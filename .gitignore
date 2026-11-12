@@ -1,0 +1,8 @@
+# Local build evidence, frozen candidates and recovery snapshots stay on disk.
+/build/
+/evidence/
+/.worktrees/
+__pycache__/
+.pytest_cache/
+*.py[cod]
+*.bak

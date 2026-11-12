@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>迭代验收看板</title>
+<style>
+:root{color-scheme:dark;--bg:#0d1117;--panel:#161b22;--line:#30363d;--text:#e6edf3;--muted:#9da7b3;--accent:#79b8ff;--good:#75d89b;--warn:#f0c36a;--bad:#ff9690}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:15px/1.6 "Segoe UI","Microsoft YaHei",sans-serif}main{max-width:1440px;margin:auto;padding:36px 32px}header{display:flex;justify-content:space-between;gap:24px;align-items:flex-start;border-bottom:1px solid var(--line);padding-bottom:24px}h1{font-size:28px;line-height:1.3;font-weight:600;letter-spacing:-.6px;margin:6px 0 12px;overflow-wrap:anywhere}.eyebrow{font:12px/1.5 Consolas,monospace;color:var(--accent);letter-spacing:1.6px}p{margin:8px 0}.muted{color:var(--muted)}#connection{font-size:13px;white-space:nowrap}.summary{display:grid;grid-template-columns:1fr auto;align-items:center;gap:28px;padding:24px 0}#conclusion{font-size:23px;font-weight:600}#next-action{color:var(--muted);max-width:800px}.metrics{display:flex;gap:32px}.metric{min-width:100px;color:var(--muted);font-size:13px}.metric b{display:block;font-size:29px;line-height:1.3;color:var(--text);font-weight:500}.metric:first-child b{color:var(--good)}nav{display:flex;gap:8px;flex-wrap:wrap;margin:6px 0 24px}button{font:inherit;color:inherit;cursor:pointer}nav button,#close{border:1px solid var(--line);background:transparent;border-radius:6px;padding:7px 13px}nav button[aria-pressed=true]{border-color:var(--accent);color:var(--accent);background:#17273c}button:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-offset:4px}#cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,315px),1fr));gap:16px}.card{display:flex;flex-direction:column;align-items:stretch;justify-content:flex-start;width:100%;height:100%;text-align:left;border:1px solid var(--line);background:var(--panel);border-radius:8px;padding:20px;overflow-wrap:anywhere}.card:hover{border-color:var(--accent)}.card h2{font-size:17px;font-weight:600;margin:12px 0;line-height:1.5}.card .overline{display:flex;justify-content:space-between;gap:12px;font-size:12px;color:var(--muted)}.verdict{font:13px/1.7 Consolas,monospace}.good{color:var(--good)}.warn{color:var(--warn)}.bad{color:var(--bad)}.stage{font-size:14px;padding:12px 0;border-top:1px solid var(--line);margin-top:12px}.stage p{margin:0 0 5px}progress{display:block;width:100%;height:5px;accent-color:var(--accent);margin:10px 0}.meta{font-size:12px;color:var(--muted)}.block{font-size:14px;color:var(--bad);margin:10px 0 0}#empty{padding:48px 24px;border:1px dashed var(--line);text-align:center;color:var(--muted);border-radius:8px}footer{font-size:12px;color:var(--muted);padding-top:28px}dialog{color:var(--text);background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:28px;width:min(760px,calc(100% - 28px));max-height:90vh}dialog::backdrop{background:#000a}dialog header{padding-bottom:16px}dialog h2{font-size:21px;margin:0;overflow-wrap:anywhere}dialog h3{font-size:14px;color:var(--accent);margin-top:24px}dialog pre{white-space:pre-wrap;overflow-wrap:anywhere;font:13px/1.7 Consolas,monospace;background:var(--bg);border:1px solid var(--line);padding:14px;border-radius:6px}dialog ul{padding-left:24px}dialog li{margin:8px 0;overflow-wrap:anywhere}a{color:var(--accent)}@media(max-width:720px){main{padding:24px 18px}.summary{grid-template-columns:1fr;gap:16px}.metrics{justify-content:flex-start;gap:24px}header{flex-direction:column;gap:8px}h1{font-size:24px}dialog{padding:20px}}
+</style>
+</head>
+<body><main>
+<header><div><div class="eyebrow">ITERATION / EVIDENCE FIRST</div><h1 id="title">迭代验收看板</h1><p class="muted" id="timestamp"></p></div><span id="connection">静态快照</span></header>
+<section class="summary" aria-label="当前结论"><div><div id="conclusion"></div><p id="next-action"></p></div><div class="metrics"><div class="metric">验收 PASS<b id="accepted">—</b></div><div class="metric">声明 DONE<b id="declared">—</b></div><div class="metric">阻塞 / 未知<b id="uncertain">—</b></div></div></section>
+<nav aria-label="筛选任务" id="filters"></nav><section id="cards" aria-label="任务列表"></section><p id="empty" hidden>暂无任务。验收尚未开始。</p>
+<footer>阶段清单的完成比例不是工时进度。声明 DONE、清单勾选和代理停止，都不能代替独立验收。</footer>
+</main>
+<dialog id="detail" aria-labelledby="detail-title"><header><h2 id="detail-title"></h2><button id="close" type="button">关闭</button></header><div id="detail-content"></div></dialog>
+<script id="board-data" type="application/json">__ITER_BOARD_DATA__</script>
+<script>
+'use strict';
+let data=JSON.parse(document.getElementById('board-data').textContent),filter='ALL';
+const cards=new Map(),grid=document.getElementById('cards'),dialog=document.getElementById('detail');
+function el(tag,text,cls){const n=document.createElement(tag);if(text!==undefined)n.textContent=String(text);if(cls)n.className=cls;return n;}
+function tone(v){return v==='PASS'?'good':(v==='FAIL'||v==='BLOCKED')?'bad':'warn';}
+const modes=[['ALL','全部'],['BLOCKED','阻塞 / 失败'],['UNKNOWN','证据未知'],['IN_PROGRESS','进行中'],['TESTING','待验收'],['PASS','验收通过']];
+for(const [key,label] of modes){const b=el('button',label);b.type='button';b.dataset.filter=key;b.onclick=()=>{filter=key;render(data);};document.getElementById('filters').append(b);}
+function matches(c){return filter==='ALL'||(filter==='BLOCKED'&&['BLOCKED','FAIL'].includes(c.acceptance_verdict))||(['UNKNOWN','PASS'].includes(filter)&&c.acceptance_verdict===filter)||c.status===filter;}
+function render(d){
+ data=d;document.getElementById('title').textContent=d.iteration_name;document.title='迭代验收 · '+d.iteration_name;
+ document.getElementById('timestamp').textContent='读取时间 '+d.generated_at;
+ const labels={PASS:'验收通过',BLOCKED:'存在阻塞，尚未完成验收',FAIL:'验收失败，需修复',UNKNOWN:'证据不完整，验收未知',PENDING:'迭代推进中',EMPTY:'暂无任务'};
+ const result=document.getElementById('conclusion');result.textContent=labels[d.conclusion]||'验收未知';result.className=tone(d.conclusion);
+ document.getElementById('next-action').textContent=d.conclusion==='PASS'?'下一步：按已授权的整轮总审与合流门禁推进。':d.total?'下一步：打开任务核对阻塞、缺失证据及恢复条件；先处理受影响的依赖。':'下一步：在获得规划写入授权后建立任务卡。';
+ document.getElementById('accepted').textContent=d.accepted+' / '+d.total;document.getElementById('declared').textContent=d.done+' / '+d.total;document.getElementById('uncertain').textContent=d.blocked+' / '+d.unknown;
+ for(const b of document.querySelectorAll('#filters button'))b.setAttribute('aria-pressed',String(b.dataset.filter===filter));
+ const visible=d.cards.filter(matches),keys=new Set(visible.map(c=>c.filename));
+ for(const [key,node] of cards)if(!keys.has(key)){node.remove();cards.delete(key);}
+ for(const c of visible){
+  let node=cards.get(c.filename);if(!node){node=el('button',undefined,'card');node.type='button';cards.set(c.filename,node);grid.append(node);}
+  node.onclick=()=>openDetail(c);node.setAttribute('aria-label',c.name+'，验收 '+c.acceptance_verdict);
+  const head=el('div',undefined,'overline');head.append(el('span','#'+c.id),el('span',c.type));
+  const stage=el('div',undefined,'stage');stage.append(el('p','业务阶段 · '+c.stage_current),el('div','清单 '+c.stage_progress,'muted'));
+  if(c.stage_pct!==null){const progress=el('progress');progress.max=100;progress.value=Math.max(0,Math.min(100,c.stage_pct));progress.setAttribute('aria-label','阶段清单完成比例');stage.append(progress);}
+  node.replaceChildren(head,el('h2',c.name),el('div','验收 '+c.acceptance_verdict+' · 声明 '+c.status,'verdict '+tone(c.acceptance_verdict)),stage,el('div','工程阶段 · '+c.tdd_step,'meta'),el('div','修复 '+c.fix_rounds+' / 累计 '+c.fix_total+' · 重规划 '+c.replan_count,'meta'),el('div','更新 '+c.updated_at,'meta'));
+  if(c.is_blocked)node.append(el('p',c.blocked_reason,'block'));
+ }
+ const empty=document.getElementById('empty');empty.hidden=visible.length>0;empty.textContent=d.total?'此筛选下暂无任务。':'暂无任务。验收尚未开始。';
+}
+function openDetail(c){
+ document.getElementById('detail-title').textContent=c.name;const body=document.getElementById('detail-content');body.replaceChildren();
+ body.append(el('p','声明 '+c.status+' / 验收 '+c.acceptance_verdict,'verdict '+tone(c.acceptance_verdict)),el('p','打开时快照 · '+data.generated_at,'meta'));
+ function section(title,text){body.append(el('h3',title),el('pre',text));}
+ section('阻塞与恢复条件',c.blocked_reason||'未记录阻塞原因；这不表示验收通过。');
+ section('候选与验收发现','卡片 '+c.filename+'\n类型 '+c.type+'\nBASE '+(c.base_sha||'UNKNOWN')+'\n实现C '+(c.head_sha||'UNKNOWN')+'\n'+(c.findings.join('\n')||'无结构门禁发现；行为结论仍以独立审查为准。'));
+ body.append(el('h3','业务阶段清单（非工时）'));const list=el('ul');for(const s of c.stages)list.append(el('li',(s.done?'[x] ':'[ ] ')+s.title));body.append(list);if(!c.stages.length)body.append(el('p','UNKNOWN · 未声明阶段清单','muted'));
+ section('工程阶段与自治预算',c.tdd_step+'\n当前修复 '+c.fix_rounds+' / 累计 '+c.fix_total+'\n会诊 '+c.consilium_count+' / 重规划 '+c.replan_count+'\n限额 '+JSON.stringify(c.policy));
+ section('授权范围',c.whitelist.join('\n')||'UNKNOWN');body.append(el('h3','原始证据出处'));
+ const sources=el('ul');for(const [index,s] of c.sources.entries()){const row=el('li');row.append(el('span',s.label+' · '+s.path+' '));if(location.protocol.startsWith('http')){const a=el('a','查看原文');a.href='/api/evidence?task='+encodeURIComponent(c.filename)+'&source='+index;a.target='_blank';a.rel='noopener';row.append(a);}sources.append(row);}body.append(sources);if(!c.sources.length)body.append(el('p','UNKNOWN · 无可读取的收据或原始证据','warn'));
+ dialog.showModal();
+}
+document.getElementById('close').onclick=()=>dialog.close();render(data);
+if(location.protocol.startsWith('http')){async function refresh(){try{const response=await fetch('/api/board',{cache:'no-store'});if(!response.ok)throw new Error(String(response.status));render(await response.json());document.getElementById('connection').textContent='实时读取 · 2秒刷新';}catch(error){document.getElementById('connection').textContent='连接中断 · 保留上次快照';}}refresh();setInterval(refresh,2000);}
+</script></body></html>
