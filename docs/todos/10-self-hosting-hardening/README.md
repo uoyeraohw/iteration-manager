@@ -1,6 +1,6 @@
 # 迭代10 · 规则一致性、使用简化与真实自用健壮性
 
-> **进度指示**：声明DONE [2/6] (33.3%) · 验收PASS [2/6] · 状态：🟡 进行中
+> **进度指示**：声明DONE [3/6] (50%) · 验收PASS [3/6] · 状态：🟡 进行中
 > 分支：`feat/iter-10-self-hosting-hardening`；独立工作区：`.worktrees/iter-10`，从规划提交`d3bd97ab16ffed6104034a887a01eb1b4d75dc0e`创建。
 > 用户已批准启动实施、精准Git提交与独立Worktree；按六卡串行验收推进。禁止部署、推送、合流或清理。
 
@@ -41,7 +41,7 @@
 | --- | --- | --- | --- | --- | --- |
 | 01 | 统一授权规则与跨入口场景 | Spike-Discovery | 无 | 🟢 已完成 / 验收:PASS | [01-authority-consistency.md](./01-authority-consistency.md) |
 | 02 | 按类型与交付模式生成和检查任务卡 | Strict-TDD | 01 | 🟢 已完成 / 验收:PASS | [02-typed-template-generation.md](./02-typed-template-generation.md) |
-| 03 | 稳定查询与CLI消费接口，保持旧入口兼容 | Strict-TDD | 02 | 🔵 待验收 / 验收:UNKNOWN | [03-query-cli-contract.md](./03-query-cli-contract.md) |
+| 03 | 稳定查询与CLI消费接口，保持旧入口兼容 | Strict-TDD | 02 | 🟢 已完成 / 验收:PASS | [03-query-cli-contract.md](./03-query-cli-contract.md) |
 | 04 | 看板展示Git/FS候选和可继承交接 | UI-Component | 03 | ⚪ 待开始 / 验收:UNKNOWN | [04-board-handoff.md](./04-board-handoff.md) |
 | 05 | 建立源码、候选、安装与消费的发布证据索引 | Spike-Discovery | 04 | ⚪ 待开始 / 验收:UNKNOWN | [05-release-evidence-index.md](./05-release-evidence-index.md) |
 | 06 | 真实自用链路与故障路径健壮性验收 | Spike-Discovery | 05 | ⚪ 待开始 / 验收:UNKNOWN | [06-self-hosting-acceptance.md](./06-self-hosting-acceptance.md) |
@@ -91,7 +91,7 @@
 ## 6. 当前交接
 
 任务01已完成独立APPROVED与C/D登记，D=2ecd3bc3f957ac1941b388e036a6427b717b6cc7，固定工具local strict确认PASS。实际经历正常跨会话续接及一次deadline取消后的FUSED收尾、用户明确单次授权恢复，原始事件和四预算均保留。
-任务02已获新候选独立APPROVED，初审F01反例已修复，36断言RED→45GREEN，156指定回归通过；登记后固定strict核对PASS才进入03。任务03—06仍TODO，未提前派发。
+任务02已固定strict PASS；任务03共享查询/CLI候选独立APPROVED，最终八文件170passed，登记D后固定strict确认PASS再进入04。任务04—06仍TODO，未提前派发。
 历史维护结论不重开；当前源码基线与各安装现状分开，安装/消费事实由05只读核查。
 
 ### 初始化实际消费
@@ -103,13 +103,13 @@
 <!-- iter:projection -->
 ## 验收事实（阶段比例不是工时）
 
-声明DONE 2/6 · 验收PASS 2/6
+声明DONE 3/6 · 验收PASS 3/6
 
 | 任务 | 声明 | 验收 | 业务阶段 / 清单比例 | 工程阶段 | 阻塞原因 | 累计尝试 | 最后更新 |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | 01-authority-consistency.md | DONE | PASS | 阶段清单已勾选完毕 / 3/3 (100%) | CHECKLIST_COMPLETE (未等同验收) | 未记录 | 0 | 2026-11-13T16:44:56.984232+00:00 |
 | 02-typed-template-generation.md | DONE | PASS | 阶段清单已勾选完毕 / 3/3 (100%) | CHECKLIST_COMPLETE (未等同验收) | 未记录 | 0 | 2026-11-13T17:27:41.977460+00:00 |
-| 03-query-cli-contract.md | TESTING | UNKNOWN | Stage 3/3：通过导入/CLI/收据/只读回归并完成前后量测，冻结供看板消费的JSON接口 / 2/3 (66.7%) | 读取真实基线、当前变更和前置PASS；完成context、claim与同owner dispatch-check。 | 未记录 | 0 | 2026-11-13T17:59:08.405402+00:00 |
+| 03-query-cli-contract.md | DONE | PASS | 阶段清单已勾选完毕 / 3/3 (100%) | CHECKLIST_COMPLETE (未等同验收) | 未记录 | 0 | 2026-11-13T18:07:33.458803+00:00 |
 | 04-board-handoff.md | TODO | UNKNOWN | Stage 1/3：固定真实用户路径、视口和四态输入，基于03字段更新详情展示 / 0/3 (0%) | 读取真实基线、当前变更和前置PASS；完成context、claim与同owner dispatch-check。 | 未记录 | 0 | 2026-11-13 |
 | 05-release-evidence-index.md | TODO | UNKNOWN | Stage 1/3：盘点四层事实与现有原件，区分当前/历史/未知 / 0/3 (0%) | 读取真实基线、当前变更和前置PASS；完成context、claim与同owner dispatch-check。 | 未记录 | 0 | 2026-11-13 |
 | 06-self-hosting-acceptance.md | TODO | UNKNOWN | Stage 1/3：整理01—05真实消费证据，隔离夹具运行故障与恢复路径 / 0/3 (0%) | 读取真实基线、当前变更和前置PASS；完成context、claim与同owner dispatch-check。 | 未记录 | 0 | 2026-11-13 |
