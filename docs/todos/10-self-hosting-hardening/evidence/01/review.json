@@ -1,0 +1,38 @@
+{
+  "checks": [
+    {
+      "name": "experiment",
+      "kind": "command",
+      "command": "python -B docs/todos/10-self-hosting-hardening/evidence/01/consumption-b/verify-observations.py",
+      "cwd": ".",
+      "exit_code": 0,
+      "output": "docs/todos/10-self-hosting-hardening/evidence/01/consumption-b/verification.json.output.txt",
+      "receipt": "docs/todos/10-self-hosting-hardening/evidence/01/consumption-b/verification.json",
+      "basis": "Original receipt/child/output read; native evidence independently checked against original rollout lines and snapshots recalculated by reviewer",
+      "summary": "Original receipt/child/output read; native evidence independently checked against original rollout lines and snapshots recalculated by reviewer"
+    },
+    {
+      "name": "decision",
+      "kind": "observation",
+      "output": ".agents/notes/implemented/process/2026-11-13-authority-consistency.md",
+      "summary": "Decision and real alternatives align source authority, preserve execution gates and separate authorization; historical Slice A testing wording recorded as Minor"
+    },
+    {
+      "name": "interfaces",
+      "kind": "observation",
+      "output": "docs/todos/10-self-hosting-hardening/evidence/01/authority-matrix.json",
+      "summary": "version1 with four required IDs and authority/allowed/forbidden/source_paths/observed_result/evidence fields; all four PASS supported within read-only consumption scope"
+    }
+  ],
+  "reviewer": "01a1d5c3-ca1a-74b1-b0de-c2223e059236",
+  "implementer": "1702/fcdae243-1628-427e-8f85-51ccfb4fef64 + 1703/6c6e933a-5d58-4dbb-aa57-3d953f675e2f",
+  "task_path": "docs/todos/10-self-hosting-hardening/01-authority-consistency.md",
+  "verdict": "APPROVED",
+  "base_sha": "d3bd97ab16ffed6104034a887a01eb1b4d75dc0e",
+  "head_sha": "997ee3753241d7f4ad5b3d68df7648d06e2adc4c",
+  "review_report": "docs/todos/10-self-hosting-hardening/evidence/01/review-report.json",
+  "schema_version": 1,
+  "type": "Spike-Discovery",
+  "contract_sha": "997ee3753241d7f4ad5b3d68df7648d06e2adc4c",
+  "task_id": "01"
+}

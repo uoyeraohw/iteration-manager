@@ -1,0 +1,586 @@
+{
+  "original_files": [
+    {
+      "raw_text": "{\n  \"version\": 1,\n  \"tasks\": {\n    \"01\": {\n      \"phase\": \"evidence-inspection\",\n      \"candidate\": \"997ee3753241d7f4ad5b3d68df7648d06e2adc4c\",\n      \"inputs\": [\n        \"docs/todos/10-self-hosting-hardening/01-authority-consistency.md\",\n        \"references/worktree_git_contract.md\",\n        \"references/superpowers_handbook.md\",\n        \"templates/root_readme.md\"\n      ],\n      \"capabilities\": [\n        \"Codeg MCP codex independent session\",\n        \"Windows iter_run\"\n      ],\n      \"dependencies\": [],\n      \"tool_entry\": \"C:/Users/qingyu/.codeg/skills/iteration-manager/build/frozen-tools/46ded3a/scripts/iter_sync.py\",\n      \"checkpoint\": \"非参与者核对冻结C、授权消费及恢复原件，返回真实裁决\",\n      \"remaining_work\": [\n        \"独立裁决\",\n        \"批准后登记D及strict\"\n      ],\n      \"observations\": {\n        \"authority\": {\n          \"status\": \"READY\",\n          \"summary\": \"用户已批准实施、精准提交和Worktree，禁止部署推送合流清理\",\n          \"evidence\": \"docs/todos/10-self-hosting-hardening/evidence/01/authority.txt\"\n        },\n        \"execution\": {\n          \"status\": \"READY\",\n          \"summary\": \"Codeg codex探针会话1701实际读取工作区及冻结必读文件成功，无拒绝；实现会话仍需完整消费\",\n          \"evidence\": \"docs/todos/10-self-hosting-hardening/evidence/01/capability-probe.json\"\n        },\n        \"verification\": {\n          \"status\": \"READY\",\n          \"summary\": \"冻结runner完整基线314 passed，COMPLETED/raw_exit_code0/tree_terminal=true；当前仅文档及受影响文本测试\",\n          \"evidence\": \"docs/todos/10-self-hosting-hardening/evidence/01/baseline-suite.json\"\n        }\n      }\n    }\n  }\n}\n",
+      "path": "build/review-01/context.json"
+    },
+    {
+      "raw_text": "{\r\n  \"read_only\": true,\r\n  \"readiness\": \"READY\",\r\n  \"task_path\": \"C:\\\\Users\\\\qingyu\\\\.codeg\\\\skills\\\\iteration-manager\\\\.worktrees\\\\iter-10\\\\docs\\\\todos\\\\10-self-hosting-hardening\\\\01-authority-consistency.md\",\r\n  \"phase\": \"evidence-inspection\",\r\n  \"acceptance_verdict\": \"UNKNOWN\",\r\n  \"findings\": [],\r\n  \"observations\": {\r\n    \"authority\": {\r\n      \"status\": \"READY\",\r\n      \"summary\": \"用户已批准实施、精准提交和Worktree，禁止部署推送合流清理\",\r\n      \"evidence\": \"docs/todos/10-self-hosting-hardening/evidence/01/authority.txt\"\r\n    },\r\n    \"execution\": {\r\n      \"status\": \"READY\",\r\n      \"summary\": \"Codeg codex探针会话1701实际读取工作区及冻结必读文件成功，无拒绝；实现会话仍需完整消费\",\r\n      \"evidence\": \"docs/todos/10-self-hosting-hardening/evidence/01/capability-probe.json\"\r\n    },\r\n    \"verification\": {\r\n      \"status\": \"READY\",\r\n      \"summary\": \"冻结runner完整基线314 passed，COMPLETED/raw_exit_code0/tree_terminal=true；当前仅文档及受影响文本测试\",\r\n      \"evidence\": \"docs/todos/10-self-hosting-hardening/evidence/01/baseline-suite.json\"\r\n    }\r\n  },\r\n  \"task_id\": \"01\",\r\n  \"delivery_mode\": \"git\",\r\n  \"candidate\": \"997ee3753241d7f4ad5b3d68df7648d06e2adc4c\",\r\n  \"execution\": {\r\n    \"attempt_count\": 2,\r\n    \"no_progress_streak\": 0,\r\n    \"last_attempt\": {\r\n      \"source\": \"docs/todos/10-self-hosting-hardening/evidence/01/attempt-implementation-b.json\",\r\n      \"phase\": \"implementation\",\r\n      \"delivery_mode\": \"git\",\r\n      \"candidate\": \"612cfde035f5fc96cec9d60435296af4e84be307\",\r\n      \"conditions\": {\r\n        \"inputs\": [\r\n          \"docs/todos/10-self-hosting-hardening/01-authority-consistency.md\",\r\n          \"references/superpowers_handbook.md\",\r\n          \"references/worktree_git_contract.md\",\r\n          \"templates/root_readme.md\"\r\n        ],\r\n        \"capabilities\": [\r\n          \"Codeg MCP codex independent session\",\r\n          \"Windows iter_run\"\r\n        ],\r\n        \"scope\": [\r\n          \".agents/notes/implemented/process/2026-11-13-authority-consistency.md\",\r\n          \"docs/todos/10-self-hosting-hardening/evidence/01/\",\r\n          \"references/superpowers_handbook.md\",\r\n          \"references/worktree_git_contract.md\",\r\n          \"templates/root_readme.md\",\r\n          \"tests/test_authority_scenarios.py\",\r\n          \"tests/test_prompt_sources.py\"\r\n        ]\r\n      },\r\n      \"executor_id\": \"6c6e933a-5d58-4dbb-aa57-3d953f675e2f\",\r\n      \"executor_state\": \"canceled\",\r\n      \"terminal_evidence\": \"docs/todos/10-self-hosting-hardening/evidence/01/native-terminal-implementation-b.json\",\r\n      \"progress\": [\r\n        {\r\n          \"kind\": \"implementation\",\r\n          \"evidence\": \"docs/todos/10-self-hosting-hardening/evidence/01/implementation-checkpoint-b.json\",\r\n          \"summary\": \"四个新会话原始调用/终态、磁盘变化归属和矩阵提交612cfde，整卡仍未批准\"\r\n        },\r\n        {\r\n          \"kind\": \"green\",\r\n          \"evidence\": \"docs/todos/10-self-hosting-hardening/evidence/01/consumption-b/verification.json.output.txt\",\r\n          \"summary\": \"消费库存核验命令0且source/test/note相对A不变，复用A回归，无重复跑\"\r\n        }\r\n      ],\r\n      \"checkpoint\": \"四类原生只读消费及磁盘/Git观察已提交；父会话在提交后回复前被deadline取消，不能按normal release\",\r\n      \"remaining_work\": [\r\n        \"取得本次单次resume-checkpoint明确授权\",\r\n        \"恢复门禁\",\r\n        \"登记strict\",\r\n        \"非参与者独审\"\r\n      ],\r\n      \"commands\": [\r\n        {\r\n          \"receipt\": \"docs/todos/10-self-hosting-hardening/evidence/01/consumption-b/scope.json\",\r\n          \"status\": \"COMPLETED\",\r\n          \"raw_exit_code\": 0,\r\n          \"started_at\": \"2026-11-13T16:27:30.116955+00:00\",\r\n          \"ended_at\": \"2026-11-13T16:27:31.236707+00:00\"\r\n        },\r\n        {\r\n          \"receipt\": \"docs/todos/10-self-hosting-hardening/evidence/01/consumption-b/verification.json\",\r\n          \"status\": \"COMPLETED\",\r\n          \"raw_exit_code\": 0,\r\n          \"started_at\": \"2026-11-13T16:27:20.132815+00:00\",\r\n          \"ended_at\": \"2026-11-13T16:27:20.487479+00:00\"\r\n        }\r\n      ],\r\n      \"started_at\": null,\r\n      \"ended_at\": null,\r\n      \"session_seconds\": null,\r\n      \"command_seconds\": 1.4744160000000002\r\n    },\r\n    \"checkpoint\": {\r\n      \"candidate\": \"612cfde035f5fc96cec9d60435296af4e84be307\",\r\n      \"phase\": \"implementation\",\r\n      \"summary\": \"四类原生只读消费及磁盘/Git观察已提交；父会话在提交后回复前被deadline取消，不能按normal release\",\r\n      \"progress\": [\r\n        {\r\n          \"kind\": \"implementation\",\r\n          \"evidence\": \"docs/todos/10-self-hosting-hardening/evidence/01/implementation-checkpoint-b.json\",\r\n          \"summary\": \"四个新会话原始调用/终态、磁盘变化归属和矩阵提交612cfde，整卡仍未批准\"\r\n        },\r\n        {\r\n          \"kind\": \"green\",\r\n          \"evidence\": \"docs/todos/10-self-hosting-hardening/evidence/01/consumption-b/verification.json.output.txt\",\r\n          \"summary\": \"消费库存核验命令0且source/test/note相对A不变，复用A回归，无重复跑\"\r\n        }\r\n      ],\r\n      \"source\": \"docs/todos/10-self-hosting-hardening/evidence/01/attempt-implementation-b.json\"\r\n    },\r\n    \"remaining_work\": [\r\n      \"取得本次单次resume-checkpoint明确授权\",\r\n      \"恢复门禁\",\r\n      \"登记strict\",\r\n      \"非参与者独审\"\r\n    ]\r\n  },\r\n  \"conditions\": {\r\n    \"inputs\": [\r\n      \"docs/todos/10-self-hosting-hardening/01-authority-consistency.md\",\r\n      \"references/superpowers_handbook.md\",\r\n      \"references/worktree_git_contract.md\",\r\n      \"templates/root_readme.md\"\r\n    ],\r\n    \"capabilities\": [\r\n      \"Codeg MCP codex independent session\",\r\n      \"Windows iter_run\"\r\n    ],\r\n    \"scope\": [\r\n      \".agents/notes/implemented/process/2026-11-13-authority-consistency.md\",\r\n      \"docs/todos/10-self-hosting-hardening/evidence/01/\",\r\n      \"references/superpowers_handbook.md\",\r\n      \"references/worktree_git_contract.md\",\r\n      \"templates/root_readme.md\",\r\n      \"tests/test_authority_scenarios.py\",\r\n      \"tests/test_prompt_sources.py\"\r\n    ]\r\n  },\r\n  \"checkpoint\": \"非参与者核对冻结C、授权消费及恢复原件，返回真实裁决\",\r\n  \"remaining_work\": [\r\n    \"批准后登记D及strict\",\r\n    \"独立裁决\"\r\n  ]\r\n}\r\n",
+      "path": "build/review-01/dispatch.json"
+    },
+    {
+      "raw_text": "{\r\n  \"version\": 1,\r\n  \"argv\": [\r\n    \"python\",\r\n    \"-B\",\r\n    \"build/review-01/inspect-frozen.py\"\r\n  ],\r\n  \"cwd\": \"C:\\\\Users\\\\qingyu\\\\.codeg\\\\skills\\\\iteration-manager\\\\.worktrees\\\\iter-10\",\r\n  \"deadline\": \"2026-11-13T16:42:39+00:00\",\r\n  \"cleanup_reserve_seconds\": 5,\r\n  \"status\": \"COMPLETED\",\r\n  \"deadline_checked_at\": \"2026-11-13T16:38:17.274435+00:00\",\r\n  \"started_at\": \"2026-11-13T16:38:17.284553+00:00\",\r\n  \"ended_at\": \"2026-11-13T16:38:25.588659+00:00\",\r\n  \"raw_exit_code\": 0,\r\n  \"tree_terminal\": true,\r\n  \"output\": \"build/review-01/frozen-inspection.json.output.txt\",\r\n  \"container_pid\": 36092,\r\n  \"launcher_exit_code\": 0,\r\n  \"command\": {\r\n    \"status\": \"COMPLETED\",\r\n    \"raw_exit_code\": 0,\r\n    \"started_at\": \"2026-11-13T16:38:17.284553+00:00\",\r\n    \"pid\": 32304,\r\n    \"deadline_checked_at\": \"2026-11-13T16:38:17.274435+00:00\",\r\n    \"ended_at\": \"2026-11-13T16:38:25.573154+00:00\"\r\n  },\r\n  \"late_by_seconds\": 0\r\n}",
+      "path": "build/review-01/frozen-inspection.json"
+    },
+    {
+      "raw_text": "{\"status\": \"COMPLETED\", \"raw_exit_code\": 0, \"started_at\": \"2026-11-13T16:38:17.284553+00:00\", \"pid\": 32304, \"deadline_checked_at\": \"2026-11-13T16:38:17.274435+00:00\", \"ended_at\": \"2026-11-13T16:38:25.573154+00:00\"}",
+      "path": "build/review-01/frozen-inspection.json.child.json"
+    },
+    {
+      "raw_text": "Full actual diff loaded: 5917872 bytes; 79 paths\r\nReviewer CODEX_THREAD_ID: 01a1d5c3-ca1a-74b1-b0de-c2223e059236\r\nwave1 snapshot recalculation: 143 files; changed= [] disk= [] git= ['status'] times= 2026-11-13T16:21:30.730907+00:00 2026-11-13T16:23:37.862575+00:00\r\nwave2 snapshot recalculation: 143 files; changed= ['docs/todos/10-self-hosting-hardening/evidence/01/dispatch-native-implementation-b.json'] disk= ['docs/todos/10-self-hosting-hardening/evidence/01/dispatch-native-implementation-b.json'] git= ['status'] times= 2026-11-13T16:23:39.063328+00:00 2026-11-13T16:25:08.836814+00:00\r\nprompt_only primary log exact matching selected records= 12 all source calls= 5 paired= 5 terminal= completed session= 1704\r\nno_git_permission primary log exact matching selected records= 12 all source calls= 5 paired= 5 terminal= completed session= 1705\r\npreexisting_dirty primary log exact matching selected records= 10 all source calls= 4 paired= 4 terminal= completed session= 1706\r\nno_merge_permission primary log exact matching selected records= 10 all source calls= 4 paired= 4 terminal= completed session= 1707\r\nreceipt original: docs/todos/10-self-hosting-hardening/evidence/01/baseline-suite.json COMPLETED/0/tree_terminal; 438 output bytes\r\nreceipt original: docs/todos/10-self-hosting-hardening/evidence/01/consumption-b/scope.json COMPLETED/0/tree_terminal; 104 output bytes\r\nreceipt original: docs/todos/10-self-hosting-hardening/evidence/01/consumption-b/verification.json COMPLETED/0/tree_terminal; 575 output bytes\r\nreceipt original: docs/todos/10-self-hosting-hardening/evidence/01/delivery-regression-checkpoint-a.json COMPLETED/0/tree_terminal; 101 output bytes\r\nreceipt original: docs/todos/10-self-hosting-hardening/evidence/01/delivery-regression-final-a.json COMPLETED/0/tree_terminal; 101 output bytes\r\nreceipt original: docs/todos/10-self-hosting-hardening/evidence/01/note-format-checkpoint-a.json COMPLETED/0/tree_terminal; 516 output bytes\r\nreceipt original: docs/todos/10-self-hosting-hardening/evidence/01/note-tree-checkpoint-a.json COMPLETED/0/tree_terminal; 540 output bytes\r\nreceipt original: docs/todos/10-self-hosting-hardening/evidence/01/scope-checkpoint-a.json COMPLETED/0/tree_terminal; 104 output bytes\r\nreceipt original: docs/todos/10-self-hosting-hardening/evidence/01/text-regression-checkpoint-a.json COMPLETED/0/tree_terminal; 100 output bytes\r\nFrozen evidence audit completed; no source or formal evidence written.\r\n",
+      "path": "build/review-01/frozen-inspection.json.output.txt"
+    },
+    {
+      "raw_text": "import json, subprocess, pathlib, base64, os\nC='997ee3753241d7f4ad5b3d68df7648d06e2adc4c'\nB='d3bd97ab16ffed6104034a887a01eb1b4d75dc0e'\nE='docs/todos/10-self-hosting-hardening/evidence/01/'\ndef raw(p): return subprocess.check_output(['git','show',C+':'+p])\ndef read(p): return json.loads(raw(p))\npaths=subprocess.check_output(['git','diff','--name-only',B,C],text=True).splitlines()\ndiff=subprocess.check_output(['git','diff',B,C])\nprint('Full actual diff loaded:',len(diff),'bytes;',len(paths),'paths')\nprint('Reviewer CODEX_THREAD_ID:',os.environ.get('CODEX_THREAD_ID','UNKNOWN'))\nfor wave in ['wave1','wave2']:\n a,b=[read(E+'consumption-b/'+wave+'-'+s+'.json') for s in ['before','after']]\n changes=[p for p in sorted(set(a['files_base64'])|set(b['files_base64'])) if a['files_base64'].get(p)!=b['files_base64'].get(p)]\n disk=[p for p in sorted(set(a['disk_inventory'])|set(b['disk_inventory'])) if a['disk_inventory'].get(p)!=b['disk_inventory'].get(p)]\n git=[k for k in a['git'] if a['git'][k]!=b['git'][k]]\n stored=read(E+'consumption-b/'+wave+'-comparison.json')\n assert (changes,disk,git)==(stored['byte_changed_paths'],stored['disk_metadata_changed_paths'],stored['git_changed_fields'])\n for p,v in a['files_base64'].items(): base64.b64decode(v,validate=True)\n print(wave,'snapshot recalculation:',len(a['files_base64']),'files; changed=',changes,'disk=',disk,'git=',git,'times=',a['observed_at'],b['observed_at'])\n for k in ['head','branch','cached','diff','refs','worktrees','reflog']:\n  assert a['git'][k]==b['git'][k]\nfor s in ['prompt_only','no_git_permission','preexisting_dirty','no_merge_permission']:\n n=read(E+'consumption-b/'+s+'-native.json'); c=read(E+'consumption-b/'+s+'-calls.json')\n g=n['native_terminal_and_guard']; assert g['terminalConfirmed'] and g['final']['status']=='completed'\n source=pathlib.Path(c['source_path']); lines=source.read_text(encoding='utf-8').splitlines()\n source_records=[json.loads(v) for v in lines]\n calls={}; outs={}; terminal=[]\n for r in c['selected_records']:\n  actual=source_records[r['source_line']-1]; assert actual==r['record'],(s,r['source_line'])\n  p=actual['payload']; t=p.get('type')\n  if t in ['custom_tool_call','function_call']: calls[p['call_id']]=p\n  if t in ['custom_tool_call_output','function_call_output']: outs[p['call_id']]=p\n  if t=='task_complete': terminal.append(p)\n all_calls=[r['payload'] for r in source_records if r.get('type')=='response_item' and r.get('payload',{}).get('type') in ['custom_tool_call','function_call']]\n assert {p['call_id'] for p in all_calls}==set(calls)\n assert set(calls)==set(outs) and len(terminal)==1\n assert terminal[0]['last_agent_message']==g['final']['text']\n print(s,'primary log exact matching selected records=',len(c['selected_records']),'all source calls=',len(all_calls),'paired=',len(outs),'terminal=',g['final']['status'],'session=',g['final']['child_conversation_id'])\nfor p in paths:\n if p.endswith('.json'):\n  value=json.loads(raw(p))\n  if p.endswith('-native.json') or 'native-terminal-' in p: continue\n  if isinstance(value,dict) and value.get('argv') and 'tree_terminal' in value:\n   child=read(p+'.child.json'); out=raw(p+'.output.txt')\n   assert value['tree_terminal'] and value['status']=='COMPLETED' and value['raw_exit_code']==0\n   assert child['status']=='COMPLETED' and child['raw_exit_code']==0 and out\n   print('receipt original:',p,'COMPLETED/0/tree_terminal;',len(out),'output bytes')\nprint('Frozen evidence audit completed; no source or formal evidence written.')\n",
+      "path": "build/review-01/inspect-frozen.py"
+    },
+    {
+      "raw_text": "Iteration Board: 10-self-hosting-hardening | PENDING\r\n声明DONE: 0/6 | 验收PASS: 0/6\r\n[TESTING] 01. 统一授权规则与跨入口场景 | 验收:UNKNOWN\r\n  业务阶段: Stage 3/3：冻结候选与消费证据，非参与者审查后登记 | 清单完成比例: 2/3 (66.7%) (非工时)\r\n  工程阶段: 读取真实基线、当前变更和前置PASS；完成context、claim与同owner dispatch-check。 | 修复轮次/累计: 0/0 | 重规划:0\r\n  阻塞: 未记录 | 更新时间: 2026-11-13T16:33:39.086935+00:00\r\n[TODO] 02. 按类型与交付模式生成和检查任务卡 | 验收:UNKNOWN\r\n  业务阶段: Stage 1/3：为可调用入口与八种组合建立可编译行为断言RED | 清单完成比例: 0/3 (0%) (非工时)\r\n  工程阶段: 读取真实基线、当前变更和前置PASS；完成context、claim与同owner dispatch-check。 | 修复轮次/累计: 0/0 | 重规划:0\r\n  阻塞: 未记录 | 更新时间: 2026-11-13\r\n[TODO] 03. 稳定查询与CLI消费接口，保持旧入口兼容 | 验收:UNKNOWN\r\n  业务阶段: Stage 1/3：冻结兼容矩阵，对缺失的统一投影字段取得有效断言RED | 清单完成比例: 0/3 (0%) (非工时)\r\n  工程阶段: 读取真实基线、当前变更和前置PASS；完成context、claim与同owner dispatch-check。 | 修复轮次/累计: 0/0 | 重规划:0\r\n  阻塞: 未记录 | 更新时间: 2026-11-13\r\n[TODO] 04. 看板展示Git/FS候选和可继承交接 | 验收:UNKNOWN\r\n  业务阶段: Stage 1/3：固定真实用户路径、视口和四态输入，基于03字段更新详情展示 | 清单完成比例: 0/3 (0%) (非工时)\r\n  工程阶段: 读取真实基线、当前变更和前置PASS；完成context、claim与同owner dispatch-check。 | 修复轮次/累计: 0/0 | 重规划:0\r\n  阻塞: 未记录 | 更新时间: 2026-11-13\r\n[TODO] 05. 建立源码、候选、安装与消费的发布证据索引 | 验收:UNKNOWN\r\n  业务阶段: Stage 1/3：盘点四层事实与现有原件，区分当前/历史/未知 | 清单完成比例: 0/3 (0%) (非工时)\r\n  工程阶段: 读取真实基线、当前变更和前置PASS；完成context、claim与同owner dispatch-check。 | 修复轮次/累计: 0/0 | 重规划:0\r\n  阻塞: 未记录 | 更新时间: 2026-11-13\r\n[TODO] 06. 真实自用链路与故障路径健壮性验收 | 验收:UNKNOWN\r\n  业务阶段: Stage 1/3：整理01—05真实消费证据，隔离夹具运行故障与恢复路径 | 清单完成比例: 0/3 (0%) (非工时)\r\n  工程阶段: 读取真实基线、当前变更和前置PASS；完成context、claim与同owner dispatch-check。 | 修复轮次/累计: 0/0 | 重规划:0\r\n  阻塞: 未记录 | 更新时间: 2026-11-13\r\n[IterSync:Local] Calibrated '10-self-hosting-hardening/README.md' -> [0/6] (0.0%) 🟡 进行中 in 107.02ms (Zero-Root-Touch preserved).\r\n",
+      "path": "build/review-01/local-before-review.txt"
+    },
+    {
+      "raw_text": "{\r\n  \"version\": 1,\r\n  \"argv\": [\r\n    \"python\",\r\n    \"-B\",\r\n    \"-c\",\r\n    \"import json,pathlib; p=pathlib.Path('build/review-01/reviewer-result.json'); j=json.loads(p.read_text(encoding='utf-8')); assert j['head_sha']==j['contract_sha']=='997ee3753241d7f4ad5b3d68df7648d06e2adc4c'; assert j['scope']=='PASSED' and j['verdict']=='APPROVED' and not j['blockers']; print('Valid reviewer report; C/contract binding equal; 2 deferred Minors; no blockers.')\"\r\n  ],\r\n  \"cwd\": \"C:\\\\Users\\\\qingyu\\\\.codeg\\\\skills\\\\iteration-manager\\\\.worktrees\\\\iter-10\",\r\n  \"deadline\": \"2026-11-13T16:42:39+00:00\",\r\n  \"cleanup_reserve_seconds\": 5,\r\n  \"status\": \"COMPLETED\",\r\n  \"deadline_checked_at\": \"2026-11-13T16:41:02.767000+00:00\",\r\n  \"started_at\": \"2026-11-13T16:41:02.775353+00:00\",\r\n  \"ended_at\": \"2026-11-13T16:41:02.960468+00:00\",\r\n  \"raw_exit_code\": 0,\r\n  \"tree_terminal\": true,\r\n  \"output\": \"build/review-01/report-validation.json.output.txt\",\r\n  \"container_pid\": 44596,\r\n  \"launcher_exit_code\": 0,\r\n  \"command\": {\r\n    \"status\": \"COMPLETED\",\r\n    \"raw_exit_code\": 0,\r\n    \"started_at\": \"2026-11-13T16:41:02.775353+00:00\",\r\n    \"pid\": 42920,\r\n    \"deadline_checked_at\": \"2026-11-13T16:41:02.767000+00:00\",\r\n    \"ended_at\": \"2026-11-13T16:41:02.949916+00:00\"\r\n  },\r\n  \"late_by_seconds\": 0\r\n}",
+      "path": "build/review-01/report-validation.json"
+    },
+    {
+      "raw_text": "{\"status\": \"COMPLETED\", \"raw_exit_code\": 0, \"started_at\": \"2026-11-13T16:41:02.775353+00:00\", \"pid\": 42920, \"deadline_checked_at\": \"2026-11-13T16:41:02.767000+00:00\", \"ended_at\": \"2026-11-13T16:41:02.949916+00:00\"}",
+      "path": "build/review-01/report-validation.json.child.json"
+    },
+    {
+      "raw_text": "Valid reviewer report; C/contract binding equal; 2 deferred Minors; no blockers.\r\n",
+      "path": "build/review-01/report-validation.json.output.txt"
+    },
+    {
+      "raw_text": "{\n  \"schema_version\": 1,\n  \"task_id\": \"01\",\n  \"review_kind\": \"independent-initial-review\",\n  \"scope\": \"PASSED\",\n  \"spec\": \"COMPLIANT\",\n  \"quality\": \"APPROVED\",\n  \"verdict\": \"APPROVED\",\n  \"base_sha\": \"d3bd97ab16ffed6104034a887a01eb1b4d75dc0e\",\n  \"head_sha\": \"997ee3753241d7f4ad5b3d68df7648d06e2adc4c\",\n  \"contract_sha\": \"997ee3753241d7f4ad5b3d68df7648d06e2adc4c\",\n  \"reviewer\": \"01a1d5c3-ca1a-74b1-b0de-c2223e059236\",\n  \"reviewer_identity_source\": \"Current CODEX_THREAD_ID observed by frozen-runner inspection; output line 2\",\n  \"implementers\": [\n    {\"session_id\": 1702, \"task_id\": \"fcdae243-1628-427e-8f85-51ccfb4fef64\", \"checkpoint\": \"5ff7c3af554f9effdf0a95050af24c767ca0878b\", \"terminal\": \"completed\"},\n    {\"session_id\": 1703, \"task_id\": \"6c6e933a-5d58-4dbb-aa57-3d953f675e2f\", \"checkpoint\": \"612cfde035f5fc96cec9d60435296af4e84be307\", \"terminal\": \"canceled\"}\n  ],\n  \"independence\": \"Reviewer did not participate in task design, implementation, tests or RCA; no previous approval adopted. No delegation, Git mutation or formal-file write performed.\",\n  \"review_basis\": {\n    \"workspace\": \"C:/Users/qingyu/.codeg/skills/iteration-manager/.worktrees/iter-10\",\n    \"branch\": \"feat/iter-10-self-hosting-hardening\",\n    \"candidate_observation\": \"HEAD equals C; git status --short empty at initial and final observations\",\n    \"frozen_spec\": \"git show C:docs/todos/10-self-hosting-hardening/01-authority-consistency.md; autonomy JSON structurally extracted separately\",\n    \"frozen_goal\": \"git show C:docs/todos/10-self-hosting-hardening/README.md, including complete iter:goal\",\n    \"review_package\": \"C:/Users/qingyu/.codeg/skills/iteration-manager/.git/worktrees/iter-10/iter_reviews/review_01_d3bd97a_997ee37_20261114_003500_568471.md\",\n    \"diff_method\": \"Actual git diff BASE C: all 79 paths inventoried. Product/docs/test/note diff read in full; large JSON evidence parsed structurally, raw native inputs/paired outputs/task_complete inspected, snapshots independently recalculated; schema/autonomy/base64 repetition not repeatedly printed. Frozen inspection loaded complete 5917872-byte actual diff and parsed every changed JSON.\",\n    \"coordinator_contracts\": [\n      \"C:/Users/qingyu/.codeg/skills/iteration-manager/build/frozen-tools/46ded3a/references/task_card_schema.md\",\n      \"C:/Users/qingyu/.codeg/skills/iteration-manager/build/frozen-tools/46ded3a/references/agent_protocol.md\",\n      \"C:/Users/qingyu/.codeg/skills/iteration-manager/build/frozen-tools/46ded3a/templates/sdd_reviewer_prompt.md\"\n    ]\n  },\n  \"acceptance\": [\n    {\n      \"requirement\": \"Four real new sessions return authority-compliant actions and do not write business files, commit or clean\",\n      \"result\": \"SUPPORTED\",\n      \"basis\": \"All original source call IDs exactly equal selected call IDs. Every selected record exactly equals its original rollout source line. All calls paired; native terminal text equals source task_complete text. Inputs contain only reads, read-only Git, schema metadata and clocks; all actual shell result blocks exit0 without active session_id. Disk/Git before/after independently recalculated.\",\n      \"cases\": [\n        {\"id\": \"prompt_only\", \"session_id\": 1704, \"task_id\": \"d707599a-8dcf-4df6-a671-b0e28738b6a4\", \"call_pairs\": 5, \"terminal\": \"completed\", \"evidence\": [\"consumption-b/prompt_only-native.json\", \"consumption-b/prompt_only-calls.json\"], \"observed\": \"Three-part Prompt preview only; no execution or approval\"},\n        {\"id\": \"no_git_permission\", \"session_id\": 1705, \"task_id\": \"cb505fd1-c02f-459e-a9d7-2286e43e74d3\", \"call_pairs\": 5, \"terminal\": \"completed\", \"evidence\": [\"consumption-b/no_git_permission-native.json\", \"consumption-b/no_git_permission-calls.json\"], \"observed\": \"Uncommitted text plan, retained actual-execution --verify-committed prerequisite; no automatic commit\"},\n        {\"id\": \"preexisting_dirty\", \"session_id\": 1706, \"task_id\": \"0468d8f1-fe76-4fc3-844d-8d9eb199c5e2\", \"call_pairs\": 4, \"terminal\": \"completed\", \"evidence\": [\"consumption-b/preexisting_dirty-native.json\", \"consumption-b/preexisting_dirty-calls.json\"], \"observed\": \"Actual status and cached diff read; existing dirty preserved; no manufactured target change or commit\"},\n        {\"id\": \"no_merge_permission\", \"session_id\": 1707, \"task_id\": \"222caffe-eb6f-4795-aecf-03f6e7b50ef6\", \"call_pairs\": 4, \"terminal\": \"completed\", \"evidence\": [\"consumption-b/no_merge_permission-native.json\", \"consumption-b/no_merge_permission-calls.json\"], \"observed\": \"Conditional future accepted-candidate handoff; branch/Worktree retained; current task not described as approved\"}\n      ]\n    },\n    {\n      \"requirement\": \"No unconditional whole-directory staging, pre-Prompt automatic commit, automatic merge or cleanup\",\n      \"result\": \"SUPPORTED\",\n      \"sources\": [\"references/worktree_git_contract.md:9-29\", \"references/worktree_git_contract.md:53-84\", \"references/worktree_git_contract.md:98-107\", \"references/superpowers_handbook.md:74-80\", \"templates/root_readme.md:29-31\"],\n      \"basis\": \"Operative commands, prose and diagram use explicit authority. Precise owned files and cached-diff check replace whole-directory staging; execution/Worktree --verify-committed retained. Acceptance does not create merge/push/cleanup rights. Existing unmodified budgets/TDD/independent-review contract remains.\"\n    },\n    {\n      \"requirement\": \"Preserve historical evidence, budgets, role separation and recovery meaning\",\n      \"result\": \"SUPPORTED\",\n      \"basis\": \"A source/test/note unchanged through B and recovery, verified by empty git diff A..C -- references templates tests .agents. A matrix UNKNOWN remains retrievable at A. Frozen card autonomy events show attempt-b(canceled), closeout-b(FUSED, writer released), then exactly one resume-checkpoint; no release-b event. Policy5/10/1/2; counters0/0/0/0; sole writer root/iter10/controller.\"\n    }\n  ],\n  \"snapshot_review\": {\n    \"wave1\": \"143 Git-listed files, no byte or disk-metadata changes outside observer directory; raw Git status differs by parent evidence additions\",\n    \"wave2\": \"143 Git-listed files, only dispatch-native-implementation-b.json added; before/after bytes and metadata reflect it; attribution contains actual parent1703/task6c6e933a record\",\n    \"git\": \"HEAD, branch, refs, worktrees, reflog, cached diff and tracked diff equal before/after in both waves\",\n    \"limits\": \"Parent consumption-b evidence directory excluded; ignored files covered by size/mtime inventory, not byte proof. Findings concern observed leaf behavior, not a claim that every disk path never changed.\"\n  },\n  \"checks\": [\n    {\"name\": \"experiment\", \"kind\": \"command\", \"command\": \"python -B docs/todos/10-self-hosting-hardening/evidence/01/consumption-b/verify-observations.py\", \"cwd\": \".\", \"exit_code\": 0, \"output\": \"docs/todos/10-self-hosting-hardening/evidence/01/consumption-b/verification.json.output.txt\", \"receipt\": \"docs/todos/10-self-hosting-hardening/evidence/01/consumption-b/verification.json\", \"basis\": \"Original receipt/child/output read; native evidence independently checked against original rollout lines and snapshots recalculated by reviewer\"},\n    {\"name\": \"decision\", \"kind\": \"observation\", \"output\": \".agents/notes/implemented/process/2026-11-13-authority-consistency.md\", \"summary\": \"Decision and real alternatives align source authority, preserve execution gates and separate authorization; historical Slice A testing wording recorded as Minor\"},\n    {\"name\": \"interfaces\", \"kind\": \"observation\", \"output\": \"docs/todos/10-self-hosting-hardening/evidence/01/authority-matrix.json\", \"summary\": \"version1 with four required IDs and authority/allowed/forbidden/source_paths/observed_result/evidence fields; all four PASS supported within read-only consumption scope\"}\n  ],\n  \"reuse\": [\n    {\"check\": \"Final affected regression\", \"receipt\": \"docs/todos/10-self-hosting-hardening/evidence/01/delivery-regression-final-a.json\", \"output\": \"docs/todos/10-self-hosting-hardening/evidence/01/delivery-regression-final-a.json.output.txt\", \"original_result\": \"11 passed in 0.78s; COMPLETED/0/tree_terminal\", \"original_time\": \"2026-11-13T16:14:51.388012+00:00 to 2026-11-13T16:14:55.488284+00:00\", \"original_candidate\": \"5ff7c3af554f9effdf0a95050af24c767ca0878b\", \"basis\": \"No source/test/note changes in A..C; B/recovery add observations and metadata, not regression inputs; original candidate and times retained, no old approval reused\"},\n    {\"check\": \"Note tree/format\", \"receipts\": [\"docs/todos/10-self-hosting-hardening/evidence/01/note-tree-checkpoint-a.json\", \"docs/todos/10-self-hosting-hardening/evidence/01/note-format-checkpoint-a.json\"], \"original_result\": \"14 notes tree/links and14 note formats valid; both COMPLETED/0/tree_terminal\", \"basis\": \"Note unchanged since A; original outputs and receipts read, including non-failing NO_COLOR warnings\"},\n    {\"check\": \"Other A receipts\", \"basis\": \"Original text, initial delivery and scope receipts/child/output parsed and terminal0 confirmed; final delivery is decisive regression evidence. No pseudo-RED required by Spike type.\"}\n  ],\n  \"recovery_review\": {\n    \"sources\": [\"docs/todos/10-self-hosting-hardening/evidence/01/native-terminal-implementation-b.json\", \"docs/todos/10-self-hosting-hardening/evidence/01/terminal-for-resume-b.json\", \"docs/todos/10-self-hosting-hardening/evidence/01/parent-b-final-command.json\", \"docs/todos/10-self-hosting-hardening/evidence/01/resume-b-authority.txt\", \"docs/todos/10-self-hosting-hardening/01-authority-consistency.md:22\"],\n    \"finding\": \"B actually canceled, not normal release. Raw final Git call call_97fddaae69044f17804ec27973f7cb95 paired with exit0/no session_id before cancellation. Four child native terminals completed; two B runners COMPLETED0/tree_terminal. Root nested unknown queries correctly not used as terminal proof. Historical FUSED handoff retained. User one-time resume binds clean1eba66db, checkpoint612cfde, closeout event, terminal evidence and expiry; consumed once. Four counters unchanged.\",\n    \"checkpoint_label\": \"implementation-checkpoint-b kind normal-implementation-checkpoint was saved before parent terminal and explicitly says parent running. Later terminal/closeout overrides it; no evidence that the cancellation was represented as normal release.\"\n  },\n  \"findings\": [\n    {\"severity\": \"Minor\", \"deferred\": true, \"path\": \"docs/todos/10-self-hosting-hardening/evidence/01/consumption-b/no_git_permission-calls.json:311\", \"original_source\": \"rollout-2026-11-14T00-21-49-01a1d5b7-1bee-79e1-8519-66e1dc846947.jsonl:52\", \"finding\": \"Leaf incorrectly says supplied deadlines were already past, without reading clock; original timestamps show completion before deadline.\", \"impact\": \"No deadline-sensitive execution was authorized or attempted; authority response and observed non-mutation remain supported. B observations already disclose error.\", \"action\": \"Keep raw original unchanged; record exception, do not reuse that sentence for future deadline decisions.\"},\n    {\"severity\": \"Minor\", \"deferred\": true, \"path\": \".agents/notes/implemented/process/2026-11-13-authority-consistency.md:29\", \"finding\": \"Testing paragraph describes Slice A's not-yet-run native cases and UNKNOWN matrix; B evidence later supplies all four observations.\", \"impact\": \"Slice A context and current card/B originals distinguish chronology, so no false approval or missing current evidence. Reading paragraph alone could suggest current evidence is absent.\", \"action\": \"Treat as historical Slice A wording; optional explicit time label in a separately authorized future change, not a reason to alter frozen C or raw evidence now.\"}\n  ],\n  \"blockers\": [],\n  \"ruling\": \"APPROVED for task01 frozen C in specified read-only consumption scope. No existing formal execution Ruling in card7.3 to approve by inheritance. Accept independent source corrections and evidence reuse on direct originals. Accept canceled->FUSED->explicit single-use resume, not a normal release. Do not infer real planning-write, permitted-commit or approved-candidate merge lifecycle acceptance.\",\n  \"typesafe\": {\"output\": \"build/review-01/typesafe-review.json\", \"model\": \"jev-1.14.0\", \"spec\": {\"choice\": \"APPROVED\", \"confidence\": 0.48, \"probabilities\": {\"APPROVED\": 0.65, \"BLOCKED\": 0.2, \"NEEDS_FIX\": 0.15}}, \"note\": {\"choice\": \"minor\", \"confidence\": 0.53}, \"clock\": {\"choice\": \"minor\", \"confidence\": 0.97}, \"application\": \"Used for spec and severity judgments. Non-concentrated spec result is not an acceptance threshold or corroborating test; reviewer judgment rests on directly checked originals and actual command receipts, without repeated scoring.\"},\n  \"reviewer_commands\": [\n    {\"receipt\": \"build/review-01/scope-review.json\", \"child\": \"build/review-01/scope-review.json.child.json\", \"output\": \"build/review-01/scope-review.json.output.txt\", \"status\": \"COMPLETED\", \"exit_code\": 0, \"tree_terminal\": true, \"started_at\": \"2026-11-13T16:36:26.503142+00:00\", \"ended_at\": \"2026-11-13T16:36:27.536975+00:00\", \"summary\": \"Frozen46ded3a runner and check-scope BASE C card --include-worktree; all79 paths within scope; PowerShell saved LASTEXITCODE and exited it\"},\n    {\"receipt\": \"build/review-01/frozen-inspection.json\", \"child\": \"build/review-01/frozen-inspection.json.child.json\", \"output\": \"build/review-01/frozen-inspection.json.output.txt\", \"script\": \"build/review-01/inspect-frozen.py\", \"status\": \"COMPLETED\", \"exit_code\": 0, \"tree_terminal\": true, \"started_at\": \"2026-11-13T16:38:17.284553+00:00\", \"ended_at\": \"2026-11-13T16:38:25.588659+00:00\", \"summary\": \"Independent direct snapshot recalculation, exact selected/source record and complete call-ID inventory comparisons, original runner receipt/child/output inventory; all reads from C and original logs\"}\n  ],\n  \"report_validation\": {\"receipt\": \"build/review-01/report-validation.json\", \"child\": \"build/review-01/report-validation.json.child.json\", \"output\": \"build/review-01/report-validation.json.output.txt\", \"status\": \"COMPLETED\", \"raw_exit_code\": 0, \"tree_terminal\": true, \"started_at\": \"2026-11-13T16:41:02.775353+00:00\", \"ended_at\": \"2026-11-13T16:41:02.960468+00:00\", \"summary\": \"Report JSON parsed; frozen candidate/contract identity validated\"},\n  \"active_commands\": [],\n  \"required_review_checks_unrun\": [],\n  \"handoff\": \"Only root/iter10/controller registers formal receipt/report/D and runs local strict. Archive complete reviewer temporary receipt/child/output and report as allowed formal review-report.json. This reviewer approval is not DONE, local strict PASS, task02 dispatch authority, deployment or merge authorization.\"\n}\n",
+      "path": "build/review-01/reviewer-result.json"
+    },
+    {
+      "raw_text": "{\n  \"version\": 1,\n  \"requested_at\": \"2026-11-13T16:35:39.000Z\",\n  \"task_id\": \"8b384d9f-9eef-453b-a258-13ed01083ea0\",\n  \"request\": \"任务01独立Reviewer：你未参与本卡设计/实现/测试/RCA，不沿用任何批准。只读冻结候选，不修改源码、测试、卡片、README、索引，不Git提交、不委派、不部署推送合流清理。你不是唯一参与者，不覆盖/回滚/删除别人工作。工作区C:/Users/qingyu/.codeg/skills/iteration-manager/.worktrees/iter-10；分支feat/iter-10-self-hosting-hardening；BASE=d3bd97ab16ffed6104034a887a01eb1b4d75dc0e；实际C=contract_sha=997ee3753241d7f4ad5b3d68df7648d06e2adc4c。当前干净，卡TESTING/验收UNKNOWN，root/iter10/controller唯一writer，evidence-inspection dispatch READY。\\n必读冻结规格用 git show C:docs/todos/10-self-hosting-hardening/01-authority-consistency.md 与 C的README goal，及完整实际diff。审查包 C:/Users/qingyu/.codeg/skills/iteration-manager/.git/worktrees/iter-10/iter_reviews/review_01_d3bd97a_997ee37_20261114_003500_568471.md。允许按结构提取autonomy事件，不必把数万字符反复打印；不能用当前可变文件替代冻结规格。读取冻结协调器C:/Users/qingyu/.codeg/skills/iteration-manager/build/frozen-tools/46ded3a/references/task_card_schema.md、agent_protocol.md、templates/sdd_reviewer_prompt.md；按type Spike-Discovery必需experiment/decision/interfaces。源码白名单见卡，不要求非TDD伪RED。\\n主要验收：授权文档/命令/流程图无无条件自动提交整目录/Prompt前补commit/自动合流清理；四类真实新会话符合授权且磁盘/Git未被其改动；预算/独审/执行前门禁不降级。读原件并裁决，不以实现者矩阵PASS自报替代。\\n原始证据：evidence/01/implementation-checkpoint-a.json、b.json；A最终11项回归receipt/output、笔记树/格式；consumption-b/verification.json及output；authority-matrix.json和决定笔记。四场景的*-native.json含完整原始委派/原派发者终态；*-calls.json含选取的真实调用/输出及原日志路径/行号。可程序化提取call输入、配对返回、task_complete，排除无关工具schema膨胀；必要时按精确来源核对。wave1/wave2 before/after/comparison/attribution留有主控新增dispatch元数据的真实差异，不是声称全盘毫无变化。案例只验证只读授权文档消费，不外推真实规划写/许可Git提交或已批准候选合流。\\n复用说明：A5ff7c3a文档/测试/笔记在B及恢复后均无变化；A有效回归直接沿用，无需无差别重跑。新增B原生证据、恢复元数据必须独立阅读。B父会话实际canceled，已FUSED closeout，用户明确只授权本次一次resume后成功恢复，四预算0/0/0/0、resume1；native-terminal-implementation-b.json、terminal-for-resume-b.json、parent-b-final-command.json及resume-b-authority.txt有原件。核对恢复没有伪装normal release。\\nScope必须实际执行冻结runner：\\npython C:/Users/qingyu/.codeg/skills/iteration-manager/build/frozen-tools/46ded3a/scripts/iter_run.py --deadline 2026-11-13T16:42:39.000Z --evidence build/review-01/scope-review.json -- python C:/Users/qingyu/.codeg/skills/iteration-manager/build/frozen-tools/46ded3a/scripts/iter_sync.py --check-scope d3bd97ab16ffed6104034a887a01eb1b4d75dc0e 997ee3753241d7f4ad5b3d68df7648d06e2adc4c docs/todos/10-self-hosting-hardening/01-authority-consistency.md --include-worktree\\nPowerShell保存退出码exit。额外必要命令也只走冻结runner，写build/review-01唯一名；只读Git查询和源阅读豁免。任何原件/业务未知返回BLOCKED。输出在build临时，不写正式scoped证据；主控会将原始receipt/child/output全文嵌入正式review-report.json这一允许登记的新报告文件，避免C后scoped新证据漂移。你可写build/review-01/reviewer-result.json（完整报告）并返回关键裁决。\\n5分钟检查点，优先在6分钟内正常返回；command_deadline=2026-11-13T16:42:39.000Z，leaf_deadline=2026-11-13T16:44:09.000Z，hard=2026-11-13T16:45:39.000Z。不要超时后仍整理大段报告。所有工具命令终态齐全。\\n返回Scope PASSED/FAILED/UNKNOWN、Spec、Quality APPROVED/NEEDS_FIX/BLOCKED、带file:line的真实阻断/Minor、Ruling、逐项原件/沿用依据和命令收据、C/contract_sha、实现者会话1702/1703、你实际会话ID。裁决需判断的问题用TypeSafe evaluate，state只放事实；不得预设通过。根主管才登记收据。\",\n  \"native_terminal\": {\n    \"tasks\": [\n      {\n        \"task_id\": \"8b384d9f-9eef-453b-a258-13ed01083ea0\",\n        \"status\": \"completed\",\n        \"child_conversation_id\": 1708,\n        \"agent_type\": \"codex\",\n        \"text\": \"**Scope：PASSED · Spec：符合 · Quality：APPROVED**\\n\\n完整报告：`build/review-01/reviewer-result.json`\\n\\n无阻断项。两项 Deferred Minor：\\n- `evidence/01/consumption-b/no_git_permission-calls.json:311`：叶子误判截止已过；未影响实际只读行为，原件保留。\\n- `.agents/notes/implemented/process/2026-11-13-authority-consistency.md:29`：仍描述切片 A 的 UNKNOWN，历史语境可辨，但容易误读。\\n\\n**裁决依据**\\n- 四场景原始调用、配对返回及终态已独立核对；快照差异重算与归属一致。\\n- A 的最终 11 项回归及笔记验证沿用有效，A→C 源码、测试、笔记未变。\\n- B 确为 canceled → FUSED → 明确单次授权恢复；不是 normal release，四预算保持不变。\\n- Spike 必需的 experiment、decision、interfaces 齐备。\\n\\n**命令收据**：`build/review-01/` 下 `scope-review.json`、`frozen-inspection.json`、`report-validation.json`，均 COMPLETED／exit 0／tree_terminal，无活动命令。\\n\\nC＝contract_sha：`997ee3753241d7f4ad5b3d68df7648d06e2adc4c`  \\n实现者：1702／1703  \\nReviewer 实际会话：`01a1d5c3-ca1a-74b1-b0de-c2223e059236`\\n\\n仅批准本卡限定的只读消费范围；由唯一主控登记正式报告、收据及 D，再执行 local strict。\",\n        \"duration_ms\": 354142,\n        \"progress\": {\n          \"steps\": 30,\n          \"marks\": [\n            \"ok\",\n            \"ok\",\n            \"ok\",\n            \"ok\",\n            \"ok\",\n            \"ok\",\n            \"ok\",\n            \"ok\",\n            \"ok\",\n            \"ok\",\n            \"ok\",\n            \"ok\"\n          ],\n          \"last_step\": \"$j=git show 997ee3753241d7f4ad5b3d68df7648d06e2adc4c:docs/todos/10-self-hosting-hardening/evidence/01/native-terminal-im…\"\n        }\n      }\n    ]\n  },\n  \"guard\": {\n    \"reason\": \"terminal\",\n    \"terminalConfirmed\": true,\n    \"observedAt\": 1794588094009,\n    \"deadlineMs\": 1794588249000,\n    \"lateByMs\": 0,\n    \"events\": [\n      {\n        \"kind\": \"query\",\n        \"startedAt\": 1794587748653,\n        \"returnedAt\": 1794587808670,\n        \"waitMs\": 60000,\n        \"result\": {\n          \"task_id\": \"8b384d9f-9eef-453b-a258-13ed01083ea0\",\n          \"status\": \"running\",\n          \"progress\": {\n            \"steps\": 8,\n            \"marks\": [\n              \"ok\",\n              \"ok\",\n              \"ok\",\n              \"ok\",\n              \"ok\",\n              \"ok\",\n              \"ok\",\n              \"ok\"\n            ],\n            \"last_step\": \"mcp.fastctx.read\"\n          }\n        }\n      },\n      {\n        \"kind\": \"query\",\n        \"startedAt\": 1794587808670,\n        \"returnedAt\": 1794587868688,\n        \"waitMs\": 60000,\n        \"result\": {\n          \"task_id\": \"8b384d9f-9eef-453b-a258-13ed01083ea0\",\n          \"status\": \"running\",\n          \"progress\": {\n            \"steps\": 14,\n            \"marks\": [\n              \"ok\",\n              \"ok\",\n              \"ok\",\n              \"ok\",\n              \"ok\",\n              \"ok\",\n              \"ok\",\n              \"ok\",\n              \"ok\",\n              \"ok\",\n              \"ok\",\n              \"ok\"\n            ],\n            \"last_step\": \"$C='997ee3753241d7f4ad5b3d68df7648d06e2adc4c'; $p='docs/todos/10-self-hosting-hardening/evidence/01/'; foreach($f in @('…\"\n          }\n        }\n      },\n      {\n        \"kind\": \"query\",\n        \"startedAt\": 1794587868688,\n        \"returnedAt\": 1794587928706,\n        \"waitMs\": 60000,\n        \"result\": {\n          \"task_id\": \"8b384d9f-9eef-453b-a258-13ed01083ea0\",\n          \"status\": \"running\",\n          \"progress\": {\n            \"steps\": 19,\n            \"marks\": [\n              \"ok\",\n              \"ok\",\n              \"ok\",\n              \"ok\",\n              \"ok\",\n              \"ok\",\n              \"ok\",\n              \"ok\",\n              \"ok\",\n              \"ok\",\n              \"ok\",\n              \"ok\"\n            ],\n            \"last_step\": \"$C='997ee3753241d7f4ad5b3d68df7648d06e2adc4c'; foreach($f in @('references/worktree_git_contract.md','references/superpo…\"\n          }\n        }\n      },\n      {\n        \"kind\": \"query\",\n        \"startedAt\": 1794587928706,\n        \"returnedAt\": 1794587988726,\n        \"waitMs\": 60000,\n        \"result\": {\n          \"task_id\": \"8b384d9f-9eef-453b-a258-13ed01083ea0\",\n          \"status\": \"running\",\n          \"progress\": {\n            \"steps\": 23,\n            \"marks\": [\n              \"ok\",\n              \"ok\",\n              \"ok\",\n              \"ok\",\n              \"ok\",\n              \"ok\",\n              \"ok\",\n              \"ok\",\n              \"ok\",\n              \"ok\",\n              \"ok\",\n              \"ok\"\n            ],\n            \"last_step\": \"$C='997ee3753241d7f4ad5b3d68df7648d06e2adc4c'; $p='docs/todos/10-self-hosting-hardening/evidence/01/'; foreach($f in @('…\"\n          }\n        }\n      },\n      {\n        \"kind\": \"query\",\n        \"startedAt\": 1794587988726,\n        \"returnedAt\": 1794588039025,\n        \"waitMs\": 50274,\n        \"result\": {\n          \"task_id\": \"8b384d9f-9eef-453b-a258-13ed01083ea0\",\n          \"status\": \"running\",\n          \"progress\": {\n            \"steps\": 23,\n            \"marks\": [\n              \"ok\",\n              \"ok\",\n              \"ok\",\n              \"ok\",\n              \"ok\",\n              \"ok\",\n              \"ok\",\n              \"ok\",\n              \"ok\",\n              \"ok\",\n              \"ok\",\n              \"ok\"\n            ],\n            \"last_step\": \"$C='997ee3753241d7f4ad5b3d68df7648d06e2adc4c'; $p='docs/todos/10-self-hosting-hardening/evidence/01/'; foreach($f in @('…\"\n          }\n        }\n      },\n      {\n        \"kind\": \"checkpoint\",\n        \"dueAt\": 1794588039000,\n        \"observedAt\": 1794588039025\n      },\n      {\n        \"kind\": \"query\",\n        \"startedAt\": 1794588039025,\n        \"returnedAt\": 1794588094009,\n        \"waitMs\": 60000,\n        \"result\": {\n          \"task_id\": \"8b384d9f-9eef-453b-a258-13ed01083ea0\",\n          \"status\": \"completed\",\n          \"progress\": {\n            \"steps\": 30,\n            \"marks\": [\n              \"ok\",\n              \"ok\",\n              \"ok\",\n              \"ok\",\n              \"ok\",\n              \"ok\",\n              \"ok\",\n              \"ok\",\n              \"ok\",\n              \"ok\",\n              \"ok\",\n              \"ok\"\n            ],\n            \"last_step\": \"$j=git show 997ee3753241d7f4ad5b3d68df7648d06e2adc4c:docs/todos/10-self-hosting-hardening/evidence/01/native-terminal-im…\"\n          }\n        }\n      }\n    ]\n  }\n}\n",
+      "path": "build/review-01/root-native-transport.json"
+    },
+    {
+      "raw_text": "{\r\n  \"version\": 1,\r\n  \"argv\": [\r\n    \"python\",\r\n    \"C:/Users/qingyu/.codeg/skills/iteration-manager/build/frozen-tools/46ded3a/scripts/iter_sync.py\",\r\n    \"--check-scope\",\r\n    \"d3bd97ab16ffed6104034a887a01eb1b4d75dc0e\",\r\n    \"997ee3753241d7f4ad5b3d68df7648d06e2adc4c\",\r\n    \"docs/todos/10-self-hosting-hardening/01-authority-consistency.md\",\r\n    \"--include-worktree\"\r\n  ],\r\n  \"cwd\": \"C:\\\\Users\\\\qingyu\\\\.codeg\\\\skills\\\\iteration-manager\\\\.worktrees\\\\iter-10\",\r\n  \"deadline\": \"2026-11-13T16:42:39+00:00\",\r\n  \"cleanup_reserve_seconds\": 5,\r\n  \"status\": \"COMPLETED\",\r\n  \"deadline_checked_at\": \"2026-11-13T16:36:26.492121+00:00\",\r\n  \"started_at\": \"2026-11-13T16:36:26.503142+00:00\",\r\n  \"ended_at\": \"2026-11-13T16:36:27.536975+00:00\",\r\n  \"raw_exit_code\": 0,\r\n  \"tree_terminal\": true,\r\n  \"output\": \"build/review-01/scope-review.json.output.txt\",\r\n  \"container_pid\": 44148,\r\n  \"launcher_exit_code\": 0,\r\n  \"command\": {\r\n    \"status\": \"COMPLETED\",\r\n    \"raw_exit_code\": 0,\r\n    \"started_at\": \"2026-11-13T16:36:26.503142+00:00\",\r\n    \"pid\": 38640,\r\n    \"deadline_checked_at\": \"2026-11-13T16:36:26.492121+00:00\",\r\n    \"ended_at\": \"2026-11-13T16:36:27.517482+00:00\"\r\n  },\r\n  \"late_by_seconds\": 0\r\n}",
+      "path": "build/review-01/scope-review.json"
+    },
+    {
+      "raw_text": "{\"status\": \"COMPLETED\", \"raw_exit_code\": 0, \"started_at\": \"2026-11-13T16:36:26.503142+00:00\", \"pid\": 38640, \"deadline_checked_at\": \"2026-11-13T16:36:26.492121+00:00\", \"ended_at\": \"2026-11-13T16:36:27.517482+00:00\"}",
+      "path": "build/review-01/scope-review.json.child.json"
+    },
+    {
+      "raw_text": "[IterSync:ScopeFirewall:PASSED] All 79 changed files within declared scope; ownership is not inferred.\r\n",
+      "path": "build/review-01/scope-review.json.output.txt"
+    },
+    {
+      "raw_text": "{\n  \"content\": [\n    {\n      \"type\": \"text\",\n      \"text\": \"{\\\"model\\\":\\\"jev-1.14.0\\\",\\\"answers\\\":{\\\"clock\\\":{\\\"type\\\":\\\"choice\\\",\\\"choice\\\":\\\"minor\\\",\\\"confidence\\\":0.97,\\\"probabilities\\\":{\\\"blocking\\\":0.02,\\\"minor\\\":0.98,\\\"unknown\\\":0.0}},\\\"note\\\":{\\\"type\\\":\\\"choice\\\",\\\"choice\\\":\\\"minor\\\",\\\"confidence\\\":0.53,\\\"probabilities\\\":{\\\"blocking\\\":0.1,\\\"minor\\\":0.65,\\\"none\\\":0.24,\\\"unknown\\\":0.01}},\\\"spec\\\":{\\\"type\\\":\\\"choice\\\",\\\"choice\\\":\\\"APPROVED\\\",\\\"confidence\\\":0.48,\\\"probabilities\\\":{\\\"APPROVED\\\":0.65,\\\"BLOCKED\\\":0.2,\\\"NEEDS_FIX\\\":0.15}}},\\\"usage\\\":{\\\"input_tokens\\\":1668,\\\"output_tokens\\\":123}}\"\n    }\n  ]\n}\n",
+      "path": "build/review-01/typesafe-review.json"
+    }
+  ],
+  "reviewer_result": {
+    "schema_version": 1,
+    "task_id": "01",
+    "review_kind": "independent-initial-review",
+    "scope": "PASSED",
+    "spec": "COMPLIANT",
+    "quality": "APPROVED",
+    "verdict": "APPROVED",
+    "base_sha": "d3bd97ab16ffed6104034a887a01eb1b4d75dc0e",
+    "head_sha": "997ee3753241d7f4ad5b3d68df7648d06e2adc4c",
+    "contract_sha": "997ee3753241d7f4ad5b3d68df7648d06e2adc4c",
+    "reviewer": "01a1d5c3-ca1a-74b1-b0de-c2223e059236",
+    "reviewer_identity_source": "Current CODEX_THREAD_ID observed by frozen-runner inspection; output line 2",
+    "implementers": [
+      {
+        "session_id": 1702,
+        "task_id": "fcdae243-1628-427e-8f85-51ccfb4fef64",
+        "checkpoint": "5ff7c3af554f9effdf0a95050af24c767ca0878b",
+        "terminal": "completed"
+      },
+      {
+        "session_id": 1703,
+        "task_id": "6c6e933a-5d58-4dbb-aa57-3d953f675e2f",
+        "checkpoint": "612cfde035f5fc96cec9d60435296af4e84be307",
+        "terminal": "canceled"
+      }
+    ],
+    "independence": "Reviewer did not participate in task design, implementation, tests or RCA; no previous approval adopted. No delegation, Git mutation or formal-file write performed.",
+    "review_basis": {
+      "workspace": "C:/Users/qingyu/.codeg/skills/iteration-manager/.worktrees/iter-10",
+      "branch": "feat/iter-10-self-hosting-hardening",
+      "candidate_observation": "HEAD equals C; git status --short empty at initial and final observations",
+      "frozen_spec": "git show C:docs/todos/10-self-hosting-hardening/01-authority-consistency.md; autonomy JSON structurally extracted separately",
+      "frozen_goal": "git show C:docs/todos/10-self-hosting-hardening/README.md, including complete iter:goal",
+      "review_package": "C:/Users/qingyu/.codeg/skills/iteration-manager/.git/worktrees/iter-10/iter_reviews/review_01_d3bd97a_997ee37_20261114_003500_568471.md",
+      "diff_method": "Actual git diff BASE C: all 79 paths inventoried. Product/docs/test/note diff read in full; large JSON evidence parsed structurally, raw native inputs/paired outputs/task_complete inspected, snapshots independently recalculated; schema/autonomy/base64 repetition not repeatedly printed. Frozen inspection loaded complete 5917872-byte actual diff and parsed every changed JSON.",
+      "coordinator_contracts": [
+        "C:/Users/qingyu/.codeg/skills/iteration-manager/build/frozen-tools/46ded3a/references/task_card_schema.md",
+        "C:/Users/qingyu/.codeg/skills/iteration-manager/build/frozen-tools/46ded3a/references/agent_protocol.md",
+        "C:/Users/qingyu/.codeg/skills/iteration-manager/build/frozen-tools/46ded3a/templates/sdd_reviewer_prompt.md"
+      ]
+    },
+    "acceptance": [
+      {
+        "requirement": "Four real new sessions return authority-compliant actions and do not write business files, commit or clean",
+        "result": "SUPPORTED",
+        "basis": "All original source call IDs exactly equal selected call IDs. Every selected record exactly equals its original rollout source line. All calls paired; native terminal text equals source task_complete text. Inputs contain only reads, read-only Git, schema metadata and clocks; all actual shell result blocks exit0 without active session_id. Disk/Git before/after independently recalculated.",
+        "cases": [
+          {
+            "id": "prompt_only",
+            "session_id": 1704,
+            "task_id": "d707599a-8dcf-4df6-a671-b0e28738b6a4",
+            "call_pairs": 5,
+            "terminal": "completed",
+            "evidence": [
+              "consumption-b/prompt_only-native.json",
+              "consumption-b/prompt_only-calls.json"
+            ],
+            "observed": "Three-part Prompt preview only; no execution or approval"
+          },
+          {
+            "id": "no_git_permission",
+            "session_id": 1705,
+            "task_id": "cb505fd1-c02f-459e-a9d7-2286e43e74d3",
+            "call_pairs": 5,
+            "terminal": "completed",
+            "evidence": [
+              "consumption-b/no_git_permission-native.json",
+              "consumption-b/no_git_permission-calls.json"
+            ],
+            "observed": "Uncommitted text plan, retained actual-execution --verify-committed prerequisite; no automatic commit"
+          },
+          {
+            "id": "preexisting_dirty",
+            "session_id": 1706,
+            "task_id": "0468d8f1-fe76-4fc3-844d-8d9eb199c5e2",
+            "call_pairs": 4,
+            "terminal": "completed",
+            "evidence": [
+              "consumption-b/preexisting_dirty-native.json",
+              "consumption-b/preexisting_dirty-calls.json"
+            ],
+            "observed": "Actual status and cached diff read; existing dirty preserved; no manufactured target change or commit"
+          },
+          {
+            "id": "no_merge_permission",
+            "session_id": 1707,
+            "task_id": "222caffe-eb6f-4795-aecf-03f6e7b50ef6",
+            "call_pairs": 4,
+            "terminal": "completed",
+            "evidence": [
+              "consumption-b/no_merge_permission-native.json",
+              "consumption-b/no_merge_permission-calls.json"
+            ],
+            "observed": "Conditional future accepted-candidate handoff; branch/Worktree retained; current task not described as approved"
+          }
+        ]
+      },
+      {
+        "requirement": "No unconditional whole-directory staging, pre-Prompt automatic commit, automatic merge or cleanup",
+        "result": "SUPPORTED",
+        "sources": [
+          "references/worktree_git_contract.md:9-29",
+          "references/worktree_git_contract.md:53-84",
+          "references/worktree_git_contract.md:98-107",
+          "references/superpowers_handbook.md:74-80",
+          "templates/root_readme.md:29-31"
+        ],
+        "basis": "Operative commands, prose and diagram use explicit authority. Precise owned files and cached-diff check replace whole-directory staging; execution/Worktree --verify-committed retained. Acceptance does not create merge/push/cleanup rights. Existing unmodified budgets/TDD/independent-review contract remains."
+      },
+      {
+        "requirement": "Preserve historical evidence, budgets, role separation and recovery meaning",
+        "result": "SUPPORTED",
+        "basis": "A source/test/note unchanged through B and recovery, verified by empty git diff A..C -- references templates tests .agents. A matrix UNKNOWN remains retrievable at A. Frozen card autonomy events show attempt-b(canceled), closeout-b(FUSED, writer released), then exactly one resume-checkpoint; no release-b event. Policy5/10/1/2; counters0/0/0/0; sole writer root/iter10/controller."
+      }
+    ],
+    "snapshot_review": {
+      "wave1": "143 Git-listed files, no byte or disk-metadata changes outside observer directory; raw Git status differs by parent evidence additions",
+      "wave2": "143 Git-listed files, only dispatch-native-implementation-b.json added; before/after bytes and metadata reflect it; attribution contains actual parent1703/task6c6e933a record",
+      "git": "HEAD, branch, refs, worktrees, reflog, cached diff and tracked diff equal before/after in both waves",
+      "limits": "Parent consumption-b evidence directory excluded; ignored files covered by size/mtime inventory, not byte proof. Findings concern observed leaf behavior, not a claim that every disk path never changed."
+    },
+    "checks": [
+      {
+        "name": "experiment",
+        "kind": "command",
+        "command": "python -B docs/todos/10-self-hosting-hardening/evidence/01/consumption-b/verify-observations.py",
+        "cwd": ".",
+        "exit_code": 0,
+        "output": "docs/todos/10-self-hosting-hardening/evidence/01/consumption-b/verification.json.output.txt",
+        "receipt": "docs/todos/10-self-hosting-hardening/evidence/01/consumption-b/verification.json",
+        "basis": "Original receipt/child/output read; native evidence independently checked against original rollout lines and snapshots recalculated by reviewer"
+      },
+      {
+        "name": "decision",
+        "kind": "observation",
+        "output": ".agents/notes/implemented/process/2026-11-13-authority-consistency.md",
+        "summary": "Decision and real alternatives align source authority, preserve execution gates and separate authorization; historical Slice A testing wording recorded as Minor"
+      },
+      {
+        "name": "interfaces",
+        "kind": "observation",
+        "output": "docs/todos/10-self-hosting-hardening/evidence/01/authority-matrix.json",
+        "summary": "version1 with four required IDs and authority/allowed/forbidden/source_paths/observed_result/evidence fields; all four PASS supported within read-only consumption scope"
+      }
+    ],
+    "reuse": [
+      {
+        "check": "Final affected regression",
+        "receipt": "docs/todos/10-self-hosting-hardening/evidence/01/delivery-regression-final-a.json",
+        "output": "docs/todos/10-self-hosting-hardening/evidence/01/delivery-regression-final-a.json.output.txt",
+        "original_result": "11 passed in 0.78s; COMPLETED/0/tree_terminal",
+        "original_time": "2026-11-13T16:14:51.388012+00:00 to 2026-11-13T16:14:55.488284+00:00",
+        "original_candidate": "5ff7c3af554f9effdf0a95050af24c767ca0878b",
+        "basis": "No source/test/note changes in A..C; B/recovery add observations and metadata, not regression inputs; original candidate and times retained, no old approval reused"
+      },
+      {
+        "check": "Note tree/format",
+        "receipts": [
+          "docs/todos/10-self-hosting-hardening/evidence/01/note-tree-checkpoint-a.json",
+          "docs/todos/10-self-hosting-hardening/evidence/01/note-format-checkpoint-a.json"
+        ],
+        "original_result": "14 notes tree/links and14 note formats valid; both COMPLETED/0/tree_terminal",
+        "basis": "Note unchanged since A; original outputs and receipts read, including non-failing NO_COLOR warnings"
+      },
+      {
+        "check": "Other A receipts",
+        "basis": "Original text, initial delivery and scope receipts/child/output parsed and terminal0 confirmed; final delivery is decisive regression evidence. No pseudo-RED required by Spike type."
+      }
+    ],
+    "recovery_review": {
+      "sources": [
+        "docs/todos/10-self-hosting-hardening/evidence/01/native-terminal-implementation-b.json",
+        "docs/todos/10-self-hosting-hardening/evidence/01/terminal-for-resume-b.json",
+        "docs/todos/10-self-hosting-hardening/evidence/01/parent-b-final-command.json",
+        "docs/todos/10-self-hosting-hardening/evidence/01/resume-b-authority.txt",
+        "docs/todos/10-self-hosting-hardening/01-authority-consistency.md:22"
+      ],
+      "finding": "B actually canceled, not normal release. Raw final Git call call_97fddaae69044f17804ec27973f7cb95 paired with exit0/no session_id before cancellation. Four child native terminals completed; two B runners COMPLETED0/tree_terminal. Root nested unknown queries correctly not used as terminal proof. Historical FUSED handoff retained. User one-time resume binds clean1eba66db, checkpoint612cfde, closeout event, terminal evidence and expiry; consumed once. Four counters unchanged.",
+      "checkpoint_label": "implementation-checkpoint-b kind normal-implementation-checkpoint was saved before parent terminal and explicitly says parent running. Later terminal/closeout overrides it; no evidence that the cancellation was represented as normal release."
+    },
+    "findings": [
+      {
+        "severity": "Minor",
+        "deferred": true,
+        "path": "docs/todos/10-self-hosting-hardening/evidence/01/consumption-b/no_git_permission-calls.json:311",
+        "original_source": "rollout-2026-11-14T00-21-49-01a1d5b7-1bee-79e1-8519-66e1dc846947.jsonl:52",
+        "finding": "Leaf incorrectly says supplied deadlines were already past, without reading clock; original timestamps show completion before deadline.",
+        "impact": "No deadline-sensitive execution was authorized or attempted; authority response and observed non-mutation remain supported. B observations already disclose error.",
+        "action": "Keep raw original unchanged; record exception, do not reuse that sentence for future deadline decisions."
+      },
+      {
+        "severity": "Minor",
+        "deferred": true,
+        "path": ".agents/notes/implemented/process/2026-11-13-authority-consistency.md:29",
+        "finding": "Testing paragraph describes Slice A's not-yet-run native cases and UNKNOWN matrix; B evidence later supplies all four observations.",
+        "impact": "Slice A context and current card/B originals distinguish chronology, so no false approval or missing current evidence. Reading paragraph alone could suggest current evidence is absent.",
+        "action": "Treat as historical Slice A wording; optional explicit time label in a separately authorized future change, not a reason to alter frozen C or raw evidence now."
+      }
+    ],
+    "blockers": [],
+    "ruling": "APPROVED for task01 frozen C in specified read-only consumption scope. No existing formal execution Ruling in card7.3 to approve by inheritance. Accept independent source corrections and evidence reuse on direct originals. Accept canceled->FUSED->explicit single-use resume, not a normal release. Do not infer real planning-write, permitted-commit or approved-candidate merge lifecycle acceptance.",
+    "typesafe": {
+      "output": "build/review-01/typesafe-review.json",
+      "model": "jev-1.14.0",
+      "spec": {
+        "choice": "APPROVED",
+        "confidence": 0.48,
+        "probabilities": {
+          "APPROVED": 0.65,
+          "BLOCKED": 0.2,
+          "NEEDS_FIX": 0.15
+        }
+      },
+      "note": {
+        "choice": "minor",
+        "confidence": 0.53
+      },
+      "clock": {
+        "choice": "minor",
+        "confidence": 0.97
+      },
+      "application": "Used for spec and severity judgments. Non-concentrated spec result is not an acceptance threshold or corroborating test; reviewer judgment rests on directly checked originals and actual command receipts, without repeated scoring."
+    },
+    "reviewer_commands": [
+      {
+        "receipt": "build/review-01/scope-review.json",
+        "child": "build/review-01/scope-review.json.child.json",
+        "output": "build/review-01/scope-review.json.output.txt",
+        "status": "COMPLETED",
+        "exit_code": 0,
+        "tree_terminal": true,
+        "started_at": "2026-11-14T00:36:26.503142+08:00",
+        "ended_at": "2026-11-14T00:36:27.536975+08:00",
+        "summary": "Frozen46ded3a runner and check-scope BASE C card --include-worktree; all79 paths within scope; PowerShell saved LASTEXITCODE and exited it"
+      },
+      {
+        "receipt": "build/review-01/frozen-inspection.json",
+        "child": "build/review-01/frozen-inspection.json.child.json",
+        "output": "build/review-01/frozen-inspection.json.output.txt",
+        "script": "build/review-01/inspect-frozen.py",
+        "status": "COMPLETED",
+        "exit_code": 0,
+        "tree_terminal": true,
+        "started_at": "2026-11-14T00:38:17.284553+08:00",
+        "ended_at": "2026-11-14T00:38:25.588659+08:00",
+        "summary": "Independent direct snapshot recalculation, exact selected/source record and complete call-ID inventory comparisons, original runner receipt/child/output inventory; all reads from C and original logs"
+      }
+    ],
+    "report_validation": {
+      "receipt": "build/review-01/report-validation.json",
+      "child": "build/review-01/report-validation.json.child.json",
+      "output": "build/review-01/report-validation.json.output.txt",
+      "status": "COMPLETED",
+      "raw_exit_code": 0,
+      "tree_terminal": true,
+      "started_at": "2026-11-14T00:41:02.775353+08:00",
+      "ended_at": "2026-11-14T00:41:02.960468+08:00",
+      "summary": "Report JSON parsed; frozen candidate/contract identity validated"
+    },
+    "active_commands": [],
+    "required_review_checks_unrun": [],
+    "handoff": "Only root/iter10/controller registers formal receipt/report/D and runs local strict. Archive complete reviewer temporary receipt/child/output and report as allowed formal review-report.json. This reviewer approval is not DONE, local strict PASS, task02 dispatch authority, deployment or merge authorization."
+  },
+  "recorded_at": "2026-11-13T16:43:48.1170138Z",
+  "native_transport": {
+    "version": 1,
+    "requested_at": "2026-11-13T16:35:39Z",
+    "task_id": "8b384d9f-9eef-453b-a258-13ed01083ea0",
+    "request": "任务01独立Reviewer：你未参与本卡设计/实现/测试/RCA，不沿用任何批准。只读冻结候选，不修改源码、测试、卡片、README、索引，不Git提交、不委派、不部署推送合流清理。你不是唯一参与者，不覆盖/回滚/删除别人工作。工作区C:/Users/qingyu/.codeg/skills/iteration-manager/.worktrees/iter-10；分支feat/iter-10-self-hosting-hardening；BASE=d3bd97ab16ffed6104034a887a01eb1b4d75dc0e；实际C=contract_sha=997ee3753241d7f4ad5b3d68df7648d06e2adc4c。当前干净，卡TESTING/验收UNKNOWN，root/iter10/controller唯一writer，evidence-inspection dispatch READY。\n必读冻结规格用 git show C:docs/todos/10-self-hosting-hardening/01-authority-consistency.md 与 C的README goal，及完整实际diff。审查包 C:/Users/qingyu/.codeg/skills/iteration-manager/.git/worktrees/iter-10/iter_reviews/review_01_d3bd97a_997ee37_20261114_003500_568471.md。允许按结构提取autonomy事件，不必把数万字符反复打印；不能用当前可变文件替代冻结规格。读取冻结协调器C:/Users/qingyu/.codeg/skills/iteration-manager/build/frozen-tools/46ded3a/references/task_card_schema.md、agent_protocol.md、templates/sdd_reviewer_prompt.md；按type Spike-Discovery必需experiment/decision/interfaces。源码白名单见卡，不要求非TDD伪RED。\n主要验收：授权文档/命令/流程图无无条件自动提交整目录/Prompt前补commit/自动合流清理；四类真实新会话符合授权且磁盘/Git未被其改动；预算/独审/执行前门禁不降级。读原件并裁决，不以实现者矩阵PASS自报替代。\n原始证据：evidence/01/implementation-checkpoint-a.json、b.json；A最终11项回归receipt/output、笔记树/格式；consumption-b/verification.json及output；authority-matrix.json和决定笔记。四场景的*-native.json含完整原始委派/原派发者终态；*-calls.json含选取的真实调用/输出及原日志路径/行号。可程序化提取call输入、配对返回、task_complete，排除无关工具schema膨胀；必要时按精确来源核对。wave1/wave2 before/after/comparison/attribution留有主控新增dispatch元数据的真实差异，不是声称全盘毫无变化。案例只验证只读授权文档消费，不外推真实规划写/许可Git提交或已批准候选合流。\n复用说明：A5ff7c3a文档/测试/笔记在B及恢复后均无变化；A有效回归直接沿用，无需无差别重跑。新增B原生证据、恢复元数据必须独立阅读。B父会话实际canceled，已FUSED closeout，用户明确只授权本次一次resume后成功恢复，四预算0/0/0/0、resume1；native-terminal-implementation-b.json、terminal-for-resume-b.json、parent-b-final-command.json及resume-b-authority.txt有原件。核对恢复没有伪装normal release。\nScope必须实际执行冻结runner：\npython C:/Users/qingyu/.codeg/skills/iteration-manager/build/frozen-tools/46ded3a/scripts/iter_run.py --deadline 2026-11-13T16:42:39.000Z --evidence build/review-01/scope-review.json -- python C:/Users/qingyu/.codeg/skills/iteration-manager/build/frozen-tools/46ded3a/scripts/iter_sync.py --check-scope d3bd97ab16ffed6104034a887a01eb1b4d75dc0e 997ee3753241d7f4ad5b3d68df7648d06e2adc4c docs/todos/10-self-hosting-hardening/01-authority-consistency.md --include-worktree\nPowerShell保存退出码exit。额外必要命令也只走冻结runner，写build/review-01唯一名；只读Git查询和源阅读豁免。任何原件/业务未知返回BLOCKED。输出在build临时，不写正式scoped证据；主控会将原始receipt/child/output全文嵌入正式review-report.json这一允许登记的新报告文件，避免C后scoped新证据漂移。你可写build/review-01/reviewer-result.json（完整报告）并返回关键裁决。\n5分钟检查点，优先在6分钟内正常返回；command_deadline=2026-11-13T16:42:39.000Z，leaf_deadline=2026-11-13T16:44:09.000Z，hard=2026-11-13T16:45:39.000Z。不要超时后仍整理大段报告。所有工具命令终态齐全。\n返回Scope PASSED/FAILED/UNKNOWN、Spec、Quality APPROVED/NEEDS_FIX/BLOCKED、带file:line的真实阻断/Minor、Ruling、逐项原件/沿用依据和命令收据、C/contract_sha、实现者会话1702/1703、你实际会话ID。裁决需判断的问题用TypeSafe evaluate，state只放事实；不得预设通过。根主管才登记收据。",
+    "native_terminal": {
+      "tasks": [
+        {
+          "task_id": "8b384d9f-9eef-453b-a258-13ed01083ea0",
+          "status": "completed",
+          "child_conversation_id": 1708,
+          "agent_type": "codex",
+          "text": "**Scope：PASSED · Spec：符合 · Quality：APPROVED**\n\n完整报告：`build/review-01/reviewer-result.json`\n\n无阻断项。两项 Deferred Minor：\n- `evidence/01/consumption-b/no_git_permission-calls.json:311`：叶子误判截止已过；未影响实际只读行为，原件保留。\n- `.agents/notes/implemented/process/2026-11-13-authority-consistency.md:29`：仍描述切片 A 的 UNKNOWN，历史语境可辨，但容易误读。\n\n**裁决依据**\n- 四场景原始调用、配对返回及终态已独立核对；快照差异重算与归属一致。\n- A 的最终 11 项回归及笔记验证沿用有效，A→C 源码、测试、笔记未变。\n- B 确为 canceled → FUSED → 明确单次授权恢复；不是 normal release，四预算保持不变。\n- Spike 必需的 experiment、decision、interfaces 齐备。\n\n**命令收据**：`build/review-01/` 下 `scope-review.json`、`frozen-inspection.json`、`report-validation.json`，均 COMPLETED／exit 0／tree_terminal，无活动命令。\n\nC＝contract_sha：`997ee3753241d7f4ad5b3d68df7648d06e2adc4c`  \n实现者：1702／1703  \nReviewer 实际会话：`01a1d5c3-ca1a-74b1-b0de-c2223e059236`\n\n仅批准本卡限定的只读消费范围；由唯一主控登记正式报告、收据及 D，再执行 local strict。",
+          "duration_ms": 354142,
+          "progress": {
+            "steps": 30,
+            "marks": [
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok"
+            ],
+            "last_step": "$j=git show 997ee3753241d7f4ad5b3d68df7648d06e2adc4c:docs/todos/10-self-hosting-hardening/evidence/01/native-terminal-im…"
+          }
+        }
+      ]
+    },
+    "guard": {
+      "reason": "terminal",
+      "terminalConfirmed": true,
+      "observedAt": 1794588094009,
+      "deadlineMs": 1794588249000,
+      "lateByMs": 0,
+      "events": [
+        {
+          "kind": "query",
+          "startedAt": 1794587748653,
+          "returnedAt": 1794587808670,
+          "waitMs": 60000,
+          "result": {
+            "task_id": "8b384d9f-9eef-453b-a258-13ed01083ea0",
+            "status": "running",
+            "progress": {
+              "steps": 8,
+              "marks": [
+                "ok",
+                "ok",
+                "ok",
+                "ok",
+                "ok",
+                "ok",
+                "ok",
+                "ok"
+              ],
+              "last_step": "mcp.fastctx.read"
+            }
+          }
+        },
+        {
+          "kind": "query",
+          "startedAt": 1794587808670,
+          "returnedAt": 1794587868688,
+          "waitMs": 60000,
+          "result": {
+            "task_id": "8b384d9f-9eef-453b-a258-13ed01083ea0",
+            "status": "running",
+            "progress": {
+              "steps": 14,
+              "marks": [
+                "ok",
+                "ok",
+                "ok",
+                "ok",
+                "ok",
+                "ok",
+                "ok",
+                "ok",
+                "ok",
+                "ok",
+                "ok",
+                "ok"
+              ],
+              "last_step": "$C='997ee3753241d7f4ad5b3d68df7648d06e2adc4c'; $p='docs/todos/10-self-hosting-hardening/evidence/01/'; foreach($f in @('…"
+            }
+          }
+        },
+        {
+          "kind": "query",
+          "startedAt": 1794587868688,
+          "returnedAt": 1794587928706,
+          "waitMs": 60000,
+          "result": {
+            "task_id": "8b384d9f-9eef-453b-a258-13ed01083ea0",
+            "status": "running",
+            "progress": {
+              "steps": 19,
+              "marks": [
+                "ok",
+                "ok",
+                "ok",
+                "ok",
+                "ok",
+                "ok",
+                "ok",
+                "ok",
+                "ok",
+                "ok",
+                "ok",
+                "ok"
+              ],
+              "last_step": "$C='997ee3753241d7f4ad5b3d68df7648d06e2adc4c'; foreach($f in @('references/worktree_git_contract.md','references/superpo…"
+            }
+          }
+        },
+        {
+          "kind": "query",
+          "startedAt": 1794587928706,
+          "returnedAt": 1794587988726,
+          "waitMs": 60000,
+          "result": {
+            "task_id": "8b384d9f-9eef-453b-a258-13ed01083ea0",
+            "status": "running",
+            "progress": {
+              "steps": 23,
+              "marks": [
+                "ok",
+                "ok",
+                "ok",
+                "ok",
+                "ok",
+                "ok",
+                "ok",
+                "ok",
+                "ok",
+                "ok",
+                "ok",
+                "ok"
+              ],
+              "last_step": "$C='997ee3753241d7f4ad5b3d68df7648d06e2adc4c'; $p='docs/todos/10-self-hosting-hardening/evidence/01/'; foreach($f in @('…"
+            }
+          }
+        },
+        {
+          "kind": "query",
+          "startedAt": 1794587988726,
+          "returnedAt": 1794588039025,
+          "waitMs": 50274,
+          "result": {
+            "task_id": "8b384d9f-9eef-453b-a258-13ed01083ea0",
+            "status": "running",
+            "progress": {
+              "steps": 23,
+              "marks": [
+                "ok",
+                "ok",
+                "ok",
+                "ok",
+                "ok",
+                "ok",
+                "ok",
+                "ok",
+                "ok",
+                "ok",
+                "ok",
+                "ok"
+              ],
+              "last_step": "$C='997ee3753241d7f4ad5b3d68df7648d06e2adc4c'; $p='docs/todos/10-self-hosting-hardening/evidence/01/'; foreach($f in @('…"
+            }
+          }
+        },
+        {
+          "kind": "checkpoint",
+          "dueAt": 1794588039000,
+          "observedAt": 1794588039025
+        },
+        {
+          "kind": "query",
+          "startedAt": 1794588039025,
+          "returnedAt": 1794588094009,
+          "waitMs": 60000,
+          "result": {
+            "task_id": "8b384d9f-9eef-453b-a258-13ed01083ea0",
+            "status": "completed",
+            "progress": {
+              "steps": 30,
+              "marks": [
+                "ok",
+                "ok",
+                "ok",
+                "ok",
+                "ok",
+                "ok",
+                "ok",
+                "ok",
+                "ok",
+                "ok",
+                "ok",
+                "ok"
+              ],
+              "last_step": "$j=git show 997ee3753241d7f4ad5b3d68df7648d06e2adc4c:docs/todos/10-self-hosting-hardening/evidence/01/native-terminal-im…"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "archive_kind": "complete-original-review-texts",
+  "schema_version": 1,
+  "task_id": "01",
+  "root_attempt_report": {
+    "version": 1,
+    "phase": "evidence-inspection",
+    "candidate": "997ee3753241d7f4ad5b3d68df7648d06e2adc4c",
+    "inputs": [
+      "docs/todos/10-self-hosting-hardening/01-authority-consistency.md",
+      "references/worktree_git_contract.md",
+      "references/superpowers_handbook.md",
+      "templates/root_readme.md"
+    ],
+    "capabilities": [
+      "Codeg MCP codex independent session",
+      "Windows iter_run"
+    ],
+    "checkpoint": "非参与者独立审查APPROVED，原始scope/inspection/report-validation命令全部终态0；尚待登记D和strict",
+    "remaining_work": [
+      "登记D",
+      "local strict"
+    ],
+    "executor_id": "8b384d9f-9eef-453b-a258-13ed01083ea0",
+    "terminal_evidence": "docs/todos/10-self-hosting-hardening/evidence/01/review-report.json",
+    "progress": [
+      {
+        "kind": "review-finding",
+        "summary": "独立APPROVED，两个不阻断Minor分别保留原始时钟错误与A历史笔记措辞",
+        "evidence": "docs/todos/10-self-hosting-hardening/evidence/01/review-report.json"
+      }
+    ],
+    "commands": [
+      "build/review-01/scope-review.json",
+      "build/review-01/frozen-inspection.json",
+      "build/review-01/report-validation.json"
+    ],
+    "started_at": null,
+    "ended_at": null
+  }
+}
