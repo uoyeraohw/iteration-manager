@@ -123,6 +123,30 @@ def test_resume_cli_real_consumption(checkpoint):
     assert json.loads(proc.stdout)['status'] == 'IN_PROGRESS'
 
 
+@pytest.mark.parametrize('mode', ['card', 'profile', 'invalid-profile', 'unknown-card'])
+def test_resume_rejects_non_git_delivery_even_inside_git(checkpoint, mode):
+    root, card, path, grant = checkpoint
+    if mode in ('card', 'unknown-card'):
+        content = update_meta(card.read_text(encoding='utf-8'),
+                              {'delivery_mode': 'filesystem' if mode == 'card' else 'unknown'})
+        card.write_text(content, encoding='utf-8')
+    else:
+        directory = root/'docs/todos/01-demo'
+        directory.mkdir(parents=True)
+        card.rename(directory/'01-task.md')
+        card = directory/'01-task.md'
+        (directory/'iteration-delivery.json').write_text(
+            '{"schema_version":1,"mode":"filesystem"}' if mode == 'profile' else '{bad', encoding='utf-8')
+        grant['card'] = card.relative_to(root).as_posix()
+    git(root, 'add', '.'); git(root, 'commit', '-m', 'delivery mode')
+    grant['head'] = git(root, 'rev-parse', 'HEAD')
+    path.write_text(json.dumps(grant), encoding='utf-8')
+    saved = card.read_bytes()
+    result = resume(card, path)
+    assert result.get('error'), result
+    assert card.read_bytes() == saved
+
+
 @pytest.mark.parametrize('counter,value', [('round', 5), ('total', 10), ('consilium', 2), ('replan', 3)])
 def test_numeric_budget_exhaustion_cannot_be_hidden_by_deadline(checkpoint, counter, value):
     root, card, path, grant = checkpoint

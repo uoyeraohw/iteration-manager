@@ -37,3 +37,5 @@ build/stage10-checkpoint-resume-20261111/behavior-red.txt 保存两项真实断�
 ## Consequences
 
 授权 JSON 是主控批准的能力文件而非密码学签名；宿主必须保证叶子不能改写工作区外文件，主控核实原生来源。工具只检查证据形状与绑定，不替代来源真实性审查。旧调用与预算保持，新动作增加显式交接成本而不重做有效RED。runner只在Windows启动，其他系统明确拒绝，避免交付未验证的进程回收路径。外层取消或不完整receipt不能证明命令终态，仍需原生补证。
+
+[分层验证与可交付检查点](2026-11-12-bounded-validation-workflow.md)将正常阶段release作为优先交接路径；本篇仍仅管理真实时间中断的Git恢复，不提供FS grant或预算豁免。

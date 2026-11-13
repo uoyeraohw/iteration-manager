@@ -86,9 +86,22 @@ def record_event(task_file, action, event_id, owner, reason='', evidence='', exe
             raise ValueError('Resume grant only applies to resume-checkpoint')
         if event_id in state['events']:
             old = state['events'][event_id]
+            if action == 'attempt' and old['input'].get('action') == 'attempt':
+                # Replay the recorded attempt, not a new attempt against today's candidate.
+                root = Path.cwd().resolve()
+                if not task_file.resolve().is_relative_to(root):
+                    raise ValueError('Task leaves project root')
+                original = old['input']['attempt']
+                report = json.loads(contained(root, evidence).read_text(encoding='utf-8'))
+                if report != original['report']:
+                    raise ValueError('Event ID reused with different attempt report')
+                payload['attempt'] = original
             if old['input'] != payload:
                 raise ValueError('Event ID reused with different payload')
             return {**old['result'], 'replayed': True}
+        if action == 'attempt':
+            from iter_execution import read_attempt
+            payload['attempt'] = read_attempt(task_file, Path.cwd().resolve(), meta, content, evidence, executor_state)
         if card_status(content) == 'DONE':
             raise ValueError('DONE is terminal; do not resume or rewrite accepted tasks')
         if action == 'resume-checkpoint':
@@ -96,6 +109,8 @@ def record_event(task_file, action, event_id, owner, reason='', evidence='', exe
             validate_resume(task_file, state, card_status(content), payload['resume_grant'])
         if state['writer'] and state['writer'] != owner:
             raise ValueError('Task has another writer: '+state['writer'])
+        if action == 'attempt' and state['writer'] != owner:
+            raise ValueError('Attempt requires the current claimed writer')
         if not state['writer']:
             state['writer'] = owner
         policy = state['policy']
@@ -103,6 +118,8 @@ def record_event(task_file, action, event_id, owner, reason='', evidence='', exe
         status = card_status(content)
         if action == 'resume-checkpoint':
             status = 'IN_PROGRESS'
+        elif action == 'attempt':
+            blocked = state.get('blocked_reason', '')
         elif (action not in ('recover', 'release', 'closeout') and state.get('blocked_reason')
                 and (action in ('claim', 'fix') or state['blocked_reason'] in
                      ('replan budget exhausted', 'consilium budget exhausted', 'total repair budget exhausted'))):

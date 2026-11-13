@@ -9,7 +9,8 @@ import subprocess
 from datetime import datetime, timezone
 from pathlib import Path
 
-from iter_contracts import contained, relative_path
+from iter_contracts import contained, relative_path, parse_card
+from iter_filesystem import load_profile
 
 RESUME_LIMIT = 3
 TERMINAL = ('completed', 'failed', 'canceled')
@@ -53,6 +54,12 @@ def git(root, *args):
 
 def validate_resume(task_file, state, status, grant):
     root = Path.cwd().resolve()
+    meta, _, errors = parse_card(task_file.read_text(encoding='utf-8'))
+    if errors:
+        raise ValueError('; '.join(errors))
+    fs_root = load_profile(task_file.resolve().parent)  # Invalid explicit profiles never fall back to Git.
+    if fs_root is not None or meta.get('delivery_mode', 'git') != 'git':
+        raise ValueError('resume-checkpoint supports Git delivery only; filesystem recovery requires an explicit plan')
     if Path(grant['workspace']).resolve(strict=True) != root:
         raise ValueError('Resume workspace/cwd mismatch')
     if Path(git(root, 'rev-parse', '--show-toplevel')).resolve() != root:

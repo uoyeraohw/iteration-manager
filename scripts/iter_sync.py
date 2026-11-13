@@ -130,10 +130,16 @@ def audit_scope_firewall(repo_dir: Path, base_sha: str, head_sha: str, task_file
             "whitelist": whitelist, "preexisting_files": preexisting}
 
 
-def discover_task_files(directory: Path) -> list[Path]:
+def discover_task_files(directory: Path, read_root: Path | None = None) -> list[Path]:
     """Keep identifiable or unreadable cards; exclude unmarked support documents."""
     task_files = []
     for path in sorted(directory.glob("*.md")):
+        # Opt-in reports retain unsafe candidates as errors without reading them,
+        # including nonnumeric names whose metadata cannot safely be inspected.
+        if (read_root is not None and path.name.lower() != "readme.md"
+                and not path.resolve().is_relative_to(read_root)):
+            task_files.append(path)
+            continue
         if not path.is_file() or path.name.lower() == "readme.md":
             continue
         if re.match(r"^\d+", path.name):
@@ -206,13 +212,22 @@ def audit_task_file(file_path: Path) -> dict:
 
 def render_task_envelope(task_file: Path, repo_dir: Path) -> dict:
     """Read-only handoff: declarations, actual audit and persistent budgets stay distinct."""
+    return _render_task_envelope(task_file, repo_dir, audit_task_file)
+
+
+def _render_task_envelope(task_file: Path, repo_dir: Path, audit_task):
     try:
         content = task_file.read_text(encoding="utf-8")
         meta, _, errors = parse_card(content)
         state = load_state(meta)
-        audit = audit_task_file(task_file)
+        audit = audit_task(task_file)
         status = card_status(content)
         micro = parse_task_stages_and_micro_state(content, status)
+        from iter_execution import execution_summary
+        execution = execution_summary(state)
+        fs_root = load_profile(task_file.resolve().parent)
+        mode = 'filesystem' if fs_root is not None and meta.get('delivery_mode') == 'filesystem' else (
+            'UNKNOWN' if meta.get('delivery_mode') == 'filesystem' or fs_root is not None else 'git')
         changed = []
         if meta.get("base_sha") and meta.get("head_sha"):
             try:
@@ -223,6 +238,8 @@ def render_task_envelope(task_file: Path, repo_dir: Path) -> dict:
                 errors.append(str(error))
         return {"TASK_HANDOFF": dict(
             schema_version=1, task_id=meta.get("task_id", task_file.stem),
+            delivery_mode=mode, candidate_id=meta.get('candidate_id', '') if mode == 'filesystem' else '',
+            execution=execution,
             task_name=meta.get("task_name", task_file.stem), type=meta.get("type", "UNKNOWN"),
             status=status, commit_sha=meta.get("head_sha", ""), base_sha=meta.get("base_sha", ""),
             fix_rounds=state["round"], fix_total=state["total"], consilium_count=state["consilium"],
@@ -816,8 +833,124 @@ def render_terminal_board(iter_dir: Path, stream=None):
 def main():
     start_time = time.perf_counter()
     args = sys.argv[1:]
+    if args and args[0] == '--timing-init':
+        from iter_timing import initialize
+        if len(args) != 3:
+            raise ValueError('Usage: --timing-init <trace> <session-id>')
+        initialize(Path.cwd(), args[1], args[2])
+        return
+    if args and args[0] == '--timing-import':
+        from iter_timing import import_record
+        if len(args) != 3:
+            raise ValueError('Usage: --timing-import <trace> <observation-json>')
+        import_record(Path.cwd(), args[1], args[2])
+        return
+    if args and args[0] == '--timing-import-receipt':
+        import argparse
+        from iter_timing import import_receipt, CATEGORIES
+        parser = argparse.ArgumentParser()
+        parser.add_argument('trace')
+        parser.add_argument('receipt')
+        parser.add_argument('--category', choices=sorted(CATEGORIES), required=True)
+        parser.add_argument('--operation', required=True)
+        parser.add_argument('--target', required=True)
+        opt = parser.parse_args(args[1:])
+        import_receipt(Path.cwd(), opt.trace, opt.receipt, opt.category, opt.operation, opt.target)
+        return
+    if args and args[0] == '--timing-report':
+        from iter_timing import report
+        if len(args) != 2:
+            raise ValueError('Usage: --timing-report <trace>')
+        result = report(Path.cwd(), args[1])
+        print(json.dumps(result, ensure_ascii=False, indent=2))
+        if result['errors']:
+            sys.exit(2)
+        return
+    if args and args[0] == '--inventory':
+        import argparse
+        from iter_inventory import inventory
+        parser = argparse.ArgumentParser()
+        parser.add_argument('target', type=Path)
+        parser.add_argument('--mode', required=True, choices=('continue', 'takeover'))
+        parser.add_argument('--context')
+        group = parser.add_mutually_exclusive_group()
+        group.add_argument('--phase', default='implementation')
+        group.add_argument('--phase-from-context', action='store_true')
+        parser.add_argument('--details', action='store_true')
+        parser.add_argument('--timing-trace')
+        opt = parser.parse_args(args[1:])
+        if opt.timing_trace:
+            from iter_timing import append, now
+            from uuid import uuid4
+            timing_id = str(uuid4())
+            append(Path.cwd(), opt.timing_trace, dict(type='start', id=timing_id,
+                   category='inventory', operation='inventory', target=str(opt.target),
+                   requested_phase='context' if opt.phase_from_context else opt.phase,
+                   mode=opt.mode, context=opt.context, details=opt.details,
+                   started_at=now(), clock_basis='local_utc', source_kind='instrumented', source='trace'))
+        phase_details = [] if opt.timing_trace else None
+        result = inventory(opt.target, Path.cwd(), opt.mode, opt.context, opt.phase, opt.phase_from_context, opt.details, phase_details) if opt.timing_trace else inventory(opt.target, Path.cwd(), opt.mode, opt.context, opt.phase, opt.phase_from_context, opt.details)
+        if opt.timing_trace:
+            append(Path.cwd(), opt.timing_trace, dict(type='finish', id=timing_id, ended_at=now(),
+                   outcome=result['readiness'], observed_phases=[task.get('phase') for task in result.get('tasks', [])],
+                   phase_details=phase_details))
+        print(json.dumps(result, ensure_ascii=False, indent=2))
+        if result['readiness'] != 'READY':
+            sys.exit(3 if result['readiness'] == 'BLOCKED' else 2)
+        return
+    if args and args[0] == '--execution-report':
+        from iter_execution import execution_report
+        if len(args) != 2:
+            raise ValueError('Usage: --execution-report <iteration-directory>')
+        result = execution_report(Path(args[1]), Path.cwd())
+        print(json.dumps(result, ensure_ascii=False, indent=2))
+        if result['errors']:
+            sys.exit(2)
+        return
+    if args and args[0] in ('--preflight', '--dispatch-check'):
+        import argparse
+        from iter_preflight import preflight, preflight_from_context, dispatch_check
+        parser = argparse.ArgumentParser()
+        parser.add_argument('target', type=Path)
+        parser.add_argument('--context')
+        phase_group = parser.add_mutually_exclusive_group()
+        phase_group.add_argument('--phase', default='implementation')
+        phase_group.add_argument('--phase-from-context', action='store_true')
+        parser.add_argument('--owner', default='')
+        parser.add_argument('--timing-trace')
+        opt = parser.parse_args(args[1:])
+        if opt.phase_from_context and args[0] != '--preflight':
+            parser.error('--phase-from-context applies only to --preflight')
+        if opt.timing_trace and args[0] != '--preflight':
+            parser.error('--timing-trace applies only to --preflight')
+        if opt.timing_trace:
+            from iter_timing import append, now
+            from uuid import uuid4
+            timing_id = str(uuid4())
+            append(Path.cwd(), opt.timing_trace, dict(type='start', id=timing_id,
+                   category='inventory', operation='preflight', target=str(opt.target),
+                   requested_phase='context' if opt.phase_from_context else opt.phase,
+                   context=opt.context, owner=opt.owner,
+                   started_at=now(), clock_basis='local_utc', source_kind='instrumented', source='trace'))
+        check = preflight if args[0] == '--preflight' else dispatch_check
+        phase_details = [] if opt.timing_trace else None
+        if opt.timing_trace:
+            from iter_preflight import _preflight
+            result = _preflight(opt.target, Path.cwd(), opt.context, opt.phase, opt.owner, audit_task_file, opt.phase_from_context, phase_details)
+        elif opt.phase_from_context:
+            result = preflight_from_context(opt.target, Path.cwd(), opt.context, opt.owner, audit_task_file)
+        else:
+            result = check(opt.target, Path.cwd(), opt.context, opt.phase, opt.owner, audit_task_file)
+        if opt.timing_trace:
+            append(Path.cwd(), opt.timing_trace, dict(type='finish', id=timing_id, ended_at=now(),
+                   outcome=result['readiness'], observed_phases=[task.get('phase') for task in result.get('tasks', [])],
+                   phase_details=phase_details))
+        print(json.dumps(result, ensure_ascii=False, indent=2))
+        if result['readiness'] != 'READY':
+            sys.exit(3 if result['readiness'] == 'BLOCKED' else 2)
+        return
     if args in (['--help'], ['-h']):
-        print('Iteration Manager: --verify-committed | --takeover-report <iteration-dir> | --render-envelope <card> [repo] | --autonomy <action> <card> --event-id ID --owner OWNER | --check-scope BASE HEAD CARD [--include-worktree] | --review-pkg BASE HEAD [task] [repo] | --local [--strict] [path] | --check-branch [--strict] [repo] [base] | --board | --serve-board [port] [path] | --export-board [path]. See references/agent_protocol.md for recovery and budgets.')
+        print('Iteration Manager: --verify-committed | --takeover-report <iteration-dir> | --inventory <iteration-dir> --mode {continue,takeover} [--context JSON (--phase PHASE | --phase-from-context) --details] | --execution-report <iteration-dir> | --preflight <iteration-dir> [--context JSON (--phase PHASE | --phase-from-context) --owner OWNER] | --dispatch-check <card> [--context JSON --phase PHASE --owner OWNER] | --render-envelope <card> [repo] | --autonomy <action including attempt> <card> --event-id ID --owner OWNER | --check-scope BASE HEAD CARD [--include-worktree] | --review-pkg BASE HEAD [task] [repo] | --local [--strict] [path] | --check-branch [--strict] [repo] [base] | --board | --serve-board [port] [path] | --export-board [path]. See references/execution_readiness.md for opt-in readiness/attempt reports; references/agent_protocol.md for recovery and budgets.')
         return
     if args and args[0] == '--takeover-report':
         if len(args) != 2:
@@ -837,7 +970,7 @@ def main():
     if args and args[0] == '--autonomy':
         import argparse
         parser = argparse.ArgumentParser()
-        parser.add_argument('action', choices=['claim','fix','consilium','replan','recover','release','closeout','resume-checkpoint'])
+        parser.add_argument('action', choices=['claim','fix','consilium','replan','recover','release','closeout','resume-checkpoint','attempt'])
         parser.add_argument('task_file', type=Path)
         parser.add_argument('--event-id', required=True)
         parser.add_argument('--owner', required=True)
