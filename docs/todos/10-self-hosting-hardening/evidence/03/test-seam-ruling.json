@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": {
+      "user_scope": "实施迭代10、精准Git提交、六卡串行，逐项验收；禁止部署推送合流清理",
+      "task03_scope": "共享查询提取、inventory/preflight/execution改走query；保留旧导入符号签名/行为；测试固定八文件回归包含test_execution_readiness，但当前白名单未列该文件",
+      "existing_test": "test_execution_readiness.py:168-182 monkeypatch iter_sync.audit_task_file to count inventory audits; assert readiness BLOCKED and calls exactly ['01-task.md','02-task.md']",
+      "candidate": "iter_inventory.inventory imports audit_task_file from iter_queries; cache local to one inventory call; iter_sync reexports same function; query cannot import CLI or iter_sync",
+      "observed_failure": "readiness BLOCKED as expected; monkeypatch count=[] at old facade, targeted new query coverage verifies one audit/card/call and fresh next call",
+      "source_changes_needed_for_bridge": "Cross-module facade-to-query registration or compatibility forwarding to propagate replacing iter_sync.audit_task_file into inventory.",
+      "source_ownership": "test_execution_readiness not in any product source scope of later tasks; task03 regression explicitly includes this file"
+    },
+    "questions": {
+      "seam": {
+        "type": "choice",
+        "instructions": "Choose the bounded next action that preserves actual behavior/old public entry points and the specified regression gate. Does necessary adjacent test instrumentation belong to authorized query extraction, or does it require holding implementation? Do not lower assertions or silently enlarge product scope.",
+        "criteria": {
+          "test_observation": "Controller explicitly adds only tests/test_execution_readiness.py to task03 test whitelist and permits changing only this audit-count test's patch target to iter_queries; keep its exact readiness/count assertions, old callable export checks and fresh per-call tests. Record scope adjustment and independent review.",
+          "compat_bridge": "Keep test whitelist unchanged; require source compatibility machinery so monkeypatching iter_sync affects inventory, despite new query boundary.",
+          "request_authority": "This test adjustment materially exceeds user iteration authority; stop affected work and request explicit permission.",
+          "unknown": "Insufficient evidence; gather specific missing public monkeypatch contract first."
+        }
+      }
+    }
+  },
+  "response": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"model\":\"jev-1.14.0\",\"answers\":{\"seam\":{\"type\":\"choice\",\"choice\":\"test_observation\",\"confidence\":0.51,\"probabilities\":{\"compat_bridge\":0.32,\"request_authority\":0.04,\"test_observation\":0.63,\"unknown\":0.01}}},\"usage\":{\"input_tokens\":805,\"output_tokens\":56}}"
+      }
+    ]
+  }
+}

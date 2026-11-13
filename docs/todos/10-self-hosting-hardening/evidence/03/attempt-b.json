@@ -1,0 +1,48 @@
+{
+  "version": 1,
+  "phase": "implementation",
+  "candidate": "1aad3d326b0d4d2c72da87ce2962a808b85e0bf2",
+  "inputs": [
+    "docs/todos/10-self-hosting-hardening/03-query-cli-contract.md",
+    "scripts/iter_sync.py",
+    "scripts/iter_inventory.py",
+    "scripts/iter_preflight.py",
+    "scripts/iter_execution.py",
+    "docs/todos/10-self-hosting-hardening/evidence/03/identity-ruling.json",
+    "docs/todos/10-self-hosting-hardening/evidence/03/implementation-checkpoint-a.json"
+  ],
+  "capabilities": [
+    "Codeg MCP codex independent session",
+    "Windows iter_run",
+    "pytest"
+  ],
+  "checkpoint": "Shared query extraction and consumer wiring; inherited four behavior RED cases now GREEN; query+legacy sync targeted suite 13 passed.",
+  "remaining_work": [
+    "C: extract iter_cli.main(argv=None)->int and lazy iter_sync main facade; retain flags/positions/default phase/exits/timing help; create authorized CLI compatibility tests",
+    "Controller: resolve old monkeypatch test observation seam before full regression acceptance; TypeSafe raw request/response slice-b-typesafe.json selects direct query wiring",
+    "C: run exact benchmark_projection.py --label after with same 10/100 x3 fixture; reuse A before/RED without rerun",
+    "C: run eight-file specified delivery regression with sufficient window, frozen scope check on final candidate, immutable diff review and independent acceptance",
+    "Controller owns card/README, attempt/release registration; no card/README written or staged by B"
+  ],
+  "executor_id": "6f7b9a4a-e4a1-4af2-93ba-534e2dcb2c3b",
+  "terminal_evidence": "docs/todos/10-self-hosting-hardening/evidence/03/native-terminal-b.json",
+  "progress": [
+    {
+      "kind": "green",
+      "summary": "4原RED已GREEN，查询+旧同步13passed，旧test观测点失败明确保留",
+      "evidence": "docs/todos/10-self-hosting-hardening/evidence/03/slice-b-query-compat-1742.json.output.txt"
+    }
+  ],
+  "commands": [
+    "docs/todos/10-self-hosting-hardening/evidence/03/slice-b-green-core-1741.json",
+    "docs/todos/10-self-hosting-hardening/evidence/03/slice-b-green-core-1742.json",
+    "docs/todos/10-self-hosting-hardening/evidence/03/slice-b-legacy-seam-1742.json",
+    "docs/todos/10-self-hosting-hardening/evidence/03/slice-b-note-archive-1743.json",
+    "docs/todos/10-self-hosting-hardening/evidence/03/slice-b-note-format-1743.json",
+    "docs/todos/10-self-hosting-hardening/evidence/03/slice-b-note-tree-1743.json",
+    "docs/todos/10-self-hosting-hardening/evidence/03/slice-b-query-compat-1742.json",
+    "docs/todos/10-self-hosting-hardening/evidence/03/slice-b-scope-1743.json"
+  ],
+  "started_at": null,
+  "ended_at": null
+}

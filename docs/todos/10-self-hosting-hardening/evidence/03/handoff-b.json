@@ -1,0 +1,169 @@
+{
+  "TASK_HANDOFF": {
+    "schema_version": 1,
+    "task_id": "03",
+    "delivery_mode": "git",
+    "candidate_id": "",
+    "execution": {
+      "attempt_count": 2,
+      "no_progress_streak": 0,
+      "last_attempt": {
+        "source": "docs/todos/10-self-hosting-hardening/evidence/03/attempt-b.json",
+        "phase": "implementation",
+        "delivery_mode": "git",
+        "candidate": "1aad3d326b0d4d2c72da87ce2962a808b85e0bf2",
+        "conditions": {
+          "inputs": [
+            "docs/todos/10-self-hosting-hardening/03-query-cli-contract.md",
+            "docs/todos/10-self-hosting-hardening/evidence/03/identity-ruling.json",
+            "docs/todos/10-self-hosting-hardening/evidence/03/implementation-checkpoint-a.json",
+            "scripts/iter_execution.py",
+            "scripts/iter_inventory.py",
+            "scripts/iter_preflight.py",
+            "scripts/iter_sync.py"
+          ],
+          "capabilities": [
+            "Codeg MCP codex independent session",
+            "Windows iter_run",
+            "pytest"
+          ],
+          "scope": [
+            ".agents/notes/implemented/architecture/2026-11-13-query-cli-contract.md",
+            "docs/todos/10-self-hosting-hardening/evidence/03/",
+            "scripts/iter_cli.py",
+            "scripts/iter_execution.py",
+            "scripts/iter_inventory.py",
+            "scripts/iter_preflight.py",
+            "scripts/iter_queries.py",
+            "scripts/iter_sync.py",
+            "tests/test_cli_compatibility.py",
+            "tests/test_query_contract.py",
+            "tests/test_sync_compatibility.py"
+          ]
+        },
+        "executor_id": "6f7b9a4a-e4a1-4af2-93ba-534e2dcb2c3b",
+        "executor_state": "completed",
+        "terminal_evidence": "docs/todos/10-self-hosting-hardening/evidence/03/native-terminal-b.json",
+        "progress": [
+          {
+            "kind": "green",
+            "evidence": "docs/todos/10-self-hosting-hardening/evidence/03/slice-b-query-compat-1742.json.output.txt",
+            "summary": "4原RED已GREEN，查询+旧同步13passed，旧test观测点失败明确保留"
+          }
+        ],
+        "checkpoint": "Shared query extraction and consumer wiring; inherited four behavior RED cases now GREEN; query+legacy sync targeted suite 13 passed.",
+        "remaining_work": [
+          "C: extract iter_cli.main(argv=None)->int and lazy iter_sync main facade; retain flags/positions/default phase/exits/timing help; create authorized CLI compatibility tests",
+          "C: run eight-file specified delivery regression with sufficient window, frozen scope check on final candidate, immutable diff review and independent acceptance",
+          "C: run exact benchmark_projection.py --label after with same 10/100 x3 fixture; reuse A before/RED without rerun",
+          "Controller owns card/README, attempt/release registration; no card/README written or staged by B",
+          "Controller: resolve old monkeypatch test observation seam before full regression acceptance; TypeSafe raw request/response slice-b-typesafe.json selects direct query wiring"
+        ],
+        "commands": [
+          {
+            "receipt": "docs/todos/10-self-hosting-hardening/evidence/03/slice-b-green-core-1741.json",
+            "status": "COMPLETED",
+            "raw_exit_code": 0,
+            "started_at": "2026-11-13T17:41:04.887142+00:00",
+            "ended_at": "2026-11-13T17:41:07.990545+00:00"
+          },
+          {
+            "receipt": "docs/todos/10-self-hosting-hardening/evidence/03/slice-b-green-core-1742.json",
+            "status": "COMPLETED",
+            "raw_exit_code": 2,
+            "started_at": "2026-11-13T17:40:39.304933+00:00",
+            "ended_at": "2026-11-13T17:40:42.871932+00:00"
+          },
+          {
+            "receipt": "docs/todos/10-self-hosting-hardening/evidence/03/slice-b-legacy-seam-1742.json",
+            "status": "COMPLETED",
+            "raw_exit_code": 1,
+            "started_at": "2026-11-13T17:42:17.315783+00:00",
+            "ended_at": "2026-11-13T17:42:21.875937+00:00"
+          },
+          {
+            "receipt": "docs/todos/10-self-hosting-hardening/evidence/03/slice-b-note-archive-1743.json",
+            "status": "COMPLETED",
+            "raw_exit_code": 0,
+            "started_at": "2026-11-13T17:42:38.657681+00:00",
+            "ended_at": "2026-11-13T17:42:41.289983+00:00"
+          },
+          {
+            "receipt": "docs/todos/10-self-hosting-hardening/evidence/03/slice-b-note-format-1743.json",
+            "status": "COMPLETED",
+            "raw_exit_code": 0,
+            "started_at": "2026-11-13T17:42:35.755461+00:00",
+            "ended_at": "2026-11-13T17:42:38.239743+00:00"
+          },
+          {
+            "receipt": "docs/todos/10-self-hosting-hardening/evidence/03/slice-b-note-tree-1743.json",
+            "status": "COMPLETED",
+            "raw_exit_code": 0,
+            "started_at": "2026-11-13T17:42:32.925528+00:00",
+            "ended_at": "2026-11-13T17:42:35.339072+00:00"
+          },
+          {
+            "receipt": "docs/todos/10-self-hosting-hardening/evidence/03/slice-b-query-compat-1742.json",
+            "status": "COMPLETED",
+            "raw_exit_code": 0,
+            "started_at": "2026-11-13T17:41:29.745093+00:00",
+            "ended_at": "2026-11-13T17:41:49.248325+00:00"
+          },
+          {
+            "receipt": "docs/todos/10-self-hosting-hardening/evidence/03/slice-b-scope-1743.json",
+            "status": "COMPLETED",
+            "raw_exit_code": 0,
+            "started_at": "2026-11-13T17:43:01.146040+00:00",
+            "ended_at": "2026-11-13T17:43:02.057720+00:00"
+          }
+        ],
+        "started_at": null,
+        "ended_at": null,
+        "session_seconds": null,
+        "command_seconds": 39.175596
+      },
+      "checkpoint": {
+        "candidate": "1aad3d326b0d4d2c72da87ce2962a808b85e0bf2",
+        "phase": "implementation",
+        "summary": "Shared query extraction and consumer wiring; inherited four behavior RED cases now GREEN; query+legacy sync targeted suite 13 passed.",
+        "progress": [
+          {
+            "kind": "green",
+            "evidence": "docs/todos/10-self-hosting-hardening/evidence/03/slice-b-query-compat-1742.json.output.txt",
+            "summary": "4原RED已GREEN，查询+旧同步13passed，旧test观测点失败明确保留"
+          }
+        ],
+        "source": "docs/todos/10-self-hosting-hardening/evidence/03/attempt-b.json"
+      },
+      "remaining_work": [
+        "C: extract iter_cli.main(argv=None)->int and lazy iter_sync main facade; retain flags/positions/default phase/exits/timing help; create authorized CLI compatibility tests",
+        "C: run eight-file specified delivery regression with sufficient window, frozen scope check on final candidate, immutable diff review and independent acceptance",
+        "C: run exact benchmark_projection.py --label after with same 10/100 x3 fixture; reuse A before/RED without rerun",
+        "Controller owns card/README, attempt/release registration; no card/README written or staged by B",
+        "Controller: resolve old monkeypatch test observation seam before full regression acceptance; TypeSafe raw request/response slice-b-typesafe.json selects direct query wiring"
+      ]
+    },
+    "task_name": "稳定查询与CLI消费接口，保持旧入口兼容",
+    "type": "Strict-TDD",
+    "status": "IN_PROGRESS",
+    "commit_sha": "",
+    "base_sha": "",
+    "fix_rounds": 0,
+    "fix_total": 0,
+    "consilium_count": 0,
+    "replan_count": 0,
+    "writer": "",
+    "blocked_reason": "",
+    "is_blocked": false,
+    "review_status": "PENDING",
+    "acceptance_verdict": "UNKNOWN",
+    "evidence": {
+      "receipt": ""
+    },
+    "errors": [],
+    "files_changed_count": 0,
+    "files_changed": [],
+    "stage_current": "Stage 1/3：冻结兼容矩阵，对缺失的统一投影字段取得有效断言RED",
+    "stage_progress": "0/3 (0%)"
+  }
+}

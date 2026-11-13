@@ -109,7 +109,7 @@
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | 01-authority-consistency.md | DONE | PASS | 阶段清单已勾选完毕 / 3/3 (100%) | CHECKLIST_COMPLETE (未等同验收) | 未记录 | 0 | 2026-11-13T16:44:56.984232+00:00 |
 | 02-typed-template-generation.md | DONE | PASS | 阶段清单已勾选完毕 / 3/3 (100%) | CHECKLIST_COMPLETE (未等同验收) | 未记录 | 0 | 2026-11-13T17:27:41.977460+00:00 |
-| 03-query-cli-contract.md | IN_PROGRESS | UNKNOWN | Stage 1/3：冻结兼容矩阵，对缺失的统一投影字段取得有效断言RED / 0/3 (0%) | 读取真实基线、当前变更和前置PASS；完成context、claim与同owner dispatch-check。 | 未记录 | 0 | 2026-11-13T17:37:50.956509+00:00 |
+| 03-query-cli-contract.md | IN_PROGRESS | UNKNOWN | Stage 1/3：冻结兼容矩阵，对缺失的统一投影字段取得有效断言RED / 0/3 (0%) | 读取真实基线、当前变更和前置PASS；完成context、claim与同owner dispatch-check。 | 未记录 | 0 | 2026-11-13T17:47:21.491404+00:00 |
 | 04-board-handoff.md | TODO | UNKNOWN | Stage 1/3：固定真实用户路径、视口和四态输入，基于03字段更新详情展示 / 0/3 (0%) | 读取真实基线、当前变更和前置PASS；完成context、claim与同owner dispatch-check。 | 未记录 | 0 | 2026-11-13 |
 | 05-release-evidence-index.md | TODO | UNKNOWN | Stage 1/3：盘点四层事实与现有原件，区分当前/历史/未知 / 0/3 (0%) | 读取真实基线、当前变更和前置PASS；完成context、claim与同owner dispatch-check。 | 未记录 | 0 | 2026-11-13 |
 | 06-self-hosting-acceptance.md | TODO | UNKNOWN | Stage 1/3：整理01—05真实消费证据，隔离夹具运行故障与恢复路径 / 0/3 (0%) | 读取真实基线、当前变更和前置PASS；完成context、claim与同owner dispatch-check。 | 未记录 | 0 | 2026-11-13 |
