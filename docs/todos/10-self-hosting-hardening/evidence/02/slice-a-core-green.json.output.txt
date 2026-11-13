@@ -1,0 +1,252 @@
+FFFFFFFF...........                                                      [100%]
+================================== FAILURES ===================================
+________________ test_render_core_combinations[git-Strict-TDD] ________________
+
+task_type = 'Strict-TDD', mode = 'git'
+
+    @pytest.mark.parametrize("task_type", TYPE_CHECKS)
+    @pytest.mark.parametrize("mode", ["git", "filesystem"])
+    def test_render_core_combinations(task_type, mode):
+        spec = spec_for(task_type, mode)
+        before = copy.deepcopy(spec)
+        content = render_task_card(spec)
+        meta, body, errors = parse_card(content)
+        assert errors == [], "render must produce parseable schema1 frontmatter"
+        assert meta["schema_version"] == "1"
+        assert meta["type"] == task_type
+        assert meta["status"] == "TODO"
+        assert meta["review_status"] == "PENDING"
+        assert meta["tdd_verified"] == "false"
+        assert meta["typesafe_score"] == "UNASSESSED"
+        assert scope_paths(content) == (spec["scope"], [])
+        contract_projection(content)
+        for name in TYPE_CHECKS[task_type]:
+            assert f"**{name}**" in body
+            assert spec["verification"][name] in body
+>       assert validate_generated_card(content, mode) == []
+E       AssertionError: assert ['Unresolved ...lder in body'] == []
+E         
+E         Left contains one more item: 'Unresolved placeholder in body'
+E         Use -v to get more diff
+
+tests\test_template_generation.py:44: AssertionError
+_______________ test_render_core_combinations[git-UI-Component] _______________
+
+task_type = 'UI-Component', mode = 'git'
+
+    @pytest.mark.parametrize("task_type", TYPE_CHECKS)
+    @pytest.mark.parametrize("mode", ["git", "filesystem"])
+    def test_render_core_combinations(task_type, mode):
+        spec = spec_for(task_type, mode)
+        before = copy.deepcopy(spec)
+        content = render_task_card(spec)
+        meta, body, errors = parse_card(content)
+        assert errors == [], "render must produce parseable schema1 frontmatter"
+        assert meta["schema_version"] == "1"
+        assert meta["type"] == task_type
+        assert meta["status"] == "TODO"
+        assert meta["review_status"] == "PENDING"
+        assert meta["tdd_verified"] == "false"
+        assert meta["typesafe_score"] == "UNASSESSED"
+        assert scope_paths(content) == (spec["scope"], [])
+        contract_projection(content)
+        for name in TYPE_CHECKS[task_type]:
+            assert f"**{name}**" in body
+            assert spec["verification"][name] in body
+>       assert validate_generated_card(content, mode) == []
+E       AssertionError: assert ['Unresolved ...lder in body'] == []
+E         
+E         Left contains one more item: 'Unresolved placeholder in body'
+E         Use -v to get more diff
+
+tests\test_template_generation.py:44: AssertionError
+____________ test_render_core_combinations[git-Refactor-Benchmark] ____________
+
+task_type = 'Refactor-Benchmark', mode = 'git'
+
+    @pytest.mark.parametrize("task_type", TYPE_CHECKS)
+    @pytest.mark.parametrize("mode", ["git", "filesystem"])
+    def test_render_core_combinations(task_type, mode):
+        spec = spec_for(task_type, mode)
+        before = copy.deepcopy(spec)
+        content = render_task_card(spec)
+        meta, body, errors = parse_card(content)
+        assert errors == [], "render must produce parseable schema1 frontmatter"
+        assert meta["schema_version"] == "1"
+        assert meta["type"] == task_type
+        assert meta["status"] == "TODO"
+        assert meta["review_status"] == "PENDING"
+        assert meta["tdd_verified"] == "false"
+        assert meta["typesafe_score"] == "UNASSESSED"
+        assert scope_paths(content) == (spec["scope"], [])
+        contract_projection(content)
+        for name in TYPE_CHECKS[task_type]:
+            assert f"**{name}**" in body
+            assert spec["verification"][name] in body
+>       assert validate_generated_card(content, mode) == []
+E       AssertionError: assert ['Unresolved ...lder in body'] == []
+E         
+E         Left contains one more item: 'Unresolved placeholder in body'
+E         Use -v to get more diff
+
+tests\test_template_generation.py:44: AssertionError
+_____________ test_render_core_combinations[git-Spike-Discovery] ______________
+
+task_type = 'Spike-Discovery', mode = 'git'
+
+    @pytest.mark.parametrize("task_type", TYPE_CHECKS)
+    @pytest.mark.parametrize("mode", ["git", "filesystem"])
+    def test_render_core_combinations(task_type, mode):
+        spec = spec_for(task_type, mode)
+        before = copy.deepcopy(spec)
+        content = render_task_card(spec)
+        meta, body, errors = parse_card(content)
+        assert errors == [], "render must produce parseable schema1 frontmatter"
+        assert meta["schema_version"] == "1"
+        assert meta["type"] == task_type
+        assert meta["status"] == "TODO"
+        assert meta["review_status"] == "PENDING"
+        assert meta["tdd_verified"] == "false"
+        assert meta["typesafe_score"] == "UNASSESSED"
+        assert scope_paths(content) == (spec["scope"], [])
+        contract_projection(content)
+        for name in TYPE_CHECKS[task_type]:
+            assert f"**{name}**" in body
+            assert spec["verification"][name] in body
+>       assert validate_generated_card(content, mode) == []
+E       AssertionError: assert ['Unresolved ...lder in body'] == []
+E         
+E         Left contains one more item: 'Unresolved placeholder in body'
+E         Use -v to get more diff
+
+tests\test_template_generation.py:44: AssertionError
+____________ test_render_core_combinations[filesystem-Strict-TDD] _____________
+
+task_type = 'Strict-TDD', mode = 'filesystem'
+
+    @pytest.mark.parametrize("task_type", TYPE_CHECKS)
+    @pytest.mark.parametrize("mode", ["git", "filesystem"])
+    def test_render_core_combinations(task_type, mode):
+        spec = spec_for(task_type, mode)
+        before = copy.deepcopy(spec)
+        content = render_task_card(spec)
+        meta, body, errors = parse_card(content)
+        assert errors == [], "render must produce parseable schema1 frontmatter"
+        assert meta["schema_version"] == "1"
+        assert meta["type"] == task_type
+        assert meta["status"] == "TODO"
+        assert meta["review_status"] == "PENDING"
+        assert meta["tdd_verified"] == "false"
+        assert meta["typesafe_score"] == "UNASSESSED"
+        assert scope_paths(content) == (spec["scope"], [])
+        contract_projection(content)
+        for name in TYPE_CHECKS[task_type]:
+            assert f"**{name}**" in body
+            assert spec["verification"][name] in body
+>       assert validate_generated_card(content, mode) == []
+E       AssertionError: assert ['Unresolved ...lder in body'] == []
+E         
+E         Left contains one more item: 'Unresolved placeholder in body'
+E         Use -v to get more diff
+
+tests\test_template_generation.py:44: AssertionError
+___________ test_render_core_combinations[filesystem-UI-Component] ____________
+
+task_type = 'UI-Component', mode = 'filesystem'
+
+    @pytest.mark.parametrize("task_type", TYPE_CHECKS)
+    @pytest.mark.parametrize("mode", ["git", "filesystem"])
+    def test_render_core_combinations(task_type, mode):
+        spec = spec_for(task_type, mode)
+        before = copy.deepcopy(spec)
+        content = render_task_card(spec)
+        meta, body, errors = parse_card(content)
+        assert errors == [], "render must produce parseable schema1 frontmatter"
+        assert meta["schema_version"] == "1"
+        assert meta["type"] == task_type
+        assert meta["status"] == "TODO"
+        assert meta["review_status"] == "PENDING"
+        assert meta["tdd_verified"] == "false"
+        assert meta["typesafe_score"] == "UNASSESSED"
+        assert scope_paths(content) == (spec["scope"], [])
+        contract_projection(content)
+        for name in TYPE_CHECKS[task_type]:
+            assert f"**{name}**" in body
+            assert spec["verification"][name] in body
+>       assert validate_generated_card(content, mode) == []
+E       AssertionError: assert ['Unresolved ...lder in body'] == []
+E         
+E         Left contains one more item: 'Unresolved placeholder in body'
+E         Use -v to get more diff
+
+tests\test_template_generation.py:44: AssertionError
+________ test_render_core_combinations[filesystem-Refactor-Benchmark] _________
+
+task_type = 'Refactor-Benchmark', mode = 'filesystem'
+
+    @pytest.mark.parametrize("task_type", TYPE_CHECKS)
+    @pytest.mark.parametrize("mode", ["git", "filesystem"])
+    def test_render_core_combinations(task_type, mode):
+        spec = spec_for(task_type, mode)
+        before = copy.deepcopy(spec)
+        content = render_task_card(spec)
+        meta, body, errors = parse_card(content)
+        assert errors == [], "render must produce parseable schema1 frontmatter"
+        assert meta["schema_version"] == "1"
+        assert meta["type"] == task_type
+        assert meta["status"] == "TODO"
+        assert meta["review_status"] == "PENDING"
+        assert meta["tdd_verified"] == "false"
+        assert meta["typesafe_score"] == "UNASSESSED"
+        assert scope_paths(content) == (spec["scope"], [])
+        contract_projection(content)
+        for name in TYPE_CHECKS[task_type]:
+            assert f"**{name}**" in body
+            assert spec["verification"][name] in body
+>       assert validate_generated_card(content, mode) == []
+E       AssertionError: assert ['Unresolved ...lder in body'] == []
+E         
+E         Left contains one more item: 'Unresolved placeholder in body'
+E         Use -v to get more diff
+
+tests\test_template_generation.py:44: AssertionError
+__________ test_render_core_combinations[filesystem-Spike-Discovery] __________
+
+task_type = 'Spike-Discovery', mode = 'filesystem'
+
+    @pytest.mark.parametrize("task_type", TYPE_CHECKS)
+    @pytest.mark.parametrize("mode", ["git", "filesystem"])
+    def test_render_core_combinations(task_type, mode):
+        spec = spec_for(task_type, mode)
+        before = copy.deepcopy(spec)
+        content = render_task_card(spec)
+        meta, body, errors = parse_card(content)
+        assert errors == [], "render must produce parseable schema1 frontmatter"
+        assert meta["schema_version"] == "1"
+        assert meta["type"] == task_type
+        assert meta["status"] == "TODO"
+        assert meta["review_status"] == "PENDING"
+        assert meta["tdd_verified"] == "false"
+        assert meta["typesafe_score"] == "UNASSESSED"
+        assert scope_paths(content) == (spec["scope"], [])
+        contract_projection(content)
+        for name in TYPE_CHECKS[task_type]:
+            assert f"**{name}**" in body
+            assert spec["verification"][name] in body
+>       assert validate_generated_card(content, mode) == []
+E       AssertionError: assert ['Unresolved ...lder in body'] == []
+E         
+E         Left contains one more item: 'Unresolved placeholder in body'
+E         Use -v to get more diff
+
+tests\test_template_generation.py:44: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_template_generation.py::test_render_core_combinations[git-Strict-TDD]
+FAILED tests/test_template_generation.py::test_render_core_combinations[git-UI-Component]
+FAILED tests/test_template_generation.py::test_render_core_combinations[git-Refactor-Benchmark]
+FAILED tests/test_template_generation.py::test_render_core_combinations[git-Spike-Discovery]
+FAILED tests/test_template_generation.py::test_render_core_combinations[filesystem-Strict-TDD]
+FAILED tests/test_template_generation.py::test_render_core_combinations[filesystem-UI-Component]
+FAILED tests/test_template_generation.py::test_render_core_combinations[filesystem-Refactor-Benchmark]
+FAILED tests/test_template_generation.py::test_render_core_combinations[filesystem-Spike-Discovery]
+8 failed, 11 passed in 1.35s

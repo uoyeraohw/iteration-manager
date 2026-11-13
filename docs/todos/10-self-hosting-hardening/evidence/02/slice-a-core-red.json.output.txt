@@ -1,0 +1,343 @@
+FFFFFFFFFFFFFFFFFFF                                                      [100%]
+================================== FAILURES ===================================
+________________ test_render_core_combinations[git-Strict-TDD] ________________
+
+task_type = 'Strict-TDD', mode = 'git'
+
+    @pytest.mark.parametrize("task_type", TYPE_CHECKS)
+    @pytest.mark.parametrize("mode", ["git", "filesystem"])
+    def test_render_core_combinations(task_type, mode):
+        spec = spec_for(task_type, mode)
+        before = copy.deepcopy(spec)
+        content = render_task_card(spec)
+        meta, body, errors = parse_card(content)
+>       assert errors == [], "render must produce parseable schema1 frontmatter"
+E       AssertionError: render must produce parseable schema1 frontmatter
+E       assert ['Missing or ... frontmatter'] == []
+E         
+E         Left contains one more item: 'Missing or unterminated frontmatter'
+E         Use -v to get more diff
+
+tests\test_template_generation.py:32: AssertionError
+_______________ test_render_core_combinations[git-UI-Component] _______________
+
+task_type = 'UI-Component', mode = 'git'
+
+    @pytest.mark.parametrize("task_type", TYPE_CHECKS)
+    @pytest.mark.parametrize("mode", ["git", "filesystem"])
+    def test_render_core_combinations(task_type, mode):
+        spec = spec_for(task_type, mode)
+        before = copy.deepcopy(spec)
+        content = render_task_card(spec)
+        meta, body, errors = parse_card(content)
+>       assert errors == [], "render must produce parseable schema1 frontmatter"
+E       AssertionError: render must produce parseable schema1 frontmatter
+E       assert ['Missing or ... frontmatter'] == []
+E         
+E         Left contains one more item: 'Missing or unterminated frontmatter'
+E         Use -v to get more diff
+
+tests\test_template_generation.py:32: AssertionError
+____________ test_render_core_combinations[git-Refactor-Benchmark] ____________
+
+task_type = 'Refactor-Benchmark', mode = 'git'
+
+    @pytest.mark.parametrize("task_type", TYPE_CHECKS)
+    @pytest.mark.parametrize("mode", ["git", "filesystem"])
+    def test_render_core_combinations(task_type, mode):
+        spec = spec_for(task_type, mode)
+        before = copy.deepcopy(spec)
+        content = render_task_card(spec)
+        meta, body, errors = parse_card(content)
+>       assert errors == [], "render must produce parseable schema1 frontmatter"
+E       AssertionError: render must produce parseable schema1 frontmatter
+E       assert ['Missing or ... frontmatter'] == []
+E         
+E         Left contains one more item: 'Missing or unterminated frontmatter'
+E         Use -v to get more diff
+
+tests\test_template_generation.py:32: AssertionError
+_____________ test_render_core_combinations[git-Spike-Discovery] ______________
+
+task_type = 'Spike-Discovery', mode = 'git'
+
+    @pytest.mark.parametrize("task_type", TYPE_CHECKS)
+    @pytest.mark.parametrize("mode", ["git", "filesystem"])
+    def test_render_core_combinations(task_type, mode):
+        spec = spec_for(task_type, mode)
+        before = copy.deepcopy(spec)
+        content = render_task_card(spec)
+        meta, body, errors = parse_card(content)
+>       assert errors == [], "render must produce parseable schema1 frontmatter"
+E       AssertionError: render must produce parseable schema1 frontmatter
+E       assert ['Missing or ... frontmatter'] == []
+E         
+E         Left contains one more item: 'Missing or unterminated frontmatter'
+E         Use -v to get more diff
+
+tests\test_template_generation.py:32: AssertionError
+____________ test_render_core_combinations[filesystem-Strict-TDD] _____________
+
+task_type = 'Strict-TDD', mode = 'filesystem'
+
+    @pytest.mark.parametrize("task_type", TYPE_CHECKS)
+    @pytest.mark.parametrize("mode", ["git", "filesystem"])
+    def test_render_core_combinations(task_type, mode):
+        spec = spec_for(task_type, mode)
+        before = copy.deepcopy(spec)
+        content = render_task_card(spec)
+        meta, body, errors = parse_card(content)
+>       assert errors == [], "render must produce parseable schema1 frontmatter"
+E       AssertionError: render must produce parseable schema1 frontmatter
+E       assert ['Missing or ... frontmatter'] == []
+E         
+E         Left contains one more item: 'Missing or unterminated frontmatter'
+E         Use -v to get more diff
+
+tests\test_template_generation.py:32: AssertionError
+___________ test_render_core_combinations[filesystem-UI-Component] ____________
+
+task_type = 'UI-Component', mode = 'filesystem'
+
+    @pytest.mark.parametrize("task_type", TYPE_CHECKS)
+    @pytest.mark.parametrize("mode", ["git", "filesystem"])
+    def test_render_core_combinations(task_type, mode):
+        spec = spec_for(task_type, mode)
+        before = copy.deepcopy(spec)
+        content = render_task_card(spec)
+        meta, body, errors = parse_card(content)
+>       assert errors == [], "render must produce parseable schema1 frontmatter"
+E       AssertionError: render must produce parseable schema1 frontmatter
+E       assert ['Missing or ... frontmatter'] == []
+E         
+E         Left contains one more item: 'Missing or unterminated frontmatter'
+E         Use -v to get more diff
+
+tests\test_template_generation.py:32: AssertionError
+________ test_render_core_combinations[filesystem-Refactor-Benchmark] _________
+
+task_type = 'Refactor-Benchmark', mode = 'filesystem'
+
+    @pytest.mark.parametrize("task_type", TYPE_CHECKS)
+    @pytest.mark.parametrize("mode", ["git", "filesystem"])
+    def test_render_core_combinations(task_type, mode):
+        spec = spec_for(task_type, mode)
+        before = copy.deepcopy(spec)
+        content = render_task_card(spec)
+        meta, body, errors = parse_card(content)
+>       assert errors == [], "render must produce parseable schema1 frontmatter"
+E       AssertionError: render must produce parseable schema1 frontmatter
+E       assert ['Missing or ... frontmatter'] == []
+E         
+E         Left contains one more item: 'Missing or unterminated frontmatter'
+E         Use -v to get more diff
+
+tests\test_template_generation.py:32: AssertionError
+__________ test_render_core_combinations[filesystem-Spike-Discovery] __________
+
+task_type = 'Spike-Discovery', mode = 'filesystem'
+
+    @pytest.mark.parametrize("task_type", TYPE_CHECKS)
+    @pytest.mark.parametrize("mode", ["git", "filesystem"])
+    def test_render_core_combinations(task_type, mode):
+        spec = spec_for(task_type, mode)
+        before = copy.deepcopy(spec)
+        content = render_task_card(spec)
+        meta, body, errors = parse_card(content)
+>       assert errors == [], "render must produce parseable schema1 frontmatter"
+E       AssertionError: render must produce parseable schema1 frontmatter
+E       assert ['Missing or ... frontmatter'] == []
+E         
+E         Left contains one more item: 'Missing or unterminated frontmatter'
+E         Use -v to get more diff
+
+tests\test_template_generation.py:32: AssertionError
+_____________________ test_reject_invalid_spec[changes0] ______________________
+
+changes = {'version': 2}
+
+    @pytest.mark.parametrize("changes", [
+        {"version": 2}, {"version": True}, {"type": "Other"}, {"extra": "unknown"},
+        {"scope": []}, {"scope": ["../escape.py"]}, {"objective": "{TODO}"},
+        {"verification": {}}, {"acceptance": []}, {"delivery_mode": "other"},
+    ])
+    def test_reject_invalid_spec(changes):
+        spec = spec_for()
+        spec.update(changes)
+>       with pytest.raises(ValueError):
+E       Failed: DID NOT RAISE <class 'ValueError'>
+
+tests\test_template_generation.py:64: Failed
+_____________________ test_reject_invalid_spec[changes1] ______________________
+
+changes = {'version': True}
+
+    @pytest.mark.parametrize("changes", [
+        {"version": 2}, {"version": True}, {"type": "Other"}, {"extra": "unknown"},
+        {"scope": []}, {"scope": ["../escape.py"]}, {"objective": "{TODO}"},
+        {"verification": {}}, {"acceptance": []}, {"delivery_mode": "other"},
+    ])
+    def test_reject_invalid_spec(changes):
+        spec = spec_for()
+        spec.update(changes)
+>       with pytest.raises(ValueError):
+E       Failed: DID NOT RAISE <class 'ValueError'>
+
+tests\test_template_generation.py:64: Failed
+_____________________ test_reject_invalid_spec[changes2] ______________________
+
+changes = {'type': 'Other'}
+
+    @pytest.mark.parametrize("changes", [
+        {"version": 2}, {"version": True}, {"type": "Other"}, {"extra": "unknown"},
+        {"scope": []}, {"scope": ["../escape.py"]}, {"objective": "{TODO}"},
+        {"verification": {}}, {"acceptance": []}, {"delivery_mode": "other"},
+    ])
+    def test_reject_invalid_spec(changes):
+        spec = spec_for()
+        spec.update(changes)
+>       with pytest.raises(ValueError):
+E       Failed: DID NOT RAISE <class 'ValueError'>
+
+tests\test_template_generation.py:64: Failed
+_____________________ test_reject_invalid_spec[changes3] ______________________
+
+changes = {'extra': 'unknown'}
+
+    @pytest.mark.parametrize("changes", [
+        {"version": 2}, {"version": True}, {"type": "Other"}, {"extra": "unknown"},
+        {"scope": []}, {"scope": ["../escape.py"]}, {"objective": "{TODO}"},
+        {"verification": {}}, {"acceptance": []}, {"delivery_mode": "other"},
+    ])
+    def test_reject_invalid_spec(changes):
+        spec = spec_for()
+        spec.update(changes)
+>       with pytest.raises(ValueError):
+E       Failed: DID NOT RAISE <class 'ValueError'>
+
+tests\test_template_generation.py:64: Failed
+_____________________ test_reject_invalid_spec[changes4] ______________________
+
+changes = {'scope': []}
+
+    @pytest.mark.parametrize("changes", [
+        {"version": 2}, {"version": True}, {"type": "Other"}, {"extra": "unknown"},
+        {"scope": []}, {"scope": ["../escape.py"]}, {"objective": "{TODO}"},
+        {"verification": {}}, {"acceptance": []}, {"delivery_mode": "other"},
+    ])
+    def test_reject_invalid_spec(changes):
+        spec = spec_for()
+        spec.update(changes)
+>       with pytest.raises(ValueError):
+E       Failed: DID NOT RAISE <class 'ValueError'>
+
+tests\test_template_generation.py:64: Failed
+_____________________ test_reject_invalid_spec[changes5] ______________________
+
+changes = {'scope': ['../escape.py']}
+
+    @pytest.mark.parametrize("changes", [
+        {"version": 2}, {"version": True}, {"type": "Other"}, {"extra": "unknown"},
+        {"scope": []}, {"scope": ["../escape.py"]}, {"objective": "{TODO}"},
+        {"verification": {}}, {"acceptance": []}, {"delivery_mode": "other"},
+    ])
+    def test_reject_invalid_spec(changes):
+        spec = spec_for()
+        spec.update(changes)
+>       with pytest.raises(ValueError):
+E       Failed: DID NOT RAISE <class 'ValueError'>
+
+tests\test_template_generation.py:64: Failed
+_____________________ test_reject_invalid_spec[changes6] ______________________
+
+changes = {'objective': '{TODO}'}
+
+    @pytest.mark.parametrize("changes", [
+        {"version": 2}, {"version": True}, {"type": "Other"}, {"extra": "unknown"},
+        {"scope": []}, {"scope": ["../escape.py"]}, {"objective": "{TODO}"},
+        {"verification": {}}, {"acceptance": []}, {"delivery_mode": "other"},
+    ])
+    def test_reject_invalid_spec(changes):
+        spec = spec_for()
+        spec.update(changes)
+>       with pytest.raises(ValueError):
+E       Failed: DID NOT RAISE <class 'ValueError'>
+
+tests\test_template_generation.py:64: Failed
+_____________________ test_reject_invalid_spec[changes7] ______________________
+
+changes = {'verification': {}}
+
+    @pytest.mark.parametrize("changes", [
+        {"version": 2}, {"version": True}, {"type": "Other"}, {"extra": "unknown"},
+        {"scope": []}, {"scope": ["../escape.py"]}, {"objective": "{TODO}"},
+        {"verification": {}}, {"acceptance": []}, {"delivery_mode": "other"},
+    ])
+    def test_reject_invalid_spec(changes):
+        spec = spec_for()
+        spec.update(changes)
+>       with pytest.raises(ValueError):
+E       Failed: DID NOT RAISE <class 'ValueError'>
+
+tests\test_template_generation.py:64: Failed
+_____________________ test_reject_invalid_spec[changes8] ______________________
+
+changes = {'acceptance': []}
+
+    @pytest.mark.parametrize("changes", [
+        {"version": 2}, {"version": True}, {"type": "Other"}, {"extra": "unknown"},
+        {"scope": []}, {"scope": ["../escape.py"]}, {"objective": "{TODO}"},
+        {"verification": {}}, {"acceptance": []}, {"delivery_mode": "other"},
+    ])
+    def test_reject_invalid_spec(changes):
+        spec = spec_for()
+        spec.update(changes)
+>       with pytest.raises(ValueError):
+E       Failed: DID NOT RAISE <class 'ValueError'>
+
+tests\test_template_generation.py:64: Failed
+_____________________ test_reject_invalid_spec[changes9] ______________________
+
+changes = {'delivery_mode': 'other'}
+
+    @pytest.mark.parametrize("changes", [
+        {"version": 2}, {"version": True}, {"type": "Other"}, {"extra": "unknown"},
+        {"scope": []}, {"scope": ["../escape.py"]}, {"objective": "{TODO}"},
+        {"verification": {}}, {"acceptance": []}, {"delivery_mode": "other"},
+    ])
+    def test_reject_invalid_spec(changes):
+        spec = spec_for()
+        spec.update(changes)
+>       with pytest.raises(ValueError):
+E       Failed: DID NOT RAISE <class 'ValueError'>
+
+tests\test_template_generation.py:64: Failed
+_______________ test_check_rejects_empty_card_and_unknown_mode ________________
+
+    def test_check_rejects_empty_card_and_unknown_mode():
+>       assert validate_generated_card("", "git")
+E       AssertionError: assert []
+E        +  where [] = validate_generated_card('', 'git')
+
+tests\test_template_generation.py:69: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_template_generation.py::test_render_core_combinations[git-Strict-TDD]
+FAILED tests/test_template_generation.py::test_render_core_combinations[git-UI-Component]
+FAILED tests/test_template_generation.py::test_render_core_combinations[git-Refactor-Benchmark]
+FAILED tests/test_template_generation.py::test_render_core_combinations[git-Spike-Discovery]
+FAILED tests/test_template_generation.py::test_render_core_combinations[filesystem-Strict-TDD]
+FAILED tests/test_template_generation.py::test_render_core_combinations[filesystem-UI-Component]
+FAILED tests/test_template_generation.py::test_render_core_combinations[filesystem-Refactor-Benchmark]
+FAILED tests/test_template_generation.py::test_render_core_combinations[filesystem-Spike-Discovery]
+FAILED tests/test_template_generation.py::test_reject_invalid_spec[changes0]
+FAILED tests/test_template_generation.py::test_reject_invalid_spec[changes1]
+FAILED tests/test_template_generation.py::test_reject_invalid_spec[changes2]
+FAILED tests/test_template_generation.py::test_reject_invalid_spec[changes3]
+FAILED tests/test_template_generation.py::test_reject_invalid_spec[changes4]
+FAILED tests/test_template_generation.py::test_reject_invalid_spec[changes5]
+FAILED tests/test_template_generation.py::test_reject_invalid_spec[changes6]
+FAILED tests/test_template_generation.py::test_reject_invalid_spec[changes7]
+FAILED tests/test_template_generation.py::test_reject_invalid_spec[changes8]
+FAILED tests/test_template_generation.py::test_reject_invalid_spec[changes9]
+FAILED tests/test_template_generation.py::test_check_rejects_empty_card_and_unknown_mode
+19 failed in 1.50s

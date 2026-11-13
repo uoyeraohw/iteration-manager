@@ -1,0 +1,31 @@
+# Agent Note: 结构化任务卡生成的核心切片
+
+Status: implemented
+
+## Problem
+
+手工模板默认Git及Strict-TDD，其他类型与FS需要人工替换段落，容易留下不适用的验证要求或冻结后仍需修改的审查正文。
+
+## Decision
+
+`iter_templates`从结构化spec直接生成确定性Markdown，复用`iter_contracts.TYPE_CHECKS`、解析器和范围规则；不读写任务卡、配置或收据。生成只给出TODO、PENDING、false和UNASSESSED，不能产生执行或批准事实。FS正文只指向外部审查结果，并明确完整正文先定稿再冻结。
+
+本次切片只交付纯函数核心和基础预检。独立CLI、完整输入及预检边界、模板入口文档、FS实际冻结兼容和交付回归尚未完成，后续切片继续原任务，不把核心GREEN当整卡通过。
+
+## Alternatives considered
+
+- 在旧模板中替换占位符及段落：能直接复用手写布局，但八组合需要脆弱的文本改写，容易残留动态正文。采用直接构造章节，并保持旧模板不动。本次TypeSafe评估选择结构化渲染，模型为jev-1.14.0；它不替代测试或独立验收。
+
+## Existing-note audit
+
+- [FS完整正文绑定](../bug-fix/2026-11-12-filesystem-r7-acceptance-repair.md)部分相关：保留其完整正文合同，不修改已有绑定算法。
+- [分层验证与检查点](2026-11-12-bounded-validation-workflow.md)部分相关：沿用核心RED→GREEN和正常切片，不减少任务交付门禁。
+- 其余检索命中涉及授权、部署与盘点，不被本决定取代。
+
+## Consequences
+
+四类型必需检查名保持单一来源；Refactor-Benchmark仍包含前后量测。代价是生成器正文与手写模板需要明确入口文档衔接，不能声称现有模板已迁移。占位符语法及Markdown边界仍需后续针对性用例完善。
+
+## Testing
+
+`slice-a-core-red.json`记录可调用空实现下19个真实断言失败，退出1；`slice-a-core-green.json`记录首次实现的8个失败和11个通过，原因是占位符正则误认HTML标记；`slice-a-core-green-2.json`记录修复后19项通过，退出0。原件均在本卡evidence/02目录，runner确认进程树终态；未执行交付回归，不代表独立审查通过。
