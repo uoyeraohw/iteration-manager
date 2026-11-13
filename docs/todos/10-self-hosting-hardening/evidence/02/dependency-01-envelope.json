@@ -1,0 +1,200 @@
+{
+  "TASK_HANDOFF": {
+    "schema_version": 1,
+    "task_id": "01",
+    "delivery_mode": "git",
+    "candidate_id": "",
+    "execution": {
+      "attempt_count": 3,
+      "no_progress_streak": 0,
+      "last_attempt": {
+        "source": "build/review-01/attempt-review.json",
+        "phase": "evidence-inspection",
+        "delivery_mode": "git",
+        "candidate": "997ee3753241d7f4ad5b3d68df7648d06e2adc4c",
+        "conditions": {
+          "inputs": [
+            "docs/todos/10-self-hosting-hardening/01-authority-consistency.md",
+            "references/superpowers_handbook.md",
+            "references/worktree_git_contract.md",
+            "templates/root_readme.md"
+          ],
+          "capabilities": [
+            "Codeg MCP codex independent session",
+            "Windows iter_run"
+          ],
+          "scope": [
+            ".agents/notes/implemented/process/2026-11-13-authority-consistency.md",
+            "docs/todos/10-self-hosting-hardening/evidence/01/",
+            "references/superpowers_handbook.md",
+            "references/worktree_git_contract.md",
+            "templates/root_readme.md",
+            "tests/test_authority_scenarios.py",
+            "tests/test_prompt_sources.py"
+          ]
+        },
+        "executor_id": "8b384d9f-9eef-453b-a258-13ed01083ea0",
+        "executor_state": "completed",
+        "terminal_evidence": "docs/todos/10-self-hosting-hardening/evidence/01/review-report.json",
+        "progress": [
+          {
+            "kind": "review-finding",
+            "evidence": "docs/todos/10-self-hosting-hardening/evidence/01/review-report.json",
+            "summary": "独立APPROVED，两个不阻断Minor分别保留原始时钟错误与A历史笔记措辞"
+          }
+        ],
+        "checkpoint": "非参与者独立审查APPROVED，原始scope/inspection/report-validation命令全部终态0；尚待登记D和strict",
+        "remaining_work": [
+          "local strict",
+          "登记D"
+        ],
+        "commands": [
+          {
+            "receipt": "build/review-01/frozen-inspection.json",
+            "status": "COMPLETED",
+            "raw_exit_code": 0,
+            "started_at": "2026-11-13T16:38:17.284553+00:00",
+            "ended_at": "2026-11-13T16:38:25.588659+00:00"
+          },
+          {
+            "receipt": "build/review-01/report-validation.json",
+            "status": "COMPLETED",
+            "raw_exit_code": 0,
+            "started_at": "2026-11-13T16:41:02.775353+00:00",
+            "ended_at": "2026-11-13T16:41:02.960468+00:00"
+          },
+          {
+            "receipt": "build/review-01/scope-review.json",
+            "status": "COMPLETED",
+            "raw_exit_code": 0,
+            "started_at": "2026-11-13T16:36:26.503142+00:00",
+            "ended_at": "2026-11-13T16:36:27.536975+00:00"
+          }
+        ],
+        "started_at": null,
+        "ended_at": null,
+        "session_seconds": null,
+        "command_seconds": 9.523054
+      },
+      "checkpoint": {
+        "candidate": "997ee3753241d7f4ad5b3d68df7648d06e2adc4c",
+        "phase": "evidence-inspection",
+        "summary": "非参与者独立审查APPROVED，原始scope/inspection/report-validation命令全部终态0；尚待登记D和strict",
+        "progress": [
+          {
+            "kind": "review-finding",
+            "evidence": "docs/todos/10-self-hosting-hardening/evidence/01/review-report.json",
+            "summary": "独立APPROVED，两个不阻断Minor分别保留原始时钟错误与A历史笔记措辞"
+          }
+        ],
+        "source": "build/review-01/attempt-review.json"
+      },
+      "remaining_work": [
+        "local strict",
+        "登记D"
+      ]
+    },
+    "task_name": "统一授权规则与跨入口场景",
+    "type": "Spike-Discovery",
+    "status": "DONE",
+    "commit_sha": "997ee3753241d7f4ad5b3d68df7648d06e2adc4c",
+    "base_sha": "d3bd97ab16ffed6104034a887a01eb1b4d75dc0e",
+    "fix_rounds": 0,
+    "fix_total": 0,
+    "consilium_count": 0,
+    "replan_count": 0,
+    "writer": "",
+    "blocked_reason": "",
+    "is_blocked": false,
+    "review_status": "APPROVED",
+    "acceptance_verdict": "PASS",
+    "evidence": {
+      "receipt": "docs/todos/10-self-hosting-hardening/evidence/01/review.json"
+    },
+    "errors": [],
+    "files_changed_count": 79,
+    "files_changed": [
+      ".agents/notes/implemented/process/2026-11-13-authority-consistency.md",
+      "docs/todos/10-self-hosting-hardening/01-authority-consistency.md",
+      "docs/todos/10-self-hosting-hardening/README.md",
+      "docs/todos/10-self-hosting-hardening/evidence/01/attempt-implementation-a.json",
+      "docs/todos/10-self-hosting-hardening/evidence/01/attempt-implementation-b.json",
+      "docs/todos/10-self-hosting-hardening/evidence/01/authority-matrix.json",
+      "docs/todos/10-self-hosting-hardening/evidence/01/authority.txt",
+      "docs/todos/10-self-hosting-hardening/evidence/01/baseline-suite.json",
+      "docs/todos/10-self-hosting-hardening/evidence/01/baseline-suite.json.child.json",
+      "docs/todos/10-self-hosting-hardening/evidence/01/baseline-suite.json.output.txt",
+      "docs/todos/10-self-hosting-hardening/evidence/01/capability-probe.json",
+      "docs/todos/10-self-hosting-hardening/evidence/01/consumption-b-observer.py",
+      "docs/todos/10-self-hosting-hardening/evidence/01/consumption-b/no_git_permission-calls.json",
+      "docs/todos/10-self-hosting-hardening/evidence/01/consumption-b/no_git_permission-native.json",
+      "docs/todos/10-self-hosting-hardening/evidence/01/consumption-b/no_merge_permission-calls.json",
+      "docs/todos/10-self-hosting-hardening/evidence/01/consumption-b/no_merge_permission-native.json",
+      "docs/todos/10-self-hosting-hardening/evidence/01/consumption-b/observations.json",
+      "docs/todos/10-self-hosting-hardening/evidence/01/consumption-b/preexisting_dirty-calls.json",
+      "docs/todos/10-self-hosting-hardening/evidence/01/consumption-b/preexisting_dirty-native.json",
+      "docs/todos/10-self-hosting-hardening/evidence/01/consumption-b/prompt_only-calls.json",
+      "docs/todos/10-self-hosting-hardening/evidence/01/consumption-b/prompt_only-native.json",
+      "docs/todos/10-self-hosting-hardening/evidence/01/consumption-b/scope.json",
+      "docs/todos/10-self-hosting-hardening/evidence/01/consumption-b/scope.json.child.json",
+      "docs/todos/10-self-hosting-hardening/evidence/01/consumption-b/scope.json.output.txt",
+      "docs/todos/10-self-hosting-hardening/evidence/01/consumption-b/typesafe-observation.json",
+      "docs/todos/10-self-hosting-hardening/evidence/01/consumption-b/verification.json",
+      "docs/todos/10-self-hosting-hardening/evidence/01/consumption-b/verification.json.child.json",
+      "docs/todos/10-self-hosting-hardening/evidence/01/consumption-b/verification.json.output.txt",
+      "docs/todos/10-self-hosting-hardening/evidence/01/consumption-b/verify-observations.py",
+      "docs/todos/10-self-hosting-hardening/evidence/01/consumption-b/wave1-after.json",
+      "docs/todos/10-self-hosting-hardening/evidence/01/consumption-b/wave1-attribution.json",
+      "docs/todos/10-self-hosting-hardening/evidence/01/consumption-b/wave1-before.json",
+      "docs/todos/10-self-hosting-hardening/evidence/01/consumption-b/wave1-comparison.json",
+      "docs/todos/10-self-hosting-hardening/evidence/01/consumption-b/wave2-after.json",
+      "docs/todos/10-self-hosting-hardening/evidence/01/consumption-b/wave2-attribution.json",
+      "docs/todos/10-self-hosting-hardening/evidence/01/consumption-b/wave2-before.json",
+      "docs/todos/10-self-hosting-hardening/evidence/01/consumption-b/wave2-comparison.json",
+      "docs/todos/10-self-hosting-hardening/evidence/01/context-baseline-pending.json",
+      "docs/todos/10-self-hosting-hardening/evidence/01/context-implementation-01.json",
+      "docs/todos/10-self-hosting-hardening/evidence/01/context-implementation-b.json",
+      "docs/todos/10-self-hosting-hardening/evidence/01/delivery-regression-checkpoint-a.json",
+      "docs/todos/10-self-hosting-hardening/evidence/01/delivery-regression-checkpoint-a.json.child.json",
+      "docs/todos/10-self-hosting-hardening/evidence/01/delivery-regression-checkpoint-a.json.output.txt",
+      "docs/todos/10-self-hosting-hardening/evidence/01/delivery-regression-final-a.json",
+      "docs/todos/10-self-hosting-hardening/evidence/01/delivery-regression-final-a.json.child.json",
+      "docs/todos/10-self-hosting-hardening/evidence/01/delivery-regression-final-a.json.output.txt",
+      "docs/todos/10-self-hosting-hardening/evidence/01/dispatch-implementation-01.json",
+      "docs/todos/10-self-hosting-hardening/evidence/01/dispatch-implementation-b.json",
+      "docs/todos/10-self-hosting-hardening/evidence/01/dispatch-native-implementation-a.json",
+      "docs/todos/10-self-hosting-hardening/evidence/01/dispatch-native-implementation-b.json",
+      "docs/todos/10-self-hosting-hardening/evidence/01/handoff-deadline-b.json",
+      "docs/todos/10-self-hosting-hardening/evidence/01/handoff-implementation-a.json",
+      "docs/todos/10-self-hosting-hardening/evidence/01/implementation-checkpoint-a.json",
+      "docs/todos/10-self-hosting-hardening/evidence/01/implementation-checkpoint-b.json",
+      "docs/todos/10-self-hosting-hardening/evidence/01/inventory-baseline-pending.json",
+      "docs/todos/10-self-hosting-hardening/evidence/01/inventory-implementation-01.json",
+      "docs/todos/10-self-hosting-hardening/evidence/01/native-terminal-implementation-a.json",
+      "docs/todos/10-self-hosting-hardening/evidence/01/native-terminal-implementation-b.json",
+      "docs/todos/10-self-hosting-hardening/evidence/01/note-format-checkpoint-a.json",
+      "docs/todos/10-self-hosting-hardening/evidence/01/note-format-checkpoint-a.json.child.json",
+      "docs/todos/10-self-hosting-hardening/evidence/01/note-format-checkpoint-a.json.output.txt",
+      "docs/todos/10-self-hosting-hardening/evidence/01/note-tree-checkpoint-a.json",
+      "docs/todos/10-self-hosting-hardening/evidence/01/note-tree-checkpoint-a.json.child.json",
+      "docs/todos/10-self-hosting-hardening/evidence/01/note-tree-checkpoint-a.json.output.txt",
+      "docs/todos/10-self-hosting-hardening/evidence/01/parent-b-final-command.json",
+      "docs/todos/10-self-hosting-hardening/evidence/01/resume-b-authority.txt",
+      "docs/todos/10-self-hosting-hardening/evidence/01/scope-checkpoint-a.json",
+      "docs/todos/10-self-hosting-hardening/evidence/01/scope-checkpoint-a.json.child.json",
+      "docs/todos/10-self-hosting-hardening/evidence/01/scope-checkpoint-a.json.output.txt",
+      "docs/todos/10-self-hosting-hardening/evidence/01/terminal-for-resume-b.json",
+      "docs/todos/10-self-hosting-hardening/evidence/01/text-regression-checkpoint-a.json",
+      "docs/todos/10-self-hosting-hardening/evidence/01/text-regression-checkpoint-a.json.child.json",
+      "docs/todos/10-self-hosting-hardening/evidence/01/text-regression-checkpoint-a.json.output.txt",
+      "docs/todos/10-self-hosting-hardening/evidence/01/typesafe-checkpoint-a.json",
+      "references/superpowers_handbook.md",
+      "references/worktree_git_contract.md",
+      "templates/root_readme.md",
+      "tests/test_authority_scenarios.py",
+      "tests/test_prompt_sources.py"
+    ],
+    "stage_current": "阶段清单已勾选完毕",
+    "stage_progress": "3/3 (100%)"
+  }
+}

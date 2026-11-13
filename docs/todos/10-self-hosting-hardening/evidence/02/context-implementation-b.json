@@ -1,0 +1,48 @@
+{
+  "version": 1,
+  "tasks": {
+    "02": {
+      "phase": "implementation",
+      "candidate": "f5583e542a20e00cfe9e3eae3776f32cbe9d7ae9",
+      "inputs": [
+        "docs/todos/10-self-hosting-hardening/02-typed-template-generation.md",
+        "templates/task_detail.md",
+        "scripts/iter_contracts.py",
+        "scripts/iter_filesystem.py"
+      ],
+      "capabilities": [
+        "Codeg MCP codex independent session",
+        "Windows iter_run",
+        "pytest"
+      ],
+      "dependencies": [
+        "docs/todos/10-self-hosting-hardening/01-authority-consistency.md"
+      ],
+      "tool_entry": "C:/Users/qingyu/.codeg/skills/iteration-manager/build/frozen-tools/46ded3a/scripts/iter_sync.py",
+      "checkpoint": "继承A的19断言RED及19GREEN；完成CLI和边界的新增有效RED→GREEN，保留文档/回归未完项",
+      "remaining_work": [
+        "CLI与边界",
+        "FS冻结兼容",
+        "文档回归",
+        "独审"
+      ],
+      "observations": {
+        "authority": {
+          "status": "READY",
+          "summary": "用户批准六卡串行实施与精准提交，01已PASS；禁止部署推送合流清理",
+          "evidence": "docs/todos/10-self-hosting-hardening/evidence/01/authority.txt"
+        },
+        "execution": {
+          "status": "READY",
+          "summary": "实际同类型Codeg codex独立会话1702/1703已成功读写工作区及冻结契约，当前无活动实现命令；新owner仍完整读取",
+          "evidence": "docs/todos/10-self-hosting-hardening/evidence/01/implementation-checkpoint-a.json"
+        },
+        "verification": {
+          "status": "READY",
+          "summary": "完整基线314通过，任务01有效独审及D后strict通过；本卡按真实可调用行为取得RED，不将缺函数/导入错当RED",
+          "evidence": "docs/todos/10-self-hosting-hardening/evidence/02/dependency-01-envelope.json"
+        }
+      }
+    }
+  }
+}

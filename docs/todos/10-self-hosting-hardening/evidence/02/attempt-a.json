@@ -1,0 +1,47 @@
+{
+  "version": 1,
+  "phase": "implementation",
+  "candidate": "f5583e542a20e00cfe9e3eae3776f32cbe9d7ae9",
+  "inputs": [
+    "docs/todos/10-self-hosting-hardening/02-typed-template-generation.md",
+    "templates/task_detail.md",
+    "scripts/iter_contracts.py",
+    "scripts/iter_filesystem.py"
+  ],
+  "capabilities": [
+    "Codeg MCP codex independent session",
+    "Windows iter_run",
+    "pytest"
+  ],
+  "checkpoint": "真实19项断言RED后八组合核心19项GREEN，CLI/边界/FS冻结/回归/文档待续",
+  "remaining_work": [
+    "CLI断言RED/GREEN",
+    "输入/预检边界",
+    "FS冻结兼容",
+    "文档及指定回归",
+    "独审/登记"
+  ],
+  "executor_id": "5638876b-7be3-4bc9-a2da-af32c4941033",
+  "terminal_evidence": "docs/todos/10-self-hosting-hardening/evidence/02/native-terminal-a.json",
+  "progress": [
+    {
+      "kind": "red",
+      "summary": "可导入可调用stub，19项行为断言失败，非导入环境失败",
+      "evidence": "docs/todos/10-self-hosting-hardening/evidence/02/slice-a-core-red.json.output.txt"
+    },
+    {
+      "kind": "green",
+      "summary": "八组合核心路径与基本预检19passed；初次GREEN误判HTML标记的失败原样保留",
+      "evidence": "docs/todos/10-self-hosting-hardening/evidence/02/slice-a-core-green-2.json.output.txt"
+    }
+  ],
+  "commands": [
+    "docs/todos/10-self-hosting-hardening/evidence/02/slice-a-core-red.json",
+    "docs/todos/10-self-hosting-hardening/evidence/02/slice-a-core-green.json",
+    "docs/todos/10-self-hosting-hardening/evidence/02/slice-a-core-green-2.json",
+    "docs/todos/10-self-hosting-hardening/evidence/02/slice-a-note-tree.json",
+    "docs/todos/10-self-hosting-hardening/evidence/02/slice-a-note-format.json"
+  ],
+  "started_at": null,
+  "ended_at": null
+}

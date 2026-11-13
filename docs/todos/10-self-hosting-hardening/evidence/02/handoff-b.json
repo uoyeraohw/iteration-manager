@@ -1,0 +1,162 @@
+{
+  "TASK_HANDOFF": {
+    "schema_version": 1,
+    "task_id": "02",
+    "delivery_mode": "git",
+    "candidate_id": "",
+    "execution": {
+      "attempt_count": 2,
+      "no_progress_streak": 0,
+      "last_attempt": {
+        "source": "docs/todos/10-self-hosting-hardening/evidence/02/attempt-b.json",
+        "phase": "implementation",
+        "delivery_mode": "git",
+        "candidate": "24a483eb7b0694ce67a5e6c0b50adb0d1cb5c160",
+        "conditions": {
+          "inputs": [
+            "docs/todos/10-self-hosting-hardening/02-typed-template-generation.md",
+            "scripts/iter_contracts.py",
+            "scripts/iter_filesystem.py",
+            "templates/task_detail.md"
+          ],
+          "capabilities": [
+            "Codeg MCP codex independent session",
+            "Windows iter_run",
+            "pytest"
+          ],
+          "scope": [
+            ".agents/notes/implemented/process/2026-11-13-typed-template-generation.md",
+            "docs/todos/10-self-hosting-hardening/evidence/02/",
+            "references/template_generation.md",
+            "scripts/iter_templates.py",
+            "templates/contracts/refactor_benchmark_contract.md",
+            "templates/contracts/spike_discovery_contract.md",
+            "templates/contracts/strict_tdd_contract.md",
+            "templates/contracts/ui_component_contract.md",
+            "templates/task_detail.md",
+            "tests/test_template_generation.py"
+          ]
+        },
+        "executor_id": "72db3dfe-466c-424e-bb74-6511fd23e455",
+        "executor_state": "completed",
+        "terminal_evidence": "docs/todos/10-self-hosting-hardening/evidence/02/native-terminal-b.json",
+        "progress": [
+          {
+            "kind": "red",
+            "evidence": "docs/todos/10-self-hosting-hardening/evidence/02/slice-b-cli-boundary-red.json.output.txt",
+            "summary": "可执行CLI输出缺失等17行为断言失败，不是导入失败"
+          },
+          {
+            "kind": "green",
+            "evidence": "docs/todos/10-self-hosting-hardening/evidence/02/slice-b-regression.json.output.txt",
+            "summary": "74项CLI/边界GREEN、81项兼容与111项指定交付回归"
+          }
+        ],
+        "checkpoint": "CLI与边界先真实断言RED后GREEN；81项含四FS绑定兼容、111项指定回归、模板及笔记已交付",
+        "remaining_work": [
+          "独立审查",
+          "登记D/strict"
+        ],
+        "commands": [
+          {
+            "receipt": "docs/todos/10-self-hosting-hardening/evidence/02/slice-b-cli-boundary-green.json",
+            "status": "COMPLETED",
+            "raw_exit_code": 0,
+            "started_at": "2026-11-13T16:56:58.804424+00:00",
+            "ended_at": "2026-11-13T16:57:05.069757+00:00"
+          },
+          {
+            "receipt": "docs/todos/10-self-hosting-hardening/evidence/02/slice-b-cli-boundary-red.json",
+            "status": "COMPLETED",
+            "raw_exit_code": 1,
+            "started_at": "2026-11-13T16:56:10.979696+00:00",
+            "ended_at": "2026-11-13T16:56:24.774354+00:00"
+          },
+          {
+            "receipt": "docs/todos/10-self-hosting-hardening/evidence/02/slice-b-compatibility.json",
+            "status": "COMPLETED",
+            "raw_exit_code": 0,
+            "started_at": "2026-11-13T16:57:29.008247+00:00",
+            "ended_at": "2026-11-13T16:57:36.018789+00:00"
+          },
+          {
+            "receipt": "docs/todos/10-self-hosting-hardening/evidence/02/slice-b-note-format.json",
+            "status": "COMPLETED",
+            "raw_exit_code": 0,
+            "started_at": "2026-11-13T16:58:48.629197+00:00",
+            "ended_at": "2026-11-13T16:58:51.117739+00:00"
+          },
+          {
+            "receipt": "docs/todos/10-self-hosting-hardening/evidence/02/slice-b-note-tree.json",
+            "status": "COMPLETED",
+            "raw_exit_code": 0,
+            "started_at": "2026-11-13T16:58:44.501096+00:00",
+            "ended_at": "2026-11-13T16:58:47.537522+00:00"
+          },
+          {
+            "receipt": "docs/todos/10-self-hosting-hardening/evidence/02/slice-b-regression.json",
+            "status": "COMPLETED",
+            "raw_exit_code": 0,
+            "started_at": "2026-11-13T16:58:23.199537+00:00",
+            "ended_at": "2026-11-13T16:58:34.702922+00:00"
+          },
+          {
+            "receipt": "docs/todos/10-self-hosting-hardening/evidence/02/slice-b-scope.json",
+            "status": "COMPLETED",
+            "raw_exit_code": 0,
+            "started_at": "2026-11-13T16:59:11.457657+00:00",
+            "ended_at": "2026-11-13T16:59:12.350717+00:00"
+          }
+        ],
+        "started_at": null,
+        "ended_at": null,
+        "session_seconds": null,
+        "command_seconds": 44.991946
+      },
+      "checkpoint": {
+        "candidate": "24a483eb7b0694ce67a5e6c0b50adb0d1cb5c160",
+        "phase": "implementation",
+        "summary": "CLI与边界先真实断言RED后GREEN；81项含四FS绑定兼容、111项指定回归、模板及笔记已交付",
+        "progress": [
+          {
+            "kind": "red",
+            "evidence": "docs/todos/10-self-hosting-hardening/evidence/02/slice-b-cli-boundary-red.json.output.txt",
+            "summary": "可执行CLI输出缺失等17行为断言失败，不是导入失败"
+          },
+          {
+            "kind": "green",
+            "evidence": "docs/todos/10-self-hosting-hardening/evidence/02/slice-b-regression.json.output.txt",
+            "summary": "74项CLI/边界GREEN、81项兼容与111项指定交付回归"
+          }
+        ],
+        "source": "docs/todos/10-self-hosting-hardening/evidence/02/attempt-b.json"
+      },
+      "remaining_work": [
+        "独立审查",
+        "登记D/strict"
+      ]
+    },
+    "task_name": "按类型与交付模式生成和检查任务卡",
+    "type": "Strict-TDD",
+    "status": "IN_PROGRESS",
+    "commit_sha": "",
+    "base_sha": "",
+    "fix_rounds": 0,
+    "fix_total": 0,
+    "consilium_count": 0,
+    "replan_count": 0,
+    "writer": "",
+    "blocked_reason": "",
+    "is_blocked": false,
+    "review_status": "PENDING",
+    "acceptance_verdict": "UNKNOWN",
+    "evidence": {
+      "receipt": ""
+    },
+    "errors": [],
+    "files_changed_count": 0,
+    "files_changed": [],
+    "stage_current": "Stage 1/3：为可调用入口与八种组合建立可编译行为断言RED",
+    "stage_progress": "0/3 (0%)"
+  }
+}
