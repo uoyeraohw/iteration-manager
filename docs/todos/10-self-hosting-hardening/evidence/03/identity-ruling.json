@@ -1,0 +1,34 @@
+{
+  "request": {
+    "state": {
+      "card_contract": [
+        "旧键与旧默认保持",
+        "未知值保持UNKNOWN/null",
+        "board cards追加delivery_mode,candidate_id,execution并与envelope同源"
+      ],
+      "existing_source": "iter_sync.py:241 candidate_id=meta.get('candidate_id','') if mode=='filesystem' else ''",
+      "existing_test": "tests/test_execution_readiness.py:562 expects git handoff candidate_id=='' and commit_sha==''; test file is not in task03 write scope",
+      "mode_semantics": "candidate_id used for filesystem candidate; Git uses commit_sha/base_sha",
+      "current_source_change": "No product source modified yet; 4 tests fail for missing board handoff fields"
+    },
+    "questions": {
+      "identity": {
+        "type": "choice",
+        "instructions": "For task03 addition and compatibility, which field rule satisfies all given contracts without expanding scope or changing old defaults?",
+        "criteria": {
+          "preserve": "Git candidate_id remains existing empty string as known not-applicable sentinel; board shares envelope value. Actually missing/unknown facts continue UNKNOWN/null where already defined. No unrelated test change.",
+          "normalize": "Change Git candidate_id to null/UNKNOWN and update external existing test expectation.",
+          "unknown": "Insufficient contract evidence or unresolved conflict; do not implement identity fields."
+        }
+      }
+    }
+  },
+  "response": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"model\":\"jev-1.14.0\",\"answers\":{\"identity\":{\"type\":\"choice\",\"choice\":\"preserve\",\"confidence\":1.0,\"probabilities\":{\"normalize\":0.0,\"preserve\":1.0,\"unknown\":0.0}}},\"usage\":{\"input_tokens\":581,\"output_tokens\":40}}"
+      }
+    ]
+  }
+}

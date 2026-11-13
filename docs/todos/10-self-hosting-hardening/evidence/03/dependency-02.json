@@ -1,0 +1,216 @@
+{
+  "TASK_HANDOFF": {
+    "schema_version": 1,
+    "task_id": "02",
+    "delivery_mode": "git",
+    "candidate_id": "",
+    "execution": {
+      "attempt_count": 5,
+      "no_progress_streak": 0,
+      "last_attempt": {
+        "source": "build/review-02-final/attempt-review.json",
+        "phase": "evidence-inspection",
+        "delivery_mode": "git",
+        "candidate": "03950f2ac4867291c3001daa10140e4da1efa81f",
+        "conditions": {
+          "inputs": [
+            "docs/todos/10-self-hosting-hardening/02-typed-template-generation.md",
+            "docs/todos/10-self-hosting-hardening/evidence/02/review-initial-rejected.json",
+            "scripts/iter_contracts.py",
+            "scripts/iter_filesystem.py",
+            "templates/task_detail.md"
+          ],
+          "capabilities": [
+            "Codeg MCP codex independent session",
+            "Windows iter_run",
+            "pytest"
+          ],
+          "scope": [
+            ".agents/notes/implemented/process/2026-11-13-typed-template-generation.md",
+            "docs/todos/10-self-hosting-hardening/evidence/02/",
+            "references/template_generation.md",
+            "scripts/iter_templates.py",
+            "templates/contracts/refactor_benchmark_contract.md",
+            "templates/contracts/spike_discovery_contract.md",
+            "templates/contracts/strict_tdd_contract.md",
+            "templates/contracts/ui_component_contract.md",
+            "templates/task_detail.md",
+            "tests/test_template_generation.py"
+          ]
+        },
+        "executor_id": "ad4701e4-889e-4c1a-8d6b-d9a4cfeed174",
+        "executor_state": "completed",
+        "terminal_evidence": "docs/todos/10-self-hosting-hardening/evidence/02/review-report.json",
+        "progress": [
+          {
+            "kind": "review-finding",
+            "evidence": "docs/todos/10-self-hosting-hardening/evidence/02/review-report.json",
+            "summary": "Scope/Spec/Quality通过，F01关闭，无新问题"
+          }
+        ],
+        "checkpoint": "独立复审APPROVED，F01关闭；45用例及4原反例独立通过、Scope通过",
+        "remaining_work": [
+          "local strict",
+          "登记D"
+        ],
+        "commands": [
+          {
+            "receipt": "build/review-02-final/affected.json",
+            "status": "COMPLETED",
+            "raw_exit_code": 0,
+            "started_at": "2026-11-13T17:23:25.283189+00:00",
+            "ended_at": "2026-11-13T17:23:35.263998+00:00"
+          },
+          {
+            "receipt": "build/review-02-final/original-f01.json",
+            "status": "COMPLETED",
+            "raw_exit_code": 0,
+            "started_at": "2026-11-13T17:24:38.872797+00:00",
+            "ended_at": "2026-11-13T17:24:41.826994+00:00"
+          },
+          {
+            "receipt": "build/review-02-final/scope.json",
+            "status": "COMPLETED",
+            "raw_exit_code": 0,
+            "started_at": "2026-11-13T17:22:48.007326+00:00",
+            "ended_at": "2026-11-13T17:22:48.943684+00:00"
+          }
+        ],
+        "started_at": null,
+        "ended_at": null,
+        "session_seconds": null,
+        "command_seconds": 13.871364000000002
+      },
+      "checkpoint": {
+        "candidate": "03950f2ac4867291c3001daa10140e4da1efa81f",
+        "phase": "evidence-inspection",
+        "summary": "独立复审APPROVED，F01关闭；45用例及4原反例独立通过、Scope通过",
+        "progress": [
+          {
+            "kind": "review-finding",
+            "evidence": "docs/todos/10-self-hosting-hardening/evidence/02/review-report.json",
+            "summary": "Scope/Spec/Quality通过，F01关闭，无新问题"
+          }
+        ],
+        "source": "build/review-02-final/attempt-review.json"
+      },
+      "remaining_work": [
+        "local strict",
+        "登记D"
+      ]
+    },
+    "task_name": "按类型与交付模式生成和检查任务卡",
+    "type": "Strict-TDD",
+    "status": "DONE",
+    "commit_sha": "03950f2ac4867291c3001daa10140e4da1efa81f",
+    "base_sha": "2ecd3bc3f957ac1941b388e036a6427b717b6cc7",
+    "fix_rounds": 0,
+    "fix_total": 0,
+    "consilium_count": 0,
+    "replan_count": 0,
+    "writer": "",
+    "blocked_reason": "",
+    "is_blocked": false,
+    "review_status": "APPROVED",
+    "acceptance_verdict": "PASS",
+    "evidence": {
+      "receipt": "docs/todos/10-self-hosting-hardening/evidence/02/review.json"
+    },
+    "errors": [],
+    "files_changed_count": 90,
+    "files_changed": [
+      ".agents/notes/implemented/process/2026-11-13-typed-template-generation.md",
+      "docs/todos/10-self-hosting-hardening/02-typed-template-generation.md",
+      "docs/todos/10-self-hosting-hardening/README.md",
+      "docs/todos/10-self-hosting-hardening/evidence/02/attempt-a.json",
+      "docs/todos/10-self-hosting-hardening/evidence/02/attempt-b.json",
+      "docs/todos/10-self-hosting-hardening/evidence/02/attempt-c.json",
+      "docs/todos/10-self-hosting-hardening/evidence/02/context-implementation-a.json",
+      "docs/todos/10-self-hosting-hardening/evidence/02/context-implementation-b.json",
+      "docs/todos/10-self-hosting-hardening/evidence/02/context-implementation-c.json",
+      "docs/todos/10-self-hosting-hardening/evidence/02/dependency-01-envelope.json",
+      "docs/todos/10-self-hosting-hardening/evidence/02/dispatch-a.json",
+      "docs/todos/10-self-hosting-hardening/evidence/02/dispatch-b.json",
+      "docs/todos/10-self-hosting-hardening/evidence/02/dispatch-native-a.json",
+      "docs/todos/10-self-hosting-hardening/evidence/02/dispatch-native-b.json",
+      "docs/todos/10-self-hosting-hardening/evidence/02/handoff-a.json",
+      "docs/todos/10-self-hosting-hardening/evidence/02/handoff-b.json",
+      "docs/todos/10-self-hosting-hardening/evidence/02/handoff-c.json",
+      "docs/todos/10-self-hosting-hardening/evidence/02/implementation-checkpoint-a.json",
+      "docs/todos/10-self-hosting-hardening/evidence/02/implementation-checkpoint-b.json",
+      "docs/todos/10-self-hosting-hardening/evidence/02/implementation-checkpoint-c.json",
+      "docs/todos/10-self-hosting-hardening/evidence/02/inventory-a.json",
+      "docs/todos/10-self-hosting-hardening/evidence/02/native-terminal-a.json",
+      "docs/todos/10-self-hosting-hardening/evidence/02/native-terminal-b.json",
+      "docs/todos/10-self-hosting-hardening/evidence/02/native-terminal-c.json",
+      "docs/todos/10-self-hosting-hardening/evidence/02/repair-c-green-1717.json",
+      "docs/todos/10-self-hosting-hardening/evidence/02/repair-c-green-1717.json.child.json",
+      "docs/todos/10-self-hosting-hardening/evidence/02/repair-c-green-1717.json.output.txt",
+      "docs/todos/10-self-hosting-hardening/evidence/02/repair-c-note-format-1718.json",
+      "docs/todos/10-self-hosting-hardening/evidence/02/repair-c-note-format-1718.json.child.json",
+      "docs/todos/10-self-hosting-hardening/evidence/02/repair-c-note-format-1718.json.output.txt",
+      "docs/todos/10-self-hosting-hardening/evidence/02/repair-c-note-tree-1718.json",
+      "docs/todos/10-self-hosting-hardening/evidence/02/repair-c-note-tree-1718.json.child.json",
+      "docs/todos/10-self-hosting-hardening/evidence/02/repair-c-note-tree-1718.json.output.txt",
+      "docs/todos/10-self-hosting-hardening/evidence/02/repair-c-red-1717.json",
+      "docs/todos/10-self-hosting-hardening/evidence/02/repair-c-red-1717.json.child.json",
+      "docs/todos/10-self-hosting-hardening/evidence/02/repair-c-red-1717.json.output.txt",
+      "docs/todos/10-self-hosting-hardening/evidence/02/repair-c-red-cli-1718.json",
+      "docs/todos/10-self-hosting-hardening/evidence/02/repair-c-red-cli-1718.json.child.json",
+      "docs/todos/10-self-hosting-hardening/evidence/02/repair-c-red-cli-1718.json.output.txt",
+      "docs/todos/10-self-hosting-hardening/evidence/02/repair-c-regression-1717.json",
+      "docs/todos/10-self-hosting-hardening/evidence/02/repair-c-regression-1717.json.child.json",
+      "docs/todos/10-self-hosting-hardening/evidence/02/repair-c-regression-1717.json.output.txt",
+      "docs/todos/10-self-hosting-hardening/evidence/02/repair-c-scope-1719.json",
+      "docs/todos/10-self-hosting-hardening/evidence/02/repair-c-scope-1719.json.child.json",
+      "docs/todos/10-self-hosting-hardening/evidence/02/repair-c-scope-1719.json.output.txt",
+      "docs/todos/10-self-hosting-hardening/evidence/02/review-initial-rejected.json",
+      "docs/todos/10-self-hosting-hardening/evidence/02/slice-a-core-green-2.json",
+      "docs/todos/10-self-hosting-hardening/evidence/02/slice-a-core-green-2.json.child.json",
+      "docs/todos/10-self-hosting-hardening/evidence/02/slice-a-core-green-2.json.output.txt",
+      "docs/todos/10-self-hosting-hardening/evidence/02/slice-a-core-green.json",
+      "docs/todos/10-self-hosting-hardening/evidence/02/slice-a-core-green.json.child.json",
+      "docs/todos/10-self-hosting-hardening/evidence/02/slice-a-core-green.json.output.txt",
+      "docs/todos/10-self-hosting-hardening/evidence/02/slice-a-core-red.json",
+      "docs/todos/10-self-hosting-hardening/evidence/02/slice-a-core-red.json.child.json",
+      "docs/todos/10-self-hosting-hardening/evidence/02/slice-a-core-red.json.output.txt",
+      "docs/todos/10-self-hosting-hardening/evidence/02/slice-a-note-format.json",
+      "docs/todos/10-self-hosting-hardening/evidence/02/slice-a-note-format.json.child.json",
+      "docs/todos/10-self-hosting-hardening/evidence/02/slice-a-note-format.json.output.txt",
+      "docs/todos/10-self-hosting-hardening/evidence/02/slice-a-note-tree.json",
+      "docs/todos/10-self-hosting-hardening/evidence/02/slice-a-note-tree.json.child.json",
+      "docs/todos/10-self-hosting-hardening/evidence/02/slice-a-note-tree.json.output.txt",
+      "docs/todos/10-self-hosting-hardening/evidence/02/slice-b-cli-boundary-green.json",
+      "docs/todos/10-self-hosting-hardening/evidence/02/slice-b-cli-boundary-green.json.child.json",
+      "docs/todos/10-self-hosting-hardening/evidence/02/slice-b-cli-boundary-green.json.output.txt",
+      "docs/todos/10-self-hosting-hardening/evidence/02/slice-b-cli-boundary-red.json",
+      "docs/todos/10-self-hosting-hardening/evidence/02/slice-b-cli-boundary-red.json.child.json",
+      "docs/todos/10-self-hosting-hardening/evidence/02/slice-b-cli-boundary-red.json.output.txt",
+      "docs/todos/10-self-hosting-hardening/evidence/02/slice-b-compatibility.json",
+      "docs/todos/10-self-hosting-hardening/evidence/02/slice-b-compatibility.json.child.json",
+      "docs/todos/10-self-hosting-hardening/evidence/02/slice-b-compatibility.json.output.txt",
+      "docs/todos/10-self-hosting-hardening/evidence/02/slice-b-note-format.json",
+      "docs/todos/10-self-hosting-hardening/evidence/02/slice-b-note-format.json.child.json",
+      "docs/todos/10-self-hosting-hardening/evidence/02/slice-b-note-format.json.output.txt",
+      "docs/todos/10-self-hosting-hardening/evidence/02/slice-b-note-tree.json",
+      "docs/todos/10-self-hosting-hardening/evidence/02/slice-b-note-tree.json.child.json",
+      "docs/todos/10-self-hosting-hardening/evidence/02/slice-b-note-tree.json.output.txt",
+      "docs/todos/10-self-hosting-hardening/evidence/02/slice-b-regression.json",
+      "docs/todos/10-self-hosting-hardening/evidence/02/slice-b-regression.json.child.json",
+      "docs/todos/10-self-hosting-hardening/evidence/02/slice-b-regression.json.output.txt",
+      "docs/todos/10-self-hosting-hardening/evidence/02/slice-b-scope.json",
+      "docs/todos/10-self-hosting-hardening/evidence/02/slice-b-scope.json.child.json",
+      "docs/todos/10-self-hosting-hardening/evidence/02/slice-b-scope.json.output.txt",
+      "references/template_generation.md",
+      "scripts/iter_templates.py",
+      "templates/contracts/refactor_benchmark_contract.md",
+      "templates/contracts/spike_discovery_contract.md",
+      "templates/contracts/strict_tdd_contract.md",
+      "templates/contracts/ui_component_contract.md",
+      "templates/task_detail.md",
+      "tests/test_template_generation.py"
+    ],
+    "stage_current": "阶段清单已勾选完毕",
+    "stage_progress": "3/3 (100%)"
+  }
+}
