@@ -1,0 +1,591 @@
+{
+  "schema_version": 1,
+  "task_id": "02",
+  "archive_kind": "initial-changes-requested",
+  "recorded_at": "2026-11-13T17:13:40.140202+00:00",
+  "original_files": {
+    "build/review-02/boundary-probe-0110.json": "{\n  \"version\": 1,\n  \"argv\": [\n    \"python\",\n    \"-B\",\n    \"-m\",\n    \"pytest\",\n    \"-p\",\n    \"no:cacheprovider\",\n    \"build/review-02/test_review_boundaries.py\",\n    \"-q\"\n  ],\n  \"cwd\": \"C:\\\\Users\\\\qingyu\\\\.codeg\\\\skills\\\\iteration-manager\\\\.worktrees\\\\iter-10\",\n  \"deadline\": \"2026-11-13T17:13:42.127000+00:00\",\n  \"cleanup_reserve_seconds\": 5,\n  \"status\": \"COMPLETED\",\n  \"deadline_checked_at\": \"2026-11-13T17:08:59.287069+00:00\",\n  \"started_at\": \"2026-11-13T17:08:59.296544+00:00\",\n  \"ended_at\": \"2026-11-13T17:09:02.819187+00:00\",\n  \"raw_exit_code\": 1,\n  \"tree_terminal\": true,\n  \"output\": \"build/review-02/boundary-probe-0110.json.output.txt\",\n  \"container_pid\": 44360,\n  \"launcher_exit_code\": 0,\n  \"command\": {\n    \"status\": \"COMPLETED\",\n    \"raw_exit_code\": 1,\n    \"started_at\": \"2026-11-13T17:08:59.296544+00:00\",\n    \"pid\": 6792,\n    \"deadline_checked_at\": \"2026-11-13T17:08:59.287069+00:00\",\n    \"ended_at\": \"2026-11-13T17:09:02.804953+00:00\"\n  },\n  \"late_by_seconds\": 0\n}",
+    "build/review-02/boundary-probe-0110.json.child.json": "{\"status\": \"COMPLETED\", \"raw_exit_code\": 1, \"started_at\": \"2026-11-13T17:08:59.296544+00:00\", \"pid\": 6792, \"deadline_checked_at\": \"2026-11-13T17:08:59.287069+00:00\", \"ended_at\": \"2026-11-13T17:09:02.804953+00:00\"}",
+    "build/review-02/boundary-probe-0110.json.output.txt": "FFF                                                                      [100%]\n================================== FAILURES ===================================\n__________ test_nonempty_text_with_leading_whitespace[verification] ___________\n\nfield = 'verification'\n\n    @pytest.mark.parametrize('field', ['verification', 'stages', 'acceptance'])\n    def test_nonempty_text_with_leading_whitespace(field):\n        spec = spec_for()\n        if field == 'verification':\n            spec[field]['green'] = ' python -m pytest tests -q'\n        else:\n            spec[field] = ['  Concrete requirement']\n        card = render_task_card(spec)\n>       assert validate_generated_card(card, 'git') == []\nE       AssertionError: assert ['Missing req...check: green'] == []\nE         \nE         Left contains one more item: 'Missing required check: green'\nE         Use -v to get more diff\n\nbuild\\review-02\\test_review_boundaries.py:20: AssertionError\n_____________ test_nonempty_text_with_leading_whitespace[stages] ______________\n\nfield = 'stages'\n\n    @pytest.mark.parametrize('field', ['verification', 'stages', 'acceptance'])\n    def test_nonempty_text_with_leading_whitespace(field):\n        spec = spec_for()\n        if field == 'verification':\n            spec[field]['green'] = ' python -m pytest tests -q'\n        else:\n            spec[field] = ['  Concrete requirement']\n        card = render_task_card(spec)\n>       assert validate_generated_card(card, 'git') == []\nE       AssertionError: assert ['Missing stages checklist'] == []\nE         \nE         Left contains one more item: 'Missing stages checklist'\nE         Use -v to get more diff\n\nbuild\\review-02\\test_review_boundaries.py:20: AssertionError\n___________ test_nonempty_text_with_leading_whitespace[acceptance] ____________\n\nfield = 'acceptance'\n\n    @pytest.mark.parametrize('field', ['verification', 'stages', 'acceptance'])\n    def test_nonempty_text_with_leading_whitespace(field):\n        spec = spec_for()\n        if field == 'verification':\n            spec[field]['green'] = ' python -m pytest tests -q'\n        else:\n            spec[field] = ['  Concrete requirement']\n        card = render_task_card(spec)\n>       assert validate_generated_card(card, 'git') == []\nE       AssertionError: assert ['Missing acc...ce checklist'] == []\nE         \nE         Left contains one more item: 'Missing acceptance checklist'\nE         Use -v to get more diff\n\nbuild\\review-02\\test_review_boundaries.py:20: AssertionError\n=========================== short test summary info ===========================\nFAILED build/review-02/test_review_boundaries.py::test_nonempty_text_with_leading_whitespace[verification]\nFAILED build/review-02/test_review_boundaries.py::test_nonempty_text_with_leading_whitespace[stages]\nFAILED build/review-02/test_review_boundaries.py::test_nonempty_text_with_leading_whitespace[acceptance]\n3 failed in 1.20s\n",
+    "build/review-02/cli-probe-0110.json": "{\n  \"version\": 1,\n  \"argv\": [\n    \"python\",\n    \"-B\",\n    \"-m\",\n    \"pytest\",\n    \"-p\",\n    \"no:cacheprovider\",\n    \"build/review-02/test_review_boundaries.py::test_cli_accepts_nonempty_command_with_leading_space\",\n    \"--basetemp\",\n    \"build/review-02/pytest-cli-tmp\",\n    \"-q\"\n  ],\n  \"cwd\": \"C:\\\\Users\\\\qingyu\\\\.codeg\\\\skills\\\\iteration-manager\\\\.worktrees\\\\iter-10\",\n  \"deadline\": \"2026-11-13T17:13:42.127000+00:00\",\n  \"cleanup_reserve_seconds\": 5,\n  \"status\": \"COMPLETED\",\n  \"deadline_checked_at\": \"2026-11-13T17:09:44.353502+00:00\",\n  \"started_at\": \"2026-11-13T17:09:44.364998+00:00\",\n  \"ended_at\": \"2026-11-13T17:09:48.061570+00:00\",\n  \"raw_exit_code\": 1,\n  \"tree_terminal\": true,\n  \"output\": \"build/review-02/cli-probe-0110.json.output.txt\",\n  \"container_pid\": 41696,\n  \"launcher_exit_code\": 0,\n  \"command\": {\n    \"status\": \"COMPLETED\",\n    \"raw_exit_code\": 1,\n    \"started_at\": \"2026-11-13T17:09:44.364998+00:00\",\n    \"pid\": 37816,\n    \"deadline_checked_at\": \"2026-11-13T17:09:44.353502+00:00\",\n    \"ended_at\": \"2026-11-13T17:09:48.049562+00:00\"\n  },\n  \"late_by_seconds\": 0\n}",
+    "build/review-02/cli-probe-0110.json.child.json": "{\"status\": \"COMPLETED\", \"raw_exit_code\": 1, \"started_at\": \"2026-11-13T17:09:44.364998+00:00\", \"pid\": 37816, \"deadline_checked_at\": \"2026-11-13T17:09:44.353502+00:00\", \"ended_at\": \"2026-11-13T17:09:48.049562+00:00\"}",
+    "build/review-02/cli-probe-0110.json.output.txt": "F                                                                        [100%]\n================================== FAILURES ===================================\n____________ test_cli_accepts_nonempty_command_with_leading_space _____________\n\n    def test_cli_accepts_nonempty_command_with_leading_space():\n        spec = spec_for()\n        spec['verification']['green'] = ' python -m pytest tests -q'\n        spec_path = Path(__file__).with_name('leading-space-spec.json')\n        spec_path.write_text(json.dumps(spec), encoding='utf-8')\n        result = subprocess.run([sys.executable, '-B', str(ROOT / 'scripts/iter_templates.py'), '--render', str(spec_path)], capture_output=True, text=True, encoding='utf-8')\n>       assert result.returncode == 0, result.stdout\nE       AssertionError: {\"valid\": false, \"errors\": [\"Missing required check: green\"]}\nE         \nE       assert 2 == 0\nE        +  where 2 = CompletedProcess(args=['C:\\\\Users\\\\qingyu\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python311\\\\python.exe', '-B', 'C:\\\\Users\\...g-space-spec.json'], returncode=2, stdout='{\"valid\": false, \"errors\": [\"Missing required check: green\"]}\\n', stderr='').returncode\n\nbuild\\review-02\\test_review_boundaries.py:31: AssertionError\n=========================== short test summary info ===========================\nFAILED build/review-02/test_review_boundaries.py::test_cli_accepts_nonempty_command_with_leading_space\n1 failed in 1.41s\n",
+    "build/review-02/context.json": "{\n  \"version\": 1,\n  \"tasks\": {\n    \"02\": {\n      \"phase\": \"evidence-inspection\",\n      \"candidate\": \"685ee752e1291c5652f3d7cf304dee6cb8842e43\",\n      \"inputs\": [\n        \"docs/todos/10-self-hosting-hardening/02-typed-template-generation.md\",\n        \"templates/task_detail.md\",\n        \"scripts/iter_contracts.py\",\n        \"scripts/iter_filesystem.py\"\n      ],\n      \"capabilities\": [\n        \"Codeg MCP codex independent session\",\n        \"Windows iter_run\",\n        \"pytest\"\n      ],\n      \"dependencies\": [\n        \"docs/todos/10-self-hosting-hardening/01-authority-consistency.md\"\n      ],\n      \"tool_entry\": \"C:/Users/qingyu/.codeg/skills/iteration-manager/build/frozen-tools/46ded3a/scripts/iter_sync.py\",\n      \"checkpoint\": \"A/B有效RED/GREEN及指定回归完成，候选已提交；非参与者独审\",\n      \"remaining_work\": [\n        \"独审\",\n        \"批准后登记D及strict\"\n      ],\n      \"observations\": {\n        \"authority\": {\n          \"status\": \"READY\",\n          \"summary\": \"用户批准六卡串行实施与精准提交，01已PASS；禁止部署推送合流清理\",\n          \"evidence\": \"docs/todos/10-self-hosting-hardening/evidence/01/authority.txt\"\n        },\n        \"execution\": {\n          \"status\": \"READY\",\n          \"summary\": \"实际同类型Codeg codex独立会话1702/1703已成功读写工作区及冻结契约，当前无活动实现命令；新owner仍完整读取\",\n          \"evidence\": \"docs/todos/10-self-hosting-hardening/evidence/01/implementation-checkpoint-a.json\"\n        },\n        \"verification\": {\n          \"status\": \"READY\",\n          \"summary\": \"完整基线314通过，任务01有效独审及D后strict通过；本卡按真实可调用行为取得RED，不将缺函数/导入错当RED\",\n          \"evidence\": \"docs/todos/10-self-hosting-hardening/evidence/02/dependency-01-envelope.json\"\n        }\n      }\n    }\n  }\n}\n",
+    "build/review-02/independent-path-0109.json": "{\n  \"version\": 1,\n  \"argv\": [\n    \"python\",\n    \"-B\",\n    \"-m\",\n    \"pytest\",\n    \"-p\",\n    \"no:cacheprovider\",\n    \"tests/test_template_generation.py::test_render_core_combinations\",\n    \"tests/test_template_generation.py::test_actual_filesystem_freeze_binding\",\n    \"tests/test_template_generation.py::test_git_projection_keeps_existing_mutability\",\n    \"-q\"\n  ],\n  \"cwd\": \"C:\\\\Users\\\\qingyu\\\\.codeg\\\\skills\\\\iteration-manager\\\\.worktrees\\\\iter-10\",\n  \"deadline\": \"2026-11-13T17:13:42.127000+00:00\",\n  \"cleanup_reserve_seconds\": 5,\n  \"status\": \"COMPLETED\",\n  \"deadline_checked_at\": \"2026-11-13T17:08:42.868813+00:00\",\n  \"started_at\": \"2026-11-13T17:08:42.878819+00:00\",\n  \"ended_at\": \"2026-11-13T17:08:46.316956+00:00\",\n  \"raw_exit_code\": 0,\n  \"tree_terminal\": true,\n  \"output\": \"build/review-02/independent-path-0109.json.output.txt\",\n  \"container_pid\": 35416,\n  \"launcher_exit_code\": 0,\n  \"command\": {\n    \"status\": \"COMPLETED\",\n    \"raw_exit_code\": 0,\n    \"started_at\": \"2026-11-13T17:08:42.878819+00:00\",\n    \"pid\": 15712,\n    \"deadline_checked_at\": \"2026-11-13T17:08:42.868813+00:00\",\n    \"ended_at\": \"2026-11-13T17:08:46.302948+00:00\"\n  },\n  \"late_by_seconds\": 0\n}",
+    "build/review-02/independent-path-0109.json.child.json": "{\"status\": \"COMPLETED\", \"raw_exit_code\": 0, \"started_at\": \"2026-11-13T17:08:42.878819+00:00\", \"pid\": 15712, \"deadline_checked_at\": \"2026-11-13T17:08:42.868813+00:00\", \"ended_at\": \"2026-11-13T17:08:46.302948+00:00\"}",
+    "build/review-02/independent-path-0109.json.output.txt": ".............                                                            [100%]\n13 passed in 1.13s\n",
+    "build/review-02/leading-space-spec.json": "{\"version\": 1, \"task_id\": \"02\", \"iteration\": \"10-example\", \"task_name\": \"Generate typed cards\", \"type\": \"Strict-TDD\", \"delivery_mode\": \"git\", \"objective\": \"Render a task card without side effects\", \"consumes\": \"TYPE_CHECKS\", \"produces\": \"render_task_card(spec) -> str\", \"scope\": [\"scripts/example.py\", \"tests/\"], \"stages\": [\"Implement behavior\"], \"acceptance\": [\"Generated card is readable\"], \"verification\": {\"red\": \"Run the actual red check\", \"green\": \" python -m pytest tests -q\", \"regression\": \"Run the actual regression check\"}}",
+    "build/review-02/reviewer-report.json": "{\n  \"schema_version\": 1,\n  \"task_id\": \"02\",\n  \"reviewer\": \"01a1d5e0-35ab-73c3-ae08-0b022aebf086\",\n  \"reviewer_identity_source\": \"CODEX_SESSION_ID and CODEX_THREAD_ID observed via environment\",\n  \"role\": \"independent-reviewer\",\n  \"independence\": \"本会话未参与本卡测试设计、实现、方案设计或RCA；仅本次审查新增反例。未委派。\",\n  \"base_sha\": \"2ecd3bc3f957ac1941b388e036a6427b717b6cc7\",\n  \"head_sha\": \"685ee752e1291c5652f3d7cf304dee6cb8842e43\",\n  \"contract_sha\": \"685ee752e1291c5652f3d7cf304dee6cb8842e43\",\n  \"workspace\": \"C:/Users/qingyu/.codeg/skills/iteration-manager/.worktrees/iter-10\",\n  \"branch\": \"feat/iter-10-self-hosting-hardening\",\n  \"review_package\": \"C:/Users/qingyu/.codeg/skills/iteration-manager/.git/worktrees/iter-10/iter_reviews/review_02_2ecd3bc_685ee75_20261114_010616_951363.md\",\n  \"verdict\": \"CHANGES_REQUESTED\",\n  \"acceptance_verdict\": \"FAIL\",\n  \"Scope\": {\n    \"verdict\": \"PASSED\",\n    \"evidence\": \"build/review-02/scope-0108.json\",\n    \"summary\": \"实际BASE..C的63文件均在声明范围；没有根docs/todos/README.md变更。正式检查使用冻结F而非候选。初始与收尾HEAD=C，tracked/untracked dirty为空；build/review-02已确认被忽略。\"\n  },\n  \"Spec\": {\n    \"verdict\": \"NONCOMPLIANT\",\n    \"summary\": \"常规八组合、初态、FS冻结规则、无写入CLI与旧契约覆盖成立；非空文本的前导空白边界不满足任务卡输入合同，见F01。\"\n  },\n  \"Quality\": {\n    \"verdict\": \"NEEDS_FIX\",\n    \"summary\": \"实现小且复用TYPE_CHECKS/解析/路径/投影规则，未引入第二状态账。原始TDD有效，首次失败和补测来源披露准确。新发现的格式判别不一致需返原实现owner修复。\"\n  },\n  \"acceptance\": [\n    {\n      \"id\": 1,\n      \"source\": \"02 card:98\",\n      \"result\": \"FAIL\",\n      \"evidence\": [\n        \"scripts/iter_templates.py:38-69\",\n        \"tests/test_template_generation.py:59-68,111-130\",\n        \"build/review-02/boundary-probe-0110.json\",\n        \"build/review-02/cli-probe-0110.json\"\n      ],\n      \"summary\": \"必需字段、version整数1、形状、四type/模式、FS candidate均有校验；但合同允许的非空文本带前导空白时，render返回而配套预检/CLI拒绝。\"\n    },\n    {\n      \"id\": 2,\n      \"source\": \"02 card:99\",\n      \"result\": \"PASS\",\n      \"evidence\": [\n        \"scripts/iter_templates.py:79-88\",\n        \"tests/test_template_generation.py:30-56\",\n        \"build/review-02/independent-path-0109.json\"\n      ],\n      \"summary\": \"初态TODO/PENDING/false/UNASSESSED，SHA为空，不生成批准或TypeSafe通过事实。\"\n    },\n    {\n      \"id\": 3,\n      \"source\": \"02 card:100\",\n      \"result\": \"PASS\",\n      \"evidence\": [\n        \"tests/test_template_generation.py:30-56,175-206\",\n        \"build/review-02/independent-path-0109.json\"\n      ],\n      \"summary\": \"八组合parse_card与预检兼容；非TDD无强制RED；4个FS组合直接调用现有实际validate_filesystem_binding，覆盖匹配、可变元数据、勾选/ledger漂移拒绝、candidate不匹配；Git动态投影保持。不是完整FS完成收据APPROVED模拟。\"\n    },\n    {\n      \"id\": 4,\n      \"source\": \"02 card:101\",\n      \"result\": \"PARTIAL\",\n      \"evidence\": [\n        \"scripts/iter_templates.py:30-69,136-207\",\n        \"tests/test_template_generation.py:76-172\",\n        \"docs/todos/10-self-hosting-hardening/evidence/02/slice-b-regression.json\"\n      ],\n      \"summary\": \"空scope/越界/缺关键验收/明确占位符拒绝；CLI只读输入且stdout输出，无覆盖/迁移API，八组合往返和check前后字节库存相等已有原件。合法非空文字误拒见F01。\"\n    },\n    {\n      \"id\": 5,\n      \"source\": \"02 card:102\",\n      \"result\": \"PASS\",\n      \"evidence\": [\n        \"templates/contracts/refactor_benchmark_contract.md:3-5\",\n        \"scripts/iter_templates.py:22-26,65-69,90\",\n        \"references/template_generation.md:36-43\"\n      ],\n      \"summary\": \"复用既有TYPE_CHECKS包含baseline/regression/compatibility/benchmark_before/benchmark_after；未新增type或弱化旧量测门禁，模板只增加生成入口说明。\"\n    },\n    {\n      \"id\": 6,\n      \"source\": \"02 card:103\",\n      \"result\": \"PASS\",\n      \"evidence\": [\n        \"docs/todos/10-self-hosting-hardening/evidence/02/implementation-checkpoint-a.json\",\n        \"docs/todos/10-self-hosting-hardening/evidence/02/implementation-checkpoint-b.json\",\n        \"build/review-02/scope-0108.json\"\n      ],\n      \"summary\": \"RED/GREEN/regression原件、候选和范围齐；两实现会话均completed且保持TESTING/PENDING或UNKNOWN，没有自批。该项证据齐备不抵消F01。\"\n    }\n  ],\n  \"findings\": [\n    {\n      \"id\": \"F01\",\n      \"severity\": \"Important\",\n      \"priority\": \"P2\",\n      \"location\": \"scripts/iter_templates.py:162-169\",\n      \"related_locations\": [\n        \"scripts/iter_templates.py:30-35\",\n        \"scripts/iter_templates.py:72-73\",\n        \"scripts/iter_templates.py:90,195-198\"\n      ],\n      \"title\": \"合法非空文本含前导空白时被生成卡预检误拒\",\n      \"trigger\": \"spec.verification.green=' python -m pytest tests -q'，或stages/acceptance=['  Concrete requirement']；其余采用既有spec_for默认有效输入。\",\n      \"expected\": \"按卡98及说明36，非空字符串有效；生成与其配套预检/CLI应一致接受。\",\n      \"actual\": \"render_task_card返回卡；regex要求内容第一个字符立即为\\\\S，报Missing required check: green / Missing stages checklist / Missing acceptance checklist；真实CLI --render退出2而非0。\",\n      \"cause\": \"_text以strip()仅判断非空但返回原文；渲染保留空白，预检却隐含禁止前导空白。\",\n      \"evidence\": [\n        \"build/review-02/boundary-probe-0110.json.output.txt:3-64\",\n        \"build/review-02/cli-probe-0110.json.output.txt:3-20\"\n      ],\n      \"requested_change\": \"原实现owner统一输入/渲染/预检的空白规则，使合同允许的非空文本能够往返；为三种字段及真实CLI保留针对性RED→GREEN，不通过未获批准的新输入限制收窄合同。\"\n    }\n  ],\n  \"checks\": [\n    {\n      \"name\": \"slice-a-core-green-2\",\n      \"kind\": \"command\",\n      \"command\": \"python -B -m pytest -p no:cacheprovider tests/test_template_generation.py::test_render_core_combinations tests/test_template_generation.py::test_reject_invalid_spec tests/test_template_generation.py::test_check_rejects_empty_card_and_unknown_mode -q\",\n      \"argv\": [\n        \"python\",\n        \"-B\",\n        \"-m\",\n        \"pytest\",\n        \"-p\",\n        \"no:cacheprovider\",\n        \"tests/test_template_generation.py::test_render_core_combinations\",\n        \"tests/test_template_generation.py::test_reject_invalid_spec\",\n        \"tests/test_template_generation.py::test_check_rejects_empty_card_and_unknown_mode\",\n        \"-q\"\n      ],\n      \"cwd\": \"C:\\\\Users\\\\qingyu\\\\.codeg\\\\skills\\\\iteration-manager\\\\.worktrees\\\\iter-10\",\n      \"exit_code\": 0,\n      \"output\": \"docs/todos/10-self-hosting-hardening/evidence/02/slice-a-core-green-2.json.output.txt\",\n      \"summary\": \"A修正后19通过，八组合核心与基本边界。\",\n      \"receipt\": \"docs/todos/10-self-hosting-hardening/evidence/02/slice-a-core-green-2.json\",\n      \"child_receipt\": \"docs/todos/10-self-hosting-hardening/evidence/02/slice-a-core-green-2.json.child.json\",\n      \"status\": \"COMPLETED\",\n      \"tree_terminal\": true,\n      \"origin\": \"implementer-original\"\n    },\n    {\n      \"name\": \"slice-a-core-green\",\n      \"kind\": \"command\",\n      \"command\": \"python -B -m pytest -p no:cacheprovider tests/test_template_generation.py::test_render_core_combinations tests/test_template_generation.py::test_reject_invalid_spec tests/test_template_generation.py::test_check_rejects_empty_card_and_unknown_mode -q\",\n      \"argv\": [\n        \"python\",\n        \"-B\",\n        \"-m\",\n        \"pytest\",\n        \"-p\",\n        \"no:cacheprovider\",\n        \"tests/test_template_generation.py::test_render_core_combinations\",\n        \"tests/test_template_generation.py::test_reject_invalid_spec\",\n        \"tests/test_template_generation.py::test_check_rejects_empty_card_and_unknown_mode\",\n        \"-q\"\n      ],\n      \"cwd\": \"C:\\\\Users\\\\qingyu\\\\.codeg\\\\skills\\\\iteration-manager\\\\.worktrees\\\\iter-10\",\n      \"exit_code\": 1,\n      \"output\": \"docs/todos/10-self-hosting-hardening/evidence/02/slice-a-core-green.json.output.txt\",\n      \"summary\": \"首次GREEN尝试8失败/11通过，占位规则误判iter标记；保留失败，不记作成功。\",\n      \"receipt\": \"docs/todos/10-self-hosting-hardening/evidence/02/slice-a-core-green.json\",\n      \"child_receipt\": \"docs/todos/10-self-hosting-hardening/evidence/02/slice-a-core-green.json.child.json\",\n      \"status\": \"COMPLETED\",\n      \"tree_terminal\": true,\n      \"origin\": \"implementer-original\",\n      \"failure_kind\": \"assertion\"\n    },\n    {\n      \"name\": \"red\",\n      \"kind\": \"command\",\n      \"command\": \"python -B -m pytest -p no:cacheprovider tests/test_template_generation.py::test_render_core_combinations tests/test_template_generation.py::test_reject_invalid_spec tests/test_template_generation.py::test_check_rejects_empty_card_and_unknown_mode -q\",\n      \"argv\": [\n        \"python\",\n        \"-B\",\n        \"-m\",\n        \"pytest\",\n        \"-p\",\n        \"no:cacheprovider\",\n        \"tests/test_template_generation.py::test_render_core_combinations\",\n        \"tests/test_template_generation.py::test_reject_invalid_spec\",\n        \"tests/test_template_generation.py::test_check_rejects_empty_card_and_unknown_mode\",\n        \"-q\"\n      ],\n      \"cwd\": \"C:\\\\Users\\\\qingyu\\\\.codeg\\\\skills\\\\iteration-manager\\\\.worktrees\\\\iter-10\",\n      \"exit_code\": 1,\n      \"output\": \"docs/todos/10-self-hosting-hardening/evidence/02/slice-a-core-red.json.output.txt\",\n      \"summary\": \"有效RED：19目标断言失败；可导入且函数实际调用，非编译/环境失败。\",\n      \"receipt\": \"docs/todos/10-self-hosting-hardening/evidence/02/slice-a-core-red.json\",\n      \"child_receipt\": \"docs/todos/10-self-hosting-hardening/evidence/02/slice-a-core-red.json.child.json\",\n      \"status\": \"COMPLETED\",\n      \"tree_terminal\": true,\n      \"origin\": \"implementer-original\",\n      \"failure_kind\": \"assertion\"\n    },\n    {\n      \"name\": \"slice-a-note-format\",\n      \"kind\": \"command\",\n      \"command\": \"npx.cmd --no-install tsx C:/Users/qingyu/.codex/skills/write-notes-like-deepseek/scripts/verify-agent-note-format.ts\",\n      \"argv\": [\n        \"npx.cmd\",\n        \"--no-install\",\n        \"tsx\",\n        \"C:/Users/qingyu/.codex/skills/write-notes-like-deepseek/scripts/verify-agent-note-format.ts\"\n      ],\n      \"cwd\": \"C:\\\\Users\\\\qingyu\\\\.codeg\\\\skills\\\\iteration-manager\\\\.worktrees\\\\iter-10\",\n      \"exit_code\": 0,\n      \"output\": \"docs/todos/10-self-hosting-hardening/evidence/02/slice-a-note-format.json.output.txt\",\n      \"summary\": \"笔记树/格式校验15项通过；原件沿用，非业务验收。\",\n      \"receipt\": \"docs/todos/10-self-hosting-hardening/evidence/02/slice-a-note-format.json\",\n      \"child_receipt\": \"docs/todos/10-self-hosting-hardening/evidence/02/slice-a-note-format.json.child.json\",\n      \"status\": \"COMPLETED\",\n      \"tree_terminal\": true,\n      \"origin\": \"implementer-original\"\n    },\n    {\n      \"name\": \"slice-a-note-tree\",\n      \"kind\": \"command\",\n      \"command\": \"npx.cmd --no-install tsx C:/Users/qingyu/.codex/skills/write-notes-like-deepseek/scripts/verify-agent-note-tree.ts\",\n      \"argv\": [\n        \"npx.cmd\",\n        \"--no-install\",\n        \"tsx\",\n        \"C:/Users/qingyu/.codex/skills/write-notes-like-deepseek/scripts/verify-agent-note-tree.ts\"\n      ],\n      \"cwd\": \"C:\\\\Users\\\\qingyu\\\\.codeg\\\\skills\\\\iteration-manager\\\\.worktrees\\\\iter-10\",\n      \"exit_code\": 0,\n      \"output\": \"docs/todos/10-self-hosting-hardening/evidence/02/slice-a-note-tree.json.output.txt\",\n      \"summary\": \"笔记树/格式校验15项通过；原件沿用，非业务验收。\",\n      \"receipt\": \"docs/todos/10-self-hosting-hardening/evidence/02/slice-a-note-tree.json\",\n      \"child_receipt\": \"docs/todos/10-self-hosting-hardening/evidence/02/slice-a-note-tree.json.child.json\",\n      \"status\": \"COMPLETED\",\n      \"tree_terminal\": true,\n      \"origin\": \"implementer-original\"\n    },\n    {\n      \"name\": \"green\",\n      \"kind\": \"command\",\n      \"command\": \"python -B -m pytest -p no:cacheprovider tests/test_template_generation.py -q\",\n      \"argv\": [\n        \"python\",\n        \"-B\",\n        \"-m\",\n        \"pytest\",\n        \"-p\",\n        \"no:cacheprovider\",\n        \"tests/test_template_generation.py\",\n        \"-q\"\n      ],\n      \"cwd\": \"C:\\\\Users\\\\qingyu\\\\.codeg\\\\skills\\\\iteration-manager\\\\.worktrees\\\\iter-10\",\n      \"exit_code\": 0,\n      \"output\": \"docs/todos/10-self-hosting-hardening/evidence/02/slice-b-cli-boundary-green.json.output.txt\",\n      \"summary\": \"同组74通过；未将兼容补测声称经历RED。\",\n      \"receipt\": \"docs/todos/10-self-hosting-hardening/evidence/02/slice-b-cli-boundary-green.json\",\n      \"child_receipt\": \"docs/todos/10-self-hosting-hardening/evidence/02/slice-b-cli-boundary-green.json.child.json\",\n      \"status\": \"COMPLETED\",\n      \"tree_terminal\": true,\n      \"origin\": \"implementer-original\"\n    },\n    {\n      \"name\": \"slice-b-cli-boundary-red\",\n      \"kind\": \"command\",\n      \"command\": \"python -B -m pytest -p no:cacheprovider tests/test_template_generation.py -q\",\n      \"argv\": [\n        \"python\",\n        \"-B\",\n        \"-m\",\n        \"pytest\",\n        \"-p\",\n        \"no:cacheprovider\",\n        \"tests/test_template_generation.py\",\n        \"-q\"\n      ],\n      \"cwd\": \"C:\\\\Users\\\\qingyu\\\\.codeg\\\\skills\\\\iteration-manager\\\\.worktrees\\\\iter-10\",\n      \"exit_code\": 1,\n      \"output\": \"docs/todos/10-self-hosting-hardening/evidence/02/slice-b-cli-boundary-red.json.output.txt\",\n      \"summary\": \"有效CLI/边界RED：17失败/57通过；CLI实际exit0但stdout空，触发相等断言；另有合法记法误拒与预检漏拒。\",\n      \"receipt\": \"docs/todos/10-self-hosting-hardening/evidence/02/slice-b-cli-boundary-red.json\",\n      \"child_receipt\": \"docs/todos/10-self-hosting-hardening/evidence/02/slice-b-cli-boundary-red.json.child.json\",\n      \"status\": \"COMPLETED\",\n      \"tree_terminal\": true,\n      \"origin\": \"implementer-original\",\n      \"failure_kind\": \"assertion\"\n    },\n    {\n      \"name\": \"slice-b-compatibility\",\n      \"kind\": \"command\",\n      \"command\": \"python -B -m pytest -p no:cacheprovider tests/test_template_generation.py -q\",\n      \"argv\": [\n        \"python\",\n        \"-B\",\n        \"-m\",\n        \"pytest\",\n        \"-p\",\n        \"no:cacheprovider\",\n        \"tests/test_template_generation.py\",\n        \"-q\"\n      ],\n      \"cwd\": \"C:\\\\Users\\\\qingyu\\\\.codeg\\\\skills\\\\iteration-manager\\\\.worktrees\\\\iter-10\",\n      \"exit_code\": 0,\n      \"output\": \"docs/todos/10-self-hosting-hardening/evidence/02/slice-b-compatibility.json.output.txt\",\n      \"summary\": \"81通过；补充7项兼容未经历RED；四type实际FS完整绑定及Git可变投影。\",\n      \"receipt\": \"docs/todos/10-self-hosting-hardening/evidence/02/slice-b-compatibility.json\",\n      \"child_receipt\": \"docs/todos/10-self-hosting-hardening/evidence/02/slice-b-compatibility.json.child.json\",\n      \"status\": \"COMPLETED\",\n      \"tree_terminal\": true,\n      \"origin\": \"implementer-original\"\n    },\n    {\n      \"name\": \"slice-b-note-format\",\n      \"kind\": \"command\",\n      \"command\": \"npx.cmd tsx C:/Users/qingyu/.codex/skills/write-notes-like-deepseek/scripts/verify-agent-note-format.ts\",\n      \"argv\": [\n        \"npx.cmd\",\n        \"tsx\",\n        \"C:/Users/qingyu/.codex/skills/write-notes-like-deepseek/scripts/verify-agent-note-format.ts\"\n      ],\n      \"cwd\": \"C:\\\\Users\\\\qingyu\\\\.codeg\\\\skills\\\\iteration-manager\\\\.worktrees\\\\iter-10\",\n      \"exit_code\": 0,\n      \"output\": \"docs/todos/10-self-hosting-hardening/evidence/02/slice-b-note-format.json.output.txt\",\n      \"summary\": \"笔记树/格式校验15项通过；原件沿用，非业务验收。\",\n      \"receipt\": \"docs/todos/10-self-hosting-hardening/evidence/02/slice-b-note-format.json\",\n      \"child_receipt\": \"docs/todos/10-self-hosting-hardening/evidence/02/slice-b-note-format.json.child.json\",\n      \"status\": \"COMPLETED\",\n      \"tree_terminal\": true,\n      \"origin\": \"implementer-original\"\n    },\n    {\n      \"name\": \"slice-b-note-tree\",\n      \"kind\": \"command\",\n      \"command\": \"npx.cmd tsx C:/Users/qingyu/.codex/skills/write-notes-like-deepseek/scripts/verify-agent-note-tree.ts\",\n      \"argv\": [\n        \"npx.cmd\",\n        \"tsx\",\n        \"C:/Users/qingyu/.codex/skills/write-notes-like-deepseek/scripts/verify-agent-note-tree.ts\"\n      ],\n      \"cwd\": \"C:\\\\Users\\\\qingyu\\\\.codeg\\\\skills\\\\iteration-manager\\\\.worktrees\\\\iter-10\",\n      \"exit_code\": 0,\n      \"output\": \"docs/todos/10-self-hosting-hardening/evidence/02/slice-b-note-tree.json.output.txt\",\n      \"summary\": \"笔记树/格式校验15项通过；原件沿用，非业务验收。\",\n      \"receipt\": \"docs/todos/10-self-hosting-hardening/evidence/02/slice-b-note-tree.json\",\n      \"child_receipt\": \"docs/todos/10-self-hosting-hardening/evidence/02/slice-b-note-tree.json.child.json\",\n      \"status\": \"COMPLETED\",\n      \"tree_terminal\": true,\n      \"origin\": \"implementer-original\"\n    },\n    {\n      \"name\": \"regression\",\n      \"kind\": \"command\",\n      \"command\": \"python -B -m pytest -p no:cacheprovider tests/test_template_generation.py tests/test_prompt_sources.py tests/test_task_card_schema.py tests/test_filesystem_receipts.py tests/test_filesystem_r7_repairs.py -q\",\n      \"argv\": [\n        \"python\",\n        \"-B\",\n        \"-m\",\n        \"pytest\",\n        \"-p\",\n        \"no:cacheprovider\",\n        \"tests/test_template_generation.py\",\n        \"tests/test_prompt_sources.py\",\n        \"tests/test_task_card_schema.py\",\n        \"tests/test_filesystem_receipts.py\",\n        \"tests/test_filesystem_r7_repairs.py\",\n        \"-q\"\n      ],\n      \"cwd\": \"C:\\\\Users\\\\qingyu\\\\.codeg\\\\skills\\\\iteration-manager\\\\.worktrees\\\\iter-10\",\n      \"exit_code\": 0,\n      \"output\": \"docs/todos/10-self-hosting-hardening/evidence/02/slice-b-regression.json.output.txt\",\n      \"summary\": \"指定五文件111通过，9.21秒；复用原件而非声称Reviewer重跑。\",\n      \"receipt\": \"docs/todos/10-self-hosting-hardening/evidence/02/slice-b-regression.json\",\n      \"child_receipt\": \"docs/todos/10-self-hosting-hardening/evidence/02/slice-b-regression.json.child.json\",\n      \"status\": \"COMPLETED\",\n      \"tree_terminal\": true,\n      \"origin\": \"implementer-original\"\n    },\n    {\n      \"name\": \"slice-b-scope\",\n      \"kind\": \"command\",\n      \"command\": \"python C:/Users/qingyu/.codeg/skills/iteration-manager/build/frozen-tools/46ded3a/scripts/iter_sync.py --check-scope 2ecd3bc3f957ac1941b388e036a6427b717b6cc7 HEAD docs/todos/10-self-hosting-hardening/02-typed-template-generation.md --include-worktree\",\n      \"argv\": [\n        \"python\",\n        \"C:/Users/qingyu/.codeg/skills/iteration-manager/build/frozen-tools/46ded3a/scripts/iter_sync.py\",\n        \"--check-scope\",\n        \"2ecd3bc3f957ac1941b388e036a6427b717b6cc7\",\n        \"HEAD\",\n        \"docs/todos/10-self-hosting-hardening/02-typed-template-generation.md\",\n        \"--include-worktree\"\n      ],\n      \"cwd\": \"C:\\\\Users\\\\qingyu\\\\.codeg\\\\skills\\\\iteration-manager\\\\.worktrees\\\\iter-10\",\n      \"exit_code\": 0,\n      \"output\": \"docs/todos/10-self-hosting-hardening/evidence/02/slice-b-scope.json.output.txt\",\n      \"summary\": \"实现者历史范围检查58文件通过，不替代本次BASE..C范围门禁。\",\n      \"receipt\": \"docs/todos/10-self-hosting-hardening/evidence/02/slice-b-scope.json\",\n      \"child_receipt\": \"docs/todos/10-self-hosting-hardening/evidence/02/slice-b-scope.json.child.json\",\n      \"status\": \"COMPLETED\",\n      \"tree_terminal\": true,\n      \"origin\": \"implementer-original\"\n    },\n    {\n      \"name\": \"boundary-probe-0110\",\n      \"kind\": \"command\",\n      \"command\": \"python -B -m pytest -p no:cacheprovider build/review-02/test_review_boundaries.py -q\",\n      \"argv\": [\n        \"python\",\n        \"-B\",\n        \"-m\",\n        \"pytest\",\n        \"-p\",\n        \"no:cacheprovider\",\n        \"build/review-02/test_review_boundaries.py\",\n        \"-q\"\n      ],\n      \"cwd\": \"C:\\\\Users\\\\qingyu\\\\.codeg\\\\skills\\\\iteration-manager\\\\.worktrees\\\\iter-10\",\n      \"exit_code\": 1,\n      \"output\": \"build/review-02/boundary-probe-0110.json.output.txt\",\n      \"summary\": \"Reviewer新增反例3项真实断言失败：非空前导空白文本被配套预检误报缺失。\",\n      \"receipt\": \"build/review-02/boundary-probe-0110.json\",\n      \"child_receipt\": \"build/review-02/boundary-probe-0110.json.child.json\",\n      \"status\": \"COMPLETED\",\n      \"tree_terminal\": true,\n      \"origin\": \"independent-reviewer\",\n      \"failure_kind\": \"assertion\"\n    },\n    {\n      \"name\": \"cli-probe-0110\",\n      \"kind\": \"command\",\n      \"command\": \"python -B -m pytest -p no:cacheprovider build/review-02/test_review_boundaries.py::test_cli_accepts_nonempty_command_with_leading_space --basetemp build/review-02/pytest-cli-tmp -q\",\n      \"argv\": [\n        \"python\",\n        \"-B\",\n        \"-m\",\n        \"pytest\",\n        \"-p\",\n        \"no:cacheprovider\",\n        \"build/review-02/test_review_boundaries.py::test_cli_accepts_nonempty_command_with_leading_space\",\n        \"--basetemp\",\n        \"build/review-02/pytest-cli-tmp\",\n        \"-q\"\n      ],\n      \"cwd\": \"C:\\\\Users\\\\qingyu\\\\.codeg\\\\skills\\\\iteration-manager\\\\.worktrees\\\\iter-10\",\n      \"exit_code\": 1,\n      \"output\": \"build/review-02/cli-probe-0110.json.output.txt\",\n      \"summary\": \"Reviewer CLI真实反例：有效非空green命令前导空格导致exit2并输出Missing required check: green。\",\n      \"receipt\": \"build/review-02/cli-probe-0110.json\",\n      \"child_receipt\": \"build/review-02/cli-probe-0110.json.child.json\",\n      \"status\": \"COMPLETED\",\n      \"tree_terminal\": true,\n      \"origin\": \"independent-reviewer\",\n      \"failure_kind\": \"assertion\"\n    },\n    {\n      \"name\": \"independent-path-0109\",\n      \"kind\": \"command\",\n      \"command\": \"python -B -m pytest -p no:cacheprovider tests/test_template_generation.py::test_render_core_combinations tests/test_template_generation.py::test_actual_filesystem_freeze_binding tests/test_template_generation.py::test_git_projection_keeps_existing_mutability -q\",\n      \"argv\": [\n        \"python\",\n        \"-B\",\n        \"-m\",\n        \"pytest\",\n        \"-p\",\n        \"no:cacheprovider\",\n        \"tests/test_template_generation.py::test_render_core_combinations\",\n        \"tests/test_template_generation.py::test_actual_filesystem_freeze_binding\",\n        \"tests/test_template_generation.py::test_git_projection_keeps_existing_mutability\",\n        \"-q\"\n      ],\n      \"cwd\": \"C:\\\\Users\\\\qingyu\\\\.codeg\\\\skills\\\\iteration-manager\\\\.worktrees\\\\iter-10\",\n      \"exit_code\": 0,\n      \"output\": \"build/review-02/independent-path-0109.json.output.txt\",\n      \"summary\": \"Reviewer针对八组合、四FS实际冻结和Git投影独立实跑13通过。\",\n      \"receipt\": \"build/review-02/independent-path-0109.json\",\n      \"child_receipt\": \"build/review-02/independent-path-0109.json.child.json\",\n      \"status\": \"COMPLETED\",\n      \"tree_terminal\": true,\n      \"origin\": \"independent-reviewer\"\n    },\n    {\n      \"name\": \"scope-0108\",\n      \"kind\": \"command\",\n      \"command\": \"python C:/Users/qingyu/.codeg/skills/iteration-manager/build/frozen-tools/46ded3a/scripts/iter_sync.py --check-scope 2ecd3bc3f957ac1941b388e036a6427b717b6cc7 685ee752e1291c5652f3d7cf304dee6cb8842e43 docs/todos/10-self-hosting-hardening/02-typed-template-generation.md --include-worktree\",\n      \"argv\": [\n        \"python\",\n        \"C:/Users/qingyu/.codeg/skills/iteration-manager/build/frozen-tools/46ded3a/scripts/iter_sync.py\",\n        \"--check-scope\",\n        \"2ecd3bc3f957ac1941b388e036a6427b717b6cc7\",\n        \"685ee752e1291c5652f3d7cf304dee6cb8842e43\",\n        \"docs/todos/10-self-hosting-hardening/02-typed-template-generation.md\",\n        \"--include-worktree\"\n      ],\n      \"cwd\": \"C:\\\\Users\\\\qingyu\\\\.codeg\\\\skills\\\\iteration-manager\\\\.worktrees\\\\iter-10\",\n      \"exit_code\": 0,\n      \"output\": \"build/review-02/scope-0108.json.output.txt\",\n      \"summary\": \"Reviewer实际通过F runner执行F check-scope BASE C --include-worktree，63文件PASSED。\",\n      \"receipt\": \"build/review-02/scope-0108.json\",\n      \"child_receipt\": \"build/review-02/scope-0108.json.child.json\",\n      \"status\": \"COMPLETED\",\n      \"tree_terminal\": true,\n      \"origin\": \"independent-reviewer\"\n    }\n  ],\n  \"reuse_basis\": [\n    {\n      \"evidence\": \"slice-a-core-red/green/green-2\",\n      \"candidate\": \"f5583e542a20e00cfe9e3eae3776f32cbe9d7ae9\",\n      \"decision\": \"保留历史RED及中间失败，不称为在C重演；核心行为由B回归与Reviewer13项重验覆盖。\",\n      \"basis\": \"已直接读取原始343行RED及252行失败GREEN输出，命令receipt/child exit匹配；无ImportError/收集失败冒充RED。\"\n    },\n    {\n      \"evidence\": \"slice-b-cli-boundary-red/green; slice-b-compatibility; slice-b-regression\",\n      \"candidate\": \"24a483eb7b0694ce67a5e6c0b50adb0d1cb5c160\",\n      \"decision\": \"原输出沿用，不重跑完整111项；针对关键FS/八组合另独立13项，新增空白反例另实跑。\",\n      \"basis\": \"git diff 24a483e..C仅卡/README/协调交接证据，没有被覆盖源码、模板、测试或既有check.output变化；同Windows/Python环境无相关变更记录；新反例说明原矩阵未覆盖此输入，111通过不推出全合同通过。\"\n    },\n    {\n      \"evidence\": \"slice-a/b-note-tree/format\",\n      \"decision\": \"沿用B最终笔记校验\",\n      \"basis\": \"B后笔记未变，原始输出15项通过；不追加无关业务测试。\"\n    }\n  ],\n  \"tdd\": {\n    \"valid\": true,\n    \"core_red\": \"A19断言失败→首次8失败/11通过→19GREEN；B有效CLI边界17失败/57通过→74GREEN。\",\n    \"supplemental_tests\": \"81项版本比74项增加7项兼容补测，未经历RED如实保留；Reviewer反例为新发现，尚未GREEN。\",\n    \"limitation\": \"没有历史RED时源码提交快照；原始trace明确执行可调用stub与实际CLI并触发目标断言，未补造历史源码。\"\n  },\n  \"rulings\": {\n    \"structured_rendering\": \"认可；复用现有合同，不模型替换段落。\",\n    \"placeholder_grammar\": \"认可本次明确约定：{{identifier}}、${identifier}、{TODO}/{TBD}、YYYY-MM-DD；普通TODO、泛型、代码、HTML允许。与测试及文档一致，非任意自然语言待填识别。\",\n    \"typesafe\": \"本次未决严重度由TypeSafe评估important，confidence0.64，概率important0.73/no_defect0.18/minor0.06/unknown0.03；Codex依据真实CLI反例与冻结输入合同作CHANGES_REQUESTED。原请求响应见build/review-02/typesafe-review.json。\"\n  },\n  \"command_terminal\": {\n    \"all_review_commands_completed\": true,\n    \"active_commands\": [],\n    \"implementation_sessions\": [\n      \"5638876b-7be3-4bc9-a2da-af32c4941033 completed\",\n      \"72db3dfe-466c-424e-bb74-6511fd23e455 completed\"\n    ],\n    \"implementation_terminal_evidence\": [\n      \"docs/todos/10-self-hosting-hardening/evidence/02/native-terminal-a.json\",\n      \"docs/todos/10-self-hosting-hardening/evidence/02/native-terminal-b.json\"\n    ],\n    \"summary\": \"12个原runner与child逐项exit一致且tree_terminal=true；4个Reviewer runner均COMPLETED/tree_terminal=true。\"\n  },\n  \"dirty\": {\n    \"initial\": [],\n    \"final\": [],\n    \"ignored_artifacts\": \"仅新增build/review-02内审查probe、输入、runner原件、TypeSafe原件和本报告；未改源码/卡/README，无Git提交。\"\n  },\n  \"unfinished\": [\n    {\n      \"owner\": \"原实现owner（由根协调者派发）\",\n      \"item\": \"修复F01并取得针对性GREEN及受影响回归后冻结新候选，交非参与者复审。\"\n    },\n    {\n      \"owner\": \"根协调者\",\n      \"item\": \"本报告原文归档正式review-report.json；当前不得登记APPROVED/DONE或放行后继。\"\n    }\n  ],\n  \"not_run\": \"未运行local strict、整轮全回归、部署或外部业务验收；本次为C任务初审，登记与任务06/整轮门禁仍归各自阶段。\",\n  \"memory\": \"Quick memory registry keyword search returned no relevant hits; no historical memory facts used.\"\n}\n",
+    "build/review-02/root-native-initial.json": "{\n  \"request\": \"你是迭代10任务02的独立 Reviewer，未参与本卡测试/实现/设计/RCA。仅审查，不修产品、不修改卡/README、不提交、不委派。先核对cwd/分支/HEAD/dirty；不是唯一参与者，不覆盖或清理他人工作。\\n工作区 C:/Users/qingyu/.codeg/skills/iteration-manager/.worktrees/iter-10，分支feat/iter-10-self-hosting-hardening。\\nBASE=2ecd3bc3f957ac1941b388e036a6427b717b6cc7，C=685ee752e1291c5652f3d7cf304dee6cb8842e43，contract=C。\\n完整读取 SKILL.md，references/agent_protocol.md，references/task_card_schema.md，templates/sdd_reviewer_prompt.md，docs/todos/10-self-hosting-hardening/README.md及02-typed-template-generation.md；冻结协调器路径 C:/Users/qingyu/.codeg/skills/iteration-manager/build/frozen-tools/46ded3a（下称F），正式门禁只能F，不用候选自批。\\n审查包 .git实际目录 C:/Users/qingyu/.codeg/skills/iteration-manager/.git/worktrees/iter-10/iter_reviews/review_02_2ecd3bc_685ee75_20261114_010616_951363.md。核对实际BASE..C及全部验收，不只实现者总结。\\nevidence/02/implementation-checkpoint-a/b.json、A/B原始runner receipt+child+output、native-terminal-a/b.json及dispatch/handoff为原件。A:19断言RED→首次8失败→19 GREEN；B:17 failed/57passed有效CLI边界RED→74 GREEN；兼容81passed(新增兼容补测未经历RED如实标记)，指定五文件回归111passed。独立核对TDD有效性、输入边界、八组合FS实际冻结、stdout/no-write、未知/占位规则、文档及契约保持。有效回归原件可复用，不无差别重跑；列沿用依据及真实缺口。未决裁决必须TypeSafe(state仅事实)，不预设APPROVED。\\n必须通过F/iter_run.py实际执行 F/iter_sync.py --check-scope BASE C docs/todos/10-self-hosting-hardening/02-typed-template-generation.md --include-worktree。\\n所有业务/测试/验收命令必须走F/scripts/iter_run.py --deadline 2026-11-13T17:13:42.127Z --evidence build/review-02/<unique>.json -- <argv>；PowerShell保留LASTEXITCODE并exit。只读查询免runner。所有新增审查文件、TypeSafe原件及报告只能写已忽略 build/review-02/，绝不在C后新增evidence或修改源码。根将完整原文归档到正式review-report.json。\\n5分钟检查点；业务6分钟停止，7分钟前尽快正常返回，叶子截止2026-11-13T17:15:12.127Z，hard2026-11-13T17:16:42.127Z。不足完成则交具体发现和剩余项，不硬塞。没有活动命令才能返回。\\n最终写build/review-02/reviewer-report.json，含reviewer真实会话标识、Scope/Spec/Quality三段、APPROVED/CHANGES_REQUESTED/UNKNOWN真实裁决、全部验收逐条证据、findings、checks（red/green/regression：name kind command cwd exit_code output及非空summary，red failure_kind assertion）、沿用依据、命令receipt/终态、dirty及未完。返回简短报告路径和裁决，不长篇拖过截止。禁止部署推送合流清理。\",\n  \"requested_at\": \"2026-11-13T17:06:42.127Z\",\n  \"dispatch\": {\n    \"content\": [\n      {\n        \"type\": \"text\",\n        \"text\": \"Delegation successful. task_id=e1327c5c-738e-4e68-ad55-b7807837c24b. Call get_delegation_status with this id in the task_ids array (optionally wait_ms) to collect the result, or cancel_delegation to stop it.\"\n      }\n    ],\n    \"structuredContent\": {\n      \"task_id\": \"e1327c5c-738e-4e68-ad55-b7807837c24b\",\n      \"status\": \"running\",\n      \"child_conversation_id\": 1711,\n      \"agent_type\": \"codex\",\n      \"message\": \"Delegation successful. task_id=e1327c5c-738e-4e68-ad55-b7807837c24b. Call get_delegation_status with this id in the task_ids array (optionally wait_ms) to collect the result, or cancel_delegation to stop it.\"\n    },\n    \"isError\": false\n  },\n  \"guard\": {\n    \"reason\": \"terminal\",\n    \"deadlineMs\": 1794590112127,\n    \"final\": {\n      \"task_id\": \"e1327c5c-738e-4e68-ad55-b7807837c24b\",\n      \"status\": \"completed\",\n      \"child_conversation_id\": 1711,\n      \"agent_type\": \"codex\",\n      \"text\": \"裁决：**CHANGES_REQUESTED**\\n\\n报告：`build/review-02/reviewer-report.json`\\n\\n发现 1 项 Important：合法非空文本带前导空白时，预检误报缺项，CLI 错误退出 2。已保留真实断言失败及 TypeSafe 原件。\\n\\n范围门禁通过；无活动命令，未修改产品、卡片或 README，未提交。\",\n      \"duration_ms\": 291270,\n      \"progress\": {\n        \"steps\": 32,\n        \"marks\": [\n          \"ok\",\n          \"failed\",\n          \"ok\",\n          \"ok\",\n          \"ok\",\n          \"failed\",\n          \"ok\",\n          \"ok\",\n          \"ok\",\n          \"ok\",\n          \"ok\",\n          \"ok\"\n        ],\n        \"last_step\": \"$r=Get-Content build/review-02/reviewer-report.json -Raw | ConvertFrom-Json; [pscustomobject]@{reviewer=$r.reviewer;verd…\"\n      },\n      \"raw\": {\n        \"content\": [\n          {\n            \"type\": \"text\",\n            \"text\": \"{\\\"tasks\\\":[{\\\"task_id\\\":\\\"e1327c5c-738e-4e68-ad55-b7807837c24b\\\",\\\"status\\\":\\\"completed\\\",\\\"child_conversation_id\\\":1711,\\\"agent_type\\\":\\\"codex\\\",\\\"text\\\":\\\"裁决：**CHANGES_REQUESTED**\\\\n\\\\n报告：`build/review-02/reviewer-report.json`\\\\n\\\\n发现 1 项 Important：合法非空文本带前导空白时，预检误报缺项，CLI 错误退出 2。已保留真实断言失败及 TypeSafe 原件。\\\\n\\\\n范围门禁通过；无活动命令，未修改产品、卡片或 README，未提交。\\\",\\\"duration_ms\\\":291270,\\\"progress\\\":{\\\"steps\\\":32,\\\"marks\\\":[\\\"ok\\\",\\\"failed\\\",\\\"ok\\\",\\\"ok\\\",\\\"ok\\\",\\\"failed\\\",\\\"ok\\\",\\\"ok\\\",\\\"ok\\\",\\\"ok\\\",\\\"ok\\\",\\\"ok\\\"],\\\"last_step\\\":\\\"$r=Get-Content build/review-02/reviewer-report.json -Raw | ConvertFrom-Json; [pscustomobject]@{reviewer=$r.reviewer;verd…\\\"}}]}\"\n          }\n        ],\n        \"structuredContent\": {\n          \"tasks\": [\n            {\n              \"task_id\": \"e1327c5c-738e-4e68-ad55-b7807837c24b\",\n              \"status\": \"completed\",\n              \"child_conversation_id\": 1711,\n              \"agent_type\": \"codex\",\n              \"text\": \"裁决：**CHANGES_REQUESTED**\\n\\n报告：`build/review-02/reviewer-report.json`\\n\\n发现 1 项 Important：合法非空文本带前导空白时，预检误报缺项，CLI 错误退出 2。已保留真实断言失败及 TypeSafe 原件。\\n\\n范围门禁通过；无活动命令，未修改产品、卡片或 README，未提交。\",\n              \"duration_ms\": 291270,\n              \"progress\": {\n                \"steps\": 32,\n                \"marks\": [\n                  \"ok\",\n                  \"failed\",\n                  \"ok\",\n                  \"ok\",\n                  \"ok\",\n                  \"failed\",\n                  \"ok\",\n                  \"ok\",\n                  \"ok\",\n                  \"ok\",\n                  \"ok\",\n                  \"ok\"\n                ],\n                \"last_step\": \"$r=Get-Content build/review-02/reviewer-report.json -Raw | ConvertFrom-Json; [pscustomobject]@{reviewer=$r.reviewer;verd…\"\n              }\n            }\n          ]\n        },\n        \"isError\": false\n      }\n    },\n    \"terminalConfirmed\": true,\n    \"observedAt\": 1794589893578,\n    \"lateByMs\": 0,\n    \"events\": [\n      {\n        \"kind\": \"query\",\n        \"startedAt\": 1794589610052,\n        \"returnedAt\": 1794589670067,\n        \"waitMs\": 60000,\n        \"result\": {\n          \"task_id\": \"e1327c5c-738e-4e68-ad55-b7807837c24b\",\n          \"status\": \"running\",\n          \"child_conversation_id\": 1711,\n          \"agent_type\": \"codex\",\n          \"message\": \"Running.\\nLatest sub-agent reply: thinking: **Reading separate output**\",\n          \"progress\": {\n            \"steps\": 13,\n            \"marks\": [\n              \"ok\",\n              \"ok\",\n              \"ok\",\n              \"ok\",\n              \"ok\",\n              \"ok\",\n              \"ok\",\n              \"ok\",\n              \"ok\",\n              \"ok\",\n              \"ok\",\n              \"ok\"\n            ],\n            \"last_step\": \"$e='docs/todos/10-self-hosting-hardening/evidence/02'; Get-Content \\\"$e/native-terminal-a.json\\\",\\\"$e/native-terminal-b.jso…\"\n          },\n          \"raw\": {\n            \"content\": [\n              {\n                \"type\": \"text\",\n                \"text\": \"{\\\"tasks\\\":[{\\\"task_id\\\":\\\"e1327c5c-738e-4e68-ad55-b7807837c24b\\\",\\\"status\\\":\\\"running\\\",\\\"child_conversation_id\\\":1711,\\\"agent_type\\\":\\\"codex\\\",\\\"message\\\":\\\"Running.\\\\nLatest sub-agent reply: thinking: **Reading separate output**\\\",\\\"progress\\\":{\\\"steps\\\":13,\\\"marks\\\":[\\\"ok\\\",\\\"ok\\\",\\\"ok\\\",\\\"ok\\\",\\\"ok\\\",\\\"ok\\\",\\\"ok\\\",\\\"ok\\\",\\\"ok\\\",\\\"ok\\\",\\\"ok\\\",\\\"ok\\\"],\\\"last_step\\\":\\\"$e='docs/todos/10-self-hosting-hardening/evidence/02'; Get-Content \\\\\\\"$e/native-terminal-a.json\\\\\\\",\\\\\\\"$e/native-terminal-b.jso…\\\"}}]}\"\n              }\n            ],\n            \"structuredContent\": {\n              \"tasks\": [\n                {\n                  \"task_id\": \"e1327c5c-738e-4e68-ad55-b7807837c24b\",\n                  \"status\": \"running\",\n                  \"child_conversation_id\": 1711,\n                  \"agent_type\": \"codex\",\n                  \"message\": \"Running.\\nLatest sub-agent reply: thinking: **Reading separate output**\",\n                  \"progress\": {\n                    \"steps\": 13,\n                    \"marks\": [\n                      \"ok\",\n                      \"ok\",\n                      \"ok\",\n                      \"ok\",\n                      \"ok\",\n                      \"ok\",\n                      \"ok\",\n                      \"ok\",\n                      \"ok\",\n                      \"ok\",\n                      \"ok\",\n                      \"ok\"\n                    ],\n                    \"last_step\": \"$e='docs/todos/10-self-hosting-hardening/evidence/02'; Get-Content \\\"$e/native-terminal-a.json\\\",\\\"$e/native-terminal-b.jso…\"\n                  }\n                }\n              ]\n            },\n            \"isError\": false\n          }\n        }\n      },\n      {\n        \"kind\": \"query\",\n        \"startedAt\": 1794589670067,\n        \"returnedAt\": 1794589730086,\n        \"waitMs\": 60000,\n        \"result\": {\n          \"task_id\": \"e1327c5c-738e-4e68-ad55-b7807837c24b\",\n          \"status\": \"running\",\n          \"child_conversation_id\": 1711,\n          \"agent_type\": \"codex\",\n          \"message\": \"Running.\\nLatest sub-agent reply: thinking: **Reading context and dependencies**\",\n          \"progress\": {\n            \"steps\": 20,\n            \"marks\": [\n              \"ok\",\n              \"ok\",\n              \"ok\",\n              \"ok\",\n              \"ok\",\n              \"ok\",\n              \"ok\",\n              \"ok\",\n              \"failed\",\n              \"ok\",\n              \"ok\",\n              \"ok\"\n            ],\n            \"last_step\": \"$f='C:/Users/qingyu/.codeg/skills/iteration-manager/build/frozen-tools/46ded3a'; python \\\"$f/scripts/iter_run.py\\\" --deadl…\"\n          },\n          \"raw\": {\n            \"content\": [\n              {\n                \"type\": \"text\",\n                \"text\": \"{\\\"tasks\\\":[{\\\"task_id\\\":\\\"e1327c5c-738e-4e68-ad55-b7807837c24b\\\",\\\"status\\\":\\\"running\\\",\\\"child_conversation_id\\\":1711,\\\"agent_type\\\":\\\"codex\\\",\\\"message\\\":\\\"Running.\\\\nLatest sub-agent reply: thinking: **Reading context and dependencies**\\\",\\\"progress\\\":{\\\"steps\\\":20,\\\"marks\\\":[\\\"ok\\\",\\\"ok\\\",\\\"ok\\\",\\\"ok\\\",\\\"ok\\\",\\\"ok\\\",\\\"ok\\\",\\\"ok\\\",\\\"failed\\\",\\\"ok\\\",\\\"ok\\\",\\\"ok\\\"],\\\"last_step\\\":\\\"$f='C:/Users/qingyu/.codeg/skills/iteration-manager/build/frozen-tools/46ded3a'; python \\\\\\\"$f/scripts/iter_run.py\\\\\\\" --deadl…\\\"}}]}\"\n              }\n            ],\n            \"structuredContent\": {\n              \"tasks\": [\n                {\n                  \"task_id\": \"e1327c5c-738e-4e68-ad55-b7807837c24b\",\n                  \"status\": \"running\",\n                  \"child_conversation_id\": 1711,\n                  \"agent_type\": \"codex\",\n                  \"message\": \"Running.\\nLatest sub-agent reply: thinking: **Reading context and dependencies**\",\n                  \"progress\": {\n                    \"steps\": 20,\n                    \"marks\": [\n                      \"ok\",\n                      \"ok\",\n                      \"ok\",\n                      \"ok\",\n                      \"ok\",\n                      \"ok\",\n                      \"ok\",\n                      \"ok\",\n                      \"failed\",\n                      \"ok\",\n                      \"ok\",\n                      \"ok\"\n                    ],\n                    \"last_step\": \"$f='C:/Users/qingyu/.codeg/skills/iteration-manager/build/frozen-tools/46ded3a'; python \\\"$f/scripts/iter_run.py\\\" --deadl…\"\n                  }\n                }\n              ]\n            },\n            \"isError\": false\n          }\n        }\n      },\n      {\n        \"kind\": \"query\",\n        \"startedAt\": 1794589730086,\n        \"returnedAt\": 1794589790102,\n        \"waitMs\": 60000,\n        \"result\": {\n          \"task_id\": \"e1327c5c-738e-4e68-ad55-b7807837c24b\",\n          \"status\": \"running\",\n          \"child_conversation_id\": 1711,\n          \"agent_type\": \"codex\",\n          \"message\": \"Running.\\nLatest sub-agent reply: thinking: **Reviewing runner outputs**\",\n          \"progress\": {\n            \"steps\": 28,\n            \"marks\": [\n              \"failed\",\n              \"ok\",\n              \"ok\",\n              \"ok\",\n              \"ok\",\n              \"failed\",\n              \"ok\",\n              \"ok\",\n              \"ok\",\n              \"failed\",\n              \"ok\",\n              \"ok\"\n            ],\n            \"last_step\": \"$e='docs/todos/10-self-hosting-hardening/evidence/02'; Get-ChildItem \\\"$e/slice-*.json\\\" | Where-Object Name -NotLike '*.c…\"\n          },\n          \"raw\": {\n            \"content\": [\n              {\n                \"type\": \"text\",\n                \"text\": \"{\\\"tasks\\\":[{\\\"task_id\\\":\\\"e1327c5c-738e-4e68-ad55-b7807837c24b\\\",\\\"status\\\":\\\"running\\\",\\\"child_conversation_id\\\":1711,\\\"agent_type\\\":\\\"codex\\\",\\\"message\\\":\\\"Running.\\\\nLatest sub-agent reply: thinking: **Reviewing runner outputs**\\\",\\\"progress\\\":{\\\"steps\\\":28,\\\"marks\\\":[\\\"failed\\\",\\\"ok\\\",\\\"ok\\\",\\\"ok\\\",\\\"ok\\\",\\\"failed\\\",\\\"ok\\\",\\\"ok\\\",\\\"ok\\\",\\\"failed\\\",\\\"ok\\\",\\\"ok\\\"],\\\"last_step\\\":\\\"$e='docs/todos/10-self-hosting-hardening/evidence/02'; Get-ChildItem \\\\\\\"$e/slice-*.json\\\\\\\" | Where-Object Name -NotLike '*.c…\\\"}}]}\"\n              }\n            ],\n            \"structuredContent\": {\n              \"tasks\": [\n                {\n                  \"task_id\": \"e1327c5c-738e-4e68-ad55-b7807837c24b\",\n                  \"status\": \"running\",\n                  \"child_conversation_id\": 1711,\n                  \"agent_type\": \"codex\",\n                  \"message\": \"Running.\\nLatest sub-agent reply: thinking: **Reviewing runner outputs**\",\n                  \"progress\": {\n                    \"steps\": 28,\n                    \"marks\": [\n                      \"failed\",\n                      \"ok\",\n                      \"ok\",\n                      \"ok\",\n                      \"ok\",\n                      \"failed\",\n                      \"ok\",\n                      \"ok\",\n                      \"ok\",\n                      \"failed\",\n                      \"ok\",\n                      \"ok\"\n                    ],\n                    \"last_step\": \"$e='docs/todos/10-self-hosting-hardening/evidence/02'; Get-ChildItem \\\"$e/slice-*.json\\\" | Where-Object Name -NotLike '*.c…\"\n                  }\n                }\n              ]\n            },\n            \"isError\": false\n          }\n        }\n      },\n      {\n        \"kind\": \"query\",\n        \"startedAt\": 1794589790102,\n        \"returnedAt\": 1794589850117,\n        \"waitMs\": 60000,\n        \"result\": {\n          \"task_id\": \"e1327c5c-738e-4e68-ad55-b7807837c24b\",\n          \"status\": \"running\",\n          \"child_conversation_id\": 1711,\n          \"agent_type\": \"codex\",\n          \"message\": \"Running.\\nLatest sub-agent reply: thinking: **Reporting generated summary mapping**\",\n          \"progress\": {\n            \"steps\": 29,\n            \"marks\": [\n              \"ok\",\n              \"ok\",\n              \"ok\",\n              \"ok\",\n              \"failed\",\n              \"ok\",\n              \"ok\",\n              \"ok\",\n              \"failed\",\n              \"ok\",\n              \"ok\",\n              \"ok\"\n            ],\n            \"last_step\": \"$e='docs/todos/10-self-hosting-hardening/evidence/02'; $all=@(Get-ChildItem \\\"$e/slice-*.json\\\" | Where-Object Name -NotLi…\"\n          },\n          \"raw\": {\n            \"content\": [\n              {\n                \"type\": \"text\",\n                \"text\": \"{\\\"tasks\\\":[{\\\"task_id\\\":\\\"e1327c5c-738e-4e68-ad55-b7807837c24b\\\",\\\"status\\\":\\\"running\\\",\\\"child_conversation_id\\\":1711,\\\"agent_type\\\":\\\"codex\\\",\\\"message\\\":\\\"Running.\\\\nLatest sub-agent reply: thinking: **Reporting generated summary mapping**\\\",\\\"progress\\\":{\\\"steps\\\":29,\\\"marks\\\":[\\\"ok\\\",\\\"ok\\\",\\\"ok\\\",\\\"ok\\\",\\\"failed\\\",\\\"ok\\\",\\\"ok\\\",\\\"ok\\\",\\\"failed\\\",\\\"ok\\\",\\\"ok\\\",\\\"ok\\\"],\\\"last_step\\\":\\\"$e='docs/todos/10-self-hosting-hardening/evidence/02'; $all=@(Get-ChildItem \\\\\\\"$e/slice-*.json\\\\\\\" | Where-Object Name -NotLi…\\\"}}]}\"\n              }\n            ],\n            \"structuredContent\": {\n              \"tasks\": [\n                {\n                  \"task_id\": \"e1327c5c-738e-4e68-ad55-b7807837c24b\",\n                  \"status\": \"running\",\n                  \"child_conversation_id\": 1711,\n                  \"agent_type\": \"codex\",\n                  \"message\": \"Running.\\nLatest sub-agent reply: thinking: **Reporting generated summary mapping**\",\n                  \"progress\": {\n                    \"steps\": 29,\n                    \"marks\": [\n                      \"ok\",\n                      \"ok\",\n                      \"ok\",\n                      \"ok\",\n                      \"failed\",\n                      \"ok\",\n                      \"ok\",\n                      \"ok\",\n                      \"failed\",\n                      \"ok\",\n                      \"ok\",\n                      \"ok\"\n                    ],\n                    \"last_step\": \"$e='docs/todos/10-self-hosting-hardening/evidence/02'; $all=@(Get-ChildItem \\\"$e/slice-*.json\\\" | Where-Object Name -NotLi…\"\n                  }\n                }\n              ]\n            },\n            \"isError\": false\n          }\n        }\n      },\n      {\n        \"kind\": \"query\",\n        \"startedAt\": 1794589850117,\n        \"returnedAt\": 1794589893578,\n        \"waitMs\": 52010,\n        \"result\": {\n          \"task_id\": \"e1327c5c-738e-4e68-ad55-b7807837c24b\",\n          \"status\": \"completed\",\n          \"child_conversation_id\": 1711,\n          \"agent_type\": \"codex\",\n          \"text\": \"裁决：**CHANGES_REQUESTED**\\n\\n报告：`build/review-02/reviewer-report.json`\\n\\n发现 1 项 Important：合法非空文本带前导空白时，预检误报缺项，CLI 错误退出 2。已保留真实断言失败及 TypeSafe 原件。\\n\\n范围门禁通过；无活动命令，未修改产品、卡片或 README，未提交。\",\n          \"duration_ms\": 291270,\n          \"progress\": {\n            \"steps\": 32,\n            \"marks\": [\n              \"ok\",\n              \"failed\",\n              \"ok\",\n              \"ok\",\n              \"ok\",\n              \"failed\",\n              \"ok\",\n              \"ok\",\n              \"ok\",\n              \"ok\",\n              \"ok\",\n              \"ok\"\n            ],\n            \"last_step\": \"$r=Get-Content build/review-02/reviewer-report.json -Raw | ConvertFrom-Json; [pscustomobject]@{reviewer=$r.reviewer;verd…\"\n          },\n          \"raw\": {\n            \"content\": [\n              {\n                \"type\": \"text\",\n                \"text\": \"{\\\"tasks\\\":[{\\\"task_id\\\":\\\"e1327c5c-738e-4e68-ad55-b7807837c24b\\\",\\\"status\\\":\\\"completed\\\",\\\"child_conversation_id\\\":1711,\\\"agent_type\\\":\\\"codex\\\",\\\"text\\\":\\\"裁决：**CHANGES_REQUESTED**\\\\n\\\\n报告：`build/review-02/reviewer-report.json`\\\\n\\\\n发现 1 项 Important：合法非空文本带前导空白时，预检误报缺项，CLI 错误退出 2。已保留真实断言失败及 TypeSafe 原件。\\\\n\\\\n范围门禁通过；无活动命令，未修改产品、卡片或 README，未提交。\\\",\\\"duration_ms\\\":291270,\\\"progress\\\":{\\\"steps\\\":32,\\\"marks\\\":[\\\"ok\\\",\\\"failed\\\",\\\"ok\\\",\\\"ok\\\",\\\"ok\\\",\\\"failed\\\",\\\"ok\\\",\\\"ok\\\",\\\"ok\\\",\\\"ok\\\",\\\"ok\\\",\\\"ok\\\"],\\\"last_step\\\":\\\"$r=Get-Content build/review-02/reviewer-report.json -Raw | ConvertFrom-Json; [pscustomobject]@{reviewer=$r.reviewer;verd…\\\"}}]}\"\n              }\n            ],\n            \"structuredContent\": {\n              \"tasks\": [\n                {\n                  \"task_id\": \"e1327c5c-738e-4e68-ad55-b7807837c24b\",\n                  \"status\": \"completed\",\n                  \"child_conversation_id\": 1711,\n                  \"agent_type\": \"codex\",\n                  \"text\": \"裁决：**CHANGES_REQUESTED**\\n\\n报告：`build/review-02/reviewer-report.json`\\n\\n发现 1 项 Important：合法非空文本带前导空白时，预检误报缺项，CLI 错误退出 2。已保留真实断言失败及 TypeSafe 原件。\\n\\n范围门禁通过；无活动命令，未修改产品、卡片或 README，未提交。\",\n                  \"duration_ms\": 291270,\n                  \"progress\": {\n                    \"steps\": 32,\n                    \"marks\": [\n                      \"ok\",\n                      \"failed\",\n                      \"ok\",\n                      \"ok\",\n                      \"ok\",\n                      \"failed\",\n                      \"ok\",\n                      \"ok\",\n                      \"ok\",\n                      \"ok\",\n                      \"ok\",\n                      \"ok\"\n                    ],\n                    \"last_step\": \"$r=Get-Content build/review-02/reviewer-report.json -Raw | ConvertFrom-Json; [pscustomobject]@{reviewer=$r.reviewer;verd…\"\n                  }\n                }\n              ]\n            },\n            \"isError\": false\n          }\n        }\n      }\n    ]\n  }\n}\n",
+    "build/review-02/scope-0108.json": "{\n  \"version\": 1,\n  \"argv\": [\n    \"python\",\n    \"C:/Users/qingyu/.codeg/skills/iteration-manager/build/frozen-tools/46ded3a/scripts/iter_sync.py\",\n    \"--check-scope\",\n    \"2ecd3bc3f957ac1941b388e036a6427b717b6cc7\",\n    \"685ee752e1291c5652f3d7cf304dee6cb8842e43\",\n    \"docs/todos/10-self-hosting-hardening/02-typed-template-generation.md\",\n    \"--include-worktree\"\n  ],\n  \"cwd\": \"C:\\\\Users\\\\qingyu\\\\.codeg\\\\skills\\\\iteration-manager\\\\.worktrees\\\\iter-10\",\n  \"deadline\": \"2026-11-13T17:13:42.127000+00:00\",\n  \"cleanup_reserve_seconds\": 5,\n  \"status\": \"COMPLETED\",\n  \"deadline_checked_at\": \"2026-11-13T17:07:22.688665+00:00\",\n  \"started_at\": \"2026-11-13T17:07:22.696666+00:00\",\n  \"ended_at\": \"2026-11-13T17:07:23.603183+00:00\",\n  \"raw_exit_code\": 0,\n  \"tree_terminal\": true,\n  \"output\": \"build/review-02/scope-0108.json.output.txt\",\n  \"container_pid\": 44524,\n  \"launcher_exit_code\": 0,\n  \"command\": {\n    \"status\": \"COMPLETED\",\n    \"raw_exit_code\": 0,\n    \"started_at\": \"2026-11-13T17:07:22.696666+00:00\",\n    \"pid\": 42884,\n    \"deadline_checked_at\": \"2026-11-13T17:07:22.688665+00:00\",\n    \"ended_at\": \"2026-11-13T17:07:23.582181+00:00\"\n  },\n  \"late_by_seconds\": 0\n}",
+    "build/review-02/scope-0108.json.child.json": "{\"status\": \"COMPLETED\", \"raw_exit_code\": 0, \"started_at\": \"2026-11-13T17:07:22.696666+00:00\", \"pid\": 42884, \"deadline_checked_at\": \"2026-11-13T17:07:22.688665+00:00\", \"ended_at\": \"2026-11-13T17:07:23.582181+00:00\"}",
+    "build/review-02/scope-0108.json.output.txt": "[IterSync:ScopeFirewall:PASSED] All 63 changed files within declared scope; ownership is not inferred.\n",
+    "build/review-02/test_review_boundaries.py": "import sys\nimport json\nimport subprocess\nfrom pathlib import Path\n\nimport pytest\n\nROOT = Path(__file__).resolve().parents[2]\nsys.path.insert(0, str(ROOT / 'tests'))\nfrom test_template_generation import spec_for\nfrom iter_templates import render_task_card, validate_generated_card\n\n\n@pytest.mark.parametrize('field', ['verification', 'stages', 'acceptance'])\ndef test_nonempty_text_with_leading_whitespace(field):\n    spec = spec_for()\n    if field == 'verification':\n        spec[field]['green'] = ' python -m pytest tests -q'\n    else:\n        spec[field] = ['  Concrete requirement']\n    card = render_task_card(spec)\n    assert validate_generated_card(card, 'git') == []\n\n\ndef test_cli_accepts_nonempty_command_with_leading_space():\n    spec = spec_for()\n    spec['verification']['green'] = ' python -m pytest tests -q'\n    spec_path = Path(__file__).with_name('leading-space-spec.json')\n    spec_path.write_text(json.dumps(spec), encoding='utf-8')\n    result = subprocess.run([sys.executable, '-B', str(ROOT / 'scripts/iter_templates.py'), '--render', str(spec_path)], capture_output=True, text=True, encoding='utf-8')\n    assert result.returncode == 0, result.stdout\n",
+    "build/review-02/typesafe-review.json": "{\n  \"request\": {\n    \"state\": {\n      \"task_contract\": \"C=685ee752e1291c5652f3d7cf304dee6cb8842e43 task02 acceptance: strings nonempty; stages/acceptance nonempty text arrays; verification required check names to actual commands or observations. Produces render_task_card(spec)->str; CLI --render prints Markdown with exit0 for valid input, input/structure error exit2.\",\n      \"source\": {\n        \"validation\": \"_text checks isinstance(str) and value.strip() nonempty, returns original value. _checklist interpolates '- [ ] '+value. Verification interpolates '**name**：'+value.\",\n        \"precheck\": \"Checklist regex is ^- \\\\[ \\\\] \\\\S ; required-check regex requires immediate \\\\S after fullwidth colon.\"\n      },\n      \"observed\": {\n        \"probe\": \"build/review-02/test_review_boundaries.py\",\n        \"runner\": \"build/review-02/boundary-probe-0110.json\",\n        \"exit_code\": 1,\n        \"output\": \"3 failed in 1.20s: green=' python -m pytest tests -q' -> ['Missing required check: green']; stages=['  Concrete requirement'] -> ['Missing stages checklist']; acceptance=['  Concrete requirement'] -> ['Missing acceptance checklist']. render_task_card returns for each input.\",\n        \"unchanged_case\": \"Original tests use no leading whitespace; 111 passed raw original and 13 focused independent tests passed.\"\n      }\n    },\n    \"questions\": {\n      \"severity\": {\n        \"type\": \"choice\",\n        \"instructions\": \"Classify the observed leading-whitespace behavior against the stated valid input contract, for this task review. Select only one severity using these definitions; do not infer other failures.\",\n        \"criteria\": {\n          \"important\": \"Valid nonempty user text is rejected or produces output rejected by the matching precheck, a functional boundary omission requiring correction before completion.\",\n          \"minor\": \"Only cosmetic/readability issue, no valid input is rejected and no functional contract affected.\",\n          \"no_defect\": \"The observed text is forbidden by an explicit stated contract or the behavior satisfies the valid input contract.\",\n          \"unknown\": \"Evidence is insufficient or contradictory to determine conformance.\"\n        }\n      }\n    }\n  },\n  \"response\": {\n    \"content\": [\n      {\n        \"type\": \"text\",\n        \"text\": \"{\\\"model\\\":\\\"jev-1.14.0\\\",\\\"answers\\\":{\\\"severity\\\":{\\\"type\\\":\\\"choice\\\",\\\"choice\\\":\\\"important\\\",\\\"confidence\\\":0.64,\\\"probabilities\\\":{\\\"important\\\":0.73,\\\"minor\\\":0.06,\\\"no_defect\\\":0.18,\\\"unknown\\\":0.03}}},\\\"usage\\\":{\\\"input_tokens\\\":786,\\\"output_tokens\\\":47}}\"\n      }\n    ]\n  }\n}\n"
+  },
+  "reviewer_result": {
+    "schema_version": 1,
+    "task_id": "02",
+    "reviewer": "01a1d5e0-35ab-73c3-ae08-0b022aebf086",
+    "reviewer_identity_source": "CODEX_SESSION_ID and CODEX_THREAD_ID observed via environment",
+    "role": "independent-reviewer",
+    "independence": "本会话未参与本卡测试设计、实现、方案设计或RCA；仅本次审查新增反例。未委派。",
+    "base_sha": "2ecd3bc3f957ac1941b388e036a6427b717b6cc7",
+    "head_sha": "685ee752e1291c5652f3d7cf304dee6cb8842e43",
+    "contract_sha": "685ee752e1291c5652f3d7cf304dee6cb8842e43",
+    "workspace": "C:/Users/qingyu/.codeg/skills/iteration-manager/.worktrees/iter-10",
+    "branch": "feat/iter-10-self-hosting-hardening",
+    "review_package": "C:/Users/qingyu/.codeg/skills/iteration-manager/.git/worktrees/iter-10/iter_reviews/review_02_2ecd3bc_685ee75_20261114_010616_951363.md",
+    "verdict": "CHANGES_REQUESTED",
+    "acceptance_verdict": "FAIL",
+    "Scope": {
+      "verdict": "PASSED",
+      "evidence": "build/review-02/scope-0108.json",
+      "summary": "实际BASE..C的63文件均在声明范围；没有根docs/todos/README.md变更。正式检查使用冻结F而非候选。初始与收尾HEAD=C，tracked/untracked dirty为空；build/review-02已确认被忽略。"
+    },
+    "Spec": {
+      "verdict": "NONCOMPLIANT",
+      "summary": "常规八组合、初态、FS冻结规则、无写入CLI与旧契约覆盖成立；非空文本的前导空白边界不满足任务卡输入合同，见F01。"
+    },
+    "Quality": {
+      "verdict": "NEEDS_FIX",
+      "summary": "实现小且复用TYPE_CHECKS/解析/路径/投影规则，未引入第二状态账。原始TDD有效，首次失败和补测来源披露准确。新发现的格式判别不一致需返原实现owner修复。"
+    },
+    "acceptance": [
+      {
+        "id": 1,
+        "source": "02 card:98",
+        "result": "FAIL",
+        "evidence": [
+          "scripts/iter_templates.py:38-69",
+          "tests/test_template_generation.py:59-68,111-130",
+          "build/review-02/boundary-probe-0110.json",
+          "build/review-02/cli-probe-0110.json"
+        ],
+        "summary": "必需字段、version整数1、形状、四type/模式、FS candidate均有校验；但合同允许的非空文本带前导空白时，render返回而配套预检/CLI拒绝。"
+      },
+      {
+        "id": 2,
+        "source": "02 card:99",
+        "result": "PASS",
+        "evidence": [
+          "scripts/iter_templates.py:79-88",
+          "tests/test_template_generation.py:30-56",
+          "build/review-02/independent-path-0109.json"
+        ],
+        "summary": "初态TODO/PENDING/false/UNASSESSED，SHA为空，不生成批准或TypeSafe通过事实。"
+      },
+      {
+        "id": 3,
+        "source": "02 card:100",
+        "result": "PASS",
+        "evidence": [
+          "tests/test_template_generation.py:30-56,175-206",
+          "build/review-02/independent-path-0109.json"
+        ],
+        "summary": "八组合parse_card与预检兼容；非TDD无强制RED；4个FS组合直接调用现有实际validate_filesystem_binding，覆盖匹配、可变元数据、勾选/ledger漂移拒绝、candidate不匹配；Git动态投影保持。不是完整FS完成收据APPROVED模拟。"
+      },
+      {
+        "id": 4,
+        "source": "02 card:101",
+        "result": "PARTIAL",
+        "evidence": [
+          "scripts/iter_templates.py:30-69,136-207",
+          "tests/test_template_generation.py:76-172",
+          "docs/todos/10-self-hosting-hardening/evidence/02/slice-b-regression.json"
+        ],
+        "summary": "空scope/越界/缺关键验收/明确占位符拒绝；CLI只读输入且stdout输出，无覆盖/迁移API，八组合往返和check前后字节库存相等已有原件。合法非空文字误拒见F01。"
+      },
+      {
+        "id": 5,
+        "source": "02 card:102",
+        "result": "PASS",
+        "evidence": [
+          "templates/contracts/refactor_benchmark_contract.md:3-5",
+          "scripts/iter_templates.py:22-26,65-69,90",
+          "references/template_generation.md:36-43"
+        ],
+        "summary": "复用既有TYPE_CHECKS包含baseline/regression/compatibility/benchmark_before/benchmark_after；未新增type或弱化旧量测门禁，模板只增加生成入口说明。"
+      },
+      {
+        "id": 6,
+        "source": "02 card:103",
+        "result": "PASS",
+        "evidence": [
+          "docs/todos/10-self-hosting-hardening/evidence/02/implementation-checkpoint-a.json",
+          "docs/todos/10-self-hosting-hardening/evidence/02/implementation-checkpoint-b.json",
+          "build/review-02/scope-0108.json"
+        ],
+        "summary": "RED/GREEN/regression原件、候选和范围齐；两实现会话均completed且保持TESTING/PENDING或UNKNOWN，没有自批。该项证据齐备不抵消F01。"
+      }
+    ],
+    "findings": [
+      {
+        "id": "F01",
+        "severity": "Important",
+        "priority": "P2",
+        "location": "scripts/iter_templates.py:162-169",
+        "related_locations": [
+          "scripts/iter_templates.py:30-35",
+          "scripts/iter_templates.py:72-73",
+          "scripts/iter_templates.py:90,195-198"
+        ],
+        "title": "合法非空文本含前导空白时被生成卡预检误拒",
+        "trigger": "spec.verification.green=' python -m pytest tests -q'，或stages/acceptance=['  Concrete requirement']；其余采用既有spec_for默认有效输入。",
+        "expected": "按卡98及说明36，非空字符串有效；生成与其配套预检/CLI应一致接受。",
+        "actual": "render_task_card返回卡；regex要求内容第一个字符立即为\\S，报Missing required check: green / Missing stages checklist / Missing acceptance checklist；真实CLI --render退出2而非0。",
+        "cause": "_text以strip()仅判断非空但返回原文；渲染保留空白，预检却隐含禁止前导空白。",
+        "evidence": [
+          "build/review-02/boundary-probe-0110.json.output.txt:3-64",
+          "build/review-02/cli-probe-0110.json.output.txt:3-20"
+        ],
+        "requested_change": "原实现owner统一输入/渲染/预检的空白规则，使合同允许的非空文本能够往返；为三种字段及真实CLI保留针对性RED→GREEN，不通过未获批准的新输入限制收窄合同。"
+      }
+    ],
+    "checks": [
+      {
+        "name": "slice-a-core-green-2",
+        "kind": "command",
+        "command": "python -B -m pytest -p no:cacheprovider tests/test_template_generation.py::test_render_core_combinations tests/test_template_generation.py::test_reject_invalid_spec tests/test_template_generation.py::test_check_rejects_empty_card_and_unknown_mode -q",
+        "argv": [
+          "python",
+          "-B",
+          "-m",
+          "pytest",
+          "-p",
+          "no:cacheprovider",
+          "tests/test_template_generation.py::test_render_core_combinations",
+          "tests/test_template_generation.py::test_reject_invalid_spec",
+          "tests/test_template_generation.py::test_check_rejects_empty_card_and_unknown_mode",
+          "-q"
+        ],
+        "cwd": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\.worktrees\\iter-10",
+        "exit_code": 0,
+        "output": "docs/todos/10-self-hosting-hardening/evidence/02/slice-a-core-green-2.json.output.txt",
+        "summary": "A修正后19通过，八组合核心与基本边界。",
+        "receipt": "docs/todos/10-self-hosting-hardening/evidence/02/slice-a-core-green-2.json",
+        "child_receipt": "docs/todos/10-self-hosting-hardening/evidence/02/slice-a-core-green-2.json.child.json",
+        "status": "COMPLETED",
+        "tree_terminal": true,
+        "origin": "implementer-original"
+      },
+      {
+        "name": "slice-a-core-green",
+        "kind": "command",
+        "command": "python -B -m pytest -p no:cacheprovider tests/test_template_generation.py::test_render_core_combinations tests/test_template_generation.py::test_reject_invalid_spec tests/test_template_generation.py::test_check_rejects_empty_card_and_unknown_mode -q",
+        "argv": [
+          "python",
+          "-B",
+          "-m",
+          "pytest",
+          "-p",
+          "no:cacheprovider",
+          "tests/test_template_generation.py::test_render_core_combinations",
+          "tests/test_template_generation.py::test_reject_invalid_spec",
+          "tests/test_template_generation.py::test_check_rejects_empty_card_and_unknown_mode",
+          "-q"
+        ],
+        "cwd": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\.worktrees\\iter-10",
+        "exit_code": 1,
+        "output": "docs/todos/10-self-hosting-hardening/evidence/02/slice-a-core-green.json.output.txt",
+        "summary": "首次GREEN尝试8失败/11通过，占位规则误判iter标记；保留失败，不记作成功。",
+        "receipt": "docs/todos/10-self-hosting-hardening/evidence/02/slice-a-core-green.json",
+        "child_receipt": "docs/todos/10-self-hosting-hardening/evidence/02/slice-a-core-green.json.child.json",
+        "status": "COMPLETED",
+        "tree_terminal": true,
+        "origin": "implementer-original",
+        "failure_kind": "assertion"
+      },
+      {
+        "name": "red",
+        "kind": "command",
+        "command": "python -B -m pytest -p no:cacheprovider tests/test_template_generation.py::test_render_core_combinations tests/test_template_generation.py::test_reject_invalid_spec tests/test_template_generation.py::test_check_rejects_empty_card_and_unknown_mode -q",
+        "argv": [
+          "python",
+          "-B",
+          "-m",
+          "pytest",
+          "-p",
+          "no:cacheprovider",
+          "tests/test_template_generation.py::test_render_core_combinations",
+          "tests/test_template_generation.py::test_reject_invalid_spec",
+          "tests/test_template_generation.py::test_check_rejects_empty_card_and_unknown_mode",
+          "-q"
+        ],
+        "cwd": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\.worktrees\\iter-10",
+        "exit_code": 1,
+        "output": "docs/todos/10-self-hosting-hardening/evidence/02/slice-a-core-red.json.output.txt",
+        "summary": "有效RED：19目标断言失败；可导入且函数实际调用，非编译/环境失败。",
+        "receipt": "docs/todos/10-self-hosting-hardening/evidence/02/slice-a-core-red.json",
+        "child_receipt": "docs/todos/10-self-hosting-hardening/evidence/02/slice-a-core-red.json.child.json",
+        "status": "COMPLETED",
+        "tree_terminal": true,
+        "origin": "implementer-original",
+        "failure_kind": "assertion"
+      },
+      {
+        "name": "slice-a-note-format",
+        "kind": "command",
+        "command": "npx.cmd --no-install tsx C:/Users/qingyu/.codex/skills/write-notes-like-deepseek/scripts/verify-agent-note-format.ts",
+        "argv": [
+          "npx.cmd",
+          "--no-install",
+          "tsx",
+          "C:/Users/qingyu/.codex/skills/write-notes-like-deepseek/scripts/verify-agent-note-format.ts"
+        ],
+        "cwd": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\.worktrees\\iter-10",
+        "exit_code": 0,
+        "output": "docs/todos/10-self-hosting-hardening/evidence/02/slice-a-note-format.json.output.txt",
+        "summary": "笔记树/格式校验15项通过；原件沿用，非业务验收。",
+        "receipt": "docs/todos/10-self-hosting-hardening/evidence/02/slice-a-note-format.json",
+        "child_receipt": "docs/todos/10-self-hosting-hardening/evidence/02/slice-a-note-format.json.child.json",
+        "status": "COMPLETED",
+        "tree_terminal": true,
+        "origin": "implementer-original"
+      },
+      {
+        "name": "slice-a-note-tree",
+        "kind": "command",
+        "command": "npx.cmd --no-install tsx C:/Users/qingyu/.codex/skills/write-notes-like-deepseek/scripts/verify-agent-note-tree.ts",
+        "argv": [
+          "npx.cmd",
+          "--no-install",
+          "tsx",
+          "C:/Users/qingyu/.codex/skills/write-notes-like-deepseek/scripts/verify-agent-note-tree.ts"
+        ],
+        "cwd": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\.worktrees\\iter-10",
+        "exit_code": 0,
+        "output": "docs/todos/10-self-hosting-hardening/evidence/02/slice-a-note-tree.json.output.txt",
+        "summary": "笔记树/格式校验15项通过；原件沿用，非业务验收。",
+        "receipt": "docs/todos/10-self-hosting-hardening/evidence/02/slice-a-note-tree.json",
+        "child_receipt": "docs/todos/10-self-hosting-hardening/evidence/02/slice-a-note-tree.json.child.json",
+        "status": "COMPLETED",
+        "tree_terminal": true,
+        "origin": "implementer-original"
+      },
+      {
+        "name": "green",
+        "kind": "command",
+        "command": "python -B -m pytest -p no:cacheprovider tests/test_template_generation.py -q",
+        "argv": [
+          "python",
+          "-B",
+          "-m",
+          "pytest",
+          "-p",
+          "no:cacheprovider",
+          "tests/test_template_generation.py",
+          "-q"
+        ],
+        "cwd": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\.worktrees\\iter-10",
+        "exit_code": 0,
+        "output": "docs/todos/10-self-hosting-hardening/evidence/02/slice-b-cli-boundary-green.json.output.txt",
+        "summary": "同组74通过；未将兼容补测声称经历RED。",
+        "receipt": "docs/todos/10-self-hosting-hardening/evidence/02/slice-b-cli-boundary-green.json",
+        "child_receipt": "docs/todos/10-self-hosting-hardening/evidence/02/slice-b-cli-boundary-green.json.child.json",
+        "status": "COMPLETED",
+        "tree_terminal": true,
+        "origin": "implementer-original"
+      },
+      {
+        "name": "slice-b-cli-boundary-red",
+        "kind": "command",
+        "command": "python -B -m pytest -p no:cacheprovider tests/test_template_generation.py -q",
+        "argv": [
+          "python",
+          "-B",
+          "-m",
+          "pytest",
+          "-p",
+          "no:cacheprovider",
+          "tests/test_template_generation.py",
+          "-q"
+        ],
+        "cwd": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\.worktrees\\iter-10",
+        "exit_code": 1,
+        "output": "docs/todos/10-self-hosting-hardening/evidence/02/slice-b-cli-boundary-red.json.output.txt",
+        "summary": "有效CLI/边界RED：17失败/57通过；CLI实际exit0但stdout空，触发相等断言；另有合法记法误拒与预检漏拒。",
+        "receipt": "docs/todos/10-self-hosting-hardening/evidence/02/slice-b-cli-boundary-red.json",
+        "child_receipt": "docs/todos/10-self-hosting-hardening/evidence/02/slice-b-cli-boundary-red.json.child.json",
+        "status": "COMPLETED",
+        "tree_terminal": true,
+        "origin": "implementer-original",
+        "failure_kind": "assertion"
+      },
+      {
+        "name": "slice-b-compatibility",
+        "kind": "command",
+        "command": "python -B -m pytest -p no:cacheprovider tests/test_template_generation.py -q",
+        "argv": [
+          "python",
+          "-B",
+          "-m",
+          "pytest",
+          "-p",
+          "no:cacheprovider",
+          "tests/test_template_generation.py",
+          "-q"
+        ],
+        "cwd": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\.worktrees\\iter-10",
+        "exit_code": 0,
+        "output": "docs/todos/10-self-hosting-hardening/evidence/02/slice-b-compatibility.json.output.txt",
+        "summary": "81通过；补充7项兼容未经历RED；四type实际FS完整绑定及Git可变投影。",
+        "receipt": "docs/todos/10-self-hosting-hardening/evidence/02/slice-b-compatibility.json",
+        "child_receipt": "docs/todos/10-self-hosting-hardening/evidence/02/slice-b-compatibility.json.child.json",
+        "status": "COMPLETED",
+        "tree_terminal": true,
+        "origin": "implementer-original"
+      },
+      {
+        "name": "slice-b-note-format",
+        "kind": "command",
+        "command": "npx.cmd tsx C:/Users/qingyu/.codex/skills/write-notes-like-deepseek/scripts/verify-agent-note-format.ts",
+        "argv": [
+          "npx.cmd",
+          "tsx",
+          "C:/Users/qingyu/.codex/skills/write-notes-like-deepseek/scripts/verify-agent-note-format.ts"
+        ],
+        "cwd": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\.worktrees\\iter-10",
+        "exit_code": 0,
+        "output": "docs/todos/10-self-hosting-hardening/evidence/02/slice-b-note-format.json.output.txt",
+        "summary": "笔记树/格式校验15项通过；原件沿用，非业务验收。",
+        "receipt": "docs/todos/10-self-hosting-hardening/evidence/02/slice-b-note-format.json",
+        "child_receipt": "docs/todos/10-self-hosting-hardening/evidence/02/slice-b-note-format.json.child.json",
+        "status": "COMPLETED",
+        "tree_terminal": true,
+        "origin": "implementer-original"
+      },
+      {
+        "name": "slice-b-note-tree",
+        "kind": "command",
+        "command": "npx.cmd tsx C:/Users/qingyu/.codex/skills/write-notes-like-deepseek/scripts/verify-agent-note-tree.ts",
+        "argv": [
+          "npx.cmd",
+          "tsx",
+          "C:/Users/qingyu/.codex/skills/write-notes-like-deepseek/scripts/verify-agent-note-tree.ts"
+        ],
+        "cwd": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\.worktrees\\iter-10",
+        "exit_code": 0,
+        "output": "docs/todos/10-self-hosting-hardening/evidence/02/slice-b-note-tree.json.output.txt",
+        "summary": "笔记树/格式校验15项通过；原件沿用，非业务验收。",
+        "receipt": "docs/todos/10-self-hosting-hardening/evidence/02/slice-b-note-tree.json",
+        "child_receipt": "docs/todos/10-self-hosting-hardening/evidence/02/slice-b-note-tree.json.child.json",
+        "status": "COMPLETED",
+        "tree_terminal": true,
+        "origin": "implementer-original"
+      },
+      {
+        "name": "regression",
+        "kind": "command",
+        "command": "python -B -m pytest -p no:cacheprovider tests/test_template_generation.py tests/test_prompt_sources.py tests/test_task_card_schema.py tests/test_filesystem_receipts.py tests/test_filesystem_r7_repairs.py -q",
+        "argv": [
+          "python",
+          "-B",
+          "-m",
+          "pytest",
+          "-p",
+          "no:cacheprovider",
+          "tests/test_template_generation.py",
+          "tests/test_prompt_sources.py",
+          "tests/test_task_card_schema.py",
+          "tests/test_filesystem_receipts.py",
+          "tests/test_filesystem_r7_repairs.py",
+          "-q"
+        ],
+        "cwd": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\.worktrees\\iter-10",
+        "exit_code": 0,
+        "output": "docs/todos/10-self-hosting-hardening/evidence/02/slice-b-regression.json.output.txt",
+        "summary": "指定五文件111通过，9.21秒；复用原件而非声称Reviewer重跑。",
+        "receipt": "docs/todos/10-self-hosting-hardening/evidence/02/slice-b-regression.json",
+        "child_receipt": "docs/todos/10-self-hosting-hardening/evidence/02/slice-b-regression.json.child.json",
+        "status": "COMPLETED",
+        "tree_terminal": true,
+        "origin": "implementer-original"
+      },
+      {
+        "name": "slice-b-scope",
+        "kind": "command",
+        "command": "python C:/Users/qingyu/.codeg/skills/iteration-manager/build/frozen-tools/46ded3a/scripts/iter_sync.py --check-scope 2ecd3bc3f957ac1941b388e036a6427b717b6cc7 HEAD docs/todos/10-self-hosting-hardening/02-typed-template-generation.md --include-worktree",
+        "argv": [
+          "python",
+          "C:/Users/qingyu/.codeg/skills/iteration-manager/build/frozen-tools/46ded3a/scripts/iter_sync.py",
+          "--check-scope",
+          "2ecd3bc3f957ac1941b388e036a6427b717b6cc7",
+          "HEAD",
+          "docs/todos/10-self-hosting-hardening/02-typed-template-generation.md",
+          "--include-worktree"
+        ],
+        "cwd": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\.worktrees\\iter-10",
+        "exit_code": 0,
+        "output": "docs/todos/10-self-hosting-hardening/evidence/02/slice-b-scope.json.output.txt",
+        "summary": "实现者历史范围检查58文件通过，不替代本次BASE..C范围门禁。",
+        "receipt": "docs/todos/10-self-hosting-hardening/evidence/02/slice-b-scope.json",
+        "child_receipt": "docs/todos/10-self-hosting-hardening/evidence/02/slice-b-scope.json.child.json",
+        "status": "COMPLETED",
+        "tree_terminal": true,
+        "origin": "implementer-original"
+      },
+      {
+        "name": "boundary-probe-0110",
+        "kind": "command",
+        "command": "python -B -m pytest -p no:cacheprovider build/review-02/test_review_boundaries.py -q",
+        "argv": [
+          "python",
+          "-B",
+          "-m",
+          "pytest",
+          "-p",
+          "no:cacheprovider",
+          "build/review-02/test_review_boundaries.py",
+          "-q"
+        ],
+        "cwd": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\.worktrees\\iter-10",
+        "exit_code": 1,
+        "output": "build/review-02/boundary-probe-0110.json.output.txt",
+        "summary": "Reviewer新增反例3项真实断言失败：非空前导空白文本被配套预检误报缺失。",
+        "receipt": "build/review-02/boundary-probe-0110.json",
+        "child_receipt": "build/review-02/boundary-probe-0110.json.child.json",
+        "status": "COMPLETED",
+        "tree_terminal": true,
+        "origin": "independent-reviewer",
+        "failure_kind": "assertion"
+      },
+      {
+        "name": "cli-probe-0110",
+        "kind": "command",
+        "command": "python -B -m pytest -p no:cacheprovider build/review-02/test_review_boundaries.py::test_cli_accepts_nonempty_command_with_leading_space --basetemp build/review-02/pytest-cli-tmp -q",
+        "argv": [
+          "python",
+          "-B",
+          "-m",
+          "pytest",
+          "-p",
+          "no:cacheprovider",
+          "build/review-02/test_review_boundaries.py::test_cli_accepts_nonempty_command_with_leading_space",
+          "--basetemp",
+          "build/review-02/pytest-cli-tmp",
+          "-q"
+        ],
+        "cwd": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\.worktrees\\iter-10",
+        "exit_code": 1,
+        "output": "build/review-02/cli-probe-0110.json.output.txt",
+        "summary": "Reviewer CLI真实反例：有效非空green命令前导空格导致exit2并输出Missing required check: green。",
+        "receipt": "build/review-02/cli-probe-0110.json",
+        "child_receipt": "build/review-02/cli-probe-0110.json.child.json",
+        "status": "COMPLETED",
+        "tree_terminal": true,
+        "origin": "independent-reviewer",
+        "failure_kind": "assertion"
+      },
+      {
+        "name": "independent-path-0109",
+        "kind": "command",
+        "command": "python -B -m pytest -p no:cacheprovider tests/test_template_generation.py::test_render_core_combinations tests/test_template_generation.py::test_actual_filesystem_freeze_binding tests/test_template_generation.py::test_git_projection_keeps_existing_mutability -q",
+        "argv": [
+          "python",
+          "-B",
+          "-m",
+          "pytest",
+          "-p",
+          "no:cacheprovider",
+          "tests/test_template_generation.py::test_render_core_combinations",
+          "tests/test_template_generation.py::test_actual_filesystem_freeze_binding",
+          "tests/test_template_generation.py::test_git_projection_keeps_existing_mutability",
+          "-q"
+        ],
+        "cwd": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\.worktrees\\iter-10",
+        "exit_code": 0,
+        "output": "build/review-02/independent-path-0109.json.output.txt",
+        "summary": "Reviewer针对八组合、四FS实际冻结和Git投影独立实跑13通过。",
+        "receipt": "build/review-02/independent-path-0109.json",
+        "child_receipt": "build/review-02/independent-path-0109.json.child.json",
+        "status": "COMPLETED",
+        "tree_terminal": true,
+        "origin": "independent-reviewer"
+      },
+      {
+        "name": "scope-0108",
+        "kind": "command",
+        "command": "python C:/Users/qingyu/.codeg/skills/iteration-manager/build/frozen-tools/46ded3a/scripts/iter_sync.py --check-scope 2ecd3bc3f957ac1941b388e036a6427b717b6cc7 685ee752e1291c5652f3d7cf304dee6cb8842e43 docs/todos/10-self-hosting-hardening/02-typed-template-generation.md --include-worktree",
+        "argv": [
+          "python",
+          "C:/Users/qingyu/.codeg/skills/iteration-manager/build/frozen-tools/46ded3a/scripts/iter_sync.py",
+          "--check-scope",
+          "2ecd3bc3f957ac1941b388e036a6427b717b6cc7",
+          "685ee752e1291c5652f3d7cf304dee6cb8842e43",
+          "docs/todos/10-self-hosting-hardening/02-typed-template-generation.md",
+          "--include-worktree"
+        ],
+        "cwd": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\.worktrees\\iter-10",
+        "exit_code": 0,
+        "output": "build/review-02/scope-0108.json.output.txt",
+        "summary": "Reviewer实际通过F runner执行F check-scope BASE C --include-worktree，63文件PASSED。",
+        "receipt": "build/review-02/scope-0108.json",
+        "child_receipt": "build/review-02/scope-0108.json.child.json",
+        "status": "COMPLETED",
+        "tree_terminal": true,
+        "origin": "independent-reviewer"
+      }
+    ],
+    "reuse_basis": [
+      {
+        "evidence": "slice-a-core-red/green/green-2",
+        "candidate": "f5583e542a20e00cfe9e3eae3776f32cbe9d7ae9",
+        "decision": "保留历史RED及中间失败，不称为在C重演；核心行为由B回归与Reviewer13项重验覆盖。",
+        "basis": "已直接读取原始343行RED及252行失败GREEN输出，命令receipt/child exit匹配；无ImportError/收集失败冒充RED。"
+      },
+      {
+        "evidence": "slice-b-cli-boundary-red/green; slice-b-compatibility; slice-b-regression",
+        "candidate": "24a483eb7b0694ce67a5e6c0b50adb0d1cb5c160",
+        "decision": "原输出沿用，不重跑完整111项；针对关键FS/八组合另独立13项，新增空白反例另实跑。",
+        "basis": "git diff 24a483e..C仅卡/README/协调交接证据，没有被覆盖源码、模板、测试或既有check.output变化；同Windows/Python环境无相关变更记录；新反例说明原矩阵未覆盖此输入，111通过不推出全合同通过。"
+      },
+      {
+        "evidence": "slice-a/b-note-tree/format",
+        "decision": "沿用B最终笔记校验",
+        "basis": "B后笔记未变，原始输出15项通过；不追加无关业务测试。"
+      }
+    ],
+    "tdd": {
+      "valid": true,
+      "core_red": "A19断言失败→首次8失败/11通过→19GREEN；B有效CLI边界17失败/57通过→74GREEN。",
+      "supplemental_tests": "81项版本比74项增加7项兼容补测，未经历RED如实保留；Reviewer反例为新发现，尚未GREEN。",
+      "limitation": "没有历史RED时源码提交快照；原始trace明确执行可调用stub与实际CLI并触发目标断言，未补造历史源码。"
+    },
+    "rulings": {
+      "structured_rendering": "认可；复用现有合同，不模型替换段落。",
+      "placeholder_grammar": "认可本次明确约定：{{identifier}}、${identifier}、{TODO}/{TBD}、YYYY-MM-DD；普通TODO、泛型、代码、HTML允许。与测试及文档一致，非任意自然语言待填识别。",
+      "typesafe": "本次未决严重度由TypeSafe评估important，confidence0.64，概率important0.73/no_defect0.18/minor0.06/unknown0.03；Codex依据真实CLI反例与冻结输入合同作CHANGES_REQUESTED。原请求响应见build/review-02/typesafe-review.json。"
+    },
+    "command_terminal": {
+      "all_review_commands_completed": true,
+      "active_commands": [],
+      "implementation_sessions": [
+        "5638876b-7be3-4bc9-a2da-af32c4941033 completed",
+        "72db3dfe-466c-424e-bb74-6511fd23e455 completed"
+      ],
+      "implementation_terminal_evidence": [
+        "docs/todos/10-self-hosting-hardening/evidence/02/native-terminal-a.json",
+        "docs/todos/10-self-hosting-hardening/evidence/02/native-terminal-b.json"
+      ],
+      "summary": "12个原runner与child逐项exit一致且tree_terminal=true；4个Reviewer runner均COMPLETED/tree_terminal=true。"
+    },
+    "dirty": {
+      "initial": [],
+      "final": [],
+      "ignored_artifacts": "仅新增build/review-02内审查probe、输入、runner原件、TypeSafe原件和本报告；未改源码/卡/README，无Git提交。"
+    },
+    "unfinished": [
+      {
+        "owner": "原实现owner（由根协调者派发）",
+        "item": "修复F01并取得针对性GREEN及受影响回归后冻结新候选，交非参与者复审。"
+      },
+      {
+        "owner": "根协调者",
+        "item": "本报告原文归档正式review-report.json；当前不得登记APPROVED/DONE或放行后继。"
+      }
+    ],
+    "not_run": "未运行local strict、整轮全回归、部署或外部业务验收；本次为C任务初审，登记与任务06/整轮门禁仍归各自阶段。",
+    "memory": "Quick memory registry keyword search returned no relevant hits; no historical memory facts used."
+  }
+}
