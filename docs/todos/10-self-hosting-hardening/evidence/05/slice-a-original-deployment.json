@@ -1,0 +1,28 @@
+{
+  "completed_at": "2026-11-12T12:12:13.649088+00:00",
+  "canonical": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager",
+  "targets": [
+    "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+    "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager"
+  ],
+  "files_overwritten_per_target": 57,
+  "files_added_per_target": 1,
+  "files_equal_per_installation": [
+    58,
+    58,
+    58
+  ],
+  "deleted_files": 0,
+  "approved_R7_files_unchanged": 57,
+  "exclusions": [
+    ".git",
+    ".gitignore",
+    "docs/todos",
+    "build",
+    "evidence",
+    "cache",
+    "*.bak"
+  ],
+  "plan": "deployment-plan.json",
+  "recovery": "restore_replicas.py"
+}

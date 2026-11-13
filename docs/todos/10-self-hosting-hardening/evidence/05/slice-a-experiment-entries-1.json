@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "argv": [
+    "python",
+    "-B",
+    "docs/todos/10-self-hosting-hardening/evidence/05/slice-a-observe-entries.py"
+  ],
+  "cwd": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\.worktrees\\iter-10",
+  "deadline": "2026-11-13T18:39:21.378000+00:00",
+  "cleanup_reserve_seconds": 5,
+  "status": "COMPLETED",
+  "deadline_checked_at": "2026-11-13T18:36:33.333914+00:00",
+  "started_at": "2026-11-13T18:36:33.343445+00:00",
+  "ended_at": "2026-11-13T18:36:33.665775+00:00",
+  "raw_exit_code": 0,
+  "tree_terminal": true,
+  "output": "docs/todos/10-self-hosting-hardening/evidence/05/slice-a-experiment-entries-1.json.output.txt",
+  "container_pid": 31868,
+  "launcher_exit_code": 0,
+  "command": {
+    "status": "COMPLETED",
+    "raw_exit_code": 0,
+    "started_at": "2026-11-13T18:36:33.343445+00:00",
+    "pid": 41476,
+    "deadline_checked_at": "2026-11-13T18:36:33.333914+00:00",
+    "ended_at": "2026-11-13T18:36:33.645743+00:00"
+  },
+  "late_by_seconds": 0
+}

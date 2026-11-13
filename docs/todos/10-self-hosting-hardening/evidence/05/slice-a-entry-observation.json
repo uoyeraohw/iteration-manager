@@ -1,0 +1,107 @@
+{
+  "checked_at": "2026-11-13T18:36:33.483435+00:00",
+  "correction": "First experiment named scripts/iter_query.py; actual source is scripts/iter_queries.py. Original evidence remains unchanged.",
+  "tags": [
+    {
+      "root": "C:/Users/qingyu/.codeg/skills/iteration-manager/.worktrees/iter-10",
+      "argv": [
+        "git",
+        "describe",
+        "--tags",
+        "--exact-match",
+        "HEAD"
+      ],
+      "exit_code": 128,
+      "stdout": "",
+      "stderr": "fatal: No names found, cannot describe anything.\n",
+      "observed_version": "UNKNOWN"
+    },
+    {
+      "root": "C:/Users/qingyu/.codeg/skills/iteration-manager",
+      "argv": [
+        "git",
+        "describe",
+        "--tags",
+        "--exact-match",
+        "HEAD"
+      ],
+      "exit_code": 128,
+      "stdout": "",
+      "stderr": "fatal: No names found, cannot describe anything.\n",
+      "observed_version": "UNKNOWN"
+    }
+  ],
+  "entries": [
+    {
+      "target": "C:/Users/qingyu/.codeg/skills/iteration-manager",
+      "entries": [
+        {
+          "path": "scripts/iter_queries.py",
+          "exists": false,
+          "equals_iter10_base": false
+        },
+        {
+          "path": "scripts/iter_cli.py",
+          "exists": false,
+          "equals_iter10_base": false
+        }
+      ]
+    },
+    {
+      "target": "C:/Users/qingyu/.codex/skills/iteration-manager",
+      "entries": [
+        {
+          "path": "scripts/iter_queries.py",
+          "exists": false,
+          "equals_iter10_base": false
+        },
+        {
+          "path": "scripts/iter_cli.py",
+          "exists": false,
+          "equals_iter10_base": false
+        }
+      ]
+    },
+    {
+      "target": "C:/Users/qingyu/.gemini/config/skills/iteration-manager",
+      "entries": [
+        {
+          "path": "scripts/iter_queries.py",
+          "exists": false,
+          "equals_iter10_base": false
+        },
+        {
+          "path": "scripts/iter_cli.py",
+          "exists": false,
+          "equals_iter10_base": false
+        }
+      ]
+    }
+  ],
+  "native": [
+    {
+      "source_pointer": "docs/todos/10-self-hosting-hardening/evidence/01/native-terminal-implementation-b.json",
+      "guard_reason": "deadline",
+      "status": "canceled",
+      "scope": "slice native terminal, not final candidate approval or installed consumption"
+    },
+    {
+      "source_pointer": "docs/todos/10-self-hosting-hardening/evidence/02/native-terminal-c.json",
+      "guard_reason": "terminal",
+      "status": "completed",
+      "scope": "slice native terminal, not final candidate approval or installed consumption"
+    },
+    {
+      "source_pointer": "docs/todos/10-self-hosting-hardening/evidence/03/native-terminal-c.json",
+      "guard_reason": "terminal",
+      "status": "completed",
+      "scope": "slice native terminal, not final candidate approval or installed consumption"
+    },
+    {
+      "source_pointer": "docs/todos/10-self-hosting-hardening/evidence/04/native-terminal-a.json",
+      "guard_reason": "terminal",
+      "status": "completed",
+      "scope": "slice native terminal, not final candidate approval or installed consumption"
+    }
+  ]
+}

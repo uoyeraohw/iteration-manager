@@ -1,0 +1,64 @@
+{
+  "status": "COMPLETED",
+  "verified_at": "2026-11-12T12:16:41.568418+00:00",
+  "canonical_repository": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager",
+  "branch": "main",
+  "head": "d29ddc2b5858dbc22239469a552493eae6142ca2",
+  "commit_kind": "INITIAL_ROOT_COMMIT_NOT_A_MERGE",
+  "tracked_files": 69,
+  "committed_files_equal_worktree": 69,
+  "worktree_clean": true,
+  "replicas": [
+    "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+    "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager"
+  ],
+  "files_equal_per_installation": 58,
+  "runtime_commit_to_replica_comparisons": 116,
+  "overwritten_per_replica": 57,
+  "added_per_replica": 1,
+  "deleted_files": 0,
+  "full_tests_passed": 205,
+  "receipts": {
+    "full-tests": {
+      "receipt": "full-tests-command.json",
+      "raw_exit_code": 0,
+      "started_at": "2026-11-12T12:10:53.949779+00:00",
+      "ended_at": "2026-11-12T12:14:53.529113+00:00"
+    },
+    "note-tree": {
+      "receipt": "note-tree-command.json",
+      "raw_exit_code": 0,
+      "started_at": "2026-11-12T12:11:03.188131+00:00",
+      "ended_at": "2026-11-12T12:11:06.203207+00:00"
+    },
+    "note-format": {
+      "receipt": "note-format-command.json",
+      "raw_exit_code": 0,
+      "started_at": "2026-11-12T12:11:06.693655+00:00",
+      "ended_at": "2026-11-12T12:11:10.669901+00:00"
+    },
+    "note-archived": {
+      "receipt": "note-archived-command.json",
+      "raw_exit_code": 0,
+      "started_at": "2026-11-12T12:13:12.240637+00:00",
+      "ended_at": "2026-11-12T12:13:16.257695+00:00"
+    },
+    "installed-entrypoints": {
+      "receipt": "installed-entrypoints-command.json",
+      "raw_exit_code": 0,
+      "started_at": "2026-11-12T12:13:10.204378+00:00",
+      "ended_at": "2026-11-12T12:13:11.740225+00:00"
+    },
+    "deployment": {
+      "receipt": "deployment-command.json",
+      "raw_exit_code": 0,
+      "started_at": "2026-11-12T12:12:11.862680+00:00",
+      "ended_at": "2026-11-12T12:12:13.762644+00:00"
+    }
+  },
+  "backup_plan": "deployment-plan.json",
+  "recovery": "restore_replicas.py",
+  "remote_configured": false,
+  "pushed": false,
+  "validation_receipt": "final-verification-command.json"
+}

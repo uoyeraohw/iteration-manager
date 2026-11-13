@@ -1,0 +1,28 @@
+{
+  "request": {
+    "state": {
+      "observation": "2026-11-13T18:33:45Z; explicit historical manifest 58 paths, all three installed roots equal maintenance main on 58/58; each equals historical frozen source on 36/58 and iter10 BASE on 45/58; five explicit entries show iter_sync differs from iter10 and iter_templates/iter_query/template_generation absent. Main HEAD d3bd97ab16ffed6104034a887a01eb1b4d75dc0e; iter10 BASE 8392193a0d9e883892f75780a63a1b16f67682c4. No full current deployment manifest observed, no new session installed-template consumption performed.",
+      "contract": "Four-layer factual index; no install/config writes or new hashes. Unknown version needs owner and recovery condition."
+    },
+    "questions": {
+      "installation_scope": {
+        "type": "choice",
+        "instructions": "Choose the strongest supportable classification for CURRENT installation observations only, without extending beyond the compared path inventory.",
+        "criteria": {
+          "bounded": "Bounded current byte observation: 58 historical whitelist paths equal main, named entry absences/differences; complete installed release identity UNKNOWN pending deployment owner manifest/version attribution.",
+          "full_main": "Full installed main release identified by HEAD, complete current delivery manifest proven.",
+          "iter10": "iter10 reviewed candidate deployed and consumed.",
+          "insufficient": "Evidence too incomplete even to report bounded path equality."
+        }
+      }
+    }
+  },
+  "response": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"model\":\"jev-1.14.0\",\"answers\":{\"installation_scope\":{\"type\":\"choice\",\"choice\":\"bounded\",\"confidence\":1.0,\"probabilities\":{\"bounded\":1.0,\"full_main\":0.0,\"insufficient\":0.0,\"iter10\":0.0}}},\"usage\":{\"input_tokens\":640,\"output_tokens\":52}}"
+      }
+    ]
+  }
+}

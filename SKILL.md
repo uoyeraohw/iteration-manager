@@ -88,6 +88,7 @@ python <skill_root>/scripts/iter_sync.py [主干工作区路径]
 
 ## 资源
 
+- [发布证据索引](references/release_status.md)：源码、已审候选、安装与实际消费分层查证；[结构化任务卡生成](references/template_generation.md)。
 - [任务卡模板](templates/task_detail.md)、[迭代索引](templates/iteration_readme.md)、[根索引](templates/root_readme.md)
 - [Implementer委派](templates/sdd_implementer_prompt.md)、[Reviewer委派](templates/sdd_reviewer_prompt.md)、[会诊](templates/consilium_rca_prompt.md)
 - 类型契约：[Strict-TDD](templates/contracts/strict_tdd_contract.md)、[UI](templates/contracts/ui_component_contract.md)、[重构](templates/contracts/refactor_benchmark_contract.md)、[Spike](templates/contracts/spike_discovery_contract.md)

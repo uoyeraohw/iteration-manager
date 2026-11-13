@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "argv": [
+    "npx.cmd",
+    "tsx",
+    "C:/Users/qingyu/.codex/skills/write-notes-like-deepseek/scripts/verify-agent-note-format.ts"
+  ],
+  "cwd": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\.worktrees\\iter-10",
+  "deadline": "2026-11-13T18:39:21.378000+00:00",
+  "cleanup_reserve_seconds": 5,
+  "status": "COMPLETED",
+  "deadline_checked_at": "2026-11-13T18:37:19.347434+00:00",
+  "started_at": "2026-11-13T18:37:19.356027+00:00",
+  "ended_at": "2026-11-13T18:37:21.674754+00:00",
+  "raw_exit_code": 0,
+  "tree_terminal": true,
+  "output": "docs/todos/10-self-hosting-hardening/evidence/05/slice-a-note-format-final.json.output.txt",
+  "container_pid": 34580,
+  "launcher_exit_code": 0,
+  "command": {
+    "status": "COMPLETED",
+    "raw_exit_code": 0,
+    "started_at": "2026-11-13T18:37:19.356027+00:00",
+    "pid": 40660,
+    "deadline_checked_at": "2026-11-13T18:37:19.347434+00:00",
+    "ended_at": "2026-11-13T18:37:21.660888+00:00"
+  },
+  "late_by_seconds": 0
+}
