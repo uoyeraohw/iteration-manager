@@ -1,0 +1,42 @@
+{
+  "version": 1,
+  "phase": "implementation",
+  "candidate": "612cfde035f5fc96cec9d60435296af4e84be307",
+  "inputs": [
+    "docs/todos/10-self-hosting-hardening/01-authority-consistency.md",
+    "references/worktree_git_contract.md",
+    "references/superpowers_handbook.md",
+    "templates/root_readme.md"
+  ],
+  "capabilities": [
+    "Codeg MCP codex independent session",
+    "Windows iter_run"
+  ],
+  "checkpoint": "四类原生只读消费及磁盘/Git观察已提交；父会话在提交后回复前被deadline取消，不能按normal release",
+  "remaining_work": [
+    "取得本次单次resume-checkpoint明确授权",
+    "恢复门禁",
+    "非参与者独审",
+    "登记strict"
+  ],
+  "executor_id": "6c6e933a-5d58-4dbb-aa57-3d953f675e2f",
+  "terminal_evidence": "docs/todos/10-self-hosting-hardening/evidence/01/native-terminal-implementation-b.json",
+  "progress": [
+    {
+      "kind": "implementation",
+      "summary": "四个新会话原始调用/终态、磁盘变化归属和矩阵提交612cfde，整卡仍未批准",
+      "evidence": "docs/todos/10-self-hosting-hardening/evidence/01/implementation-checkpoint-b.json"
+    },
+    {
+      "kind": "green",
+      "summary": "消费库存核验命令0且source/test/note相对A不变，复用A回归，无重复跑",
+      "evidence": "docs/todos/10-self-hosting-hardening/evidence/01/consumption-b/verification.json.output.txt"
+    }
+  ],
+  "commands": [
+    "docs/todos/10-self-hosting-hardening/evidence/01/consumption-b/verification.json",
+    "docs/todos/10-self-hosting-hardening/evidence/01/consumption-b/scope.json"
+  ],
+  "started_at": null,
+  "ended_at": null
+}

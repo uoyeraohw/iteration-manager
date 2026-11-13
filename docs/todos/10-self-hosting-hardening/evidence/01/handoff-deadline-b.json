@@ -1,0 +1,129 @@
+{
+  "TASK_HANDOFF": {
+    "schema_version": 1,
+    "task_id": "01",
+    "delivery_mode": "git",
+    "candidate_id": "",
+    "execution": {
+      "attempt_count": 2,
+      "no_progress_streak": 0,
+      "last_attempt": {
+        "source": "docs/todos/10-self-hosting-hardening/evidence/01/attempt-implementation-b.json",
+        "phase": "implementation",
+        "delivery_mode": "git",
+        "candidate": "612cfde035f5fc96cec9d60435296af4e84be307",
+        "conditions": {
+          "inputs": [
+            "docs/todos/10-self-hosting-hardening/01-authority-consistency.md",
+            "references/superpowers_handbook.md",
+            "references/worktree_git_contract.md",
+            "templates/root_readme.md"
+          ],
+          "capabilities": [
+            "Codeg MCP codex independent session",
+            "Windows iter_run"
+          ],
+          "scope": [
+            ".agents/notes/implemented/process/2026-11-13-authority-consistency.md",
+            "docs/todos/10-self-hosting-hardening/evidence/01/",
+            "references/superpowers_handbook.md",
+            "references/worktree_git_contract.md",
+            "templates/root_readme.md",
+            "tests/test_authority_scenarios.py",
+            "tests/test_prompt_sources.py"
+          ]
+        },
+        "executor_id": "6c6e933a-5d58-4dbb-aa57-3d953f675e2f",
+        "executor_state": "canceled",
+        "terminal_evidence": "docs/todos/10-self-hosting-hardening/evidence/01/native-terminal-implementation-b.json",
+        "progress": [
+          {
+            "kind": "implementation",
+            "evidence": "docs/todos/10-self-hosting-hardening/evidence/01/implementation-checkpoint-b.json",
+            "summary": "四个新会话原始调用/终态、磁盘变化归属和矩阵提交612cfde，整卡仍未批准"
+          },
+          {
+            "kind": "green",
+            "evidence": "docs/todos/10-self-hosting-hardening/evidence/01/consumption-b/verification.json.output.txt",
+            "summary": "消费库存核验命令0且source/test/note相对A不变，复用A回归，无重复跑"
+          }
+        ],
+        "checkpoint": "四类原生只读消费及磁盘/Git观察已提交；父会话在提交后回复前被deadline取消，不能按normal release",
+        "remaining_work": [
+          "取得本次单次resume-checkpoint明确授权",
+          "恢复门禁",
+          "登记strict",
+          "非参与者独审"
+        ],
+        "commands": [
+          {
+            "receipt": "docs/todos/10-self-hosting-hardening/evidence/01/consumption-b/scope.json",
+            "status": "COMPLETED",
+            "raw_exit_code": 0,
+            "started_at": "2026-11-13T16:27:30.116955+00:00",
+            "ended_at": "2026-11-13T16:27:31.236707+00:00"
+          },
+          {
+            "receipt": "docs/todos/10-self-hosting-hardening/evidence/01/consumption-b/verification.json",
+            "status": "COMPLETED",
+            "raw_exit_code": 0,
+            "started_at": "2026-11-13T16:27:20.132815+00:00",
+            "ended_at": "2026-11-13T16:27:20.487479+00:00"
+          }
+        ],
+        "started_at": null,
+        "ended_at": null,
+        "session_seconds": null,
+        "command_seconds": 1.4744160000000002
+      },
+      "checkpoint": {
+        "candidate": "612cfde035f5fc96cec9d60435296af4e84be307",
+        "phase": "implementation",
+        "summary": "四类原生只读消费及磁盘/Git观察已提交；父会话在提交后回复前被deadline取消，不能按normal release",
+        "progress": [
+          {
+            "kind": "implementation",
+            "evidence": "docs/todos/10-self-hosting-hardening/evidence/01/implementation-checkpoint-b.json",
+            "summary": "四个新会话原始调用/终态、磁盘变化归属和矩阵提交612cfde，整卡仍未批准"
+          },
+          {
+            "kind": "green",
+            "evidence": "docs/todos/10-self-hosting-hardening/evidence/01/consumption-b/verification.json.output.txt",
+            "summary": "消费库存核验命令0且source/test/note相对A不变，复用A回归，无重复跑"
+          }
+        ],
+        "source": "docs/todos/10-self-hosting-hardening/evidence/01/attempt-implementation-b.json"
+      },
+      "remaining_work": [
+        "取得本次单次resume-checkpoint明确授权",
+        "恢复门禁",
+        "登记strict",
+        "非参与者独审"
+      ]
+    },
+    "task_name": "统一授权规则与跨入口场景",
+    "type": "Spike-Discovery",
+    "status": "FUSED",
+    "commit_sha": "",
+    "base_sha": "",
+    "fix_rounds": 0,
+    "fix_total": 0,
+    "consilium_count": 0,
+    "replan_count": 0,
+    "writer": "",
+    "blocked_reason": "execution deadline; slice B committed before canceled reply; explicit single-use resume-checkpoint authorization required to continue review",
+    "is_blocked": true,
+    "review_status": "PENDING",
+    "acceptance_verdict": "BLOCKED",
+    "evidence": {
+      "receipt": ""
+    },
+    "errors": [
+      "BLOCKED: Task is FUSED"
+    ],
+    "files_changed_count": 0,
+    "files_changed": [],
+    "stage_current": "Stage 1/3：对照引用链形成冲突清单和四类场景的可观察预期",
+    "stage_progress": "0/3 (0%)"
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "version": 1,
+  "tasks": {
+    "01": {
+      "phase": "implementation",
+      "candidate": "5ff7c3af554f9effdf0a95050af24c767ca0878b",
+      "inputs": [
+        "docs/todos/10-self-hosting-hardening/01-authority-consistency.md",
+        "references/worktree_git_contract.md",
+        "references/superpowers_handbook.md",
+        "templates/root_readme.md"
+      ],
+      "capabilities": [
+        "Codeg MCP codex independent session",
+        "Windows iter_run"
+      ],
+      "dependencies": [],
+      "tool_entry": "C:/Users/qingyu/.codeg/skills/iteration-manager/build/frozen-tools/46ded3a/scripts/iter_sync.py",
+      "checkpoint": "继承切片A的已提交文档和11项GREEN；只完成四个新会话原生消费与证据汇总，不重跑有效检查",
+      "remaining_work": [
+        "四场景新会话",
+        "独审",
+        "登记strict"
+      ],
+      "observations": {
+        "authority": {
+          "status": "READY",
+          "summary": "用户已批准实施、精准提交和Worktree，禁止部署推送合流清理",
+          "evidence": "docs/todos/10-self-hosting-hardening/evidence/01/authority.txt"
+        },
+        "execution": {
+          "status": "READY",
+          "summary": "Codeg codex探针会话1701实际读取工作区及冻结必读文件成功，无拒绝；实现会话仍需完整消费",
+          "evidence": "docs/todos/10-self-hosting-hardening/evidence/01/capability-probe.json"
+        },
+        "verification": {
+          "status": "READY",
+          "summary": "冻结runner完整基线314 passed，COMPLETED/raw_exit_code0/tree_terminal=true；当前仅文档及受影响文本测试",
+          "evidence": "docs/todos/10-self-hosting-hardening/evidence/01/baseline-suite.json"
+        }
+      }
+    }
+  }
+}

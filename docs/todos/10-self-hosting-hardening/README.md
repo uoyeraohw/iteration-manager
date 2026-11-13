@@ -1,7 +1,7 @@
 # 迭代10 · 规则一致性、使用简化与真实自用健壮性
 
-> **进度指示**：声明DONE [0/6] (0%) · 验收PASS [0/6] · 状态：⚪ 待开始
-> 分支规划：`feat/iter-10-self-hosting-hardening`；工作区规划：`.worktrees/iter-10`（均未创建）。
+> **进度指示**：声明DONE [0/6] (0%) · 验收PASS [0/6] · 状态：🔴 验收阻塞
+> 分支：`feat/iter-10-self-hosting-hardening`；独立工作区：`.worktrees/iter-10`，从规划提交`d3bd97ab16ffed6104034a887a01eb1b4d75dc0e`创建。
 > 用户已批准启动实施、精准Git提交与独立Worktree；按六卡串行验收推进。禁止部署、推送、合流或清理。
 
 ## 1. 迭代核心目标与全局约束
@@ -15,7 +15,7 @@
 - 初始化前dirty仅未跟踪`.codegraph/`；保留，不暂存、删除或认定其获本轮修改授权。实际执行前重新核对，不把历史快照当当前状态。
 - 最新用户授权：同意启动迭代10，实施、精准Git提交、创建独立Worktree；六卡串行，每卡验收PASS才进入后继。暂不部署、推送、合流或清理。初始化阶段的授权限制保留为历史，不再作为实施前提。
 - 交付模式：本迭代真实任务采用Git。FS只作为新模板/看板及隔离验收样例，不把真实任务切换FS来绕开提交。
-- 协调器固定为`46ded3a4696e3bdb531d06951fce7982fa9db1cd`的完整源码/契约，执行准备时以Git树导出到主仓库`build/frozen-tools/46ded3a/`；先核对该目录不存在或已是对应原件，再准备，不覆盖不明目录。固定绝对入口`C:/Users/qingyu/.codeg/skills/iteration-manager/build/frozen-tools/46ded3a/scripts/iter_sync.py`，runner和deadline_watch取同一目录。本轮未导出该副本。
+- 协调器固定为`46ded3a4696e3bdb531d06951fce7982fa9db1cd`的完整源码/契约，已在确认目标不存在后以Git树导出到主仓库`build/frozen-tools/46ded3a/`。固定绝对入口`C:/Users/qingyu/.codeg/skills/iteration-manager/build/frozen-tools/46ded3a/scripts/iter_sync.py`，runner和deadline_watch取同一目录；不更新该副本。
 - 被测候选为iter-10工作区代码。所有任务卡调度/自治/正式门禁使用冻结协调器；候选查询/生成/看板作为被测对象另行验证，不能用正在修改的检查器给自己签发批准。
 - 冻结版本中已知Worktree文档冲突由更高优先的当前授权、SKILL.md与共同协议约束；任务01修复候选，不修改固定副本。若固定工具发现真实门禁缺陷，停止受影响放行并保留证据，经单独裁决决定修复/迁移；不能自动更新协调器。
 - **角色**：主控兼主管可协调，不写产品代码；实现owner负责同任务RED/GREEN和返修；非参与者独立Reviewer。规划/实现/测试/RCA参与者不能自审；整轮独立总审另行安排。执行前按真实工具schema确定代理路由和容量，不填虚构assistant_id。
@@ -39,7 +39,7 @@
 
 | 任务序号 | 任务名称 | type | 前置 | 状态 | 详细卡片索引 |
 | --- | --- | --- | --- | --- | --- |
-| 01 | 统一授权规则与跨入口场景 | Spike-Discovery | 无 | ⚪ 待开始 / 验收:UNKNOWN | [01-authority-consistency.md](./01-authority-consistency.md) |
+| 01 | 统一授权规则与跨入口场景 | Spike-Discovery | 无 | 🔴 已熔断 / 验收:BLOCKED | [01-authority-consistency.md](./01-authority-consistency.md) |
 | 02 | 按类型与交付模式生成和检查任务卡 | Strict-TDD | 01 | ⚪ 待开始 / 验收:UNKNOWN | [02-typed-template-generation.md](./02-typed-template-generation.md) |
 | 03 | 稳定查询与CLI消费接口，保持旧入口兼容 | Strict-TDD | 02 | ⚪ 待开始 / 验收:UNKNOWN | [03-query-cli-contract.md](./03-query-cli-contract.md) |
 | 04 | 看板展示Git/FS候选和可继承交接 | UI-Component | 03 | ⚪ 待开始 / 验收:UNKNOWN | [04-board-handoff.md](./04-board-handoff.md) |
@@ -107,7 +107,7 @@
 
 | 任务 | 声明 | 验收 | 业务阶段 / 清单比例 | 工程阶段 | 阻塞原因 | 累计尝试 | 最后更新 |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| 01-authority-consistency.md | TODO | UNKNOWN | Stage 1/3：对照引用链形成冲突清单和四类场景的可观察预期 / 0/3 (0%) | 读取真实基线、当前变更和前置PASS；完成context、claim与同owner dispatch-check。 | 未记录 | 0 | 2026-11-13 |
+| 01-authority-consistency.md | FUSED | BLOCKED | Stage 1/3：对照引用链形成冲突清单和四类场景的可观察预期 / 0/3 (0%) | 读取真实基线、当前变更和前置PASS；完成context、claim与同owner dispatch-check。 | execution deadline; slice B committed before canceled reply; explicit single-use resume-checkpoint authorization required to continue review | 0 | 2026-11-13T16:31:37.211266+00:00 |
 | 02-typed-template-generation.md | TODO | UNKNOWN | Stage 1/3：为可调用入口与八种组合建立可编译行为断言RED / 0/3 (0%) | 读取真实基线、当前变更和前置PASS；完成context、claim与同owner dispatch-check。 | 未记录 | 0 | 2026-11-13 |
 | 03-query-cli-contract.md | TODO | UNKNOWN | Stage 1/3：冻结兼容矩阵，对缺失的统一投影字段取得有效断言RED / 0/3 (0%) | 读取真实基线、当前变更和前置PASS；完成context、claim与同owner dispatch-check。 | 未记录 | 0 | 2026-11-13 |
 | 04-board-handoff.md | TODO | UNKNOWN | Stage 1/3：固定真实用户路径、视口和四态输入，基于03字段更新详情展示 / 0/3 (0%) | 读取真实基线、当前变更和前置PASS；完成context、claim与同owner dispatch-check。 | 未记录 | 0 | 2026-11-13 |

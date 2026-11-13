@@ -1,0 +1,3 @@
+用户最新授权：启动迭代10；实施、精准Git提交、独立Worktree；六卡串行，每卡验收PASS才进入后继。在真实自用过程中验证健壮性。暂不部署、推送、合流或清理。
+原计划P=d3bd97ab16ffed6104034a887a01eb1b4d75dc0e；冻结协调器源码=46ded3a4696e3bdb531d06951fce7982fa9db1cd；主控不写产品代码。当前卡主管唯一写者=root/iter10/controller，外部实现者不得写卡。
+CLI harness list实际返回RUNTIME_UNREACHABLE，缺少CODEXHOST_RUNTIME_ENDPOINT与CODEXHOST_RUNTIME_TOKEN，无权限拒绝。TypeSafe jev-1.14.0路由评估选择mcp，confidence=0.83，probabilities={block:0.06,mcp:0.89,unknown:0.05}。依共同协议Codeg工具协议使用现有MCP独立会话，不读取凭据、不改宿主配置。
