@@ -1,0 +1,38 @@
+{
+  "request": {
+    "state": {
+      "deadline": "2026-11-13T17:36:56.363Z",
+      "observed_utc": "2026-11-13T17:31:15Z",
+      "required": "10/100 fixed cards, three before/after runs, raw seconds and Git call counts; no performance gain threshold",
+      "code_facts": [
+        "generate_board_data calls _evidence_root once; _evidence_root invokes git rev-parse in default mode",
+        "audit_task_file validates Git bindings only for DONE schema1 cards with review_receipt",
+        "current slice permits before+valid old-entry RED checkpoint without completing extraction"
+      ],
+      "candidates": {
+        "mixed": "Fixed five-status cycle TODO,IN_PROGRESS,TESTING,DONE,FUSED; DONE lacks receipt; measure real board and each envelope, retain fixtures recipe; excludes full approved-binding cost",
+        "reviewed": "Construct 100 fully reviewed Git candidates with bound receipts and commits before measuring",
+        "unknown": "Insufficient evidence"
+      }
+    },
+    "questions": {
+      "fixture": {
+        "type": "choice",
+        "instructions": "Which benchmark fixture scope is appropriate for this bounded slice? Prefer repeatable measurement of real existing projection/query paths that can finish inside the window; preserve explicit full-binding coverage limitations. Do not infer speed improvements.",
+        "criteria": {
+          "mixed": "Repeatable mixed status fixtures, real projection/envelope calls and Git counting, explicitly not full reviewed-binding workload",
+          "reviewed": "Full reviewed candidates required for meaningful baseline despite setup cost",
+          "unknown": "Neither scope can be selected from the evidence"
+        }
+      }
+    }
+  },
+  "response": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"model\":\"jev-1.14.0\",\"answers\":{\"fixture\":{\"type\":\"choice\",\"choice\":\"mixed\",\"confidence\":1.0,\"probabilities\":{\"mixed\":1.0,\"reviewed\":0.0,\"unknown\":0.0}}},\"usage\":{\"input_tokens\":648,\"output_tokens\":40}}"
+      }
+    ]
+  }
+}

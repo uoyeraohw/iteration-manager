@@ -1,0 +1,704 @@
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-baseline-1733.json:1: trailing whitespace.
++{
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-baseline-1733.json:2: trailing whitespace.
++  "version": 1,
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-baseline-1733.json:3: trailing whitespace.
++  "argv": [
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-baseline-1733.json:4: trailing whitespace.
++    "python",
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-baseline-1733.json:5: trailing whitespace.
++    "-B",
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-baseline-1733.json:6: trailing whitespace.
++    "-m",
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-baseline-1733.json:7: trailing whitespace.
++    "pytest",
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-baseline-1733.json:8: trailing whitespace.
++    "-p",
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-baseline-1733.json:9: trailing whitespace.
++    "no:cacheprovider",
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-baseline-1733.json:10: trailing whitespace.
++    "tests/test_sync_compatibility.py",
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-baseline-1733.json:11: trailing whitespace.
++    "-q"
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-baseline-1733.json:12: trailing whitespace.
++  ],
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-baseline-1733.json:13: trailing whitespace.
++  "cwd": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\.worktrees\\iter-10",
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-baseline-1733.json:14: trailing whitespace.
++  "deadline": "2026-11-13T17:36:56.363000+00:00",
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-baseline-1733.json:15: trailing whitespace.
++  "cleanup_reserve_seconds": 5,
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-baseline-1733.json:16: trailing whitespace.
++  "status": "COMPLETED",
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-baseline-1733.json:17: trailing whitespace.
++  "deadline_checked_at": "2026-11-13T17:32:42.760457+00:00",
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-baseline-1733.json:18: trailing whitespace.
++  "started_at": "2026-11-13T17:32:42.767962+00:00",
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-baseline-1733.json:19: trailing whitespace.
++  "ended_at": "2026-11-13T17:33:01.793081+00:00",
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-baseline-1733.json:20: trailing whitespace.
++  "raw_exit_code": 0,
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-baseline-1733.json:21: trailing whitespace.
++  "tree_terminal": true,
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-baseline-1733.json:22: trailing whitespace.
++  "output": "docs/todos/10-self-hosting-hardening/evidence/03/slice-a-baseline-1733.json.output.txt",
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-baseline-1733.json:23: trailing whitespace.
++  "container_pid": 35516,
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-baseline-1733.json:24: trailing whitespace.
++  "launcher_exit_code": 0,
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-baseline-1733.json:25: trailing whitespace.
++  "command": {
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-baseline-1733.json:26: trailing whitespace.
++    "status": "COMPLETED",
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-baseline-1733.json:27: trailing whitespace.
++    "raw_exit_code": 0,
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-baseline-1733.json:28: trailing whitespace.
++    "started_at": "2026-11-13T17:32:42.767962+00:00",
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-baseline-1733.json:29: trailing whitespace.
++    "pid": 44648,
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-baseline-1733.json:30: trailing whitespace.
++    "deadline_checked_at": "2026-11-13T17:32:42.760457+00:00",
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-baseline-1733.json:31: trailing whitespace.
++    "ended_at": "2026-11-13T17:33:01.779106+00:00"
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-baseline-1733.json:32: trailing whitespace.
++  },
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-baseline-1733.json:33: trailing whitespace.
++  "late_by_seconds": 0
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-baseline-1733.json.output.txt:1: trailing whitespace.
++.....                                                                    [100%]
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-baseline-1733.json.output.txt:2: trailing whitespace.
++5 passed in 16.51s
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-before-1732.json:1: trailing whitespace.
++{
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-before-1732.json:2: trailing whitespace.
++  "version": 1,
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-before-1732.json:3: trailing whitespace.
++  "argv": [
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-before-1732.json:4: trailing whitespace.
++    "python",
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-before-1732.json:5: trailing whitespace.
++    "-B",
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-before-1732.json:6: trailing whitespace.
++    "docs/todos/10-self-hosting-hardening/evidence/03/benchmark_projection.py",
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-before-1732.json:7: trailing whitespace.
++    "--label",
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-before-1732.json:8: trailing whitespace.
++    "before"
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-before-1732.json:9: trailing whitespace.
++  ],
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-before-1732.json:10: trailing whitespace.
++  "cwd": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\.worktrees\\iter-10",
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-before-1732.json:11: trailing whitespace.
++  "deadline": "2026-11-13T17:36:56.363000+00:00",
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-before-1732.json:12: trailing whitespace.
++  "cleanup_reserve_seconds": 5,
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-before-1732.json:13: trailing whitespace.
++  "status": "COMPLETED",
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-before-1732.json:14: trailing whitespace.
++  "deadline_checked_at": "2026-11-13T17:32:03.129630+00:00",
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-before-1732.json:15: trailing whitespace.
++  "started_at": "2026-11-13T17:32:03.136748+00:00",
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-before-1732.json:16: trailing whitespace.
++  "ended_at": "2026-11-13T17:32:06.094074+00:00",
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-before-1732.json:17: trailing whitespace.
++  "raw_exit_code": 0,
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-before-1732.json:18: trailing whitespace.
++  "tree_terminal": true,
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-before-1732.json:19: trailing whitespace.
++  "output": "docs/todos/10-self-hosting-hardening/evidence/03/slice-a-before-1732.json.output.txt",
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-before-1732.json:20: trailing whitespace.
++  "container_pid": 22368,
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-before-1732.json:21: trailing whitespace.
++  "launcher_exit_code": 0,
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-before-1732.json:22: trailing whitespace.
++  "command": {
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-before-1732.json:23: trailing whitespace.
++    "status": "COMPLETED",
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-before-1732.json:24: trailing whitespace.
++    "raw_exit_code": 0,
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-before-1732.json:25: trailing whitespace.
++    "started_at": "2026-11-13T17:32:03.136748+00:00",
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-before-1732.json:26: trailing whitespace.
++    "pid": 16972,
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-before-1732.json:27: trailing whitespace.
++    "deadline_checked_at": "2026-11-13T17:32:03.129630+00:00",
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-before-1732.json:28: trailing whitespace.
++    "ended_at": "2026-11-13T17:32:06.082066+00:00"
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-before-1732.json:29: trailing whitespace.
++  },
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-before-1732.json:30: trailing whitespace.
++  "late_by_seconds": 0
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-before-1732.json.output.txt:1: trailing whitespace.
++{"label": "before", "python": "3.11.6 (tags/v3.11.6:8b6ee5b, Oct  2 2023, 14:57:12) [MSC v.1935 64 bit (AMD64)]", "platform": "Windows-10-10.0.26300-SP0", "sizes": [10, 100], "repeats": 3, "statuses": ["TODO", "IN_PROGRESS", "TESTING", "DONE", "FUSED"], "workload": "one board plus all task envelopes; fixture setup excluded", "limitation": "synthetic cards; DONE missing receipt; no approved-binding workload", "signatures": {"load_state": "(meta)", "record_event": "(task_file, action, event_id, owner, reason='', evidence='', executor_state='', resume_grant=None)", "load_profile": "(iter_dir: pathlib.Path) -> pathlib.Path | None", "validate_filesystem_binding": "(meta: dict, receipt: dict, root: pathlib.Path, task_path: str, content: str) -> list[str]", "card_status": "(content)", "parse_card": "(content)", "scope_paths": "(content)", "relative_path": "(value)", "contained": "(root, value, directory=False, allow_empty=False)", "validate_receipt": "(meta, receipt, root, task_path, delivery='git')", "validate_binding": "(meta, receipt, root, task_path, content, git, resolve)", "matches_scope": "(path, scopes)", "section": "(content, name, legacy_title)", "_run_git": "(args: list, cwd: pathlib.Path) -> subprocess.CompletedProcess", "_checked_git": "(args: list, cwd: pathlib.Path) -> str", "resolve_commit": "(ref: str, cwd: pathlib.Path) -> str", "worktree_changed_files": "(cwd: pathlib.Path) -> list", "committed_candidate_errors": "(path: pathlib.Path) -> list", "scan_task_file": "(file_path: pathlib.Path) -> str", "extract_section_4_whitelist": "(task_file: pathlib.Path) -> list", "audit_scope_firewall": "(repo_dir: pathlib.Path, base_sha: str, head_sha: str, task_file: pathlib.Path, include_worktree: bool = False, baseline_dirty=None) -> dict", "discover_task_files": "(directory: pathlib.Path, read_root: pathlib.Path | None = None) -> list[pathlib.Path]", "audit_task_file": "(file_path: pathlib.Path) -> dict", "render_task_envelope": "(task_file: pathlib.Path, repo_dir: pathlib.Path) -> dict", "_render_task_envelope": "(task_file: pathlib.Path, repo_dir: pathlib.Path, audit_task)", "record_fix_and_check_fuse": "(task_file: pathlib.Path, repo_dir: pathlib.Path, error_summary: str = '', event_id: str = '', owner: str = 'legacy') -> dict", "verify_todos_committed": "(repo_dir: pathlib.Path) -> dict", "find_todos_root": "(start_dir: pathlib.Path) -> pathlib.Path", "is_feature_or_worktree": "(repo_dir: pathlib.Path) -> tuple", "resolve_target_iteration_dir": "(target_p: pathlib.Path) -> pathlib.Path", "resolve_local_iter_dir": "(start_path: pathlib.Path, todos_root: pathlib.Path) -> pathlib.Path", "update_table_row": "(content, links, updates)", "markdown_text": "(value)", "replace_projection": "(content, text)", "projection_markdown": "(data)", "sync_local_iteration": "(iter_dir: pathlib.Path, dry_run: bool = False, strict: bool = False) -> dict", "generate_review_package": "(base_sha: str, head_sha: str, task_id: str = '', repo_dir: pathlib.Path = None) -> pathlib.Path", "check_branch_isolation": "(repo_dir: pathlib.Path, base_branch: str = 'main', strict: bool = False) -> dict", "sync_todos": "(todos_root: pathlib.Path, dry_run: bool = False, strict: bool = False) -> dict", "disp_width": "(s: str) -> int", "parse_task_stages_and_micro_state": "(content: str, st: str) -> dict", "_evidence_root": "(iter_dir: pathlib.Path) -> pathlib.Path | None", "generate_board_data": "(iter_dir: pathlib.Path) -> dict", "build_html_dashboard": "(data: dict) -> str", "serve_live_board": "(iter_dir: pathlib.Path, port: int = 8765, open_browser: bool = True)", "render_terminal_board": "(iter_dir: pathlib.Path, stream=None)", "main": "()"}, "candidate": "f879bba28326af84fd9217a70c390a35887ec62b"}
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-before-1732.json.output.txt:2: trailing whitespace.
++{"label": "before", "size": 10, "repeat": 1, "seconds": 0.13272730000608135, "git_call_count": 1, "git_calls": [["git", "rev-parse", "--show-toplevel"]], "board_keys": ["accepted", "accepted_percentage", "blocked", "cards", "conclusion", "done", "failed", "fused", "generated_at", "in_progress", "invalid_status", "iteration_name", "percentage", "status", "testing", "todo", "total", "unknown"], "card_keys": ["acceptance_verdict", "base_sha", "blocked_reason", "consilium_count", "filename", "findings", "fix_rounds", "fix_total", "head_sha", "id", "is_blocked", "name", "policy", "replan_count", "review_status", "sources", "stage_current", "stage_pct", "stage_progress", "stages", "stages_done", "stages_total", "status", "tdd_step", "tdd_steps", "type", "updated_at", "whitelist"]}
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-before-1732.json.output.txt:3: trailing whitespace.
++{"label": "before", "size": 10, "repeat": 2, "seconds": 0.11966129999200348, "git_call_count": 1, "git_calls": [["git", "rev-parse", "--show-toplevel"]], "board_keys": ["accepted", "accepted_percentage", "blocked", "cards", "conclusion", "done", "failed", "fused", "generated_at", "in_progress", "invalid_status", "iteration_name", "percentage", "status", "testing", "todo", "total", "unknown"], "card_keys": ["acceptance_verdict", "base_sha", "blocked_reason", "consilium_count", "filename", "findings", "fix_rounds", "fix_total", "head_sha", "id", "is_blocked", "name", "policy", "replan_count", "review_status", "sources", "stage_current", "stage_pct", "stage_progress", "stages", "stages_done", "stages_total", "status", "tdd_step", "tdd_steps", "type", "updated_at", "whitelist"]}
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-before-1732.json.output.txt:4: trailing whitespace.
++{"label": "before", "size": 10, "repeat": 3, "seconds": 0.12035120000655297, "git_call_count": 1, "git_calls": [["git", "rev-parse", "--show-toplevel"]], "board_keys": ["accepted", "accepted_percentage", "blocked", "cards", "conclusion", "done", "failed", "fused", "generated_at", "in_progress", "invalid_status", "iteration_name", "percentage", "status", "testing", "todo", "total", "unknown"], "card_keys": ["acceptance_verdict", "base_sha", "blocked_reason", "consilium_count", "filename", "findings", "fix_rounds", "fix_total", "head_sha", "id", "is_blocked", "name", "policy", "replan_count", "review_status", "sources", "stage_current", "stage_pct", "stage_progress", "stages", "stages_done", "stages_total", "status", "tdd_step", "tdd_steps", "type", "updated_at", "whitelist"]}
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-before-1732.json.output.txt:5: trailing whitespace.
++{"label": "before", "size": 100, "repeat": 1, "seconds": 0.6158059000008507, "git_call_count": 1, "git_calls": [["git", "rev-parse", "--show-toplevel"]], "board_keys": ["accepted", "accepted_percentage", "blocked", "cards", "conclusion", "done", "failed", "fused", "generated_at", "in_progress", "invalid_status", "iteration_name", "percentage", "status", "testing", "todo", "total", "unknown"], "card_keys": ["acceptance_verdict", "base_sha", "blocked_reason", "consilium_count", "filename", "findings", "fix_rounds", "fix_total", "head_sha", "id", "is_blocked", "name", "policy", "replan_count", "review_status", "sources", "stage_current", "stage_pct", "stage_progress", "stages", "stages_done", "stages_total", "status", "tdd_step", "tdd_steps", "type", "updated_at", "whitelist"]}
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-before-1732.json.output.txt:6: trailing whitespace.
++{"label": "before", "size": 100, "repeat": 2, "seconds": 0.6082395999983419, "git_call_count": 1, "git_calls": [["git", "rev-parse", "--show-toplevel"]], "board_keys": ["accepted", "accepted_percentage", "blocked", "cards", "conclusion", "done", "failed", "fused", "generated_at", "in_progress", "invalid_status", "iteration_name", "percentage", "status", "testing", "todo", "total", "unknown"], "card_keys": ["acceptance_verdict", "base_sha", "blocked_reason", "consilium_count", "filename", "findings", "fix_rounds", "fix_total", "head_sha", "id", "is_blocked", "name", "policy", "replan_count", "review_status", "sources", "stage_current", "stage_pct", "stage_progress", "stages", "stages_done", "stages_total", "status", "tdd_step", "tdd_steps", "type", "updated_at", "whitelist"]}
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-before-1732.json.output.txt:7: trailing whitespace.
++{"label": "before", "size": 100, "repeat": 3, "seconds": 0.6249414999911096, "git_call_count": 1, "git_calls": [["git", "rev-parse", "--show-toplevel"]], "board_keys": ["accepted", "accepted_percentage", "blocked", "cards", "conclusion", "done", "failed", "fused", "generated_at", "in_progress", "invalid_status", "iteration_name", "percentage", "status", "testing", "todo", "total", "unknown"], "card_keys": ["acceptance_verdict", "base_sha", "blocked_reason", "consilium_count", "filename", "findings", "fix_rounds", "fix_total", "head_sha", "id", "is_blocked", "name", "policy", "replan_count", "review_status", "sources", "stage_current", "stage_pct", "stage_progress", "stages", "stages_done", "stages_total", "status", "tdd_step", "tdd_steps", "type", "updated_at", "whitelist"]}
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-note-archive-1735.json:1: trailing whitespace.
++{
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-note-archive-1735.json:2: trailing whitespace.
++  "version": 1,
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-note-archive-1735.json:3: trailing whitespace.
++  "argv": [
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-note-archive-1735.json:4: trailing whitespace.
++    "npx.cmd",
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-note-archive-1735.json:5: trailing whitespace.
++    "--no-install",
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-note-archive-1735.json:6: trailing whitespace.
++    "tsx",
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-note-archive-1735.json:7: trailing whitespace.
++    "C:/Users/qingyu/.codex/skills/write-notes-like-deepseek/scripts/verify-archived-agent-notes.ts"
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-note-archive-1735.json:8: trailing whitespace.
++  ],
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-note-archive-1735.json:9: trailing whitespace.
++  "cwd": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\.worktrees\\iter-10",
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-note-archive-1735.json:10: trailing whitespace.
++  "deadline": "2026-11-13T17:36:56.363000+00:00",
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-note-archive-1735.json:11: trailing whitespace.
++  "cleanup_reserve_seconds": 5,
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-note-archive-1735.json:12: trailing whitespace.
++  "status": "COMPLETED",
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-note-archive-1735.json:13: trailing whitespace.
++  "deadline_checked_at": "2026-11-13T17:34:56.071657+00:00",
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-note-archive-1735.json:14: trailing whitespace.
++  "started_at": "2026-11-13T17:34:56.081658+00:00",
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-note-archive-1735.json:15: trailing whitespace.
++  "ended_at": "2026-11-13T17:34:58.765839+00:00",
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-note-archive-1735.json:16: trailing whitespace.
++  "raw_exit_code": 0,
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-note-archive-1735.json:17: trailing whitespace.
++  "tree_terminal": true,
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-note-archive-1735.json:18: trailing whitespace.
++  "output": "docs/todos/10-self-hosting-hardening/evidence/03/slice-a-note-archive-1735.json.output.txt",
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-note-archive-1735.json:19: trailing whitespace.
++  "container_pid": 29416,
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-note-archive-1735.json:20: trailing whitespace.
++  "launcher_exit_code": 0,
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-note-archive-1735.json:21: trailing whitespace.
++  "command": {
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-note-archive-1735.json:22: trailing whitespace.
++    "status": "COMPLETED",
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-note-archive-1735.json:23: trailing whitespace.
++    "raw_exit_code": 0,
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-note-archive-1735.json:24: trailing whitespace.
++    "started_at": "2026-11-13T17:34:56.081658+00:00",
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-note-archive-1735.json:25: trailing whitespace.
++    "pid": 40616,
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-note-archive-1735.json:26: trailing whitespace.
++    "deadline_checked_at": "2026-11-13T17:34:56.071657+00:00",
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-note-archive-1735.json:27: trailing whitespace.
++    "ended_at": "2026-11-13T17:34:58.751829+00:00"
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-note-archive-1735.json:28: trailing whitespace.
++  },
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-note-archive-1735.json:29: trailing whitespace.
++  "late_by_seconds": 0
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-note-format-1735.json:1: trailing whitespace.
++{
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-note-format-1735.json:2: trailing whitespace.
++  "version": 1,
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-note-format-1735.json:3: trailing whitespace.
++  "argv": [
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-note-format-1735.json:4: trailing whitespace.
++    "npx.cmd",
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-note-format-1735.json:5: trailing whitespace.
++    "--no-install",
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-note-format-1735.json:6: trailing whitespace.
++    "tsx",
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-note-format-1735.json:7: trailing whitespace.
++    "C:/Users/qingyu/.codex/skills/write-notes-like-deepseek/scripts/verify-agent-note-format.ts"
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-note-format-1735.json:8: trailing whitespace.
++  ],
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-note-format-1735.json:9: trailing whitespace.
++  "cwd": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\.worktrees\\iter-10",
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-note-format-1735.json:10: trailing whitespace.
++  "deadline": "2026-11-13T17:36:56.363000+00:00",
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-note-format-1735.json:11: trailing whitespace.
++  "cleanup_reserve_seconds": 5,
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-note-format-1735.json:12: trailing whitespace.
++  "status": "COMPLETED",
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-note-format-1735.json:13: trailing whitespace.
++  "deadline_checked_at": "2026-11-13T17:34:52.135390+00:00",
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-note-format-1735.json:14: trailing whitespace.
++  "started_at": "2026-11-13T17:34:52.145396+00:00",
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-note-format-1735.json:15: trailing whitespace.
++  "ended_at": "2026-11-13T17:34:54.960160+00:00",
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-note-format-1735.json:16: trailing whitespace.
++  "raw_exit_code": 0,
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-note-format-1735.json:17: trailing whitespace.
++  "tree_terminal": true,
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-note-format-1735.json:18: trailing whitespace.
++  "output": "docs/todos/10-self-hosting-hardening/evidence/03/slice-a-note-format-1735.json.output.txt",
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-note-format-1735.json:19: trailing whitespace.
++  "container_pid": 41568,
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-note-format-1735.json:20: trailing whitespace.
++  "launcher_exit_code": 0,
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-note-format-1735.json:21: trailing whitespace.
++  "command": {
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-note-format-1735.json:22: trailing whitespace.
++    "status": "COMPLETED",
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-note-format-1735.json:23: trailing whitespace.
++    "raw_exit_code": 0,
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-note-format-1735.json:24: trailing whitespace.
++    "started_at": "2026-11-13T17:34:52.145396+00:00",
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-note-format-1735.json:25: trailing whitespace.
++    "pid": 44148,
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-note-format-1735.json:26: trailing whitespace.
++    "deadline_checked_at": "2026-11-13T17:34:52.135390+00:00",
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-note-format-1735.json:27: trailing whitespace.
++    "ended_at": "2026-11-13T17:34:54.948053+00:00"
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-note-format-1735.json:28: trailing whitespace.
++  },
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-note-format-1735.json:29: trailing whitespace.
++  "late_by_seconds": 0
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-note-validation-1734.json:1: trailing whitespace.
++{
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-note-validation-1734.json:2: trailing whitespace.
++  "version": 1,
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-note-validation-1734.json:3: trailing whitespace.
++  "argv": [
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-note-validation-1734.json:4: trailing whitespace.
++    "npx.cmd",
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-note-validation-1734.json:5: trailing whitespace.
++    "--no-install",
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-note-validation-1734.json:6: trailing whitespace.
++    "tsx",
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-note-validation-1734.json:7: trailing whitespace.
++    "C:/Users/qingyu/.codex/skills/write-notes-like-deepseek/scripts/verify-agent-note-tree.ts"
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-note-validation-1734.json:8: trailing whitespace.
++  ],
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-note-validation-1734.json:9: trailing whitespace.
++  "cwd": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\.worktrees\\iter-10",
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-note-validation-1734.json:10: trailing whitespace.
++  "deadline": "2026-11-13T17:36:56.363000+00:00",
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-note-validation-1734.json:11: trailing whitespace.
++  "cleanup_reserve_seconds": 5,
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-note-validation-1734.json:12: trailing whitespace.
++  "status": "COMPLETED",
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-note-validation-1734.json:13: trailing whitespace.
++  "deadline_checked_at": "2026-11-13T17:34:38.210817+00:00",
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-note-validation-1734.json:14: trailing whitespace.
++  "started_at": "2026-11-13T17:34:38.218814+00:00",
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-note-validation-1734.json:15: trailing whitespace.
++  "ended_at": "2026-11-13T17:34:40.745735+00:00",
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-note-validation-1734.json:16: trailing whitespace.
++  "raw_exit_code": 0,
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-note-validation-1734.json:17: trailing whitespace.
++  "tree_terminal": true,
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-note-validation-1734.json:18: trailing whitespace.
++  "output": "docs/todos/10-self-hosting-hardening/evidence/03/slice-a-note-validation-1734.json.output.txt",
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-note-validation-1734.json:19: trailing whitespace.
++  "container_pid": 37440,
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-note-validation-1734.json:20: trailing whitespace.
++  "launcher_exit_code": 0,
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-note-validation-1734.json:21: trailing whitespace.
++  "command": {
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-note-validation-1734.json:22: trailing whitespace.
++    "status": "COMPLETED",
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-note-validation-1734.json:23: trailing whitespace.
++    "raw_exit_code": 0,
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-note-validation-1734.json:24: trailing whitespace.
++    "started_at": "2026-11-13T17:34:38.218814+00:00",
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-note-validation-1734.json:25: trailing whitespace.
++    "pid": 37604,
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-note-validation-1734.json:26: trailing whitespace.
++    "deadline_checked_at": "2026-11-13T17:34:38.210817+00:00",
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-note-validation-1734.json:27: trailing whitespace.
++    "ended_at": "2026-11-13T17:34:40.731575+00:00"
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-note-validation-1734.json:28: trailing whitespace.
++  },
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-note-validation-1734.json:29: trailing whitespace.
++  "late_by_seconds": 0
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json:1: trailing whitespace.
++{
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json:2: trailing whitespace.
++  "version": 1,
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json:3: trailing whitespace.
++  "argv": [
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json:4: trailing whitespace.
++    "python",
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json:5: trailing whitespace.
++    "-B",
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json:6: trailing whitespace.
++    "-m",
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json:7: trailing whitespace.
++    "pytest",
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json:8: trailing whitespace.
++    "-p",
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json:9: trailing whitespace.
++    "no:cacheprovider",
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json:10: trailing whitespace.
++    "tests/test_query_contract.py::test_legacy_board_exposes_same_handoff_fields",
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json:11: trailing whitespace.
++    "-q"
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json:12: trailing whitespace.
++  ],
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json:13: trailing whitespace.
++  "cwd": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\.worktrees\\iter-10",
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json:14: trailing whitespace.
++  "deadline": "2026-11-13T17:36:56.363000+00:00",
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json:15: trailing whitespace.
++  "cleanup_reserve_seconds": 5,
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json:16: trailing whitespace.
++  "status": "COMPLETED",
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json:17: trailing whitespace.
++  "deadline_checked_at": "2026-11-13T17:32:14.001035+00:00",
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json:18: trailing whitespace.
++  "started_at": "2026-11-13T17:32:14.011009+00:00",
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json:19: trailing whitespace.
++  "ended_at": "2026-11-13T17:32:17.884950+00:00",
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json:20: trailing whitespace.
++  "raw_exit_code": 1,
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json:21: trailing whitespace.
++  "tree_terminal": true,
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json:22: trailing whitespace.
++  "output": "docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt",
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json:23: trailing whitespace.
++  "container_pid": 38840,
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json:24: trailing whitespace.
++  "launcher_exit_code": 0,
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json:25: trailing whitespace.
++  "command": {
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json:26: trailing whitespace.
++    "status": "COMPLETED",
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json:27: trailing whitespace.
++    "raw_exit_code": 1,
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json:28: trailing whitespace.
++    "started_at": "2026-11-13T17:32:14.011009+00:00",
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json:29: trailing whitespace.
++    "pid": 44172,
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json:30: trailing whitespace.
++    "deadline_checked_at": "2026-11-13T17:32:14.001035+00:00",
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json:31: trailing whitespace.
++    "ended_at": "2026-11-13T17:32:17.874397+00:00"
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json:32: trailing whitespace.
++  },
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json:33: trailing whitespace.
++  "late_by_seconds": 0
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:1: trailing whitespace.
++FFFF                                                                     [100%]
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:2: trailing whitespace.
++================================== FAILURES ===================================
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:3: trailing whitespace.
++__________ test_legacy_board_exposes_same_handoff_fields[False-git] ___________
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:4: trailing whitespace.
++
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:5: trailing whitespace.
++tmp_path = WindowsPath('C:/Users/qingyu/AppData/Local/Temp/pytest-of-qingyu/pytest-370/test_legacy_board_exposes_same0')
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:6: trailing whitespace.
++mode = 'git', has_checkpoint = False
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:7: trailing whitespace.
++
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:8: trailing whitespace.
++    @pytest.mark.parametrize('mode', ['git', 'filesystem'])
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:9: trailing whitespace.
++    @pytest.mark.parametrize('has_checkpoint', [False, True])
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:10: trailing whitespace.
++    def test_legacy_board_exposes_same_handoff_fields(tmp_path, mode, has_checkpoint):
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:11: trailing whitespace.
++        directory = tmp_path / 'docs/todos/03-contract'
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:12: trailing whitespace.
++        directory.mkdir(parents=True)
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:13: trailing whitespace.
++        metadata = dict(schema_version='1', task_id='03', status='IN_PROGRESS', type='Strict-TDD')
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:14: trailing whitespace.
++        if mode == 'filesystem':
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:15: trailing whitespace.
++            (directory / 'iteration-delivery.json').write_text(
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:16: trailing whitespace.
++                json.dumps(dict(schema_version=1, mode=mode)), encoding='utf-8')
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:17: trailing whitespace.
++            metadata.update(delivery_mode=mode, candidate_id='fs-candidate-a')
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:18: trailing whitespace.
++        state = load_state(metadata)
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:19: trailing whitespace.
++        if has_checkpoint:
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:20: trailing whitespace.
++            state['events']['attempt-a'] = {'input': {'action': 'attempt', 'attempt': {
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:21: trailing whitespace.
++                'candidate': 'fixed-candidate', 'phase': 'implementation',
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:22: trailing whitespace.
++                'checkpoint': 'valid old-entry RED', 'remaining_work': ['extract query layer'],
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:23: trailing whitespace.
++                'progress': [{'kind': 'red', 'evidence': 'red.txt', 'summary': 'assertion failure'}],
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:24: trailing whitespace.
++                'source': 'attempt.json',
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:25: trailing whitespace.
++            }}}
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:26: trailing whitespace.
++        metadata['autonomy_state'] = json.dumps(state)
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:27: trailing whitespace.
++        card = directory / '03-task.md'
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:28: trailing whitespace.
++        card.write_text('---\n' + ''.join(f'{key}: {json.dumps(value)}\n' for key, value in metadata.items())
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:29: trailing whitespace.
++                        + '---\n', encoding='utf-8')
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:30: trailing whitespace.
++        before = {path: path.read_bytes() for path in directory.iterdir()}
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:31: trailing whitespace.
++        handoff = render_task_envelope(card, tmp_path)['TASK_HANDOFF']
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:32: trailing whitespace.
++        board_card = generate_board_data(directory)['cards'][0]
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:33: trailing whitespace.
++        required = {'delivery_mode', 'candidate_id', 'execution'}
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:34: trailing whitespace.
++>       assert required <= board_card.keys(), f'legacy board missing handoff fields: {required - board_card.keys()}'
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:35: trailing whitespace.
++E       AssertionError: legacy board missing handoff fields: {'candidate_id', 'delivery_mode', 'execution'}
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:36: trailing whitespace.
++E       assert {'candidate_id', 'delivery_mode', 'execution'} <= dict_keys(['id', 'name', 'filename', 'status', 'type', 'head_sha', 'base_sha', 'review_status', 'acceptance_verdict', ..., 'tdd_steps', 'replan_count', 'fix_rounds', 'fix_total', 'consilium_count', 'policy', 'is_blocked', 'blocked_reason'])
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:37: trailing whitespace.
++E        +  where dict_keys(['id', 'name', 'filename', 'status', 'type', 'head_sha', 'base_sha', 'review_status', 'acceptance_verdict', ..., 'tdd_steps', 'replan_count', 'fix_rounds', 'fix_total', 'consilium_count', 'policy', 'is_blocked', 'blocked_reason']) = <built-in method keys of dict object at 0x0000017E307C8840>()
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:38: trailing whitespace.
++E        +    where <built-in method keys of dict object at 0x0000017E307C8840> = {'acceptance_verdict': 'UNKNOWN', 'base_sha': '', 'blocked_reason': '', 'consilium_count': 0, ...}.keys
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:39: trailing whitespace.
++
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:40: trailing whitespace.
++tests\test_query_contract.py:36: AssertionError
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:41: trailing whitespace.
++_______ test_legacy_board_exposes_same_handoff_fields[False-filesystem] _______
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:42: trailing whitespace.
++
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:43: trailing whitespace.
++tmp_path = WindowsPath('C:/Users/qingyu/AppData/Local/Temp/pytest-of-qingyu/pytest-370/test_legacy_board_exposes_same1')
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:44: trailing whitespace.
++mode = 'filesystem', has_checkpoint = False
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:45: trailing whitespace.
++
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:46: trailing whitespace.
++    @pytest.mark.parametrize('mode', ['git', 'filesystem'])
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:47: trailing whitespace.
++    @pytest.mark.parametrize('has_checkpoint', [False, True])
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:48: trailing whitespace.
++    def test_legacy_board_exposes_same_handoff_fields(tmp_path, mode, has_checkpoint):
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:49: trailing whitespace.
++        directory = tmp_path / 'docs/todos/03-contract'
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:50: trailing whitespace.
++        directory.mkdir(parents=True)
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:51: trailing whitespace.
++        metadata = dict(schema_version='1', task_id='03', status='IN_PROGRESS', type='Strict-TDD')
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:52: trailing whitespace.
++        if mode == 'filesystem':
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:53: trailing whitespace.
++            (directory / 'iteration-delivery.json').write_text(
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:54: trailing whitespace.
++                json.dumps(dict(schema_version=1, mode=mode)), encoding='utf-8')
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:55: trailing whitespace.
++            metadata.update(delivery_mode=mode, candidate_id='fs-candidate-a')
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:56: trailing whitespace.
++        state = load_state(metadata)
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:57: trailing whitespace.
++        if has_checkpoint:
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:58: trailing whitespace.
++            state['events']['attempt-a'] = {'input': {'action': 'attempt', 'attempt': {
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:59: trailing whitespace.
++                'candidate': 'fixed-candidate', 'phase': 'implementation',
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:60: trailing whitespace.
++                'checkpoint': 'valid old-entry RED', 'remaining_work': ['extract query layer'],
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:61: trailing whitespace.
++                'progress': [{'kind': 'red', 'evidence': 'red.txt', 'summary': 'assertion failure'}],
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:62: trailing whitespace.
++                'source': 'attempt.json',
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:63: trailing whitespace.
++            }}}
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:64: trailing whitespace.
++        metadata['autonomy_state'] = json.dumps(state)
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:65: trailing whitespace.
++        card = directory / '03-task.md'
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:66: trailing whitespace.
++        card.write_text('---\n' + ''.join(f'{key}: {json.dumps(value)}\n' for key, value in metadata.items())
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:67: trailing whitespace.
++                        + '---\n', encoding='utf-8')
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:68: trailing whitespace.
++        before = {path: path.read_bytes() for path in directory.iterdir()}
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:69: trailing whitespace.
++        handoff = render_task_envelope(card, tmp_path)['TASK_HANDOFF']
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:70: trailing whitespace.
++        board_card = generate_board_data(directory)['cards'][0]
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:71: trailing whitespace.
++        required = {'delivery_mode', 'candidate_id', 'execution'}
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:72: trailing whitespace.
++>       assert required <= board_card.keys(), f'legacy board missing handoff fields: {required - board_card.keys()}'
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:73: trailing whitespace.
++E       AssertionError: legacy board missing handoff fields: {'candidate_id', 'delivery_mode', 'execution'}
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:74: trailing whitespace.
++E       assert {'candidate_id', 'delivery_mode', 'execution'} <= dict_keys(['id', 'name', 'filename', 'status', 'type', 'head_sha', 'base_sha', 'review_status', 'acceptance_verdict', ..., 'tdd_steps', 'replan_count', 'fix_rounds', 'fix_total', 'consilium_count', 'policy', 'is_blocked', 'blocked_reason'])
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:75: trailing whitespace.
++E        +  where dict_keys(['id', 'name', 'filename', 'status', 'type', 'head_sha', 'base_sha', 'review_status', 'acceptance_verdict', ..., 'tdd_steps', 'replan_count', 'fix_rounds', 'fix_total', 'consilium_count', 'policy', 'is_blocked', 'blocked_reason']) = <built-in method keys of dict object at 0x0000017E307CD340>()
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:76: trailing whitespace.
++E        +    where <built-in method keys of dict object at 0x0000017E307CD340> = {'acceptance_verdict': 'UNKNOWN', 'base_sha': '', 'blocked_reason': '', 'consilium_count': 0, ...}.keys
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:77: trailing whitespace.
++
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:78: trailing whitespace.
++tests\test_query_contract.py:36: AssertionError
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:79: trailing whitespace.
++___________ test_legacy_board_exposes_same_handoff_fields[True-git] ___________
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:80: trailing whitespace.
++
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:81: trailing whitespace.
++tmp_path = WindowsPath('C:/Users/qingyu/AppData/Local/Temp/pytest-of-qingyu/pytest-370/test_legacy_board_exposes_same2')
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:82: trailing whitespace.
++mode = 'git', has_checkpoint = True
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:83: trailing whitespace.
++
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:84: trailing whitespace.
++    @pytest.mark.parametrize('mode', ['git', 'filesystem'])
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:85: trailing whitespace.
++    @pytest.mark.parametrize('has_checkpoint', [False, True])
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:86: trailing whitespace.
++    def test_legacy_board_exposes_same_handoff_fields(tmp_path, mode, has_checkpoint):
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:87: trailing whitespace.
++        directory = tmp_path / 'docs/todos/03-contract'
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:88: trailing whitespace.
++        directory.mkdir(parents=True)
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:89: trailing whitespace.
++        metadata = dict(schema_version='1', task_id='03', status='IN_PROGRESS', type='Strict-TDD')
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:90: trailing whitespace.
++        if mode == 'filesystem':
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:91: trailing whitespace.
++            (directory / 'iteration-delivery.json').write_text(
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:92: trailing whitespace.
++                json.dumps(dict(schema_version=1, mode=mode)), encoding='utf-8')
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:93: trailing whitespace.
++            metadata.update(delivery_mode=mode, candidate_id='fs-candidate-a')
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:94: trailing whitespace.
++        state = load_state(metadata)
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:95: trailing whitespace.
++        if has_checkpoint:
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:96: trailing whitespace.
++            state['events']['attempt-a'] = {'input': {'action': 'attempt', 'attempt': {
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:97: trailing whitespace.
++                'candidate': 'fixed-candidate', 'phase': 'implementation',
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:98: trailing whitespace.
++                'checkpoint': 'valid old-entry RED', 'remaining_work': ['extract query layer'],
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:99: trailing whitespace.
++                'progress': [{'kind': 'red', 'evidence': 'red.txt', 'summary': 'assertion failure'}],
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:100: trailing whitespace.
++                'source': 'attempt.json',
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:101: trailing whitespace.
++            }}}
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:102: trailing whitespace.
++        metadata['autonomy_state'] = json.dumps(state)
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:103: trailing whitespace.
++        card = directory / '03-task.md'
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:104: trailing whitespace.
++        card.write_text('---\n' + ''.join(f'{key}: {json.dumps(value)}\n' for key, value in metadata.items())
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:105: trailing whitespace.
++                        + '---\n', encoding='utf-8')
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:106: trailing whitespace.
++        before = {path: path.read_bytes() for path in directory.iterdir()}
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:107: trailing whitespace.
++        handoff = render_task_envelope(card, tmp_path)['TASK_HANDOFF']
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:108: trailing whitespace.
++        board_card = generate_board_data(directory)['cards'][0]
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:109: trailing whitespace.
++        required = {'delivery_mode', 'candidate_id', 'execution'}
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:110: trailing whitespace.
++>       assert required <= board_card.keys(), f'legacy board missing handoff fields: {required - board_card.keys()}'
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:111: trailing whitespace.
++E       AssertionError: legacy board missing handoff fields: {'candidate_id', 'delivery_mode', 'execution'}
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:112: trailing whitespace.
++E       assert {'candidate_id', 'delivery_mode', 'execution'} <= dict_keys(['id', 'name', 'filename', 'status', 'type', 'head_sha', 'base_sha', 'review_status', 'acceptance_verdict', ..., 'tdd_steps', 'replan_count', 'fix_rounds', 'fix_total', 'consilium_count', 'policy', 'is_blocked', 'blocked_reason'])
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:113: trailing whitespace.
++E        +  where dict_keys(['id', 'name', 'filename', 'status', 'type', 'head_sha', 'base_sha', 'review_status', 'acceptance_verdict', ..., 'tdd_steps', 'replan_count', 'fix_rounds', 'fix_total', 'consilium_count', 'policy', 'is_blocked', 'blocked_reason']) = <built-in method keys of dict object at 0x0000017E30732B40>()
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:114: trailing whitespace.
++E        +    where <built-in method keys of dict object at 0x0000017E30732B40> = {'acceptance_verdict': 'UNKNOWN', 'base_sha': '', 'blocked_reason': '', 'consilium_count': 0, ...}.keys
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:115: trailing whitespace.
++
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:116: trailing whitespace.
++tests\test_query_contract.py:36: AssertionError
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:117: trailing whitespace.
++_______ test_legacy_board_exposes_same_handoff_fields[True-filesystem] ________
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:118: trailing whitespace.
++
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:119: trailing whitespace.
++tmp_path = WindowsPath('C:/Users/qingyu/AppData/Local/Temp/pytest-of-qingyu/pytest-370/test_legacy_board_exposes_same3')
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:120: trailing whitespace.
++mode = 'filesystem', has_checkpoint = True
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:121: trailing whitespace.
++
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:122: trailing whitespace.
++    @pytest.mark.parametrize('mode', ['git', 'filesystem'])
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:123: trailing whitespace.
++    @pytest.mark.parametrize('has_checkpoint', [False, True])
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:124: trailing whitespace.
++    def test_legacy_board_exposes_same_handoff_fields(tmp_path, mode, has_checkpoint):
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:125: trailing whitespace.
++        directory = tmp_path / 'docs/todos/03-contract'
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:126: trailing whitespace.
++        directory.mkdir(parents=True)
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:127: trailing whitespace.
++        metadata = dict(schema_version='1', task_id='03', status='IN_PROGRESS', type='Strict-TDD')
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:128: trailing whitespace.
++        if mode == 'filesystem':
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:129: trailing whitespace.
++            (directory / 'iteration-delivery.json').write_text(
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:130: trailing whitespace.
++                json.dumps(dict(schema_version=1, mode=mode)), encoding='utf-8')
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:131: trailing whitespace.
++            metadata.update(delivery_mode=mode, candidate_id='fs-candidate-a')
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:132: trailing whitespace.
++        state = load_state(metadata)
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:133: trailing whitespace.
++        if has_checkpoint:
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:134: trailing whitespace.
++            state['events']['attempt-a'] = {'input': {'action': 'attempt', 'attempt': {
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:135: trailing whitespace.
++                'candidate': 'fixed-candidate', 'phase': 'implementation',
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:136: trailing whitespace.
++                'checkpoint': 'valid old-entry RED', 'remaining_work': ['extract query layer'],
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:137: trailing whitespace.
++                'progress': [{'kind': 'red', 'evidence': 'red.txt', 'summary': 'assertion failure'}],
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:138: trailing whitespace.
++                'source': 'attempt.json',
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:139: trailing whitespace.
++            }}}
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:140: trailing whitespace.
++        metadata['autonomy_state'] = json.dumps(state)
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:141: trailing whitespace.
++        card = directory / '03-task.md'
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:142: trailing whitespace.
++        card.write_text('---\n' + ''.join(f'{key}: {json.dumps(value)}\n' for key, value in metadata.items())
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:143: trailing whitespace.
++                        + '---\n', encoding='utf-8')
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:144: trailing whitespace.
++        before = {path: path.read_bytes() for path in directory.iterdir()}
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:145: trailing whitespace.
++        handoff = render_task_envelope(card, tmp_path)['TASK_HANDOFF']
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:146: trailing whitespace.
++        board_card = generate_board_data(directory)['cards'][0]
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:147: trailing whitespace.
++        required = {'delivery_mode', 'candidate_id', 'execution'}
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:148: trailing whitespace.
++>       assert required <= board_card.keys(), f'legacy board missing handoff fields: {required - board_card.keys()}'
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:149: trailing whitespace.
++E       AssertionError: legacy board missing handoff fields: {'candidate_id', 'delivery_mode', 'execution'}
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:150: trailing whitespace.
++E       assert {'candidate_id', 'delivery_mode', 'execution'} <= dict_keys(['id', 'name', 'filename', 'status', 'type', 'head_sha', 'base_sha', 'review_status', 'acceptance_verdict', ..., 'tdd_steps', 'replan_count', 'fix_rounds', 'fix_total', 'consilium_count', 'policy', 'is_blocked', 'blocked_reason'])
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:151: trailing whitespace.
++E        +  where dict_keys(['id', 'name', 'filename', 'status', 'type', 'head_sha', 'base_sha', 'review_status', 'acceptance_verdict', ..., 'tdd_steps', 'replan_count', 'fix_rounds', 'fix_total', 'consilium_count', 'policy', 'is_blocked', 'blocked_reason']) = <built-in method keys of dict object at 0x0000017E307CDD40>()
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:152: trailing whitespace.
++E        +    where <built-in method keys of dict object at 0x0000017E307CDD40> = {'acceptance_verdict': 'UNKNOWN', 'base_sha': '', 'blocked_reason': '', 'consilium_count': 0, ...}.keys
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:153: trailing whitespace.
++
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:154: trailing whitespace.
++tests\test_query_contract.py:36: AssertionError
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:155: trailing whitespace.
++=========================== short test summary info ===========================
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:156: trailing whitespace.
++FAILED tests/test_query_contract.py::test_legacy_board_exposes_same_handoff_fields[False-git]
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:157: trailing whitespace.
++FAILED tests/test_query_contract.py::test_legacy_board_exposes_same_handoff_fields[False-filesystem]
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:158: trailing whitespace.
++FAILED tests/test_query_contract.py::test_legacy_board_exposes_same_handoff_fields[True-git]
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:159: trailing whitespace.
++FAILED tests/test_query_contract.py::test_legacy_board_exposes_same_handoff_fields[True-filesystem]
+docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt:160: trailing whitespace.
++4 failed in 1.58s
