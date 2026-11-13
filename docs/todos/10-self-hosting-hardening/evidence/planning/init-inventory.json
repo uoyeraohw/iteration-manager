@@ -1,0 +1,18 @@
+{
+  "kind": "planning-coordination-cli",
+  "argv": [
+    "C:\\Users\\qingyu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+    "-B",
+    "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\scripts\\iter_sync.py",
+    "--inventory",
+    "docs\\todos\\10-self-hosting-hardening",
+    "--mode",
+    "continue"
+  ],
+  "cwd": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager",
+  "started_at": "2026-11-13T15:46:18.086218+00:00",
+  "ended_at": "2026-11-13T15:46:18.833771+00:00",
+  "raw_exit_code": 2,
+  "stdout": "docs\\todos\\10-self-hosting-hardening\\evidence\\planning\\init-inventory.stdout.txt",
+  "stderr": "docs\\todos\\10-self-hosting-hardening\\evidence\\planning\\init-inventory.stderr.txt"
+}

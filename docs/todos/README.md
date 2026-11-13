@@ -9,5 +9,7 @@
 - [AIMovie任务发现兼容性增量（ACCEPTED，candidate09三安装51文件一致）](07-aimovie-discovery-compat/README.md)
 - [文件系统收据与冻结绑定（R7及七卡迁移已独立验收，六项媒体补验通过）](08-filesystem-receipts/README.md)
 - [技能交付收尾：Codeg已初始化Git main，Codex/Gemini已覆盖同步](09-final-closeout/README.md)
+- [迭代10：规则一致性、使用简化与真实自用健壮性（已初始化，6卡TODO）](10-self-hosting-hardening/README.md)
 - 维护主版本：`C:/Users/qingyu/.codeg/skills/iteration-manager`。
-- 当前运行源码仍为批准的 `SC-FS-I01-20261112-R7`。用户明确授权后，Codeg主版本已初始化Git，分支为main；Codex及Gemini独立副本已实际覆盖57份原交付文件并各新增1份Git基线决定记录，三安装各58份交付文件逐字节一致。维护任务、Git元数据、构建证据、缓存及历史备份不随技能同步。初始提交与最终核验见任务09及其证据目录。各旧任务中的非Git、无HEAD及早期strict结果均保留为当时事实，不代表当前主版本状态。
+- 2026-11-13初始化观察：当前源码分支main，HEAD为`46ded3a4696e3bdb531d06951fce7982fa9db1cd`；迭代10尚未实施或提交。安装副本和真实消费的当前事实将在迭代10任务05只读核查，不从旧部署记录推断。
+- 历史交付基线 `SC-FS-I01-20261112-R7`：用户明确授权后，Codeg主版本已初始化Git，分支为main；当批Codex及Gemini独立副本已实际覆盖57份原交付文件并各新增1份Git基线决定记录，三安装各58份交付文件逐字节一致。维护任务、Git元数据、构建证据、缓存及历史备份不随技能同步。初始提交与最终核验见任务09及其证据目录。各旧任务中的非Git、无HEAD及早期strict结果均保留为当时事实，不代表当前主版本状态。

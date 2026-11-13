@@ -1,0 +1,99 @@
+{
+  "version": 1,
+  "recorded_at": "2026-11-13 15:44:53 UTC",
+  "model": "jev-1.14.0",
+  "weights": {
+    "granularity": 0.3,
+    "clarity": 0.3,
+    "single_responsibility": 0.2,
+    "actionability": 0.2
+  },
+  "conversion": "score/(number_of_legend_levels-1)*100; each current legend has 5 levels",
+  "threshold": {
+    "total": 80,
+    "each_dimension": 70
+  },
+  "round1_failed": {
+    "original_task_id": "03",
+    "single_responsibility": 62.5,
+    "total": 84.7,
+    "result": "FAIL"
+  },
+  "revision": "Split original task03 into query/CLI contract (03) and UI consumer (04), disjoint source ownership; original04->05 and original05->06 only renumbered; unchanged evaluations reused.",
+  "scores": [
+    {
+      "id": "01",
+      "granularity": 94.5,
+      "clarity": 87.75,
+      "single_responsibility": 83.25,
+      "actionability": 84.75,
+      "total": 88.275,
+      "round": 1,
+      "source_question_task_id": "01",
+      "passed": true
+    },
+    {
+      "id": "02",
+      "granularity": 94.75,
+      "clarity": 96,
+      "single_responsibility": 85.75,
+      "actionability": 83.25,
+      "total": 91.025,
+      "round": 1,
+      "source_question_task_id": "02",
+      "passed": true
+    },
+    {
+      "id": "03",
+      "granularity": 97,
+      "clarity": 95.5,
+      "single_responsibility": 88.75,
+      "actionability": 83.25,
+      "total": 92.15,
+      "round": 2,
+      "source_question_task_id": "03",
+      "passed": true
+    },
+    {
+      "id": "04",
+      "granularity": 93.5,
+      "clarity": 88.75,
+      "single_responsibility": 90.25,
+      "actionability": 77.75,
+      "total": 88.27499999999999,
+      "round": 2,
+      "source_question_task_id": "04",
+      "passed": true
+    },
+    {
+      "id": "05",
+      "granularity": 87.75,
+      "clarity": 82.5,
+      "single_responsibility": 80.75,
+      "actionability": 71.5,
+      "total": 81.525,
+      "round": 1,
+      "source_question_task_id": "04",
+      "passed": true
+    },
+    {
+      "id": "06",
+      "granularity": 82.5,
+      "clarity": 98.75,
+      "single_responsibility": 80.5,
+      "actionability": 86,
+      "total": 87.675,
+      "round": 1,
+      "source_question_task_id": "05",
+      "passed": true
+    }
+  ],
+  "planning_verdict": "PASS",
+  "execution_acceptance": "UNKNOWN",
+  "not_run": [
+    "implementation",
+    "test suites",
+    "independent product review",
+    "deployment"
+  ]
+}

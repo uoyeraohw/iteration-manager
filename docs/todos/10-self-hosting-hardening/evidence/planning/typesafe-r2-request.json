@@ -1,0 +1,302 @@
+{
+  "state": {
+    "scope": "六卡串行迭代10，仅本轮初始化。所有卡TODO、PENDING，未执行。源码基线46ded3a4696e3bdb531d06951fce7982fa9db1cd；精确计划范围docs/todos/10-self-hosting-hardening及根索引。",
+    "execution_contract": "Git交付；获实施和提交授权后先提交计划，再verify-committed创建.worktrees/iter-10 feat/iter-10-self-hosting-hardening；从46ded3a提取只读独立固定协调工具到build/frozen-tools/46ded3a（不将可变worktree脚本当协调器），候选为被测对象。冻结协调器与候选分别检查；原权限冲突按SKILL/agent_protocol和任务01矩阵处理。所有业务/验收命令用冻结iter_run，单次原始receipt；主控兼主管但不写业务，独立实现者和非参与者Reviewer；真实会话10分钟检查点上限、预留90秒、叶子至少120秒窗口，不足只正常交接。每张卡独立evidence/NN目录，精确scope不跨卡重写。原四预算5/10/1/2，无进展两次门禁；同一工作区串行。所有测试路径相对worktree，命令python -B -m pytest -p no:cacheprovider ... -q，指定完整回归在最终候选。Git/发布/安装/清理授权不推断。",
+    "tasks": [
+      {
+        "id": "01",
+        "slug": "authority-consistency",
+        "name": "统一授权规则与跨入口场景",
+        "type": "Spike-Discovery",
+        "deps": [],
+        "goal": "移除Worktree及相关模板与共同协议相反的自动提交/合流/清理指令，以实际新会话消费验证仅Prompt、无Git权限、他人dirty、未授权合流四类行为。",
+        "files": [
+          "references/worktree_git_contract.md",
+          "references/superpowers_handbook.md",
+          "templates/root_readme.md",
+          "tests/test_prompt_sources.py",
+          "tests/test_authority_scenarios.py",
+          ".agents/notes/implemented/process/2026-11-13-authority-consistency.md"
+        ],
+        "consumes": "SKILL.md、references/agent_protocol.md、references/task_card_schema.md 在工具基线46ded3a上的授权与证据合同；不改其既有收据字段。",
+        "produces": "references/worktree_git_contract.md 与共同协议一致；evidence/01/authority-matrix.json（version:1, scenarios:[{id,authority,allowed,forbidden,source_paths,observed_result,evidence}]），包含prompt_only/no_git_permission/preexisting_dirty/no_merge_permission四项；observed_result只能为PASS/FAIL/UNKNOWN，来自真实新会话而非手填推测。",
+        "stages": [
+          "对照引用链形成冲突清单和四类场景的可观察预期",
+          "修正文档、命令及流程图，完成文本回归与真实新会话场景",
+          "冻结候选与消费证据，非参与者审查后登记"
+        ],
+        "checks": [
+          "四类新会话只返回符合授权的行动，不写业务/不提交/不清理；以原生调用记录和磁盘/Git只读核对支撑，不仅靠回答承诺",
+          "git add整个docs/todos、Prompt前自动补Commit、自动合流销毁不再作为无条件指令；仍保留执行前提交门禁",
+          "原历史记录不改写，权限缺口仅阻断相应动作；旧预算、TDD与独审规则不降级"
+        ],
+        "tests": "tests/test_prompt_sources.py tests/test_task_card_schema.py tests/test_authority_scenarios.py",
+        "red": "非TDD文档任务，不要求或补造历史RED；experiment为场景核验程序成功且真实消费记录齐全，decision为冲突处置，interfaces为authority-matrix。"
+      },
+      {
+        "id": "02",
+        "slug": "typed-template-generation",
+        "name": "按类型与交付模式生成和检查任务卡",
+        "type": "Strict-TDD",
+        "deps": [
+          "01"
+        ],
+        "goal": "新增不依赖模型替换段落的任务卡生成/检查入口，覆盖现有四type×Git/FS八种组合，不改变既有收据与旧卡契约。",
+        "files": [
+          "scripts/iter_templates.py",
+          "templates/task_detail.md",
+          "templates/contracts/strict_tdd_contract.md",
+          "templates/contracts/ui_component_contract.md",
+          "templates/contracts/refactor_benchmark_contract.md",
+          "templates/contracts/spike_discovery_contract.md",
+          "references/template_generation.md",
+          "tests/test_template_generation.py",
+          ".agents/notes/implemented/process/2026-11-13-typed-template-generation.md"
+        ],
+        "consumes": "iter_contracts.parse_card(content)、TYPE_CHECKS、contract_projection(content)；iter_filesystem现有冻结规则；任务01授权矩阵。旧schema_version=1，四type不改名。",
+        "produces": "scripts/iter_templates.py: render_task_card(spec: dict) -> str；validate_generated_card(content: str, delivery_mode: str) -> list[str]；独立CLI `--render <spec.json>` stdout输出Markdown，`--check <card.md> --delivery-mode git|filesystem` stdout输出JSON {valid,errors}，合法退出0、输入/结构错误退出2。默认不写文件，不集成第二套状态账。",
+        "stages": [
+          "为可调用入口与八种组合建立可编译行为断言RED",
+          "最小实现纯渲染/预检与八组合GREEN，保留未知和占位输入拒绝",
+          "完成旧解析/FS冻结兼容、文档与独立审查"
+        ],
+        "checks": [
+          "spec必需version=1, task_id, iteration, task_name, type, delivery_mode, objective, consumes, produces, scope, stages, acceptance, verification；FS另需candidate_id。字符串非空，scope为项目相对文件/目录数组，stages/acceptance为非空文本数组，verification为该type必需check名到实际命令或观测说明的映射；未知字段/类型/版本拒绝",
+          "输出初态TODO、PENDING、tdd_verified=false、typesafe_score=UNASSESSED；模板生成不等于TypeSafe通过，不生成虚假SHA或APPROVED",
+          "八组合均能由现有parse_card识别；非TDD无强制RED/TRUE；FS不含非空SHA、不复制审查后需修改的动态正文，冻结前定稿规则明确",
+          "拒绝空scope、越界路径、缺关键验收与未替换占位符；CLI不覆盖现有文件、不迁移旧卡",
+          "Refactor-Benchmark保持现有before/after门禁；纯结构重构未来契约拆分只记录讨论结论，不在本轮新增type或放宽旧门禁"
+        ],
+        "tests": "tests/test_template_generation.py tests/test_prompt_sources.py tests/test_task_card_schema.py tests/test_filesystem_receipts.py tests/test_filesystem_r7_repairs.py",
+        "red": "先建立可导入、可调用的最小入口使行为断言RED（例如返回空正文被断言拒绝）；ImportError、缺函数或语法错误不计RED。核心行为RED→最小GREEN，补充边界如实标注。"
+      },
+      {
+        "id": "03",
+        "slug": "query-cli-contract",
+        "name": "稳定查询与CLI消费接口，保持旧入口兼容",
+        "type": "Strict-TDD",
+        "deps": [
+          "02"
+        ],
+        "goal": "集中提供一致的任务查询与交接数据，CLI只适配命令；完成所需模块整理但不改HTML交互。为后继看板提供Git/FS候选与execution字段，旧接口可继续调用。",
+        "files": [
+          "scripts/iter_sync.py",
+          "scripts/iter_queries.py",
+          "scripts/iter_cli.py",
+          "scripts/iter_inventory.py",
+          "scripts/iter_preflight.py",
+          "scripts/iter_execution.py",
+          "tests/test_sync_compatibility.py",
+          "tests/test_cli_compatibility.py",
+          "tests/test_query_contract.py",
+          ".agents/notes/implemented/architecture/2026-11-13-query-cli-contract.md"
+        ],
+        "consumes": "现有audit_task_file(file_path)、discover_task_files(directory,read_root=None)、render_task_envelope(task_file,repo_dir)、generate_board_data(iter_dir)接口与TASK_HANDOFF；任务02生成样例，任务01授权边界。",
+        "produces": "iter_queries提供discover_task_files(directory: Path, read_root: Path | None = None) -> list[Path]、audit_task_file(file_path: Path) -> dict、render_task_envelope(task_file: Path, repo_dir: Path) -> dict；iter_cli.main(argv: list[str] | None = None) -> int。iter_sync保留旧导入符号与main()，原generate_board_data(iter_dir: Path) -> dict仍由iter_sync导出，其cards仅追加delivery_mode,candidate_id,execution（checkpoint,remaining_work），和envelope调用同一查询结果。未知值保持UNKNOWN/null，不删除旧键。",
+        "stages": [
+          "冻结兼容矩阵，对缺失的统一投影字段取得有效断言RED",
+          "实现共享查询接口与CLI适配，iter_sync保留兼容门面，不修改HTML",
+          "通过导入/CLI/收据/只读回归并完成前后量测，冻结供看板消费的JSON接口"
+        ],
+        "checks": [
+          "新增字段的行为测试先在当前可调用generate_board_data上断言RED；不得以新模块ImportError作RED。相同卡envelope与board的交付模式/候选/检查点/剩余工作值一致，旧键与旧默认保持",
+          "旧CLI参数组合与位置参数、phase默认implementation、旧0/1/2/3退出码和未知选项无写入保持；不修改runner124/125语义；帮助覆盖timing命令",
+          "保留iter_sync现有被导入函数/类的签名和行为；新查询模块不导入CLI或iter_sync；inventory/preflight/execution通过查询层读取，测试证明不存在反向依赖；仅在main调用时加载CLI",
+          "generate_board_data仍可通过旧入口调用，HTML/HTTP渲染留在iter_sync且本卡不改模板；卡片缺收据、非法profile、候选漂移、预算、只读及同次审计复用均不放宽",
+          "按10/100卡固定样例，记录同环境前后至少3次原始耗时及Git调用次数；禁止新加跨调用缓存，不把合成测量叫真实工时，测量只评价改动影响不要求虚构性能提升",
+          "仅当前白名单源码可写；后继看板任务只消费本接口，不再修改这些源码，接口缺陷返还本owner并按合同重审"
+        ],
+        "tests": "tests/test_query_contract.py tests/test_cli_compatibility.py tests/test_sync_compatibility.py tests/test_completion_gates.py tests/test_execution_readiness.py tests/test_execution_report.py tests/test_filesystem_delivery_controller.py tests/test_worktree_concurrency.py",
+        "red": "Strict-TDD：当前旧入口上的新增数据字段/同源关系先真实断言RED→GREEN；regression保留全部旧CLI与导入。另记录baseline、compatibility、benchmark_before、benchmark_after以覆盖结构整理，不要求性能提升。"
+      },
+      {
+        "id": "04",
+        "slug": "board-handoff",
+        "name": "看板展示Git/FS候选和可继承交接",
+        "type": "UI-Component",
+        "deps": [
+          "03"
+        ],
+        "goal": "仅在展示与交互层消费任务03冻结的字段，让用户从看板辨认真实候选、检查点和剩余工作；不重写查询/CLI源码。",
+        "files": [
+          "templates/board.html",
+          "tests/test_board_truth.py",
+          "tests/test_board_service.py",
+          "tests/test_board_handoff.py",
+          ".agents/notes/implemented/feature/2026-11-13-board-handoff.md"
+        ],
+        "consumes": "任务03 generate_board_data(iter_dir) cards中的delivery_mode、candidate_id、execution.checkpoint/remaining_work及既有head_sha/base_sha/sources；旧卡未知语义和本地HTTP安全边界。",
+        "produces": "templates/board.html 按delivery_mode展示Git BASE/C或FS candidate_id和列明证据入口；详情增加最近有效检查点及剩余工作，筛选/键盘/刷新/断连行为可观测。数据读取接口及旧CLI不变。",
+        "stages": [
+          "固定真实用户路径、视口和四态输入，基于03字段更新详情展示",
+          "补精确计数、候选/交接展示与HTTP边界测试",
+          "实际浏览器完成交互/状态/视觉检查，独立审查冻结模板"
+        ],
+        "checks": [
+          "Git显示BASE/C，FS显示candidate_id而非空SHA；候选模式未知明确未知。冻结证据只用现有sources的列明入口，不接受任意路径",
+          "最近有效检查点保留原候选/证据出处；缺记录显示未知，remaining_work为空不推断任务完成",
+          "真实桌面浏览器筛选→开详情→读候选与剩余项→打开原文→键盘关闭；记录实际视口，验证正常/空/加载/断连错误；不得DOM注入/内部store代替用户输入",
+          "README/终端/HTML的DONE与PASS精确计数一致；HTTP读取只读、不泄露未列明文件，路由级symlink越界拒绝；权限不足时明确未验不跳过当通过",
+          "不改03查询/CLI源码。发现接口缺陷退回03并重审受影响候选；UI截图与交互分别留证，不用截图推断交互成功"
+        ],
+        "tests": "tests/test_board_handoff.py tests/test_board_truth.py tests/test_board_service.py tests/test_query_contract.py tests/test_filesystem_delivery_controller.py",
+        "red": "UI按interaction/states/visual/regression四checks，实际浏览器证据必需；功能测试在可执行条件下先失败再修复，如实记录，不以导入失败冒RED。"
+      },
+      {
+        "id": "05",
+        "slug": "release-evidence-index",
+        "name": "建立源码、候选、安装与消费的发布证据索引",
+        "type": "Spike-Discovery",
+        "deps": [
+          "04"
+        ],
+        "goal": "让维护者能定位当前源码、已验收候选、安装副本与真实消费四层事实，不把历史部署等同当前；只读核查副本，不同步或发布。",
+        "files": [
+          "references/release_status.md",
+          "SKILL.md",
+          "tests/test_release_index.py",
+          ".agents/notes/implemented/process/2026-11-13-release-evidence-index.md"
+        ],
+        "consumes": "本轮实际Git提交、任务01—04有效报告及现有历史部署原件；Codex/Gemini安装允许范围只读观察，不能凭P1历史边界推断当前状态。",
+        "produces": "references/release_status.md 为发布事实索引（非任务状态账）：每行source_commit/reviewed_candidate/install_target/observed_version/consumer_evidence/checked_at/evidence_scope/result/source_pointer；缺项UNKNOWN，历史记录保留时间与范围；SKILL链接该索引及template_generation。",
+        "stages": [
+          "盘点四层事实与现有原件，区分当前/历史/未知",
+          "生成精简索引并接入入口，验证链接及事实指针",
+          "独立核对不混淆源码/部署/消费，冻结与交付"
+        ],
+        "checks": [
+          "本地源码与已批准候选不混为一谈；尚无整轮总审时明确待总审，不能预写本迭代PASS",
+          "安装副本只读核对显式交付清单与入口；不读取凭据、不修改配置、不执行安装、不将本轮候选自动覆盖过去",
+          "未知/不可达来源明确UNKNOWN和负责补齐者；不遍历全部历史、不重跑旧业务、不把历史BLOCKED重新列为当前任务",
+          "特性分支不写docs/todos/README.md；本轮初始化已给根索引指向本卡，最终合主干更新须另获授权",
+          "索引与SKILL均不维护另一份任务状态或伪造自引用最终SHA；以固定已观察提交和日期记录，本任务最终D及总审放本迭代交付记录"
+        ],
+        "tests": "tests/test_release_index.py tests/test_prompt_sources.py tests/test_task_card_schema.py",
+        "red": "文档/证据索引使用experiment（只读来源核验）、decision（当前/历史/未知分类）、interfaces（四层字段说明），不造TDD；测试只校验结构/指针，不替代事实核对。"
+      },
+      {
+        "id": "06",
+        "slug": "self-hosting-acceptance",
+        "name": "真实自用链路与故障路径健壮性验收",
+        "type": "Spike-Discovery",
+        "deps": [
+          "05"
+        ],
+        "goal": "把本迭代01—05的真实使用链、隔离负例及最终候选独立验收结合，验证Skill管理自身项目时不绕门禁、不丢失证据、不重复执行。",
+        "files": [
+          "tests/test_self_hosting.py",
+          "references/self_hosting_acceptance.md",
+          ".agents/notes/implemented/testing/2026-11-13-self-hosting-acceptance.md"
+        ],
+        "consumes": "固定协调工具46ded3a、本迭代01—05真实卡片与原生会话/runner证据、最终被测候选C；现有tests夹具和新模板生成入口；绝不修改01—04源码/收据来迁就测试。",
+        "produces": "tests/test_self_hosting.py隔离契约回归；references/self_hosting_acceptance.md记录可复用自用方法；evidence/06/robustness-report.json包含version,candidate,coordinator_commit,cases[{id,layer,expected,observed,result,evidence}],unverified；layer只能static/synthetic/native-self-use，结论PASS/FAIL/UNKNOWN/BLOCKED。",
+        "stages": [
+          "整理01—05真实消费证据，隔离夹具运行故障与恢复路径",
+          "候选完整回归、旧协调器与新候选只读交叉检查、一次真实跨会话检查点续接",
+          "非参与者独立审查任务06；随后独立整轮总审与分支strict，未齐保持TESTING/UNKNOWN"
+        ],
+        "checks": [
+          "至少一项真实任务完成inventory→claim→同owner dispatch-check→原生委派→命令收据→attempt→release→独审→C/D收据→strict链，至少一次新会话继承有效检查点而不无依据重跑",
+          "隔离样例验证：缺授权、外来writer、缺context、候选/phase不符、依赖未PASS、连续两次无进展第三次拒绝、幂等重放/改payload拒绝、坏卡/未知DONE/FS漂移、根索引越权拒绝",
+          "runner/守卫超时与unknown、四预算、受控resume及FS拒绝Git grant复用既有有效测试或精准补验；不在真实卡制造假失败、耗尽预算或强杀用户服务",
+          "本轮新增缺陷仅在满足既定合同所必需时返还原任务 owner；如需改已验收源，停止依赖、按影响范围重审并生成新绑定，禁止在06白名单外顺手修复",
+          "主控、实现者、测试作者、设计/RCA参与者不作为该任务独立Reviewer；整轮另用非参与者聚焦接口/真实自用/全量证据；协调器与候选都不能单独自我批准",
+          "全量 `python -B -m pytest -p no:cacheprovider tests -q` 在最终候选执行；真实浏览器沿用04有效证据或因变化精准补验；所有卡PASS后分支strict和总审，不以本地strict退出0推断全完成",
+          "隔离负例成功拦截不叫业务失败；静态/合成/原生真实自用分层报告。没有部署/用户业务项目整链证据不作该层通过声明"
+        ],
+        "tests": "tests/test_self_hosting.py",
+        "red": "Spike实验无需伪造RED；新增测试如发现真实缺陷保留失败并退回原owner。experiment含实测链路，decision为边界结论，interfaces为报告字段及恢复交接。最终全量独立于单卡检查。"
+      }
+    ]
+  },
+  "questions": {
+    "03_granularity": {
+      "type": "score",
+      "instructions": "只评价tasks中id=03的granularity维度。任务已拆分：03为查询/CLI数据合同及兼容整理，不修改HTML；04只消费其数据合同改展示/交互，不改03源码。计划初始化不授权实现/提交。依据实际范围判断。",
+      "criteria": [
+        "没有可界定交付",
+        "多个无关结果混杂且不能独立验收",
+        "交付大致可界定但依赖或检查点缺失",
+        "单一责任域有明确交付、依赖与可验收检查点",
+        "责任域、串行依赖、共享写域和检查点均清楚，可独立拒收且不依赖后继实现"
+      ]
+    },
+    "03_clarity": {
+      "type": "score",
+      "instructions": "只评价tasks中id=03的clarity维度。任务已拆分：03为查询/CLI数据合同及兼容整理，不修改HTML；04只消费其数据合同改展示/交互，不改03源码。计划初始化不授权实现/提交。依据实际范围判断。",
+      "criteria": [
+        "无验收要求",
+        "只有主观目标",
+        "部分行为可验证但关键失败结果缺失",
+        "核心及主要失败行为和检查命令明确",
+        "核心/失败/兼容/授权边界、实际证据层级和命令均明确，未知不冒通过"
+      ]
+    },
+    "03_single_responsibility": {
+      "type": "score",
+      "instructions": "只评价tasks中id=03的single_responsibility维度。任务已拆分：03为查询/CLI数据合同及兼容整理，不修改HTML；04只消费其数据合同改展示/交互，不改03源码。计划初始化不授权实现/提交。依据实际范围判断。",
+      "criteria": [
+        "没有职责边界",
+        "多执行者并发覆盖相同源",
+        "职责大致清楚但有跨卡共享写入",
+        "每卡有明确唯一责任和精确白名单",
+        "共享状态同一owner，跨卡源白名单不交叠，接口与相邻责任清楚"
+      ]
+    },
+    "03_actionability": {
+      "type": "score",
+      "instructions": "只评价tasks中id=03的actionability维度。任务已拆分：03为查询/CLI数据合同及兼容整理，不修改HTML；04只消费其数据合同改展示/交互，不改03源码。计划初始化不授权实现/提交。依据实际范围判断。",
+      "criteria": [
+        "不可执行",
+        "缺输入/范围/验证入口",
+        "有步骤但关键接口或证据前提不清",
+        "有具体文件、接口、验证命令和阶段",
+        "现有能力可承接，前置授权与冻结工具明确，证据、独审、失败恢复和未执行边界可操作"
+      ]
+    },
+    "04_granularity": {
+      "type": "score",
+      "instructions": "只评价tasks中id=04的granularity维度。任务已拆分：03为查询/CLI数据合同及兼容整理，不修改HTML；04只消费其数据合同改展示/交互，不改03源码。计划初始化不授权实现/提交。依据实际范围判断。",
+      "criteria": [
+        "没有可界定交付",
+        "多个无关结果混杂且不能独立验收",
+        "交付大致可界定但依赖或检查点缺失",
+        "单一责任域有明确交付、依赖与可验收检查点",
+        "责任域、串行依赖、共享写域和检查点均清楚，可独立拒收且不依赖后继实现"
+      ]
+    },
+    "04_clarity": {
+      "type": "score",
+      "instructions": "只评价tasks中id=04的clarity维度。任务已拆分：03为查询/CLI数据合同及兼容整理，不修改HTML；04只消费其数据合同改展示/交互，不改03源码。计划初始化不授权实现/提交。依据实际范围判断。",
+      "criteria": [
+        "无验收要求",
+        "只有主观目标",
+        "部分行为可验证但关键失败结果缺失",
+        "核心及主要失败行为和检查命令明确",
+        "核心/失败/兼容/授权边界、实际证据层级和命令均明确，未知不冒通过"
+      ]
+    },
+    "04_single_responsibility": {
+      "type": "score",
+      "instructions": "只评价tasks中id=04的single_responsibility维度。任务已拆分：03为查询/CLI数据合同及兼容整理，不修改HTML；04只消费其数据合同改展示/交互，不改03源码。计划初始化不授权实现/提交。依据实际范围判断。",
+      "criteria": [
+        "没有职责边界",
+        "多执行者并发覆盖相同源",
+        "职责大致清楚但有跨卡共享写入",
+        "每卡有明确唯一责任和精确白名单",
+        "共享状态同一owner，跨卡源白名单不交叠，接口与相邻责任清楚"
+      ]
+    },
+    "04_actionability": {
+      "type": "score",
+      "instructions": "只评价tasks中id=04的actionability维度。任务已拆分：03为查询/CLI数据合同及兼容整理，不修改HTML；04只消费其数据合同改展示/交互，不改03源码。计划初始化不授权实现/提交。依据实际范围判断。",
+      "criteria": [
+        "不可执行",
+        "缺输入/范围/验证入口",
+        "有步骤但关键接口或证据前提不清",
+        "有具体文件、接口、验证命令和阶段",
+        "现有能力可承接，前置授权与冻结工具明确，证据、独审、失败恢复和未执行边界可操作"
+      ]
+    }
+  }
+}

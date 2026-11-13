@@ -1,0 +1,53 @@
+{
+  "kind": "planning-structure-validation",
+  "recorded_at": "2026-11-13T15:45:53.816001+00:00",
+  "card_count": 6,
+  "cards": [
+    {
+      "task": "01",
+      "file": "01-authority-consistency.md",
+      "status": "TODO",
+      "acceptance": "UNKNOWN",
+      "scope_count": 7
+    },
+    {
+      "task": "02",
+      "file": "02-typed-template-generation.md",
+      "status": "TODO",
+      "acceptance": "UNKNOWN",
+      "scope_count": 10
+    },
+    {
+      "task": "03",
+      "file": "03-query-cli-contract.md",
+      "status": "TODO",
+      "acceptance": "UNKNOWN",
+      "scope_count": 11
+    },
+    {
+      "task": "04",
+      "file": "04-board-handoff.md",
+      "status": "TODO",
+      "acceptance": "UNKNOWN",
+      "scope_count": 6
+    },
+    {
+      "task": "05",
+      "file": "05-release-evidence-index.md",
+      "status": "TODO",
+      "acceptance": "UNKNOWN",
+      "scope_count": 5
+    },
+    {
+      "task": "06",
+      "file": "06-self-hosting-acceptance.md",
+      "status": "TODO",
+      "acceptance": "UNKNOWN",
+      "scope_count": 4
+    }
+  ],
+  "errors": [],
+  "result": "PASS",
+  "execution_acceptance": "UNKNOWN",
+  "tests_run": false
+}
