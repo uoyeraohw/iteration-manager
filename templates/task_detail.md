@@ -27,7 +27,9 @@ updated_at: "YYYY-MM-DD HH:mm"
 > **当前阶段**：由下方阶段清单推导；比例表示清单完成情况，不表示工时进度。  
 > **TypeSafe 质检分**：`UNASSESSED` · **TDD 实证**：`PENDING` · **对审状态**：`PENDING`
 
-本模板默认Git。生成新FS卡时，先完成以下替换，不直接复制默认Git正文作为冻结成品；既有卡不自动改写：
+新卡优先按 [结构化生成说明](../references/template_generation.md) 使用 `scripts/iter_templates.py --render spec.json`，直接生成四type×Git/FS组合；`--check`仅预检，不代表执行或批准。本手填模板仍保留兼容用途。
+
+本模板默认Git。手工创建新FS卡时，先完成以下替换，不直接复制默认Git正文作为冻结成品；既有卡不自动改写：
 
 1. 在frontmatter中加入下面两项并填写真实候选ID；保留base_sha/head_sha为空，不添加非空contract_sha：
    ```yaml

@@ -1,0 +1,66 @@
+{
+  "version": 1,
+  "kind": "implementation-checkpoint",
+  "task_id": "02",
+  "role": "implementer-not-reviewer",
+  "workspace": "C:/Users/qingyu/.codeg/skills/iteration-manager/.worktrees/iter-10",
+  "branch": "feat/iter-10-self-hosting-hardening",
+  "base_sha": "2ecd3bc3f957ac1941b388e036a6427b717b6cc7",
+  "starting_head": "f5583e542a20e00cfe9e3eae3776f32cbe9d7ae9",
+  "candidate_reference": "Git commit containing this checkpoint; full SHA returned in native session",
+  "started_at": "2026-11-13T16:54:56Z",
+  "checkpoint_at": "2026-11-13T16:59:13Z",
+  "highest_status": "TESTING",
+  "acceptance_verdict": "UNKNOWN",
+  "outcome": "progress",
+  "summary": "Independent stdout-only CLI implemented after executable assertion RED; explicit placeholder grammar preserves legitimate Markdown/code/generics. Eight CLI combinations and four actual isolated FS bindings pass. Documentation and five-file delivery regression completed. No independent review or approval.",
+  "changed_files": [
+    "scripts/iter_templates.py",
+    "tests/test_template_generation.py",
+    "templates/task_detail.md",
+    "templates/contracts/strict_tdd_contract.md",
+    "templates/contracts/ui_component_contract.md",
+    "templates/contracts/refactor_benchmark_contract.md",
+    "templates/contracts/spike_discovery_contract.md",
+    "references/template_generation.md",
+    ".agents/notes/implemented/process/2026-11-13-typed-template-generation.md",
+    "docs/todos/10-self-hosting-hardening/evidence/02/implementation-checkpoint-b.json",
+    "docs/todos/10-self-hosting-hardening/evidence/02/slice-b-*"
+  ],
+  "typesafe": {
+    "request_state": {
+      "requirement": "Reject real unresolved placeholders while allowing legitimate Markdown, code, generics, braces. Existing regex rejects any {...}, <...>, TODO anywhere.",
+      "legitimate_examples": ["dict[str, int] -> {key: value}", "List<T>", "<details>text</details>", "Discuss TODO state"],
+      "unresolved_examples": ["{{task_name}}", "${TASK_ID}", "{TODO}", "YYYY-MM-DD"]
+    },
+    "question": "Choose a placeholder grammar for new structured spec precheck, preserving legitimate prose/code and detecting explicit unresolved template tokens.",
+    "criteria": {
+      "explicit": "Reject explicit double-brace identifier, dollar-brace identifier, exact {TODO}/{TBD}, date sentinel; allow generic angle/braces and standalone TODO prose; document grammar.",
+      "broad": "Reject all braces, angle text and TODO words.",
+      "insufficient": "Evidence does not support selecting either grammar."
+    },
+    "response": {"model": "jev-1.14.0", "answers": {"grammar": {"type": "choice", "choice": "explicit", "confidence": 1.0, "probabilities": {"broad": 0.0, "explicit": 1.0, "insufficient": 0.0}}}, "usage": {"input_tokens": 513, "output_tokens": 42}},
+    "application": "Replace broad braces/angle/TODO regex with documented explicit tokens, backed by discriminating tests. Existing cards are not migrated."
+  },
+  "command_receipts": [
+    {"path": "slice-b-cli-boundary-red.json", "status": "COMPLETED", "raw_exit_code": 1, "tree_terminal": true, "result": "17 failed, 57 passed in 3.19s; CLI executed and exited 0 with empty stdout, producing actual equality AssertionError; boundary failures also observed"},
+    {"path": "slice-b-cli-boundary-green.json", "status": "COMPLETED", "raw_exit_code": 0, "tree_terminal": true, "result": "74 passed; same new core CLI/boundary tests"},
+    {"path": "slice-b-compatibility.json", "status": "COMPLETED", "raw_exit_code": 0, "tree_terminal": true, "result": "81 passed in 4.77s; added compatibility tests did not experience RED; existing FS binding used directly in isolated fixtures without fabricated verdicts"},
+    {"path": "slice-b-regression.json", "status": "COMPLETED", "raw_exit_code": 0, "tree_terminal": true, "result": "111 passed in 9.21s; exact specified five-file regression"},
+    {"path": "slice-b-note-tree.json", "status": "COMPLETED", "raw_exit_code": 0, "tree_terminal": true, "result": "Actual global skill tree validator run from project root"},
+    {"path": "slice-b-note-format.json", "status": "COMPLETED", "raw_exit_code": 0, "tree_terminal": true, "result": "Actual global skill format validator run from project root"},
+    {"path": "slice-b-scope.json", "status": "COMPLETED", "raw_exit_code": 0, "tree_terminal": true, "result": "Frozen check-scope BASE..starting HEAD including worktree: all 58 then-present changed files in scope; ownership not inferred. Final checkpoint and scope receipt are also within the same authorized evidence directory."}
+  ],
+  "evidence_reuse": "Slice A core RED and corrected GREEN retained unchanged, including failed first GREEN. B regression includes current source and all A core tests. No historical RED or approval recreated.",
+  "remaining_work": [
+    "Controller consume this normal completed slice, record actual attempt/release/envelope and candidate SHA; no resume required.",
+    "Independent nonparticipant Reviewer examine task BASE..final candidate and raw A/B evidence; implementer does not issue approval or receipt.",
+    "Controller independently reverify required gates and bind candidate/contract, register actual review receipt and state only after approval, then run frozen strict."
+  ],
+  "dirty_ownership": {
+    "controller": "Task 02 card and preexisting untracked attempt-a/context-implementation-a/context-implementation-b/dependency-01-envelope/dispatch-a/dispatch-b/dispatch-native-a/handoff-a/inventory-a/native-terminal-a files are excluded from this implementation commit.",
+    "implementation": "Only changed_files above and terminal slice-b receipt/output/child originals belong to B. No task01 source, tests or evidence modified."
+  },
+  "active_commands": [],
+  "time_accounting": "Exact per-command start/end and argv/cwd in immutable receipts; coding/model/tool proportions UNKNOWN. Session and handoff are distinct; native terminal time is supplied by controller."
+}

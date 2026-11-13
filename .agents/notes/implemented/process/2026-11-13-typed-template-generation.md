@@ -10,7 +10,9 @@ Status: implemented
 
 `iter_templates`从结构化spec直接生成确定性Markdown，复用`iter_contracts.TYPE_CHECKS`、解析器和范围规则；不读写任务卡、配置或收据。生成只给出TODO、PENDING、false和UNASSESSED，不能产生执行或批准事实。FS正文只指向外部审查结果，并明确完整正文先定稿再冻结。
 
-本次切片只交付纯函数核心和基础预检。独立CLI、完整输入及预检边界、模板入口文档、FS实际冻结兼容和交付回归尚未完成，后续切片继续原任务，不把核心GREEN当整卡通过。
+独立CLI提供stdout Markdown渲染与stdout JSON预检，合法退出0、输入或结构错误退出2，默认不写文件。spec严格限定版本、字段、类型与必需形状。预检针对新生成初态，不代替旧卡解析或完成验收。
+
+占位符只识别显式双大括号标识符、美元大括号标识符、精确`{TODO}`/`{TBD}`与日期哨兵`YYYY-MM-DD`；普通大括号、泛型、HTML与代码块可表达。该判别由TypeSafe jev-1.14.0选择显式语法，confidence=1.0；不是质量评分或验收。
 
 ## Alternatives considered
 
@@ -24,8 +26,10 @@ Status: implemented
 
 ## Consequences
 
-四类型必需检查名保持单一来源；Refactor-Benchmark仍包含前后量测。代价是生成器正文与手写模板需要明确入口文档衔接，不能声称现有模板已迁移。占位符语法及Markdown边界仍需后续针对性用例完善。
+四类型必需检查名保持单一来源；Refactor-Benchmark仍包含前后量测。手写模板通过生成说明衔接新入口，不迁移既有卡。显式占位符语法避免误杀合法代码，代价是调用者须遵循约定的占位语法，不能期待识别任意自然语言待填提示。
 
 ## Testing
 
 `slice-a-core-red.json`记录可调用空实现下19个真实断言失败，退出1；`slice-a-core-green.json`记录首次实现的8个失败和11个通过，原因是占位符正则误认HTML标记；`slice-a-core-green-2.json`记录修复后19项通过，退出0。原件均在本卡evidence/02目录，runner确认进程树终态；未执行交付回归，不代表独立审查通过。
+
+切片B的`slice-b-cli-boundary-red.json`记录17失败、57通过，CLI实际执行但stdout为空触发断言失败，另有合法代码误拒和预检漏拒；`slice-b-cli-boundary-green.json`同组74通过。`slice-b-compatibility.json`补充既有Git投影和四type实际FS绑定：冻结匹配、元数据登记兼容、正文/勾选漂移拒绝和candidate不匹配拒绝；不伪造历史RED或批准。后续交付回归与独审以检查点及原件为准。

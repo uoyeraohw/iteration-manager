@@ -1,0 +1,456 @@
+...................FFFFFFFFFFFFF.................................F.FF... [ 97%]
+.F                                                                       [100%]
+================================== FAILURES ===================================
+_____________________ test_cli_roundtrip[git-Strict-TDD] ______________________
+
+task_type = 'Strict-TDD', mode = 'git'
+tmp_path = WindowsPath('C:/Users/qingyu/AppData/Local/Temp/pytest-of-qingyu/pytest-360/test_cli_roundtrip_git_Strict_0')
+
+    @pytest.mark.parametrize("task_type", TYPE_CHECKS)
+    @pytest.mark.parametrize("mode", ["git", "filesystem"])
+    def test_cli_roundtrip(task_type, mode, tmp_path):
+        script = Path(__file__).resolve().parents[1] / "scripts/iter_templates.py"
+        spec_path = tmp_path / "spec.json"
+        spec_path.write_text(json.dumps(spec_for(task_type, mode)), encoding="utf-8")
+        result = subprocess.run([sys.executable, "-B", str(script), "--render", str(spec_path)], capture_output=True, text=True, encoding="utf-8")
+        assert result.returncode == 0
+>       assert result.stdout == render_task_card(spec_for(task_type, mode))
+E       assert '' == '---\nschema_...:ledger -->\n'
+E         
+E         - ---
+E         - schema_version: 1
+E         - iteration: "10-example"
+E         - task_id: "02"
+E         - task_name: "Generate typed cards"
+E         - status: "TODO"...
+E         
+E         ...Full output truncated (56 lines hidden), use '-vv' to show
+
+tests\test_template_generation.py:83: AssertionError
+____________________ test_cli_roundtrip[git-UI-Component] _____________________
+
+task_type = 'UI-Component', mode = 'git'
+tmp_path = WindowsPath('C:/Users/qingyu/AppData/Local/Temp/pytest-of-qingyu/pytest-360/test_cli_roundtrip_git_UI_Comp0')
+
+    @pytest.mark.parametrize("task_type", TYPE_CHECKS)
+    @pytest.mark.parametrize("mode", ["git", "filesystem"])
+    def test_cli_roundtrip(task_type, mode, tmp_path):
+        script = Path(__file__).resolve().parents[1] / "scripts/iter_templates.py"
+        spec_path = tmp_path / "spec.json"
+        spec_path.write_text(json.dumps(spec_for(task_type, mode)), encoding="utf-8")
+        result = subprocess.run([sys.executable, "-B", str(script), "--render", str(spec_path)], capture_output=True, text=True, encoding="utf-8")
+        assert result.returncode == 0
+>       assert result.stdout == render_task_card(spec_for(task_type, mode))
+E       assert '' == '---\nschema_...:ledger -->\n'
+E         
+E         - ---
+E         - schema_version: 1
+E         - iteration: "10-example"
+E         - task_id: "02"
+E         - task_name: "Generate typed cards"
+E         - status: "TODO"...
+E         
+E         ...Full output truncated (57 lines hidden), use '-vv' to show
+
+tests\test_template_generation.py:83: AssertionError
+_________________ test_cli_roundtrip[git-Refactor-Benchmark] __________________
+
+task_type = 'Refactor-Benchmark', mode = 'git'
+tmp_path = WindowsPath('C:/Users/qingyu/AppData/Local/Temp/pytest-of-qingyu/pytest-360/test_cli_roundtrip_git_Refacto0')
+
+    @pytest.mark.parametrize("task_type", TYPE_CHECKS)
+    @pytest.mark.parametrize("mode", ["git", "filesystem"])
+    def test_cli_roundtrip(task_type, mode, tmp_path):
+        script = Path(__file__).resolve().parents[1] / "scripts/iter_templates.py"
+        spec_path = tmp_path / "spec.json"
+        spec_path.write_text(json.dumps(spec_for(task_type, mode)), encoding="utf-8")
+        result = subprocess.run([sys.executable, "-B", str(script), "--render", str(spec_path)], capture_output=True, text=True, encoding="utf-8")
+        assert result.returncode == 0
+>       assert result.stdout == render_task_card(spec_for(task_type, mode))
+E       assert '' == '---\nschema_...:ledger -->\n'
+E         
+E         - ---
+E         - schema_version: 1
+E         - iteration: "10-example"
+E         - task_id: "02"
+E         - task_name: "Generate typed cards"
+E         - status: "TODO"...
+E         
+E         ...Full output truncated (58 lines hidden), use '-vv' to show
+
+tests\test_template_generation.py:83: AssertionError
+___________________ test_cli_roundtrip[git-Spike-Discovery] ___________________
+
+task_type = 'Spike-Discovery', mode = 'git'
+tmp_path = WindowsPath('C:/Users/qingyu/AppData/Local/Temp/pytest-of-qingyu/pytest-360/test_cli_roundtrip_git_Spike_D0')
+
+    @pytest.mark.parametrize("task_type", TYPE_CHECKS)
+    @pytest.mark.parametrize("mode", ["git", "filesystem"])
+    def test_cli_roundtrip(task_type, mode, tmp_path):
+        script = Path(__file__).resolve().parents[1] / "scripts/iter_templates.py"
+        spec_path = tmp_path / "spec.json"
+        spec_path.write_text(json.dumps(spec_for(task_type, mode)), encoding="utf-8")
+        result = subprocess.run([sys.executable, "-B", str(script), "--render", str(spec_path)], capture_output=True, text=True, encoding="utf-8")
+        assert result.returncode == 0
+>       assert result.stdout == render_task_card(spec_for(task_type, mode))
+E       assert '' == '---\nschema_...:ledger -->\n'
+E         
+E         - ---
+E         - schema_version: 1
+E         - iteration: "10-example"
+E         - task_id: "02"
+E         - task_name: "Generate typed cards"
+E         - status: "TODO"...
+E         
+E         ...Full output truncated (56 lines hidden), use '-vv' to show
+
+tests\test_template_generation.py:83: AssertionError
+__________________ test_cli_roundtrip[filesystem-Strict-TDD] __________________
+
+task_type = 'Strict-TDD', mode = 'filesystem'
+tmp_path = WindowsPath('C:/Users/qingyu/AppData/Local/Temp/pytest-of-qingyu/pytest-360/test_cli_roundtrip_filesystem_0')
+
+    @pytest.mark.parametrize("task_type", TYPE_CHECKS)
+    @pytest.mark.parametrize("mode", ["git", "filesystem"])
+    def test_cli_roundtrip(task_type, mode, tmp_path):
+        script = Path(__file__).resolve().parents[1] / "scripts/iter_templates.py"
+        spec_path = tmp_path / "spec.json"
+        spec_path.write_text(json.dumps(spec_for(task_type, mode)), encoding="utf-8")
+        result = subprocess.run([sys.executable, "-B", str(script), "--render", str(spec_path)], capture_output=True, text=True, encoding="utf-8")
+        assert result.returncode == 0
+>       assert result.stdout == render_task_card(spec_for(task_type, mode))
+E       assert '' == '---\nschema_...:ledger -->\n'
+E         
+E         - ---
+E         - schema_version: 1
+E         - iteration: "10-example"
+E         - task_id: "02"
+E         - task_name: "Generate typed cards"
+E         - status: "TODO"...
+E         
+E         ...Full output truncated (58 lines hidden), use '-vv' to show
+
+tests\test_template_generation.py:83: AssertionError
+_________________ test_cli_roundtrip[filesystem-UI-Component] _________________
+
+task_type = 'UI-Component', mode = 'filesystem'
+tmp_path = WindowsPath('C:/Users/qingyu/AppData/Local/Temp/pytest-of-qingyu/pytest-360/test_cli_roundtrip_filesystem_1')
+
+    @pytest.mark.parametrize("task_type", TYPE_CHECKS)
+    @pytest.mark.parametrize("mode", ["git", "filesystem"])
+    def test_cli_roundtrip(task_type, mode, tmp_path):
+        script = Path(__file__).resolve().parents[1] / "scripts/iter_templates.py"
+        spec_path = tmp_path / "spec.json"
+        spec_path.write_text(json.dumps(spec_for(task_type, mode)), encoding="utf-8")
+        result = subprocess.run([sys.executable, "-B", str(script), "--render", str(spec_path)], capture_output=True, text=True, encoding="utf-8")
+        assert result.returncode == 0
+>       assert result.stdout == render_task_card(spec_for(task_type, mode))
+E       assert '' == '---\nschema_...:ledger -->\n'
+E         
+E         - ---
+E         - schema_version: 1
+E         - iteration: "10-example"
+E         - task_id: "02"
+E         - task_name: "Generate typed cards"
+E         - status: "TODO"...
+E         
+E         ...Full output truncated (59 lines hidden), use '-vv' to show
+
+tests\test_template_generation.py:83: AssertionError
+______________ test_cli_roundtrip[filesystem-Refactor-Benchmark] ______________
+
+task_type = 'Refactor-Benchmark', mode = 'filesystem'
+tmp_path = WindowsPath('C:/Users/qingyu/AppData/Local/Temp/pytest-of-qingyu/pytest-360/test_cli_roundtrip_filesystem_2')
+
+    @pytest.mark.parametrize("task_type", TYPE_CHECKS)
+    @pytest.mark.parametrize("mode", ["git", "filesystem"])
+    def test_cli_roundtrip(task_type, mode, tmp_path):
+        script = Path(__file__).resolve().parents[1] / "scripts/iter_templates.py"
+        spec_path = tmp_path / "spec.json"
+        spec_path.write_text(json.dumps(spec_for(task_type, mode)), encoding="utf-8")
+        result = subprocess.run([sys.executable, "-B", str(script), "--render", str(spec_path)], capture_output=True, text=True, encoding="utf-8")
+        assert result.returncode == 0
+>       assert result.stdout == render_task_card(spec_for(task_type, mode))
+E       assert '' == '---\nschema_...:ledger -->\n'
+E         
+E         - ---
+E         - schema_version: 1
+E         - iteration: "10-example"
+E         - task_id: "02"
+E         - task_name: "Generate typed cards"
+E         - status: "TODO"...
+E         
+E         ...Full output truncated (60 lines hidden), use '-vv' to show
+
+tests\test_template_generation.py:83: AssertionError
+_______________ test_cli_roundtrip[filesystem-Spike-Discovery] ________________
+
+task_type = 'Spike-Discovery', mode = 'filesystem'
+tmp_path = WindowsPath('C:/Users/qingyu/AppData/Local/Temp/pytest-of-qingyu/pytest-360/test_cli_roundtrip_filesystem_3')
+
+    @pytest.mark.parametrize("task_type", TYPE_CHECKS)
+    @pytest.mark.parametrize("mode", ["git", "filesystem"])
+    def test_cli_roundtrip(task_type, mode, tmp_path):
+        script = Path(__file__).resolve().parents[1] / "scripts/iter_templates.py"
+        spec_path = tmp_path / "spec.json"
+        spec_path.write_text(json.dumps(spec_for(task_type, mode)), encoding="utf-8")
+        result = subprocess.run([sys.executable, "-B", str(script), "--render", str(spec_path)], capture_output=True, text=True, encoding="utf-8")
+        assert result.returncode == 0
+>       assert result.stdout == render_task_card(spec_for(task_type, mode))
+E       assert '' == '---\nschema_...:ledger -->\n'
+E         
+E         - ---
+E         - schema_version: 1
+E         - iteration: "10-example"
+E         - task_id: "02"
+E         - task_name: "Generate typed cards"
+E         - status: "TODO"...
+E         
+E         ...Full output truncated (58 lines hidden), use '-vv' to show
+
+tests\test_template_generation.py:83: AssertionError
+___________________ test_legitimate_notation[{key: value}] ____________________
+
+text = '{key: value}'
+
+    @pytest.mark.parametrize("text", ["{key: value}", "List<T>", "<details>text</details>", "Discuss TODO state", "```python\nx = {'a': 1}\n```"])
+    def test_legitimate_notation(text):
+        spec = spec_for()
+        spec["objective"] = text
+>       assert validate_generated_card(render_task_card(spec), "git") == []
+                                       ^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_template_generation.py:97: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+scripts\iter_templates.py:69: in render_task_card
+    _validate_spec(spec)
+scripts\iter_templates.py:38: in _validate_spec
+    _text(spec[name], name)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+value = '{key: value}', name = 'objective'
+
+    def _text(value, name):
+        if not isinstance(value, str) or not value.strip():
+            raise ValueError(f"{name} must be nonempty text")
+        if _PLACEHOLDER.search(value):
+>           raise ValueError(f"Unresolved placeholder in {name}")
+E           ValueError: Unresolved placeholder in objective
+
+scripts\iter_templates.py:25: ValueError
+______________________ test_legitimate_notation[List<T>] ______________________
+
+text = 'List<T>'
+
+    @pytest.mark.parametrize("text", ["{key: value}", "List<T>", "<details>text</details>", "Discuss TODO state", "```python\nx = {'a': 1}\n```"])
+    def test_legitimate_notation(text):
+        spec = spec_for()
+        spec["objective"] = text
+>       assert validate_generated_card(render_task_card(spec), "git") == []
+                                       ^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_template_generation.py:97: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+scripts\iter_templates.py:69: in render_task_card
+    _validate_spec(spec)
+scripts\iter_templates.py:38: in _validate_spec
+    _text(spec[name], name)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+value = 'List<T>', name = 'objective'
+
+    def _text(value, name):
+        if not isinstance(value, str) or not value.strip():
+            raise ValueError(f"{name} must be nonempty text")
+        if _PLACEHOLDER.search(value):
+>           raise ValueError(f"Unresolved placeholder in {name}")
+E           ValueError: Unresolved placeholder in objective
+
+scripts\iter_templates.py:25: ValueError
+______________ test_legitimate_notation[<details>text</details>] ______________
+
+text = '<details>text</details>'
+
+    @pytest.mark.parametrize("text", ["{key: value}", "List<T>", "<details>text</details>", "Discuss TODO state", "```python\nx = {'a': 1}\n```"])
+    def test_legitimate_notation(text):
+        spec = spec_for()
+        spec["objective"] = text
+>       assert validate_generated_card(render_task_card(spec), "git") == []
+                                       ^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_template_generation.py:97: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+scripts\iter_templates.py:69: in render_task_card
+    _validate_spec(spec)
+scripts\iter_templates.py:38: in _validate_spec
+    _text(spec[name], name)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+value = '<details>text</details>', name = 'objective'
+
+    def _text(value, name):
+        if not isinstance(value, str) or not value.strip():
+            raise ValueError(f"{name} must be nonempty text")
+        if _PLACEHOLDER.search(value):
+>           raise ValueError(f"Unresolved placeholder in {name}")
+E           ValueError: Unresolved placeholder in objective
+
+scripts\iter_templates.py:25: ValueError
+________________ test_legitimate_notation[Discuss TODO state] _________________
+
+text = 'Discuss TODO state'
+
+    @pytest.mark.parametrize("text", ["{key: value}", "List<T>", "<details>text</details>", "Discuss TODO state", "```python\nx = {'a': 1}\n```"])
+    def test_legitimate_notation(text):
+        spec = spec_for()
+        spec["objective"] = text
+>       assert validate_generated_card(render_task_card(spec), "git") == []
+                                       ^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_template_generation.py:97: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+scripts\iter_templates.py:69: in render_task_card
+    _validate_spec(spec)
+scripts\iter_templates.py:38: in _validate_spec
+    _text(spec[name], name)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+value = 'Discuss TODO state', name = 'objective'
+
+    def _text(value, name):
+        if not isinstance(value, str) or not value.strip():
+            raise ValueError(f"{name} must be nonempty text")
+        if _PLACEHOLDER.search(value):
+>           raise ValueError(f"Unresolved placeholder in {name}")
+E           ValueError: Unresolved placeholder in objective
+
+scripts\iter_templates.py:25: ValueError
+___________ test_legitimate_notation[```python\nx = {'a': 1}\n```] ____________
+
+text = "```python\nx = {'a': 1}\n```"
+
+    @pytest.mark.parametrize("text", ["{key: value}", "List<T>", "<details>text</details>", "Discuss TODO state", "```python\nx = {'a': 1}\n```"])
+    def test_legitimate_notation(text):
+        spec = spec_for()
+        spec["objective"] = text
+>       assert validate_generated_card(render_task_card(spec), "git") == []
+                                       ^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_template_generation.py:97: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+scripts\iter_templates.py:69: in render_task_card
+    _validate_spec(spec)
+scripts\iter_templates.py:38: in _validate_spec
+    _text(spec[name], name)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+value = "```python\nx = {'a': 1}\n```", name = 'objective'
+
+    def _text(value, name):
+        if not isinstance(value, str) or not value.strip():
+            raise ValueError(f"{name} must be nonempty text")
+        if _PLACEHOLDER.search(value):
+>           raise ValueError(f"Unresolved placeholder in {name}")
+E           ValueError: Unresolved placeholder in objective
+
+scripts\iter_templates.py:25: ValueError
+____ test_generated_card_boundaries[task_id: "02"-task_id: "{{task_id}}"] _____
+
+old = 'task_id: "02"', new = 'task_id: "{{task_id}}"'
+
+    @pytest.mark.parametrize("old,new", [
+        ('schema_version: 1', 'schema_version: 2'),
+        ('task_id: "02"', 'task_id: "{{task_id}}"'),
+        ('type: "Strict-TDD"', 'type: "Other"'),
+        ('status: "TODO"', 'status: "TODO"\nunknown: "value"'),
+        ('**red**：Run the actual red check', '**red**：'),
+        ('| `scripts/example.py` |', '| `../outside` |'),
+    ])
+    def test_generated_card_boundaries(old, new):
+>       assert validate_generated_card(render_task_card(spec_for()).replace(old, new), "git")
+E       assert []
+E        +  where [] = validate_generated_card('---\nschema_version: 1\niteration: "10-example"\ntask_id: "{{task_id}}"\ntask_name: "Generate typed cards"\nstatus: "... 执行实证与裁决账本\n<!-- iter:ledger -->\n实际命令、原始证据、退出码、候选、检查点与剩余项在执行中记录；未执行不推断通过。\n独立审查结果由外部收据与报告提供。\n<!-- /iter:ledger -->\n', 'git')
+E        +    where '---\nschema_version: 1\niteration: "10-example"\ntask_id: "{{task_id}}"\ntask_name: "Generate typed cards"\nstatus: "... 执行实证与裁决账本\n<!-- iter:ledger -->\n实际命令、原始证据、退出码、候选、检查点与剩余项在执行中记录；未执行不推断通过。\n独立审查结果由外部收据与报告提供。\n<!-- /iter:ledger -->\n' = <built-in method replace of str object at 0x0000019F9D68E760>('task_id: "02"', 'task_id: "{{task_id}}"')
+E        +      where <built-in method replace of str object at 0x0000019F9D68E760> = '---\nschema_version: 1\niteration: "10-example"\ntask_id: "02"\ntask_name: "Generate typed cards"\nstatus: "TODO"\nty... 执行实证与裁决账本\n<!-- iter:ledger -->\n实际命令、原始证据、退出码、候选、检查点与剩余项在执行中记录；未执行不推断通过。\n独立审查结果由外部收据与报告提供。\n<!-- /iter:ledger -->\n'.replace
+E        +        where '---\nschema_version: 1\niteration: "10-example"\ntask_id: "02"\ntask_name: "Generate typed cards"\nstatus: "TODO"\nty... 执行实证与裁决账本\n<!-- iter:ledger -->\n实际命令、原始证据、退出码、候选、检查点与剩余项在执行中记录；未执行不推断通过。\n独立审查结果由外部收据与报告提供。\n<!-- /iter:ledger -->\n' = render_task_card({'acceptance': ['Generated card is readable'], 'consumes': 'TYPE_CHECKS', 'delivery_mode': 'git', 'iteration': '10-example', ...})
+E        +          where {'acceptance': ['Generated card is readable'], 'consumes': 'TYPE_CHECKS', 'delivery_mode': 'git', 'iteration': '10-example', ...} = spec_for()
+
+tests\test_template_generation.py:141: AssertionError
+_ test_generated_card_boundaries[status: "TODO"-status: "TODO"\nunknown: "value"] _
+
+old = 'status: "TODO"', new = 'status: "TODO"\nunknown: "value"'
+
+    @pytest.mark.parametrize("old,new", [
+        ('schema_version: 1', 'schema_version: 2'),
+        ('task_id: "02"', 'task_id: "{{task_id}}"'),
+        ('type: "Strict-TDD"', 'type: "Other"'),
+        ('status: "TODO"', 'status: "TODO"\nunknown: "value"'),
+        ('**red**：Run the actual red check', '**red**：'),
+        ('| `scripts/example.py` |', '| `../outside` |'),
+    ])
+    def test_generated_card_boundaries(old, new):
+>       assert validate_generated_card(render_task_card(spec_for()).replace(old, new), "git")
+E       assert []
+E        +  where [] = validate_generated_card('---\nschema_version: 1\niteration: "10-example"\ntask_id: "02"\ntask_name: "Generate typed cards"\nstatus: "TODO"\nun... 执行实证与裁决账本\n<!-- iter:ledger -->\n实际命令、原始证据、退出码、候选、检查点与剩余项在执行中记录；未执行不推断通过。\n独立审查结果由外部收据与报告提供。\n<!-- /iter:ledger -->\n', 'git')
+E        +    where '---\nschema_version: 1\niteration: "10-example"\ntask_id: "02"\ntask_name: "Generate typed cards"\nstatus: "TODO"\nun... 执行实证与裁决账本\n<!-- iter:ledger -->\n实际命令、原始证据、退出码、候选、检查点与剩余项在执行中记录；未执行不推断通过。\n独立审查结果由外部收据与报告提供。\n<!-- /iter:ledger -->\n' = <built-in method replace of str object at 0x0000019F9E894020>('status: "TODO"', 'status: "TODO"\nunknown: "value"')
+E        +      where <built-in method replace of str object at 0x0000019F9E894020> = '---\nschema_version: 1\niteration: "10-example"\ntask_id: "02"\ntask_name: "Generate typed cards"\nstatus: "TODO"\nty... 执行实证与裁决账本\n<!-- iter:ledger -->\n实际命令、原始证据、退出码、候选、检查点与剩余项在执行中记录；未执行不推断通过。\n独立审查结果由外部收据与报告提供。\n<!-- /iter:ledger -->\n'.replace
+E        +        where '---\nschema_version: 1\niteration: "10-example"\ntask_id: "02"\ntask_name: "Generate typed cards"\nstatus: "TODO"\nty... 执行实证与裁决账本\n<!-- iter:ledger -->\n实际命令、原始证据、退出码、候选、检查点与剩余项在执行中记录；未执行不推断通过。\n独立审查结果由外部收据与报告提供。\n<!-- /iter:ledger -->\n' = render_task_card({'acceptance': ['Generated card is readable'], 'consumes': 'TYPE_CHECKS', 'delivery_mode': 'git', 'iteration': '10-example', ...})
+E        +          where {'acceptance': ['Generated card is readable'], 'consumes': 'TYPE_CHECKS', 'delivery_mode': 'git', 'iteration': '10-example', ...} = spec_for()
+
+tests\test_template_generation.py:141: AssertionError
+_ test_generated_card_boundaries[**red**\uff1aRun the actual red check-**red**\uff1a] _
+
+old = '**red**：Run the actual red check', new = '**red**：'
+
+    @pytest.mark.parametrize("old,new", [
+        ('schema_version: 1', 'schema_version: 2'),
+        ('task_id: "02"', 'task_id: "{{task_id}}"'),
+        ('type: "Strict-TDD"', 'type: "Other"'),
+        ('status: "TODO"', 'status: "TODO"\nunknown: "value"'),
+        ('**red**：Run the actual red check', '**red**：'),
+        ('| `scripts/example.py` |', '| `../outside` |'),
+    ])
+    def test_generated_card_boundaries(old, new):
+>       assert validate_generated_card(render_task_card(spec_for()).replace(old, new), "git")
+E       assert []
+E        +  where [] = validate_generated_card('---\nschema_version: 1\niteration: "10-example"\ntask_id: "02"\ntask_name: "Generate typed cards"\nstatus: "TODO"\nty... 执行实证与裁决账本\n<!-- iter:ledger -->\n实际命令、原始证据、退出码、候选、检查点与剩余项在执行中记录；未执行不推断通过。\n独立审查结果由外部收据与报告提供。\n<!-- /iter:ledger -->\n', 'git')
+E        +    where '---\nschema_version: 1\niteration: "10-example"\ntask_id: "02"\ntask_name: "Generate typed cards"\nstatus: "TODO"\nty... 执行实证与裁决账本\n<!-- iter:ledger -->\n实际命令、原始证据、退出码、候选、检查点与剩余项在执行中记录；未执行不推断通过。\n独立审查结果由外部收据与报告提供。\n<!-- /iter:ledger -->\n' = <built-in method replace of str object at 0x0000019F9E894B10>('**red**：Run the actual red check', '**red**：')
+E        +      where <built-in method replace of str object at 0x0000019F9E894B10> = '---\nschema_version: 1\niteration: "10-example"\ntask_id: "02"\ntask_name: "Generate typed cards"\nstatus: "TODO"\nty... 执行实证与裁决账本\n<!-- iter:ledger -->\n实际命令、原始证据、退出码、候选、检查点与剩余项在执行中记录；未执行不推断通过。\n独立审查结果由外部收据与报告提供。\n<!-- /iter:ledger -->\n'.replace
+E        +        where '---\nschema_version: 1\niteration: "10-example"\ntask_id: "02"\ntask_name: "Generate typed cards"\nstatus: "TODO"\nty... 执行实证与裁决账本\n<!-- iter:ledger -->\n实际命令、原始证据、退出码、候选、检查点与剩余项在执行中记录；未执行不推断通过。\n独立审查结果由外部收据与报告提供。\n<!-- /iter:ledger -->\n' = render_task_card({'acceptance': ['Generated card is readable'], 'consumes': 'TYPE_CHECKS', 'delivery_mode': 'git', 'iteration': '10-example', ...})
+E        +          where {'acceptance': ['Generated card is readable'], 'consumes': 'TYPE_CHECKS', 'delivery_mode': 'git', 'iteration': '10-example', ...} = spec_for()
+
+tests\test_template_generation.py:141: AssertionError
+___________________________ test_cli_invalid_inputs ___________________________
+
+tmp_path = WindowsPath('C:/Users/qingyu/AppData/Local/Temp/pytest-of-qingyu/pytest-360/test_cli_invalid_inputs0')
+
+    def test_cli_invalid_inputs(tmp_path):
+        script = Path(__file__).resolve().parents[1] / "scripts/iter_templates.py"
+        bad = tmp_path / "bad.json"
+        bad.write_text("{", encoding="utf-8")
+        for args in (["--render", str(bad)], ["--check", str(bad), "--delivery-mode", "git"], ["--check", str(tmp_path / "missing"), "--delivery-mode", "filesystem"]):
+            result = subprocess.run([sys.executable, "-B", str(script), *args], capture_output=True, text=True, encoding="utf-8")
+>           assert result.returncode == 2
+E           AssertionError: assert 0 == 2
+E            +  where 0 = CompletedProcess(args=['C:\\Users\\qingyu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe', '-B', 'C:\\Users\...a\\Local\\Temp\\pytest-of-qingyu\\pytest-360\\test_cli_invalid_inputs0\\bad.json'], returncode=0, stdout='', stderr='').returncode
+
+tests\test_template_generation.py:157: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_template_generation.py::test_cli_roundtrip[git-Strict-TDD]
+FAILED tests/test_template_generation.py::test_cli_roundtrip[git-UI-Component]
+FAILED tests/test_template_generation.py::test_cli_roundtrip[git-Refactor-Benchmark]
+FAILED tests/test_template_generation.py::test_cli_roundtrip[git-Spike-Discovery]
+FAILED tests/test_template_generation.py::test_cli_roundtrip[filesystem-Strict-TDD]
+FAILED tests/test_template_generation.py::test_cli_roundtrip[filesystem-UI-Component]
+FAILED tests/test_template_generation.py::test_cli_roundtrip[filesystem-Refactor-Benchmark]
+FAILED tests/test_template_generation.py::test_cli_roundtrip[filesystem-Spike-Discovery]
+FAILED tests/test_template_generation.py::test_legitimate_notation[{key: value}]
+FAILED tests/test_template_generation.py::test_legitimate_notation[List<T>]
+FAILED tests/test_template_generation.py::test_legitimate_notation[<details>text</details>]
+FAILED tests/test_template_generation.py::test_legitimate_notation[Discuss TODO state]
+FAILED tests/test_template_generation.py::test_legitimate_notation[```python\nx = {'a': 1}\n```]
+FAILED tests/test_template_generation.py::test_generated_card_boundaries[task_id: "02"-task_id: "{{task_id}}"]
+FAILED tests/test_template_generation.py::test_generated_card_boundaries[status: "TODO"-status: "TODO"\nunknown: "value"]
+FAILED tests/test_template_generation.py::test_generated_card_boundaries[**red**\uff1aRun the actual red check-**red**\uff1a]
+FAILED tests/test_template_generation.py::test_cli_invalid_inputs - Assertion...
+17 failed, 57 passed in 3.19s

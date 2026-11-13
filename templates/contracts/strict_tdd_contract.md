@@ -1,5 +1,7 @@
 # 🧩 [Strict-TDD] 核心逻辑 / 接口契约型子任务模板
 
+新卡可用[结构化生成入口](../../references/template_generation.md)，spec.type设为Strict-TDD，delivery_mode显式选择git或filesystem；本合同的有效RED与独审门禁不变。
+
 完成证据遵守 `references/task_card_schema.md`，必需checks：red、green、regression（RED非零且failure_kind=assertion，其他退出0）。实现仅置TESTING；非参与者独审后，由主管按Git的C/D或FS冻结合同登记收据与状态，再严格检查。不得仅凭勾选或APPROVED字段放行。
 
 > **适用范围**：后端领域模型、业务计算逻辑、API 接口、状态机、数据转换、工具算法等。  

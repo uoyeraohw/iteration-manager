@@ -1,6 +1,9 @@
 """Pure task-card generation; no project files or state are written."""
+import argparse
 import json
 import re
+import sys
+from pathlib import Path
 
 from iter_contracts import TYPE_CHECKS, contract_projection, parse_card, relative_path, scope_paths, section
 
@@ -9,7 +12,13 @@ _REQUIRED = {
     "version", "task_id", "iteration", "task_name", "type", "delivery_mode",
     "objective", "consumes", "produces", "scope", "stages", "acceptance", "verification",
 }
-_PLACEHOLDER = re.compile(r"\{[^{}\n]+\}|<(?!\!--)[^<>\n]+>|\b(?:TODO|TBD)\b|YYYY-MM-DD")
+_PLACEHOLDER = re.compile(r"\{\{\s*[\w.-]+\s*\}\}|\$\{[\w.-]+\}|\{(?:TODO|TBD)\}|YYYY-MM-DD")
+_META_FIELDS = {
+    "schema_version", "iteration", "task_id", "task_name", "status", "type",
+    "fix_rounds", "replan_count", "is_blocked", "blocked_reason", "typesafe_score",
+    "typesafe_evidence", "tdd_verified", "review_status", "review_receipt",
+    "base_sha", "head_sha", "contract_sha", "delivery_mode", "candidate_id",
+}
 _TYPE_GUIDANCE = {
     "Strict-TDD": "核心行为先取得可编译测试的真实断言RED，再最小GREEN；环境错误不算RED。",
     "UI-Component": "先走真实用户路径，再检查正常、空、加载、错误四态及约定视口和实际视觉。",
@@ -130,6 +139,10 @@ def validate_generated_card(content: str, delivery_mode: str) -> list[str]:
         return ["Unknown delivery_mode"]
     meta, body, errors = parse_card(content)
     errors = list(errors)
+    if set(meta) - _META_FIELDS:
+        errors.append("Unknown generated-card metadata")
+    if any(_PLACEHOLDER.search(value) for value in meta.values()):
+        errors.append("Unresolved placeholder in metadata")
     expected = {"schema_version": "1", "status": "TODO", "review_status": "PENDING",
                 "tdd_verified": "false", "typesafe_score": "UNASSESSED"}
     for name, value in expected.items():
@@ -151,7 +164,8 @@ def validate_generated_card(content: str, delivery_mode: str) -> list[str]:
         if block is None or not re.search(r"^- \[ \] \S", block, re.M):
             errors.append(f"Missing {name} checklist")
     for name in checks or ():
-        if f"**{name}**" not in (section(content, "verification", r"(?!)") or ""):
+        block = section(content, "verification", r"(?!)") or ""
+        if not re.search(r"^- \[ \] \*\*" + re.escape(name) + r"\*\*：\S[^\n]*", block, re.M):
             errors.append(f"Missing required check: {name}")
     if _PLACEHOLDER.search(body):
         errors.append("Unresolved placeholder in body")
@@ -162,4 +176,37 @@ def validate_generated_card(content: str, delivery_mode: str) -> list[str]:
             errors.append("Filesystem cards cannot contain SHA values")
     elif meta.get("delivery_mode", "git") != "git":
         errors.append("Delivery mode mismatch")
+    elif "candidate_id" in meta:
+        errors.append("candidate_id is only valid for filesystem delivery")
     return errors
+
+
+def main(argv=None):
+    parser = argparse.ArgumentParser(description=__doc__)
+    action = parser.add_mutually_exclusive_group(required=True)
+    action.add_argument("--render", metavar="SPEC_JSON")
+    action.add_argument("--check", metavar="CARD_MD")
+    parser.add_argument("--delivery-mode", choices=("git", "filesystem"))
+    args = parser.parse_args(argv)
+    try:
+        if args.render:
+            if args.delivery_mode is not None:
+                raise ValueError("--render uses delivery_mode from the spec")
+            content = render_task_card(json.loads(Path(args.render).read_text(encoding="utf-8")))
+            errors = validate_generated_card(content, parse_card(content)[0].get("delivery_mode", "git"))
+            if errors:
+                raise ValueError("; ".join(errors))
+            sys.stdout.write(content)
+            return 0
+        if args.delivery_mode is None:
+            raise ValueError("--check requires --delivery-mode")
+        errors = validate_generated_card(Path(args.check).read_text(encoding="utf-8"), args.delivery_mode)
+    except (OSError, ValueError) as exc:
+        errors = [str(exc)]
+    print(json.dumps({"valid": not errors, "errors": errors}, ensure_ascii=False))
+    return 2 if errors else 0
+
+
+if __name__ == "__main__":
+    sys.stdout.reconfigure(encoding="utf-8")
+    raise SystemExit(main())

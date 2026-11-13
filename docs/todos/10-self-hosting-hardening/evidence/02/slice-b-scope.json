@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "argv": [
+    "python",
+    "C:/Users/qingyu/.codeg/skills/iteration-manager/build/frozen-tools/46ded3a/scripts/iter_sync.py",
+    "--check-scope",
+    "2ecd3bc3f957ac1941b388e036a6427b717b6cc7",
+    "HEAD",
+    "docs/todos/10-self-hosting-hardening/02-typed-template-generation.md",
+    "--include-worktree"
+  ],
+  "cwd": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\.worktrees\\iter-10",
+  "deadline": "2026-11-13T17:01:45+00:00",
+  "cleanup_reserve_seconds": 5,
+  "status": "COMPLETED",
+  "deadline_checked_at": "2026-11-13T16:59:11.448658+00:00",
+  "started_at": "2026-11-13T16:59:11.457657+00:00",
+  "ended_at": "2026-11-13T16:59:12.350717+00:00",
+  "raw_exit_code": 0,
+  "tree_terminal": true,
+  "output": "docs/todos/10-self-hosting-hardening/evidence/02/slice-b-scope.json.output.txt",
+  "container_pid": 40440,
+  "launcher_exit_code": 0,
+  "command": {
+    "status": "COMPLETED",
+    "raw_exit_code": 0,
+    "started_at": "2026-11-13T16:59:11.457657+00:00",
+    "pid": 37720,
+    "deadline_checked_at": "2026-11-13T16:59:11.448658+00:00",
+    "ended_at": "2026-11-13T16:59:12.334202+00:00"
+  },
+  "late_by_seconds": 0
+}
