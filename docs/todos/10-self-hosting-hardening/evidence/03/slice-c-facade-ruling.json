@@ -1,0 +1,29 @@
+{
+  "request": {
+    "state": {
+      "old_main": "iter_sync.main() takes no arguments, reads sys.argv; successful command branches use bare return (None); sys.exit(1/2/3) escapes to imported caller; OSError/ValueError/RuntimeError are handled only in script __main__ guard.",
+      "candidate": "iter_sync.main() lazily returns iter_cli.main(), so success returns 0 and formerly escaping exceptions become integer codes.",
+      "contract": "iter_cli.main(argv: list[str] | None=None)->int is new; iter_sync retains old main() facade and imported function/class signatures and behavior.",
+      "available_dispatch": "iter_cli._dispatch(argv) contains exact old dispatch body except copying argv and expanded help."
+    },
+    "questions": {
+      "facade": {
+        "type": "choice",
+        "instructions": "Which facade behavior meets both the new integer CLI API and old imported main contract?",
+        "criteria": {
+          "preserve": "Legacy main lazily invokes _dispatch(sys.argv[1:]), keeping None/SystemExit/errors; restore old __main__ error wrapper. New public iter_cli.main returns integer.",
+          "integer": "Legacy main returns new integer API result, accepting success/error behavior change.",
+          "unknown": "Evidence insufficient."
+        }
+      }
+    }
+  },
+  "response": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"model\":\"jev-1.14.0\",\"answers\":{\"facade\":{\"type\":\"choice\",\"choice\":\"preserve\",\"confidence\":0.66,\"probabilities\":{\"integer\":0.19,\"preserve\":0.77,\"unknown\":0.04}}},\"usage\":{\"input_tokens\":540,\"output_tokens\":41}}"
+      }
+    ]
+  }
+}

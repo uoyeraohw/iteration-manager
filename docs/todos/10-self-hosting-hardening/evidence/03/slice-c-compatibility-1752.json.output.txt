@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "C:\Users\qingyu\.codeg\skills\iteration-manager\.worktrees\iter-10\docs\todos\10-self-hosting-hardening\evidence\03\slice-c-compatibility.py", line 29, in <module>
+    assert signatures['before'] == signatures['after']
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

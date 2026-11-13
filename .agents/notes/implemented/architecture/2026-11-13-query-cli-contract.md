@@ -12,9 +12,9 @@ Status: implemented
 
 新增字段从当前可调用iter_sync.generate_board_data取得断言RED，覆盖Git/FS与有/无检查点，envelope作为同卡字段参照。测试中的attempt是投影单元夹具，不是正式收据或真实执行历史。
 
-iter_queries持有发现、审计、envelope及其直接依赖的Git读取和阶段解析。iter_sync重新导出全部旧符号和签名，保留CLI与HTML/HTTP。board和envelope调用同一task_handoff_projection，board只追加delivery_mode、candidate_id、execution；Git candidate_id保留已知不适用空串。坏profile不降级，board新增字段以UNKNOWN/null表示不可用。
+iter_queries持有发现、审计、envelope及其直接依赖的Git读取和阶段解析。iter_sync重新导出全部旧符号和签名，保留HTML/HTTP；main()仅在调用时加载iter_cli的分派体，保留成功返回None、失败SystemExit及原脚本异常处理。新iter_cli.main(argv=None)复制输入参数并返回整数退出码；两个入口共用整体迁移的旧分派主体，不重写参数解析。board和envelope调用同一task_handoff_projection，board只追加delivery_mode、candidate_id、execution；Git candidate_id保留已知不适用空串。坏profile不降级，board新增字段以UNKNOWN/null表示不可用。
 
-inventory、preflight、execution直接读取query；inventory的audit字典仍只在一次调用中存在，依赖审计和envelope共用结果，下次调用重新审计。CLI模块提取、after、八文件交付回归和独审留给切片C，不宣称本切片完成03。
+inventory、preflight、execution直接读取query；inventory的audit字典仍只在一次调用中存在，依赖审计和envelope共用结果，下次调用重新审计。旧inventory审计计数测试按主控明确授权仅把观测点迁到iter_queries，readiness与逐卡一次断言保持原样，不建立门面monkeypatch注册桥。
 
 ## Existing-note audit
 
@@ -26,7 +26,8 @@ inventory、preflight、execution直接读取query；inventory的audit字典仍�
 
 - 先建立100个完整批准绑定候选：能覆盖更重的Git验证，但搭建成本不适合本次有界量测；采用明确限定的五状态合成样例。TypeSafe原请求响应在本卡evidence/03/slice-a-typesafe.json。
 - RED后立即抽共享投影helper：TypeSafe在当时证据下推荐此切片，随后发现旧Git envelope测试明确要求candidate_id为空串。未将UNKNOWN/null要求静默套到旧字段；保留RED检查点，由契约owner澄清不适用哨兵与未知值边界再实施。原请求响应及新增反证保存在slice-a-scope-decision.json。
-- 为兼容旧测试向iter_sync注入跨模块monkeypatch转发：可保留旧观测点，但引入与查询所有权无关的注册机制。本次直接接线query，不增加转发；TypeSafe请求/响应在slice-b-typesafe.json。旧test_execution_readiness.py:180只patch同步模块，不能再观察inventory审计；白名单外测试保持原样，由主控授权后适配观测点。
+- 为兼容旧测试向iter_sync注入跨模块monkeypatch转发：可保留旧观测点，但引入与查询所有权无关的注册机制。本次直接接线query，不增加转发；TypeSafe请求/响应在slice-b-typesafe.json，主控的定点测试授权见test-seam-ruling.json。
+- 统一重写argparse：可集中参数声明，但会改变既有混合位置参数与分派优先级；选择整体迁移原分派，只有参数来源、返回码适配和timing帮助有变化。TypeSafe原请求响应在slice-c-typesafe.json。
 
 ## Testing
 
@@ -36,4 +37,4 @@ inventory、preflight、execution直接读取query；inventory的audit字典仍�
 
 ## Consequences
 
-下一会话可直接消费查询层、投影GREEN和完整签名快照，不必重做before与RED。旧测试的同步模块monkeypatch观测点需要主控处理；这不是对审计复用的豁免。CLI提取、after、指定回归和独立审查仍是03剩余门禁。当前最高TESTING，不产生自批结论。
+切片C的CLI可调用stub先取得help返回码断言RED，迁移后CLI针对性11 passed；其余10项补充测试没有先RED。A/B有效RED与before直接沿用；after使用A原脚本和相同10/100各三次输入。完整命令与未完门禁以checkpoint-c为准。整体迁移保留旧分派复杂度，但避免重写造成兼容漂移；不增加跨调用缓存，不承诺性能提升。当前最高TESTING，独立审查和卡片登记归主控。

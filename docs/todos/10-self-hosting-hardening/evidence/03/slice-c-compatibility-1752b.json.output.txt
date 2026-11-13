@@ -1,0 +1,85 @@
+{"signature_changes": {}, "added_exports": ["task_handoff_projection"]}
+{
+  "api_signatures_unchanged": true,
+  "legacy_prefix_unchanged": true,
+  "dispatcher_body_unchanged_except_argv_and_help": true,
+  "benchmark": {
+    "before": [
+      {
+        "size": 10,
+        "repeat": 1,
+        "seconds": 0.13272730000608135,
+        "git_call_count": 1
+      },
+      {
+        "size": 10,
+        "repeat": 2,
+        "seconds": 0.11966129999200348,
+        "git_call_count": 1
+      },
+      {
+        "size": 10,
+        "repeat": 3,
+        "seconds": 0.12035120000655297,
+        "git_call_count": 1
+      },
+      {
+        "size": 100,
+        "repeat": 1,
+        "seconds": 0.6158059000008507,
+        "git_call_count": 1
+      },
+      {
+        "size": 100,
+        "repeat": 2,
+        "seconds": 0.6082395999983419,
+        "git_call_count": 1
+      },
+      {
+        "size": 100,
+        "repeat": 3,
+        "seconds": 0.6249414999911096,
+        "git_call_count": 1
+      }
+    ],
+    "after": [
+      {
+        "size": 10,
+        "repeat": 1,
+        "seconds": 0.14391179999802262,
+        "git_call_count": 1
+      },
+      {
+        "size": 10,
+        "repeat": 2,
+        "seconds": 0.1315158000070369,
+        "git_call_count": 1
+      },
+      {
+        "size": 10,
+        "repeat": 3,
+        "seconds": 0.13606459999573417,
+        "git_call_count": 1
+      },
+      {
+        "size": 100,
+        "repeat": 1,
+        "seconds": 0.7588083000009647,
+        "git_call_count": 1
+      },
+      {
+        "size": 100,
+        "repeat": 2,
+        "seconds": 0.7589429999934509,
+        "git_call_count": 1
+      },
+      {
+        "size": 100,
+        "repeat": 3,
+        "seconds": 0.7327065999998013,
+        "git_call_count": 1
+      }
+    ]
+  },
+  "performance_claim": null
+}

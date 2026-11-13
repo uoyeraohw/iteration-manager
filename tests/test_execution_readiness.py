@@ -173,11 +173,12 @@ def test_inventory_audits_each_card_at_most_once_even_for_dependency(tmp_path, m
     data['tasks']['02'] = json.loads(json.dumps(data['tasks']['01']))
     data['tasks']['02']['dependencies'] = [card.relative_to(tmp_path).as_posix()]
     save(ctx, data)
-    calls = []; original = engine.audit_task_file
+    import iter_queries
+    calls = []; original = iter_queries.audit_task_file
     def observed(path):
         calls.append(path.name)
         return original(path)
-    monkeypatch.setattr(engine, 'audit_task_file', observed)
+    monkeypatch.setattr(iter_queries, 'audit_task_file', observed)
     result = combined(card.parent, tmp_path, 'continue', ctx.name)
     assert result['readiness'] == 'BLOCKED' and sorted(calls) == ['01-task.md','02-task.md']
 

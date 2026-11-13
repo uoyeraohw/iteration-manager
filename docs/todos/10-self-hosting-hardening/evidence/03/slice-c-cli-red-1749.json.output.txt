@@ -1,0 +1,17 @@
+F                                                                        [100%]
+================================== FAILURES ===================================
+______________ test_callable_help_returns_zero_and_covers_timing ______________
+
+capsys = <_pytest.capture.CaptureFixture object at 0x000001C0D40CCB50>
+
+    def test_callable_help_returns_zero_and_covers_timing(capsys):
+        args = ['--help']
+>       assert cli.main(args) == 0
+E       AssertionError: assert 1 == 0
+E        +  where 1 = <function main at 0x000001C0D408A700>(['--help'])
+E        +    where <function main at 0x000001C0D408A700> = cli.main
+
+tests\test_cli_compatibility.py:11: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_cli_compatibility.py::test_callable_help_returns_zero_and_covers_timing
+1 failed in 1.16s
