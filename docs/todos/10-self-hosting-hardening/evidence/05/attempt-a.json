@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "phase": "implementation",
+  "candidate": "a509cd59d4aa153e7fa3dbf64a29411554faa666",
+  "inputs": [
+    "docs/todos/10-self-hosting-hardening/05-release-evidence-index.md",
+    "SKILL.md",
+    "references/release_status.md"
+  ],
+  "capabilities": [
+    "Codeg MCP codex independent session",
+    "Windows iter_run",
+    "pytest",
+    "read-only installed source inspection"
+  ],
+  "checkpoint": "四层发布证据索引和入口链接；真实只读58路径/补充入口实测，9passed；完整安装与新会话采用UNKNOWN",
+  "remaining_work": [
+    "主控独立核验及冻结C",
+    "非参与者独审",
+    "登记D/local strict"
+  ],
+  "executor_id": "285eb86e-960e-4140-ade7-669a57dc1264",
+  "terminal_evidence": "docs/todos/10-self-hosting-hardening/evidence/05/native-terminal-a.json",
+  "progress": [
+    {
+      "kind": "implementation",
+      "summary": "按有日期四层索引，不把源码/单卡批准/历史部署/安装消费混同",
+      "evidence": "references/release_status.md"
+    },
+    {
+      "kind": "green",
+      "summary": "指定三文件9passed，Note与冻结scope通过",
+      "evidence": "docs/todos/10-self-hosting-hardening/evidence/05/slice-a-targeted-final.json.output.txt"
+    }
+  ],
+  "commands": [
+    "docs/todos/10-self-hosting-hardening/evidence/05/slice-a-experiment-1.json",
+    "docs/todos/10-self-hosting-hardening/evidence/05/slice-a-experiment-entries-1.json",
+    "docs/todos/10-self-hosting-hardening/evidence/05/slice-a-targeted-1.json",
+    "docs/todos/10-self-hosting-hardening/evidence/05/slice-a-targeted-final.json",
+    "docs/todos/10-self-hosting-hardening/evidence/05/slice-a-note-tree-1.json",
+    "docs/todos/10-self-hosting-hardening/evidence/05/slice-a-note-format-1.json",
+    "docs/todos/10-self-hosting-hardening/evidence/05/slice-a-note-final.json",
+    "docs/todos/10-self-hosting-hardening/evidence/05/slice-a-note-format-final.json",
+    "docs/todos/10-self-hosting-hardening/evidence/05/slice-a-scope-1.json",
+    "docs/todos/10-self-hosting-hardening/evidence/05/slice-a-scope-final.json"
+  ],
+  "started_at": null,
+  "ended_at": null
+}

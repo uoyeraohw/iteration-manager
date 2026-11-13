@@ -1,0 +1,506 @@
+{
+  "request": "任务05实施：发布证据索引。你是唯一实现owner，负责文档/测试/证据/必要返修；不写卡或迭代README，不自批、不委派。不是唯一参与者，先核对cwd/branch/HEAD/dirty，保护主控05卡及evidence/05/context/dependency/inventory/dispatch，不暂存它们。\ncwd C:/Users/qingyu/.codeg/skills/iteration-manager/.worktrees/iter-10，feat/iter-10-self-hosting-hardening，BASE8392193a0d9e883892f75780a63a1b16f67682c4。04已APPROVED/固定strict4/6PASS；本卡同owner dispatch READY。inventory总退出3因DONE不可派发/其它卡缺context，05逐卡READY且依赖04PASS，不把汇总阻断当本卡失败。\n完整读SKILL、references/agent_protocol.md/task_card_schema.md、迭代10 README/05卡，相关template_generation.md、现有发布记录和指定源，源文件改前完整读。按已批准计划继续无需重询。目标：references/release_status.md四层事实索引，每行source_commit/reviewed_candidate/install_target/observed_version/consumer_evidence/checked_at/evidence_scope/result/source_pointer；历史来源保留时间/边界，未知UNKNOWN与补齐owner。不是另一状态账，不预写本轮PASS/虚构自引用最终SHA。SKILL精简链接该索引和template_generation。测试tests/test_release_index.py校验结构/字段/链接指针，不代替事实。Spike必需experiment成功命令、decision/interfaces观测，不造TDD。\n允许仅05白名单：references/release_status.md、SKILL.md、tests/test_release_index.py、.agents/notes/implemented/process/2026-11-13-release-evidence-index.md、evidence/05/slice-a-*、observation/experiment脚本与产物、implementation-checkpoint-a.json。不改01—04源码/收据/根docs/todos/README。安装副本只读：主维护源C:/Users/qingyu/.codeg/skills/iteration-manager main、Codex C:/Users/qingyu/.codex/skills/iteration-manager、Gemini C:/Users/qingyu/.gemini/config/skills/iteration-manager。只读显式交付清单/入口文件，不扫凭据、不改配置/副本、不发布。权限真实拒绝不得换工具绕过，可按合同记UNKNOWN/owner/恢复条件。\n现有前期只读调查线索供定点核验（不重开历史）：主维护根build/git-init-sync-20261112-120855/final-receipt.json记录旧三副本58文件相等205tests、无push；build/stage10-checkpoint-resume-20261111/fs-r7-migration-independent/ACCEPTANCE.md记录R7最终7/7 CLOSED_LOCAL_MOCK_FS边界；build/p1-inventory-20261113/README.md与deployment.json说明P1源码增量未部署（不要凭历史推断当前）。本轮工作区8392193与main d3bd97a、现时安装内容分别测读；版本无标签/无法归属明确UNKNOWN，不用新哈希。按实际manifest whitelist逐文件byte compare可行；非必要SHA256禁止。原件在main build不随Worktree，保留source_pointer和必要少量原件捕获于evidence/05，捕获注明原绝对来源/时间/范围，不把转述叫原件。不要遍历全部历史或重跑旧外部业务。真实消费01—04用各review.json/原生记录指针，FS合成与真实Git自用分开。\n需分清：Codeg维护main不是iter10已部署；worktree单卡APPROVED不是整轮总审；当前源码/候选/安装/消费四层不互相替代。05完成D及整轮结果留任务记录，不制造自引用SHA。\n实质尚未决定的分类/取舍实际TypeSafe evaluate，原始请求响应保存，不为明确事实刷分。Note先检索维护中文决定，实际tree/format校验。\n所有业务/实验/测试/验收通过F=C:/Users/qingyu/.codeg/skills/iteration-manager/build/frozen-tools/46ded3a/scripts/iter_run.py --deadline 2026-11-13T18:39:21.378Z --evidence docs/todos/10-self-hosting-hardening/evidence/05/slice-a-<unique>.json -- <argv>；cwd根，保留raw exit/output/tree_terminal，PowerShell非零短路，原件不覆盖。定向交付：python -B -m pytest -p no:cacheprovider tests/test_release_index.py tests/test_prompt_sources.py tests/test_task_card_schema.py -q；范围F iter_sync --check-scope BASE HEAD 05卡 --include-worktree。Note工具按实际Skill路径，npx.cmd。\n精准Git仅自己的产品/测试/Note/原件，检查cached归属/whitespace；原始日志CRLF/blankEOF保留，可用core.whitespace=cr-at-eol,-blank-at-eof check，其它报错读原因。先正常阶段交付不等deadline；5min检查点，6min停业务，7min正常返回；leaf 2026-11-13T18:40:51.378Z，hard 2026-11-13T18:42:21.378Z。最高TESTING。\n返回implementation-checkpoint-a.json含真实源码/证据SHA、命令/exit/tree_terminal、四层事实与UNKNOWN、还需做的独审/strict、dirty/活动命令状态；不修改卡/README。时间不足保留可审切片，不省门禁、不假造事实。",
+  "requested_at": "2026-11-13T18:32:21.378Z",
+  "dispatch": {
+    "task_id": "285eb86e-960e-4140-ade7-669a57dc1264",
+    "status": "running",
+    "child_conversation_id": 1720,
+    "agent_type": "codex",
+    "message": "Delegation successful. task_id=285eb86e-960e-4140-ade7-669a57dc1264. Call get_delegation_status with this id in the task_ids array (optionally wait_ms) to collect the result, or cancel_delegation to stop it."
+  },
+  "guard": {
+    "reason": "terminal",
+    "deadlineMs": 1794595251378,
+    "final": {
+      "task_id": "285eb86e-960e-4140-ade7-669a57dc1264",
+      "status": "completed",
+      "child_conversation_id": 1720,
+      "agent_type": "codex",
+      "text": "切片 A 已交付，最高 **TESTING**，未自批。\n\n- 实现提交：`21acfe0`\n- 最终交付：`a509cd59d4aa153e7fa3dbf64a29411554faa666`\n- 索引：`references/release_status.md`\n- 检查点：`docs/todos/10-self-hosting-hardening/evidence/05/implementation-checkpoint-a.json`\n- 定向测试 **9 passed**；Note tree/format、冻结范围检查通过。\n- 完整安装版本及新会话消费保持 **UNKNOWN**，已注明补齐 owner。\n\n无活动命令；主控卡及 context/dependency/inventory/dispatch 未暂存。后续由主控安排独审、登记及 strict。\n\n",
+      "duration_ms": 358531,
+      "progress": {
+        "steps": 51,
+        "marks": [
+          "ok",
+          "ok",
+          "ok",
+          "ok",
+          "ok",
+          "ok",
+          "failed",
+          "ok",
+          "ok",
+          "ok",
+          "ok",
+          "ok"
+        ],
+        "last_step": "git add -- docs/todos/10-self-hosting-hardening/evidence/05/implementation-checkpoint-a.json docs/todos/10-self-hosting-…"
+      },
+      "raw": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"tasks\":[{\"task_id\":\"285eb86e-960e-4140-ade7-669a57dc1264\",\"status\":\"completed\",\"child_conversation_id\":1720,\"agent_type\":\"codex\",\"text\":\"切片 A 已交付，最高 **TESTING**，未自批。\\n\\n- 实现提交：`21acfe0`\\n- 最终交付：`a509cd59d4aa153e7fa3dbf64a29411554faa666`\\n- 索引：`references/release_status.md`\\n- 检查点：`docs/todos/10-self-hosting-hardening/evidence/05/implementation-checkpoint-a.json`\\n- 定向测试 **9 passed**；Note tree/format、冻结范围检查通过。\\n- 完整安装版本及新会话消费保持 **UNKNOWN**，已注明补齐 owner。\\n\\n无活动命令；主控卡及 context/dependency/inventory/dispatch 未暂存。后续由主控安排独审、登记及 strict。\\n\\n\",\"duration_ms\":358531,\"progress\":{\"steps\":51,\"marks\":[\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"failed\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\"],\"last_step\":\"git add -- docs/todos/10-self-hosting-hardening/evidence/05/implementation-checkpoint-a.json docs/todos/10-self-hosting-…\"}}]}"
+          }
+        ],
+        "structuredContent": {
+          "tasks": [
+            {
+              "task_id": "285eb86e-960e-4140-ade7-669a57dc1264",
+              "status": "completed",
+              "child_conversation_id": 1720,
+              "agent_type": "codex",
+              "text": "切片 A 已交付，最高 **TESTING**，未自批。\n\n- 实现提交：`21acfe0`\n- 最终交付：`a509cd59d4aa153e7fa3dbf64a29411554faa666`\n- 索引：`references/release_status.md`\n- 检查点：`docs/todos/10-self-hosting-hardening/evidence/05/implementation-checkpoint-a.json`\n- 定向测试 **9 passed**；Note tree/format、冻结范围检查通过。\n- 完整安装版本及新会话消费保持 **UNKNOWN**，已注明补齐 owner。\n\n无活动命令；主控卡及 context/dependency/inventory/dispatch 未暂存。后续由主控安排独审、登记及 strict。\n\n",
+              "duration_ms": 358531,
+              "progress": {
+                "steps": 51,
+                "marks": [
+                  "ok",
+                  "ok",
+                  "ok",
+                  "ok",
+                  "ok",
+                  "ok",
+                  "failed",
+                  "ok",
+                  "ok",
+                  "ok",
+                  "ok",
+                  "ok"
+                ],
+                "last_step": "git add -- docs/todos/10-self-hosting-hardening/evidence/05/implementation-checkpoint-a.json docs/todos/10-self-hosting-…"
+              }
+            }
+          ]
+        },
+        "isError": false
+      }
+    },
+    "terminalConfirmed": true,
+    "observedAt": 1794595100076,
+    "lateByMs": 0,
+    "events": [
+      {
+        "kind": "query",
+        "startedAt": 1794594741533,
+        "returnedAt": 1794594801557,
+        "waitMs": 60000,
+        "result": {
+          "task_id": "285eb86e-960e-4140-ade7-669a57dc1264",
+          "status": "running",
+          "child_conversation_id": 1720,
+          "agent_type": "codex",
+          "message": "Running.\nLatest sub-agent reply: thinking: **Parsing the manifest**",
+          "progress": {
+            "steps": 20,
+            "marks": [
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok"
+            ],
+            "last_step": "mcp.fastctx.glob"
+          },
+          "raw": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"tasks\":[{\"task_id\":\"285eb86e-960e-4140-ade7-669a57dc1264\",\"status\":\"running\",\"child_conversation_id\":1720,\"agent_type\":\"codex\",\"message\":\"Running.\\nLatest sub-agent reply: thinking: **Parsing the manifest**\",\"progress\":{\"steps\":20,\"marks\":[\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\"],\"last_step\":\"mcp.fastctx.glob\"}}]}"
+              }
+            ],
+            "structuredContent": {
+              "tasks": [
+                {
+                  "task_id": "285eb86e-960e-4140-ade7-669a57dc1264",
+                  "status": "running",
+                  "child_conversation_id": 1720,
+                  "agent_type": "codex",
+                  "message": "Running.\nLatest sub-agent reply: thinking: **Parsing the manifest**",
+                  "progress": {
+                    "steps": 20,
+                    "marks": [
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok"
+                    ],
+                    "last_step": "mcp.fastctx.glob"
+                  }
+                }
+              ]
+            },
+            "isError": false
+          }
+        }
+      },
+      {
+        "kind": "query",
+        "startedAt": 1794594801557,
+        "returnedAt": 1794594861581,
+        "waitMs": 60000,
+        "result": {
+          "task_id": "285eb86e-960e-4140-ade7-669a57dc1264",
+          "status": "running",
+          "child_conversation_id": 1720,
+          "agent_type": "codex",
+          "message": "Running.\nLatest sub-agent reply: 实测三个安装目录在历史 manifest 的 58 条路径上均与 main 相等；其中 13 条与 iter-10 基线不同，新增模板、查询入口及说明文件未安装。因此索引会记录这份有限清单观察，将完整安装版本保留为 UNKNOWN。P1 的…",
+          "progress": {
+            "steps": 26,
+            "marks": [
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok"
+            ],
+            "last_step": "git describe --tags --exact-match HEAD; git -C C:/Users/qingyu/.codeg/skills/iteration-manager describe --tags --exact-m…"
+          },
+          "raw": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"tasks\":[{\"task_id\":\"285eb86e-960e-4140-ade7-669a57dc1264\",\"status\":\"running\",\"child_conversation_id\":1720,\"agent_type\":\"codex\",\"message\":\"Running.\\nLatest sub-agent reply: 实测三个安装目录在历史 manifest 的 58 条路径上均与 main 相等；其中 13 条与 iter-10 基线不同，新增模板、查询入口及说明文件未安装。因此索引会记录这份有限清单观察，将完整安装版本保留为 UNKNOWN。P1 的…\",\"progress\":{\"steps\":26,\"marks\":[\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\"],\"last_step\":\"git describe --tags --exact-match HEAD; git -C C:/Users/qingyu/.codeg/skills/iteration-manager describe --tags --exact-m…\"}}]}"
+              }
+            ],
+            "structuredContent": {
+              "tasks": [
+                {
+                  "task_id": "285eb86e-960e-4140-ade7-669a57dc1264",
+                  "status": "running",
+                  "child_conversation_id": 1720,
+                  "agent_type": "codex",
+                  "message": "Running.\nLatest sub-agent reply: 实测三个安装目录在历史 manifest 的 58 条路径上均与 main 相等；其中 13 条与 iter-10 基线不同，新增模板、查询入口及说明文件未安装。因此索引会记录这份有限清单观察，将完整安装版本保留为 UNKNOWN。P1 的…",
+                  "progress": {
+                    "steps": 26,
+                    "marks": [
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok"
+                    ],
+                    "last_step": "git describe --tags --exact-match HEAD; git -C C:/Users/qingyu/.codeg/skills/iteration-manager describe --tags --exact-m…"
+                  }
+                }
+              ]
+            },
+            "isError": false
+          }
+        }
+      },
+      {
+        "kind": "query",
+        "startedAt": 1794594861581,
+        "returnedAt": 1794594921600,
+        "waitMs": 60000,
+        "result": {
+          "task_id": "285eb86e-960e-4140-ade7-669a57dc1264",
+          "status": "running",
+          "child_conversation_id": 1720,
+          "agent_type": "codex",
+          "message": "Running.\nLatest sub-agent reply: 实测三个安装目录在历史 manifest 的 58 条路径上均与 main 相等；其中 13 条与 iter-10 基线不同，新增模板、查询入口及说明文件未安装。因此索引会记录这份有限清单观察，将完整安装版本保留为 UNKNOWN。P1 的…",
+          "progress": {
+            "steps": 26,
+            "marks": [
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok"
+            ],
+            "last_step": "git describe --tags --exact-match HEAD; git -C C:/Users/qingyu/.codeg/skills/iteration-manager describe --tags --exact-m…"
+          },
+          "raw": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"tasks\":[{\"task_id\":\"285eb86e-960e-4140-ade7-669a57dc1264\",\"status\":\"running\",\"child_conversation_id\":1720,\"agent_type\":\"codex\",\"message\":\"Running.\\nLatest sub-agent reply: 实测三个安装目录在历史 manifest 的 58 条路径上均与 main 相等；其中 13 条与 iter-10 基线不同，新增模板、查询入口及说明文件未安装。因此索引会记录这份有限清单观察，将完整安装版本保留为 UNKNOWN。P1 的…\",\"progress\":{\"steps\":26,\"marks\":[\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\"],\"last_step\":\"git describe --tags --exact-match HEAD; git -C C:/Users/qingyu/.codeg/skills/iteration-manager describe --tags --exact-m…\"}}]}"
+              }
+            ],
+            "structuredContent": {
+              "tasks": [
+                {
+                  "task_id": "285eb86e-960e-4140-ade7-669a57dc1264",
+                  "status": "running",
+                  "child_conversation_id": 1720,
+                  "agent_type": "codex",
+                  "message": "Running.\nLatest sub-agent reply: 实测三个安装目录在历史 manifest 的 58 条路径上均与 main 相等；其中 13 条与 iter-10 基线不同，新增模板、查询入口及说明文件未安装。因此索引会记录这份有限清单观察，将完整安装版本保留为 UNKNOWN。P1 的…",
+                  "progress": {
+                    "steps": 26,
+                    "marks": [
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok"
+                    ],
+                    "last_step": "git describe --tags --exact-match HEAD; git -C C:/Users/qingyu/.codeg/skills/iteration-manager describe --tags --exact-m…"
+                  }
+                }
+              ]
+            },
+            "isError": false
+          }
+        }
+      },
+      {
+        "kind": "query",
+        "startedAt": 1794594921600,
+        "returnedAt": 1794594981622,
+        "waitMs": 60000,
+        "result": {
+          "task_id": "285eb86e-960e-4140-ade7-669a57dc1264",
+          "status": "running",
+          "child_conversation_id": 1720,
+          "agent_type": "codex",
+          "message": "Running.\nLatest sub-agent reply: thinking: **Reading selected native records**",
+          "progress": {
+            "steps": 37,
+            "marks": [
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok"
+            ],
+            "last_step": "python C:/Users/qingyu/.codeg/skills/iteration-manager/build/frozen-tools/46ded3a/scripts/iter_run.py --deadline 2026-11…"
+          },
+          "raw": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"tasks\":[{\"task_id\":\"285eb86e-960e-4140-ade7-669a57dc1264\",\"status\":\"running\",\"child_conversation_id\":1720,\"agent_type\":\"codex\",\"message\":\"Running.\\nLatest sub-agent reply: thinking: **Reading selected native records**\",\"progress\":{\"steps\":37,\"marks\":[\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\"],\"last_step\":\"python C:/Users/qingyu/.codeg/skills/iteration-manager/build/frozen-tools/46ded3a/scripts/iter_run.py --deadline 2026-11…\"}}]}"
+              }
+            ],
+            "structuredContent": {
+              "tasks": [
+                {
+                  "task_id": "285eb86e-960e-4140-ade7-669a57dc1264",
+                  "status": "running",
+                  "child_conversation_id": 1720,
+                  "agent_type": "codex",
+                  "message": "Running.\nLatest sub-agent reply: thinking: **Reading selected native records**",
+                  "progress": {
+                    "steps": 37,
+                    "marks": [
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok"
+                    ],
+                    "last_step": "python C:/Users/qingyu/.codeg/skills/iteration-manager/build/frozen-tools/46ded3a/scripts/iter_run.py --deadline 2026-11…"
+                  }
+                }
+              ]
+            },
+            "isError": false
+          }
+        }
+      },
+      {
+        "kind": "query",
+        "startedAt": 1794594981622,
+        "returnedAt": 1794595041408,
+        "waitMs": 59756,
+        "result": {
+          "task_id": "285eb86e-960e-4140-ade7-669a57dc1264",
+          "status": "running",
+          "child_conversation_id": 1720,
+          "agent_type": "codex",
+          "message": "Running.\nLatest sub-agent reply: thinking: **Checking scope artifacts**",
+          "progress": {
+            "steps": 44,
+            "marks": [
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok"
+            ],
+            "last_step": "python C:/Users/qingyu/.codeg/skills/iteration-manager/build/frozen-tools/46ded3a/scripts/iter_run.py --deadline 2026-11…"
+          },
+          "raw": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"tasks\":[{\"task_id\":\"285eb86e-960e-4140-ade7-669a57dc1264\",\"status\":\"running\",\"child_conversation_id\":1720,\"agent_type\":\"codex\",\"message\":\"Running.\\nLatest sub-agent reply: thinking: **Checking scope artifacts**\",\"progress\":{\"steps\":44,\"marks\":[\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\"],\"last_step\":\"python C:/Users/qingyu/.codeg/skills/iteration-manager/build/frozen-tools/46ded3a/scripts/iter_run.py --deadline 2026-11…\"}}]}"
+              }
+            ],
+            "structuredContent": {
+              "tasks": [
+                {
+                  "task_id": "285eb86e-960e-4140-ade7-669a57dc1264",
+                  "status": "running",
+                  "child_conversation_id": 1720,
+                  "agent_type": "codex",
+                  "message": "Running.\nLatest sub-agent reply: thinking: **Checking scope artifacts**",
+                  "progress": {
+                    "steps": 44,
+                    "marks": [
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok"
+                    ],
+                    "last_step": "python C:/Users/qingyu/.codeg/skills/iteration-manager/build/frozen-tools/46ded3a/scripts/iter_run.py --deadline 2026-11…"
+                  }
+                }
+              ]
+            },
+            "isError": false
+          }
+        }
+      },
+      {
+        "kind": "checkpoint",
+        "dueAt": 1794595041378,
+        "observedAt": 1794595041408
+      },
+      {
+        "kind": "query",
+        "startedAt": 1794595041408,
+        "returnedAt": 1794595100076,
+        "waitMs": 60000,
+        "result": {
+          "task_id": "285eb86e-960e-4140-ade7-669a57dc1264",
+          "status": "completed",
+          "child_conversation_id": 1720,
+          "agent_type": "codex",
+          "text": "切片 A 已交付，最高 **TESTING**，未自批。\n\n- 实现提交：`21acfe0`\n- 最终交付：`a509cd59d4aa153e7fa3dbf64a29411554faa666`\n- 索引：`references/release_status.md`\n- 检查点：`docs/todos/10-self-hosting-hardening/evidence/05/implementation-checkpoint-a.json`\n- 定向测试 **9 passed**；Note tree/format、冻结范围检查通过。\n- 完整安装版本及新会话消费保持 **UNKNOWN**，已注明补齐 owner。\n\n无活动命令；主控卡及 context/dependency/inventory/dispatch 未暂存。后续由主控安排独审、登记及 strict。\n\n",
+          "duration_ms": 358531,
+          "progress": {
+            "steps": 51,
+            "marks": [
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "failed",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok"
+            ],
+            "last_step": "git add -- docs/todos/10-self-hosting-hardening/evidence/05/implementation-checkpoint-a.json docs/todos/10-self-hosting-…"
+          },
+          "raw": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"tasks\":[{\"task_id\":\"285eb86e-960e-4140-ade7-669a57dc1264\",\"status\":\"completed\",\"child_conversation_id\":1720,\"agent_type\":\"codex\",\"text\":\"切片 A 已交付，最高 **TESTING**，未自批。\\n\\n- 实现提交：`21acfe0`\\n- 最终交付：`a509cd59d4aa153e7fa3dbf64a29411554faa666`\\n- 索引：`references/release_status.md`\\n- 检查点：`docs/todos/10-self-hosting-hardening/evidence/05/implementation-checkpoint-a.json`\\n- 定向测试 **9 passed**；Note tree/format、冻结范围检查通过。\\n- 完整安装版本及新会话消费保持 **UNKNOWN**，已注明补齐 owner。\\n\\n无活动命令；主控卡及 context/dependency/inventory/dispatch 未暂存。后续由主控安排独审、登记及 strict。\\n\\n\",\"duration_ms\":358531,\"progress\":{\"steps\":51,\"marks\":[\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"failed\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\"],\"last_step\":\"git add -- docs/todos/10-self-hosting-hardening/evidence/05/implementation-checkpoint-a.json docs/todos/10-self-hosting-…\"}}]}"
+              }
+            ],
+            "structuredContent": {
+              "tasks": [
+                {
+                  "task_id": "285eb86e-960e-4140-ade7-669a57dc1264",
+                  "status": "completed",
+                  "child_conversation_id": 1720,
+                  "agent_type": "codex",
+                  "text": "切片 A 已交付，最高 **TESTING**，未自批。\n\n- 实现提交：`21acfe0`\n- 最终交付：`a509cd59d4aa153e7fa3dbf64a29411554faa666`\n- 索引：`references/release_status.md`\n- 检查点：`docs/todos/10-self-hosting-hardening/evidence/05/implementation-checkpoint-a.json`\n- 定向测试 **9 passed**；Note tree/format、冻结范围检查通过。\n- 完整安装版本及新会话消费保持 **UNKNOWN**，已注明补齐 owner。\n\n无活动命令；主控卡及 context/dependency/inventory/dispatch 未暂存。后续由主控安排独审、登记及 strict。\n\n",
+                  "duration_ms": 358531,
+                  "progress": {
+                    "steps": 51,
+                    "marks": [
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "failed",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok"
+                    ],
+                    "last_step": "git add -- docs/todos/10-self-hosting-hardening/evidence/05/implementation-checkpoint-a.json docs/todos/10-self-hosting-…"
+                  }
+                }
+              ]
+            },
+            "isError": false
+          }
+        }
+      }
+    ]
+  }
+}

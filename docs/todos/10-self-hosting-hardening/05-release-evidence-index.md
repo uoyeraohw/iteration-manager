@@ -3,7 +3,7 @@ schema_version: 1
 iteration: "10-self-hosting-hardening"
 task_id: "05"
 task_name: "建立源码、候选、安装与消费的发布证据索引"
-status: "TODO"
+status: "TESTING"
 type: "Spike-Discovery"
 fix_rounds: 0
 replan_count: 0
@@ -17,12 +17,13 @@ review_receipt: ""
 base_sha: ""
 head_sha: ""
 created_at: "2026-11-13"
-updated_at: "2026-11-13"
+updated_at: "2026-11-13T18:39:21.953421+00:00"
+autonomy_state: "{\"version\":1,\"policy\":{\"round_limit\":5,\"total_limit\":10,\"consilium_limit\":1,\"replan_limit\":2},\"round\":0,\"total\":0,\"consilium\":0,\"replan\":0,\"writer\":\"\",\"events\":{\"iter10-05-claim-a\":{\"input\":{\"action\":\"claim\",\"owner\":\"root/iter10/controller\",\"reason\":\"\",\"evidence\":\"\",\"executor_state\":\"\"},\"result\":{\"task_id\":\"05-release-evidence-index\",\"previous_rounds\":0,\"current_rounds\":0,\"fix_total\":0,\"consilium_count\":0,\"replan_count\":0,\"is_fused\":false,\"status\":\"IN_PROGRESS\",\"blocked_reason\":\"\",\"writer\":\"root/iter10/controller\",\"consilium_bundle\":null},\"at\":\"2026-11-13T18:31:40.172924+00:00\"},\"iter10-05-attempt-a\":{\"input\":{\"action\":\"attempt\",\"owner\":\"root/iter10/controller\",\"reason\":\"\",\"evidence\":\"docs/todos/10-self-hosting-hardening/evidence/05/attempt-a.json\",\"executor_state\":\"completed\",\"attempt\":{\"report\":{\"version\":1,\"phase\":\"implementation\",\"candidate\":\"a509cd59d4aa153e7fa3dbf64a29411554faa666\",\"inputs\":[\"docs/todos/10-self-hosting-hardening/05-release-evidence-index.md\",\"SKILL.md\",\"references/release_status.md\"],\"capabilities\":[\"Codeg MCP codex independent session\",\"Windows iter_run\",\"pytest\",\"read-only installed source inspection\"],\"checkpoint\":\"四层发布证据索引和入口链接；真实只读58路径/补充入口实测，9passed；完整安装与新会话采用UNKNOWN\",\"remaining_work\":[\"主控独立核验及冻结C\",\"非参与者独审\",\"登记D/local strict\"],\"executor_id\":\"285eb86e-960e-4140-ade7-669a57dc1264\",\"terminal_evidence\":\"docs/todos/10-self-hosting-hardening/evidence/05/native-terminal-a.json\",\"progress\":[{\"kind\":\"implementation\",\"summary\":\"按有日期四层索引，不把源码/单卡批准/历史部署/安装消费混同\",\"evidence\":\"references/release_status.md\"},{\"kind\":\"green\",\"summary\":\"指定三文件9passed，Note与冻结scope通过\",\"evidence\":\"docs/todos/10-self-hosting-hardening/evidence/05/slice-a-targeted-final.json.output.txt\"}],\"commands\":[\"docs/todos/10-self-hosting-hardening/evidence/05/slice-a-experiment-1.json\",\"docs/todos/10-self-hosting-hardening/evidence/05/slice-a-experiment-entries-1.json\",\"docs/todos/10-self-hosting-hardening/evidence/05/slice-a-targeted-1.json\",\"docs/todos/10-self-hosting-hardening/evidence/05/slice-a-targeted-final.json\",\"docs/todos/10-self-hosting-hardening/evidence/05/slice-a-note-tree-1.json\",\"docs/todos/10-self-hosting-hardening/evidence/05/slice-a-note-format-1.json\",\"docs/todos/10-self-hosting-hardening/evidence/05/slice-a-note-final.json\",\"docs/todos/10-self-hosting-hardening/evidence/05/slice-a-note-format-final.json\",\"docs/todos/10-self-hosting-hardening/evidence/05/slice-a-scope-1.json\",\"docs/todos/10-self-hosting-hardening/evidence/05/slice-a-scope-final.json\"],\"started_at\":null,\"ended_at\":null},\"source\":\"docs/todos/10-self-hosting-hardening/evidence/05/attempt-a.json\",\"phase\":\"implementation\",\"delivery_mode\":\"git\",\"candidate\":\"a509cd59d4aa153e7fa3dbf64a29411554faa666\",\"conditions\":{\"inputs\":[\"SKILL.md\",\"docs/todos/10-self-hosting-hardening/05-release-evidence-index.md\",\"references/release_status.md\"],\"capabilities\":[\"Codeg MCP codex independent session\",\"Windows iter_run\",\"pytest\",\"read-only installed source inspection\"],\"scope\":[\".agents/notes/implemented/process/2026-11-13-release-evidence-index.md\",\"SKILL.md\",\"docs/todos/10-self-hosting-hardening/evidence/05/\",\"references/release_status.md\",\"tests/test_release_index.py\"]},\"executor_id\":\"285eb86e-960e-4140-ade7-669a57dc1264\",\"executor_state\":\"completed\",\"terminal_evidence\":\"docs/todos/10-self-hosting-hardening/evidence/05/native-terminal-a.json\",\"progress\":[{\"kind\":\"implementation\",\"evidence\":\"references/release_status.md\",\"summary\":\"按有日期四层索引，不把源码/单卡批准/历史部署/安装消费混同\"},{\"kind\":\"green\",\"evidence\":\"docs/todos/10-self-hosting-hardening/evidence/05/slice-a-targeted-final.json.output.txt\",\"summary\":\"指定三文件9passed，Note与冻结scope通过\"}],\"checkpoint\":\"四层发布证据索引和入口链接；真实只读58路径/补充入口实测，9passed；完整安装与新会话采用UNKNOWN\",\"remaining_work\":[\"主控独立核验及冻结C\",\"登记D/local strict\",\"非参与者独审\"],\"commands\":[{\"receipt\":\"docs/todos/10-self-hosting-hardening/evidence/05/slice-a-experiment-1.json\",\"status\":\"COMPLETED\",\"raw_exit_code\":0,\"started_at\":\"2026-11-13T18:33:45.406517+00:00\",\"ended_at\":\"2026-11-13T18:33:46.109457+00:00\"},{\"receipt\":\"docs/todos/10-self-hosting-hardening/evidence/05/slice-a-experiment-entries-1.json\",\"status\":\"COMPLETED\",\"raw_exit_code\":0,\"started_at\":\"2026-11-13T18:36:33.343445+00:00\",\"ended_at\":\"2026-11-13T18:36:33.665775+00:00\"},{\"receipt\":\"docs/todos/10-self-hosting-hardening/evidence/05/slice-a-note-final.json\",\"status\":\"COMPLETED\",\"raw_exit_code\":0,\"started_at\":\"2026-11-13T18:36:58.656680+00:00\",\"ended_at\":\"2026-11-13T18:37:03.744293+00:00\"},{\"receipt\":\"docs/todos/10-self-hosting-hardening/evidence/05/slice-a-note-format-1.json\",\"status\":\"COMPLETED\",\"raw_exit_code\":0,\"started_at\":\"2026-11-13T18:35:47.229250+00:00\",\"ended_at\":\"2026-11-13T18:35:49.490818+00:00\"},{\"receipt\":\"docs/todos/10-self-hosting-hardening/evidence/05/slice-a-note-format-final.json\",\"status\":\"COMPLETED\",\"raw_exit_code\":0,\"started_at\":\"2026-11-13T18:37:19.356027+00:00\",\"ended_at\":\"2026-11-13T18:37:21.674754+00:00\"},{\"receipt\":\"docs/todos/10-self-hosting-hardening/evidence/05/slice-a-note-tree-1.json\",\"status\":\"COMPLETED\",\"raw_exit_code\":0,\"started_at\":\"2026-11-13T18:35:43.839683+00:00\",\"ended_at\":\"2026-11-13T18:35:46.163515+00:00\"},{\"receipt\":\"docs/todos/10-self-hosting-hardening/evidence/05/slice-a-scope-1.json\",\"status\":\"COMPLETED\",\"raw_exit_code\":0,\"started_at\":\"2026-11-13T18:36:11.311280+00:00\",\"ended_at\":\"2026-11-13T18:36:12.240485+00:00\"},{\"receipt\":\"docs/todos/10-self-hosting-hardening/evidence/05/slice-a-scope-final.json\",\"status\":\"COMPLETED\",\"raw_exit_code\":0,\"started_at\":\"2026-11-13T18:37:38.093412+00:00\",\"ended_at\":\"2026-11-13T18:37:39.017180+00:00\"},{\"receipt\":\"docs/todos/10-self-hosting-hardening/evidence/05/slice-a-targeted-1.json\",\"status\":\"COMPLETED\",\"raw_exit_code\":0,\"started_at\":\"2026-11-13T18:35:39.142233+00:00\",\"ended_at\":\"2026-11-13T18:35:42.773455+00:00\"},{\"receipt\":\"docs/todos/10-self-hosting-hardening/evidence/05/slice-a-targeted-final.json\",\"status\":\"COMPLETED\",\"raw_exit_code\":0,\"started_at\":\"2026-11-13T18:36:53.956033+00:00\",\"ended_at\":\"2026-11-13T18:36:57.598769+00:00\"}],\"started_at\":null,\"ended_at\":null,\"session_seconds\":null,\"command_seconds\":22.143940999999998}},\"result\":{\"task_id\":\"05-release-evidence-index\",\"previous_rounds\":0,\"current_rounds\":0,\"fix_total\":0,\"consilium_count\":0,\"replan_count\":0,\"is_fused\":false,\"status\":\"IN_PROGRESS\",\"blocked_reason\":\"\",\"writer\":\"root/iter10/controller\",\"consilium_bundle\":null},\"at\":\"2026-11-13T18:39:21.616885+00:00\"},\"iter10-05-release-a\":{\"input\":{\"action\":\"release\",\"owner\":\"root/iter10/controller\",\"reason\":\"\",\"evidence\":\"docs/todos/10-self-hosting-hardening/evidence/05/native-terminal-a.json\",\"executor_state\":\"completed\"},\"result\":{\"task_id\":\"05-release-evidence-index\",\"previous_rounds\":0,\"current_rounds\":0,\"fix_total\":0,\"consilium_count\":0,\"replan_count\":0,\"is_fused\":false,\"status\":\"IN_PROGRESS\",\"blocked_reason\":\"\",\"writer\":\"\",\"consilium_bundle\":null},\"at\":\"2026-11-13T18:39:21.953421+00:00\"}},\"blocked_reason\":\"\"}"
 ---
 
 # 05 · 建立源码、候选、安装与消费的发布证据索引
 
-> 声明 TODO；验收 UNKNOWN；尚无执行、RED/GREEN或独立批准。本文是已初始化计划，不授予实施、Git提交或部署权限。
+> 声明 TESTING；验收 UNKNOWN；四层索引及真实只读观察已交付，待非参与者独审。
 
 ## 1. 任务执行目标与接口契约
 
@@ -36,8 +37,8 @@ updated_at: "2026-11-13"
 ## 2. 业务阶段与检查点
 
 <!-- iter:stages -->
-- [ ] Stage 1/3：盘点四层事实与现有原件，区分当前/历史/未知
-- [ ] Stage 2/3：生成精简索引并接入入口，验证链接及事实指针
+- [x] Stage 1/3：盘点四层事实与现有原件，区分当前/历史/未知
+- [x] Stage 2/3：生成精简索引并接入入口，验证链接及事实指针
 - [ ] Stage 3/3：独立核对不混淆源码/部署/消费，冻结与交付
 <!-- /iter:stages -->
 
@@ -109,7 +110,10 @@ $code = $LASTEXITCODE; exit $code
 - 本卡预计收据位置：`docs/todos/10-self-hosting-hardening/evidence/05/review.json`，实际产生后才登记frontmatter。
 
 ### 7.2 执行时填写
-实际task_id、UTC起止/检查点、候选、命令receipt、可继承产物、remaining_work、dirty归属及命令终态；未知明确UNKNOWN。每次真实终态后attempt，再release/closeout；四预算保持5/10/1/2。
+- 实际Codeg task_id=285eb86e-960e-4140-ade7-669a57dc1264，会话1720，原生completed、守卫未超期。产品21acfe0b83122f10d105a65a8891667b4aa0977e，交付检查点a509cd59d4aa153e7fa3dbf64a29411554faa666；原件native-terminal-a.json和implementation-checkpoint-a.json。正常attempt→release，四预算未重置；会话细分时间未测保持null。
+- 实验按历史58条显式路径及命名入口只读观察三根：58/58匹配维护main，45/58匹配本轮实施前基线；无版本标签，完整安装版本及新会话采用UNKNOWN。维护main、已审01—04候选、真实Git自用/合成FS和历史R7均分别列证；不修改副本或配置。
+- 第一次实验误写单数入口，保留原件并补测实际iter_queries.py/iter_cli.py；P1 deployment.json在所查位置缺失，记UNKNOWN与历史证据owner。未重开旧业务。嵌套PowerShell那次raw0含-ne错误，不作成功验收，已用直接命令补齐Note格式校验；所有原件保留。
+- 指定三文件最终9passed，主控独立controller-regression.json再次9passed；Note tree/format及固定scope有效通过。原始日志的CR/空行/尾随空白保留，不为Git告警修改证据；产品/测试/Note whitespace通过。当前无活动命令；剩余独审、C/D及固定local strict。
 
 ### 7.3 审查与裁决
 - 审查：PENDING；Reviewer未分配。
