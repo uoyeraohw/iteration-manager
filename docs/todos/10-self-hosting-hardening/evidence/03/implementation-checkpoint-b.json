@@ -1,0 +1,229 @@
+{
+  "version": 1,
+  "task_id": "03",
+  "slice": "B",
+  "status": "IN_PROGRESS",
+  "acceptance": "PENDING; not independently approved",
+  "base_sha": "f879bba28326af84fd9217a70c390a35887ec62b",
+  "starting_sha": "2acec13c3e371b498b35e242f18d46f483fadb50",
+  "actual_sha": "1ed4cd76585512977eae9098fd400eef4b6c71ac",
+  "sha_meaning": "Code/tests/note/raw runner evidence commit. This checkpoint is committed afterward in an evidence-only commit; no amend.",
+  "started_at": "2026-11-13T17:38:50Z",
+  "checkpoint_at": "2026-11-13T17:43:31Z",
+  "business_stopped_at": "2026-11-13T17:43:02.057720Z",
+  "tree_terminal": true,
+  "active_commands": [],
+  "commands": [
+    {
+      "receipt": "docs/todos/10-self-hosting-hardening/evidence/03/slice-b-green-core-1741.json",
+      "argv": [
+        "python",
+        "-B",
+        "-m",
+        "pytest",
+        "-p",
+        "no:cacheprovider",
+        "tests/test_query_contract.py",
+        "-q"
+      ],
+      "status": "COMPLETED",
+      "raw_exit_code": 0,
+      "tree_terminal": true,
+      "started_at": "2026-11-14T01:41:04.887142+08:00",
+      "ended_at": "2026-11-14T01:41:07.990545+08:00",
+      "output": "docs/todos/10-self-hosting-hardening/evidence/03/slice-b-green-core-1741.json.output.txt"
+    },
+    {
+      "receipt": "docs/todos/10-self-hosting-hardening/evidence/03/slice-b-green-core-1742.json",
+      "argv": [
+        "python",
+        "-B",
+        "-m",
+        "pytest",
+        "-p",
+        "no:cacheprovider",
+        "tests/test_query_contract.py",
+        "-q"
+      ],
+      "status": "COMPLETED",
+      "raw_exit_code": 2,
+      "tree_terminal": true,
+      "started_at": "2026-11-14T01:40:39.304933+08:00",
+      "ended_at": "2026-11-14T01:40:42.871932+08:00",
+      "output": "docs/todos/10-self-hosting-hardening/evidence/03/slice-b-green-core-1742.json.output.txt"
+    },
+    {
+      "receipt": "docs/todos/10-self-hosting-hardening/evidence/03/slice-b-legacy-seam-1742.json",
+      "argv": [
+        "python",
+        "-B",
+        "-m",
+        "pytest",
+        "-p",
+        "no:cacheprovider",
+        "tests/test_execution_readiness.py::test_inventory_audits_each_card_at_most_once_even_for_dependency",
+        "-q"
+      ],
+      "status": "COMPLETED",
+      "raw_exit_code": 1,
+      "tree_terminal": true,
+      "started_at": "2026-11-14T01:42:17.315783+08:00",
+      "ended_at": "2026-11-14T01:42:21.875937+08:00",
+      "output": "docs/todos/10-self-hosting-hardening/evidence/03/slice-b-legacy-seam-1742.json.output.txt"
+    },
+    {
+      "receipt": "docs/todos/10-self-hosting-hardening/evidence/03/slice-b-note-archive-1743.json",
+      "argv": [
+        "npx.cmd",
+        "--no-install",
+        "tsx",
+        "C:/Users/qingyu/.codex/skills/write-notes-like-deepseek/scripts/verify-archived-agent-notes.ts"
+      ],
+      "status": "COMPLETED",
+      "raw_exit_code": 0,
+      "tree_terminal": true,
+      "started_at": "2026-11-14T01:42:38.657681+08:00",
+      "ended_at": "2026-11-14T01:42:41.289983+08:00",
+      "output": "docs/todos/10-self-hosting-hardening/evidence/03/slice-b-note-archive-1743.json.output.txt"
+    },
+    {
+      "receipt": "docs/todos/10-self-hosting-hardening/evidence/03/slice-b-note-format-1743.json",
+      "argv": [
+        "npx.cmd",
+        "--no-install",
+        "tsx",
+        "C:/Users/qingyu/.codex/skills/write-notes-like-deepseek/scripts/verify-agent-note-format.ts"
+      ],
+      "status": "COMPLETED",
+      "raw_exit_code": 0,
+      "tree_terminal": true,
+      "started_at": "2026-11-14T01:42:35.755461+08:00",
+      "ended_at": "2026-11-14T01:42:38.239743+08:00",
+      "output": "docs/todos/10-self-hosting-hardening/evidence/03/slice-b-note-format-1743.json.output.txt"
+    },
+    {
+      "receipt": "docs/todos/10-self-hosting-hardening/evidence/03/slice-b-note-tree-1743.json",
+      "argv": [
+        "npx.cmd",
+        "--no-install",
+        "tsx",
+        "C:/Users/qingyu/.codex/skills/write-notes-like-deepseek/scripts/verify-agent-note-tree.ts"
+      ],
+      "status": "COMPLETED",
+      "raw_exit_code": 0,
+      "tree_terminal": true,
+      "started_at": "2026-11-14T01:42:32.925528+08:00",
+      "ended_at": "2026-11-14T01:42:35.339072+08:00",
+      "output": "docs/todos/10-self-hosting-hardening/evidence/03/slice-b-note-tree-1743.json.output.txt"
+    },
+    {
+      "receipt": "docs/todos/10-self-hosting-hardening/evidence/03/slice-b-query-compat-1742.json",
+      "argv": [
+        "python",
+        "-B",
+        "-m",
+        "pytest",
+        "-p",
+        "no:cacheprovider",
+        "tests/test_query_contract.py",
+        "tests/test_sync_compatibility.py",
+        "-q"
+      ],
+      "status": "COMPLETED",
+      "raw_exit_code": 0,
+      "tree_terminal": true,
+      "started_at": "2026-11-14T01:41:29.745093+08:00",
+      "ended_at": "2026-11-14T01:41:49.248325+08:00",
+      "output": "docs/todos/10-self-hosting-hardening/evidence/03/slice-b-query-compat-1742.json.output.txt"
+    },
+    {
+      "receipt": "docs/todos/10-self-hosting-hardening/evidence/03/slice-b-scope-1743.json",
+      "argv": [
+        "python",
+        "-B",
+        "C:/Users/qingyu/.codeg/skills/iteration-manager/build/frozen-tools/46ded3a/scripts/iter_sync.py",
+        "--check-scope",
+        "f879bba28326af84fd9217a70c390a35887ec62b",
+        "HEAD",
+        "docs/todos/10-self-hosting-hardening/03-query-cli-contract.md",
+        "--include-worktree"
+      ],
+      "status": "COMPLETED",
+      "raw_exit_code": 0,
+      "tree_terminal": true,
+      "started_at": "2026-11-14T01:43:01.14604+08:00",
+      "ended_at": "2026-11-14T01:43:02.05772+08:00",
+      "output": "docs/todos/10-self-hosting-hardening/evidence/03/slice-b-scope-1743.json.output.txt"
+    }
+  ],
+  "environment": {
+    "test_PYTHONPATH": "C:/Users/qingyu/.codeg/skills/iteration-manager/.worktrees/iter-10/scripts",
+    "runner": "C:/Users/qingyu/.codeg/skills/iteration-manager/build/frozen-tools/46ded3a/scripts/iter_run.py",
+    "command_deadline": "2026-11-13T17:45:39.239Z"
+  },
+  "checkpoint": "Shared query extraction and consumer wiring; inherited four behavior RED cases now GREEN; query+legacy sync targeted suite 13 passed.",
+  "completed": [
+    "iter_queries owns discover_task_files/audit_task_file/render_task_envelope with unchanged signatures; query does not import sync or CLI",
+    "iter_sync re-exports prior symbols and retains existing main, HTML/HTTP and board entry",
+    "board appends only delivery_mode,candidate_id,execution via shared task_handoff_projection; Git candidate_id empty inapplicable sentinel preserved",
+    "inventory/preflight/execution use query discovery; inventory audit cache remains invocation-local",
+    "query tests verify old exports, dependency direction, audit reuse across dependency/envelope, fresh calls, unknown status and invalid-profile refusal",
+    "Note tree/format/archive validation and frozen scope check exited 0"
+  ],
+  "inherited_red": {
+    "receipt": "docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json",
+    "cases": 4,
+    "failure_kind": "assertion",
+    "rerun": false
+  },
+  "new_tests": {
+    "additional_cases": 4,
+    "preceded_by_red": false,
+    "statement": "Supplementary structure/compatibility tests added after implementation; not presented as prior RED."
+  },
+  "failures": [
+    {
+      "receipt": "docs/todos/10-self-hosting-hardening/evidence/03/slice-b-green-core-1742.json",
+      "exit_code": 2,
+      "meaning": "Initial standalone query test collection lacked scripts import path; not behavior RED. Subsequent explicit PYTHONPATH/core GREEN and standalone test import fix covered by 13-pass run."
+    },
+    {
+      "receipt": "docs/todos/10-self-hosting-hardening/evidence/03/slice-b-legacy-seam-1742.json",
+      "exit_code": 1,
+      "test": "tests/test_execution_readiness.py::test_inventory_audits_each_card_at_most_once_even_for_dependency",
+      "observed": "readiness BLOCKED as expected, iter_sync monkeypatch calls=[] because inventory now reads iter_queries",
+      "required_action": "Controller must resolve authorization for adapting the old instrumentation point, or explicitly require another in-scope compatibility approach. No whitelist-external test edits were made. Full task regression cannot be claimed PASS.",
+      "new_query_coverage": "tests/test_query_contract.py::test_inventory_query_audit_reused_only_within_call proves one audit/card/call and fresh second invocation"
+    }
+  ],
+  "remaining_work": [
+    "C: extract iter_cli.main(argv=None)->int and lazy iter_sync main facade; retain flags/positions/default phase/exits/timing help; create authorized CLI compatibility tests",
+    "Controller: resolve old monkeypatch test observation seam before full regression acceptance; TypeSafe raw request/response slice-b-typesafe.json selects direct query wiring",
+    "C: run exact benchmark_projection.py --label after with same 10/100 x3 fixture; reuse A before/RED without rerun",
+    "C: run eight-file specified delivery regression with sufficient window, frozen scope check on final candidate, immutable diff review and independent acceptance",
+    "Controller owns card/README, attempt/release registration; no card/README written or staged by B"
+  ],
+  "continuation": {
+    "source": "scripts/iter_sync.py::main remains original; iter_queries extraction already usable",
+    "tests": "tests/test_query_contract.py (8 cases), tests/test_sync_compatibility.py (5 cases)",
+    "benchmark": "docs/todos/10-self-hosting-hardening/evidence/03/benchmark_projection.py",
+    "prior_handoff": "docs/todos/10-self-hosting-hardening/evidence/03/handoff-a.json",
+    "note": ".agents/notes/implemented/architecture/2026-11-13-query-cli-contract.md"
+  },
+  "dirty_ownership": {
+    "controller_owned_untracked": [
+      "docs/todos/10-self-hosting-hardening/evidence/03/context-implementation-b.json",
+      "docs/todos/10-self-hosting-hardening/evidence/03/dispatch-b.json"
+    ],
+    "controller_files_staged": false,
+    "other_owner_files_modified": false
+  },
+  "whitespace": {
+    "finding": "git diff --check flags CRLF on added iter_sync lines as trailing whitespace; existing file CRLF preserved. No normalization applied to raw evidence.",
+    "not_a_behavior_gate": true
+  },
+  "time_accounting": {
+    "session_seconds": "UNKNOWN until native terminal handoff",
+    "test_command_seconds": "Use command receipt intervals; query+compat pytest reports 17.20s; no inferred reasoning/test-writing allocation"
+  }
+}
