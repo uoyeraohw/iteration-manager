@@ -1,0 +1,180 @@
+{
+  "version": 1,
+  "status": "IN_PROGRESS",
+  "task_id": "03",
+  "slice": "A",
+  "base_sha": "f879bba28326af84fd9217a70c390a35887ec62b",
+  "actual_sha": "0603596fd6fb647f54dbb401c35b245dfe45ec8b",
+  "sha_meaning": "Committed checkpoint test/note/evidence candidate; product scripts unchanged from BASE. This file is a subsequent evidence-only delivery commit.",
+  "started_at": "2026-11-13T17:30:06Z",
+  "ended_at": "2026-11-13T17:36:05.4646359+00:00",
+  "tree_terminal": true,
+  "active_commands": [],
+  "commands": [
+    {
+      "receipt": "docs/todos/10-self-hosting-hardening/evidence/03/slice-a-before-1732.json",
+      "argv": [
+        "python",
+        "-B",
+        "docs/todos/10-self-hosting-hardening/evidence/03/benchmark_projection.py",
+        "--label",
+        "before"
+      ],
+      "status": "COMPLETED",
+      "raw_exit_code": 0,
+      "tree_terminal": true,
+      "started_at": "2026-11-14T01:32:03.136748+08:00",
+      "ended_at": "2026-11-14T01:32:06.094074+08:00",
+      "output": "docs/todos/10-self-hosting-hardening/evidence/03/slice-a-before-1732.json.output.txt"
+    },
+    {
+      "receipt": "docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json",
+      "argv": [
+        "python",
+        "-B",
+        "-m",
+        "pytest",
+        "-p",
+        "no:cacheprovider",
+        "tests/test_query_contract.py::test_legacy_board_exposes_same_handoff_fields",
+        "-q"
+      ],
+      "status": "COMPLETED",
+      "raw_exit_code": 1,
+      "tree_terminal": true,
+      "started_at": "2026-11-14T01:32:14.011009+08:00",
+      "ended_at": "2026-11-14T01:32:17.88495+08:00",
+      "output": "docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt"
+    },
+    {
+      "receipt": "docs/todos/10-self-hosting-hardening/evidence/03/slice-a-baseline-1733.json",
+      "argv": [
+        "python",
+        "-B",
+        "-m",
+        "pytest",
+        "-p",
+        "no:cacheprovider",
+        "tests/test_sync_compatibility.py",
+        "-q"
+      ],
+      "status": "COMPLETED",
+      "raw_exit_code": 0,
+      "tree_terminal": true,
+      "started_at": "2026-11-14T01:32:42.767962+08:00",
+      "ended_at": "2026-11-14T01:33:01.793081+08:00",
+      "output": "docs/todos/10-self-hosting-hardening/evidence/03/slice-a-baseline-1733.json.output.txt"
+    },
+    {
+      "receipt": "docs/todos/10-self-hosting-hardening/evidence/03/slice-a-note-validation-1734.json",
+      "argv": [
+        "npx.cmd",
+        "--no-install",
+        "tsx",
+        "C:/Users/qingyu/.codex/skills/write-notes-like-deepseek/scripts/verify-agent-note-tree.ts"
+      ],
+      "status": "COMPLETED",
+      "raw_exit_code": 0,
+      "tree_terminal": true,
+      "started_at": "2026-11-14T01:34:38.218814+08:00",
+      "ended_at": "2026-11-14T01:34:40.745735+08:00",
+      "output": "docs/todos/10-self-hosting-hardening/evidence/03/slice-a-note-validation-1734.json.output.txt"
+    },
+    {
+      "receipt": "docs/todos/10-self-hosting-hardening/evidence/03/slice-a-note-format-1735.json",
+      "argv": [
+        "npx.cmd",
+        "--no-install",
+        "tsx",
+        "C:/Users/qingyu/.codex/skills/write-notes-like-deepseek/scripts/verify-agent-note-format.ts"
+      ],
+      "status": "COMPLETED",
+      "raw_exit_code": 0,
+      "tree_terminal": true,
+      "started_at": "2026-11-14T01:34:52.145396+08:00",
+      "ended_at": "2026-11-14T01:34:54.96016+08:00",
+      "output": "docs/todos/10-self-hosting-hardening/evidence/03/slice-a-note-format-1735.json.output.txt"
+    },
+    {
+      "receipt": "docs/todos/10-self-hosting-hardening/evidence/03/slice-a-note-archive-1735.json",
+      "argv": [
+        "npx.cmd",
+        "--no-install",
+        "tsx",
+        "C:/Users/qingyu/.codex/skills/write-notes-like-deepseek/scripts/verify-archived-agent-notes.ts"
+      ],
+      "status": "COMPLETED",
+      "raw_exit_code": 0,
+      "tree_terminal": true,
+      "started_at": "2026-11-14T01:34:56.081658+08:00",
+      "ended_at": "2026-11-14T01:34:58.765839+08:00",
+      "output": "docs/todos/10-self-hosting-hardening/evidence/03/slice-a-note-archive-1735.json.output.txt"
+    }
+  ],
+  "checkpoint": "benchmark_before plus callable legacy-entry assertion RED; no product GREEN",
+  "valid_red": {
+    "receipt": "docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json",
+    "exit_code": 1,
+    "failure_kind": "assertion",
+    "result": "4 failed at missing delivery_mode,candidate_id,execution assertion; no ImportError",
+    "candidate_source_sha": "f879bba28326af84fd9217a70c390a35887ec62b"
+  },
+  "measurements": {
+    "script": "docs/todos/10-self-hosting-hardening/evidence/03/benchmark_projection.py",
+    "before_receipt": "docs/todos/10-self-hosting-hardening/evidence/03/slice-a-before-1732.json",
+    "ten_seconds": [
+      0.13272730000608135,
+      0.11966129999200348,
+      0.12035120000655297
+    ],
+    "hundred_seconds": [
+      0.6158059000008507,
+      0.6082395999983419,
+      0.6249414999911096
+    ],
+    "git_calls_each_run": 1,
+    "workload": "Fixed five-status synthetic cards, board plus each envelope; excludes fixture construction and approved-receipt binding cost",
+    "after": "NOT_RUN; final extraction candidate required"
+  },
+  "inheritable_artifacts": [
+    "tests/test_query_contract.py::test_legacy_board_exposes_same_handoff_fields",
+    "docs/todos/10-self-hosting-hardening/evidence/03/compatibility-matrix-a.md",
+    ".agents/notes/implemented/architecture/2026-11-13-query-cli-contract.md",
+    "docs/todos/10-self-hosting-hardening/evidence/03/slice-a-typesafe.json",
+    "docs/todos/10-self-hosting-hardening/evidence/03/slice-a-scope-decision.json"
+  ],
+  "remaining_work": [
+    "Controller clarify known Git candidate_id empty-string inapplicability sentinel versus UNKNOWN/null requirement; tests/test_execution_readiness.py:562 is outside implementation whitelist. No source or test outside scope was changed.",
+    "Implement shared projection GREEN against four retained RED cases. Preserve all old keys, old callable signatures, invalid-profile refusal and audit semantics; add unknown and no-cross-call-cache behavior coverage as needed.",
+    "Extract discover_task_files/audit_task_file/render_task_envelope to iter_queries without reverse iter_sync/CLI imports; inventory/preflight/execution consume query while preserving per-invocation audit reuse.",
+    "Implement iter_cli.main(argv=None)->int and lazy iter_sync main facade. Add tests/test_cli_compatibility.py preserving flags, positional arguments, implementation phase default, 0/1/2/3, unknown-option no writes, and timing help.",
+    "Run final after with exact retained benchmark script and inputs through frozen runner under newly authorized deadline. Reuse before and valid RED; do not fabricate after or promise speedup.",
+    "Run GREEN, all eight task-specified regression files, scope check and independent review on final candidate. Do not advance 04 before controller PASS."
+  ],
+  "dirty_ownership": {
+    "observed_after_first_commit": [
+      " M docs/todos/10-self-hosting-hardening/03-query-cli-contract.md",
+      "?? docs/todos/10-self-hosting-hardening/evidence/03/claim-a.json",
+      "?? docs/todos/10-self-hosting-hardening/evidence/03/context-implementation-a.json",
+      "?? docs/todos/10-self-hosting-hardening/evidence/03/dependency-02.json",
+      "?? docs/todos/10-self-hosting-hardening/evidence/03/dispatch-a.json",
+      "?? docs/todos/10-self-hosting-hardening/evidence/03/inventory-a.json"
+    ],
+    "controller_owned": [
+      "docs/todos/10-self-hosting-hardening/03-query-cli-contract.md",
+      "docs/todos/10-self-hosting-hardening/evidence/03/claim-a.json",
+      "docs/todos/10-self-hosting-hardening/evidence/03/context-implementation-a.json",
+      "docs/todos/10-self-hosting-hardening/evidence/03/dependency-02.json",
+      "docs/todos/10-self-hosting-hardening/evidence/03/dispatch-a.json",
+      "docs/todos/10-self-hosting-hardening/evidence/03/inventory-a.json"
+    ],
+    "staged_controller_files": false,
+    "other_owner_files_modified": false
+  },
+  "whitespace": {
+    "cached_check_exit_code": 2,
+    "report": "docs/todos/10-self-hosting-hardening/evidence/03/slice-a-whitespace.txt",
+    "explanation": "Raw runner JSON uses CRLF; pytest RED output contains indentation/blank whitespace. Preserved verbatim, not normalized. Source test/note/benchmark/matrix diff has no whitespace finding; controller card CRLF was excluded from staging."
+  },
+  "acceptance": "PENDING; implementer does not approve"
+}
