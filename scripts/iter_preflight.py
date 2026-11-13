@@ -182,7 +182,7 @@ def preflight_from_context(directory, root, context=None, owner='', audit=None):
 
 
 def _preflight(directory, root, context, phase, owner, audit, phase_from_context, phase_observer=None):
-    from iter_sync import discover_task_files
+    from iter_queries import discover_task_files
     directory, root = Path(directory).resolve(), Path(root).resolve()
     if not directory.is_dir() or not directory.is_relative_to(root):
         return dict(read_only=True, readiness='BLOCKED', tasks=[], findings=['Iteration directory leaves/misses project'])

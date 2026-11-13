@@ -189,7 +189,7 @@ def timing_totals(attempts, root, inventory_complete=True):
 def execution_report(directory, root):
     """Read-only task inventory. Missing or inconsistent history stays explicit."""
     from iter_autonomy import load_state
-    from iter_sync import discover_task_files
+    from iter_queries import discover_task_files
     root, directory = Path(root).resolve(), Path(directory).resolve()
     if not directory.is_dir() or not directory.is_relative_to(root):
         raise ValueError('Report requires an iteration directory inside the current project root')

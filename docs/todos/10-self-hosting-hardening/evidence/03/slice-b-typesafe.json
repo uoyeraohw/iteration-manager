@@ -1,0 +1,36 @@
+{
+  "request": {
+    "state": {
+      "contract": [
+        "iter_queries cannot import iter_sync or CLI",
+        "inventory/preflight/execution consume queries",
+        "do not edit tests/test_execution_readiness.py"
+      ],
+      "observed_source": "tests/test_execution_readiness.py:176-182 monkeypatches iter_sync.audit_task_file, then calls iter_inventory.inventory and requires exactly two calls",
+      "implementation_candidates": {
+        "query": "Import audit_task_file from iter_queries in inventory; keep invocation-local audit dictionary; add equivalent coverage in allowed test_query_contract; report old test instrumentation mismatch for controller authorization",
+        "bridge": "Introduce cross-module forwarding/registration so monkeypatching iter_sync also affects inventory",
+        "unknown": "Need more evidence"
+      }
+    },
+    "questions": {
+      "seam": {
+        "type": "choice",
+        "instructions": "Which consumer wiring satisfies the query ownership/no reverse imports requirement with the smallest maintainable change? Preserve real per-call audit reuse. A test instrumentation mismatch must remain explicit; no unauthorized edits or claim of full regression PASS.",
+        "criteria": {
+          "query": "Direct query wiring, targeted audit-reuse coverage, explicit old instrumentation mismatch",
+          "bridge": "Additional compatibility hook to retain iter_sync monkeypatch propagation",
+          "unknown": "Cannot choose from evidence"
+        }
+      }
+    }
+  },
+  "response": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"model\":\"jev-1.14.0\",\"answers\":{\"seam\":{\"type\":\"choice\",\"choice\":\"query\",\"confidence\":0.89,\"probabilities\":{\"bridge\":0.04,\"query\":0.93,\"unknown\":0.03}}},\"usage\":{\"input_tokens\":553,\"output_tokens\":39}}"
+      }
+    ]
+  }
+}
