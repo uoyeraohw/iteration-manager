@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "argv": [
+    "python",
+    "-B",
+    "-c",
+    "from pathlib import Path; Path('docs/todos/10-self-hosting-hardening/evidence/04/browser-stop-b').write_text('stop own test services',encoding='utf8')"
+  ],
+  "cwd": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\.worktrees\\iter-10",
+  "deadline": "2026-11-13T18:27:00+00:00",
+  "cleanup_reserve_seconds": 5,
+  "status": "COMPLETED",
+  "deadline_checked_at": "2026-11-13T18:22:22.694931+00:00",
+  "started_at": "2026-11-13T18:22:22.702932+00:00",
+  "ended_at": "2026-11-13T18:22:22.836457+00:00",
+  "raw_exit_code": 0,
+  "tree_terminal": true,
+  "output": "docs/todos/10-self-hosting-hardening/evidence/04/browser-stop-command-b.json.output.txt",
+  "container_pid": 41132,
+  "launcher_exit_code": 0,
+  "command": {
+    "status": "COMPLETED",
+    "raw_exit_code": 0,
+    "started_at": "2026-11-13T18:22:22.702932+00:00",
+    "pid": 39084,
+    "deadline_checked_at": "2026-11-13T18:22:22.694931+00:00",
+    "ended_at": "2026-11-13T18:22:22.823426+00:00"
+  },
+  "late_by_seconds": 0
+}

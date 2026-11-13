@@ -1,0 +1,6 @@
+[ego-browser:notice] Ego Lite update is available (current 0.6.2.8). Finish the current browser task, then ask the user before running `ego-browser upgrade`; re-read the ego-browser Skill afterward.
+{"spaceId":5,"page":"p1","info":{"url":"chrome://new-tab-page/","title":"New Tab","w":1139,"h":869,"sx":0,"sy":0,"pw":1139,"ph":869}}
+[p1 "New Tab" | space "iteration10-self-hosting-board-20261114"(5): 1 managed, 0 untracked — p1* "New Tab"]
+root
+
+

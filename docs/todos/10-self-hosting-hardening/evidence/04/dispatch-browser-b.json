@@ -1,0 +1,178 @@
+{
+  "read_only": true,
+  "readiness": "READY",
+  "task_path": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\.worktrees\\iter-10\\docs\\todos\\10-self-hosting-hardening\\04-board-handoff.md",
+  "phase": "implementation",
+  "acceptance_verdict": "UNKNOWN",
+  "findings": [],
+  "observations": {
+    "authority": {
+      "status": "READY",
+      "summary": "六卡串行实施授权持续；03固定strict3/6PASS，禁止部署推送合流清理",
+      "evidence": "docs/todos/10-self-hosting-hardening/evidence/03/review.json"
+    },
+    "execution": {
+      "status": "READY",
+      "summary": "Codeg独立会话1716实际实现和读取权限可用；无活动实现者，ego-browser TaskSpace5已真实返回viewport",
+      "evidence": "docs/todos/10-self-hosting-hardening/evidence/04/browser-probe.json.output.txt"
+    },
+    "ui-entry": {
+      "status": "READY",
+      "summary": "真实入口为候选iter_sync --serve-board本地127.0.0.1，看板数据来自generate_board_data读取真实卡及隔离FS样例；Page实测1139x869，原生筛选/详情/列明原文/Escape路径。正常/空/加载/断连将在HTTP真实边界触发，不DOM造状态",
+      "evidence": "docs/todos/10-self-hosting-hardening/evidence/04/ui-entry.json"
+    },
+    "verification": {
+      "status": "READY",
+      "summary": "冻结runner和pytest可用，03独审及170最终回归；现有LiveBoardHandler与HTTP测试可复用",
+      "evidence": "docs/todos/10-self-hosting-hardening/evidence/03/controller-final-regression.json"
+    }
+  },
+  "task_id": "04",
+  "delivery_mode": "git",
+  "candidate": "7fe4b4dcab7110c0f3f6791e5f9ef0d5a29eaa67",
+  "execution": {
+    "attempt_count": 1,
+    "no_progress_streak": 0,
+    "last_attempt": {
+      "source": "docs/todos/10-self-hosting-hardening/evidence/04/attempt-a-valid.json",
+      "phase": "implementation",
+      "delivery_mode": "git",
+      "candidate": "7fe4b4dcab7110c0f3f6791e5f9ef0d5a29eaa67",
+      "conditions": {
+        "inputs": [
+          "docs/todos/10-self-hosting-hardening/04-board-handoff.md",
+          "templates/board.html"
+        ],
+        "capabilities": [
+          "Codeg MCP codex independent session",
+          "Windows iter_run",
+          "pytest"
+        ],
+        "scope": [
+          ".agents/notes/implemented/feature/2026-11-13-board-handoff.md",
+          "docs/todos/10-self-hosting-hardening/evidence/04/",
+          "templates/board.html",
+          "tests/test_board_handoff.py",
+          "tests/test_board_service.py",
+          "tests/test_board_truth.py"
+        ]
+      },
+      "executor_id": "b0d6567f-d3d8-4a6f-aebb-8437e57b4cb9",
+      "executor_state": "completed",
+      "terminal_evidence": "docs/todos/10-self-hosting-hardening/evidence/04/native-terminal-a.json",
+      "progress": [
+        {
+          "kind": "green",
+          "evidence": "docs/todos/10-self-hosting-hardening/evidence/04/slice-a-final-regression-1816.json.output.txt",
+          "summary": "67 passed，symlink实测拒绝"
+        }
+      ],
+      "checkpoint": "模板Git/FS交接、精确计数和HTTP越界实测；最终五文件67passed；真实浏览器尚未验",
+      "remaining_work": [
+        "独立审查",
+        "真实浏览器四态/交互/视觉"
+      ],
+      "commands": [
+        {
+          "receipt": "docs/todos/10-self-hosting-hardening/evidence/04/slice-a-final-note-format-1816.json",
+          "status": "COMPLETED",
+          "raw_exit_code": 0,
+          "started_at": "2026-11-13T18:15:44.813287+00:00",
+          "ended_at": "2026-11-13T18:15:47.124672+00:00"
+        },
+        {
+          "receipt": "docs/todos/10-self-hosting-hardening/evidence/04/slice-a-final-regression-1816.json",
+          "status": "COMPLETED",
+          "raw_exit_code": 0,
+          "started_at": "2026-11-13T18:15:35.653140+00:00",
+          "ended_at": "2026-11-13T18:15:57.822802+00:00"
+        },
+        {
+          "receipt": "docs/todos/10-self-hosting-hardening/evidence/04/slice-a-green-1814.json",
+          "status": "COMPLETED",
+          "raw_exit_code": 0,
+          "started_at": "2026-11-13T18:13:34.998966+00:00",
+          "ended_at": "2026-11-13T18:13:41.960743+00:00"
+        },
+        {
+          "receipt": "docs/todos/10-self-hosting-hardening/evidence/04/slice-a-note-tree-1815.json",
+          "status": "COMPLETED",
+          "raw_exit_code": 0,
+          "started_at": "2026-11-13T18:15:08.597633+00:00",
+          "ended_at": "2026-11-13T18:15:11.032853+00:00"
+        },
+        {
+          "receipt": "docs/todos/10-self-hosting-hardening/evidence/04/slice-a-red-1812.json",
+          "status": "COMPLETED",
+          "raw_exit_code": 1,
+          "started_at": "2026-11-13T18:12:16.138557+00:00",
+          "ended_at": "2026-11-13T18:12:27.337590+00:00"
+        },
+        {
+          "receipt": "docs/todos/10-self-hosting-hardening/evidence/04/slice-a-regression-1815.json",
+          "status": "COMPLETED",
+          "raw_exit_code": 0,
+          "started_at": "2026-11-13T18:14:27.474611+00:00",
+          "ended_at": "2026-11-13T18:14:56.174888+00:00"
+        },
+        {
+          "receipt": "docs/todos/10-self-hosting-hardening/evidence/04/slice-a-scope-1816.json",
+          "status": "COMPLETED",
+          "raw_exit_code": 0,
+          "started_at": "2026-11-13T18:16:23.589548+00:00",
+          "ended_at": "2026-11-13T18:16:24.545649+00:00"
+        }
+      ],
+      "started_at": null,
+      "ended_at": null,
+      "session_seconds": null,
+      "command_seconds": 72.42207
+    },
+    "checkpoint": {
+      "candidate": "7fe4b4dcab7110c0f3f6791e5f9ef0d5a29eaa67",
+      "phase": "implementation",
+      "summary": "模板Git/FS交接、精确计数和HTTP越界实测；最终五文件67passed；真实浏览器尚未验",
+      "progress": [
+        {
+          "kind": "green",
+          "evidence": "docs/todos/10-self-hosting-hardening/evidence/04/slice-a-final-regression-1816.json.output.txt",
+          "summary": "67 passed，symlink实测拒绝"
+        }
+      ],
+      "source": "docs/todos/10-self-hosting-hardening/evidence/04/attempt-a-valid.json"
+    },
+    "remaining_work": [
+      "独立审查",
+      "真实浏览器四态/交互/视觉"
+    ]
+  },
+  "conditions": {
+    "inputs": [
+      "docs/todos/10-self-hosting-hardening/04-board-handoff.md",
+      "scripts/iter_sync.py",
+      "templates/board.html",
+      "tests/test_board_service.py",
+      "tests/test_query_contract.py"
+    ],
+    "capabilities": [
+      "Codeg MCP codex independent session",
+      "Windows iter_run",
+      "ego-browser native Page input",
+      "pytest"
+    ],
+    "scope": [
+      ".agents/notes/implemented/feature/2026-11-13-board-handoff.md",
+      "docs/todos/10-self-hosting-hardening/evidence/04/",
+      "templates/board.html",
+      "tests/test_board_handoff.py",
+      "tests/test_board_service.py",
+      "tests/test_board_truth.py"
+    ]
+  },
+  "checkpoint": "B root native browser acceptance after terminal A",
+  "remaining_work": [
+    "模板/边界测试",
+    "独审",
+    "真实浏览器四态交互/视觉"
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "read_only": true,
+  "readiness": "READY",
+  "task_path": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\.worktrees\\iter-10\\docs\\todos\\10-self-hosting-hardening\\04-board-handoff.md",
+  "phase": "implementation",
+  "acceptance_verdict": "UNKNOWN",
+  "findings": [],
+  "observations": {
+    "authority": {
+      "status": "READY",
+      "summary": "六卡串行实施授权持续；03固定strict3/6PASS，禁止部署推送合流清理",
+      "evidence": "docs/todos/10-self-hosting-hardening/evidence/03/review.json"
+    },
+    "execution": {
+      "status": "READY",
+      "summary": "Codeg独立会话1716实际实现和读取权限可用；无活动实现者，ego-browser TaskSpace5已真实返回viewport",
+      "evidence": "docs/todos/10-self-hosting-hardening/evidence/04/browser-probe.json.output.txt"
+    },
+    "ui-entry": {
+      "status": "READY",
+      "summary": "真实入口为候选iter_sync --serve-board本地127.0.0.1，看板数据来自generate_board_data读取真实卡及隔离FS样例；Page实测1139x869，原生筛选/详情/列明原文/Escape路径。正常/空/加载/断连将在HTTP真实边界触发，不DOM造状态",
+      "evidence": "docs/todos/10-self-hosting-hardening/evidence/04/ui-entry.json"
+    },
+    "verification": {
+      "status": "READY",
+      "summary": "冻结runner和pytest可用，03独审及170最终回归；现有LiveBoardHandler与HTTP测试可复用",
+      "evidence": "docs/todos/10-self-hosting-hardening/evidence/03/controller-final-regression.json"
+    }
+  },
+  "task_id": "04",
+  "delivery_mode": "git",
+  "candidate": "2ce0705ebeeaee73f75a1dcd2882836dbc6b9d29",
+  "execution": {
+    "attempt_count": 0,
+    "no_progress_streak": 0,
+    "last_attempt": null,
+    "checkpoint": null,
+    "remaining_work": []
+  },
+  "conditions": {
+    "inputs": [
+      "docs/todos/10-self-hosting-hardening/04-board-handoff.md",
+      "scripts/iter_sync.py",
+      "templates/board.html",
+      "tests/test_board_service.py",
+      "tests/test_query_contract.py"
+    ],
+    "capabilities": [
+      "Codeg MCP codex independent session",
+      "Windows iter_run",
+      "ego-browser native Page input",
+      "pytest"
+    ],
+    "scope": [
+      ".agents/notes/implemented/feature/2026-11-13-board-handoff.md",
+      "docs/todos/10-self-hosting-hardening/evidence/04/",
+      "templates/board.html",
+      "tests/test_board_handoff.py",
+      "tests/test_board_service.py",
+      "tests/test_board_truth.py"
+    ]
+  },
+  "checkpoint": "A模板/定点失败→实现/五文件回归及可复用HTTP浏览器夹具；B由根原生浏览器验收",
+  "remaining_work": [
+    "模板/边界测试",
+    "独审",
+    "真实浏览器四态交互/视觉"
+  ]
+}

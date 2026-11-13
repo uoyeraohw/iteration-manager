@@ -1,0 +1,3 @@
+const task=await taskSpace(5),page=task.page('p1');
+await page.click("loc=css:button[data-filter='PASS']");await page.waitForFunction(()=>document.querySelectorAll('#cards .card').length===3);await page.click('loc=css:button[aria-label="稳定查询与CLI消费接口，保持旧入口兼容，验收 PASS"]');await page.waitForSelector('#detail[open]');console.log('GIT APPROVED DETAIL');console.log(await page.snapshot({scope:'full_page'}));console.log({screenshot:await page.screenshot({path:'C:/Users/qingyu/.codeg/skills/iteration-manager/.worktrees/iter-10/docs/todos/10-self-hosting-hardening/evidence/04/browser-git-detail-b.png'})});
+

@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "phase": "implementation",
+  "candidate": "7fe4b4dcab7110c0f3f6791e5f9ef0d5a29eaa67",
+  "inputs": [
+    "docs/todos/10-self-hosting-hardening/04-board-handoff.md",
+    "templates/board.html"
+  ],
+  "capabilities": [
+    "Codeg MCP codex independent session",
+    "Windows iter_run",
+    "pytest"
+  ],
+  "checkpoint": "模板Git/FS交接、精确计数和HTTP越界实测；最终五文件67passed；真实浏览器尚未验",
+  "remaining_work": [
+    "真实浏览器四态/交互/视觉",
+    "独立审查"
+  ],
+  "executor_id": "b0d6567f-d3d8-4a6f-aebb-8437e57b4cb9",
+  "terminal_evidence": "docs/todos/10-self-hosting-hardening/evidence/04/native-terminal-a.json",
+  "progress": [
+    {
+      "kind": "green",
+      "summary": "67 passed，symlink实测拒绝",
+      "evidence": "docs/todos/10-self-hosting-hardening/evidence/04/slice-a-final-regression-1816.json.output.txt"
+    }
+  ],
+  "commands": [
+    "docs/todos/10-self-hosting-hardening/evidence/04/slice-a-red-1812.json",
+    "docs/todos/10-self-hosting-hardening/evidence/04/slice-a-green-1814.json",
+    "docs/todos/10-self-hosting-hardening/evidence/04/slice-a-regression-1815.json",
+    "docs/todos/10-self-hosting-hardening/evidence/04/slice-a-final-regression-1816.json",
+    "docs/todos/10-self-hosting-hardening/evidence/04/slice-a-note-tree-1815.json",
+    "docs/todos/10-self-hosting-hardening/evidence/04/slice-a-final-note-format-1816.json",
+    "docs/todos/10-self-hosting-hardening/evidence/04/slice-a-scope-1816.json"
+  ]
+}

@@ -1,0 +1,389 @@
+[ego-browser:notice] Ego Lite update is available (current 0.6.2.8). Finish the current browser task, then ask the user before running `ego-browser upgrade`; re-read the ego-browser Skill afterward.
+SYNTHETIC FS NORMAL
+[p1 "迭代验收 · 01-synthetic-fs" | space "iteration10-self-hosting-board-20261114"(5): 1 managed, 0 untracked — p1* "迭代验收 · 01-synthetic-fs"]
+root
+  container
+    container
+      container
+        text "ITERATION / EVIDENCE FIRST"
+        heading
+          text "01-synthetic-fs"
+        paragraph
+          text "读取时间 2026-11-14T02:21:04.289946+08:00"
+      container
+        status
+          text "实时读取 · 2秒刷新"
+        button [ref=22]
+          text "刷新"
+    container "当前结论"
+      container
+        text "迭代推进中"
+        paragraph
+          text "下一步：打开任务核对阻塞、缺失证据及恢复条件；先处理受影响的依赖。"
+      container
+        container
+          text "验收 PASS"
+          text "0 / 1"
+        container
+          text "声明 DONE"
+          text "0 / 1"
+        container
+          text "阻塞 / 未知"
+          text "0 / 1"
+    container "筛选任务"
+      button [ref=23]
+        text "全部"
+      button [ref=24]
+        text "阻塞 / 失败"
+      button [ref=25]
+        text "证据未知"
+      button [ref=26]
+        text "进行中"
+      button [ref=27]
+        text "待验收"
+      button [ref=28]
+        text "验收通过"
+    container "任务列表"
+      button "SYNTHETIC · FS交接样例，验收 UNKNOWN" [ref=29, loc=css:button[aria-label="SYNTHETIC · FS交接样例，验收 UNKNOWN"]]
+        container
+          text "#01"
+          text "UI-Component"
+        heading
+          text "SYNTHETIC · FS交接样例"
+        text "验收 UNKNOWN · 声明 IN_PROGRESS"
+        container
+          paragraph
+            text "业务阶段 · Native browser pending"
+          text "清单 1/2 (50%)"
+          container "阶段清单完成比例"
+        text "工程阶段 · UNKNOWN"
+        text "修复 0 / 累计 0 · 重规划 0"
+        text "更新 UNKNOWN"
+    text "阶段清单的完成比例不是工时进度。声明 DONE、清单勾选和代理停止，都不能代替独立验收。"
+
+{ detail: '声明 IN_PROGRESS / 验收 UNKNOWN\n\n打开时快照 · 2026-11-14T02:21:04.289946+08:00\n\n阻塞与恢复条件\n未记录阻塞原因；这不表示验收通过。\n候选与验收发现\n卡片 01-task.md\n类型 UI-Component\nFilesystem\ncandidate_id synthetic-fs-current-a\n无结构门禁发现；行为结论仍以独立审查为准。\n最近有效检查点（原候选）\n原候选 synthetic-fs-original-a\n阶段 implementation\nSYNTHETIC · 已保存模板检查点\n出处 evidence/attempt.json\nimplementation · evidence/progress.txt · SYNTHETIC · 可读列明证据\n剩余工作\n由根执行真实浏览器交互与四态观测\n非参与者独立审查\n业务阶段清单（非工时）\n[x] SYNTHETIC checkpoint\n[ ] Native browser pending\n工程阶段与自治预算\nUNKNOWN\n当前修复 0 / 累计 0\n会诊 0 / 重规划 0\n限额 {"round_limit":5,"total_limit":10,"consilium_limit":1,"replan_limit":2}\n授权范围\nUNKNOWN\n原始证据出处\n审查收据 · evidence/sources.json 查看原文\n独立审查报告 · evidence/report.txt 查看原文\nsynthetic progress 原始输出 · evidence/progress.txt 查看原文' }
+[p1 "迭代验收 · 01-synthetic-fs" | space "iteration10-self-hosting-board-20261114"(5): 1 managed, 0 untracked — p1* "迭代验收 · 01-synthetic-fs"]
+root
+  container
+    container
+      text "ITERATION / EVIDENCE FIRST"
+      heading
+        text "01-synthetic-fs"
+      paragraph
+        text "读取时间 2026-11-14T02:21:04.289946+08:00"
+      text "实时读取 · 2秒刷新"
+      button [ref=22]
+        text "刷新"
+    container "当前结论"
+      text "迭代推进中"
+      paragraph
+        text "下一步：打开任务核对阻塞、缺失证据及恢复条件；先处理受影响的依赖。"
+      text "验收 PASS"
+      text "0 / 1"
+      text "声明 DONE"
+      text "0 / 1"
+      text "阻塞 / 未知"
+      text "0 / 1"
+    container "筛选任务"
+      button [ref=23]
+        text "全部"
+      button [ref=24]
+        text "阻塞 / 失败"
+      button [ref=25]
+        text "证据未知"
+      button [ref=26]
+        text "进行中"
+      button [ref=27]
+        text "待验收"
+      button [ref=28]
+        text "验收通过"
+    container "任务列表"
+      button "SYNTHETIC · FS交接样例，验收 UNKNOWN" [ref=29, loc=css:button[aria-label="SYNTHETIC · FS交接样例，验收 UNKNOWN"]]
+        text "#01"
+        text "UI-Component"
+        heading
+          text "SYNTHETIC · FS交接样例"
+        text "验收 UNKNOWN · 声明 IN_PROGRESS"
+        paragraph
+          text "业务阶段 · Native browser pending"
+        text "清单 1/2 (50%)"
+        text "工程阶段 · UNKNOWN"
+        text "修复 0 / 累计 0 · 重规划 0"
+        text "更新 UNKNOWN"
+    text "阶段清单的完成比例不是工时进度。声明 DONE、清单勾选和代理停止，都不能代替独立验收。"
+  dialog_modal "SYNTHETIC · FS交接样例" [ref=30]
+    container
+      heading
+        text "SYNTHETIC · FS交接样例"
+      button [ref=31]
+        text "关闭"
+    container
+      paragraph
+        text "声明 IN_PROGRESS / 验收 UNKNOWN"
+      paragraph
+        text "打开时快照 · 2026-11-14T02:21:04.289946+08:00"
+      heading
+        text "阻塞与恢复条件"
+      text "未记录阻塞原因；这不表示验收通过。"
+      heading
+        text "候选与验收发现"
+      text "卡片 01-task.md 类型 UI-Component Filesystem candidate_id synthetic-fs-current-a 无结构门禁发现；行为结论仍以独立审查为准。"
+      heading
+        text "最近有效检查点（原候选）"
+      text "原候选 synthetic-fs-original-a 阶段 implementation SYNTHETIC · 已保存模板检查点 出处 evidence/attempt.json implementation · evidence/progress.txt · SYNTHETIC · 可读列明证据"
+      heading
+        text "剩余工作"
+      text "由根执行真实浏览器交互与四态观测 非参与者独立审查"
+      heading
+        text "业务阶段清单（非工时）"
+      unordered_list
+        list_item
+          text "[x] SYNTHETIC checkpoint"
+        list_item
+          text "[ ] Native browser pending"
+      heading
+        text "工程阶段与自治预算"
+      text "UNKNOWN 当前修复 0 / 累计 0 会诊 0 / 重规划 0 限额 {"round_limit":5,"total_limit":10,"consilium_limit":1,"replan_limit":2}"
+      heading
+        text "授权范围"
+      text "UNKNOWN"
+      heading
+        text "原始证据出处"
+      unordered_list
+        list_item
+          text "审查收据 · evidence/sources.json"
+          anchor [ref=32, loc=href:/api/evidence?task=01-task.md&source=0, url=http://127.0.0.1:52020/api/evidence?task=01-task.md&source=0]
+            text "查看原文"
+        list_item
+          text "独立审查报告 · evidence/report.txt"
+          anchor [ref=33, loc=href:/api/evidence?task=01-task.md&source=1, url=http://127.0.0.1:52020/api/evidence?task=01-task.md&source=1]
+            text "查看原文"
+        list_item
+          text "synthetic progress 原始输出 · evidence/progress.txt"
+          anchor [ref=34, loc=href:/api/evidence?task=01-task.md&source=2, url=http://127.0.0.1:52020/api/evidence?task=01-task.md&source=2]
+            text "查看原文"
+
+{ screenshot: 'C:/Users/qingyu/.codeg/skills/iteration-manager/.worktrees/iter-10/docs/todos/10-self-hosting-hardening/evidence/04/browser-fs-detail-b.png' }
+EMPTY FILTER
+[p1 "迭代验收 · 01-synthetic-fs" | space "iteration10-self-hosting-board-20261114"(5): 1 managed, 0 untracked — p1* "迭代验收 · 01-synthetic-fs"]
+root
+  container
+    container
+      container
+        text "ITERATION / EVIDENCE FIRST"
+        heading
+          text "01-synthetic-fs"
+        paragraph
+          text "读取时间 2026-11-14T02:21:04.289946+08:00"
+      container
+        status
+          text "实时读取 · 2秒刷新"
+        button [ref=22]
+          text "刷新"
+    container "当前结论"
+      container
+        text "迭代推进中"
+        paragraph
+          text "下一步：打开任务核对阻塞、缺失证据及恢复条件；先处理受影响的依赖。"
+      container
+        container
+          text "验收 PASS"
+          text "0 / 1"
+        container
+          text "声明 DONE"
+          text "0 / 1"
+        container
+          text "阻塞 / 未知"
+          text "0 / 1"
+    container "筛选任务"
+      button [ref=23]
+        text "全部"
+      button [ref=24]
+        text "阻塞 / 失败"
+      button [ref=25]
+        text "证据未知"
+      button [ref=26]
+        text "进行中"
+      button [ref=27]
+        text "待验收"
+      button [ref=28]
+        text "验收通过"
+    paragraph
+      text "此筛选下暂无任务。"
+    text "阶段清单的完成比例不是工时进度。声明 DONE、清单勾选和代理停止，都不能代替独立验收。"
+
+EMPTY INVENTORY
+[p1 "迭代验收 · empty-synthetic" | space "iteration10-self-hosting-board-20261114"(5): 1 managed, 0 untracked — p1* "迭代验收 · empty-synthetic"]
+root
+  container
+    container
+      container
+        text "ITERATION / EVIDENCE FIRST"
+        heading
+          text "empty-synthetic"
+        paragraph
+          text "读取时间 2026-11-14T02:21:04.884844+08:00"
+      container
+        status
+          text "实时读取 · 2秒刷新"
+        button [ref=35]
+          text "刷新"
+    container "当前结论"
+      container
+        text "暂无任务"
+        paragraph
+          text "下一步：在获得规划写入授权后建立任务卡。"
+      container
+        container
+          text "验收 PASS"
+          text "0 / 0"
+        container
+          text "声明 DONE"
+          text "0 / 0"
+        container
+          text "阻塞 / 未知"
+          text "0 / 0"
+    container "筛选任务"
+      button [ref=36]
+        text "全部"
+      button [ref=37]
+        text "阻塞 / 失败"
+      button [ref=38]
+        text "证据未知"
+      button [ref=39]
+        text "进行中"
+      button [ref=40]
+        text "待验收"
+      button [ref=41]
+        text "验收通过"
+    paragraph
+      text "暂无任务。验收尚未开始。"
+    text "阶段清单的完成比例不是工时进度。声明 DONE、清单勾选和代理停止，都不能代替独立验收。"
+
+{ screenshot: 'C:/Users/qingyu/.codeg/skills/iteration-manager/.worktrees/iter-10/docs/todos/10-self-hosting-hardening/evidence/04/browser-empty-b.png' }
+REAL HTTP DELAY LOADING
+[p1 "迭代验收 · 01-synthetic-fs" | space "iteration10-self-hosting-board-20261114"(5): 1 managed, 0 untracked — p1* "迭代验收 · 01-synthetic-fs"]
+root
+  container
+    container
+      container
+        text "ITERATION / EVIDENCE FIRST"
+        heading
+          text "01-synthetic-fs"
+        paragraph
+          text "读取时间 2026-11-14T02:21:05.059724+08:00"
+      container
+        status
+          text "加载中 · 保留上次快照"
+        button [ref=42]
+          text "刷新"
+    container "当前结论"
+      container
+        text "迭代推进中"
+        paragraph
+          text "下一步：打开任务核对阻塞、缺失证据及恢复条件；先处理受影响的依赖。"
+      container
+        container
+          text "验收 PASS"
+          text "0 / 1"
+        container
+          text "声明 DONE"
+          text "0 / 1"
+        container
+          text "阻塞 / 未知"
+          text "0 / 1"
+    container "筛选任务"
+      button [ref=43]
+        text "全部"
+      button [ref=44]
+        text "阻塞 / 失败"
+      button [ref=45]
+        text "证据未知"
+      button [ref=46]
+        text "进行中"
+      button [ref=47]
+        text "待验收"
+      button [ref=48]
+        text "验收通过"
+    container "任务列表"
+      button "SYNTHETIC · FS交接样例，验收 UNKNOWN" [ref=49, loc=css:button[aria-label="SYNTHETIC · FS交接样例，验收 UNKNOWN"]]
+        container
+          text "#01"
+          text "UI-Component"
+        heading
+          text "SYNTHETIC · FS交接样例"
+        text "验收 UNKNOWN · 声明 IN_PROGRESS"
+        container
+          paragraph
+            text "业务阶段 · Native browser pending"
+          text "清单 1/2 (50%)"
+          container "阶段清单完成比例"
+        text "工程阶段 · UNKNOWN"
+        text "修复 0 / 累计 0 · 重规划 0"
+        text "更新 UNKNOWN"
+    text "阶段清单的完成比例不是工时进度。声明 DONE、清单勾选和代理停止，都不能代替独立验收。"
+
+{ screenshot: 'C:/Users/qingyu/.codeg/skills/iteration-manager/.worktrees/iter-10/docs/todos/10-self-hosting-hardening/evidence/04/browser-loading-b.png' }
+DELAY COMPLETED
+[p1 "迭代验收 · 01-synthetic-fs" | space "iteration10-self-hosting-board-20261114"(5): 1 managed, 0 untracked — p1* "迭代验收 · 01-synthetic-fs"]
+root
+  container
+    container
+      container
+        text "ITERATION / EVIDENCE FIRST"
+        heading
+          text "01-synthetic-fs"
+        paragraph
+          text "读取时间 2026-11-14T02:21:11.109268+08:00"
+      container
+        status
+          text "实时读取 · 2秒刷新"
+        button [ref=42]
+          text "刷新"
+    container "当前结论"
+      container
+        text "迭代推进中"
+        paragraph
+          text "下一步：打开任务核对阻塞、缺失证据及恢复条件；先处理受影响的依赖。"
+      container
+        container
+          text "验收 PASS"
+          text "0 / 1"
+        container
+          text "声明 DONE"
+          text "0 / 1"
+        container
+          text "阻塞 / 未知"
+          text "0 / 1"
+    container "筛选任务"
+      button [ref=43]
+        text "全部"
+      button [ref=44]
+        text "阻塞 / 失败"
+      button [ref=45]
+        text "证据未知"
+      button [ref=46]
+        text "进行中"
+      button [ref=47]
+        text "待验收"
+      button [ref=48]
+        text "验收通过"
+    container "任务列表"
+      button "SYNTHETIC · FS交接样例，验收 UNKNOWN" [ref=49, loc=css:button[aria-label="SYNTHETIC · FS交接样例，验收 UNKNOWN"]]
+        container
+          text "#01"
+          text "UI-Component"
+        heading
+          text "SYNTHETIC · FS交接样例"
+        text "验收 UNKNOWN · 声明 IN_PROGRESS"
+        container
+          paragraph
+            text "业务阶段 · Native browser pending"
+          text "清单 1/2 (50%)"
+          container "阶段清单完成比例"
+        text "工程阶段 · UNKNOWN"
+        text "修复 0 / 累计 0 · 重规划 0"
+        text "更新 UNKNOWN"
+    text "阶段清单的完成比例不是工时进度。声明 DONE、清单勾选和代理停止，都不能代替独立验收。"
+
+

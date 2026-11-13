@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "observed_sources": [
+    "templates/board.html:25-62",
+    "scripts/iter_sync.py LiveBoardHandler",
+    "tests/test_board_service.py:11-50"
+  ],
+  "actual_browser_probe": "docs/todos/10-self-hosting-hardening/evidence/04/browser-probe.json",
+  "task_space_id": 5,
+  "page": "p1",
+  "viewport": {
+    "width": 1139,
+    "height": 869
+  },
+  "real_path": [
+    "candidate local HTTP GET /",
+    "native filter button",
+    "native card click",
+    "read identity/checkpoint/remaining",
+    "native listed evidence link",
+    "native Escape close"
+  ],
+  "data_source": "真实Git本迭代卡＋任务03冻结查询；FS隔离卡/合法profile，不修改真实卡",
+  "planned_boundary_states": [
+    "normal",
+    "empty filter/empty inventory",
+    "delayed real /api/board request",
+    "server disconnect retaining last snapshot"
+  ],
+  "not_yet_observed": "尚未启动HTTP服务、未完成交互/视觉；此证据只建立实际入口/能力和计划样本，不是验收"
+}

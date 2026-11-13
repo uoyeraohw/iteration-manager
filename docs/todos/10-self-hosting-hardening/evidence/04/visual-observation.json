@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "observer": "root/1699 controller",
+  "viewport": {
+    "width": 1139,
+    "height": 869
+  },
+  "images": [
+    "docs/todos/10-self-hosting-hardening/evidence/04/browser-real-git-b.png",
+    "docs/todos/10-self-hosting-hardening/evidence/04/browser-git-detail-b.png",
+    "docs/todos/10-self-hosting-hardening/evidence/04/browser-checkpoint-b.png",
+    "docs/todos/10-self-hosting-hardening/evidence/04/browser-fs-detail-b.png",
+    "docs/todos/10-self-hosting-hardening/evidence/04/browser-empty-b.png",
+    "docs/todos/10-self-hosting-hardening/evidence/04/browser-loading-b.png",
+    "docs/todos/10-self-hosting-hardening/evidence/04/browser-disconnected-b.png"
+  ],
+  "inspected": [
+    "Git总览3/6 DONE、3/6 PASS单独显示，深色卡片层级清晰",
+    "Git/FS检查点详情模态可滚动，关闭按钮可见；候选与原候选分组，路径换行",
+    "空库存0/0但结论暂无任务，不误称通过",
+    "加载与断连状态可读，断连不抹掉快照"
+  ],
+  "result": "符合本卡桌面可读性与状态展示要求，待非参与者独审",
+  "unverified": []
+}

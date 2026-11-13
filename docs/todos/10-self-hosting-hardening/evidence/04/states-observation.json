@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "candidate_source": "c2d90643cc391168e0e424843c761e9291629d99",
+  "viewport": {
+    "width": 1139,
+    "height": 869
+  },
+  "normal": {
+    "layer": "native-self-use",
+    "source": "docs/todos/10-self-hosting-hardening/evidence/04/browser-source-b.json.output.txt",
+    "observed": "真实Git卡通过原生筛选/详情/列明原文链接/弹窗/Escape；真实04检查点和剩余项"
+  },
+  "synthetic_fs": {
+    "source": "docs/todos/10-self-hosting-hardening/evidence/04/browser-states-b.json.output.txt",
+    "observed": "原生FS详情显示current candidate与original checkpoint；FS输入是隔离合成夹具"
+  },
+  "empty": {
+    "source": "docs/todos/10-self-hosting-hardening/evidence/04/browser-states-b.json.output.txt",
+    "observed": "空筛选和空库存0/0，非PASS"
+  },
+  "loading": {
+    "source": "docs/todos/10-self-hosting-hardening/evidence/04/browser-states-b.json.output.txt",
+    "observed": "真实HTTP响应6秒延迟，加载中保留快照→实时读取"
+  },
+  "error": {
+    "source": "docs/todos/10-self-hosting-hardening/evidence/04/browser-disconnect-b.json.output.txt",
+    "observed": "原生刷新时间改变；停止本次FS服务后连接中断，计数及卡保持"
+  },
+  "command_state_source": "docs/todos/10-self-hosting-hardening/evidence/04/browser-service-b.json",
+  "browser_task_finished": true
+}

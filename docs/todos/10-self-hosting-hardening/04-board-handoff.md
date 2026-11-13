@@ -3,7 +3,7 @@ schema_version: 1
 iteration: "10-self-hosting-hardening"
 task_id: "04"
 task_name: "看板展示Git/FS候选和可继承交接"
-status: "TODO"
+status: "TESTING"
 type: "UI-Component"
 fix_rounds: 0
 replan_count: 0
@@ -17,12 +17,13 @@ review_receipt: ""
 base_sha: ""
 head_sha: ""
 created_at: "2026-11-13"
-updated_at: "2026-11-13"
+updated_at: "2026-11-13T18:18:47.740318+00:00"
+autonomy_state: "{\"version\":1,\"policy\":{\"round_limit\":5,\"total_limit\":10,\"consilium_limit\":1,\"replan_limit\":2},\"round\":0,\"total\":0,\"consilium\":0,\"replan\":0,\"writer\":\"root/iter10/controller\",\"events\":{\"iter10-04-claim-a\":{\"input\":{\"action\":\"claim\",\"owner\":\"root/iter10/controller\",\"reason\":\"\",\"evidence\":\"\",\"executor_state\":\"\"},\"result\":{\"task_id\":\"04-board-handoff\",\"previous_rounds\":0,\"current_rounds\":0,\"fix_total\":0,\"consilium_count\":0,\"replan_count\":0,\"is_fused\":false,\"status\":\"TODO\",\"blocked_reason\":\"\",\"writer\":\"root/iter10/controller\",\"consilium_bundle\":null},\"at\":\"2026-11-13T18:10:05.929322+00:00\"},\"iter10-04-claim-b\":{\"input\":{\"action\":\"claim\",\"owner\":\"root/iter10/controller\",\"reason\":\"\",\"evidence\":\"\",\"executor_state\":\"\"},\"result\":{\"task_id\":\"04-board-handoff\",\"previous_rounds\":0,\"current_rounds\":0,\"fix_total\":0,\"consilium_count\":0,\"replan_count\":0,\"is_fused\":false,\"status\":\"IN_PROGRESS\",\"blocked_reason\":\"\",\"writer\":\"root/iter10/controller\",\"consilium_bundle\":null},\"at\":\"2026-11-13T18:18:18.888694+00:00\"},\"iter10-04-attempt-a\":{\"input\":{\"action\":\"attempt\",\"owner\":\"root/iter10/controller\",\"reason\":\"\",\"evidence\":\"docs/todos/10-self-hosting-hardening/evidence/04/attempt-a-valid.json\",\"executor_state\":\"completed\",\"attempt\":{\"report\":{\"version\":1,\"phase\":\"implementation\",\"candidate\":\"7fe4b4dcab7110c0f3f6791e5f9ef0d5a29eaa67\",\"inputs\":[\"docs/todos/10-self-hosting-hardening/04-board-handoff.md\",\"templates/board.html\"],\"capabilities\":[\"Codeg MCP codex independent session\",\"Windows iter_run\",\"pytest\"],\"checkpoint\":\"模板Git/FS交接、精确计数和HTTP越界实测；最终五文件67passed；真实浏览器尚未验\",\"remaining_work\":[\"真实浏览器四态/交互/视觉\",\"独立审查\"],\"executor_id\":\"b0d6567f-d3d8-4a6f-aebb-8437e57b4cb9\",\"terminal_evidence\":\"docs/todos/10-self-hosting-hardening/evidence/04/native-terminal-a.json\",\"progress\":[{\"kind\":\"green\",\"summary\":\"67 passed，symlink实测拒绝\",\"evidence\":\"docs/todos/10-self-hosting-hardening/evidence/04/slice-a-final-regression-1816.json.output.txt\"}],\"commands\":[\"docs/todos/10-self-hosting-hardening/evidence/04/slice-a-red-1812.json\",\"docs/todos/10-self-hosting-hardening/evidence/04/slice-a-green-1814.json\",\"docs/todos/10-self-hosting-hardening/evidence/04/slice-a-regression-1815.json\",\"docs/todos/10-self-hosting-hardening/evidence/04/slice-a-final-regression-1816.json\",\"docs/todos/10-self-hosting-hardening/evidence/04/slice-a-note-tree-1815.json\",\"docs/todos/10-self-hosting-hardening/evidence/04/slice-a-final-note-format-1816.json\",\"docs/todos/10-self-hosting-hardening/evidence/04/slice-a-scope-1816.json\"],\"started_at\":null,\"ended_at\":null},\"source\":\"docs/todos/10-self-hosting-hardening/evidence/04/attempt-a-valid.json\",\"phase\":\"implementation\",\"delivery_mode\":\"git\",\"candidate\":\"7fe4b4dcab7110c0f3f6791e5f9ef0d5a29eaa67\",\"conditions\":{\"inputs\":[\"docs/todos/10-self-hosting-hardening/04-board-handoff.md\",\"templates/board.html\"],\"capabilities\":[\"Codeg MCP codex independent session\",\"Windows iter_run\",\"pytest\"],\"scope\":[\".agents/notes/implemented/feature/2026-11-13-board-handoff.md\",\"docs/todos/10-self-hosting-hardening/evidence/04/\",\"templates/board.html\",\"tests/test_board_handoff.py\",\"tests/test_board_service.py\",\"tests/test_board_truth.py\"]},\"executor_id\":\"b0d6567f-d3d8-4a6f-aebb-8437e57b4cb9\",\"executor_state\":\"completed\",\"terminal_evidence\":\"docs/todos/10-self-hosting-hardening/evidence/04/native-terminal-a.json\",\"progress\":[{\"kind\":\"green\",\"evidence\":\"docs/todos/10-self-hosting-hardening/evidence/04/slice-a-final-regression-1816.json.output.txt\",\"summary\":\"67 passed，symlink实测拒绝\"}],\"checkpoint\":\"模板Git/FS交接、精确计数和HTTP越界实测；最终五文件67passed；真实浏览器尚未验\",\"remaining_work\":[\"独立审查\",\"真实浏览器四态/交互/视觉\"],\"commands\":[{\"receipt\":\"docs/todos/10-self-hosting-hardening/evidence/04/slice-a-final-note-format-1816.json\",\"status\":\"COMPLETED\",\"raw_exit_code\":0,\"started_at\":\"2026-11-13T18:15:44.813287+00:00\",\"ended_at\":\"2026-11-13T18:15:47.124672+00:00\"},{\"receipt\":\"docs/todos/10-self-hosting-hardening/evidence/04/slice-a-final-regression-1816.json\",\"status\":\"COMPLETED\",\"raw_exit_code\":0,\"started_at\":\"2026-11-13T18:15:35.653140+00:00\",\"ended_at\":\"2026-11-13T18:15:57.822802+00:00\"},{\"receipt\":\"docs/todos/10-self-hosting-hardening/evidence/04/slice-a-green-1814.json\",\"status\":\"COMPLETED\",\"raw_exit_code\":0,\"started_at\":\"2026-11-13T18:13:34.998966+00:00\",\"ended_at\":\"2026-11-13T18:13:41.960743+00:00\"},{\"receipt\":\"docs/todos/10-self-hosting-hardening/evidence/04/slice-a-note-tree-1815.json\",\"status\":\"COMPLETED\",\"raw_exit_code\":0,\"started_at\":\"2026-11-13T18:15:08.597633+00:00\",\"ended_at\":\"2026-11-13T18:15:11.032853+00:00\"},{\"receipt\":\"docs/todos/10-self-hosting-hardening/evidence/04/slice-a-red-1812.json\",\"status\":\"COMPLETED\",\"raw_exit_code\":1,\"started_at\":\"2026-11-13T18:12:16.138557+00:00\",\"ended_at\":\"2026-11-13T18:12:27.337590+00:00\"},{\"receipt\":\"docs/todos/10-self-hosting-hardening/evidence/04/slice-a-regression-1815.json\",\"status\":\"COMPLETED\",\"raw_exit_code\":0,\"started_at\":\"2026-11-13T18:14:27.474611+00:00\",\"ended_at\":\"2026-11-13T18:14:56.174888+00:00\"},{\"receipt\":\"docs/todos/10-self-hosting-hardening/evidence/04/slice-a-scope-1816.json\",\"status\":\"COMPLETED\",\"raw_exit_code\":0,\"started_at\":\"2026-11-13T18:16:23.589548+00:00\",\"ended_at\":\"2026-11-13T18:16:24.545649+00:00\"}],\"started_at\":null,\"ended_at\":null,\"session_seconds\":null,\"command_seconds\":72.42207}},\"result\":{\"task_id\":\"04-board-handoff\",\"previous_rounds\":0,\"current_rounds\":0,\"fix_total\":0,\"consilium_count\":0,\"replan_count\":0,\"is_fused\":false,\"status\":\"IN_PROGRESS\",\"blocked_reason\":\"\",\"writer\":\"root/iter10/controller\",\"consilium_bundle\":null},\"at\":\"2026-11-13T18:18:47.006666+00:00\"},\"iter10-04-release-a\":{\"input\":{\"action\":\"release\",\"owner\":\"root/iter10/controller\",\"reason\":\"\",\"evidence\":\"docs/todos/10-self-hosting-hardening/evidence/04/native-terminal-a.json\",\"executor_state\":\"completed\"},\"result\":{\"task_id\":\"04-board-handoff\",\"previous_rounds\":0,\"current_rounds\":0,\"fix_total\":0,\"consilium_count\":0,\"replan_count\":0,\"is_fused\":false,\"status\":\"IN_PROGRESS\",\"blocked_reason\":\"\",\"writer\":\"\",\"consilium_bundle\":null},\"at\":\"2026-11-13T18:18:47.355134+00:00\"},\"iter10-04-claim-browser-b\":{\"input\":{\"action\":\"claim\",\"owner\":\"root/iter10/controller\",\"reason\":\"\",\"evidence\":\"\",\"executor_state\":\"\"},\"result\":{\"task_id\":\"04-board-handoff\",\"previous_rounds\":0,\"current_rounds\":0,\"fix_total\":0,\"consilium_count\":0,\"replan_count\":0,\"is_fused\":false,\"status\":\"IN_PROGRESS\",\"blocked_reason\":\"\",\"writer\":\"root/iter10/controller\",\"consilium_bundle\":null},\"at\":\"2026-11-13T18:18:47.740318+00:00\"}},\"blocked_reason\":\"\"}"
 ---
 
 # 04 · 看板展示Git/FS候选和可继承交接
 
-> 声明 TODO；验收 UNKNOWN；尚无执行、RED/GREEN或独立批准。本文是已初始化计划，不授予实施、Git提交或部署权限。
+> **当前状态**：TESTING；验收UNKNOWN；实现、67项回归和桌面真实交互已完成，待独立审查。
 
 ## 1. 任务执行目标与接口契约
 
@@ -36,8 +37,8 @@ updated_at: "2026-11-13"
 ## 2. 业务阶段与检查点
 
 <!-- iter:stages -->
-- [ ] Stage 1/3：固定真实用户路径、视口和四态输入，基于03字段更新详情展示
-- [ ] Stage 2/3：补精确计数、候选/交接展示与HTTP边界测试
+- [x] Stage 1/3：固定真实用户路径、视口和四态输入，基于03字段更新详情展示
+- [x] Stage 2/3：补精确计数、候选/交接展示与HTTP边界测试
 - [ ] Stage 3/3：实际浏览器完成交互/状态/视觉检查，独立审查冻结模板
 <!-- /iter:stages -->
 
@@ -111,7 +112,11 @@ $code = $LASTEXITCODE; exit $code
 - 本卡预计收据位置：`docs/todos/10-self-hosting-hardening/evidence/04/review.json`，实际产生后才登记frontmatter。
 
 ### 7.2 执行时填写
-实际task_id、UTC起止/检查点、候选、命令receipt、可继承产物、remaining_work、dirty归属及命令终态；未知明确UNKNOWN。每次真实终态后attempt，再release/closeout；四预算保持5/10/1/2。
+- A实际task_id=b0d6567f-d3d8-4a6f-aebb-8437e57b4cb9，Codeg会话1718；原生completed，守卫无超期。实现C=c2d90643cc391168e0e424843c761e9291629d99，检查点7fe4b4d；4项有效断言RED，最终指定五文件67passed。实际Windows symlink创建及HTTP越界拒绝通过，未skip。原件见evidence/04/native-terminal-a.json与implementation-checkpoint-a.json。
+- 主控attempt首次漏两个必需时间键，被固定工具退出2拒绝，保留attempt-a.json和coordination-report-rejection.json；另存attempt-a-valid.json以null保留未知时间，成功登记后release/claim，不清预算。
+- B主控原生ego-browser TaskSpace5/p1，1139×869：真实Git三卡PASS筛选、03详情BASE/C、列明收据链接弹窗、Escape；04真实检查点/剩余项。FS/empty/loading使用明确隔离合成输入，仍经真实HTTP和原生用户输入。手动刷新时间改变，停止自有FS服务触发断连，原快照保留。见browser-*-b.json及对应output/screenshot、states-observation.json、visual-observation.json。
+- 浏览器TaskSpace正常finish；自有HTTP服务由stop-file正常退出，browser-service-b.json为COMPLETED/exit0/tree_terminal=true。主控独立五文件回归controller-regression-b.json为67passed；无活动实现或测试命令。未部署/推送/合流/清理Worktree。
+- TypeSafe进入独审判断submit（0.65概率；不作批准）；完整原件typesafe-ui-review-readiness.json。剩余：独立Reviewer、登记C/D及固定strict。
 
 ### 7.3 审查与裁决
 - 审查：PENDING；Reviewer未分配。
