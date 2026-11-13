@@ -1,0 +1,116 @@
+{
+  "status": "TESTING",
+  "base_sha": "8392193a0d9e883892f75780a63a1b16f67682c4",
+  "source_sha": "21acfe0b83122f10d105a65a8891667b4aa0977e",
+  "evidence_sha": "21acfe0b83122f10d105a65a8891667b4aa0977e",
+  "checked_at": "2026-11-13T18:38:01.6493790Z",
+  "checks": [
+    {
+      "receipt": "docs/todos/10-self-hosting-hardening/evidence/05/slice-a-experiment-1.json",
+      "command": "python -B docs/todos/10-self-hosting-hardening/evidence/05/slice-a-observe.py",
+      "cwd": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\.worktrees\\iter-10",
+      "raw_exit_code": 0,
+      "tree_terminal": true,
+      "status": "COMPLETED",
+      "output": "docs/todos/10-self-hosting-hardening/evidence/05/slice-a-experiment-1.json.output.txt",
+      "started_at": "2026-11-14T02:33:45.406517+08:00",
+      "ended_at": "2026-11-14T02:33:46.109457+08:00"
+    },
+    {
+      "receipt": "docs/todos/10-self-hosting-hardening/evidence/05/slice-a-experiment-entries-1.json",
+      "command": "python -B docs/todos/10-self-hosting-hardening/evidence/05/slice-a-observe-entries.py",
+      "cwd": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\.worktrees\\iter-10",
+      "raw_exit_code": 0,
+      "tree_terminal": true,
+      "status": "COMPLETED",
+      "output": "docs/todos/10-self-hosting-hardening/evidence/05/slice-a-experiment-entries-1.json.output.txt",
+      "started_at": "2026-11-14T02:36:33.343445+08:00",
+      "ended_at": "2026-11-14T02:36:33.665775+08:00"
+    },
+    {
+      "receipt": "docs/todos/10-self-hosting-hardening/evidence/05/slice-a-targeted-final.json",
+      "command": "python -B -m pytest -p no:cacheprovider tests/test_release_index.py tests/test_prompt_sources.py tests/test_task_card_schema.py -q",
+      "cwd": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\.worktrees\\iter-10",
+      "raw_exit_code": 0,
+      "tree_terminal": true,
+      "status": "COMPLETED",
+      "output": "docs/todos/10-self-hosting-hardening/evidence/05/slice-a-targeted-final.json.output.txt",
+      "started_at": "2026-11-14T02:36:53.956033+08:00",
+      "ended_at": "2026-11-14T02:36:57.598769+08:00"
+    },
+    {
+      "receipt": "docs/todos/10-self-hosting-hardening/evidence/05/slice-a-note-tree-1.json",
+      "command": "npx.cmd tsx C:/Users/qingyu/.codex/skills/write-notes-like-deepseek/scripts/verify-agent-note-tree.ts",
+      "cwd": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\.worktrees\\iter-10",
+      "raw_exit_code": 0,
+      "tree_terminal": true,
+      "status": "COMPLETED",
+      "output": "docs/todos/10-self-hosting-hardening/evidence/05/slice-a-note-tree-1.json.output.txt",
+      "started_at": "2026-11-14T02:35:43.839683+08:00",
+      "ended_at": "2026-11-14T02:35:46.163515+08:00"
+    },
+    {
+      "receipt": "docs/todos/10-self-hosting-hardening/evidence/05/slice-a-note-format-final.json",
+      "command": "npx.cmd tsx C:/Users/qingyu/.codex/skills/write-notes-like-deepseek/scripts/verify-agent-note-format.ts",
+      "cwd": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\.worktrees\\iter-10",
+      "raw_exit_code": 0,
+      "tree_terminal": true,
+      "status": "COMPLETED",
+      "output": "docs/todos/10-self-hosting-hardening/evidence/05/slice-a-note-format-final.json.output.txt",
+      "started_at": "2026-11-14T02:37:19.356027+08:00",
+      "ended_at": "2026-11-14T02:37:21.674754+08:00"
+    },
+    {
+      "receipt": "docs/todos/10-self-hosting-hardening/evidence/05/slice-a-scope-final.json",
+      "command": "python -B C:/Users/qingyu/.codeg/skills/iteration-manager/build/frozen-tools/46ded3a/scripts/iter_sync.py --check-scope 8392193a0d9e883892f75780a63a1b16f67682c4 HEAD docs/todos/10-self-hosting-hardening/05-release-evidence-index.md --include-worktree",
+      "cwd": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\.worktrees\\iter-10",
+      "raw_exit_code": 0,
+      "tree_terminal": true,
+      "status": "COMPLETED",
+      "output": "docs/todos/10-self-hosting-hardening/evidence/05/slice-a-scope-final.json.output.txt",
+      "started_at": "2026-11-14T02:37:38.093412+08:00",
+      "ended_at": "2026-11-14T02:37:39.01718+08:00"
+    }
+  ],
+  "type_checks": {
+    "experiment": "docs/todos/10-self-hosting-hardening/evidence/05/slice-a-experiment-1.json",
+    "decision": "docs/todos/10-self-hosting-hardening/evidence/05/slice-a-decision.json",
+    "interfaces": "docs/todos/10-self-hosting-hardening/evidence/05/slice-a-interfaces.json"
+  },
+  "four_layers": {
+    "reviewed_candidate": "01-04 original APPROVED receipts indexed, not whole iteration acceptance",
+    "source": "main d3bd97ab16ffed6104034a887a01eb1b4d75dc0e vs iter10 BASE 8392193a0d9e883892f75780a63a1b16f67682c4; neither tagged",
+    "consumption": "01-04 review/native records separate from synthetic FS. 01 indexed slice canceled,02-04 completed; not final C approval by terminal status alone.",
+    "installation": "58 explicit historical paths: all three roots equal main; 45 equal iter10 BASE,36 equal historic frozen source. Correct iter_queries/CLI and template entries missing. Complete version UNKNOWN."
+  },
+  "unknowns": {
+    "whole_iteration": "controller: independent total review/strict not yet performed",
+    "p1_deployment_json": "historical evidence owner: original missing; supply or confirm unrecoverable",
+    "complete_installed_version": "deployment owner: full current manifest and version attribution",
+    "installed_native_adoption": "deployment owner: authorized new-session consumption"
+  },
+  "corrections": [
+    "First experiment used singular iter_query.py. Supplemental experiment checked actual iter_queries.py and iter_cli.py; old original preserved.",
+    "slice-a-note-final.json raw0 is NOT acceptance evidence: nested PowerShell expanded LASTEXITCODE and emitted -ne error. Direct format rerun accepted; prior direct tree check remains applicable as topology/links unchanged."
+  ],
+  "verification": {
+    "targeted": "9 passed in 0.65s; Spike, no TDD claim",
+    "note_tree": "18 notes; direct tree result reused for unchanged topology and links",
+    "note_format": "18 notes, direct final command raw0",
+    "whitespace": "Product/test/Note cached check passed. All-cached check exit2: raw slice-a-note-final.json.output.txt line15 trailing whitespace preserved as original, not normalized.",
+    "scope": "frozen BASE..source_sha plus worktree, raw0"
+  },
+  "remaining_work": [
+    "Controller reviews actual BASE..final delivery HEAD plus own dirty and freezes review inputs.",
+    "Nonparticipant independent reviewer; no self-approval.",
+    "After independent APPROVED controller registers receipt/D and runs frozen local strict; total iteration review/branch strict remain later."
+  ],
+  "dirty_ownership": [
+    "05 card controller-owned, untouched/unstaged",
+    "evidence/05/context-implementation-a.json,dependency-04.json,inventory-a.json,dispatch-a.json controller-owned, untouched/unstaged",
+    "Own checkpoint and final scope evidence pending precise checkpoint commit"
+  ],
+  "active_commands": [],
+  "activity": "All runner receipts terminal; no background command started",
+  "timing": "Normal handoff before command deadline; no invented test-writing/development duration"
+}
