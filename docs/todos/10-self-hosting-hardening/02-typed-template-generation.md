@@ -129,4 +129,5 @@ $code = $LASTEXITCODE; exit $code
 - 协调登记异常：首次生成attempt因本机默认GBK解码context失败，后续PowerShell未短路而先release；无活动执行者或源码变化。主控重新claim后用显式UTF-8补记同一真实attempt，事件保留，四预算不变。后续命令按退出码短路，不将首条外层exit0视为全部成功。
 - 返修C会话1712/091c5173-015d-4e58-b251-1bef0834c8c5正常completed，源码939bc4d、交付db63b4f7cb47b046e8c96f87f0732e012b32a812。F01按项边界提取并strip判空，保留原文不收窄合同；36真实断言RED→45GREEN，指定五文件156passed、笔记/范围通过；7命令均COMPLETED/tree_terminal=true，无活动命令，attempt→release已记录。原B会话completed不可resume，新会话继承同一实现责任与原件，不重做A/B。待新候选独审。
 - 复审1713/ad4701e4-889e-4c1a-8d6b-d9a4cfeed174（Reviewer01a1d5ee-843b-7490-92b4-557fa753af23）正常completed，Scope PASSED/Spec COMPLIANT/Quality APPROVED。C=contract03950f2ac4867291c3001daa10140e4da1efa81f；F01关闭，无新发现。独立45项及初审4原反例通过，156指定回归按未变代码/输入/环境沿用；TypeSafe初步分布接近后用原反例补证，不刷分。完整原文与守卫归档review-report.json，新收据review.json，attempt→release完成，无活动命令。D后strict通过才进入03。
+- 首次登记D=1eed281后strict真实exit2：根将额外历史非零RED按其它command名放入checks，冻结schema要求非red名为成功。收据改为仅三项必需checks的机械投影，历史输出和Reviewer原报告全部保留；源码/测试/冻结规格不变，不重跑有效行为测试。后继仍等待strict PASS。
 <!-- /iter:ledger -->
