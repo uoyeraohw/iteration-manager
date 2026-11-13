@@ -41,7 +41,7 @@
 | --- | --- | --- | --- | --- | --- |
 | 01 | 统一授权规则与跨入口场景 | Spike-Discovery | 无 | 🟢 已完成 / 验收:PASS | [01-authority-consistency.md](./01-authority-consistency.md) |
 | 02 | 按类型与交付模式生成和检查任务卡 | Strict-TDD | 01 | 🟢 已完成 / 验收:PASS | [02-typed-template-generation.md](./02-typed-template-generation.md) |
-| 03 | 稳定查询与CLI消费接口，保持旧入口兼容 | Strict-TDD | 02 | 🟡 进行中 / 验收:UNKNOWN | [03-query-cli-contract.md](./03-query-cli-contract.md) |
+| 03 | 稳定查询与CLI消费接口，保持旧入口兼容 | Strict-TDD | 02 | 🔵 待验收 / 验收:UNKNOWN | [03-query-cli-contract.md](./03-query-cli-contract.md) |
 | 04 | 看板展示Git/FS候选和可继承交接 | UI-Component | 03 | ⚪ 待开始 / 验收:UNKNOWN | [04-board-handoff.md](./04-board-handoff.md) |
 | 05 | 建立源码、候选、安装与消费的发布证据索引 | Spike-Discovery | 04 | ⚪ 待开始 / 验收:UNKNOWN | [05-release-evidence-index.md](./05-release-evidence-index.md) |
 | 06 | 真实自用链路与故障路径健壮性验收 | Spike-Discovery | 05 | ⚪ 待开始 / 验收:UNKNOWN | [06-self-hosting-acceptance.md](./06-self-hosting-acceptance.md) |
@@ -109,7 +109,7 @@
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | 01-authority-consistency.md | DONE | PASS | 阶段清单已勾选完毕 / 3/3 (100%) | CHECKLIST_COMPLETE (未等同验收) | 未记录 | 0 | 2026-11-13T16:44:56.984232+00:00 |
 | 02-typed-template-generation.md | DONE | PASS | 阶段清单已勾选完毕 / 3/3 (100%) | CHECKLIST_COMPLETE (未等同验收) | 未记录 | 0 | 2026-11-13T17:27:41.977460+00:00 |
-| 03-query-cli-contract.md | IN_PROGRESS | UNKNOWN | Stage 1/3：冻结兼容矩阵，对缺失的统一投影字段取得有效断言RED / 0/3 (0%) | 读取真实基线、当前变更和前置PASS；完成context、claim与同owner dispatch-check。 | 未记录 | 0 | 2026-11-13T17:47:21.491404+00:00 |
+| 03-query-cli-contract.md | TESTING | UNKNOWN | Stage 3/3：通过导入/CLI/收据/只读回归并完成前后量测，冻结供看板消费的JSON接口 / 2/3 (66.7%) | 读取真实基线、当前变更和前置PASS；完成context、claim与同owner dispatch-check。 | 未记录 | 0 | 2026-11-13T17:59:08.405402+00:00 |
 | 04-board-handoff.md | TODO | UNKNOWN | Stage 1/3：固定真实用户路径、视口和四态输入，基于03字段更新详情展示 / 0/3 (0%) | 读取真实基线、当前变更和前置PASS；完成context、claim与同owner dispatch-check。 | 未记录 | 0 | 2026-11-13 |
 | 05-release-evidence-index.md | TODO | UNKNOWN | Stage 1/3：盘点四层事实与现有原件，区分当前/历史/未知 / 0/3 (0%) | 读取真实基线、当前变更和前置PASS；完成context、claim与同owner dispatch-check。 | 未记录 | 0 | 2026-11-13 |
 | 06-self-hosting-acceptance.md | TODO | UNKNOWN | Stage 1/3：整理01—05真实消费证据，隔离夹具运行故障与恢复路径 / 0/3 (0%) | 读取真实基线、当前变更和前置PASS；完成context、claim与同owner dispatch-check。 | 未记录 | 0 | 2026-11-13 |
