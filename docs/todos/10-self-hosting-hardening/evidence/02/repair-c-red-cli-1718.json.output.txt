@@ -1,0 +1,1084 @@
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF.........                            [100%]
+================================== FAILURES ===================================
+____________ test_leading_whitespace_roundtrip[api-git-  -stages] _____________
+
+field = 'stages', prefix = '  ', mode = 'git', entry = 'api'
+tmp_path = WindowsPath('C:/Users/qingyu/AppData/Local/Temp/pytest-of-qingyu/pytest-366/test_leading_whitespace_roundt0')
+
+    @pytest.mark.parametrize("field", ["stages", "acceptance", "verification"])
+    @pytest.mark.parametrize("prefix", ["  ", "\t", "\n  "])
+    @pytest.mark.parametrize("mode", ["git", "filesystem"])
+    @pytest.mark.parametrize("entry", ["api", "cli"])
+    def test_leading_whitespace_roundtrip(field, prefix, mode, entry, tmp_path):
+        spec = spec_for(mode=mode)
+        value = prefix + "Concrete requirement or command"
+        if field == "verification":
+            spec[field]["green"] = value
+        else:
+            spec[field] = [value]
+        card = render_task_card(spec)
+        assert value in card
+        if entry == "api":
+>           assert validate_generated_card(card, mode) == []
+E           AssertionError: assert ['Missing stages checklist'] == []
+E             
+E             Left contains one more item: 'Missing stages checklist'
+E             Use -v to get more diff
+
+tests\test_template_generation.py:223: AssertionError
+__________ test_leading_whitespace_roundtrip[api-git-  -acceptance] ___________
+
+field = 'acceptance', prefix = '  ', mode = 'git', entry = 'api'
+tmp_path = WindowsPath('C:/Users/qingyu/AppData/Local/Temp/pytest-of-qingyu/pytest-366/test_leading_whitespace_roundt1')
+
+    @pytest.mark.parametrize("field", ["stages", "acceptance", "verification"])
+    @pytest.mark.parametrize("prefix", ["  ", "\t", "\n  "])
+    @pytest.mark.parametrize("mode", ["git", "filesystem"])
+    @pytest.mark.parametrize("entry", ["api", "cli"])
+    def test_leading_whitespace_roundtrip(field, prefix, mode, entry, tmp_path):
+        spec = spec_for(mode=mode)
+        value = prefix + "Concrete requirement or command"
+        if field == "verification":
+            spec[field]["green"] = value
+        else:
+            spec[field] = [value]
+        card = render_task_card(spec)
+        assert value in card
+        if entry == "api":
+>           assert validate_generated_card(card, mode) == []
+E           AssertionError: assert ['Missing acc...ce checklist'] == []
+E             
+E             Left contains one more item: 'Missing acceptance checklist'
+E             Use -v to get more diff
+
+tests\test_template_generation.py:223: AssertionError
+_________ test_leading_whitespace_roundtrip[api-git-  -verification] __________
+
+field = 'verification', prefix = '  ', mode = 'git', entry = 'api'
+tmp_path = WindowsPath('C:/Users/qingyu/AppData/Local/Temp/pytest-of-qingyu/pytest-366/test_leading_whitespace_roundt2')
+
+    @pytest.mark.parametrize("field", ["stages", "acceptance", "verification"])
+    @pytest.mark.parametrize("prefix", ["  ", "\t", "\n  "])
+    @pytest.mark.parametrize("mode", ["git", "filesystem"])
+    @pytest.mark.parametrize("entry", ["api", "cli"])
+    def test_leading_whitespace_roundtrip(field, prefix, mode, entry, tmp_path):
+        spec = spec_for(mode=mode)
+        value = prefix + "Concrete requirement or command"
+        if field == "verification":
+            spec[field]["green"] = value
+        else:
+            spec[field] = [value]
+        card = render_task_card(spec)
+        assert value in card
+        if entry == "api":
+>           assert validate_generated_card(card, mode) == []
+E           AssertionError: assert ['Missing req...check: green'] == []
+E             
+E             Left contains one more item: 'Missing required check: green'
+E             Use -v to get more diff
+
+tests\test_template_generation.py:223: AssertionError
+____________ test_leading_whitespace_roundtrip[api-git-\t-stages] _____________
+
+field = 'stages', prefix = '\t', mode = 'git', entry = 'api'
+tmp_path = WindowsPath('C:/Users/qingyu/AppData/Local/Temp/pytest-of-qingyu/pytest-366/test_leading_whitespace_roundt3')
+
+    @pytest.mark.parametrize("field", ["stages", "acceptance", "verification"])
+    @pytest.mark.parametrize("prefix", ["  ", "\t", "\n  "])
+    @pytest.mark.parametrize("mode", ["git", "filesystem"])
+    @pytest.mark.parametrize("entry", ["api", "cli"])
+    def test_leading_whitespace_roundtrip(field, prefix, mode, entry, tmp_path):
+        spec = spec_for(mode=mode)
+        value = prefix + "Concrete requirement or command"
+        if field == "verification":
+            spec[field]["green"] = value
+        else:
+            spec[field] = [value]
+        card = render_task_card(spec)
+        assert value in card
+        if entry == "api":
+>           assert validate_generated_card(card, mode) == []
+E           AssertionError: assert ['Missing stages checklist'] == []
+E             
+E             Left contains one more item: 'Missing stages checklist'
+E             Use -v to get more diff
+
+tests\test_template_generation.py:223: AssertionError
+__________ test_leading_whitespace_roundtrip[api-git-\t-acceptance] ___________
+
+field = 'acceptance', prefix = '\t', mode = 'git', entry = 'api'
+tmp_path = WindowsPath('C:/Users/qingyu/AppData/Local/Temp/pytest-of-qingyu/pytest-366/test_leading_whitespace_roundt4')
+
+    @pytest.mark.parametrize("field", ["stages", "acceptance", "verification"])
+    @pytest.mark.parametrize("prefix", ["  ", "\t", "\n  "])
+    @pytest.mark.parametrize("mode", ["git", "filesystem"])
+    @pytest.mark.parametrize("entry", ["api", "cli"])
+    def test_leading_whitespace_roundtrip(field, prefix, mode, entry, tmp_path):
+        spec = spec_for(mode=mode)
+        value = prefix + "Concrete requirement or command"
+        if field == "verification":
+            spec[field]["green"] = value
+        else:
+            spec[field] = [value]
+        card = render_task_card(spec)
+        assert value in card
+        if entry == "api":
+>           assert validate_generated_card(card, mode) == []
+E           AssertionError: assert ['Missing acc...ce checklist'] == []
+E             
+E             Left contains one more item: 'Missing acceptance checklist'
+E             Use -v to get more diff
+
+tests\test_template_generation.py:223: AssertionError
+_________ test_leading_whitespace_roundtrip[api-git-\t-verification] __________
+
+field = 'verification', prefix = '\t', mode = 'git', entry = 'api'
+tmp_path = WindowsPath('C:/Users/qingyu/AppData/Local/Temp/pytest-of-qingyu/pytest-366/test_leading_whitespace_roundt5')
+
+    @pytest.mark.parametrize("field", ["stages", "acceptance", "verification"])
+    @pytest.mark.parametrize("prefix", ["  ", "\t", "\n  "])
+    @pytest.mark.parametrize("mode", ["git", "filesystem"])
+    @pytest.mark.parametrize("entry", ["api", "cli"])
+    def test_leading_whitespace_roundtrip(field, prefix, mode, entry, tmp_path):
+        spec = spec_for(mode=mode)
+        value = prefix + "Concrete requirement or command"
+        if field == "verification":
+            spec[field]["green"] = value
+        else:
+            spec[field] = [value]
+        card = render_task_card(spec)
+        assert value in card
+        if entry == "api":
+>           assert validate_generated_card(card, mode) == []
+E           AssertionError: assert ['Missing req...check: green'] == []
+E             
+E             Left contains one more item: 'Missing required check: green'
+E             Use -v to get more diff
+
+tests\test_template_generation.py:223: AssertionError
+___________ test_leading_whitespace_roundtrip[api-git-\n  -stages] ____________
+
+field = 'stages', prefix = '\n  ', mode = 'git', entry = 'api'
+tmp_path = WindowsPath('C:/Users/qingyu/AppData/Local/Temp/pytest-of-qingyu/pytest-366/test_leading_whitespace_roundt6')
+
+    @pytest.mark.parametrize("field", ["stages", "acceptance", "verification"])
+    @pytest.mark.parametrize("prefix", ["  ", "\t", "\n  "])
+    @pytest.mark.parametrize("mode", ["git", "filesystem"])
+    @pytest.mark.parametrize("entry", ["api", "cli"])
+    def test_leading_whitespace_roundtrip(field, prefix, mode, entry, tmp_path):
+        spec = spec_for(mode=mode)
+        value = prefix + "Concrete requirement or command"
+        if field == "verification":
+            spec[field]["green"] = value
+        else:
+            spec[field] = [value]
+        card = render_task_card(spec)
+        assert value in card
+        if entry == "api":
+>           assert validate_generated_card(card, mode) == []
+E           AssertionError: assert ['Missing stages checklist'] == []
+E             
+E             Left contains one more item: 'Missing stages checklist'
+E             Use -v to get more diff
+
+tests\test_template_generation.py:223: AssertionError
+_________ test_leading_whitespace_roundtrip[api-git-\n  -acceptance] __________
+
+field = 'acceptance', prefix = '\n  ', mode = 'git', entry = 'api'
+tmp_path = WindowsPath('C:/Users/qingyu/AppData/Local/Temp/pytest-of-qingyu/pytest-366/test_leading_whitespace_roundt7')
+
+    @pytest.mark.parametrize("field", ["stages", "acceptance", "verification"])
+    @pytest.mark.parametrize("prefix", ["  ", "\t", "\n  "])
+    @pytest.mark.parametrize("mode", ["git", "filesystem"])
+    @pytest.mark.parametrize("entry", ["api", "cli"])
+    def test_leading_whitespace_roundtrip(field, prefix, mode, entry, tmp_path):
+        spec = spec_for(mode=mode)
+        value = prefix + "Concrete requirement or command"
+        if field == "verification":
+            spec[field]["green"] = value
+        else:
+            spec[field] = [value]
+        card = render_task_card(spec)
+        assert value in card
+        if entry == "api":
+>           assert validate_generated_card(card, mode) == []
+E           AssertionError: assert ['Missing acc...ce checklist'] == []
+E             
+E             Left contains one more item: 'Missing acceptance checklist'
+E             Use -v to get more diff
+
+tests\test_template_generation.py:223: AssertionError
+________ test_leading_whitespace_roundtrip[api-git-\n  -verification] _________
+
+field = 'verification', prefix = '\n  ', mode = 'git', entry = 'api'
+tmp_path = WindowsPath('C:/Users/qingyu/AppData/Local/Temp/pytest-of-qingyu/pytest-366/test_leading_whitespace_roundt8')
+
+    @pytest.mark.parametrize("field", ["stages", "acceptance", "verification"])
+    @pytest.mark.parametrize("prefix", ["  ", "\t", "\n  "])
+    @pytest.mark.parametrize("mode", ["git", "filesystem"])
+    @pytest.mark.parametrize("entry", ["api", "cli"])
+    def test_leading_whitespace_roundtrip(field, prefix, mode, entry, tmp_path):
+        spec = spec_for(mode=mode)
+        value = prefix + "Concrete requirement or command"
+        if field == "verification":
+            spec[field]["green"] = value
+        else:
+            spec[field] = [value]
+        card = render_task_card(spec)
+        assert value in card
+        if entry == "api":
+>           assert validate_generated_card(card, mode) == []
+E           AssertionError: assert ['Missing req...check: green'] == []
+E             
+E             Left contains one more item: 'Missing required check: green'
+E             Use -v to get more diff
+
+tests\test_template_generation.py:223: AssertionError
+_________ test_leading_whitespace_roundtrip[api-filesystem-  -stages] _________
+
+field = 'stages', prefix = '  ', mode = 'filesystem', entry = 'api'
+tmp_path = WindowsPath('C:/Users/qingyu/AppData/Local/Temp/pytest-of-qingyu/pytest-366/test_leading_whitespace_roundt9')
+
+    @pytest.mark.parametrize("field", ["stages", "acceptance", "verification"])
+    @pytest.mark.parametrize("prefix", ["  ", "\t", "\n  "])
+    @pytest.mark.parametrize("mode", ["git", "filesystem"])
+    @pytest.mark.parametrize("entry", ["api", "cli"])
+    def test_leading_whitespace_roundtrip(field, prefix, mode, entry, tmp_path):
+        spec = spec_for(mode=mode)
+        value = prefix + "Concrete requirement or command"
+        if field == "verification":
+            spec[field]["green"] = value
+        else:
+            spec[field] = [value]
+        card = render_task_card(spec)
+        assert value in card
+        if entry == "api":
+>           assert validate_generated_card(card, mode) == []
+E           AssertionError: assert ['Missing stages checklist'] == []
+E             
+E             Left contains one more item: 'Missing stages checklist'
+E             Use -v to get more diff
+
+tests\test_template_generation.py:223: AssertionError
+_______ test_leading_whitespace_roundtrip[api-filesystem-  -acceptance] _______
+
+field = 'acceptance', prefix = '  ', mode = 'filesystem', entry = 'api'
+tmp_path = WindowsPath('C:/Users/qingyu/AppData/Local/Temp/pytest-of-qingyu/pytest-366/test_leading_whitespace_roundt10')
+
+    @pytest.mark.parametrize("field", ["stages", "acceptance", "verification"])
+    @pytest.mark.parametrize("prefix", ["  ", "\t", "\n  "])
+    @pytest.mark.parametrize("mode", ["git", "filesystem"])
+    @pytest.mark.parametrize("entry", ["api", "cli"])
+    def test_leading_whitespace_roundtrip(field, prefix, mode, entry, tmp_path):
+        spec = spec_for(mode=mode)
+        value = prefix + "Concrete requirement or command"
+        if field == "verification":
+            spec[field]["green"] = value
+        else:
+            spec[field] = [value]
+        card = render_task_card(spec)
+        assert value in card
+        if entry == "api":
+>           assert validate_generated_card(card, mode) == []
+E           AssertionError: assert ['Missing acc...ce checklist'] == []
+E             
+E             Left contains one more item: 'Missing acceptance checklist'
+E             Use -v to get more diff
+
+tests\test_template_generation.py:223: AssertionError
+______ test_leading_whitespace_roundtrip[api-filesystem-  -verification] ______
+
+field = 'verification', prefix = '  ', mode = 'filesystem', entry = 'api'
+tmp_path = WindowsPath('C:/Users/qingyu/AppData/Local/Temp/pytest-of-qingyu/pytest-366/test_leading_whitespace_roundt11')
+
+    @pytest.mark.parametrize("field", ["stages", "acceptance", "verification"])
+    @pytest.mark.parametrize("prefix", ["  ", "\t", "\n  "])
+    @pytest.mark.parametrize("mode", ["git", "filesystem"])
+    @pytest.mark.parametrize("entry", ["api", "cli"])
+    def test_leading_whitespace_roundtrip(field, prefix, mode, entry, tmp_path):
+        spec = spec_for(mode=mode)
+        value = prefix + "Concrete requirement or command"
+        if field == "verification":
+            spec[field]["green"] = value
+        else:
+            spec[field] = [value]
+        card = render_task_card(spec)
+        assert value in card
+        if entry == "api":
+>           assert validate_generated_card(card, mode) == []
+E           AssertionError: assert ['Missing req...check: green'] == []
+E             
+E             Left contains one more item: 'Missing required check: green'
+E             Use -v to get more diff
+
+tests\test_template_generation.py:223: AssertionError
+_________ test_leading_whitespace_roundtrip[api-filesystem-\t-stages] _________
+
+field = 'stages', prefix = '\t', mode = 'filesystem', entry = 'api'
+tmp_path = WindowsPath('C:/Users/qingyu/AppData/Local/Temp/pytest-of-qingyu/pytest-366/test_leading_whitespace_roundt12')
+
+    @pytest.mark.parametrize("field", ["stages", "acceptance", "verification"])
+    @pytest.mark.parametrize("prefix", ["  ", "\t", "\n  "])
+    @pytest.mark.parametrize("mode", ["git", "filesystem"])
+    @pytest.mark.parametrize("entry", ["api", "cli"])
+    def test_leading_whitespace_roundtrip(field, prefix, mode, entry, tmp_path):
+        spec = spec_for(mode=mode)
+        value = prefix + "Concrete requirement or command"
+        if field == "verification":
+            spec[field]["green"] = value
+        else:
+            spec[field] = [value]
+        card = render_task_card(spec)
+        assert value in card
+        if entry == "api":
+>           assert validate_generated_card(card, mode) == []
+E           AssertionError: assert ['Missing stages checklist'] == []
+E             
+E             Left contains one more item: 'Missing stages checklist'
+E             Use -v to get more diff
+
+tests\test_template_generation.py:223: AssertionError
+_______ test_leading_whitespace_roundtrip[api-filesystem-\t-acceptance] _______
+
+field = 'acceptance', prefix = '\t', mode = 'filesystem', entry = 'api'
+tmp_path = WindowsPath('C:/Users/qingyu/AppData/Local/Temp/pytest-of-qingyu/pytest-366/test_leading_whitespace_roundt13')
+
+    @pytest.mark.parametrize("field", ["stages", "acceptance", "verification"])
+    @pytest.mark.parametrize("prefix", ["  ", "\t", "\n  "])
+    @pytest.mark.parametrize("mode", ["git", "filesystem"])
+    @pytest.mark.parametrize("entry", ["api", "cli"])
+    def test_leading_whitespace_roundtrip(field, prefix, mode, entry, tmp_path):
+        spec = spec_for(mode=mode)
+        value = prefix + "Concrete requirement or command"
+        if field == "verification":
+            spec[field]["green"] = value
+        else:
+            spec[field] = [value]
+        card = render_task_card(spec)
+        assert value in card
+        if entry == "api":
+>           assert validate_generated_card(card, mode) == []
+E           AssertionError: assert ['Missing acc...ce checklist'] == []
+E             
+E             Left contains one more item: 'Missing acceptance checklist'
+E             Use -v to get more diff
+
+tests\test_template_generation.py:223: AssertionError
+______ test_leading_whitespace_roundtrip[api-filesystem-\t-verification] ______
+
+field = 'verification', prefix = '\t', mode = 'filesystem', entry = 'api'
+tmp_path = WindowsPath('C:/Users/qingyu/AppData/Local/Temp/pytest-of-qingyu/pytest-366/test_leading_whitespace_roundt14')
+
+    @pytest.mark.parametrize("field", ["stages", "acceptance", "verification"])
+    @pytest.mark.parametrize("prefix", ["  ", "\t", "\n  "])
+    @pytest.mark.parametrize("mode", ["git", "filesystem"])
+    @pytest.mark.parametrize("entry", ["api", "cli"])
+    def test_leading_whitespace_roundtrip(field, prefix, mode, entry, tmp_path):
+        spec = spec_for(mode=mode)
+        value = prefix + "Concrete requirement or command"
+        if field == "verification":
+            spec[field]["green"] = value
+        else:
+            spec[field] = [value]
+        card = render_task_card(spec)
+        assert value in card
+        if entry == "api":
+>           assert validate_generated_card(card, mode) == []
+E           AssertionError: assert ['Missing req...check: green'] == []
+E             
+E             Left contains one more item: 'Missing required check: green'
+E             Use -v to get more diff
+
+tests\test_template_generation.py:223: AssertionError
+________ test_leading_whitespace_roundtrip[api-filesystem-\n  -stages] ________
+
+field = 'stages', prefix = '\n  ', mode = 'filesystem', entry = 'api'
+tmp_path = WindowsPath('C:/Users/qingyu/AppData/Local/Temp/pytest-of-qingyu/pytest-366/test_leading_whitespace_roundt15')
+
+    @pytest.mark.parametrize("field", ["stages", "acceptance", "verification"])
+    @pytest.mark.parametrize("prefix", ["  ", "\t", "\n  "])
+    @pytest.mark.parametrize("mode", ["git", "filesystem"])
+    @pytest.mark.parametrize("entry", ["api", "cli"])
+    def test_leading_whitespace_roundtrip(field, prefix, mode, entry, tmp_path):
+        spec = spec_for(mode=mode)
+        value = prefix + "Concrete requirement or command"
+        if field == "verification":
+            spec[field]["green"] = value
+        else:
+            spec[field] = [value]
+        card = render_task_card(spec)
+        assert value in card
+        if entry == "api":
+>           assert validate_generated_card(card, mode) == []
+E           AssertionError: assert ['Missing stages checklist'] == []
+E             
+E             Left contains one more item: 'Missing stages checklist'
+E             Use -v to get more diff
+
+tests\test_template_generation.py:223: AssertionError
+______ test_leading_whitespace_roundtrip[api-filesystem-\n  -acceptance] ______
+
+field = 'acceptance', prefix = '\n  ', mode = 'filesystem', entry = 'api'
+tmp_path = WindowsPath('C:/Users/qingyu/AppData/Local/Temp/pytest-of-qingyu/pytest-366/test_leading_whitespace_roundt16')
+
+    @pytest.mark.parametrize("field", ["stages", "acceptance", "verification"])
+    @pytest.mark.parametrize("prefix", ["  ", "\t", "\n  "])
+    @pytest.mark.parametrize("mode", ["git", "filesystem"])
+    @pytest.mark.parametrize("entry", ["api", "cli"])
+    def test_leading_whitespace_roundtrip(field, prefix, mode, entry, tmp_path):
+        spec = spec_for(mode=mode)
+        value = prefix + "Concrete requirement or command"
+        if field == "verification":
+            spec[field]["green"] = value
+        else:
+            spec[field] = [value]
+        card = render_task_card(spec)
+        assert value in card
+        if entry == "api":
+>           assert validate_generated_card(card, mode) == []
+E           AssertionError: assert ['Missing acc...ce checklist'] == []
+E             
+E             Left contains one more item: 'Missing acceptance checklist'
+E             Use -v to get more diff
+
+tests\test_template_generation.py:223: AssertionError
+_____ test_leading_whitespace_roundtrip[api-filesystem-\n  -verification] _____
+
+field = 'verification', prefix = '\n  ', mode = 'filesystem', entry = 'api'
+tmp_path = WindowsPath('C:/Users/qingyu/AppData/Local/Temp/pytest-of-qingyu/pytest-366/test_leading_whitespace_roundt17')
+
+    @pytest.mark.parametrize("field", ["stages", "acceptance", "verification"])
+    @pytest.mark.parametrize("prefix", ["  ", "\t", "\n  "])
+    @pytest.mark.parametrize("mode", ["git", "filesystem"])
+    @pytest.mark.parametrize("entry", ["api", "cli"])
+    def test_leading_whitespace_roundtrip(field, prefix, mode, entry, tmp_path):
+        spec = spec_for(mode=mode)
+        value = prefix + "Concrete requirement or command"
+        if field == "verification":
+            spec[field]["green"] = value
+        else:
+            spec[field] = [value]
+        card = render_task_card(spec)
+        assert value in card
+        if entry == "api":
+>           assert validate_generated_card(card, mode) == []
+E           AssertionError: assert ['Missing req...check: green'] == []
+E             
+E             Left contains one more item: 'Missing required check: green'
+E             Use -v to get more diff
+
+tests\test_template_generation.py:223: AssertionError
+____________ test_leading_whitespace_roundtrip[cli-git-  -stages] _____________
+
+field = 'stages', prefix = '  ', mode = 'git', entry = 'cli'
+tmp_path = WindowsPath('C:/Users/qingyu/AppData/Local/Temp/pytest-of-qingyu/pytest-366/test_leading_whitespace_roundt18')
+
+    @pytest.mark.parametrize("field", ["stages", "acceptance", "verification"])
+    @pytest.mark.parametrize("prefix", ["  ", "\t", "\n  "])
+    @pytest.mark.parametrize("mode", ["git", "filesystem"])
+    @pytest.mark.parametrize("entry", ["api", "cli"])
+    def test_leading_whitespace_roundtrip(field, prefix, mode, entry, tmp_path):
+        spec = spec_for(mode=mode)
+        value = prefix + "Concrete requirement or command"
+        if field == "verification":
+            spec[field]["green"] = value
+        else:
+            spec[field] = [value]
+        card = render_task_card(spec)
+        assert value in card
+        if entry == "api":
+            assert validate_generated_card(card, mode) == []
+            return
+        script = Path(__file__).resolve().parents[1] / "scripts/iter_templates.py"
+        spec_path = tmp_path / "spec.json"
+        spec_path.write_text(json.dumps(spec), encoding="utf-8")
+        rendered = subprocess.run([sys.executable, "-B", str(script), "--render", str(spec_path)], capture_output=True, text=True, encoding="utf-8")
+>       assert rendered.returncode == 0, rendered.stdout
+E       AssertionError: {"valid": false, "errors": ["Missing stages checklist"]}
+E         
+E       assert 2 == 0
+E        +  where 2 = CompletedProcess(args=['C:\\Users\\qingyu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe', '-B', 'C:\\Users\...ce_roundt18\\spec.json'], returncode=2, stdout='{"valid": false, "errors": ["Missing stages checklist"]}\n', stderr='').returncode
+
+tests\test_template_generation.py:229: AssertionError
+__________ test_leading_whitespace_roundtrip[cli-git-  -acceptance] ___________
+
+field = 'acceptance', prefix = '  ', mode = 'git', entry = 'cli'
+tmp_path = WindowsPath('C:/Users/qingyu/AppData/Local/Temp/pytest-of-qingyu/pytest-366/test_leading_whitespace_roundt19')
+
+    @pytest.mark.parametrize("field", ["stages", "acceptance", "verification"])
+    @pytest.mark.parametrize("prefix", ["  ", "\t", "\n  "])
+    @pytest.mark.parametrize("mode", ["git", "filesystem"])
+    @pytest.mark.parametrize("entry", ["api", "cli"])
+    def test_leading_whitespace_roundtrip(field, prefix, mode, entry, tmp_path):
+        spec = spec_for(mode=mode)
+        value = prefix + "Concrete requirement or command"
+        if field == "verification":
+            spec[field]["green"] = value
+        else:
+            spec[field] = [value]
+        card = render_task_card(spec)
+        assert value in card
+        if entry == "api":
+            assert validate_generated_card(card, mode) == []
+            return
+        script = Path(__file__).resolve().parents[1] / "scripts/iter_templates.py"
+        spec_path = tmp_path / "spec.json"
+        spec_path.write_text(json.dumps(spec), encoding="utf-8")
+        rendered = subprocess.run([sys.executable, "-B", str(script), "--render", str(spec_path)], capture_output=True, text=True, encoding="utf-8")
+>       assert rendered.returncode == 0, rendered.stdout
+E       AssertionError: {"valid": false, "errors": ["Missing acceptance checklist"]}
+E         
+E       assert 2 == 0
+E        +  where 2 = CompletedProcess(args=['C:\\Users\\qingyu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe', '-B', 'C:\\Users\...oundt19\\spec.json'], returncode=2, stdout='{"valid": false, "errors": ["Missing acceptance checklist"]}\n', stderr='').returncode
+
+tests\test_template_generation.py:229: AssertionError
+_________ test_leading_whitespace_roundtrip[cli-git-  -verification] __________
+
+field = 'verification', prefix = '  ', mode = 'git', entry = 'cli'
+tmp_path = WindowsPath('C:/Users/qingyu/AppData/Local/Temp/pytest-of-qingyu/pytest-366/test_leading_whitespace_roundt20')
+
+    @pytest.mark.parametrize("field", ["stages", "acceptance", "verification"])
+    @pytest.mark.parametrize("prefix", ["  ", "\t", "\n  "])
+    @pytest.mark.parametrize("mode", ["git", "filesystem"])
+    @pytest.mark.parametrize("entry", ["api", "cli"])
+    def test_leading_whitespace_roundtrip(field, prefix, mode, entry, tmp_path):
+        spec = spec_for(mode=mode)
+        value = prefix + "Concrete requirement or command"
+        if field == "verification":
+            spec[field]["green"] = value
+        else:
+            spec[field] = [value]
+        card = render_task_card(spec)
+        assert value in card
+        if entry == "api":
+            assert validate_generated_card(card, mode) == []
+            return
+        script = Path(__file__).resolve().parents[1] / "scripts/iter_templates.py"
+        spec_path = tmp_path / "spec.json"
+        spec_path.write_text(json.dumps(spec), encoding="utf-8")
+        rendered = subprocess.run([sys.executable, "-B", str(script), "--render", str(spec_path)], capture_output=True, text=True, encoding="utf-8")
+>       assert rendered.returncode == 0, rendered.stdout
+E       AssertionError: {"valid": false, "errors": ["Missing required check: green"]}
+E         
+E       assert 2 == 0
+E        +  where 2 = CompletedProcess(args=['C:\\Users\\qingyu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe', '-B', 'C:\\Users\...undt20\\spec.json'], returncode=2, stdout='{"valid": false, "errors": ["Missing required check: green"]}\n', stderr='').returncode
+
+tests\test_template_generation.py:229: AssertionError
+____________ test_leading_whitespace_roundtrip[cli-git-\t-stages] _____________
+
+field = 'stages', prefix = '\t', mode = 'git', entry = 'cli'
+tmp_path = WindowsPath('C:/Users/qingyu/AppData/Local/Temp/pytest-of-qingyu/pytest-366/test_leading_whitespace_roundt21')
+
+    @pytest.mark.parametrize("field", ["stages", "acceptance", "verification"])
+    @pytest.mark.parametrize("prefix", ["  ", "\t", "\n  "])
+    @pytest.mark.parametrize("mode", ["git", "filesystem"])
+    @pytest.mark.parametrize("entry", ["api", "cli"])
+    def test_leading_whitespace_roundtrip(field, prefix, mode, entry, tmp_path):
+        spec = spec_for(mode=mode)
+        value = prefix + "Concrete requirement or command"
+        if field == "verification":
+            spec[field]["green"] = value
+        else:
+            spec[field] = [value]
+        card = render_task_card(spec)
+        assert value in card
+        if entry == "api":
+            assert validate_generated_card(card, mode) == []
+            return
+        script = Path(__file__).resolve().parents[1] / "scripts/iter_templates.py"
+        spec_path = tmp_path / "spec.json"
+        spec_path.write_text(json.dumps(spec), encoding="utf-8")
+        rendered = subprocess.run([sys.executable, "-B", str(script), "--render", str(spec_path)], capture_output=True, text=True, encoding="utf-8")
+>       assert rendered.returncode == 0, rendered.stdout
+E       AssertionError: {"valid": false, "errors": ["Missing stages checklist"]}
+E         
+E       assert 2 == 0
+E        +  where 2 = CompletedProcess(args=['C:\\Users\\qingyu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe', '-B', 'C:\\Users\...ce_roundt21\\spec.json'], returncode=2, stdout='{"valid": false, "errors": ["Missing stages checklist"]}\n', stderr='').returncode
+
+tests\test_template_generation.py:229: AssertionError
+__________ test_leading_whitespace_roundtrip[cli-git-\t-acceptance] ___________
+
+field = 'acceptance', prefix = '\t', mode = 'git', entry = 'cli'
+tmp_path = WindowsPath('C:/Users/qingyu/AppData/Local/Temp/pytest-of-qingyu/pytest-366/test_leading_whitespace_roundt22')
+
+    @pytest.mark.parametrize("field", ["stages", "acceptance", "verification"])
+    @pytest.mark.parametrize("prefix", ["  ", "\t", "\n  "])
+    @pytest.mark.parametrize("mode", ["git", "filesystem"])
+    @pytest.mark.parametrize("entry", ["api", "cli"])
+    def test_leading_whitespace_roundtrip(field, prefix, mode, entry, tmp_path):
+        spec = spec_for(mode=mode)
+        value = prefix + "Concrete requirement or command"
+        if field == "verification":
+            spec[field]["green"] = value
+        else:
+            spec[field] = [value]
+        card = render_task_card(spec)
+        assert value in card
+        if entry == "api":
+            assert validate_generated_card(card, mode) == []
+            return
+        script = Path(__file__).resolve().parents[1] / "scripts/iter_templates.py"
+        spec_path = tmp_path / "spec.json"
+        spec_path.write_text(json.dumps(spec), encoding="utf-8")
+        rendered = subprocess.run([sys.executable, "-B", str(script), "--render", str(spec_path)], capture_output=True, text=True, encoding="utf-8")
+>       assert rendered.returncode == 0, rendered.stdout
+E       AssertionError: {"valid": false, "errors": ["Missing acceptance checklist"]}
+E         
+E       assert 2 == 0
+E        +  where 2 = CompletedProcess(args=['C:\\Users\\qingyu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe', '-B', 'C:\\Users\...oundt22\\spec.json'], returncode=2, stdout='{"valid": false, "errors": ["Missing acceptance checklist"]}\n', stderr='').returncode
+
+tests\test_template_generation.py:229: AssertionError
+_________ test_leading_whitespace_roundtrip[cli-git-\t-verification] __________
+
+field = 'verification', prefix = '\t', mode = 'git', entry = 'cli'
+tmp_path = WindowsPath('C:/Users/qingyu/AppData/Local/Temp/pytest-of-qingyu/pytest-366/test_leading_whitespace_roundt23')
+
+    @pytest.mark.parametrize("field", ["stages", "acceptance", "verification"])
+    @pytest.mark.parametrize("prefix", ["  ", "\t", "\n  "])
+    @pytest.mark.parametrize("mode", ["git", "filesystem"])
+    @pytest.mark.parametrize("entry", ["api", "cli"])
+    def test_leading_whitespace_roundtrip(field, prefix, mode, entry, tmp_path):
+        spec = spec_for(mode=mode)
+        value = prefix + "Concrete requirement or command"
+        if field == "verification":
+            spec[field]["green"] = value
+        else:
+            spec[field] = [value]
+        card = render_task_card(spec)
+        assert value in card
+        if entry == "api":
+            assert validate_generated_card(card, mode) == []
+            return
+        script = Path(__file__).resolve().parents[1] / "scripts/iter_templates.py"
+        spec_path = tmp_path / "spec.json"
+        spec_path.write_text(json.dumps(spec), encoding="utf-8")
+        rendered = subprocess.run([sys.executable, "-B", str(script), "--render", str(spec_path)], capture_output=True, text=True, encoding="utf-8")
+>       assert rendered.returncode == 0, rendered.stdout
+E       AssertionError: {"valid": false, "errors": ["Missing required check: green"]}
+E         
+E       assert 2 == 0
+E        +  where 2 = CompletedProcess(args=['C:\\Users\\qingyu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe', '-B', 'C:\\Users\...undt23\\spec.json'], returncode=2, stdout='{"valid": false, "errors": ["Missing required check: green"]}\n', stderr='').returncode
+
+tests\test_template_generation.py:229: AssertionError
+___________ test_leading_whitespace_roundtrip[cli-git-\n  -stages] ____________
+
+field = 'stages', prefix = '\n  ', mode = 'git', entry = 'cli'
+tmp_path = WindowsPath('C:/Users/qingyu/AppData/Local/Temp/pytest-of-qingyu/pytest-366/test_leading_whitespace_roundt24')
+
+    @pytest.mark.parametrize("field", ["stages", "acceptance", "verification"])
+    @pytest.mark.parametrize("prefix", ["  ", "\t", "\n  "])
+    @pytest.mark.parametrize("mode", ["git", "filesystem"])
+    @pytest.mark.parametrize("entry", ["api", "cli"])
+    def test_leading_whitespace_roundtrip(field, prefix, mode, entry, tmp_path):
+        spec = spec_for(mode=mode)
+        value = prefix + "Concrete requirement or command"
+        if field == "verification":
+            spec[field]["green"] = value
+        else:
+            spec[field] = [value]
+        card = render_task_card(spec)
+        assert value in card
+        if entry == "api":
+            assert validate_generated_card(card, mode) == []
+            return
+        script = Path(__file__).resolve().parents[1] / "scripts/iter_templates.py"
+        spec_path = tmp_path / "spec.json"
+        spec_path.write_text(json.dumps(spec), encoding="utf-8")
+        rendered = subprocess.run([sys.executable, "-B", str(script), "--render", str(spec_path)], capture_output=True, text=True, encoding="utf-8")
+>       assert rendered.returncode == 0, rendered.stdout
+E       AssertionError: {"valid": false, "errors": ["Missing stages checklist"]}
+E         
+E       assert 2 == 0
+E        +  where 2 = CompletedProcess(args=['C:\\Users\\qingyu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe', '-B', 'C:\\Users\...ce_roundt24\\spec.json'], returncode=2, stdout='{"valid": false, "errors": ["Missing stages checklist"]}\n', stderr='').returncode
+
+tests\test_template_generation.py:229: AssertionError
+_________ test_leading_whitespace_roundtrip[cli-git-\n  -acceptance] __________
+
+field = 'acceptance', prefix = '\n  ', mode = 'git', entry = 'cli'
+tmp_path = WindowsPath('C:/Users/qingyu/AppData/Local/Temp/pytest-of-qingyu/pytest-366/test_leading_whitespace_roundt25')
+
+    @pytest.mark.parametrize("field", ["stages", "acceptance", "verification"])
+    @pytest.mark.parametrize("prefix", ["  ", "\t", "\n  "])
+    @pytest.mark.parametrize("mode", ["git", "filesystem"])
+    @pytest.mark.parametrize("entry", ["api", "cli"])
+    def test_leading_whitespace_roundtrip(field, prefix, mode, entry, tmp_path):
+        spec = spec_for(mode=mode)
+        value = prefix + "Concrete requirement or command"
+        if field == "verification":
+            spec[field]["green"] = value
+        else:
+            spec[field] = [value]
+        card = render_task_card(spec)
+        assert value in card
+        if entry == "api":
+            assert validate_generated_card(card, mode) == []
+            return
+        script = Path(__file__).resolve().parents[1] / "scripts/iter_templates.py"
+        spec_path = tmp_path / "spec.json"
+        spec_path.write_text(json.dumps(spec), encoding="utf-8")
+        rendered = subprocess.run([sys.executable, "-B", str(script), "--render", str(spec_path)], capture_output=True, text=True, encoding="utf-8")
+>       assert rendered.returncode == 0, rendered.stdout
+E       AssertionError: {"valid": false, "errors": ["Missing acceptance checklist"]}
+E         
+E       assert 2 == 0
+E        +  where 2 = CompletedProcess(args=['C:\\Users\\qingyu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe', '-B', 'C:\\Users\...oundt25\\spec.json'], returncode=2, stdout='{"valid": false, "errors": ["Missing acceptance checklist"]}\n', stderr='').returncode
+
+tests\test_template_generation.py:229: AssertionError
+________ test_leading_whitespace_roundtrip[cli-git-\n  -verification] _________
+
+field = 'verification', prefix = '\n  ', mode = 'git', entry = 'cli'
+tmp_path = WindowsPath('C:/Users/qingyu/AppData/Local/Temp/pytest-of-qingyu/pytest-366/test_leading_whitespace_roundt26')
+
+    @pytest.mark.parametrize("field", ["stages", "acceptance", "verification"])
+    @pytest.mark.parametrize("prefix", ["  ", "\t", "\n  "])
+    @pytest.mark.parametrize("mode", ["git", "filesystem"])
+    @pytest.mark.parametrize("entry", ["api", "cli"])
+    def test_leading_whitespace_roundtrip(field, prefix, mode, entry, tmp_path):
+        spec = spec_for(mode=mode)
+        value = prefix + "Concrete requirement or command"
+        if field == "verification":
+            spec[field]["green"] = value
+        else:
+            spec[field] = [value]
+        card = render_task_card(spec)
+        assert value in card
+        if entry == "api":
+            assert validate_generated_card(card, mode) == []
+            return
+        script = Path(__file__).resolve().parents[1] / "scripts/iter_templates.py"
+        spec_path = tmp_path / "spec.json"
+        spec_path.write_text(json.dumps(spec), encoding="utf-8")
+        rendered = subprocess.run([sys.executable, "-B", str(script), "--render", str(spec_path)], capture_output=True, text=True, encoding="utf-8")
+>       assert rendered.returncode == 0, rendered.stdout
+E       AssertionError: {"valid": false, "errors": ["Missing required check: green"]}
+E         
+E       assert 2 == 0
+E        +  where 2 = CompletedProcess(args=['C:\\Users\\qingyu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe', '-B', 'C:\\Users\...undt26\\spec.json'], returncode=2, stdout='{"valid": false, "errors": ["Missing required check: green"]}\n', stderr='').returncode
+
+tests\test_template_generation.py:229: AssertionError
+_________ test_leading_whitespace_roundtrip[cli-filesystem-  -stages] _________
+
+field = 'stages', prefix = '  ', mode = 'filesystem', entry = 'cli'
+tmp_path = WindowsPath('C:/Users/qingyu/AppData/Local/Temp/pytest-of-qingyu/pytest-366/test_leading_whitespace_roundt27')
+
+    @pytest.mark.parametrize("field", ["stages", "acceptance", "verification"])
+    @pytest.mark.parametrize("prefix", ["  ", "\t", "\n  "])
+    @pytest.mark.parametrize("mode", ["git", "filesystem"])
+    @pytest.mark.parametrize("entry", ["api", "cli"])
+    def test_leading_whitespace_roundtrip(field, prefix, mode, entry, tmp_path):
+        spec = spec_for(mode=mode)
+        value = prefix + "Concrete requirement or command"
+        if field == "verification":
+            spec[field]["green"] = value
+        else:
+            spec[field] = [value]
+        card = render_task_card(spec)
+        assert value in card
+        if entry == "api":
+            assert validate_generated_card(card, mode) == []
+            return
+        script = Path(__file__).resolve().parents[1] / "scripts/iter_templates.py"
+        spec_path = tmp_path / "spec.json"
+        spec_path.write_text(json.dumps(spec), encoding="utf-8")
+        rendered = subprocess.run([sys.executable, "-B", str(script), "--render", str(spec_path)], capture_output=True, text=True, encoding="utf-8")
+>       assert rendered.returncode == 0, rendered.stdout
+E       AssertionError: {"valid": false, "errors": ["Missing stages checklist"]}
+E         
+E       assert 2 == 0
+E        +  where 2 = CompletedProcess(args=['C:\\Users\\qingyu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe', '-B', 'C:\\Users\...ce_roundt27\\spec.json'], returncode=2, stdout='{"valid": false, "errors": ["Missing stages checklist"]}\n', stderr='').returncode
+
+tests\test_template_generation.py:229: AssertionError
+_______ test_leading_whitespace_roundtrip[cli-filesystem-  -acceptance] _______
+
+field = 'acceptance', prefix = '  ', mode = 'filesystem', entry = 'cli'
+tmp_path = WindowsPath('C:/Users/qingyu/AppData/Local/Temp/pytest-of-qingyu/pytest-366/test_leading_whitespace_roundt28')
+
+    @pytest.mark.parametrize("field", ["stages", "acceptance", "verification"])
+    @pytest.mark.parametrize("prefix", ["  ", "\t", "\n  "])
+    @pytest.mark.parametrize("mode", ["git", "filesystem"])
+    @pytest.mark.parametrize("entry", ["api", "cli"])
+    def test_leading_whitespace_roundtrip(field, prefix, mode, entry, tmp_path):
+        spec = spec_for(mode=mode)
+        value = prefix + "Concrete requirement or command"
+        if field == "verification":
+            spec[field]["green"] = value
+        else:
+            spec[field] = [value]
+        card = render_task_card(spec)
+        assert value in card
+        if entry == "api":
+            assert validate_generated_card(card, mode) == []
+            return
+        script = Path(__file__).resolve().parents[1] / "scripts/iter_templates.py"
+        spec_path = tmp_path / "spec.json"
+        spec_path.write_text(json.dumps(spec), encoding="utf-8")
+        rendered = subprocess.run([sys.executable, "-B", str(script), "--render", str(spec_path)], capture_output=True, text=True, encoding="utf-8")
+>       assert rendered.returncode == 0, rendered.stdout
+E       AssertionError: {"valid": false, "errors": ["Missing acceptance checklist"]}
+E         
+E       assert 2 == 0
+E        +  where 2 = CompletedProcess(args=['C:\\Users\\qingyu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe', '-B', 'C:\\Users\...oundt28\\spec.json'], returncode=2, stdout='{"valid": false, "errors": ["Missing acceptance checklist"]}\n', stderr='').returncode
+
+tests\test_template_generation.py:229: AssertionError
+______ test_leading_whitespace_roundtrip[cli-filesystem-  -verification] ______
+
+field = 'verification', prefix = '  ', mode = 'filesystem', entry = 'cli'
+tmp_path = WindowsPath('C:/Users/qingyu/AppData/Local/Temp/pytest-of-qingyu/pytest-366/test_leading_whitespace_roundt29')
+
+    @pytest.mark.parametrize("field", ["stages", "acceptance", "verification"])
+    @pytest.mark.parametrize("prefix", ["  ", "\t", "\n  "])
+    @pytest.mark.parametrize("mode", ["git", "filesystem"])
+    @pytest.mark.parametrize("entry", ["api", "cli"])
+    def test_leading_whitespace_roundtrip(field, prefix, mode, entry, tmp_path):
+        spec = spec_for(mode=mode)
+        value = prefix + "Concrete requirement or command"
+        if field == "verification":
+            spec[field]["green"] = value
+        else:
+            spec[field] = [value]
+        card = render_task_card(spec)
+        assert value in card
+        if entry == "api":
+            assert validate_generated_card(card, mode) == []
+            return
+        script = Path(__file__).resolve().parents[1] / "scripts/iter_templates.py"
+        spec_path = tmp_path / "spec.json"
+        spec_path.write_text(json.dumps(spec), encoding="utf-8")
+        rendered = subprocess.run([sys.executable, "-B", str(script), "--render", str(spec_path)], capture_output=True, text=True, encoding="utf-8")
+>       assert rendered.returncode == 0, rendered.stdout
+E       AssertionError: {"valid": false, "errors": ["Missing required check: green"]}
+E         
+E       assert 2 == 0
+E        +  where 2 = CompletedProcess(args=['C:\\Users\\qingyu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe', '-B', 'C:\\Users\...undt29\\spec.json'], returncode=2, stdout='{"valid": false, "errors": ["Missing required check: green"]}\n', stderr='').returncode
+
+tests\test_template_generation.py:229: AssertionError
+_________ test_leading_whitespace_roundtrip[cli-filesystem-\t-stages] _________
+
+field = 'stages', prefix = '\t', mode = 'filesystem', entry = 'cli'
+tmp_path = WindowsPath('C:/Users/qingyu/AppData/Local/Temp/pytest-of-qingyu/pytest-366/test_leading_whitespace_roundt30')
+
+    @pytest.mark.parametrize("field", ["stages", "acceptance", "verification"])
+    @pytest.mark.parametrize("prefix", ["  ", "\t", "\n  "])
+    @pytest.mark.parametrize("mode", ["git", "filesystem"])
+    @pytest.mark.parametrize("entry", ["api", "cli"])
+    def test_leading_whitespace_roundtrip(field, prefix, mode, entry, tmp_path):
+        spec = spec_for(mode=mode)
+        value = prefix + "Concrete requirement or command"
+        if field == "verification":
+            spec[field]["green"] = value
+        else:
+            spec[field] = [value]
+        card = render_task_card(spec)
+        assert value in card
+        if entry == "api":
+            assert validate_generated_card(card, mode) == []
+            return
+        script = Path(__file__).resolve().parents[1] / "scripts/iter_templates.py"
+        spec_path = tmp_path / "spec.json"
+        spec_path.write_text(json.dumps(spec), encoding="utf-8")
+        rendered = subprocess.run([sys.executable, "-B", str(script), "--render", str(spec_path)], capture_output=True, text=True, encoding="utf-8")
+>       assert rendered.returncode == 0, rendered.stdout
+E       AssertionError: {"valid": false, "errors": ["Missing stages checklist"]}
+E         
+E       assert 2 == 0
+E        +  where 2 = CompletedProcess(args=['C:\\Users\\qingyu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe', '-B', 'C:\\Users\...ce_roundt30\\spec.json'], returncode=2, stdout='{"valid": false, "errors": ["Missing stages checklist"]}\n', stderr='').returncode
+
+tests\test_template_generation.py:229: AssertionError
+_______ test_leading_whitespace_roundtrip[cli-filesystem-\t-acceptance] _______
+
+field = 'acceptance', prefix = '\t', mode = 'filesystem', entry = 'cli'
+tmp_path = WindowsPath('C:/Users/qingyu/AppData/Local/Temp/pytest-of-qingyu/pytest-366/test_leading_whitespace_roundt31')
+
+    @pytest.mark.parametrize("field", ["stages", "acceptance", "verification"])
+    @pytest.mark.parametrize("prefix", ["  ", "\t", "\n  "])
+    @pytest.mark.parametrize("mode", ["git", "filesystem"])
+    @pytest.mark.parametrize("entry", ["api", "cli"])
+    def test_leading_whitespace_roundtrip(field, prefix, mode, entry, tmp_path):
+        spec = spec_for(mode=mode)
+        value = prefix + "Concrete requirement or command"
+        if field == "verification":
+            spec[field]["green"] = value
+        else:
+            spec[field] = [value]
+        card = render_task_card(spec)
+        assert value in card
+        if entry == "api":
+            assert validate_generated_card(card, mode) == []
+            return
+        script = Path(__file__).resolve().parents[1] / "scripts/iter_templates.py"
+        spec_path = tmp_path / "spec.json"
+        spec_path.write_text(json.dumps(spec), encoding="utf-8")
+        rendered = subprocess.run([sys.executable, "-B", str(script), "--render", str(spec_path)], capture_output=True, text=True, encoding="utf-8")
+>       assert rendered.returncode == 0, rendered.stdout
+E       AssertionError: {"valid": false, "errors": ["Missing acceptance checklist"]}
+E         
+E       assert 2 == 0
+E        +  where 2 = CompletedProcess(args=['C:\\Users\\qingyu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe', '-B', 'C:\\Users\...oundt31\\spec.json'], returncode=2, stdout='{"valid": false, "errors": ["Missing acceptance checklist"]}\n', stderr='').returncode
+
+tests\test_template_generation.py:229: AssertionError
+______ test_leading_whitespace_roundtrip[cli-filesystem-\t-verification] ______
+
+field = 'verification', prefix = '\t', mode = 'filesystem', entry = 'cli'
+tmp_path = WindowsPath('C:/Users/qingyu/AppData/Local/Temp/pytest-of-qingyu/pytest-366/test_leading_whitespace_roundt32')
+
+    @pytest.mark.parametrize("field", ["stages", "acceptance", "verification"])
+    @pytest.mark.parametrize("prefix", ["  ", "\t", "\n  "])
+    @pytest.mark.parametrize("mode", ["git", "filesystem"])
+    @pytest.mark.parametrize("entry", ["api", "cli"])
+    def test_leading_whitespace_roundtrip(field, prefix, mode, entry, tmp_path):
+        spec = spec_for(mode=mode)
+        value = prefix + "Concrete requirement or command"
+        if field == "verification":
+            spec[field]["green"] = value
+        else:
+            spec[field] = [value]
+        card = render_task_card(spec)
+        assert value in card
+        if entry == "api":
+            assert validate_generated_card(card, mode) == []
+            return
+        script = Path(__file__).resolve().parents[1] / "scripts/iter_templates.py"
+        spec_path = tmp_path / "spec.json"
+        spec_path.write_text(json.dumps(spec), encoding="utf-8")
+        rendered = subprocess.run([sys.executable, "-B", str(script), "--render", str(spec_path)], capture_output=True, text=True, encoding="utf-8")
+>       assert rendered.returncode == 0, rendered.stdout
+E       AssertionError: {"valid": false, "errors": ["Missing required check: green"]}
+E         
+E       assert 2 == 0
+E        +  where 2 = CompletedProcess(args=['C:\\Users\\qingyu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe', '-B', 'C:\\Users\...undt32\\spec.json'], returncode=2, stdout='{"valid": false, "errors": ["Missing required check: green"]}\n', stderr='').returncode
+
+tests\test_template_generation.py:229: AssertionError
+________ test_leading_whitespace_roundtrip[cli-filesystem-\n  -stages] ________
+
+field = 'stages', prefix = '\n  ', mode = 'filesystem', entry = 'cli'
+tmp_path = WindowsPath('C:/Users/qingyu/AppData/Local/Temp/pytest-of-qingyu/pytest-366/test_leading_whitespace_roundt33')
+
+    @pytest.mark.parametrize("field", ["stages", "acceptance", "verification"])
+    @pytest.mark.parametrize("prefix", ["  ", "\t", "\n  "])
+    @pytest.mark.parametrize("mode", ["git", "filesystem"])
+    @pytest.mark.parametrize("entry", ["api", "cli"])
+    def test_leading_whitespace_roundtrip(field, prefix, mode, entry, tmp_path):
+        spec = spec_for(mode=mode)
+        value = prefix + "Concrete requirement or command"
+        if field == "verification":
+            spec[field]["green"] = value
+        else:
+            spec[field] = [value]
+        card = render_task_card(spec)
+        assert value in card
+        if entry == "api":
+            assert validate_generated_card(card, mode) == []
+            return
+        script = Path(__file__).resolve().parents[1] / "scripts/iter_templates.py"
+        spec_path = tmp_path / "spec.json"
+        spec_path.write_text(json.dumps(spec), encoding="utf-8")
+        rendered = subprocess.run([sys.executable, "-B", str(script), "--render", str(spec_path)], capture_output=True, text=True, encoding="utf-8")
+>       assert rendered.returncode == 0, rendered.stdout
+E       AssertionError: {"valid": false, "errors": ["Missing stages checklist"]}
+E         
+E       assert 2 == 0
+E        +  where 2 = CompletedProcess(args=['C:\\Users\\qingyu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe', '-B', 'C:\\Users\...ce_roundt33\\spec.json'], returncode=2, stdout='{"valid": false, "errors": ["Missing stages checklist"]}\n', stderr='').returncode
+
+tests\test_template_generation.py:229: AssertionError
+______ test_leading_whitespace_roundtrip[cli-filesystem-\n  -acceptance] ______
+
+field = 'acceptance', prefix = '\n  ', mode = 'filesystem', entry = 'cli'
+tmp_path = WindowsPath('C:/Users/qingyu/AppData/Local/Temp/pytest-of-qingyu/pytest-366/test_leading_whitespace_roundt34')
+
+    @pytest.mark.parametrize("field", ["stages", "acceptance", "verification"])
+    @pytest.mark.parametrize("prefix", ["  ", "\t", "\n  "])
+    @pytest.mark.parametrize("mode", ["git", "filesystem"])
+    @pytest.mark.parametrize("entry", ["api", "cli"])
+    def test_leading_whitespace_roundtrip(field, prefix, mode, entry, tmp_path):
+        spec = spec_for(mode=mode)
+        value = prefix + "Concrete requirement or command"
+        if field == "verification":
+            spec[field]["green"] = value
+        else:
+            spec[field] = [value]
+        card = render_task_card(spec)
+        assert value in card
+        if entry == "api":
+            assert validate_generated_card(card, mode) == []
+            return
+        script = Path(__file__).resolve().parents[1] / "scripts/iter_templates.py"
+        spec_path = tmp_path / "spec.json"
+        spec_path.write_text(json.dumps(spec), encoding="utf-8")
+        rendered = subprocess.run([sys.executable, "-B", str(script), "--render", str(spec_path)], capture_output=True, text=True, encoding="utf-8")
+>       assert rendered.returncode == 0, rendered.stdout
+E       AssertionError: {"valid": false, "errors": ["Missing acceptance checklist"]}
+E         
+E       assert 2 == 0
+E        +  where 2 = CompletedProcess(args=['C:\\Users\\qingyu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe', '-B', 'C:\\Users\...oundt34\\spec.json'], returncode=2, stdout='{"valid": false, "errors": ["Missing acceptance checklist"]}\n', stderr='').returncode
+
+tests\test_template_generation.py:229: AssertionError
+_____ test_leading_whitespace_roundtrip[cli-filesystem-\n  -verification] _____
+
+field = 'verification', prefix = '\n  ', mode = 'filesystem', entry = 'cli'
+tmp_path = WindowsPath('C:/Users/qingyu/AppData/Local/Temp/pytest-of-qingyu/pytest-366/test_leading_whitespace_roundt35')
+
+    @pytest.mark.parametrize("field", ["stages", "acceptance", "verification"])
+    @pytest.mark.parametrize("prefix", ["  ", "\t", "\n  "])
+    @pytest.mark.parametrize("mode", ["git", "filesystem"])
+    @pytest.mark.parametrize("entry", ["api", "cli"])
+    def test_leading_whitespace_roundtrip(field, prefix, mode, entry, tmp_path):
+        spec = spec_for(mode=mode)
+        value = prefix + "Concrete requirement or command"
+        if field == "verification":
+            spec[field]["green"] = value
+        else:
+            spec[field] = [value]
+        card = render_task_card(spec)
+        assert value in card
+        if entry == "api":
+            assert validate_generated_card(card, mode) == []
+            return
+        script = Path(__file__).resolve().parents[1] / "scripts/iter_templates.py"
+        spec_path = tmp_path / "spec.json"
+        spec_path.write_text(json.dumps(spec), encoding="utf-8")
+        rendered = subprocess.run([sys.executable, "-B", str(script), "--render", str(spec_path)], capture_output=True, text=True, encoding="utf-8")
+>       assert rendered.returncode == 0, rendered.stdout
+E       AssertionError: {"valid": false, "errors": ["Missing required check: green"]}
+E         
+E       assert 2 == 0
+E        +  where 2 = CompletedProcess(args=['C:\\Users\\qingyu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe', '-B', 'C:\\Users\...undt35\\spec.json'], returncode=2, stdout='{"valid": false, "errors": ["Missing required check: green"]}\n', stderr='').returncode
+
+tests\test_template_generation.py:229: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_template_generation.py::test_leading_whitespace_roundtrip[api-git-  -stages]
+FAILED tests/test_template_generation.py::test_leading_whitespace_roundtrip[api-git-  -acceptance]
+FAILED tests/test_template_generation.py::test_leading_whitespace_roundtrip[api-git-  -verification]
+FAILED tests/test_template_generation.py::test_leading_whitespace_roundtrip[api-git-\t-stages]
+FAILED tests/test_template_generation.py::test_leading_whitespace_roundtrip[api-git-\t-acceptance]
+FAILED tests/test_template_generation.py::test_leading_whitespace_roundtrip[api-git-\t-verification]
+FAILED tests/test_template_generation.py::test_leading_whitespace_roundtrip[api-git-\n  -stages]
+FAILED tests/test_template_generation.py::test_leading_whitespace_roundtrip[api-git-\n  -acceptance]
+FAILED tests/test_template_generation.py::test_leading_whitespace_roundtrip[api-git-\n  -verification]
+FAILED tests/test_template_generation.py::test_leading_whitespace_roundtrip[api-filesystem-  -stages]
+FAILED tests/test_template_generation.py::test_leading_whitespace_roundtrip[api-filesystem-  -acceptance]
+FAILED tests/test_template_generation.py::test_leading_whitespace_roundtrip[api-filesystem-  -verification]
+FAILED tests/test_template_generation.py::test_leading_whitespace_roundtrip[api-filesystem-\t-stages]
+FAILED tests/test_template_generation.py::test_leading_whitespace_roundtrip[api-filesystem-\t-acceptance]
+FAILED tests/test_template_generation.py::test_leading_whitespace_roundtrip[api-filesystem-\t-verification]
+FAILED tests/test_template_generation.py::test_leading_whitespace_roundtrip[api-filesystem-\n  -stages]
+FAILED tests/test_template_generation.py::test_leading_whitespace_roundtrip[api-filesystem-\n  -acceptance]
+FAILED tests/test_template_generation.py::test_leading_whitespace_roundtrip[api-filesystem-\n  -verification]
+FAILED tests/test_template_generation.py::test_leading_whitespace_roundtrip[cli-git-  -stages]
+FAILED tests/test_template_generation.py::test_leading_whitespace_roundtrip[cli-git-  -acceptance]
+FAILED tests/test_template_generation.py::test_leading_whitespace_roundtrip[cli-git-  -verification]
+FAILED tests/test_template_generation.py::test_leading_whitespace_roundtrip[cli-git-\t-stages]
+FAILED tests/test_template_generation.py::test_leading_whitespace_roundtrip[cli-git-\t-acceptance]
+FAILED tests/test_template_generation.py::test_leading_whitespace_roundtrip[cli-git-\t-verification]
+FAILED tests/test_template_generation.py::test_leading_whitespace_roundtrip[cli-git-\n  -stages]
+FAILED tests/test_template_generation.py::test_leading_whitespace_roundtrip[cli-git-\n  -acceptance]
+FAILED tests/test_template_generation.py::test_leading_whitespace_roundtrip[cli-git-\n  -verification]
+FAILED tests/test_template_generation.py::test_leading_whitespace_roundtrip[cli-filesystem-  -stages]
+FAILED tests/test_template_generation.py::test_leading_whitespace_roundtrip[cli-filesystem-  -acceptance]
+FAILED tests/test_template_generation.py::test_leading_whitespace_roundtrip[cli-filesystem-  -verification]
+FAILED tests/test_template_generation.py::test_leading_whitespace_roundtrip[cli-filesystem-\t-stages]
+FAILED tests/test_template_generation.py::test_leading_whitespace_roundtrip[cli-filesystem-\t-acceptance]
+FAILED tests/test_template_generation.py::test_leading_whitespace_roundtrip[cli-filesystem-\t-verification]
+FAILED tests/test_template_generation.py::test_leading_whitespace_roundtrip[cli-filesystem-\n  -stages]
+FAILED tests/test_template_generation.py::test_leading_whitespace_roundtrip[cli-filesystem-\n  -acceptance]
+FAILED tests/test_template_generation.py::test_leading_whitespace_roundtrip[cli-filesystem-\n  -verification]
+36 failed, 9 passed in 5.58s

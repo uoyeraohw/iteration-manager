@@ -204,3 +204,48 @@ def test_git_projection_keeps_existing_mutability():
     card = render_task_card(spec_for())
     changed = card.replace("- [ ] Implement behavior", "- [x] Implement behavior").replace("实际命令、", "已运行命令、")
     assert contract_projection(card) == contract_projection(changed)
+
+
+@pytest.mark.parametrize("field", ["stages", "acceptance", "verification"])
+@pytest.mark.parametrize("prefix", ["  ", "\t", "\n  "])
+@pytest.mark.parametrize("mode", ["git", "filesystem"])
+@pytest.mark.parametrize("entry", ["api", "cli"])
+def test_leading_whitespace_roundtrip(field, prefix, mode, entry, tmp_path):
+    spec = spec_for(mode=mode)
+    value = prefix + "Concrete requirement or command"
+    if field == "verification":
+        spec[field]["green"] = value
+    else:
+        spec[field] = [value]
+    card = render_task_card(spec)
+    assert value in card
+    if entry == "api":
+        assert validate_generated_card(card, mode) == []
+        return
+    script = Path(__file__).resolve().parents[1] / "scripts/iter_templates.py"
+    spec_path = tmp_path / "spec.json"
+    spec_path.write_text(json.dumps(spec), encoding="utf-8")
+    rendered = subprocess.run([sys.executable, "-B", str(script), "--render", str(spec_path)], capture_output=True, text=True, encoding="utf-8")
+    assert rendered.returncode == 0, rendered.stdout
+    assert rendered.stdout == card
+    card_path = tmp_path / "card.md"
+    card_path.write_text(rendered.stdout, encoding="utf-8")
+    checked = subprocess.run([sys.executable, "-B", str(script), "--check", str(card_path), "--delivery-mode", mode], capture_output=True, text=True, encoding="utf-8")
+    assert checked.returncode == 0, checked.stdout
+    assert json.loads(checked.stdout) == {"valid": True, "errors": []}
+
+
+@pytest.mark.parametrize("field", ["stages", "acceptance", "verification"])
+@pytest.mark.parametrize("blank", ["", "  \t", "\n  "])
+def test_blank_checklist_text_remains_invalid(field, blank):
+    spec = spec_for()
+    if field == "verification":
+        original = spec[field]["green"]
+        spec[field]["green"] = blank
+    else:
+        original = spec[field][0]
+        spec[field] = [blank]
+    with pytest.raises(ValueError, match="nonempty text"):
+        render_task_card(spec)
+    card = render_task_card(spec_for()).replace(original, blank)
+    assert validate_generated_card(card, "git")

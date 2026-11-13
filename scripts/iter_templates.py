@@ -161,11 +161,13 @@ def validate_generated_card(content: str, delivery_mode: str) -> list[str]:
         errors.append(str(exc))
     for name in ("stages", "acceptance", "verification"):
         block = section(content, name, r"(?!)")
-        if block is None or not re.search(r"^- \[ \] \S", block, re.M):
+        items = re.findall(r"^- \[ \] (.*?)(?=^- \[ \] |\Z)", block or "", re.M | re.S)
+        if not any(item.strip() for item in items):
             errors.append(f"Missing {name} checklist")
     for name in checks or ():
         block = section(content, "verification", r"(?!)") or ""
-        if not re.search(r"^- \[ \] \*\*" + re.escape(name) + r"\*\*：\S[^\n]*", block, re.M):
+        match = re.search(r"^- \[ \] \*\*" + re.escape(name) + r"\*\*：(.*?)(?=^- \[ \] |\Z)", block, re.M | re.S)
+        if match is None or not match.group(1).strip():
             errors.append(f"Missing required check: {name}")
     if _PLACEHOLDER.search(body):
         errors.append("Unresolved placeholder in body")

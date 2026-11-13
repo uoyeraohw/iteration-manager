@@ -42,6 +42,8 @@ python -B scripts/iter_templates.py --check card.md --delivery-mode git
 
 检查名复用`TYPE_CHECKS`；命令与观测的证据要求仍见[任务卡契约](task_card_schema.md)，生成不执行这些检查。非TDD不要求伪造RED或true；Refactor仍保留before/after实测门禁。
 
+`stages`、`acceptance`及`verification`的非空文本可含前导空白（含换行），渲染保留原文；预检按清单项判断非空，不把下一项的内容算作当前必需检查的说明。纯空白仍无效。
+
 ## 占位符与Markdown
 
 此入口把`{{identifier}}`、`${identifier}`（identifier由Unicode字母/数字/下划线、点或连字符组成）、精确`{TODO}`、`{TBD}`及`YYYY-MM-DD`定义为未替换占位符，在spec文本与生成卡正文/元数据中拒绝。旧手填模板应先转换为实际spec，不以通用大括号猜测是否填写。
