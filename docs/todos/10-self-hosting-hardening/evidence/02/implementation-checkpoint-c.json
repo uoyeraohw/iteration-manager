@@ -1,0 +1,265 @@
+{
+  "version": 1,
+  "kind": "implementation-checkpoint",
+  "task_id": "02",
+  "role": "repair-implementer-not-reviewer",
+  "workspace": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\.worktrees\\iter-10",
+  "branch": "feat/iter-10-self-hosting-hardening",
+  "base_sha": "2ecd3bc3f957ac1941b388e036a6427b717b6cc7",
+  "starting_head": "faa9ce577fccadd642f457f2b2ef8216419f05d9",
+  "source_candidate_sha": "939bc4d5fcf198a0c0a07d8ad42ea442abace708",
+  "delivery_reference": "Evidence-only commit containing this checkpoint; final full SHA returned by native session. Source/tests/docs are unchanged from source_candidate_sha.",
+  "started_at": "2026-11-13T17:15:18Z",
+  "checkpoint_at": "2026-11-13T17:19:37.5982029Z",
+  "highest_status": "TESTING",
+  "acceptance_verdict": "UNKNOWN",
+  "outcome": "progress",
+  "summary": "F01 only: precheck extracts text within each checklist item and checks strip() nonemptiness, preserving leading whitespace including newline. No spec restriction or renderer normalization added.",
+  "changed_files": [
+    "scripts/iter_templates.py",
+    "tests/test_template_generation.py",
+    "references/template_generation.md",
+    ".agents/notes/implemented/process/2026-11-13-typed-template-generation.md",
+    "docs/todos/10-self-hosting-hardening/evidence/02/repair-c-*",
+    "docs/todos/10-self-hosting-hardening/evidence/02/implementation-checkpoint-c.json"
+  ],
+  "initial_dirty": [],
+  "command_receipts": [
+    {
+      "path": "docs/todos/10-self-hosting-hardening/evidence/02/repair-c-green-1717.json",
+      "argv": [
+        "python",
+        "-B",
+        "-m",
+        "pytest",
+        "-p",
+        "no:cacheprovider",
+        "tests/test_template_generation.py::test_leading_whitespace_roundtrip",
+        "tests/test_template_generation.py::test_blank_checklist_text_remains_invalid",
+        "-q"
+      ],
+      "cwd": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\.worktrees\\iter-10",
+      "status": "COMPLETED",
+      "raw_exit_code": 0,
+      "tree_terminal": true,
+      "started_at": "2026-11-14T01:17:17.159402+08:00",
+      "ended_at": "2026-11-14T01:17:26.803703+08:00",
+      "output": "docs/todos/10-self-hosting-hardening/evidence/02/repair-c-green-1717.json.output.txt",
+      "output_tail": [
+        ".............................................                            [100%]",
+        "45 passed in 7.39s"
+      ]
+    },
+    {
+      "path": "docs/todos/10-self-hosting-hardening/evidence/02/repair-c-note-format-1718.json",
+      "argv": [
+        "npx.cmd",
+        "--no-install",
+        "tsx",
+        "C:/Users/qingyu/.codex/skills/write-notes-like-deepseek/scripts/verify-agent-note-format.ts"
+      ],
+      "cwd": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\.worktrees\\iter-10",
+      "status": "COMPLETED",
+      "raw_exit_code": 0,
+      "tree_terminal": true,
+      "started_at": "2026-11-14T01:18:22.702033+08:00",
+      "ended_at": "2026-11-14T01:18:25.123047+08:00",
+      "output": "docs/todos/10-self-hosting-hardening/evidence/02/repair-c-note-format-1718.json.output.txt",
+      "output_tail": [
+        "(Use `node --trace-warnings ...` to show where the warning was created)",
+        "ok: 15 note(s) verified"
+      ]
+    },
+    {
+      "path": "docs/todos/10-self-hosting-hardening/evidence/02/repair-c-note-tree-1718.json",
+      "argv": [
+        "npx.cmd",
+        "--no-install",
+        "tsx",
+        "C:/Users/qingyu/.codex/skills/write-notes-like-deepseek/scripts/verify-agent-note-tree.ts"
+      ],
+      "cwd": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\.worktrees\\iter-10",
+      "status": "COMPLETED",
+      "raw_exit_code": 0,
+      "tree_terminal": true,
+      "started_at": "2026-11-14T01:18:19.761187+08:00",
+      "ended_at": "2026-11-14T01:18:22.280151+08:00",
+      "output": "docs/todos/10-self-hosting-hardening/evidence/02/repair-c-note-tree-1718.json.output.txt",
+      "output_tail": [
+        "(Use `node --trace-warnings ...` to show where the warning was created)",
+        "ok: 15 note(s) tree and relative links verified"
+      ]
+    },
+    {
+      "path": "docs/todos/10-self-hosting-hardening/evidence/02/repair-c-red-1717.json",
+      "argv": [
+        "python",
+        "-B",
+        "-m",
+        "pytest",
+        "-p",
+        "no:cacheprovider",
+        "tests/test_template_generation.py::test_leading_whitespace_roundtrip",
+        "tests/test_template_generation.py::test_blank_checklist_text_remains_invalid",
+        "-q"
+      ],
+      "cwd": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\.worktrees\\iter-10",
+      "status": "COMPLETED",
+      "raw_exit_code": 1,
+      "tree_terminal": true,
+      "started_at": "2026-11-14T01:16:36.946645+08:00",
+      "ended_at": "2026-11-14T01:16:41.078169+08:00",
+      "output": "docs/todos/10-self-hosting-hardening/evidence/02/repair-c-red-1717.json.output.txt",
+      "output_tail": [
+        "FAILED tests/test_template_generation.py::test_leading_whitespace_roundtrip[filesystem-\\n  -verification]",
+        "18 failed, 9 passed in 1.80s"
+      ]
+    },
+    {
+      "path": "docs/todos/10-self-hosting-hardening/evidence/02/repair-c-red-cli-1718.json",
+      "argv": [
+        "python",
+        "-B",
+        "-m",
+        "pytest",
+        "-p",
+        "no:cacheprovider",
+        "tests/test_template_generation.py::test_leading_whitespace_roundtrip",
+        "tests/test_template_generation.py::test_blank_checklist_text_remains_invalid",
+        "-q"
+      ],
+      "cwd": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\.worktrees\\iter-10",
+      "status": "COMPLETED",
+      "raw_exit_code": 1,
+      "tree_terminal": true,
+      "started_at": "2026-11-14T01:16:55.14621+08:00",
+      "ended_at": "2026-11-14T01:17:03.318988+08:00",
+      "output": "docs/todos/10-self-hosting-hardening/evidence/02/repair-c-red-cli-1718.json.output.txt",
+      "output_tail": [
+        "FAILED tests/test_template_generation.py::test_leading_whitespace_roundtrip[cli-filesystem-\\n  -verification]",
+        "36 failed, 9 passed in 5.58s"
+      ]
+    },
+    {
+      "path": "docs/todos/10-self-hosting-hardening/evidence/02/repair-c-regression-1717.json",
+      "argv": [
+        "python",
+        "-B",
+        "-m",
+        "pytest",
+        "-p",
+        "no:cacheprovider",
+        "tests/test_template_generation.py",
+        "tests/test_prompt_sources.py",
+        "tests/test_task_card_schema.py",
+        "tests/test_filesystem_receipts.py",
+        "tests/test_filesystem_r7_repairs.py",
+        "-q"
+      ],
+      "cwd": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\.worktrees\\iter-10",
+      "status": "COMPLETED",
+      "raw_exit_code": 0,
+      "tree_terminal": true,
+      "started_at": "2026-11-14T01:17:34.776801+08:00",
+      "ended_at": "2026-11-14T01:17:53.676768+08:00",
+      "output": "docs/todos/10-self-hosting-hardening/evidence/02/repair-c-regression-1717.json.output.txt",
+      "output_tail": [
+        "............                                                             [100%]",
+        "156 passed in 16.60s"
+      ]
+    },
+    {
+      "path": "docs/todos/10-self-hosting-hardening/evidence/02/repair-c-scope-1719.json",
+      "argv": [
+        "python",
+        "C:/Users/qingyu/.codeg/skills/iteration-manager/build/frozen-tools/46ded3a/scripts/iter_sync.py",
+        "--check-scope",
+        "2ecd3bc3f957ac1941b388e036a6427b717b6cc7",
+        "HEAD",
+        "docs/todos/10-self-hosting-hardening/02-typed-template-generation.md",
+        "--include-worktree"
+      ],
+      "cwd": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\.worktrees\\iter-10",
+      "status": "COMPLETED",
+      "raw_exit_code": 0,
+      "tree_terminal": true,
+      "started_at": "2026-11-14T01:19:04.1862+08:00",
+      "ended_at": "2026-11-14T01:19:05.104611+08:00",
+      "output": "docs/todos/10-self-hosting-hardening/evidence/02/repair-c-scope-1719.json.output.txt",
+      "output_tail": [
+        "[IterSync:ScopeFirewall:PASSED] All 85 changed files within declared scope; ownership is not inferred."
+      ]
+    }
+  ],
+  "tdd": {
+    "red": "repair-c-red-cli-1718.json: 36 real AssertionError failures, 9 boundary passes; includes 18 actual CLI --render returncode 2 != 0 failures, not ImportError.",
+    "first_red": "repair-c-red-1717.json: 18 API assertion failures, 9 passes; the initial combined test stopped before CLI. Retained unchanged, not claimed as CLI RED.",
+    "green": "Same 45 cases passed after minimal precheck correction. Three fields x space/tab/newline x Git/FS x API/real CLI; CLI tests execute --render then --check.",
+    "regression": "Exact requested five-file regression: 156 passed, exit0. No source/test changes after this run.",
+    "nonempty_boundary": "Nine blank-only cases remain rejected both at spec render and generated-card precheck. Green verification precedes nonempty regression item, so it cannot borrow content from that next item."
+  },
+  "rulings": {
+    "inherited": "Initial F01 Important/controller CHANGES_REQUESTED and nonempty input contract retained from review-initial-rejected.json; no re-scoring of severity, core rendering or placeholder grammar.",
+    "repair_choice": {
+      "state": {
+        "contract": "stages/acceptance are nonempty text arrays; verification values are nonempty commands or observation text. No prohibition on leading whitespace.",
+        "observed": "_text checks value.strip() for nonemptiness and returns original value; render preserves it. Precheck regex requires immediate non-whitespace after checklist prefix and check colon. Independent F01 spaces before valid content rejected.",
+        "current_render": "_checklist interpolates each value after checklist prefix; verification builds check label plus original text.",
+        "boundary": "Blank-only values rejected at render; precheck rejects missing checklist and empty required check values."
+      },
+      "question": "Select the smallest correction for F01 preserving nonempty input contract and blank-only precheck rejection, without redesigning task generation.",
+      "criteria": {
+        "precheck": "Allow leading whitespace only if a non-whitespace character remains in the same checklist item; preserve rendered text.",
+        "normalize": "Strip leading whitespace in rendered stages/acceptance and verification values, leaving precheck unchanged.",
+        "unknown": "Insufficient evidence."
+      },
+      "response": {
+        "model": "jev-1.14.0",
+        "choice": "precheck",
+        "confidence": 0.92,
+        "probabilities": {
+          "precheck": 0.95,
+          "unknown": 0.01,
+          "normalize": 0.04
+        }
+      },
+      "application": "Item-bounded extraction followed by strip() check; preserve text and reject empty item without borrowing next checklist content."
+    }
+  },
+  "evidence_reuse": [
+    {
+      "evidence": "A/B original RED/GREEN and review-initial-rejected.json",
+      "decision": "Retained unchanged as historical evidence, not represented as rerun on repair candidate.",
+      "basis": "Only F01 precheck and targeted tests/docs changed; no redesign of eight-combination rendering, placeholders, Git projection, FS binding or four-type contracts."
+    },
+    {
+      "evidence": "repair-c-regression-1717.json",
+      "decision": "Reran all five requested files including prior eight combinations and actual FS binding tests.",
+      "basis": "Precheck changed; B regression alone is not sufficient for F01."
+    },
+    {
+      "evidence": "repair-c-note-tree/format-1718.json",
+      "decision": "Reran both actual global skill validators after existing note update.",
+      "basis": "Note updated; old B note validation not substituted."
+    }
+  ],
+  "git_checks": {
+    "cached_diff": "Reviewed exact 22-file source/test/doc/note and own repair-c runner artifacts before source commit; no card/README or other owner staged.",
+    "source_whitespace_exit": 0,
+    "raw_evidence_whitespace_exit": 2,
+    "raw_exception": "Unmodified runner CRLF and pytest assertion diff E-lines contain trailing spaces. With cr-at-eol, 54 raw output trailing-whitespace findings remain, exclusively in the two RED output originals; retained to preserve evidence. No formatting of originals.",
+    "scope": "Frozen iter_sync BASE HEAD task02 --include-worktree through frozen runner; see repair-c-scope-1719.json. Checkpoint and its receipt are additions in the same authorized evidence directory."
+  },
+  "remaining_work": [
+    "Root arranges independent nonparticipant re-review of BASE..delivery HEAD and unchanged A/B evidence plus repair receipts.",
+    "Root owns task card/README, final independent verification, receipt registration and state changes after approval. No successor work performed."
+  ],
+  "dirty": {
+    "initial": [],
+    "after_source_commit": [],
+    "at_checkpoint": "Only newly added own scope receipt/output/child and this checkpoint await evidence-only commit. Final status supplied by native session."
+  },
+  "active_commands": [],
+  "command_terminal": "All seven own runner commands COMPLETED and tree_terminal=true. No active command sessions.",
+  "time_accounting": "Per-command observed times retained in receipts. First clock observation is started_at; actual pre-observation startup and coding/model/tool proportions UNKNOWN. Normal checkpoint returned before work deadline; no waiting to deadline."
+}
