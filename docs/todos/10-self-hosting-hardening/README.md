@@ -40,7 +40,7 @@
 | 任务序号 | 任务名称 | type | 前置 | 状态 | 详细卡片索引 |
 | --- | --- | --- | --- | --- | --- |
 | 01 | 统一授权规则与跨入口场景 | Spike-Discovery | 无 | 🟢 已完成 / 验收:PASS | [01-authority-consistency.md](./01-authority-consistency.md) |
-| 02 | 按类型与交付模式生成和检查任务卡 | Strict-TDD | 01 | 🟡 进行中 / 验收:UNKNOWN | [02-typed-template-generation.md](./02-typed-template-generation.md) |
+| 02 | 按类型与交付模式生成和检查任务卡 | Strict-TDD | 01 | 🔵 待验收 / 验收:UNKNOWN | [02-typed-template-generation.md](./02-typed-template-generation.md) |
 | 03 | 稳定查询与CLI消费接口，保持旧入口兼容 | Strict-TDD | 02 | ⚪ 待开始 / 验收:UNKNOWN | [03-query-cli-contract.md](./03-query-cli-contract.md) |
 | 04 | 看板展示Git/FS候选和可继承交接 | UI-Component | 03 | ⚪ 待开始 / 验收:UNKNOWN | [04-board-handoff.md](./04-board-handoff.md) |
 | 05 | 建立源码、候选、安装与消费的发布证据索引 | Spike-Discovery | 04 | ⚪ 待开始 / 验收:UNKNOWN | [05-release-evidence-index.md](./05-release-evidence-index.md) |
@@ -108,7 +108,7 @@
 | 任务 | 声明 | 验收 | 业务阶段 / 清单比例 | 工程阶段 | 阻塞原因 | 累计尝试 | 最后更新 |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | 01-authority-consistency.md | DONE | PASS | 阶段清单已勾选完毕 / 3/3 (100%) | CHECKLIST_COMPLETE (未等同验收) | 未记录 | 0 | 2026-11-13T16:44:56.984232+00:00 |
-| 02-typed-template-generation.md | IN_PROGRESS | UNKNOWN | Stage 3/3：完成旧解析/FS冻结兼容、文档与独立审查 / 2/3 (66.7%) | 读取真实基线、当前变更和前置PASS；完成context、claim与同owner dispatch-check。 | 未记录 | 0 | 2026-11-13T17:13:58.289549+00:00 |
+| 02-typed-template-generation.md | TESTING | UNKNOWN | Stage 3/3：完成旧解析/FS冻结兼容、文档与独立审查 / 2/3 (66.7%) | 读取真实基线、当前变更和前置PASS；完成context、claim与同owner dispatch-check。 | 未记录 | 0 | 2026-11-13T17:21:32.137169+00:00 |
 | 03-query-cli-contract.md | TODO | UNKNOWN | Stage 1/3：冻结兼容矩阵，对缺失的统一投影字段取得有效断言RED / 0/3 (0%) | 读取真实基线、当前变更和前置PASS；完成context、claim与同owner dispatch-check。 | 未记录 | 0 | 2026-11-13 |
 | 04-board-handoff.md | TODO | UNKNOWN | Stage 1/3：固定真实用户路径、视口和四态输入，基于03字段更新详情展示 / 0/3 (0%) | 读取真实基线、当前变更和前置PASS；完成context、claim与同owner dispatch-check。 | 未记录 | 0 | 2026-11-13 |
 | 05-release-evidence-index.md | TODO | UNKNOWN | Stage 1/3：盘点四层事实与现有原件，区分当前/历史/未知 / 0/3 (0%) | 读取真实基线、当前变更和前置PASS；完成context、claim与同owner dispatch-check。 | 未记录 | 0 | 2026-11-13 |
