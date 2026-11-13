@@ -42,3 +42,14 @@ def test_script_terminator_and_task_text_never_enter_html_sink(tmp_path):
     assert payload not in html
     assert 'innerHTML' not in html
     assert '\\u003c/script' in html
+
+
+def test_exact_done_and_pass_counts_in_readme_and_terminal(tmp_path):
+    from test_filesystem_delivery_controller import fixture
+    card, _, _ = fixture(tmp_path)
+    (card.parent/'02.md').write_text('---\nstatus: DONE\n---\n',encoding='utf-8')
+    stream=io.StringIO(); render_terminal_board(card.parent,stream)
+    assert '声明DONE: 2/2 | 验收PASS: 1/2' in stream.getvalue()
+    sync_local_iteration(card.parent)
+    readme=(card.parent/'README.md').read_text(encoding='utf-8')
+    assert '声明DONE 2/2 · 验收PASS 1/2' in readme

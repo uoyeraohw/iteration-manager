@@ -1,0 +1,99 @@
+FFFF.                                                                    [100%]
+================================== FAILURES ===================================
+_________ test_mode_specific_candidate_and_historical_checkpoint[git] _________
+
+tmp_path = WindowsPath('C:/Users/qingyu/AppData/Local/Temp/pytest-of-qingyu/pytest-379/test_mode_specific_candidate_a0')
+mode = 'git'
+
+    @pytest.mark.parametrize('mode', ['git', 'filesystem', 'UNKNOWN'])
+    def test_mode_specific_candidate_and_historical_checkpoint(tmp_path, mode):
+        (tmp_path / '01.md').write_text('---\nstatus: IN_PROGRESS\n---\n', encoding='utf-8')
+        data = generate_board_data(tmp_path)
+        data['cards'][0].update(delivery_mode=mode, candidate_id='synthetic-fs-current',
+            base_sha='base-original', head_sha='git-current', execution={
+                'checkpoint': {'candidate': 'historical-candidate', 'phase': 'implementation',
+                    'summary': 'valid checkpoint', 'source': 'attempt-original.json',
+                    'progress': [{'kind': 'red', 'evidence': 'original-red.txt', 'summary': 'assertion failed'}]},
+                'remaining_work': ['native browser acceptance']})
+        text = template_render(data, "openDetail(data.cards[0]);console.log(JSON.stringify(flatten(nodes['detail-content'])));")
+        if mode == 'filesystem':
+            assert 'candidate_id synthetic-fs-current' in text
+            assert 'BASE ' not in text and '实现C ' not in text
+        elif mode == 'git':
+            assert 'BASE base-original' in text and '实现C git-current' in text
+            assert 'synthetic-fs-current' not in text
+        else:
+            assert 'UNKNOWN · 交付模式未知' in text
+            assert 'git-current' not in text and 'synthetic-fs-current' not in text
+        for value in ('historical-candidate', 'attempt-original.json', 'original-red.txt',
+                      'assertion failed', 'native browser acceptance'):
+>           assert value in text
+E           assert 'historical-candidate' in '\n声明 IN_PROGRESS / 验收 UNKNOWN\n打开时快照 · 2026-11-14T02:12:18.717596+08:00\n阻塞与恢复条件\n未记录阻塞原因；这不表示验收通过。\n候选与验收发现\n卡片 01.m...round_limit":5,"total_limit":10,"consilium_limit":1,"replan_limit":2}\n授权范围\nUNKNOWN\n原始证据出处\n\nUNKNOWN · 无可读取的收据或原始证据'
+
+tests\test_board_handoff.py:62: AssertionError
+_____ test_mode_specific_candidate_and_historical_checkpoint[filesystem] ______
+
+tmp_path = WindowsPath('C:/Users/qingyu/AppData/Local/Temp/pytest-of-qingyu/pytest-379/test_mode_specific_candidate_a1')
+mode = 'filesystem'
+
+    @pytest.mark.parametrize('mode', ['git', 'filesystem', 'UNKNOWN'])
+    def test_mode_specific_candidate_and_historical_checkpoint(tmp_path, mode):
+        (tmp_path / '01.md').write_text('---\nstatus: IN_PROGRESS\n---\n', encoding='utf-8')
+        data = generate_board_data(tmp_path)
+        data['cards'][0].update(delivery_mode=mode, candidate_id='synthetic-fs-current',
+            base_sha='base-original', head_sha='git-current', execution={
+                'checkpoint': {'candidate': 'historical-candidate', 'phase': 'implementation',
+                    'summary': 'valid checkpoint', 'source': 'attempt-original.json',
+                    'progress': [{'kind': 'red', 'evidence': 'original-red.txt', 'summary': 'assertion failed'}]},
+                'remaining_work': ['native browser acceptance']})
+        text = template_render(data, "openDetail(data.cards[0]);console.log(JSON.stringify(flatten(nodes['detail-content'])));")
+        if mode == 'filesystem':
+>           assert 'candidate_id synthetic-fs-current' in text
+E           assert 'candidate_id synthetic-fs-current' in '\n声明 IN_PROGRESS / 验收 UNKNOWN\n打开时快照 · 2026-11-14T02:12:19.665171+08:00\n阻塞与恢复条件\n未记录阻塞原因；这不表示验收通过。\n候选与验收发现\n卡片 01.m...round_limit":5,"total_limit":10,"consilium_limit":1,"replan_limit":2}\n授权范围\nUNKNOWN\n原始证据出处\n\nUNKNOWN · 无可读取的收据或原始证据'
+
+tests\test_board_handoff.py:52: AssertionError
+_______ test_mode_specific_candidate_and_historical_checkpoint[UNKNOWN] _______
+
+tmp_path = WindowsPath('C:/Users/qingyu/AppData/Local/Temp/pytest-of-qingyu/pytest-379/test_mode_specific_candidate_a2')
+mode = 'UNKNOWN'
+
+    @pytest.mark.parametrize('mode', ['git', 'filesystem', 'UNKNOWN'])
+    def test_mode_specific_candidate_and_historical_checkpoint(tmp_path, mode):
+        (tmp_path / '01.md').write_text('---\nstatus: IN_PROGRESS\n---\n', encoding='utf-8')
+        data = generate_board_data(tmp_path)
+        data['cards'][0].update(delivery_mode=mode, candidate_id='synthetic-fs-current',
+            base_sha='base-original', head_sha='git-current', execution={
+                'checkpoint': {'candidate': 'historical-candidate', 'phase': 'implementation',
+                    'summary': 'valid checkpoint', 'source': 'attempt-original.json',
+                    'progress': [{'kind': 'red', 'evidence': 'original-red.txt', 'summary': 'assertion failed'}]},
+                'remaining_work': ['native browser acceptance']})
+        text = template_render(data, "openDetail(data.cards[0]);console.log(JSON.stringify(flatten(nodes['detail-content'])));")
+        if mode == 'filesystem':
+            assert 'candidate_id synthetic-fs-current' in text
+            assert 'BASE ' not in text and '实现C ' not in text
+        elif mode == 'git':
+            assert 'BASE base-original' in text and '实现C git-current' in text
+            assert 'synthetic-fs-current' not in text
+        else:
+>           assert 'UNKNOWN · 交付模式未知' in text
+E           assert 'UNKNOWN · 交付模式未知' in '\n声明 IN_PROGRESS / 验收 UNKNOWN\n打开时快照 · 2026-11-14T02:12:19.847489+08:00\n阻塞与恢复条件\n未记录阻塞原因；这不表示验收通过。\n候选与验收发现\n卡片 01.m...round_limit":5,"total_limit":10,"consilium_limit":1,"replan_limit":2}\n授权范围\nUNKNOWN\n原始证据出处\n\nUNKNOWN · 无可读取的收据或原始证据'
+
+tests\test_board_handoff.py:58: AssertionError
+_____ test_missing_checkpoint_and_empty_remaining_do_not_imply_completion _____
+
+tmp_path = WindowsPath('C:/Users/qingyu/AppData/Local/Temp/pytest-of-qingyu/pytest-379/test_missing_checkpoint_and_em0')
+
+    def test_missing_checkpoint_and_empty_remaining_do_not_imply_completion(tmp_path):
+        (tmp_path / '01.md').write_text('---\nstatus: TODO\n---\n', encoding='utf-8')
+        data = generate_board_data(tmp_path)
+        text = template_render(data, "openDetail(data.cards[0]);console.log(JSON.stringify(flatten(nodes['detail-content'])));")
+>       assert 'UNKNOWN · 无有效检查点记录' in text
+E       assert 'UNKNOWN · 无有效检查点记录' in '\n声明 TODO / 验收 UNKNOWN\n打开时快照 · 2026-11-14T02:12:20.022306+08:00\n阻塞与恢复条件\n未记录阻塞原因；这不表示验收通过。\n候选与验收发现\n卡片 01.md\n类型 U...round_limit":5,"total_limit":10,"consilium_limit":1,"replan_limit":2}\n授权范围\nUNKNOWN\n原始证据出处\n\nUNKNOWN · 无可读取的收据或原始证据'
+
+tests\test_board_handoff.py:69: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_board_handoff.py::test_mode_specific_candidate_and_historical_checkpoint[git]
+FAILED tests/test_board_handoff.py::test_mode_specific_candidate_and_historical_checkpoint[filesystem]
+FAILED tests/test_board_handoff.py::test_mode_specific_candidate_and_historical_checkpoint[UNKNOWN]
+FAILED tests/test_board_handoff.py::test_missing_checkpoint_and_empty_remaining_do_not_imply_completion
+4 failed, 1 passed in 2.20s

@@ -1,0 +1,11 @@
+{
+  "request": {
+    "state": {
+      "template": {"candidate":"Always renders BASE and head_sha with UNKNOWN fallback","detail":"No execution fields rendered","refresh":"fetch /api/board every 2000ms; connection text updated only after response","evidence":"sources enumerated into task/source index URLs"},
+      "contract": {"modes":["git","filesystem","UNKNOWN"],"checkpoint":["candidate","phase","summary","progress","source"],"remaining":"execution.remaining_work; empty not completion"},
+      "restrictions":["No changes to query/CLI","Keep dark layout","Root performs real browser acceptance"]
+    },
+    "questions":{"presentation":{"type":"choice","instructions":"Choose a detail presentation that preserves candidate identity and historical checkpoint provenance without implying completion from missing values.","criteria":{"mode_sections":"Mode-specific candidate section, separate historical checkpoint and remaining-work sections; explicit unknown messages","sha_only":"Keep SHA-only candidate section for all modes","merge":"Merge current and historical candidate into one value","insufficient":"Insufficient evidence to choose"}}}
+  },
+  "response":{"model":"jev-1.14.0","answers":{"presentation":{"type":"choice","choice":"mode_sections","confidence":0.97,"probabilities":{"insufficient":0.01,"merge":0.0,"mode_sections":0.98,"sha_only":0.01}}},"usage":{"input_tokens":557,"output_tokens":51}}
+}
