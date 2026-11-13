@@ -1,6 +1,6 @@
 # 迭代10 · 规则一致性、使用简化与真实自用健壮性
 
-> **进度指示**：声明DONE [0/6] (0%) · 验收PASS [0/6] · 状态：🔴 验收阻塞
+> **进度指示**：声明DONE [0/6] (0%) · 验收PASS [0/6] · 状态：🟡 进行中
 > 分支：`feat/iter-10-self-hosting-hardening`；独立工作区：`.worktrees/iter-10`，从规划提交`d3bd97ab16ffed6104034a887a01eb1b4d75dc0e`创建。
 > 用户已批准启动实施、精准Git提交与独立Worktree；按六卡串行验收推进。禁止部署、推送、合流或清理。
 
@@ -39,7 +39,7 @@
 
 | 任务序号 | 任务名称 | type | 前置 | 状态 | 详细卡片索引 |
 | --- | --- | --- | --- | --- | --- |
-| 01 | 统一授权规则与跨入口场景 | Spike-Discovery | 无 | 🔴 已熔断 / 验收:BLOCKED | [01-authority-consistency.md](./01-authority-consistency.md) |
+| 01 | 统一授权规则与跨入口场景 | Spike-Discovery | 无 | 🔵 待验收 / 验收:UNKNOWN | [01-authority-consistency.md](./01-authority-consistency.md) |
 | 02 | 按类型与交付模式生成和检查任务卡 | Strict-TDD | 01 | ⚪ 待开始 / 验收:UNKNOWN | [02-typed-template-generation.md](./02-typed-template-generation.md) |
 | 03 | 稳定查询与CLI消费接口，保持旧入口兼容 | Strict-TDD | 02 | ⚪ 待开始 / 验收:UNKNOWN | [03-query-cli-contract.md](./03-query-cli-contract.md) |
 | 04 | 看板展示Git/FS候选和可继承交接 | UI-Component | 03 | ⚪ 待开始 / 验收:UNKNOWN | [04-board-handoff.md](./04-board-handoff.md) |
@@ -107,7 +107,7 @@
 
 | 任务 | 声明 | 验收 | 业务阶段 / 清单比例 | 工程阶段 | 阻塞原因 | 累计尝试 | 最后更新 |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| 01-authority-consistency.md | FUSED | BLOCKED | Stage 1/3：对照引用链形成冲突清单和四类场景的可观察预期 / 0/3 (0%) | 读取真实基线、当前变更和前置PASS；完成context、claim与同owner dispatch-check。 | execution deadline; slice B committed before canceled reply; explicit single-use resume-checkpoint authorization required to continue review | 0 | 2026-11-13T16:31:37.211266+00:00 |
+| 01-authority-consistency.md | TESTING | UNKNOWN | Stage 3/3：冻结候选与消费证据，非参与者审查后登记 / 2/3 (66.7%) | 读取真实基线、当前变更和前置PASS；完成context、claim与同owner dispatch-check。 | 未记录 | 0 | 2026-11-13T16:33:39.086935+00:00 |
 | 02-typed-template-generation.md | TODO | UNKNOWN | Stage 1/3：为可调用入口与八种组合建立可编译行为断言RED / 0/3 (0%) | 读取真实基线、当前变更和前置PASS；完成context、claim与同owner dispatch-check。 | 未记录 | 0 | 2026-11-13 |
 | 03-query-cli-contract.md | TODO | UNKNOWN | Stage 1/3：冻结兼容矩阵，对缺失的统一投影字段取得有效断言RED / 0/3 (0%) | 读取真实基线、当前变更和前置PASS；完成context、claim与同owner dispatch-check。 | 未记录 | 0 | 2026-11-13 |
 | 04-board-handoff.md | TODO | UNKNOWN | Stage 1/3：固定真实用户路径、视口和四态输入，基于03字段更新详情展示 / 0/3 (0%) | 读取真实基线、当前变更和前置PASS；完成context、claim与同owner dispatch-check。 | 未记录 | 0 | 2026-11-13 |
