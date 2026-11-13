@@ -1,0 +1,49 @@
+{
+  "version": 1,
+  "purpose": "选择切片A静态测试路径，不产生原生消费验收",
+  "request": {
+    "state": {
+      "assignment": "切片A仅修正文档、真实文本回归和四场景预期说明；主控后续桥接四个新会话。observed_result无原生消费只能UNKNOWN，不派子代理。",
+      "existing_tests": "tests/test_prompt_sources.py有两个测试，只读权威助手文件、SKILL、type及预算文本。未有test_authority_scenarios.py。",
+      "sources": {
+        "protocol": "只生成Prompt不写文件、不运行实现、不提交；实际创建Worktree或执行前运行--verify-committed；不自动暂存整个docs/todos。合流发布删除另授权。",
+        "worktree_contract": "/iter init收尾强制git add .gitignore docs/todos/；生成Prompt前校验并补Commit；全部完成立即合main并销毁Worktree；mermaid亦含相同指令。",
+        "handbook": "4.1列4类暂停红线，以迭代总目标为最高权威裁决。",
+        "root_template": "合并后统一sync，未写按授权。"
+      }
+    },
+    "questions": {
+      "scope_of_static_checks": {
+        "type": "choice",
+        "instructions": "选择本切片的测试方式，标准是直接读取实际候选文件检出授权冲突回归，提供四场景可观察预期且不把静态检查当原生消费。不得新增产品执行功能。",
+        "criteria": {
+          "source_assertions": "用实际源文本断言正向授权边界和已知旧冲突；四场景预期以参数化源断言验证，原生矩阵单独UNKNOWN待消费。",
+          "mock_session": "模拟代理工具调用并以模拟结果填写原生矩阵PASS。",
+          "native_now": "本切片自行派发新会话原生验证。",
+          "insufficient": "现有证据不足以选择。"
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.14.0",
+    "answers": {
+      "scope_of_static_checks": {
+        "type": "choice",
+        "choice": "source_assertions",
+        "confidence": 1,
+        "probabilities": {
+          "insufficient": 0,
+          "mock_session": 0,
+          "native_now": 0,
+          "source_assertions": 1
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 795,
+      "output_tokens": 59
+    }
+  },
+  "application": "实际源文本正向/负向回归；四原生场景UNKNOWN留主控桥接"
+}
