@@ -1,0 +1,34 @@
+{
+  "request": {
+    "state": {
+      "observed": {
+        "source": "browser_harness.py:68-90",
+        "startup": "Starts four HTTP servers, then synchronously calls generate_board_data for each directory before publishing ready; real_git uses ROOT/docs/todos/10-self-hosting-hardening.",
+        "failure": "06 full regression 490 passed 1 failed; readiness absent after 8 seconds",
+        "diagnosis": "Same harness ready after 8.562 sec, exit0 stderr empty",
+        "scope": "Only handoff test, necessary 04 harness and Note; no product UI/query/CLI changes",
+        "constraints": "Preserve default native real service, 8-second readiness assertion and lifecycle/HTTP/provenance assertions; synthetic must never be labeled real."
+      }
+    },
+    "questions": {
+      "route": {
+        "type": "choice",
+        "instructions": "Select the smallest test isolation route that preserves the default real browser harness contract and removes dependence on current repository task inventory.",
+        "criteria": {
+          "explicit_mode": "Add explicit opt-in isolated-fixtures flag to existing harness; use tempfile synthetic Git/FS/empty/loading inputs with synthetic names and provenance, preserve default real_git directory.",
+          "new_duplicate": "Duplicate server lifecycle into a new standalone synthetic harness.",
+          "timeout": "Increase timeout while still reading real repository inventory.",
+          "insufficient": "Evidence insufficient to select a route."
+        }
+      }
+    }
+  },
+  "response": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"model\":\"jev-1.14.0\",\"answers\":{\"route\":{\"type\":\"choice\",\"choice\":\"explicit_mode\",\"confidence\":0.95,\"probabilities\":{\"explicit_mode\":0.96,\"insufficient\":0.01,\"new_duplicate\":0.03,\"timeout\":0.0}}},\"usage\":{\"input_tokens\":595,\"output_tokens\":51}}"
+      }
+    ]
+  }
+}

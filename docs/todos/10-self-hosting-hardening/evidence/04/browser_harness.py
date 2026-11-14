@@ -53,6 +53,8 @@ def main():
     parser.add_argument('--ready-file', type=Path, required=True)
     parser.add_argument('--duration', type=float, default=120)
     parser.add_argument('--delay', type=float, default=6)
+    parser.add_argument('--isolated-fixtures', action='store_true',
+                        help='Use only temporary synthetic inventory; not native self-use evidence')
     args = parser.parse_args()
     if args.duration <= 0 or args.delay < 0:
         parser.error('duration must be positive; delay must be nonnegative')
@@ -64,9 +66,17 @@ def main():
         fs = filesystem_fixture(fixture_root)
         empty = fixture_root / 'empty-synthetic'
         empty.mkdir()
+        git_name, git_directory = 'real_git', ROOT / 'docs/todos/10-self-hosting-hardening'
+        if args.isolated_fixtures:
+            git_name, git_directory = 'synthetic_git', fixture_root / 'docs/todos/02-synthetic-git'
+            git_directory.mkdir(parents=True)
+            (git_directory / '01-task.md').write_text(
+                '---\nstatus: IN_PROGRESS\ntask_name: SYNTHETIC Git inventory\n'
+                'delivery_mode: git\nbase_sha: synthetic-base\nhead_sha: synthetic-head\n---\n',
+                encoding='utf-8')
         try:
             for name, directory, delay in (
-                ('real_git', ROOT / 'docs/todos/10-self-hosting-hardening', 0),
+                (git_name, git_directory, 0),
                 ('synthetic_fs', fs, 0), ('synthetic_empty', empty, 0),
                 ('synthetic_loading', fs, args.delay)):
                 stopping = threading.Event()

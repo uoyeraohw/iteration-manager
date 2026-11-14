@@ -79,13 +79,55 @@ def test_html_exact_counts_are_rendered_not_just_embedded(tmp_path):
     assert template_render(data, "console.log(JSON.stringify([nodes.declared.textContent,nodes.accepted.textContent]));") == ['2 / 2', '1 / 2']
 
 
+@pytest.mark.parametrize('isolated', [True, False])
+def test_browser_harness_isolated_mode_never_reads_checkout(tmp_path, monkeypatch, capsys, isolated):
+    import importlib.util
+
+    script = Path(__file__).resolve().parents[1] / 'docs/todos/10-self-hosting-hardening/evidence/04/browser_harness.py'
+    spec = importlib.util.spec_from_file_location('isolated_browser_harness', script)
+    harness = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(harness)
+    if not isolated:
+        checkout = tmp_path / 'checkout'
+        iteration = checkout / 'docs/todos/10-self-hosting-hardening'
+        iteration.mkdir(parents=True)
+        (iteration / '01.md').write_text('---\nstatus: TODO\n---\n', encoding='utf-8')
+        monkeypatch.setattr(harness, 'ROOT', checkout)
+    ready, stop = tmp_path / 'ready.json', tmp_path / 'stop'
+    monkeypatch.setattr(sys, 'argv', [str(script), '--ready-file', str(ready),
+        '--stop-file', str(stop), '--duration', '.01', '--delay', '0'] +
+        (['--isolated-fixtures'] if isolated else []))
+    original = harness.generate_board_data
+    visited = []
+
+    def fixture_only(directory):
+        if isolated:
+            assert not directory.is_relative_to(harness.ROOT), 'isolated mode read checkout inventory'
+        visited.append(directory)
+        return original(directory)
+
+    monkeypatch.setattr(harness, 'generate_board_data', fixture_only)
+    harness.main()
+    info = json.loads(ready.read_text(encoding='utf-8'))
+    assert len(visited) == 4
+    git_name = 'synthetic_git' if isolated else 'real_git'
+    assert set(info['services']) == {git_name, 'synthetic_fs', 'synthetic_empty', 'synthetic_loading'}
+    assert info['services'][git_name]['synthetic'] is isolated
+    if not isolated:
+        assert Path(info['services']['real_git']['iter_dir']) == iteration
+    assert all(directory.is_relative_to(Path(info['synthetic_root']))
+               for directory in visited if isolated or directory != iteration)
+    assert not Path(info['synthetic_root']).exists()
+    assert json.loads(capsys.readouterr().out.splitlines()[-1])['active_commands'] == []
+
+
 def test_browser_http_harness_lifecycle_and_synthetic_provenance(tmp_path):
     import http.client
     import time
     script = Path(__file__).resolve().parents[1] / 'docs/todos/10-self-hosting-hardening/evidence/04/browser_harness.py'
     ready, stop = tmp_path/'ready.json', tmp_path/'stop'
     process = subprocess.Popen([sys.executable, '-B', str(script), '--ready-file', str(ready),
-        '--stop-file', str(stop), '--duration', '12', '--delay', '.2'],
+        '--stop-file', str(stop), '--duration', '12', '--delay', '.2', '--isolated-fixtures'],
         stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     try:
         end = time.monotonic()+8
@@ -93,7 +135,11 @@ def test_browser_http_harness_lifecycle_and_synthetic_provenance(tmp_path):
             time.sleep(.05)
         assert ready.exists(), 'Harness failed to publish ready JSON'
         info=json.loads(ready.read_text(encoding='utf-8'))
-        assert info['services']['real_git']['synthetic'] is False
+        assert 'real_git' not in info['services']
+        assert len(info['services']) == 4
+        assert all(service['synthetic'] for service in info['services'].values())
+        assert all(Path(service['iter_dir']).is_relative_to(Path(info['synthetic_root']))
+                   for service in info['services'].values())
         assert info['services']['synthetic_empty']['total']==0
         for name in ('synthetic_fs', 'synthetic_loading'):
             service=info['services'][name]
