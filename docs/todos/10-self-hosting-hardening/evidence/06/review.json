@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "task_id": "06",
+  "type": "Spike-Discovery",
+  "task_path": "docs/todos/10-self-hosting-hardening/06-self-hosting-acceptance.md",
+  "base_sha": "b3938b86b4cccfcdbd582ab5c2531beec086e0c4",
+  "head_sha": "f03c00773219de13b93f0575c1e82f80ce7984f5",
+  "contract_sha": "f03c00773219de13b93f0575c1e82f80ce7984f5",
+  "implementer": "codeg/codex/1723/01a1d793-e65a-7251-8c92-b82981f6cf0c",
+  "reviewer": "codeg/codex/1727/01a1d7b8-cddd-78a3-bf91-2c6015fc74b9",
+  "verdict": "APPROVED",
+  "review_report": "docs/todos/10-self-hosting-hardening/evidence/06/review-report.json",
+  "checks": [
+    {
+      "name": "experiment",
+      "kind": "command",
+      "command": "python -B -m pytest -p no:cacheprovider tests -q",
+      "cwd": ".",
+      "exit_code": 0,
+      "summary": "最终产品候选b393完整493passed，C仅卡/证据变化有效沿用；原始失败保留",
+      "output": "docs/todos/10-self-hosting-hardening/evidence/06/controller-full-regression-final.json.output.txt"
+    },
+    {
+      "name": "decision",
+      "kind": "observation",
+      "summary": "三层证据、正确拦截、04受影响返修及06过程FAIL均如实分类，不宣称部署",
+      "output": "docs/todos/10-self-hosting-hardening/evidence/06/robustness-report-final.json"
+    },
+    {
+      "name": "interfaces",
+      "kind": "observation",
+      "summary": "字段与续接基线、原产品来源、两段范围及批准责任明确",
+      "output": "docs/todos/10-self-hosting-hardening/evidence/06/controller-interfaces-final.json"
+    }
+  ]
+}

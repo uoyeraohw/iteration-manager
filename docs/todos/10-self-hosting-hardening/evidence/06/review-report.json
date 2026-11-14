@@ -1,0 +1,839 @@
+{
+  "task_id": "06",
+  "reviewer": {
+    "session_id": "01a1d7b8-cddd-78a3-bf91-2c6015fc74b9",
+    "codeg_session_id": 1727,
+    "native_task_id": "cc36ebad-5d17-4b4d-bb9c-e4f2fde7ee51",
+    "identity_verified_by": [
+      "CODEX_SESSION_ID / CODEX_THREAD_ID",
+      "Codeg get_session_info(1727)",
+      "主控原始委派返回"
+    ],
+    "independent": true,
+    "participation": "未参与06实现、测试、方案或RCA；不是实现会话1723，也不是主控1699。",
+    "read_only": true,
+    "delegated": false,
+    "business_or_test_commands_started": false
+  },
+  "baseline": {
+    "cwd": "C:/Users/qingyu/.codeg/skills/iteration-manager/.worktrees/iter-10",
+    "branch": "feat/iter-10-self-hosting-hardening",
+    "base_sha": "b3938b86b4cccfcdbd582ab5c2531beec086e0c4",
+    "head_sha": "f03c00773219de13b93f0575c1e82f80ce7984f5",
+    "contract_sha": "f03c00773219de13b93f0575c1e82f80ce7984f5",
+    "original_base_sha": "7107ddb2f2256ceaea40e6ea0aeddd045220b99b",
+    "original_product_sha": "cd808bf3cf9b95ba7a1ba7901c320e4fd4621df2",
+    "checkpoint_sha": "c5238c16b1e9c5d941d8dec3c53d273f6a074e44",
+    "original_segment_end_sha": "8756b47c1fc60c91292ca66e7444cffa05e0ef51",
+    "dirty_at_start": [],
+    "dirty_at_end": [],
+    "last_checked_at": "2026-11-14T01:47:49Z"
+  },
+  "verdict": "APPROVED",
+  "reviewer_judgment": "06原产品、累计证据和最终续接满足本卡待审要求。保留派发顺序FAIL，不将其改称合规正例；03原始完整链及正常跨会话续接满足至少一链要求。本批准绑定上述C及contract，不预批准登记D、最终strict或整轮总审。",
+  "scope": {
+    "result": "PASS",
+    "evidence": [
+      "亲自完整读取SKILL、共同协议、task_card_schema、迭代README和06卡。",
+      "实际Git差异7107ddb..8756b47共46路径，覆盖06测试、方法、Note、任务卡及e06原件；没有只审最终小diff。",
+      "实际Git差异b3938b8..C共10路径，仅06卡和06证据。",
+      "controller-scope-ranges.json保存冻结runner对原段46路径、续接段9路径的COMPLETED/raw0/tree_terminal=true原件。",
+      "b2f2257..C仅新增74行controller-scope-ranges.json，属于既定e06目录。",
+      "cd808bf3..C的06测试、方法和Note无变化；b3938b8..C的产品、测试、脚本、模板及references无变化。",
+      "中间04修复未计入06范围，未扩大白名单或重写Git。"
+    ]
+  },
+  "spec": {
+    "result": "PASS",
+    "evidence": [
+      "14项联合用例直接组合成熟夹具、真实CLI和真实审计接口，覆盖指定拒绝、持久化、幂等、漂移及根索引保护；明确属于synthetic。",
+      "完整493项执行覆盖runner、deadline_watch、四预算、unknown、受控resume及FS拒绝Git grant，不以定义存在代替执行。",
+      "03原始inventory、claim、同owner dispatch、A/B/C原生终态、runner、attempt、release、独审、C/D及固定strict分别核对。",
+      "03 B输入引用A检查点，C输入引用A/B检查点；旧RED和before保留。after较慢，未宣称提速。",
+      "04首次全量反例返还原责任域，独审、新绑定和固定strict完成后才继续06；原UI证据按未变范围沿用。",
+      "05旧正文漂移拒绝及后续独立新绑定分别保留。",
+      "experiment可采用最终成功全量命令，decision采用robustness-report-final.json，interfaces采用controller-interfaces-final.json。",
+      "实验报告未自批准06；卡仍为TESTING/PENDING，未提前登记DONE或strict PASS。"
+    ]
+  },
+  "quality": {
+    "result": "PASS",
+    "evidence": [
+      "新增测试未复制整套测试框架，断言涵盖CLI拒绝、字节不变、检查点继承及跨投影不误PASS。",
+      "首次测试API误用、提取器错误和全量失败原件均保留，未冒称有效产品RED。",
+      "最终报告保持严格字段及static/synthetic/native-self-use分层；检查点报告未覆写。",
+      "Note tree和format原始输出有效，均验证19篇Note。",
+      "未发现需要返修的产品或测试阻断缺陷。"
+    ]
+  },
+  "issues": [
+    {
+      "id": "R06-01",
+      "file": "docs/todos/10-self-hosting-hardening/evidence/06/robustness-report-final.json",
+      "lines": [
+        173,
+        182
+      ],
+      "related_location": "docs/todos/10-self-hosting-hardening/06-self-hosting-acceptance.md:119",
+      "severity": "MEDIUM",
+      "blocking": false,
+      "trigger": "06原生委派发生时，前序协调工具调用尚报告running。",
+      "actual": "主控先发出委派，随后才消费READY；最终报告如实记录FAIL。",
+      "expected": "等待协调调用终态并消费READY后再原生委派。",
+      "disposition": "保留历史FAIL及责任归属，不追溯改写。原定验收要求至少一条完整合规链，已由03原件满足；后续04派发已采用先消费READY的顺序。",
+      "owner": "主控"
+    }
+  ],
+  "checks": {
+    "evidence_prefix": "docs/todos/10-self-hosting-hardening/evidence/",
+    "experiment": {
+      "command": "python -B -m pytest -p no:cacheprovider tests -q",
+      "cwd": ".",
+      "receipt": "06/controller-full-regression-final.json",
+      "output": "06/controller-full-regression-final.json.output.txt",
+      "original_candidate": "b3938b86b4cccfcdbd582ab5c2531beec086e0c4",
+      "status": "COMPLETED",
+      "raw_exit_code": 0,
+      "tree_terminal": true,
+      "result": "493 passed in 321.63s",
+      "reuse_basis": "b393..C仅06卡和证据变化，覆盖产品与测试完全未变；保留原候选及原执行时间。本Reviewer未重跑。"
+    },
+    "targeted": {
+      "receipt": "06/slice-a-targeted-2.json",
+      "output": "06/slice-a-targeted-2.json.output.txt",
+      "result": "14 passed in 16.36s",
+      "raw_exit_code": 0,
+      "tree_terminal": true,
+      "reuse_basis": "06测试从原产品cd808bf3到C未变，最终完整493项再次包含该文件。"
+    },
+    "decision": {
+      "kind": "observation",
+      "output": "06/robustness-report-final.json",
+      "result": "分层、原始失败、最终全量及过程偏差均保留。"
+    },
+    "interfaces": {
+      "kind": "observation",
+      "output": "06/controller-interfaces-final.json",
+      "result": "字段、分层、原段与续接绑定清楚；批准由卡片收据另行登记。"
+    },
+    "cross_check": {
+      "receipt": "06/controller-cross-check-final.json",
+      "output": "06/controller-cross-check-final.json.output.txt",
+      "source": "06/controller-cross-check.py",
+      "raw_exit_code": 0,
+      "tree_terminal": true,
+      "result": "固定envelope与候选query逐字段比较六卡身份、状态、绑定、预算和execution；01—05 PASS，06 TESTING/UNKNOWN。",
+      "reuse_basis": "比较接口未变；后续06候选正文变化已由当前Git差异及实际卡片定点核对。"
+    },
+    "native_chain_03": {
+      "index": "06/native-chain-inventory.json",
+      "originals": [
+        "03/inventory-a.json",
+        "03/claim-a.json",
+        "03/dispatch-a.json",
+        "03/dispatch-b.json",
+        "03/dispatch-c.json",
+        "03/context-implementation-b.json",
+        "03/context-implementation-c.json",
+        "03/native-terminal-a.json",
+        "03/native-terminal-b.json",
+        "03/native-terminal-c.json",
+        "03/attempt-a.json",
+        "03/attempt-b.json",
+        "03/attempt-c.json",
+        "03/handoff-a.json",
+        "03/handoff-b.json",
+        "03/handoff-c.json",
+        "03/review.json"
+      ],
+      "native_sessions": [
+        1714,
+        1715,
+        1716
+      ],
+      "native_terminal": "三者均completed且terminalConfirmed=true；逐项读取attempt引用的runner原件，全部COMPLETED/tree_terminal=true，历史非零退出未隐去。",
+      "implementation_C": "542f2b445f499b3a2e90d92a6ed6bba20cdb1bdb",
+      "registration_D": "2ce0705ebeeaee73f75a1dcd2882836dbc6b9d29",
+      "strict_original": "build/review-03/strict-after-D.txt:1-43",
+      "controller_original": "C:/Users/qingyu/.codex/sessions/2026/11/13/rollout-2026-11-13T23-06-27-01a1d572-1a27-7b51-b8f4-797832bc44a6.jsonl",
+      "ordering_evidence": "原始行1519在17:29:21.144Z返回claim0/dispatch0；行1526在17:29:56.509Z返回原生委派成功。",
+      "reuse_basis": "沿用实际已审03链，不重新模拟，不因新会话重跑旧RED/before。"
+    },
+    "repair_04": {
+      "failure": "06/controller-full-regression.json.output.txt:9-34",
+      "diagnosis": "06/controller-harness-diagnosis.json.output.txt:16-20",
+      "independent_receipt": "04/review-repair-final.json",
+      "independent_report": "04/review-report-repair-final.json",
+      "reviewer": "1725/01a1d7a9-5822-7bc3-a3e7-51486485f8ea",
+      "result": "保留490passed/1failed及8.562秒诊断；显式isolated-fixtures修复未提高8秒，默认真实入口未变。",
+      "strict_evidence": "主控原始会话行3005，2026-11-14T01:33:06.748Z，冻结local strict退出0，5/6 PASS，04引用review-repair-final.json；随后01:33:21.256Z才启动06最终全量。",
+      "ui_reuse": "04原生操作、七图、四态原件及原批准保留；synthetic FS/empty/loading来源明确，未升级为真实FS业务验收。"
+    },
+    "task_05": {
+      "original_report": "05/review-report.json",
+      "new_receipt": "05/review-final.json",
+      "new_report": "05/review-report-final.json",
+      "binding": "head/contract=dc5d868c6b90268a2eefc29966874c96d48dd122",
+      "result": "正文漂移正确拒绝后独立新绑定，旧新原件均保留。"
+    },
+    "note": {
+      "outputs": [
+        "06/slice-a-note-tree.json.output.txt",
+        "06/slice-a-note-format.json.output.txt"
+      ],
+      "result": "19 notes tree/relative links及format通过。",
+      "reuse_basis": "06 Note从cd808bf3到C未变。"
+    },
+    "scope": {
+      "original": "06/controller-scope-ranges.json",
+      "result": "冻结runner两段scope均退出0；最后仅新增汇总文件，实际Git差异已核对。"
+    }
+  },
+  "typesafe": {
+    "request": {
+      "state": {
+        "binding": {
+          "base": "b3938b86b4cccfcdbd582ab5c2531beec086e0c4",
+          "head": "f03c00773219de13b93f0575c1e82f80ce7984f5",
+          "contract": "f03c00773219de13b93f0575c1e82f80ce7984f5",
+          "original_range": "7107ddb2f2256ceaea40e6ea0aeddd045220b99b..8756b47c1fc60c91292ca66e7444cffa05e0ef51"
+        },
+        "requirements": [
+          "06 is Spike-Discovery: experiment successful command, decision and interfaces observations; no TDD RED requirement.",
+          "Card acceptance line92 requires at least one real inventory->claim->same-owner dispatch-check->native delegation->runner->attempt->release->independent review->C/D->frozen strict chain and one cross-session checkpoint continuation.",
+          "Common protocol requires controller to consume READY before native delegation; script does not automatically intercept delegation.",
+          "Independent review precedes registration D and final strict; reviewer is read-only and cannot run tests or write registration."
+        ],
+        "observations": {
+          "identity": "Current session1727 external01a1d7b8-cddd-78a3-bf91-2c6015fc74b9 from runtime environment and Codeg get_session_info; implementation1723 external01a1d793-e65a-7251-8c92-b82981f6cf0c; controller1699 external01a1d572-1a27-7b51-b8f4-797832bc44a6. Current session has done only review.",
+          "scope": "git diff original range:46 paths comprising06 test/method/Note/card/e06. Final range10 paths only06 card/e06. Frozen runner scope originals exit0/tree_terminal=true for46 and9paths; b2f2257..f03c007 adds only controller-scope-ranges.json. git diff cd808bf3..C shows06 test/method/Note unchanged. b393..C scripts/tests/templates/references/SKILL unchanged. Worktree clean.",
+          "tests": "Read actual140-line test_self_hosting.py and imported fixture/CLI definitions. Six parametrized gate refusals; attempt/replay/changedpayload/release/reclaim; two empty attempts block third; bad-number/unknownDONE; FS source/evidence/body drift across audit/envelope/board; feature-root refusal bytes unchanged. Original targeted receipt/output14passed16.36s. Final full tests receipt COMPLETED raw0 tree_terminaltrue and child0; output493passed321.63s onb393; no tests rerun by reviewer.",
+          "process_deviation": "robustness-report-final.json:173-182 contains06-dispatch-consumption-order resultFAIL:06 delegation issued while coordination tool still reportedrunning, READY consumed afterward. Cardline119 repeats gap. This case is not presented as compliant positive chain.",
+          "chain03": "Original03 inventory/claim/dispatchA READY read. Controller original log17:29:21.144Z reportsclaim0/dispatch0 before native delegate17:29:56.356Z. Three original native tasks1714A/1715B/1716C havecompleted/terminalConfirmedtrue, distinct taskIDs, runner receipts and empty released writer. Bcontext includesAcheckpoint; C includesA+Bcheckpoints. Originalbefore/RED retained; after measurements slower. Original independent receipt reviewer01a1d610-f583-76d0-8943-f401eece9af0 bindsC542f2b445f499b3a2e90d92a6ed6bba20cdb1bdb, registrationD2ce0705ebeeaee73f75a1dcd2882836dbc6b9d29. build/review-03/strict-after-D.txt explicitly03PASS.",
+          "repair04": "First06full output490passed1failed atready8seconds. Diagnosisready8.562seconds exit0. Repair delegatedback04, opt-in isolated-fixtures retained8secondlimit/defaultrealentry, independent1725 APPROVED/newreceipt41f6618. Controller original log01:33:06.748Z fixedstrict exit0,5/6PASS referencingnew04receipt before final06full command01:33:21.256Z. Original04nativeUI evidence retained, syntheticFS/empty/loading identified.",
+          "reports": "Final report fields version,candidate,coordinator_commit,cases,unverified; cases use static/synthetic/native-self-use and PASS/FAIL/UNKNOWN/BLOCKED. Finalcandidate fieldb393; final interfaces distinguish original and continuation ranges. Old checkpointreport not overwritten. Final cross-check receipt raw0/terminaltrue; code compares six cards identity/status/binding/budgets/execution and outputs01-05PASS06TESTINGUNKNOWN.",
+          "pending": "06 registration receipt/D/finalstrict have not occurred. Deployment/fullinstallation/newinstalledsession/externalbusinessUNKNOWN."
+        }
+      },
+      "questions": {
+        "dispatch_gap": {
+          "type": "choice",
+          "instructions": "Classify the effect of the recorded task06 dispatch-order violation on independent review against the original card's at-least-one-complete-chain requirement. Preserve the historical FAIL regardless of classification; do not invent a requirement that every chain pass.",
+          "criteria": {
+            "NONBLOCKING_RECORDED_DEVIATION": "Historical violation remains FAIL, but the original card's required complete chain and continuation are supplied by a separate documented03chain; no new implementation is required for that acceptance item.",
+            "CHANGES_REQUIRED": "The violation or missing chain evidence leaves an original task06 acceptance requirement unmet and requires correction before approval.",
+            "INSUFFICIENT": "The observations do not resolve whether the original required chain exists or whether the violation invalidates it."
+          }
+        },
+        "final_run_reuse": {
+          "type": "choice",
+          "instructions": "Decide whether b393 full-test evidence may support review of C for covered product/test behavior without rerunning it. Evaluate evidence reuse only, not final registration/strict approval.",
+          "criteria": {
+            "REUSE": "Covered product/tests and inputs are unchanged inb393..C; full original receipt/output supports reuse while retaining originalcandidate/time.",
+            "RERUN": "A changed covered product/test/input invalidates reuse.",
+            "INSUFFICIENT": "Available observations cannot establish applicability of the full run."
+          }
+        }
+      }
+    },
+    "response_raw": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"model\":\"jev-1.14.0\",\"answers\":{\"dispatch_gap\":{\"type\":\"choice\",\"choice\":\"NONBLOCKING_RECORDED_DEVIATION\",\"confidence\":0.97,\"probabilities\":{\"CHANGES_REQUIRED\":0.01,\"INSUFFICIENT\":0.01,\"NONBLOCKING_RECORDED_DEVIATION\":0.98}},\"final_run_reuse\":{\"type\":\"choice\",\"choice\":\"REUSE\",\"confidence\":0.83,\"probabilities\":{\"INSUFFICIENT\":0.05,\"RERUN\":0.06,\"REUSE\":0.89}}},\"usage\":{\"input_tokens\":2027,\"output_tokens\":110}}"
+        }
+      ]
+    },
+    "reviewer_application": "采纳过程偏差保留但不阻断、最终全量可沿用的判断；结合实际diff、原始链及卡片标准作出APPROVED。概率和confidence不作为质量分或验收证据。"
+  },
+  "unknown": {
+    "blocking_review_gaps": [],
+    "pending_controller_gates": [
+      "保存本次原生完整返回及守卫到唯一新report/receipt，base=b393、head/contract=C；不得覆盖C内原件。",
+      "按卡片契约登记允许元数据及D，再运行冻结协调器最终strict；本次尚未发生，不预PASS。",
+      "本卡登记PASS后进行独立整轮总审及分支strict。"
+    ],
+    "external_boundaries": [
+      "部署UNKNOWN",
+      "完整安装版本UNKNOWN",
+      "新安装会话实际消费UNKNOWN",
+      "外部用户业务整链UNKNOWN"
+    ]
+  },
+  "actual_terminal": {
+    "review_work": "COMPLETED",
+    "return_mode": "正常返回",
+    "native_session_last_observed": "in_progress",
+    "native_terminal_confirmation_owner": "主控回收本返回时核对",
+    "implementation_1723": "原生completed，terminalConfirmed=true",
+    "reviewer_active_commands": [],
+    "e06_runner_receipts": "已读取的12份均COMPLETED/tree_terminal=true，历史非零结果保留。",
+    "writes": [],
+    "git_mutations": [],
+    "task_card_state": "TESTING/PENDING；Reviewer未写DONE。"
+  },
+  "native_guard": {
+    "reason": "terminal",
+    "deadlineMs": 1794621084134,
+    "final": {
+      "task_id": "cc36ebad-5d17-4b4d-bb9c-e4f2fde7ee51",
+      "status": "completed",
+      "child_conversation_id": 1727,
+      "agent_type": "codex",
+      "text": "{\n  \"task_id\": \"06\",\n  \"reviewer\": {\n    \"session_id\": \"01a1d7b8-cddd-78a3-bf91-2c6015fc74b9\",\n    \"codeg_session_id\": 1727,\n    \"native_task_id\": \"cc36ebad-5d17-4b4d-bb9c-e4f2fde7ee51\",\n    \"identity_verified_by\": [\n      \"CODEX_SESSION_ID / CODEX_THREAD_ID\",\n      \"Codeg get_session_info(1727)\",\n      \"主控原始委派返回\"\n    ],\n    \"independent\": true,\n    \"participation\": \"未参与06实现、测试、方案或RCA；不是实现会话1723，也不是主控1699。\",\n    \"read_only\": true,\n    \"delegated\": false,\n    \"business_or_test_commands_started\": false\n  },\n  \"baseline\": {\n    \"cwd\": \"C:/Users/qingyu/.codeg/skills/iteration-manager/.worktrees/iter-10\",\n    \"branch\": \"feat/iter-10-self-hosting-hardening\",\n    \"base_sha\": \"b3938b86b4cccfcdbd582ab5c2531beec086e0c4\",\n    \"head_sha\": \"f03c00773219de13b93f0575c1e82f80ce7984f5\",\n    \"contract_sha\": \"f03c00773219de13b93f0575c1e82f80ce7984f5\",\n    \"original_base_sha\": \"7107ddb2f2256ceaea40e6ea0aeddd045220b99b\",\n    \"original_product_sha\": \"cd808bf3cf9b95ba7a1ba7901c320e4fd4621df2\",\n    \"checkpoint_sha\": \"c5238c16b1e9c5d941d8dec3c53d273f6a074e44\",\n    \"original_segment_end_sha\": \"8756b47c1fc60c91292ca66e7444cffa05e0ef51\",\n    \"dirty_at_start\": [],\n    \"dirty_at_end\": [],\n    \"last_checked_at\": \"2026-11-14T01:47:49Z\"\n  },\n  \"verdict\": \"APPROVED\",\n  \"reviewer_judgment\": \"06原产品、累计证据和最终续接满足本卡待审要求。保留派发顺序FAIL，不将其改称合规正例；03原始完整链及正常跨会话续接满足至少一链要求。本批准绑定上述C及contract，不预批准登记D、最终strict或整轮总审。\",\n  \"scope\": {\n    \"result\": \"PASS\",\n    \"evidence\": [\n      \"亲自完整读取SKILL、共同协议、task_card_schema、迭代README和06卡。\",\n      \"实际Git差异7107ddb..8756b47共46路径，覆盖06测试、方法、Note、任务卡及e06原件；没有只审最终小diff。\",\n      \"实际Git差异b3938b8..C共10路径，仅06卡和06证据。\",\n      \"controller-scope-ranges.json保存冻结runner对原段46路径、续接段9路径的COMPLETED/raw0/tree_terminal=true原件。\",\n      \"b2f2257..C仅新增74行controller-scope-ranges.json，属于既定e06目录。\",\n      \"cd808bf3..C的06测试、方法和Note无变化；b3938b8..C的产品、测试、脚本、模板及references无变化。\",\n      \"中间04修复未计入06范围，未扩大白名单或重写Git。\"\n    ]\n  },\n  \"spec\": {\n    \"result\": \"PASS\",\n    \"evidence\": [\n      \"14项联合用例直接组合成熟夹具、真实CLI和真实审计接口，覆盖指定拒绝、持久化、幂等、漂移及根索引保护；明确属于synthetic。\",\n      \"完整493项执行覆盖runner、deadline_watch、四预算、unknown、受控resume及FS拒绝Git grant，不以定义存在代替执行。\",\n      \"03原始inventory、claim、同owner dispatch、A/B/C原生终态、runner、attempt、release、独审、C/D及固定strict分别核对。\",\n      \"03 B输入引用A检查点，C输入引用A/B检查点；旧RED和before保留。after较慢，未宣称提速。\",\n      \"04首次全量反例返还原责任域，独审、新绑定和固定strict完成后才继续06；原UI证据按未变范围沿用。\",\n      \"05旧正文漂移拒绝及后续独立新绑定分别保留。\",\n      \"experiment可采用最终成功全量命令，decision采用robustness-report-final.json，interfaces采用controller-interfaces-final.json。\",\n      \"实验报告未自批准06；卡仍为TESTING/PENDING，未提前登记DONE或strict PASS。\"\n    ]\n  },\n  \"quality\": {\n    \"result\": \"PASS\",\n    \"evidence\": [\n      \"新增测试未复制整套测试框架，断言涵盖CLI拒绝、字节不变、检查点继承及跨投影不误PASS。\",\n      \"首次测试API误用、提取器错误和全量失败原件均保留，未冒称有效产品RED。\",\n      \"最终报告保持严格字段及static/synthetic/native-self-use分层；检查点报告未覆写。\",\n      \"Note tree和format原始输出有效，均验证19篇Note。\",\n      \"未发现需要返修的产品或测试阻断缺陷。\"\n    ]\n  },\n  \"issues\": [\n    {\n      \"id\": \"R06-01\",\n      \"file\": \"docs/todos/10-self-hosting-hardening/evidence/06/robustness-report-final.json\",\n      \"lines\": [173, 182],\n      \"related_location\": \"docs/todos/10-self-hosting-hardening/06-self-hosting-acceptance.md:119\",\n      \"severity\": \"MEDIUM\",\n      \"blocking\": false,\n      \"trigger\": \"06原生委派发生时，前序协调工具调用尚报告running。\",\n      \"actual\": \"主控先发出委派，随后才消费READY；最终报告如实记录FAIL。\",\n      \"expected\": \"等待协调调用终态并消费READY后再原生委派。\",\n      \"disposition\": \"保留历史FAIL及责任归属，不追溯改写。原定验收要求至少一条完整合规链，已由03原件满足；后续04派发已采用先消费READY的顺序。\",\n      \"owner\": \"主控\"\n    }\n  ],\n  \"checks\": {\n    \"evidence_prefix\": \"docs/todos/10-self-hosting-hardening/evidence/\",\n    \"experiment\": {\n      \"command\": \"python -B -m pytest -p no:cacheprovider tests -q\",\n      \"cwd\": \".\",\n      \"receipt\": \"06/controller-full-regression-final.json\",\n      \"output\": \"06/controller-full-regression-final.json.output.txt\",\n      \"original_candidate\": \"b3938b86b4cccfcdbd582ab5c2531beec086e0c4\",\n      \"status\": \"COMPLETED\",\n      \"raw_exit_code\": 0,\n      \"tree_terminal\": true,\n      \"result\": \"493 passed in 321.63s\",\n      \"reuse_basis\": \"b393..C仅06卡和证据变化，覆盖产品与测试完全未变；保留原候选及原执行时间。本Reviewer未重跑。\"\n    },\n    \"targeted\": {\n      \"receipt\": \"06/slice-a-targeted-2.json\",\n      \"output\": \"06/slice-a-targeted-2.json.output.txt\",\n      \"result\": \"14 passed in 16.36s\",\n      \"raw_exit_code\": 0,\n      \"tree_terminal\": true,\n      \"reuse_basis\": \"06测试从原产品cd808bf3到C未变，最终完整493项再次包含该文件。\"\n    },\n    \"decision\": {\n      \"kind\": \"observation\",\n      \"output\": \"06/robustness-report-final.json\",\n      \"result\": \"分层、原始失败、最终全量及过程偏差均保留。\"\n    },\n    \"interfaces\": {\n      \"kind\": \"observation\",\n      \"output\": \"06/controller-interfaces-final.json\",\n      \"result\": \"字段、分层、原段与续接绑定清楚；批准由卡片收据另行登记。\"\n    },\n    \"cross_check\": {\n      \"receipt\": \"06/controller-cross-check-final.json\",\n      \"output\": \"06/controller-cross-check-final.json.output.txt\",\n      \"source\": \"06/controller-cross-check.py\",\n      \"raw_exit_code\": 0,\n      \"tree_terminal\": true,\n      \"result\": \"固定envelope与候选query逐字段比较六卡身份、状态、绑定、预算和execution；01—05 PASS，06 TESTING/UNKNOWN。\",\n      \"reuse_basis\": \"比较接口未变；后续06候选正文变化已由当前Git差异及实际卡片定点核对。\"\n    },\n    \"native_chain_03\": {\n      \"index\": \"06/native-chain-inventory.json\",\n      \"originals\": [\n        \"03/inventory-a.json\",\n        \"03/claim-a.json\",\n        \"03/dispatch-a.json\",\n        \"03/dispatch-b.json\",\n        \"03/dispatch-c.json\",\n        \"03/context-implementation-b.json\",\n        \"03/context-implementation-c.json\",\n        \"03/native-terminal-a.json\",\n        \"03/native-terminal-b.json\",\n        \"03/native-terminal-c.json\",\n        \"03/attempt-a.json\",\n        \"03/attempt-b.json\",\n        \"03/attempt-c.json\",\n        \"03/handoff-a.json\",\n        \"03/handoff-b.json\",\n        \"03/handoff-c.json\",\n        \"03/review.json\"\n      ],\n      \"native_sessions\": [1714, 1715, 1716],\n      \"native_terminal\": \"三者均completed且terminalConfirmed=true；逐项读取attempt引用的runner原件，全部COMPLETED/tree_terminal=true，历史非零退出未隐去。\",\n      \"implementation_C\": \"542f2b445f499b3a2e90d92a6ed6bba20cdb1bdb\",\n      \"registration_D\": \"2ce0705ebeeaee73f75a1dcd2882836dbc6b9d29\",\n      \"strict_original\": \"build/review-03/strict-after-D.txt:1-43\",\n      \"controller_original\": \"C:/Users/qingyu/.codex/sessions/2026/11/13/rollout-2026-11-13T23-06-27-01a1d572-1a27-7b51-b8f4-797832bc44a6.jsonl\",\n      \"ordering_evidence\": \"原始行1519在17:29:21.144Z返回claim0/dispatch0；行1526在17:29:56.509Z返回原生委派成功。\",\n      \"reuse_basis\": \"沿用实际已审03链，不重新模拟，不因新会话重跑旧RED/before。\"\n    },\n    \"repair_04\": {\n      \"failure\": \"06/controller-full-regression.json.output.txt:9-34\",\n      \"diagnosis\": \"06/controller-harness-diagnosis.json.output.txt:16-20\",\n      \"independent_receipt\": \"04/review-repair-final.json\",\n      \"independent_report\": \"04/review-report-repair-final.json\",\n      \"reviewer\": \"1725/01a1d7a9-5822-7bc3-a3e7-51486485f8ea\",\n      \"result\": \"保留490passed/1failed及8.562秒诊断；显式isolated-fixtures修复未提高8秒，默认真实入口未变。\",\n      \"strict_evidence\": \"主控原始会话行3005，2026-11-14T01:33:06.748Z，冻结local strict退出0，5/6 PASS，04引用review-repair-final.json；随后01:33:21.256Z才启动06最终全量。\",\n      \"ui_reuse\": \"04原生操作、七图、四态原件及原批准保留；synthetic FS/empty/loading来源明确，未升级为真实FS业务验收。\"\n    },\n    \"task_05\": {\n      \"original_report\": \"05/review-report.json\",\n      \"new_receipt\": \"05/review-final.json\",\n      \"new_report\": \"05/review-report-final.json\",\n      \"binding\": \"head/contract=dc5d868c6b90268a2eefc29966874c96d48dd122\",\n      \"result\": \"正文漂移正确拒绝后独立新绑定，旧新原件均保留。\"\n    },\n    \"note\": {\n      \"outputs\": [\n        \"06/slice-a-note-tree.json.output.txt\",\n        \"06/slice-a-note-format.json.output.txt\"\n      ],\n      \"result\": \"19 notes tree/relative links及format通过。\",\n      \"reuse_basis\": \"06 Note从cd808bf3到C未变。\"\n    },\n    \"scope\": {\n      \"original\": \"06/controller-scope-ranges.json\",\n      \"result\": \"冻结runner两段scope均退出0；最后仅新增汇总文件，实际Git差异已核对。\"\n    }\n  },\n  \"typesafe\": {\n    \"request\": {\n      \"state\": {\n        \"binding\": {\n          \"base\": \"b3938b86b4cccfcdbd582ab5c2531beec086e0c4\",\n          \"head\": \"f03c00773219de13b93f0575c1e82f80ce7984f5\",\n          \"contract\": \"f03c00773219de13b93f0575c1e82f80ce7984f5\",\n          \"original_range\": \"7107ddb2f2256ceaea40e6ea0aeddd045220b99b..8756b47c1fc60c91292ca66e7444cffa05e0ef51\"\n        },\n        \"requirements\": [\n          \"06 is Spike-Discovery: experiment successful command, decision and interfaces observations; no TDD RED requirement.\",\n          \"Card acceptance line92 requires at least one real inventory->claim->same-owner dispatch-check->native delegation->runner->attempt->release->independent review->C/D->frozen strict chain and one cross-session checkpoint continuation.\",\n          \"Common protocol requires controller to consume READY before native delegation; script does not automatically intercept delegation.\",\n          \"Independent review precedes registration D and final strict; reviewer is read-only and cannot run tests or write registration.\"\n        ],\n        \"observations\": {\n          \"identity\": \"Current session1727 external01a1d7b8-cddd-78a3-bf91-2c6015fc74b9 from runtime environment and Codeg get_session_info; implementation1723 external01a1d793-e65a-7251-8c92-b82981f6cf0c; controller1699 external01a1d572-1a27-7b51-b8f4-797832bc44a6. Current session has done only review.\",\n          \"scope\": \"git diff original range:46 paths comprising06 test/method/Note/card/e06. Final range10 paths only06 card/e06. Frozen runner scope originals exit0/tree_terminal=true for46 and9paths; b2f2257..f03c007 adds only controller-scope-ranges.json. git diff cd808bf3..C shows06 test/method/Note unchanged. b393..C scripts/tests/templates/references/SKILL unchanged. Worktree clean.\",\n          \"tests\": \"Read actual140-line test_self_hosting.py and imported fixture/CLI definitions. Six parametrized gate refusals; attempt/replay/changedpayload/release/reclaim; two empty attempts block third; bad-number/unknownDONE; FS source/evidence/body drift across audit/envelope/board; feature-root refusal bytes unchanged. Original targeted receipt/output14passed16.36s. Final full tests receipt COMPLETED raw0 tree_terminaltrue and child0; output493passed321.63s onb393; no tests rerun by reviewer.\",\n          \"process_deviation\": \"robustness-report-final.json:173-182 contains06-dispatch-consumption-order resultFAIL:06 delegation issued while coordination tool still reportedrunning, READY consumed afterward. Cardline119 repeats gap. This case is not presented as compliant positive chain.\",\n          \"chain03\": \"Original03 inventory/claim/dispatchA READY read. Controller original log17:29:21.144Z reportsclaim0/dispatch0 before native delegate17:29:56.356Z. Three original native tasks1714A/1715B/1716C havecompleted/terminalConfirmedtrue, distinct taskIDs, runner receipts and empty released writer. Bcontext includesAcheckpoint; C includesA+Bcheckpoints. Originalbefore/RED retained; after measurements slower. Original independent receipt reviewer01a1d610-f583-76d0-8943-f401eece9af0 bindsC542f2b445f499b3a2e90d92a6ed6bba20cdb1bdb, registrationD2ce0705ebeeaee73f75a1dcd2882836dbc6b9d29. build/review-03/strict-after-D.txt explicitly03PASS.\",\n          \"repair04\": \"First06full output490passed1failed atready8seconds. Diagnosisready8.562seconds exit0. Repair delegatedback04, opt-in isolated-fixtures retained8secondlimit/defaultrealentry, independent1725 APPROVED/newreceipt41f6618. Controller original log01:33:06.748Z fixedstrict exit0,5/6PASS referencingnew04receipt before final06full command01:33:21.256Z. Original04nativeUI evidence retained, syntheticFS/empty/loading identified.\",\n          \"reports\": \"Final report fields version,candidate,coordinator_commit,cases,unverified; cases use static/synthetic/native-self-use and PASS/FAIL/UNKNOWN/BLOCKED. Finalcandidate fieldb393; final interfaces distinguish original and continuation ranges. Old checkpointreport not overwritten. Final cross-check receipt raw0/terminaltrue; code compares six cards identity/status/binding/budgets/execution and outputs01-05PASS06TESTINGUNKNOWN.\",\n          \"pending\": \"06 registration receipt/D/finalstrict have not occurred. Deployment/fullinstallation/newinstalledsession/externalbusinessUNKNOWN.\"\n        }\n      },\n      \"questions\": {\n        \"dispatch_gap\": {\n          \"type\": \"choice\",\n          \"instructions\": \"Classify the effect of the recorded task06 dispatch-order violation on independent review against the original card's at-least-one-complete-chain requirement. Preserve the historical FAIL regardless of classification; do not invent a requirement that every chain pass.\",\n          \"criteria\": {\n            \"NONBLOCKING_RECORDED_DEVIATION\": \"Historical violation remains FAIL, but the original card's required complete chain and continuation are supplied by a separate documented03chain; no new implementation is required for that acceptance item.\",\n            \"CHANGES_REQUIRED\": \"The violation or missing chain evidence leaves an original task06 acceptance requirement unmet and requires correction before approval.\",\n            \"INSUFFICIENT\": \"The observations do not resolve whether the original required chain exists or whether the violation invalidates it.\"\n          }\n        },\n        \"final_run_reuse\": {\n          \"type\": \"choice\",\n          \"instructions\": \"Decide whether b393 full-test evidence may support review of C for covered product/test behavior without rerunning it. Evaluate evidence reuse only, not final registration/strict approval.\",\n          \"criteria\": {\n            \"REUSE\": \"Covered product/tests and inputs are unchanged inb393..C; full original receipt/output supports reuse while retaining originalcandidate/time.\",\n            \"RERUN\": \"A changed covered product/test/input invalidates reuse.\",\n            \"INSUFFICIENT\": \"Available observations cannot establish applicability of the full run.\"\n          }\n        }\n      }\n    },\n    \"response_raw\": {\n      \"content\": [\n        {\n          \"type\": \"text\",\n          \"text\": \"{\\\"model\\\":\\\"jev-1.14.0\\\",\\\"answers\\\":{\\\"dispatch_gap\\\":{\\\"type\\\":\\\"choice\\\",\\\"choice\\\":\\\"NONBLOCKING_RECORDED_DEVIATION\\\",\\\"confidence\\\":0.97,\\\"probabilities\\\":{\\\"CHANGES_REQUIRED\\\":0.01,\\\"INSUFFICIENT\\\":0.01,\\\"NONBLOCKING_RECORDED_DEVIATION\\\":0.98}},\\\"final_run_reuse\\\":{\\\"type\\\":\\\"choice\\\",\\\"choice\\\":\\\"REUSE\\\",\\\"confidence\\\":0.83,\\\"probabilities\\\":{\\\"INSUFFICIENT\\\":0.05,\\\"RERUN\\\":0.06,\\\"REUSE\\\":0.89}}},\\\"usage\\\":{\\\"input_tokens\\\":2027,\\\"output_tokens\\\":110}}\"\n        }\n      ]\n    },\n    \"reviewer_application\": \"采纳过程偏差保留但不阻断、最终全量可沿用的判断；结合实际diff、原始链及卡片标准作出APPROVED。概率和confidence不作为质量分或验收证据。\"\n  },\n  \"unknown\": {\n    \"blocking_review_gaps\": [],\n    \"pending_controller_gates\": [\n      \"保存本次原生完整返回及守卫到唯一新report/receipt，base=b393、head/contract=C；不得覆盖C内原件。\",\n      \"按卡片契约登记允许元数据及D，再运行冻结协调器最终strict；本次尚未发生，不预PASS。\",\n      \"本卡登记PASS后进行独立整轮总审及分支strict。\"\n    ],\n    \"external_boundaries\": [\n      \"部署UNKNOWN\",\n      \"完整安装版本UNKNOWN\",\n      \"新安装会话实际消费UNKNOWN\",\n      \"外部用户业务整链UNKNOWN\"\n    ]\n  },\n  \"actual_terminal\": {\n    \"review_work\": \"COMPLETED\",\n    \"return_mode\": \"正常返回\",\n    \"native_session_last_observed\": \"in_progress\",\n    \"native_terminal_confirmation_owner\": \"主控回收本返回时核对\",\n    \"implementation_1723\": \"原生completed，terminalConfirmed=true\",\n    \"reviewer_active_commands\": [],\n    \"e06_runner_receipts\": \"已读取的12份均COMPLETED/tree_terminal=true，历史非零结果保留。\",\n    \"writes\": [],\n    \"git_mutations\": [],\n    \"task_card_state\": \"TESTING/PENDING；Reviewer未写DONE。\"\n  }\n}\n",
+      "duration_ms": 375666,
+      "progress": {
+        "steps": 38,
+        "marks": [
+          "ok",
+          "ok",
+          "ok",
+          "ok",
+          "ok",
+          "ok",
+          "ok",
+          "ok",
+          "ok",
+          "ok",
+          "ok",
+          "ok"
+        ],
+        "last_step": "$e='docs/todos/10-self-hosting-hardening/evidence/03'; foreach($s in 'a','b','c'){ $a=Get-Content \"$e/attempt-$s.json\" -…"
+      },
+      "raw": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"tasks\":[{\"task_id\":\"cc36ebad-5d17-4b4d-bb9c-e4f2fde7ee51\",\"status\":\"completed\",\"child_conversation_id\":1727,\"agent_type\":\"codex\",\"text\":\"{\\n  \\\"task_id\\\": \\\"06\\\",\\n  \\\"reviewer\\\": {\\n    \\\"session_id\\\": \\\"01a1d7b8-cddd-78a3-bf91-2c6015fc74b9\\\",\\n    \\\"codeg_session_id\\\": 1727,\\n    \\\"native_task_id\\\": \\\"cc36ebad-5d17-4b4d-bb9c-e4f2fde7ee51\\\",\\n    \\\"identity_verified_by\\\": [\\n      \\\"CODEX_SESSION_ID / CODEX_THREAD_ID\\\",\\n      \\\"Codeg get_session_info(1727)\\\",\\n      \\\"主控原始委派返回\\\"\\n    ],\\n    \\\"independent\\\": true,\\n    \\\"participation\\\": \\\"未参与06实现、测试、方案或RCA；不是实现会话1723，也不是主控1699。\\\",\\n    \\\"read_only\\\": true,\\n    \\\"delegated\\\": false,\\n    \\\"business_or_test_commands_started\\\": false\\n  },\\n  \\\"baseline\\\": {\\n    \\\"cwd\\\": \\\"C:/Users/qingyu/.codeg/skills/iteration-manager/.worktrees/iter-10\\\",\\n    \\\"branch\\\": \\\"feat/iter-10-self-hosting-hardening\\\",\\n    \\\"base_sha\\\": \\\"b3938b86b4cccfcdbd582ab5c2531beec086e0c4\\\",\\n    \\\"head_sha\\\": \\\"f03c00773219de13b93f0575c1e82f80ce7984f5\\\",\\n    \\\"contract_sha\\\": \\\"f03c00773219de13b93f0575c1e82f80ce7984f5\\\",\\n    \\\"original_base_sha\\\": \\\"7107ddb2f2256ceaea40e6ea0aeddd045220b99b\\\",\\n    \\\"original_product_sha\\\": \\\"cd808bf3cf9b95ba7a1ba7901c320e4fd4621df2\\\",\\n    \\\"checkpoint_sha\\\": \\\"c5238c16b1e9c5d941d8dec3c53d273f6a074e44\\\",\\n    \\\"original_segment_end_sha\\\": \\\"8756b47c1fc60c91292ca66e7444cffa05e0ef51\\\",\\n    \\\"dirty_at_start\\\": [],\\n    \\\"dirty_at_end\\\": [],\\n    \\\"last_checked_at\\\": \\\"2026-11-14T01:47:49Z\\\"\\n  },\\n  \\\"verdict\\\": \\\"APPROVED\\\",\\n  \\\"reviewer_judgment\\\": \\\"06原产品、累计证据和最终续接满足本卡待审要求。保留派发顺序FAIL，不将其改称合规正例；03原始完整链及正常跨会话续接满足至少一链要求。本批准绑定上述C及contract，不预批准登记D、最终strict或整轮总审。\\\",\\n  \\\"scope\\\": {\\n    \\\"result\\\": \\\"PASS\\\",\\n    \\\"evidence\\\": [\\n      \\\"亲自完整读取SKILL、共同协议、task_card_schema、迭代README和06卡。\\\",\\n      \\\"实际Git差异7107ddb..8756b47共46路径，覆盖06测试、方法、Note、任务卡及e06原件；没有只审最终小diff。\\\",\\n      \\\"实际Git差异b3938b8..C共10路径，仅06卡和06证据。\\\",\\n      \\\"controller-scope-ranges.json保存冻结runner对原段46路径、续接段9路径的COMPLETED/raw0/tree_terminal=true原件。\\\",\\n      \\\"b2f2257..C仅新增74行controller-scope-ranges.json，属于既定e06目录。\\\",\\n      \\\"cd808bf3..C的06测试、方法和Note无变化；b3938b8..C的产品、测试、脚本、模板及references无变化。\\\",\\n      \\\"中间04修复未计入06范围，未扩大白名单或重写Git。\\\"\\n    ]\\n  },\\n  \\\"spec\\\": {\\n    \\\"result\\\": \\\"PASS\\\",\\n    \\\"evidence\\\": [\\n      \\\"14项联合用例直接组合成熟夹具、真实CLI和真实审计接口，覆盖指定拒绝、持久化、幂等、漂移及根索引保护；明确属于synthetic。\\\",\\n      \\\"完整493项执行覆盖runner、deadline_watch、四预算、unknown、受控resume及FS拒绝Git grant，不以定义存在代替执行。\\\",\\n      \\\"03原始inventory、claim、同owner dispatch、A/B/C原生终态、runner、attempt、release、独审、C/D及固定strict分别核对。\\\",\\n      \\\"03 B输入引用A检查点，C输入引用A/B检查点；旧RED和before保留。after较慢，未宣称提速。\\\",\\n      \\\"04首次全量反例返还原责任域，独审、新绑定和固定strict完成后才继续06；原UI证据按未变范围沿用。\\\",\\n      \\\"05旧正文漂移拒绝及后续独立新绑定分别保留。\\\",\\n      \\\"experiment可采用最终成功全量命令，decision采用robustness-report-final.json，interfaces采用controller-interfaces-final.json。\\\",\\n      \\\"实验报告未自批准06；卡仍为TESTING/PENDING，未提前登记DONE或strict PASS。\\\"\\n    ]\\n  },\\n  \\\"quality\\\": {\\n    \\\"result\\\": \\\"PASS\\\",\\n    \\\"evidence\\\": [\\n      \\\"新增测试未复制整套测试框架，断言涵盖CLI拒绝、字节不变、检查点继承及跨投影不误PASS。\\\",\\n      \\\"首次测试API误用、提取器错误和全量失败原件均保留，未冒称有效产品RED。\\\",\\n      \\\"最终报告保持严格字段及static/synthetic/native-self-use分层；检查点报告未覆写。\\\",\\n      \\\"Note tree和format原始输出有效，均验证19篇Note。\\\",\\n      \\\"未发现需要返修的产品或测试阻断缺陷。\\\"\\n    ]\\n  },\\n  \\\"issues\\\": [\\n    {\\n      \\\"id\\\": \\\"R06-01\\\",\\n      \\\"file\\\": \\\"docs/todos/10-self-hosting-hardening/evidence/06/robustness-report-final.json\\\",\\n      \\\"lines\\\": [173, 182],\\n      \\\"related_location\\\": \\\"docs/todos/10-self-hosting-hardening/06-self-hosting-acceptance.md:119\\\",\\n      \\\"severity\\\": \\\"MEDIUM\\\",\\n      \\\"blocking\\\": false,\\n      \\\"trigger\\\": \\\"06原生委派发生时，前序协调工具调用尚报告running。\\\",\\n      \\\"actual\\\": \\\"主控先发出委派，随后才消费READY；最终报告如实记录FAIL。\\\",\\n      \\\"expected\\\": \\\"等待协调调用终态并消费READY后再原生委派。\\\",\\n      \\\"disposition\\\": \\\"保留历史FAIL及责任归属，不追溯改写。原定验收要求至少一条完整合规链，已由03原件满足；后续04派发已采用先消费READY的顺序。\\\",\\n      \\\"owner\\\": \\\"主控\\\"\\n    }\\n  ],\\n  \\\"checks\\\": {\\n    \\\"evidence_prefix\\\": \\\"docs/todos/10-self-hosting-hardening/evidence/\\\",\\n    \\\"experiment\\\": {\\n      \\\"command\\\": \\\"python -B -m pytest -p no:cacheprovider tests -q\\\",\\n      \\\"cwd\\\": \\\".\\\",\\n      \\\"receipt\\\": \\\"06/controller-full-regression-final.json\\\",\\n      \\\"output\\\": \\\"06/controller-full-regression-final.json.output.txt\\\",\\n      \\\"original_candidate\\\": \\\"b3938b86b4cccfcdbd582ab5c2531beec086e0c4\\\",\\n      \\\"status\\\": \\\"COMPLETED\\\",\\n      \\\"raw_exit_code\\\": 0,\\n      \\\"tree_terminal\\\": true,\\n      \\\"result\\\": \\\"493 passed in 321.63s\\\",\\n      \\\"reuse_basis\\\": \\\"b393..C仅06卡和证据变化，覆盖产品与测试完全未变；保留原候选及原执行时间。本Reviewer未重跑。\\\"\\n    },\\n    \\\"targeted\\\": {\\n      \\\"receipt\\\": \\\"06/slice-a-targeted-2.json\\\",\\n      \\\"output\\\": \\\"06/slice-a-targeted-2.json.output.txt\\\",\\n      \\\"result\\\": \\\"14 passed in 16.36s\\\",\\n      \\\"raw_exit_code\\\": 0,\\n      \\\"tree_terminal\\\": true,\\n      \\\"reuse_basis\\\": \\\"06测试从原产品cd808bf3到C未变，最终完整493项再次包含该文件。\\\"\\n    },\\n    \\\"decision\\\": {\\n      \\\"kind\\\": \\\"observation\\\",\\n      \\\"output\\\": \\\"06/robustness-report-final.json\\\",\\n      \\\"result\\\": \\\"分层、原始失败、最终全量及过程偏差均保留。\\\"\\n    },\\n    \\\"interfaces\\\": {\\n      \\\"kind\\\": \\\"observation\\\",\\n      \\\"output\\\": \\\"06/controller-interfaces-final.json\\\",\\n      \\\"result\\\": \\\"字段、分层、原段与续接绑定清楚；批准由卡片收据另行登记。\\\"\\n    },\\n    \\\"cross_check\\\": {\\n      \\\"receipt\\\": \\\"06/controller-cross-check-final.json\\\",\\n      \\\"output\\\": \\\"06/controller-cross-check-final.json.output.txt\\\",\\n      \\\"source\\\": \\\"06/controller-cross-check.py\\\",\\n      \\\"raw_exit_code\\\": 0,\\n      \\\"tree_terminal\\\": true,\\n      \\\"result\\\": \\\"固定envelope与候选query逐字段比较六卡身份、状态、绑定、预算和execution；01—05 PASS，06 TESTING/UNKNOWN。\\\",\\n      \\\"reuse_basis\\\": \\\"比较接口未变；后续06候选正文变化已由当前Git差异及实际卡片定点核对。\\\"\\n    },\\n    \\\"native_chain_03\\\": {\\n      \\\"index\\\": \\\"06/native-chain-inventory.json\\\",\\n      \\\"originals\\\": [\\n        \\\"03/inventory-a.json\\\",\\n        \\\"03/claim-a.json\\\",\\n        \\\"03/dispatch-a.json\\\",\\n        \\\"03/dispatch-b.json\\\",\\n        \\\"03/dispatch-c.json\\\",\\n        \\\"03/context-implementation-b.json\\\",\\n        \\\"03/context-implementation-c.json\\\",\\n        \\\"03/native-terminal-a.json\\\",\\n        \\\"03/native-terminal-b.json\\\",\\n        \\\"03/native-terminal-c.json\\\",\\n        \\\"03/attempt-a.json\\\",\\n        \\\"03/attempt-b.json\\\",\\n        \\\"03/attempt-c.json\\\",\\n        \\\"03/handoff-a.json\\\",\\n        \\\"03/handoff-b.json\\\",\\n        \\\"03/handoff-c.json\\\",\\n        \\\"03/review.json\\\"\\n      ],\\n      \\\"native_sessions\\\": [1714, 1715, 1716],\\n      \\\"native_terminal\\\": \\\"三者均completed且terminalConfirmed=true；逐项读取attempt引用的runner原件，全部COMPLETED/tree_terminal=true，历史非零退出未隐去。\\\",\\n      \\\"implementation_C\\\": \\\"542f2b445f499b3a2e90d92a6ed6bba20cdb1bdb\\\",\\n      \\\"registration_D\\\": \\\"2ce0705ebeeaee73f75a1dcd2882836dbc6b9d29\\\",\\n      \\\"strict_original\\\": \\\"build/review-03/strict-after-D.txt:1-43\\\",\\n      \\\"controller_original\\\": \\\"C:/Users/qingyu/.codex/sessions/2026/11/13/rollout-2026-11-13T23-06-27-01a1d572-1a27-7b51-b8f4-797832bc44a6.jsonl\\\",\\n      \\\"ordering_evidence\\\": \\\"原始行1519在17:29:21.144Z返回claim0/dispatch0；行1526在17:29:56.509Z返回原生委派成功。\\\",\\n      \\\"reuse_basis\\\": \\\"沿用实际已审03链，不重新模拟，不因新会话重跑旧RED/before。\\\"\\n    },\\n    \\\"repair_04\\\": {\\n      \\\"failure\\\": \\\"06/controller-full-regression.json.output.txt:9-34\\\",\\n      \\\"diagnosis\\\": \\\"06/controller-harness-diagnosis.json.output.txt:16-20\\\",\\n      \\\"independent_receipt\\\": \\\"04/review-repair-final.json\\\",\\n      \\\"independent_report\\\": \\\"04/review-report-repair-final.json\\\",\\n      \\\"reviewer\\\": \\\"1725/01a1d7a9-5822-7bc3-a3e7-51486485f8ea\\\",\\n      \\\"result\\\": \\\"保留490passed/1failed及8.562秒诊断；显式isolated-fixtures修复未提高8秒，默认真实入口未变。\\\",\\n      \\\"strict_evidence\\\": \\\"主控原始会话行3005，2026-11-14T01:33:06.748Z，冻结local strict退出0，5/6 PASS，04引用review-repair-final.json；随后01:33:21.256Z才启动06最终全量。\\\",\\n      \\\"ui_reuse\\\": \\\"04原生操作、七图、四态原件及原批准保留；synthetic FS/empty/loading来源明确，未升级为真实FS业务验收。\\\"\\n    },\\n    \\\"task_05\\\": {\\n      \\\"original_report\\\": \\\"05/review-report.json\\\",\\n      \\\"new_receipt\\\": \\\"05/review-final.json\\\",\\n      \\\"new_report\\\": \\\"05/review-report-final.json\\\",\\n      \\\"binding\\\": \\\"head/contract=dc5d868c6b90268a2eefc29966874c96d48dd122\\\",\\n      \\\"result\\\": \\\"正文漂移正确拒绝后独立新绑定，旧新原件均保留。\\\"\\n    },\\n    \\\"note\\\": {\\n      \\\"outputs\\\": [\\n        \\\"06/slice-a-note-tree.json.output.txt\\\",\\n        \\\"06/slice-a-note-format.json.output.txt\\\"\\n      ],\\n      \\\"result\\\": \\\"19 notes tree/relative links及format通过。\\\",\\n      \\\"reuse_basis\\\": \\\"06 Note从cd808bf3到C未变。\\\"\\n    },\\n    \\\"scope\\\": {\\n      \\\"original\\\": \\\"06/controller-scope-ranges.json\\\",\\n      \\\"result\\\": \\\"冻结runner两段scope均退出0；最后仅新增汇总文件，实际Git差异已核对。\\\"\\n    }\\n  },\\n  \\\"typesafe\\\": {\\n    \\\"request\\\": {\\n      \\\"state\\\": {\\n        \\\"binding\\\": {\\n          \\\"base\\\": \\\"b3938b86b4cccfcdbd582ab5c2531beec086e0c4\\\",\\n          \\\"head\\\": \\\"f03c00773219de13b93f0575c1e82f80ce7984f5\\\",\\n          \\\"contract\\\": \\\"f03c00773219de13b93f0575c1e82f80ce7984f5\\\",\\n          \\\"original_range\\\": \\\"7107ddb2f2256ceaea40e6ea0aeddd045220b99b..8756b47c1fc60c91292ca66e7444cffa05e0ef51\\\"\\n        },\\n        \\\"requirements\\\": [\\n          \\\"06 is Spike-Discovery: experiment successful command, decision and interfaces observations; no TDD RED requirement.\\\",\\n          \\\"Card acceptance line92 requires at least one real inventory->claim->same-owner dispatch-check->native delegation->runner->attempt->release->independent review->C/D->frozen strict chain and one cross-session checkpoint continuation.\\\",\\n          \\\"Common protocol requires controller to consume READY before native delegation; script does not automatically intercept delegation.\\\",\\n          \\\"Independent review precedes registration D and final strict; reviewer is read-only and cannot run tests or write registration.\\\"\\n        ],\\n        \\\"observations\\\": {\\n          \\\"identity\\\": \\\"Current session1727 external01a1d7b8-cddd-78a3-bf91-2c6015fc74b9 from runtime environment and Codeg get_session_info; implementation1723 external01a1d793-e65a-7251-8c92-b82981f6cf0c; controller1699 external01a1d572-1a27-7b51-b8f4-797832bc44a6. Current session has done only review.\\\",\\n          \\\"scope\\\": \\\"git diff original range:46 paths comprising06 test/method/Note/card/e06. Final range10 paths only06 card/e06. Frozen runner scope originals exit0/tree_terminal=true for46 and9paths; b2f2257..f03c007 adds only controller-scope-ranges.json. git diff cd808bf3..C shows06 test/method/Note unchanged. b393..C scripts/tests/templates/references/SKILL unchanged. Worktree clean.\\\",\\n          \\\"tests\\\": \\\"Read actual140-line test_self_hosting.py and imported fixture/CLI definitions. Six parametrized gate refusals; attempt/replay/changedpayload/release/reclaim; two empty attempts block third; bad-number/unknownDONE; FS source/evidence/body drift across audit/envelope/board; feature-root refusal bytes unchanged. Original targeted receipt/output14passed16.36s. Final full tests receipt COMPLETED raw0 tree_terminaltrue and child0; output493passed321.63s onb393; no tests rerun by reviewer.\\\",\\n          \\\"process_deviation\\\": \\\"robustness-report-final.json:173-182 contains06-dispatch-consumption-order resultFAIL:06 delegation issued while coordination tool still reportedrunning, READY consumed afterward. Cardline119 repeats gap. This case is not presented as compliant positive chain.\\\",\\n          \\\"chain03\\\": \\\"Original03 inventory/claim/dispatchA READY read. Controller original log17:29:21.144Z reportsclaim0/dispatch0 before native delegate17:29:56.356Z. Three original native tasks1714A/1715B/1716C havecompleted/terminalConfirmedtrue, distinct taskIDs, runner receipts and empty released writer. Bcontext includesAcheckpoint; C includesA+Bcheckpoints. Originalbefore/RED retained; after measurements slower. Original independent receipt reviewer01a1d610-f583-76d0-8943-f401eece9af0 bindsC542f2b445f499b3a2e90d92a6ed6bba20cdb1bdb, registrationD2ce0705ebeeaee73f75a1dcd2882836dbc6b9d29. build/review-03/strict-after-D.txt explicitly03PASS.\\\",\\n          \\\"repair04\\\": \\\"First06full output490passed1failed atready8seconds. Diagnosisready8.562seconds exit0. Repair delegatedback04, opt-in isolated-fixtures retained8secondlimit/defaultrealentry, independent1725 APPROVED/newreceipt41f6618. Controller original log01:33:06.748Z fixedstrict exit0,5/6PASS referencingnew04receipt before final06full command01:33:21.256Z. Original04nativeUI evidence retained, syntheticFS/empty/loading identified.\\\",\\n          \\\"reports\\\": \\\"Final report fields version,candidate,coordinator_commit,cases,unverified; cases use static/synthetic/native-self-use and PASS/FAIL/UNKNOWN/BLOCKED. Finalcandidate fieldb393; final interfaces distinguish original and continuation ranges. Old checkpointreport not overwritten. Final cross-check receipt raw0/terminaltrue; code compares six cards identity/status/binding/budgets/execution and outputs01-05PASS06TESTINGUNKNOWN.\\\",\\n          \\\"pending\\\": \\\"06 registration receipt/D/finalstrict have not occurred. Deployment/fullinstallation/newinstalledsession/externalbusinessUNKNOWN.\\\"\\n        }\\n      },\\n      \\\"questions\\\": {\\n        \\\"dispatch_gap\\\": {\\n          \\\"type\\\": \\\"choice\\\",\\n          \\\"instructions\\\": \\\"Classify the effect of the recorded task06 dispatch-order violation on independent review against the original card's at-least-one-complete-chain requirement. Preserve the historical FAIL regardless of classification; do not invent a requirement that every chain pass.\\\",\\n          \\\"criteria\\\": {\\n            \\\"NONBLOCKING_RECORDED_DEVIATION\\\": \\\"Historical violation remains FAIL, but the original card's required complete chain and continuation are supplied by a separate documented03chain; no new implementation is required for that acceptance item.\\\",\\n            \\\"CHANGES_REQUIRED\\\": \\\"The violation or missing chain evidence leaves an original task06 acceptance requirement unmet and requires correction before approval.\\\",\\n            \\\"INSUFFICIENT\\\": \\\"The observations do not resolve whether the original required chain exists or whether the violation invalidates it.\\\"\\n          }\\n        },\\n        \\\"final_run_reuse\\\": {\\n          \\\"type\\\": \\\"choice\\\",\\n          \\\"instructions\\\": \\\"Decide whether b393 full-test evidence may support review of C for covered product/test behavior without rerunning it. Evaluate evidence reuse only, not final registration/strict approval.\\\",\\n          \\\"criteria\\\": {\\n            \\\"REUSE\\\": \\\"Covered product/tests and inputs are unchanged inb393..C; full original receipt/output supports reuse while retaining originalcandidate/time.\\\",\\n            \\\"RERUN\\\": \\\"A changed covered product/test/input invalidates reuse.\\\",\\n            \\\"INSUFFICIENT\\\": \\\"Available observations cannot establish applicability of the full run.\\\"\\n          }\\n        }\\n      }\\n    },\\n    \\\"response_raw\\\": {\\n      \\\"content\\\": [\\n        {\\n          \\\"type\\\": \\\"text\\\",\\n          \\\"text\\\": \\\"{\\\\\\\"model\\\\\\\":\\\\\\\"jev-1.14.0\\\\\\\",\\\\\\\"answers\\\\\\\":{\\\\\\\"dispatch_gap\\\\\\\":{\\\\\\\"type\\\\\\\":\\\\\\\"choice\\\\\\\",\\\\\\\"choice\\\\\\\":\\\\\\\"NONBLOCKING_RECORDED_DEVIATION\\\\\\\",\\\\\\\"confidence\\\\\\\":0.97,\\\\\\\"probabilities\\\\\\\":{\\\\\\\"CHANGES_REQUIRED\\\\\\\":0.01,\\\\\\\"INSUFFICIENT\\\\\\\":0.01,\\\\\\\"NONBLOCKING_RECORDED_DEVIATION\\\\\\\":0.98}},\\\\\\\"final_run_reuse\\\\\\\":{\\\\\\\"type\\\\\\\":\\\\\\\"choice\\\\\\\",\\\\\\\"choice\\\\\\\":\\\\\\\"REUSE\\\\\\\",\\\\\\\"confidence\\\\\\\":0.83,\\\\\\\"probabilities\\\\\\\":{\\\\\\\"INSUFFICIENT\\\\\\\":0.05,\\\\\\\"RERUN\\\\\\\":0.06,\\\\\\\"REUSE\\\\\\\":0.89}}},\\\\\\\"usage\\\\\\\":{\\\\\\\"input_tokens\\\\\\\":2027,\\\\\\\"output_tokens\\\\\\\":110}}\\\"\\n        }\\n      ]\\n    },\\n    \\\"reviewer_application\\\": \\\"采纳过程偏差保留但不阻断、最终全量可沿用的判断；结合实际diff、原始链及卡片标准作出APPROVED。概率和confidence不作为质量分或验收证据。\\\"\\n  },\\n  \\\"unknown\\\": {\\n    \\\"blocking_review_gaps\\\": [],\\n    \\\"pending_controller_gates\\\": [\\n      \\\"保存本次原生完整返回及守卫到唯一新report/receipt，base=b393、head/contract=C；不得覆盖C内原件。\\\",\\n      \\\"按卡片契约登记允许元数据及D，再运行冻结协调器最终strict；本次尚未发生，不预PASS。\\\",\\n      \\\"本卡登记PASS后进行独立整轮总审及分支strict。\\\"\\n    ],\\n    \\\"external_boundaries\\\": [\\n      \\\"部署UNKNOWN\\\",\\n      \\\"完整安装版本UNKNOWN\\\",\\n      \\\"新安装会话实际消费UNKNOWN\\\",\\n      \\\"外部用户业务整链UNKNOWN\\\"\\n    ]\\n  },\\n  \\\"actual_terminal\\\": {\\n    \\\"review_work\\\": \\\"COMPLETED\\\",\\n    \\\"return_mode\\\": \\\"正常返回\\\",\\n    \\\"native_session_last_observed\\\": \\\"in_progress\\\",\\n    \\\"native_terminal_confirmation_owner\\\": \\\"主控回收本返回时核对\\\",\\n    \\\"implementation_1723\\\": \\\"原生completed，terminalConfirmed=true\\\",\\n    \\\"reviewer_active_commands\\\": [],\\n    \\\"e06_runner_receipts\\\": \\\"已读取的12份均COMPLETED/tree_terminal=true，历史非零结果保留。\\\",\\n    \\\"writes\\\": [],\\n    \\\"git_mutations\\\": [],\\n    \\\"task_card_state\\\": \\\"TESTING/PENDING；Reviewer未写DONE。\\\"\\n  }\\n}\\n\",\"duration_ms\":375666,\"progress\":{\"steps\":38,\"marks\":[\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\"],\"last_step\":\"$e='docs/todos/10-self-hosting-hardening/evidence/03'; foreach($s in 'a','b','c'){ $a=Get-Content \\\"$e/attempt-$s.json\\\" -…\"}}]}"
+          }
+        ],
+        "structuredContent": {
+          "tasks": [
+            {
+              "task_id": "cc36ebad-5d17-4b4d-bb9c-e4f2fde7ee51",
+              "status": "completed",
+              "child_conversation_id": 1727,
+              "agent_type": "codex",
+              "text": "{\n  \"task_id\": \"06\",\n  \"reviewer\": {\n    \"session_id\": \"01a1d7b8-cddd-78a3-bf91-2c6015fc74b9\",\n    \"codeg_session_id\": 1727,\n    \"native_task_id\": \"cc36ebad-5d17-4b4d-bb9c-e4f2fde7ee51\",\n    \"identity_verified_by\": [\n      \"CODEX_SESSION_ID / CODEX_THREAD_ID\",\n      \"Codeg get_session_info(1727)\",\n      \"主控原始委派返回\"\n    ],\n    \"independent\": true,\n    \"participation\": \"未参与06实现、测试、方案或RCA；不是实现会话1723，也不是主控1699。\",\n    \"read_only\": true,\n    \"delegated\": false,\n    \"business_or_test_commands_started\": false\n  },\n  \"baseline\": {\n    \"cwd\": \"C:/Users/qingyu/.codeg/skills/iteration-manager/.worktrees/iter-10\",\n    \"branch\": \"feat/iter-10-self-hosting-hardening\",\n    \"base_sha\": \"b3938b86b4cccfcdbd582ab5c2531beec086e0c4\",\n    \"head_sha\": \"f03c00773219de13b93f0575c1e82f80ce7984f5\",\n    \"contract_sha\": \"f03c00773219de13b93f0575c1e82f80ce7984f5\",\n    \"original_base_sha\": \"7107ddb2f2256ceaea40e6ea0aeddd045220b99b\",\n    \"original_product_sha\": \"cd808bf3cf9b95ba7a1ba7901c320e4fd4621df2\",\n    \"checkpoint_sha\": \"c5238c16b1e9c5d941d8dec3c53d273f6a074e44\",\n    \"original_segment_end_sha\": \"8756b47c1fc60c91292ca66e7444cffa05e0ef51\",\n    \"dirty_at_start\": [],\n    \"dirty_at_end\": [],\n    \"last_checked_at\": \"2026-11-14T01:47:49Z\"\n  },\n  \"verdict\": \"APPROVED\",\n  \"reviewer_judgment\": \"06原产品、累计证据和最终续接满足本卡待审要求。保留派发顺序FAIL，不将其改称合规正例；03原始完整链及正常跨会话续接满足至少一链要求。本批准绑定上述C及contract，不预批准登记D、最终strict或整轮总审。\",\n  \"scope\": {\n    \"result\": \"PASS\",\n    \"evidence\": [\n      \"亲自完整读取SKILL、共同协议、task_card_schema、迭代README和06卡。\",\n      \"实际Git差异7107ddb..8756b47共46路径，覆盖06测试、方法、Note、任务卡及e06原件；没有只审最终小diff。\",\n      \"实际Git差异b3938b8..C共10路径，仅06卡和06证据。\",\n      \"controller-scope-ranges.json保存冻结runner对原段46路径、续接段9路径的COMPLETED/raw0/tree_terminal=true原件。\",\n      \"b2f2257..C仅新增74行controller-scope-ranges.json，属于既定e06目录。\",\n      \"cd808bf3..C的06测试、方法和Note无变化；b3938b8..C的产品、测试、脚本、模板及references无变化。\",\n      \"中间04修复未计入06范围，未扩大白名单或重写Git。\"\n    ]\n  },\n  \"spec\": {\n    \"result\": \"PASS\",\n    \"evidence\": [\n      \"14项联合用例直接组合成熟夹具、真实CLI和真实审计接口，覆盖指定拒绝、持久化、幂等、漂移及根索引保护；明确属于synthetic。\",\n      \"完整493项执行覆盖runner、deadline_watch、四预算、unknown、受控resume及FS拒绝Git grant，不以定义存在代替执行。\",\n      \"03原始inventory、claim、同owner dispatch、A/B/C原生终态、runner、attempt、release、独审、C/D及固定strict分别核对。\",\n      \"03 B输入引用A检查点，C输入引用A/B检查点；旧RED和before保留。after较慢，未宣称提速。\",\n      \"04首次全量反例返还原责任域，独审、新绑定和固定strict完成后才继续06；原UI证据按未变范围沿用。\",\n      \"05旧正文漂移拒绝及后续独立新绑定分别保留。\",\n      \"experiment可采用最终成功全量命令，decision采用robustness-report-final.json，interfaces采用controller-interfaces-final.json。\",\n      \"实验报告未自批准06；卡仍为TESTING/PENDING，未提前登记DONE或strict PASS。\"\n    ]\n  },\n  \"quality\": {\n    \"result\": \"PASS\",\n    \"evidence\": [\n      \"新增测试未复制整套测试框架，断言涵盖CLI拒绝、字节不变、检查点继承及跨投影不误PASS。\",\n      \"首次测试API误用、提取器错误和全量失败原件均保留，未冒称有效产品RED。\",\n      \"最终报告保持严格字段及static/synthetic/native-self-use分层；检查点报告未覆写。\",\n      \"Note tree和format原始输出有效，均验证19篇Note。\",\n      \"未发现需要返修的产品或测试阻断缺陷。\"\n    ]\n  },\n  \"issues\": [\n    {\n      \"id\": \"R06-01\",\n      \"file\": \"docs/todos/10-self-hosting-hardening/evidence/06/robustness-report-final.json\",\n      \"lines\": [173, 182],\n      \"related_location\": \"docs/todos/10-self-hosting-hardening/06-self-hosting-acceptance.md:119\",\n      \"severity\": \"MEDIUM\",\n      \"blocking\": false,\n      \"trigger\": \"06原生委派发生时，前序协调工具调用尚报告running。\",\n      \"actual\": \"主控先发出委派，随后才消费READY；最终报告如实记录FAIL。\",\n      \"expected\": \"等待协调调用终态并消费READY后再原生委派。\",\n      \"disposition\": \"保留历史FAIL及责任归属，不追溯改写。原定验收要求至少一条完整合规链，已由03原件满足；后续04派发已采用先消费READY的顺序。\",\n      \"owner\": \"主控\"\n    }\n  ],\n  \"checks\": {\n    \"evidence_prefix\": \"docs/todos/10-self-hosting-hardening/evidence/\",\n    \"experiment\": {\n      \"command\": \"python -B -m pytest -p no:cacheprovider tests -q\",\n      \"cwd\": \".\",\n      \"receipt\": \"06/controller-full-regression-final.json\",\n      \"output\": \"06/controller-full-regression-final.json.output.txt\",\n      \"original_candidate\": \"b3938b86b4cccfcdbd582ab5c2531beec086e0c4\",\n      \"status\": \"COMPLETED\",\n      \"raw_exit_code\": 0,\n      \"tree_terminal\": true,\n      \"result\": \"493 passed in 321.63s\",\n      \"reuse_basis\": \"b393..C仅06卡和证据变化，覆盖产品与测试完全未变；保留原候选及原执行时间。本Reviewer未重跑。\"\n    },\n    \"targeted\": {\n      \"receipt\": \"06/slice-a-targeted-2.json\",\n      \"output\": \"06/slice-a-targeted-2.json.output.txt\",\n      \"result\": \"14 passed in 16.36s\",\n      \"raw_exit_code\": 0,\n      \"tree_terminal\": true,\n      \"reuse_basis\": \"06测试从原产品cd808bf3到C未变，最终完整493项再次包含该文件。\"\n    },\n    \"decision\": {\n      \"kind\": \"observation\",\n      \"output\": \"06/robustness-report-final.json\",\n      \"result\": \"分层、原始失败、最终全量及过程偏差均保留。\"\n    },\n    \"interfaces\": {\n      \"kind\": \"observation\",\n      \"output\": \"06/controller-interfaces-final.json\",\n      \"result\": \"字段、分层、原段与续接绑定清楚；批准由卡片收据另行登记。\"\n    },\n    \"cross_check\": {\n      \"receipt\": \"06/controller-cross-check-final.json\",\n      \"output\": \"06/controller-cross-check-final.json.output.txt\",\n      \"source\": \"06/controller-cross-check.py\",\n      \"raw_exit_code\": 0,\n      \"tree_terminal\": true,\n      \"result\": \"固定envelope与候选query逐字段比较六卡身份、状态、绑定、预算和execution；01—05 PASS，06 TESTING/UNKNOWN。\",\n      \"reuse_basis\": \"比较接口未变；后续06候选正文变化已由当前Git差异及实际卡片定点核对。\"\n    },\n    \"native_chain_03\": {\n      \"index\": \"06/native-chain-inventory.json\",\n      \"originals\": [\n        \"03/inventory-a.json\",\n        \"03/claim-a.json\",\n        \"03/dispatch-a.json\",\n        \"03/dispatch-b.json\",\n        \"03/dispatch-c.json\",\n        \"03/context-implementation-b.json\",\n        \"03/context-implementation-c.json\",\n        \"03/native-terminal-a.json\",\n        \"03/native-terminal-b.json\",\n        \"03/native-terminal-c.json\",\n        \"03/attempt-a.json\",\n        \"03/attempt-b.json\",\n        \"03/attempt-c.json\",\n        \"03/handoff-a.json\",\n        \"03/handoff-b.json\",\n        \"03/handoff-c.json\",\n        \"03/review.json\"\n      ],\n      \"native_sessions\": [1714, 1715, 1716],\n      \"native_terminal\": \"三者均completed且terminalConfirmed=true；逐项读取attempt引用的runner原件，全部COMPLETED/tree_terminal=true，历史非零退出未隐去。\",\n      \"implementation_C\": \"542f2b445f499b3a2e90d92a6ed6bba20cdb1bdb\",\n      \"registration_D\": \"2ce0705ebeeaee73f75a1dcd2882836dbc6b9d29\",\n      \"strict_original\": \"build/review-03/strict-after-D.txt:1-43\",\n      \"controller_original\": \"C:/Users/qingyu/.codex/sessions/2026/11/13/rollout-2026-11-13T23-06-27-01a1d572-1a27-7b51-b8f4-797832bc44a6.jsonl\",\n      \"ordering_evidence\": \"原始行1519在17:29:21.144Z返回claim0/dispatch0；行1526在17:29:56.509Z返回原生委派成功。\",\n      \"reuse_basis\": \"沿用实际已审03链，不重新模拟，不因新会话重跑旧RED/before。\"\n    },\n    \"repair_04\": {\n      \"failure\": \"06/controller-full-regression.json.output.txt:9-34\",\n      \"diagnosis\": \"06/controller-harness-diagnosis.json.output.txt:16-20\",\n      \"independent_receipt\": \"04/review-repair-final.json\",\n      \"independent_report\": \"04/review-report-repair-final.json\",\n      \"reviewer\": \"1725/01a1d7a9-5822-7bc3-a3e7-51486485f8ea\",\n      \"result\": \"保留490passed/1failed及8.562秒诊断；显式isolated-fixtures修复未提高8秒，默认真实入口未变。\",\n      \"strict_evidence\": \"主控原始会话行3005，2026-11-14T01:33:06.748Z，冻结local strict退出0，5/6 PASS，04引用review-repair-final.json；随后01:33:21.256Z才启动06最终全量。\",\n      \"ui_reuse\": \"04原生操作、七图、四态原件及原批准保留；synthetic FS/empty/loading来源明确，未升级为真实FS业务验收。\"\n    },\n    \"task_05\": {\n      \"original_report\": \"05/review-report.json\",\n      \"new_receipt\": \"05/review-final.json\",\n      \"new_report\": \"05/review-report-final.json\",\n      \"binding\": \"head/contract=dc5d868c6b90268a2eefc29966874c96d48dd122\",\n      \"result\": \"正文漂移正确拒绝后独立新绑定，旧新原件均保留。\"\n    },\n    \"note\": {\n      \"outputs\": [\n        \"06/slice-a-note-tree.json.output.txt\",\n        \"06/slice-a-note-format.json.output.txt\"\n      ],\n      \"result\": \"19 notes tree/relative links及format通过。\",\n      \"reuse_basis\": \"06 Note从cd808bf3到C未变。\"\n    },\n    \"scope\": {\n      \"original\": \"06/controller-scope-ranges.json\",\n      \"result\": \"冻结runner两段scope均退出0；最后仅新增汇总文件，实际Git差异已核对。\"\n    }\n  },\n  \"typesafe\": {\n    \"request\": {\n      \"state\": {\n        \"binding\": {\n          \"base\": \"b3938b86b4cccfcdbd582ab5c2531beec086e0c4\",\n          \"head\": \"f03c00773219de13b93f0575c1e82f80ce7984f5\",\n          \"contract\": \"f03c00773219de13b93f0575c1e82f80ce7984f5\",\n          \"original_range\": \"7107ddb2f2256ceaea40e6ea0aeddd045220b99b..8756b47c1fc60c91292ca66e7444cffa05e0ef51\"\n        },\n        \"requirements\": [\n          \"06 is Spike-Discovery: experiment successful command, decision and interfaces observations; no TDD RED requirement.\",\n          \"Card acceptance line92 requires at least one real inventory->claim->same-owner dispatch-check->native delegation->runner->attempt->release->independent review->C/D->frozen strict chain and one cross-session checkpoint continuation.\",\n          \"Common protocol requires controller to consume READY before native delegation; script does not automatically intercept delegation.\",\n          \"Independent review precedes registration D and final strict; reviewer is read-only and cannot run tests or write registration.\"\n        ],\n        \"observations\": {\n          \"identity\": \"Current session1727 external01a1d7b8-cddd-78a3-bf91-2c6015fc74b9 from runtime environment and Codeg get_session_info; implementation1723 external01a1d793-e65a-7251-8c92-b82981f6cf0c; controller1699 external01a1d572-1a27-7b51-b8f4-797832bc44a6. Current session has done only review.\",\n          \"scope\": \"git diff original range:46 paths comprising06 test/method/Note/card/e06. Final range10 paths only06 card/e06. Frozen runner scope originals exit0/tree_terminal=true for46 and9paths; b2f2257..f03c007 adds only controller-scope-ranges.json. git diff cd808bf3..C shows06 test/method/Note unchanged. b393..C scripts/tests/templates/references/SKILL unchanged. Worktree clean.\",\n          \"tests\": \"Read actual140-line test_self_hosting.py and imported fixture/CLI definitions. Six parametrized gate refusals; attempt/replay/changedpayload/release/reclaim; two empty attempts block third; bad-number/unknownDONE; FS source/evidence/body drift across audit/envelope/board; feature-root refusal bytes unchanged. Original targeted receipt/output14passed16.36s. Final full tests receipt COMPLETED raw0 tree_terminaltrue and child0; output493passed321.63s onb393; no tests rerun by reviewer.\",\n          \"process_deviation\": \"robustness-report-final.json:173-182 contains06-dispatch-consumption-order resultFAIL:06 delegation issued while coordination tool still reportedrunning, READY consumed afterward. Cardline119 repeats gap. This case is not presented as compliant positive chain.\",\n          \"chain03\": \"Original03 inventory/claim/dispatchA READY read. Controller original log17:29:21.144Z reportsclaim0/dispatch0 before native delegate17:29:56.356Z. Three original native tasks1714A/1715B/1716C havecompleted/terminalConfirmedtrue, distinct taskIDs, runner receipts and empty released writer. Bcontext includesAcheckpoint; C includesA+Bcheckpoints. Originalbefore/RED retained; after measurements slower. Original independent receipt reviewer01a1d610-f583-76d0-8943-f401eece9af0 bindsC542f2b445f499b3a2e90d92a6ed6bba20cdb1bdb, registrationD2ce0705ebeeaee73f75a1dcd2882836dbc6b9d29. build/review-03/strict-after-D.txt explicitly03PASS.\",\n          \"repair04\": \"First06full output490passed1failed atready8seconds. Diagnosisready8.562seconds exit0. Repair delegatedback04, opt-in isolated-fixtures retained8secondlimit/defaultrealentry, independent1725 APPROVED/newreceipt41f6618. Controller original log01:33:06.748Z fixedstrict exit0,5/6PASS referencingnew04receipt before final06full command01:33:21.256Z. Original04nativeUI evidence retained, syntheticFS/empty/loading identified.\",\n          \"reports\": \"Final report fields version,candidate,coordinator_commit,cases,unverified; cases use static/synthetic/native-self-use and PASS/FAIL/UNKNOWN/BLOCKED. Finalcandidate fieldb393; final interfaces distinguish original and continuation ranges. Old checkpointreport not overwritten. Final cross-check receipt raw0/terminaltrue; code compares six cards identity/status/binding/budgets/execution and outputs01-05PASS06TESTINGUNKNOWN.\",\n          \"pending\": \"06 registration receipt/D/finalstrict have not occurred. Deployment/fullinstallation/newinstalledsession/externalbusinessUNKNOWN.\"\n        }\n      },\n      \"questions\": {\n        \"dispatch_gap\": {\n          \"type\": \"choice\",\n          \"instructions\": \"Classify the effect of the recorded task06 dispatch-order violation on independent review against the original card's at-least-one-complete-chain requirement. Preserve the historical FAIL regardless of classification; do not invent a requirement that every chain pass.\",\n          \"criteria\": {\n            \"NONBLOCKING_RECORDED_DEVIATION\": \"Historical violation remains FAIL, but the original card's required complete chain and continuation are supplied by a separate documented03chain; no new implementation is required for that acceptance item.\",\n            \"CHANGES_REQUIRED\": \"The violation or missing chain evidence leaves an original task06 acceptance requirement unmet and requires correction before approval.\",\n            \"INSUFFICIENT\": \"The observations do not resolve whether the original required chain exists or whether the violation invalidates it.\"\n          }\n        },\n        \"final_run_reuse\": {\n          \"type\": \"choice\",\n          \"instructions\": \"Decide whether b393 full-test evidence may support review of C for covered product/test behavior without rerunning it. Evaluate evidence reuse only, not final registration/strict approval.\",\n          \"criteria\": {\n            \"REUSE\": \"Covered product/tests and inputs are unchanged inb393..C; full original receipt/output supports reuse while retaining originalcandidate/time.\",\n            \"RERUN\": \"A changed covered product/test/input invalidates reuse.\",\n            \"INSUFFICIENT\": \"Available observations cannot establish applicability of the full run.\"\n          }\n        }\n      }\n    },\n    \"response_raw\": {\n      \"content\": [\n        {\n          \"type\": \"text\",\n          \"text\": \"{\\\"model\\\":\\\"jev-1.14.0\\\",\\\"answers\\\":{\\\"dispatch_gap\\\":{\\\"type\\\":\\\"choice\\\",\\\"choice\\\":\\\"NONBLOCKING_RECORDED_DEVIATION\\\",\\\"confidence\\\":0.97,\\\"probabilities\\\":{\\\"CHANGES_REQUIRED\\\":0.01,\\\"INSUFFICIENT\\\":0.01,\\\"NONBLOCKING_RECORDED_DEVIATION\\\":0.98}},\\\"final_run_reuse\\\":{\\\"type\\\":\\\"choice\\\",\\\"choice\\\":\\\"REUSE\\\",\\\"confidence\\\":0.83,\\\"probabilities\\\":{\\\"INSUFFICIENT\\\":0.05,\\\"RERUN\\\":0.06,\\\"REUSE\\\":0.89}}},\\\"usage\\\":{\\\"input_tokens\\\":2027,\\\"output_tokens\\\":110}}\"\n        }\n      ]\n    },\n    \"reviewer_application\": \"采纳过程偏差保留但不阻断、最终全量可沿用的判断；结合实际diff、原始链及卡片标准作出APPROVED。概率和confidence不作为质量分或验收证据。\"\n  },\n  \"unknown\": {\n    \"blocking_review_gaps\": [],\n    \"pending_controller_gates\": [\n      \"保存本次原生完整返回及守卫到唯一新report/receipt，base=b393、head/contract=C；不得覆盖C内原件。\",\n      \"按卡片契约登记允许元数据及D，再运行冻结协调器最终strict；本次尚未发生，不预PASS。\",\n      \"本卡登记PASS后进行独立整轮总审及分支strict。\"\n    ],\n    \"external_boundaries\": [\n      \"部署UNKNOWN\",\n      \"完整安装版本UNKNOWN\",\n      \"新安装会话实际消费UNKNOWN\",\n      \"外部用户业务整链UNKNOWN\"\n    ]\n  },\n  \"actual_terminal\": {\n    \"review_work\": \"COMPLETED\",\n    \"return_mode\": \"正常返回\",\n    \"native_session_last_observed\": \"in_progress\",\n    \"native_terminal_confirmation_owner\": \"主控回收本返回时核对\",\n    \"implementation_1723\": \"原生completed，terminalConfirmed=true\",\n    \"reviewer_active_commands\": [],\n    \"e06_runner_receipts\": \"已读取的12份均COMPLETED/tree_terminal=true，历史非零结果保留。\",\n    \"writes\": [],\n    \"git_mutations\": [],\n    \"task_card_state\": \"TESTING/PENDING；Reviewer未写DONE。\"\n  }\n}\n",
+              "duration_ms": 375666,
+              "progress": {
+                "steps": 38,
+                "marks": [
+                  "ok",
+                  "ok",
+                  "ok",
+                  "ok",
+                  "ok",
+                  "ok",
+                  "ok",
+                  "ok",
+                  "ok",
+                  "ok",
+                  "ok",
+                  "ok"
+                ],
+                "last_step": "$e='docs/todos/10-self-hosting-hardening/evidence/03'; foreach($s in 'a','b','c'){ $a=Get-Content \"$e/attempt-$s.json\" -…"
+              }
+            }
+          ]
+        },
+        "isError": false
+      }
+    },
+    "terminalConfirmed": true,
+    "observedAt": 1794620949973,
+    "lateByMs": 0,
+    "events": [
+      {
+        "kind": "query",
+        "startedAt": 1794620574328,
+        "returnedAt": 1794620634351,
+        "waitMs": 60000,
+        "result": {
+          "task_id": "cc36ebad-5d17-4b4d-bb9c-e4f2fde7ee51",
+          "status": "running",
+          "child_conversation_id": 1727,
+          "agent_type": "codex",
+          "message": "Running.\nLatest sub-agent reply: thinking: **Reading the schema**",
+          "progress": {
+            "steps": 12,
+            "marks": [
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok"
+            ],
+            "last_step": "git diff --name-only b2f2257 f03c007; git diff --name-only b3938b8 f03c007 -- scripts tests references SKILL.md template…"
+          },
+          "raw": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"tasks\":[{\"task_id\":\"cc36ebad-5d17-4b4d-bb9c-e4f2fde7ee51\",\"status\":\"running\",\"child_conversation_id\":1727,\"agent_type\":\"codex\",\"message\":\"Running.\\nLatest sub-agent reply: thinking: **Reading the schema**\",\"progress\":{\"steps\":12,\"marks\":[\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\"],\"last_step\":\"git diff --name-only b2f2257 f03c007; git diff --name-only b3938b8 f03c007 -- scripts tests references SKILL.md template…\"}}]}"
+              }
+            ],
+            "structuredContent": {
+              "tasks": [
+                {
+                  "task_id": "cc36ebad-5d17-4b4d-bb9c-e4f2fde7ee51",
+                  "status": "running",
+                  "child_conversation_id": 1727,
+                  "agent_type": "codex",
+                  "message": "Running.\nLatest sub-agent reply: thinking: **Reading the schema**",
+                  "progress": {
+                    "steps": 12,
+                    "marks": [
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok"
+                    ],
+                    "last_step": "git diff --name-only b2f2257 f03c007; git diff --name-only b3938b8 f03c007 -- scripts tests references SKILL.md template…"
+                  }
+                }
+              ]
+            },
+            "isError": false
+          }
+        }
+      },
+      {
+        "kind": "query",
+        "startedAt": 1794620634351,
+        "returnedAt": 1794620694367,
+        "waitMs": 60000,
+        "result": {
+          "task_id": "cc36ebad-5d17-4b4d-bb9c-e4f2fde7ee51",
+          "status": "running",
+          "child_conversation_id": 1727,
+          "agent_type": "codex",
+          "message": "Running.\nLatest sub-agent reply: thinking: **Parsing dispatch metadata**",
+          "progress": {
+            "steps": 20,
+            "marks": [
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok"
+            ],
+            "last_step": "$e='docs/todos/10-self-hosting-hardening/evidence/'; foreach($s in 'a','b','c'){ $n=Get-Content \"$($e)03/native-terminal…"
+          },
+          "raw": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"tasks\":[{\"task_id\":\"cc36ebad-5d17-4b4d-bb9c-e4f2fde7ee51\",\"status\":\"running\",\"child_conversation_id\":1727,\"agent_type\":\"codex\",\"message\":\"Running.\\nLatest sub-agent reply: thinking: **Parsing dispatch metadata**\",\"progress\":{\"steps\":20,\"marks\":[\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\"],\"last_step\":\"$e='docs/todos/10-self-hosting-hardening/evidence/'; foreach($s in 'a','b','c'){ $n=Get-Content \\\"$($e)03/native-terminal…\"}}]}"
+              }
+            ],
+            "structuredContent": {
+              "tasks": [
+                {
+                  "task_id": "cc36ebad-5d17-4b4d-bb9c-e4f2fde7ee51",
+                  "status": "running",
+                  "child_conversation_id": 1727,
+                  "agent_type": "codex",
+                  "message": "Running.\nLatest sub-agent reply: thinking: **Parsing dispatch metadata**",
+                  "progress": {
+                    "steps": 20,
+                    "marks": [
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok"
+                    ],
+                    "last_step": "$e='docs/todos/10-self-hosting-hardening/evidence/'; foreach($s in 'a','b','c'){ $n=Get-Content \"$($e)03/native-terminal…"
+                  }
+                }
+              ]
+            },
+            "isError": false
+          }
+        }
+      },
+      {
+        "kind": "query",
+        "startedAt": 1794620694367,
+        "returnedAt": 1794620754393,
+        "waitMs": 60000,
+        "result": {
+          "task_id": "cc36ebad-5d17-4b4d-bb9c-e4f2fde7ee51",
+          "status": "running",
+          "child_conversation_id": 1727,
+          "agent_type": "codex",
+          "message": "Running.\nLatest sub-agent reply: thinking: **Narrowing source-log scope**",
+          "progress": {
+            "steps": 30,
+            "marks": [
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok"
+            ],
+            "last_step": "$p='C:/Users/qingyu/.codex/sessions/2026/11/13/rollout-2026-11-13T23-06-27-01a1d572-1a27-7b51-b8f4-797832bc44a6.jsonl'; …"
+          },
+          "raw": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"tasks\":[{\"task_id\":\"cc36ebad-5d17-4b4d-bb9c-e4f2fde7ee51\",\"status\":\"running\",\"child_conversation_id\":1727,\"agent_type\":\"codex\",\"message\":\"Running.\\nLatest sub-agent reply: thinking: **Narrowing source-log scope**\",\"progress\":{\"steps\":30,\"marks\":[\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\"],\"last_step\":\"$p='C:/Users/qingyu/.codex/sessions/2026/11/13/rollout-2026-11-13T23-06-27-01a1d572-1a27-7b51-b8f4-797832bc44a6.jsonl'; …\"}}]}"
+              }
+            ],
+            "structuredContent": {
+              "tasks": [
+                {
+                  "task_id": "cc36ebad-5d17-4b4d-bb9c-e4f2fde7ee51",
+                  "status": "running",
+                  "child_conversation_id": 1727,
+                  "agent_type": "codex",
+                  "message": "Running.\nLatest sub-agent reply: thinking: **Narrowing source-log scope**",
+                  "progress": {
+                    "steps": 30,
+                    "marks": [
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok"
+                    ],
+                    "last_step": "$p='C:/Users/qingyu/.codex/sessions/2026/11/13/rollout-2026-11-13T23-06-27-01a1d572-1a27-7b51-b8f4-797832bc44a6.jsonl'; …"
+                  }
+                }
+              ]
+            },
+            "isError": false
+          }
+        }
+      },
+      {
+        "kind": "query",
+        "startedAt": 1794620754393,
+        "returnedAt": 1794620814408,
+        "waitMs": 60000,
+        "result": {
+          "task_id": "cc36ebad-5d17-4b4d-bb9c-e4f2fde7ee51",
+          "status": "running",
+          "child_conversation_id": 1727,
+          "agent_type": "codex",
+          "message": "Running.\nLatest sub-agent reply: thinking: **Verifying original06 tests**",
+          "progress": {
+            "steps": 35,
+            "marks": [
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok"
+            ],
+            "last_step": "mcp.fastctx.read"
+          },
+          "raw": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"tasks\":[{\"task_id\":\"cc36ebad-5d17-4b4d-bb9c-e4f2fde7ee51\",\"status\":\"running\",\"child_conversation_id\":1727,\"agent_type\":\"codex\",\"message\":\"Running.\\nLatest sub-agent reply: thinking: **Verifying original06 tests**\",\"progress\":{\"steps\":35,\"marks\":[\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\"],\"last_step\":\"mcp.fastctx.read\"}}]}"
+              }
+            ],
+            "structuredContent": {
+              "tasks": [
+                {
+                  "task_id": "cc36ebad-5d17-4b4d-bb9c-e4f2fde7ee51",
+                  "status": "running",
+                  "child_conversation_id": 1727,
+                  "agent_type": "codex",
+                  "message": "Running.\nLatest sub-agent reply: thinking: **Verifying original06 tests**",
+                  "progress": {
+                    "steps": 35,
+                    "marks": [
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok"
+                    ],
+                    "last_step": "mcp.fastctx.read"
+                  }
+                }
+              ]
+            },
+            "isError": false
+          }
+        }
+      },
+      {
+        "kind": "query",
+        "startedAt": 1794620814408,
+        "returnedAt": 1794620874203,
+        "waitMs": 59726,
+        "result": {
+          "task_id": "cc36ebad-5d17-4b4d-bb9c-e4f2fde7ee51",
+          "status": "running",
+          "child_conversation_id": 1727,
+          "agent_type": "codex",
+          "message": "Running.\nLatest sub-agent reply: thinking: **我正在读取 all03 回执**",
+          "progress": {
+            "steps": 38,
+            "marks": [
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok"
+            ],
+            "last_step": "$e='docs/todos/10-self-hosting-hardening/evidence/03'; foreach($s in 'a','b','c'){ $a=Get-Content \"$e/attempt-$s.json\" -…"
+          },
+          "raw": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"tasks\":[{\"task_id\":\"cc36ebad-5d17-4b4d-bb9c-e4f2fde7ee51\",\"status\":\"running\",\"child_conversation_id\":1727,\"agent_type\":\"codex\",\"message\":\"Running.\\nLatest sub-agent reply: thinking: **我正在读取 all03 回执**\",\"progress\":{\"steps\":38,\"marks\":[\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\"],\"last_step\":\"$e='docs/todos/10-self-hosting-hardening/evidence/03'; foreach($s in 'a','b','c'){ $a=Get-Content \\\"$e/attempt-$s.json\\\" -…\"}}]}"
+              }
+            ],
+            "structuredContent": {
+              "tasks": [
+                {
+                  "task_id": "cc36ebad-5d17-4b4d-bb9c-e4f2fde7ee51",
+                  "status": "running",
+                  "child_conversation_id": 1727,
+                  "agent_type": "codex",
+                  "message": "Running.\nLatest sub-agent reply: thinking: **我正在读取 all03 回执**",
+                  "progress": {
+                    "steps": 38,
+                    "marks": [
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok"
+                    ],
+                    "last_step": "$e='docs/todos/10-self-hosting-hardening/evidence/03'; foreach($s in 'a','b','c'){ $a=Get-Content \"$e/attempt-$s.json\" -…"
+                  }
+                }
+              ]
+            },
+            "isError": false
+          }
+        }
+      },
+      {
+        "kind": "checkpoint",
+        "dueAt": 1794620874134,
+        "observedAt": 1794620874203
+      },
+      {
+        "kind": "query",
+        "startedAt": 1794620874203,
+        "returnedAt": 1794620934234,
+        "waitMs": 60000,
+        "result": {
+          "task_id": "cc36ebad-5d17-4b4d-bb9c-e4f2fde7ee51",
+          "status": "running",
+          "child_conversation_id": 1727,
+          "agent_type": "codex",
+          "message": "Running.\nLatest sub-agent reply: \"repair04\": \"First06full output490passed1failed atready8seconds. Diagnosisready8.562seconds exit0. Repair delegatedback0…",
+          "progress": {
+            "steps": 38,
+            "marks": [
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok"
+            ],
+            "last_step": "$e='docs/todos/10-self-hosting-hardening/evidence/03'; foreach($s in 'a','b','c'){ $a=Get-Content \"$e/attempt-$s.json\" -…"
+          },
+          "raw": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"tasks\":[{\"task_id\":\"cc36ebad-5d17-4b4d-bb9c-e4f2fde7ee51\",\"status\":\"running\",\"child_conversation_id\":1727,\"agent_type\":\"codex\",\"message\":\"Running.\\nLatest sub-agent reply: \\\"repair04\\\": \\\"First06full output490passed1failed atready8seconds. Diagnosisready8.562seconds exit0. Repair delegatedback0…\",\"progress\":{\"steps\":38,\"marks\":[\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\"],\"last_step\":\"$e='docs/todos/10-self-hosting-hardening/evidence/03'; foreach($s in 'a','b','c'){ $a=Get-Content \\\"$e/attempt-$s.json\\\" -…\"}}]}"
+              }
+            ],
+            "structuredContent": {
+              "tasks": [
+                {
+                  "task_id": "cc36ebad-5d17-4b4d-bb9c-e4f2fde7ee51",
+                  "status": "running",
+                  "child_conversation_id": 1727,
+                  "agent_type": "codex",
+                  "message": "Running.\nLatest sub-agent reply: \"repair04\": \"First06full output490passed1failed atready8seconds. Diagnosisready8.562seconds exit0. Repair delegatedback0…",
+                  "progress": {
+                    "steps": 38,
+                    "marks": [
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok"
+                    ],
+                    "last_step": "$e='docs/todos/10-self-hosting-hardening/evidence/03'; foreach($s in 'a','b','c'){ $a=Get-Content \"$e/attempt-$s.json\" -…"
+                  }
+                }
+              ]
+            },
+            "isError": false
+          }
+        }
+      },
+      {
+        "kind": "query",
+        "startedAt": 1794620934234,
+        "returnedAt": 1794620949973,
+        "waitMs": 60000,
+        "result": {
+          "task_id": "cc36ebad-5d17-4b4d-bb9c-e4f2fde7ee51",
+          "status": "completed",
+          "child_conversation_id": 1727,
+          "agent_type": "codex",
+          "text": "{\n  \"task_id\": \"06\",\n  \"reviewer\": {\n    \"session_id\": \"01a1d7b8-cddd-78a3-bf91-2c6015fc74b9\",\n    \"codeg_session_id\": 1727,\n    \"native_task_id\": \"cc36ebad-5d17-4b4d-bb9c-e4f2fde7ee51\",\n    \"identity_verified_by\": [\n      \"CODEX_SESSION_ID / CODEX_THREAD_ID\",\n      \"Codeg get_session_info(1727)\",\n      \"主控原始委派返回\"\n    ],\n    \"independent\": true,\n    \"participation\": \"未参与06实现、测试、方案或RCA；不是实现会话1723，也不是主控1699。\",\n    \"read_only\": true,\n    \"delegated\": false,\n    \"business_or_test_commands_started\": false\n  },\n  \"baseline\": {\n    \"cwd\": \"C:/Users/qingyu/.codeg/skills/iteration-manager/.worktrees/iter-10\",\n    \"branch\": \"feat/iter-10-self-hosting-hardening\",\n    \"base_sha\": \"b3938b86b4cccfcdbd582ab5c2531beec086e0c4\",\n    \"head_sha\": \"f03c00773219de13b93f0575c1e82f80ce7984f5\",\n    \"contract_sha\": \"f03c00773219de13b93f0575c1e82f80ce7984f5\",\n    \"original_base_sha\": \"7107ddb2f2256ceaea40e6ea0aeddd045220b99b\",\n    \"original_product_sha\": \"cd808bf3cf9b95ba7a1ba7901c320e4fd4621df2\",\n    \"checkpoint_sha\": \"c5238c16b1e9c5d941d8dec3c53d273f6a074e44\",\n    \"original_segment_end_sha\": \"8756b47c1fc60c91292ca66e7444cffa05e0ef51\",\n    \"dirty_at_start\": [],\n    \"dirty_at_end\": [],\n    \"last_checked_at\": \"2026-11-14T01:47:49Z\"\n  },\n  \"verdict\": \"APPROVED\",\n  \"reviewer_judgment\": \"06原产品、累计证据和最终续接满足本卡待审要求。保留派发顺序FAIL，不将其改称合规正例；03原始完整链及正常跨会话续接满足至少一链要求。本批准绑定上述C及contract，不预批准登记D、最终strict或整轮总审。\",\n  \"scope\": {\n    \"result\": \"PASS\",\n    \"evidence\": [\n      \"亲自完整读取SKILL、共同协议、task_card_schema、迭代README和06卡。\",\n      \"实际Git差异7107ddb..8756b47共46路径，覆盖06测试、方法、Note、任务卡及e06原件；没有只审最终小diff。\",\n      \"实际Git差异b3938b8..C共10路径，仅06卡和06证据。\",\n      \"controller-scope-ranges.json保存冻结runner对原段46路径、续接段9路径的COMPLETED/raw0/tree_terminal=true原件。\",\n      \"b2f2257..C仅新增74行controller-scope-ranges.json，属于既定e06目录。\",\n      \"cd808bf3..C的06测试、方法和Note无变化；b3938b8..C的产品、测试、脚本、模板及references无变化。\",\n      \"中间04修复未计入06范围，未扩大白名单或重写Git。\"\n    ]\n  },\n  \"spec\": {\n    \"result\": \"PASS\",\n    \"evidence\": [\n      \"14项联合用例直接组合成熟夹具、真实CLI和真实审计接口，覆盖指定拒绝、持久化、幂等、漂移及根索引保护；明确属于synthetic。\",\n      \"完整493项执行覆盖runner、deadline_watch、四预算、unknown、受控resume及FS拒绝Git grant，不以定义存在代替执行。\",\n      \"03原始inventory、claim、同owner dispatch、A/B/C原生终态、runner、attempt、release、独审、C/D及固定strict分别核对。\",\n      \"03 B输入引用A检查点，C输入引用A/B检查点；旧RED和before保留。after较慢，未宣称提速。\",\n      \"04首次全量反例返还原责任域，独审、新绑定和固定strict完成后才继续06；原UI证据按未变范围沿用。\",\n      \"05旧正文漂移拒绝及后续独立新绑定分别保留。\",\n      \"experiment可采用最终成功全量命令，decision采用robustness-report-final.json，interfaces采用controller-interfaces-final.json。\",\n      \"实验报告未自批准06；卡仍为TESTING/PENDING，未提前登记DONE或strict PASS。\"\n    ]\n  },\n  \"quality\": {\n    \"result\": \"PASS\",\n    \"evidence\": [\n      \"新增测试未复制整套测试框架，断言涵盖CLI拒绝、字节不变、检查点继承及跨投影不误PASS。\",\n      \"首次测试API误用、提取器错误和全量失败原件均保留，未冒称有效产品RED。\",\n      \"最终报告保持严格字段及static/synthetic/native-self-use分层；检查点报告未覆写。\",\n      \"Note tree和format原始输出有效，均验证19篇Note。\",\n      \"未发现需要返修的产品或测试阻断缺陷。\"\n    ]\n  },\n  \"issues\": [\n    {\n      \"id\": \"R06-01\",\n      \"file\": \"docs/todos/10-self-hosting-hardening/evidence/06/robustness-report-final.json\",\n      \"lines\": [173, 182],\n      \"related_location\": \"docs/todos/10-self-hosting-hardening/06-self-hosting-acceptance.md:119\",\n      \"severity\": \"MEDIUM\",\n      \"blocking\": false,\n      \"trigger\": \"06原生委派发生时，前序协调工具调用尚报告running。\",\n      \"actual\": \"主控先发出委派，随后才消费READY；最终报告如实记录FAIL。\",\n      \"expected\": \"等待协调调用终态并消费READY后再原生委派。\",\n      \"disposition\": \"保留历史FAIL及责任归属，不追溯改写。原定验收要求至少一条完整合规链，已由03原件满足；后续04派发已采用先消费READY的顺序。\",\n      \"owner\": \"主控\"\n    }\n  ],\n  \"checks\": {\n    \"evidence_prefix\": \"docs/todos/10-self-hosting-hardening/evidence/\",\n    \"experiment\": {\n      \"command\": \"python -B -m pytest -p no:cacheprovider tests -q\",\n      \"cwd\": \".\",\n      \"receipt\": \"06/controller-full-regression-final.json\",\n      \"output\": \"06/controller-full-regression-final.json.output.txt\",\n      \"original_candidate\": \"b3938b86b4cccfcdbd582ab5c2531beec086e0c4\",\n      \"status\": \"COMPLETED\",\n      \"raw_exit_code\": 0,\n      \"tree_terminal\": true,\n      \"result\": \"493 passed in 321.63s\",\n      \"reuse_basis\": \"b393..C仅06卡和证据变化，覆盖产品与测试完全未变；保留原候选及原执行时间。本Reviewer未重跑。\"\n    },\n    \"targeted\": {\n      \"receipt\": \"06/slice-a-targeted-2.json\",\n      \"output\": \"06/slice-a-targeted-2.json.output.txt\",\n      \"result\": \"14 passed in 16.36s\",\n      \"raw_exit_code\": 0,\n      \"tree_terminal\": true,\n      \"reuse_basis\": \"06测试从原产品cd808bf3到C未变，最终完整493项再次包含该文件。\"\n    },\n    \"decision\": {\n      \"kind\": \"observation\",\n      \"output\": \"06/robustness-report-final.json\",\n      \"result\": \"分层、原始失败、最终全量及过程偏差均保留。\"\n    },\n    \"interfaces\": {\n      \"kind\": \"observation\",\n      \"output\": \"06/controller-interfaces-final.json\",\n      \"result\": \"字段、分层、原段与续接绑定清楚；批准由卡片收据另行登记。\"\n    },\n    \"cross_check\": {\n      \"receipt\": \"06/controller-cross-check-final.json\",\n      \"output\": \"06/controller-cross-check-final.json.output.txt\",\n      \"source\": \"06/controller-cross-check.py\",\n      \"raw_exit_code\": 0,\n      \"tree_terminal\": true,\n      \"result\": \"固定envelope与候选query逐字段比较六卡身份、状态、绑定、预算和execution；01—05 PASS，06 TESTING/UNKNOWN。\",\n      \"reuse_basis\": \"比较接口未变；后续06候选正文变化已由当前Git差异及实际卡片定点核对。\"\n    },\n    \"native_chain_03\": {\n      \"index\": \"06/native-chain-inventory.json\",\n      \"originals\": [\n        \"03/inventory-a.json\",\n        \"03/claim-a.json\",\n        \"03/dispatch-a.json\",\n        \"03/dispatch-b.json\",\n        \"03/dispatch-c.json\",\n        \"03/context-implementation-b.json\",\n        \"03/context-implementation-c.json\",\n        \"03/native-terminal-a.json\",\n        \"03/native-terminal-b.json\",\n        \"03/native-terminal-c.json\",\n        \"03/attempt-a.json\",\n        \"03/attempt-b.json\",\n        \"03/attempt-c.json\",\n        \"03/handoff-a.json\",\n        \"03/handoff-b.json\",\n        \"03/handoff-c.json\",\n        \"03/review.json\"\n      ],\n      \"native_sessions\": [1714, 1715, 1716],\n      \"native_terminal\": \"三者均completed且terminalConfirmed=true；逐项读取attempt引用的runner原件，全部COMPLETED/tree_terminal=true，历史非零退出未隐去。\",\n      \"implementation_C\": \"542f2b445f499b3a2e90d92a6ed6bba20cdb1bdb\",\n      \"registration_D\": \"2ce0705ebeeaee73f75a1dcd2882836dbc6b9d29\",\n      \"strict_original\": \"build/review-03/strict-after-D.txt:1-43\",\n      \"controller_original\": \"C:/Users/qingyu/.codex/sessions/2026/11/13/rollout-2026-11-13T23-06-27-01a1d572-1a27-7b51-b8f4-797832bc44a6.jsonl\",\n      \"ordering_evidence\": \"原始行1519在17:29:21.144Z返回claim0/dispatch0；行1526在17:29:56.509Z返回原生委派成功。\",\n      \"reuse_basis\": \"沿用实际已审03链，不重新模拟，不因新会话重跑旧RED/before。\"\n    },\n    \"repair_04\": {\n      \"failure\": \"06/controller-full-regression.json.output.txt:9-34\",\n      \"diagnosis\": \"06/controller-harness-diagnosis.json.output.txt:16-20\",\n      \"independent_receipt\": \"04/review-repair-final.json\",\n      \"independent_report\": \"04/review-report-repair-final.json\",\n      \"reviewer\": \"1725/01a1d7a9-5822-7bc3-a3e7-51486485f8ea\",\n      \"result\": \"保留490passed/1failed及8.562秒诊断；显式isolated-fixtures修复未提高8秒，默认真实入口未变。\",\n      \"strict_evidence\": \"主控原始会话行3005，2026-11-14T01:33:06.748Z，冻结local strict退出0，5/6 PASS，04引用review-repair-final.json；随后01:33:21.256Z才启动06最终全量。\",\n      \"ui_reuse\": \"04原生操作、七图、四态原件及原批准保留；synthetic FS/empty/loading来源明确，未升级为真实FS业务验收。\"\n    },\n    \"task_05\": {\n      \"original_report\": \"05/review-report.json\",\n      \"new_receipt\": \"05/review-final.json\",\n      \"new_report\": \"05/review-report-final.json\",\n      \"binding\": \"head/contract=dc5d868c6b90268a2eefc29966874c96d48dd122\",\n      \"result\": \"正文漂移正确拒绝后独立新绑定，旧新原件均保留。\"\n    },\n    \"note\": {\n      \"outputs\": [\n        \"06/slice-a-note-tree.json.output.txt\",\n        \"06/slice-a-note-format.json.output.txt\"\n      ],\n      \"result\": \"19 notes tree/relative links及format通过。\",\n      \"reuse_basis\": \"06 Note从cd808bf3到C未变。\"\n    },\n    \"scope\": {\n      \"original\": \"06/controller-scope-ranges.json\",\n      \"result\": \"冻结runner两段scope均退出0；最后仅新增汇总文件，实际Git差异已核对。\"\n    }\n  },\n  \"typesafe\": {\n    \"request\": {\n      \"state\": {\n        \"binding\": {\n          \"base\": \"b3938b86b4cccfcdbd582ab5c2531beec086e0c4\",\n          \"head\": \"f03c00773219de13b93f0575c1e82f80ce7984f5\",\n          \"contract\": \"f03c00773219de13b93f0575c1e82f80ce7984f5\",\n          \"original_range\": \"7107ddb2f2256ceaea40e6ea0aeddd045220b99b..8756b47c1fc60c91292ca66e7444cffa05e0ef51\"\n        },\n        \"requirements\": [\n          \"06 is Spike-Discovery: experiment successful command, decision and interfaces observations; no TDD RED requirement.\",\n          \"Card acceptance line92 requires at least one real inventory->claim->same-owner dispatch-check->native delegation->runner->attempt->release->independent review->C/D->frozen strict chain and one cross-session checkpoint continuation.\",\n          \"Common protocol requires controller to consume READY before native delegation; script does not automatically intercept delegation.\",\n          \"Independent review precedes registration D and final strict; reviewer is read-only and cannot run tests or write registration.\"\n        ],\n        \"observations\": {\n          \"identity\": \"Current session1727 external01a1d7b8-cddd-78a3-bf91-2c6015fc74b9 from runtime environment and Codeg get_session_info; implementation1723 external01a1d793-e65a-7251-8c92-b82981f6cf0c; controller1699 external01a1d572-1a27-7b51-b8f4-797832bc44a6. Current session has done only review.\",\n          \"scope\": \"git diff original range:46 paths comprising06 test/method/Note/card/e06. Final range10 paths only06 card/e06. Frozen runner scope originals exit0/tree_terminal=true for46 and9paths; b2f2257..f03c007 adds only controller-scope-ranges.json. git diff cd808bf3..C shows06 test/method/Note unchanged. b393..C scripts/tests/templates/references/SKILL unchanged. Worktree clean.\",\n          \"tests\": \"Read actual140-line test_self_hosting.py and imported fixture/CLI definitions. Six parametrized gate refusals; attempt/replay/changedpayload/release/reclaim; two empty attempts block third; bad-number/unknownDONE; FS source/evidence/body drift across audit/envelope/board; feature-root refusal bytes unchanged. Original targeted receipt/output14passed16.36s. Final full tests receipt COMPLETED raw0 tree_terminaltrue and child0; output493passed321.63s onb393; no tests rerun by reviewer.\",\n          \"process_deviation\": \"robustness-report-final.json:173-182 contains06-dispatch-consumption-order resultFAIL:06 delegation issued while coordination tool still reportedrunning, READY consumed afterward. Cardline119 repeats gap. This case is not presented as compliant positive chain.\",\n          \"chain03\": \"Original03 inventory/claim/dispatchA READY read. Controller original log17:29:21.144Z reportsclaim0/dispatch0 before native delegate17:29:56.356Z. Three original native tasks1714A/1715B/1716C havecompleted/terminalConfirmedtrue, distinct taskIDs, runner receipts and empty released writer. Bcontext includesAcheckpoint; C includesA+Bcheckpoints. Originalbefore/RED retained; after measurements slower. Original independent receipt reviewer01a1d610-f583-76d0-8943-f401eece9af0 bindsC542f2b445f499b3a2e90d92a6ed6bba20cdb1bdb, registrationD2ce0705ebeeaee73f75a1dcd2882836dbc6b9d29. build/review-03/strict-after-D.txt explicitly03PASS.\",\n          \"repair04\": \"First06full output490passed1failed atready8seconds. Diagnosisready8.562seconds exit0. Repair delegatedback04, opt-in isolated-fixtures retained8secondlimit/defaultrealentry, independent1725 APPROVED/newreceipt41f6618. Controller original log01:33:06.748Z fixedstrict exit0,5/6PASS referencingnew04receipt before final06full command01:33:21.256Z. Original04nativeUI evidence retained, syntheticFS/empty/loading identified.\",\n          \"reports\": \"Final report fields version,candidate,coordinator_commit,cases,unverified; cases use static/synthetic/native-self-use and PASS/FAIL/UNKNOWN/BLOCKED. Finalcandidate fieldb393; final interfaces distinguish original and continuation ranges. Old checkpointreport not overwritten. Final cross-check receipt raw0/terminaltrue; code compares six cards identity/status/binding/budgets/execution and outputs01-05PASS06TESTINGUNKNOWN.\",\n          \"pending\": \"06 registration receipt/D/finalstrict have not occurred. Deployment/fullinstallation/newinstalledsession/externalbusinessUNKNOWN.\"\n        }\n      },\n      \"questions\": {\n        \"dispatch_gap\": {\n          \"type\": \"choice\",\n          \"instructions\": \"Classify the effect of the recorded task06 dispatch-order violation on independent review against the original card's at-least-one-complete-chain requirement. Preserve the historical FAIL regardless of classification; do not invent a requirement that every chain pass.\",\n          \"criteria\": {\n            \"NONBLOCKING_RECORDED_DEVIATION\": \"Historical violation remains FAIL, but the original card's required complete chain and continuation are supplied by a separate documented03chain; no new implementation is required for that acceptance item.\",\n            \"CHANGES_REQUIRED\": \"The violation or missing chain evidence leaves an original task06 acceptance requirement unmet and requires correction before approval.\",\n            \"INSUFFICIENT\": \"The observations do not resolve whether the original required chain exists or whether the violation invalidates it.\"\n          }\n        },\n        \"final_run_reuse\": {\n          \"type\": \"choice\",\n          \"instructions\": \"Decide whether b393 full-test evidence may support review of C for covered product/test behavior without rerunning it. Evaluate evidence reuse only, not final registration/strict approval.\",\n          \"criteria\": {\n            \"REUSE\": \"Covered product/tests and inputs are unchanged inb393..C; full original receipt/output supports reuse while retaining originalcandidate/time.\",\n            \"RERUN\": \"A changed covered product/test/input invalidates reuse.\",\n            \"INSUFFICIENT\": \"Available observations cannot establish applicability of the full run.\"\n          }\n        }\n      }\n    },\n    \"response_raw\": {\n      \"content\": [\n        {\n          \"type\": \"text\",\n          \"text\": \"{\\\"model\\\":\\\"jev-1.14.0\\\",\\\"answers\\\":{\\\"dispatch_gap\\\":{\\\"type\\\":\\\"choice\\\",\\\"choice\\\":\\\"NONBLOCKING_RECORDED_DEVIATION\\\",\\\"confidence\\\":0.97,\\\"probabilities\\\":{\\\"CHANGES_REQUIRED\\\":0.01,\\\"INSUFFICIENT\\\":0.01,\\\"NONBLOCKING_RECORDED_DEVIATION\\\":0.98}},\\\"final_run_reuse\\\":{\\\"type\\\":\\\"choice\\\",\\\"choice\\\":\\\"REUSE\\\",\\\"confidence\\\":0.83,\\\"probabilities\\\":{\\\"INSUFFICIENT\\\":0.05,\\\"RERUN\\\":0.06,\\\"REUSE\\\":0.89}}},\\\"usage\\\":{\\\"input_tokens\\\":2027,\\\"output_tokens\\\":110}}\"\n        }\n      ]\n    },\n    \"reviewer_application\": \"采纳过程偏差保留但不阻断、最终全量可沿用的判断；结合实际diff、原始链及卡片标准作出APPROVED。概率和confidence不作为质量分或验收证据。\"\n  },\n  \"unknown\": {\n    \"blocking_review_gaps\": [],\n    \"pending_controller_gates\": [\n      \"保存本次原生完整返回及守卫到唯一新report/receipt，base=b393、head/contract=C；不得覆盖C内原件。\",\n      \"按卡片契约登记允许元数据及D，再运行冻结协调器最终strict；本次尚未发生，不预PASS。\",\n      \"本卡登记PASS后进行独立整轮总审及分支strict。\"\n    ],\n    \"external_boundaries\": [\n      \"部署UNKNOWN\",\n      \"完整安装版本UNKNOWN\",\n      \"新安装会话实际消费UNKNOWN\",\n      \"外部用户业务整链UNKNOWN\"\n    ]\n  },\n  \"actual_terminal\": {\n    \"review_work\": \"COMPLETED\",\n    \"return_mode\": \"正常返回\",\n    \"native_session_last_observed\": \"in_progress\",\n    \"native_terminal_confirmation_owner\": \"主控回收本返回时核对\",\n    \"implementation_1723\": \"原生completed，terminalConfirmed=true\",\n    \"reviewer_active_commands\": [],\n    \"e06_runner_receipts\": \"已读取的12份均COMPLETED/tree_terminal=true，历史非零结果保留。\",\n    \"writes\": [],\n    \"git_mutations\": [],\n    \"task_card_state\": \"TESTING/PENDING；Reviewer未写DONE。\"\n  }\n}\n",
+          "duration_ms": 375666,
+          "progress": {
+            "steps": 38,
+            "marks": [
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok"
+            ],
+            "last_step": "$e='docs/todos/10-self-hosting-hardening/evidence/03'; foreach($s in 'a','b','c'){ $a=Get-Content \"$e/attempt-$s.json\" -…"
+          },
+          "raw": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"tasks\":[{\"task_id\":\"cc36ebad-5d17-4b4d-bb9c-e4f2fde7ee51\",\"status\":\"completed\",\"child_conversation_id\":1727,\"agent_type\":\"codex\",\"text\":\"{\\n  \\\"task_id\\\": \\\"06\\\",\\n  \\\"reviewer\\\": {\\n    \\\"session_id\\\": \\\"01a1d7b8-cddd-78a3-bf91-2c6015fc74b9\\\",\\n    \\\"codeg_session_id\\\": 1727,\\n    \\\"native_task_id\\\": \\\"cc36ebad-5d17-4b4d-bb9c-e4f2fde7ee51\\\",\\n    \\\"identity_verified_by\\\": [\\n      \\\"CODEX_SESSION_ID / CODEX_THREAD_ID\\\",\\n      \\\"Codeg get_session_info(1727)\\\",\\n      \\\"主控原始委派返回\\\"\\n    ],\\n    \\\"independent\\\": true,\\n    \\\"participation\\\": \\\"未参与06实现、测试、方案或RCA；不是实现会话1723，也不是主控1699。\\\",\\n    \\\"read_only\\\": true,\\n    \\\"delegated\\\": false,\\n    \\\"business_or_test_commands_started\\\": false\\n  },\\n  \\\"baseline\\\": {\\n    \\\"cwd\\\": \\\"C:/Users/qingyu/.codeg/skills/iteration-manager/.worktrees/iter-10\\\",\\n    \\\"branch\\\": \\\"feat/iter-10-self-hosting-hardening\\\",\\n    \\\"base_sha\\\": \\\"b3938b86b4cccfcdbd582ab5c2531beec086e0c4\\\",\\n    \\\"head_sha\\\": \\\"f03c00773219de13b93f0575c1e82f80ce7984f5\\\",\\n    \\\"contract_sha\\\": \\\"f03c00773219de13b93f0575c1e82f80ce7984f5\\\",\\n    \\\"original_base_sha\\\": \\\"7107ddb2f2256ceaea40e6ea0aeddd045220b99b\\\",\\n    \\\"original_product_sha\\\": \\\"cd808bf3cf9b95ba7a1ba7901c320e4fd4621df2\\\",\\n    \\\"checkpoint_sha\\\": \\\"c5238c16b1e9c5d941d8dec3c53d273f6a074e44\\\",\\n    \\\"original_segment_end_sha\\\": \\\"8756b47c1fc60c91292ca66e7444cffa05e0ef51\\\",\\n    \\\"dirty_at_start\\\": [],\\n    \\\"dirty_at_end\\\": [],\\n    \\\"last_checked_at\\\": \\\"2026-11-14T01:47:49Z\\\"\\n  },\\n  \\\"verdict\\\": \\\"APPROVED\\\",\\n  \\\"reviewer_judgment\\\": \\\"06原产品、累计证据和最终续接满足本卡待审要求。保留派发顺序FAIL，不将其改称合规正例；03原始完整链及正常跨会话续接满足至少一链要求。本批准绑定上述C及contract，不预批准登记D、最终strict或整轮总审。\\\",\\n  \\\"scope\\\": {\\n    \\\"result\\\": \\\"PASS\\\",\\n    \\\"evidence\\\": [\\n      \\\"亲自完整读取SKILL、共同协议、task_card_schema、迭代README和06卡。\\\",\\n      \\\"实际Git差异7107ddb..8756b47共46路径，覆盖06测试、方法、Note、任务卡及e06原件；没有只审最终小diff。\\\",\\n      \\\"实际Git差异b3938b8..C共10路径，仅06卡和06证据。\\\",\\n      \\\"controller-scope-ranges.json保存冻结runner对原段46路径、续接段9路径的COMPLETED/raw0/tree_terminal=true原件。\\\",\\n      \\\"b2f2257..C仅新增74行controller-scope-ranges.json，属于既定e06目录。\\\",\\n      \\\"cd808bf3..C的06测试、方法和Note无变化；b3938b8..C的产品、测试、脚本、模板及references无变化。\\\",\\n      \\\"中间04修复未计入06范围，未扩大白名单或重写Git。\\\"\\n    ]\\n  },\\n  \\\"spec\\\": {\\n    \\\"result\\\": \\\"PASS\\\",\\n    \\\"evidence\\\": [\\n      \\\"14项联合用例直接组合成熟夹具、真实CLI和真实审计接口，覆盖指定拒绝、持久化、幂等、漂移及根索引保护；明确属于synthetic。\\\",\\n      \\\"完整493项执行覆盖runner、deadline_watch、四预算、unknown、受控resume及FS拒绝Git grant，不以定义存在代替执行。\\\",\\n      \\\"03原始inventory、claim、同owner dispatch、A/B/C原生终态、runner、attempt、release、独审、C/D及固定strict分别核对。\\\",\\n      \\\"03 B输入引用A检查点，C输入引用A/B检查点；旧RED和before保留。after较慢，未宣称提速。\\\",\\n      \\\"04首次全量反例返还原责任域，独审、新绑定和固定strict完成后才继续06；原UI证据按未变范围沿用。\\\",\\n      \\\"05旧正文漂移拒绝及后续独立新绑定分别保留。\\\",\\n      \\\"experiment可采用最终成功全量命令，decision采用robustness-report-final.json，interfaces采用controller-interfaces-final.json。\\\",\\n      \\\"实验报告未自批准06；卡仍为TESTING/PENDING，未提前登记DONE或strict PASS。\\\"\\n    ]\\n  },\\n  \\\"quality\\\": {\\n    \\\"result\\\": \\\"PASS\\\",\\n    \\\"evidence\\\": [\\n      \\\"新增测试未复制整套测试框架，断言涵盖CLI拒绝、字节不变、检查点继承及跨投影不误PASS。\\\",\\n      \\\"首次测试API误用、提取器错误和全量失败原件均保留，未冒称有效产品RED。\\\",\\n      \\\"最终报告保持严格字段及static/synthetic/native-self-use分层；检查点报告未覆写。\\\",\\n      \\\"Note tree和format原始输出有效，均验证19篇Note。\\\",\\n      \\\"未发现需要返修的产品或测试阻断缺陷。\\\"\\n    ]\\n  },\\n  \\\"issues\\\": [\\n    {\\n      \\\"id\\\": \\\"R06-01\\\",\\n      \\\"file\\\": \\\"docs/todos/10-self-hosting-hardening/evidence/06/robustness-report-final.json\\\",\\n      \\\"lines\\\": [173, 182],\\n      \\\"related_location\\\": \\\"docs/todos/10-self-hosting-hardening/06-self-hosting-acceptance.md:119\\\",\\n      \\\"severity\\\": \\\"MEDIUM\\\",\\n      \\\"blocking\\\": false,\\n      \\\"trigger\\\": \\\"06原生委派发生时，前序协调工具调用尚报告running。\\\",\\n      \\\"actual\\\": \\\"主控先发出委派，随后才消费READY；最终报告如实记录FAIL。\\\",\\n      \\\"expected\\\": \\\"等待协调调用终态并消费READY后再原生委派。\\\",\\n      \\\"disposition\\\": \\\"保留历史FAIL及责任归属，不追溯改写。原定验收要求至少一条完整合规链，已由03原件满足；后续04派发已采用先消费READY的顺序。\\\",\\n      \\\"owner\\\": \\\"主控\\\"\\n    }\\n  ],\\n  \\\"checks\\\": {\\n    \\\"evidence_prefix\\\": \\\"docs/todos/10-self-hosting-hardening/evidence/\\\",\\n    \\\"experiment\\\": {\\n      \\\"command\\\": \\\"python -B -m pytest -p no:cacheprovider tests -q\\\",\\n      \\\"cwd\\\": \\\".\\\",\\n      \\\"receipt\\\": \\\"06/controller-full-regression-final.json\\\",\\n      \\\"output\\\": \\\"06/controller-full-regression-final.json.output.txt\\\",\\n      \\\"original_candidate\\\": \\\"b3938b86b4cccfcdbd582ab5c2531beec086e0c4\\\",\\n      \\\"status\\\": \\\"COMPLETED\\\",\\n      \\\"raw_exit_code\\\": 0,\\n      \\\"tree_terminal\\\": true,\\n      \\\"result\\\": \\\"493 passed in 321.63s\\\",\\n      \\\"reuse_basis\\\": \\\"b393..C仅06卡和证据变化，覆盖产品与测试完全未变；保留原候选及原执行时间。本Reviewer未重跑。\\\"\\n    },\\n    \\\"targeted\\\": {\\n      \\\"receipt\\\": \\\"06/slice-a-targeted-2.json\\\",\\n      \\\"output\\\": \\\"06/slice-a-targeted-2.json.output.txt\\\",\\n      \\\"result\\\": \\\"14 passed in 16.36s\\\",\\n      \\\"raw_exit_code\\\": 0,\\n      \\\"tree_terminal\\\": true,\\n      \\\"reuse_basis\\\": \\\"06测试从原产品cd808bf3到C未变，最终完整493项再次包含该文件。\\\"\\n    },\\n    \\\"decision\\\": {\\n      \\\"kind\\\": \\\"observation\\\",\\n      \\\"output\\\": \\\"06/robustness-report-final.json\\\",\\n      \\\"result\\\": \\\"分层、原始失败、最终全量及过程偏差均保留。\\\"\\n    },\\n    \\\"interfaces\\\": {\\n      \\\"kind\\\": \\\"observation\\\",\\n      \\\"output\\\": \\\"06/controller-interfaces-final.json\\\",\\n      \\\"result\\\": \\\"字段、分层、原段与续接绑定清楚；批准由卡片收据另行登记。\\\"\\n    },\\n    \\\"cross_check\\\": {\\n      \\\"receipt\\\": \\\"06/controller-cross-check-final.json\\\",\\n      \\\"output\\\": \\\"06/controller-cross-check-final.json.output.txt\\\",\\n      \\\"source\\\": \\\"06/controller-cross-check.py\\\",\\n      \\\"raw_exit_code\\\": 0,\\n      \\\"tree_terminal\\\": true,\\n      \\\"result\\\": \\\"固定envelope与候选query逐字段比较六卡身份、状态、绑定、预算和execution；01—05 PASS，06 TESTING/UNKNOWN。\\\",\\n      \\\"reuse_basis\\\": \\\"比较接口未变；后续06候选正文变化已由当前Git差异及实际卡片定点核对。\\\"\\n    },\\n    \\\"native_chain_03\\\": {\\n      \\\"index\\\": \\\"06/native-chain-inventory.json\\\",\\n      \\\"originals\\\": [\\n        \\\"03/inventory-a.json\\\",\\n        \\\"03/claim-a.json\\\",\\n        \\\"03/dispatch-a.json\\\",\\n        \\\"03/dispatch-b.json\\\",\\n        \\\"03/dispatch-c.json\\\",\\n        \\\"03/context-implementation-b.json\\\",\\n        \\\"03/context-implementation-c.json\\\",\\n        \\\"03/native-terminal-a.json\\\",\\n        \\\"03/native-terminal-b.json\\\",\\n        \\\"03/native-terminal-c.json\\\",\\n        \\\"03/attempt-a.json\\\",\\n        \\\"03/attempt-b.json\\\",\\n        \\\"03/attempt-c.json\\\",\\n        \\\"03/handoff-a.json\\\",\\n        \\\"03/handoff-b.json\\\",\\n        \\\"03/handoff-c.json\\\",\\n        \\\"03/review.json\\\"\\n      ],\\n      \\\"native_sessions\\\": [1714, 1715, 1716],\\n      \\\"native_terminal\\\": \\\"三者均completed且terminalConfirmed=true；逐项读取attempt引用的runner原件，全部COMPLETED/tree_terminal=true，历史非零退出未隐去。\\\",\\n      \\\"implementation_C\\\": \\\"542f2b445f499b3a2e90d92a6ed6bba20cdb1bdb\\\",\\n      \\\"registration_D\\\": \\\"2ce0705ebeeaee73f75a1dcd2882836dbc6b9d29\\\",\\n      \\\"strict_original\\\": \\\"build/review-03/strict-after-D.txt:1-43\\\",\\n      \\\"controller_original\\\": \\\"C:/Users/qingyu/.codex/sessions/2026/11/13/rollout-2026-11-13T23-06-27-01a1d572-1a27-7b51-b8f4-797832bc44a6.jsonl\\\",\\n      \\\"ordering_evidence\\\": \\\"原始行1519在17:29:21.144Z返回claim0/dispatch0；行1526在17:29:56.509Z返回原生委派成功。\\\",\\n      \\\"reuse_basis\\\": \\\"沿用实际已审03链，不重新模拟，不因新会话重跑旧RED/before。\\\"\\n    },\\n    \\\"repair_04\\\": {\\n      \\\"failure\\\": \\\"06/controller-full-regression.json.output.txt:9-34\\\",\\n      \\\"diagnosis\\\": \\\"06/controller-harness-diagnosis.json.output.txt:16-20\\\",\\n      \\\"independent_receipt\\\": \\\"04/review-repair-final.json\\\",\\n      \\\"independent_report\\\": \\\"04/review-report-repair-final.json\\\",\\n      \\\"reviewer\\\": \\\"1725/01a1d7a9-5822-7bc3-a3e7-51486485f8ea\\\",\\n      \\\"result\\\": \\\"保留490passed/1failed及8.562秒诊断；显式isolated-fixtures修复未提高8秒，默认真实入口未变。\\\",\\n      \\\"strict_evidence\\\": \\\"主控原始会话行3005，2026-11-14T01:33:06.748Z，冻结local strict退出0，5/6 PASS，04引用review-repair-final.json；随后01:33:21.256Z才启动06最终全量。\\\",\\n      \\\"ui_reuse\\\": \\\"04原生操作、七图、四态原件及原批准保留；synthetic FS/empty/loading来源明确，未升级为真实FS业务验收。\\\"\\n    },\\n    \\\"task_05\\\": {\\n      \\\"original_report\\\": \\\"05/review-report.json\\\",\\n      \\\"new_receipt\\\": \\\"05/review-final.json\\\",\\n      \\\"new_report\\\": \\\"05/review-report-final.json\\\",\\n      \\\"binding\\\": \\\"head/contract=dc5d868c6b90268a2eefc29966874c96d48dd122\\\",\\n      \\\"result\\\": \\\"正文漂移正确拒绝后独立新绑定，旧新原件均保留。\\\"\\n    },\\n    \\\"note\\\": {\\n      \\\"outputs\\\": [\\n        \\\"06/slice-a-note-tree.json.output.txt\\\",\\n        \\\"06/slice-a-note-format.json.output.txt\\\"\\n      ],\\n      \\\"result\\\": \\\"19 notes tree/relative links及format通过。\\\",\\n      \\\"reuse_basis\\\": \\\"06 Note从cd808bf3到C未变。\\\"\\n    },\\n    \\\"scope\\\": {\\n      \\\"original\\\": \\\"06/controller-scope-ranges.json\\\",\\n      \\\"result\\\": \\\"冻结runner两段scope均退出0；最后仅新增汇总文件，实际Git差异已核对。\\\"\\n    }\\n  },\\n  \\\"typesafe\\\": {\\n    \\\"request\\\": {\\n      \\\"state\\\": {\\n        \\\"binding\\\": {\\n          \\\"base\\\": \\\"b3938b86b4cccfcdbd582ab5c2531beec086e0c4\\\",\\n          \\\"head\\\": \\\"f03c00773219de13b93f0575c1e82f80ce7984f5\\\",\\n          \\\"contract\\\": \\\"f03c00773219de13b93f0575c1e82f80ce7984f5\\\",\\n          \\\"original_range\\\": \\\"7107ddb2f2256ceaea40e6ea0aeddd045220b99b..8756b47c1fc60c91292ca66e7444cffa05e0ef51\\\"\\n        },\\n        \\\"requirements\\\": [\\n          \\\"06 is Spike-Discovery: experiment successful command, decision and interfaces observations; no TDD RED requirement.\\\",\\n          \\\"Card acceptance line92 requires at least one real inventory->claim->same-owner dispatch-check->native delegation->runner->attempt->release->independent review->C/D->frozen strict chain and one cross-session checkpoint continuation.\\\",\\n          \\\"Common protocol requires controller to consume READY before native delegation; script does not automatically intercept delegation.\\\",\\n          \\\"Independent review precedes registration D and final strict; reviewer is read-only and cannot run tests or write registration.\\\"\\n        ],\\n        \\\"observations\\\": {\\n          \\\"identity\\\": \\\"Current session1727 external01a1d7b8-cddd-78a3-bf91-2c6015fc74b9 from runtime environment and Codeg get_session_info; implementation1723 external01a1d793-e65a-7251-8c92-b82981f6cf0c; controller1699 external01a1d572-1a27-7b51-b8f4-797832bc44a6. Current session has done only review.\\\",\\n          \\\"scope\\\": \\\"git diff original range:46 paths comprising06 test/method/Note/card/e06. Final range10 paths only06 card/e06. Frozen runner scope originals exit0/tree_terminal=true for46 and9paths; b2f2257..f03c007 adds only controller-scope-ranges.json. git diff cd808bf3..C shows06 test/method/Note unchanged. b393..C scripts/tests/templates/references/SKILL unchanged. Worktree clean.\\\",\\n          \\\"tests\\\": \\\"Read actual140-line test_self_hosting.py and imported fixture/CLI definitions. Six parametrized gate refusals; attempt/replay/changedpayload/release/reclaim; two empty attempts block third; bad-number/unknownDONE; FS source/evidence/body drift across audit/envelope/board; feature-root refusal bytes unchanged. Original targeted receipt/output14passed16.36s. Final full tests receipt COMPLETED raw0 tree_terminaltrue and child0; output493passed321.63s onb393; no tests rerun by reviewer.\\\",\\n          \\\"process_deviation\\\": \\\"robustness-report-final.json:173-182 contains06-dispatch-consumption-order resultFAIL:06 delegation issued while coordination tool still reportedrunning, READY consumed afterward. Cardline119 repeats gap. This case is not presented as compliant positive chain.\\\",\\n          \\\"chain03\\\": \\\"Original03 inventory/claim/dispatchA READY read. Controller original log17:29:21.144Z reportsclaim0/dispatch0 before native delegate17:29:56.356Z. Three original native tasks1714A/1715B/1716C havecompleted/terminalConfirmedtrue, distinct taskIDs, runner receipts and empty released writer. Bcontext includesAcheckpoint; C includesA+Bcheckpoints. Originalbefore/RED retained; after measurements slower. Original independent receipt reviewer01a1d610-f583-76d0-8943-f401eece9af0 bindsC542f2b445f499b3a2e90d92a6ed6bba20cdb1bdb, registrationD2ce0705ebeeaee73f75a1dcd2882836dbc6b9d29. build/review-03/strict-after-D.txt explicitly03PASS.\\\",\\n          \\\"repair04\\\": \\\"First06full output490passed1failed atready8seconds. Diagnosisready8.562seconds exit0. Repair delegatedback04, opt-in isolated-fixtures retained8secondlimit/defaultrealentry, independent1725 APPROVED/newreceipt41f6618. Controller original log01:33:06.748Z fixedstrict exit0,5/6PASS referencingnew04receipt before final06full command01:33:21.256Z. Original04nativeUI evidence retained, syntheticFS/empty/loading identified.\\\",\\n          \\\"reports\\\": \\\"Final report fields version,candidate,coordinator_commit,cases,unverified; cases use static/synthetic/native-self-use and PASS/FAIL/UNKNOWN/BLOCKED. Finalcandidate fieldb393; final interfaces distinguish original and continuation ranges. Old checkpointreport not overwritten. Final cross-check receipt raw0/terminaltrue; code compares six cards identity/status/binding/budgets/execution and outputs01-05PASS06TESTINGUNKNOWN.\\\",\\n          \\\"pending\\\": \\\"06 registration receipt/D/finalstrict have not occurred. Deployment/fullinstallation/newinstalledsession/externalbusinessUNKNOWN.\\\"\\n        }\\n      },\\n      \\\"questions\\\": {\\n        \\\"dispatch_gap\\\": {\\n          \\\"type\\\": \\\"choice\\\",\\n          \\\"instructions\\\": \\\"Classify the effect of the recorded task06 dispatch-order violation on independent review against the original card's at-least-one-complete-chain requirement. Preserve the historical FAIL regardless of classification; do not invent a requirement that every chain pass.\\\",\\n          \\\"criteria\\\": {\\n            \\\"NONBLOCKING_RECORDED_DEVIATION\\\": \\\"Historical violation remains FAIL, but the original card's required complete chain and continuation are supplied by a separate documented03chain; no new implementation is required for that acceptance item.\\\",\\n            \\\"CHANGES_REQUIRED\\\": \\\"The violation or missing chain evidence leaves an original task06 acceptance requirement unmet and requires correction before approval.\\\",\\n            \\\"INSUFFICIENT\\\": \\\"The observations do not resolve whether the original required chain exists or whether the violation invalidates it.\\\"\\n          }\\n        },\\n        \\\"final_run_reuse\\\": {\\n          \\\"type\\\": \\\"choice\\\",\\n          \\\"instructions\\\": \\\"Decide whether b393 full-test evidence may support review of C for covered product/test behavior without rerunning it. Evaluate evidence reuse only, not final registration/strict approval.\\\",\\n          \\\"criteria\\\": {\\n            \\\"REUSE\\\": \\\"Covered product/tests and inputs are unchanged inb393..C; full original receipt/output supports reuse while retaining originalcandidate/time.\\\",\\n            \\\"RERUN\\\": \\\"A changed covered product/test/input invalidates reuse.\\\",\\n            \\\"INSUFFICIENT\\\": \\\"Available observations cannot establish applicability of the full run.\\\"\\n          }\\n        }\\n      }\\n    },\\n    \\\"response_raw\\\": {\\n      \\\"content\\\": [\\n        {\\n          \\\"type\\\": \\\"text\\\",\\n          \\\"text\\\": \\\"{\\\\\\\"model\\\\\\\":\\\\\\\"jev-1.14.0\\\\\\\",\\\\\\\"answers\\\\\\\":{\\\\\\\"dispatch_gap\\\\\\\":{\\\\\\\"type\\\\\\\":\\\\\\\"choice\\\\\\\",\\\\\\\"choice\\\\\\\":\\\\\\\"NONBLOCKING_RECORDED_DEVIATION\\\\\\\",\\\\\\\"confidence\\\\\\\":0.97,\\\\\\\"probabilities\\\\\\\":{\\\\\\\"CHANGES_REQUIRED\\\\\\\":0.01,\\\\\\\"INSUFFICIENT\\\\\\\":0.01,\\\\\\\"NONBLOCKING_RECORDED_DEVIATION\\\\\\\":0.98}},\\\\\\\"final_run_reuse\\\\\\\":{\\\\\\\"type\\\\\\\":\\\\\\\"choice\\\\\\\",\\\\\\\"choice\\\\\\\":\\\\\\\"REUSE\\\\\\\",\\\\\\\"confidence\\\\\\\":0.83,\\\\\\\"probabilities\\\\\\\":{\\\\\\\"INSUFFICIENT\\\\\\\":0.05,\\\\\\\"RERUN\\\\\\\":0.06,\\\\\\\"REUSE\\\\\\\":0.89}}},\\\\\\\"usage\\\\\\\":{\\\\\\\"input_tokens\\\\\\\":2027,\\\\\\\"output_tokens\\\\\\\":110}}\\\"\\n        }\\n      ]\\n    },\\n    \\\"reviewer_application\\\": \\\"采纳过程偏差保留但不阻断、最终全量可沿用的判断；结合实际diff、原始链及卡片标准作出APPROVED。概率和confidence不作为质量分或验收证据。\\\"\\n  },\\n  \\\"unknown\\\": {\\n    \\\"blocking_review_gaps\\\": [],\\n    \\\"pending_controller_gates\\\": [\\n      \\\"保存本次原生完整返回及守卫到唯一新report/receipt，base=b393、head/contract=C；不得覆盖C内原件。\\\",\\n      \\\"按卡片契约登记允许元数据及D，再运行冻结协调器最终strict；本次尚未发生，不预PASS。\\\",\\n      \\\"本卡登记PASS后进行独立整轮总审及分支strict。\\\"\\n    ],\\n    \\\"external_boundaries\\\": [\\n      \\\"部署UNKNOWN\\\",\\n      \\\"完整安装版本UNKNOWN\\\",\\n      \\\"新安装会话实际消费UNKNOWN\\\",\\n      \\\"外部用户业务整链UNKNOWN\\\"\\n    ]\\n  },\\n  \\\"actual_terminal\\\": {\\n    \\\"review_work\\\": \\\"COMPLETED\\\",\\n    \\\"return_mode\\\": \\\"正常返回\\\",\\n    \\\"native_session_last_observed\\\": \\\"in_progress\\\",\\n    \\\"native_terminal_confirmation_owner\\\": \\\"主控回收本返回时核对\\\",\\n    \\\"implementation_1723\\\": \\\"原生completed，terminalConfirmed=true\\\",\\n    \\\"reviewer_active_commands\\\": [],\\n    \\\"e06_runner_receipts\\\": \\\"已读取的12份均COMPLETED/tree_terminal=true，历史非零结果保留。\\\",\\n    \\\"writes\\\": [],\\n    \\\"git_mutations\\\": [],\\n    \\\"task_card_state\\\": \\\"TESTING/PENDING；Reviewer未写DONE。\\\"\\n  }\\n}\\n\",\"duration_ms\":375666,\"progress\":{\"steps\":38,\"marks\":[\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\"],\"last_step\":\"$e='docs/todos/10-self-hosting-hardening/evidence/03'; foreach($s in 'a','b','c'){ $a=Get-Content \\\"$e/attempt-$s.json\\\" -…\"}}]}"
+              }
+            ],
+            "structuredContent": {
+              "tasks": [
+                {
+                  "task_id": "cc36ebad-5d17-4b4d-bb9c-e4f2fde7ee51",
+                  "status": "completed",
+                  "child_conversation_id": 1727,
+                  "agent_type": "codex",
+                  "text": "{\n  \"task_id\": \"06\",\n  \"reviewer\": {\n    \"session_id\": \"01a1d7b8-cddd-78a3-bf91-2c6015fc74b9\",\n    \"codeg_session_id\": 1727,\n    \"native_task_id\": \"cc36ebad-5d17-4b4d-bb9c-e4f2fde7ee51\",\n    \"identity_verified_by\": [\n      \"CODEX_SESSION_ID / CODEX_THREAD_ID\",\n      \"Codeg get_session_info(1727)\",\n      \"主控原始委派返回\"\n    ],\n    \"independent\": true,\n    \"participation\": \"未参与06实现、测试、方案或RCA；不是实现会话1723，也不是主控1699。\",\n    \"read_only\": true,\n    \"delegated\": false,\n    \"business_or_test_commands_started\": false\n  },\n  \"baseline\": {\n    \"cwd\": \"C:/Users/qingyu/.codeg/skills/iteration-manager/.worktrees/iter-10\",\n    \"branch\": \"feat/iter-10-self-hosting-hardening\",\n    \"base_sha\": \"b3938b86b4cccfcdbd582ab5c2531beec086e0c4\",\n    \"head_sha\": \"f03c00773219de13b93f0575c1e82f80ce7984f5\",\n    \"contract_sha\": \"f03c00773219de13b93f0575c1e82f80ce7984f5\",\n    \"original_base_sha\": \"7107ddb2f2256ceaea40e6ea0aeddd045220b99b\",\n    \"original_product_sha\": \"cd808bf3cf9b95ba7a1ba7901c320e4fd4621df2\",\n    \"checkpoint_sha\": \"c5238c16b1e9c5d941d8dec3c53d273f6a074e44\",\n    \"original_segment_end_sha\": \"8756b47c1fc60c91292ca66e7444cffa05e0ef51\",\n    \"dirty_at_start\": [],\n    \"dirty_at_end\": [],\n    \"last_checked_at\": \"2026-11-14T01:47:49Z\"\n  },\n  \"verdict\": \"APPROVED\",\n  \"reviewer_judgment\": \"06原产品、累计证据和最终续接满足本卡待审要求。保留派发顺序FAIL，不将其改称合规正例；03原始完整链及正常跨会话续接满足至少一链要求。本批准绑定上述C及contract，不预批准登记D、最终strict或整轮总审。\",\n  \"scope\": {\n    \"result\": \"PASS\",\n    \"evidence\": [\n      \"亲自完整读取SKILL、共同协议、task_card_schema、迭代README和06卡。\",\n      \"实际Git差异7107ddb..8756b47共46路径，覆盖06测试、方法、Note、任务卡及e06原件；没有只审最终小diff。\",\n      \"实际Git差异b3938b8..C共10路径，仅06卡和06证据。\",\n      \"controller-scope-ranges.json保存冻结runner对原段46路径、续接段9路径的COMPLETED/raw0/tree_terminal=true原件。\",\n      \"b2f2257..C仅新增74行controller-scope-ranges.json，属于既定e06目录。\",\n      \"cd808bf3..C的06测试、方法和Note无变化；b3938b8..C的产品、测试、脚本、模板及references无变化。\",\n      \"中间04修复未计入06范围，未扩大白名单或重写Git。\"\n    ]\n  },\n  \"spec\": {\n    \"result\": \"PASS\",\n    \"evidence\": [\n      \"14项联合用例直接组合成熟夹具、真实CLI和真实审计接口，覆盖指定拒绝、持久化、幂等、漂移及根索引保护；明确属于synthetic。\",\n      \"完整493项执行覆盖runner、deadline_watch、四预算、unknown、受控resume及FS拒绝Git grant，不以定义存在代替执行。\",\n      \"03原始inventory、claim、同owner dispatch、A/B/C原生终态、runner、attempt、release、独审、C/D及固定strict分别核对。\",\n      \"03 B输入引用A检查点，C输入引用A/B检查点；旧RED和before保留。after较慢，未宣称提速。\",\n      \"04首次全量反例返还原责任域，独审、新绑定和固定strict完成后才继续06；原UI证据按未变范围沿用。\",\n      \"05旧正文漂移拒绝及后续独立新绑定分别保留。\",\n      \"experiment可采用最终成功全量命令，decision采用robustness-report-final.json，interfaces采用controller-interfaces-final.json。\",\n      \"实验报告未自批准06；卡仍为TESTING/PENDING，未提前登记DONE或strict PASS。\"\n    ]\n  },\n  \"quality\": {\n    \"result\": \"PASS\",\n    \"evidence\": [\n      \"新增测试未复制整套测试框架，断言涵盖CLI拒绝、字节不变、检查点继承及跨投影不误PASS。\",\n      \"首次测试API误用、提取器错误和全量失败原件均保留，未冒称有效产品RED。\",\n      \"最终报告保持严格字段及static/synthetic/native-self-use分层；检查点报告未覆写。\",\n      \"Note tree和format原始输出有效，均验证19篇Note。\",\n      \"未发现需要返修的产品或测试阻断缺陷。\"\n    ]\n  },\n  \"issues\": [\n    {\n      \"id\": \"R06-01\",\n      \"file\": \"docs/todos/10-self-hosting-hardening/evidence/06/robustness-report-final.json\",\n      \"lines\": [173, 182],\n      \"related_location\": \"docs/todos/10-self-hosting-hardening/06-self-hosting-acceptance.md:119\",\n      \"severity\": \"MEDIUM\",\n      \"blocking\": false,\n      \"trigger\": \"06原生委派发生时，前序协调工具调用尚报告running。\",\n      \"actual\": \"主控先发出委派，随后才消费READY；最终报告如实记录FAIL。\",\n      \"expected\": \"等待协调调用终态并消费READY后再原生委派。\",\n      \"disposition\": \"保留历史FAIL及责任归属，不追溯改写。原定验收要求至少一条完整合规链，已由03原件满足；后续04派发已采用先消费READY的顺序。\",\n      \"owner\": \"主控\"\n    }\n  ],\n  \"checks\": {\n    \"evidence_prefix\": \"docs/todos/10-self-hosting-hardening/evidence/\",\n    \"experiment\": {\n      \"command\": \"python -B -m pytest -p no:cacheprovider tests -q\",\n      \"cwd\": \".\",\n      \"receipt\": \"06/controller-full-regression-final.json\",\n      \"output\": \"06/controller-full-regression-final.json.output.txt\",\n      \"original_candidate\": \"b3938b86b4cccfcdbd582ab5c2531beec086e0c4\",\n      \"status\": \"COMPLETED\",\n      \"raw_exit_code\": 0,\n      \"tree_terminal\": true,\n      \"result\": \"493 passed in 321.63s\",\n      \"reuse_basis\": \"b393..C仅06卡和证据变化，覆盖产品与测试完全未变；保留原候选及原执行时间。本Reviewer未重跑。\"\n    },\n    \"targeted\": {\n      \"receipt\": \"06/slice-a-targeted-2.json\",\n      \"output\": \"06/slice-a-targeted-2.json.output.txt\",\n      \"result\": \"14 passed in 16.36s\",\n      \"raw_exit_code\": 0,\n      \"tree_terminal\": true,\n      \"reuse_basis\": \"06测试从原产品cd808bf3到C未变，最终完整493项再次包含该文件。\"\n    },\n    \"decision\": {\n      \"kind\": \"observation\",\n      \"output\": \"06/robustness-report-final.json\",\n      \"result\": \"分层、原始失败、最终全量及过程偏差均保留。\"\n    },\n    \"interfaces\": {\n      \"kind\": \"observation\",\n      \"output\": \"06/controller-interfaces-final.json\",\n      \"result\": \"字段、分层、原段与续接绑定清楚；批准由卡片收据另行登记。\"\n    },\n    \"cross_check\": {\n      \"receipt\": \"06/controller-cross-check-final.json\",\n      \"output\": \"06/controller-cross-check-final.json.output.txt\",\n      \"source\": \"06/controller-cross-check.py\",\n      \"raw_exit_code\": 0,\n      \"tree_terminal\": true,\n      \"result\": \"固定envelope与候选query逐字段比较六卡身份、状态、绑定、预算和execution；01—05 PASS，06 TESTING/UNKNOWN。\",\n      \"reuse_basis\": \"比较接口未变；后续06候选正文变化已由当前Git差异及实际卡片定点核对。\"\n    },\n    \"native_chain_03\": {\n      \"index\": \"06/native-chain-inventory.json\",\n      \"originals\": [\n        \"03/inventory-a.json\",\n        \"03/claim-a.json\",\n        \"03/dispatch-a.json\",\n        \"03/dispatch-b.json\",\n        \"03/dispatch-c.json\",\n        \"03/context-implementation-b.json\",\n        \"03/context-implementation-c.json\",\n        \"03/native-terminal-a.json\",\n        \"03/native-terminal-b.json\",\n        \"03/native-terminal-c.json\",\n        \"03/attempt-a.json\",\n        \"03/attempt-b.json\",\n        \"03/attempt-c.json\",\n        \"03/handoff-a.json\",\n        \"03/handoff-b.json\",\n        \"03/handoff-c.json\",\n        \"03/review.json\"\n      ],\n      \"native_sessions\": [1714, 1715, 1716],\n      \"native_terminal\": \"三者均completed且terminalConfirmed=true；逐项读取attempt引用的runner原件，全部COMPLETED/tree_terminal=true，历史非零退出未隐去。\",\n      \"implementation_C\": \"542f2b445f499b3a2e90d92a6ed6bba20cdb1bdb\",\n      \"registration_D\": \"2ce0705ebeeaee73f75a1dcd2882836dbc6b9d29\",\n      \"strict_original\": \"build/review-03/strict-after-D.txt:1-43\",\n      \"controller_original\": \"C:/Users/qingyu/.codex/sessions/2026/11/13/rollout-2026-11-13T23-06-27-01a1d572-1a27-7b51-b8f4-797832bc44a6.jsonl\",\n      \"ordering_evidence\": \"原始行1519在17:29:21.144Z返回claim0/dispatch0；行1526在17:29:56.509Z返回原生委派成功。\",\n      \"reuse_basis\": \"沿用实际已审03链，不重新模拟，不因新会话重跑旧RED/before。\"\n    },\n    \"repair_04\": {\n      \"failure\": \"06/controller-full-regression.json.output.txt:9-34\",\n      \"diagnosis\": \"06/controller-harness-diagnosis.json.output.txt:16-20\",\n      \"independent_receipt\": \"04/review-repair-final.json\",\n      \"independent_report\": \"04/review-report-repair-final.json\",\n      \"reviewer\": \"1725/01a1d7a9-5822-7bc3-a3e7-51486485f8ea\",\n      \"result\": \"保留490passed/1failed及8.562秒诊断；显式isolated-fixtures修复未提高8秒，默认真实入口未变。\",\n      \"strict_evidence\": \"主控原始会话行3005，2026-11-14T01:33:06.748Z，冻结local strict退出0，5/6 PASS，04引用review-repair-final.json；随后01:33:21.256Z才启动06最终全量。\",\n      \"ui_reuse\": \"04原生操作、七图、四态原件及原批准保留；synthetic FS/empty/loading来源明确，未升级为真实FS业务验收。\"\n    },\n    \"task_05\": {\n      \"original_report\": \"05/review-report.json\",\n      \"new_receipt\": \"05/review-final.json\",\n      \"new_report\": \"05/review-report-final.json\",\n      \"binding\": \"head/contract=dc5d868c6b90268a2eefc29966874c96d48dd122\",\n      \"result\": \"正文漂移正确拒绝后独立新绑定，旧新原件均保留。\"\n    },\n    \"note\": {\n      \"outputs\": [\n        \"06/slice-a-note-tree.json.output.txt\",\n        \"06/slice-a-note-format.json.output.txt\"\n      ],\n      \"result\": \"19 notes tree/relative links及format通过。\",\n      \"reuse_basis\": \"06 Note从cd808bf3到C未变。\"\n    },\n    \"scope\": {\n      \"original\": \"06/controller-scope-ranges.json\",\n      \"result\": \"冻结runner两段scope均退出0；最后仅新增汇总文件，实际Git差异已核对。\"\n    }\n  },\n  \"typesafe\": {\n    \"request\": {\n      \"state\": {\n        \"binding\": {\n          \"base\": \"b3938b86b4cccfcdbd582ab5c2531beec086e0c4\",\n          \"head\": \"f03c00773219de13b93f0575c1e82f80ce7984f5\",\n          \"contract\": \"f03c00773219de13b93f0575c1e82f80ce7984f5\",\n          \"original_range\": \"7107ddb2f2256ceaea40e6ea0aeddd045220b99b..8756b47c1fc60c91292ca66e7444cffa05e0ef51\"\n        },\n        \"requirements\": [\n          \"06 is Spike-Discovery: experiment successful command, decision and interfaces observations; no TDD RED requirement.\",\n          \"Card acceptance line92 requires at least one real inventory->claim->same-owner dispatch-check->native delegation->runner->attempt->release->independent review->C/D->frozen strict chain and one cross-session checkpoint continuation.\",\n          \"Common protocol requires controller to consume READY before native delegation; script does not automatically intercept delegation.\",\n          \"Independent review precedes registration D and final strict; reviewer is read-only and cannot run tests or write registration.\"\n        ],\n        \"observations\": {\n          \"identity\": \"Current session1727 external01a1d7b8-cddd-78a3-bf91-2c6015fc74b9 from runtime environment and Codeg get_session_info; implementation1723 external01a1d793-e65a-7251-8c92-b82981f6cf0c; controller1699 external01a1d572-1a27-7b51-b8f4-797832bc44a6. Current session has done only review.\",\n          \"scope\": \"git diff original range:46 paths comprising06 test/method/Note/card/e06. Final range10 paths only06 card/e06. Frozen runner scope originals exit0/tree_terminal=true for46 and9paths; b2f2257..f03c007 adds only controller-scope-ranges.json. git diff cd808bf3..C shows06 test/method/Note unchanged. b393..C scripts/tests/templates/references/SKILL unchanged. Worktree clean.\",\n          \"tests\": \"Read actual140-line test_self_hosting.py and imported fixture/CLI definitions. Six parametrized gate refusals; attempt/replay/changedpayload/release/reclaim; two empty attempts block third; bad-number/unknownDONE; FS source/evidence/body drift across audit/envelope/board; feature-root refusal bytes unchanged. Original targeted receipt/output14passed16.36s. Final full tests receipt COMPLETED raw0 tree_terminaltrue and child0; output493passed321.63s onb393; no tests rerun by reviewer.\",\n          \"process_deviation\": \"robustness-report-final.json:173-182 contains06-dispatch-consumption-order resultFAIL:06 delegation issued while coordination tool still reportedrunning, READY consumed afterward. Cardline119 repeats gap. This case is not presented as compliant positive chain.\",\n          \"chain03\": \"Original03 inventory/claim/dispatchA READY read. Controller original log17:29:21.144Z reportsclaim0/dispatch0 before native delegate17:29:56.356Z. Three original native tasks1714A/1715B/1716C havecompleted/terminalConfirmedtrue, distinct taskIDs, runner receipts and empty released writer. Bcontext includesAcheckpoint; C includesA+Bcheckpoints. Originalbefore/RED retained; after measurements slower. Original independent receipt reviewer01a1d610-f583-76d0-8943-f401eece9af0 bindsC542f2b445f499b3a2e90d92a6ed6bba20cdb1bdb, registrationD2ce0705ebeeaee73f75a1dcd2882836dbc6b9d29. build/review-03/strict-after-D.txt explicitly03PASS.\",\n          \"repair04\": \"First06full output490passed1failed atready8seconds. Diagnosisready8.562seconds exit0. Repair delegatedback04, opt-in isolated-fixtures retained8secondlimit/defaultrealentry, independent1725 APPROVED/newreceipt41f6618. Controller original log01:33:06.748Z fixedstrict exit0,5/6PASS referencingnew04receipt before final06full command01:33:21.256Z. Original04nativeUI evidence retained, syntheticFS/empty/loading identified.\",\n          \"reports\": \"Final report fields version,candidate,coordinator_commit,cases,unverified; cases use static/synthetic/native-self-use and PASS/FAIL/UNKNOWN/BLOCKED. Finalcandidate fieldb393; final interfaces distinguish original and continuation ranges. Old checkpointreport not overwritten. Final cross-check receipt raw0/terminaltrue; code compares six cards identity/status/binding/budgets/execution and outputs01-05PASS06TESTINGUNKNOWN.\",\n          \"pending\": \"06 registration receipt/D/finalstrict have not occurred. Deployment/fullinstallation/newinstalledsession/externalbusinessUNKNOWN.\"\n        }\n      },\n      \"questions\": {\n        \"dispatch_gap\": {\n          \"type\": \"choice\",\n          \"instructions\": \"Classify the effect of the recorded task06 dispatch-order violation on independent review against the original card's at-least-one-complete-chain requirement. Preserve the historical FAIL regardless of classification; do not invent a requirement that every chain pass.\",\n          \"criteria\": {\n            \"NONBLOCKING_RECORDED_DEVIATION\": \"Historical violation remains FAIL, but the original card's required complete chain and continuation are supplied by a separate documented03chain; no new implementation is required for that acceptance item.\",\n            \"CHANGES_REQUIRED\": \"The violation or missing chain evidence leaves an original task06 acceptance requirement unmet and requires correction before approval.\",\n            \"INSUFFICIENT\": \"The observations do not resolve whether the original required chain exists or whether the violation invalidates it.\"\n          }\n        },\n        \"final_run_reuse\": {\n          \"type\": \"choice\",\n          \"instructions\": \"Decide whether b393 full-test evidence may support review of C for covered product/test behavior without rerunning it. Evaluate evidence reuse only, not final registration/strict approval.\",\n          \"criteria\": {\n            \"REUSE\": \"Covered product/tests and inputs are unchanged inb393..C; full original receipt/output supports reuse while retaining originalcandidate/time.\",\n            \"RERUN\": \"A changed covered product/test/input invalidates reuse.\",\n            \"INSUFFICIENT\": \"Available observations cannot establish applicability of the full run.\"\n          }\n        }\n      }\n    },\n    \"response_raw\": {\n      \"content\": [\n        {\n          \"type\": \"text\",\n          \"text\": \"{\\\"model\\\":\\\"jev-1.14.0\\\",\\\"answers\\\":{\\\"dispatch_gap\\\":{\\\"type\\\":\\\"choice\\\",\\\"choice\\\":\\\"NONBLOCKING_RECORDED_DEVIATION\\\",\\\"confidence\\\":0.97,\\\"probabilities\\\":{\\\"CHANGES_REQUIRED\\\":0.01,\\\"INSUFFICIENT\\\":0.01,\\\"NONBLOCKING_RECORDED_DEVIATION\\\":0.98}},\\\"final_run_reuse\\\":{\\\"type\\\":\\\"choice\\\",\\\"choice\\\":\\\"REUSE\\\",\\\"confidence\\\":0.83,\\\"probabilities\\\":{\\\"INSUFFICIENT\\\":0.05,\\\"RERUN\\\":0.06,\\\"REUSE\\\":0.89}}},\\\"usage\\\":{\\\"input_tokens\\\":2027,\\\"output_tokens\\\":110}}\"\n        }\n      ]\n    },\n    \"reviewer_application\": \"采纳过程偏差保留但不阻断、最终全量可沿用的判断；结合实际diff、原始链及卡片标准作出APPROVED。概率和confidence不作为质量分或验收证据。\"\n  },\n  \"unknown\": {\n    \"blocking_review_gaps\": [],\n    \"pending_controller_gates\": [\n      \"保存本次原生完整返回及守卫到唯一新report/receipt，base=b393、head/contract=C；不得覆盖C内原件。\",\n      \"按卡片契约登记允许元数据及D，再运行冻结协调器最终strict；本次尚未发生，不预PASS。\",\n      \"本卡登记PASS后进行独立整轮总审及分支strict。\"\n    ],\n    \"external_boundaries\": [\n      \"部署UNKNOWN\",\n      \"完整安装版本UNKNOWN\",\n      \"新安装会话实际消费UNKNOWN\",\n      \"外部用户业务整链UNKNOWN\"\n    ]\n  },\n  \"actual_terminal\": {\n    \"review_work\": \"COMPLETED\",\n    \"return_mode\": \"正常返回\",\n    \"native_session_last_observed\": \"in_progress\",\n    \"native_terminal_confirmation_owner\": \"主控回收本返回时核对\",\n    \"implementation_1723\": \"原生completed，terminalConfirmed=true\",\n    \"reviewer_active_commands\": [],\n    \"e06_runner_receipts\": \"已读取的12份均COMPLETED/tree_terminal=true，历史非零结果保留。\",\n    \"writes\": [],\n    \"git_mutations\": [],\n    \"task_card_state\": \"TESTING/PENDING；Reviewer未写DONE。\"\n  }\n}\n",
+                  "duration_ms": 375666,
+                  "progress": {
+                    "steps": 38,
+                    "marks": [
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok"
+                    ],
+                    "last_step": "$e='docs/todos/10-self-hosting-hardening/evidence/03'; foreach($s in 'a','b','c'){ $a=Get-Content \"$e/attempt-$s.json\" -…"
+                  }
+                }
+              ]
+            },
+            "isError": false
+          }
+        }
+      }
+    ]
+  }
+}
