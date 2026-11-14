@@ -1,0 +1,691 @@
+{
+  "task_id": "04",
+  "review_scope": "定点返修增量独审",
+  "reviewer": {
+    "session_id": "01a1d7a9-5822-7bc3-a3e7-51486485f8ea",
+    "identity_source": "CODEX_SESSION_ID / CODEX_THREAD_ID",
+    "independence": "未参与04实现、测试、方案或RCA；不是主控、1718或1724",
+    "read_only": true,
+    "delegated": false
+  },
+  "baseline": {
+    "cwd": "C:/Users/qingyu/.codeg/skills/iteration-manager/.worktrees/iter-10",
+    "branch": "feat/iter-10-self-hosting-hardening",
+    "base_sha": "6afa4de271ee90271f2c068a8060ed2590c8ff98",
+    "head_sha": "41f6618008542a1394fd0341237b36c91554c218",
+    "contract_sha": "41f6618008542a1394fd0341237b36c91554c218",
+    "repair_product_sha": "493ecf2dbfc247247b7c7b2465d126c99117d106",
+    "dirty_at_start": [],
+    "dirty_at_end": [],
+    "final_checked_at": "2026-11-14T01:28:57Z"
+  },
+  "verdict": "APPROVED",
+  "reviewer_judgment": "修复通过显式临时库存模式解除生命周期测试与真实迭代审计成本的耦合，默认真实Git入口保持兼容。保留8秒门限及真实HTTP、延迟、出处和回收断言；未发现阻断缺陷。本批准绑定上述修复增量，不替代旧04产品批准，也不表示登记后strict或06整轮验收通过。",
+  "evidence_prefix": "docs/todos/10-self-hosting-hardening/evidence/",
+  "scope": {
+    "result": "PASS",
+    "evidence": [
+      "实际BASE..C共32个变更路径，均属于04白名单、04卡或04证据目录。",
+      "源码变化限于04/browser_harness.py及tests/test_board_handoff.py；既有Note同步，卡片变化为执行元数据及ledger。",
+      "BASE..C未修改scripts、references、templates、SKILL、迭代README、05产品或06原件。",
+      "493ecf2..C在harness、tests、scripts、templates上无变化。",
+      "原review-report.json、review.json及原浏览器产物未在本次修复中覆写。"
+    ]
+  },
+  "spec": [
+    {
+      "requirement": "隔离真实checkout库存读取",
+      "result": "PASS",
+      "evidence": [
+        "04/browser_harness.py:64-81：显式模式将Git库存替换为TemporaryDirectory下synthetic_git；FS、empty和loading也位于同一临时根。",
+        "04/browser_harness.py:87-100：四个真实HTTP handler均绑定对应临时iter_dir，ready仍调用真实generate_board_data。",
+        "scripts/iter_sync.py:476-510、576-595及scripts/iter_queries.py:12-16、59-103：查询、HTTP及Git调用使用传入目录；合成IN_PROGRESS卡不进入DONE绑定审计分支。",
+        "tests/test_board_handoff.py:103-120：隔离断言检查真实查询入口的目录、四服务归属、synthetic标记及临时目录删除。",
+        "隔离对象是任务库存；从checkout加载程序源码和UI模板仍属正常行为。"
+      ]
+    },
+    {
+      "requirement": "默认入口兼容且不伪造真实消费",
+      "result": "PASS",
+      "evidence": [
+        "04/browser_harness.py:56-57、69-76：默认不启用隔离，仍使用real_git及原真实迭代路径。",
+        "tests/test_board_handoff.py:82-121：默认参数分支以临时checkout核对原目录选择及synthetic=false。",
+        "显式隔离模式名称为synthetic_git，四服务均标记synthetic；帮助文本和Note均明确不作为native-self-use证据。",
+        "默认模式兼容参数测试为后补，未冒称经历RED。"
+      ]
+    },
+    {
+      "requirement": "不弱化既有行为断言",
+      "result": "PASS",
+      "evidence": [
+        "tests/test_board_handoff.py:124-169仍保留8秒ready断言、真实子进程和HTTP请求。",
+        "HTTP 200、至少0.18秒延迟、FS当前候选与历史checkpoint、remaining_work、三个sources及实际原文响应断言均保留。",
+        "原real_git出处断言改由默认模式参数测试覆盖；生命周期测试新增四服务全部synthetic及临时路径归属断言。"
+      ]
+    },
+    {
+      "requirement": "线程、服务及temp正常回收",
+      "result": "PASS",
+      "evidence": [
+        "04/browser_harness.py:104-115：正常停止及finally均设置停止事件、shutdown、join、server_close，退出临时目录上下文后才输出终态。",
+        "tests/test_board_handoff.py:164-173：实际停止服务和子进程，检查exit0、active_commands为空及临时根不存在。",
+        "最终实现者与主控独立五文件原件均69passed，runner及child记录均为终态。"
+      ]
+    }
+  ],
+  "quality": {
+    "result": "PASS",
+    "evidence": [
+      "新增模式复用真实查询和HTTP生命周期，没有复制服务实现或模拟查询返回值。",
+      "repair-final-red-isolation-a.json.output.txt:40-53记录实际checkout目录触发AssertionError；不是导入、编译或参数解析失败。",
+      "旧失败和8.562秒诊断保留；没有通过提高超时或把合成结果改称真实消费来消除失败。",
+      "既有Note记录隔离边界、默认兼容及RED覆盖范围；tree和format原件均有效通过。"
+    ]
+  },
+  "checks": [
+    {
+      "receipt": "04/repair-final-red-isolation-a.json",
+      "output": "04/repair-final-red-isolation-a.json.output.txt",
+      "raw_exit_code": 1,
+      "result": "1 failed；有效隔离行为AssertionError",
+      "tree_terminal": true
+    },
+    {
+      "receipt": "04/repair-final-green-isolation-a.json",
+      "output": "04/repair-final-green-isolation-a.json.output.txt",
+      "raw_exit_code": 0,
+      "result": "7 passed in 3.13s",
+      "tree_terminal": true
+    },
+    {
+      "receipt": "04/repair-final-five-files-final-b.json",
+      "output": "04/repair-final-five-files-final-b.json.output.txt",
+      "raw_exit_code": 0,
+      "result": "69 passed in 14.65s",
+      "tree_terminal": true
+    },
+    {
+      "receipt": "04/controller-regression-repair-final.json",
+      "output": "04/controller-regression-repair-final.json.output.txt",
+      "raw_exit_code": 0,
+      "result": "主控独立规定五文件69 passed in 14.27s",
+      "tree_terminal": true
+    },
+    {
+      "receipts": [
+        "04/repair-final-note-tree-a.json",
+        "04/repair-final-note-format-a.json"
+      ],
+      "outputs": [
+        "04/repair-final-note-tree-a.json.output.txt",
+        "04/repair-final-note-format-a.json.output.txt"
+      ],
+      "raw_exit_codes": [
+        0,
+        0
+      ],
+      "result": "19 notes tree/relative links及format通过",
+      "tree_terminal": true
+    }
+  ],
+  "issues": [],
+  "reused_evidence": [
+    {
+      "coverage": "原04产品展示、原生交互、四态及1139x869视觉",
+      "original_reviewed_candidate": "9b9010afb8dbf0b0cf74f83c6c97605984319619",
+      "approval_sources": [
+        "04/review-report.json",
+        "04/review.json"
+      ],
+      "originals": [
+        "04/browser-git-b.json.output.txt",
+        "04/browser-detail-b.json.output.txt",
+        "04/browser-source-b.json.output.txt",
+        "04/browser-states-b.json.output.txt",
+        "04/browser-disconnect-b.json.output.txt",
+        "04/browser-real-git-b.png",
+        "04/browser-git-detail-b.png",
+        "04/browser-checkpoint-b.png",
+        "04/browser-fs-detail-b.png",
+        "04/browser-empty-b.png",
+        "04/browser-loading-b.png",
+        "04/browser-disconnected-b.png"
+      ],
+      "impact_basis": "原已审候选至当前C的scripts及templates无变化；默认harness目录选择未变；原浏览器产物在修复BASE..C无变化。旧Reviewer已实际观察七图，本次定点核对原生操作及状态输出，不重跑浏览器。",
+      "provenance": "真实Git库存；FS、empty、loading为明确合成输入，经真实HTTP和原生浏览器操作。未将其升级为真实FS业务批准。"
+    },
+    {
+      "coverage": "修复测试及独立回归",
+      "original_candidate": "493ecf2dbfc247247b7c7b2465d126c99117d106",
+      "current_candidate": "41f6618008542a1394fd0341237b36c91554c218",
+      "impact_basis": "产品harness及测试在两候选间无变化，沿用已读取的最终69passed及主控独立69passed原件；本Reviewer没有重新执行测试。"
+    }
+  ],
+  "unknown": {
+    "blocking_review_gaps": [],
+    "boundaries": [
+      "本次未启动业务、测试或浏览器命令，未写文件、卡片或Git，未委派。",
+      "原06全量仍是490passed/1failed；修复候选的整轮全量结果不在本次批准范围内，06保持TESTING、未放行。",
+      "新收据登记、登记D及固定协调器strict尚待主控执行，本报告未声称其通过。",
+      "CodeGraph返回另一worktree提示，未将该索引作为当前源码证据；已读取当前worktree相关源码。"
+    ]
+  },
+  "handoff": {
+    "owner": "主控",
+    "binding": "新批准仅绑定BASE6afa4de..C41f6618，contract41f6618；旧04产品批准保留原BASE/C身份。",
+    "registration": "新report及receipt使用唯一新名字，不覆盖C中已有review-report.json或review.json。",
+    "remaining_gates": [
+      "登记新绑定及D后消费固定协调器strict",
+      "按既定流程返回06最终全量及后续验收"
+    ]
+  },
+  "typesafe": {
+    "request": {
+      "state": {
+        "binding": {
+          "base": "6afa4de271ee90271f2c068a8060ed2590c8ff98",
+          "head": "41f6618008542a1394fd0341237b36c91554c218",
+          "contract": "41f6618008542a1394fd0341237b36c91554c218",
+          "product": "493ecf2dbfc247247b7c7b2465d126c99117d106",
+          "branch": "feat/iter-10-self-hosting-hardening",
+          "dirty": []
+        },
+        "authority": "Read-only independent task04 repair review. No tests/browser rerun, file writes or delegation. New approval binds incremental repair BASE, preserving original task04 approval separately. Post-registration frozen strict and task06 full regression are subsequent controller work.",
+        "diff": {
+          "paths": 32,
+          "changed": "browser_harness.py adds opt-in --isolated-fixtures and temporary synthetic Git inventory; test_board_handoff.py adds isolation/default-mode tests and opts lifecycle test into isolation; existing Note adds explanation; task04 metadata/ledger and new evidence.",
+          "unchanged": "BASE..C has no scripts, templates, references, SKILL, task05/task06 product changes, old review-report.json/review.json or original browser artifacts. Product/tests/harness unchanged after 493ecf2 except Note/card/evidence."
+        },
+        "source": {
+          "browser_harness.py:64-100": "TemporaryDirectory owns FS, empty and loading inventory. Default git_name=real_git and directory=ROOT/docs/todos/10-self-hosting-hardening. Opt-in replaces it with synthetic_git under temp root. All four handler classes receive those directory values. ready totals call real generate_board_data; synthetic flag is name != real_git.",
+          "browser_harness.py:83-115": "Real LiveBoardHandler subclass; /api/board waits Event for configured delay. On stop/finally, Event.set, server.shutdown, thread.join, server_close; temp context exits before final stopped/active_commands output.",
+          "iter_sync.py:462-610 and iter_queries.py:12-112": "Queries discover and read given iter_dir. Git subprocess cwd is provided directory. Synthetic cards are IN_PROGRESS, so DONE receipt/Git binding audit branch is not entered. HTTP uses self.iter_dir. Loading source/template code from checkout is retained; isolated contract concerns inventory, not program source reads.",
+          "test_board_handoff.py:82-121": "Isolation test wraps real query to assert no inventory directory is below harness.ROOT, asserts four temp directories/synthetic labels and temp removal. Default parameter case uses temp checkout, checks original directory and real_git false synthetic label.",
+          "test_board_handoff.py:124-173": "Actual subprocess/HTTP lifecycle. Keeps 8-second ready assertion, HTTP 200, .18-second delay lower bound, FS candidate/current versus original checkpoint, remaining work, three sources, actual evidence response, exit0, active_commands empty and temp removed."
+        },
+        "originals": {
+          "failure": "06/controller-full-regression.json: COMPLETED exit1 tree_terminal true; output 490 passed/1 failed at original 8-second ready assertion.",
+          "diagnosis": "06/controller-harness-diagnosis.json.output.txt: candidate85031b1, default ready8.562s, exit0, stderr empty.",
+          "red": "04/repair-final-red-isolation-a.json: COMPLETED exit1 tree_terminal true; output AssertionError isolated mode read checkout inventory at actual checkout directory, 1 failed. Initial test injects parsed isolated_fixtures=True, not import/CLI failure.",
+          "green": "04/repair-final-green-isolation-a.json: COMPLETED exit0 tree_terminal true; 7 passed. Default-mode compatibility parameter was added later, not claimed RED.",
+          "final": "04/repair-final-five-files-final-b.json: specified five files, COMPLETED exit0 tree_terminal true, 69 passed in14.65s.",
+          "independent": "04/controller-regression-repair-final.json: same five files, COMPLETED exit0 tree_terminal true, 69 passed in14.27s.",
+          "cleanup": "All six implementer runner receipts plus independent runner and child records terminal. Native repair task6a14c232-1dd5-4d68-806f-39c192b8aa33 completed.",
+          "note": "Existing Note updated; original tree/format outputs ok19 notes, runner exit0 terminal.",
+          "ui": "Old review-report/review.json approve candidate9b9010af. Original native source popup/Escape, state/delay/disconnect records and seven1139x869 screenshots remain; templates/query/CLI and default harness branch unchanged. FS/empty/loading provenance explicitly synthetic."
+        }
+      },
+      "questions": {
+        "repair_disposition": {
+          "type": "choice",
+          "instructions": "Determine the independent disposition of only this incremental task04 harness repair against the stated authorization and requirements. Treat subsequent registration/strict and task06 full regression as pending later gates, not already passed. Do not infer native self-use from synthetic tests.",
+          "criteria": {
+            "APPROVED": "Available source and original evidence support isolation, default compatibility, retained behavior assertions and normal cleanup; no concrete material defect is established.",
+            "CHANGES_REQUESTED": "A concrete material defect or weakened required assertion in the repair requires correction.",
+            "BLOCKED": "Required evidence is absent or contradictory, preventing an incremental review conclusion."
+          }
+        },
+        "ui_reuse": {
+          "type": "choice",
+          "instructions": "Classify whether the old task04 native UI evidence can be reused for the unchanged product/UI behaviors in this incremental review, without claiming it was rerun or that synthetic tests are native acceptance.",
+          "criteria": {
+            "REUSE": "Covered UI/query/default behavior and original artifacts are unchanged; prior approval and originals remain attributable.",
+            "RERUN_REQUIRED": "An observed changed covered behavior invalidates the old UI evidence.",
+            "INSUFFICIENT": "The evidence does not establish whether covered behavior or originals changed."
+          }
+        }
+      }
+    },
+    "response_raw": {
+      "model": "jev-1.14.0",
+      "answers": {
+        "repair_disposition": {
+          "type": "choice",
+          "choice": "APPROVED",
+          "confidence": 0.64,
+          "probabilities": {
+            "APPROVED": 0.76,
+            "BLOCKED": 0.07,
+            "CHANGES_REQUESTED": 0.17
+          }
+        },
+        "ui_reuse": {
+          "type": "choice",
+          "choice": "REUSE",
+          "confidence": 1,
+          "probabilities": {
+            "INSUFFICIENT": 0,
+            "RERUN_REQUIRED": 0,
+            "REUSE": 1
+          }
+        }
+      },
+      "usage": {
+        "input_tokens": 1819,
+        "output_tokens": 98
+      }
+    },
+    "reviewer_application": "采纳增量APPROVED和UI证据可沿用的方向；最终裁决依据当前diff、源码及原件作出。概率和confidence不作为质量分或测试证据。"
+  },
+  "native_guard": {
+    "reason": "terminal",
+    "deadlineMs": 1794620071121,
+    "final": {
+      "task_id": "a1947bd9-a375-4590-8310-d7454f450451",
+      "status": "completed",
+      "child_conversation_id": 1725,
+      "agent_type": "codex",
+      "text": "{\n  \"task_id\": \"04\",\n  \"review_scope\": \"定点返修增量独审\",\n  \"reviewer\": {\n    \"session_id\": \"01a1d7a9-5822-7bc3-a3e7-51486485f8ea\",\n    \"identity_source\": \"CODEX_SESSION_ID / CODEX_THREAD_ID\",\n    \"independence\": \"未参与04实现、测试、方案或RCA；不是主控、1718或1724\",\n    \"read_only\": true,\n    \"delegated\": false\n  },\n  \"baseline\": {\n    \"cwd\": \"C:/Users/qingyu/.codeg/skills/iteration-manager/.worktrees/iter-10\",\n    \"branch\": \"feat/iter-10-self-hosting-hardening\",\n    \"base_sha\": \"6afa4de271ee90271f2c068a8060ed2590c8ff98\",\n    \"head_sha\": \"41f6618008542a1394fd0341237b36c91554c218\",\n    \"contract_sha\": \"41f6618008542a1394fd0341237b36c91554c218\",\n    \"repair_product_sha\": \"493ecf2dbfc247247b7c7b2465d126c99117d106\",\n    \"dirty_at_start\": [],\n    \"dirty_at_end\": [],\n    \"final_checked_at\": \"2026-11-14T01:28:57Z\"\n  },\n  \"verdict\": \"APPROVED\",\n  \"reviewer_judgment\": \"修复通过显式临时库存模式解除生命周期测试与真实迭代审计成本的耦合，默认真实Git入口保持兼容。保留8秒门限及真实HTTP、延迟、出处和回收断言；未发现阻断缺陷。本批准绑定上述修复增量，不替代旧04产品批准，也不表示登记后strict或06整轮验收通过。\",\n  \"evidence_prefix\": \"docs/todos/10-self-hosting-hardening/evidence/\",\n  \"scope\": {\n    \"result\": \"PASS\",\n    \"evidence\": [\n      \"实际BASE..C共32个变更路径，均属于04白名单、04卡或04证据目录。\",\n      \"源码变化限于04/browser_harness.py及tests/test_board_handoff.py；既有Note同步，卡片变化为执行元数据及ledger。\",\n      \"BASE..C未修改scripts、references、templates、SKILL、迭代README、05产品或06原件。\",\n      \"493ecf2..C在harness、tests、scripts、templates上无变化。\",\n      \"原review-report.json、review.json及原浏览器产物未在本次修复中覆写。\"\n    ]\n  },\n  \"spec\": [\n    {\n      \"requirement\": \"隔离真实checkout库存读取\",\n      \"result\": \"PASS\",\n      \"evidence\": [\n        \"04/browser_harness.py:64-81：显式模式将Git库存替换为TemporaryDirectory下synthetic_git；FS、empty和loading也位于同一临时根。\",\n        \"04/browser_harness.py:87-100：四个真实HTTP handler均绑定对应临时iter_dir，ready仍调用真实generate_board_data。\",\n        \"scripts/iter_sync.py:476-510、576-595及scripts/iter_queries.py:12-16、59-103：查询、HTTP及Git调用使用传入目录；合成IN_PROGRESS卡不进入DONE绑定审计分支。\",\n        \"tests/test_board_handoff.py:103-120：隔离断言检查真实查询入口的目录、四服务归属、synthetic标记及临时目录删除。\",\n        \"隔离对象是任务库存；从checkout加载程序源码和UI模板仍属正常行为。\"\n      ]\n    },\n    {\n      \"requirement\": \"默认入口兼容且不伪造真实消费\",\n      \"result\": \"PASS\",\n      \"evidence\": [\n        \"04/browser_harness.py:56-57、69-76：默认不启用隔离，仍使用real_git及原真实迭代路径。\",\n        \"tests/test_board_handoff.py:82-121：默认参数分支以临时checkout核对原目录选择及synthetic=false。\",\n        \"显式隔离模式名称为synthetic_git，四服务均标记synthetic；帮助文本和Note均明确不作为native-self-use证据。\",\n        \"默认模式兼容参数测试为后补，未冒称经历RED。\"\n      ]\n    },\n    {\n      \"requirement\": \"不弱化既有行为断言\",\n      \"result\": \"PASS\",\n      \"evidence\": [\n        \"tests/test_board_handoff.py:124-169仍保留8秒ready断言、真实子进程和HTTP请求。\",\n        \"HTTP 200、至少0.18秒延迟、FS当前候选与历史checkpoint、remaining_work、三个sources及实际原文响应断言均保留。\",\n        \"原real_git出处断言改由默认模式参数测试覆盖；生命周期测试新增四服务全部synthetic及临时路径归属断言。\"\n      ]\n    },\n    {\n      \"requirement\": \"线程、服务及temp正常回收\",\n      \"result\": \"PASS\",\n      \"evidence\": [\n        \"04/browser_harness.py:104-115：正常停止及finally均设置停止事件、shutdown、join、server_close，退出临时目录上下文后才输出终态。\",\n        \"tests/test_board_handoff.py:164-173：实际停止服务和子进程，检查exit0、active_commands为空及临时根不存在。\",\n        \"最终实现者与主控独立五文件原件均69passed，runner及child记录均为终态。\"\n      ]\n    }\n  ],\n  \"quality\": {\n    \"result\": \"PASS\",\n    \"evidence\": [\n      \"新增模式复用真实查询和HTTP生命周期，没有复制服务实现或模拟查询返回值。\",\n      \"repair-final-red-isolation-a.json.output.txt:40-53记录实际checkout目录触发AssertionError；不是导入、编译或参数解析失败。\",\n      \"旧失败和8.562秒诊断保留；没有通过提高超时或把合成结果改称真实消费来消除失败。\",\n      \"既有Note记录隔离边界、默认兼容及RED覆盖范围；tree和format原件均有效通过。\"\n    ]\n  },\n  \"checks\": [\n    {\n      \"receipt\": \"04/repair-final-red-isolation-a.json\",\n      \"output\": \"04/repair-final-red-isolation-a.json.output.txt\",\n      \"raw_exit_code\": 1,\n      \"result\": \"1 failed；有效隔离行为AssertionError\",\n      \"tree_terminal\": true\n    },\n    {\n      \"receipt\": \"04/repair-final-green-isolation-a.json\",\n      \"output\": \"04/repair-final-green-isolation-a.json.output.txt\",\n      \"raw_exit_code\": 0,\n      \"result\": \"7 passed in 3.13s\",\n      \"tree_terminal\": true\n    },\n    {\n      \"receipt\": \"04/repair-final-five-files-final-b.json\",\n      \"output\": \"04/repair-final-five-files-final-b.json.output.txt\",\n      \"raw_exit_code\": 0,\n      \"result\": \"69 passed in 14.65s\",\n      \"tree_terminal\": true\n    },\n    {\n      \"receipt\": \"04/controller-regression-repair-final.json\",\n      \"output\": \"04/controller-regression-repair-final.json.output.txt\",\n      \"raw_exit_code\": 0,\n      \"result\": \"主控独立规定五文件69 passed in 14.27s\",\n      \"tree_terminal\": true\n    },\n    {\n      \"receipts\": [\n        \"04/repair-final-note-tree-a.json\",\n        \"04/repair-final-note-format-a.json\"\n      ],\n      \"outputs\": [\n        \"04/repair-final-note-tree-a.json.output.txt\",\n        \"04/repair-final-note-format-a.json.output.txt\"\n      ],\n      \"raw_exit_codes\": [0, 0],\n      \"result\": \"19 notes tree/relative links及format通过\",\n      \"tree_terminal\": true\n    }\n  ],\n  \"issues\": [],\n  \"reused_evidence\": [\n    {\n      \"coverage\": \"原04产品展示、原生交互、四态及1139x869视觉\",\n      \"original_reviewed_candidate\": \"9b9010afb8dbf0b0cf74f83c6c97605984319619\",\n      \"approval_sources\": [\n        \"04/review-report.json\",\n        \"04/review.json\"\n      ],\n      \"originals\": [\n        \"04/browser-git-b.json.output.txt\",\n        \"04/browser-detail-b.json.output.txt\",\n        \"04/browser-source-b.json.output.txt\",\n        \"04/browser-states-b.json.output.txt\",\n        \"04/browser-disconnect-b.json.output.txt\",\n        \"04/browser-real-git-b.png\",\n        \"04/browser-git-detail-b.png\",\n        \"04/browser-checkpoint-b.png\",\n        \"04/browser-fs-detail-b.png\",\n        \"04/browser-empty-b.png\",\n        \"04/browser-loading-b.png\",\n        \"04/browser-disconnected-b.png\"\n      ],\n      \"impact_basis\": \"原已审候选至当前C的scripts及templates无变化；默认harness目录选择未变；原浏览器产物在修复BASE..C无变化。旧Reviewer已实际观察七图，本次定点核对原生操作及状态输出，不重跑浏览器。\",\n      \"provenance\": \"真实Git库存；FS、empty、loading为明确合成输入，经真实HTTP和原生浏览器操作。未将其升级为真实FS业务批准。\"\n    },\n    {\n      \"coverage\": \"修复测试及独立回归\",\n      \"original_candidate\": \"493ecf2dbfc247247b7c7b2465d126c99117d106\",\n      \"current_candidate\": \"41f6618008542a1394fd0341237b36c91554c218\",\n      \"impact_basis\": \"产品harness及测试在两候选间无变化，沿用已读取的最终69passed及主控独立69passed原件；本Reviewer没有重新执行测试。\"\n    }\n  ],\n  \"unknown\": {\n    \"blocking_review_gaps\": [],\n    \"boundaries\": [\n      \"本次未启动业务、测试或浏览器命令，未写文件、卡片或Git，未委派。\",\n      \"原06全量仍是490passed/1failed；修复候选的整轮全量结果不在本次批准范围内，06保持TESTING、未放行。\",\n      \"新收据登记、登记D及固定协调器strict尚待主控执行，本报告未声称其通过。\",\n      \"CodeGraph返回另一worktree提示，未将该索引作为当前源码证据；已读取当前worktree相关源码。\"\n    ]\n  },\n  \"handoff\": {\n    \"owner\": \"主控\",\n    \"binding\": \"新批准仅绑定BASE6afa4de..C41f6618，contract41f6618；旧04产品批准保留原BASE/C身份。\",\n    \"registration\": \"新report及receipt使用唯一新名字，不覆盖C中已有review-report.json或review.json。\",\n    \"remaining_gates\": [\n      \"登记新绑定及D后消费固定协调器strict\",\n      \"按既定流程返回06最终全量及后续验收\"\n    ]\n  },\n  \"typesafe\": {\n    \"request\": {\n      \"state\": {\n        \"binding\": {\n          \"base\": \"6afa4de271ee90271f2c068a8060ed2590c8ff98\",\n          \"head\": \"41f6618008542a1394fd0341237b36c91554c218\",\n          \"contract\": \"41f6618008542a1394fd0341237b36c91554c218\",\n          \"product\": \"493ecf2dbfc247247b7c7b2465d126c99117d106\",\n          \"branch\": \"feat/iter-10-self-hosting-hardening\",\n          \"dirty\": []\n        },\n        \"authority\": \"Read-only independent task04 repair review. No tests/browser rerun, file writes or delegation. New approval binds incremental repair BASE, preserving original task04 approval separately. Post-registration frozen strict and task06 full regression are subsequent controller work.\",\n        \"diff\": {\n          \"paths\": 32,\n          \"changed\": \"browser_harness.py adds opt-in --isolated-fixtures and temporary synthetic Git inventory; test_board_handoff.py adds isolation/default-mode tests and opts lifecycle test into isolation; existing Note adds explanation; task04 metadata/ledger and new evidence.\",\n          \"unchanged\": \"BASE..C has no scripts, templates, references, SKILL, task05/task06 product changes, old review-report.json/review.json or original browser artifacts. Product/tests/harness unchanged after 493ecf2 except Note/card/evidence.\"\n        },\n        \"source\": {\n          \"browser_harness.py:64-100\": \"TemporaryDirectory owns FS, empty and loading inventory. Default git_name=real_git and directory=ROOT/docs/todos/10-self-hosting-hardening. Opt-in replaces it with synthetic_git under temp root. All four handler classes receive those directory values. ready totals call real generate_board_data; synthetic flag is name != real_git.\",\n          \"browser_harness.py:83-115\": \"Real LiveBoardHandler subclass; /api/board waits Event for configured delay. On stop/finally, Event.set, server.shutdown, thread.join, server_close; temp context exits before final stopped/active_commands output.\",\n          \"iter_sync.py:462-610 and iter_queries.py:12-112\": \"Queries discover and read given iter_dir. Git subprocess cwd is provided directory. Synthetic cards are IN_PROGRESS, so DONE receipt/Git binding audit branch is not entered. HTTP uses self.iter_dir. Loading source/template code from checkout is retained; isolated contract concerns inventory, not program source reads.\",\n          \"test_board_handoff.py:82-121\": \"Isolation test wraps real query to assert no inventory directory is below harness.ROOT, asserts four temp directories/synthetic labels and temp removal. Default parameter case uses temp checkout, checks original directory and real_git false synthetic label.\",\n          \"test_board_handoff.py:124-173\": \"Actual subprocess/HTTP lifecycle. Keeps 8-second ready assertion, HTTP 200, .18-second delay lower bound, FS candidate/current versus original checkpoint, remaining work, three sources, actual evidence response, exit0, active_commands empty and temp removed.\"\n        },\n        \"originals\": {\n          \"failure\": \"06/controller-full-regression.json: COMPLETED exit1 tree_terminal true; output 490 passed/1 failed at original 8-second ready assertion.\",\n          \"diagnosis\": \"06/controller-harness-diagnosis.json.output.txt: candidate85031b1, default ready8.562s, exit0, stderr empty.\",\n          \"red\": \"04/repair-final-red-isolation-a.json: COMPLETED exit1 tree_terminal true; output AssertionError isolated mode read checkout inventory at actual checkout directory, 1 failed. Initial test injects parsed isolated_fixtures=True, not import/CLI failure.\",\n          \"green\": \"04/repair-final-green-isolation-a.json: COMPLETED exit0 tree_terminal true; 7 passed. Default-mode compatibility parameter was added later, not claimed RED.\",\n          \"final\": \"04/repair-final-five-files-final-b.json: specified five files, COMPLETED exit0 tree_terminal true, 69 passed in14.65s.\",\n          \"independent\": \"04/controller-regression-repair-final.json: same five files, COMPLETED exit0 tree_terminal true, 69 passed in14.27s.\",\n          \"cleanup\": \"All six implementer runner receipts plus independent runner and child records terminal. Native repair task6a14c232-1dd5-4d68-806f-39c192b8aa33 completed.\",\n          \"note\": \"Existing Note updated; original tree/format outputs ok19 notes, runner exit0 terminal.\",\n          \"ui\": \"Old review-report/review.json approve candidate9b9010af. Original native source popup/Escape, state/delay/disconnect records and seven1139x869 screenshots remain; templates/query/CLI and default harness branch unchanged. FS/empty/loading provenance explicitly synthetic.\"\n        }\n      },\n      \"questions\": {\n        \"repair_disposition\": {\n          \"type\": \"choice\",\n          \"instructions\": \"Determine the independent disposition of only this incremental task04 harness repair against the stated authorization and requirements. Treat subsequent registration/strict and task06 full regression as pending later gates, not already passed. Do not infer native self-use from synthetic tests.\",\n          \"criteria\": {\n            \"APPROVED\": \"Available source and original evidence support isolation, default compatibility, retained behavior assertions and normal cleanup; no concrete material defect is established.\",\n            \"CHANGES_REQUESTED\": \"A concrete material defect or weakened required assertion in the repair requires correction.\",\n            \"BLOCKED\": \"Required evidence is absent or contradictory, preventing an incremental review conclusion.\"\n          }\n        },\n        \"ui_reuse\": {\n          \"type\": \"choice\",\n          \"instructions\": \"Classify whether the old task04 native UI evidence can be reused for the unchanged product/UI behaviors in this incremental review, without claiming it was rerun or that synthetic tests are native acceptance.\",\n          \"criteria\": {\n            \"REUSE\": \"Covered UI/query/default behavior and original artifacts are unchanged; prior approval and originals remain attributable.\",\n            \"RERUN_REQUIRED\": \"An observed changed covered behavior invalidates the old UI evidence.\",\n            \"INSUFFICIENT\": \"The evidence does not establish whether covered behavior or originals changed.\"\n          }\n        }\n      }\n    },\n    \"response_raw\": {\n      \"model\": \"jev-1.14.0\",\n      \"answers\": {\n        \"repair_disposition\": {\n          \"type\": \"choice\",\n          \"choice\": \"APPROVED\",\n          \"confidence\": 0.64,\n          \"probabilities\": {\n            \"APPROVED\": 0.76,\n            \"BLOCKED\": 0.07,\n            \"CHANGES_REQUESTED\": 0.17\n          }\n        },\n        \"ui_reuse\": {\n          \"type\": \"choice\",\n          \"choice\": \"REUSE\",\n          \"confidence\": 1.0,\n          \"probabilities\": {\n            \"INSUFFICIENT\": 0.0,\n            \"RERUN_REQUIRED\": 0.0,\n            \"REUSE\": 1.0\n          }\n        }\n      },\n      \"usage\": {\n        \"input_tokens\": 1819,\n        \"output_tokens\": 98\n      }\n    },\n    \"reviewer_application\": \"采纳增量APPROVED和UI证据可沿用的方向；最终裁决依据当前diff、源码及原件作出。概率和confidence不作为质量分或测试证据。\"\n  }\n}\n",
+      "duration_ms": 244654,
+      "progress": {
+        "steps": 28,
+        "marks": [
+          "ok",
+          "ok",
+          "ok",
+          "ok",
+          "ok",
+          "ok",
+          "ok",
+          "ok",
+          "ok",
+          "ok",
+          "ok",
+          "ok"
+        ],
+        "last_step": "git status --short; git branch --show-current; git rev-parse HEAD; git rev-parse 6afa4de271ee90271f2c068a8060ed2590c8ff9…"
+      },
+      "raw": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"tasks\":[{\"task_id\":\"a1947bd9-a375-4590-8310-d7454f450451\",\"status\":\"completed\",\"child_conversation_id\":1725,\"agent_type\":\"codex\",\"text\":\"{\\n  \\\"task_id\\\": \\\"04\\\",\\n  \\\"review_scope\\\": \\\"定点返修增量独审\\\",\\n  \\\"reviewer\\\": {\\n    \\\"session_id\\\": \\\"01a1d7a9-5822-7bc3-a3e7-51486485f8ea\\\",\\n    \\\"identity_source\\\": \\\"CODEX_SESSION_ID / CODEX_THREAD_ID\\\",\\n    \\\"independence\\\": \\\"未参与04实现、测试、方案或RCA；不是主控、1718或1724\\\",\\n    \\\"read_only\\\": true,\\n    \\\"delegated\\\": false\\n  },\\n  \\\"baseline\\\": {\\n    \\\"cwd\\\": \\\"C:/Users/qingyu/.codeg/skills/iteration-manager/.worktrees/iter-10\\\",\\n    \\\"branch\\\": \\\"feat/iter-10-self-hosting-hardening\\\",\\n    \\\"base_sha\\\": \\\"6afa4de271ee90271f2c068a8060ed2590c8ff98\\\",\\n    \\\"head_sha\\\": \\\"41f6618008542a1394fd0341237b36c91554c218\\\",\\n    \\\"contract_sha\\\": \\\"41f6618008542a1394fd0341237b36c91554c218\\\",\\n    \\\"repair_product_sha\\\": \\\"493ecf2dbfc247247b7c7b2465d126c99117d106\\\",\\n    \\\"dirty_at_start\\\": [],\\n    \\\"dirty_at_end\\\": [],\\n    \\\"final_checked_at\\\": \\\"2026-11-14T01:28:57Z\\\"\\n  },\\n  \\\"verdict\\\": \\\"APPROVED\\\",\\n  \\\"reviewer_judgment\\\": \\\"修复通过显式临时库存模式解除生命周期测试与真实迭代审计成本的耦合，默认真实Git入口保持兼容。保留8秒门限及真实HTTP、延迟、出处和回收断言；未发现阻断缺陷。本批准绑定上述修复增量，不替代旧04产品批准，也不表示登记后strict或06整轮验收通过。\\\",\\n  \\\"evidence_prefix\\\": \\\"docs/todos/10-self-hosting-hardening/evidence/\\\",\\n  \\\"scope\\\": {\\n    \\\"result\\\": \\\"PASS\\\",\\n    \\\"evidence\\\": [\\n      \\\"实际BASE..C共32个变更路径，均属于04白名单、04卡或04证据目录。\\\",\\n      \\\"源码变化限于04/browser_harness.py及tests/test_board_handoff.py；既有Note同步，卡片变化为执行元数据及ledger。\\\",\\n      \\\"BASE..C未修改scripts、references、templates、SKILL、迭代README、05产品或06原件。\\\",\\n      \\\"493ecf2..C在harness、tests、scripts、templates上无变化。\\\",\\n      \\\"原review-report.json、review.json及原浏览器产物未在本次修复中覆写。\\\"\\n    ]\\n  },\\n  \\\"spec\\\": [\\n    {\\n      \\\"requirement\\\": \\\"隔离真实checkout库存读取\\\",\\n      \\\"result\\\": \\\"PASS\\\",\\n      \\\"evidence\\\": [\\n        \\\"04/browser_harness.py:64-81：显式模式将Git库存替换为TemporaryDirectory下synthetic_git；FS、empty和loading也位于同一临时根。\\\",\\n        \\\"04/browser_harness.py:87-100：四个真实HTTP handler均绑定对应临时iter_dir，ready仍调用真实generate_board_data。\\\",\\n        \\\"scripts/iter_sync.py:476-510、576-595及scripts/iter_queries.py:12-16、59-103：查询、HTTP及Git调用使用传入目录；合成IN_PROGRESS卡不进入DONE绑定审计分支。\\\",\\n        \\\"tests/test_board_handoff.py:103-120：隔离断言检查真实查询入口的目录、四服务归属、synthetic标记及临时目录删除。\\\",\\n        \\\"隔离对象是任务库存；从checkout加载程序源码和UI模板仍属正常行为。\\\"\\n      ]\\n    },\\n    {\\n      \\\"requirement\\\": \\\"默认入口兼容且不伪造真实消费\\\",\\n      \\\"result\\\": \\\"PASS\\\",\\n      \\\"evidence\\\": [\\n        \\\"04/browser_harness.py:56-57、69-76：默认不启用隔离，仍使用real_git及原真实迭代路径。\\\",\\n        \\\"tests/test_board_handoff.py:82-121：默认参数分支以临时checkout核对原目录选择及synthetic=false。\\\",\\n        \\\"显式隔离模式名称为synthetic_git，四服务均标记synthetic；帮助文本和Note均明确不作为native-self-use证据。\\\",\\n        \\\"默认模式兼容参数测试为后补，未冒称经历RED。\\\"\\n      ]\\n    },\\n    {\\n      \\\"requirement\\\": \\\"不弱化既有行为断言\\\",\\n      \\\"result\\\": \\\"PASS\\\",\\n      \\\"evidence\\\": [\\n        \\\"tests/test_board_handoff.py:124-169仍保留8秒ready断言、真实子进程和HTTP请求。\\\",\\n        \\\"HTTP 200、至少0.18秒延迟、FS当前候选与历史checkpoint、remaining_work、三个sources及实际原文响应断言均保留。\\\",\\n        \\\"原real_git出处断言改由默认模式参数测试覆盖；生命周期测试新增四服务全部synthetic及临时路径归属断言。\\\"\\n      ]\\n    },\\n    {\\n      \\\"requirement\\\": \\\"线程、服务及temp正常回收\\\",\\n      \\\"result\\\": \\\"PASS\\\",\\n      \\\"evidence\\\": [\\n        \\\"04/browser_harness.py:104-115：正常停止及finally均设置停止事件、shutdown、join、server_close，退出临时目录上下文后才输出终态。\\\",\\n        \\\"tests/test_board_handoff.py:164-173：实际停止服务和子进程，检查exit0、active_commands为空及临时根不存在。\\\",\\n        \\\"最终实现者与主控独立五文件原件均69passed，runner及child记录均为终态。\\\"\\n      ]\\n    }\\n  ],\\n  \\\"quality\\\": {\\n    \\\"result\\\": \\\"PASS\\\",\\n    \\\"evidence\\\": [\\n      \\\"新增模式复用真实查询和HTTP生命周期，没有复制服务实现或模拟查询返回值。\\\",\\n      \\\"repair-final-red-isolation-a.json.output.txt:40-53记录实际checkout目录触发AssertionError；不是导入、编译或参数解析失败。\\\",\\n      \\\"旧失败和8.562秒诊断保留；没有通过提高超时或把合成结果改称真实消费来消除失败。\\\",\\n      \\\"既有Note记录隔离边界、默认兼容及RED覆盖范围；tree和format原件均有效通过。\\\"\\n    ]\\n  },\\n  \\\"checks\\\": [\\n    {\\n      \\\"receipt\\\": \\\"04/repair-final-red-isolation-a.json\\\",\\n      \\\"output\\\": \\\"04/repair-final-red-isolation-a.json.output.txt\\\",\\n      \\\"raw_exit_code\\\": 1,\\n      \\\"result\\\": \\\"1 failed；有效隔离行为AssertionError\\\",\\n      \\\"tree_terminal\\\": true\\n    },\\n    {\\n      \\\"receipt\\\": \\\"04/repair-final-green-isolation-a.json\\\",\\n      \\\"output\\\": \\\"04/repair-final-green-isolation-a.json.output.txt\\\",\\n      \\\"raw_exit_code\\\": 0,\\n      \\\"result\\\": \\\"7 passed in 3.13s\\\",\\n      \\\"tree_terminal\\\": true\\n    },\\n    {\\n      \\\"receipt\\\": \\\"04/repair-final-five-files-final-b.json\\\",\\n      \\\"output\\\": \\\"04/repair-final-five-files-final-b.json.output.txt\\\",\\n      \\\"raw_exit_code\\\": 0,\\n      \\\"result\\\": \\\"69 passed in 14.65s\\\",\\n      \\\"tree_terminal\\\": true\\n    },\\n    {\\n      \\\"receipt\\\": \\\"04/controller-regression-repair-final.json\\\",\\n      \\\"output\\\": \\\"04/controller-regression-repair-final.json.output.txt\\\",\\n      \\\"raw_exit_code\\\": 0,\\n      \\\"result\\\": \\\"主控独立规定五文件69 passed in 14.27s\\\",\\n      \\\"tree_terminal\\\": true\\n    },\\n    {\\n      \\\"receipts\\\": [\\n        \\\"04/repair-final-note-tree-a.json\\\",\\n        \\\"04/repair-final-note-format-a.json\\\"\\n      ],\\n      \\\"outputs\\\": [\\n        \\\"04/repair-final-note-tree-a.json.output.txt\\\",\\n        \\\"04/repair-final-note-format-a.json.output.txt\\\"\\n      ],\\n      \\\"raw_exit_codes\\\": [0, 0],\\n      \\\"result\\\": \\\"19 notes tree/relative links及format通过\\\",\\n      \\\"tree_terminal\\\": true\\n    }\\n  ],\\n  \\\"issues\\\": [],\\n  \\\"reused_evidence\\\": [\\n    {\\n      \\\"coverage\\\": \\\"原04产品展示、原生交互、四态及1139x869视觉\\\",\\n      \\\"original_reviewed_candidate\\\": \\\"9b9010afb8dbf0b0cf74f83c6c97605984319619\\\",\\n      \\\"approval_sources\\\": [\\n        \\\"04/review-report.json\\\",\\n        \\\"04/review.json\\\"\\n      ],\\n      \\\"originals\\\": [\\n        \\\"04/browser-git-b.json.output.txt\\\",\\n        \\\"04/browser-detail-b.json.output.txt\\\",\\n        \\\"04/browser-source-b.json.output.txt\\\",\\n        \\\"04/browser-states-b.json.output.txt\\\",\\n        \\\"04/browser-disconnect-b.json.output.txt\\\",\\n        \\\"04/browser-real-git-b.png\\\",\\n        \\\"04/browser-git-detail-b.png\\\",\\n        \\\"04/browser-checkpoint-b.png\\\",\\n        \\\"04/browser-fs-detail-b.png\\\",\\n        \\\"04/browser-empty-b.png\\\",\\n        \\\"04/browser-loading-b.png\\\",\\n        \\\"04/browser-disconnected-b.png\\\"\\n      ],\\n      \\\"impact_basis\\\": \\\"原已审候选至当前C的scripts及templates无变化；默认harness目录选择未变；原浏览器产物在修复BASE..C无变化。旧Reviewer已实际观察七图，本次定点核对原生操作及状态输出，不重跑浏览器。\\\",\\n      \\\"provenance\\\": \\\"真实Git库存；FS、empty、loading为明确合成输入，经真实HTTP和原生浏览器操作。未将其升级为真实FS业务批准。\\\"\\n    },\\n    {\\n      \\\"coverage\\\": \\\"修复测试及独立回归\\\",\\n      \\\"original_candidate\\\": \\\"493ecf2dbfc247247b7c7b2465d126c99117d106\\\",\\n      \\\"current_candidate\\\": \\\"41f6618008542a1394fd0341237b36c91554c218\\\",\\n      \\\"impact_basis\\\": \\\"产品harness及测试在两候选间无变化，沿用已读取的最终69passed及主控独立69passed原件；本Reviewer没有重新执行测试。\\\"\\n    }\\n  ],\\n  \\\"unknown\\\": {\\n    \\\"blocking_review_gaps\\\": [],\\n    \\\"boundaries\\\": [\\n      \\\"本次未启动业务、测试或浏览器命令，未写文件、卡片或Git，未委派。\\\",\\n      \\\"原06全量仍是490passed/1failed；修复候选的整轮全量结果不在本次批准范围内，06保持TESTING、未放行。\\\",\\n      \\\"新收据登记、登记D及固定协调器strict尚待主控执行，本报告未声称其通过。\\\",\\n      \\\"CodeGraph返回另一worktree提示，未将该索引作为当前源码证据；已读取当前worktree相关源码。\\\"\\n    ]\\n  },\\n  \\\"handoff\\\": {\\n    \\\"owner\\\": \\\"主控\\\",\\n    \\\"binding\\\": \\\"新批准仅绑定BASE6afa4de..C41f6618，contract41f6618；旧04产品批准保留原BASE/C身份。\\\",\\n    \\\"registration\\\": \\\"新report及receipt使用唯一新名字，不覆盖C中已有review-report.json或review.json。\\\",\\n    \\\"remaining_gates\\\": [\\n      \\\"登记新绑定及D后消费固定协调器strict\\\",\\n      \\\"按既定流程返回06最终全量及后续验收\\\"\\n    ]\\n  },\\n  \\\"typesafe\\\": {\\n    \\\"request\\\": {\\n      \\\"state\\\": {\\n        \\\"binding\\\": {\\n          \\\"base\\\": \\\"6afa4de271ee90271f2c068a8060ed2590c8ff98\\\",\\n          \\\"head\\\": \\\"41f6618008542a1394fd0341237b36c91554c218\\\",\\n          \\\"contract\\\": \\\"41f6618008542a1394fd0341237b36c91554c218\\\",\\n          \\\"product\\\": \\\"493ecf2dbfc247247b7c7b2465d126c99117d106\\\",\\n          \\\"branch\\\": \\\"feat/iter-10-self-hosting-hardening\\\",\\n          \\\"dirty\\\": []\\n        },\\n        \\\"authority\\\": \\\"Read-only independent task04 repair review. No tests/browser rerun, file writes or delegation. New approval binds incremental repair BASE, preserving original task04 approval separately. Post-registration frozen strict and task06 full regression are subsequent controller work.\\\",\\n        \\\"diff\\\": {\\n          \\\"paths\\\": 32,\\n          \\\"changed\\\": \\\"browser_harness.py adds opt-in --isolated-fixtures and temporary synthetic Git inventory; test_board_handoff.py adds isolation/default-mode tests and opts lifecycle test into isolation; existing Note adds explanation; task04 metadata/ledger and new evidence.\\\",\\n          \\\"unchanged\\\": \\\"BASE..C has no scripts, templates, references, SKILL, task05/task06 product changes, old review-report.json/review.json or original browser artifacts. Product/tests/harness unchanged after 493ecf2 except Note/card/evidence.\\\"\\n        },\\n        \\\"source\\\": {\\n          \\\"browser_harness.py:64-100\\\": \\\"TemporaryDirectory owns FS, empty and loading inventory. Default git_name=real_git and directory=ROOT/docs/todos/10-self-hosting-hardening. Opt-in replaces it with synthetic_git under temp root. All four handler classes receive those directory values. ready totals call real generate_board_data; synthetic flag is name != real_git.\\\",\\n          \\\"browser_harness.py:83-115\\\": \\\"Real LiveBoardHandler subclass; /api/board waits Event for configured delay. On stop/finally, Event.set, server.shutdown, thread.join, server_close; temp context exits before final stopped/active_commands output.\\\",\\n          \\\"iter_sync.py:462-610 and iter_queries.py:12-112\\\": \\\"Queries discover and read given iter_dir. Git subprocess cwd is provided directory. Synthetic cards are IN_PROGRESS, so DONE receipt/Git binding audit branch is not entered. HTTP uses self.iter_dir. Loading source/template code from checkout is retained; isolated contract concerns inventory, not program source reads.\\\",\\n          \\\"test_board_handoff.py:82-121\\\": \\\"Isolation test wraps real query to assert no inventory directory is below harness.ROOT, asserts four temp directories/synthetic labels and temp removal. Default parameter case uses temp checkout, checks original directory and real_git false synthetic label.\\\",\\n          \\\"test_board_handoff.py:124-173\\\": \\\"Actual subprocess/HTTP lifecycle. Keeps 8-second ready assertion, HTTP 200, .18-second delay lower bound, FS candidate/current versus original checkpoint, remaining work, three sources, actual evidence response, exit0, active_commands empty and temp removed.\\\"\\n        },\\n        \\\"originals\\\": {\\n          \\\"failure\\\": \\\"06/controller-full-regression.json: COMPLETED exit1 tree_terminal true; output 490 passed/1 failed at original 8-second ready assertion.\\\",\\n          \\\"diagnosis\\\": \\\"06/controller-harness-diagnosis.json.output.txt: candidate85031b1, default ready8.562s, exit0, stderr empty.\\\",\\n          \\\"red\\\": \\\"04/repair-final-red-isolation-a.json: COMPLETED exit1 tree_terminal true; output AssertionError isolated mode read checkout inventory at actual checkout directory, 1 failed. Initial test injects parsed isolated_fixtures=True, not import/CLI failure.\\\",\\n          \\\"green\\\": \\\"04/repair-final-green-isolation-a.json: COMPLETED exit0 tree_terminal true; 7 passed. Default-mode compatibility parameter was added later, not claimed RED.\\\",\\n          \\\"final\\\": \\\"04/repair-final-five-files-final-b.json: specified five files, COMPLETED exit0 tree_terminal true, 69 passed in14.65s.\\\",\\n          \\\"independent\\\": \\\"04/controller-regression-repair-final.json: same five files, COMPLETED exit0 tree_terminal true, 69 passed in14.27s.\\\",\\n          \\\"cleanup\\\": \\\"All six implementer runner receipts plus independent runner and child records terminal. Native repair task6a14c232-1dd5-4d68-806f-39c192b8aa33 completed.\\\",\\n          \\\"note\\\": \\\"Existing Note updated; original tree/format outputs ok19 notes, runner exit0 terminal.\\\",\\n          \\\"ui\\\": \\\"Old review-report/review.json approve candidate9b9010af. Original native source popup/Escape, state/delay/disconnect records and seven1139x869 screenshots remain; templates/query/CLI and default harness branch unchanged. FS/empty/loading provenance explicitly synthetic.\\\"\\n        }\\n      },\\n      \\\"questions\\\": {\\n        \\\"repair_disposition\\\": {\\n          \\\"type\\\": \\\"choice\\\",\\n          \\\"instructions\\\": \\\"Determine the independent disposition of only this incremental task04 harness repair against the stated authorization and requirements. Treat subsequent registration/strict and task06 full regression as pending later gates, not already passed. Do not infer native self-use from synthetic tests.\\\",\\n          \\\"criteria\\\": {\\n            \\\"APPROVED\\\": \\\"Available source and original evidence support isolation, default compatibility, retained behavior assertions and normal cleanup; no concrete material defect is established.\\\",\\n            \\\"CHANGES_REQUESTED\\\": \\\"A concrete material defect or weakened required assertion in the repair requires correction.\\\",\\n            \\\"BLOCKED\\\": \\\"Required evidence is absent or contradictory, preventing an incremental review conclusion.\\\"\\n          }\\n        },\\n        \\\"ui_reuse\\\": {\\n          \\\"type\\\": \\\"choice\\\",\\n          \\\"instructions\\\": \\\"Classify whether the old task04 native UI evidence can be reused for the unchanged product/UI behaviors in this incremental review, without claiming it was rerun or that synthetic tests are native acceptance.\\\",\\n          \\\"criteria\\\": {\\n            \\\"REUSE\\\": \\\"Covered UI/query/default behavior and original artifacts are unchanged; prior approval and originals remain attributable.\\\",\\n            \\\"RERUN_REQUIRED\\\": \\\"An observed changed covered behavior invalidates the old UI evidence.\\\",\\n            \\\"INSUFFICIENT\\\": \\\"The evidence does not establish whether covered behavior or originals changed.\\\"\\n          }\\n        }\\n      }\\n    },\\n    \\\"response_raw\\\": {\\n      \\\"model\\\": \\\"jev-1.14.0\\\",\\n      \\\"answers\\\": {\\n        \\\"repair_disposition\\\": {\\n          \\\"type\\\": \\\"choice\\\",\\n          \\\"choice\\\": \\\"APPROVED\\\",\\n          \\\"confidence\\\": 0.64,\\n          \\\"probabilities\\\": {\\n            \\\"APPROVED\\\": 0.76,\\n            \\\"BLOCKED\\\": 0.07,\\n            \\\"CHANGES_REQUESTED\\\": 0.17\\n          }\\n        },\\n        \\\"ui_reuse\\\": {\\n          \\\"type\\\": \\\"choice\\\",\\n          \\\"choice\\\": \\\"REUSE\\\",\\n          \\\"confidence\\\": 1.0,\\n          \\\"probabilities\\\": {\\n            \\\"INSUFFICIENT\\\": 0.0,\\n            \\\"RERUN_REQUIRED\\\": 0.0,\\n            \\\"REUSE\\\": 1.0\\n          }\\n        }\\n      },\\n      \\\"usage\\\": {\\n        \\\"input_tokens\\\": 1819,\\n        \\\"output_tokens\\\": 98\\n      }\\n    },\\n    \\\"reviewer_application\\\": \\\"采纳增量APPROVED和UI证据可沿用的方向；最终裁决依据当前diff、源码及原件作出。概率和confidence不作为质量分或测试证据。\\\"\\n  }\\n}\\n\",\"duration_ms\":244654,\"progress\":{\"steps\":28,\"marks\":[\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\"],\"last_step\":\"git status --short; git branch --show-current; git rev-parse HEAD; git rev-parse 6afa4de271ee90271f2c068a8060ed2590c8ff9…\"}}]}"
+          }
+        ],
+        "structuredContent": {
+          "tasks": [
+            {
+              "task_id": "a1947bd9-a375-4590-8310-d7454f450451",
+              "status": "completed",
+              "child_conversation_id": 1725,
+              "agent_type": "codex",
+              "text": "{\n  \"task_id\": \"04\",\n  \"review_scope\": \"定点返修增量独审\",\n  \"reviewer\": {\n    \"session_id\": \"01a1d7a9-5822-7bc3-a3e7-51486485f8ea\",\n    \"identity_source\": \"CODEX_SESSION_ID / CODEX_THREAD_ID\",\n    \"independence\": \"未参与04实现、测试、方案或RCA；不是主控、1718或1724\",\n    \"read_only\": true,\n    \"delegated\": false\n  },\n  \"baseline\": {\n    \"cwd\": \"C:/Users/qingyu/.codeg/skills/iteration-manager/.worktrees/iter-10\",\n    \"branch\": \"feat/iter-10-self-hosting-hardening\",\n    \"base_sha\": \"6afa4de271ee90271f2c068a8060ed2590c8ff98\",\n    \"head_sha\": \"41f6618008542a1394fd0341237b36c91554c218\",\n    \"contract_sha\": \"41f6618008542a1394fd0341237b36c91554c218\",\n    \"repair_product_sha\": \"493ecf2dbfc247247b7c7b2465d126c99117d106\",\n    \"dirty_at_start\": [],\n    \"dirty_at_end\": [],\n    \"final_checked_at\": \"2026-11-14T01:28:57Z\"\n  },\n  \"verdict\": \"APPROVED\",\n  \"reviewer_judgment\": \"修复通过显式临时库存模式解除生命周期测试与真实迭代审计成本的耦合，默认真实Git入口保持兼容。保留8秒门限及真实HTTP、延迟、出处和回收断言；未发现阻断缺陷。本批准绑定上述修复增量，不替代旧04产品批准，也不表示登记后strict或06整轮验收通过。\",\n  \"evidence_prefix\": \"docs/todos/10-self-hosting-hardening/evidence/\",\n  \"scope\": {\n    \"result\": \"PASS\",\n    \"evidence\": [\n      \"实际BASE..C共32个变更路径，均属于04白名单、04卡或04证据目录。\",\n      \"源码变化限于04/browser_harness.py及tests/test_board_handoff.py；既有Note同步，卡片变化为执行元数据及ledger。\",\n      \"BASE..C未修改scripts、references、templates、SKILL、迭代README、05产品或06原件。\",\n      \"493ecf2..C在harness、tests、scripts、templates上无变化。\",\n      \"原review-report.json、review.json及原浏览器产物未在本次修复中覆写。\"\n    ]\n  },\n  \"spec\": [\n    {\n      \"requirement\": \"隔离真实checkout库存读取\",\n      \"result\": \"PASS\",\n      \"evidence\": [\n        \"04/browser_harness.py:64-81：显式模式将Git库存替换为TemporaryDirectory下synthetic_git；FS、empty和loading也位于同一临时根。\",\n        \"04/browser_harness.py:87-100：四个真实HTTP handler均绑定对应临时iter_dir，ready仍调用真实generate_board_data。\",\n        \"scripts/iter_sync.py:476-510、576-595及scripts/iter_queries.py:12-16、59-103：查询、HTTP及Git调用使用传入目录；合成IN_PROGRESS卡不进入DONE绑定审计分支。\",\n        \"tests/test_board_handoff.py:103-120：隔离断言检查真实查询入口的目录、四服务归属、synthetic标记及临时目录删除。\",\n        \"隔离对象是任务库存；从checkout加载程序源码和UI模板仍属正常行为。\"\n      ]\n    },\n    {\n      \"requirement\": \"默认入口兼容且不伪造真实消费\",\n      \"result\": \"PASS\",\n      \"evidence\": [\n        \"04/browser_harness.py:56-57、69-76：默认不启用隔离，仍使用real_git及原真实迭代路径。\",\n        \"tests/test_board_handoff.py:82-121：默认参数分支以临时checkout核对原目录选择及synthetic=false。\",\n        \"显式隔离模式名称为synthetic_git，四服务均标记synthetic；帮助文本和Note均明确不作为native-self-use证据。\",\n        \"默认模式兼容参数测试为后补，未冒称经历RED。\"\n      ]\n    },\n    {\n      \"requirement\": \"不弱化既有行为断言\",\n      \"result\": \"PASS\",\n      \"evidence\": [\n        \"tests/test_board_handoff.py:124-169仍保留8秒ready断言、真实子进程和HTTP请求。\",\n        \"HTTP 200、至少0.18秒延迟、FS当前候选与历史checkpoint、remaining_work、三个sources及实际原文响应断言均保留。\",\n        \"原real_git出处断言改由默认模式参数测试覆盖；生命周期测试新增四服务全部synthetic及临时路径归属断言。\"\n      ]\n    },\n    {\n      \"requirement\": \"线程、服务及temp正常回收\",\n      \"result\": \"PASS\",\n      \"evidence\": [\n        \"04/browser_harness.py:104-115：正常停止及finally均设置停止事件、shutdown、join、server_close，退出临时目录上下文后才输出终态。\",\n        \"tests/test_board_handoff.py:164-173：实际停止服务和子进程，检查exit0、active_commands为空及临时根不存在。\",\n        \"最终实现者与主控独立五文件原件均69passed，runner及child记录均为终态。\"\n      ]\n    }\n  ],\n  \"quality\": {\n    \"result\": \"PASS\",\n    \"evidence\": [\n      \"新增模式复用真实查询和HTTP生命周期，没有复制服务实现或模拟查询返回值。\",\n      \"repair-final-red-isolation-a.json.output.txt:40-53记录实际checkout目录触发AssertionError；不是导入、编译或参数解析失败。\",\n      \"旧失败和8.562秒诊断保留；没有通过提高超时或把合成结果改称真实消费来消除失败。\",\n      \"既有Note记录隔离边界、默认兼容及RED覆盖范围；tree和format原件均有效通过。\"\n    ]\n  },\n  \"checks\": [\n    {\n      \"receipt\": \"04/repair-final-red-isolation-a.json\",\n      \"output\": \"04/repair-final-red-isolation-a.json.output.txt\",\n      \"raw_exit_code\": 1,\n      \"result\": \"1 failed；有效隔离行为AssertionError\",\n      \"tree_terminal\": true\n    },\n    {\n      \"receipt\": \"04/repair-final-green-isolation-a.json\",\n      \"output\": \"04/repair-final-green-isolation-a.json.output.txt\",\n      \"raw_exit_code\": 0,\n      \"result\": \"7 passed in 3.13s\",\n      \"tree_terminal\": true\n    },\n    {\n      \"receipt\": \"04/repair-final-five-files-final-b.json\",\n      \"output\": \"04/repair-final-five-files-final-b.json.output.txt\",\n      \"raw_exit_code\": 0,\n      \"result\": \"69 passed in 14.65s\",\n      \"tree_terminal\": true\n    },\n    {\n      \"receipt\": \"04/controller-regression-repair-final.json\",\n      \"output\": \"04/controller-regression-repair-final.json.output.txt\",\n      \"raw_exit_code\": 0,\n      \"result\": \"主控独立规定五文件69 passed in 14.27s\",\n      \"tree_terminal\": true\n    },\n    {\n      \"receipts\": [\n        \"04/repair-final-note-tree-a.json\",\n        \"04/repair-final-note-format-a.json\"\n      ],\n      \"outputs\": [\n        \"04/repair-final-note-tree-a.json.output.txt\",\n        \"04/repair-final-note-format-a.json.output.txt\"\n      ],\n      \"raw_exit_codes\": [0, 0],\n      \"result\": \"19 notes tree/relative links及format通过\",\n      \"tree_terminal\": true\n    }\n  ],\n  \"issues\": [],\n  \"reused_evidence\": [\n    {\n      \"coverage\": \"原04产品展示、原生交互、四态及1139x869视觉\",\n      \"original_reviewed_candidate\": \"9b9010afb8dbf0b0cf74f83c6c97605984319619\",\n      \"approval_sources\": [\n        \"04/review-report.json\",\n        \"04/review.json\"\n      ],\n      \"originals\": [\n        \"04/browser-git-b.json.output.txt\",\n        \"04/browser-detail-b.json.output.txt\",\n        \"04/browser-source-b.json.output.txt\",\n        \"04/browser-states-b.json.output.txt\",\n        \"04/browser-disconnect-b.json.output.txt\",\n        \"04/browser-real-git-b.png\",\n        \"04/browser-git-detail-b.png\",\n        \"04/browser-checkpoint-b.png\",\n        \"04/browser-fs-detail-b.png\",\n        \"04/browser-empty-b.png\",\n        \"04/browser-loading-b.png\",\n        \"04/browser-disconnected-b.png\"\n      ],\n      \"impact_basis\": \"原已审候选至当前C的scripts及templates无变化；默认harness目录选择未变；原浏览器产物在修复BASE..C无变化。旧Reviewer已实际观察七图，本次定点核对原生操作及状态输出，不重跑浏览器。\",\n      \"provenance\": \"真实Git库存；FS、empty、loading为明确合成输入，经真实HTTP和原生浏览器操作。未将其升级为真实FS业务批准。\"\n    },\n    {\n      \"coverage\": \"修复测试及独立回归\",\n      \"original_candidate\": \"493ecf2dbfc247247b7c7b2465d126c99117d106\",\n      \"current_candidate\": \"41f6618008542a1394fd0341237b36c91554c218\",\n      \"impact_basis\": \"产品harness及测试在两候选间无变化，沿用已读取的最终69passed及主控独立69passed原件；本Reviewer没有重新执行测试。\"\n    }\n  ],\n  \"unknown\": {\n    \"blocking_review_gaps\": [],\n    \"boundaries\": [\n      \"本次未启动业务、测试或浏览器命令，未写文件、卡片或Git，未委派。\",\n      \"原06全量仍是490passed/1failed；修复候选的整轮全量结果不在本次批准范围内，06保持TESTING、未放行。\",\n      \"新收据登记、登记D及固定协调器strict尚待主控执行，本报告未声称其通过。\",\n      \"CodeGraph返回另一worktree提示，未将该索引作为当前源码证据；已读取当前worktree相关源码。\"\n    ]\n  },\n  \"handoff\": {\n    \"owner\": \"主控\",\n    \"binding\": \"新批准仅绑定BASE6afa4de..C41f6618，contract41f6618；旧04产品批准保留原BASE/C身份。\",\n    \"registration\": \"新report及receipt使用唯一新名字，不覆盖C中已有review-report.json或review.json。\",\n    \"remaining_gates\": [\n      \"登记新绑定及D后消费固定协调器strict\",\n      \"按既定流程返回06最终全量及后续验收\"\n    ]\n  },\n  \"typesafe\": {\n    \"request\": {\n      \"state\": {\n        \"binding\": {\n          \"base\": \"6afa4de271ee90271f2c068a8060ed2590c8ff98\",\n          \"head\": \"41f6618008542a1394fd0341237b36c91554c218\",\n          \"contract\": \"41f6618008542a1394fd0341237b36c91554c218\",\n          \"product\": \"493ecf2dbfc247247b7c7b2465d126c99117d106\",\n          \"branch\": \"feat/iter-10-self-hosting-hardening\",\n          \"dirty\": []\n        },\n        \"authority\": \"Read-only independent task04 repair review. No tests/browser rerun, file writes or delegation. New approval binds incremental repair BASE, preserving original task04 approval separately. Post-registration frozen strict and task06 full regression are subsequent controller work.\",\n        \"diff\": {\n          \"paths\": 32,\n          \"changed\": \"browser_harness.py adds opt-in --isolated-fixtures and temporary synthetic Git inventory; test_board_handoff.py adds isolation/default-mode tests and opts lifecycle test into isolation; existing Note adds explanation; task04 metadata/ledger and new evidence.\",\n          \"unchanged\": \"BASE..C has no scripts, templates, references, SKILL, task05/task06 product changes, old review-report.json/review.json or original browser artifacts. Product/tests/harness unchanged after 493ecf2 except Note/card/evidence.\"\n        },\n        \"source\": {\n          \"browser_harness.py:64-100\": \"TemporaryDirectory owns FS, empty and loading inventory. Default git_name=real_git and directory=ROOT/docs/todos/10-self-hosting-hardening. Opt-in replaces it with synthetic_git under temp root. All four handler classes receive those directory values. ready totals call real generate_board_data; synthetic flag is name != real_git.\",\n          \"browser_harness.py:83-115\": \"Real LiveBoardHandler subclass; /api/board waits Event for configured delay. On stop/finally, Event.set, server.shutdown, thread.join, server_close; temp context exits before final stopped/active_commands output.\",\n          \"iter_sync.py:462-610 and iter_queries.py:12-112\": \"Queries discover and read given iter_dir. Git subprocess cwd is provided directory. Synthetic cards are IN_PROGRESS, so DONE receipt/Git binding audit branch is not entered. HTTP uses self.iter_dir. Loading source/template code from checkout is retained; isolated contract concerns inventory, not program source reads.\",\n          \"test_board_handoff.py:82-121\": \"Isolation test wraps real query to assert no inventory directory is below harness.ROOT, asserts four temp directories/synthetic labels and temp removal. Default parameter case uses temp checkout, checks original directory and real_git false synthetic label.\",\n          \"test_board_handoff.py:124-173\": \"Actual subprocess/HTTP lifecycle. Keeps 8-second ready assertion, HTTP 200, .18-second delay lower bound, FS candidate/current versus original checkpoint, remaining work, three sources, actual evidence response, exit0, active_commands empty and temp removed.\"\n        },\n        \"originals\": {\n          \"failure\": \"06/controller-full-regression.json: COMPLETED exit1 tree_terminal true; output 490 passed/1 failed at original 8-second ready assertion.\",\n          \"diagnosis\": \"06/controller-harness-diagnosis.json.output.txt: candidate85031b1, default ready8.562s, exit0, stderr empty.\",\n          \"red\": \"04/repair-final-red-isolation-a.json: COMPLETED exit1 tree_terminal true; output AssertionError isolated mode read checkout inventory at actual checkout directory, 1 failed. Initial test injects parsed isolated_fixtures=True, not import/CLI failure.\",\n          \"green\": \"04/repair-final-green-isolation-a.json: COMPLETED exit0 tree_terminal true; 7 passed. Default-mode compatibility parameter was added later, not claimed RED.\",\n          \"final\": \"04/repair-final-five-files-final-b.json: specified five files, COMPLETED exit0 tree_terminal true, 69 passed in14.65s.\",\n          \"independent\": \"04/controller-regression-repair-final.json: same five files, COMPLETED exit0 tree_terminal true, 69 passed in14.27s.\",\n          \"cleanup\": \"All six implementer runner receipts plus independent runner and child records terminal. Native repair task6a14c232-1dd5-4d68-806f-39c192b8aa33 completed.\",\n          \"note\": \"Existing Note updated; original tree/format outputs ok19 notes, runner exit0 terminal.\",\n          \"ui\": \"Old review-report/review.json approve candidate9b9010af. Original native source popup/Escape, state/delay/disconnect records and seven1139x869 screenshots remain; templates/query/CLI and default harness branch unchanged. FS/empty/loading provenance explicitly synthetic.\"\n        }\n      },\n      \"questions\": {\n        \"repair_disposition\": {\n          \"type\": \"choice\",\n          \"instructions\": \"Determine the independent disposition of only this incremental task04 harness repair against the stated authorization and requirements. Treat subsequent registration/strict and task06 full regression as pending later gates, not already passed. Do not infer native self-use from synthetic tests.\",\n          \"criteria\": {\n            \"APPROVED\": \"Available source and original evidence support isolation, default compatibility, retained behavior assertions and normal cleanup; no concrete material defect is established.\",\n            \"CHANGES_REQUESTED\": \"A concrete material defect or weakened required assertion in the repair requires correction.\",\n            \"BLOCKED\": \"Required evidence is absent or contradictory, preventing an incremental review conclusion.\"\n          }\n        },\n        \"ui_reuse\": {\n          \"type\": \"choice\",\n          \"instructions\": \"Classify whether the old task04 native UI evidence can be reused for the unchanged product/UI behaviors in this incremental review, without claiming it was rerun or that synthetic tests are native acceptance.\",\n          \"criteria\": {\n            \"REUSE\": \"Covered UI/query/default behavior and original artifacts are unchanged; prior approval and originals remain attributable.\",\n            \"RERUN_REQUIRED\": \"An observed changed covered behavior invalidates the old UI evidence.\",\n            \"INSUFFICIENT\": \"The evidence does not establish whether covered behavior or originals changed.\"\n          }\n        }\n      }\n    },\n    \"response_raw\": {\n      \"model\": \"jev-1.14.0\",\n      \"answers\": {\n        \"repair_disposition\": {\n          \"type\": \"choice\",\n          \"choice\": \"APPROVED\",\n          \"confidence\": 0.64,\n          \"probabilities\": {\n            \"APPROVED\": 0.76,\n            \"BLOCKED\": 0.07,\n            \"CHANGES_REQUESTED\": 0.17\n          }\n        },\n        \"ui_reuse\": {\n          \"type\": \"choice\",\n          \"choice\": \"REUSE\",\n          \"confidence\": 1.0,\n          \"probabilities\": {\n            \"INSUFFICIENT\": 0.0,\n            \"RERUN_REQUIRED\": 0.0,\n            \"REUSE\": 1.0\n          }\n        }\n      },\n      \"usage\": {\n        \"input_tokens\": 1819,\n        \"output_tokens\": 98\n      }\n    },\n    \"reviewer_application\": \"采纳增量APPROVED和UI证据可沿用的方向；最终裁决依据当前diff、源码及原件作出。概率和confidence不作为质量分或测试证据。\"\n  }\n}\n",
+              "duration_ms": 244654,
+              "progress": {
+                "steps": 28,
+                "marks": [
+                  "ok",
+                  "ok",
+                  "ok",
+                  "ok",
+                  "ok",
+                  "ok",
+                  "ok",
+                  "ok",
+                  "ok",
+                  "ok",
+                  "ok",
+                  "ok"
+                ],
+                "last_step": "git status --short; git branch --show-current; git rev-parse HEAD; git rev-parse 6afa4de271ee90271f2c068a8060ed2590c8ff9…"
+              }
+            }
+          ]
+        },
+        "isError": false
+      }
+    },
+    "terminalConfirmed": true,
+    "observedAt": 1794619805939,
+    "lateByMs": 0,
+    "events": [
+      {
+        "kind": "query",
+        "startedAt": 1794619561263,
+        "returnedAt": 1794619621290,
+        "waitMs": 60000,
+        "result": {
+          "task_id": "a1947bd9-a375-4590-8310-d7454f450451",
+          "status": "running",
+          "child_conversation_id": 1725,
+          "agent_type": "codex",
+          "message": "Running.\nLatest sub-agent reply: thinking: **Checking the clock count**",
+          "progress": {
+            "steps": 14,
+            "marks": [
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok"
+            ],
+            "last_step": "mcp.fastctx.grep"
+          },
+          "raw": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"tasks\":[{\"task_id\":\"a1947bd9-a375-4590-8310-d7454f450451\",\"status\":\"running\",\"child_conversation_id\":1725,\"agent_type\":\"codex\",\"message\":\"Running.\\nLatest sub-agent reply: thinking: **Checking the clock count**\",\"progress\":{\"steps\":14,\"marks\":[\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\"],\"last_step\":\"mcp.fastctx.grep\"}}]}"
+              }
+            ],
+            "structuredContent": {
+              "tasks": [
+                {
+                  "task_id": "a1947bd9-a375-4590-8310-d7454f450451",
+                  "status": "running",
+                  "child_conversation_id": 1725,
+                  "agent_type": "codex",
+                  "message": "Running.\nLatest sub-agent reply: thinking: **Checking the clock count**",
+                  "progress": {
+                    "steps": 14,
+                    "marks": [
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok"
+                    ],
+                    "last_step": "mcp.fastctx.grep"
+                  }
+                }
+              ]
+            },
+            "isError": false
+          }
+        }
+      },
+      {
+        "kind": "query",
+        "startedAt": 1794619621290,
+        "returnedAt": 1794619681309,
+        "waitMs": 60000,
+        "result": {
+          "task_id": "a1947bd9-a375-4590-8310-d7454f450451",
+          "status": "running",
+          "child_conversation_id": 1725,
+          "agent_type": "codex",
+          "message": "Running.\nLatest sub-agent reply: thinking: **Reading memory lines**",
+          "progress": {
+            "steps": 24,
+            "marks": [
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok"
+            ],
+            "last_step": "$e='docs/todos/10-self-hosting-hardening/evidence/04/'; foreach($n in @('context-repair-final.json','context-repair-fina…"
+          },
+          "raw": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"tasks\":[{\"task_id\":\"a1947bd9-a375-4590-8310-d7454f450451\",\"status\":\"running\",\"child_conversation_id\":1725,\"agent_type\":\"codex\",\"message\":\"Running.\\nLatest sub-agent reply: thinking: **Reading memory lines**\",\"progress\":{\"steps\":24,\"marks\":[\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\"],\"last_step\":\"$e='docs/todos/10-self-hosting-hardening/evidence/04/'; foreach($n in @('context-repair-final.json','context-repair-fina…\"}}]}"
+              }
+            ],
+            "structuredContent": {
+              "tasks": [
+                {
+                  "task_id": "a1947bd9-a375-4590-8310-d7454f450451",
+                  "status": "running",
+                  "child_conversation_id": 1725,
+                  "agent_type": "codex",
+                  "message": "Running.\nLatest sub-agent reply: thinking: **Reading memory lines**",
+                  "progress": {
+                    "steps": 24,
+                    "marks": [
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok"
+                    ],
+                    "last_step": "$e='docs/todos/10-self-hosting-hardening/evidence/04/'; foreach($n in @('context-repair-final.json','context-repair-fina…"
+                  }
+                }
+              ]
+            },
+            "isError": false
+          }
+        }
+      },
+      {
+        "kind": "query",
+        "startedAt": 1794619681309,
+        "returnedAt": 1794619741326,
+        "waitMs": 60000,
+        "result": {
+          "task_id": "a1947bd9-a375-4590-8310-d7454f450451",
+          "status": "running",
+          "child_conversation_id": 1725,
+          "agent_type": "codex",
+          "message": "Running.\nLatest sub-agent reply: thinking: **Inspecting git head aliases**",
+          "progress": {
+            "steps": 28,
+            "marks": [
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok"
+            ],
+            "last_step": "git status --short; git branch --show-current; git rev-parse HEAD; git rev-parse 6afa4de271ee90271f2c068a8060ed2590c8ff9…"
+          },
+          "raw": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"tasks\":[{\"task_id\":\"a1947bd9-a375-4590-8310-d7454f450451\",\"status\":\"running\",\"child_conversation_id\":1725,\"agent_type\":\"codex\",\"message\":\"Running.\\nLatest sub-agent reply: thinking: **Inspecting git head aliases**\",\"progress\":{\"steps\":28,\"marks\":[\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\"],\"last_step\":\"git status --short; git branch --show-current; git rev-parse HEAD; git rev-parse 6afa4de271ee90271f2c068a8060ed2590c8ff9…\"}}]}"
+              }
+            ],
+            "structuredContent": {
+              "tasks": [
+                {
+                  "task_id": "a1947bd9-a375-4590-8310-d7454f450451",
+                  "status": "running",
+                  "child_conversation_id": 1725,
+                  "agent_type": "codex",
+                  "message": "Running.\nLatest sub-agent reply: thinking: **Inspecting git head aliases**",
+                  "progress": {
+                    "steps": 28,
+                    "marks": [
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok"
+                    ],
+                    "last_step": "git status --short; git branch --show-current; git rev-parse HEAD; git rev-parse 6afa4de271ee90271f2c068a8060ed2590c8ff9…"
+                  }
+                }
+              ]
+            },
+            "isError": false
+          }
+        }
+      },
+      {
+        "kind": "query",
+        "startedAt": 1794619741326,
+        "returnedAt": 1794619801338,
+        "waitMs": 60000,
+        "result": {
+          "task_id": "a1947bd9-a375-4590-8310-d7454f450451",
+          "status": "running",
+          "child_conversation_id": 1725,
+          "agent_type": "codex",
+          "message": "Running.\nLatest sub-agent reply: \"type\": \"choice\",",
+          "progress": {
+            "steps": 28,
+            "marks": [
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok"
+            ],
+            "last_step": "git status --short; git branch --show-current; git rev-parse HEAD; git rev-parse 6afa4de271ee90271f2c068a8060ed2590c8ff9…"
+          },
+          "raw": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"tasks\":[{\"task_id\":\"a1947bd9-a375-4590-8310-d7454f450451\",\"status\":\"running\",\"child_conversation_id\":1725,\"agent_type\":\"codex\",\"message\":\"Running.\\nLatest sub-agent reply: \\\"type\\\": \\\"choice\\\",\",\"progress\":{\"steps\":28,\"marks\":[\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\"],\"last_step\":\"git status --short; git branch --show-current; git rev-parse HEAD; git rev-parse 6afa4de271ee90271f2c068a8060ed2590c8ff9…\"}}]}"
+              }
+            ],
+            "structuredContent": {
+              "tasks": [
+                {
+                  "task_id": "a1947bd9-a375-4590-8310-d7454f450451",
+                  "status": "running",
+                  "child_conversation_id": 1725,
+                  "agent_type": "codex",
+                  "message": "Running.\nLatest sub-agent reply: \"type\": \"choice\",",
+                  "progress": {
+                    "steps": 28,
+                    "marks": [
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok"
+                    ],
+                    "last_step": "git status --short; git branch --show-current; git rev-parse HEAD; git rev-parse 6afa4de271ee90271f2c068a8060ed2590c8ff9…"
+                  }
+                }
+              ]
+            },
+            "isError": false
+          }
+        }
+      },
+      {
+        "kind": "query",
+        "startedAt": 1794619801338,
+        "returnedAt": 1794619805939,
+        "waitMs": 59783,
+        "result": {
+          "task_id": "a1947bd9-a375-4590-8310-d7454f450451",
+          "status": "completed",
+          "child_conversation_id": 1725,
+          "agent_type": "codex",
+          "text": "{\n  \"task_id\": \"04\",\n  \"review_scope\": \"定点返修增量独审\",\n  \"reviewer\": {\n    \"session_id\": \"01a1d7a9-5822-7bc3-a3e7-51486485f8ea\",\n    \"identity_source\": \"CODEX_SESSION_ID / CODEX_THREAD_ID\",\n    \"independence\": \"未参与04实现、测试、方案或RCA；不是主控、1718或1724\",\n    \"read_only\": true,\n    \"delegated\": false\n  },\n  \"baseline\": {\n    \"cwd\": \"C:/Users/qingyu/.codeg/skills/iteration-manager/.worktrees/iter-10\",\n    \"branch\": \"feat/iter-10-self-hosting-hardening\",\n    \"base_sha\": \"6afa4de271ee90271f2c068a8060ed2590c8ff98\",\n    \"head_sha\": \"41f6618008542a1394fd0341237b36c91554c218\",\n    \"contract_sha\": \"41f6618008542a1394fd0341237b36c91554c218\",\n    \"repair_product_sha\": \"493ecf2dbfc247247b7c7b2465d126c99117d106\",\n    \"dirty_at_start\": [],\n    \"dirty_at_end\": [],\n    \"final_checked_at\": \"2026-11-14T01:28:57Z\"\n  },\n  \"verdict\": \"APPROVED\",\n  \"reviewer_judgment\": \"修复通过显式临时库存模式解除生命周期测试与真实迭代审计成本的耦合，默认真实Git入口保持兼容。保留8秒门限及真实HTTP、延迟、出处和回收断言；未发现阻断缺陷。本批准绑定上述修复增量，不替代旧04产品批准，也不表示登记后strict或06整轮验收通过。\",\n  \"evidence_prefix\": \"docs/todos/10-self-hosting-hardening/evidence/\",\n  \"scope\": {\n    \"result\": \"PASS\",\n    \"evidence\": [\n      \"实际BASE..C共32个变更路径，均属于04白名单、04卡或04证据目录。\",\n      \"源码变化限于04/browser_harness.py及tests/test_board_handoff.py；既有Note同步，卡片变化为执行元数据及ledger。\",\n      \"BASE..C未修改scripts、references、templates、SKILL、迭代README、05产品或06原件。\",\n      \"493ecf2..C在harness、tests、scripts、templates上无变化。\",\n      \"原review-report.json、review.json及原浏览器产物未在本次修复中覆写。\"\n    ]\n  },\n  \"spec\": [\n    {\n      \"requirement\": \"隔离真实checkout库存读取\",\n      \"result\": \"PASS\",\n      \"evidence\": [\n        \"04/browser_harness.py:64-81：显式模式将Git库存替换为TemporaryDirectory下synthetic_git；FS、empty和loading也位于同一临时根。\",\n        \"04/browser_harness.py:87-100：四个真实HTTP handler均绑定对应临时iter_dir，ready仍调用真实generate_board_data。\",\n        \"scripts/iter_sync.py:476-510、576-595及scripts/iter_queries.py:12-16、59-103：查询、HTTP及Git调用使用传入目录；合成IN_PROGRESS卡不进入DONE绑定审计分支。\",\n        \"tests/test_board_handoff.py:103-120：隔离断言检查真实查询入口的目录、四服务归属、synthetic标记及临时目录删除。\",\n        \"隔离对象是任务库存；从checkout加载程序源码和UI模板仍属正常行为。\"\n      ]\n    },\n    {\n      \"requirement\": \"默认入口兼容且不伪造真实消费\",\n      \"result\": \"PASS\",\n      \"evidence\": [\n        \"04/browser_harness.py:56-57、69-76：默认不启用隔离，仍使用real_git及原真实迭代路径。\",\n        \"tests/test_board_handoff.py:82-121：默认参数分支以临时checkout核对原目录选择及synthetic=false。\",\n        \"显式隔离模式名称为synthetic_git，四服务均标记synthetic；帮助文本和Note均明确不作为native-self-use证据。\",\n        \"默认模式兼容参数测试为后补，未冒称经历RED。\"\n      ]\n    },\n    {\n      \"requirement\": \"不弱化既有行为断言\",\n      \"result\": \"PASS\",\n      \"evidence\": [\n        \"tests/test_board_handoff.py:124-169仍保留8秒ready断言、真实子进程和HTTP请求。\",\n        \"HTTP 200、至少0.18秒延迟、FS当前候选与历史checkpoint、remaining_work、三个sources及实际原文响应断言均保留。\",\n        \"原real_git出处断言改由默认模式参数测试覆盖；生命周期测试新增四服务全部synthetic及临时路径归属断言。\"\n      ]\n    },\n    {\n      \"requirement\": \"线程、服务及temp正常回收\",\n      \"result\": \"PASS\",\n      \"evidence\": [\n        \"04/browser_harness.py:104-115：正常停止及finally均设置停止事件、shutdown、join、server_close，退出临时目录上下文后才输出终态。\",\n        \"tests/test_board_handoff.py:164-173：实际停止服务和子进程，检查exit0、active_commands为空及临时根不存在。\",\n        \"最终实现者与主控独立五文件原件均69passed，runner及child记录均为终态。\"\n      ]\n    }\n  ],\n  \"quality\": {\n    \"result\": \"PASS\",\n    \"evidence\": [\n      \"新增模式复用真实查询和HTTP生命周期，没有复制服务实现或模拟查询返回值。\",\n      \"repair-final-red-isolation-a.json.output.txt:40-53记录实际checkout目录触发AssertionError；不是导入、编译或参数解析失败。\",\n      \"旧失败和8.562秒诊断保留；没有通过提高超时或把合成结果改称真实消费来消除失败。\",\n      \"既有Note记录隔离边界、默认兼容及RED覆盖范围；tree和format原件均有效通过。\"\n    ]\n  },\n  \"checks\": [\n    {\n      \"receipt\": \"04/repair-final-red-isolation-a.json\",\n      \"output\": \"04/repair-final-red-isolation-a.json.output.txt\",\n      \"raw_exit_code\": 1,\n      \"result\": \"1 failed；有效隔离行为AssertionError\",\n      \"tree_terminal\": true\n    },\n    {\n      \"receipt\": \"04/repair-final-green-isolation-a.json\",\n      \"output\": \"04/repair-final-green-isolation-a.json.output.txt\",\n      \"raw_exit_code\": 0,\n      \"result\": \"7 passed in 3.13s\",\n      \"tree_terminal\": true\n    },\n    {\n      \"receipt\": \"04/repair-final-five-files-final-b.json\",\n      \"output\": \"04/repair-final-five-files-final-b.json.output.txt\",\n      \"raw_exit_code\": 0,\n      \"result\": \"69 passed in 14.65s\",\n      \"tree_terminal\": true\n    },\n    {\n      \"receipt\": \"04/controller-regression-repair-final.json\",\n      \"output\": \"04/controller-regression-repair-final.json.output.txt\",\n      \"raw_exit_code\": 0,\n      \"result\": \"主控独立规定五文件69 passed in 14.27s\",\n      \"tree_terminal\": true\n    },\n    {\n      \"receipts\": [\n        \"04/repair-final-note-tree-a.json\",\n        \"04/repair-final-note-format-a.json\"\n      ],\n      \"outputs\": [\n        \"04/repair-final-note-tree-a.json.output.txt\",\n        \"04/repair-final-note-format-a.json.output.txt\"\n      ],\n      \"raw_exit_codes\": [0, 0],\n      \"result\": \"19 notes tree/relative links及format通过\",\n      \"tree_terminal\": true\n    }\n  ],\n  \"issues\": [],\n  \"reused_evidence\": [\n    {\n      \"coverage\": \"原04产品展示、原生交互、四态及1139x869视觉\",\n      \"original_reviewed_candidate\": \"9b9010afb8dbf0b0cf74f83c6c97605984319619\",\n      \"approval_sources\": [\n        \"04/review-report.json\",\n        \"04/review.json\"\n      ],\n      \"originals\": [\n        \"04/browser-git-b.json.output.txt\",\n        \"04/browser-detail-b.json.output.txt\",\n        \"04/browser-source-b.json.output.txt\",\n        \"04/browser-states-b.json.output.txt\",\n        \"04/browser-disconnect-b.json.output.txt\",\n        \"04/browser-real-git-b.png\",\n        \"04/browser-git-detail-b.png\",\n        \"04/browser-checkpoint-b.png\",\n        \"04/browser-fs-detail-b.png\",\n        \"04/browser-empty-b.png\",\n        \"04/browser-loading-b.png\",\n        \"04/browser-disconnected-b.png\"\n      ],\n      \"impact_basis\": \"原已审候选至当前C的scripts及templates无变化；默认harness目录选择未变；原浏览器产物在修复BASE..C无变化。旧Reviewer已实际观察七图，本次定点核对原生操作及状态输出，不重跑浏览器。\",\n      \"provenance\": \"真实Git库存；FS、empty、loading为明确合成输入，经真实HTTP和原生浏览器操作。未将其升级为真实FS业务批准。\"\n    },\n    {\n      \"coverage\": \"修复测试及独立回归\",\n      \"original_candidate\": \"493ecf2dbfc247247b7c7b2465d126c99117d106\",\n      \"current_candidate\": \"41f6618008542a1394fd0341237b36c91554c218\",\n      \"impact_basis\": \"产品harness及测试在两候选间无变化，沿用已读取的最终69passed及主控独立69passed原件；本Reviewer没有重新执行测试。\"\n    }\n  ],\n  \"unknown\": {\n    \"blocking_review_gaps\": [],\n    \"boundaries\": [\n      \"本次未启动业务、测试或浏览器命令，未写文件、卡片或Git，未委派。\",\n      \"原06全量仍是490passed/1failed；修复候选的整轮全量结果不在本次批准范围内，06保持TESTING、未放行。\",\n      \"新收据登记、登记D及固定协调器strict尚待主控执行，本报告未声称其通过。\",\n      \"CodeGraph返回另一worktree提示，未将该索引作为当前源码证据；已读取当前worktree相关源码。\"\n    ]\n  },\n  \"handoff\": {\n    \"owner\": \"主控\",\n    \"binding\": \"新批准仅绑定BASE6afa4de..C41f6618，contract41f6618；旧04产品批准保留原BASE/C身份。\",\n    \"registration\": \"新report及receipt使用唯一新名字，不覆盖C中已有review-report.json或review.json。\",\n    \"remaining_gates\": [\n      \"登记新绑定及D后消费固定协调器strict\",\n      \"按既定流程返回06最终全量及后续验收\"\n    ]\n  },\n  \"typesafe\": {\n    \"request\": {\n      \"state\": {\n        \"binding\": {\n          \"base\": \"6afa4de271ee90271f2c068a8060ed2590c8ff98\",\n          \"head\": \"41f6618008542a1394fd0341237b36c91554c218\",\n          \"contract\": \"41f6618008542a1394fd0341237b36c91554c218\",\n          \"product\": \"493ecf2dbfc247247b7c7b2465d126c99117d106\",\n          \"branch\": \"feat/iter-10-self-hosting-hardening\",\n          \"dirty\": []\n        },\n        \"authority\": \"Read-only independent task04 repair review. No tests/browser rerun, file writes or delegation. New approval binds incremental repair BASE, preserving original task04 approval separately. Post-registration frozen strict and task06 full regression are subsequent controller work.\",\n        \"diff\": {\n          \"paths\": 32,\n          \"changed\": \"browser_harness.py adds opt-in --isolated-fixtures and temporary synthetic Git inventory; test_board_handoff.py adds isolation/default-mode tests and opts lifecycle test into isolation; existing Note adds explanation; task04 metadata/ledger and new evidence.\",\n          \"unchanged\": \"BASE..C has no scripts, templates, references, SKILL, task05/task06 product changes, old review-report.json/review.json or original browser artifacts. Product/tests/harness unchanged after 493ecf2 except Note/card/evidence.\"\n        },\n        \"source\": {\n          \"browser_harness.py:64-100\": \"TemporaryDirectory owns FS, empty and loading inventory. Default git_name=real_git and directory=ROOT/docs/todos/10-self-hosting-hardening. Opt-in replaces it with synthetic_git under temp root. All four handler classes receive those directory values. ready totals call real generate_board_data; synthetic flag is name != real_git.\",\n          \"browser_harness.py:83-115\": \"Real LiveBoardHandler subclass; /api/board waits Event for configured delay. On stop/finally, Event.set, server.shutdown, thread.join, server_close; temp context exits before final stopped/active_commands output.\",\n          \"iter_sync.py:462-610 and iter_queries.py:12-112\": \"Queries discover and read given iter_dir. Git subprocess cwd is provided directory. Synthetic cards are IN_PROGRESS, so DONE receipt/Git binding audit branch is not entered. HTTP uses self.iter_dir. Loading source/template code from checkout is retained; isolated contract concerns inventory, not program source reads.\",\n          \"test_board_handoff.py:82-121\": \"Isolation test wraps real query to assert no inventory directory is below harness.ROOT, asserts four temp directories/synthetic labels and temp removal. Default parameter case uses temp checkout, checks original directory and real_git false synthetic label.\",\n          \"test_board_handoff.py:124-173\": \"Actual subprocess/HTTP lifecycle. Keeps 8-second ready assertion, HTTP 200, .18-second delay lower bound, FS candidate/current versus original checkpoint, remaining work, three sources, actual evidence response, exit0, active_commands empty and temp removed.\"\n        },\n        \"originals\": {\n          \"failure\": \"06/controller-full-regression.json: COMPLETED exit1 tree_terminal true; output 490 passed/1 failed at original 8-second ready assertion.\",\n          \"diagnosis\": \"06/controller-harness-diagnosis.json.output.txt: candidate85031b1, default ready8.562s, exit0, stderr empty.\",\n          \"red\": \"04/repair-final-red-isolation-a.json: COMPLETED exit1 tree_terminal true; output AssertionError isolated mode read checkout inventory at actual checkout directory, 1 failed. Initial test injects parsed isolated_fixtures=True, not import/CLI failure.\",\n          \"green\": \"04/repair-final-green-isolation-a.json: COMPLETED exit0 tree_terminal true; 7 passed. Default-mode compatibility parameter was added later, not claimed RED.\",\n          \"final\": \"04/repair-final-five-files-final-b.json: specified five files, COMPLETED exit0 tree_terminal true, 69 passed in14.65s.\",\n          \"independent\": \"04/controller-regression-repair-final.json: same five files, COMPLETED exit0 tree_terminal true, 69 passed in14.27s.\",\n          \"cleanup\": \"All six implementer runner receipts plus independent runner and child records terminal. Native repair task6a14c232-1dd5-4d68-806f-39c192b8aa33 completed.\",\n          \"note\": \"Existing Note updated; original tree/format outputs ok19 notes, runner exit0 terminal.\",\n          \"ui\": \"Old review-report/review.json approve candidate9b9010af. Original native source popup/Escape, state/delay/disconnect records and seven1139x869 screenshots remain; templates/query/CLI and default harness branch unchanged. FS/empty/loading provenance explicitly synthetic.\"\n        }\n      },\n      \"questions\": {\n        \"repair_disposition\": {\n          \"type\": \"choice\",\n          \"instructions\": \"Determine the independent disposition of only this incremental task04 harness repair against the stated authorization and requirements. Treat subsequent registration/strict and task06 full regression as pending later gates, not already passed. Do not infer native self-use from synthetic tests.\",\n          \"criteria\": {\n            \"APPROVED\": \"Available source and original evidence support isolation, default compatibility, retained behavior assertions and normal cleanup; no concrete material defect is established.\",\n            \"CHANGES_REQUESTED\": \"A concrete material defect or weakened required assertion in the repair requires correction.\",\n            \"BLOCKED\": \"Required evidence is absent or contradictory, preventing an incremental review conclusion.\"\n          }\n        },\n        \"ui_reuse\": {\n          \"type\": \"choice\",\n          \"instructions\": \"Classify whether the old task04 native UI evidence can be reused for the unchanged product/UI behaviors in this incremental review, without claiming it was rerun or that synthetic tests are native acceptance.\",\n          \"criteria\": {\n            \"REUSE\": \"Covered UI/query/default behavior and original artifacts are unchanged; prior approval and originals remain attributable.\",\n            \"RERUN_REQUIRED\": \"An observed changed covered behavior invalidates the old UI evidence.\",\n            \"INSUFFICIENT\": \"The evidence does not establish whether covered behavior or originals changed.\"\n          }\n        }\n      }\n    },\n    \"response_raw\": {\n      \"model\": \"jev-1.14.0\",\n      \"answers\": {\n        \"repair_disposition\": {\n          \"type\": \"choice\",\n          \"choice\": \"APPROVED\",\n          \"confidence\": 0.64,\n          \"probabilities\": {\n            \"APPROVED\": 0.76,\n            \"BLOCKED\": 0.07,\n            \"CHANGES_REQUESTED\": 0.17\n          }\n        },\n        \"ui_reuse\": {\n          \"type\": \"choice\",\n          \"choice\": \"REUSE\",\n          \"confidence\": 1.0,\n          \"probabilities\": {\n            \"INSUFFICIENT\": 0.0,\n            \"RERUN_REQUIRED\": 0.0,\n            \"REUSE\": 1.0\n          }\n        }\n      },\n      \"usage\": {\n        \"input_tokens\": 1819,\n        \"output_tokens\": 98\n      }\n    },\n    \"reviewer_application\": \"采纳增量APPROVED和UI证据可沿用的方向；最终裁决依据当前diff、源码及原件作出。概率和confidence不作为质量分或测试证据。\"\n  }\n}\n",
+          "duration_ms": 244654,
+          "progress": {
+            "steps": 28,
+            "marks": [
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok"
+            ],
+            "last_step": "git status --short; git branch --show-current; git rev-parse HEAD; git rev-parse 6afa4de271ee90271f2c068a8060ed2590c8ff9…"
+          },
+          "raw": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"tasks\":[{\"task_id\":\"a1947bd9-a375-4590-8310-d7454f450451\",\"status\":\"completed\",\"child_conversation_id\":1725,\"agent_type\":\"codex\",\"text\":\"{\\n  \\\"task_id\\\": \\\"04\\\",\\n  \\\"review_scope\\\": \\\"定点返修增量独审\\\",\\n  \\\"reviewer\\\": {\\n    \\\"session_id\\\": \\\"01a1d7a9-5822-7bc3-a3e7-51486485f8ea\\\",\\n    \\\"identity_source\\\": \\\"CODEX_SESSION_ID / CODEX_THREAD_ID\\\",\\n    \\\"independence\\\": \\\"未参与04实现、测试、方案或RCA；不是主控、1718或1724\\\",\\n    \\\"read_only\\\": true,\\n    \\\"delegated\\\": false\\n  },\\n  \\\"baseline\\\": {\\n    \\\"cwd\\\": \\\"C:/Users/qingyu/.codeg/skills/iteration-manager/.worktrees/iter-10\\\",\\n    \\\"branch\\\": \\\"feat/iter-10-self-hosting-hardening\\\",\\n    \\\"base_sha\\\": \\\"6afa4de271ee90271f2c068a8060ed2590c8ff98\\\",\\n    \\\"head_sha\\\": \\\"41f6618008542a1394fd0341237b36c91554c218\\\",\\n    \\\"contract_sha\\\": \\\"41f6618008542a1394fd0341237b36c91554c218\\\",\\n    \\\"repair_product_sha\\\": \\\"493ecf2dbfc247247b7c7b2465d126c99117d106\\\",\\n    \\\"dirty_at_start\\\": [],\\n    \\\"dirty_at_end\\\": [],\\n    \\\"final_checked_at\\\": \\\"2026-11-14T01:28:57Z\\\"\\n  },\\n  \\\"verdict\\\": \\\"APPROVED\\\",\\n  \\\"reviewer_judgment\\\": \\\"修复通过显式临时库存模式解除生命周期测试与真实迭代审计成本的耦合，默认真实Git入口保持兼容。保留8秒门限及真实HTTP、延迟、出处和回收断言；未发现阻断缺陷。本批准绑定上述修复增量，不替代旧04产品批准，也不表示登记后strict或06整轮验收通过。\\\",\\n  \\\"evidence_prefix\\\": \\\"docs/todos/10-self-hosting-hardening/evidence/\\\",\\n  \\\"scope\\\": {\\n    \\\"result\\\": \\\"PASS\\\",\\n    \\\"evidence\\\": [\\n      \\\"实际BASE..C共32个变更路径，均属于04白名单、04卡或04证据目录。\\\",\\n      \\\"源码变化限于04/browser_harness.py及tests/test_board_handoff.py；既有Note同步，卡片变化为执行元数据及ledger。\\\",\\n      \\\"BASE..C未修改scripts、references、templates、SKILL、迭代README、05产品或06原件。\\\",\\n      \\\"493ecf2..C在harness、tests、scripts、templates上无变化。\\\",\\n      \\\"原review-report.json、review.json及原浏览器产物未在本次修复中覆写。\\\"\\n    ]\\n  },\\n  \\\"spec\\\": [\\n    {\\n      \\\"requirement\\\": \\\"隔离真实checkout库存读取\\\",\\n      \\\"result\\\": \\\"PASS\\\",\\n      \\\"evidence\\\": [\\n        \\\"04/browser_harness.py:64-81：显式模式将Git库存替换为TemporaryDirectory下synthetic_git；FS、empty和loading也位于同一临时根。\\\",\\n        \\\"04/browser_harness.py:87-100：四个真实HTTP handler均绑定对应临时iter_dir，ready仍调用真实generate_board_data。\\\",\\n        \\\"scripts/iter_sync.py:476-510、576-595及scripts/iter_queries.py:12-16、59-103：查询、HTTP及Git调用使用传入目录；合成IN_PROGRESS卡不进入DONE绑定审计分支。\\\",\\n        \\\"tests/test_board_handoff.py:103-120：隔离断言检查真实查询入口的目录、四服务归属、synthetic标记及临时目录删除。\\\",\\n        \\\"隔离对象是任务库存；从checkout加载程序源码和UI模板仍属正常行为。\\\"\\n      ]\\n    },\\n    {\\n      \\\"requirement\\\": \\\"默认入口兼容且不伪造真实消费\\\",\\n      \\\"result\\\": \\\"PASS\\\",\\n      \\\"evidence\\\": [\\n        \\\"04/browser_harness.py:56-57、69-76：默认不启用隔离，仍使用real_git及原真实迭代路径。\\\",\\n        \\\"tests/test_board_handoff.py:82-121：默认参数分支以临时checkout核对原目录选择及synthetic=false。\\\",\\n        \\\"显式隔离模式名称为synthetic_git，四服务均标记synthetic；帮助文本和Note均明确不作为native-self-use证据。\\\",\\n        \\\"默认模式兼容参数测试为后补，未冒称经历RED。\\\"\\n      ]\\n    },\\n    {\\n      \\\"requirement\\\": \\\"不弱化既有行为断言\\\",\\n      \\\"result\\\": \\\"PASS\\\",\\n      \\\"evidence\\\": [\\n        \\\"tests/test_board_handoff.py:124-169仍保留8秒ready断言、真实子进程和HTTP请求。\\\",\\n        \\\"HTTP 200、至少0.18秒延迟、FS当前候选与历史checkpoint、remaining_work、三个sources及实际原文响应断言均保留。\\\",\\n        \\\"原real_git出处断言改由默认模式参数测试覆盖；生命周期测试新增四服务全部synthetic及临时路径归属断言。\\\"\\n      ]\\n    },\\n    {\\n      \\\"requirement\\\": \\\"线程、服务及temp正常回收\\\",\\n      \\\"result\\\": \\\"PASS\\\",\\n      \\\"evidence\\\": [\\n        \\\"04/browser_harness.py:104-115：正常停止及finally均设置停止事件、shutdown、join、server_close，退出临时目录上下文后才输出终态。\\\",\\n        \\\"tests/test_board_handoff.py:164-173：实际停止服务和子进程，检查exit0、active_commands为空及临时根不存在。\\\",\\n        \\\"最终实现者与主控独立五文件原件均69passed，runner及child记录均为终态。\\\"\\n      ]\\n    }\\n  ],\\n  \\\"quality\\\": {\\n    \\\"result\\\": \\\"PASS\\\",\\n    \\\"evidence\\\": [\\n      \\\"新增模式复用真实查询和HTTP生命周期，没有复制服务实现或模拟查询返回值。\\\",\\n      \\\"repair-final-red-isolation-a.json.output.txt:40-53记录实际checkout目录触发AssertionError；不是导入、编译或参数解析失败。\\\",\\n      \\\"旧失败和8.562秒诊断保留；没有通过提高超时或把合成结果改称真实消费来消除失败。\\\",\\n      \\\"既有Note记录隔离边界、默认兼容及RED覆盖范围；tree和format原件均有效通过。\\\"\\n    ]\\n  },\\n  \\\"checks\\\": [\\n    {\\n      \\\"receipt\\\": \\\"04/repair-final-red-isolation-a.json\\\",\\n      \\\"output\\\": \\\"04/repair-final-red-isolation-a.json.output.txt\\\",\\n      \\\"raw_exit_code\\\": 1,\\n      \\\"result\\\": \\\"1 failed；有效隔离行为AssertionError\\\",\\n      \\\"tree_terminal\\\": true\\n    },\\n    {\\n      \\\"receipt\\\": \\\"04/repair-final-green-isolation-a.json\\\",\\n      \\\"output\\\": \\\"04/repair-final-green-isolation-a.json.output.txt\\\",\\n      \\\"raw_exit_code\\\": 0,\\n      \\\"result\\\": \\\"7 passed in 3.13s\\\",\\n      \\\"tree_terminal\\\": true\\n    },\\n    {\\n      \\\"receipt\\\": \\\"04/repair-final-five-files-final-b.json\\\",\\n      \\\"output\\\": \\\"04/repair-final-five-files-final-b.json.output.txt\\\",\\n      \\\"raw_exit_code\\\": 0,\\n      \\\"result\\\": \\\"69 passed in 14.65s\\\",\\n      \\\"tree_terminal\\\": true\\n    },\\n    {\\n      \\\"receipt\\\": \\\"04/controller-regression-repair-final.json\\\",\\n      \\\"output\\\": \\\"04/controller-regression-repair-final.json.output.txt\\\",\\n      \\\"raw_exit_code\\\": 0,\\n      \\\"result\\\": \\\"主控独立规定五文件69 passed in 14.27s\\\",\\n      \\\"tree_terminal\\\": true\\n    },\\n    {\\n      \\\"receipts\\\": [\\n        \\\"04/repair-final-note-tree-a.json\\\",\\n        \\\"04/repair-final-note-format-a.json\\\"\\n      ],\\n      \\\"outputs\\\": [\\n        \\\"04/repair-final-note-tree-a.json.output.txt\\\",\\n        \\\"04/repair-final-note-format-a.json.output.txt\\\"\\n      ],\\n      \\\"raw_exit_codes\\\": [0, 0],\\n      \\\"result\\\": \\\"19 notes tree/relative links及format通过\\\",\\n      \\\"tree_terminal\\\": true\\n    }\\n  ],\\n  \\\"issues\\\": [],\\n  \\\"reused_evidence\\\": [\\n    {\\n      \\\"coverage\\\": \\\"原04产品展示、原生交互、四态及1139x869视觉\\\",\\n      \\\"original_reviewed_candidate\\\": \\\"9b9010afb8dbf0b0cf74f83c6c97605984319619\\\",\\n      \\\"approval_sources\\\": [\\n        \\\"04/review-report.json\\\",\\n        \\\"04/review.json\\\"\\n      ],\\n      \\\"originals\\\": [\\n        \\\"04/browser-git-b.json.output.txt\\\",\\n        \\\"04/browser-detail-b.json.output.txt\\\",\\n        \\\"04/browser-source-b.json.output.txt\\\",\\n        \\\"04/browser-states-b.json.output.txt\\\",\\n        \\\"04/browser-disconnect-b.json.output.txt\\\",\\n        \\\"04/browser-real-git-b.png\\\",\\n        \\\"04/browser-git-detail-b.png\\\",\\n        \\\"04/browser-checkpoint-b.png\\\",\\n        \\\"04/browser-fs-detail-b.png\\\",\\n        \\\"04/browser-empty-b.png\\\",\\n        \\\"04/browser-loading-b.png\\\",\\n        \\\"04/browser-disconnected-b.png\\\"\\n      ],\\n      \\\"impact_basis\\\": \\\"原已审候选至当前C的scripts及templates无变化；默认harness目录选择未变；原浏览器产物在修复BASE..C无变化。旧Reviewer已实际观察七图，本次定点核对原生操作及状态输出，不重跑浏览器。\\\",\\n      \\\"provenance\\\": \\\"真实Git库存；FS、empty、loading为明确合成输入，经真实HTTP和原生浏览器操作。未将其升级为真实FS业务批准。\\\"\\n    },\\n    {\\n      \\\"coverage\\\": \\\"修复测试及独立回归\\\",\\n      \\\"original_candidate\\\": \\\"493ecf2dbfc247247b7c7b2465d126c99117d106\\\",\\n      \\\"current_candidate\\\": \\\"41f6618008542a1394fd0341237b36c91554c218\\\",\\n      \\\"impact_basis\\\": \\\"产品harness及测试在两候选间无变化，沿用已读取的最终69passed及主控独立69passed原件；本Reviewer没有重新执行测试。\\\"\\n    }\\n  ],\\n  \\\"unknown\\\": {\\n    \\\"blocking_review_gaps\\\": [],\\n    \\\"boundaries\\\": [\\n      \\\"本次未启动业务、测试或浏览器命令，未写文件、卡片或Git，未委派。\\\",\\n      \\\"原06全量仍是490passed/1failed；修复候选的整轮全量结果不在本次批准范围内，06保持TESTING、未放行。\\\",\\n      \\\"新收据登记、登记D及固定协调器strict尚待主控执行，本报告未声称其通过。\\\",\\n      \\\"CodeGraph返回另一worktree提示，未将该索引作为当前源码证据；已读取当前worktree相关源码。\\\"\\n    ]\\n  },\\n  \\\"handoff\\\": {\\n    \\\"owner\\\": \\\"主控\\\",\\n    \\\"binding\\\": \\\"新批准仅绑定BASE6afa4de..C41f6618，contract41f6618；旧04产品批准保留原BASE/C身份。\\\",\\n    \\\"registration\\\": \\\"新report及receipt使用唯一新名字，不覆盖C中已有review-report.json或review.json。\\\",\\n    \\\"remaining_gates\\\": [\\n      \\\"登记新绑定及D后消费固定协调器strict\\\",\\n      \\\"按既定流程返回06最终全量及后续验收\\\"\\n    ]\\n  },\\n  \\\"typesafe\\\": {\\n    \\\"request\\\": {\\n      \\\"state\\\": {\\n        \\\"binding\\\": {\\n          \\\"base\\\": \\\"6afa4de271ee90271f2c068a8060ed2590c8ff98\\\",\\n          \\\"head\\\": \\\"41f6618008542a1394fd0341237b36c91554c218\\\",\\n          \\\"contract\\\": \\\"41f6618008542a1394fd0341237b36c91554c218\\\",\\n          \\\"product\\\": \\\"493ecf2dbfc247247b7c7b2465d126c99117d106\\\",\\n          \\\"branch\\\": \\\"feat/iter-10-self-hosting-hardening\\\",\\n          \\\"dirty\\\": []\\n        },\\n        \\\"authority\\\": \\\"Read-only independent task04 repair review. No tests/browser rerun, file writes or delegation. New approval binds incremental repair BASE, preserving original task04 approval separately. Post-registration frozen strict and task06 full regression are subsequent controller work.\\\",\\n        \\\"diff\\\": {\\n          \\\"paths\\\": 32,\\n          \\\"changed\\\": \\\"browser_harness.py adds opt-in --isolated-fixtures and temporary synthetic Git inventory; test_board_handoff.py adds isolation/default-mode tests and opts lifecycle test into isolation; existing Note adds explanation; task04 metadata/ledger and new evidence.\\\",\\n          \\\"unchanged\\\": \\\"BASE..C has no scripts, templates, references, SKILL, task05/task06 product changes, old review-report.json/review.json or original browser artifacts. Product/tests/harness unchanged after 493ecf2 except Note/card/evidence.\\\"\\n        },\\n        \\\"source\\\": {\\n          \\\"browser_harness.py:64-100\\\": \\\"TemporaryDirectory owns FS, empty and loading inventory. Default git_name=real_git and directory=ROOT/docs/todos/10-self-hosting-hardening. Opt-in replaces it with synthetic_git under temp root. All four handler classes receive those directory values. ready totals call real generate_board_data; synthetic flag is name != real_git.\\\",\\n          \\\"browser_harness.py:83-115\\\": \\\"Real LiveBoardHandler subclass; /api/board waits Event for configured delay. On stop/finally, Event.set, server.shutdown, thread.join, server_close; temp context exits before final stopped/active_commands output.\\\",\\n          \\\"iter_sync.py:462-610 and iter_queries.py:12-112\\\": \\\"Queries discover and read given iter_dir. Git subprocess cwd is provided directory. Synthetic cards are IN_PROGRESS, so DONE receipt/Git binding audit branch is not entered. HTTP uses self.iter_dir. Loading source/template code from checkout is retained; isolated contract concerns inventory, not program source reads.\\\",\\n          \\\"test_board_handoff.py:82-121\\\": \\\"Isolation test wraps real query to assert no inventory directory is below harness.ROOT, asserts four temp directories/synthetic labels and temp removal. Default parameter case uses temp checkout, checks original directory and real_git false synthetic label.\\\",\\n          \\\"test_board_handoff.py:124-173\\\": \\\"Actual subprocess/HTTP lifecycle. Keeps 8-second ready assertion, HTTP 200, .18-second delay lower bound, FS candidate/current versus original checkpoint, remaining work, three sources, actual evidence response, exit0, active_commands empty and temp removed.\\\"\\n        },\\n        \\\"originals\\\": {\\n          \\\"failure\\\": \\\"06/controller-full-regression.json: COMPLETED exit1 tree_terminal true; output 490 passed/1 failed at original 8-second ready assertion.\\\",\\n          \\\"diagnosis\\\": \\\"06/controller-harness-diagnosis.json.output.txt: candidate85031b1, default ready8.562s, exit0, stderr empty.\\\",\\n          \\\"red\\\": \\\"04/repair-final-red-isolation-a.json: COMPLETED exit1 tree_terminal true; output AssertionError isolated mode read checkout inventory at actual checkout directory, 1 failed. Initial test injects parsed isolated_fixtures=True, not import/CLI failure.\\\",\\n          \\\"green\\\": \\\"04/repair-final-green-isolation-a.json: COMPLETED exit0 tree_terminal true; 7 passed. Default-mode compatibility parameter was added later, not claimed RED.\\\",\\n          \\\"final\\\": \\\"04/repair-final-five-files-final-b.json: specified five files, COMPLETED exit0 tree_terminal true, 69 passed in14.65s.\\\",\\n          \\\"independent\\\": \\\"04/controller-regression-repair-final.json: same five files, COMPLETED exit0 tree_terminal true, 69 passed in14.27s.\\\",\\n          \\\"cleanup\\\": \\\"All six implementer runner receipts plus independent runner and child records terminal. Native repair task6a14c232-1dd5-4d68-806f-39c192b8aa33 completed.\\\",\\n          \\\"note\\\": \\\"Existing Note updated; original tree/format outputs ok19 notes, runner exit0 terminal.\\\",\\n          \\\"ui\\\": \\\"Old review-report/review.json approve candidate9b9010af. Original native source popup/Escape, state/delay/disconnect records and seven1139x869 screenshots remain; templates/query/CLI and default harness branch unchanged. FS/empty/loading provenance explicitly synthetic.\\\"\\n        }\\n      },\\n      \\\"questions\\\": {\\n        \\\"repair_disposition\\\": {\\n          \\\"type\\\": \\\"choice\\\",\\n          \\\"instructions\\\": \\\"Determine the independent disposition of only this incremental task04 harness repair against the stated authorization and requirements. Treat subsequent registration/strict and task06 full regression as pending later gates, not already passed. Do not infer native self-use from synthetic tests.\\\",\\n          \\\"criteria\\\": {\\n            \\\"APPROVED\\\": \\\"Available source and original evidence support isolation, default compatibility, retained behavior assertions and normal cleanup; no concrete material defect is established.\\\",\\n            \\\"CHANGES_REQUESTED\\\": \\\"A concrete material defect or weakened required assertion in the repair requires correction.\\\",\\n            \\\"BLOCKED\\\": \\\"Required evidence is absent or contradictory, preventing an incremental review conclusion.\\\"\\n          }\\n        },\\n        \\\"ui_reuse\\\": {\\n          \\\"type\\\": \\\"choice\\\",\\n          \\\"instructions\\\": \\\"Classify whether the old task04 native UI evidence can be reused for the unchanged product/UI behaviors in this incremental review, without claiming it was rerun or that synthetic tests are native acceptance.\\\",\\n          \\\"criteria\\\": {\\n            \\\"REUSE\\\": \\\"Covered UI/query/default behavior and original artifacts are unchanged; prior approval and originals remain attributable.\\\",\\n            \\\"RERUN_REQUIRED\\\": \\\"An observed changed covered behavior invalidates the old UI evidence.\\\",\\n            \\\"INSUFFICIENT\\\": \\\"The evidence does not establish whether covered behavior or originals changed.\\\"\\n          }\\n        }\\n      }\\n    },\\n    \\\"response_raw\\\": {\\n      \\\"model\\\": \\\"jev-1.14.0\\\",\\n      \\\"answers\\\": {\\n        \\\"repair_disposition\\\": {\\n          \\\"type\\\": \\\"choice\\\",\\n          \\\"choice\\\": \\\"APPROVED\\\",\\n          \\\"confidence\\\": 0.64,\\n          \\\"probabilities\\\": {\\n            \\\"APPROVED\\\": 0.76,\\n            \\\"BLOCKED\\\": 0.07,\\n            \\\"CHANGES_REQUESTED\\\": 0.17\\n          }\\n        },\\n        \\\"ui_reuse\\\": {\\n          \\\"type\\\": \\\"choice\\\",\\n          \\\"choice\\\": \\\"REUSE\\\",\\n          \\\"confidence\\\": 1.0,\\n          \\\"probabilities\\\": {\\n            \\\"INSUFFICIENT\\\": 0.0,\\n            \\\"RERUN_REQUIRED\\\": 0.0,\\n            \\\"REUSE\\\": 1.0\\n          }\\n        }\\n      },\\n      \\\"usage\\\": {\\n        \\\"input_tokens\\\": 1819,\\n        \\\"output_tokens\\\": 98\\n      }\\n    },\\n    \\\"reviewer_application\\\": \\\"采纳增量APPROVED和UI证据可沿用的方向；最终裁决依据当前diff、源码及原件作出。概率和confidence不作为质量分或测试证据。\\\"\\n  }\\n}\\n\",\"duration_ms\":244654,\"progress\":{\"steps\":28,\"marks\":[\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\"],\"last_step\":\"git status --short; git branch --show-current; git rev-parse HEAD; git rev-parse 6afa4de271ee90271f2c068a8060ed2590c8ff9…\"}}]}"
+              }
+            ],
+            "structuredContent": {
+              "tasks": [
+                {
+                  "task_id": "a1947bd9-a375-4590-8310-d7454f450451",
+                  "status": "completed",
+                  "child_conversation_id": 1725,
+                  "agent_type": "codex",
+                  "text": "{\n  \"task_id\": \"04\",\n  \"review_scope\": \"定点返修增量独审\",\n  \"reviewer\": {\n    \"session_id\": \"01a1d7a9-5822-7bc3-a3e7-51486485f8ea\",\n    \"identity_source\": \"CODEX_SESSION_ID / CODEX_THREAD_ID\",\n    \"independence\": \"未参与04实现、测试、方案或RCA；不是主控、1718或1724\",\n    \"read_only\": true,\n    \"delegated\": false\n  },\n  \"baseline\": {\n    \"cwd\": \"C:/Users/qingyu/.codeg/skills/iteration-manager/.worktrees/iter-10\",\n    \"branch\": \"feat/iter-10-self-hosting-hardening\",\n    \"base_sha\": \"6afa4de271ee90271f2c068a8060ed2590c8ff98\",\n    \"head_sha\": \"41f6618008542a1394fd0341237b36c91554c218\",\n    \"contract_sha\": \"41f6618008542a1394fd0341237b36c91554c218\",\n    \"repair_product_sha\": \"493ecf2dbfc247247b7c7b2465d126c99117d106\",\n    \"dirty_at_start\": [],\n    \"dirty_at_end\": [],\n    \"final_checked_at\": \"2026-11-14T01:28:57Z\"\n  },\n  \"verdict\": \"APPROVED\",\n  \"reviewer_judgment\": \"修复通过显式临时库存模式解除生命周期测试与真实迭代审计成本的耦合，默认真实Git入口保持兼容。保留8秒门限及真实HTTP、延迟、出处和回收断言；未发现阻断缺陷。本批准绑定上述修复增量，不替代旧04产品批准，也不表示登记后strict或06整轮验收通过。\",\n  \"evidence_prefix\": \"docs/todos/10-self-hosting-hardening/evidence/\",\n  \"scope\": {\n    \"result\": \"PASS\",\n    \"evidence\": [\n      \"实际BASE..C共32个变更路径，均属于04白名单、04卡或04证据目录。\",\n      \"源码变化限于04/browser_harness.py及tests/test_board_handoff.py；既有Note同步，卡片变化为执行元数据及ledger。\",\n      \"BASE..C未修改scripts、references、templates、SKILL、迭代README、05产品或06原件。\",\n      \"493ecf2..C在harness、tests、scripts、templates上无变化。\",\n      \"原review-report.json、review.json及原浏览器产物未在本次修复中覆写。\"\n    ]\n  },\n  \"spec\": [\n    {\n      \"requirement\": \"隔离真实checkout库存读取\",\n      \"result\": \"PASS\",\n      \"evidence\": [\n        \"04/browser_harness.py:64-81：显式模式将Git库存替换为TemporaryDirectory下synthetic_git；FS、empty和loading也位于同一临时根。\",\n        \"04/browser_harness.py:87-100：四个真实HTTP handler均绑定对应临时iter_dir，ready仍调用真实generate_board_data。\",\n        \"scripts/iter_sync.py:476-510、576-595及scripts/iter_queries.py:12-16、59-103：查询、HTTP及Git调用使用传入目录；合成IN_PROGRESS卡不进入DONE绑定审计分支。\",\n        \"tests/test_board_handoff.py:103-120：隔离断言检查真实查询入口的目录、四服务归属、synthetic标记及临时目录删除。\",\n        \"隔离对象是任务库存；从checkout加载程序源码和UI模板仍属正常行为。\"\n      ]\n    },\n    {\n      \"requirement\": \"默认入口兼容且不伪造真实消费\",\n      \"result\": \"PASS\",\n      \"evidence\": [\n        \"04/browser_harness.py:56-57、69-76：默认不启用隔离，仍使用real_git及原真实迭代路径。\",\n        \"tests/test_board_handoff.py:82-121：默认参数分支以临时checkout核对原目录选择及synthetic=false。\",\n        \"显式隔离模式名称为synthetic_git，四服务均标记synthetic；帮助文本和Note均明确不作为native-self-use证据。\",\n        \"默认模式兼容参数测试为后补，未冒称经历RED。\"\n      ]\n    },\n    {\n      \"requirement\": \"不弱化既有行为断言\",\n      \"result\": \"PASS\",\n      \"evidence\": [\n        \"tests/test_board_handoff.py:124-169仍保留8秒ready断言、真实子进程和HTTP请求。\",\n        \"HTTP 200、至少0.18秒延迟、FS当前候选与历史checkpoint、remaining_work、三个sources及实际原文响应断言均保留。\",\n        \"原real_git出处断言改由默认模式参数测试覆盖；生命周期测试新增四服务全部synthetic及临时路径归属断言。\"\n      ]\n    },\n    {\n      \"requirement\": \"线程、服务及temp正常回收\",\n      \"result\": \"PASS\",\n      \"evidence\": [\n        \"04/browser_harness.py:104-115：正常停止及finally均设置停止事件、shutdown、join、server_close，退出临时目录上下文后才输出终态。\",\n        \"tests/test_board_handoff.py:164-173：实际停止服务和子进程，检查exit0、active_commands为空及临时根不存在。\",\n        \"最终实现者与主控独立五文件原件均69passed，runner及child记录均为终态。\"\n      ]\n    }\n  ],\n  \"quality\": {\n    \"result\": \"PASS\",\n    \"evidence\": [\n      \"新增模式复用真实查询和HTTP生命周期，没有复制服务实现或模拟查询返回值。\",\n      \"repair-final-red-isolation-a.json.output.txt:40-53记录实际checkout目录触发AssertionError；不是导入、编译或参数解析失败。\",\n      \"旧失败和8.562秒诊断保留；没有通过提高超时或把合成结果改称真实消费来消除失败。\",\n      \"既有Note记录隔离边界、默认兼容及RED覆盖范围；tree和format原件均有效通过。\"\n    ]\n  },\n  \"checks\": [\n    {\n      \"receipt\": \"04/repair-final-red-isolation-a.json\",\n      \"output\": \"04/repair-final-red-isolation-a.json.output.txt\",\n      \"raw_exit_code\": 1,\n      \"result\": \"1 failed；有效隔离行为AssertionError\",\n      \"tree_terminal\": true\n    },\n    {\n      \"receipt\": \"04/repair-final-green-isolation-a.json\",\n      \"output\": \"04/repair-final-green-isolation-a.json.output.txt\",\n      \"raw_exit_code\": 0,\n      \"result\": \"7 passed in 3.13s\",\n      \"tree_terminal\": true\n    },\n    {\n      \"receipt\": \"04/repair-final-five-files-final-b.json\",\n      \"output\": \"04/repair-final-five-files-final-b.json.output.txt\",\n      \"raw_exit_code\": 0,\n      \"result\": \"69 passed in 14.65s\",\n      \"tree_terminal\": true\n    },\n    {\n      \"receipt\": \"04/controller-regression-repair-final.json\",\n      \"output\": \"04/controller-regression-repair-final.json.output.txt\",\n      \"raw_exit_code\": 0,\n      \"result\": \"主控独立规定五文件69 passed in 14.27s\",\n      \"tree_terminal\": true\n    },\n    {\n      \"receipts\": [\n        \"04/repair-final-note-tree-a.json\",\n        \"04/repair-final-note-format-a.json\"\n      ],\n      \"outputs\": [\n        \"04/repair-final-note-tree-a.json.output.txt\",\n        \"04/repair-final-note-format-a.json.output.txt\"\n      ],\n      \"raw_exit_codes\": [0, 0],\n      \"result\": \"19 notes tree/relative links及format通过\",\n      \"tree_terminal\": true\n    }\n  ],\n  \"issues\": [],\n  \"reused_evidence\": [\n    {\n      \"coverage\": \"原04产品展示、原生交互、四态及1139x869视觉\",\n      \"original_reviewed_candidate\": \"9b9010afb8dbf0b0cf74f83c6c97605984319619\",\n      \"approval_sources\": [\n        \"04/review-report.json\",\n        \"04/review.json\"\n      ],\n      \"originals\": [\n        \"04/browser-git-b.json.output.txt\",\n        \"04/browser-detail-b.json.output.txt\",\n        \"04/browser-source-b.json.output.txt\",\n        \"04/browser-states-b.json.output.txt\",\n        \"04/browser-disconnect-b.json.output.txt\",\n        \"04/browser-real-git-b.png\",\n        \"04/browser-git-detail-b.png\",\n        \"04/browser-checkpoint-b.png\",\n        \"04/browser-fs-detail-b.png\",\n        \"04/browser-empty-b.png\",\n        \"04/browser-loading-b.png\",\n        \"04/browser-disconnected-b.png\"\n      ],\n      \"impact_basis\": \"原已审候选至当前C的scripts及templates无变化；默认harness目录选择未变；原浏览器产物在修复BASE..C无变化。旧Reviewer已实际观察七图，本次定点核对原生操作及状态输出，不重跑浏览器。\",\n      \"provenance\": \"真实Git库存；FS、empty、loading为明确合成输入，经真实HTTP和原生浏览器操作。未将其升级为真实FS业务批准。\"\n    },\n    {\n      \"coverage\": \"修复测试及独立回归\",\n      \"original_candidate\": \"493ecf2dbfc247247b7c7b2465d126c99117d106\",\n      \"current_candidate\": \"41f6618008542a1394fd0341237b36c91554c218\",\n      \"impact_basis\": \"产品harness及测试在两候选间无变化，沿用已读取的最终69passed及主控独立69passed原件；本Reviewer没有重新执行测试。\"\n    }\n  ],\n  \"unknown\": {\n    \"blocking_review_gaps\": [],\n    \"boundaries\": [\n      \"本次未启动业务、测试或浏览器命令，未写文件、卡片或Git，未委派。\",\n      \"原06全量仍是490passed/1failed；修复候选的整轮全量结果不在本次批准范围内，06保持TESTING、未放行。\",\n      \"新收据登记、登记D及固定协调器strict尚待主控执行，本报告未声称其通过。\",\n      \"CodeGraph返回另一worktree提示，未将该索引作为当前源码证据；已读取当前worktree相关源码。\"\n    ]\n  },\n  \"handoff\": {\n    \"owner\": \"主控\",\n    \"binding\": \"新批准仅绑定BASE6afa4de..C41f6618，contract41f6618；旧04产品批准保留原BASE/C身份。\",\n    \"registration\": \"新report及receipt使用唯一新名字，不覆盖C中已有review-report.json或review.json。\",\n    \"remaining_gates\": [\n      \"登记新绑定及D后消费固定协调器strict\",\n      \"按既定流程返回06最终全量及后续验收\"\n    ]\n  },\n  \"typesafe\": {\n    \"request\": {\n      \"state\": {\n        \"binding\": {\n          \"base\": \"6afa4de271ee90271f2c068a8060ed2590c8ff98\",\n          \"head\": \"41f6618008542a1394fd0341237b36c91554c218\",\n          \"contract\": \"41f6618008542a1394fd0341237b36c91554c218\",\n          \"product\": \"493ecf2dbfc247247b7c7b2465d126c99117d106\",\n          \"branch\": \"feat/iter-10-self-hosting-hardening\",\n          \"dirty\": []\n        },\n        \"authority\": \"Read-only independent task04 repair review. No tests/browser rerun, file writes or delegation. New approval binds incremental repair BASE, preserving original task04 approval separately. Post-registration frozen strict and task06 full regression are subsequent controller work.\",\n        \"diff\": {\n          \"paths\": 32,\n          \"changed\": \"browser_harness.py adds opt-in --isolated-fixtures and temporary synthetic Git inventory; test_board_handoff.py adds isolation/default-mode tests and opts lifecycle test into isolation; existing Note adds explanation; task04 metadata/ledger and new evidence.\",\n          \"unchanged\": \"BASE..C has no scripts, templates, references, SKILL, task05/task06 product changes, old review-report.json/review.json or original browser artifacts. Product/tests/harness unchanged after 493ecf2 except Note/card/evidence.\"\n        },\n        \"source\": {\n          \"browser_harness.py:64-100\": \"TemporaryDirectory owns FS, empty and loading inventory. Default git_name=real_git and directory=ROOT/docs/todos/10-self-hosting-hardening. Opt-in replaces it with synthetic_git under temp root. All four handler classes receive those directory values. ready totals call real generate_board_data; synthetic flag is name != real_git.\",\n          \"browser_harness.py:83-115\": \"Real LiveBoardHandler subclass; /api/board waits Event for configured delay. On stop/finally, Event.set, server.shutdown, thread.join, server_close; temp context exits before final stopped/active_commands output.\",\n          \"iter_sync.py:462-610 and iter_queries.py:12-112\": \"Queries discover and read given iter_dir. Git subprocess cwd is provided directory. Synthetic cards are IN_PROGRESS, so DONE receipt/Git binding audit branch is not entered. HTTP uses self.iter_dir. Loading source/template code from checkout is retained; isolated contract concerns inventory, not program source reads.\",\n          \"test_board_handoff.py:82-121\": \"Isolation test wraps real query to assert no inventory directory is below harness.ROOT, asserts four temp directories/synthetic labels and temp removal. Default parameter case uses temp checkout, checks original directory and real_git false synthetic label.\",\n          \"test_board_handoff.py:124-173\": \"Actual subprocess/HTTP lifecycle. Keeps 8-second ready assertion, HTTP 200, .18-second delay lower bound, FS candidate/current versus original checkpoint, remaining work, three sources, actual evidence response, exit0, active_commands empty and temp removed.\"\n        },\n        \"originals\": {\n          \"failure\": \"06/controller-full-regression.json: COMPLETED exit1 tree_terminal true; output 490 passed/1 failed at original 8-second ready assertion.\",\n          \"diagnosis\": \"06/controller-harness-diagnosis.json.output.txt: candidate85031b1, default ready8.562s, exit0, stderr empty.\",\n          \"red\": \"04/repair-final-red-isolation-a.json: COMPLETED exit1 tree_terminal true; output AssertionError isolated mode read checkout inventory at actual checkout directory, 1 failed. Initial test injects parsed isolated_fixtures=True, not import/CLI failure.\",\n          \"green\": \"04/repair-final-green-isolation-a.json: COMPLETED exit0 tree_terminal true; 7 passed. Default-mode compatibility parameter was added later, not claimed RED.\",\n          \"final\": \"04/repair-final-five-files-final-b.json: specified five files, COMPLETED exit0 tree_terminal true, 69 passed in14.65s.\",\n          \"independent\": \"04/controller-regression-repair-final.json: same five files, COMPLETED exit0 tree_terminal true, 69 passed in14.27s.\",\n          \"cleanup\": \"All six implementer runner receipts plus independent runner and child records terminal. Native repair task6a14c232-1dd5-4d68-806f-39c192b8aa33 completed.\",\n          \"note\": \"Existing Note updated; original tree/format outputs ok19 notes, runner exit0 terminal.\",\n          \"ui\": \"Old review-report/review.json approve candidate9b9010af. Original native source popup/Escape, state/delay/disconnect records and seven1139x869 screenshots remain; templates/query/CLI and default harness branch unchanged. FS/empty/loading provenance explicitly synthetic.\"\n        }\n      },\n      \"questions\": {\n        \"repair_disposition\": {\n          \"type\": \"choice\",\n          \"instructions\": \"Determine the independent disposition of only this incremental task04 harness repair against the stated authorization and requirements. Treat subsequent registration/strict and task06 full regression as pending later gates, not already passed. Do not infer native self-use from synthetic tests.\",\n          \"criteria\": {\n            \"APPROVED\": \"Available source and original evidence support isolation, default compatibility, retained behavior assertions and normal cleanup; no concrete material defect is established.\",\n            \"CHANGES_REQUESTED\": \"A concrete material defect or weakened required assertion in the repair requires correction.\",\n            \"BLOCKED\": \"Required evidence is absent or contradictory, preventing an incremental review conclusion.\"\n          }\n        },\n        \"ui_reuse\": {\n          \"type\": \"choice\",\n          \"instructions\": \"Classify whether the old task04 native UI evidence can be reused for the unchanged product/UI behaviors in this incremental review, without claiming it was rerun or that synthetic tests are native acceptance.\",\n          \"criteria\": {\n            \"REUSE\": \"Covered UI/query/default behavior and original artifacts are unchanged; prior approval and originals remain attributable.\",\n            \"RERUN_REQUIRED\": \"An observed changed covered behavior invalidates the old UI evidence.\",\n            \"INSUFFICIENT\": \"The evidence does not establish whether covered behavior or originals changed.\"\n          }\n        }\n      }\n    },\n    \"response_raw\": {\n      \"model\": \"jev-1.14.0\",\n      \"answers\": {\n        \"repair_disposition\": {\n          \"type\": \"choice\",\n          \"choice\": \"APPROVED\",\n          \"confidence\": 0.64,\n          \"probabilities\": {\n            \"APPROVED\": 0.76,\n            \"BLOCKED\": 0.07,\n            \"CHANGES_REQUESTED\": 0.17\n          }\n        },\n        \"ui_reuse\": {\n          \"type\": \"choice\",\n          \"choice\": \"REUSE\",\n          \"confidence\": 1.0,\n          \"probabilities\": {\n            \"INSUFFICIENT\": 0.0,\n            \"RERUN_REQUIRED\": 0.0,\n            \"REUSE\": 1.0\n          }\n        }\n      },\n      \"usage\": {\n        \"input_tokens\": 1819,\n        \"output_tokens\": 98\n      }\n    },\n    \"reviewer_application\": \"采纳增量APPROVED和UI证据可沿用的方向；最终裁决依据当前diff、源码及原件作出。概率和confidence不作为质量分或测试证据。\"\n  }\n}\n",
+                  "duration_ms": 244654,
+                  "progress": {
+                    "steps": 28,
+                    "marks": [
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok"
+                    ],
+                    "last_step": "git status --short; git branch --show-current; git rev-parse HEAD; git rev-parse 6afa4de271ee90271f2c068a8060ed2590c8ff9…"
+                  }
+                }
+              ]
+            },
+            "isError": false
+          }
+        }
+      }
+    ]
+  }
+}
