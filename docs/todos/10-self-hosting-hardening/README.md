@@ -85,7 +85,7 @@
 - [x] 任务01—05的原生真实自用至少覆盖一次完整调度/验收链和一次正常跨会话续接。
 - [x] 八组合模板、旧CLI/导入、Git/FS真实看板及证据读取集成通过。
 - [x] 隔离负例/恢复测试通过；静态、synthetic与native-self-use分层列证，不外推部署/外部业务通过。
-- [ ] 最终候选完整回归、独立整轮报告、分支strict通过；源改动均被有效DONE白名单覆盖。
+- [x] 最终候选完整回归、独立整轮报告、分支strict通过；源改动均被有效DONE白名单覆盖。
 - [x] 无活动实现命令遗留；UNKNOWN命令状态明确阻断。根索引更新和部署留在相应授权操作，不破Zero-Root-Touch。
 
 ## 6. 当前交接
@@ -98,7 +98,7 @@
 
 [健壮性最终报告](evidence/06/robustness-report-final.json)保留一次主控06派发顺序FAIL：尚未消费协调输出即原生委派。该条不作为合规正例，后续派发已先消费READY；独审按原标准采用03完整链，裁定MEDIUM非阻断。脚本不自动拦截原生委派。
 
-安装与新安装会话消费、部署及外部用户业务仍UNKNOWN；本轮不部署、推送、合流或清理。整轮非参与者总审与最终分支strict尚待完成。
+安装与新安装会话消费、部署及外部用户业务仍UNKNOWN；本轮不部署、推送、合流或清理。整轮非参与者总审APPROVED，固定分支strict已通过；原始交付见第7—8节。
 
 ### 初始化实际消费
 - 现有解析器识别6张TODO卡；结构、链接、白名单无跨卡重叠及TypeSafe换算校验通过，见[evidence/planning/init-validation.json](evidence/planning/init-validation.json)。
@@ -124,7 +124,7 @@
 ## 7. 整轮独立总审交付
 
 - 非参与者Codeg1728，session `01a1d7c1-2a7f-79a2-9e26-80d7b5d0167e`，对冻结候选 `3088245ac6b4dd1d7a13508721f82ace15696a16` 独立裁定 **APPROVED**；无阻断缺陷，三条非阻断问题保留原出处。原生会话completed，守卫确认终态，无活动命令。
-- 六卡有效批准、493项最终完整回归及真实Git自用链可沿用；FS仅隔离样例，不外推真实FS业务生命周期。最终分支strict仍待主控执行，未预写通过。
+- 六卡有效批准、493项最终完整回归及真实Git自用链可沿用；FS仅隔离样例，不外推真实FS业务生命周期。随后固定分支strict已通过，原始执行证据见第8节。
 - TypeSafe首轮整体CHANGES_REQUESTED及后续补证分类原样保留，不改写成模型批准；Reviewer依据源码、原始证据和实际阶段顺序作独立APPROVED。第二次原始请求部分中文引文乱码，按原样保存，不作精确引文证据；阶段顺序以可读SKILL.md第55行及README第80行核对。
 
 <details>
@@ -135,4 +135,54 @@
 ```
 
 </details>
+
+## 8. 最终固定门禁与保留状态
+
+固定46ded3a对整轮总审登记提交5723bc7运行 `--check-branch --strict . main`，COMPLETED/raw0/tree_terminal=true，原始输出如下。此后只补README交付事实及勾选，不改产品、六卡、goal或原件；最终登记提交后的同入口核验保留在本Worktree `build/iter10-closeout/branch-strict-final.json`。
+
+```text
+[IterSync:CheckBranch:PASSED] Branch complies 100% with Zero-Root-Touch (scoped to iter-10).
+```
+
+<details>
+<summary>同次runner原始收据</summary>
+
+```json
+{
+  "version": 1,
+  "argv": [
+    "python",
+    "C:/Users/qingyu/.codeg/skills/iteration-manager/build/frozen-tools/46ded3a/scripts/iter_sync.py",
+    "--check-branch",
+    "--strict",
+    ".",
+    "main"
+  ],
+  "cwd": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\.worktrees\\iter-10",
+  "deadline": "2026-11-14T02:05:39.415000+00:00",
+  "cleanup_reserve_seconds": 5,
+  "status": "COMPLETED",
+  "deadline_checked_at": "2026-11-14T02:01:40.934204+00:00",
+  "started_at": "2026-11-14T02:01:40.941231+00:00",
+  "ended_at": "2026-11-14T02:01:53.750907+00:00",
+  "raw_exit_code": 0,
+  "tree_terminal": true,
+  "output": "build/iter10-closeout/branch-strict-registration.json.output.txt",
+  "container_pid": 39080,
+  "launcher_exit_code": 0,
+  "command": {
+    "status": "COMPLETED",
+    "raw_exit_code": 0,
+    "started_at": "2026-11-14T02:01:40.941231+00:00",
+    "pid": 17788,
+    "deadline_checked_at": "2026-11-14T02:01:40.934204+00:00",
+    "ended_at": "2026-11-14T02:01:53.737232+00:00"
+  },
+  "late_by_seconds": 0
+}
+```
+
+</details>
+
+交付保留本独立Worktree、全部精准提交及原始失败/恢复/批准记录；无活动本轮执行者或测试命令。main未合流，未部署、推送或清理；安装副本及外部用户项目未作本轮通过声明。
 
