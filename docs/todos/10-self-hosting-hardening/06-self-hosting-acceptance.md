@@ -3,7 +3,7 @@ schema_version: 1
 iteration: "10-self-hosting-hardening"
 task_id: "06"
 task_name: "真实自用链路与故障路径健壮性验收"
-status: "TODO"
+status: "TESTING"
 type: "Spike-Discovery"
 fix_rounds: 0
 replan_count: 0
@@ -14,15 +14,16 @@ typesafe_evidence: "docs/todos/10-self-hosting-hardening/evidence/planning/types
 tdd_verified: false
 review_status: "PENDING"
 review_receipt: ""
-base_sha: ""
+base_sha: "7107ddb2f2256ceaea40e6ea0aeddd045220b99b"
 head_sha: ""
 created_at: "2026-11-13"
-updated_at: "2026-11-13"
+updated_at: "2026-11-14T01:10:27.224983+00:00"
+autonomy_state: "{\"version\":1,\"policy\":{\"round_limit\":5,\"total_limit\":10,\"consilium_limit\":1,\"replan_limit\":2},\"round\":0,\"total\":0,\"consilium\":0,\"replan\":0,\"writer\":\"\",\"events\":{\"iter10-06-claim-a\":{\"input\":{\"action\":\"claim\",\"owner\":\"root/iter10/controller\",\"reason\":\"\",\"evidence\":\"\",\"executor_state\":\"\"},\"result\":{\"task_id\":\"06-self-hosting-acceptance\",\"previous_rounds\":0,\"current_rounds\":0,\"fix_total\":0,\"consilium_count\":0,\"replan_count\":0,\"is_fused\":false,\"status\":\"TODO\",\"blocked_reason\":\"\",\"writer\":\"root/iter10/controller\",\"consilium_bundle\":null},\"at\":\"2026-11-14T01:02:36.989568+00:00\"},\"iter10-06-attempt-a\":{\"input\":{\"action\":\"attempt\",\"owner\":\"root/iter10/controller\",\"reason\":\"\",\"evidence\":\"docs/todos/10-self-hosting-hardening/evidence/06/attempt-a.json\",\"executor_state\":\"completed\",\"attempt\":{\"report\":{\"version\":1,\"phase\":\"implementation\",\"candidate\":\"c5238c16b1e9c5d941d8dec3c53d273f6a074e44\",\"inputs\":[\"tests/test_self_hosting.py\",\"references/self_hosting_acceptance.md\"],\"capabilities\":[\"Codeg MCP codex independent session\",\"Windows iter_run\",\"pytest\"],\"checkpoint\":\"14项跨模块隔离契约通过，真实03 A/B/C链索引和方法已交付\",\"remaining_work\":[\"主控最终候选全量与交叉核验\",\"报告补齐/冻结独审\",\"登记C/D和strict\"],\"executor_id\":\"19637bc8-ff22-4810-b202-121b60285548\",\"terminal_evidence\":\"docs/todos/10-self-hosting-hardening/evidence/06/native-terminal-a.json\",\"progress\":[{\"kind\":\"green\",\"summary\":\"14 passed, 真实链索引与Note校验通过\",\"evidence\":\"docs/todos/10-self-hosting-hardening/evidence/06/slice-a-targeted-2.json.output.txt\"}],\"commands\":[\"docs/todos/10-self-hosting-hardening/evidence/06/slice-a-targeted-1.json\",\"docs/todos/10-self-hosting-hardening/evidence/06/slice-a-targeted-2.json\",\"docs/todos/10-self-hosting-hardening/evidence/06/slice-a-frozen-strict-dry-run.json\",\"docs/todos/10-self-hosting-hardening/evidence/06/slice-a-native-inventory.json\",\"docs/todos/10-self-hosting-hardening/evidence/06/slice-a-native-inventory-2.json\",\"docs/todos/10-self-hosting-hardening/evidence/06/slice-a-note-tree.json\",\"docs/todos/10-self-hosting-hardening/evidence/06/slice-a-note-format.json\"],\"started_at\":null,\"ended_at\":null},\"source\":\"docs/todos/10-self-hosting-hardening/evidence/06/attempt-a.json\",\"phase\":\"implementation\",\"delivery_mode\":\"git\",\"candidate\":\"c5238c16b1e9c5d941d8dec3c53d273f6a074e44\",\"conditions\":{\"inputs\":[\"references/self_hosting_acceptance.md\",\"tests/test_self_hosting.py\"],\"capabilities\":[\"Codeg MCP codex independent session\",\"Windows iter_run\",\"pytest\"],\"scope\":[\".agents/notes/implemented/testing/2026-11-13-self-hosting-acceptance.md\",\"docs/todos/10-self-hosting-hardening/evidence/06/\",\"references/self_hosting_acceptance.md\",\"tests/test_self_hosting.py\"]},\"executor_id\":\"19637bc8-ff22-4810-b202-121b60285548\",\"executor_state\":\"completed\",\"terminal_evidence\":\"docs/todos/10-self-hosting-hardening/evidence/06/native-terminal-a.json\",\"progress\":[{\"kind\":\"green\",\"evidence\":\"docs/todos/10-self-hosting-hardening/evidence/06/slice-a-targeted-2.json.output.txt\",\"summary\":\"14 passed, 真实链索引与Note校验通过\"}],\"checkpoint\":\"14项跨模块隔离契约通过，真实03 A/B/C链索引和方法已交付\",\"remaining_work\":[\"主控最终候选全量与交叉核验\",\"报告补齐/冻结独审\",\"登记C/D和strict\"],\"commands\":[{\"receipt\":\"docs/todos/10-self-hosting-hardening/evidence/06/slice-a-frozen-strict-dry-run.json\",\"status\":\"COMPLETED\",\"raw_exit_code\":2,\"started_at\":\"2026-11-14T01:06:33.536804+00:00\",\"ended_at\":\"2026-11-14T01:06:53.758027+00:00\"},{\"receipt\":\"docs/todos/10-self-hosting-hardening/evidence/06/slice-a-native-inventory-2.json\",\"status\":\"COMPLETED\",\"raw_exit_code\":0,\"started_at\":\"2026-11-14T01:07:49.808604+00:00\",\"ended_at\":\"2026-11-14T01:07:50.058056+00:00\"},{\"receipt\":\"docs/todos/10-self-hosting-hardening/evidence/06/slice-a-native-inventory.json\",\"status\":\"COMPLETED\",\"raw_exit_code\":1,\"started_at\":\"2026-11-14T01:07:27.263830+00:00\",\"ended_at\":\"2026-11-14T01:07:27.492226+00:00\"},{\"receipt\":\"docs/todos/10-self-hosting-hardening/evidence/06/slice-a-note-format.json\",\"status\":\"COMPLETED\",\"raw_exit_code\":0,\"started_at\":\"2026-11-14T01:07:55.262012+00:00\",\"ended_at\":\"2026-11-14T01:07:57.741345+00:00\"},{\"receipt\":\"docs/todos/10-self-hosting-hardening/evidence/06/slice-a-note-tree.json\",\"status\":\"COMPLETED\",\"raw_exit_code\":0,\"started_at\":\"2026-11-14T01:07:51.223322+00:00\",\"ended_at\":\"2026-11-14T01:07:54.153157+00:00\"},{\"receipt\":\"docs/todos/10-self-hosting-hardening/evidence/06/slice-a-targeted-1.json\",\"status\":\"COMPLETED\",\"raw_exit_code\":1,\"started_at\":\"2026-11-14T01:04:24.262746+00:00\",\"ended_at\":\"2026-11-14T01:04:44.848096+00:00\"},{\"receipt\":\"docs/todos/10-self-hosting-hardening/evidence/06/slice-a-targeted-2.json\",\"status\":\"COMPLETED\",\"raw_exit_code\":0,\"started_at\":\"2026-11-14T01:05:20.500549+00:00\",\"ended_at\":\"2026-11-14T01:05:39.455262+00:00\"}],\"started_at\":null,\"ended_at\":null,\"session_seconds\":null,\"command_seconds\":65.64830199999999}},\"result\":{\"task_id\":\"06-self-hosting-acceptance\",\"previous_rounds\":0,\"current_rounds\":0,\"fix_total\":0,\"consilium_count\":0,\"replan_count\":0,\"is_fused\":false,\"status\":\"TODO\",\"blocked_reason\":\"\",\"writer\":\"root/iter10/controller\",\"consilium_bundle\":null},\"at\":\"2026-11-14T01:10:26.929190+00:00\"},\"iter10-06-release-a\":{\"input\":{\"action\":\"release\",\"owner\":\"root/iter10/controller\",\"reason\":\"\",\"evidence\":\"docs/todos/10-self-hosting-hardening/evidence/06/native-terminal-a.json\",\"executor_state\":\"completed\"},\"result\":{\"task_id\":\"06-self-hosting-acceptance\",\"previous_rounds\":0,\"current_rounds\":0,\"fix_total\":0,\"consilium_count\":0,\"replan_count\":0,\"is_fused\":false,\"status\":\"TODO\",\"blocked_reason\":\"\",\"writer\":\"\",\"consilium_bundle\":null},\"at\":\"2026-11-14T01:10:27.224983+00:00\"}},\"blocked_reason\":\"\"}"
 ---
 
 # 06 · 真实自用链路与故障路径健壮性验收
 
-> 声明 TODO；验收 UNKNOWN；尚无执行、RED/GREEN或独立批准。本文是已初始化计划，不授予实施、Git提交或部署权限。
+> **当前状态**：声明 TESTING；14项隔离联合契约通过，真实链索引已交付；待最终全量、交叉核验与独审。
 
 ## 1. 任务执行目标与接口契约
 
@@ -110,7 +111,10 @@ $code = $LASTEXITCODE; exit $code
 - 本卡预计收据位置：`docs/todos/10-self-hosting-hardening/evidence/06/review.json`，实际产生后才登记frontmatter。
 
 ### 7.2 执行时填写
-实际task_id、UTC起止/检查点、候选、命令receipt、可继承产物、remaining_work、dirty归属及命令终态；未知明确UNKNOWN。每次真实终态后attempt，再release/closeout；四预算保持5/10/1/2。
+- 实现Codeg1723/session01a1d793-e65a-7251-8c92-b82981f6cf0c，task19637bc8-ff22-4810-b202-121b60285548原生completed；产品cd808bf3，正常检查点c5238c16；native-terminal-a.json含原始查询与完整截止守卫。所有命令tree_terminal=true，无活动命令。attempt→release，四预算未重置。
+- 隔离测试14passed（首跑3项新测试API误用及首次提取器错误期待strict顶层0，均保留原件，不称产品缺陷或有效RED）。真实03 A/B/C正常续接及完整链、04浏览器和05正文漂移正确拒绝均分层索引。
+- 本次06派发调用前协调命令仍由工具报告running，主控回收输出时才消费READY。保留此过程缺口，不把06本次派发当作严格的“先消费后委派”正例；完整合规链使用已有03原件，后续派发须等待并消费READY再调用。
+- 当前剩余最终候选全量、冻结/候选交叉核验、范围与独审。实现/测试/Note不再变化时独立全量涵盖14项，不额外重复同输入定向测试。
 
 ### 7.3 审查与裁决
 - 审查：PENDING；Reviewer未分配。

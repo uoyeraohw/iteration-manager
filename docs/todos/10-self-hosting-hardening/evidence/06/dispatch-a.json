@@ -1,0 +1,61 @@
+{
+  "read_only": true,
+  "readiness": "READY",
+  "task_path": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\.worktrees\\iter-10\\docs\\todos\\10-self-hosting-hardening\\06-self-hosting-acceptance.md",
+  "phase": "implementation",
+  "acceptance_verdict": "UNKNOWN",
+  "findings": [],
+  "observations": {
+    "authority": {
+      "status": "READY",
+      "summary": "用户授权六卡实施/精准提交，05固定strict已PASS5/6；禁止部署推送合流清理",
+      "evidence": "docs/todos/10-self-hosting-hardening/evidence/05/review-final.json"
+    },
+    "execution": {
+      "status": "READY",
+      "summary": "1720/1721/1722原生completed，无活动业务/命令；只写06白名单",
+      "evidence": "docs/todos/10-self-hosting-hardening/evidence/05/review-report-final.json"
+    },
+    "verification": {
+      "status": "READY",
+      "summary": "冻结runner、pytest已有真实成功收据；最终全量由主控安排充足窗口",
+      "evidence": "docs/todos/10-self-hosting-hardening/evidence/05/controller-regression.json"
+    }
+  },
+  "task_id": "06",
+  "delivery_mode": "git",
+  "candidate": "7107ddb2f2256ceaea40e6ea0aeddd045220b99b",
+  "execution": {
+    "attempt_count": 0,
+    "no_progress_streak": 0,
+    "last_attempt": null,
+    "checkpoint": null,
+    "remaining_work": []
+  },
+  "conditions": {
+    "inputs": [
+      "SKILL.md",
+      "docs/todos/10-self-hosting-hardening/05-release-evidence-index.md",
+      "docs/todos/10-self-hosting-hardening/06-self-hosting-acceptance.md",
+      "references/execution_readiness.md"
+    ],
+    "capabilities": [
+      "Codeg MCP codex independent session",
+      "Windows iter_run",
+      "pytest",
+      "read-only native evidence"
+    ],
+    "scope": [
+      ".agents/notes/implemented/testing/2026-11-13-self-hosting-acceptance.md",
+      "docs/todos/10-self-hosting-hardening/evidence/06/",
+      "references/self_hosting_acceptance.md",
+      "tests/test_self_hosting.py"
+    ]
+  },
+  "checkpoint": "交付隔离契约测试、真实证据矩阵和复用方法正常检查点，不在叶子末尾启动全量",
+  "remaining_work": [
+    "主控最终全量与交叉查询",
+    "冻结报告独审",
+    "登记strict"
+  ]
+}
