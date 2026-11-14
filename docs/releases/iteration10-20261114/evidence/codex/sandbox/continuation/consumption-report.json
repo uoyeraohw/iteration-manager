@@ -1,0 +1,192 @@
+{
+  "version": 1,
+  "marker": "ITER10-CODEX-20261114",
+  "installed_root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+  "documents_read_by_controller": [
+    "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager\\SKILL.md",
+    "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager\\references\\template_generation.md",
+    "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager\\references\\execution_readiness.md"
+  ],
+  "session": {
+    "kind": "independent new Codex installation-consumption session",
+    "agent": "/root",
+    "codex_thread_id": "01a1d7d9-46d2-71c2-b0b9-321bc12e6415",
+    "codex_session_id": "01a1d7d9-46d2-71c2-b0b9-321bc12e6415",
+    "probe_pid": 31928,
+    "probe_parent_pid": 43312,
+    "cwd": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\codex-consumption\\sandbox",
+    "continuation_probe_pid": 44072,
+    "continuation_probe_parent_pid": 40092,
+    "continuation_cwd": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\codex-consumption\\sandbox\\continuation"
+  },
+  "evidence": {
+    "commands": "probe-results.json",
+    "spec": "spec.json",
+    "card": "card.md",
+    "takeover": "takeover.json",
+    "runner": "probe-run.json",
+    "initial_runner": "../probe-run.json"
+  },
+  "limitations": [
+    "Explicit loading of installed documents/scripts does not establish native automatic discovery.",
+    "No real filesystem business delivery lifecycle is tested.",
+    "Takeover observes existing declarations and acceptance audit; it does not implement or re-approve the six cards.",
+    "No budget registration, Git writes, product edits, network, installation, credentials, assistant configuration, deployment, cleanup, or delegation."
+  ],
+  "started_at": "2026-11-14T02:19:40.388282+00:00",
+  "result": "ALL_REQUESTED_PROBE_ASSERTIONS_SATISFIED",
+  "remaining_work": [],
+  "checks": [
+    {
+      "name": "render zero; exact output preserved",
+      "satisfied": true
+    },
+    {
+      "name": "filesystem check zero and valid true",
+      "satisfied": true
+    },
+    {
+      "name": "complete UI filesystem spec",
+      "satisfied": true
+    },
+    {
+      "name": "marker and isolated candidate retained",
+      "satisfied": true
+    },
+    {
+      "name": "four UI verification categories retained",
+      "satisfied": true
+    },
+    {
+      "name": "initial status=TODO",
+      "satisfied": true
+    },
+    {
+      "name": "initial review_status=PENDING",
+      "satisfied": true
+    },
+    {
+      "name": "initial tdd_verified=false",
+      "satisfied": true
+    },
+    {
+      "name": "initial typesafe_score=UNASSESSED",
+      "satisfied": true
+    },
+    {
+      "name": "no approval/SHA/RED/GREEN fabrication",
+      "satisfied": true
+    },
+    {
+      "name": "traversal exit two and parseable error",
+      "satisfied": true
+    },
+    {
+      "name": "no out-of-sandbox file created",
+      "satisfied": true
+    },
+    {
+      "name": "takeover exit zero",
+      "satisfied": true
+    },
+    {
+      "name": "takeover read_only true",
+      "satisfied": true
+    },
+    {
+      "name": "exactly six takeover tasks",
+      "satisfied": true
+    },
+    {
+      "name": "task 1 declares DONE",
+      "satisfied": true
+    },
+    {
+      "name": "task 1 acceptance PASS",
+      "satisfied": true
+    },
+    {
+      "name": "task 2 declares DONE",
+      "satisfied": true
+    },
+    {
+      "name": "task 2 acceptance PASS",
+      "satisfied": true
+    },
+    {
+      "name": "task 3 declares DONE",
+      "satisfied": true
+    },
+    {
+      "name": "task 3 acceptance PASS",
+      "satisfied": true
+    },
+    {
+      "name": "task 4 declares DONE",
+      "satisfied": true
+    },
+    {
+      "name": "task 4 acceptance PASS",
+      "satisfied": true
+    },
+    {
+      "name": "task 5 declares DONE",
+      "satisfied": true
+    },
+    {
+      "name": "task 5 acceptance PASS",
+      "satisfied": true
+    },
+    {
+      "name": "task 6 declares DONE",
+      "satisfied": true
+    },
+    {
+      "name": "task 6 acceptance PASS",
+      "satisfied": true
+    }
+  ],
+  "command_returncodes": [
+    {
+      "label": "render",
+      "returncode": 0
+    },
+    {
+      "label": "check",
+      "returncode": 0
+    },
+    {
+      "label": "reject traversal",
+      "returncode": 2
+    },
+    {
+      "label": "readonly takeover",
+      "returncode": 0
+    }
+  ],
+  "ended_at": "2026-11-14T02:21:06.641969+00:00",
+  "runner_observation": {
+    "source": "probe-run.json",
+    "observed_by": "/root via FastCtx read after runner termination and exec session exit",
+    "status": "COMPLETED",
+    "raw_exit_code": 0,
+    "tree_terminal": true,
+    "exec_exit_code": 0,
+    "started_at": "2026-11-14T02:20:48.601442+00:00",
+    "ended_at": "2026-11-14T02:21:06.673973+00:00",
+    "deadline": "2026-11-14T02:25:22.096000+00:00",
+    "argv": ["python", "-B", "probe.py"],
+    "runner_argv": ["python", "-B", "C:/Users/qingyu/.codex/skills/iteration-manager/scripts/iter_run.py", "--deadline", "2026-11-14T02:25:22.096Z", "--evidence", "probe-run.json", "--", "python", "-B", "probe.py"],
+    "checkpoint": "Normal completed checkpoint; all requested assertions satisfied; no command tree left running."
+  },
+  "initial_probe_correction": {
+    "evidence": "../probe-run.json",
+    "raw_exit_code": 1,
+    "reason": "Probe expected acceptance_verdict in generated frontmatter; observed initial field is review_status: PENDING. Product output was valid.",
+    "unchanged_valid_evidence_reused": [
+      "../spec.json",
+      "../card.md",
+      "../probe-results.json"
+    ]
+  }
+}

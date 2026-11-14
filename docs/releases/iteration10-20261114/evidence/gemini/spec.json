@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "task_id": "01",
+  "iteration": "10-self-hosting-hardening",
+  "task_name": "UI组件安装消费验证",
+  "type": "UI-Component",
+  "delivery_mode": "filesystem",
+  "candidate_id": "安装消费隔离样例",
+  "objective": "验证 UI-Component filesystem 渲染与检查 (ITER10-GEMINI-20261114)",
+  "consumes": "TYPE_CHECKS",
+  "produces": "card.md",
+  "scope": [
+    "src/ui/component.py",
+    "tests/ui/"
+  ],
+  "stages": [
+    "阶段一：构建组件",
+    "阶段二：验证交付"
+  ],
+  "acceptance": [
+    "UI 四类验收齐备，marker 为 ITER10-GEMINI-20261114"
+  ],
+  "verification": {
+    "interaction": "点击按钮触发相应交互事件并记录观测",
+    "states": "正常态、空态、加载态、错误态四态齐备",
+    "visual": "遵循设计规范样式与视口尺寸要求",
+    "regression": "原有UI测试集全量回归无损"
+  }
+}

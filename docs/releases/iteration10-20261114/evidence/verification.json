@@ -1,0 +1,48 @@
+{
+  "verified_at": "2026-11-14T02:31:44.038135+00:00",
+  "verdict": "PASS",
+  "payload_source_head": "26652bad2fcfb7c883d8e9a8bcad4aeb96160816",
+  "files_equal_per_installation": [
+    91,
+    91,
+    91
+  ],
+  "main_tests": "493 passed in 410.05s",
+  "consumers": [
+    {
+      "name": "codex",
+      "installation": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "command_exit_codes": [
+        0,
+        0,
+        2,
+        0
+      ],
+      "actual_iteration_acceptance": "6/6 PASS",
+      "runner_status": "COMPLETED",
+      "tree_terminal": true
+    },
+    {
+      "name": "gemini",
+      "installation": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "command_exit_codes": [
+        0,
+        0,
+        2,
+        0
+      ],
+      "actual_iteration_acceptance": "6/6 PASS",
+      "runner_status": "COMPLETED",
+      "tree_terminal": true
+    }
+  ],
+  "primary_provenance": "Codex native JSONL tool calls/outputs; Antigravity native SQLite read/command steps; actual installed docs returned and scripts executed",
+  "preserved_initial_failure": "Codex probe expected nonexistent acceptance_verdict; initial raw1 kept, corrected to review_status, reused valid render/check evidence",
+  "boundaries": [
+    "Explicit-root new-session consumption, not native automatic discovery",
+    "Gemini copy consumed by actual new Antigravity session, not Gemini CLI",
+    "No real filesystem business lifecycle acceptance added",
+    "Maintenance suite runs in Codeg; deployed board test harness remains maintenance docs dependency",
+    "No assistant configuration change, push, branch deletion or Worktree cleanup"
+  ]
+}

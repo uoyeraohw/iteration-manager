@@ -1,0 +1,72 @@
+{
+  "commands": [
+    {
+      "label": "render",
+      "argv": [
+        "C:\\Users\\qingyu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "-B",
+        "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager\\scripts\\iter_templates.py",
+        "--render",
+        "spec.json"
+      ],
+      "cwd": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\codex-consumption\\sandbox",
+      "started_at": "2026-11-14T02:19:40.389796+00:00",
+      "ended_at": "2026-11-14T02:19:40.582393+00:00",
+      "returncode": 0,
+      "stdout": "---\r\nschema_version: 1\r\niteration: \"10-codex-install-consumption\"\r\ntask_id: \"01\"\r\ntask_name: \"ITER10-CODEX-20261114 isolated UI card\"\r\nstatus: \"TODO\"\r\ntype: \"UI-Component\"\r\nfix_rounds: 0\r\nreplan_count: 0\r\nis_blocked: false\r\nblocked_reason: \"\"\r\ntypesafe_score: \"UNASSESSED\"\r\ntypesafe_evidence: \"\"\r\ntdd_verified: false\r\nreview_status: \"PENDING\"\r\nreview_receipt: \"\"\r\nbase_sha: \"\"\r\nhead_sha: \"\"\r\ndelivery_mode: \"filesystem\"\r\ncandidate_id: \"iter10-codex-installed-consumption-isolated-sample\"\r\n---\r\n\r\n# 01 · ITER10-CODEX-20261114 isolated UI card\r\n\r\n## 1. 任务执行目标与接口契约\r\n- **主要目标**：ITER10-CODEX-20261114: render an isolated unapproved UI consumption sample\r\n- **Consumes**：Local isolated UI fixture only\r\n- **Produces**：An unapproved filesystem UI task card\r\n\r\n## 2. 业务阶段\r\n<!-- iter:stages -->\r\n- [ ] Describe an isolated UI sample without implementation\r\n<!-- /iter:stages -->\r\n\r\n## 3. 按类型验证规划\r\n先走真实用户路径，再检查正常、空、加载、错误四态及约定视口和实际视觉。\r\n<!-- iter:verification -->\r\n- [ ] **interaction**：Observe sample button interaction in an isolated UI fixture; not executed by generation\r\n- [ ] **states**：Observe loading, empty, success and error states; not executed by generation\r\n- [ ] **visual**：Inspect sample layout at its actual viewport; not executed by generation\r\n- [ ] **regression**：Run affected sample UI regression checks after authorized implementation; not executed here\r\n<!-- /iter:verification -->\r\n\r\n## 4. 交付与冻结\r\n完整正文、阶段勾选及实证先定稿，再冻结候选并独审；审查后只登记允许的元数据及外部收据，正文变化须重新冻结与受影响重审。\r\n执行状态与审查结果读取frontmatter及review_receipt；生成不代表验证或独立批准。\r\n\r\n## 5. 新增或变更内容清单\r\n<!-- iter:scope -->\r\n| 文件路径 | 变更类型 | 核心职责说明 |\r\n| --- | --- | --- |\r\n| `ui/sample.py` | MODIFIED | 本任务授权范围 |\r\n| `tests/` | MODIFIED | 本任务授权范围 |\r\n<!-- /iter:scope -->\r\n\r\n## 6. 确定性验收标准\r\n<!-- iter:acceptance -->\r\n- [ ] All four UI verification categories are present; no approval facts are generated\r\n<!-- /iter:acceptance -->\r\n\r\n## 7. 执行实证与裁决账本\r\n<!-- iter:ledger -->\r\n实际命令、原始证据、退出码、候选、检查点与剩余项在执行中记录；未执行不推断通过。\r\n独立审查结果由外部收据与报告提供。\r\n<!-- /iter:ledger -->\r\n",
+      "stderr": "",
+      "stdout_base64": "LS0tDQpzY2hlbWFfdmVyc2lvbjogMQ0KaXRlcmF0aW9uOiAiMTAtY29kZXgtaW5zdGFsbC1jb25zdW1wdGlvbiINCnRhc2tfaWQ6ICIwMSINCnRhc2tfbmFtZTogIklURVIxMC1DT0RFWC0yMDI2MTExNCBpc29sYXRlZCBVSSBjYXJkIg0Kc3RhdHVzOiAiVE9ETyINCnR5cGU6ICJVSS1Db21wb25lbnQiDQpmaXhfcm91bmRzOiAwDQpyZXBsYW5fY291bnQ6IDANCmlzX2Jsb2NrZWQ6IGZhbHNlDQpibG9ja2VkX3JlYXNvbjogIiINCnR5cGVzYWZlX3Njb3JlOiAiVU5BU1NFU1NFRCINCnR5cGVzYWZlX2V2aWRlbmNlOiAiIg0KdGRkX3ZlcmlmaWVkOiBmYWxzZQ0KcmV2aWV3X3N0YXR1czogIlBFTkRJTkciDQpyZXZpZXdfcmVjZWlwdDogIiINCmJhc2Vfc2hhOiAiIg0KaGVhZF9zaGE6ICIiDQpkZWxpdmVyeV9tb2RlOiAiZmlsZXN5c3RlbSINCmNhbmRpZGF0ZV9pZDogIml0ZXIxMC1jb2RleC1pbnN0YWxsZWQtY29uc3VtcHRpb24taXNvbGF0ZWQtc2FtcGxlIg0KLS0tDQoNCiMgMDEgwrcgSVRFUjEwLUNPREVYLTIwMjYxMTE0IGlzb2xhdGVkIFVJIGNhcmQNCg0KIyMgMS4g5Lu75Yqh5omn6KGM55uu5qCH5LiO5o6l5Y+j5aWR57qmDQotICoq5Li76KaB55uu5qCHKirvvJpJVEVSMTAtQ09ERVgtMjAyNjExMTQ6IHJlbmRlciBhbiBpc29sYXRlZCB1bmFwcHJvdmVkIFVJIGNvbnN1bXB0aW9uIHNhbXBsZQ0KLSAqKkNvbnN1bWVzKirvvJpMb2NhbCBpc29sYXRlZCBVSSBmaXh0dXJlIG9ubHkNCi0gKipQcm9kdWNlcyoq77yaQW4gdW5hcHByb3ZlZCBmaWxlc3lzdGVtIFVJIHRhc2sgY2FyZA0KDQojIyAyLiDkuJrliqHpmLbmrrUNCjwhLS0gaXRlcjpzdGFnZXMgLS0+DQotIFsgXSBEZXNjcmliZSBhbiBpc29sYXRlZCBVSSBzYW1wbGUgd2l0aG91dCBpbXBsZW1lbnRhdGlvbg0KPCEtLSAvaXRlcjpzdGFnZXMgLS0+DQoNCiMjIDMuIOaMieexu+Wei+mqjOivgeinhOWIkg0K5YWI6LWw55yf5a6e55So5oi36Lev5b6E77yM5YaN5qOA5p+l5q2j5bi444CB56m644CB5Yqg6L2944CB6ZSZ6K+v5Zub5oCB5Y+K57qm5a6a6KeG5Y+j5ZKM5a6e6ZmF6KeG6KeJ44CCDQo8IS0tIGl0ZXI6dmVyaWZpY2F0aW9uIC0tPg0KLSBbIF0gKippbnRlcmFjdGlvbioq77yaT2JzZXJ2ZSBzYW1wbGUgYnV0dG9uIGludGVyYWN0aW9uIGluIGFuIGlzb2xhdGVkIFVJIGZpeHR1cmU7IG5vdCBleGVjdXRlZCBieSBnZW5lcmF0aW9uDQotIFsgXSAqKnN0YXRlcyoq77yaT2JzZXJ2ZSBsb2FkaW5nLCBlbXB0eSwgc3VjY2VzcyBhbmQgZXJyb3Igc3RhdGVzOyBub3QgZXhlY3V0ZWQgYnkgZ2VuZXJhdGlvbg0KLSBbIF0gKip2aXN1YWwqKu+8mkluc3BlY3Qgc2FtcGxlIGxheW91dCBhdCBpdHMgYWN0dWFsIHZpZXdwb3J0OyBub3QgZXhlY3V0ZWQgYnkgZ2VuZXJhdGlvbg0KLSBbIF0gKipyZWdyZXNzaW9uKirvvJpSdW4gYWZmZWN0ZWQgc2FtcGxlIFVJIHJlZ3Jlc3Npb24gY2hlY2tzIGFmdGVyIGF1dGhvcml6ZWQgaW1wbGVtZW50YXRpb247IG5vdCBleGVjdXRlZCBoZXJlDQo8IS0tIC9pdGVyOnZlcmlmaWNhdGlvbiAtLT4NCg0KIyMgNC4g5Lqk5LuY5LiO5Ya757uTDQrlrozmlbTmraPmlofjgIHpmLbmrrXli77pgInlj4rlrp7or4HlhYjlrprnqL/vvIzlho3lhrvnu5PlgJnpgInlubbni6zlrqHvvJvlrqHmn6XlkI7lj6rnmbvorrDlhYHorrjnmoTlhYPmlbDmja7lj4rlpJbpg6jmlLbmja7vvIzmraPmloflj5jljJbpobvph43mlrDlhrvnu5PkuI7lj5flvbHlk43ph43lrqHjgIINCuaJp+ihjOeKtuaAgeS4juWuoeafpee7k+aenOivu+WPlmZyb250bWF0dGVy5Y+KcmV2aWV3X3JlY2VpcHTvvJvnlJ/miJDkuI3ku6Pooajpqozor4HmiJbni6znq4vmibnlh4bjgIINCg0KIyMgNS4g5paw5aKe5oiW5Y+Y5pu05YaF5a655riF5Y2VDQo8IS0tIGl0ZXI6c2NvcGUgLS0+DQp8IOaWh+S7tui3r+W+hCB8IOWPmOabtOexu+WeiyB8IOaguOW/g+iBjOi0o+ivtOaYjiB8DQp8IC0tLSB8IC0tLSB8IC0tLSB8DQp8IGB1aS9zYW1wbGUucHlgIHwgTU9ESUZJRUQgfCDmnKzku7vliqHmjojmnYPojIPlm7QgfA0KfCBgdGVzdHMvYCB8IE1PRElGSUVEIHwg5pys5Lu75Yqh5o6I5p2D6IyD5Zu0IHwNCjwhLS0gL2l0ZXI6c2NvcGUgLS0+DQoNCiMjIDYuIOehruWumuaAp+mqjOaUtuagh+WHhg0KPCEtLSBpdGVyOmFjY2VwdGFuY2UgLS0+DQotIFsgXSBBbGwgZm91ciBVSSB2ZXJpZmljYXRpb24gY2F0ZWdvcmllcyBhcmUgcHJlc2VudDsgbm8gYXBwcm92YWwgZmFjdHMgYXJlIGdlbmVyYXRlZA0KPCEtLSAvaXRlcjphY2NlcHRhbmNlIC0tPg0KDQojIyA3LiDmiafooYzlrp7or4HkuI7oo4HlhrPotKbmnKwNCjwhLS0gaXRlcjpsZWRnZXIgLS0+DQrlrp7pmYXlkb3ku6TjgIHljp/lp4vor4Hmja7jgIHpgIDlh7rnoIHjgIHlgJnpgInjgIHmo4Dmn6XngrnkuI7liankvZnpobnlnKjmiafooYzkuK3orrDlvZXvvJvmnKrmiafooYzkuI3mjqjmlq3pgJrov4fjgIINCueLrOeri+Wuoeafpee7k+aenOeUseWklumDqOaUtuaNruS4juaKpeWRiuaPkOS+m+OAgg0KPCEtLSAvaXRlcjpsZWRnZXIgLS0+DQo=",
+      "stderr_base64": ""
+    },
+    {
+      "label": "check",
+      "argv": [
+        "C:\\Users\\qingyu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "-B",
+        "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager\\scripts\\iter_templates.py",
+        "--check",
+        "card.md",
+        "--delivery-mode",
+        "filesystem"
+      ],
+      "cwd": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\codex-consumption\\sandbox",
+      "started_at": "2026-11-14T02:19:40.584392+00:00",
+      "ended_at": "2026-11-14T02:19:40.781450+00:00",
+      "returncode": 0,
+      "stdout": "{\"valid\": true, \"errors\": []}\r\n",
+      "stderr": "",
+      "stdout_base64": "eyJ2YWxpZCI6IHRydWUsICJlcnJvcnMiOiBbXX0NCg==",
+      "stderr_base64": ""
+    }
+  ],
+  "checks": [
+    {
+      "name": "exclusive sandbox cwd",
+      "satisfied": true
+    },
+    {
+      "name": "render exits zero",
+      "satisfied": true
+    },
+    {
+      "name": "check exits zero and valid true",
+      "satisfied": true
+    },
+    {
+      "name": "marker and candidate retained",
+      "satisfied": true
+    },
+    {
+      "name": "four UI categories retained",
+      "satisfied": true
+    },
+    {
+      "name": "initial status=TODO",
+      "satisfied": true
+    },
+    {
+      "name": "initial acceptance_verdict=PENDING",
+      "satisfied": false
+    }
+  ]
+}

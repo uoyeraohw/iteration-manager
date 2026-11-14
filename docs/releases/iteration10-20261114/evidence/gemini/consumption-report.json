@@ -1,0 +1,90 @@
+{
+  "version": 1,
+  "timestamp": "2026-11-14T02:27:00Z",
+  "installation": {
+    "root": "C:/Users/qingyu/.gemini/config/skills/iteration-manager",
+    "scripts": {
+      "iter_run": "C:/Users/qingyu/.gemini/config/skills/iteration-manager/scripts/iter_run.py",
+      "iter_templates": "C:/Users/qingyu/.gemini/config/skills/iteration-manager/scripts/iter_templates.py",
+      "iter_sync": "C:/Users/qingyu/.gemini/config/skills/iteration-manager/scripts/iter_sync.py"
+    },
+    "documentation_read": [
+      "C:/Users/qingyu/.gemini/config/skills/iteration-manager/SKILL.md",
+      "C:/Users/qingyu/.gemini/config/skills/iteration-manager/references/template_generation.md",
+      "C:/Users/qingyu/.gemini/config/skills/iteration-manager/references/execution_readiness.md"
+    ]
+  },
+  "session": {
+    "conversation_id": "73f429df-53de-4b18-be12-78412da1b0d4",
+    "app_data_directory": "C:\\Users\\qingyu\\.gemini\\antigravity-acp",
+    "discovery_mode": "explicit_antigravity_session_load",
+    "discovery_notes": "通过新 Antigravity 会话显式加载 Gemini 安装副本；显式加载不等于 Gemini CLI 原生自动发现"
+  },
+  "sandbox": {
+    "cwd": "C:/Users/qingyu/.codeg/skills/iteration-manager/build/iter10-release-20261114-101008/gemini-consumption",
+    "read_write_isolated": true
+  },
+  "runner": {
+    "command_line": "python -B C:/Users/qingyu/.gemini/config/skills/iteration-manager/scripts/iter_run.py --deadline 2026-11-14T02:29:29.446Z --evidence probe-run.json -- python -B probe.py",
+    "status": "COMPLETED",
+    "raw_exit_code": 0,
+    "tree_terminal": true,
+    "container_pid": 36780,
+    "child_pid": 25788,
+    "evidence_file": "probe-run.json",
+    "output_file": "probe-run.json.output.txt"
+  },
+  "evidence_pointers": {
+    "probe_run_receipt": "probe-run.json",
+    "probe_run_output": "probe-run.json.output.txt",
+    "probe_results": "probe-results.json",
+    "spec_json": "spec.json",
+    "card_md": "card.md",
+    "escape_spec_json": "spec_escape.json",
+    "takeover_json": "takeover.json"
+  },
+  "assertions_verified": {
+    "assertion_1_spec_construction": {
+      "type": "UI-Component",
+      "delivery_mode": "filesystem",
+      "marker": "ITER10-GEMINI-20261114",
+      "candidate_id": "安装消费隔离样例",
+      "no_approval_facts": true,
+      "saved_to": "spec.json"
+    },
+    "assertion_2_template_render_and_check": {
+      "render_exit_code": 0,
+      "card_saved_to": "card.md",
+      "initial_status": "TODO",
+      "initial_review_status": "PENDING",
+      "tdd_verified": false,
+      "ui_four_categories_present": ["interaction", "states", "visual", "regression"],
+      "no_fabricated_red_green": true,
+      "check_exit_code": 0,
+      "check_valid": true,
+      "check_errors": []
+    },
+    "assertion_3_scope_escape_rejection": {
+      "scope": ["../escape"],
+      "render_exit_code": 2,
+      "error_parseable_json": true,
+      "errors": ["Expected a repository-relative path: '../escape'"],
+      "no_out_of_bounds_files": true
+    },
+    "assertion_4_takeover_report": {
+      "target": "C:/Users/qingyu/.codeg/skills/iteration-manager/docs/todos/10-self-hosting-hardening",
+      "exit_code": 0,
+      "read_only": true,
+      "task_count": 6,
+      "all_declared_done": true,
+      "all_acceptance_verdict_pass": true,
+      "saved_to": "takeover.json"
+    }
+  },
+  "scope_and_limitations": {
+    "explicit_load_vs_discovery": "显式加载不等于原生自动发现",
+    "lifecycle_scope": "本次消费验收不验真实 FS 业务生命周期",
+    "write_boundary": "仅允许在当前专属 sandbox (gemini-consumption) 读写，未修改任何产品代码、未进行 Git 写入、未触碰网络与凭据"
+  },
+  "uncompleted_items": []
+}

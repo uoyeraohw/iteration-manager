@@ -1,0 +1,1561 @@
+{
+  "source_head": "26652bad2fcfb7c883d8e9a8bcad4aeb96160816",
+  "canonical": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager",
+  "files": [
+    ".agents/notes/implemented/architecture/2026-11-11-readonly-skill-grant.md",
+    ".agents/notes/implemented/architecture/2026-11-11-trustworthy-board.md",
+    ".agents/notes/implemented/architecture/2026-11-12-filesystem-delivery.md",
+    ".agents/notes/implemented/architecture/2026-11-13-query-cli-contract.md",
+    ".agents/notes/implemented/bug-fix/2026-11-10-stage01-evidence-gates.md",
+    ".agents/notes/implemented/bug-fix/2026-11-12-filesystem-r7-acceptance-repair.md",
+    ".agents/notes/implemented/feature/2026-11-13-board-handoff.md",
+    ".agents/notes/implemented/process/2026-11-11-assistant-deployment.md",
+    ".agents/notes/implemented/process/2026-11-11-bounded-autonomy.md",
+    ".agents/notes/implemented/process/2026-11-11-checkpoint-resume.md",
+    ".agents/notes/implemented/process/2026-11-12-bounded-validation-workflow.md",
+    ".agents/notes/implemented/process/2026-11-12-canonical-git-repository.md",
+    ".agents/notes/implemented/process/2026-11-12-execution-readiness-guard.md",
+    ".agents/notes/implemented/process/2026-11-12-workflow-consumption.md",
+    ".agents/notes/implemented/process/2026-11-13-authority-consistency.md",
+    ".agents/notes/implemented/process/2026-11-13-readonly-inventory.md",
+    ".agents/notes/implemented/process/2026-11-13-release-evidence-index.md",
+    ".agents/notes/implemented/process/2026-11-13-typed-template-generation.md",
+    ".agents/notes/implemented/testing/2026-11-13-self-hosting-acceptance.md",
+    "SKILL.md",
+    "references/agent_protocol.md",
+    "references/checkpoint_execution.md",
+    "references/execution_readiness.md",
+    "references/readonly_skill_access.md",
+    "references/release_status.md",
+    "references/self_hosting_acceptance.md",
+    "references/superpowers_handbook.md",
+    "references/task_card_schema.md",
+    "references/template_generation.md",
+    "references/typesafe_eval_guide.md",
+    "references/worktree_git_contract.md",
+    "scripts/deadline_watch.js",
+    "scripts/iter_autonomy.py",
+    "scripts/iter_checkpoint.py",
+    "scripts/iter_cli.py",
+    "scripts/iter_contracts.py",
+    "scripts/iter_execution.py",
+    "scripts/iter_filesystem.py",
+    "scripts/iter_inventory.py",
+    "scripts/iter_preflight.py",
+    "scripts/iter_queries.py",
+    "scripts/iter_run.py",
+    "scripts/iter_sync.py",
+    "scripts/iter_templates.py",
+    "scripts/iter_timing.py",
+    "scripts/iter_win_job.py",
+    "scripts/skill_readonly_mcp.py",
+    "templates/assistants/iteration_controller.md",
+    "templates/assistants/iteration_planner.md",
+    "templates/assistants/task_tech_lead.md",
+    "templates/board.html",
+    "templates/consilium_rca_prompt.md",
+    "templates/contracts/refactor_benchmark_contract.md",
+    "templates/contracts/spike_discovery_contract.md",
+    "templates/contracts/strict_tdd_contract.md",
+    "templates/contracts/ui_component_contract.md",
+    "templates/iteration_readme.md",
+    "templates/root_readme.md",
+    "templates/sdd_implementer_prompt.md",
+    "templates/sdd_reviewer_prompt.md",
+    "templates/task_detail.md",
+    "tests/test_authority_scenarios.py",
+    "tests/test_autonomy.py",
+    "tests/test_board_handoff.py",
+    "tests/test_board_service.py",
+    "tests/test_board_truth.py",
+    "tests/test_checkpoint_resume.py",
+    "tests/test_cli_compatibility.py",
+    "tests/test_completion_gates.py",
+    "tests/test_deadline_watch.py",
+    "tests/test_execution_readiness.py",
+    "tests/test_execution_report.py",
+    "tests/test_filesystem_delivery_controller.py",
+    "tests/test_filesystem_r7_repairs.py",
+    "tests/test_filesystem_receipts.py",
+    "tests/test_git_guards.py",
+    "tests/test_iter_run.py",
+    "tests/test_prompt_sources.py",
+    "tests/test_query_contract.py",
+    "tests/test_release_index.py",
+    "tests/test_scope_firewall.py",
+    "tests/test_self_hosting.py",
+    "tests/test_session_timing.py",
+    "tests/test_skill_readonly_mcp.py",
+    "tests/test_sync_compatibility.py",
+    "tests/test_task_card_schema.py",
+    "tests/test_task_discovery_compat.py",
+    "tests/test_template_generation.py",
+    "tests/test_timing_coverage.py",
+    "tests/test_timing_terminal_phase.py",
+    "tests/test_worktree_concurrency.py"
+  ],
+  "items": [
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": ".agents/notes/implemented/architecture/2026-11-11-readonly-skill-grant.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\0\\.agents\\notes\\implemented\\architecture\\2026-11-11-readonly-skill-grant.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\.agents\\notes\\implemented\\architecture\\2026-11-11-readonly-skill-grant.md",
+      "changed": false
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": ".agents/notes/implemented/architecture/2026-11-11-trustworthy-board.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\0\\.agents\\notes\\implemented\\architecture\\2026-11-11-trustworthy-board.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\.agents\\notes\\implemented\\architecture\\2026-11-11-trustworthy-board.md",
+      "changed": false
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": ".agents/notes/implemented/architecture/2026-11-12-filesystem-delivery.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\0\\.agents\\notes\\implemented\\architecture\\2026-11-12-filesystem-delivery.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\.agents\\notes\\implemented\\architecture\\2026-11-12-filesystem-delivery.md",
+      "changed": false
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": ".agents/notes/implemented/architecture/2026-11-13-query-cli-contract.md",
+      "existed": false,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\0\\.agents\\notes\\implemented\\architecture\\2026-11-13-query-cli-contract.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\.agents\\notes\\implemented\\architecture\\2026-11-13-query-cli-contract.md",
+      "changed": true
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": ".agents/notes/implemented/bug-fix/2026-11-10-stage01-evidence-gates.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\0\\.agents\\notes\\implemented\\bug-fix\\2026-11-10-stage01-evidence-gates.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\.agents\\notes\\implemented\\bug-fix\\2026-11-10-stage01-evidence-gates.md",
+      "changed": false
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": ".agents/notes/implemented/bug-fix/2026-11-12-filesystem-r7-acceptance-repair.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\0\\.agents\\notes\\implemented\\bug-fix\\2026-11-12-filesystem-r7-acceptance-repair.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\.agents\\notes\\implemented\\bug-fix\\2026-11-12-filesystem-r7-acceptance-repair.md",
+      "changed": false
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": ".agents/notes/implemented/feature/2026-11-13-board-handoff.md",
+      "existed": false,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\0\\.agents\\notes\\implemented\\feature\\2026-11-13-board-handoff.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\.agents\\notes\\implemented\\feature\\2026-11-13-board-handoff.md",
+      "changed": true
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": ".agents/notes/implemented/process/2026-11-11-assistant-deployment.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\0\\.agents\\notes\\implemented\\process\\2026-11-11-assistant-deployment.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\.agents\\notes\\implemented\\process\\2026-11-11-assistant-deployment.md",
+      "changed": false
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": ".agents/notes/implemented/process/2026-11-11-bounded-autonomy.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\0\\.agents\\notes\\implemented\\process\\2026-11-11-bounded-autonomy.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\.agents\\notes\\implemented\\process\\2026-11-11-bounded-autonomy.md",
+      "changed": false
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": ".agents/notes/implemented/process/2026-11-11-checkpoint-resume.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\0\\.agents\\notes\\implemented\\process\\2026-11-11-checkpoint-resume.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\.agents\\notes\\implemented\\process\\2026-11-11-checkpoint-resume.md",
+      "changed": false
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": ".agents/notes/implemented/process/2026-11-12-bounded-validation-workflow.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\0\\.agents\\notes\\implemented\\process\\2026-11-12-bounded-validation-workflow.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\.agents\\notes\\implemented\\process\\2026-11-12-bounded-validation-workflow.md",
+      "changed": false
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": ".agents/notes/implemented/process/2026-11-12-canonical-git-repository.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\0\\.agents\\notes\\implemented\\process\\2026-11-12-canonical-git-repository.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\.agents\\notes\\implemented\\process\\2026-11-12-canonical-git-repository.md",
+      "changed": false
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": ".agents/notes/implemented/process/2026-11-12-execution-readiness-guard.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\0\\.agents\\notes\\implemented\\process\\2026-11-12-execution-readiness-guard.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\.agents\\notes\\implemented\\process\\2026-11-12-execution-readiness-guard.md",
+      "changed": false
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": ".agents/notes/implemented/process/2026-11-12-workflow-consumption.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\0\\.agents\\notes\\implemented\\process\\2026-11-12-workflow-consumption.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\.agents\\notes\\implemented\\process\\2026-11-12-workflow-consumption.md",
+      "changed": false
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": ".agents/notes/implemented/process/2026-11-13-authority-consistency.md",
+      "existed": false,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\0\\.agents\\notes\\implemented\\process\\2026-11-13-authority-consistency.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\.agents\\notes\\implemented\\process\\2026-11-13-authority-consistency.md",
+      "changed": true
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": ".agents/notes/implemented/process/2026-11-13-readonly-inventory.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\0\\.agents\\notes\\implemented\\process\\2026-11-13-readonly-inventory.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\.agents\\notes\\implemented\\process\\2026-11-13-readonly-inventory.md",
+      "changed": false
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": ".agents/notes/implemented/process/2026-11-13-release-evidence-index.md",
+      "existed": false,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\0\\.agents\\notes\\implemented\\process\\2026-11-13-release-evidence-index.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\.agents\\notes\\implemented\\process\\2026-11-13-release-evidence-index.md",
+      "changed": true
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": ".agents/notes/implemented/process/2026-11-13-typed-template-generation.md",
+      "existed": false,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\0\\.agents\\notes\\implemented\\process\\2026-11-13-typed-template-generation.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\.agents\\notes\\implemented\\process\\2026-11-13-typed-template-generation.md",
+      "changed": true
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": ".agents/notes/implemented/testing/2026-11-13-self-hosting-acceptance.md",
+      "existed": false,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\0\\.agents\\notes\\implemented\\testing\\2026-11-13-self-hosting-acceptance.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\.agents\\notes\\implemented\\testing\\2026-11-13-self-hosting-acceptance.md",
+      "changed": true
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": "SKILL.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\0\\SKILL.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\SKILL.md",
+      "changed": true
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": "references/agent_protocol.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\0\\references\\agent_protocol.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\references\\agent_protocol.md",
+      "changed": false
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": "references/checkpoint_execution.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\0\\references\\checkpoint_execution.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\references\\checkpoint_execution.md",
+      "changed": false
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": "references/execution_readiness.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\0\\references\\execution_readiness.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\references\\execution_readiness.md",
+      "changed": false
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": "references/readonly_skill_access.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\0\\references\\readonly_skill_access.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\references\\readonly_skill_access.md",
+      "changed": false
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": "references/release_status.md",
+      "existed": false,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\0\\references\\release_status.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\references\\release_status.md",
+      "changed": true
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": "references/self_hosting_acceptance.md",
+      "existed": false,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\0\\references\\self_hosting_acceptance.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\references\\self_hosting_acceptance.md",
+      "changed": true
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": "references/superpowers_handbook.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\0\\references\\superpowers_handbook.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\references\\superpowers_handbook.md",
+      "changed": true
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": "references/task_card_schema.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\0\\references\\task_card_schema.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\references\\task_card_schema.md",
+      "changed": false
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": "references/template_generation.md",
+      "existed": false,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\0\\references\\template_generation.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\references\\template_generation.md",
+      "changed": true
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": "references/typesafe_eval_guide.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\0\\references\\typesafe_eval_guide.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\references\\typesafe_eval_guide.md",
+      "changed": false
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": "references/worktree_git_contract.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\0\\references\\worktree_git_contract.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\references\\worktree_git_contract.md",
+      "changed": true
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": "scripts/deadline_watch.js",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\0\\scripts\\deadline_watch.js",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\scripts\\deadline_watch.js",
+      "changed": false
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": "scripts/iter_autonomy.py",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\0\\scripts\\iter_autonomy.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\scripts\\iter_autonomy.py",
+      "changed": false
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": "scripts/iter_checkpoint.py",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\0\\scripts\\iter_checkpoint.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\scripts\\iter_checkpoint.py",
+      "changed": false
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": "scripts/iter_cli.py",
+      "existed": false,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\0\\scripts\\iter_cli.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\scripts\\iter_cli.py",
+      "changed": true
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": "scripts/iter_contracts.py",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\0\\scripts\\iter_contracts.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\scripts\\iter_contracts.py",
+      "changed": false
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": "scripts/iter_execution.py",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\0\\scripts\\iter_execution.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\scripts\\iter_execution.py",
+      "changed": true
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": "scripts/iter_filesystem.py",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\0\\scripts\\iter_filesystem.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\scripts\\iter_filesystem.py",
+      "changed": false
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": "scripts/iter_inventory.py",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\0\\scripts\\iter_inventory.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\scripts\\iter_inventory.py",
+      "changed": true
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": "scripts/iter_preflight.py",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\0\\scripts\\iter_preflight.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\scripts\\iter_preflight.py",
+      "changed": true
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": "scripts/iter_queries.py",
+      "existed": false,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\0\\scripts\\iter_queries.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\scripts\\iter_queries.py",
+      "changed": true
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": "scripts/iter_run.py",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\0\\scripts\\iter_run.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\scripts\\iter_run.py",
+      "changed": false
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": "scripts/iter_sync.py",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\0\\scripts\\iter_sync.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\scripts\\iter_sync.py",
+      "changed": true
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": "scripts/iter_templates.py",
+      "existed": false,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\0\\scripts\\iter_templates.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\scripts\\iter_templates.py",
+      "changed": true
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": "scripts/iter_timing.py",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\0\\scripts\\iter_timing.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\scripts\\iter_timing.py",
+      "changed": false
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": "scripts/iter_win_job.py",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\0\\scripts\\iter_win_job.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\scripts\\iter_win_job.py",
+      "changed": false
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": "scripts/skill_readonly_mcp.py",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\0\\scripts\\skill_readonly_mcp.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\scripts\\skill_readonly_mcp.py",
+      "changed": false
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": "templates/assistants/iteration_controller.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\0\\templates\\assistants\\iteration_controller.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\templates\\assistants\\iteration_controller.md",
+      "changed": false
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": "templates/assistants/iteration_planner.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\0\\templates\\assistants\\iteration_planner.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\templates\\assistants\\iteration_planner.md",
+      "changed": false
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": "templates/assistants/task_tech_lead.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\0\\templates\\assistants\\task_tech_lead.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\templates\\assistants\\task_tech_lead.md",
+      "changed": false
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": "templates/board.html",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\0\\templates\\board.html",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\templates\\board.html",
+      "changed": true
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": "templates/consilium_rca_prompt.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\0\\templates\\consilium_rca_prompt.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\templates\\consilium_rca_prompt.md",
+      "changed": false
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": "templates/contracts/refactor_benchmark_contract.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\0\\templates\\contracts\\refactor_benchmark_contract.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\templates\\contracts\\refactor_benchmark_contract.md",
+      "changed": true
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": "templates/contracts/spike_discovery_contract.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\0\\templates\\contracts\\spike_discovery_contract.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\templates\\contracts\\spike_discovery_contract.md",
+      "changed": true
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": "templates/contracts/strict_tdd_contract.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\0\\templates\\contracts\\strict_tdd_contract.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\templates\\contracts\\strict_tdd_contract.md",
+      "changed": true
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": "templates/contracts/ui_component_contract.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\0\\templates\\contracts\\ui_component_contract.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\templates\\contracts\\ui_component_contract.md",
+      "changed": true
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": "templates/iteration_readme.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\0\\templates\\iteration_readme.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\templates\\iteration_readme.md",
+      "changed": false
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": "templates/root_readme.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\0\\templates\\root_readme.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\templates\\root_readme.md",
+      "changed": true
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": "templates/sdd_implementer_prompt.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\0\\templates\\sdd_implementer_prompt.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\templates\\sdd_implementer_prompt.md",
+      "changed": false
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": "templates/sdd_reviewer_prompt.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\0\\templates\\sdd_reviewer_prompt.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\templates\\sdd_reviewer_prompt.md",
+      "changed": false
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": "templates/task_detail.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\0\\templates\\task_detail.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\templates\\task_detail.md",
+      "changed": true
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": "tests/test_authority_scenarios.py",
+      "existed": false,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\0\\tests\\test_authority_scenarios.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\tests\\test_authority_scenarios.py",
+      "changed": true
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": "tests/test_autonomy.py",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\0\\tests\\test_autonomy.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\tests\\test_autonomy.py",
+      "changed": false
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": "tests/test_board_handoff.py",
+      "existed": false,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\0\\tests\\test_board_handoff.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\tests\\test_board_handoff.py",
+      "changed": true
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": "tests/test_board_service.py",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\0\\tests\\test_board_service.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\tests\\test_board_service.py",
+      "changed": true
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": "tests/test_board_truth.py",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\0\\tests\\test_board_truth.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\tests\\test_board_truth.py",
+      "changed": true
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": "tests/test_checkpoint_resume.py",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\0\\tests\\test_checkpoint_resume.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\tests\\test_checkpoint_resume.py",
+      "changed": false
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": "tests/test_cli_compatibility.py",
+      "existed": false,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\0\\tests\\test_cli_compatibility.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\tests\\test_cli_compatibility.py",
+      "changed": true
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": "tests/test_completion_gates.py",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\0\\tests\\test_completion_gates.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\tests\\test_completion_gates.py",
+      "changed": false
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": "tests/test_deadline_watch.py",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\0\\tests\\test_deadline_watch.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\tests\\test_deadline_watch.py",
+      "changed": false
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": "tests/test_execution_readiness.py",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\0\\tests\\test_execution_readiness.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\tests\\test_execution_readiness.py",
+      "changed": true
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": "tests/test_execution_report.py",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\0\\tests\\test_execution_report.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\tests\\test_execution_report.py",
+      "changed": false
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": "tests/test_filesystem_delivery_controller.py",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\0\\tests\\test_filesystem_delivery_controller.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\tests\\test_filesystem_delivery_controller.py",
+      "changed": false
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": "tests/test_filesystem_r7_repairs.py",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\0\\tests\\test_filesystem_r7_repairs.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\tests\\test_filesystem_r7_repairs.py",
+      "changed": false
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": "tests/test_filesystem_receipts.py",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\0\\tests\\test_filesystem_receipts.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\tests\\test_filesystem_receipts.py",
+      "changed": false
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": "tests/test_git_guards.py",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\0\\tests\\test_git_guards.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\tests\\test_git_guards.py",
+      "changed": false
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": "tests/test_iter_run.py",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\0\\tests\\test_iter_run.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\tests\\test_iter_run.py",
+      "changed": false
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": "tests/test_prompt_sources.py",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\0\\tests\\test_prompt_sources.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\tests\\test_prompt_sources.py",
+      "changed": true
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": "tests/test_query_contract.py",
+      "existed": false,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\0\\tests\\test_query_contract.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\tests\\test_query_contract.py",
+      "changed": true
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": "tests/test_release_index.py",
+      "existed": false,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\0\\tests\\test_release_index.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\tests\\test_release_index.py",
+      "changed": true
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": "tests/test_scope_firewall.py",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\0\\tests\\test_scope_firewall.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\tests\\test_scope_firewall.py",
+      "changed": false
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": "tests/test_self_hosting.py",
+      "existed": false,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\0\\tests\\test_self_hosting.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\tests\\test_self_hosting.py",
+      "changed": true
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": "tests/test_session_timing.py",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\0\\tests\\test_session_timing.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\tests\\test_session_timing.py",
+      "changed": false
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": "tests/test_skill_readonly_mcp.py",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\0\\tests\\test_skill_readonly_mcp.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\tests\\test_skill_readonly_mcp.py",
+      "changed": false
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": "tests/test_sync_compatibility.py",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\0\\tests\\test_sync_compatibility.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\tests\\test_sync_compatibility.py",
+      "changed": false
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": "tests/test_task_card_schema.py",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\0\\tests\\test_task_card_schema.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\tests\\test_task_card_schema.py",
+      "changed": false
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": "tests/test_task_discovery_compat.py",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\0\\tests\\test_task_discovery_compat.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\tests\\test_task_discovery_compat.py",
+      "changed": false
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": "tests/test_template_generation.py",
+      "existed": false,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\0\\tests\\test_template_generation.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\tests\\test_template_generation.py",
+      "changed": true
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": "tests/test_timing_coverage.py",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\0\\tests\\test_timing_coverage.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\tests\\test_timing_coverage.py",
+      "changed": false
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": "tests/test_timing_terminal_phase.py",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\0\\tests\\test_timing_terminal_phase.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\tests\\test_timing_terminal_phase.py",
+      "changed": false
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": "tests/test_worktree_concurrency.py",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\0\\tests\\test_worktree_concurrency.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\tests\\test_worktree_concurrency.py",
+      "changed": false
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": ".agents/notes/implemented/architecture/2026-11-11-readonly-skill-grant.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\1\\.agents\\notes\\implemented\\architecture\\2026-11-11-readonly-skill-grant.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\.agents\\notes\\implemented\\architecture\\2026-11-11-readonly-skill-grant.md",
+      "changed": false
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": ".agents/notes/implemented/architecture/2026-11-11-trustworthy-board.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\1\\.agents\\notes\\implemented\\architecture\\2026-11-11-trustworthy-board.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\.agents\\notes\\implemented\\architecture\\2026-11-11-trustworthy-board.md",
+      "changed": false
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": ".agents/notes/implemented/architecture/2026-11-12-filesystem-delivery.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\1\\.agents\\notes\\implemented\\architecture\\2026-11-12-filesystem-delivery.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\.agents\\notes\\implemented\\architecture\\2026-11-12-filesystem-delivery.md",
+      "changed": false
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": ".agents/notes/implemented/architecture/2026-11-13-query-cli-contract.md",
+      "existed": false,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\1\\.agents\\notes\\implemented\\architecture\\2026-11-13-query-cli-contract.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\.agents\\notes\\implemented\\architecture\\2026-11-13-query-cli-contract.md",
+      "changed": true
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": ".agents/notes/implemented/bug-fix/2026-11-10-stage01-evidence-gates.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\1\\.agents\\notes\\implemented\\bug-fix\\2026-11-10-stage01-evidence-gates.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\.agents\\notes\\implemented\\bug-fix\\2026-11-10-stage01-evidence-gates.md",
+      "changed": false
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": ".agents/notes/implemented/bug-fix/2026-11-12-filesystem-r7-acceptance-repair.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\1\\.agents\\notes\\implemented\\bug-fix\\2026-11-12-filesystem-r7-acceptance-repair.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\.agents\\notes\\implemented\\bug-fix\\2026-11-12-filesystem-r7-acceptance-repair.md",
+      "changed": false
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": ".agents/notes/implemented/feature/2026-11-13-board-handoff.md",
+      "existed": false,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\1\\.agents\\notes\\implemented\\feature\\2026-11-13-board-handoff.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\.agents\\notes\\implemented\\feature\\2026-11-13-board-handoff.md",
+      "changed": true
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": ".agents/notes/implemented/process/2026-11-11-assistant-deployment.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\1\\.agents\\notes\\implemented\\process\\2026-11-11-assistant-deployment.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\.agents\\notes\\implemented\\process\\2026-11-11-assistant-deployment.md",
+      "changed": false
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": ".agents/notes/implemented/process/2026-11-11-bounded-autonomy.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\1\\.agents\\notes\\implemented\\process\\2026-11-11-bounded-autonomy.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\.agents\\notes\\implemented\\process\\2026-11-11-bounded-autonomy.md",
+      "changed": false
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": ".agents/notes/implemented/process/2026-11-11-checkpoint-resume.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\1\\.agents\\notes\\implemented\\process\\2026-11-11-checkpoint-resume.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\.agents\\notes\\implemented\\process\\2026-11-11-checkpoint-resume.md",
+      "changed": false
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": ".agents/notes/implemented/process/2026-11-12-bounded-validation-workflow.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\1\\.agents\\notes\\implemented\\process\\2026-11-12-bounded-validation-workflow.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\.agents\\notes\\implemented\\process\\2026-11-12-bounded-validation-workflow.md",
+      "changed": false
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": ".agents/notes/implemented/process/2026-11-12-canonical-git-repository.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\1\\.agents\\notes\\implemented\\process\\2026-11-12-canonical-git-repository.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\.agents\\notes\\implemented\\process\\2026-11-12-canonical-git-repository.md",
+      "changed": false
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": ".agents/notes/implemented/process/2026-11-12-execution-readiness-guard.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\1\\.agents\\notes\\implemented\\process\\2026-11-12-execution-readiness-guard.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\.agents\\notes\\implemented\\process\\2026-11-12-execution-readiness-guard.md",
+      "changed": false
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": ".agents/notes/implemented/process/2026-11-12-workflow-consumption.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\1\\.agents\\notes\\implemented\\process\\2026-11-12-workflow-consumption.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\.agents\\notes\\implemented\\process\\2026-11-12-workflow-consumption.md",
+      "changed": false
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": ".agents/notes/implemented/process/2026-11-13-authority-consistency.md",
+      "existed": false,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\1\\.agents\\notes\\implemented\\process\\2026-11-13-authority-consistency.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\.agents\\notes\\implemented\\process\\2026-11-13-authority-consistency.md",
+      "changed": true
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": ".agents/notes/implemented/process/2026-11-13-readonly-inventory.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\1\\.agents\\notes\\implemented\\process\\2026-11-13-readonly-inventory.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\.agents\\notes\\implemented\\process\\2026-11-13-readonly-inventory.md",
+      "changed": false
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": ".agents/notes/implemented/process/2026-11-13-release-evidence-index.md",
+      "existed": false,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\1\\.agents\\notes\\implemented\\process\\2026-11-13-release-evidence-index.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\.agents\\notes\\implemented\\process\\2026-11-13-release-evidence-index.md",
+      "changed": true
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": ".agents/notes/implemented/process/2026-11-13-typed-template-generation.md",
+      "existed": false,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\1\\.agents\\notes\\implemented\\process\\2026-11-13-typed-template-generation.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\.agents\\notes\\implemented\\process\\2026-11-13-typed-template-generation.md",
+      "changed": true
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": ".agents/notes/implemented/testing/2026-11-13-self-hosting-acceptance.md",
+      "existed": false,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\1\\.agents\\notes\\implemented\\testing\\2026-11-13-self-hosting-acceptance.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\.agents\\notes\\implemented\\testing\\2026-11-13-self-hosting-acceptance.md",
+      "changed": true
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": "SKILL.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\1\\SKILL.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\SKILL.md",
+      "changed": true
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": "references/agent_protocol.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\1\\references\\agent_protocol.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\references\\agent_protocol.md",
+      "changed": false
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": "references/checkpoint_execution.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\1\\references\\checkpoint_execution.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\references\\checkpoint_execution.md",
+      "changed": false
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": "references/execution_readiness.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\1\\references\\execution_readiness.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\references\\execution_readiness.md",
+      "changed": false
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": "references/readonly_skill_access.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\1\\references\\readonly_skill_access.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\references\\readonly_skill_access.md",
+      "changed": false
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": "references/release_status.md",
+      "existed": false,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\1\\references\\release_status.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\references\\release_status.md",
+      "changed": true
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": "references/self_hosting_acceptance.md",
+      "existed": false,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\1\\references\\self_hosting_acceptance.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\references\\self_hosting_acceptance.md",
+      "changed": true
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": "references/superpowers_handbook.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\1\\references\\superpowers_handbook.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\references\\superpowers_handbook.md",
+      "changed": true
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": "references/task_card_schema.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\1\\references\\task_card_schema.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\references\\task_card_schema.md",
+      "changed": false
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": "references/template_generation.md",
+      "existed": false,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\1\\references\\template_generation.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\references\\template_generation.md",
+      "changed": true
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": "references/typesafe_eval_guide.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\1\\references\\typesafe_eval_guide.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\references\\typesafe_eval_guide.md",
+      "changed": false
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": "references/worktree_git_contract.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\1\\references\\worktree_git_contract.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\references\\worktree_git_contract.md",
+      "changed": true
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": "scripts/deadline_watch.js",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\1\\scripts\\deadline_watch.js",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\scripts\\deadline_watch.js",
+      "changed": false
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": "scripts/iter_autonomy.py",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\1\\scripts\\iter_autonomy.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\scripts\\iter_autonomy.py",
+      "changed": false
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": "scripts/iter_checkpoint.py",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\1\\scripts\\iter_checkpoint.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\scripts\\iter_checkpoint.py",
+      "changed": false
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": "scripts/iter_cli.py",
+      "existed": false,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\1\\scripts\\iter_cli.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\scripts\\iter_cli.py",
+      "changed": true
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": "scripts/iter_contracts.py",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\1\\scripts\\iter_contracts.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\scripts\\iter_contracts.py",
+      "changed": false
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": "scripts/iter_execution.py",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\1\\scripts\\iter_execution.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\scripts\\iter_execution.py",
+      "changed": true
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": "scripts/iter_filesystem.py",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\1\\scripts\\iter_filesystem.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\scripts\\iter_filesystem.py",
+      "changed": false
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": "scripts/iter_inventory.py",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\1\\scripts\\iter_inventory.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\scripts\\iter_inventory.py",
+      "changed": true
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": "scripts/iter_preflight.py",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\1\\scripts\\iter_preflight.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\scripts\\iter_preflight.py",
+      "changed": true
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": "scripts/iter_queries.py",
+      "existed": false,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\1\\scripts\\iter_queries.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\scripts\\iter_queries.py",
+      "changed": true
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": "scripts/iter_run.py",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\1\\scripts\\iter_run.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\scripts\\iter_run.py",
+      "changed": false
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": "scripts/iter_sync.py",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\1\\scripts\\iter_sync.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\scripts\\iter_sync.py",
+      "changed": true
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": "scripts/iter_templates.py",
+      "existed": false,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\1\\scripts\\iter_templates.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\scripts\\iter_templates.py",
+      "changed": true
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": "scripts/iter_timing.py",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\1\\scripts\\iter_timing.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\scripts\\iter_timing.py",
+      "changed": false
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": "scripts/iter_win_job.py",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\1\\scripts\\iter_win_job.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\scripts\\iter_win_job.py",
+      "changed": false
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": "scripts/skill_readonly_mcp.py",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\1\\scripts\\skill_readonly_mcp.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\scripts\\skill_readonly_mcp.py",
+      "changed": false
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": "templates/assistants/iteration_controller.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\1\\templates\\assistants\\iteration_controller.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\templates\\assistants\\iteration_controller.md",
+      "changed": false
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": "templates/assistants/iteration_planner.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\1\\templates\\assistants\\iteration_planner.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\templates\\assistants\\iteration_planner.md",
+      "changed": false
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": "templates/assistants/task_tech_lead.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\1\\templates\\assistants\\task_tech_lead.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\templates\\assistants\\task_tech_lead.md",
+      "changed": false
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": "templates/board.html",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\1\\templates\\board.html",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\templates\\board.html",
+      "changed": true
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": "templates/consilium_rca_prompt.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\1\\templates\\consilium_rca_prompt.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\templates\\consilium_rca_prompt.md",
+      "changed": false
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": "templates/contracts/refactor_benchmark_contract.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\1\\templates\\contracts\\refactor_benchmark_contract.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\templates\\contracts\\refactor_benchmark_contract.md",
+      "changed": true
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": "templates/contracts/spike_discovery_contract.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\1\\templates\\contracts\\spike_discovery_contract.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\templates\\contracts\\spike_discovery_contract.md",
+      "changed": true
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": "templates/contracts/strict_tdd_contract.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\1\\templates\\contracts\\strict_tdd_contract.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\templates\\contracts\\strict_tdd_contract.md",
+      "changed": true
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": "templates/contracts/ui_component_contract.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\1\\templates\\contracts\\ui_component_contract.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\templates\\contracts\\ui_component_contract.md",
+      "changed": true
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": "templates/iteration_readme.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\1\\templates\\iteration_readme.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\templates\\iteration_readme.md",
+      "changed": false
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": "templates/root_readme.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\1\\templates\\root_readme.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\templates\\root_readme.md",
+      "changed": true
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": "templates/sdd_implementer_prompt.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\1\\templates\\sdd_implementer_prompt.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\templates\\sdd_implementer_prompt.md",
+      "changed": false
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": "templates/sdd_reviewer_prompt.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\1\\templates\\sdd_reviewer_prompt.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\templates\\sdd_reviewer_prompt.md",
+      "changed": false
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": "templates/task_detail.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\1\\templates\\task_detail.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\templates\\task_detail.md",
+      "changed": true
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": "tests/test_authority_scenarios.py",
+      "existed": false,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\1\\tests\\test_authority_scenarios.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\tests\\test_authority_scenarios.py",
+      "changed": true
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": "tests/test_autonomy.py",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\1\\tests\\test_autonomy.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\tests\\test_autonomy.py",
+      "changed": false
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": "tests/test_board_handoff.py",
+      "existed": false,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\1\\tests\\test_board_handoff.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\tests\\test_board_handoff.py",
+      "changed": true
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": "tests/test_board_service.py",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\1\\tests\\test_board_service.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\tests\\test_board_service.py",
+      "changed": true
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": "tests/test_board_truth.py",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\1\\tests\\test_board_truth.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\tests\\test_board_truth.py",
+      "changed": true
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": "tests/test_checkpoint_resume.py",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\1\\tests\\test_checkpoint_resume.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\tests\\test_checkpoint_resume.py",
+      "changed": false
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": "tests/test_cli_compatibility.py",
+      "existed": false,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\1\\tests\\test_cli_compatibility.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\tests\\test_cli_compatibility.py",
+      "changed": true
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": "tests/test_completion_gates.py",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\1\\tests\\test_completion_gates.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\tests\\test_completion_gates.py",
+      "changed": false
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": "tests/test_deadline_watch.py",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\1\\tests\\test_deadline_watch.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\tests\\test_deadline_watch.py",
+      "changed": false
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": "tests/test_execution_readiness.py",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\1\\tests\\test_execution_readiness.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\tests\\test_execution_readiness.py",
+      "changed": true
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": "tests/test_execution_report.py",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\1\\tests\\test_execution_report.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\tests\\test_execution_report.py",
+      "changed": false
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": "tests/test_filesystem_delivery_controller.py",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\1\\tests\\test_filesystem_delivery_controller.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\tests\\test_filesystem_delivery_controller.py",
+      "changed": false
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": "tests/test_filesystem_r7_repairs.py",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\1\\tests\\test_filesystem_r7_repairs.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\tests\\test_filesystem_r7_repairs.py",
+      "changed": false
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": "tests/test_filesystem_receipts.py",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\1\\tests\\test_filesystem_receipts.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\tests\\test_filesystem_receipts.py",
+      "changed": false
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": "tests/test_git_guards.py",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\1\\tests\\test_git_guards.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\tests\\test_git_guards.py",
+      "changed": false
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": "tests/test_iter_run.py",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\1\\tests\\test_iter_run.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\tests\\test_iter_run.py",
+      "changed": false
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": "tests/test_prompt_sources.py",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\1\\tests\\test_prompt_sources.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\tests\\test_prompt_sources.py",
+      "changed": true
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": "tests/test_query_contract.py",
+      "existed": false,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\1\\tests\\test_query_contract.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\tests\\test_query_contract.py",
+      "changed": true
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": "tests/test_release_index.py",
+      "existed": false,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\1\\tests\\test_release_index.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\tests\\test_release_index.py",
+      "changed": true
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": "tests/test_scope_firewall.py",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\1\\tests\\test_scope_firewall.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\tests\\test_scope_firewall.py",
+      "changed": false
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": "tests/test_self_hosting.py",
+      "existed": false,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\1\\tests\\test_self_hosting.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\tests\\test_self_hosting.py",
+      "changed": true
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": "tests/test_session_timing.py",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\1\\tests\\test_session_timing.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\tests\\test_session_timing.py",
+      "changed": false
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": "tests/test_skill_readonly_mcp.py",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\1\\tests\\test_skill_readonly_mcp.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\tests\\test_skill_readonly_mcp.py",
+      "changed": false
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": "tests/test_sync_compatibility.py",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\1\\tests\\test_sync_compatibility.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\tests\\test_sync_compatibility.py",
+      "changed": false
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": "tests/test_task_card_schema.py",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\1\\tests\\test_task_card_schema.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\tests\\test_task_card_schema.py",
+      "changed": false
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": "tests/test_task_discovery_compat.py",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\1\\tests\\test_task_discovery_compat.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\tests\\test_task_discovery_compat.py",
+      "changed": false
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": "tests/test_template_generation.py",
+      "existed": false,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\1\\tests\\test_template_generation.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\tests\\test_template_generation.py",
+      "changed": true
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": "tests/test_timing_coverage.py",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\1\\tests\\test_timing_coverage.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\tests\\test_timing_coverage.py",
+      "changed": false
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": "tests/test_timing_terminal_phase.py",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\1\\tests\\test_timing_terminal_phase.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\tests\\test_timing_terminal_phase.py",
+      "changed": false
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": "tests/test_worktree_concurrency.py",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\replica-backups\\1\\tests\\test_worktree_concurrency.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\source\\tests\\test_worktree_concurrency.py",
+      "changed": false
+    }
+  ],
+  "preserved_nonactive_backups": [
+    {
+      "path": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager\\scripts\\iter_sync.py.bak",
+      "snapshot": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\preserved-backups\\1\\scripts\\iter_sync.py.bak"
+    }
+  ]
+}

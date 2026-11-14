@@ -9,7 +9,27 @@
 - [AIMovie任务发现兼容性增量（ACCEPTED，candidate09三安装51文件一致）](07-aimovie-discovery-compat/README.md)
 - [文件系统收据与冻结绑定（R7及七卡迁移已独立验收，六项媒体补验通过）](08-filesystem-receipts/README.md)
 - [技能交付收尾：Codeg已初始化Git main，Codex/Gemini已覆盖同步](09-final-closeout/README.md)
-- [迭代10：规则一致性、使用简化与真实自用健壮性（已初始化，6卡TODO）](10-self-hosting-hardening/README.md)
+- [迭代10：规则一致性、使用简化与真实自用健壮性（6/6 PASS，已本地合流、双副本同步）](10-self-hosting-hardening/README.md)
+- [2026-11-14发布记录：主干493项通过，91份文件三安装一致，新会话显式消费通过](../releases/iteration10-20261114/README.md)
 - 维护主版本：`C:/Users/qingyu/.codeg/skills/iteration-manager`。
-- 2026-11-13初始化观察：当前源码分支main，HEAD为`46ded3a4696e3bdb531d06951fce7982fa9db1cd`；迭代10尚未实施或提交。安装副本和真实消费的当前事实将在迭代10任务05只读核查，不从旧部署记录推断。
+- 2026-11-13历史初始化观察（非当前状态）：当时源码分支main，HEAD为`46ded3a4696e3bdb531d06951fce7982fa9db1cd`；迭代10尚未实施或提交。当时计划由任务05只读核查安装副本和真实消费，不从旧部署记录推断。后续合流及安装事实见上述2026-11-14发布记录。
 - 历史交付基线 `SC-FS-I01-20261112-R7`：用户明确授权后，Codeg主版本已初始化Git，分支为main；当批Codex及Gemini独立副本已实际覆盖57份原交付文件并各新增1份Git基线决定记录，三安装各58份交付文件逐字节一致。维护任务、Git元数据、构建证据、缓存及历史备份不随技能同步。初始提交与最终核验见任务09及其证据目录。各旧任务中的非Git、无HEAD及早期strict结果均保留为当时事实，不代表当前主版本状态。
+
+<!-- iter:projection -->
+## 验收事实（状态声明不等于批准）
+
+声明DONE 6/6 · 验收PASS 6/6
+
+| 迭代 | 声明DONE | 验收PASS | 验收结论 |
+| --- | --- | --- | --- |
+| 01-stage01-gate-repair | 0/0 | 0/0 | EMPTY |
+| 02-bounded-autonomy | 0/0 | 0/0 | EMPTY |
+| 03-trustworthy-board-and-deployment | 0/0 | 0/0 | EMPTY |
+| 04-controller-chain-validation | 0/0 | 0/0 | EMPTY |
+| 05-readonly-skill-access | 0/0 | 0/0 | EMPTY |
+| 06-checkpoint-resume | 0/0 | 0/0 | EMPTY |
+| 07-aimovie-discovery-compat | 0/0 | 0/0 | EMPTY |
+| 08-filesystem-receipts | 0/0 | 0/0 | EMPTY |
+| 09-final-closeout | 0/0 | 0/0 | EMPTY |
+| 10-self-hosting-hardening | 6/6 | 6/6 | PASS |
+<!-- /iter:projection -->

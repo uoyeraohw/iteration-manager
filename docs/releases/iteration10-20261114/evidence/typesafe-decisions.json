@@ -1,0 +1,17 @@
+{
+  "deployment": {
+    "observed_source_manifest": 91,
+    "target_active": 72,
+    "missing": 19,
+    "different_existing": 18,
+    "model": "jev-1.14.0",
+    "choice": "whitelist",
+    "confidence": 1.0
+  },
+  "route": {
+    "model": "jev-1.14.0",
+    "choice": "explicit",
+    "confidence": 0.97,
+    "boundary": "Gemini copy explicit consumption through Antigravity; not Gemini CLI automatic discovery"
+  }
+}

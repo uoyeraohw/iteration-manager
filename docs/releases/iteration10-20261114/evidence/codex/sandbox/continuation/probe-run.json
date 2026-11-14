@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "argv": [
+    "python",
+    "-B",
+    "probe.py"
+  ],
+  "cwd": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\codex-consumption\\sandbox\\continuation",
+  "deadline": "2026-11-14T02:25:22.096000+00:00",
+  "cleanup_reserve_seconds": 5,
+  "status": "COMPLETED",
+  "deadline_checked_at": "2026-11-14T02:20:48.593441+00:00",
+  "started_at": "2026-11-14T02:20:48.601442+00:00",
+  "ended_at": "2026-11-14T02:21:06.673973+00:00",
+  "raw_exit_code": 0,
+  "tree_terminal": true,
+  "output": "probe-run.json.output.txt",
+  "container_pid": 40092,
+  "launcher_exit_code": 0,
+  "command": {
+    "status": "COMPLETED",
+    "raw_exit_code": 0,
+    "started_at": "2026-11-14T02:20:48.601442+00:00",
+    "pid": 44072,
+    "deadline_checked_at": "2026-11-14T02:20:48.593441+00:00",
+    "ended_at": "2026-11-14T02:21:06.656969+00:00"
+  },
+  "late_by_seconds": 0
+}

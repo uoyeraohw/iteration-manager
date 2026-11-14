@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "argv": [
+    "python",
+    "-B",
+    "probe.py"
+  ],
+  "cwd": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\gemini-consumption",
+  "deadline": "2026-11-14T02:29:29.446000+00:00",
+  "cleanup_reserve_seconds": 5,
+  "status": "COMPLETED",
+  "deadline_checked_at": "2026-11-14T02:25:46.976591+00:00",
+  "started_at": "2026-11-14T02:25:46.984959+00:00",
+  "ended_at": "2026-11-14T02:26:19.959350+00:00",
+  "raw_exit_code": 0,
+  "tree_terminal": true,
+  "output": "probe-run.json.output.txt",
+  "container_pid": 36780,
+  "launcher_exit_code": 0,
+  "command": {
+    "status": "COMPLETED",
+    "raw_exit_code": 0,
+    "started_at": "2026-11-14T02:25:46.984959+00:00",
+    "pid": 25788,
+    "deadline_checked_at": "2026-11-14T02:25:46.976591+00:00",
+    "ended_at": "2026-11-14T02:26:19.944120+00:00"
+  },
+  "late_by_seconds": 0
+}

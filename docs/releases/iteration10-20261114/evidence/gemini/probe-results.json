@@ -1,0 +1,66 @@
+[
+  {
+    "name": "save_spec",
+    "argv": [
+      "internal:save_spec",
+      "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\gemini-consumption\\spec.json"
+    ],
+    "returncode": 0,
+    "stdout": "Saved spec.json with marker ITER10-GEMINI-20261114, candidate_id: 安装消费隔离样例",
+    "stderr": ""
+  },
+  {
+    "name": "render_card",
+    "argv": [
+      "C:\\Users\\qingyu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+      "-B",
+      "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager\\scripts\\iter_templates.py",
+      "--render",
+      "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\gemini-consumption\\spec.json"
+    ],
+    "returncode": 0,
+    "stdout": "---\nschema_version: 1\niteration: \"10-self-hosting-hardening\"\ntask_id: \"01\"\ntask_name: \"UI组件安装消费验证\"\nstatus: \"TODO\"\ntype: \"UI-Component\"\nfix_rounds: 0\nreplan_count: 0\nis_blocked: false\nblocked_reason: \"\"\ntypesafe_score: \"UNASSESSED\"\ntypesafe_evidence: \"\"\ntdd_verified: false\nreview_status: \"PENDING\"\nreview_receipt: \"\"\nbase_sha: \"\"\nhead_sha: \"\"\ndelivery_mode: \"filesystem\"\ncandidate_id: \"安装消费隔离样例\"\n---\n\n# 01 · UI组件安装消费验证\n\n## 1. 任务执行目标与接口契约\n- **主要目标**：验证 UI-Component filesystem 渲染与检查 (ITER10-GEMINI-20261114)\n- **Consumes**：TYPE_CHECKS\n- **Produces**：card.md\n\n## 2. 业务阶段\n<!-- iter:stages -->\n- [ ] 阶段一：构建组件\n- [ ] 阶段二：验证交付\n<!-- /iter:stages -->\n\n## 3. 按类型验证规划\n先走真实用户路径，再检查正常、空、加载、错误四态及约定视口和实际视觉。\n<!-- iter:verification -->\n- [ ] **interaction**：点击按钮触发相应交互事件并记录观测\n- [ ] **states**：正常态、空态、加载态、错误态四态齐备\n- [ ] **visual**：遵循设计规范样式与视口尺寸要求\n- [ ] **regression**：原有UI测试集全量回归无损\n<!-- /iter:verification -->\n\n## 4. 交付与冻结\n完整正文、阶段勾选及实证先定稿，再冻结候选并独审；审查后只登记允许的元数据及外部收据，正文变化须重新冻结与受影响重审。\n执行状态与审查结果读取frontmatter及review_receipt；生成不代表验证或独立批准。\n\n## 5. 新增或变更内容清单\n<!-- iter:scope -->\n| 文件路径 | 变更类型 | 核心职责说明 |\n| --- | --- | --- |\n| `src/ui/component.py` | MODIFIED | 本任务授权范围 |\n| `tests/ui/` | MODIFIED | 本任务授权范围 |\n<!-- /iter:scope -->\n\n## 6. 确定性验收标准\n<!-- iter:acceptance -->\n- [ ] UI 四类验收齐备，marker 为 ITER10-GEMINI-20261114\n<!-- /iter:acceptance -->\n\n## 7. 执行实证与裁决账本\n<!-- iter:ledger -->\n实际命令、原始证据、退出码、候选、检查点与剩余项在执行中记录；未执行不推断通过。\n独立审查结果由外部收据与报告提供。\n<!-- /iter:ledger -->\n",
+    "stderr": ""
+  },
+  {
+    "name": "check_card",
+    "argv": [
+      "C:\\Users\\qingyu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+      "-B",
+      "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager\\scripts\\iter_templates.py",
+      "--check",
+      "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\gemini-consumption\\card.md",
+      "--delivery-mode",
+      "filesystem"
+    ],
+    "returncode": 0,
+    "stdout": "{\"valid\": true, \"errors\": []}\n",
+    "stderr": ""
+  },
+  {
+    "name": "render_escape_scope",
+    "argv": [
+      "C:\\Users\\qingyu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+      "-B",
+      "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager\\scripts\\iter_templates.py",
+      "--render",
+      "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\gemini-consumption\\spec_escape.json"
+    ],
+    "returncode": 2,
+    "stdout": "{\"valid\": false, \"errors\": [\"Expected a repository-relative path: '../escape'\"]}\n",
+    "stderr": ""
+  },
+  {
+    "name": "takeover_report",
+    "argv": [
+      "C:\\Users\\qingyu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+      "-B",
+      "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager\\scripts\\iter_sync.py",
+      "--takeover-report",
+      "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\docs\\todos\\10-self-hosting-hardening"
+    ],
+    "returncode": 0,
+    "stdout": "{\"read_only\": true, \"tasks\": [{\"path\": \"C:\\\\Users\\\\qingyu\\\\.codeg\\\\skills\\\\iteration-manager\\\\docs\\\\todos\\\\10-self-hosting-hardening\\\\01-authority-consistency.md\", \"declared_status\": \"DONE\", \"acceptance_verdict\": \"PASS\", \"missing\": [], \"findings\": []}, {\"path\": \"C:\\\\Users\\\\qingyu\\\\.codeg\\\\skills\\\\iteration-manager\\\\docs\\\\todos\\\\10-self-hosting-hardening\\\\02-typed-template-generation.md\", \"declared_status\": \"DONE\", \"acceptance_verdict\": \"PASS\", \"missing\": [], \"findings\": []}, {\"path\": \"C:\\\\Users\\\\qingyu\\\\.codeg\\\\skills\\\\iteration-manager\\\\docs\\\\todos\\\\10-self-hosting-hardening\\\\03-query-cli-contract.md\", \"declared_status\": \"DONE\", \"acceptance_verdict\": \"PASS\", \"missing\": [], \"findings\": []}, {\"path\": \"C:\\\\Users\\\\qingyu\\\\.codeg\\\\skills\\\\iteration-manager\\\\docs\\\\todos\\\\10-self-hosting-hardening\\\\04-board-handoff.md\", \"declared_status\": \"DONE\", \"acceptance_verdict\": \"PASS\", \"missing\": [], \"findings\": []}, {\"path\": \"C:\\\\Users\\\\qingyu\\\\.codeg\\\\skills\\\\iteration-manager\\\\docs\\\\todos\\\\10-self-hosting-hardening\\\\05-release-evidence-index.md\", \"declared_status\": \"DONE\", \"acceptance_verdict\": \"PASS\", \"missing\": [], \"findings\": []}, {\"path\": \"C:\\\\Users\\\\qingyu\\\\.codeg\\\\skills\\\\iteration-manager\\\\docs\\\\todos\\\\10-self-hosting-hardening\\\\06-self-hosting-acceptance.md\", \"declared_status\": \"DONE\", \"acceptance_verdict\": \"PASS\", \"missing\": [], \"findings\": []}], \"next\": \"Request migration/reverification authorization; preserve history\"}\n",
+    "stderr": ""
+  }
+]

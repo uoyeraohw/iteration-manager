@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "task_id": "01",
+  "iteration": "10-codex-install-consumption",
+  "task_name": "ITER10-CODEX-20261114 isolated UI card",
+  "type": "UI-Component",
+  "delivery_mode": "filesystem",
+  "candidate_id": "iter10-codex-installed-consumption-isolated-sample",
+  "objective": "ITER10-CODEX-20261114: render an isolated unapproved UI consumption sample",
+  "consumes": "Local isolated UI fixture only",
+  "produces": "An unapproved filesystem UI task card",
+  "scope": [
+    "../escape"
+  ],
+  "stages": [
+    "Describe an isolated UI sample without implementation"
+  ],
+  "acceptance": [
+    "All four UI verification categories are present; no approval facts are generated"
+  ],
+  "verification": {
+    "interaction": "Observe sample button interaction in an isolated UI fixture; not executed by generation",
+    "states": "Observe loading, empty, success and error states; not executed by generation",
+    "visual": "Inspect sample layout at its actual viewport; not executed by generation",
+    "regression": "Run affected sample UI regression checks after authorized implementation; not executed here"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "completed_at": "2026-11-14T02:17:32.117284+00:00",
+  "source_head": "26652bad2fcfb7c883d8e9a8bcad4aeb96160816",
+  "canonical": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager",
+  "targets": [
+    "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+    "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager"
+  ],
+  "files_per_target": 91,
+  "per_target": [
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "existing_backed_up": 72,
+      "added": 19,
+      "changed_existing": 18
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "existing_backed_up": 72,
+      "added": 19,
+      "changed_existing": 18
+    }
+  ],
+  "deleted_files": 0,
+  "verification": "all manifest files directly byte-equal across three installations",
+  "recovery": "restore_replicas.py --check (inspection); restore_replicas.py --apply (only with rollback authorization)"
+}

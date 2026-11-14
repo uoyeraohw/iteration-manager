@@ -1,0 +1,7 @@
+{"result": "INCOMPLETE", "report": "consumption-report.json", "checks": [{"name": "exclusive sandbox cwd", "satisfied": true}, {"name": "render exits zero", "satisfied": true}, {"name": "check exits zero and valid true", "satisfied": true}, {"name": "marker and candidate retained", "satisfied": true}, {"name": "four UI categories retained", "satisfied": true}, {"name": "initial status=TODO", "satisfied": true}, {"name": "initial acceptance_verdict=PENDING", "satisfied": false}]}
+Traceback (most recent call last):
+  File "C:\Users\qingyu\.codeg\skills\iteration-manager\build\iter10-release-20261114-101008\codex-consumption\sandbox\probe.py", line 103, in <module>
+    check('initial ' + key + '=' + value,
+  File "C:\Users\qingyu\.codeg\skills\iteration-manager\build\iter10-release-20261114-101008\codex-consumption\sandbox\probe.py", line 52, in check
+    assert condition, name
+AssertionError: initial acceptance_verdict=PENDING

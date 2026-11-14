@@ -1,0 +1,42 @@
+{
+  "before": [
+    "sandbox\\card.md",
+    "sandbox\\consumption-report.json",
+    "sandbox\\continuation\\card.md",
+    "sandbox\\continuation\\invalid-spec.json",
+    "sandbox\\continuation\\probe-results.json",
+    "sandbox\\continuation\\probe-run.json",
+    "sandbox\\continuation\\probe-run.json.child.json",
+    "sandbox\\continuation\\probe-run.json.output.txt",
+    "sandbox\\continuation\\probe.py",
+    "sandbox\\continuation\\spec.json",
+    "sandbox\\probe-results.json",
+    "sandbox\\probe-run.json",
+    "sandbox\\probe-run.json.child.json",
+    "sandbox\\probe-run.json.output.txt",
+    "sandbox\\probe.py",
+    "sandbox\\spec.json"
+  ],
+  "after": [
+    "sandbox\\card.md",
+    "sandbox\\consumption-report.json",
+    "sandbox\\continuation\\card.md",
+    "sandbox\\continuation\\invalid-spec.json",
+    "sandbox\\continuation\\probe-results.json",
+    "sandbox\\continuation\\probe-run.json",
+    "sandbox\\continuation\\probe-run.json.child.json",
+    "sandbox\\continuation\\probe-run.json.output.txt",
+    "sandbox\\continuation\\probe.py",
+    "sandbox\\continuation\\spec.json",
+    "sandbox\\probe-results.json",
+    "sandbox\\probe-run.json",
+    "sandbox\\probe-run.json.child.json",
+    "sandbox\\probe-run.json.output.txt",
+    "sandbox\\probe.py",
+    "sandbox\\spec.json"
+  ],
+  "new_files": [],
+  "target": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\iter10-release-20261114-101008\\codex-consumption\\sandbox\\escape",
+  "target_exists": false,
+  "external_paths_not_read": true
+}
