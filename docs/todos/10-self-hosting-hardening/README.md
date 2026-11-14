@@ -44,7 +44,7 @@
 | 03 | 稳定查询与CLI消费接口，保持旧入口兼容 | Strict-TDD | 02 | 🟢 已完成 / 验收:PASS | [03-query-cli-contract.md](./03-query-cli-contract.md) |
 | 04 | 看板展示Git/FS候选和可继承交接 | UI-Component | 03 | 🟢 已完成 / 验收:PASS | [04-board-handoff.md](./04-board-handoff.md) |
 | 05 | 建立源码、候选、安装与消费的发布证据索引 | Spike-Discovery | 04 | 🟢 已完成 / 验收:PASS | [05-release-evidence-index.md](./05-release-evidence-index.md) |
-| 06 | 真实自用链路与故障路径健壮性验收 | Spike-Discovery | 05 | ⚪ 待开始 / 验收:UNKNOWN | [06-self-hosting-acceptance.md](./06-self-hosting-acceptance.md) |
+| 06 | 真实自用链路与故障路径健壮性验收 | Spike-Discovery | 05 | 🔵 待验收 / 验收:UNKNOWN | [06-self-hosting-acceptance.md](./06-self-hosting-acceptance.md) |
 
 ### 规划取舍
 原五卡方案把查询/CLI与看板集中在一张卡，首轮TypeSafe的单一职责仅62.5，未过70门槛。现拆为03数据接口与04展示消费，源码范围不交叠；未改变的01、02、发布索引、最终自用评估沿用原结果，仅重评实质变化的03/04。不是重复刷分。
@@ -110,7 +110,7 @@
 | 01-authority-consistency.md | DONE | PASS | 阶段清单已勾选完毕 / 3/3 (100%) | CHECKLIST_COMPLETE (未等同验收) | 未记录 | 0 | 2026-11-13T16:44:56.984232+00:00 |
 | 02-typed-template-generation.md | DONE | PASS | 阶段清单已勾选完毕 / 3/3 (100%) | CHECKLIST_COMPLETE (未等同验收) | 未记录 | 0 | 2026-11-13T17:27:41.977460+00:00 |
 | 03-query-cli-contract.md | DONE | PASS | 阶段清单已勾选完毕 / 3/3 (100%) | CHECKLIST_COMPLETE (未等同验收) | 未记录 | 0 | 2026-11-13T18:07:33.458803+00:00 |
-| 04-board-handoff.md | DONE | PASS | 阶段清单已勾选完毕 / 3/3 (100%) | CHECKLIST_COMPLETE (未等同验收) | 未记录 | 0 | 2026-11-13T18:29:46.773665+00:00 |
+| 04-board-handoff.md | DONE | PASS | 阶段清单已勾选完毕 / 3/3 (100%) | CHECKLIST_COMPLETE (未等同验收) | 未记录 | 0 | 2026-11-14T01:32:48.144107+00:00 |
 | 05-release-evidence-index.md | DONE | PASS | 阶段清单已勾选完毕 / 3/3 (100%) | CHECKLIST_COMPLETE (未等同验收) | 未记录 | 0 | 2026-11-13T18:54:56.518826+00:00 |
-| 06-self-hosting-acceptance.md | TODO | UNKNOWN | Stage 1/3：整理01—05真实消费证据，隔离夹具运行故障与恢复路径 / 0/3 (0%) | 读取真实基线、当前变更和前置PASS；完成context、claim与同owner dispatch-check。 | 未记录 | 0 | 2026-11-13 |
+| 06-self-hosting-acceptance.md | TESTING | UNKNOWN | Stage 1/3：整理01—05真实消费证据，隔离夹具运行故障与恢复路径 / 0/3 (0%) | 读取真实基线、当前变更和前置PASS；完成context、claim与同owner dispatch-check。 | 未记录 | 0 | 2026-11-14T01:10:27.224983+00:00 |
 <!-- /iter:projection -->
