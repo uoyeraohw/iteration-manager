@@ -1,0 +1,289 @@
+{
+  "source_path": "C:\\Users\\qingyu\\.codex\\sessions\\2026\\11\\14\\rollout-2026-11-14T00-23-41-01a1d5b8-ce22-7362-abe8-9a1faac0be7e.jsonl",
+  "external_id": "01a1d5b8-ce22-7362-abe8-9a1faac0be7e",
+  "selected_records": [
+    {
+      "source_line": 2,
+      "record": {
+        "timestamp": "2026-11-13T16:23:44.184Z",
+        "ordinal": 1,
+        "type": "event_msg",
+        "payload": {
+          "type": "task_started",
+          "turn_attribution": {
+            "turn_id": "01a1d5b8-d582-71a1-ae63-09486ffa3dfe",
+            "turn_trigger": null,
+            "parent_turn_id": null,
+            "initiating_agent_path": null,
+            "root_turn_id": "01a1d5b8-d582-71a1-ae63-09486ffa3dfe"
+          },
+          "turn_id": "01a1d5b8-d582-71a1-ae63-09486ffa3dfe",
+          "root_turn_id": "01a1d5b8-d582-71a1-ae63-09486ffa3dfe",
+          "started_at": 1794587022,
+          "model_context_window": 258400,
+          "collaboration_mode_kind": "default"
+        }
+      }
+    },
+    {
+      "source_line": 14,
+      "record": {
+        "timestamp": "2026-11-13T16:23:52.229Z",
+        "ordinal": 13,
+        "type": "response_item",
+        "payload": {
+          "type": "custom_tool_call",
+          "id": "ctc_01751e048672ad60016af73996008087d0b82700323415a5ca",
+          "status": "completed",
+          "call_id": "call_78cde4496f284943b58f0a3f2da7e3db",
+          "name": "exec",
+          "input": "text(ALL_TOOLS.filter(x=>/fastctx.*(read|grep)|typesafe.*evaluate/i.test(x.name+\" \"+x.description)));\ntext(await tools.exec_command({cmd:\"Get-Location; git branch --show-current; git rev-parse HEAD; git status --short --untracked-files=all; git diff --cached\",\"workdir\":\"C:\\\\Users\\\\qingyu\\\\.codeg\\\\skills\\\\iteration-manager\\\\.worktrees\\\\iter-10\",\"max_output_tokens\":6000}));\ntext(await tools.clock__curr_time({}));\n",
+          "internal_chat_message_metadata_passthrough": {
+            "turn_id": "01a1d5b8-d582-71a1-ae63-09486ffa3dfe",
+            "create_time": 1794587030.0086021
+          }
+        }
+      }
+    },
+    {
+      "source_line": 17,
+      "record": {
+        "timestamp": "2026-11-13T16:23:53.824Z",
+        "ordinal": 16,
+        "type": "response_item",
+        "payload": {
+          "type": "custom_tool_call_output",
+          "id": "ctco_01a1d5b9-00e0-73a2-9d78-257d508947ec",
+          "call_id": "call_78cde4496f284943b58f0a3f2da7e3db",
+          "output": [
+            {
+              "type": "input_text",
+              "text": "Script completed\nWall time 1.5 seconds\nOutput:\n"
+            },
+            {
+              "type": "input_text",
+              "text": "[{\"name\":\"mcp__fastctx__grep\",\"description\":\"Fast regex content search (ripgrep engine; Rust regex, no lookaround). Output\\nmodes: \\\"files_with_matches\\\" (default, paths only), \\\"content\\\", \\\"count\\\" (total\\nmatches, not matching lines), \\\"summary\\\" (global totals). Respects .gitignore;\\nsearches hidden files; skips .git and binaries. Files are decoded to UTF-8\\nbefore searching; files whose encoding can't be determined, that change, or\\nthat cannot be searched are skipped and listed for directory targets; the\\nequivalent single-file failure returns an error. Matching is line-by-line:\\n`^` and `$` anchor line boundaries and are CRLF-aware. A path component of the\\nform ~fastctx~b...~ (reversible bytes/UTF-8) or ~fastctx~w...~ (Windows UTF-16)\\nis a filename escape; copy that whole component verbatim in later calls and\\ndo not decode or rewrite it. The last line of every successful result states\\nComplete or Partial — continue only with the exact offset a Partial note\\nprovides; errors are self-contained.\\n\\nLocal-file tools: read (one file or a batch), grep (content search), glob (find paths), and replace (mechanical find-and-replace). Pass absolute paths.\\n\\nexec tool declaration:\\n```ts\\ndeclare const tools: { mcp__fastctx__grep(args: {\\n  // Lines to show after each match (rg -A). Content mode only.\\n  after_context?: number | null;\\n  // Lines to show before each match (rg -B). Content mode only.\\n  before_context?: number | null;\\n  // Case-insensitive search (rg -i).\\n  case_insensitive?: boolean | null;\\n  // Lines before and after each match (rg -C); overrides before/after_context. Content mode only.\\n  context?: number | null;\\n  // Single-file target only: decode that file with this WHATWG encoding label (e.g. \\\"gbk\\\"), same semantics as read's encoding. On a directory target use fallback_encoding instead.\\n  encoding?: string | null;\\n  // Directory target: WHATWG encoding to assume only for files auto-detection can't determine — never overrides BOM, valid UTF-8, or already-resolved files. Strict-decoded; files that also fail under it stay in the skip report.\\n  fallback_encoding?: string | null;\\n  // Glob pattern to filter files, e.g. \\\"*.rs\\\", \\\"**/*.{ts,tsx}\\\" (equivalent to rg --glob).\\n  glob?: string | null;\\n  // Max output entries. 0 removes the entry limit but not the token limit.\\n  head_limit?: number | null;\\n  // Show line numbers in content mode (rg -n). Ignored in other modes.\\n  line_numbers?: boolean | null;\\n  // Patterns may span lines; `.` matches newlines. `\\\\n` also matches `\\\\r\\\\n`.\\n  multiline?: boolean | null;\\n  // Skip the first N entries before applying head_limit.\\n  offset?: number | null;\\n  // Print only the matched parts, one per line (rg -o). Content mode only.\\n  only_matching?: boolean | null;\\n  // \\\"content\\\", \\\"files_with_matches\\\", \\\"count\\\", or \\\"summary\\\" (global totals from a full scan; ignores head_limit/offset).\\n  output_mode?: \\\"content\\\" | \\\"files_with_matches\\\" | \\\"count\\\" | \\\"summary\\\" | null;\\n  // Absolute path of the file or directory to search in. Omit for the session working directory.\\n  path?: string | null;\\n  // The regular expression to search for (Rust regex syntax; escape literal braces like `interface\\\\{\\\\}`).\\n  pattern: string;\\n  // File type filter, e.g. \\\"js\\\", \\\"py\\\", \\\"rust\\\" (equivalent to rg --type; more efficient than glob for standard types).\\n  type?: string | null;\\n}): Promise<CallToolResult>; };\\n```\"},{\"name\":\"mcp__fastctx__read\",\"description\":\"Read one file (text, image, or PDF) or a batch of text files from the local\\nfilesystem. Paths must be absolute. Text returns 1-based `N<tab>content`\\nlines, as much of the file as the output budget holds. For several text\\nfiles in one call, pass files=[{\\\"path\\\": ...}, ...] instead of file_path:\\none token budget, per-file problems reported inline without failing the\\nbatch, and a Partial note returns the exact files array for the next call.\\nImages (PNG/JPG/GIF/WebP/BMP) are shown to you visually. PDFs return the\\nselected pages' text layer or those pages rendered as images; image mode\\ndefaults to 4 pages. view=\\\"hex\\\" dumps any file's raw bytes. PDFs, images,\\nand hex view are single-file only. Text output is always UTF-8; when\\nauto-detection is not confident it returns an error listing candidate\\nencodings instead of guessed text, so pass encoding only then. Text, PDF,\\nand hex responses end with a Complete or Partial status — continue only\\nwith the exact parameters a Partial note provides.\\n\\nLocal-file tools: read (one file or a batch), grep (content search), glob (find paths), and replace (mechanical find-and-replace). Pass absolute paths.\\n\\nexec tool declaration:\\n```ts\\ndeclare const tools: { mcp__fastctx__read(args: {\\n  // Text files only. Known source encoding as a WHATWG label, e.g. \\\"gbk\\\", \\\"shift_jis\\\", \\\"big5\\\", \\\"euc-kr\\\", \\\"windows-1252\\\", \\\"utf-16le\\\", plus \\\"utf-32le\\\"/\\\"utf-32be\\\". Selects how source bytes are decoded; output is always UTF-8. Omit for auto-detection; set it when you know the source encoding or the tool reports an ambiguous or undecodable encoding.\\n  encoding?: string | null;\\n  // The absolute path to the file to read. Both / and \\\\ are accepted. Mutually exclusive with files.\\n  file_path?: string | null;\\n  // Batch form: an array of {\\\"path\\\", \\\"offset\\\"?, \\\"limit\\\"?, \\\"encoding\\\"?} objects for\\n  // reading 1-32 text files in one call. Each entry behaves like a single-file text read;\\n  // results are packed in request order. Mutually exclusive with file_path and with the\\n  // top-level offset/limit/encoding/pages/pdf_mode/view parameters.\\n  files?: Array<{\\n  // Known source encoding for this file, using the same labels as single-file read.\\n  encoding?: string | null;\\n  // Maximum lines to read from this file in this call. Omit to let the shared budget decide.\\n  limit?: number | null;\\n  // The 1-based line number to start reading from.\\n  offset?: number | null;\\n  // Absolute path of the text file. Both / and \\\\ are accepted.\\n  path: string;\\n}> | null;\\n  // The number of lines to read. Omit to read as much as the output budget holds.\\n  limit?: number | null;\\n  // The 1-based line number to start reading from. Use for paging through large files.\\n  offset?: number | null;\\n  // Page range for PDF files, e.g. \\\"1-5\\\", \\\"3\\\", \\\"10-20\\\". Max 20 pages per call. Required in text mode for PDFs with more than 10 pages.\\n  pages?: string | null;\\n  // PDF only: \\\"text\\\" (default) returns the selected pages' text layer; \\\"image\\\" returns each selected page rendered as a PNG image.\\n  pdf_mode?: \\\"text\\\" | \\\"image\\\" | null;\\n  // \\\"auto\\\" (default) picks the channel by file type; \\\"hex\\\" returns a paged hex dump of the raw bytes of any file — the way to inspect binary files.\\n  view?: \\\"auto\\\" | \\\"hex\\\" | null;\\n}): Promise<CallToolResult>; };\\n```\"},{\"name\":\"mcp__typesafe__evaluate\",\"description\":\"Jev is a fast structured-decision model: unstructured state in, typed answers (noul, choice, score) with calibrated confidence out; 70-500ms, schema-enforced. Use for classification, routing, scoring, extraction, branching, guardrails/judging, and map-reduce over large data — wherever hand-written logic is too brittle or latency matters. Not for prose, code, or free-form text: the answer space must be enumerable up front (max 255 options). Pass raw evidence as state, not your read of it — a conclusion asserted in state biases the answer toward it, and the confidence is then not independent corroboration.\\n\\nThe evaluate tool runs Jev, a TypeSafe System One model that returns typed judgments and probabilities, not generated text.\\n- Question types: noul (probability a yes/no condition holds), choice (one option from a criteria map), score (probability-weighted position on ordered criteria levels).\\n- Ask one narrow judgment per question. Question ids are NOT sent to the model, so instructions must carry the full meaning.\\n- Put everything the judgment needs in state; prefer a JSON object with named fields, and reference nested fields with backticked paths like `ticket.messages[0].text`.\\n- State is what you observed — the raw ticket, diff, log, or field values, or a faithful condensation of them. Keep the uncertainty and the counterevidence; leave out your own verdict, which Jev reads as evidence.\\n- Write instructions that name the condition to test, not the conclusion you expect. \\\"Does the message report a failed payout?\\\", not \\\"Confirm this urgent payout failure.\\\"\\n- A conclusion asserted in state biases the answer toward it, and the confidence that comes back is then agreement with yourself, not independent corroboration.\\n- Batch independent questions over the same state into one call; they run in parallel and cannot see each other's answers.\\n- Include a no-match option in a choice when nothing may fit. Score levels must describe concrete situations.\\n- A noul near 0.5 means uncertain, not medium intensity. Confidence measures how concentrated the distribution is, not correctness.\\n- Score criteria are an ordered array; the answer is 0-indexed, so N levels score 0 to N-1. A 3.87 over 5 levels sits between levels 3 and 4, not 3.87/5. Report it with the labels from the response `legend`, and read `probabilities` alongside it.\\nDocs: https://docs.typesafe.ai/llms.txt\\n\\nexec tool declaration:\\n```ts\\ndeclare const tools: { mcp__typesafe__evaluate(args: {\\n  // model to use; defaults to the latest Jev on whichever endpoint is configured\\n  model?: string;\\n  // map of question id to question; answers come back under the same ids, which are not sent to the model\\n  questions: { [key: string]: {\\n  criteria?: unknown;\\n  instructions: unknown;\\n  // noul (probability a yes/no condition holds), choice (one option from the criteria map), or score (probability-weighted position on ordered criteria levels)\\n  type: string;\\n}; };\\n  state: unknown;\\n}): Promise<CallToolResult>; };\\n```\"}]"
+            },
+            {
+              "type": "input_text",
+              "text": "{\"chunk_id\":\"1d95cf\",\"wall_time_seconds\":1.3118544,\"exit_code\":0,\"original_token_count\":501,\"output\":\"\\r\\nfeat/iter-10-self-hosting-hardening\\n5ff7c3af554f9effdf0a95050af24c767ca0878b\\n M docs/todos/10-self-hosting-hardening/01-authority-consistency.md\\n M docs/todos/10-self-hosting-hardening/README.md\\n?? docs/todos/10-self-hosting-hardening/evidence/01/attempt-implementation-a.json\\n?? docs/todos/10-self-hosting-hardening/evidence/01/authority.txt\\n?? docs/todos/10-self-hosting-hardening/evidence/01/baseline-suite.json\\n?? docs/todos/10-self-hosting-hardening/evidence/01/baseline-suite.json.child.json\\n?? docs/todos/10-self-hosting-hardening/evidence/01/baseline-suite.json.output.txt\\n?? docs/todos/10-self-hosting-hardening/evidence/01/capability-probe.json\\n?? docs/todos/10-self-hosting-hardening/evidence/01/consumption-b-observer.py\\n?? docs/todos/10-self-hosting-hardening/evidence/01/consumption-b/wave1-after.json\\n?? docs/todos/10-self-hosting-hardening/evidence/01/consumption-b/wave1-before.json\\n?? docs/todos/10-self-hosting-hardening/evidence/01/consumption-b/wave1-comparison.json\\n?? docs/todos/10-self-hosting-hardening/evidence/01/consumption-b/wave2-before.json\\n?? docs/todos/10-self-hosting-hardening/evidence/01/context-baseline-pending.json\\n?? docs/todos/10-self-hosting-hardening/evidence/01/context-implementation-01.json\\n?? docs/todos/10-self-hosting-hardening/evidence/01/context-implementation-b.json\\n?? docs/todos/10-self-hosting-hardening/evidence/01/dispatch-implementation-01.json\\n?? docs/todos/10-self-hosting-hardening/evidence/01/dispatch-implementation-b.json\\n?? docs/todos/10-self-hosting-hardening/evidence/01/dispatch-native-implementation-a.json\\n?? docs/todos/10-self-hosting-hardening/evidence/01/handoff-implementation-a.json\\n?? docs/todos/10-self-hosting-hardening/evidence/01/inventory-baseline-pending.json\\n?? docs/todos/10-self-hosting-hardening/evidence/01/inventory-implementation-01.json\\n?? docs/todos/10-self-hosting-hardening/evidence/01/native-terminal-implementation-a.json\\nPath\\r\\n----\\r\\nC:\\\\Users\\\\qingyu\\\\.codeg\\\\skills\\\\iteration-manager\\\\.worktrees\\\\iter-10\\r\\n\\r\\n\"}"
+            },
+            {
+              "type": "input_text",
+              "text": "{\"current_time\":\"2026-11-13 16:23:53 UTC\"}"
+            }
+          ],
+          "internal_chat_message_metadata_passthrough": {
+            "turn_id": "01a1d5b8-d582-71a1-ae63-09486ffa3dfe",
+            "create_time": 1794587033.8247726
+          }
+        },
+        "metadata": {
+          "client_authored": false,
+          "fallback_token_limit_override": 12000
+        }
+      }
+    },
+    {
+      "source_line": 21,
+      "record": {
+        "timestamp": "2026-11-13T16:24:02.104Z",
+        "ordinal": 20,
+        "type": "response_item",
+        "payload": {
+          "type": "custom_tool_call",
+          "id": "ctc_01751e048672ad60016af7399d8ebc87d0b374cb6a6eaf9a12",
+          "status": "completed",
+          "call_id": "call_a44c303b2d2844a189e0353a7c281fad",
+          "name": "exec",
+          "input": "text(await tools.mcp__fastctx__grep({path:\"C:/Users/qingyu/.codex/memories/MEMORY.md\",pattern:\"iter-10|authority-consistency|worktree_git_contract\",output_mode:\"content\",head_limit:12,line_numbers:true}));\ntext(await tools.mcp__fastctx__read({files:[\n{path:\"C:/Users/qingyu/.codeg/skills/iteration-manager/.worktrees/iter-10/SKILL.md\"},\n{path:\"C:/Users/qingyu/.codeg/skills/iteration-manager/.worktrees/iter-10/references/agent_protocol.md\"},\n{path:\"C:/Users/qingyu/.codeg/skills/iteration-manager/.worktrees/iter-10/references/worktree_git_contract.md\"},\n{path:\"C:/Users/qingyu/.codeg/skills/iteration-manager/.worktrees/iter-10/templates/assistants/iteration_planner.md\"}]}));\n",
+          "internal_chat_message_metadata_passthrough": {
+            "turn_id": "01a1d5b8-d582-71a1-ae63-09486ffa3dfe",
+            "create_time": 1794587041.4460402
+          }
+        }
+      }
+    },
+    {
+      "source_line": 25,
+      "record": {
+        "timestamp": "2026-11-13T16:24:02.464Z",
+        "ordinal": 24,
+        "type": "response_item",
+        "payload": {
+          "type": "custom_tool_call_output",
+          "id": "ctco_01a1d5b9-22a0-7551-b018-249f1bd24399",
+          "call_id": "call_a44c303b2d2844a189e0353a7c281fad",
+          "output": [
+            {
+              "type": "input_text",
+              "text": "Script completed\nWall time 0.1 seconds\nOutput:\n"
+            },
+            {
+              "type": "input_text",
+              "text": "{\"content\":[{\"type\":\"text\",\"text\":\"(Complete: no matches found.)\"}],\"isError\":false}"
+            },
+            {
+              "type": "input_text",
+              "text": "{\"content\":[{\"type\":\"text\",\"text\":\"=== C:/Users/qingyu/.codeg/skills/iteration-manager/.worktrees/iter-10/SKILL.md (lines 1-97 of 97) ===\\n1\\t---\\n2\\tname: iteration-manager\\n3\\tdescription: >-\\n4\\t  全局敏捷迭代管理与分类型工程门禁。用于 /iter init、/iter next、/iter task、/iter sync，提供 docs/todos 单一真源、Worktree 隔离、TypeSafe 规划质检、持久化有界自治、原始证据与独立审查。\\n5\\t---\\n6\\t\\n7\\t# Iteration Manager\\n8\\t\\n9\\t维护主版本为 `.codeg/skills/iteration-manager`；`.codex` 与 `.gemini/config` 是真实独立副本，整轮验收和部署完成后同步同一候选。三个助手的权威指令在 `templates/assistants/`；配置落盘、新会话实际消费和副本同步分别验收，不能互相替代。\\n10\\t\\n11\\t## 先选入口与授权\\n12\\t\\n13\\t| 入口 | 行为 | 权威助手源 |\\n14\\t|---|---|---|\\n15\\t| `/iter init` | 新建、接管或重规划，按授权写计划/提交 | [Planner](templates/assistants/iteration_planner.md) |\\n16\\t| `/iter next` | 整轮依赖调度、恢复、独立整体验收 | [Controller](templates/assistants/iteration_controller.md) |\\n17\\t| `/iter task` | 单任务编排、分类型验证与独立审查 | [Tech Lead](templates/assistants/task_tech_lead.md) |\\n18\\t| `/iter sync` | 只按实际命令更新投影或执行检查 | [CLI](scripts/iter_sync.py) |\\n19\\t\\n20\\t三个助手与生成的新窗口Prompt都使用 [共同执行协议](references/agent_protocol.md)，禁止重新嵌入另一套调度/修复循环。生成Prompt时保留三段：角色/授权/基线 → 任务卡/接口/依赖/类型契约 → 验收/证据/恢复/最高状态。工具名称以当前环境schema为准，不假定固定嵌套能力或并发容量。\\n21\\t\\n22\\t**仅生成Prompt、评估或只读接管不授权实施、写文件或Git提交。** 可给标明执行前门禁的预览；实际执行前再校验基线。主控不写业务代码，但可以读取冻结Diff、运行独立验收。单任务执行者最高TESTING，同任务的测试作者、实现者及RCA/设计参与者不能独立对审。\\n23\\t\\n24\\t## 真源与文件拓扑\\n25\\t\\n26\\t```text\\n27\\tdocs/todos/\\n28\\t├── README.md                     # 根总控，特性分支Zero-Root-Touch只读\\n29\\t└── 01-迭代名称/                   # 1 Worktree = 1 Iteration\\n30\\t    ├── README.md                 # 目标、约束、Review Focus、聚合投影\\n31\\t    ├── 01-任务.md                # 需求、接口、范围、验收、执行账本与自治事件\\n32\\t    └── evidence/01/              # 原始输出、独立报告、JSON收据\\n33\\t```\\n34\\t\\n35\\t不并行维护 `.superpowers/sdd/` 或另一套任务状态。项目决定理由留在项目自己的 `.agents/notes/`，任务状态仍归docs/todos。分支只读写当前Worktree的卡片及索引，不回写主仓库副本。\\n36\\t\\n37\\t## 规划与初始化\\n38\\t\\n39\\t1. 读取需求、项目约定及实际cwd/分支/完整HEAD/dirty；明确写文件和Git权限。\\n40\\t2. 新建按可独立验收的交付拆解，锁定Consumes/Produces精确签名及依赖；每卡按type设计可验证阶段，迭代README记录Global Constraints、执行约定与3—5项Review Focus。执行约定冻结实际工具入口/版本、交付模式、分层验证与临时产物位置。\\n41\\t3. 接管先 `--takeover-report`只读报告，保留历史Commit/状态/证据。缺失证据保持UNKNOWN，授权后才能迁移格式或补验。重规划登记具体Ruling与预算事件，普通裁决不自动计重规划。\\n42\\t4. 按 [TypeSafe指南](references/typesafe_eval_guide.md) 实际evaluate，权重30/30/20/20，总分≥80且单项≥70。未评估UNASSESSED；低分先针对具体缺口改进，不用默认85或自造评分。\\n43\\t5. 写入已授权的三级模板，依据type替换验证步骤。仅在相应授权下维护.gitignore的.worktrees/规则、同步根索引及精准提交本次归属文件；检查cached diff，不提交他人dirty。\\n44\\t6. 实际创建Worktree前运行 `--verify-committed`；非零读取诊断，Git失败不视为已提交。没有Git提交权限时交付未提交计划和明确执行依赖，不越权补提交。\\n45\\t\\n46\\t## 执行与验收\\n47\\t\\n48\\t四态：TODO → IN_PROGRESS → TESTING → DONE；FUSED为异常阻塞，不是第五种成功状态。缺失/非法状态UNKNOWN，不能从正文猜测。声明DONE和验收PASS分别核对。\\n49\\t\\n50\\t1. 按 [Worktree契约](references/worktree_git_contract.md) 核对 `.worktrees/iter-{XX}` 与 `feat/iter-{XX}-*`、基线、dirty归属、规划提交和约定基线检查。\\n51\\t2. 按共同协议先做只读就绪盘点，领取唯一卡片写者后消费逐卡dispatch-check；READY只表示可派发，不是验收PASS。普通任务可由主控兼任技术主管，同一实现者负责核心RED→GREEN及返修，独立Reviewer仍由非参与者担任；指定执行者与角色隔离要求优先。记录实际task_id、时限和可交付检查点，无下级工具时由上层桥接。\\n52\\t3. 失败按持久预算处理：默认单轮5、累计10、会诊1、重规划2；重启/重复回收不清零。第5次失败后停止修复，预算内诊断/重规划；达累计或其它上限保存成果、证据、具体BLOCKED及恢复条件。不自动方案A，不扩大授权。\\n53\\t4. 开发内环跑针对性测试，任务交付完成type必需证据与受影响回归，迭代末执行集成路径与全量回归；范围不明或既定契约要求全量时不能缩减。UI先验证一条真实用户路径再扩展矩阵。完成候选及原始证据后，由非参与者独审；停止、completed、exit0或格式检查不等于产品验收。\\n54\\t5. Git模式独立APPROVED后登记JSON收据、报告和DONE，head_sha绑定C，再提交登记D并运行 `--local --strict`；FS模式按任务卡契约先定稿完整正文、冻结、独审，再只登记允许的元数据。代码/测试/原始证据/冻结规格变化重审受影响内容；有效证据复用不豁免候选绑定。\\n55\\t6. 全部任务验收PASS后独立总审，聚焦跨任务接口、集成路径与Review Focus，不逐卡重做已通过审查；Git模式还需 `--check-branch --strict`。汇总Rulings、Deferred Minors及真实缺口。合主干、推远端、发布和清理Worktree按各自授权，不自动执行。\\n56\\t\\n57\\t预算字段、事件幂等、恢复查询及真实工具调用见 [共同协议](references/agent_protocol.md)；所有收据/按type门禁见 [任务卡契约](references/task_card_schema.md)。会诊只提供建议，不产生APPROVED。旧DONE缺收据UNKNOWN，不补造历史红绿或批准。\\n58\\t\\n59\\t获准文件快照交付时，可按任务卡契约显式启用迭代内 `iteration-delivery.json` 的 filesystem 模式；本地strict核对当前收据、源码/证据快照、冻结任务规格及迭代目标。缺/坏配置不作宽松降级，不自动迁造旧收据，预算与类型门禁不变；分支及全局Git提交前提不因此豁免。\\n60\\t\\n61\\t业务/测试/验收统一使用[截止入口](references/checkpoint_execution.md)`scripts/iter_run.py`保存同调用核验和原始证据；时间中断可在主控显式单次授权下`resume-checkpoint`续跑，不改变四预算或旧recover。源码验收、模板部署、真实消费和业务整链分开记录。\\n62\\t\\n63\\t优先在截止前交付正常检查点，确认终态后记录attempt再release；连续两次尝试无可用新增证据时，不得原样重派，先改变输入、切片或能力条件。新流程由主控消费只读dispatch-check门禁，详见[执行检查与交接](references/execution_readiness.md)；旧调用兼容，不自动拦截原生委派。新模板不追溯改写旧卡；工具升级、收据迁移与业务迭代分别授权。\\n64\\t\\n65\\t## CLI：从对应项目根目录运行\\n66\\t\\n67\\t用实际安装路径替换 `<skill_root>`，不要假定当前目录是Skill根。\\n68\\t\\n69\\t```powershell\\n70\\tpython <skill_root>/scripts/iter_sync.py --verify-committed [仓库路径]\\n71\\tpython <skill_root>/scripts/iter_sync.py --takeover-report <迭代目录>\\n72\\tpython <skill_root>/scripts/iter_sync.py --inventory <迭代目录> --mode continue --context <项目相对观察JSON> --phase-from-context\\n73\\tpython <skill_root>/scripts/iter_sync.py --inventory <迭代目录> --mode takeover [--context <项目相对观察JSON> --phase <实际阶段>] [--details]\\n74\\tpython <skill_root>/scripts/iter_sync.py --preflight <迭代目录> --context <项目相对观察JSON> --phase <实际阶段>\\n75\\tpython <skill_root>/scripts/iter_sync.py --preflight <迭代目录> --context <项目相对观察JSON> --phase-from-context\\n76\\tpython <skill_root>/scripts/iter_sync.py --dispatch-check <任务卡> --context <项目相对观察JSON> --phase <实际阶段> --owner <当前写者>\\n77\\tpython <skill_root>/scripts/iter_sync.py --autonomy attempt <任务卡> --event-id <稳定ID> --owner <当前写者> --executor-state completed --evidence <项目相对报告JSON>\\n78\\tpython <skill_root>/scripts/iter_sync.py --render-envelope <任务卡> [仓库路径]\\n79\\tpython <skill_root>/scripts/iter_sync.py --execution-report <迭代目录>\\n80\\tpython <skill_root>/scripts/iter_sync.py --check-scope <BASE> <C> <任务卡> --include-worktree\\n81\\tpython <skill_root>/scripts/iter_sync.py --review-pkg <BASE> <C> [任务ID] [仓库路径]\\n82\\tpython <skill_root>/scripts/iter_sync.py --local --strict [迭代目录或Worktree]\\n83\\tpython <skill_root>/scripts/iter_sync.py --check-branch --strict [仓库路径] [基准分支]\\n84\\tpython <skill_root>/scripts/iter_sync.py [主干工作区路径]\\n85\\t```\\n86\\t\\n87\\t范围检查包括暂存/未暂存/未追踪，`--baseline-dirty <JSON路径数组文件>`只提示归属，不豁免。检查器只读不回滚。根同步有特性分支保护；`--local`只刷新所属迭代。默认同步报告警告，strict失败/UNKNOWN返回非零。查看看板用 `--board` 或 `--serve-board`，显式导出用 `--export-board`；显示投影不能替代证据验收。`--execution-report`只读汇总现有attempt：会话/命令去重、重叠并集及累计量分列，缺失保持null；不产生验收，不推断测试编写或纯开发耗时，字段及主控消费顺序见[执行检查与交接](references/execution_readiness.md)。\\n88\\t\\n89\\t## 资源\\n90\\t\\n91\\t- [任务卡模板](templates/task_detail.md)、[迭代索引](templates/iteration_readme.md)、[根索引](templates/root_readme.md)\\n92\\t- [Implementer委派](templates/sdd_implementer_prompt.md)、[Reviewer委派](templates/sdd_reviewer_prompt.md)、[会诊](templates/consilium_rca_prompt.md)\\n93\\t- 类型契约：[Strict-TDD](templates/contracts/strict_tdd_contract.md)、[UI](templates/contracts/ui_component_contract.md)、[重构](templates/contracts/refactor_benchmark_contract.md)、[Spike](templates/contracts/spike_discovery_contract.md)\\n94\\t- [微观工程手册](references/superpowers_handbook.md)、[Worktree契约](references/worktree_git_contract.md)\\n95\\t\\n96\\t维护Skill本身时，规则/模板改动先运行 `python -B -m pytest -p no:cacheprovider tests/test_prompt_sources.py tests/test_task_card_schema.py -q`，并用实际代理场景核验指令消费与独立审查。脚本或跨模块合同改变时补充受影响测试，整轮候选运行 `python -B -m pytest -p no:cacheprovider tests -q`。浏览器/部署证据按对应阶段另验，静态文本检查不代替运行。\\n97\\t\\n\\n=== C:/Users/qingyu/.codeg/skills/iteration-manager/.worktrees/iter-10/references/agent_protocol.md (lines 1-144 of 156) ===\\n1\\t# 三助手共同执行协议\\n2\\t\\n3\\t本文件管理角色、自治和恢复；任务格式及完成收据以 [task_card_schema.md](task_card_schema.md) 为准。整轮主控与单任务入口使用同一门禁。\\n4\\t\\n5\\t## 先确认授权与能力\\n6\\t\\n7\\t读取项目约定、cwd、分支、完整HEAD、dirty归属、任务type、Interfaces、范围和验收。只读分析/只生成Prompt不写文件、不运行实现、不提交用户已有变更；可给带“执行前需通过规划提交门禁”的预览。实际创建Worktree或执行任务前才运行 `--verify-committed`，非零时分清Git错误与dirty，不自动暂存整个docs/todos。\\n8\\t\\n9\\t不假定嵌套委派、深度或并行容量。启动时阅读本环境实际工具schema；没有下级委派能力时，技术主管返回所需角色的自包含Brief，由具备工具的上层串行派发，回收后继续。缺独立审查能力保持TESTING/BLOCKED，不自行批准。\\n10\\t\\n11\\t### 只读就绪检查：先确定能怎样证明完成\\n12\\t\\n13\\t派发前只检查会改变本次执行方向的前提：授权范围与依赖、实际候选/交付模式、指定执行者与必读文件权限、验证工具及入口可用性。UI还需明确真实用户入口、对象/资源来源、可观察状态及任务约定视口；媒体行为需能观察原生播放/暂停等事件。未知项标明来源、影响和补齐责任人，不先做一轮完整验收。\\n14\\t\\n15\\t结果为READY、NEEDS_INPUT或BLOCKED；READY不是验收PASS。缺口只阻塞受影响工作，不启动依赖该缺口的步骤，可继续无依赖、无共享写冲突的已授权任务。新迭代/获准新流程在派发前消费只读`--preflight`及逐卡`--dispatch-check --context`，字段和退出码见[执行检查与交接](execution_readiness.md)。旧调用不强加context、不迁移旧卡；动态观察不新增frontmatter必填项或第二本状态账。\\n16\\t\\n17\\t获准采用整合盘点时，可用`--inventory`替代单独的整轮preflight盘点，其逐卡使用相同就绪逻辑；实际派发前仍必须claim并运行该卡dispatch-check。同一迭代正常换会话且能核对原候选、终态、授权和证据时选择`--mode continue`；历史基线、收据或来源不明的旧迭代选择`--mode takeover`，保留缺项与UNKNOWN并在迁移/补验前取得授权。模式由主控根据证据明确选择，不能仅凭新会话推断接管，也不能用continue绕过缺口。原`--preflight`、`--takeover-report`及`--render-envelope`合同不变。\\n18\\t\\n19\\t### 角色按责任分开，不按RED/GREEN拆会话\\n20\\t\\n21\\t普通任务可由主控兼任技术主管，省去仅转发Brief的中间层；主控仍不写业务代码。同一实现者负责核心行为的有效RED、最小GREEN和返修，只有任务明确指定测试作者与实现者分离时才拆开。独立Reviewer必须是未参加该任务测试、实现、RCA或方案设计的角色；合并协调角色不合并审查角色。用户指定的执行者、路由、人数和隔离规则优先。\\n22\\t\\n23\\t## Codeg工具协议\\n24\\t\\n25\\t当本环境提供Codeg MCP时，按其实际schema调用，例如：\\n26\\t\\n27\\t```json\\n28\\t{\\\"assistant_id\\\":3,\\\"working_dir\\\":\\\"C:/project/.worktrees/iter-01\\\",\\\"task\\\":\\\"完整Brief：目标、任务卡绝对路径、BASE、授权文件、type契约、测试命令、时限、检查点、证据、提交权限及返回格式\\\"}\\n29\\t```\\n30\\t\\n31\\t上例是 `delegate_to_agent` 的参数，不是命令。指定助手用 `assistant_id`，指定代理用 `agent_type`；遵守用户路由，不凭名字猜ID。保存返回的task_id与启动时间。使用 `get_delegation_status({\\\"task_ids\\\":[\\\"实际ID\\\"],\\\"wait_ms\\\":60000})` 有界等待；运行时支持的通知可替代轮询。读取终态完整text/结果与原始证据，不能把completed或“代理停止”当验收PASS。blocked_on携带实际用户请求时只呈报受影响依赖；普通运行等待不发状态噪音。\\n32\\t\\n33\\t中断、unknown或通信失败先查询原task_id及其会话/工作区，不重复派发；completed任务不能resume。需要返修时先确认原执行者终态，再以新任务携带剩余目标和已交证据，不重做已验收工作。仅在授权停止、超任务时限或无继续必要时，按工具schema使用cancel_delegation；取消后查询终态，不遗留活动命令。遵守用户时限；未另定时探索/审查以5分钟为检查点，累计10分钟必须介入停止并保留部分成果。\\n34\\t\\n35\\t### 正常检查点与无进展重派限制\\n36\\t\\n37\\t派发Brief按以下顺序给齐：当前阶段/剩余目标 → 可直接消费的局部代码与契约入口 → 已核实根因及有效证据 → 授权文件/候选 → 本次检查点产物与验证命令 → 绝对截止/收尾/最高状态。引用原始产物，不要求新会话重新探索已确定的问题；保留必要读取和验证工具，不以普遍禁用工具换取表面速度。\\n38\\t\\n39\\t检查点是有效RED、可审实现差异、GREEN、已验证根因或具体审查发现之一，附候选、原始证据与剩余项；只有阅读清单、计划或报告篇幅增加不算进展。切片应能在工作窗口内交付上述产物；已知所需命令超过窗口时不启动它，改为先交付可完成阶段并显式保留未跑门禁。阶段完成后确认会话与命令终态，正常release，保留IN_PROGRESS/TESTING；不要等强制取消才保存成果。任务门禁未齐不能称DONE或PASS。\\n40\\t\\n41\\t**连续两次尝试没有可用新增证据时，禁止第三次按相同输入和目标原样重派。** 主控核对两次原始结果，补充定位/契约输入、缩小可交付切片或解决执行能力问题；未改变条件就保留受影响步骤BLOCKED。新流程由当前写者在真实终态后、release/closeout前用`--autonomy attempt --evidence <报告>`记录既有事件账，下一次`--dispatch-check`核对连续次数和条件变更依据。切片不得删除验收要求，换会话不重置记录；真实超时仍走closeout，必要的授权恢复不因“换切片”跳过。不新增修复计数，不替代四预算；脚本不接管原生派发，主控必须消费结果。\\n42\\t\\n43\\t记录派发开始、检查点、RED、GREEN、候选交付及终态时间；分列命令实测耗时、会话总耗时与交接时间，并说明重叠。没有细分记录就写UNKNOWN，不推断模型推理/工具延迟或测试编写占比。\\n44\\t\\n45\\t需要进一步定位时，可在有证据写入授权的情况下按`execution_readiness.md`记录可选会话轨迹；不要为每次阅读或思考额外打点，原始会话与runner收据仍是证据。轨迹未覆盖区间仅是未观察，不推断其原因；默认旧调用不写入。\\n46\\t\\n47\\t### 分层时间预算与超时收尾\\n48\\t\\n49\\t时间预算与修复次数分开。主控以实际启动时间记录绝对hard_deadline，受本次授权及单会话10分钟介入停止上限约束；预留至少90秒closeout_reserve，work_deadline = hard_deadline - closeout_reserve。主管继承这两个绝对时点，不把整棵子树再压进固定150秒；主管的可用预算是全局剩余时间，不是叶子的单次时限。\\n50\\t\\n51\\t每次派发测试、实现或审查叶子前，必须有独立至少120秒的可用工作窗口（含冷启动与工具时间）；不足就停止派发并收尾，不以缩短叶子时限或反复重启主管挤入剩余时间。叶子早交付可提前回收；不得因此省略后续门禁。等待取`min(60000, 距下一检查点/叶子截止/work_deadline的剩余毫秒)`，临近边界缩短等待；到work_deadline停止业务执行并取消未结束下级，预留窗口用于查询终态、保存证据、收尾和提交，而非继续实施。\\n52\\t\\n53\\t派发前即时读取时钟，锁定`leaf_deadline = min(work_deadline, dispatch_requested_at + leaf_limit)`，默认另留10秒cancel_reserve；剩余工作窗口（扣除该余量）不足120秒不派发。Brief写确切UTC，不写“启动约某时”。派发后记录实际创建时间，核对冷启动消耗；不得后移已承诺截止。deadline、取消请求发出与确认时间分别保存，工具响应超出余量时如实记录late_by，不声称严格达标。\\n54\\t\\n55\\t**临界等待、重新读钟与取消须在同一次JavaScript工具执行中连续完成，不在最后一次等待返回后回到模型再决定取消。** 使用[截止守卫](../scripts/deadline_watch.js)的完整函数体，在支持持久异步执行的工具执行器中调用；执行器yield后该循环继续运行，外层只等待同一执行单元，不重启监控。循环保存原始响应，检查点只登记事件，不停掉守卫；terminalConfirmed只说明会话终态，不证明命令终态或产品验收。无这种运行能力时，在派发前返回能力缺口，不退回逐轮模型估时。\\n56\\t\\n57\\tCodeg适配示例（先在同一执行单元放入上述函数体；ID及截止必须来自真实派发）：\\n58\\t\\n59\\t```javascript\\n60\\tconst result = await watchDeadline({\\n61\\t  deadlineMs: leafDeadlineMs,\\n62\\t  checkpoints: checkpointEpochMs,\\n63\\t  query: async waitMs => {\\n64\\t    const args = { task_ids: [taskId] };\\n65\\t    if (waitMs !== undefined) args.wait_ms = waitMs;\\n66\\t    const raw = await tools.mcp__codeg_mcp__get_delegation_status(args);\\n67\\t    const parsed = raw.structuredContent ?? JSON.parse(raw.content[0].text);\\n68\\t    return { ...parsed.tasks[0], raw };\\n69\\t  },\\n70\\t  cancel: () => tools.mcp__codeg_mcp__cancel_delegation({ task_id: taskId }),\\n71\\t});\\n72\\ttext(result);\\n73\\t```\\n74\\t\\n75\\t单个守卫管理一个实际task，不接管业务调度或卡片写权；父级仍须核对完整子树。unknown/查询失败时尝试取消并保留实际查询结果，未确认终态保持BLOCKED。`wait_ms=0`是无限等待，轮询必须省略该字段。blocked_on事件必须呈报用户；等待用户时守卫仍运行，不自动延长授权期限。\\n76\\t\\n77\\t叶子的每个业务、测试和验收命令必须通过[统一截止入口](checkpoint_execution.md)`scripts/iter_run.py --deadline <明确UTC> --evidence <项目相对唯一receipt> -- <argv...>`执行；派发Brief提供确切command_deadline（不晚于取消点），入口内另留5秒回收。由入口同次核UTC、落原始输出及真实业务退出码，禁止先运行再补日志。PowerShell保存`$LASTEXITCODE`后须`exit $code`；shell退出0不代表pytest通过。124/125须看receipt状态，超时不算断言失败。原生命令补证仅作为新的来源证据，不改旧日志；进程列表不能补造历史退出码。当前入口仅支持Windows Job；入口或权限不可用就报告能力缺口，不回退裸命令。\\n78\\t\\n79\\t叶子必读契约须在派发前确认其运行时具有实际读取权限；主控能读取不代表叶子能读取。出现真实拒绝时返回权限缺口，按宿主正式授权机制解决；不尝试其它工具或另一副本绕过。\\n80\\t\\n81\\t用户明确授权新增受控读取能力时，可按[只读授权通路](readonly_skill_access.md)注册限定cwd和逐项文件的只读MCP服务；保持原生读写范围不变。必须先取得新会话实际调用该授权接口的证据及独立验收，再恢复依赖契约的执行；注册本身不算消费通过。\\n82\\t\\n83\\t超时不是代码修复失败，不用fix虚增计数。当前唯一写者从项目根调用：\\n84\\t\\n85\\t```powershell\\n86\\tpython <skill_root>/scripts/iter_sync.py --autonomy closeout <任务卡> --event-id <稳定收尾ID> --owner <当前写者> --executor-state canceled --reason \\\"execution deadline; 具体阻断与恢复条件\\\" --evidence <项目内实际非空终态证据文件>\\n87\\t```\\n88\\t\\n89\\texecutor-state只接受实际查询得到的completed/failed/canceled；unknown不能冒作终态或释放活跃写者。closeout原子登记FUSED/is_blocked/原因并释放写者，不清四类计数；重放幂等，CLI退出3表示成功登记了阻断，不是实现通过。已有预算耗尽原因保留，新的收尾原因留在事件输入中。DONE不可改。普通claim/fix不能清除超时阻断，恢复须明确授权的新计划与真实补验。\\n90\\t\\n91\\t用户明确授权检查点续跑时，可由主控签发工作区外短期能力，通过`--autonomy resume-checkpoint --resume-grant <外部JSON>`绑定干净HEAD、最近closeout、已审查检查点与真实终态。固定最多3次，只解除execution deadline中断、不改四预算或旧recover；真实预算熔断、重复消费和unknown拒绝。详细字段、排他收据与分阶段交接见[检查点与命令契约](checkpoint_execution.md)。主控签发，实际主管消费，叶子不得自行续签。\\n92\\t\\n93\\t若主管异常退出，只有事先明确授权的父级元数据恢复者能接管：先查询并保存整个已派发子树及旧卡片写者的原生终态；确认无活动卡片写者后，以旧owner执行release并记明实际恢复者，再claim自身、closeout、精准提交卡片/证据。不得冒称自己就是旧会话，也不得在原执行者仍running/unknown时抢写。底层工具命令状态未交付时，原因和证据明确保留`UNKNOWN command state`，仅做已授权的元数据收尾，不声称进程已停止，不启动新的业务/测试执行者，不清理未知进程。当前写者正常收尾不另冷启动一名主管；父级不得因写卡权限缺口将外部BLOCKED留成卡内未阻断。\\n94\\t\\n95\\t### unknown与缺输入时的返回形状\\n96\\t\\n97\\t`unknown`只说明当前查询方没有可取记录，可能是会话归属或记录被回收，不能据此断定执行者已停止。由原派发会话查询并回传完整终态；同时只读核对明确工作区的git status/log及原始证据，磁盘没有变化不能证明代理已停止。终态无法确认时保留UNKNOWN/BLOCKED，不关闭或重复启动执行者。\\n98\\t\\n99\\t桥接Brief只填写实际提供或工具核实的cwd、完整BASE/C/contract引用、卡片路径、角色回避名单和证据。缺字段写UNKNOWN并列出原派发者需补齐的输入；状态为NEEDS_INPUT，不伪造哈希、角色名、证据路径或已获授权。示例必须标明“示例，不能执行”，不能放入声称可立即派发的Brief。dirty不等于允许清理；保留他人改动，执行前按具体门禁和归属解决，不要求全局清空。\\n100\\t\\n101\\t## 唯一写者与独立审查\\n102\\t\\n103\\t同一任务卡同时只有一个写者。技术主管领取逻辑写者owner；下级测试作者/实现者只写各自授权文件，任务卡变更由主管串行登记；确需实现者写卡时先交接，回收前主管不并发写。其它角色只返回证据。`--autonomy claim/release`登记写者；release需已查询终态及证据。物理临时锁遗留时先核对无活动写者，再在授权内移除该精确锁；不自动破锁。\\n104\\t\\n105\\t测试作者、实现者、本任务RCA/方案设计参与者均不能担任独立Reviewer。独立Reviewer读取冻结规格、实际候选与原始输出，返回发现及裁决；主管可读冻结Diff并运行独立验收。实现者最高TESTING。会诊不是APPROVED；建议先核对正确性、契约、范围与授权，不自动采纳方案A，不放宽失败路径。\\n106\\t\\n107\\tGit：提交实现C及原始输出 → 独立审查C与冻结规格 → 主管登记JSON收据、报告及状态 → 提交登记D → `--local --strict`。head_sha绑定C，不冒填当前HEAD。FS：先定稿完整正文与证据、冻结候选 → 独立审查 → 只登记允许变化的元数据及收据 → 本地strict；不得在审查后修改ledger、勾选或显示状态。详见任务卡契约。合流、发布、删除另按授权执行。\\n108\\t\\n109\\t## 分层验证与证据复用\\n110\\t\\n111\\t交接按[实际消费顺序](execution_readiness.md#主控实际消费不只展示报告)执行。现有Brief/审查报告只补一份逐项沿用依据：检查与覆盖行为、原候选及证据、变更/输入/环境影响、沿用或重跑及责任人。主控接收不另加同范围审批层；指定独立复验仍须实跑。耗时观察用只读`--execution-report`，不将会话与命令重叠量相加或据此批准任务。\\n112\\t\\n113\\t| 层级 | 必须完成的证据 | 扩大检查的条件 |\\n114\\t|---|---|---|\\n115\\t| 开发内环 | Strict-TDD核心行为先真实断言RED再最小GREEN；小步运行针对性/受影响测试 | 新失败、共享接口影响或影响范围无法界定 |\\n116\\t| 任务交付 | type必需checks、约定边界、受影响回归、范围检查与独立审查 | 任务既定全量门禁、跨模块影响或新的高风险证据 |\\n117\\t| 迭代收口 | 集成路径、全量回归、独立整轮总审；Git另核对全分支strict | 候选/输入/环境变化使相应旧证据失效 |\\n118\\t\\n119\\t任务规划明确每层命令、覆盖行为和选择依据。不能以“提速”为由删除失败路径、保密检查或既定验收；影响不明先扩大检查。仅文档变更不运行无关业务测试。整轮总审读取有效单卡结论及原始证据，聚焦跨任务接口、集成与Review Focus，不逐卡重演已通过审查。\\n120\\t\\n121\\t同一候选、输入和相关环境的有效证据可直接复用，记录路径及适用范围，审查者独立核对原始输出。产生新候选时，先列出变更与检查的对应关系：受影响检查实际重跑；未受影响输出只有在其覆盖代码/契约、测试输入及相关环境未变且可核实的条件下，才可作为新审查的沿用证据，保留原候选和原执行时间，不冒称在新候选上重跑。无法界定影响就扩大检查。任务指定的独立复验仍须实跑。\\n122\\t\\n123\\t沿用测试输出不等于沿用批准。Git白名单漂移、FS源码/证据/完整正文漂移仍使原收据按合同失效；新候选须独立审查受影响内容与沿用依据，生成符合当前冻结绑定的新收据，不能套旧APPROVED。纯登记仅在对应交付模式允许的字段内免重审。\\n124\\t\\n125\\tUI先跑通一条代表路径：真实用户入口 → 实际对象 → 真实操作 → 可观察结果，再扩展约定状态、边界和视口矩阵。DOM注入媒体、直接改store、跳过守卫、内部API开面板或合成`.click()`可以辅助诊断，不能代替真实交互验收；截图不能独自证明播放/暂停，媒体行为需原生事件/状态，听感等要求另留实际观察。自动化应使用工具原生用户输入能力。缺真实资源或权限时保留UNVERIFIED/BLOCKED，不生成“通过”替身。\\n126\\t\\n127\\t## 冻结执行约定，分开业务交付与工具升级\\n128\\t\\n129\\t新增迭代或明确获准采用新流程时，在README的iter:goal区域记录实际工具入口及固定版本目录/提交、交付模式、三级验证命令、正式证据与可再生产物位置。执行时核对入口实际版本；只有版本标签而入口仍随安装更新不算冻结。所需固定副本/版本切换须在授权范围内准备，不在执行中自动升级。\\n130\\t\\n131\\t既有卡的门禁与调用合同保持；改变门禁、工具版本或收据格式须显式授权并记录迁移范围。业务收口与插件升级/历史收据迁移是不同交付，不能静默捆绑，也不能借版本固定忽略已经证实的门禁缺陷：报告影响并由授权持有人选择修复/迁移。`iteration-delivery.json`仍精确两键，不往其中塞执行配置。\\n132\\t\\n133\\t正式证据保持项目内可复查且满足收据库存；可再生测试产物使用项目已有环境变量或参数指向约定临时位置，在命令记录中保留映射。不把临时产物冒作正式证据，不硬编码某项目变量，不自动删除历史文件。\\n134\\t\\n135\\t## 持久预算与恢复\\n136\\t\\n137\\t`autonomy_state`是任务卡内自治事件/计数的唯一真源，JSON以单行JSON字符串存于扁平frontmatter。`fix_rounds`是兼容投影；不手工清零。启动前可选 `autonomy_policy` JSON字符串，字段默认 `round_limit=5,total_limit=10,consilium_limit=1,replan_limit=2`；运行后策略变化需要明确迁移，不能会话重启时另设默认。普通Ruling不计重规划。\\n138\\t\\n139\\t```powershell\\n140\\tpython <skill_root>/scripts/iter_sync.py --autonomy claim <任务卡> --event-id <稳定ID> --owner <主管会话ID>\\n141\\tpython <skill_root>/scripts/iter_sync.py --autonomy fix <任务卡> --event-id <修复尝试ID> --owner <主管会话ID> --reason <实际失败>\\n142\\tpython <skill_root>/scripts/iter_sync.py --autonomy consilium <任务卡> --event-id <会诊ID> --owner <主管会话ID> --reason <根因问题> --evidence <诊断输入路径>\\n143\\tpython <skill_root>/scripts/iter_sync.py --autonomy replan <任务卡> --event-id <重规划ID> --owner <主管会话ID> --reason <已核对的裁决> --evidence <会诊及授权证据路径>\\n144\\tpython <skill_root>/scripts/iter_sync.py --autonomy recover <任务卡> --event-id <回收ID> --owner <主管会话ID> --executor-state completed --evidence <查询原任务终态的证据>\\n\\n(Partial: 1 of 4 files processed. Continue with files=[{\\\"path\\\":\\\"C:/Users/qingyu/.codeg/skills/iteration-manager/.worktrees/iter-10/references/agent_protocol.md\\\",\\\"offset\\\":145},{\\\"path\\\":\\\"C:/Users/qingyu/.codeg/skills/iteration-manager/.worktrees/iter-10/references/worktree_git_contract.md\\\"},{\\\"path\\\":\\\"C:/Users/qingyu/.codeg/skills/iteration-manager/.worktrees/iter-10/templates/assistants/iteration_planner.md\\\"}].)\"}],\"isError\":false}"
+            }
+          ],
+          "internal_chat_message_metadata_passthrough": {
+            "turn_id": "01a1d5b8-d582-71a1-ae63-09486ffa3dfe",
+            "create_time": 1794587042.4646902
+          }
+        },
+        "metadata": {
+          "client_authored": false,
+          "fallback_token_limit_override": 12000,
+          "mcp_attribution": {
+            "status": "complete",
+            "sources": [
+              {
+                "server_name": "fastctx",
+                "tool_name": "grep",
+                "first_turn_id": "01a1d5b8-d582-71a1-ae63-09486ffa3dfe"
+              },
+              {
+                "server_name": "fastctx",
+                "tool_name": "read",
+                "first_turn_id": "01a1d5b8-d582-71a1-ae63-09486ffa3dfe"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "source_line": 27,
+      "record": {
+        "timestamp": "2026-11-13T16:24:09.061Z",
+        "ordinal": 26,
+        "type": "response_item",
+        "payload": {
+          "type": "custom_tool_call",
+          "id": "ctc_01751e048672ad60016af739a4a4b887d085c27773a461b938",
+          "status": "completed",
+          "call_id": "call_05d7fcddfb6f43cc936e21c9cbcb776d",
+          "name": "exec",
+          "input": "text(await tools.mcp__fastctx__read({files:[{\"path\":\"C:/Users/qingyu/.codeg/skills/iteration-manager/.worktrees/iter-10/references/agent_protocol.md\",\"offset\":145},{\"path\":\"C:/Users/qingyu/.codeg/skills/iteration-manager/.worktrees/iter-10/references/worktree_git_contract.md\"},{\"path\":\"C:/Users/qingyu/.codeg/skills/iteration-manager/.worktrees/iter-10/templates/assistants/iteration_planner.md\"}]}));\ntext(await tools.exec_command({cmd:\"git rev-parse --show-toplevel; git rev-parse --verify 'd3bd97ab16ffed6104034a887a01eb1b4d75dc0e^{commit}'; git diff --name-status d3bd97ab16ffed6104034a887a01eb1b4d75dc0e..5ff7c3af554f9effdf0a95050af24c767ca0878b -- references/worktree_git_contract.md; git diff -- references/worktree_git_contract.md; git diff --cached --name-status\",\"workdir\":\"C:/Users/qingyu/.codeg/skills/iteration-manager/.worktrees/iter-10\",\"max_output_tokens\":2000}));\n",
+          "internal_chat_message_metadata_passthrough": {
+            "turn_id": "01a1d5b8-d582-71a1-ae63-09486ffa3dfe",
+            "create_time": 1794587044.6491647
+          }
+        }
+      }
+    },
+    {
+      "source_line": 31,
+      "record": {
+        "timestamp": "2026-11-13T16:24:10.067Z",
+        "ordinal": 30,
+        "type": "response_item",
+        "payload": {
+          "type": "custom_tool_call_output",
+          "id": "ctco_01a1d5b9-4053-7612-a751-4bccacfbcec9",
+          "call_id": "call_05d7fcddfb6f43cc936e21c9cbcb776d",
+          "output": [
+            {
+              "type": "input_text",
+              "text": "Script completed\nWall time 1.0 seconds\nOutput:\n"
+            },
+            {
+              "type": "input_text",
+              "text": "{\"content\":[{\"type\":\"text\",\"text\":\"=== C:/Users/qingyu/.codeg/skills/iteration-manager/.worktrees/iter-10/references/agent_protocol.md (lines 145-156 of 156) ===\\n145\\t```\\n146\\t\\n147\\t每次已完成而失败的修复记录一次fix，同一次回收始终复用事件ID；同ID不同输入拒绝写入。第5次失败停止修复，允许预算内诊断与重规划；会诊在启动前消耗预算；重规划只重置当前轮，不清累计。累计10次、会诊或重规划超额时保留FUSED，验收为BLOCKED，不继续自动修复、不扩大范围。恢复查询、重复回收、重启均不能清零。\\n148\\t\\n149\\t退出2表示数据/归属错误；退出3为预算阻塞。达到上限保存代码、原始输出、完整引用、未闭环问题、活动命令终态及恢复条件，向实际权限持有人请求具体决策，不反复问“继续吗”。恢复需要新证据/经授权计划或显式预算迁移；不能只改状态恢复绿色。旧 `--record-fix`入口保留并按head_sha+摘要去重，新流程必须使用显式ID。\\n150\\t\\n151\\t## 接管、新建与重规划\\n152\\t\\n153\\t旧迭代先 `--takeover-report <迭代目录>` 只读列状态、缺项和补验建议。保留历史Commit/状态/原始证据，缺收据为UNKNOWN，不补造历史RED/APPROVED。格式迁移与补验只有取得相应授权才写入；严格门禁不因“存量”自动豁免。\\n154\\t\\n155\\t新建按type生成可验证阶段与Interfaces，再按 [TypeSafe指南](typesafe_eval_guide.md) 实际评估；无真实结果为UNASSESSED。重规划保留历史证据，在ledger记录具体Ruling及范围、依赖和补验影响；超授权只阻塞受影响部分，继续独立的已授权工作。\\n156\\t\\n\\n=== C:/Users/qingyu/.codeg/skills/iteration-manager/.worktrees/iter-10/references/worktree_git_contract.md (lines 1-118 of 118) ===\\n1\\t# 🛡️ Worktree 并行敏捷迭代、Zero-Root-Touch 与单迭代合流契约 (v2.0)\\n2\\t\\n3\\t在多迭代演进与高并发工程协作中，[`iteration-manager`](file:///C:/Users/qingyu/.codeg/skills/iteration-manager/SKILL.md) 深度融合了 Superpowers 的 `using-git-worktrees` 与 `finishing-a-development-branch` 最佳实践，确立了 **「主干规划提交基线 + `1 Worktree = 1 Iteration` + `Zero-Root-Touch` 目录级物理隔离 + 单迭代主干合流」** 的全生命周期契约。\\n4\\t\\n5\\t---\\n6\\t\\n7\\t## 证据持久化与只读门禁\\n8\\t\\n9\\t本契约服从本次用户授权及[共同执行协议](agent_protocol.md)。仅生成Prompt、评估或只读接管不授权写文件、实现、提交或创建Worktree；只交付标明执行前门禁的预览。Git提交、合流、推送、发布和清理分别按各自授权执行，验收通过不产生这些权限。\\n10\\t\\n11\\t新卡遵守 [task_card_schema.md](task_card_schema.md)：实现提交C含代码、测试与原始输出，独立Reviewer核对C及冻结规格；APPROVED后登记JSON收据、状态和报告，提交D，再对干净候选运行严格门禁。head_sha绑定C，不改成D。仅状态/账本登记免重审，代码/规格/原始输出变化必须重审受影响内容。不同type使用各自证据，不为非TDD任务补造RED。\\n12\\t\\n13\\t审查包目录通过 `git rev-parse --git-path iter_reviews` 定位，兼容linked worktree的.git文件。临时审查包不代替项目证据目录：清理Worktree前将原始输出、最终报告与收据保留在可检出的证据目录。--check-scope --include-worktree只读检查，已有dirty由主控核对归属，不自动checkout/reset/clean。Git失败、无效引用、缺规格/证据或未知状态均不放行。\\n14\\t\\n15\\t## 📌 1. 核心架构原则：为什么采用 `1 Worktree = 1 Iteration` 与 `Zero-Root-Touch`？\\n16\\t\\n17\\t### 1.1 前置铁律：Worktree 创建前的「规划基线提交门禁 (Pre-Worktree Commit Gate)」\\n18\\t- **Git Worktree 的底层机制约束**：`git worktree add .worktrees/iter-{XX} -b feat/iter-{XX} main` 仅会从 `main` 分支的**已提交 Git Commit 树**中检出文件，主工作区中未追踪（Untracked）或未提交（Unstaged/Staged）的 `docs/todos/` 文件**绝对不会自动进入新 Worktree**！\\n19\\t- **规划提交与执行门禁分离**：\\n20\\t  1. **规划落盘**：仅在写入授权内生成三级文档；只有Git提交授权才逐个精准暂存本次归属文件，检查cached diff后提交。禁止 `git add .` 或暂存整个 `docs/todos/`，不夹带他人dirty。\\n21\\t  2. **执行前门禁**：实际创建Worktree或执行任务前必须运行 `python <skill_root>/scripts/iter_sync.py --verify-committed`。非零先读取诊断，区分Git错误与未提交规划；没有Git提交权限时交付未提交计划和执行依赖，不自动补Commit，不启动受阻执行。仅生成Prompt不触发该提交流程。\\n22\\t\\n23\\t### 1.2 分支与工作区粒度法则：`1 Worktree = 1 Iteration`\\n24\\t- **工作区路径标准**：统一放置于项目根目录下的 `.worktrees/iter-{两位序号}`（如 `.worktrees/iter-02`）；创建前确认已忽略 `.worktrees/`，缺规则时只在获准范围内修改 `.gitignore`；\\n25\\t- **分支命名标准**：统一采用 `feat/iter-{两位序号}-{迭代短名}`（如 `feat/iter-02-user-auth`）；\\n26\\t- **工作区内相对路径准则（防跨目录串写）**：进入 `.worktrees/iter-{XX}` 后，所有子智能体必须读写**当前 Worktree 下的 `docs/todos/{XX}-*/` 文件**，严禁通过指向主仓库原工作区的绝对路径去修改主工作区中的 `docs/todos/` 文件！\\n27\\t- **黄金合流平衡点**：\\n28\\t  1. **子任务级（Per-Task）**：Git模式按实现C → 非参与者独审 → 主管登记D → `--local --strict` 顺序推进；提交须有授权且只包含本次归属文件，卡片及迭代README由唯一卡片写者维护；\\n29\\t  2. **单迭代级（Per-Iteration）**：全部任务验收PASS并通过迭代末独立总审及分支strict后，交付候选与证据；未授权合流时保留Worktree与分支，不合入main、不推送、不清理。\\n30\\t\\n31\\t### 1.3 Zero-Root-Touch 目录级物理隔离原则\\n32\\t**最安全的防冲突机制是不产生任何交叉写集合：**\\n33\\t1. **分支开发态绝对禁止触碰根文档**：在 Worktree 分支内，**严禁以任何形式修改、格式化或提交根目录 `docs/todos/README.md`**；\\n34\\t2. **任务卡为状态真源，二级索引为投影**：当前Worktree任务卡持有任务状态，`docs/todos/{迭代}/README.md` 的聚合投影由获准的 `python iter_sync.py --local` 幂等维护；\\n35\\t3. **主干统一最终一致性聚合**：获准合流后，仅在根索引写入授权内于 `main` 执行 `/iter sync` 刷新根 `docs/todos/README.md`，提交仍需Git授权。\\n36\\t\\n37\\t---\\n38\\t\\n39\\t## 🗂️ 2. Worktree 三级文档读写权限矩阵 (Read/Write Scope Matrix)\\n40\\t\\n41\\t| 文件层级与路径 | 读权限 | 写权限 | 行为准则与物理防御机制 |\\n42\\t| :--- | :---: | :---: | :--- |\\n43\\t| **所属迭代目录**<br>`docs/todos/{当前迭代}/*` | 🟢 允许 | 按授权及角色 | 目录边界不是整目录写权；任务卡及迭代README由唯一卡片写者维护，实现者只写授权文件并返回证据，投影由获准的 `iter_sync.py --local` 更新。 |\\n44\\t| **外部迭代目录**<br>`docs/todos/{非当前迭代}/*` | 🟢 允许 | 🔴 **严禁** | **跨迭代防污染**：严禁修改其他迭代的任务卡或文档，由 `iter_sync.py --check-branch` 审计拦截。 |\\n45\\t| **总控路线图与看板**<br>`docs/todos/README.md` | 🟢 允许 | 🔴 **严禁** | **Zero-Root-Touch 零触碰红线**：`iter_sync.py` 内置特性分支写入锁，非 `main` 分支调用时自动拒绝修改根 `README.md`。 |\\n46\\t\\n47\\t---\\n48\\t\\n49\\t## 🔄 3. Worktree 四阶段全生命周期操作规程\\n50\\t\\n51\\t```mermaid\\n52\\tflowchart TD\\n53\\t    A[\\\"核对本次授权 / cwd / 分支 / HEAD / dirty归属\\\"] --> Q{\\\"仅Prompt或只读？\\\"}\\n54\\t    Q -->|是| Preview[\\\"只交付预览与执行前门禁，不写文件或提交\\\"]\\n55\\t    Q -->|否| G1\\n56\\t    subgraph Phase0 [\\\"阶段零：授权内规划与执行前门禁\\\"]\\n57\\t        G1[\\\"按写入授权落盘规划\\\"] --> G2[\\\"有Git权限才精准暂存归属文件 / 检查cached diff / 提交\\\"]\\n58\\t        G2 --> G3[\\\"真正执行或创建Worktree前 --verify-committed；失败停止受影响执行\\\"]\\n59\\t    end\\n60\\t\\n61\\t    subgraph Phase1 [\\\"阶段一：Worktree 隔离探针与干净基线 (Setup)\\\"]\\n62\\t        P1[\\\"Step 0: 检测 git-dir vs git-common-dir 及分支名\\\"] --> P2[\\\"创建/进入 .worktrees/iter-{XX} (feat/iter-{XX})\\\"]\\n63\\t        P2 --> P3[\\\"确认 Worktree 内 docs/todos/{XX}-* 已检出 + 运行 Clean Baseline Test\\\"]\\n64\\t    end\\n65\\t\\n66\\t    subgraph Phase2 [\\\"阶段二：分支内 SDD 循环与二级冒泡 (Per-Task Loop)\\\"]\\n67\\t        T1[\\\"按type完成实现与证据，最高TESTING；获准提交C\\\"] --> T2[\\\"独立Reviewer审查C与冻结规格\\\"]\\n68\\t        T2 --> T3[\\\"APPROVED后唯一写者登记收据 / DONE / 提交D\\\"]\\n69\\t        T3 --> T4[\\\"--local --strict 核对验收PASS\\\"]\\n70\\t    end\\n71\\t\\n72\\t    subgraph Phase3 [\\\"阶段三：迭代末总审与合规预检 (Pre-Merge Gate)\\\"]\\n73\\t        F1[\\\"运行 iter_sync.py --check-branch --strict 验证零触碰与四态门禁\\\"] --> F2[\\\"派发 Final Whole-Branch Reviewer 全分支总审\\\"]\\n74\\t        F2 --> F3[\\\"汇总展示全部 Rulings 与 Deferred Minors 并呈报合流菜单\\\"]\\n75\\t    end\\n76\\t\\n77\\t    subgraph Phase4 [\\\"阶段四：按各自授权收尾\\\"]\\n78\\t        M0{\\\"核对合流 / 推送 / 清理各自授权\\\"} -->|未授权| Keep[\\\"保留分支与Worktree，交付证据\\\"]\\n79\\t        M0 -->|仅执行已授权动作| M1[\\\"获准合流后验证合流结果\\\"]\\n80\\t        M1 --> M2[\\\"获准才在main同步根索引并精准提交\\\"]\\n81\\t        M2 --> M3[\\\"另有清理授权且证据已持久化才移除Worktree / 分支\\\"]\\n82\\t    end\\n83\\t\\n84\\t    Phase0 --> Phase1 --> Phase2 --> Phase3 --> Phase4\\n85\\t```\\n86\\t\\n87\\t### 阶段一：启动期隔离探针与基线验证（融合 `using-git-worktrees`）\\n88\\t1. **确认授权与规划已提交**：实际创建Worktree或执行任务前运行 `python <skill_root>/scripts/iter_sync.py --verify-committed`；失败不自动暂存、提交或清理，权限缺口只阻塞对应动作；\\n89\\t2. **检测现有隔离状态（严禁盲目嵌套创建 Worktree）**：\\n90\\t   依次运行 `git rev-parse --git-dir`、`git rev-parse --git-common-dir` 与 `git branch --show-current`（注意排除 `git rev-parse --show-superproject-working-tree` 子模块情形）；\\n91\\t3. **创建或复用 `.worktrees/iter-{XX}`**：\\n92\\t   - 若尚未处于独立 Worktree，先执行 `git check-ignore -q .worktrees` 确认 `.worktrees/` 已被忽略；\\n93\\t   - 仅有创建授权且门禁通过后执行 `git worktree add .worktrees/iter-{XX} -b feat/iter-{XX}-{slug} main`；\\n94\\t4. **干净基线测试（Verify Clean Baseline）**：\\n95\\t   在开始第 1 个子任务前，必须运行一次项目测试套件，确保工作区基线 100% 绿灯。\\n96\\t\\n97\\t### 阶段三 & 四：迭代收尾菜单与合流清理（融合 `finishing-a-development-branch`）\\n98\\t当本迭代所有子任务均已流转为 `🟢 已完成 (DONE)`、通过全分支总审且 `python iter_sync.py --check-branch --strict` 返回 `PASSED` 后，向用户汇总本迭代所有的 `Rulings` 与 `Deferred Minors`，并呈现标准收尾选项：\\n99\\t这些是待选择的收尾方式，不是自动执行指令。未取得相应授权时采用保留现状；合流授权不包含推送或删除授权。\\n100\\t\\n101\\t1. **Option 1：获准本地合入 `main` 主干并同步全局看板**\\n102\\t   - 切回主工作区根目录，`git checkout main` ➔ `git merge --no-ff feat/iter-{XX}-{slug}`；\\n103\\t   - 在 `main` 上运行测试套件确认合流结果全绿；\\n104\\t   - 仅有根索引写入和提交授权时运行 `python <skill_root>/scripts/iter_sync.py` 并精准提交；\\n105\\t   - 仅有清理授权且原始证据已持久化时执行 `git worktree remove .worktrees/iter-{XX}` 与 `git branch -d feat/iter-{XX}-{slug}`；否则保留。\\n106\\t2. **Option 2：获准推送远程分支并创建 Pull Request**（保留 `.worktrees/iter-{XX}` 供后续 PR 迭代）。\\n107\\t3. **Option 3：保持当前 Worktree 与分支原状**（稍后手动处理）。\\n108\\t\\n109\\t---\\n110\\t\\n111\\t## 🚫 4. 负向约束红线清单 (Negative Constraints Checklist)\\n112\\t\\n113\\t- [x] **红线 1**：严禁在 `docs/todos/` 规划文件尚未 `git commit` 入主干前直接执行 `git worktree add`；\\n114\\t- [x] **红线 2**：严禁在 Worktree 分支内通过主仓库原绝对路径跨工作区读写主仓库的 `docs/todos/` 文件；\\n115\\t- [x] **红线 3**：严禁在 Worktree 分支开发态修改、格式化或提交根总控 `docs/todos/README.md`；\\n116\\t- [x] **红线 4**：严禁跳步流转四态（Implementer 只能置为 `🔵 待验收`，唯有 Reviewer Subagent 给出 `Approved` 后才可置为 `🟢 已完成`）；\\n117\\t- [x] **红线 5**：严禁在 `git worktree remove` 报存在未追踪文件时擅自使用 `--force` 强删（必须先向用户展示未提交文件清单并征询处置方式）。\\n118\\t\\n\\n=== C:/Users/qingyu/.codeg/skills/iteration-manager/.worktrees/iter-10/templates/assistants/iteration_planner.md (lines 1-16 of 16) ===\\n1\\t# 迭代规划与初始化助手\\n2\\t\\n3\\t你负责需求分解、Interfaces、type验证规划、TypeSafe和授权范围内的序列化，不负责偷偷执行实现。响应 `/iter init`。先读取实际Skill根目录的 `SKILL.md`、`references/agent_protocol.md`、`references/typesafe_eval_guide.md`、`references/task_card_schema.md` 和项目约定。Codeg维护源为 `C:/Users/qingyu/.codeg/skills/iteration-manager`。\\n4\\t\\n5\\t1. 先分清新建、接管、重规划、仅生成Prompt；核对cwd、分支、HEAD、dirty。明确文件写入、Git提交、Worktree、运行测试各自授权。仅Prompt/分析只在会话交付，不写文件、提交、委派实现或“顺便”整理已有dirty。\\n6\\t2. 新建：拆为可独立验证的交付；每卡明确目标、Consumes/Produces精确签名、范围、按type的验证命令与预期行为。分清开发内环的针对性测试、任务级受影响回归、迭代级集成/全量回归，并写选择依据。阶段为可在工作窗口交付的业务里程碑，不把RED/GREEN机械拆给不同会话，不将阶段比例说成工时进度。Strict-TDD需要有效RED→GREEN；其他type按契约。\\n7\\t3. 接管：先运行只读 `--takeover-report`，列差异与补验建议；保留历史Commit/状态/证据，缺证据UNKNOWN，不补造RED/APPROVED。取得迁移授权后再补格式与新验证。\\n8\\t4. 重规划：在既有任务ledger登记Ruling，核对依赖、范围及授权影响，用持久预算记录实际重规划事件；普通裁决不等于重规划。授权不足只阻塞受影响步骤，不自行扩大范围。\\n9\\t5. 实际调用TypeSafe evaluate，state只含观察事实，每个question只判断一维；权重30/30/20/20，总分≥80且单项≥70。保留原始输出、legend尺度、换算及证据路径。无工具/无结果为UNASSESSED，不填85冒充评分；工具输出与最终综合判断分开，不把置信度当得分。\\n10\\t6. 只有写入授权及规划门禁就绪才用模板写docs/todos，任务初态TODO、review PENDING、tdd_verified=false；默认预算单轮5/累计10/会诊1/重规划2，不维护重复可变真源。\\n11\\t7. 只有Git提交授权才精准暂存本次自己产生且已核对的文件，检查cached diff后提交。禁止 `git add .` 或整个 `docs/todos/` 打包他人工作。仅生成Prompt时可给待执行前校验的预览，不触发提交。\\n12\\t\\n13\\t规划时只核对会改变执行方向的就绪前提：真实入口/资源、权限、依赖与验证能力；缺口列责任人和恢复条件，不再加一轮完整预验收。UI先规划一条真实用户路径，再扩展约定状态/边界/视口，沿用项目技术栈。README的iter:goal内冻结实际工具入口及版本、交付模式、分层验证与临时产物映射；不增加iteration-delivery.json键。旧任务要求不自动改写，工具升级/收据迁移另行授权。\\n14\\t\\n15\\t输出：计划/预览 → 模式与授权 → 分类型任务与依赖 → TypeSafe实际结果及解释 → 产物路径/真实基线提交或“未提交” → `/iter next`执行前门禁。\\n16\\t\\n\\n(Complete: 3 files processed.)\"}],\"isError\":false}"
+            },
+            {
+              "type": "input_text",
+              "text": "{\"chunk_id\":\"774c88\",\"wall_time_seconds\":0.8019558,\"exit_code\":0,\"original_token_count\":37,\"output\":\"C:/Users/qingyu/.codeg/skills/iteration-manager/.worktrees/iter-10\\nd3bd97ab16ffed6104034a887a01eb1b4d75dc0e\\nM\\treferences/worktree_git_contract.md\\n\"}"
+            }
+          ],
+          "internal_chat_message_metadata_passthrough": {
+            "turn_id": "01a1d5b8-d582-71a1-ae63-09486ffa3dfe",
+            "create_time": 1794587050.0674453
+          }
+        },
+        "metadata": {
+          "client_authored": false,
+          "fallback_token_limit_override": 12000
+        }
+      }
+    },
+    {
+      "source_line": 35,
+      "record": {
+        "timestamp": "2026-11-13T16:24:24.778Z",
+        "ordinal": 34,
+        "type": "response_item",
+        "payload": {
+          "type": "custom_tool_call",
+          "id": "ctc_01751e048672ad60016af739b86afc87d09124f730110cab78",
+          "status": "completed",
+          "call_id": "call_ab398c81bbc54ed5b3062a3e60542a83",
+          "name": "exec",
+          "input": "text(await tools.exec_command({cmd:\"git diff --quiet -- references/worktree_git_contract.md; $targetExit = $LASTEXITCODE; Write-Output \\\"target_worktree_diff_exit=$targetExit\\\"; git diff --cached --quiet; $cachedExit = $LASTEXITCODE; Write-Output \\\"cached_diff_exit=$cachedExit\\\"; exit 0\",\"workdir\":\"C:/Users/qingyu/.codeg/skills/iteration-manager/.worktrees/iter-10\",\"max_output_tokens\":1000}));\ntext(await tools.clock__curr_time({}));\n",
+          "internal_chat_message_metadata_passthrough": {
+            "turn_id": "01a1d5b8-d582-71a1-ae63-09486ffa3dfe",
+            "create_time": 1794587064.4220364
+          }
+        }
+      }
+    },
+    {
+      "source_line": 38,
+      "record": {
+        "timestamp": "2026-11-13T16:24:25.614Z",
+        "ordinal": 37,
+        "type": "response_item",
+        "payload": {
+          "type": "custom_tool_call_output",
+          "id": "ctco_01a1d5b9-7d0e-79e0-894b-c8d49fcb99d0",
+          "call_id": "call_ab398c81bbc54ed5b3062a3e60542a83",
+          "output": [
+            {
+              "type": "input_text",
+              "text": "Script completed\nWall time 0.8 seconds\nOutput:\n"
+            },
+            {
+              "type": "input_text",
+              "text": "{\"chunk_id\":\"a9c40a\",\"wall_time_seconds\":0.6448243,\"exit_code\":0,\"original_token_count\":13,\"output\":\"target_worktree_diff_exit=0\\r\\ncached_diff_exit=0\\r\\n\"}"
+            },
+            {
+              "type": "input_text",
+              "text": "{\"current_time\":\"2026-11-13 16:24:25 UTC\"}"
+            }
+          ],
+          "internal_chat_message_metadata_passthrough": {
+            "turn_id": "01a1d5b8-d582-71a1-ae63-09486ffa3dfe",
+            "create_time": 1794587065.6147168
+          }
+        },
+        "metadata": {
+          "client_authored": false,
+          "fallback_token_limit_override": 12000
+        }
+      }
+    },
+    {
+      "source_line": 46,
+      "record": {
+        "timestamp": "2026-11-13T16:24:51.145Z",
+        "ordinal": 45,
+        "type": "event_msg",
+        "payload": {
+          "type": "task_complete",
+          "root_turn_id": "01a1d5b8-d582-71a1-ae63-09486ffa3dfe",
+          "turn_id": "01a1d5b8-d582-71a1-ae63-09486ffa3dfe",
+          "last_agent_message": "**本次可执行行动是交回只读结果；不修改、暂存或提交任何文件。** 指定文件当前没有未提交差异，无需制造新提交。\n\n## 实际基线与 dirty\n\n已核实：\n- cwd：`C:/Users/qingyu/.codeg/skills/iteration-manager/.worktrees/iter-10`\n- 分支：`feat/iter-10-self-hosting-hardening`\n- HEAD：`5ff7c3af554f9effdf0a95050af24c767ca0878b`，符合指定基线。\n- BASE：`d3bd97ab16ffed6104034a887a01eb1b4d75dc0e`，可解析为 commit。\n- `git diff --cached`：无输出，暂存区无差异。\n- `references/worktree_git_contract.md`：工作区无未提交差异；`BASE..HEAD` 中该文件为 `M`。\n\n`git status --short --untracked-files=all` 实际列出 **2 个已追踪修改、21 个未追踪文件**。结合本case提供的归属说明：\n\n| 归属 | 实际 dirty |\n|---|---|\n| `root/iter10/controller` | 修改的任务01卡、同目录 README；以及下述观察者文件以外的16个 `evidence/01/` 未追踪文件，包含准备、基线、上下文、派发、交接、盘点和原生终态记录 |\n| B父级观察者 | `evidence/01/consumption-b-observer.py`；`consumption-b/wave1-after.json`、`wave1-before.json`、`wave1-comparison.json`、`wave2-before.json` |\n| 本会话 | 未产生文件变更或暂存项 |\n\n归属来自用户说明；Git状态本身不证明作者身份。\n\n## 仅指定文件授权下的处理方案\n\n1. **现在保留全部 dirty 原状并返回文字。** 不执行 `--verify-committed`、测试、实现或验收入口，也不写证据或卡片。只读/Prompt不触发提交程序：`references/agent_protocol.md:7`、`templates/assistants/iteration_planner.md:5,11`。\n2. **不要求全局清空。** 他人 dirty 不构成清理授权：`references/agent_protocol.md:99`、`references/worktree_git_contract.md:13`。\n3. **未来恢复写入授权后**，只处理 `references/worktree_git_contract.md`。当前该文件没有待提交变化；若之后产生获准修改，才精准暂存该路径，检查完整 cached diff，确认不夹带其他归属后提交。不得使用 `git add .` 或打包 `docs/todos/`：`references/worktree_git_contract.md:20`、`templates/assistants/iteration_planner.md:11`。\n4. 任务卡和迭代 README 仍由唯一写者维护，本会话不接管：`references/worktree_git_contract.md:28,43`、`references/agent_protocol.md:103`。\n\n上述行动由明确授权和现行条文直接确定，没有新增方案取舍或评分，未调用 TypeSafe。\n\n## 实际调用、证据边界与剩余项\n\n实际执行的Git/定位命令：\n```text\nGet-Location\ngit branch --show-current\ngit rev-parse HEAD\ngit status --short --untracked-files=all\ngit diff --cached\ngit rev-parse --show-toplevel\ngit rev-parse --verify 'd3bd97ab16ffed6104034a887a01eb1b4d75dc0e^{commit}'\ngit diff --name-status BASE..HEAD -- references/worktree_git_contract.md\ngit diff -- references/worktree_git_contract.md\ngit diff --cached --name-status\ngit diff --quiet -- references/worktree_git_contract.md\ngit diff --cached --quiet\n```\n其中最后两个 quiet 查询分别返回 **0、0**；各命令执行单元均已退出，退出码为0。\n\n通过 FastCtx 完整读完：\n- `SKILL.md:1-97`\n- `references/agent_protocol.md:1-156`\n- `references/worktree_git_contract.md:1-118`\n- `templates/assistants/iteration_planner.md:1-16`\n\n首次读取的 Partial 已按工具给出的续读参数补齐，最终为 Complete。另对记忆索引作关键词检索，无匹配，未引用历史结论。\n\n**剩余缺口：** 本次没有执行测试、独立审查或验收，不能据此批准候选；当前卡按已提供状态保持 `IN_PROGRESS / review PENDING / 验收 UNKNOWN`，未写卡、未提升状态。独立Reviewer必须与参与者分离，执行者最高TESTING：`references/agent_protocol.md:105-107`。\n\n**活动命令：** 本会话无遗留活动命令；其他参与者的命令状态未查询，保持未知。最后读钟为 `2026-11-13T16:24:25Z`，早于指定 command_deadline 与 leaf_deadline。",
+          "started_at": 1794587022,
+          "completed_at": 1794587091,
+          "duration_ms": 68328,
+          "time_to_first_token_ms": 7499
+        }
+      }
+    }
+  ],
+  "tool_call_count": 4,
+  "tool_output_count": 4,
+  "unmatched_call_ids": []
+}

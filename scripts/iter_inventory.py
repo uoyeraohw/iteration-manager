@@ -5,7 +5,7 @@ from iter_preflight import _dispatch_check, dispatch_check
 
 
 def inventory(directory, root, mode, context=None, phase='implementation', phase_from_context=False, details=False, phase_observer=None):
-    from iter_sync import discover_task_files, audit_task_file, _render_task_envelope
+    from iter_queries import discover_task_files, audit_task_file, _render_task_envelope
     root, directory = Path(root).resolve(), Path(directory).resolve()
     if mode not in ('continue', 'takeover'):
         raise ValueError('Inventory mode must be continue or takeover')

@@ -1,0 +1,48 @@
+{
+  "version": 1,
+  "tasks": {
+    "05": {
+      "phase": "implementation",
+      "candidate": "8392193a0d9e883892f75780a63a1b16f67682c4",
+      "inputs": [
+        "docs/todos/10-self-hosting-hardening/05-release-evidence-index.md",
+        "SKILL.md",
+        "references/template_generation.md",
+        "docs/todos/10-self-hosting-hardening/evidence/04/review.json"
+      ],
+      "capabilities": [
+        "Codeg MCP codex independent session",
+        "Windows iter_run",
+        "pytest",
+        "read-only installed skill source inspection"
+      ],
+      "dependencies": [
+        "docs/todos/10-self-hosting-hardening/04-board-handoff.md"
+      ],
+      "tool_entry": "C:/Users/qingyu/.codeg/skills/iteration-manager/build/frozen-tools/46ded3a/scripts/iter_sync.py",
+      "checkpoint": "按05建立四层发布事实索引、只读观察副本、链接和结构回归；正常阶段交付",
+      "remaining_work": [
+        "四层来源核验和索引/入口",
+        "定向回归",
+        "独审"
+      ],
+      "observations": {
+        "authority": {
+          "status": "READY",
+          "summary": "六卡串行实施及精准提交；04固定strict4/6PASS；禁止部署推送合流清理",
+          "evidence": "docs/todos/10-self-hosting-hardening/evidence/04/review.json"
+        },
+        "execution": {
+          "status": "READY",
+          "summary": "Codeg独立1718/1719正常终态；无活动命令；副本只读，未知可按05契约标UNKNOWN",
+          "evidence": "docs/todos/10-self-hosting-hardening/evidence/04/review-report.json"
+        },
+        "verification": {
+          "status": "READY",
+          "summary": "冻结runner/pytest和链接/Note校验已实际使用",
+          "evidence": "docs/todos/10-self-hosting-hardening/evidence/04/controller-regression-b.json"
+        }
+      }
+    }
+  }
+}

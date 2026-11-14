@@ -1,0 +1,10 @@
+{
+  "byte_changed_paths": [],
+  "disk_metadata_changed_paths": [],
+  "git_changed_fields": [
+    "status"
+  ],
+  "byte_compared_file_count": 143,
+  "unchanged": false,
+  "exclusion": "Only parent-owned consumption-b evidence directory excluded; ignored files covered by disk size/mtime inventory, not byte comparison."
+}

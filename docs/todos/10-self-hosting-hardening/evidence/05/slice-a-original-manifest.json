@@ -1,0 +1,824 @@
+{
+  "candidate": "SC-FS-I01-20261112-R7",
+  "files_per_target": 58,
+  "items": [
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": ".agents/notes/implemented/architecture/2026-11-11-readonly-skill-grant.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\replica-backups\\0\\.agents\\notes\\implemented\\architecture\\2026-11-11-readonly-skill-grant.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\source\\.agents\\notes\\implemented\\architecture\\2026-11-11-readonly-skill-grant.md"
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": ".agents/notes/implemented/architecture/2026-11-11-trustworthy-board.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\replica-backups\\0\\.agents\\notes\\implemented\\architecture\\2026-11-11-trustworthy-board.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\source\\.agents\\notes\\implemented\\architecture\\2026-11-11-trustworthy-board.md"
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": ".agents/notes/implemented/architecture/2026-11-12-filesystem-delivery.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\replica-backups\\0\\.agents\\notes\\implemented\\architecture\\2026-11-12-filesystem-delivery.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\source\\.agents\\notes\\implemented\\architecture\\2026-11-12-filesystem-delivery.md"
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": ".agents/notes/implemented/bug-fix/2026-11-10-stage01-evidence-gates.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\replica-backups\\0\\.agents\\notes\\implemented\\bug-fix\\2026-11-10-stage01-evidence-gates.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\source\\.agents\\notes\\implemented\\bug-fix\\2026-11-10-stage01-evidence-gates.md"
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": ".agents/notes/implemented/bug-fix/2026-11-12-filesystem-r7-acceptance-repair.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\replica-backups\\0\\.agents\\notes\\implemented\\bug-fix\\2026-11-12-filesystem-r7-acceptance-repair.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\source\\.agents\\notes\\implemented\\bug-fix\\2026-11-12-filesystem-r7-acceptance-repair.md"
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": ".agents/notes/implemented/process/2026-11-11-assistant-deployment.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\replica-backups\\0\\.agents\\notes\\implemented\\process\\2026-11-11-assistant-deployment.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\source\\.agents\\notes\\implemented\\process\\2026-11-11-assistant-deployment.md"
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": ".agents/notes/implemented/process/2026-11-11-bounded-autonomy.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\replica-backups\\0\\.agents\\notes\\implemented\\process\\2026-11-11-bounded-autonomy.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\source\\.agents\\notes\\implemented\\process\\2026-11-11-bounded-autonomy.md"
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": ".agents/notes/implemented/process/2026-11-11-checkpoint-resume.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\replica-backups\\0\\.agents\\notes\\implemented\\process\\2026-11-11-checkpoint-resume.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\source\\.agents\\notes\\implemented\\process\\2026-11-11-checkpoint-resume.md"
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": ".agents/notes/implemented/process/2026-11-12-canonical-git-repository.md",
+      "existed": false,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\replica-backups\\0\\.agents\\notes\\implemented\\process\\2026-11-12-canonical-git-repository.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\source\\.agents\\notes\\implemented\\process\\2026-11-12-canonical-git-repository.md"
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": "SKILL.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\replica-backups\\0\\SKILL.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\source\\SKILL.md"
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": "references/agent_protocol.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\replica-backups\\0\\references\\agent_protocol.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\source\\references\\agent_protocol.md"
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": "references/checkpoint_execution.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\replica-backups\\0\\references\\checkpoint_execution.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\source\\references\\checkpoint_execution.md"
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": "references/readonly_skill_access.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\replica-backups\\0\\references\\readonly_skill_access.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\source\\references\\readonly_skill_access.md"
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": "references/superpowers_handbook.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\replica-backups\\0\\references\\superpowers_handbook.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\source\\references\\superpowers_handbook.md"
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": "references/task_card_schema.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\replica-backups\\0\\references\\task_card_schema.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\source\\references\\task_card_schema.md"
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": "references/typesafe_eval_guide.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\replica-backups\\0\\references\\typesafe_eval_guide.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\source\\references\\typesafe_eval_guide.md"
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": "references/worktree_git_contract.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\replica-backups\\0\\references\\worktree_git_contract.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\source\\references\\worktree_git_contract.md"
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": "scripts/deadline_watch.js",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\replica-backups\\0\\scripts\\deadline_watch.js",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\source\\scripts\\deadline_watch.js"
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": "scripts/iter_autonomy.py",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\replica-backups\\0\\scripts\\iter_autonomy.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\source\\scripts\\iter_autonomy.py"
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": "scripts/iter_checkpoint.py",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\replica-backups\\0\\scripts\\iter_checkpoint.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\source\\scripts\\iter_checkpoint.py"
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": "scripts/iter_contracts.py",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\replica-backups\\0\\scripts\\iter_contracts.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\source\\scripts\\iter_contracts.py"
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": "scripts/iter_filesystem.py",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\replica-backups\\0\\scripts\\iter_filesystem.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\source\\scripts\\iter_filesystem.py"
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": "scripts/iter_run.py",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\replica-backups\\0\\scripts\\iter_run.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\source\\scripts\\iter_run.py"
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": "scripts/iter_sync.py",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\replica-backups\\0\\scripts\\iter_sync.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\source\\scripts\\iter_sync.py"
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": "scripts/iter_win_job.py",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\replica-backups\\0\\scripts\\iter_win_job.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\source\\scripts\\iter_win_job.py"
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": "scripts/skill_readonly_mcp.py",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\replica-backups\\0\\scripts\\skill_readonly_mcp.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\source\\scripts\\skill_readonly_mcp.py"
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": "templates/assistants/iteration_controller.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\replica-backups\\0\\templates\\assistants\\iteration_controller.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\source\\templates\\assistants\\iteration_controller.md"
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": "templates/assistants/iteration_planner.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\replica-backups\\0\\templates\\assistants\\iteration_planner.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\source\\templates\\assistants\\iteration_planner.md"
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": "templates/assistants/task_tech_lead.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\replica-backups\\0\\templates\\assistants\\task_tech_lead.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\source\\templates\\assistants\\task_tech_lead.md"
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": "templates/board.html",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\replica-backups\\0\\templates\\board.html",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\source\\templates\\board.html"
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": "templates/consilium_rca_prompt.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\replica-backups\\0\\templates\\consilium_rca_prompt.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\source\\templates\\consilium_rca_prompt.md"
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": "templates/contracts/refactor_benchmark_contract.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\replica-backups\\0\\templates\\contracts\\refactor_benchmark_contract.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\source\\templates\\contracts\\refactor_benchmark_contract.md"
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": "templates/contracts/spike_discovery_contract.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\replica-backups\\0\\templates\\contracts\\spike_discovery_contract.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\source\\templates\\contracts\\spike_discovery_contract.md"
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": "templates/contracts/strict_tdd_contract.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\replica-backups\\0\\templates\\contracts\\strict_tdd_contract.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\source\\templates\\contracts\\strict_tdd_contract.md"
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": "templates/contracts/ui_component_contract.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\replica-backups\\0\\templates\\contracts\\ui_component_contract.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\source\\templates\\contracts\\ui_component_contract.md"
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": "templates/iteration_readme.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\replica-backups\\0\\templates\\iteration_readme.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\source\\templates\\iteration_readme.md"
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": "templates/root_readme.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\replica-backups\\0\\templates\\root_readme.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\source\\templates\\root_readme.md"
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": "templates/sdd_implementer_prompt.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\replica-backups\\0\\templates\\sdd_implementer_prompt.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\source\\templates\\sdd_implementer_prompt.md"
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": "templates/sdd_reviewer_prompt.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\replica-backups\\0\\templates\\sdd_reviewer_prompt.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\source\\templates\\sdd_reviewer_prompt.md"
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": "templates/task_detail.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\replica-backups\\0\\templates\\task_detail.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\source\\templates\\task_detail.md"
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": "tests/test_autonomy.py",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\replica-backups\\0\\tests\\test_autonomy.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\source\\tests\\test_autonomy.py"
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": "tests/test_board_service.py",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\replica-backups\\0\\tests\\test_board_service.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\source\\tests\\test_board_service.py"
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": "tests/test_board_truth.py",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\replica-backups\\0\\tests\\test_board_truth.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\source\\tests\\test_board_truth.py"
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": "tests/test_checkpoint_resume.py",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\replica-backups\\0\\tests\\test_checkpoint_resume.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\source\\tests\\test_checkpoint_resume.py"
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": "tests/test_completion_gates.py",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\replica-backups\\0\\tests\\test_completion_gates.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\source\\tests\\test_completion_gates.py"
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": "tests/test_deadline_watch.py",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\replica-backups\\0\\tests\\test_deadline_watch.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\source\\tests\\test_deadline_watch.py"
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": "tests/test_filesystem_delivery_controller.py",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\replica-backups\\0\\tests\\test_filesystem_delivery_controller.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\source\\tests\\test_filesystem_delivery_controller.py"
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": "tests/test_filesystem_r7_repairs.py",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\replica-backups\\0\\tests\\test_filesystem_r7_repairs.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\source\\tests\\test_filesystem_r7_repairs.py"
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": "tests/test_filesystem_receipts.py",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\replica-backups\\0\\tests\\test_filesystem_receipts.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\source\\tests\\test_filesystem_receipts.py"
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": "tests/test_git_guards.py",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\replica-backups\\0\\tests\\test_git_guards.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\source\\tests\\test_git_guards.py"
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": "tests/test_iter_run.py",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\replica-backups\\0\\tests\\test_iter_run.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\source\\tests\\test_iter_run.py"
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": "tests/test_prompt_sources.py",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\replica-backups\\0\\tests\\test_prompt_sources.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\source\\tests\\test_prompt_sources.py"
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": "tests/test_scope_firewall.py",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\replica-backups\\0\\tests\\test_scope_firewall.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\source\\tests\\test_scope_firewall.py"
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": "tests/test_skill_readonly_mcp.py",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\replica-backups\\0\\tests\\test_skill_readonly_mcp.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\source\\tests\\test_skill_readonly_mcp.py"
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": "tests/test_sync_compatibility.py",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\replica-backups\\0\\tests\\test_sync_compatibility.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\source\\tests\\test_sync_compatibility.py"
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": "tests/test_task_card_schema.py",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\replica-backups\\0\\tests\\test_task_card_schema.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\source\\tests\\test_task_card_schema.py"
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": "tests/test_task_discovery_compat.py",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\replica-backups\\0\\tests\\test_task_discovery_compat.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\source\\tests\\test_task_discovery_compat.py"
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.codex\\skills\\iteration-manager",
+      "relative": "tests/test_worktree_concurrency.py",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\replica-backups\\0\\tests\\test_worktree_concurrency.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\source\\tests\\test_worktree_concurrency.py"
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": ".agents/notes/implemented/architecture/2026-11-11-readonly-skill-grant.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\replica-backups\\1\\.agents\\notes\\implemented\\architecture\\2026-11-11-readonly-skill-grant.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\source\\.agents\\notes\\implemented\\architecture\\2026-11-11-readonly-skill-grant.md"
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": ".agents/notes/implemented/architecture/2026-11-11-trustworthy-board.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\replica-backups\\1\\.agents\\notes\\implemented\\architecture\\2026-11-11-trustworthy-board.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\source\\.agents\\notes\\implemented\\architecture\\2026-11-11-trustworthy-board.md"
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": ".agents/notes/implemented/architecture/2026-11-12-filesystem-delivery.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\replica-backups\\1\\.agents\\notes\\implemented\\architecture\\2026-11-12-filesystem-delivery.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\source\\.agents\\notes\\implemented\\architecture\\2026-11-12-filesystem-delivery.md"
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": ".agents/notes/implemented/bug-fix/2026-11-10-stage01-evidence-gates.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\replica-backups\\1\\.agents\\notes\\implemented\\bug-fix\\2026-11-10-stage01-evidence-gates.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\source\\.agents\\notes\\implemented\\bug-fix\\2026-11-10-stage01-evidence-gates.md"
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": ".agents/notes/implemented/bug-fix/2026-11-12-filesystem-r7-acceptance-repair.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\replica-backups\\1\\.agents\\notes\\implemented\\bug-fix\\2026-11-12-filesystem-r7-acceptance-repair.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\source\\.agents\\notes\\implemented\\bug-fix\\2026-11-12-filesystem-r7-acceptance-repair.md"
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": ".agents/notes/implemented/process/2026-11-11-assistant-deployment.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\replica-backups\\1\\.agents\\notes\\implemented\\process\\2026-11-11-assistant-deployment.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\source\\.agents\\notes\\implemented\\process\\2026-11-11-assistant-deployment.md"
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": ".agents/notes/implemented/process/2026-11-11-bounded-autonomy.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\replica-backups\\1\\.agents\\notes\\implemented\\process\\2026-11-11-bounded-autonomy.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\source\\.agents\\notes\\implemented\\process\\2026-11-11-bounded-autonomy.md"
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": ".agents/notes/implemented/process/2026-11-11-checkpoint-resume.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\replica-backups\\1\\.agents\\notes\\implemented\\process\\2026-11-11-checkpoint-resume.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\source\\.agents\\notes\\implemented\\process\\2026-11-11-checkpoint-resume.md"
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": ".agents/notes/implemented/process/2026-11-12-canonical-git-repository.md",
+      "existed": false,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\replica-backups\\1\\.agents\\notes\\implemented\\process\\2026-11-12-canonical-git-repository.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\source\\.agents\\notes\\implemented\\process\\2026-11-12-canonical-git-repository.md"
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": "SKILL.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\replica-backups\\1\\SKILL.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\source\\SKILL.md"
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": "references/agent_protocol.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\replica-backups\\1\\references\\agent_protocol.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\source\\references\\agent_protocol.md"
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": "references/checkpoint_execution.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\replica-backups\\1\\references\\checkpoint_execution.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\source\\references\\checkpoint_execution.md"
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": "references/readonly_skill_access.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\replica-backups\\1\\references\\readonly_skill_access.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\source\\references\\readonly_skill_access.md"
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": "references/superpowers_handbook.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\replica-backups\\1\\references\\superpowers_handbook.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\source\\references\\superpowers_handbook.md"
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": "references/task_card_schema.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\replica-backups\\1\\references\\task_card_schema.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\source\\references\\task_card_schema.md"
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": "references/typesafe_eval_guide.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\replica-backups\\1\\references\\typesafe_eval_guide.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\source\\references\\typesafe_eval_guide.md"
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": "references/worktree_git_contract.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\replica-backups\\1\\references\\worktree_git_contract.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\source\\references\\worktree_git_contract.md"
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": "scripts/deadline_watch.js",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\replica-backups\\1\\scripts\\deadline_watch.js",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\source\\scripts\\deadline_watch.js"
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": "scripts/iter_autonomy.py",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\replica-backups\\1\\scripts\\iter_autonomy.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\source\\scripts\\iter_autonomy.py"
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": "scripts/iter_checkpoint.py",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\replica-backups\\1\\scripts\\iter_checkpoint.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\source\\scripts\\iter_checkpoint.py"
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": "scripts/iter_contracts.py",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\replica-backups\\1\\scripts\\iter_contracts.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\source\\scripts\\iter_contracts.py"
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": "scripts/iter_filesystem.py",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\replica-backups\\1\\scripts\\iter_filesystem.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\source\\scripts\\iter_filesystem.py"
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": "scripts/iter_run.py",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\replica-backups\\1\\scripts\\iter_run.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\source\\scripts\\iter_run.py"
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": "scripts/iter_sync.py",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\replica-backups\\1\\scripts\\iter_sync.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\source\\scripts\\iter_sync.py"
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": "scripts/iter_win_job.py",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\replica-backups\\1\\scripts\\iter_win_job.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\source\\scripts\\iter_win_job.py"
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": "scripts/skill_readonly_mcp.py",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\replica-backups\\1\\scripts\\skill_readonly_mcp.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\source\\scripts\\skill_readonly_mcp.py"
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": "templates/assistants/iteration_controller.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\replica-backups\\1\\templates\\assistants\\iteration_controller.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\source\\templates\\assistants\\iteration_controller.md"
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": "templates/assistants/iteration_planner.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\replica-backups\\1\\templates\\assistants\\iteration_planner.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\source\\templates\\assistants\\iteration_planner.md"
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": "templates/assistants/task_tech_lead.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\replica-backups\\1\\templates\\assistants\\task_tech_lead.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\source\\templates\\assistants\\task_tech_lead.md"
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": "templates/board.html",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\replica-backups\\1\\templates\\board.html",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\source\\templates\\board.html"
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": "templates/consilium_rca_prompt.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\replica-backups\\1\\templates\\consilium_rca_prompt.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\source\\templates\\consilium_rca_prompt.md"
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": "templates/contracts/refactor_benchmark_contract.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\replica-backups\\1\\templates\\contracts\\refactor_benchmark_contract.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\source\\templates\\contracts\\refactor_benchmark_contract.md"
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": "templates/contracts/spike_discovery_contract.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\replica-backups\\1\\templates\\contracts\\spike_discovery_contract.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\source\\templates\\contracts\\spike_discovery_contract.md"
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": "templates/contracts/strict_tdd_contract.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\replica-backups\\1\\templates\\contracts\\strict_tdd_contract.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\source\\templates\\contracts\\strict_tdd_contract.md"
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": "templates/contracts/ui_component_contract.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\replica-backups\\1\\templates\\contracts\\ui_component_contract.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\source\\templates\\contracts\\ui_component_contract.md"
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": "templates/iteration_readme.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\replica-backups\\1\\templates\\iteration_readme.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\source\\templates\\iteration_readme.md"
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": "templates/root_readme.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\replica-backups\\1\\templates\\root_readme.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\source\\templates\\root_readme.md"
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": "templates/sdd_implementer_prompt.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\replica-backups\\1\\templates\\sdd_implementer_prompt.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\source\\templates\\sdd_implementer_prompt.md"
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": "templates/sdd_reviewer_prompt.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\replica-backups\\1\\templates\\sdd_reviewer_prompt.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\source\\templates\\sdd_reviewer_prompt.md"
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": "templates/task_detail.md",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\replica-backups\\1\\templates\\task_detail.md",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\source\\templates\\task_detail.md"
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": "tests/test_autonomy.py",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\replica-backups\\1\\tests\\test_autonomy.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\source\\tests\\test_autonomy.py"
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": "tests/test_board_service.py",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\replica-backups\\1\\tests\\test_board_service.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\source\\tests\\test_board_service.py"
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": "tests/test_board_truth.py",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\replica-backups\\1\\tests\\test_board_truth.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\source\\tests\\test_board_truth.py"
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": "tests/test_checkpoint_resume.py",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\replica-backups\\1\\tests\\test_checkpoint_resume.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\source\\tests\\test_checkpoint_resume.py"
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": "tests/test_completion_gates.py",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\replica-backups\\1\\tests\\test_completion_gates.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\source\\tests\\test_completion_gates.py"
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": "tests/test_deadline_watch.py",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\replica-backups\\1\\tests\\test_deadline_watch.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\source\\tests\\test_deadline_watch.py"
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": "tests/test_filesystem_delivery_controller.py",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\replica-backups\\1\\tests\\test_filesystem_delivery_controller.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\source\\tests\\test_filesystem_delivery_controller.py"
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": "tests/test_filesystem_r7_repairs.py",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\replica-backups\\1\\tests\\test_filesystem_r7_repairs.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\source\\tests\\test_filesystem_r7_repairs.py"
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": "tests/test_filesystem_receipts.py",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\replica-backups\\1\\tests\\test_filesystem_receipts.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\source\\tests\\test_filesystem_receipts.py"
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": "tests/test_git_guards.py",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\replica-backups\\1\\tests\\test_git_guards.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\source\\tests\\test_git_guards.py"
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": "tests/test_iter_run.py",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\replica-backups\\1\\tests\\test_iter_run.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\source\\tests\\test_iter_run.py"
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": "tests/test_prompt_sources.py",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\replica-backups\\1\\tests\\test_prompt_sources.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\source\\tests\\test_prompt_sources.py"
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": "tests/test_scope_firewall.py",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\replica-backups\\1\\tests\\test_scope_firewall.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\source\\tests\\test_scope_firewall.py"
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": "tests/test_skill_readonly_mcp.py",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\replica-backups\\1\\tests\\test_skill_readonly_mcp.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\source\\tests\\test_skill_readonly_mcp.py"
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": "tests/test_sync_compatibility.py",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\replica-backups\\1\\tests\\test_sync_compatibility.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\source\\tests\\test_sync_compatibility.py"
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": "tests/test_task_card_schema.py",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\replica-backups\\1\\tests\\test_task_card_schema.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\source\\tests\\test_task_card_schema.py"
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": "tests/test_task_discovery_compat.py",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\replica-backups\\1\\tests\\test_task_discovery_compat.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\source\\tests\\test_task_discovery_compat.py"
+    },
+    {
+      "root": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager",
+      "relative": "tests/test_worktree_concurrency.py",
+      "existed": true,
+      "backup": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\replica-backups\\1\\tests\\test_worktree_concurrency.py",
+      "source": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\source\\tests\\test_worktree_concurrency.py"
+    }
+  ],
+  "preserved_nonactive_backups": [
+    {
+      "path": "C:\\Users\\qingyu\\.gemini\\config\\skills\\iteration-manager\\scripts\\iter_sync.py.bak",
+      "snapshot": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\build\\git-init-sync-20261112-120855\\preserved-backups\\1\\scripts\\iter_sync.py.bak"
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "raw_comparison": "wave1-comparison.json",
+  "normalized_status_unchanged": true,
+  "normalization": "Exclude only parent observer consumption-b/ evidence file additions from status. Raw before/after retained.",
+  "controller_change": null
+}

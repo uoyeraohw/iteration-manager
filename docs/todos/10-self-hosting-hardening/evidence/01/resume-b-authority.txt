@@ -1,0 +1,3 @@
+用户通过本轮问题明确答复“授权本次单次恢复”。仅授权任务01此次时间中断的resume-checkpoint一次，保留已提交成果和四预算，恢复后继续独审及六卡串行推进。未授权其他中断自动续跑、部署、推送、合流或清理。
+问题原文：是否授权对任务01本次时间中断执行一次 resume-checkpoint，保留已提交成果和四预算，恢复后继续独审及六卡串行推进？固定协议要求这项单次恢复授权；当前已按真实 canceled 终态登记 FUSED，未进入任务02。
+已核对检查点612cfde035f5fc96cec9d60435296af4e84be307：源码/测试/笔记与5ff7c3a相同；四叶子由原派发会话保留实际completed响应、原始工具调用及输出。B两个runner均COMPLETED/0/tree_terminal，最后精准Git命令原始call_id=call_97fddaae69044f17804ec27973f7cb95，原始exit_code=0且无session_id。上述为恢复/终态证据，不是产品独立APPROVED。

@@ -1,0 +1,784 @@
+{
+  "task_id": "04",
+  "reviewer": {
+    "session_id": "01a1d627-da6f-75c3-87c5-5431d61a2594",
+    "identity_source": "当前运行环境 CODEX_SESSION_ID / CODEX_THREAD_ID",
+    "role": "全新独立 Reviewer",
+    "independence": "未参与本卡实现、测试、设计或 RCA；不是主控1699或实现者1718",
+    "read_only": true,
+    "delegation": false
+  },
+  "baseline": {
+    "cwd": "C:/Users/qingyu/.codeg/skills/iteration-manager/.worktrees/iter-10",
+    "branch": "feat/iter-10-self-hosting-hardening",
+    "base_sha": "2ce0705ebeeaee73f75a1dcd2882836dbc6b9d29",
+    "head_sha": "9b9010afb8dbf0b0cf74f83c6c97605984319619",
+    "contract_sha": "9b9010afb8dbf0b0cf74f83c6c97605984319619",
+    "dirty_at_start": [],
+    "dirty_at_end": [],
+    "final_head_checked_at": "2026-11-13T18:27:18Z"
+  },
+  "verdict": "APPROVED",
+  "reviewer_judgment": "04冻结候选满足本卡展示、交接、桌面交互、四态和HTTP安全要求。未发现需要修复的阻断缺陷。此结论仅为独立审查裁决，不登记DONE、完成收据或登记后strict。",
+  "evidence_path_prefix": "docs/todos/10-self-hosting-hardening/evidence/04/",
+  "scope": {
+    "result": "PASS",
+    "evidence": [
+      "实际读取BASE..C差异及95个变更路径；均属于board模板、三份测试、授权笔记、04卡或04证据目录。",
+      "BASE..C在scripts/、references/、SKILL.md及迭代README上无差异；未修改03查询/CLI源码。",
+      "忽略行尾差异后，04卡变化为执行元数据、显示状态、阶段勾选及ledger；目标、接口、白名单和验收标准未被降低。",
+      "controller-scope-b.json.output.txt:1记录95个变更文件均在范围内；本次另以实际Git路径清单核对。",
+      "完整阅读SKILL.md、references/agent_protocol.md、references/task_card_schema.md、迭代10 README及04-board-handoff.md。未重做01—03验收。"
+    ]
+  },
+  "spec": [
+    {
+      "requirement": "Git BASE/C、FS candidate_id、未知模式",
+      "result": "PASS",
+      "evidence": [
+        "templates/board.html:55-56按delivery_mode分支；Git缺SHA显示UNKNOWN，FS只显示candidate_id，未知模式明确UNKNOWN。",
+        "tests/test_board_handoff.py:40-62覆盖三种模式。",
+        "browser-detail-b.json.output.txt:76-98实际Git详情显示BASE/C。",
+        "browser-states-b.json.output.txt:64、129-136显示FS当前candidate_id及历史原候选。"
+      ]
+    },
+    {
+      "requirement": "历史checkpoint保留原候选、证据和remaining；缺失不假完成",
+      "result": "PASS",
+      "evidence": [
+        "templates/board.html:57-59显示checkpoint.candidate、phase、summary、source及progress evidence；无记录和空remaining均明确UNKNOWN。",
+        "tests/test_board_handoff.py:60-70验证历史出处、剩余项和缺失语义。",
+        "browser-source-b.json.output.txt:70-76及browser-checkpoint-b.png显示7fe4b4d原候选、attempt-a-valid.json、最终回归原件及剩余工作。",
+        "implementation-checkpoint-a.json保留c2d9064产品候选及原始检查、剩余项；attempt-a-valid.json保留7fe4b4d检查点和原证据。"
+      ]
+    },
+    {
+      "requirement": "只使用sources列明原文入口",
+      "result": "PASS",
+      "evidence": [
+        "templates/board.html:62-63枚举sources标签及路径；链接只有task/source索引，没有任意路径参数。",
+        "browser-detail-b.json.output.txt:115-135列明收据、独审报告及RED/GREEN/regression原件。",
+        "browser-source-b.json.output.txt:2-3记录source=0链接打开真实收据popup。",
+        "browser-states-b.json.output.txt:151-164列明FS三个来源。"
+      ]
+    },
+    {
+      "requirement": "真实桌面filter→detail→source→Escape和刷新",
+      "result": "PASS",
+      "evidence": [
+        "browser-detail-b.mjs:2使用原生page.click筛选PASS，等待三卡后打开03详情。",
+        "browser-source-b.mjs:1使用原生链接点击、popup及keyboard.press('Escape')，等待dialog隐藏；随后打开真实04检查点。",
+        "browser-source-b.json.output.txt:99记录ESCAPE CLOSED。",
+        "browser-disconnect-b.json.output.txt:64记录原生刷新前后读取时间由02:21:47.276319变为02:21:47.461353。",
+        "实际视口1139×869，TaskSpace5/p1。evaluate仅用于读取文本和计数，没有替代用户输入。"
+      ]
+    },
+    {
+      "requirement": "正常、空、加载、断连及桌面视觉",
+      "result": "PASS",
+      "evidence": [
+        "browser-git-b.json.output.txt为真实Git卡正常状态。",
+        "browser-states-b.json.output.txt:167-261覆盖空筛选及空库存；0/0未显示整轮PASS。",
+        "browser-states-b.json.output.txt:264-387记录真实HTTP延迟下加载→实时读取。",
+        "browser-disconnect-b.json.output.txt:64-125记录断连后计数、卡片和时间快照保留。",
+        "已通过view_image实际观察全部七张browser-*.png：候选与历史检查点分组清楚，长路径换行，模态有可见关闭按钮和滚动条，四态文字可读。",
+        "FS、empty、loading输入明确为synthetic；浏览器、HTTP边界和输入操作为真实执行。"
+      ]
+    },
+    {
+      "requirement": "DONE/PASS精确计数与HTTP symlink安全",
+      "result": "PASS",
+      "evidence": [
+        "tests/test_board_truth.py:47-55断言README和终端精确为DONE 2/2、PASS 1/2。",
+        "tests/test_board_handoff.py:73-79断言实际模板渲染相同计数，不只是检查嵌入JSON。",
+        "真实Git浏览器显示DONE 3/6、PASS 3/6，与迭代README当前聚合一致。",
+        "tests/test_board_service.py:53-71实际创建symlink并执行HTTP越界、未列明文件、任意path参数及负索引拒绝断言；无skip或创建失败吞错。",
+        "最终实现者及主控独立五文件回归均67passed，没有skip结果。"
+      ]
+    }
+  ],
+  "quality": {
+    "result": "PASS",
+    "evidence": [
+      "产品修改局限于展示与刷新行为，继续消费03既有字段和安全入口。",
+      "模板继续使用textContent构造内容；未引入HTML注入入口。",
+      "刷新有并发守卫、加载反馈、失败保留快照及finally恢复按钮。",
+      "Node最小DOM测试明确只是模板单元测试；真实输入与视觉另有原始证据。",
+      "RED原件包含四个真实AssertionError，非导入、编译或环境失败；补充测试未冒称全部先RED。",
+      "服务收据为COMPLETED、raw_exit_code=0、tree_terminal=true；原始末行stopped=true且active_commands为空；浏览器输出记录TASKSPACE FINISHED。"
+    ]
+  },
+  "checks": [
+    {
+      "name": "interaction",
+      "kind": "command",
+      "raw_exit_code": 0,
+      "receipts": [
+        "browser-git-b.json",
+        "browser-detail-b.json",
+        "browser-source-b.json",
+        "browser-states-b.json",
+        "browser-disconnect-b.json"
+      ],
+      "output": [
+        "browser-git-b.json.output.txt",
+        "browser-detail-b.json.output.txt",
+        "browser-source-b.json.output.txt",
+        "browser-states-b.json.output.txt",
+        "browser-disconnect-b.json.output.txt"
+      ],
+      "summary": "五个ego-browser命令均正常完成；原生筛选、详情、列明来源popup、Escape及刷新有原始输出。"
+    },
+    {
+      "name": "states",
+      "kind": "observation",
+      "output": [
+        "browser-git-b.json.output.txt",
+        "browser-states-b.json.output.txt",
+        "browser-disconnect-b.json.output.txt"
+      ],
+      "summary": "直接读取正常、空、加载、断连原件；states-observation.json仅作索引。"
+    },
+    {
+      "name": "visual",
+      "kind": "observation",
+      "output": [
+        "browser-real-git-b.png",
+        "browser-git-detail-b.png",
+        "browser-checkpoint-b.png",
+        "browser-fs-detail-b.png",
+        "browser-empty-b.png",
+        "browser-loading-b.png",
+        "browser-disconnected-b.png"
+      ],
+      "summary": "七张原始截图均已通过view_image实际观察；visual-observation.json未被当作视觉验收替代品。"
+    },
+    {
+      "name": "regression",
+      "kind": "command",
+      "receipt": "controller-regression-b.json",
+      "raw_exit_code": 0,
+      "output": [
+        "controller-regression-b.json.output.txt"
+      ],
+      "summary": "指定五文件独立67passed in 18.48s；本次沿用，不重复运行。"
+    },
+    {
+      "name": "supporting_red_green",
+      "receipts": [
+        "slice-a-red-1812.json",
+        "slice-a-green-1814.json",
+        "slice-a-final-regression-1816.json"
+      ],
+      "output": [
+        "slice-a-red-1812.json.output.txt",
+        "slice-a-green-1814.json.output.txt",
+        "slice-a-final-regression-1816.json.output.txt"
+      ],
+      "summary": "RED：4 failed、1 passed、exit1；GREEN：13passed；最终实现者回归67passed。"
+    }
+  ],
+  "issues": [],
+  "nonblocking_observations": [
+    {
+      "severity": "INFO",
+      "location": "browser-service-b.json.output.txt:2-44",
+      "observation": "原件保留两次请求写回时的ConnectionAbortedError WinError10053。客户端中止的具体原因未单独记录；后续状态检查和服务正常终态均有证据，未构成本卡行为失败。",
+      "required_action": "无"
+    },
+    {
+      "severity": "INFO",
+      "location": "coordination-report-rejection.json:4-9",
+      "observation": "首次attempt报告缺started_at/ended_at，被退出2拒绝；无效原件保留，新valid报告以null记录未知时间并成功登记。未将拒绝响应中的状态字段解释为卡真实FUSED。",
+      "required_action": "无"
+    }
+  ],
+  "evidence_reuse": [
+    {
+      "original_candidate": "c2d90643cc391168e0e424843c761e9291629d99",
+      "current_candidate": "9b9010afb8dbf0b0cf74f83c6c97605984319619",
+      "basis": "实际git diff确认c2d9064..当前C在templates/、tests/及browser_harness.py无变化；后续变化为卡片和证据登记。",
+      "reused": [
+        "实现者最终67passed",
+        "主控独立67passed",
+        "同产品源码上的原生浏览器证据"
+      ],
+      "reviewer_action": "独立读取源码、测试和原始输出并观察截图；未冒称本次重新执行。"
+    },
+    {
+      "original_candidate": "7fe4b4dcab7110c0f3f6791e5f9ef0d5a29eaa67",
+      "basis": "这是历史检查点身份，不替换为最终C；原candidate、evidence及remaining均保留。",
+      "reused": [
+        "attempt-a-valid.json",
+        "implementation-checkpoint-a.json",
+        "native-terminal-a.json"
+      ]
+    }
+  ],
+  "unverified": {
+    "blocking_gaps": [],
+    "boundaries": [
+      "本Reviewer没有重新启动业务、测试或浏览器命令；按本次授权复用匹配源码的有效证据。",
+      "FS证据证明合成FS输入经真实HTTP和原生浏览器展示，不外推为真实FS业务交付批准。",
+      "收据登记、登记D和固定协调器local strict尚属主控后续步骤，本报告未执行或宣称通过。"
+    ]
+  },
+  "typesafe": {
+    "request": {
+      "state": {
+        "task": {
+          "id": "04",
+          "type": "UI-Component",
+          "base": "2ce0705ebeeaee73f75a1dcd2882836dbc6b9d29",
+          "candidate": "9b9010afb8dbf0b0cf74f83c6c97605984319619",
+          "contract": "9b9010afb8dbf0b0cf74f83c6c97605984319619",
+          "requirements": [
+            "Git BASE/C; FS candidate_id; unknown mode explicit",
+            "Historical checkpoint candidate/source/progress evidence and remaining retained; missing checkpoint UNKNOWN; empty remaining not completion",
+            "Native desktop filter/detail/source/Escape/refresh; normal/empty/loading/disconnect",
+            "Exact DONE/PASS counts across README/terminal/HTML",
+            "HTTP listed sources only, symlink escape rejected",
+            "No task03 source changes"
+          ],
+          "excludes": [
+            "mobile",
+            "deployment",
+            "tasks01-03 reacceptance",
+            "DONE/receipt registration by reviewer"
+          ]
+        },
+        "observed_git": {
+          "branch": "feat/iter-10-self-hosting-hardening",
+          "head": "9b9010afb8dbf0b0cf74f83c6c97605984319619",
+          "dirty": [],
+          "diff_count": 95,
+          "changed_categories": [
+            "templates/board.html",
+            "tests/test_board_handoff.py",
+            "tests/test_board_truth.py",
+            "tests/test_board_service.py",
+            ".agents/notes/implemented/feature/2026-11-13-board-handoff.md",
+            "task04 card",
+            "task04 evidence directory"
+          ],
+          "scripts_references_skill_readme_diff": [],
+          "product_tests_harness_diff_c2d9064_to_candidate": []
+        },
+        "source": {
+          "templates/board.html:55-59": "delivery_mode branches git/filesystem/UNKNOWN; git base_sha/head_sha fall back UNKNOWN; FS only candidate_id; checkpoint candidate, phase, summary, source and progress map retained; empty remaining says UNKNOWN and does not mean completion.",
+          "templates/board.html:63": "sources entries rendered as label/path; links only /api/evidence?task=encodeURIComponent(c.filename)&source=index; textContent via el().",
+          "templates/board.html:67": "refreshing guard; button disabled during fetch; loading keeps previous snapshot; catch shows disconnect; finally enables button.",
+          "tests/test_board_handoff.py:14-37": "Node minimal DOM; file protocol; explicitly not native browser evidence.",
+          "tests/test_board_service.py:53-71": "link.symlink_to(outside) without skip/catch; then actual HTTP requests require symlink absent from sources, 404 on direct/unlisted/path/negative-index routes, no secret body.",
+          "tests/test_board_truth.py:47-55 and test_board_handoff.py:73-79": "fixture with 2 DONE, 1 PASS, 2 total; exact README/terminal and rendered HTML count assertions."
+        },
+        "raw_evidence": {
+          "red": {
+            "receipt": "slice-a-red-1812.json",
+            "raw_exit_code": 1,
+            "tree_terminal": true,
+            "output": "4 failed, 1 passed in 2.20s",
+            "failures": [
+              "historical-candidate absent for git",
+              "FS candidate absent",
+              "UNKNOWN mode absent",
+              "missing checkpoint UNKNOWN absent"
+            ],
+            "failure_type": "AssertionError"
+          },
+          "green": {
+            "receipt": "slice-a-green-1814.json",
+            "raw_exit_code": 0,
+            "tree_terminal": true,
+            "output": "13 passed in 4.60s"
+          },
+          "final_implementation_regression": {
+            "receipt": "slice-a-final-regression-1816.json",
+            "raw_exit_code": 0,
+            "tree_terminal": true,
+            "output": "67 passed in 19.67s"
+          },
+          "controller_regression": {
+            "receipt": "controller-regression-b.json",
+            "raw_exit_code": 0,
+            "tree_terminal": true,
+            "output": "67 passed in 18.48s",
+            "files": [
+              "test_board_handoff.py",
+              "test_board_truth.py",
+              "test_board_service.py",
+              "test_query_contract.py",
+              "test_filesystem_delivery_controller.py"
+            ]
+          },
+          "browser": {
+            "tool": "ego-browser 0.6.2.8",
+            "taskspace": 5,
+            "page": "p1",
+            "viewport": "1139x869",
+            "receipts": [
+              "browser-git-b.json",
+              "browser-detail-b.json",
+              "browser-source-b.json",
+              "browser-states-b.json",
+              "browser-disconnect-b.json"
+            ],
+            "all_raw_exit_code": 0,
+            "all_tree_terminal": true,
+            "inputs": "mjs files call page.click, page.keyboard.press('Escape'), page.goto; evaluate only reads text/counts; no DOM/store writes",
+            "outputs": [
+              "Git real cards 3/6 PASS and 3/6 DONE",
+              "PASS filter yields 3 cards; native detail opens task03 BASE f879bba... and C 542f2b4...",
+              "source=0 popup contains task03 receipt; popup closed; Escape waits detail hidden",
+              "task04 checkpoint shows original 7fe4b4d, attempt-a-valid.json, original final regression evidence and remaining work",
+              "synthetic FS current synthetic-fs-current-a, original synthetic-fs-original-a, source paths and remaining",
+              "empty filter text and empty inventory 0/0, no PASS conclusion",
+              "6 second HTTP delay: loading then real-time; snapshot retained",
+              "manual refresh timestamp 02:21:47.276319 -> 02:21:47.461353",
+              "disconnect counts before/after identical; card and timestamp retained; TASKSPACE FINISHED"
+            ],
+            "data_provenance": "Git real cards; FS/empty/loading explicitly synthetic inputs via real HTTP and native browser input"
+          },
+          "visual": {
+            "observed_with": "tools.view_image",
+            "images": 7,
+            "observations": [
+              "1139x869 dark desktop layout",
+              "separate PASS/DONE metrics",
+              "Git and FS identity sections distinct from historical checkpoint",
+              "dialog has visible close button and scrollbar; long evidence paths wrap",
+              "empty, loading and disconnected text visible",
+              "no observed horizontal clipping of candidate text"
+            ]
+          },
+          "lifecycle": {
+            "receipt": "browser-service-b.json",
+            "status": "COMPLETED",
+            "raw_exit_code": 0,
+            "tree_terminal": true,
+            "output_last_line": "{\"stopped\":true,\"active_commands\":[]}",
+            "stderr": "two ConnectionAbortedError WinError10053 traces in request threads while browser navigated; subsequent browser states and shutdown recorded"
+          },
+          "coordination": {
+            "invalid": "attempt-a.json missing started_at/ended_at; rejected exit2; retained",
+            "valid": "attempt-a-valid.json has both null; successful event in task card; original candidate/evidence/remaining retained",
+            "card_state": "TESTING/PENDING, is_blocked false; budgets 0/0/0/0; current reviewer has not changed files"
+          }
+        }
+      },
+      "questions": {
+        "scope": {
+          "type": "choice",
+          "instructions": "For task04 only, classify whether observed changed paths and frozen requirements respect the approved scope. Do not require deployment/mobile/tasks01-03 reruns.",
+          "criteria": {
+            "within_scope": "Changed paths fit task04 whitelist/implicit card; task03 product sources and frozen requirements unchanged",
+            "out_of_scope": "A concrete unauthorized change is present",
+            "insufficient": "Evidence cannot determine scope"
+          }
+        },
+        "review_disposition": {
+          "type": "choice",
+          "instructions": "Choose the independent task04 review disposition justified by these observed sources and original evidence. Approval is only source/behavior review, not DONE, receipt, or post-registration strict. Missing actual required evidence means blocked; demonstrated contract defect means changes requested. Existing matching-code independent regression may be reused.",
+          "criteria": {
+            "APPROVED": "Required task04 behaviors have direct code/test/native-input/visual evidence, and no material defect is established",
+            "CHANGES_REQUESTED": "A concrete task04 contract or product defect is established and needs repair",
+            "BLOCKED": "A required review input/evidence is missing or contradictory so disposition cannot be determined"
+          }
+        }
+      }
+    },
+    "response_raw": {
+      "model": "jev-1.14.0",
+      "answers": {
+        "review_disposition": {
+          "type": "choice",
+          "choice": "APPROVED",
+          "confidence": 0.68,
+          "probabilities": {
+            "APPROVED": 0.79,
+            "BLOCKED": 0.13,
+            "CHANGES_REQUESTED": 0.08
+          }
+        },
+        "scope": {
+          "type": "choice",
+          "choice": "within_scope",
+          "confidence": 0.97,
+          "probabilities": {
+            "insufficient": 0,
+            "out_of_scope": 0.02,
+            "within_scope": 0.98
+          }
+        }
+      },
+      "usage": {
+        "input_tokens": 2409,
+        "output_tokens": 95
+      }
+    },
+    "reviewer_application": "采用其范围分类及审查方向；最终APPROVED由本Reviewer依据实际diff、原始断言输出、原生输入记录和七张截图作出。概率与confidence不作为质量分或验收证据。"
+  },
+  "native_provenance": {
+    "request": "你是任务04全新独立Reviewer，未参与本卡实现/测试/设计/RCA。只读，禁止修改任何文件、卡、README、Git/配置，不委派；不是唯一参与者，保护他人工作。cwd C:/Users/qingyu/.codeg/skills/iteration-manager/.worktrees/iter-10，branch feat/iter-10-self-hosting-hardening，BASE2ce0705ebeeaee73f75a1dcd2882836dbc6b9d29，候选/冻结契约C9b9010afb8dbf0b0cf74f83c6c97605984319619；先核对HEAD/dirty。主控1699/实现1718不能自审，你独立裁决。\n完整读SKILL、references/agent_protocol.md/task_card_schema.md、迭代10 README和04-board-handoff.md，实际git diff BASE..C、产品board.html及测试、原始证据，必要截图通过view_image实际观察。只审04，不重做01—03。保持批准范围/兼容规则，不增加手机/部署门禁。任务要求Git BASE/C、FS candidate_id，历史checkpoint原候选/evidence/remaining不丢；无记录UNKNOWN、空remaining不假完成；列明sources原文；精确DONE/PASS；真实桌面filter→detail→source→Escape、刷新及正常/空/加载/断连；HTTP symlink安全实测；不得改03源码。\nimplementation-checkpoint-a.json含c2d9064产品、7fe4b4d检查点；A有4 assertion RED，最终五文件67passed；根controller-regression-b.json同最终源码独立67passed，源码未变可复用，不再无目的重跑。真实ego TaskSpace5/p1，1139x869：browser-git/detail/source/states/disconnect-b.json输出及7张browser-*.png；states-observation.json/visual-observation.json只是索引，必须读原件。FS/empty/loading输入为明确synthetic，但真实浏览器原生输入；Git是真实卡。DOM evaluate只读，不替代输入。源链接popup、Escape和refresh时间变化已原始输出。服务正常stop，browser-service-b.json COMPLETED0/tree_terminal=true，TaskSpace finish。\n需留意：模板生成测试用Node最小DOM不冒浏览器；Windows symlink不是skip；根首次attempt缺时间键被拒，保留无效原件后新valid报告成功；不误读error字段的is_fused成卡真实FUSED。缺陷需file:line/trigger/expected/actual/evidence，非阻断建议不扩范围。遵循TypeSafe未决审查结论实际evaluate，state仅实际证据，返回请求/响应与自己的最终判断分开。\n返回纯JSON或清晰同等结构：reviewer真实会话标识、base/head/contract SHA、verdict APPROVED/CHANGES_REQUESTED/BLOCKED、scope/spec/quality逐项证据、check.output原件列表、issues及严重性、证据沿用依据、unverified边界、typesafe原始结果。不要预设APPROVED。最高只返回独审裁决，不写DONE/收据。\n5分钟检查点，6分钟业务停，7分钟正常返回；leaf_deadline 2026-11-13T18:33:27.441Z，hard 2026-11-13T18:34:57.441Z。不启动业务命令；若认为必须补命令先返回具体缺口，不绕runner。不写文件，所以完整报告在返回text交给主控登记。",
+    "requested_at": "2026-11-13T18:24:57.441Z",
+    "dispatch": {
+      "task_id": "15039ddf-a469-47ed-9c5a-2a732ef24dbf",
+      "status": "running",
+      "child_conversation_id": 1719,
+      "agent_type": "codex",
+      "message": "Delegation successful. task_id=15039ddf-a469-47ed-9c5a-2a732ef24dbf. Call get_delegation_status with this id in the task_ids array (optionally wait_ms) to collect the result, or cancel_delegation to stop it."
+    },
+    "guard": {
+      "reason": "terminal",
+      "deadlineMs": 1794594807441,
+      "final": {
+        "task_id": "15039ddf-a469-47ed-9c5a-2a732ef24dbf",
+        "status": "completed",
+        "child_conversation_id": 1719,
+        "agent_type": "codex",
+        "text": "{\n  \"task_id\": \"04\",\n  \"reviewer\": {\n    \"session_id\": \"01a1d627-da6f-75c3-87c5-5431d61a2594\",\n    \"identity_source\": \"当前运行环境 CODEX_SESSION_ID / CODEX_THREAD_ID\",\n    \"role\": \"全新独立 Reviewer\",\n    \"independence\": \"未参与本卡实现、测试、设计或 RCA；不是主控1699或实现者1718\",\n    \"read_only\": true,\n    \"delegation\": false\n  },\n  \"baseline\": {\n    \"cwd\": \"C:/Users/qingyu/.codeg/skills/iteration-manager/.worktrees/iter-10\",\n    \"branch\": \"feat/iter-10-self-hosting-hardening\",\n    \"base_sha\": \"2ce0705ebeeaee73f75a1dcd2882836dbc6b9d29\",\n    \"head_sha\": \"9b9010afb8dbf0b0cf74f83c6c97605984319619\",\n    \"contract_sha\": \"9b9010afb8dbf0b0cf74f83c6c97605984319619\",\n    \"dirty_at_start\": [],\n    \"dirty_at_end\": [],\n    \"final_head_checked_at\": \"2026-11-13T18:27:18Z\"\n  },\n  \"verdict\": \"APPROVED\",\n  \"reviewer_judgment\": \"04冻结候选满足本卡展示、交接、桌面交互、四态和HTTP安全要求。未发现需要修复的阻断缺陷。此结论仅为独立审查裁决，不登记DONE、完成收据或登记后strict。\",\n  \"evidence_path_prefix\": \"docs/todos/10-self-hosting-hardening/evidence/04/\",\n  \"scope\": {\n    \"result\": \"PASS\",\n    \"evidence\": [\n      \"实际读取BASE..C差异及95个变更路径；均属于board模板、三份测试、授权笔记、04卡或04证据目录。\",\n      \"BASE..C在scripts/、references/、SKILL.md及迭代README上无差异；未修改03查询/CLI源码。\",\n      \"忽略行尾差异后，04卡变化为执行元数据、显示状态、阶段勾选及ledger；目标、接口、白名单和验收标准未被降低。\",\n      \"controller-scope-b.json.output.txt:1记录95个变更文件均在范围内；本次另以实际Git路径清单核对。\",\n      \"完整阅读SKILL.md、references/agent_protocol.md、references/task_card_schema.md、迭代10 README及04-board-handoff.md。未重做01—03验收。\"\n    ]\n  },\n  \"spec\": [\n    {\n      \"requirement\": \"Git BASE/C、FS candidate_id、未知模式\",\n      \"result\": \"PASS\",\n      \"evidence\": [\n        \"templates/board.html:55-56按delivery_mode分支；Git缺SHA显示UNKNOWN，FS只显示candidate_id，未知模式明确UNKNOWN。\",\n        \"tests/test_board_handoff.py:40-62覆盖三种模式。\",\n        \"browser-detail-b.json.output.txt:76-98实际Git详情显示BASE/C。\",\n        \"browser-states-b.json.output.txt:64、129-136显示FS当前candidate_id及历史原候选。\"\n      ]\n    },\n    {\n      \"requirement\": \"历史checkpoint保留原候选、证据和remaining；缺失不假完成\",\n      \"result\": \"PASS\",\n      \"evidence\": [\n        \"templates/board.html:57-59显示checkpoint.candidate、phase、summary、source及progress evidence；无记录和空remaining均明确UNKNOWN。\",\n        \"tests/test_board_handoff.py:60-70验证历史出处、剩余项和缺失语义。\",\n        \"browser-source-b.json.output.txt:70-76及browser-checkpoint-b.png显示7fe4b4d原候选、attempt-a-valid.json、最终回归原件及剩余工作。\",\n        \"implementation-checkpoint-a.json保留c2d9064产品候选及原始检查、剩余项；attempt-a-valid.json保留7fe4b4d检查点和原证据。\"\n      ]\n    },\n    {\n      \"requirement\": \"只使用sources列明原文入口\",\n      \"result\": \"PASS\",\n      \"evidence\": [\n        \"templates/board.html:62-63枚举sources标签及路径；链接只有task/source索引，没有任意路径参数。\",\n        \"browser-detail-b.json.output.txt:115-135列明收据、独审报告及RED/GREEN/regression原件。\",\n        \"browser-source-b.json.output.txt:2-3记录source=0链接打开真实收据popup。\",\n        \"browser-states-b.json.output.txt:151-164列明FS三个来源。\"\n      ]\n    },\n    {\n      \"requirement\": \"真实桌面filter→detail→source→Escape和刷新\",\n      \"result\": \"PASS\",\n      \"evidence\": [\n        \"browser-detail-b.mjs:2使用原生page.click筛选PASS，等待三卡后打开03详情。\",\n        \"browser-source-b.mjs:1使用原生链接点击、popup及keyboard.press('Escape')，等待dialog隐藏；随后打开真实04检查点。\",\n        \"browser-source-b.json.output.txt:99记录ESCAPE CLOSED。\",\n        \"browser-disconnect-b.json.output.txt:64记录原生刷新前后读取时间由02:21:47.276319变为02:21:47.461353。\",\n        \"实际视口1139×869，TaskSpace5/p1。evaluate仅用于读取文本和计数，没有替代用户输入。\"\n      ]\n    },\n    {\n      \"requirement\": \"正常、空、加载、断连及桌面视觉\",\n      \"result\": \"PASS\",\n      \"evidence\": [\n        \"browser-git-b.json.output.txt为真实Git卡正常状态。\",\n        \"browser-states-b.json.output.txt:167-261覆盖空筛选及空库存；0/0未显示整轮PASS。\",\n        \"browser-states-b.json.output.txt:264-387记录真实HTTP延迟下加载→实时读取。\",\n        \"browser-disconnect-b.json.output.txt:64-125记录断连后计数、卡片和时间快照保留。\",\n        \"已通过view_image实际观察全部七张browser-*.png：候选与历史检查点分组清楚，长路径换行，模态有可见关闭按钮和滚动条，四态文字可读。\",\n        \"FS、empty、loading输入明确为synthetic；浏览器、HTTP边界和输入操作为真实执行。\"\n      ]\n    },\n    {\n      \"requirement\": \"DONE/PASS精确计数与HTTP symlink安全\",\n      \"result\": \"PASS\",\n      \"evidence\": [\n        \"tests/test_board_truth.py:47-55断言README和终端精确为DONE 2/2、PASS 1/2。\",\n        \"tests/test_board_handoff.py:73-79断言实际模板渲染相同计数，不只是检查嵌入JSON。\",\n        \"真实Git浏览器显示DONE 3/6、PASS 3/6，与迭代README当前聚合一致。\",\n        \"tests/test_board_service.py:53-71实际创建symlink并执行HTTP越界、未列明文件、任意path参数及负索引拒绝断言；无skip或创建失败吞错。\",\n        \"最终实现者及主控独立五文件回归均67passed，没有skip结果。\"\n      ]\n    }\n  ],\n  \"quality\": {\n    \"result\": \"PASS\",\n    \"evidence\": [\n      \"产品修改局限于展示与刷新行为，继续消费03既有字段和安全入口。\",\n      \"模板继续使用textContent构造内容；未引入HTML注入入口。\",\n      \"刷新有并发守卫、加载反馈、失败保留快照及finally恢复按钮。\",\n      \"Node最小DOM测试明确只是模板单元测试；真实输入与视觉另有原始证据。\",\n      \"RED原件包含四个真实AssertionError，非导入、编译或环境失败；补充测试未冒称全部先RED。\",\n      \"服务收据为COMPLETED、raw_exit_code=0、tree_terminal=true；原始末行stopped=true且active_commands为空；浏览器输出记录TASKSPACE FINISHED。\"\n    ]\n  },\n  \"checks\": [\n    {\n      \"name\": \"interaction\",\n      \"kind\": \"command\",\n      \"raw_exit_code\": 0,\n      \"receipts\": [\n        \"browser-git-b.json\",\n        \"browser-detail-b.json\",\n        \"browser-source-b.json\",\n        \"browser-states-b.json\",\n        \"browser-disconnect-b.json\"\n      ],\n      \"output\": [\n        \"browser-git-b.json.output.txt\",\n        \"browser-detail-b.json.output.txt\",\n        \"browser-source-b.json.output.txt\",\n        \"browser-states-b.json.output.txt\",\n        \"browser-disconnect-b.json.output.txt\"\n      ],\n      \"summary\": \"五个ego-browser命令均正常完成；原生筛选、详情、列明来源popup、Escape及刷新有原始输出。\"\n    },\n    {\n      \"name\": \"states\",\n      \"kind\": \"observation\",\n      \"output\": [\n        \"browser-git-b.json.output.txt\",\n        \"browser-states-b.json.output.txt\",\n        \"browser-disconnect-b.json.output.txt\"\n      ],\n      \"summary\": \"直接读取正常、空、加载、断连原件；states-observation.json仅作索引。\"\n    },\n    {\n      \"name\": \"visual\",\n      \"kind\": \"observation\",\n      \"output\": [\n        \"browser-real-git-b.png\",\n        \"browser-git-detail-b.png\",\n        \"browser-checkpoint-b.png\",\n        \"browser-fs-detail-b.png\",\n        \"browser-empty-b.png\",\n        \"browser-loading-b.png\",\n        \"browser-disconnected-b.png\"\n      ],\n      \"summary\": \"七张原始截图均已通过view_image实际观察；visual-observation.json未被当作视觉验收替代品。\"\n    },\n    {\n      \"name\": \"regression\",\n      \"kind\": \"command\",\n      \"receipt\": \"controller-regression-b.json\",\n      \"raw_exit_code\": 0,\n      \"output\": [\n        \"controller-regression-b.json.output.txt\"\n      ],\n      \"summary\": \"指定五文件独立67passed in 18.48s；本次沿用，不重复运行。\"\n    },\n    {\n      \"name\": \"supporting_red_green\",\n      \"receipts\": [\n        \"slice-a-red-1812.json\",\n        \"slice-a-green-1814.json\",\n        \"slice-a-final-regression-1816.json\"\n      ],\n      \"output\": [\n        \"slice-a-red-1812.json.output.txt\",\n        \"slice-a-green-1814.json.output.txt\",\n        \"slice-a-final-regression-1816.json.output.txt\"\n      ],\n      \"summary\": \"RED：4 failed、1 passed、exit1；GREEN：13passed；最终实现者回归67passed。\"\n    }\n  ],\n  \"issues\": [],\n  \"nonblocking_observations\": [\n    {\n      \"severity\": \"INFO\",\n      \"location\": \"browser-service-b.json.output.txt:2-44\",\n      \"observation\": \"原件保留两次请求写回时的ConnectionAbortedError WinError10053。客户端中止的具体原因未单独记录；后续状态检查和服务正常终态均有证据，未构成本卡行为失败。\",\n      \"required_action\": \"无\"\n    },\n    {\n      \"severity\": \"INFO\",\n      \"location\": \"coordination-report-rejection.json:4-9\",\n      \"observation\": \"首次attempt报告缺started_at/ended_at，被退出2拒绝；无效原件保留，新valid报告以null记录未知时间并成功登记。未将拒绝响应中的状态字段解释为卡真实FUSED。\",\n      \"required_action\": \"无\"\n    }\n  ],\n  \"evidence_reuse\": [\n    {\n      \"original_candidate\": \"c2d90643cc391168e0e424843c761e9291629d99\",\n      \"current_candidate\": \"9b9010afb8dbf0b0cf74f83c6c97605984319619\",\n      \"basis\": \"实际git diff确认c2d9064..当前C在templates/、tests/及browser_harness.py无变化；后续变化为卡片和证据登记。\",\n      \"reused\": [\n        \"实现者最终67passed\",\n        \"主控独立67passed\",\n        \"同产品源码上的原生浏览器证据\"\n      ],\n      \"reviewer_action\": \"独立读取源码、测试和原始输出并观察截图；未冒称本次重新执行。\"\n    },\n    {\n      \"original_candidate\": \"7fe4b4dcab7110c0f3f6791e5f9ef0d5a29eaa67\",\n      \"basis\": \"这是历史检查点身份，不替换为最终C；原candidate、evidence及remaining均保留。\",\n      \"reused\": [\n        \"attempt-a-valid.json\",\n        \"implementation-checkpoint-a.json\",\n        \"native-terminal-a.json\"\n      ]\n    }\n  ],\n  \"unverified\": {\n    \"blocking_gaps\": [],\n    \"boundaries\": [\n      \"本Reviewer没有重新启动业务、测试或浏览器命令；按本次授权复用匹配源码的有效证据。\",\n      \"FS证据证明合成FS输入经真实HTTP和原生浏览器展示，不外推为真实FS业务交付批准。\",\n      \"收据登记、登记D和固定协调器local strict尚属主控后续步骤，本报告未执行或宣称通过。\"\n    ]\n  },\n  \"typesafe\": {\n    \"request\": {\n      \"state\": {\n        \"task\": {\n          \"id\": \"04\",\n          \"type\": \"UI-Component\",\n          \"base\": \"2ce0705ebeeaee73f75a1dcd2882836dbc6b9d29\",\n          \"candidate\": \"9b9010afb8dbf0b0cf74f83c6c97605984319619\",\n          \"contract\": \"9b9010afb8dbf0b0cf74f83c6c97605984319619\",\n          \"requirements\": [\n            \"Git BASE/C; FS candidate_id; unknown mode explicit\",\n            \"Historical checkpoint candidate/source/progress evidence and remaining retained; missing checkpoint UNKNOWN; empty remaining not completion\",\n            \"Native desktop filter/detail/source/Escape/refresh; normal/empty/loading/disconnect\",\n            \"Exact DONE/PASS counts across README/terminal/HTML\",\n            \"HTTP listed sources only, symlink escape rejected\",\n            \"No task03 source changes\"\n          ],\n          \"excludes\": [\n            \"mobile\",\n            \"deployment\",\n            \"tasks01-03 reacceptance\",\n            \"DONE/receipt registration by reviewer\"\n          ]\n        },\n        \"observed_git\": {\n          \"branch\": \"feat/iter-10-self-hosting-hardening\",\n          \"head\": \"9b9010afb8dbf0b0cf74f83c6c97605984319619\",\n          \"dirty\": [],\n          \"diff_count\": 95,\n          \"changed_categories\": [\n            \"templates/board.html\",\n            \"tests/test_board_handoff.py\",\n            \"tests/test_board_truth.py\",\n            \"tests/test_board_service.py\",\n            \".agents/notes/implemented/feature/2026-11-13-board-handoff.md\",\n            \"task04 card\",\n            \"task04 evidence directory\"\n          ],\n          \"scripts_references_skill_readme_diff\": [],\n          \"product_tests_harness_diff_c2d9064_to_candidate\": []\n        },\n        \"source\": {\n          \"templates/board.html:55-59\": \"delivery_mode branches git/filesystem/UNKNOWN; git base_sha/head_sha fall back UNKNOWN; FS only candidate_id; checkpoint candidate, phase, summary, source and progress map retained; empty remaining says UNKNOWN and does not mean completion.\",\n          \"templates/board.html:63\": \"sources entries rendered as label/path; links only /api/evidence?task=encodeURIComponent(c.filename)&source=index; textContent via el().\",\n          \"templates/board.html:67\": \"refreshing guard; button disabled during fetch; loading keeps previous snapshot; catch shows disconnect; finally enables button.\",\n          \"tests/test_board_handoff.py:14-37\": \"Node minimal DOM; file protocol; explicitly not native browser evidence.\",\n          \"tests/test_board_service.py:53-71\": \"link.symlink_to(outside) without skip/catch; then actual HTTP requests require symlink absent from sources, 404 on direct/unlisted/path/negative-index routes, no secret body.\",\n          \"tests/test_board_truth.py:47-55 and test_board_handoff.py:73-79\": \"fixture with 2 DONE, 1 PASS, 2 total; exact README/terminal and rendered HTML count assertions.\"\n        },\n        \"raw_evidence\": {\n          \"red\": {\n            \"receipt\": \"slice-a-red-1812.json\",\n            \"raw_exit_code\": 1,\n            \"tree_terminal\": true,\n            \"output\": \"4 failed, 1 passed in 2.20s\",\n            \"failures\": [\n              \"historical-candidate absent for git\",\n              \"FS candidate absent\",\n              \"UNKNOWN mode absent\",\n              \"missing checkpoint UNKNOWN absent\"\n            ],\n            \"failure_type\": \"AssertionError\"\n          },\n          \"green\": {\n            \"receipt\": \"slice-a-green-1814.json\",\n            \"raw_exit_code\": 0,\n            \"tree_terminal\": true,\n            \"output\": \"13 passed in 4.60s\"\n          },\n          \"final_implementation_regression\": {\n            \"receipt\": \"slice-a-final-regression-1816.json\",\n            \"raw_exit_code\": 0,\n            \"tree_terminal\": true,\n            \"output\": \"67 passed in 19.67s\"\n          },\n          \"controller_regression\": {\n            \"receipt\": \"controller-regression-b.json\",\n            \"raw_exit_code\": 0,\n            \"tree_terminal\": true,\n            \"output\": \"67 passed in 18.48s\",\n            \"files\": [\n              \"test_board_handoff.py\",\n              \"test_board_truth.py\",\n              \"test_board_service.py\",\n              \"test_query_contract.py\",\n              \"test_filesystem_delivery_controller.py\"\n            ]\n          },\n          \"browser\": {\n            \"tool\": \"ego-browser 0.6.2.8\",\n            \"taskspace\": 5,\n            \"page\": \"p1\",\n            \"viewport\": \"1139x869\",\n            \"receipts\": [\n              \"browser-git-b.json\",\n              \"browser-detail-b.json\",\n              \"browser-source-b.json\",\n              \"browser-states-b.json\",\n              \"browser-disconnect-b.json\"\n            ],\n            \"all_raw_exit_code\": 0,\n            \"all_tree_terminal\": true,\n            \"inputs\": \"mjs files call page.click, page.keyboard.press('Escape'), page.goto; evaluate only reads text/counts; no DOM/store writes\",\n            \"outputs\": [\n              \"Git real cards 3/6 PASS and 3/6 DONE\",\n              \"PASS filter yields 3 cards; native detail opens task03 BASE f879bba... and C 542f2b4...\",\n              \"source=0 popup contains task03 receipt; popup closed; Escape waits detail hidden\",\n              \"task04 checkpoint shows original 7fe4b4d, attempt-a-valid.json, original final regression evidence and remaining work\",\n              \"synthetic FS current synthetic-fs-current-a, original synthetic-fs-original-a, source paths and remaining\",\n              \"empty filter text and empty inventory 0/0, no PASS conclusion\",\n              \"6 second HTTP delay: loading then real-time; snapshot retained\",\n              \"manual refresh timestamp 02:21:47.276319 -> 02:21:47.461353\",\n              \"disconnect counts before/after identical; card and timestamp retained; TASKSPACE FINISHED\"\n            ],\n            \"data_provenance\": \"Git real cards; FS/empty/loading explicitly synthetic inputs via real HTTP and native browser input\"\n          },\n          \"visual\": {\n            \"observed_with\": \"tools.view_image\",\n            \"images\": 7,\n            \"observations\": [\n              \"1139x869 dark desktop layout\",\n              \"separate PASS/DONE metrics\",\n              \"Git and FS identity sections distinct from historical checkpoint\",\n              \"dialog has visible close button and scrollbar; long evidence paths wrap\",\n              \"empty, loading and disconnected text visible\",\n              \"no observed horizontal clipping of candidate text\"\n            ]\n          },\n          \"lifecycle\": {\n            \"receipt\": \"browser-service-b.json\",\n            \"status\": \"COMPLETED\",\n            \"raw_exit_code\": 0,\n            \"tree_terminal\": true,\n            \"output_last_line\": \"{\\\"stopped\\\":true,\\\"active_commands\\\":[]}\",\n            \"stderr\": \"two ConnectionAbortedError WinError10053 traces in request threads while browser navigated; subsequent browser states and shutdown recorded\"\n          },\n          \"coordination\": {\n            \"invalid\": \"attempt-a.json missing started_at/ended_at; rejected exit2; retained\",\n            \"valid\": \"attempt-a-valid.json has both null; successful event in task card; original candidate/evidence/remaining retained\",\n            \"card_state\": \"TESTING/PENDING, is_blocked false; budgets 0/0/0/0; current reviewer has not changed files\"\n          }\n        }\n      },\n      \"questions\": {\n        \"scope\": {\n          \"type\": \"choice\",\n          \"instructions\": \"For task04 only, classify whether observed changed paths and frozen requirements respect the approved scope. Do not require deployment/mobile/tasks01-03 reruns.\",\n          \"criteria\": {\n            \"within_scope\": \"Changed paths fit task04 whitelist/implicit card; task03 product sources and frozen requirements unchanged\",\n            \"out_of_scope\": \"A concrete unauthorized change is present\",\n            \"insufficient\": \"Evidence cannot determine scope\"\n          }\n        },\n        \"review_disposition\": {\n          \"type\": \"choice\",\n          \"instructions\": \"Choose the independent task04 review disposition justified by these observed sources and original evidence. Approval is only source/behavior review, not DONE, receipt, or post-registration strict. Missing actual required evidence means blocked; demonstrated contract defect means changes requested. Existing matching-code independent regression may be reused.\",\n          \"criteria\": {\n            \"APPROVED\": \"Required task04 behaviors have direct code/test/native-input/visual evidence, and no material defect is established\",\n            \"CHANGES_REQUESTED\": \"A concrete task04 contract or product defect is established and needs repair\",\n            \"BLOCKED\": \"A required review input/evidence is missing or contradictory so disposition cannot be determined\"\n          }\n        }\n      }\n    },\n    \"response_raw\": {\n      \"model\": \"jev-1.14.0\",\n      \"answers\": {\n        \"review_disposition\": {\n          \"type\": \"choice\",\n          \"choice\": \"APPROVED\",\n          \"confidence\": 0.68,\n          \"probabilities\": {\n            \"APPROVED\": 0.79,\n            \"BLOCKED\": 0.13,\n            \"CHANGES_REQUESTED\": 0.08\n          }\n        },\n        \"scope\": {\n          \"type\": \"choice\",\n          \"choice\": \"within_scope\",\n          \"confidence\": 0.97,\n          \"probabilities\": {\n            \"insufficient\": 0.0,\n            \"out_of_scope\": 0.02,\n            \"within_scope\": 0.98\n          }\n        }\n      },\n      \"usage\": {\n        \"input_tokens\": 2409,\n        \"output_tokens\": 95\n      }\n    },\n    \"reviewer_application\": \"采用其范围分类及审查方向；最终APPROVED由本Reviewer依据实际diff、原始断言输出、原生输入记录和七张截图作出。概率与confidence不作为质量分或验收证据。\"\n  }\n}",
+        "duration_ms": 223803,
+        "progress": {
+          "steps": 25,
+          "marks": [
+            "ok",
+            "ok",
+            "ok",
+            "ok",
+            "ok",
+            "ok",
+            "ok",
+            "ok",
+            "ok",
+            "ok",
+            "ok",
+            "ok"
+          ],
+          "last_step": "git status --short; git branch --show-current; git rev-parse HEAD; git rev-parse 2ce0705ebeeaee73f75a1dcd2882836dbc6b9d2…"
+        },
+        "raw": {
+          "content": [
+            {
+              "type": "text",
+              "text": "{\"tasks\":[{\"task_id\":\"15039ddf-a469-47ed-9c5a-2a732ef24dbf\",\"status\":\"completed\",\"child_conversation_id\":1719,\"agent_type\":\"codex\",\"text\":\"{\\n  \\\"task_id\\\": \\\"04\\\",\\n  \\\"reviewer\\\": {\\n    \\\"session_id\\\": \\\"01a1d627-da6f-75c3-87c5-5431d61a2594\\\",\\n    \\\"identity_source\\\": \\\"当前运行环境 CODEX_SESSION_ID / CODEX_THREAD_ID\\\",\\n    \\\"role\\\": \\\"全新独立 Reviewer\\\",\\n    \\\"independence\\\": \\\"未参与本卡实现、测试、设计或 RCA；不是主控1699或实现者1718\\\",\\n    \\\"read_only\\\": true,\\n    \\\"delegation\\\": false\\n  },\\n  \\\"baseline\\\": {\\n    \\\"cwd\\\": \\\"C:/Users/qingyu/.codeg/skills/iteration-manager/.worktrees/iter-10\\\",\\n    \\\"branch\\\": \\\"feat/iter-10-self-hosting-hardening\\\",\\n    \\\"base_sha\\\": \\\"2ce0705ebeeaee73f75a1dcd2882836dbc6b9d29\\\",\\n    \\\"head_sha\\\": \\\"9b9010afb8dbf0b0cf74f83c6c97605984319619\\\",\\n    \\\"contract_sha\\\": \\\"9b9010afb8dbf0b0cf74f83c6c97605984319619\\\",\\n    \\\"dirty_at_start\\\": [],\\n    \\\"dirty_at_end\\\": [],\\n    \\\"final_head_checked_at\\\": \\\"2026-11-13T18:27:18Z\\\"\\n  },\\n  \\\"verdict\\\": \\\"APPROVED\\\",\\n  \\\"reviewer_judgment\\\": \\\"04冻结候选满足本卡展示、交接、桌面交互、四态和HTTP安全要求。未发现需要修复的阻断缺陷。此结论仅为独立审查裁决，不登记DONE、完成收据或登记后strict。\\\",\\n  \\\"evidence_path_prefix\\\": \\\"docs/todos/10-self-hosting-hardening/evidence/04/\\\",\\n  \\\"scope\\\": {\\n    \\\"result\\\": \\\"PASS\\\",\\n    \\\"evidence\\\": [\\n      \\\"实际读取BASE..C差异及95个变更路径；均属于board模板、三份测试、授权笔记、04卡或04证据目录。\\\",\\n      \\\"BASE..C在scripts/、references/、SKILL.md及迭代README上无差异；未修改03查询/CLI源码。\\\",\\n      \\\"忽略行尾差异后，04卡变化为执行元数据、显示状态、阶段勾选及ledger；目标、接口、白名单和验收标准未被降低。\\\",\\n      \\\"controller-scope-b.json.output.txt:1记录95个变更文件均在范围内；本次另以实际Git路径清单核对。\\\",\\n      \\\"完整阅读SKILL.md、references/agent_protocol.md、references/task_card_schema.md、迭代10 README及04-board-handoff.md。未重做01—03验收。\\\"\\n    ]\\n  },\\n  \\\"spec\\\": [\\n    {\\n      \\\"requirement\\\": \\\"Git BASE/C、FS candidate_id、未知模式\\\",\\n      \\\"result\\\": \\\"PASS\\\",\\n      \\\"evidence\\\": [\\n        \\\"templates/board.html:55-56按delivery_mode分支；Git缺SHA显示UNKNOWN，FS只显示candidate_id，未知模式明确UNKNOWN。\\\",\\n        \\\"tests/test_board_handoff.py:40-62覆盖三种模式。\\\",\\n        \\\"browser-detail-b.json.output.txt:76-98实际Git详情显示BASE/C。\\\",\\n        \\\"browser-states-b.json.output.txt:64、129-136显示FS当前candidate_id及历史原候选。\\\"\\n      ]\\n    },\\n    {\\n      \\\"requirement\\\": \\\"历史checkpoint保留原候选、证据和remaining；缺失不假完成\\\",\\n      \\\"result\\\": \\\"PASS\\\",\\n      \\\"evidence\\\": [\\n        \\\"templates/board.html:57-59显示checkpoint.candidate、phase、summary、source及progress evidence；无记录和空remaining均明确UNKNOWN。\\\",\\n        \\\"tests/test_board_handoff.py:60-70验证历史出处、剩余项和缺失语义。\\\",\\n        \\\"browser-source-b.json.output.txt:70-76及browser-checkpoint-b.png显示7fe4b4d原候选、attempt-a-valid.json、最终回归原件及剩余工作。\\\",\\n        \\\"implementation-checkpoint-a.json保留c2d9064产品候选及原始检查、剩余项；attempt-a-valid.json保留7fe4b4d检查点和原证据。\\\"\\n      ]\\n    },\\n    {\\n      \\\"requirement\\\": \\\"只使用sources列明原文入口\\\",\\n      \\\"result\\\": \\\"PASS\\\",\\n      \\\"evidence\\\": [\\n        \\\"templates/board.html:62-63枚举sources标签及路径；链接只有task/source索引，没有任意路径参数。\\\",\\n        \\\"browser-detail-b.json.output.txt:115-135列明收据、独审报告及RED/GREEN/regression原件。\\\",\\n        \\\"browser-source-b.json.output.txt:2-3记录source=0链接打开真实收据popup。\\\",\\n        \\\"browser-states-b.json.output.txt:151-164列明FS三个来源。\\\"\\n      ]\\n    },\\n    {\\n      \\\"requirement\\\": \\\"真实桌面filter→detail→source→Escape和刷新\\\",\\n      \\\"result\\\": \\\"PASS\\\",\\n      \\\"evidence\\\": [\\n        \\\"browser-detail-b.mjs:2使用原生page.click筛选PASS，等待三卡后打开03详情。\\\",\\n        \\\"browser-source-b.mjs:1使用原生链接点击、popup及keyboard.press('Escape')，等待dialog隐藏；随后打开真实04检查点。\\\",\\n        \\\"browser-source-b.json.output.txt:99记录ESCAPE CLOSED。\\\",\\n        \\\"browser-disconnect-b.json.output.txt:64记录原生刷新前后读取时间由02:21:47.276319变为02:21:47.461353。\\\",\\n        \\\"实际视口1139×869，TaskSpace5/p1。evaluate仅用于读取文本和计数，没有替代用户输入。\\\"\\n      ]\\n    },\\n    {\\n      \\\"requirement\\\": \\\"正常、空、加载、断连及桌面视觉\\\",\\n      \\\"result\\\": \\\"PASS\\\",\\n      \\\"evidence\\\": [\\n        \\\"browser-git-b.json.output.txt为真实Git卡正常状态。\\\",\\n        \\\"browser-states-b.json.output.txt:167-261覆盖空筛选及空库存；0/0未显示整轮PASS。\\\",\\n        \\\"browser-states-b.json.output.txt:264-387记录真实HTTP延迟下加载→实时读取。\\\",\\n        \\\"browser-disconnect-b.json.output.txt:64-125记录断连后计数、卡片和时间快照保留。\\\",\\n        \\\"已通过view_image实际观察全部七张browser-*.png：候选与历史检查点分组清楚，长路径换行，模态有可见关闭按钮和滚动条，四态文字可读。\\\",\\n        \\\"FS、empty、loading输入明确为synthetic；浏览器、HTTP边界和输入操作为真实执行。\\\"\\n      ]\\n    },\\n    {\\n      \\\"requirement\\\": \\\"DONE/PASS精确计数与HTTP symlink安全\\\",\\n      \\\"result\\\": \\\"PASS\\\",\\n      \\\"evidence\\\": [\\n        \\\"tests/test_board_truth.py:47-55断言README和终端精确为DONE 2/2、PASS 1/2。\\\",\\n        \\\"tests/test_board_handoff.py:73-79断言实际模板渲染相同计数，不只是检查嵌入JSON。\\\",\\n        \\\"真实Git浏览器显示DONE 3/6、PASS 3/6，与迭代README当前聚合一致。\\\",\\n        \\\"tests/test_board_service.py:53-71实际创建symlink并执行HTTP越界、未列明文件、任意path参数及负索引拒绝断言；无skip或创建失败吞错。\\\",\\n        \\\"最终实现者及主控独立五文件回归均67passed，没有skip结果。\\\"\\n      ]\\n    }\\n  ],\\n  \\\"quality\\\": {\\n    \\\"result\\\": \\\"PASS\\\",\\n    \\\"evidence\\\": [\\n      \\\"产品修改局限于展示与刷新行为，继续消费03既有字段和安全入口。\\\",\\n      \\\"模板继续使用textContent构造内容；未引入HTML注入入口。\\\",\\n      \\\"刷新有并发守卫、加载反馈、失败保留快照及finally恢复按钮。\\\",\\n      \\\"Node最小DOM测试明确只是模板单元测试；真实输入与视觉另有原始证据。\\\",\\n      \\\"RED原件包含四个真实AssertionError，非导入、编译或环境失败；补充测试未冒称全部先RED。\\\",\\n      \\\"服务收据为COMPLETED、raw_exit_code=0、tree_terminal=true；原始末行stopped=true且active_commands为空；浏览器输出记录TASKSPACE FINISHED。\\\"\\n    ]\\n  },\\n  \\\"checks\\\": [\\n    {\\n      \\\"name\\\": \\\"interaction\\\",\\n      \\\"kind\\\": \\\"command\\\",\\n      \\\"raw_exit_code\\\": 0,\\n      \\\"receipts\\\": [\\n        \\\"browser-git-b.json\\\",\\n        \\\"browser-detail-b.json\\\",\\n        \\\"browser-source-b.json\\\",\\n        \\\"browser-states-b.json\\\",\\n        \\\"browser-disconnect-b.json\\\"\\n      ],\\n      \\\"output\\\": [\\n        \\\"browser-git-b.json.output.txt\\\",\\n        \\\"browser-detail-b.json.output.txt\\\",\\n        \\\"browser-source-b.json.output.txt\\\",\\n        \\\"browser-states-b.json.output.txt\\\",\\n        \\\"browser-disconnect-b.json.output.txt\\\"\\n      ],\\n      \\\"summary\\\": \\\"五个ego-browser命令均正常完成；原生筛选、详情、列明来源popup、Escape及刷新有原始输出。\\\"\\n    },\\n    {\\n      \\\"name\\\": \\\"states\\\",\\n      \\\"kind\\\": \\\"observation\\\",\\n      \\\"output\\\": [\\n        \\\"browser-git-b.json.output.txt\\\",\\n        \\\"browser-states-b.json.output.txt\\\",\\n        \\\"browser-disconnect-b.json.output.txt\\\"\\n      ],\\n      \\\"summary\\\": \\\"直接读取正常、空、加载、断连原件；states-observation.json仅作索引。\\\"\\n    },\\n    {\\n      \\\"name\\\": \\\"visual\\\",\\n      \\\"kind\\\": \\\"observation\\\",\\n      \\\"output\\\": [\\n        \\\"browser-real-git-b.png\\\",\\n        \\\"browser-git-detail-b.png\\\",\\n        \\\"browser-checkpoint-b.png\\\",\\n        \\\"browser-fs-detail-b.png\\\",\\n        \\\"browser-empty-b.png\\\",\\n        \\\"browser-loading-b.png\\\",\\n        \\\"browser-disconnected-b.png\\\"\\n      ],\\n      \\\"summary\\\": \\\"七张原始截图均已通过view_image实际观察；visual-observation.json未被当作视觉验收替代品。\\\"\\n    },\\n    {\\n      \\\"name\\\": \\\"regression\\\",\\n      \\\"kind\\\": \\\"command\\\",\\n      \\\"receipt\\\": \\\"controller-regression-b.json\\\",\\n      \\\"raw_exit_code\\\": 0,\\n      \\\"output\\\": [\\n        \\\"controller-regression-b.json.output.txt\\\"\\n      ],\\n      \\\"summary\\\": \\\"指定五文件独立67passed in 18.48s；本次沿用，不重复运行。\\\"\\n    },\\n    {\\n      \\\"name\\\": \\\"supporting_red_green\\\",\\n      \\\"receipts\\\": [\\n        \\\"slice-a-red-1812.json\\\",\\n        \\\"slice-a-green-1814.json\\\",\\n        \\\"slice-a-final-regression-1816.json\\\"\\n      ],\\n      \\\"output\\\": [\\n        \\\"slice-a-red-1812.json.output.txt\\\",\\n        \\\"slice-a-green-1814.json.output.txt\\\",\\n        \\\"slice-a-final-regression-1816.json.output.txt\\\"\\n      ],\\n      \\\"summary\\\": \\\"RED：4 failed、1 passed、exit1；GREEN：13passed；最终实现者回归67passed。\\\"\\n    }\\n  ],\\n  \\\"issues\\\": [],\\n  \\\"nonblocking_observations\\\": [\\n    {\\n      \\\"severity\\\": \\\"INFO\\\",\\n      \\\"location\\\": \\\"browser-service-b.json.output.txt:2-44\\\",\\n      \\\"observation\\\": \\\"原件保留两次请求写回时的ConnectionAbortedError WinError10053。客户端中止的具体原因未单独记录；后续状态检查和服务正常终态均有证据，未构成本卡行为失败。\\\",\\n      \\\"required_action\\\": \\\"无\\\"\\n    },\\n    {\\n      \\\"severity\\\": \\\"INFO\\\",\\n      \\\"location\\\": \\\"coordination-report-rejection.json:4-9\\\",\\n      \\\"observation\\\": \\\"首次attempt报告缺started_at/ended_at，被退出2拒绝；无效原件保留，新valid报告以null记录未知时间并成功登记。未将拒绝响应中的状态字段解释为卡真实FUSED。\\\",\\n      \\\"required_action\\\": \\\"无\\\"\\n    }\\n  ],\\n  \\\"evidence_reuse\\\": [\\n    {\\n      \\\"original_candidate\\\": \\\"c2d90643cc391168e0e424843c761e9291629d99\\\",\\n      \\\"current_candidate\\\": \\\"9b9010afb8dbf0b0cf74f83c6c97605984319619\\\",\\n      \\\"basis\\\": \\\"实际git diff确认c2d9064..当前C在templates/、tests/及browser_harness.py无变化；后续变化为卡片和证据登记。\\\",\\n      \\\"reused\\\": [\\n        \\\"实现者最终67passed\\\",\\n        \\\"主控独立67passed\\\",\\n        \\\"同产品源码上的原生浏览器证据\\\"\\n      ],\\n      \\\"reviewer_action\\\": \\\"独立读取源码、测试和原始输出并观察截图；未冒称本次重新执行。\\\"\\n    },\\n    {\\n      \\\"original_candidate\\\": \\\"7fe4b4dcab7110c0f3f6791e5f9ef0d5a29eaa67\\\",\\n      \\\"basis\\\": \\\"这是历史检查点身份，不替换为最终C；原candidate、evidence及remaining均保留。\\\",\\n      \\\"reused\\\": [\\n        \\\"attempt-a-valid.json\\\",\\n        \\\"implementation-checkpoint-a.json\\\",\\n        \\\"native-terminal-a.json\\\"\\n      ]\\n    }\\n  ],\\n  \\\"unverified\\\": {\\n    \\\"blocking_gaps\\\": [],\\n    \\\"boundaries\\\": [\\n      \\\"本Reviewer没有重新启动业务、测试或浏览器命令；按本次授权复用匹配源码的有效证据。\\\",\\n      \\\"FS证据证明合成FS输入经真实HTTP和原生浏览器展示，不外推为真实FS业务交付批准。\\\",\\n      \\\"收据登记、登记D和固定协调器local strict尚属主控后续步骤，本报告未执行或宣称通过。\\\"\\n    ]\\n  },\\n  \\\"typesafe\\\": {\\n    \\\"request\\\": {\\n      \\\"state\\\": {\\n        \\\"task\\\": {\\n          \\\"id\\\": \\\"04\\\",\\n          \\\"type\\\": \\\"UI-Component\\\",\\n          \\\"base\\\": \\\"2ce0705ebeeaee73f75a1dcd2882836dbc6b9d29\\\",\\n          \\\"candidate\\\": \\\"9b9010afb8dbf0b0cf74f83c6c97605984319619\\\",\\n          \\\"contract\\\": \\\"9b9010afb8dbf0b0cf74f83c6c97605984319619\\\",\\n          \\\"requirements\\\": [\\n            \\\"Git BASE/C; FS candidate_id; unknown mode explicit\\\",\\n            \\\"Historical checkpoint candidate/source/progress evidence and remaining retained; missing checkpoint UNKNOWN; empty remaining not completion\\\",\\n            \\\"Native desktop filter/detail/source/Escape/refresh; normal/empty/loading/disconnect\\\",\\n            \\\"Exact DONE/PASS counts across README/terminal/HTML\\\",\\n            \\\"HTTP listed sources only, symlink escape rejected\\\",\\n            \\\"No task03 source changes\\\"\\n          ],\\n          \\\"excludes\\\": [\\n            \\\"mobile\\\",\\n            \\\"deployment\\\",\\n            \\\"tasks01-03 reacceptance\\\",\\n            \\\"DONE/receipt registration by reviewer\\\"\\n          ]\\n        },\\n        \\\"observed_git\\\": {\\n          \\\"branch\\\": \\\"feat/iter-10-self-hosting-hardening\\\",\\n          \\\"head\\\": \\\"9b9010afb8dbf0b0cf74f83c6c97605984319619\\\",\\n          \\\"dirty\\\": [],\\n          \\\"diff_count\\\": 95,\\n          \\\"changed_categories\\\": [\\n            \\\"templates/board.html\\\",\\n            \\\"tests/test_board_handoff.py\\\",\\n            \\\"tests/test_board_truth.py\\\",\\n            \\\"tests/test_board_service.py\\\",\\n            \\\".agents/notes/implemented/feature/2026-11-13-board-handoff.md\\\",\\n            \\\"task04 card\\\",\\n            \\\"task04 evidence directory\\\"\\n          ],\\n          \\\"scripts_references_skill_readme_diff\\\": [],\\n          \\\"product_tests_harness_diff_c2d9064_to_candidate\\\": []\\n        },\\n        \\\"source\\\": {\\n          \\\"templates/board.html:55-59\\\": \\\"delivery_mode branches git/filesystem/UNKNOWN; git base_sha/head_sha fall back UNKNOWN; FS only candidate_id; checkpoint candidate, phase, summary, source and progress map retained; empty remaining says UNKNOWN and does not mean completion.\\\",\\n          \\\"templates/board.html:63\\\": \\\"sources entries rendered as label/path; links only /api/evidence?task=encodeURIComponent(c.filename)&source=index; textContent via el().\\\",\\n          \\\"templates/board.html:67\\\": \\\"refreshing guard; button disabled during fetch; loading keeps previous snapshot; catch shows disconnect; finally enables button.\\\",\\n          \\\"tests/test_board_handoff.py:14-37\\\": \\\"Node minimal DOM; file protocol; explicitly not native browser evidence.\\\",\\n          \\\"tests/test_board_service.py:53-71\\\": \\\"link.symlink_to(outside) without skip/catch; then actual HTTP requests require symlink absent from sources, 404 on direct/unlisted/path/negative-index routes, no secret body.\\\",\\n          \\\"tests/test_board_truth.py:47-55 and test_board_handoff.py:73-79\\\": \\\"fixture with 2 DONE, 1 PASS, 2 total; exact README/terminal and rendered HTML count assertions.\\\"\\n        },\\n        \\\"raw_evidence\\\": {\\n          \\\"red\\\": {\\n            \\\"receipt\\\": \\\"slice-a-red-1812.json\\\",\\n            \\\"raw_exit_code\\\": 1,\\n            \\\"tree_terminal\\\": true,\\n            \\\"output\\\": \\\"4 failed, 1 passed in 2.20s\\\",\\n            \\\"failures\\\": [\\n              \\\"historical-candidate absent for git\\\",\\n              \\\"FS candidate absent\\\",\\n              \\\"UNKNOWN mode absent\\\",\\n              \\\"missing checkpoint UNKNOWN absent\\\"\\n            ],\\n            \\\"failure_type\\\": \\\"AssertionError\\\"\\n          },\\n          \\\"green\\\": {\\n            \\\"receipt\\\": \\\"slice-a-green-1814.json\\\",\\n            \\\"raw_exit_code\\\": 0,\\n            \\\"tree_terminal\\\": true,\\n            \\\"output\\\": \\\"13 passed in 4.60s\\\"\\n          },\\n          \\\"final_implementation_regression\\\": {\\n            \\\"receipt\\\": \\\"slice-a-final-regression-1816.json\\\",\\n            \\\"raw_exit_code\\\": 0,\\n            \\\"tree_terminal\\\": true,\\n            \\\"output\\\": \\\"67 passed in 19.67s\\\"\\n          },\\n          \\\"controller_regression\\\": {\\n            \\\"receipt\\\": \\\"controller-regression-b.json\\\",\\n            \\\"raw_exit_code\\\": 0,\\n            \\\"tree_terminal\\\": true,\\n            \\\"output\\\": \\\"67 passed in 18.48s\\\",\\n            \\\"files\\\": [\\n              \\\"test_board_handoff.py\\\",\\n              \\\"test_board_truth.py\\\",\\n              \\\"test_board_service.py\\\",\\n              \\\"test_query_contract.py\\\",\\n              \\\"test_filesystem_delivery_controller.py\\\"\\n            ]\\n          },\\n          \\\"browser\\\": {\\n            \\\"tool\\\": \\\"ego-browser 0.6.2.8\\\",\\n            \\\"taskspace\\\": 5,\\n            \\\"page\\\": \\\"p1\\\",\\n            \\\"viewport\\\": \\\"1139x869\\\",\\n            \\\"receipts\\\": [\\n              \\\"browser-git-b.json\\\",\\n              \\\"browser-detail-b.json\\\",\\n              \\\"browser-source-b.json\\\",\\n              \\\"browser-states-b.json\\\",\\n              \\\"browser-disconnect-b.json\\\"\\n            ],\\n            \\\"all_raw_exit_code\\\": 0,\\n            \\\"all_tree_terminal\\\": true,\\n            \\\"inputs\\\": \\\"mjs files call page.click, page.keyboard.press('Escape'), page.goto; evaluate only reads text/counts; no DOM/store writes\\\",\\n            \\\"outputs\\\": [\\n              \\\"Git real cards 3/6 PASS and 3/6 DONE\\\",\\n              \\\"PASS filter yields 3 cards; native detail opens task03 BASE f879bba... and C 542f2b4...\\\",\\n              \\\"source=0 popup contains task03 receipt; popup closed; Escape waits detail hidden\\\",\\n              \\\"task04 checkpoint shows original 7fe4b4d, attempt-a-valid.json, original final regression evidence and remaining work\\\",\\n              \\\"synthetic FS current synthetic-fs-current-a, original synthetic-fs-original-a, source paths and remaining\\\",\\n              \\\"empty filter text and empty inventory 0/0, no PASS conclusion\\\",\\n              \\\"6 second HTTP delay: loading then real-time; snapshot retained\\\",\\n              \\\"manual refresh timestamp 02:21:47.276319 -> 02:21:47.461353\\\",\\n              \\\"disconnect counts before/after identical; card and timestamp retained; TASKSPACE FINISHED\\\"\\n            ],\\n            \\\"data_provenance\\\": \\\"Git real cards; FS/empty/loading explicitly synthetic inputs via real HTTP and native browser input\\\"\\n          },\\n          \\\"visual\\\": {\\n            \\\"observed_with\\\": \\\"tools.view_image\\\",\\n            \\\"images\\\": 7,\\n            \\\"observations\\\": [\\n              \\\"1139x869 dark desktop layout\\\",\\n              \\\"separate PASS/DONE metrics\\\",\\n              \\\"Git and FS identity sections distinct from historical checkpoint\\\",\\n              \\\"dialog has visible close button and scrollbar; long evidence paths wrap\\\",\\n              \\\"empty, loading and disconnected text visible\\\",\\n              \\\"no observed horizontal clipping of candidate text\\\"\\n            ]\\n          },\\n          \\\"lifecycle\\\": {\\n            \\\"receipt\\\": \\\"browser-service-b.json\\\",\\n            \\\"status\\\": \\\"COMPLETED\\\",\\n            \\\"raw_exit_code\\\": 0,\\n            \\\"tree_terminal\\\": true,\\n            \\\"output_last_line\\\": \\\"{\\\\\\\"stopped\\\\\\\":true,\\\\\\\"active_commands\\\\\\\":[]}\\\",\\n            \\\"stderr\\\": \\\"two ConnectionAbortedError WinError10053 traces in request threads while browser navigated; subsequent browser states and shutdown recorded\\\"\\n          },\\n          \\\"coordination\\\": {\\n            \\\"invalid\\\": \\\"attempt-a.json missing started_at/ended_at; rejected exit2; retained\\\",\\n            \\\"valid\\\": \\\"attempt-a-valid.json has both null; successful event in task card; original candidate/evidence/remaining retained\\\",\\n            \\\"card_state\\\": \\\"TESTING/PENDING, is_blocked false; budgets 0/0/0/0; current reviewer has not changed files\\\"\\n          }\\n        }\\n      },\\n      \\\"questions\\\": {\\n        \\\"scope\\\": {\\n          \\\"type\\\": \\\"choice\\\",\\n          \\\"instructions\\\": \\\"For task04 only, classify whether observed changed paths and frozen requirements respect the approved scope. Do not require deployment/mobile/tasks01-03 reruns.\\\",\\n          \\\"criteria\\\": {\\n            \\\"within_scope\\\": \\\"Changed paths fit task04 whitelist/implicit card; task03 product sources and frozen requirements unchanged\\\",\\n            \\\"out_of_scope\\\": \\\"A concrete unauthorized change is present\\\",\\n            \\\"insufficient\\\": \\\"Evidence cannot determine scope\\\"\\n          }\\n        },\\n        \\\"review_disposition\\\": {\\n          \\\"type\\\": \\\"choice\\\",\\n          \\\"instructions\\\": \\\"Choose the independent task04 review disposition justified by these observed sources and original evidence. Approval is only source/behavior review, not DONE, receipt, or post-registration strict. Missing actual required evidence means blocked; demonstrated contract defect means changes requested. Existing matching-code independent regression may be reused.\\\",\\n          \\\"criteria\\\": {\\n            \\\"APPROVED\\\": \\\"Required task04 behaviors have direct code/test/native-input/visual evidence, and no material defect is established\\\",\\n            \\\"CHANGES_REQUESTED\\\": \\\"A concrete task04 contract or product defect is established and needs repair\\\",\\n            \\\"BLOCKED\\\": \\\"A required review input/evidence is missing or contradictory so disposition cannot be determined\\\"\\n          }\\n        }\\n      }\\n    },\\n    \\\"response_raw\\\": {\\n      \\\"model\\\": \\\"jev-1.14.0\\\",\\n      \\\"answers\\\": {\\n        \\\"review_disposition\\\": {\\n          \\\"type\\\": \\\"choice\\\",\\n          \\\"choice\\\": \\\"APPROVED\\\",\\n          \\\"confidence\\\": 0.68,\\n          \\\"probabilities\\\": {\\n            \\\"APPROVED\\\": 0.79,\\n            \\\"BLOCKED\\\": 0.13,\\n            \\\"CHANGES_REQUESTED\\\": 0.08\\n          }\\n        },\\n        \\\"scope\\\": {\\n          \\\"type\\\": \\\"choice\\\",\\n          \\\"choice\\\": \\\"within_scope\\\",\\n          \\\"confidence\\\": 0.97,\\n          \\\"probabilities\\\": {\\n            \\\"insufficient\\\": 0.0,\\n            \\\"out_of_scope\\\": 0.02,\\n            \\\"within_scope\\\": 0.98\\n          }\\n        }\\n      },\\n      \\\"usage\\\": {\\n        \\\"input_tokens\\\": 2409,\\n        \\\"output_tokens\\\": 95\\n      }\\n    },\\n    \\\"reviewer_application\\\": \\\"采用其范围分类及审查方向；最终APPROVED由本Reviewer依据实际diff、原始断言输出、原生输入记录和七张截图作出。概率与confidence不作为质量分或验收证据。\\\"\\n  }\\n}\",\"duration_ms\":223803,\"progress\":{\"steps\":25,\"marks\":[\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\"],\"last_step\":\"git status --short; git branch --show-current; git rev-parse HEAD; git rev-parse 2ce0705ebeeaee73f75a1dcd2882836dbc6b9d2…\"}}]}"
+            }
+          ],
+          "structuredContent": {
+            "tasks": [
+              {
+                "task_id": "15039ddf-a469-47ed-9c5a-2a732ef24dbf",
+                "status": "completed",
+                "child_conversation_id": 1719,
+                "agent_type": "codex",
+                "text": "{\n  \"task_id\": \"04\",\n  \"reviewer\": {\n    \"session_id\": \"01a1d627-da6f-75c3-87c5-5431d61a2594\",\n    \"identity_source\": \"当前运行环境 CODEX_SESSION_ID / CODEX_THREAD_ID\",\n    \"role\": \"全新独立 Reviewer\",\n    \"independence\": \"未参与本卡实现、测试、设计或 RCA；不是主控1699或实现者1718\",\n    \"read_only\": true,\n    \"delegation\": false\n  },\n  \"baseline\": {\n    \"cwd\": \"C:/Users/qingyu/.codeg/skills/iteration-manager/.worktrees/iter-10\",\n    \"branch\": \"feat/iter-10-self-hosting-hardening\",\n    \"base_sha\": \"2ce0705ebeeaee73f75a1dcd2882836dbc6b9d29\",\n    \"head_sha\": \"9b9010afb8dbf0b0cf74f83c6c97605984319619\",\n    \"contract_sha\": \"9b9010afb8dbf0b0cf74f83c6c97605984319619\",\n    \"dirty_at_start\": [],\n    \"dirty_at_end\": [],\n    \"final_head_checked_at\": \"2026-11-13T18:27:18Z\"\n  },\n  \"verdict\": \"APPROVED\",\n  \"reviewer_judgment\": \"04冻结候选满足本卡展示、交接、桌面交互、四态和HTTP安全要求。未发现需要修复的阻断缺陷。此结论仅为独立审查裁决，不登记DONE、完成收据或登记后strict。\",\n  \"evidence_path_prefix\": \"docs/todos/10-self-hosting-hardening/evidence/04/\",\n  \"scope\": {\n    \"result\": \"PASS\",\n    \"evidence\": [\n      \"实际读取BASE..C差异及95个变更路径；均属于board模板、三份测试、授权笔记、04卡或04证据目录。\",\n      \"BASE..C在scripts/、references/、SKILL.md及迭代README上无差异；未修改03查询/CLI源码。\",\n      \"忽略行尾差异后，04卡变化为执行元数据、显示状态、阶段勾选及ledger；目标、接口、白名单和验收标准未被降低。\",\n      \"controller-scope-b.json.output.txt:1记录95个变更文件均在范围内；本次另以实际Git路径清单核对。\",\n      \"完整阅读SKILL.md、references/agent_protocol.md、references/task_card_schema.md、迭代10 README及04-board-handoff.md。未重做01—03验收。\"\n    ]\n  },\n  \"spec\": [\n    {\n      \"requirement\": \"Git BASE/C、FS candidate_id、未知模式\",\n      \"result\": \"PASS\",\n      \"evidence\": [\n        \"templates/board.html:55-56按delivery_mode分支；Git缺SHA显示UNKNOWN，FS只显示candidate_id，未知模式明确UNKNOWN。\",\n        \"tests/test_board_handoff.py:40-62覆盖三种模式。\",\n        \"browser-detail-b.json.output.txt:76-98实际Git详情显示BASE/C。\",\n        \"browser-states-b.json.output.txt:64、129-136显示FS当前candidate_id及历史原候选。\"\n      ]\n    },\n    {\n      \"requirement\": \"历史checkpoint保留原候选、证据和remaining；缺失不假完成\",\n      \"result\": \"PASS\",\n      \"evidence\": [\n        \"templates/board.html:57-59显示checkpoint.candidate、phase、summary、source及progress evidence；无记录和空remaining均明确UNKNOWN。\",\n        \"tests/test_board_handoff.py:60-70验证历史出处、剩余项和缺失语义。\",\n        \"browser-source-b.json.output.txt:70-76及browser-checkpoint-b.png显示7fe4b4d原候选、attempt-a-valid.json、最终回归原件及剩余工作。\",\n        \"implementation-checkpoint-a.json保留c2d9064产品候选及原始检查、剩余项；attempt-a-valid.json保留7fe4b4d检查点和原证据。\"\n      ]\n    },\n    {\n      \"requirement\": \"只使用sources列明原文入口\",\n      \"result\": \"PASS\",\n      \"evidence\": [\n        \"templates/board.html:62-63枚举sources标签及路径；链接只有task/source索引，没有任意路径参数。\",\n        \"browser-detail-b.json.output.txt:115-135列明收据、独审报告及RED/GREEN/regression原件。\",\n        \"browser-source-b.json.output.txt:2-3记录source=0链接打开真实收据popup。\",\n        \"browser-states-b.json.output.txt:151-164列明FS三个来源。\"\n      ]\n    },\n    {\n      \"requirement\": \"真实桌面filter→detail→source→Escape和刷新\",\n      \"result\": \"PASS\",\n      \"evidence\": [\n        \"browser-detail-b.mjs:2使用原生page.click筛选PASS，等待三卡后打开03详情。\",\n        \"browser-source-b.mjs:1使用原生链接点击、popup及keyboard.press('Escape')，等待dialog隐藏；随后打开真实04检查点。\",\n        \"browser-source-b.json.output.txt:99记录ESCAPE CLOSED。\",\n        \"browser-disconnect-b.json.output.txt:64记录原生刷新前后读取时间由02:21:47.276319变为02:21:47.461353。\",\n        \"实际视口1139×869，TaskSpace5/p1。evaluate仅用于读取文本和计数，没有替代用户输入。\"\n      ]\n    },\n    {\n      \"requirement\": \"正常、空、加载、断连及桌面视觉\",\n      \"result\": \"PASS\",\n      \"evidence\": [\n        \"browser-git-b.json.output.txt为真实Git卡正常状态。\",\n        \"browser-states-b.json.output.txt:167-261覆盖空筛选及空库存；0/0未显示整轮PASS。\",\n        \"browser-states-b.json.output.txt:264-387记录真实HTTP延迟下加载→实时读取。\",\n        \"browser-disconnect-b.json.output.txt:64-125记录断连后计数、卡片和时间快照保留。\",\n        \"已通过view_image实际观察全部七张browser-*.png：候选与历史检查点分组清楚，长路径换行，模态有可见关闭按钮和滚动条，四态文字可读。\",\n        \"FS、empty、loading输入明确为synthetic；浏览器、HTTP边界和输入操作为真实执行。\"\n      ]\n    },\n    {\n      \"requirement\": \"DONE/PASS精确计数与HTTP symlink安全\",\n      \"result\": \"PASS\",\n      \"evidence\": [\n        \"tests/test_board_truth.py:47-55断言README和终端精确为DONE 2/2、PASS 1/2。\",\n        \"tests/test_board_handoff.py:73-79断言实际模板渲染相同计数，不只是检查嵌入JSON。\",\n        \"真实Git浏览器显示DONE 3/6、PASS 3/6，与迭代README当前聚合一致。\",\n        \"tests/test_board_service.py:53-71实际创建symlink并执行HTTP越界、未列明文件、任意path参数及负索引拒绝断言；无skip或创建失败吞错。\",\n        \"最终实现者及主控独立五文件回归均67passed，没有skip结果。\"\n      ]\n    }\n  ],\n  \"quality\": {\n    \"result\": \"PASS\",\n    \"evidence\": [\n      \"产品修改局限于展示与刷新行为，继续消费03既有字段和安全入口。\",\n      \"模板继续使用textContent构造内容；未引入HTML注入入口。\",\n      \"刷新有并发守卫、加载反馈、失败保留快照及finally恢复按钮。\",\n      \"Node最小DOM测试明确只是模板单元测试；真实输入与视觉另有原始证据。\",\n      \"RED原件包含四个真实AssertionError，非导入、编译或环境失败；补充测试未冒称全部先RED。\",\n      \"服务收据为COMPLETED、raw_exit_code=0、tree_terminal=true；原始末行stopped=true且active_commands为空；浏览器输出记录TASKSPACE FINISHED。\"\n    ]\n  },\n  \"checks\": [\n    {\n      \"name\": \"interaction\",\n      \"kind\": \"command\",\n      \"raw_exit_code\": 0,\n      \"receipts\": [\n        \"browser-git-b.json\",\n        \"browser-detail-b.json\",\n        \"browser-source-b.json\",\n        \"browser-states-b.json\",\n        \"browser-disconnect-b.json\"\n      ],\n      \"output\": [\n        \"browser-git-b.json.output.txt\",\n        \"browser-detail-b.json.output.txt\",\n        \"browser-source-b.json.output.txt\",\n        \"browser-states-b.json.output.txt\",\n        \"browser-disconnect-b.json.output.txt\"\n      ],\n      \"summary\": \"五个ego-browser命令均正常完成；原生筛选、详情、列明来源popup、Escape及刷新有原始输出。\"\n    },\n    {\n      \"name\": \"states\",\n      \"kind\": \"observation\",\n      \"output\": [\n        \"browser-git-b.json.output.txt\",\n        \"browser-states-b.json.output.txt\",\n        \"browser-disconnect-b.json.output.txt\"\n      ],\n      \"summary\": \"直接读取正常、空、加载、断连原件；states-observation.json仅作索引。\"\n    },\n    {\n      \"name\": \"visual\",\n      \"kind\": \"observation\",\n      \"output\": [\n        \"browser-real-git-b.png\",\n        \"browser-git-detail-b.png\",\n        \"browser-checkpoint-b.png\",\n        \"browser-fs-detail-b.png\",\n        \"browser-empty-b.png\",\n        \"browser-loading-b.png\",\n        \"browser-disconnected-b.png\"\n      ],\n      \"summary\": \"七张原始截图均已通过view_image实际观察；visual-observation.json未被当作视觉验收替代品。\"\n    },\n    {\n      \"name\": \"regression\",\n      \"kind\": \"command\",\n      \"receipt\": \"controller-regression-b.json\",\n      \"raw_exit_code\": 0,\n      \"output\": [\n        \"controller-regression-b.json.output.txt\"\n      ],\n      \"summary\": \"指定五文件独立67passed in 18.48s；本次沿用，不重复运行。\"\n    },\n    {\n      \"name\": \"supporting_red_green\",\n      \"receipts\": [\n        \"slice-a-red-1812.json\",\n        \"slice-a-green-1814.json\",\n        \"slice-a-final-regression-1816.json\"\n      ],\n      \"output\": [\n        \"slice-a-red-1812.json.output.txt\",\n        \"slice-a-green-1814.json.output.txt\",\n        \"slice-a-final-regression-1816.json.output.txt\"\n      ],\n      \"summary\": \"RED：4 failed、1 passed、exit1；GREEN：13passed；最终实现者回归67passed。\"\n    }\n  ],\n  \"issues\": [],\n  \"nonblocking_observations\": [\n    {\n      \"severity\": \"INFO\",\n      \"location\": \"browser-service-b.json.output.txt:2-44\",\n      \"observation\": \"原件保留两次请求写回时的ConnectionAbortedError WinError10053。客户端中止的具体原因未单独记录；后续状态检查和服务正常终态均有证据，未构成本卡行为失败。\",\n      \"required_action\": \"无\"\n    },\n    {\n      \"severity\": \"INFO\",\n      \"location\": \"coordination-report-rejection.json:4-9\",\n      \"observation\": \"首次attempt报告缺started_at/ended_at，被退出2拒绝；无效原件保留，新valid报告以null记录未知时间并成功登记。未将拒绝响应中的状态字段解释为卡真实FUSED。\",\n      \"required_action\": \"无\"\n    }\n  ],\n  \"evidence_reuse\": [\n    {\n      \"original_candidate\": \"c2d90643cc391168e0e424843c761e9291629d99\",\n      \"current_candidate\": \"9b9010afb8dbf0b0cf74f83c6c97605984319619\",\n      \"basis\": \"实际git diff确认c2d9064..当前C在templates/、tests/及browser_harness.py无变化；后续变化为卡片和证据登记。\",\n      \"reused\": [\n        \"实现者最终67passed\",\n        \"主控独立67passed\",\n        \"同产品源码上的原生浏览器证据\"\n      ],\n      \"reviewer_action\": \"独立读取源码、测试和原始输出并观察截图；未冒称本次重新执行。\"\n    },\n    {\n      \"original_candidate\": \"7fe4b4dcab7110c0f3f6791e5f9ef0d5a29eaa67\",\n      \"basis\": \"这是历史检查点身份，不替换为最终C；原candidate、evidence及remaining均保留。\",\n      \"reused\": [\n        \"attempt-a-valid.json\",\n        \"implementation-checkpoint-a.json\",\n        \"native-terminal-a.json\"\n      ]\n    }\n  ],\n  \"unverified\": {\n    \"blocking_gaps\": [],\n    \"boundaries\": [\n      \"本Reviewer没有重新启动业务、测试或浏览器命令；按本次授权复用匹配源码的有效证据。\",\n      \"FS证据证明合成FS输入经真实HTTP和原生浏览器展示，不外推为真实FS业务交付批准。\",\n      \"收据登记、登记D和固定协调器local strict尚属主控后续步骤，本报告未执行或宣称通过。\"\n    ]\n  },\n  \"typesafe\": {\n    \"request\": {\n      \"state\": {\n        \"task\": {\n          \"id\": \"04\",\n          \"type\": \"UI-Component\",\n          \"base\": \"2ce0705ebeeaee73f75a1dcd2882836dbc6b9d29\",\n          \"candidate\": \"9b9010afb8dbf0b0cf74f83c6c97605984319619\",\n          \"contract\": \"9b9010afb8dbf0b0cf74f83c6c97605984319619\",\n          \"requirements\": [\n            \"Git BASE/C; FS candidate_id; unknown mode explicit\",\n            \"Historical checkpoint candidate/source/progress evidence and remaining retained; missing checkpoint UNKNOWN; empty remaining not completion\",\n            \"Native desktop filter/detail/source/Escape/refresh; normal/empty/loading/disconnect\",\n            \"Exact DONE/PASS counts across README/terminal/HTML\",\n            \"HTTP listed sources only, symlink escape rejected\",\n            \"No task03 source changes\"\n          ],\n          \"excludes\": [\n            \"mobile\",\n            \"deployment\",\n            \"tasks01-03 reacceptance\",\n            \"DONE/receipt registration by reviewer\"\n          ]\n        },\n        \"observed_git\": {\n          \"branch\": \"feat/iter-10-self-hosting-hardening\",\n          \"head\": \"9b9010afb8dbf0b0cf74f83c6c97605984319619\",\n          \"dirty\": [],\n          \"diff_count\": 95,\n          \"changed_categories\": [\n            \"templates/board.html\",\n            \"tests/test_board_handoff.py\",\n            \"tests/test_board_truth.py\",\n            \"tests/test_board_service.py\",\n            \".agents/notes/implemented/feature/2026-11-13-board-handoff.md\",\n            \"task04 card\",\n            \"task04 evidence directory\"\n          ],\n          \"scripts_references_skill_readme_diff\": [],\n          \"product_tests_harness_diff_c2d9064_to_candidate\": []\n        },\n        \"source\": {\n          \"templates/board.html:55-59\": \"delivery_mode branches git/filesystem/UNKNOWN; git base_sha/head_sha fall back UNKNOWN; FS only candidate_id; checkpoint candidate, phase, summary, source and progress map retained; empty remaining says UNKNOWN and does not mean completion.\",\n          \"templates/board.html:63\": \"sources entries rendered as label/path; links only /api/evidence?task=encodeURIComponent(c.filename)&source=index; textContent via el().\",\n          \"templates/board.html:67\": \"refreshing guard; button disabled during fetch; loading keeps previous snapshot; catch shows disconnect; finally enables button.\",\n          \"tests/test_board_handoff.py:14-37\": \"Node minimal DOM; file protocol; explicitly not native browser evidence.\",\n          \"tests/test_board_service.py:53-71\": \"link.symlink_to(outside) without skip/catch; then actual HTTP requests require symlink absent from sources, 404 on direct/unlisted/path/negative-index routes, no secret body.\",\n          \"tests/test_board_truth.py:47-55 and test_board_handoff.py:73-79\": \"fixture with 2 DONE, 1 PASS, 2 total; exact README/terminal and rendered HTML count assertions.\"\n        },\n        \"raw_evidence\": {\n          \"red\": {\n            \"receipt\": \"slice-a-red-1812.json\",\n            \"raw_exit_code\": 1,\n            \"tree_terminal\": true,\n            \"output\": \"4 failed, 1 passed in 2.20s\",\n            \"failures\": [\n              \"historical-candidate absent for git\",\n              \"FS candidate absent\",\n              \"UNKNOWN mode absent\",\n              \"missing checkpoint UNKNOWN absent\"\n            ],\n            \"failure_type\": \"AssertionError\"\n          },\n          \"green\": {\n            \"receipt\": \"slice-a-green-1814.json\",\n            \"raw_exit_code\": 0,\n            \"tree_terminal\": true,\n            \"output\": \"13 passed in 4.60s\"\n          },\n          \"final_implementation_regression\": {\n            \"receipt\": \"slice-a-final-regression-1816.json\",\n            \"raw_exit_code\": 0,\n            \"tree_terminal\": true,\n            \"output\": \"67 passed in 19.67s\"\n          },\n          \"controller_regression\": {\n            \"receipt\": \"controller-regression-b.json\",\n            \"raw_exit_code\": 0,\n            \"tree_terminal\": true,\n            \"output\": \"67 passed in 18.48s\",\n            \"files\": [\n              \"test_board_handoff.py\",\n              \"test_board_truth.py\",\n              \"test_board_service.py\",\n              \"test_query_contract.py\",\n              \"test_filesystem_delivery_controller.py\"\n            ]\n          },\n          \"browser\": {\n            \"tool\": \"ego-browser 0.6.2.8\",\n            \"taskspace\": 5,\n            \"page\": \"p1\",\n            \"viewport\": \"1139x869\",\n            \"receipts\": [\n              \"browser-git-b.json\",\n              \"browser-detail-b.json\",\n              \"browser-source-b.json\",\n              \"browser-states-b.json\",\n              \"browser-disconnect-b.json\"\n            ],\n            \"all_raw_exit_code\": 0,\n            \"all_tree_terminal\": true,\n            \"inputs\": \"mjs files call page.click, page.keyboard.press('Escape'), page.goto; evaluate only reads text/counts; no DOM/store writes\",\n            \"outputs\": [\n              \"Git real cards 3/6 PASS and 3/6 DONE\",\n              \"PASS filter yields 3 cards; native detail opens task03 BASE f879bba... and C 542f2b4...\",\n              \"source=0 popup contains task03 receipt; popup closed; Escape waits detail hidden\",\n              \"task04 checkpoint shows original 7fe4b4d, attempt-a-valid.json, original final regression evidence and remaining work\",\n              \"synthetic FS current synthetic-fs-current-a, original synthetic-fs-original-a, source paths and remaining\",\n              \"empty filter text and empty inventory 0/0, no PASS conclusion\",\n              \"6 second HTTP delay: loading then real-time; snapshot retained\",\n              \"manual refresh timestamp 02:21:47.276319 -> 02:21:47.461353\",\n              \"disconnect counts before/after identical; card and timestamp retained; TASKSPACE FINISHED\"\n            ],\n            \"data_provenance\": \"Git real cards; FS/empty/loading explicitly synthetic inputs via real HTTP and native browser input\"\n          },\n          \"visual\": {\n            \"observed_with\": \"tools.view_image\",\n            \"images\": 7,\n            \"observations\": [\n              \"1139x869 dark desktop layout\",\n              \"separate PASS/DONE metrics\",\n              \"Git and FS identity sections distinct from historical checkpoint\",\n              \"dialog has visible close button and scrollbar; long evidence paths wrap\",\n              \"empty, loading and disconnected text visible\",\n              \"no observed horizontal clipping of candidate text\"\n            ]\n          },\n          \"lifecycle\": {\n            \"receipt\": \"browser-service-b.json\",\n            \"status\": \"COMPLETED\",\n            \"raw_exit_code\": 0,\n            \"tree_terminal\": true,\n            \"output_last_line\": \"{\\\"stopped\\\":true,\\\"active_commands\\\":[]}\",\n            \"stderr\": \"two ConnectionAbortedError WinError10053 traces in request threads while browser navigated; subsequent browser states and shutdown recorded\"\n          },\n          \"coordination\": {\n            \"invalid\": \"attempt-a.json missing started_at/ended_at; rejected exit2; retained\",\n            \"valid\": \"attempt-a-valid.json has both null; successful event in task card; original candidate/evidence/remaining retained\",\n            \"card_state\": \"TESTING/PENDING, is_blocked false; budgets 0/0/0/0; current reviewer has not changed files\"\n          }\n        }\n      },\n      \"questions\": {\n        \"scope\": {\n          \"type\": \"choice\",\n          \"instructions\": \"For task04 only, classify whether observed changed paths and frozen requirements respect the approved scope. Do not require deployment/mobile/tasks01-03 reruns.\",\n          \"criteria\": {\n            \"within_scope\": \"Changed paths fit task04 whitelist/implicit card; task03 product sources and frozen requirements unchanged\",\n            \"out_of_scope\": \"A concrete unauthorized change is present\",\n            \"insufficient\": \"Evidence cannot determine scope\"\n          }\n        },\n        \"review_disposition\": {\n          \"type\": \"choice\",\n          \"instructions\": \"Choose the independent task04 review disposition justified by these observed sources and original evidence. Approval is only source/behavior review, not DONE, receipt, or post-registration strict. Missing actual required evidence means blocked; demonstrated contract defect means changes requested. Existing matching-code independent regression may be reused.\",\n          \"criteria\": {\n            \"APPROVED\": \"Required task04 behaviors have direct code/test/native-input/visual evidence, and no material defect is established\",\n            \"CHANGES_REQUESTED\": \"A concrete task04 contract or product defect is established and needs repair\",\n            \"BLOCKED\": \"A required review input/evidence is missing or contradictory so disposition cannot be determined\"\n          }\n        }\n      }\n    },\n    \"response_raw\": {\n      \"model\": \"jev-1.14.0\",\n      \"answers\": {\n        \"review_disposition\": {\n          \"type\": \"choice\",\n          \"choice\": \"APPROVED\",\n          \"confidence\": 0.68,\n          \"probabilities\": {\n            \"APPROVED\": 0.79,\n            \"BLOCKED\": 0.13,\n            \"CHANGES_REQUESTED\": 0.08\n          }\n        },\n        \"scope\": {\n          \"type\": \"choice\",\n          \"choice\": \"within_scope\",\n          \"confidence\": 0.97,\n          \"probabilities\": {\n            \"insufficient\": 0.0,\n            \"out_of_scope\": 0.02,\n            \"within_scope\": 0.98\n          }\n        }\n      },\n      \"usage\": {\n        \"input_tokens\": 2409,\n        \"output_tokens\": 95\n      }\n    },\n    \"reviewer_application\": \"采用其范围分类及审查方向；最终APPROVED由本Reviewer依据实际diff、原始断言输出、原生输入记录和七张截图作出。概率与confidence不作为质量分或验收证据。\"\n  }\n}",
+                "duration_ms": 223803,
+                "progress": {
+                  "steps": 25,
+                  "marks": [
+                    "ok",
+                    "ok",
+                    "ok",
+                    "ok",
+                    "ok",
+                    "ok",
+                    "ok",
+                    "ok",
+                    "ok",
+                    "ok",
+                    "ok",
+                    "ok"
+                  ],
+                  "last_step": "git status --short; git branch --show-current; git rev-parse HEAD; git rev-parse 2ce0705ebeeaee73f75a1dcd2882836dbc6b9d2…"
+                }
+              }
+            ]
+          },
+          "isError": false
+        }
+      },
+      "terminalConfirmed": true,
+      "observedAt": 1794594521441,
+      "lateByMs": 0,
+      "events": [
+        {
+          "kind": "query",
+          "startedAt": 1794594297594,
+          "returnedAt": 1794594357618,
+          "waitMs": 60000,
+          "result": {
+            "task_id": "15039ddf-a469-47ed-9c5a-2a732ef24dbf",
+            "status": "running",
+            "child_conversation_id": 1719,
+            "agent_type": "codex",
+            "message": "Running.\nLatest sub-agent reply: thinking: **Inspecting seven images**",
+            "progress": {
+              "steps": 17,
+              "marks": [
+                "ok",
+                "ok",
+                "ok",
+                "ok",
+                "ok",
+                "ok",
+                "ok",
+                "ok",
+                "ok",
+                "ok",
+                "ok",
+                "ok"
+              ],
+              "last_step": "View Image C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\.worktrees\\iter-10\\docs\\todos\\10-self-hosting-hardening\\evide…"
+            },
+            "raw": {
+              "content": [
+                {
+                  "type": "text",
+                  "text": "{\"tasks\":[{\"task_id\":\"15039ddf-a469-47ed-9c5a-2a732ef24dbf\",\"status\":\"running\",\"child_conversation_id\":1719,\"agent_type\":\"codex\",\"message\":\"Running.\\nLatest sub-agent reply: thinking: **Inspecting seven images**\",\"progress\":{\"steps\":17,\"marks\":[\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\"],\"last_step\":\"View Image C:\\\\Users\\\\qingyu\\\\.codeg\\\\skills\\\\iteration-manager\\\\.worktrees\\\\iter-10\\\\docs\\\\todos\\\\10-self-hosting-hardening\\\\evide…\"}}]}"
+                }
+              ],
+              "structuredContent": {
+                "tasks": [
+                  {
+                    "task_id": "15039ddf-a469-47ed-9c5a-2a732ef24dbf",
+                    "status": "running",
+                    "child_conversation_id": 1719,
+                    "agent_type": "codex",
+                    "message": "Running.\nLatest sub-agent reply: thinking: **Inspecting seven images**",
+                    "progress": {
+                      "steps": 17,
+                      "marks": [
+                        "ok",
+                        "ok",
+                        "ok",
+                        "ok",
+                        "ok",
+                        "ok",
+                        "ok",
+                        "ok",
+                        "ok",
+                        "ok",
+                        "ok",
+                        "ok"
+                      ],
+                      "last_step": "View Image C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\.worktrees\\iter-10\\docs\\todos\\10-self-hosting-hardening\\evide…"
+                    }
+                  }
+                ]
+              },
+              "isError": false
+            }
+          }
+        },
+        {
+          "kind": "query",
+          "startedAt": 1794594357618,
+          "returnedAt": 1794594417642,
+          "waitMs": 60000,
+          "result": {
+            "task_id": "15039ddf-a469-47ed-9c5a-2a732ef24dbf",
+            "status": "running",
+            "child_conversation_id": 1719,
+            "agent_type": "codex",
+            "message": "Running.\nLatest sub-agent reply: thinking: **Verifying final evidence metadata**",
+            "progress": {
+              "steps": 23,
+              "marks": [
+                "ok",
+                "ok",
+                "ok",
+                "ok",
+                "ok",
+                "ok",
+                "ok",
+                "ok",
+                "ok",
+                "ok",
+                "ok",
+                "ok"
+              ],
+              "last_step": "git diff --ignore-space-at-eol 2ce0705ebeeaee73f75a1dcd2882836dbc6b9d29..9b9010afb8dbf0b0cf74f83c6c97605984319619 -- doc…"
+            },
+            "raw": {
+              "content": [
+                {
+                  "type": "text",
+                  "text": "{\"tasks\":[{\"task_id\":\"15039ddf-a469-47ed-9c5a-2a732ef24dbf\",\"status\":\"running\",\"child_conversation_id\":1719,\"agent_type\":\"codex\",\"message\":\"Running.\\nLatest sub-agent reply: thinking: **Verifying final evidence metadata**\",\"progress\":{\"steps\":23,\"marks\":[\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\"],\"last_step\":\"git diff --ignore-space-at-eol 2ce0705ebeeaee73f75a1dcd2882836dbc6b9d29..9b9010afb8dbf0b0cf74f83c6c97605984319619 -- doc…\"}}]}"
+                }
+              ],
+              "structuredContent": {
+                "tasks": [
+                  {
+                    "task_id": "15039ddf-a469-47ed-9c5a-2a732ef24dbf",
+                    "status": "running",
+                    "child_conversation_id": 1719,
+                    "agent_type": "codex",
+                    "message": "Running.\nLatest sub-agent reply: thinking: **Verifying final evidence metadata**",
+                    "progress": {
+                      "steps": 23,
+                      "marks": [
+                        "ok",
+                        "ok",
+                        "ok",
+                        "ok",
+                        "ok",
+                        "ok",
+                        "ok",
+                        "ok",
+                        "ok",
+                        "ok",
+                        "ok",
+                        "ok"
+                      ],
+                      "last_step": "git diff --ignore-space-at-eol 2ce0705ebeeaee73f75a1dcd2882836dbc6b9d29..9b9010afb8dbf0b0cf74f83c6c97605984319619 -- doc…"
+                    }
+                  }
+                ]
+              },
+              "isError": false
+            }
+          }
+        },
+        {
+          "kind": "query",
+          "startedAt": 1794594417642,
+          "returnedAt": 1794594477658,
+          "waitMs": 60000,
+          "result": {
+            "task_id": "15039ddf-a469-47ed-9c5a-2a732ef24dbf",
+            "status": "running",
+            "child_conversation_id": 1719,
+            "agent_type": "codex",
+            "message": "Running.\nLatest sub-agent reply: \"summary\": \"直接读取正常、空、加载、断连原件；states",
+            "progress": {
+              "steps": 25,
+              "marks": [
+                "ok",
+                "ok",
+                "ok",
+                "ok",
+                "ok",
+                "ok",
+                "ok",
+                "ok",
+                "ok",
+                "ok",
+                "ok",
+                "ok"
+              ],
+              "last_step": "git status --short; git branch --show-current; git rev-parse HEAD; git rev-parse 2ce0705ebeeaee73f75a1dcd2882836dbc6b9d2…"
+            },
+            "raw": {
+              "content": [
+                {
+                  "type": "text",
+                  "text": "{\"tasks\":[{\"task_id\":\"15039ddf-a469-47ed-9c5a-2a732ef24dbf\",\"status\":\"running\",\"child_conversation_id\":1719,\"agent_type\":\"codex\",\"message\":\"Running.\\nLatest sub-agent reply: \\\"summary\\\": \\\"直接读取正常、空、加载、断连原件；states\",\"progress\":{\"steps\":25,\"marks\":[\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\"],\"last_step\":\"git status --short; git branch --show-current; git rev-parse HEAD; git rev-parse 2ce0705ebeeaee73f75a1dcd2882836dbc6b9d2…\"}}]}"
+                }
+              ],
+              "structuredContent": {
+                "tasks": [
+                  {
+                    "task_id": "15039ddf-a469-47ed-9c5a-2a732ef24dbf",
+                    "status": "running",
+                    "child_conversation_id": 1719,
+                    "agent_type": "codex",
+                    "message": "Running.\nLatest sub-agent reply: \"summary\": \"直接读取正常、空、加载、断连原件；states",
+                    "progress": {
+                      "steps": 25,
+                      "marks": [
+                        "ok",
+                        "ok",
+                        "ok",
+                        "ok",
+                        "ok",
+                        "ok",
+                        "ok",
+                        "ok",
+                        "ok",
+                        "ok",
+                        "ok",
+                        "ok"
+                      ],
+                      "last_step": "git status --short; git branch --show-current; git rev-parse HEAD; git rev-parse 2ce0705ebeeaee73f75a1dcd2882836dbc6b9d2…"
+                    }
+                  }
+                ]
+              },
+              "isError": false
+            }
+          }
+        },
+        {
+          "kind": "query",
+          "startedAt": 1794594477658,
+          "returnedAt": 1794594521441,
+          "waitMs": 60000,
+          "result": {
+            "task_id": "15039ddf-a469-47ed-9c5a-2a732ef24dbf",
+            "status": "completed",
+            "child_conversation_id": 1719,
+            "agent_type": "codex",
+            "text": "{\n  \"task_id\": \"04\",\n  \"reviewer\": {\n    \"session_id\": \"01a1d627-da6f-75c3-87c5-5431d61a2594\",\n    \"identity_source\": \"当前运行环境 CODEX_SESSION_ID / CODEX_THREAD_ID\",\n    \"role\": \"全新独立 Reviewer\",\n    \"independence\": \"未参与本卡实现、测试、设计或 RCA；不是主控1699或实现者1718\",\n    \"read_only\": true,\n    \"delegation\": false\n  },\n  \"baseline\": {\n    \"cwd\": \"C:/Users/qingyu/.codeg/skills/iteration-manager/.worktrees/iter-10\",\n    \"branch\": \"feat/iter-10-self-hosting-hardening\",\n    \"base_sha\": \"2ce0705ebeeaee73f75a1dcd2882836dbc6b9d29\",\n    \"head_sha\": \"9b9010afb8dbf0b0cf74f83c6c97605984319619\",\n    \"contract_sha\": \"9b9010afb8dbf0b0cf74f83c6c97605984319619\",\n    \"dirty_at_start\": [],\n    \"dirty_at_end\": [],\n    \"final_head_checked_at\": \"2026-11-13T18:27:18Z\"\n  },\n  \"verdict\": \"APPROVED\",\n  \"reviewer_judgment\": \"04冻结候选满足本卡展示、交接、桌面交互、四态和HTTP安全要求。未发现需要修复的阻断缺陷。此结论仅为独立审查裁决，不登记DONE、完成收据或登记后strict。\",\n  \"evidence_path_prefix\": \"docs/todos/10-self-hosting-hardening/evidence/04/\",\n  \"scope\": {\n    \"result\": \"PASS\",\n    \"evidence\": [\n      \"实际读取BASE..C差异及95个变更路径；均属于board模板、三份测试、授权笔记、04卡或04证据目录。\",\n      \"BASE..C在scripts/、references/、SKILL.md及迭代README上无差异；未修改03查询/CLI源码。\",\n      \"忽略行尾差异后，04卡变化为执行元数据、显示状态、阶段勾选及ledger；目标、接口、白名单和验收标准未被降低。\",\n      \"controller-scope-b.json.output.txt:1记录95个变更文件均在范围内；本次另以实际Git路径清单核对。\",\n      \"完整阅读SKILL.md、references/agent_protocol.md、references/task_card_schema.md、迭代10 README及04-board-handoff.md。未重做01—03验收。\"\n    ]\n  },\n  \"spec\": [\n    {\n      \"requirement\": \"Git BASE/C、FS candidate_id、未知模式\",\n      \"result\": \"PASS\",\n      \"evidence\": [\n        \"templates/board.html:55-56按delivery_mode分支；Git缺SHA显示UNKNOWN，FS只显示candidate_id，未知模式明确UNKNOWN。\",\n        \"tests/test_board_handoff.py:40-62覆盖三种模式。\",\n        \"browser-detail-b.json.output.txt:76-98实际Git详情显示BASE/C。\",\n        \"browser-states-b.json.output.txt:64、129-136显示FS当前candidate_id及历史原候选。\"\n      ]\n    },\n    {\n      \"requirement\": \"历史checkpoint保留原候选、证据和remaining；缺失不假完成\",\n      \"result\": \"PASS\",\n      \"evidence\": [\n        \"templates/board.html:57-59显示checkpoint.candidate、phase、summary、source及progress evidence；无记录和空remaining均明确UNKNOWN。\",\n        \"tests/test_board_handoff.py:60-70验证历史出处、剩余项和缺失语义。\",\n        \"browser-source-b.json.output.txt:70-76及browser-checkpoint-b.png显示7fe4b4d原候选、attempt-a-valid.json、最终回归原件及剩余工作。\",\n        \"implementation-checkpoint-a.json保留c2d9064产品候选及原始检查、剩余项；attempt-a-valid.json保留7fe4b4d检查点和原证据。\"\n      ]\n    },\n    {\n      \"requirement\": \"只使用sources列明原文入口\",\n      \"result\": \"PASS\",\n      \"evidence\": [\n        \"templates/board.html:62-63枚举sources标签及路径；链接只有task/source索引，没有任意路径参数。\",\n        \"browser-detail-b.json.output.txt:115-135列明收据、独审报告及RED/GREEN/regression原件。\",\n        \"browser-source-b.json.output.txt:2-3记录source=0链接打开真实收据popup。\",\n        \"browser-states-b.json.output.txt:151-164列明FS三个来源。\"\n      ]\n    },\n    {\n      \"requirement\": \"真实桌面filter→detail→source→Escape和刷新\",\n      \"result\": \"PASS\",\n      \"evidence\": [\n        \"browser-detail-b.mjs:2使用原生page.click筛选PASS，等待三卡后打开03详情。\",\n        \"browser-source-b.mjs:1使用原生链接点击、popup及keyboard.press('Escape')，等待dialog隐藏；随后打开真实04检查点。\",\n        \"browser-source-b.json.output.txt:99记录ESCAPE CLOSED。\",\n        \"browser-disconnect-b.json.output.txt:64记录原生刷新前后读取时间由02:21:47.276319变为02:21:47.461353。\",\n        \"实际视口1139×869，TaskSpace5/p1。evaluate仅用于读取文本和计数，没有替代用户输入。\"\n      ]\n    },\n    {\n      \"requirement\": \"正常、空、加载、断连及桌面视觉\",\n      \"result\": \"PASS\",\n      \"evidence\": [\n        \"browser-git-b.json.output.txt为真实Git卡正常状态。\",\n        \"browser-states-b.json.output.txt:167-261覆盖空筛选及空库存；0/0未显示整轮PASS。\",\n        \"browser-states-b.json.output.txt:264-387记录真实HTTP延迟下加载→实时读取。\",\n        \"browser-disconnect-b.json.output.txt:64-125记录断连后计数、卡片和时间快照保留。\",\n        \"已通过view_image实际观察全部七张browser-*.png：候选与历史检查点分组清楚，长路径换行，模态有可见关闭按钮和滚动条，四态文字可读。\",\n        \"FS、empty、loading输入明确为synthetic；浏览器、HTTP边界和输入操作为真实执行。\"\n      ]\n    },\n    {\n      \"requirement\": \"DONE/PASS精确计数与HTTP symlink安全\",\n      \"result\": \"PASS\",\n      \"evidence\": [\n        \"tests/test_board_truth.py:47-55断言README和终端精确为DONE 2/2、PASS 1/2。\",\n        \"tests/test_board_handoff.py:73-79断言实际模板渲染相同计数，不只是检查嵌入JSON。\",\n        \"真实Git浏览器显示DONE 3/6、PASS 3/6，与迭代README当前聚合一致。\",\n        \"tests/test_board_service.py:53-71实际创建symlink并执行HTTP越界、未列明文件、任意path参数及负索引拒绝断言；无skip或创建失败吞错。\",\n        \"最终实现者及主控独立五文件回归均67passed，没有skip结果。\"\n      ]\n    }\n  ],\n  \"quality\": {\n    \"result\": \"PASS\",\n    \"evidence\": [\n      \"产品修改局限于展示与刷新行为，继续消费03既有字段和安全入口。\",\n      \"模板继续使用textContent构造内容；未引入HTML注入入口。\",\n      \"刷新有并发守卫、加载反馈、失败保留快照及finally恢复按钮。\",\n      \"Node最小DOM测试明确只是模板单元测试；真实输入与视觉另有原始证据。\",\n      \"RED原件包含四个真实AssertionError，非导入、编译或环境失败；补充测试未冒称全部先RED。\",\n      \"服务收据为COMPLETED、raw_exit_code=0、tree_terminal=true；原始末行stopped=true且active_commands为空；浏览器输出记录TASKSPACE FINISHED。\"\n    ]\n  },\n  \"checks\": [\n    {\n      \"name\": \"interaction\",\n      \"kind\": \"command\",\n      \"raw_exit_code\": 0,\n      \"receipts\": [\n        \"browser-git-b.json\",\n        \"browser-detail-b.json\",\n        \"browser-source-b.json\",\n        \"browser-states-b.json\",\n        \"browser-disconnect-b.json\"\n      ],\n      \"output\": [\n        \"browser-git-b.json.output.txt\",\n        \"browser-detail-b.json.output.txt\",\n        \"browser-source-b.json.output.txt\",\n        \"browser-states-b.json.output.txt\",\n        \"browser-disconnect-b.json.output.txt\"\n      ],\n      \"summary\": \"五个ego-browser命令均正常完成；原生筛选、详情、列明来源popup、Escape及刷新有原始输出。\"\n    },\n    {\n      \"name\": \"states\",\n      \"kind\": \"observation\",\n      \"output\": [\n        \"browser-git-b.json.output.txt\",\n        \"browser-states-b.json.output.txt\",\n        \"browser-disconnect-b.json.output.txt\"\n      ],\n      \"summary\": \"直接读取正常、空、加载、断连原件；states-observation.json仅作索引。\"\n    },\n    {\n      \"name\": \"visual\",\n      \"kind\": \"observation\",\n      \"output\": [\n        \"browser-real-git-b.png\",\n        \"browser-git-detail-b.png\",\n        \"browser-checkpoint-b.png\",\n        \"browser-fs-detail-b.png\",\n        \"browser-empty-b.png\",\n        \"browser-loading-b.png\",\n        \"browser-disconnected-b.png\"\n      ],\n      \"summary\": \"七张原始截图均已通过view_image实际观察；visual-observation.json未被当作视觉验收替代品。\"\n    },\n    {\n      \"name\": \"regression\",\n      \"kind\": \"command\",\n      \"receipt\": \"controller-regression-b.json\",\n      \"raw_exit_code\": 0,\n      \"output\": [\n        \"controller-regression-b.json.output.txt\"\n      ],\n      \"summary\": \"指定五文件独立67passed in 18.48s；本次沿用，不重复运行。\"\n    },\n    {\n      \"name\": \"supporting_red_green\",\n      \"receipts\": [\n        \"slice-a-red-1812.json\",\n        \"slice-a-green-1814.json\",\n        \"slice-a-final-regression-1816.json\"\n      ],\n      \"output\": [\n        \"slice-a-red-1812.json.output.txt\",\n        \"slice-a-green-1814.json.output.txt\",\n        \"slice-a-final-regression-1816.json.output.txt\"\n      ],\n      \"summary\": \"RED：4 failed、1 passed、exit1；GREEN：13passed；最终实现者回归67passed。\"\n    }\n  ],\n  \"issues\": [],\n  \"nonblocking_observations\": [\n    {\n      \"severity\": \"INFO\",\n      \"location\": \"browser-service-b.json.output.txt:2-44\",\n      \"observation\": \"原件保留两次请求写回时的ConnectionAbortedError WinError10053。客户端中止的具体原因未单独记录；后续状态检查和服务正常终态均有证据，未构成本卡行为失败。\",\n      \"required_action\": \"无\"\n    },\n    {\n      \"severity\": \"INFO\",\n      \"location\": \"coordination-report-rejection.json:4-9\",\n      \"observation\": \"首次attempt报告缺started_at/ended_at，被退出2拒绝；无效原件保留，新valid报告以null记录未知时间并成功登记。未将拒绝响应中的状态字段解释为卡真实FUSED。\",\n      \"required_action\": \"无\"\n    }\n  ],\n  \"evidence_reuse\": [\n    {\n      \"original_candidate\": \"c2d90643cc391168e0e424843c761e9291629d99\",\n      \"current_candidate\": \"9b9010afb8dbf0b0cf74f83c6c97605984319619\",\n      \"basis\": \"实际git diff确认c2d9064..当前C在templates/、tests/及browser_harness.py无变化；后续变化为卡片和证据登记。\",\n      \"reused\": [\n        \"实现者最终67passed\",\n        \"主控独立67passed\",\n        \"同产品源码上的原生浏览器证据\"\n      ],\n      \"reviewer_action\": \"独立读取源码、测试和原始输出并观察截图；未冒称本次重新执行。\"\n    },\n    {\n      \"original_candidate\": \"7fe4b4dcab7110c0f3f6791e5f9ef0d5a29eaa67\",\n      \"basis\": \"这是历史检查点身份，不替换为最终C；原candidate、evidence及remaining均保留。\",\n      \"reused\": [\n        \"attempt-a-valid.json\",\n        \"implementation-checkpoint-a.json\",\n        \"native-terminal-a.json\"\n      ]\n    }\n  ],\n  \"unverified\": {\n    \"blocking_gaps\": [],\n    \"boundaries\": [\n      \"本Reviewer没有重新启动业务、测试或浏览器命令；按本次授权复用匹配源码的有效证据。\",\n      \"FS证据证明合成FS输入经真实HTTP和原生浏览器展示，不外推为真实FS业务交付批准。\",\n      \"收据登记、登记D和固定协调器local strict尚属主控后续步骤，本报告未执行或宣称通过。\"\n    ]\n  },\n  \"typesafe\": {\n    \"request\": {\n      \"state\": {\n        \"task\": {\n          \"id\": \"04\",\n          \"type\": \"UI-Component\",\n          \"base\": \"2ce0705ebeeaee73f75a1dcd2882836dbc6b9d29\",\n          \"candidate\": \"9b9010afb8dbf0b0cf74f83c6c97605984319619\",\n          \"contract\": \"9b9010afb8dbf0b0cf74f83c6c97605984319619\",\n          \"requirements\": [\n            \"Git BASE/C; FS candidate_id; unknown mode explicit\",\n            \"Historical checkpoint candidate/source/progress evidence and remaining retained; missing checkpoint UNKNOWN; empty remaining not completion\",\n            \"Native desktop filter/detail/source/Escape/refresh; normal/empty/loading/disconnect\",\n            \"Exact DONE/PASS counts across README/terminal/HTML\",\n            \"HTTP listed sources only, symlink escape rejected\",\n            \"No task03 source changes\"\n          ],\n          \"excludes\": [\n            \"mobile\",\n            \"deployment\",\n            \"tasks01-03 reacceptance\",\n            \"DONE/receipt registration by reviewer\"\n          ]\n        },\n        \"observed_git\": {\n          \"branch\": \"feat/iter-10-self-hosting-hardening\",\n          \"head\": \"9b9010afb8dbf0b0cf74f83c6c97605984319619\",\n          \"dirty\": [],\n          \"diff_count\": 95,\n          \"changed_categories\": [\n            \"templates/board.html\",\n            \"tests/test_board_handoff.py\",\n            \"tests/test_board_truth.py\",\n            \"tests/test_board_service.py\",\n            \".agents/notes/implemented/feature/2026-11-13-board-handoff.md\",\n            \"task04 card\",\n            \"task04 evidence directory\"\n          ],\n          \"scripts_references_skill_readme_diff\": [],\n          \"product_tests_harness_diff_c2d9064_to_candidate\": []\n        },\n        \"source\": {\n          \"templates/board.html:55-59\": \"delivery_mode branches git/filesystem/UNKNOWN; git base_sha/head_sha fall back UNKNOWN; FS only candidate_id; checkpoint candidate, phase, summary, source and progress map retained; empty remaining says UNKNOWN and does not mean completion.\",\n          \"templates/board.html:63\": \"sources entries rendered as label/path; links only /api/evidence?task=encodeURIComponent(c.filename)&source=index; textContent via el().\",\n          \"templates/board.html:67\": \"refreshing guard; button disabled during fetch; loading keeps previous snapshot; catch shows disconnect; finally enables button.\",\n          \"tests/test_board_handoff.py:14-37\": \"Node minimal DOM; file protocol; explicitly not native browser evidence.\",\n          \"tests/test_board_service.py:53-71\": \"link.symlink_to(outside) without skip/catch; then actual HTTP requests require symlink absent from sources, 404 on direct/unlisted/path/negative-index routes, no secret body.\",\n          \"tests/test_board_truth.py:47-55 and test_board_handoff.py:73-79\": \"fixture with 2 DONE, 1 PASS, 2 total; exact README/terminal and rendered HTML count assertions.\"\n        },\n        \"raw_evidence\": {\n          \"red\": {\n            \"receipt\": \"slice-a-red-1812.json\",\n            \"raw_exit_code\": 1,\n            \"tree_terminal\": true,\n            \"output\": \"4 failed, 1 passed in 2.20s\",\n            \"failures\": [\n              \"historical-candidate absent for git\",\n              \"FS candidate absent\",\n              \"UNKNOWN mode absent\",\n              \"missing checkpoint UNKNOWN absent\"\n            ],\n            \"failure_type\": \"AssertionError\"\n          },\n          \"green\": {\n            \"receipt\": \"slice-a-green-1814.json\",\n            \"raw_exit_code\": 0,\n            \"tree_terminal\": true,\n            \"output\": \"13 passed in 4.60s\"\n          },\n          \"final_implementation_regression\": {\n            \"receipt\": \"slice-a-final-regression-1816.json\",\n            \"raw_exit_code\": 0,\n            \"tree_terminal\": true,\n            \"output\": \"67 passed in 19.67s\"\n          },\n          \"controller_regression\": {\n            \"receipt\": \"controller-regression-b.json\",\n            \"raw_exit_code\": 0,\n            \"tree_terminal\": true,\n            \"output\": \"67 passed in 18.48s\",\n            \"files\": [\n              \"test_board_handoff.py\",\n              \"test_board_truth.py\",\n              \"test_board_service.py\",\n              \"test_query_contract.py\",\n              \"test_filesystem_delivery_controller.py\"\n            ]\n          },\n          \"browser\": {\n            \"tool\": \"ego-browser 0.6.2.8\",\n            \"taskspace\": 5,\n            \"page\": \"p1\",\n            \"viewport\": \"1139x869\",\n            \"receipts\": [\n              \"browser-git-b.json\",\n              \"browser-detail-b.json\",\n              \"browser-source-b.json\",\n              \"browser-states-b.json\",\n              \"browser-disconnect-b.json\"\n            ],\n            \"all_raw_exit_code\": 0,\n            \"all_tree_terminal\": true,\n            \"inputs\": \"mjs files call page.click, page.keyboard.press('Escape'), page.goto; evaluate only reads text/counts; no DOM/store writes\",\n            \"outputs\": [\n              \"Git real cards 3/6 PASS and 3/6 DONE\",\n              \"PASS filter yields 3 cards; native detail opens task03 BASE f879bba... and C 542f2b4...\",\n              \"source=0 popup contains task03 receipt; popup closed; Escape waits detail hidden\",\n              \"task04 checkpoint shows original 7fe4b4d, attempt-a-valid.json, original final regression evidence and remaining work\",\n              \"synthetic FS current synthetic-fs-current-a, original synthetic-fs-original-a, source paths and remaining\",\n              \"empty filter text and empty inventory 0/0, no PASS conclusion\",\n              \"6 second HTTP delay: loading then real-time; snapshot retained\",\n              \"manual refresh timestamp 02:21:47.276319 -> 02:21:47.461353\",\n              \"disconnect counts before/after identical; card and timestamp retained; TASKSPACE FINISHED\"\n            ],\n            \"data_provenance\": \"Git real cards; FS/empty/loading explicitly synthetic inputs via real HTTP and native browser input\"\n          },\n          \"visual\": {\n            \"observed_with\": \"tools.view_image\",\n            \"images\": 7,\n            \"observations\": [\n              \"1139x869 dark desktop layout\",\n              \"separate PASS/DONE metrics\",\n              \"Git and FS identity sections distinct from historical checkpoint\",\n              \"dialog has visible close button and scrollbar; long evidence paths wrap\",\n              \"empty, loading and disconnected text visible\",\n              \"no observed horizontal clipping of candidate text\"\n            ]\n          },\n          \"lifecycle\": {\n            \"receipt\": \"browser-service-b.json\",\n            \"status\": \"COMPLETED\",\n            \"raw_exit_code\": 0,\n            \"tree_terminal\": true,\n            \"output_last_line\": \"{\\\"stopped\\\":true,\\\"active_commands\\\":[]}\",\n            \"stderr\": \"two ConnectionAbortedError WinError10053 traces in request threads while browser navigated; subsequent browser states and shutdown recorded\"\n          },\n          \"coordination\": {\n            \"invalid\": \"attempt-a.json missing started_at/ended_at; rejected exit2; retained\",\n            \"valid\": \"attempt-a-valid.json has both null; successful event in task card; original candidate/evidence/remaining retained\",\n            \"card_state\": \"TESTING/PENDING, is_blocked false; budgets 0/0/0/0; current reviewer has not changed files\"\n          }\n        }\n      },\n      \"questions\": {\n        \"scope\": {\n          \"type\": \"choice\",\n          \"instructions\": \"For task04 only, classify whether observed changed paths and frozen requirements respect the approved scope. Do not require deployment/mobile/tasks01-03 reruns.\",\n          \"criteria\": {\n            \"within_scope\": \"Changed paths fit task04 whitelist/implicit card; task03 product sources and frozen requirements unchanged\",\n            \"out_of_scope\": \"A concrete unauthorized change is present\",\n            \"insufficient\": \"Evidence cannot determine scope\"\n          }\n        },\n        \"review_disposition\": {\n          \"type\": \"choice\",\n          \"instructions\": \"Choose the independent task04 review disposition justified by these observed sources and original evidence. Approval is only source/behavior review, not DONE, receipt, or post-registration strict. Missing actual required evidence means blocked; demonstrated contract defect means changes requested. Existing matching-code independent regression may be reused.\",\n          \"criteria\": {\n            \"APPROVED\": \"Required task04 behaviors have direct code/test/native-input/visual evidence, and no material defect is established\",\n            \"CHANGES_REQUESTED\": \"A concrete task04 contract or product defect is established and needs repair\",\n            \"BLOCKED\": \"A required review input/evidence is missing or contradictory so disposition cannot be determined\"\n          }\n        }\n      }\n    },\n    \"response_raw\": {\n      \"model\": \"jev-1.14.0\",\n      \"answers\": {\n        \"review_disposition\": {\n          \"type\": \"choice\",\n          \"choice\": \"APPROVED\",\n          \"confidence\": 0.68,\n          \"probabilities\": {\n            \"APPROVED\": 0.79,\n            \"BLOCKED\": 0.13,\n            \"CHANGES_REQUESTED\": 0.08\n          }\n        },\n        \"scope\": {\n          \"type\": \"choice\",\n          \"choice\": \"within_scope\",\n          \"confidence\": 0.97,\n          \"probabilities\": {\n            \"insufficient\": 0.0,\n            \"out_of_scope\": 0.02,\n            \"within_scope\": 0.98\n          }\n        }\n      },\n      \"usage\": {\n        \"input_tokens\": 2409,\n        \"output_tokens\": 95\n      }\n    },\n    \"reviewer_application\": \"采用其范围分类及审查方向；最终APPROVED由本Reviewer依据实际diff、原始断言输出、原生输入记录和七张截图作出。概率与confidence不作为质量分或验收证据。\"\n  }\n}",
+            "duration_ms": 223803,
+            "progress": {
+              "steps": 25,
+              "marks": [
+                "ok",
+                "ok",
+                "ok",
+                "ok",
+                "ok",
+                "ok",
+                "ok",
+                "ok",
+                "ok",
+                "ok",
+                "ok",
+                "ok"
+              ],
+              "last_step": "git status --short; git branch --show-current; git rev-parse HEAD; git rev-parse 2ce0705ebeeaee73f75a1dcd2882836dbc6b9d2…"
+            },
+            "raw": {
+              "content": [
+                {
+                  "type": "text",
+                  "text": "{\"tasks\":[{\"task_id\":\"15039ddf-a469-47ed-9c5a-2a732ef24dbf\",\"status\":\"completed\",\"child_conversation_id\":1719,\"agent_type\":\"codex\",\"text\":\"{\\n  \\\"task_id\\\": \\\"04\\\",\\n  \\\"reviewer\\\": {\\n    \\\"session_id\\\": \\\"01a1d627-da6f-75c3-87c5-5431d61a2594\\\",\\n    \\\"identity_source\\\": \\\"当前运行环境 CODEX_SESSION_ID / CODEX_THREAD_ID\\\",\\n    \\\"role\\\": \\\"全新独立 Reviewer\\\",\\n    \\\"independence\\\": \\\"未参与本卡实现、测试、设计或 RCA；不是主控1699或实现者1718\\\",\\n    \\\"read_only\\\": true,\\n    \\\"delegation\\\": false\\n  },\\n  \\\"baseline\\\": {\\n    \\\"cwd\\\": \\\"C:/Users/qingyu/.codeg/skills/iteration-manager/.worktrees/iter-10\\\",\\n    \\\"branch\\\": \\\"feat/iter-10-self-hosting-hardening\\\",\\n    \\\"base_sha\\\": \\\"2ce0705ebeeaee73f75a1dcd2882836dbc6b9d29\\\",\\n    \\\"head_sha\\\": \\\"9b9010afb8dbf0b0cf74f83c6c97605984319619\\\",\\n    \\\"contract_sha\\\": \\\"9b9010afb8dbf0b0cf74f83c6c97605984319619\\\",\\n    \\\"dirty_at_start\\\": [],\\n    \\\"dirty_at_end\\\": [],\\n    \\\"final_head_checked_at\\\": \\\"2026-11-13T18:27:18Z\\\"\\n  },\\n  \\\"verdict\\\": \\\"APPROVED\\\",\\n  \\\"reviewer_judgment\\\": \\\"04冻结候选满足本卡展示、交接、桌面交互、四态和HTTP安全要求。未发现需要修复的阻断缺陷。此结论仅为独立审查裁决，不登记DONE、完成收据或登记后strict。\\\",\\n  \\\"evidence_path_prefix\\\": \\\"docs/todos/10-self-hosting-hardening/evidence/04/\\\",\\n  \\\"scope\\\": {\\n    \\\"result\\\": \\\"PASS\\\",\\n    \\\"evidence\\\": [\\n      \\\"实际读取BASE..C差异及95个变更路径；均属于board模板、三份测试、授权笔记、04卡或04证据目录。\\\",\\n      \\\"BASE..C在scripts/、references/、SKILL.md及迭代README上无差异；未修改03查询/CLI源码。\\\",\\n      \\\"忽略行尾差异后，04卡变化为执行元数据、显示状态、阶段勾选及ledger；目标、接口、白名单和验收标准未被降低。\\\",\\n      \\\"controller-scope-b.json.output.txt:1记录95个变更文件均在范围内；本次另以实际Git路径清单核对。\\\",\\n      \\\"完整阅读SKILL.md、references/agent_protocol.md、references/task_card_schema.md、迭代10 README及04-board-handoff.md。未重做01—03验收。\\\"\\n    ]\\n  },\\n  \\\"spec\\\": [\\n    {\\n      \\\"requirement\\\": \\\"Git BASE/C、FS candidate_id、未知模式\\\",\\n      \\\"result\\\": \\\"PASS\\\",\\n      \\\"evidence\\\": [\\n        \\\"templates/board.html:55-56按delivery_mode分支；Git缺SHA显示UNKNOWN，FS只显示candidate_id，未知模式明确UNKNOWN。\\\",\\n        \\\"tests/test_board_handoff.py:40-62覆盖三种模式。\\\",\\n        \\\"browser-detail-b.json.output.txt:76-98实际Git详情显示BASE/C。\\\",\\n        \\\"browser-states-b.json.output.txt:64、129-136显示FS当前candidate_id及历史原候选。\\\"\\n      ]\\n    },\\n    {\\n      \\\"requirement\\\": \\\"历史checkpoint保留原候选、证据和remaining；缺失不假完成\\\",\\n      \\\"result\\\": \\\"PASS\\\",\\n      \\\"evidence\\\": [\\n        \\\"templates/board.html:57-59显示checkpoint.candidate、phase、summary、source及progress evidence；无记录和空remaining均明确UNKNOWN。\\\",\\n        \\\"tests/test_board_handoff.py:60-70验证历史出处、剩余项和缺失语义。\\\",\\n        \\\"browser-source-b.json.output.txt:70-76及browser-checkpoint-b.png显示7fe4b4d原候选、attempt-a-valid.json、最终回归原件及剩余工作。\\\",\\n        \\\"implementation-checkpoint-a.json保留c2d9064产品候选及原始检查、剩余项；attempt-a-valid.json保留7fe4b4d检查点和原证据。\\\"\\n      ]\\n    },\\n    {\\n      \\\"requirement\\\": \\\"只使用sources列明原文入口\\\",\\n      \\\"result\\\": \\\"PASS\\\",\\n      \\\"evidence\\\": [\\n        \\\"templates/board.html:62-63枚举sources标签及路径；链接只有task/source索引，没有任意路径参数。\\\",\\n        \\\"browser-detail-b.json.output.txt:115-135列明收据、独审报告及RED/GREEN/regression原件。\\\",\\n        \\\"browser-source-b.json.output.txt:2-3记录source=0链接打开真实收据popup。\\\",\\n        \\\"browser-states-b.json.output.txt:151-164列明FS三个来源。\\\"\\n      ]\\n    },\\n    {\\n      \\\"requirement\\\": \\\"真实桌面filter→detail→source→Escape和刷新\\\",\\n      \\\"result\\\": \\\"PASS\\\",\\n      \\\"evidence\\\": [\\n        \\\"browser-detail-b.mjs:2使用原生page.click筛选PASS，等待三卡后打开03详情。\\\",\\n        \\\"browser-source-b.mjs:1使用原生链接点击、popup及keyboard.press('Escape')，等待dialog隐藏；随后打开真实04检查点。\\\",\\n        \\\"browser-source-b.json.output.txt:99记录ESCAPE CLOSED。\\\",\\n        \\\"browser-disconnect-b.json.output.txt:64记录原生刷新前后读取时间由02:21:47.276319变为02:21:47.461353。\\\",\\n        \\\"实际视口1139×869，TaskSpace5/p1。evaluate仅用于读取文本和计数，没有替代用户输入。\\\"\\n      ]\\n    },\\n    {\\n      \\\"requirement\\\": \\\"正常、空、加载、断连及桌面视觉\\\",\\n      \\\"result\\\": \\\"PASS\\\",\\n      \\\"evidence\\\": [\\n        \\\"browser-git-b.json.output.txt为真实Git卡正常状态。\\\",\\n        \\\"browser-states-b.json.output.txt:167-261覆盖空筛选及空库存；0/0未显示整轮PASS。\\\",\\n        \\\"browser-states-b.json.output.txt:264-387记录真实HTTP延迟下加载→实时读取。\\\",\\n        \\\"browser-disconnect-b.json.output.txt:64-125记录断连后计数、卡片和时间快照保留。\\\",\\n        \\\"已通过view_image实际观察全部七张browser-*.png：候选与历史检查点分组清楚，长路径换行，模态有可见关闭按钮和滚动条，四态文字可读。\\\",\\n        \\\"FS、empty、loading输入明确为synthetic；浏览器、HTTP边界和输入操作为真实执行。\\\"\\n      ]\\n    },\\n    {\\n      \\\"requirement\\\": \\\"DONE/PASS精确计数与HTTP symlink安全\\\",\\n      \\\"result\\\": \\\"PASS\\\",\\n      \\\"evidence\\\": [\\n        \\\"tests/test_board_truth.py:47-55断言README和终端精确为DONE 2/2、PASS 1/2。\\\",\\n        \\\"tests/test_board_handoff.py:73-79断言实际模板渲染相同计数，不只是检查嵌入JSON。\\\",\\n        \\\"真实Git浏览器显示DONE 3/6、PASS 3/6，与迭代README当前聚合一致。\\\",\\n        \\\"tests/test_board_service.py:53-71实际创建symlink并执行HTTP越界、未列明文件、任意path参数及负索引拒绝断言；无skip或创建失败吞错。\\\",\\n        \\\"最终实现者及主控独立五文件回归均67passed，没有skip结果。\\\"\\n      ]\\n    }\\n  ],\\n  \\\"quality\\\": {\\n    \\\"result\\\": \\\"PASS\\\",\\n    \\\"evidence\\\": [\\n      \\\"产品修改局限于展示与刷新行为，继续消费03既有字段和安全入口。\\\",\\n      \\\"模板继续使用textContent构造内容；未引入HTML注入入口。\\\",\\n      \\\"刷新有并发守卫、加载反馈、失败保留快照及finally恢复按钮。\\\",\\n      \\\"Node最小DOM测试明确只是模板单元测试；真实输入与视觉另有原始证据。\\\",\\n      \\\"RED原件包含四个真实AssertionError，非导入、编译或环境失败；补充测试未冒称全部先RED。\\\",\\n      \\\"服务收据为COMPLETED、raw_exit_code=0、tree_terminal=true；原始末行stopped=true且active_commands为空；浏览器输出记录TASKSPACE FINISHED。\\\"\\n    ]\\n  },\\n  \\\"checks\\\": [\\n    {\\n      \\\"name\\\": \\\"interaction\\\",\\n      \\\"kind\\\": \\\"command\\\",\\n      \\\"raw_exit_code\\\": 0,\\n      \\\"receipts\\\": [\\n        \\\"browser-git-b.json\\\",\\n        \\\"browser-detail-b.json\\\",\\n        \\\"browser-source-b.json\\\",\\n        \\\"browser-states-b.json\\\",\\n        \\\"browser-disconnect-b.json\\\"\\n      ],\\n      \\\"output\\\": [\\n        \\\"browser-git-b.json.output.txt\\\",\\n        \\\"browser-detail-b.json.output.txt\\\",\\n        \\\"browser-source-b.json.output.txt\\\",\\n        \\\"browser-states-b.json.output.txt\\\",\\n        \\\"browser-disconnect-b.json.output.txt\\\"\\n      ],\\n      \\\"summary\\\": \\\"五个ego-browser命令均正常完成；原生筛选、详情、列明来源popup、Escape及刷新有原始输出。\\\"\\n    },\\n    {\\n      \\\"name\\\": \\\"states\\\",\\n      \\\"kind\\\": \\\"observation\\\",\\n      \\\"output\\\": [\\n        \\\"browser-git-b.json.output.txt\\\",\\n        \\\"browser-states-b.json.output.txt\\\",\\n        \\\"browser-disconnect-b.json.output.txt\\\"\\n      ],\\n      \\\"summary\\\": \\\"直接读取正常、空、加载、断连原件；states-observation.json仅作索引。\\\"\\n    },\\n    {\\n      \\\"name\\\": \\\"visual\\\",\\n      \\\"kind\\\": \\\"observation\\\",\\n      \\\"output\\\": [\\n        \\\"browser-real-git-b.png\\\",\\n        \\\"browser-git-detail-b.png\\\",\\n        \\\"browser-checkpoint-b.png\\\",\\n        \\\"browser-fs-detail-b.png\\\",\\n        \\\"browser-empty-b.png\\\",\\n        \\\"browser-loading-b.png\\\",\\n        \\\"browser-disconnected-b.png\\\"\\n      ],\\n      \\\"summary\\\": \\\"七张原始截图均已通过view_image实际观察；visual-observation.json未被当作视觉验收替代品。\\\"\\n    },\\n    {\\n      \\\"name\\\": \\\"regression\\\",\\n      \\\"kind\\\": \\\"command\\\",\\n      \\\"receipt\\\": \\\"controller-regression-b.json\\\",\\n      \\\"raw_exit_code\\\": 0,\\n      \\\"output\\\": [\\n        \\\"controller-regression-b.json.output.txt\\\"\\n      ],\\n      \\\"summary\\\": \\\"指定五文件独立67passed in 18.48s；本次沿用，不重复运行。\\\"\\n    },\\n    {\\n      \\\"name\\\": \\\"supporting_red_green\\\",\\n      \\\"receipts\\\": [\\n        \\\"slice-a-red-1812.json\\\",\\n        \\\"slice-a-green-1814.json\\\",\\n        \\\"slice-a-final-regression-1816.json\\\"\\n      ],\\n      \\\"output\\\": [\\n        \\\"slice-a-red-1812.json.output.txt\\\",\\n        \\\"slice-a-green-1814.json.output.txt\\\",\\n        \\\"slice-a-final-regression-1816.json.output.txt\\\"\\n      ],\\n      \\\"summary\\\": \\\"RED：4 failed、1 passed、exit1；GREEN：13passed；最终实现者回归67passed。\\\"\\n    }\\n  ],\\n  \\\"issues\\\": [],\\n  \\\"nonblocking_observations\\\": [\\n    {\\n      \\\"severity\\\": \\\"INFO\\\",\\n      \\\"location\\\": \\\"browser-service-b.json.output.txt:2-44\\\",\\n      \\\"observation\\\": \\\"原件保留两次请求写回时的ConnectionAbortedError WinError10053。客户端中止的具体原因未单独记录；后续状态检查和服务正常终态均有证据，未构成本卡行为失败。\\\",\\n      \\\"required_action\\\": \\\"无\\\"\\n    },\\n    {\\n      \\\"severity\\\": \\\"INFO\\\",\\n      \\\"location\\\": \\\"coordination-report-rejection.json:4-9\\\",\\n      \\\"observation\\\": \\\"首次attempt报告缺started_at/ended_at，被退出2拒绝；无效原件保留，新valid报告以null记录未知时间并成功登记。未将拒绝响应中的状态字段解释为卡真实FUSED。\\\",\\n      \\\"required_action\\\": \\\"无\\\"\\n    }\\n  ],\\n  \\\"evidence_reuse\\\": [\\n    {\\n      \\\"original_candidate\\\": \\\"c2d90643cc391168e0e424843c761e9291629d99\\\",\\n      \\\"current_candidate\\\": \\\"9b9010afb8dbf0b0cf74f83c6c97605984319619\\\",\\n      \\\"basis\\\": \\\"实际git diff确认c2d9064..当前C在templates/、tests/及browser_harness.py无变化；后续变化为卡片和证据登记。\\\",\\n      \\\"reused\\\": [\\n        \\\"实现者最终67passed\\\",\\n        \\\"主控独立67passed\\\",\\n        \\\"同产品源码上的原生浏览器证据\\\"\\n      ],\\n      \\\"reviewer_action\\\": \\\"独立读取源码、测试和原始输出并观察截图；未冒称本次重新执行。\\\"\\n    },\\n    {\\n      \\\"original_candidate\\\": \\\"7fe4b4dcab7110c0f3f6791e5f9ef0d5a29eaa67\\\",\\n      \\\"basis\\\": \\\"这是历史检查点身份，不替换为最终C；原candidate、evidence及remaining均保留。\\\",\\n      \\\"reused\\\": [\\n        \\\"attempt-a-valid.json\\\",\\n        \\\"implementation-checkpoint-a.json\\\",\\n        \\\"native-terminal-a.json\\\"\\n      ]\\n    }\\n  ],\\n  \\\"unverified\\\": {\\n    \\\"blocking_gaps\\\": [],\\n    \\\"boundaries\\\": [\\n      \\\"本Reviewer没有重新启动业务、测试或浏览器命令；按本次授权复用匹配源码的有效证据。\\\",\\n      \\\"FS证据证明合成FS输入经真实HTTP和原生浏览器展示，不外推为真实FS业务交付批准。\\\",\\n      \\\"收据登记、登记D和固定协调器local strict尚属主控后续步骤，本报告未执行或宣称通过。\\\"\\n    ]\\n  },\\n  \\\"typesafe\\\": {\\n    \\\"request\\\": {\\n      \\\"state\\\": {\\n        \\\"task\\\": {\\n          \\\"id\\\": \\\"04\\\",\\n          \\\"type\\\": \\\"UI-Component\\\",\\n          \\\"base\\\": \\\"2ce0705ebeeaee73f75a1dcd2882836dbc6b9d29\\\",\\n          \\\"candidate\\\": \\\"9b9010afb8dbf0b0cf74f83c6c97605984319619\\\",\\n          \\\"contract\\\": \\\"9b9010afb8dbf0b0cf74f83c6c97605984319619\\\",\\n          \\\"requirements\\\": [\\n            \\\"Git BASE/C; FS candidate_id; unknown mode explicit\\\",\\n            \\\"Historical checkpoint candidate/source/progress evidence and remaining retained; missing checkpoint UNKNOWN; empty remaining not completion\\\",\\n            \\\"Native desktop filter/detail/source/Escape/refresh; normal/empty/loading/disconnect\\\",\\n            \\\"Exact DONE/PASS counts across README/terminal/HTML\\\",\\n            \\\"HTTP listed sources only, symlink escape rejected\\\",\\n            \\\"No task03 source changes\\\"\\n          ],\\n          \\\"excludes\\\": [\\n            \\\"mobile\\\",\\n            \\\"deployment\\\",\\n            \\\"tasks01-03 reacceptance\\\",\\n            \\\"DONE/receipt registration by reviewer\\\"\\n          ]\\n        },\\n        \\\"observed_git\\\": {\\n          \\\"branch\\\": \\\"feat/iter-10-self-hosting-hardening\\\",\\n          \\\"head\\\": \\\"9b9010afb8dbf0b0cf74f83c6c97605984319619\\\",\\n          \\\"dirty\\\": [],\\n          \\\"diff_count\\\": 95,\\n          \\\"changed_categories\\\": [\\n            \\\"templates/board.html\\\",\\n            \\\"tests/test_board_handoff.py\\\",\\n            \\\"tests/test_board_truth.py\\\",\\n            \\\"tests/test_board_service.py\\\",\\n            \\\".agents/notes/implemented/feature/2026-11-13-board-handoff.md\\\",\\n            \\\"task04 card\\\",\\n            \\\"task04 evidence directory\\\"\\n          ],\\n          \\\"scripts_references_skill_readme_diff\\\": [],\\n          \\\"product_tests_harness_diff_c2d9064_to_candidate\\\": []\\n        },\\n        \\\"source\\\": {\\n          \\\"templates/board.html:55-59\\\": \\\"delivery_mode branches git/filesystem/UNKNOWN; git base_sha/head_sha fall back UNKNOWN; FS only candidate_id; checkpoint candidate, phase, summary, source and progress map retained; empty remaining says UNKNOWN and does not mean completion.\\\",\\n          \\\"templates/board.html:63\\\": \\\"sources entries rendered as label/path; links only /api/evidence?task=encodeURIComponent(c.filename)&source=index; textContent via el().\\\",\\n          \\\"templates/board.html:67\\\": \\\"refreshing guard; button disabled during fetch; loading keeps previous snapshot; catch shows disconnect; finally enables button.\\\",\\n          \\\"tests/test_board_handoff.py:14-37\\\": \\\"Node minimal DOM; file protocol; explicitly not native browser evidence.\\\",\\n          \\\"tests/test_board_service.py:53-71\\\": \\\"link.symlink_to(outside) without skip/catch; then actual HTTP requests require symlink absent from sources, 404 on direct/unlisted/path/negative-index routes, no secret body.\\\",\\n          \\\"tests/test_board_truth.py:47-55 and test_board_handoff.py:73-79\\\": \\\"fixture with 2 DONE, 1 PASS, 2 total; exact README/terminal and rendered HTML count assertions.\\\"\\n        },\\n        \\\"raw_evidence\\\": {\\n          \\\"red\\\": {\\n            \\\"receipt\\\": \\\"slice-a-red-1812.json\\\",\\n            \\\"raw_exit_code\\\": 1,\\n            \\\"tree_terminal\\\": true,\\n            \\\"output\\\": \\\"4 failed, 1 passed in 2.20s\\\",\\n            \\\"failures\\\": [\\n              \\\"historical-candidate absent for git\\\",\\n              \\\"FS candidate absent\\\",\\n              \\\"UNKNOWN mode absent\\\",\\n              \\\"missing checkpoint UNKNOWN absent\\\"\\n            ],\\n            \\\"failure_type\\\": \\\"AssertionError\\\"\\n          },\\n          \\\"green\\\": {\\n            \\\"receipt\\\": \\\"slice-a-green-1814.json\\\",\\n            \\\"raw_exit_code\\\": 0,\\n            \\\"tree_terminal\\\": true,\\n            \\\"output\\\": \\\"13 passed in 4.60s\\\"\\n          },\\n          \\\"final_implementation_regression\\\": {\\n            \\\"receipt\\\": \\\"slice-a-final-regression-1816.json\\\",\\n            \\\"raw_exit_code\\\": 0,\\n            \\\"tree_terminal\\\": true,\\n            \\\"output\\\": \\\"67 passed in 19.67s\\\"\\n          },\\n          \\\"controller_regression\\\": {\\n            \\\"receipt\\\": \\\"controller-regression-b.json\\\",\\n            \\\"raw_exit_code\\\": 0,\\n            \\\"tree_terminal\\\": true,\\n            \\\"output\\\": \\\"67 passed in 18.48s\\\",\\n            \\\"files\\\": [\\n              \\\"test_board_handoff.py\\\",\\n              \\\"test_board_truth.py\\\",\\n              \\\"test_board_service.py\\\",\\n              \\\"test_query_contract.py\\\",\\n              \\\"test_filesystem_delivery_controller.py\\\"\\n            ]\\n          },\\n          \\\"browser\\\": {\\n            \\\"tool\\\": \\\"ego-browser 0.6.2.8\\\",\\n            \\\"taskspace\\\": 5,\\n            \\\"page\\\": \\\"p1\\\",\\n            \\\"viewport\\\": \\\"1139x869\\\",\\n            \\\"receipts\\\": [\\n              \\\"browser-git-b.json\\\",\\n              \\\"browser-detail-b.json\\\",\\n              \\\"browser-source-b.json\\\",\\n              \\\"browser-states-b.json\\\",\\n              \\\"browser-disconnect-b.json\\\"\\n            ],\\n            \\\"all_raw_exit_code\\\": 0,\\n            \\\"all_tree_terminal\\\": true,\\n            \\\"inputs\\\": \\\"mjs files call page.click, page.keyboard.press('Escape'), page.goto; evaluate only reads text/counts; no DOM/store writes\\\",\\n            \\\"outputs\\\": [\\n              \\\"Git real cards 3/6 PASS and 3/6 DONE\\\",\\n              \\\"PASS filter yields 3 cards; native detail opens task03 BASE f879bba... and C 542f2b4...\\\",\\n              \\\"source=0 popup contains task03 receipt; popup closed; Escape waits detail hidden\\\",\\n              \\\"task04 checkpoint shows original 7fe4b4d, attempt-a-valid.json, original final regression evidence and remaining work\\\",\\n              \\\"synthetic FS current synthetic-fs-current-a, original synthetic-fs-original-a, source paths and remaining\\\",\\n              \\\"empty filter text and empty inventory 0/0, no PASS conclusion\\\",\\n              \\\"6 second HTTP delay: loading then real-time; snapshot retained\\\",\\n              \\\"manual refresh timestamp 02:21:47.276319 -> 02:21:47.461353\\\",\\n              \\\"disconnect counts before/after identical; card and timestamp retained; TASKSPACE FINISHED\\\"\\n            ],\\n            \\\"data_provenance\\\": \\\"Git real cards; FS/empty/loading explicitly synthetic inputs via real HTTP and native browser input\\\"\\n          },\\n          \\\"visual\\\": {\\n            \\\"observed_with\\\": \\\"tools.view_image\\\",\\n            \\\"images\\\": 7,\\n            \\\"observations\\\": [\\n              \\\"1139x869 dark desktop layout\\\",\\n              \\\"separate PASS/DONE metrics\\\",\\n              \\\"Git and FS identity sections distinct from historical checkpoint\\\",\\n              \\\"dialog has visible close button and scrollbar; long evidence paths wrap\\\",\\n              \\\"empty, loading and disconnected text visible\\\",\\n              \\\"no observed horizontal clipping of candidate text\\\"\\n            ]\\n          },\\n          \\\"lifecycle\\\": {\\n            \\\"receipt\\\": \\\"browser-service-b.json\\\",\\n            \\\"status\\\": \\\"COMPLETED\\\",\\n            \\\"raw_exit_code\\\": 0,\\n            \\\"tree_terminal\\\": true,\\n            \\\"output_last_line\\\": \\\"{\\\\\\\"stopped\\\\\\\":true,\\\\\\\"active_commands\\\\\\\":[]}\\\",\\n            \\\"stderr\\\": \\\"two ConnectionAbortedError WinError10053 traces in request threads while browser navigated; subsequent browser states and shutdown recorded\\\"\\n          },\\n          \\\"coordination\\\": {\\n            \\\"invalid\\\": \\\"attempt-a.json missing started_at/ended_at; rejected exit2; retained\\\",\\n            \\\"valid\\\": \\\"attempt-a-valid.json has both null; successful event in task card; original candidate/evidence/remaining retained\\\",\\n            \\\"card_state\\\": \\\"TESTING/PENDING, is_blocked false; budgets 0/0/0/0; current reviewer has not changed files\\\"\\n          }\\n        }\\n      },\\n      \\\"questions\\\": {\\n        \\\"scope\\\": {\\n          \\\"type\\\": \\\"choice\\\",\\n          \\\"instructions\\\": \\\"For task04 only, classify whether observed changed paths and frozen requirements respect the approved scope. Do not require deployment/mobile/tasks01-03 reruns.\\\",\\n          \\\"criteria\\\": {\\n            \\\"within_scope\\\": \\\"Changed paths fit task04 whitelist/implicit card; task03 product sources and frozen requirements unchanged\\\",\\n            \\\"out_of_scope\\\": \\\"A concrete unauthorized change is present\\\",\\n            \\\"insufficient\\\": \\\"Evidence cannot determine scope\\\"\\n          }\\n        },\\n        \\\"review_disposition\\\": {\\n          \\\"type\\\": \\\"choice\\\",\\n          \\\"instructions\\\": \\\"Choose the independent task04 review disposition justified by these observed sources and original evidence. Approval is only source/behavior review, not DONE, receipt, or post-registration strict. Missing actual required evidence means blocked; demonstrated contract defect means changes requested. Existing matching-code independent regression may be reused.\\\",\\n          \\\"criteria\\\": {\\n            \\\"APPROVED\\\": \\\"Required task04 behaviors have direct code/test/native-input/visual evidence, and no material defect is established\\\",\\n            \\\"CHANGES_REQUESTED\\\": \\\"A concrete task04 contract or product defect is established and needs repair\\\",\\n            \\\"BLOCKED\\\": \\\"A required review input/evidence is missing or contradictory so disposition cannot be determined\\\"\\n          }\\n        }\\n      }\\n    },\\n    \\\"response_raw\\\": {\\n      \\\"model\\\": \\\"jev-1.14.0\\\",\\n      \\\"answers\\\": {\\n        \\\"review_disposition\\\": {\\n          \\\"type\\\": \\\"choice\\\",\\n          \\\"choice\\\": \\\"APPROVED\\\",\\n          \\\"confidence\\\": 0.68,\\n          \\\"probabilities\\\": {\\n            \\\"APPROVED\\\": 0.79,\\n            \\\"BLOCKED\\\": 0.13,\\n            \\\"CHANGES_REQUESTED\\\": 0.08\\n          }\\n        },\\n        \\\"scope\\\": {\\n          \\\"type\\\": \\\"choice\\\",\\n          \\\"choice\\\": \\\"within_scope\\\",\\n          \\\"confidence\\\": 0.97,\\n          \\\"probabilities\\\": {\\n            \\\"insufficient\\\": 0.0,\\n            \\\"out_of_scope\\\": 0.02,\\n            \\\"within_scope\\\": 0.98\\n          }\\n        }\\n      },\\n      \\\"usage\\\": {\\n        \\\"input_tokens\\\": 2409,\\n        \\\"output_tokens\\\": 95\\n      }\\n    },\\n    \\\"reviewer_application\\\": \\\"采用其范围分类及审查方向；最终APPROVED由本Reviewer依据实际diff、原始断言输出、原生输入记录和七张截图作出。概率与confidence不作为质量分或验收证据。\\\"\\n  }\\n}\",\"duration_ms\":223803,\"progress\":{\"steps\":25,\"marks\":[\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\"],\"last_step\":\"git status --short; git branch --show-current; git rev-parse HEAD; git rev-parse 2ce0705ebeeaee73f75a1dcd2882836dbc6b9d2…\"}}]}"
+                }
+              ],
+              "structuredContent": {
+                "tasks": [
+                  {
+                    "task_id": "15039ddf-a469-47ed-9c5a-2a732ef24dbf",
+                    "status": "completed",
+                    "child_conversation_id": 1719,
+                    "agent_type": "codex",
+                    "text": "{\n  \"task_id\": \"04\",\n  \"reviewer\": {\n    \"session_id\": \"01a1d627-da6f-75c3-87c5-5431d61a2594\",\n    \"identity_source\": \"当前运行环境 CODEX_SESSION_ID / CODEX_THREAD_ID\",\n    \"role\": \"全新独立 Reviewer\",\n    \"independence\": \"未参与本卡实现、测试、设计或 RCA；不是主控1699或实现者1718\",\n    \"read_only\": true,\n    \"delegation\": false\n  },\n  \"baseline\": {\n    \"cwd\": \"C:/Users/qingyu/.codeg/skills/iteration-manager/.worktrees/iter-10\",\n    \"branch\": \"feat/iter-10-self-hosting-hardening\",\n    \"base_sha\": \"2ce0705ebeeaee73f75a1dcd2882836dbc6b9d29\",\n    \"head_sha\": \"9b9010afb8dbf0b0cf74f83c6c97605984319619\",\n    \"contract_sha\": \"9b9010afb8dbf0b0cf74f83c6c97605984319619\",\n    \"dirty_at_start\": [],\n    \"dirty_at_end\": [],\n    \"final_head_checked_at\": \"2026-11-13T18:27:18Z\"\n  },\n  \"verdict\": \"APPROVED\",\n  \"reviewer_judgment\": \"04冻结候选满足本卡展示、交接、桌面交互、四态和HTTP安全要求。未发现需要修复的阻断缺陷。此结论仅为独立审查裁决，不登记DONE、完成收据或登记后strict。\",\n  \"evidence_path_prefix\": \"docs/todos/10-self-hosting-hardening/evidence/04/\",\n  \"scope\": {\n    \"result\": \"PASS\",\n    \"evidence\": [\n      \"实际读取BASE..C差异及95个变更路径；均属于board模板、三份测试、授权笔记、04卡或04证据目录。\",\n      \"BASE..C在scripts/、references/、SKILL.md及迭代README上无差异；未修改03查询/CLI源码。\",\n      \"忽略行尾差异后，04卡变化为执行元数据、显示状态、阶段勾选及ledger；目标、接口、白名单和验收标准未被降低。\",\n      \"controller-scope-b.json.output.txt:1记录95个变更文件均在范围内；本次另以实际Git路径清单核对。\",\n      \"完整阅读SKILL.md、references/agent_protocol.md、references/task_card_schema.md、迭代10 README及04-board-handoff.md。未重做01—03验收。\"\n    ]\n  },\n  \"spec\": [\n    {\n      \"requirement\": \"Git BASE/C、FS candidate_id、未知模式\",\n      \"result\": \"PASS\",\n      \"evidence\": [\n        \"templates/board.html:55-56按delivery_mode分支；Git缺SHA显示UNKNOWN，FS只显示candidate_id，未知模式明确UNKNOWN。\",\n        \"tests/test_board_handoff.py:40-62覆盖三种模式。\",\n        \"browser-detail-b.json.output.txt:76-98实际Git详情显示BASE/C。\",\n        \"browser-states-b.json.output.txt:64、129-136显示FS当前candidate_id及历史原候选。\"\n      ]\n    },\n    {\n      \"requirement\": \"历史checkpoint保留原候选、证据和remaining；缺失不假完成\",\n      \"result\": \"PASS\",\n      \"evidence\": [\n        \"templates/board.html:57-59显示checkpoint.candidate、phase、summary、source及progress evidence；无记录和空remaining均明确UNKNOWN。\",\n        \"tests/test_board_handoff.py:60-70验证历史出处、剩余项和缺失语义。\",\n        \"browser-source-b.json.output.txt:70-76及browser-checkpoint-b.png显示7fe4b4d原候选、attempt-a-valid.json、最终回归原件及剩余工作。\",\n        \"implementation-checkpoint-a.json保留c2d9064产品候选及原始检查、剩余项；attempt-a-valid.json保留7fe4b4d检查点和原证据。\"\n      ]\n    },\n    {\n      \"requirement\": \"只使用sources列明原文入口\",\n      \"result\": \"PASS\",\n      \"evidence\": [\n        \"templates/board.html:62-63枚举sources标签及路径；链接只有task/source索引，没有任意路径参数。\",\n        \"browser-detail-b.json.output.txt:115-135列明收据、独审报告及RED/GREEN/regression原件。\",\n        \"browser-source-b.json.output.txt:2-3记录source=0链接打开真实收据popup。\",\n        \"browser-states-b.json.output.txt:151-164列明FS三个来源。\"\n      ]\n    },\n    {\n      \"requirement\": \"真实桌面filter→detail→source→Escape和刷新\",\n      \"result\": \"PASS\",\n      \"evidence\": [\n        \"browser-detail-b.mjs:2使用原生page.click筛选PASS，等待三卡后打开03详情。\",\n        \"browser-source-b.mjs:1使用原生链接点击、popup及keyboard.press('Escape')，等待dialog隐藏；随后打开真实04检查点。\",\n        \"browser-source-b.json.output.txt:99记录ESCAPE CLOSED。\",\n        \"browser-disconnect-b.json.output.txt:64记录原生刷新前后读取时间由02:21:47.276319变为02:21:47.461353。\",\n        \"实际视口1139×869，TaskSpace5/p1。evaluate仅用于读取文本和计数，没有替代用户输入。\"\n      ]\n    },\n    {\n      \"requirement\": \"正常、空、加载、断连及桌面视觉\",\n      \"result\": \"PASS\",\n      \"evidence\": [\n        \"browser-git-b.json.output.txt为真实Git卡正常状态。\",\n        \"browser-states-b.json.output.txt:167-261覆盖空筛选及空库存；0/0未显示整轮PASS。\",\n        \"browser-states-b.json.output.txt:264-387记录真实HTTP延迟下加载→实时读取。\",\n        \"browser-disconnect-b.json.output.txt:64-125记录断连后计数、卡片和时间快照保留。\",\n        \"已通过view_image实际观察全部七张browser-*.png：候选与历史检查点分组清楚，长路径换行，模态有可见关闭按钮和滚动条，四态文字可读。\",\n        \"FS、empty、loading输入明确为synthetic；浏览器、HTTP边界和输入操作为真实执行。\"\n      ]\n    },\n    {\n      \"requirement\": \"DONE/PASS精确计数与HTTP symlink安全\",\n      \"result\": \"PASS\",\n      \"evidence\": [\n        \"tests/test_board_truth.py:47-55断言README和终端精确为DONE 2/2、PASS 1/2。\",\n        \"tests/test_board_handoff.py:73-79断言实际模板渲染相同计数，不只是检查嵌入JSON。\",\n        \"真实Git浏览器显示DONE 3/6、PASS 3/6，与迭代README当前聚合一致。\",\n        \"tests/test_board_service.py:53-71实际创建symlink并执行HTTP越界、未列明文件、任意path参数及负索引拒绝断言；无skip或创建失败吞错。\",\n        \"最终实现者及主控独立五文件回归均67passed，没有skip结果。\"\n      ]\n    }\n  ],\n  \"quality\": {\n    \"result\": \"PASS\",\n    \"evidence\": [\n      \"产品修改局限于展示与刷新行为，继续消费03既有字段和安全入口。\",\n      \"模板继续使用textContent构造内容；未引入HTML注入入口。\",\n      \"刷新有并发守卫、加载反馈、失败保留快照及finally恢复按钮。\",\n      \"Node最小DOM测试明确只是模板单元测试；真实输入与视觉另有原始证据。\",\n      \"RED原件包含四个真实AssertionError，非导入、编译或环境失败；补充测试未冒称全部先RED。\",\n      \"服务收据为COMPLETED、raw_exit_code=0、tree_terminal=true；原始末行stopped=true且active_commands为空；浏览器输出记录TASKSPACE FINISHED。\"\n    ]\n  },\n  \"checks\": [\n    {\n      \"name\": \"interaction\",\n      \"kind\": \"command\",\n      \"raw_exit_code\": 0,\n      \"receipts\": [\n        \"browser-git-b.json\",\n        \"browser-detail-b.json\",\n        \"browser-source-b.json\",\n        \"browser-states-b.json\",\n        \"browser-disconnect-b.json\"\n      ],\n      \"output\": [\n        \"browser-git-b.json.output.txt\",\n        \"browser-detail-b.json.output.txt\",\n        \"browser-source-b.json.output.txt\",\n        \"browser-states-b.json.output.txt\",\n        \"browser-disconnect-b.json.output.txt\"\n      ],\n      \"summary\": \"五个ego-browser命令均正常完成；原生筛选、详情、列明来源popup、Escape及刷新有原始输出。\"\n    },\n    {\n      \"name\": \"states\",\n      \"kind\": \"observation\",\n      \"output\": [\n        \"browser-git-b.json.output.txt\",\n        \"browser-states-b.json.output.txt\",\n        \"browser-disconnect-b.json.output.txt\"\n      ],\n      \"summary\": \"直接读取正常、空、加载、断连原件；states-observation.json仅作索引。\"\n    },\n    {\n      \"name\": \"visual\",\n      \"kind\": \"observation\",\n      \"output\": [\n        \"browser-real-git-b.png\",\n        \"browser-git-detail-b.png\",\n        \"browser-checkpoint-b.png\",\n        \"browser-fs-detail-b.png\",\n        \"browser-empty-b.png\",\n        \"browser-loading-b.png\",\n        \"browser-disconnected-b.png\"\n      ],\n      \"summary\": \"七张原始截图均已通过view_image实际观察；visual-observation.json未被当作视觉验收替代品。\"\n    },\n    {\n      \"name\": \"regression\",\n      \"kind\": \"command\",\n      \"receipt\": \"controller-regression-b.json\",\n      \"raw_exit_code\": 0,\n      \"output\": [\n        \"controller-regression-b.json.output.txt\"\n      ],\n      \"summary\": \"指定五文件独立67passed in 18.48s；本次沿用，不重复运行。\"\n    },\n    {\n      \"name\": \"supporting_red_green\",\n      \"receipts\": [\n        \"slice-a-red-1812.json\",\n        \"slice-a-green-1814.json\",\n        \"slice-a-final-regression-1816.json\"\n      ],\n      \"output\": [\n        \"slice-a-red-1812.json.output.txt\",\n        \"slice-a-green-1814.json.output.txt\",\n        \"slice-a-final-regression-1816.json.output.txt\"\n      ],\n      \"summary\": \"RED：4 failed、1 passed、exit1；GREEN：13passed；最终实现者回归67passed。\"\n    }\n  ],\n  \"issues\": [],\n  \"nonblocking_observations\": [\n    {\n      \"severity\": \"INFO\",\n      \"location\": \"browser-service-b.json.output.txt:2-44\",\n      \"observation\": \"原件保留两次请求写回时的ConnectionAbortedError WinError10053。客户端中止的具体原因未单独记录；后续状态检查和服务正常终态均有证据，未构成本卡行为失败。\",\n      \"required_action\": \"无\"\n    },\n    {\n      \"severity\": \"INFO\",\n      \"location\": \"coordination-report-rejection.json:4-9\",\n      \"observation\": \"首次attempt报告缺started_at/ended_at，被退出2拒绝；无效原件保留，新valid报告以null记录未知时间并成功登记。未将拒绝响应中的状态字段解释为卡真实FUSED。\",\n      \"required_action\": \"无\"\n    }\n  ],\n  \"evidence_reuse\": [\n    {\n      \"original_candidate\": \"c2d90643cc391168e0e424843c761e9291629d99\",\n      \"current_candidate\": \"9b9010afb8dbf0b0cf74f83c6c97605984319619\",\n      \"basis\": \"实际git diff确认c2d9064..当前C在templates/、tests/及browser_harness.py无变化；后续变化为卡片和证据登记。\",\n      \"reused\": [\n        \"实现者最终67passed\",\n        \"主控独立67passed\",\n        \"同产品源码上的原生浏览器证据\"\n      ],\n      \"reviewer_action\": \"独立读取源码、测试和原始输出并观察截图；未冒称本次重新执行。\"\n    },\n    {\n      \"original_candidate\": \"7fe4b4dcab7110c0f3f6791e5f9ef0d5a29eaa67\",\n      \"basis\": \"这是历史检查点身份，不替换为最终C；原candidate、evidence及remaining均保留。\",\n      \"reused\": [\n        \"attempt-a-valid.json\",\n        \"implementation-checkpoint-a.json\",\n        \"native-terminal-a.json\"\n      ]\n    }\n  ],\n  \"unverified\": {\n    \"blocking_gaps\": [],\n    \"boundaries\": [\n      \"本Reviewer没有重新启动业务、测试或浏览器命令；按本次授权复用匹配源码的有效证据。\",\n      \"FS证据证明合成FS输入经真实HTTP和原生浏览器展示，不外推为真实FS业务交付批准。\",\n      \"收据登记、登记D和固定协调器local strict尚属主控后续步骤，本报告未执行或宣称通过。\"\n    ]\n  },\n  \"typesafe\": {\n    \"request\": {\n      \"state\": {\n        \"task\": {\n          \"id\": \"04\",\n          \"type\": \"UI-Component\",\n          \"base\": \"2ce0705ebeeaee73f75a1dcd2882836dbc6b9d29\",\n          \"candidate\": \"9b9010afb8dbf0b0cf74f83c6c97605984319619\",\n          \"contract\": \"9b9010afb8dbf0b0cf74f83c6c97605984319619\",\n          \"requirements\": [\n            \"Git BASE/C; FS candidate_id; unknown mode explicit\",\n            \"Historical checkpoint candidate/source/progress evidence and remaining retained; missing checkpoint UNKNOWN; empty remaining not completion\",\n            \"Native desktop filter/detail/source/Escape/refresh; normal/empty/loading/disconnect\",\n            \"Exact DONE/PASS counts across README/terminal/HTML\",\n            \"HTTP listed sources only, symlink escape rejected\",\n            \"No task03 source changes\"\n          ],\n          \"excludes\": [\n            \"mobile\",\n            \"deployment\",\n            \"tasks01-03 reacceptance\",\n            \"DONE/receipt registration by reviewer\"\n          ]\n        },\n        \"observed_git\": {\n          \"branch\": \"feat/iter-10-self-hosting-hardening\",\n          \"head\": \"9b9010afb8dbf0b0cf74f83c6c97605984319619\",\n          \"dirty\": [],\n          \"diff_count\": 95,\n          \"changed_categories\": [\n            \"templates/board.html\",\n            \"tests/test_board_handoff.py\",\n            \"tests/test_board_truth.py\",\n            \"tests/test_board_service.py\",\n            \".agents/notes/implemented/feature/2026-11-13-board-handoff.md\",\n            \"task04 card\",\n            \"task04 evidence directory\"\n          ],\n          \"scripts_references_skill_readme_diff\": [],\n          \"product_tests_harness_diff_c2d9064_to_candidate\": []\n        },\n        \"source\": {\n          \"templates/board.html:55-59\": \"delivery_mode branches git/filesystem/UNKNOWN; git base_sha/head_sha fall back UNKNOWN; FS only candidate_id; checkpoint candidate, phase, summary, source and progress map retained; empty remaining says UNKNOWN and does not mean completion.\",\n          \"templates/board.html:63\": \"sources entries rendered as label/path; links only /api/evidence?task=encodeURIComponent(c.filename)&source=index; textContent via el().\",\n          \"templates/board.html:67\": \"refreshing guard; button disabled during fetch; loading keeps previous snapshot; catch shows disconnect; finally enables button.\",\n          \"tests/test_board_handoff.py:14-37\": \"Node minimal DOM; file protocol; explicitly not native browser evidence.\",\n          \"tests/test_board_service.py:53-71\": \"link.symlink_to(outside) without skip/catch; then actual HTTP requests require symlink absent from sources, 404 on direct/unlisted/path/negative-index routes, no secret body.\",\n          \"tests/test_board_truth.py:47-55 and test_board_handoff.py:73-79\": \"fixture with 2 DONE, 1 PASS, 2 total; exact README/terminal and rendered HTML count assertions.\"\n        },\n        \"raw_evidence\": {\n          \"red\": {\n            \"receipt\": \"slice-a-red-1812.json\",\n            \"raw_exit_code\": 1,\n            \"tree_terminal\": true,\n            \"output\": \"4 failed, 1 passed in 2.20s\",\n            \"failures\": [\n              \"historical-candidate absent for git\",\n              \"FS candidate absent\",\n              \"UNKNOWN mode absent\",\n              \"missing checkpoint UNKNOWN absent\"\n            ],\n            \"failure_type\": \"AssertionError\"\n          },\n          \"green\": {\n            \"receipt\": \"slice-a-green-1814.json\",\n            \"raw_exit_code\": 0,\n            \"tree_terminal\": true,\n            \"output\": \"13 passed in 4.60s\"\n          },\n          \"final_implementation_regression\": {\n            \"receipt\": \"slice-a-final-regression-1816.json\",\n            \"raw_exit_code\": 0,\n            \"tree_terminal\": true,\n            \"output\": \"67 passed in 19.67s\"\n          },\n          \"controller_regression\": {\n            \"receipt\": \"controller-regression-b.json\",\n            \"raw_exit_code\": 0,\n            \"tree_terminal\": true,\n            \"output\": \"67 passed in 18.48s\",\n            \"files\": [\n              \"test_board_handoff.py\",\n              \"test_board_truth.py\",\n              \"test_board_service.py\",\n              \"test_query_contract.py\",\n              \"test_filesystem_delivery_controller.py\"\n            ]\n          },\n          \"browser\": {\n            \"tool\": \"ego-browser 0.6.2.8\",\n            \"taskspace\": 5,\n            \"page\": \"p1\",\n            \"viewport\": \"1139x869\",\n            \"receipts\": [\n              \"browser-git-b.json\",\n              \"browser-detail-b.json\",\n              \"browser-source-b.json\",\n              \"browser-states-b.json\",\n              \"browser-disconnect-b.json\"\n            ],\n            \"all_raw_exit_code\": 0,\n            \"all_tree_terminal\": true,\n            \"inputs\": \"mjs files call page.click, page.keyboard.press('Escape'), page.goto; evaluate only reads text/counts; no DOM/store writes\",\n            \"outputs\": [\n              \"Git real cards 3/6 PASS and 3/6 DONE\",\n              \"PASS filter yields 3 cards; native detail opens task03 BASE f879bba... and C 542f2b4...\",\n              \"source=0 popup contains task03 receipt; popup closed; Escape waits detail hidden\",\n              \"task04 checkpoint shows original 7fe4b4d, attempt-a-valid.json, original final regression evidence and remaining work\",\n              \"synthetic FS current synthetic-fs-current-a, original synthetic-fs-original-a, source paths and remaining\",\n              \"empty filter text and empty inventory 0/0, no PASS conclusion\",\n              \"6 second HTTP delay: loading then real-time; snapshot retained\",\n              \"manual refresh timestamp 02:21:47.276319 -> 02:21:47.461353\",\n              \"disconnect counts before/after identical; card and timestamp retained; TASKSPACE FINISHED\"\n            ],\n            \"data_provenance\": \"Git real cards; FS/empty/loading explicitly synthetic inputs via real HTTP and native browser input\"\n          },\n          \"visual\": {\n            \"observed_with\": \"tools.view_image\",\n            \"images\": 7,\n            \"observations\": [\n              \"1139x869 dark desktop layout\",\n              \"separate PASS/DONE metrics\",\n              \"Git and FS identity sections distinct from historical checkpoint\",\n              \"dialog has visible close button and scrollbar; long evidence paths wrap\",\n              \"empty, loading and disconnected text visible\",\n              \"no observed horizontal clipping of candidate text\"\n            ]\n          },\n          \"lifecycle\": {\n            \"receipt\": \"browser-service-b.json\",\n            \"status\": \"COMPLETED\",\n            \"raw_exit_code\": 0,\n            \"tree_terminal\": true,\n            \"output_last_line\": \"{\\\"stopped\\\":true,\\\"active_commands\\\":[]}\",\n            \"stderr\": \"two ConnectionAbortedError WinError10053 traces in request threads while browser navigated; subsequent browser states and shutdown recorded\"\n          },\n          \"coordination\": {\n            \"invalid\": \"attempt-a.json missing started_at/ended_at; rejected exit2; retained\",\n            \"valid\": \"attempt-a-valid.json has both null; successful event in task card; original candidate/evidence/remaining retained\",\n            \"card_state\": \"TESTING/PENDING, is_blocked false; budgets 0/0/0/0; current reviewer has not changed files\"\n          }\n        }\n      },\n      \"questions\": {\n        \"scope\": {\n          \"type\": \"choice\",\n          \"instructions\": \"For task04 only, classify whether observed changed paths and frozen requirements respect the approved scope. Do not require deployment/mobile/tasks01-03 reruns.\",\n          \"criteria\": {\n            \"within_scope\": \"Changed paths fit task04 whitelist/implicit card; task03 product sources and frozen requirements unchanged\",\n            \"out_of_scope\": \"A concrete unauthorized change is present\",\n            \"insufficient\": \"Evidence cannot determine scope\"\n          }\n        },\n        \"review_disposition\": {\n          \"type\": \"choice\",\n          \"instructions\": \"Choose the independent task04 review disposition justified by these observed sources and original evidence. Approval is only source/behavior review, not DONE, receipt, or post-registration strict. Missing actual required evidence means blocked; demonstrated contract defect means changes requested. Existing matching-code independent regression may be reused.\",\n          \"criteria\": {\n            \"APPROVED\": \"Required task04 behaviors have direct code/test/native-input/visual evidence, and no material defect is established\",\n            \"CHANGES_REQUESTED\": \"A concrete task04 contract or product defect is established and needs repair\",\n            \"BLOCKED\": \"A required review input/evidence is missing or contradictory so disposition cannot be determined\"\n          }\n        }\n      }\n    },\n    \"response_raw\": {\n      \"model\": \"jev-1.14.0\",\n      \"answers\": {\n        \"review_disposition\": {\n          \"type\": \"choice\",\n          \"choice\": \"APPROVED\",\n          \"confidence\": 0.68,\n          \"probabilities\": {\n            \"APPROVED\": 0.79,\n            \"BLOCKED\": 0.13,\n            \"CHANGES_REQUESTED\": 0.08\n          }\n        },\n        \"scope\": {\n          \"type\": \"choice\",\n          \"choice\": \"within_scope\",\n          \"confidence\": 0.97,\n          \"probabilities\": {\n            \"insufficient\": 0.0,\n            \"out_of_scope\": 0.02,\n            \"within_scope\": 0.98\n          }\n        }\n      },\n      \"usage\": {\n        \"input_tokens\": 2409,\n        \"output_tokens\": 95\n      }\n    },\n    \"reviewer_application\": \"采用其范围分类及审查方向；最终APPROVED由本Reviewer依据实际diff、原始断言输出、原生输入记录和七张截图作出。概率与confidence不作为质量分或验收证据。\"\n  }\n}",
+                    "duration_ms": 223803,
+                    "progress": {
+                      "steps": 25,
+                      "marks": [
+                        "ok",
+                        "ok",
+                        "ok",
+                        "ok",
+                        "ok",
+                        "ok",
+                        "ok",
+                        "ok",
+                        "ok",
+                        "ok",
+                        "ok",
+                        "ok"
+                      ],
+                      "last_step": "git status --short; git branch --show-current; git rev-parse HEAD; git rev-parse 2ce0705ebeeaee73f75a1dcd2882836dbc6b9d2…"
+                    }
+                  }
+                ]
+              },
+              "isError": false
+            }
+          }
+        }
+      ]
+    }
+  }
+}

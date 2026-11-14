@@ -1,0 +1,66 @@
+{
+  "read_only": true,
+  "readiness": "READY",
+  "task_path": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\.worktrees\\iter-10\\docs\\todos\\10-self-hosting-hardening\\02-typed-template-generation.md",
+  "phase": "implementation",
+  "acceptance_verdict": "UNKNOWN",
+  "findings": [],
+  "observations": {
+    "authority": {
+      "status": "READY",
+      "summary": "用户批准六卡串行实施与精准提交，01已PASS；禁止部署推送合流清理",
+      "evidence": "docs/todos/10-self-hosting-hardening/evidence/01/authority.txt"
+    },
+    "execution": {
+      "status": "READY",
+      "summary": "实际同类型Codeg codex独立会话1702/1703已成功读写工作区及冻结契约，当前无活动实现命令；新owner仍完整读取",
+      "evidence": "docs/todos/10-self-hosting-hardening/evidence/01/implementation-checkpoint-a.json"
+    },
+    "verification": {
+      "status": "READY",
+      "summary": "完整基线314通过，任务01有效独审及D后strict通过；本卡按真实可调用行为取得RED，不将缺函数/导入错当RED",
+      "evidence": "docs/todos/10-self-hosting-hardening/evidence/02/dependency-01-envelope.json"
+    }
+  },
+  "task_id": "02",
+  "delivery_mode": "git",
+  "candidate": "2ecd3bc3f957ac1941b388e036a6427b717b6cc7",
+  "execution": {
+    "attempt_count": 0,
+    "no_progress_streak": 0,
+    "last_attempt": null,
+    "checkpoint": null,
+    "remaining_work": []
+  },
+  "conditions": {
+    "inputs": [
+      "docs/todos/10-self-hosting-hardening/02-typed-template-generation.md",
+      "scripts/iter_contracts.py",
+      "scripts/iter_filesystem.py",
+      "templates/task_detail.md"
+    ],
+    "capabilities": [
+      "Codeg MCP codex independent session",
+      "Windows iter_run",
+      "pytest"
+    ],
+    "scope": [
+      ".agents/notes/implemented/process/2026-11-13-typed-template-generation.md",
+      "docs/todos/10-self-hosting-hardening/evidence/02/",
+      "references/template_generation.md",
+      "scripts/iter_templates.py",
+      "templates/contracts/refactor_benchmark_contract.md",
+      "templates/contracts/spike_discovery_contract.md",
+      "templates/contracts/strict_tdd_contract.md",
+      "templates/contracts/ui_component_contract.md",
+      "templates/task_detail.md",
+      "tests/test_template_generation.py"
+    ]
+  },
+  "checkpoint": "核心八组合先真实断言RED再最小GREEN，正常切片交付保留剩余门禁",
+  "remaining_work": [
+    "受影响回归与文档/笔记",
+    "独审",
+    "登记strict"
+  ]
+}

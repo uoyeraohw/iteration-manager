@@ -1,0 +1,1395 @@
+{
+  "checked_at": "2026-11-13T18:33:45.549039+00:00",
+  "source_commit": "8392193a0d9e883892f75780a63a1b16f67682c4",
+  "main_commit": "d3bd97ab16ffed6104034a887a01eb1b4d75dc0e",
+  "main_branch": "main",
+  "manifest_scope": "58 explicit historical delivery paths plus five named entry points; no recursive installation scan",
+  "captures": [
+    {
+      "original_absolute_path": "C:/Users/qingyu/.codeg/skills/iteration-manager/build/git-init-sync-20261112-120855/final-receipt.json",
+      "capture": "docs/todos/10-self-hosting-hardening/evidence/05/slice-a-original-git-final.json",
+      "captured_at": "2026-11-13T18:33:45.549039+00:00",
+      "scope": "complete original bytes, not a retelling"
+    },
+    {
+      "original_absolute_path": "C:/Users/qingyu/.codeg/skills/iteration-manager/build/git-init-sync-20261112-120855/deployment-plan.json",
+      "capture": "docs/todos/10-self-hosting-hardening/evidence/05/slice-a-original-manifest.json",
+      "captured_at": "2026-11-13T18:33:45.549039+00:00",
+      "scope": "complete original bytes, not a retelling"
+    },
+    {
+      "original_absolute_path": "C:/Users/qingyu/.codeg/skills/iteration-manager/build/git-init-sync-20261112-120855/deployment.json",
+      "capture": "docs/todos/10-self-hosting-hardening/evidence/05/slice-a-original-deployment.json",
+      "captured_at": "2026-11-13T18:33:45.549039+00:00",
+      "scope": "complete original bytes, not a retelling"
+    },
+    {
+      "original_absolute_path": "C:/Users/qingyu/.codeg/skills/iteration-manager/build/stage10-checkpoint-resume-20261111/fs-r7-migration-independent/ACCEPTANCE.md",
+      "capture": "docs/todos/10-self-hosting-hardening/evidence/05/slice-a-original-r7-acceptance.md",
+      "captured_at": "2026-11-13T18:33:45.549039+00:00",
+      "scope": "complete original bytes, not a retelling"
+    },
+    {
+      "original_absolute_path": "C:/Users/qingyu/.codeg/skills/iteration-manager/build/p1-inventory-20261113/README.md",
+      "capture": "docs/todos/10-self-hosting-hardening/evidence/05/slice-a-original-p1-readme.md",
+      "captured_at": "2026-11-13T18:33:45.549039+00:00",
+      "scope": "complete original bytes, not a retelling"
+    }
+  ],
+  "p1_deployment_json_exists": false,
+  "observations": [
+    {
+      "target": "C:/Users/qingyu/.codeg/skills/iteration-manager",
+      "observed_version": "UNKNOWN",
+      "files": [
+        {
+          "path": ".agents/notes/implemented/architecture/2026-11-11-readonly-skill-grant.md",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": true
+        },
+        {
+          "path": ".agents/notes/implemented/architecture/2026-11-11-trustworthy-board.md",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": true
+        },
+        {
+          "path": ".agents/notes/implemented/architecture/2026-11-12-filesystem-delivery.md",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": true
+        },
+        {
+          "path": ".agents/notes/implemented/bug-fix/2026-11-10-stage01-evidence-gates.md",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": true
+        },
+        {
+          "path": ".agents/notes/implemented/bug-fix/2026-11-12-filesystem-r7-acceptance-repair.md",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": true
+        },
+        {
+          "path": ".agents/notes/implemented/process/2026-11-11-assistant-deployment.md",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": true
+        },
+        {
+          "path": ".agents/notes/implemented/process/2026-11-11-bounded-autonomy.md",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": false
+        },
+        {
+          "path": ".agents/notes/implemented/process/2026-11-11-checkpoint-resume.md",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": false
+        },
+        {
+          "path": ".agents/notes/implemented/process/2026-11-12-canonical-git-repository.md",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": true
+        },
+        {
+          "path": "SKILL.md",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": false
+        },
+        {
+          "path": "references/agent_protocol.md",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": false
+        },
+        {
+          "path": "references/checkpoint_execution.md",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": false
+        },
+        {
+          "path": "references/readonly_skill_access.md",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": true
+        },
+        {
+          "path": "references/superpowers_handbook.md",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": false,
+          "equals_historical_capture": false
+        },
+        {
+          "path": "references/task_card_schema.md",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": false
+        },
+        {
+          "path": "references/typesafe_eval_guide.md",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": true
+        },
+        {
+          "path": "references/worktree_git_contract.md",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": false,
+          "equals_historical_capture": true
+        },
+        {
+          "path": "scripts/deadline_watch.js",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": true
+        },
+        {
+          "path": "scripts/iter_autonomy.py",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": false
+        },
+        {
+          "path": "scripts/iter_checkpoint.py",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": false
+        },
+        {
+          "path": "scripts/iter_contracts.py",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": true
+        },
+        {
+          "path": "scripts/iter_filesystem.py",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": true
+        },
+        {
+          "path": "scripts/iter_run.py",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": true
+        },
+        {
+          "path": "scripts/iter_sync.py",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": false,
+          "equals_historical_capture": false
+        },
+        {
+          "path": "scripts/iter_win_job.py",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": true
+        },
+        {
+          "path": "scripts/skill_readonly_mcp.py",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": true
+        },
+        {
+          "path": "templates/assistants/iteration_controller.md",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": false
+        },
+        {
+          "path": "templates/assistants/iteration_planner.md",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": false
+        },
+        {
+          "path": "templates/assistants/task_tech_lead.md",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": false
+        },
+        {
+          "path": "templates/board.html",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": false,
+          "equals_historical_capture": true
+        },
+        {
+          "path": "templates/consilium_rca_prompt.md",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": true
+        },
+        {
+          "path": "templates/contracts/refactor_benchmark_contract.md",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": false,
+          "equals_historical_capture": false
+        },
+        {
+          "path": "templates/contracts/spike_discovery_contract.md",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": false,
+          "equals_historical_capture": false
+        },
+        {
+          "path": "templates/contracts/strict_tdd_contract.md",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": false,
+          "equals_historical_capture": false
+        },
+        {
+          "path": "templates/contracts/ui_component_contract.md",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": false,
+          "equals_historical_capture": false
+        },
+        {
+          "path": "templates/iteration_readme.md",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": false
+        },
+        {
+          "path": "templates/root_readme.md",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": false,
+          "equals_historical_capture": true
+        },
+        {
+          "path": "templates/sdd_implementer_prompt.md",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": false
+        },
+        {
+          "path": "templates/sdd_reviewer_prompt.md",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": false
+        },
+        {
+          "path": "templates/task_detail.md",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": false,
+          "equals_historical_capture": false
+        },
+        {
+          "path": "tests/test_autonomy.py",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": true
+        },
+        {
+          "path": "tests/test_board_service.py",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": false,
+          "equals_historical_capture": true
+        },
+        {
+          "path": "tests/test_board_truth.py",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": false,
+          "equals_historical_capture": true
+        },
+        {
+          "path": "tests/test_checkpoint_resume.py",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": false
+        },
+        {
+          "path": "tests/test_completion_gates.py",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": true
+        },
+        {
+          "path": "tests/test_deadline_watch.py",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": true
+        },
+        {
+          "path": "tests/test_filesystem_delivery_controller.py",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": true
+        },
+        {
+          "path": "tests/test_filesystem_r7_repairs.py",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": true
+        },
+        {
+          "path": "tests/test_filesystem_receipts.py",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": true
+        },
+        {
+          "path": "tests/test_git_guards.py",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": true
+        },
+        {
+          "path": "tests/test_iter_run.py",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": true
+        },
+        {
+          "path": "tests/test_prompt_sources.py",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": false,
+          "equals_historical_capture": true
+        },
+        {
+          "path": "tests/test_scope_firewall.py",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": true
+        },
+        {
+          "path": "tests/test_skill_readonly_mcp.py",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": true
+        },
+        {
+          "path": "tests/test_sync_compatibility.py",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": true
+        },
+        {
+          "path": "tests/test_task_card_schema.py",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": true
+        },
+        {
+          "path": "tests/test_task_discovery_compat.py",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": true
+        },
+        {
+          "path": "tests/test_worktree_concurrency.py",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": true
+        }
+      ],
+      "entries": {
+        "SKILL.md": {
+          "exists": true,
+          "equals_iter10_base": true
+        },
+        "scripts/iter_sync.py": {
+          "exists": true,
+          "equals_iter10_base": false
+        },
+        "scripts/iter_templates.py": {
+          "exists": false,
+          "equals_iter10_base": false
+        },
+        "scripts/iter_query.py": {
+          "exists": false,
+          "equals_iter10_base": false
+        },
+        "references/template_generation.md": {
+          "exists": false,
+          "equals_iter10_base": false
+        }
+      }
+    },
+    {
+      "target": "C:/Users/qingyu/.codex/skills/iteration-manager",
+      "observed_version": "UNKNOWN",
+      "files": [
+        {
+          "path": ".agents/notes/implemented/architecture/2026-11-11-readonly-skill-grant.md",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": true
+        },
+        {
+          "path": ".agents/notes/implemented/architecture/2026-11-11-trustworthy-board.md",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": true
+        },
+        {
+          "path": ".agents/notes/implemented/architecture/2026-11-12-filesystem-delivery.md",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": true
+        },
+        {
+          "path": ".agents/notes/implemented/bug-fix/2026-11-10-stage01-evidence-gates.md",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": true
+        },
+        {
+          "path": ".agents/notes/implemented/bug-fix/2026-11-12-filesystem-r7-acceptance-repair.md",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": true
+        },
+        {
+          "path": ".agents/notes/implemented/process/2026-11-11-assistant-deployment.md",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": true
+        },
+        {
+          "path": ".agents/notes/implemented/process/2026-11-11-bounded-autonomy.md",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": false
+        },
+        {
+          "path": ".agents/notes/implemented/process/2026-11-11-checkpoint-resume.md",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": false
+        },
+        {
+          "path": ".agents/notes/implemented/process/2026-11-12-canonical-git-repository.md",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": true
+        },
+        {
+          "path": "SKILL.md",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": false
+        },
+        {
+          "path": "references/agent_protocol.md",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": false
+        },
+        {
+          "path": "references/checkpoint_execution.md",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": false
+        },
+        {
+          "path": "references/readonly_skill_access.md",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": true
+        },
+        {
+          "path": "references/superpowers_handbook.md",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": false,
+          "equals_historical_capture": false
+        },
+        {
+          "path": "references/task_card_schema.md",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": false
+        },
+        {
+          "path": "references/typesafe_eval_guide.md",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": true
+        },
+        {
+          "path": "references/worktree_git_contract.md",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": false,
+          "equals_historical_capture": true
+        },
+        {
+          "path": "scripts/deadline_watch.js",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": true
+        },
+        {
+          "path": "scripts/iter_autonomy.py",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": false
+        },
+        {
+          "path": "scripts/iter_checkpoint.py",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": false
+        },
+        {
+          "path": "scripts/iter_contracts.py",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": true
+        },
+        {
+          "path": "scripts/iter_filesystem.py",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": true
+        },
+        {
+          "path": "scripts/iter_run.py",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": true
+        },
+        {
+          "path": "scripts/iter_sync.py",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": false,
+          "equals_historical_capture": false
+        },
+        {
+          "path": "scripts/iter_win_job.py",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": true
+        },
+        {
+          "path": "scripts/skill_readonly_mcp.py",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": true
+        },
+        {
+          "path": "templates/assistants/iteration_controller.md",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": false
+        },
+        {
+          "path": "templates/assistants/iteration_planner.md",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": false
+        },
+        {
+          "path": "templates/assistants/task_tech_lead.md",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": false
+        },
+        {
+          "path": "templates/board.html",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": false,
+          "equals_historical_capture": true
+        },
+        {
+          "path": "templates/consilium_rca_prompt.md",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": true
+        },
+        {
+          "path": "templates/contracts/refactor_benchmark_contract.md",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": false,
+          "equals_historical_capture": false
+        },
+        {
+          "path": "templates/contracts/spike_discovery_contract.md",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": false,
+          "equals_historical_capture": false
+        },
+        {
+          "path": "templates/contracts/strict_tdd_contract.md",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": false,
+          "equals_historical_capture": false
+        },
+        {
+          "path": "templates/contracts/ui_component_contract.md",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": false,
+          "equals_historical_capture": false
+        },
+        {
+          "path": "templates/iteration_readme.md",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": false
+        },
+        {
+          "path": "templates/root_readme.md",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": false,
+          "equals_historical_capture": true
+        },
+        {
+          "path": "templates/sdd_implementer_prompt.md",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": false
+        },
+        {
+          "path": "templates/sdd_reviewer_prompt.md",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": false
+        },
+        {
+          "path": "templates/task_detail.md",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": false,
+          "equals_historical_capture": false
+        },
+        {
+          "path": "tests/test_autonomy.py",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": true
+        },
+        {
+          "path": "tests/test_board_service.py",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": false,
+          "equals_historical_capture": true
+        },
+        {
+          "path": "tests/test_board_truth.py",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": false,
+          "equals_historical_capture": true
+        },
+        {
+          "path": "tests/test_checkpoint_resume.py",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": false
+        },
+        {
+          "path": "tests/test_completion_gates.py",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": true
+        },
+        {
+          "path": "tests/test_deadline_watch.py",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": true
+        },
+        {
+          "path": "tests/test_filesystem_delivery_controller.py",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": true
+        },
+        {
+          "path": "tests/test_filesystem_r7_repairs.py",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": true
+        },
+        {
+          "path": "tests/test_filesystem_receipts.py",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": true
+        },
+        {
+          "path": "tests/test_git_guards.py",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": true
+        },
+        {
+          "path": "tests/test_iter_run.py",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": true
+        },
+        {
+          "path": "tests/test_prompt_sources.py",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": false,
+          "equals_historical_capture": true
+        },
+        {
+          "path": "tests/test_scope_firewall.py",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": true
+        },
+        {
+          "path": "tests/test_skill_readonly_mcp.py",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": true
+        },
+        {
+          "path": "tests/test_sync_compatibility.py",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": true
+        },
+        {
+          "path": "tests/test_task_card_schema.py",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": true
+        },
+        {
+          "path": "tests/test_task_discovery_compat.py",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": true
+        },
+        {
+          "path": "tests/test_worktree_concurrency.py",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": true
+        }
+      ],
+      "entries": {
+        "SKILL.md": {
+          "exists": true,
+          "equals_iter10_base": true
+        },
+        "scripts/iter_sync.py": {
+          "exists": true,
+          "equals_iter10_base": false
+        },
+        "scripts/iter_templates.py": {
+          "exists": false,
+          "equals_iter10_base": false
+        },
+        "scripts/iter_query.py": {
+          "exists": false,
+          "equals_iter10_base": false
+        },
+        "references/template_generation.md": {
+          "exists": false,
+          "equals_iter10_base": false
+        }
+      }
+    },
+    {
+      "target": "C:/Users/qingyu/.gemini/config/skills/iteration-manager",
+      "observed_version": "UNKNOWN",
+      "files": [
+        {
+          "path": ".agents/notes/implemented/architecture/2026-11-11-readonly-skill-grant.md",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": true
+        },
+        {
+          "path": ".agents/notes/implemented/architecture/2026-11-11-trustworthy-board.md",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": true
+        },
+        {
+          "path": ".agents/notes/implemented/architecture/2026-11-12-filesystem-delivery.md",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": true
+        },
+        {
+          "path": ".agents/notes/implemented/bug-fix/2026-11-10-stage01-evidence-gates.md",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": true
+        },
+        {
+          "path": ".agents/notes/implemented/bug-fix/2026-11-12-filesystem-r7-acceptance-repair.md",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": true
+        },
+        {
+          "path": ".agents/notes/implemented/process/2026-11-11-assistant-deployment.md",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": true
+        },
+        {
+          "path": ".agents/notes/implemented/process/2026-11-11-bounded-autonomy.md",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": false
+        },
+        {
+          "path": ".agents/notes/implemented/process/2026-11-11-checkpoint-resume.md",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": false
+        },
+        {
+          "path": ".agents/notes/implemented/process/2026-11-12-canonical-git-repository.md",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": true
+        },
+        {
+          "path": "SKILL.md",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": false
+        },
+        {
+          "path": "references/agent_protocol.md",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": false
+        },
+        {
+          "path": "references/checkpoint_execution.md",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": false
+        },
+        {
+          "path": "references/readonly_skill_access.md",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": true
+        },
+        {
+          "path": "references/superpowers_handbook.md",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": false,
+          "equals_historical_capture": false
+        },
+        {
+          "path": "references/task_card_schema.md",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": false
+        },
+        {
+          "path": "references/typesafe_eval_guide.md",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": true
+        },
+        {
+          "path": "references/worktree_git_contract.md",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": false,
+          "equals_historical_capture": true
+        },
+        {
+          "path": "scripts/deadline_watch.js",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": true
+        },
+        {
+          "path": "scripts/iter_autonomy.py",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": false
+        },
+        {
+          "path": "scripts/iter_checkpoint.py",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": false
+        },
+        {
+          "path": "scripts/iter_contracts.py",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": true
+        },
+        {
+          "path": "scripts/iter_filesystem.py",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": true
+        },
+        {
+          "path": "scripts/iter_run.py",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": true
+        },
+        {
+          "path": "scripts/iter_sync.py",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": false,
+          "equals_historical_capture": false
+        },
+        {
+          "path": "scripts/iter_win_job.py",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": true
+        },
+        {
+          "path": "scripts/skill_readonly_mcp.py",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": true
+        },
+        {
+          "path": "templates/assistants/iteration_controller.md",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": false
+        },
+        {
+          "path": "templates/assistants/iteration_planner.md",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": false
+        },
+        {
+          "path": "templates/assistants/task_tech_lead.md",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": false
+        },
+        {
+          "path": "templates/board.html",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": false,
+          "equals_historical_capture": true
+        },
+        {
+          "path": "templates/consilium_rca_prompt.md",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": true
+        },
+        {
+          "path": "templates/contracts/refactor_benchmark_contract.md",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": false,
+          "equals_historical_capture": false
+        },
+        {
+          "path": "templates/contracts/spike_discovery_contract.md",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": false,
+          "equals_historical_capture": false
+        },
+        {
+          "path": "templates/contracts/strict_tdd_contract.md",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": false,
+          "equals_historical_capture": false
+        },
+        {
+          "path": "templates/contracts/ui_component_contract.md",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": false,
+          "equals_historical_capture": false
+        },
+        {
+          "path": "templates/iteration_readme.md",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": false
+        },
+        {
+          "path": "templates/root_readme.md",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": false,
+          "equals_historical_capture": true
+        },
+        {
+          "path": "templates/sdd_implementer_prompt.md",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": false
+        },
+        {
+          "path": "templates/sdd_reviewer_prompt.md",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": false
+        },
+        {
+          "path": "templates/task_detail.md",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": false,
+          "equals_historical_capture": false
+        },
+        {
+          "path": "tests/test_autonomy.py",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": true
+        },
+        {
+          "path": "tests/test_board_service.py",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": false,
+          "equals_historical_capture": true
+        },
+        {
+          "path": "tests/test_board_truth.py",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": false,
+          "equals_historical_capture": true
+        },
+        {
+          "path": "tests/test_checkpoint_resume.py",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": false
+        },
+        {
+          "path": "tests/test_completion_gates.py",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": true
+        },
+        {
+          "path": "tests/test_deadline_watch.py",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": true
+        },
+        {
+          "path": "tests/test_filesystem_delivery_controller.py",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": true
+        },
+        {
+          "path": "tests/test_filesystem_r7_repairs.py",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": true
+        },
+        {
+          "path": "tests/test_filesystem_receipts.py",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": true
+        },
+        {
+          "path": "tests/test_git_guards.py",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": true
+        },
+        {
+          "path": "tests/test_iter_run.py",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": true
+        },
+        {
+          "path": "tests/test_prompt_sources.py",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": false,
+          "equals_historical_capture": true
+        },
+        {
+          "path": "tests/test_scope_firewall.py",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": true
+        },
+        {
+          "path": "tests/test_skill_readonly_mcp.py",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": true
+        },
+        {
+          "path": "tests/test_sync_compatibility.py",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": true
+        },
+        {
+          "path": "tests/test_task_card_schema.py",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": true
+        },
+        {
+          "path": "tests/test_task_discovery_compat.py",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": true
+        },
+        {
+          "path": "tests/test_worktree_concurrency.py",
+          "exists": true,
+          "equals_main": true,
+          "equals_iter10_base": true,
+          "equals_historical_capture": true
+        }
+      ],
+      "entries": {
+        "SKILL.md": {
+          "exists": true,
+          "equals_iter10_base": true
+        },
+        "scripts/iter_sync.py": {
+          "exists": true,
+          "equals_iter10_base": false
+        },
+        "scripts/iter_templates.py": {
+          "exists": false,
+          "equals_iter10_base": false
+        },
+        "scripts/iter_query.py": {
+          "exists": false,
+          "equals_iter10_base": false
+        },
+        "references/template_generation.md": {
+          "exists": false,
+          "equals_iter10_base": false
+        }
+      }
+    }
+  ],
+  "reviews": [
+    {
+      "task": "01",
+      "reviewed_candidate": "997ee3753241d7f4ad5b3d68df7648d06e2adc4c",
+      "verdict": "APPROVED",
+      "receipt": "docs/todos/10-self-hosting-hardening/evidence/01/review.json",
+      "pointers": [
+        "docs/todos/10-self-hosting-hardening/evidence/01/review-report.json",
+        "docs/todos/10-self-hosting-hardening/evidence/01/consumption-b/verification.json.output.txt",
+        ".agents/notes/implemented/process/2026-11-13-authority-consistency.md",
+        "docs/todos/10-self-hosting-hardening/evidence/01/authority-matrix.json"
+      ]
+    },
+    {
+      "task": "02",
+      "reviewed_candidate": "03950f2ac4867291c3001daa10140e4da1efa81f",
+      "verdict": "APPROVED",
+      "receipt": "docs/todos/10-self-hosting-hardening/evidence/02/review.json",
+      "pointers": [
+        "docs/todos/10-self-hosting-hardening/evidence/02/review-report.json",
+        "docs/todos/10-self-hosting-hardening/evidence/02/repair-c-red-cli-1718.json.output.txt",
+        "docs/todos/10-self-hosting-hardening/evidence/02/repair-c-green-1717.json.output.txt",
+        "docs/todos/10-self-hosting-hardening/evidence/02/repair-c-regression-1717.json.output.txt"
+      ]
+    },
+    {
+      "task": "03",
+      "reviewed_candidate": "542f2b445f499b3a2e90d92a6ed6bba20cdb1bdb",
+      "verdict": "APPROVED",
+      "receipt": "docs/todos/10-self-hosting-hardening/evidence/03/review.json",
+      "pointers": [
+        "docs/todos/10-self-hosting-hardening/evidence/03/review-report.json",
+        "docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt",
+        "docs/todos/10-self-hosting-hardening/evidence/03/slice-b-green-core-1741.json.output.txt",
+        "docs/todos/10-self-hosting-hardening/evidence/03/controller-final-regression.json.output.txt"
+      ]
+    },
+    {
+      "task": "04",
+      "reviewed_candidate": "9b9010afb8dbf0b0cf74f83c6c97605984319619",
+      "verdict": "APPROVED",
+      "receipt": "docs/todos/10-self-hosting-hardening/evidence/04/review.json",
+      "pointers": [
+        "docs/todos/10-self-hosting-hardening/evidence/04/review-report.json",
+        "docs/todos/10-self-hosting-hardening/evidence/04/browser-source-b.json.output.txt",
+        "docs/todos/10-self-hosting-hardening/evidence/04/states-observation.json",
+        "docs/todos/10-self-hosting-hardening/evidence/04/visual-observation.json",
+        "docs/todos/10-self-hosting-hardening/evidence/04/controller-regression-b.json.output.txt"
+      ]
+    }
+  ]
+}

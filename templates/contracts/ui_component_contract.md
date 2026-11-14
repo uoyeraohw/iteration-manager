@@ -1,5 +1,7 @@
 # 🧩 [UI-Component] 视图呈现 / 前端交互型子任务模板
 
+新卡可用[结构化生成入口](../../references/template_generation.md)，spec.type设为UI-Component，delivery_mode显式选择git或filesystem；不复制默认TDD的RED要求，四态、真实视觉与独审门禁不变。
+
 完成证据遵守 `references/task_card_schema.md`，必需checks：interaction、states、visual、regression（states/visual为观测，实际检查正常/空/加载/错误和任务规定视口）。实现仅置TESTING；非参与者独审后，由主管按Git的C/D或FS冻结合同登记收据与状态，再严格检查。不得仅凭勾选或APPROVED字段放行。
 
 > **适用范围**：前端 Web 组件、视图渲染、表单交互、动画效果、样式布局及响应式适配。  

@@ -1,0 +1,47 @@
+{
+  "version": 1,
+  "phase": "implementation",
+  "candidate": "db63b4f7cb47b046e8c96f87f0732e012b32a812",
+  "inputs": [
+    "docs/todos/10-self-hosting-hardening/02-typed-template-generation.md",
+    "templates/task_detail.md",
+    "scripts/iter_contracts.py",
+    "scripts/iter_filesystem.py",
+    "docs/todos/10-self-hosting-hardening/evidence/02/review-initial-rejected.json"
+  ],
+  "capabilities": [
+    "Codeg MCP codex independent session",
+    "Windows iter_run",
+    "pytest"
+  ],
+  "checkpoint": "F01 only: precheck extracts text within each checklist item and checks strip() nonemptiness, preserving leading whitespace including newline. No spec restriction or renderer normalization added.",
+  "remaining_work": [
+    "独立复审",
+    "登记D及strict"
+  ],
+  "executor_id": "091c5173-015d-4e58-b251-1bef0834c8c5",
+  "terminal_evidence": "docs/todos/10-self-hosting-hardening/evidence/02/native-terminal-c.json",
+  "progress": [
+    {
+      "kind": "red",
+      "summary": "F01三字段/CLI36真实断言失败",
+      "evidence": "docs/todos/10-self-hosting-hardening/evidence/02/repair-c-red-cli-1718.json.output.txt"
+    },
+    {
+      "kind": "green",
+      "summary": "同45用例GREEN，指定156回归通过",
+      "evidence": "docs/todos/10-self-hosting-hardening/evidence/02/repair-c-regression-1717.json.output.txt"
+    }
+  ],
+  "commands": [
+    "docs/todos/10-self-hosting-hardening/evidence/02/repair-c-green-1717.json",
+    "docs/todos/10-self-hosting-hardening/evidence/02/repair-c-note-format-1718.json",
+    "docs/todos/10-self-hosting-hardening/evidence/02/repair-c-note-tree-1718.json",
+    "docs/todos/10-self-hosting-hardening/evidence/02/repair-c-red-1717.json",
+    "docs/todos/10-self-hosting-hardening/evidence/02/repair-c-red-cli-1718.json",
+    "docs/todos/10-self-hosting-hardening/evidence/02/repair-c-regression-1717.json",
+    "docs/todos/10-self-hosting-hardening/evidence/02/repair-c-scope-1719.json"
+  ],
+  "started_at": null,
+  "ended_at": null
+}

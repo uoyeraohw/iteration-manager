@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "sessions": [
+    {
+      "id": "6c6e933a-5d58-4dbb-aa57-3d953f675e2f",
+      "status": "canceled",
+      "source": "docs/todos/10-self-hosting-hardening/evidence/01/native-terminal-implementation-b.json"
+    },
+    {
+      "id": "d707599a-8dcf-4df6-a671-b0e28738b6a4",
+      "status": "completed",
+      "source": "docs/todos/10-self-hosting-hardening/evidence/01/consumption-b/prompt_only-native.json"
+    },
+    {
+      "id": "cb505fd1-c02f-459e-a9d7-2286e43e74d3",
+      "status": "completed",
+      "source": "docs/todos/10-self-hosting-hardening/evidence/01/consumption-b/no_git_permission-native.json"
+    },
+    {
+      "id": "0468d8f1-fe76-4fc3-844d-8d9eb199c5e2",
+      "status": "completed",
+      "source": "docs/todos/10-self-hosting-hardening/evidence/01/consumption-b/preexisting_dirty-native.json"
+    },
+    {
+      "id": "222caffe-eb6f-4795-aecf-03f6e7b50ef6",
+      "status": "completed",
+      "source": "docs/todos/10-self-hosting-hardening/evidence/01/consumption-b/no_merge_permission-native.json"
+    }
+  ],
+  "commands": [
+    {
+      "id": "consumption-b-verification",
+      "status": "completed",
+      "exit_code": 0,
+      "source": "docs/todos/10-self-hosting-hardening/evidence/01/consumption-b/verification.json"
+    },
+    {
+      "id": "consumption-b-scope",
+      "status": "completed",
+      "exit_code": 0,
+      "source": "docs/todos/10-self-hosting-hardening/evidence/01/consumption-b/scope.json"
+    },
+    {
+      "id": "parent-b-final-git-command",
+      "status": "completed",
+      "exit_code": 0,
+      "source": "docs/todos/10-self-hosting-hardening/evidence/01/parent-b-final-command.json"
+    }
+  ]
+}

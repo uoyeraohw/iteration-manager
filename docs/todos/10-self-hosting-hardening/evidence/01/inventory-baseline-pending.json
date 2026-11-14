@@ -1,0 +1,177 @@
+{
+  "version": 1,
+  "read_only": true,
+  "mode": "continue",
+  "readiness": "BLOCKED",
+  "tasks": [
+    {
+      "path": "docs/todos/10-self-hosting-hardening/01-authority-consistency.md",
+      "task_id": "01",
+      "readiness": "NEEDS_INPUT",
+      "phase": "implementation",
+      "findings": [
+        "verification: 完整基线套件正在运行；未完成前不启动实现"
+      ],
+      "acceptance_verdict": "UNKNOWN",
+      "status": "TODO",
+      "type": "Spike-Discovery",
+      "delivery_mode": "git",
+      "candidate": "d3bd97ab16ffed6104034a887a01eb1b4d75dc0e",
+      "candidate_id": "",
+      "commit_sha": "",
+      "review_status": "PENDING",
+      "receipt": "",
+      "audit_findings": [],
+      "writer": "",
+      "blocked_reason": "",
+      "execution": {
+        "attempt_count": 0,
+        "no_progress_streak": 0,
+        "checkpoint": null,
+        "remaining_work": [],
+        "last_attempt_source": null
+      }
+    },
+    {
+      "path": "docs/todos/10-self-hosting-hardening/02-typed-template-generation.md",
+      "task_id": "02",
+      "readiness": "BLOCKED",
+      "phase": null,
+      "findings": [
+        "Context missing task: 02"
+      ],
+      "acceptance_verdict": "UNKNOWN",
+      "status": "TODO",
+      "type": "Strict-TDD",
+      "delivery_mode": "git",
+      "candidate": "d3bd97ab16ffed6104034a887a01eb1b4d75dc0e",
+      "candidate_id": "",
+      "commit_sha": "",
+      "review_status": "PENDING",
+      "receipt": "",
+      "audit_findings": [],
+      "writer": "",
+      "blocked_reason": "",
+      "execution": {
+        "attempt_count": 0,
+        "no_progress_streak": 0,
+        "checkpoint": null,
+        "remaining_work": [],
+        "last_attempt_source": null
+      }
+    },
+    {
+      "path": "docs/todos/10-self-hosting-hardening/03-query-cli-contract.md",
+      "task_id": "03",
+      "readiness": "BLOCKED",
+      "phase": null,
+      "findings": [
+        "Context missing task: 03"
+      ],
+      "acceptance_verdict": "UNKNOWN",
+      "status": "TODO",
+      "type": "Strict-TDD",
+      "delivery_mode": "git",
+      "candidate": "d3bd97ab16ffed6104034a887a01eb1b4d75dc0e",
+      "candidate_id": "",
+      "commit_sha": "",
+      "review_status": "PENDING",
+      "receipt": "",
+      "audit_findings": [],
+      "writer": "",
+      "blocked_reason": "",
+      "execution": {
+        "attempt_count": 0,
+        "no_progress_streak": 0,
+        "checkpoint": null,
+        "remaining_work": [],
+        "last_attempt_source": null
+      }
+    },
+    {
+      "path": "docs/todos/10-self-hosting-hardening/04-board-handoff.md",
+      "task_id": "04",
+      "readiness": "BLOCKED",
+      "phase": null,
+      "findings": [
+        "Context missing task: 04"
+      ],
+      "acceptance_verdict": "UNKNOWN",
+      "status": "TODO",
+      "type": "UI-Component",
+      "delivery_mode": "git",
+      "candidate": "d3bd97ab16ffed6104034a887a01eb1b4d75dc0e",
+      "candidate_id": "",
+      "commit_sha": "",
+      "review_status": "PENDING",
+      "receipt": "",
+      "audit_findings": [],
+      "writer": "",
+      "blocked_reason": "",
+      "execution": {
+        "attempt_count": 0,
+        "no_progress_streak": 0,
+        "checkpoint": null,
+        "remaining_work": [],
+        "last_attempt_source": null
+      }
+    },
+    {
+      "path": "docs/todos/10-self-hosting-hardening/05-release-evidence-index.md",
+      "task_id": "05",
+      "readiness": "BLOCKED",
+      "phase": null,
+      "findings": [
+        "Context missing task: 05"
+      ],
+      "acceptance_verdict": "UNKNOWN",
+      "status": "TODO",
+      "type": "Spike-Discovery",
+      "delivery_mode": "git",
+      "candidate": "d3bd97ab16ffed6104034a887a01eb1b4d75dc0e",
+      "candidate_id": "",
+      "commit_sha": "",
+      "review_status": "PENDING",
+      "receipt": "",
+      "audit_findings": [],
+      "writer": "",
+      "blocked_reason": "",
+      "execution": {
+        "attempt_count": 0,
+        "no_progress_streak": 0,
+        "checkpoint": null,
+        "remaining_work": [],
+        "last_attempt_source": null
+      }
+    },
+    {
+      "path": "docs/todos/10-self-hosting-hardening/06-self-hosting-acceptance.md",
+      "task_id": "06",
+      "readiness": "BLOCKED",
+      "phase": null,
+      "findings": [
+        "Context missing task: 06"
+      ],
+      "acceptance_verdict": "UNKNOWN",
+      "status": "TODO",
+      "type": "Spike-Discovery",
+      "delivery_mode": "git",
+      "candidate": "d3bd97ab16ffed6104034a887a01eb1b4d75dc0e",
+      "candidate_id": "",
+      "commit_sha": "",
+      "review_status": "PENDING",
+      "receipt": "",
+      "audit_findings": [],
+      "writer": "",
+      "blocked_reason": "",
+      "execution": {
+        "attempt_count": 0,
+        "no_progress_streak": 0,
+        "checkpoint": null,
+        "remaining_work": [],
+        "last_attempt_source": null
+      }
+    }
+  ],
+  "findings": []
+}

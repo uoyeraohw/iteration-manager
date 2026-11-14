@@ -1,0 +1,62 @@
+{
+  "read_only": true,
+  "readiness": "READY",
+  "task_path": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\.worktrees\\iter-10\\docs\\todos\\10-self-hosting-hardening\\05-release-evidence-index.md",
+  "phase": "implementation",
+  "acceptance_verdict": "UNKNOWN",
+  "findings": [],
+  "observations": {
+    "authority": {
+      "status": "READY",
+      "summary": "六卡串行实施及精准提交；04固定strict4/6PASS；禁止部署推送合流清理",
+      "evidence": "docs/todos/10-self-hosting-hardening/evidence/04/review.json"
+    },
+    "execution": {
+      "status": "READY",
+      "summary": "Codeg独立1718/1719正常终态；无活动命令；副本只读，未知可按05契约标UNKNOWN",
+      "evidence": "docs/todos/10-self-hosting-hardening/evidence/04/review-report.json"
+    },
+    "verification": {
+      "status": "READY",
+      "summary": "冻结runner/pytest和链接/Note校验已实际使用",
+      "evidence": "docs/todos/10-self-hosting-hardening/evidence/04/controller-regression-b.json"
+    }
+  },
+  "task_id": "05",
+  "delivery_mode": "git",
+  "candidate": "8392193a0d9e883892f75780a63a1b16f67682c4",
+  "execution": {
+    "attempt_count": 0,
+    "no_progress_streak": 0,
+    "last_attempt": null,
+    "checkpoint": null,
+    "remaining_work": []
+  },
+  "conditions": {
+    "inputs": [
+      "SKILL.md",
+      "docs/todos/10-self-hosting-hardening/05-release-evidence-index.md",
+      "docs/todos/10-self-hosting-hardening/evidence/04/review.json",
+      "references/template_generation.md"
+    ],
+    "capabilities": [
+      "Codeg MCP codex independent session",
+      "Windows iter_run",
+      "pytest",
+      "read-only installed skill source inspection"
+    ],
+    "scope": [
+      ".agents/notes/implemented/process/2026-11-13-release-evidence-index.md",
+      "SKILL.md",
+      "docs/todos/10-self-hosting-hardening/evidence/05/",
+      "references/release_status.md",
+      "tests/test_release_index.py"
+    ]
+  },
+  "checkpoint": "按05建立四层发布事实索引、只读观察副本、链接和结构回归；正常阶段交付",
+  "remaining_work": [
+    "四层来源核验和索引/入口",
+    "定向回归",
+    "独审"
+  ]
+}

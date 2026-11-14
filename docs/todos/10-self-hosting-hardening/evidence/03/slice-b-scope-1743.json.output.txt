@@ -1,0 +1,1 @@
+[IterSync:ScopeFirewall:PASSED] All 69 changed files within declared scope; ownership is not inferred.

@@ -1,0 +1,124 @@
+{
+  "version": 1,
+  "status": "TESTING",
+  "identity": {
+    "role": "task06 implementation owner",
+    "runtime_agent_path": "/root",
+    "session_id": "01a1d793-e65a-7251-8c92-b82981f6cf0c",
+    "native_delegation_task_id": null,
+    "reason": "Native Codeg task id not exposed to this leaf; controller must attach original dispatch identity"
+  },
+  "cwd": "C:/Users/qingyu/.codeg/skills/iteration-manager/.worktrees/iter-10",
+  "branch": "feat/iter-10-self-hosting-hardening",
+  "base_sha": "7107ddb2f2256ceaea40e6ea0aeddd045220b99b",
+  "product_commit": "cd808bf3cf9b95ba7a1ba7901c320e4fd4621df2",
+  "started_at": null,
+  "first_clock_observed_at": "2026-11-14T01:02:54Z",
+  "checkpoint_at": "2026-11-14T01:08:28Z",
+  "ended_at": null,
+  "command_deadline": "2026-11-14T01:09:35.327Z",
+  "leaf_deadline": "2026-11-14T01:11:05.327Z",
+  "hard_deadline": "2026-11-14T01:12:35.327Z",
+  "diff_scope": [
+    "tests/test_self_hosting.py",
+    "references/self_hosting_acceptance.md",
+    ".agents/notes/implemented/testing/2026-11-13-self-hosting-acceptance.md",
+    "docs/todos/10-self-hosting-hardening/evidence/06/ (only own explicitly selected files)"
+  ],
+  "commands": [
+    {
+      "receipt": "slice-a-targeted-1.json",
+      "command": "python -B -m pytest -p no:cacheprovider tests/test_self_hosting.py -q",
+      "exit_code": 1,
+      "observation": "11 passed/3 failed; new test API misuse, not product defect or valid RED"
+    },
+    {
+      "receipt": "slice-a-targeted-2.json",
+      "command": "python -B -m pytest -p no:cacheprovider tests/test_self_hosting.py -q",
+      "exit_code": 0,
+      "observation": "14 passed in 16.36s"
+    },
+    {
+      "receipt": "slice-a-frozen-strict-dry-run.json",
+      "command": "frozen iter_sync.py --local --strict --dry-run docs/todos/10-self-hosting-hardening",
+      "exit_code": 2,
+      "observation": "Per-task01-05 PASS; whole command refuses current uncommitted06; no new strict approval"
+    },
+    {
+      "receipt": "slice-a-native-inventory.json",
+      "command": "python -B evidence/06/slice-a-inventory.py",
+      "exit_code": 1,
+      "observation": "Extractor wrongly expected aggregate strict exit0; corrected to preserve actual2 and prior-task verdicts"
+    },
+    {
+      "receipt": "slice-a-native-inventory-2.json",
+      "command": "python -B docs/todos/10-self-hosting-hardening/evidence/06/slice-a-inventory.py",
+      "exit_code": 0,
+      "observation": "5 cards,3 native slices,13 report cases"
+    },
+    {
+      "receipt": "slice-a-note-tree.json",
+      "command": "npx.cmd --no-install tsx C:/Users/qingyu/.codex/skills/write-notes-like-deepseek/scripts/verify-agent-note-tree.ts",
+      "exit_code": 0,
+      "observation": "19 notes tree and relative links verified"
+    },
+    {
+      "receipt": "slice-a-note-format.json",
+      "command": "npx.cmd --no-install tsx C:/Users/qingyu/.codex/skills/write-notes-like-deepseek/scripts/verify-agent-note-format.ts",
+      "exit_code": 0,
+      "observation": "19 notes verified"
+    }
+  ],
+  "runner": "C:/Users/qingyu/.codeg/skills/iteration-manager/build/frozen-tools/46ded3a/scripts/iter_run.py",
+  "receipt_directory": "docs/todos/10-self-hosting-hardening/evidence/06/",
+  "all_commands_tree_terminal": true,
+  "active_commands": [],
+  "coverage": {
+    "synthetic": "14 cross-module cases cover all requested isolated refusal/persistence/drift/root-index contracts",
+    "native": "03 inventory target READY, claim,dispatch, A/B/C native identities+terminal, every runner ref,attempt/release events, independent review C and registration D, frozen strict per-task recheck",
+    "reuse": "Direct fixture/data function reuse; existing runner/guard/budget/resume/FS-grant test definitions reserved for controller final full run;04 native UI unchanged;05 old/new reports retained"
+  },
+  "typesafe": {
+    "receipt": "slice-a-typesafe.json",
+    "decision": "compose existing fixtures with new cross-module assertions",
+    "confidence": 0.99
+  },
+  "dirty_ownership": {
+    "controller": [
+      "docs/todos/10-self-hosting-hardening/06-self-hosting-acceptance.md",
+      "docs/todos/10-self-hosting-hardening/evidence/06/context-a.json",
+      "docs/todos/10-self-hosting-hardening/evidence/06/dispatch-a.json",
+      "docs/todos/10-self-hosting-hardening/evidence/06/inventory-a.json"
+    ],
+    "staged_controller_files": false,
+    "owner_changes_committed": true
+  },
+  "remaining_work": [
+    {
+      "owner": "controller",
+      "work": "Run final candidate full pytest suite (including existing runner/guard/budget/resume/FS-grant behavior); reports retain UNKNOWN until evidence"
+    },
+    {
+      "owner": "controller",
+      "work": "Frozen/candidate read-only cross-check, complete BASE..final HEAD/dirty scope check and final independent acceptance"
+    },
+    {
+      "owner": "nonparticipant reviewer via controller",
+      "work": "Independent task06 review; no implementer approval"
+    },
+    {
+      "owner": "controller",
+      "work": "Consume terminal then attempt/release; finalize checks and C/D registration/strict; no DONE in leaf"
+    },
+    {
+      "owner": "controller",
+      "work": "Attach native dispatch task identity and historical strict raw record if required beyond card/controller record and current per-task recheck"
+    }
+  ],
+  "not_claimed": [
+    "deployment",
+    "full installed version",
+    "new installed-session consumption",
+    "external user business PASS"
+  ]
+}

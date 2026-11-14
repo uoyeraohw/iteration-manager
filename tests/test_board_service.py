@@ -48,3 +48,24 @@ def test_listed_evidence_can_be_read_but_not_arbitrary_files(tmp_path):
         assert request(server,'/api/evidence?task=01.md&source=999')[0]==404
     finally:
         server.shutdown();server.server_close();thread.join()
+
+
+def test_http_symlink_escape_and_unlisted_routes_are_rejected(tmp_path):
+    outside=tmp_path.parent/(tmp_path.name+'-private.txt')
+    outside.write_text('secret outside project',encoding='utf-8')
+    link=tmp_path/'escape.txt'
+    # Creation failure is an explicit unverified gate, not a passing skip.
+    link.symlink_to(outside)
+    (tmp_path/'receipt.json').write_text(json.dumps({'review_report':'escape.txt','checks':[]}),encoding='utf-8')
+    (tmp_path/'01.md').write_text('---\nstatus: TODO\nreview_receipt: receipt.json\n---\n',encoding='utf-8')
+    server,thread=serve(tmp_path)
+    try:
+        status,_,body=request(server,'/api/board')
+        assert status==200 and b'secret outside project' not in body
+        assert all(s['path']!='escape.txt' for s in json.loads(body)['cards'][0]['sources'])
+        for route in ('/escape.txt','/receipt.json','/api/evidence?task=01.md&source=1',
+                      '/api/evidence?path=escape.txt','/api/evidence?task=01.md&source=-1'):
+            status,_,body=request(server,route)
+            assert status==404 and b'secret outside project' not in body
+    finally:
+        server.shutdown();server.server_close();thread.join()

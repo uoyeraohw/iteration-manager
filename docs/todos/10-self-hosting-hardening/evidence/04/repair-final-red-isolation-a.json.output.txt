@@ -1,0 +1,53 @@
+F                                                                        [100%]
+================================== FAILURES ===================================
+___________ test_browser_harness_isolated_mode_never_reads_checkout ___________
+
+tmp_path = WindowsPath('C:/Users/qingyu/AppData/Local/Temp/pytest-of-qingyu/pytest-390/test_browser_harness_isolated_0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x000001C18D30D610>
+capsys = <_pytest.capture.CaptureFixture object at 0x000001C18D30DBD0>
+
+    def test_browser_harness_isolated_mode_never_reads_checkout(tmp_path, monkeypatch, capsys):
+        import argparse
+        import importlib.util
+    
+        script = Path(__file__).resolve().parents[1] / 'docs/todos/10-self-hosting-hardening/evidence/04/browser_harness.py'
+        spec = importlib.util.spec_from_file_location('isolated_browser_harness', script)
+        harness = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(harness)
+        ready, stop = tmp_path / 'ready.json', tmp_path / 'stop'
+        monkeypatch.setattr(argparse.ArgumentParser, 'parse_args', lambda self: argparse.Namespace(
+            ready_file=ready, stop_file=stop, duration=.01, delay=0, isolated_fixtures=True))
+        original = harness.generate_board_data
+        visited = []
+    
+        def fixture_only(directory):
+            assert not directory.is_relative_to(harness.ROOT), 'isolated mode read checkout inventory'
+            visited.append(directory)
+            return original(directory)
+    
+        monkeypatch.setattr(harness, 'generate_board_data', fixture_only)
+>       harness.main()
+
+tests\test_board_handoff.py:102: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+docs\todos\10-self-hosting-hardening\evidence\04\browser_harness.py:86: in main
+    'services': {name: {'url': f'http://127.0.0.1:{server.server_port}/',
+docs\todos\10-self-hosting-hardening\evidence\04\browser_harness.py:89: in <dictcomp>
+    'total': generate_board_data(directory)['total']}
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+directory = WindowsPath('C:/Users/qingyu/.codeg/skills/iteration-manager/.worktrees/iter-10/docs/todos/10-self-hosting-hardening')
+
+    def fixture_only(directory):
+>       assert not directory.is_relative_to(harness.ROOT), 'isolated mode read checkout inventory'
+E       AssertionError: isolated mode read checkout inventory
+E       assert not True
+E        +  where True = is_relative_to(WindowsPath('C:/Users/qingyu/.codeg/skills/iteration-manager/.worktrees/iter-10'))
+E        +    where is_relative_to = WindowsPath('C:/Users/qingyu/.codeg/skills/iteration-manager/.worktrees/iter-10/docs/todos/10-self-hosting-hardening').is_relative_to
+E        +    and   WindowsPath('C:/Users/qingyu/.codeg/skills/iteration-manager/.worktrees/iter-10') = <module 'isolated_browser_harness' from 'C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\.worktrees\\iter-10\\docs\\todos\\10-self-hosting-hardening\\evidence\\04\\browser_harness.py'>.ROOT
+
+tests\test_board_handoff.py:97: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_board_handoff.py::test_browser_harness_isolated_mode_never_reads_checkout
+1 failed in 1.72s

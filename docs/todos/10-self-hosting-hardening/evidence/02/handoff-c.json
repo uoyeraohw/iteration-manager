@@ -1,0 +1,163 @@
+{
+  "TASK_HANDOFF": {
+    "schema_version": 1,
+    "task_id": "02",
+    "delivery_mode": "git",
+    "candidate_id": "",
+    "execution": {
+      "attempt_count": 4,
+      "no_progress_streak": 0,
+      "last_attempt": {
+        "source": "docs/todos/10-self-hosting-hardening/evidence/02/attempt-c.json",
+        "phase": "implementation",
+        "delivery_mode": "git",
+        "candidate": "db63b4f7cb47b046e8c96f87f0732e012b32a812",
+        "conditions": {
+          "inputs": [
+            "docs/todos/10-self-hosting-hardening/02-typed-template-generation.md",
+            "docs/todos/10-self-hosting-hardening/evidence/02/review-initial-rejected.json",
+            "scripts/iter_contracts.py",
+            "scripts/iter_filesystem.py",
+            "templates/task_detail.md"
+          ],
+          "capabilities": [
+            "Codeg MCP codex independent session",
+            "Windows iter_run",
+            "pytest"
+          ],
+          "scope": [
+            ".agents/notes/implemented/process/2026-11-13-typed-template-generation.md",
+            "docs/todos/10-self-hosting-hardening/evidence/02/",
+            "references/template_generation.md",
+            "scripts/iter_templates.py",
+            "templates/contracts/refactor_benchmark_contract.md",
+            "templates/contracts/spike_discovery_contract.md",
+            "templates/contracts/strict_tdd_contract.md",
+            "templates/contracts/ui_component_contract.md",
+            "templates/task_detail.md",
+            "tests/test_template_generation.py"
+          ]
+        },
+        "executor_id": "091c5173-015d-4e58-b251-1bef0834c8c5",
+        "executor_state": "completed",
+        "terminal_evidence": "docs/todos/10-self-hosting-hardening/evidence/02/native-terminal-c.json",
+        "progress": [
+          {
+            "kind": "red",
+            "evidence": "docs/todos/10-self-hosting-hardening/evidence/02/repair-c-red-cli-1718.json.output.txt",
+            "summary": "F01三字段/CLI36真实断言失败"
+          },
+          {
+            "kind": "green",
+            "evidence": "docs/todos/10-self-hosting-hardening/evidence/02/repair-c-regression-1717.json.output.txt",
+            "summary": "同45用例GREEN，指定156回归通过"
+          }
+        ],
+        "checkpoint": "F01 only: precheck extracts text within each checklist item and checks strip() nonemptiness, preserving leading whitespace including newline. No spec restriction or renderer normalization added.",
+        "remaining_work": [
+          "独立复审",
+          "登记D及strict"
+        ],
+        "commands": [
+          {
+            "receipt": "docs/todos/10-self-hosting-hardening/evidence/02/repair-c-green-1717.json",
+            "status": "COMPLETED",
+            "raw_exit_code": 0,
+            "started_at": "2026-11-13T17:17:17.159402+00:00",
+            "ended_at": "2026-11-13T17:17:26.803703+00:00"
+          },
+          {
+            "receipt": "docs/todos/10-self-hosting-hardening/evidence/02/repair-c-note-format-1718.json",
+            "status": "COMPLETED",
+            "raw_exit_code": 0,
+            "started_at": "2026-11-13T17:18:22.702033+00:00",
+            "ended_at": "2026-11-13T17:18:25.123047+00:00"
+          },
+          {
+            "receipt": "docs/todos/10-self-hosting-hardening/evidence/02/repair-c-note-tree-1718.json",
+            "status": "COMPLETED",
+            "raw_exit_code": 0,
+            "started_at": "2026-11-13T17:18:19.761187+00:00",
+            "ended_at": "2026-11-13T17:18:22.280151+00:00"
+          },
+          {
+            "receipt": "docs/todos/10-self-hosting-hardening/evidence/02/repair-c-red-1717.json",
+            "status": "COMPLETED",
+            "raw_exit_code": 1,
+            "started_at": "2026-11-13T17:16:36.946645+00:00",
+            "ended_at": "2026-11-13T17:16:41.078169+00:00"
+          },
+          {
+            "receipt": "docs/todos/10-self-hosting-hardening/evidence/02/repair-c-red-cli-1718.json",
+            "status": "COMPLETED",
+            "raw_exit_code": 1,
+            "started_at": "2026-11-13T17:16:55.146210+00:00",
+            "ended_at": "2026-11-13T17:17:03.318988+00:00"
+          },
+          {
+            "receipt": "docs/todos/10-self-hosting-hardening/evidence/02/repair-c-regression-1717.json",
+            "status": "COMPLETED",
+            "raw_exit_code": 0,
+            "started_at": "2026-11-13T17:17:34.776801+00:00",
+            "ended_at": "2026-11-13T17:17:53.676768+00:00"
+          },
+          {
+            "receipt": "docs/todos/10-self-hosting-hardening/evidence/02/repair-c-scope-1719.json",
+            "status": "COMPLETED",
+            "raw_exit_code": 0,
+            "started_at": "2026-11-13T17:19:04.186200+00:00",
+            "ended_at": "2026-11-13T17:19:05.104611+00:00"
+          }
+        ],
+        "started_at": null,
+        "ended_at": null,
+        "session_seconds": null,
+        "command_seconds": 46.70695899999999
+      },
+      "checkpoint": {
+        "candidate": "db63b4f7cb47b046e8c96f87f0732e012b32a812",
+        "phase": "implementation",
+        "summary": "F01 only: precheck extracts text within each checklist item and checks strip() nonemptiness, preserving leading whitespace including newline. No spec restriction or renderer normalization added.",
+        "progress": [
+          {
+            "kind": "red",
+            "evidence": "docs/todos/10-self-hosting-hardening/evidence/02/repair-c-red-cli-1718.json.output.txt",
+            "summary": "F01三字段/CLI36真实断言失败"
+          },
+          {
+            "kind": "green",
+            "evidence": "docs/todos/10-self-hosting-hardening/evidence/02/repair-c-regression-1717.json.output.txt",
+            "summary": "同45用例GREEN，指定156回归通过"
+          }
+        ],
+        "source": "docs/todos/10-self-hosting-hardening/evidence/02/attempt-c.json"
+      },
+      "remaining_work": [
+        "独立复审",
+        "登记D及strict"
+      ]
+    },
+    "task_name": "按类型与交付模式生成和检查任务卡",
+    "type": "Strict-TDD",
+    "status": "IN_PROGRESS",
+    "commit_sha": "",
+    "base_sha": "",
+    "fix_rounds": 0,
+    "fix_total": 0,
+    "consilium_count": 0,
+    "replan_count": 0,
+    "writer": "",
+    "blocked_reason": "",
+    "is_blocked": false,
+    "review_status": "PENDING",
+    "acceptance_verdict": "UNKNOWN",
+    "evidence": {
+      "receipt": ""
+    },
+    "errors": [],
+    "files_changed_count": 0,
+    "files_changed": [],
+    "stage_current": "Stage 3/3：完成旧解析/FS冻结兼容、文档与独立审查",
+    "stage_progress": "2/3 (66.7%)"
+  }
+}

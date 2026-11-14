@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "tasks": {
+    "03": {
+      "phase": "implementation",
+      "candidate": "268f221742f2b22ff8faa88a53ac50b18947f57f",
+      "inputs": [
+        "docs/todos/10-self-hosting-hardening/03-query-cli-contract.md",
+        "scripts/iter_sync.py",
+        "scripts/iter_inventory.py",
+        "scripts/iter_preflight.py",
+        "scripts/iter_execution.py",
+        "docs/todos/10-self-hosting-hardening/evidence/03/identity-ruling.json",
+        "docs/todos/10-self-hosting-hardening/evidence/03/implementation-checkpoint-a.json",
+        "docs/todos/10-self-hosting-hardening/evidence/03/test-seam-ruling.json",
+        "docs/todos/10-self-hosting-hardening/evidence/03/implementation-checkpoint-b.json"
+      ],
+      "capabilities": [
+        "Codeg MCP codex independent session",
+        "Windows iter_run",
+        "pytest"
+      ],
+      "dependencies": [
+        "docs/todos/10-self-hosting-hardening/02-typed-template-generation.md"
+      ],
+      "tool_entry": "C:/Users/qingyu/.codeg/skills/iteration-manager/build/frozen-tools/46ded3a/scripts/iter_sync.py",
+      "checkpoint": "C只做剩余CLI/限定测试观测修复/after/八文件交付回归",
+      "remaining_work": [
+        "CLI",
+        "after/回归",
+        "独审"
+      ],
+      "observations": {
+        "authority": {
+          "status": "READY",
+          "summary": "六卡串行实施/精准Git/Worktree授权仍有效，02独立APPROVED和strict已PASS；不部署推送合流清理",
+          "evidence": "docs/todos/10-self-hosting-hardening/evidence/01/authority.txt"
+        },
+        "execution": {
+          "status": "READY",
+          "summary": "同能力Codeg codex会话1712已真实读取契约并提交，无活动实现命令",
+          "evidence": "docs/todos/10-self-hosting-hardening/evidence/02/native-terminal-c.json"
+        },
+        "verification": {
+          "status": "READY",
+          "summary": "冻结runner和pytest已真实运行；02复审及固定strict PASS，受影响集合与前后量测按03卡",
+          "evidence": "docs/todos/10-self-hosting-hardening/evidence/02/review.json"
+        }
+      }
+    }
+  }
+}

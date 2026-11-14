@@ -1,0 +1,46 @@
+{
+  "version": 1,
+  "phase": "implementation",
+  "candidate": "24a483eb7b0694ce67a5e6c0b50adb0d1cb5c160",
+  "inputs": [
+    "docs/todos/10-self-hosting-hardening/02-typed-template-generation.md",
+    "templates/task_detail.md",
+    "scripts/iter_contracts.py",
+    "scripts/iter_filesystem.py"
+  ],
+  "capabilities": [
+    "Codeg MCP codex independent session",
+    "Windows iter_run",
+    "pytest"
+  ],
+  "checkpoint": "CLI与边界先真实断言RED后GREEN；81项含四FS绑定兼容、111项指定回归、模板及笔记已交付",
+  "remaining_work": [
+    "独立审查",
+    "登记D/strict"
+  ],
+  "executor_id": "72db3dfe-466c-424e-bb74-6511fd23e455",
+  "terminal_evidence": "docs/todos/10-self-hosting-hardening/evidence/02/native-terminal-b.json",
+  "progress": [
+    {
+      "kind": "red",
+      "summary": "可执行CLI输出缺失等17行为断言失败，不是导入失败",
+      "evidence": "docs/todos/10-self-hosting-hardening/evidence/02/slice-b-cli-boundary-red.json.output.txt"
+    },
+    {
+      "kind": "green",
+      "summary": "74项CLI/边界GREEN、81项兼容与111项指定交付回归",
+      "evidence": "docs/todos/10-self-hosting-hardening/evidence/02/slice-b-regression.json.output.txt"
+    }
+  ],
+  "commands": [
+    "docs/todos/10-self-hosting-hardening/evidence/02/slice-b-cli-boundary-red.json",
+    "docs/todos/10-self-hosting-hardening/evidence/02/slice-b-cli-boundary-green.json",
+    "docs/todos/10-self-hosting-hardening/evidence/02/slice-b-compatibility.json",
+    "docs/todos/10-self-hosting-hardening/evidence/02/slice-b-regression.json",
+    "docs/todos/10-self-hosting-hardening/evidence/02/slice-b-note-tree.json",
+    "docs/todos/10-self-hosting-hardening/evidence/02/slice-b-note-format.json",
+    "docs/todos/10-self-hosting-hardening/evidence/02/slice-b-scope.json"
+  ],
+  "started_at": null,
+  "ended_at": null
+}

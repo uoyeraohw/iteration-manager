@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "task_id": "05",
+  "type": "Spike-Discovery",
+  "task_path": "docs/todos/10-self-hosting-hardening/05-release-evidence-index.md",
+  "base_sha": "8392193a0d9e883892f75780a63a1b16f67682c4",
+  "head_sha": "8616468ab3384efad26095ca182255448076e081",
+  "contract_sha": "8616468ab3384efad26095ca182255448076e081",
+  "implementer": "codeg/codex/1720",
+  "reviewer": "codeg/codex/1721/01a1d636-91f8-73b2-92cd-e1933b28bda6",
+  "verdict": "APPROVED",
+  "review_report": "docs/todos/10-self-hosting-hardening/evidence/05/review-report.json",
+  "checks": [
+    {
+      "name": "experiment",
+      "kind": "command",
+      "command": "python -B docs/todos/10-self-hosting-hardening/evidence/05/slice-a-observe.py",
+      "cwd": ".",
+      "exit_code": 0,
+      "summary": "COMPLETED、tree_terminal=true；原始逐文件布尔值、捕获来源及review指针支持限定观察。",
+      "output": "docs/todos/10-self-hosting-hardening/evidence/05/slice-a-experiment-1.json.output.txt"
+    },
+    {
+      "name": "decision",
+      "kind": "observation",
+      "summary": "有限清单OBSERVED、完整版本UNKNOWN的分类与原始实验一致；历史R7、P1及补齐责任没有外推。",
+      "output": "docs/todos/10-self-hosting-hardening/evidence/05/slice-a-decision.json"
+    },
+    {
+      "name": "interfaces",
+      "kind": "observation",
+      "summary": "四层九字段、UTC日期、原件捕获、UNKNOWN及状态真源边界与索引一致。",
+      "output": "docs/todos/10-self-hosting-hardening/evidence/05/slice-a-interfaces.json"
+    }
+  ]
+}

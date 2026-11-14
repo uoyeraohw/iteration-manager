@@ -1,0 +1,38 @@
+{
+  "request": {
+    "state": {
+      "task": "06 integration-only Spike; whitelist new test/method/note/evidence; targeted pytest only this leaf",
+      "existing": {
+        "readiness": "fixture, cli, inventory, report, save return isolated FS card/context and existing CLI invocation",
+        "filesystem": "test_filesystem_delivery_controller.fixture returns valid frozen synthetic DONE card with receipt/manifest",
+        "root": "test_worktree_concurrency.git_repo_with_worktrees provides two disposable feature worktrees",
+        "coverage": "existing node tests cover each guard, runner/deadline/resume; new task requires cross-module contract rather than copying all unit tests"
+      },
+      "options": [
+        "reuse fixture/data functions, compose inventory-dispatch-attempt-envelope/audit assertions",
+        "invoke existing test functions wholesale",
+        "new independent fixture framework"
+      ]
+    },
+    "questions": {
+      "method": {
+        "type": "choice",
+        "instructions": "Choose the implementation method for NEW cross-module self-hosting contract tests; require independent assertions across projections, isolated data, minimal duplicated setup and maintainability. Select insufficient if evidence cannot support a choice.",
+        "criteria": {
+          "compose": "Reuse existing fixture/data functions and compose new cross-module assertions",
+          "invoke": "Invoke existing test functions wholesale",
+          "framework": "Build new fixture framework",
+          "insufficient": "Insufficient evidence"
+        }
+      }
+    }
+  },
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"model\":\"jev-1.14.0\",\"answers\":{\"method\":{\"type\":\"choice\",\"choice\":\"compose\",\"confidence\":0.99,\"probabilities\":{\"compose\":0.99,\"framework\":0.0,\"insufficient\":0.01,\"invoke\":0.0}}},\"usage\":{\"input_tokens\":575,\"output_tokens\":48}}"
+      }
+    ]
+  }
+}

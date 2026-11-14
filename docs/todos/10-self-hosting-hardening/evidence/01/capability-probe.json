@@ -1,0 +1,8 @@
+{
+  "version": 1,
+  "source": "Codeg MCP get_delegation_status",
+  "task_id": "d5cc8a1a-fc9d-4658-a939-97502efad064",
+  "status": "completed",
+  "result": "**4 个文件均由本会话实际读取成功，未出现权限拒绝。** 本次仅读取首部以核对标题和权限，不代表完整契约消费或未来会话权限。\n\n### 工作区核对\n出处：`exec_command`，chunk `9d1113`，退出码 `0`。\n\n- cwd：`C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\.worktrees\\iter-10`\n- 分支：`feat/iter-10-self-hosting-hardening`\n- 完整 HEAD：`d3bd97ab16ffed6104034a887a01eb1b4d75dc0e`\n- `git status --short --branch`：\n  ```text\n  ## feat/iter-10-self-hosting-hardening\n  ?? docs/todos/10-self-hosting-hardening/evidence/01/\n  ```\n\n### 文件读取结果\n出处均为实际调用 `mcp__fastctx__read`，返回 `isError: false`；工具均标记 `Partial`，以下仅报告已读取部分。\n\n| 文件 | 结果 | 首个标题及行号 |\n|---|---|---|\n| 工作区 `SKILL.md` | 可读，读取 L1–24 | L7：`# Iteration Manager` |\n| 工作区 `docs/todos/10-self-hosting-hardening/01-authority-consistency.md` | 可读，读取 L1–40 | L23：`# 01 · 统一授权规则与跨入口场景` |\n| `C:/Users/qingyu/.codeg/skills/iteration-manager/build/frozen-tools/46ded3a/references/agent_protocol.md` | 可读，读取 L1–16 | L1：`# 三助手共同执行协议` |\n| `C:/Users/qingyu/.codeg/skills/iteration-manager/build/frozen-tools/46ded3a/references/task_card_schema.md` | 可读，读取 L1–12 | L1：`# 任务卡与验收证据契约（schema_version: 1）` |\n\n读取摘录：\n- `SKILL.md:22`：“仅生成Prompt、评估或只读接管不授权实施、写文件或Git提交。”\n- 任务卡 `:25`：“声明 TODO；验收 UNKNOWN；尚无执行、RED/GREEN或独立批准。”\n- `agent_protocol.md:7`：“只读分析/只生成Prompt不写文件、不运行实现、不提交用户已有变更”\n- `task_card_schema.md:9`：“验收结果为PASS、FAIL、UNKNOWN、BLOCKED；仅PASS可以放行。”\n\n已在 5 分钟检查点前交回；未实施、测试、写文件、Git 提交或委派，无后台命令。",
+  "observed_at": "2026-11-13T16:05:01.171Z"
+}

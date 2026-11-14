@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "source": "Codeg MCP get_delegation_status",
+  "task": {
+    "tasks": [
+      {
+        "task_id": "72db3dfe-466c-424e-bb74-6511fd23e455",
+        "status": "completed",
+        "child_conversation_id": 1710,
+        "agent_type": "codex",
+        "text": "切片 B 已精准提交：`24a483eb7b0694ce67a5e6c0b50adb0d1cb5c160`。最高状态 **TESTING**，验收 **UNKNOWN**。\n\n已完成：stdout CLI、输入/预检边界、占位符判别、八组合兼容、实际 FS 冻结绑定测试，以及模板、使用说明和笔记同步。\n\n证据位于 `docs/todos/10-self-hosting-hardening/evidence/02/`：\n\n| receipt（均以 `slice-b-` 开头） | 实际 exit | 结果 |\n|---|---:|---|\n| cli-boundary-red.json | 1 | 17 failed、57 passed；有效行为断言 RED |\n| cli-boundary-green.json | 0 | 74 passed |\n| compatibility.json | 0 | 81 passed |\n| regression.json | 0 | 指定五文件回归，111 passed |\n| note-tree.json | 0 | 通过 |\n| note-format.json | 0 | 通过 |\n| scope.json | 0 | 范围检查通过 |\n\n全部 receipt 为 **COMPLETED、tree_terminal=true**，launcher exit 均为 0；无活动命令。\n\n续接记录：`evidence/02/implementation-checkpoint-b.json`。剩余由主控登记 attempt/release/envelope，安排非参与者独审、独立复验及批准后的登记与 strict。\n\n卡片、README 和主控未跟踪证据仍为 dirty，未夹带提交；暂存区为空。01 源码、测试及证据未改动。",
+        "duration_ms": 342340,
+        "progress": {
+          "steps": 32,
+          "marks": [
+            "ok",
+            "ok",
+            "ok",
+            "ok",
+            "ok",
+            "ok",
+            "ok",
+            "ok",
+            "ok",
+            "ok",
+            "ok",
+            "ok"
+          ],
+          "last_step": "git diff --cached --name-only; git show --format=fuller --stat HEAD | Select-Object -First 12; Get-Content docs/todos/10…"
+        }
+      }
+    ]
+  },
+  "guard": {
+    "reason": "terminal",
+    "terminalConfirmed": true,
+    "deadlineMs": 1794589395000,
+    "observed_at": "2026-11-13T17:00:27.863Z",
+    "lateByMs": 0
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "read_only": true,
+  "readiness": "READY",
+  "task_path": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\.worktrees\\iter-10\\docs\\todos\\10-self-hosting-hardening\\03-query-cli-contract.md",
+  "phase": "implementation",
+  "acceptance_verdict": "UNKNOWN",
+  "findings": [],
+  "observations": {
+    "authority": {
+      "status": "READY",
+      "summary": "六卡串行实施/精准Git/Worktree授权仍有效，02独立APPROVED和strict已PASS；不部署推送合流清理",
+      "evidence": "docs/todos/10-self-hosting-hardening/evidence/01/authority.txt"
+    },
+    "execution": {
+      "status": "READY",
+      "summary": "同能力Codeg codex会话1712已真实读取契约并提交，无活动实现命令",
+      "evidence": "docs/todos/10-self-hosting-hardening/evidence/02/native-terminal-c.json"
+    },
+    "verification": {
+      "status": "READY",
+      "summary": "冻结runner和pytest已真实运行；02复审及固定strict PASS，受影响集合与前后量测按03卡",
+      "evidence": "docs/todos/10-self-hosting-hardening/evidence/02/review.json"
+    }
+  },
+  "task_id": "03",
+  "delivery_mode": "git",
+  "candidate": "f879bba28326af84fd9217a70c390a35887ec62b",
+  "execution": {
+    "attempt_count": 0,
+    "no_progress_streak": 0,
+    "last_attempt": null,
+    "checkpoint": null,
+    "remaining_work": []
+  },
+  "conditions": {
+    "inputs": [
+      "docs/todos/10-self-hosting-hardening/03-query-cli-contract.md",
+      "scripts/iter_execution.py",
+      "scripts/iter_inventory.py",
+      "scripts/iter_preflight.py",
+      "scripts/iter_sync.py"
+    ],
+    "capabilities": [
+      "Codeg MCP codex independent session",
+      "Windows iter_run",
+      "pytest"
+    ],
+    "scope": [
+      ".agents/notes/implemented/architecture/2026-11-13-query-cli-contract.md",
+      "docs/todos/10-self-hosting-hardening/evidence/03/",
+      "scripts/iter_cli.py",
+      "scripts/iter_execution.py",
+      "scripts/iter_inventory.py",
+      "scripts/iter_preflight.py",
+      "scripts/iter_queries.py",
+      "scripts/iter_sync.py",
+      "tests/test_cli_compatibility.py",
+      "tests/test_query_contract.py",
+      "tests/test_sync_compatibility.py"
+    ]
+  },
+  "checkpoint": "切片A保存同环境10/100卡3次before基准、旧入口字段有效RED与可审查询/CLI核心差异；不足窗口留B续接",
+  "remaining_work": [
+    "共享查询/CLI",
+    "兼容回归及after量测",
+    "独审"
+  ]
+}

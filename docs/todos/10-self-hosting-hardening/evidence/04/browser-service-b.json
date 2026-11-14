@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "argv": [
+    "python",
+    "-B",
+    "docs/todos/10-self-hosting-hardening/evidence/04/browser_harness.py",
+    "--ready-file",
+    "docs/todos/10-self-hosting-hardening/evidence/04/browser-ready-b.json",
+    "--stop-file",
+    "docs/todos/10-self-hosting-hardening/evidence/04/browser-stop-b",
+    "--duration",
+    "420",
+    "--delay",
+    "6"
+  ],
+  "cwd": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\.worktrees\\iter-10",
+  "deadline": "2026-11-13T18:27:00+00:00",
+  "cleanup_reserve_seconds": 5,
+  "status": "COMPLETED",
+  "deadline_checked_at": "2026-11-13T18:18:48.848968+00:00",
+  "started_at": "2026-11-13T18:18:48.856964+00:00",
+  "ended_at": "2026-11-13T18:22:23.067191+00:00",
+  "raw_exit_code": 0,
+  "tree_terminal": true,
+  "output": "docs/todos/10-self-hosting-hardening/evidence/04/browser-service-b.json.output.txt",
+  "container_pid": 21040,
+  "launcher_exit_code": 0,
+  "command": {
+    "status": "COMPLETED",
+    "raw_exit_code": 0,
+    "started_at": "2026-11-13T18:18:48.856964+00:00",
+    "pid": 12776,
+    "deadline_checked_at": "2026-11-13T18:18:48.848968+00:00",
+    "ended_at": "2026-11-13T18:22:23.054169+00:00"
+  },
+  "late_by_seconds": 0
+}

@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "report": "docs/todos/10-self-hosting-hardening/evidence/06/robustness-report-final.json",
+  "fields": [
+    "version",
+    "candidate",
+    "coordinator_commit",
+    "cases",
+    "unverified"
+  ],
+  "layers": [
+    "static",
+    "synthetic",
+    "native-self-use"
+  ],
+  "results": [
+    "PASS",
+    "FAIL",
+    "UNKNOWN",
+    "BLOCKED"
+  ],
+  "approval": "实验不自证批准；独审和C/D/strict在任务卡单一真源",
+  "continuation": {
+    "original_base": "7107ddb2f2256ceaea40e6ea0aeddd045220b99b",
+    "checkpoint": "c5238c16b1e9c5d941d8dec3c53d273f6a074e44",
+    "pre_repair_end": "8756b47c1fc60c91292ca66e7444cffa05e0ef51",
+    "accepted_upstream_repair": "41f6618008542a1394fd0341237b36c91554c218",
+    "continuation_base": "b3938b86b4cccfcdbd582ab5c2531beec086e0c4",
+    "scope_rule": "原06段和最终续接段分别检查scope；04修复由04批准承担，独审仍阅读全部06差异，不能隐藏旧实现"
+  }
+}

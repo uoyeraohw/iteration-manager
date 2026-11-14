@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "source": "root native exec chunk684213, 2026-11-13T18:18 UTC",
+  "command": "frozen iter_sync --autonomy attempt ... --evidence evidence/04/attempt-a.json",
+  "raw_exit_code": 2,
+  "observed_error": "Invalid version:1 attempt report fields",
+  "cause": "主控报告漏started_at/ended_at两个必需键",
+  "response": "保留原无效文件；新attempt-a-valid.json用null明确未知会话时间，冻结入口接受；失败未增加预算或产生成功attempt。随后release/claim",
+  "acceptance": "这是输入拒绝事实，不是产品失败或FUSED成功状态"
+}

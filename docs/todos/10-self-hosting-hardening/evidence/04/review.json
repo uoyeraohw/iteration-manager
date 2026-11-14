@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "task_id": "04",
+  "type": "UI-Component",
+  "task_path": "docs/todos/10-self-hosting-hardening/04-board-handoff.md",
+  "base_sha": "2ce0705ebeeaee73f75a1dcd2882836dbc6b9d29",
+  "head_sha": "9b9010afb8dbf0b0cf74f83c6c97605984319619",
+  "contract_sha": "9b9010afb8dbf0b0cf74f83c6c97605984319619",
+  "implementer": "codeg/codex/1718",
+  "reviewer": "codeg/codex/1719/01a1d627-da6f-75c3-87c5-5431d61a2594",
+  "verdict": "APPROVED",
+  "review_report": "docs/todos/10-self-hosting-hardening/evidence/04/review-report.json",
+  "checks": [
+    {
+      "name": "interaction",
+      "kind": "command",
+      "command": "ego-browser nodejs -e \"await import('file:///C:/Users/qingyu/.codeg/skills/iteration-manager/.worktrees/iter-10/docs/todos/10-self-hosting-hardening/evidence/04/browser-source-b.mjs')\"",
+      "cwd": ".",
+      "exit_code": 0,
+      "summary": "真实Git筛选/详情/列明来源原生popup/Escape；其它原生步骤见报告五个receipt",
+      "output": "docs/todos/10-self-hosting-hardening/evidence/04/browser-source-b.json.output.txt"
+    },
+    {
+      "name": "states",
+      "kind": "observation",
+      "summary": "正常/空/加载/断连均经真实HTTP和原生浏览器观测，索引指向完整原件",
+      "output": "docs/todos/10-self-hosting-hardening/evidence/04/states-observation.json"
+    },
+    {
+      "name": "visual",
+      "kind": "observation",
+      "summary": "1139x869桌面七图；主控及独立Reviewer实际看图",
+      "output": "docs/todos/10-self-hosting-hardening/evidence/04/visual-observation.json"
+    },
+    {
+      "name": "regression",
+      "kind": "command",
+      "command": "python -B -m pytest -p no:cacheprovider tests/test_board_handoff.py tests/test_board_truth.py tests/test_board_service.py tests/test_query_contract.py tests/test_filesystem_delivery_controller.py -q",
+      "cwd": ".",
+      "exit_code": 0,
+      "summary": "主控独立67passed；源码与最终C相同",
+      "output": "docs/todos/10-self-hosting-hardening/evidence/04/controller-regression-b.json.output.txt"
+    }
+  ]
+}

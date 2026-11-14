@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "tasks": {
+    "04": {
+      "phase": "implementation",
+      "candidate": "6afa4de271ee90271f2c068a8060ed2590c8ff98",
+      "inputs": [
+        "docs/todos/10-self-hosting-hardening/04-board-handoff.md",
+        "tests/test_board_handoff.py",
+        "docs/todos/10-self-hosting-hardening/evidence/04/browser_harness.py",
+        "docs/todos/10-self-hosting-hardening/evidence/06/controller-harness-diagnosis.json.output.txt"
+      ],
+      "capabilities": [
+        "Codeg MCP codex independent session",
+        "Windows iter_run",
+        "pytest"
+      ],
+      "dependencies": [
+        "docs/todos/10-self-hosting-hardening/03-query-cli-contract.md"
+      ],
+      "tool_entry": "C:/Users/qingyu/.codeg/skills/iteration-manager/build/frozen-tools/46ded3a/scripts/iter_sync.py",
+      "checkpoint": "定点修复全量暴露的HTTP夹具ready时限耦合，保留真实UI默认行为和旧原件",
+      "remaining_work": [
+        "独立受影响审查及新绑定",
+        "固定strict后回06全量"
+      ],
+      "observations": {
+        "authority": {
+          "status": "READY",
+          "summary": "06全量有效反例，按原04白名单定点重开；串行暂停06",
+          "evidence": "docs/todos/10-self-hosting-hardening/evidence/06/controller-full-regression.json"
+        },
+        "execution": {
+          "status": "READY",
+          "summary": "06实现1723及测试命令均终态，当前仅04修复者",
+          "evidence": "docs/todos/10-self-hosting-hardening/evidence/06/native-terminal-a.json"
+        },
+        "verification": {
+          "status": "READY",
+          "summary": "同harness实测8.562秒ready/exit0/stderr空，冻结runner可用",
+          "evidence": "docs/todos/10-self-hosting-hardening/evidence/06/controller-harness-diagnosis.json"
+        },
+        "ui-entry": {
+          "status": "READY",
+          "summary": "04已实际原生桌面Git/FS交互与1139x869四态；本次仅隔离测试夹具，不改变模板或原生交互，沿用原件",
+          "evidence": "docs/todos/10-self-hosting-hardening/evidence/04/visual-observation.json"
+        }
+      }
+    }
+  }
+}

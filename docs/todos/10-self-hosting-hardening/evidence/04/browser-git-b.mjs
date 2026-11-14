@@ -1,0 +1,3 @@
+import fs from 'node:fs';
+const ready=JSON.parse(fs.readFileSync('C:/Users/qingyu/.codeg/skills/iteration-manager/.worktrees/iter-10/docs/todos/10-self-hosting-hardening/evidence/04/browser-ready-b.json','utf8'));const task=await taskSpace(5),page=task.page('p1');
+await page.goto(ready.services.real_git.url);await page.waitForSelector('#cards .card',{state:'visible'});console.log(JSON.stringify({viewport:await page.info(),layer:'native-self-use',data:'real_git'}));console.log(await page.snapshot());console.log({screenshot:await page.screenshot({path:'C:/Users/qingyu/.codeg/skills/iteration-manager/.worktrees/iter-10/docs/todos/10-self-hosting-hardening/evidence/04/browser-real-git-b.png'})});

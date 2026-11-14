@@ -1,0 +1,586 @@
+{
+  "reviewer": {
+    "identity": "Codex independent reviewer / session 01a1d636-91f8-73b2-92cd-e1933b28bda6",
+    "runtime_role": "/root",
+    "independent": true,
+    "participation": "未参与任务05实现、测试、设计或RCA；不是主控1699或实现1720",
+    "read_only": true
+  },
+  "base_sha": "8392193a0d9e883892f75780a63a1b16f67682c4",
+  "head_sha": "8616468ab3384efad26095ca182255448076e081",
+  "contract_sha": "8616468ab3384efad26095ca182255448076e081",
+  "branch": "feat/iter-10-self-hosting-hardening",
+  "dirty": [],
+  "verdict": "APPROVED",
+  "verdict_basis": "实际差异、原始实验输出及历史原件支持任务05限定交付。四层事实、日期、范围、来源和UNKNOWN补齐责任清楚；未发现需要返修的实质缺陷。本裁决不表示部署、新会话采用或整轮验收通过。",
+  "scope": {
+    "result": "符合",
+    "evidence": [
+      "实际BASE..C共60个变更文件，限于05白名单、05卡及其证据目录。",
+      "SKILL.md仅增加发布索引和template_generation资源链接。",
+      "根docs/todos/README.md、迭代README、01—04源码及收据未在本次差异中修改。",
+      "slice-a-observe.py:21-64使用历史manifest显式路径及命名入口；未递归扫描安装目录或读取凭据、配置。",
+      "controller-scope.json.output.txt:1记录60个文件均在声明范围内；本次另读取实际Git变更清单核对。"
+    ]
+  },
+  "spec": {
+    "result": "符合",
+    "evidence": [
+      "references/release_status.md:5-16定义九字段及UTC、原件捕获和范围含义；18-58分列源码、已审候选、安装、实际消费。",
+      "references/release_status.md:22-34分别记录维护main、iter10实施前基线及01—04原收据候选，不把逐卡批准提升为整轮批准。",
+      "references/release_status.md:38-44明确58路径只是历史清单观察，完整安装版本UNKNOWN；说明单数入口错误及复数入口补测。",
+      "references/release_status.md:49-58区分原生切片终态、最终review批准、真实Git自用与合成FS。",
+      "references/release_status.md:60-65明确部署owner、历史证据owner、相应操作owner及主控的补齐条件。",
+      "SKILL.md:91同时链接release_status.md与template_generation.md；索引没有自身最终SHA、本轮预PASS或另一任务状态账。"
+    ]
+  },
+  "quality": {
+    "result": "符合",
+    "evidence": [
+      "完整读取SKILL、共同协议、任务卡schema、迭代README、05卡、发布索引、结构测试及Note；审查实际差异和关键原始输出。",
+      "原始实验逐文件记录支持三根各58/58等于main、45/58等于iter10基线、36/58等于历史冻结源；本次从原始输出重新汇总得到相同数量。",
+      "历史manifest实际含58条唯一relative路径、两个副本目标；观察脚本另比较维护main，未把manifest目标数冒称三份部署操作。",
+      "五份历史捕获与各自记录的原绝对来源逐字节相等；捕获清单保留时间和范围。",
+      "tests/test_release_index.py明确只检查结构、字段和链接，不承担事实批准。"
+    ]
+  },
+  "issues": [],
+  "checks": [
+    {
+      "name": "experiment",
+      "kind": "command",
+      "command": "python -B docs/todos/10-self-hosting-hardening/evidence/05/slice-a-observe.py",
+      "cwd": ".",
+      "exit_code": 0,
+      "receipt": "docs/todos/10-self-hosting-hardening/evidence/05/slice-a-experiment-1.json",
+      "output": "docs/todos/10-self-hosting-hardening/evidence/05/slice-a-experiment-1.json.output.txt",
+      "summary": "COMPLETED、tree_terminal=true；原始逐文件布尔值、捕获来源及review指针支持限定观察。",
+      "supplement": {
+        "command": "python -B docs/todos/10-self-hosting-hardening/evidence/05/slice-a-observe-entries.py",
+        "exit_code": 0,
+        "receipt": "docs/todos/10-self-hosting-hardening/evidence/05/slice-a-experiment-entries-1.json",
+        "output": "docs/todos/10-self-hosting-hardening/evidence/05/slice-a-experiment-entries-1.json.output.txt",
+        "summary": "实际复数iter_queries.py及iter_cli.py在三根缺失；标签查询128保留UNKNOWN；01 canceled与02—04 completed分开记录。"
+      }
+    },
+    {
+      "name": "decision",
+      "kind": "observation",
+      "output": "docs/todos/10-self-hosting-hardening/evidence/05/slice-a-decision.json",
+      "summary": "有限清单OBSERVED、完整版本UNKNOWN的分类与原始实验一致；历史R7、P1及补齐责任没有外推。"
+    },
+    {
+      "name": "interfaces",
+      "kind": "observation",
+      "output": "docs/todos/10-self-hosting-hardening/evidence/05/slice-a-interfaces.json",
+      "summary": "四层九字段、UTC日期、原件捕获、UNKNOWN及状态真源边界与索引一致。"
+    }
+  ],
+  "reused_evidence": [
+    {
+      "coverage": "指定三文件结构、入口和既有契约回归",
+      "original_source_sha": "21acfe0b83122f10d105a65a8891667b4aa0977e",
+      "outputs": [
+        "docs/todos/10-self-hosting-hardening/evidence/05/slice-a-targeted-final.json.output.txt",
+        "docs/todos/10-self-hosting-hardening/evidence/05/controller-regression.json.output.txt"
+      ],
+      "result": "实现者9 passed in 0.65s；主控独立9 passed in 0.66s；对应receipt均COMPLETED/raw0/tree_terminal=true。",
+      "reuse_basis": "实际21acfe0..C变更不包含产品、测试、Note或上述原始实验和回归输出；未受影响证据沿用，不冒称Reviewer重新执行。"
+    },
+    {
+      "coverage": "Note目录、相对链接及格式",
+      "outputs": [
+        "docs/todos/10-self-hosting-hardening/evidence/05/slice-a-note-tree-1.json.output.txt",
+        "docs/todos/10-self-hosting-hardening/evidence/05/slice-a-note-format-final.json.output.txt"
+      ],
+      "result": "直接命令各raw0，输出分别为18 notes tree/links verified和18 notes verified。",
+      "reuse_basis": "Note及相关拓扑未变化；排除错误嵌套PowerShell命令后仍有有效直接命令证据。"
+    },
+    {
+      "coverage": "01—04既有批准及历史消费索引",
+      "outputs": [
+        "docs/todos/10-self-hosting-hardening/evidence/01/review.json",
+        "docs/todos/10-self-hosting-hardening/evidence/02/review.json",
+        "docs/todos/10-self-hosting-hardening/evidence/03/review.json",
+        "docs/todos/10-self-hosting-hardening/evidence/04/review.json"
+      ],
+      "reuse_basis": "仅核对索引引用的原候选、checks及批准范围，不重做01—04验收；原生completed/canceled均不替代这些批准。"
+    }
+  ],
+  "excluded_evidence": [
+    {
+      "file": "docs/todos/10-self-hosting-hardening/evidence/05/slice-a-note-final.json.output.txt:8-14",
+      "fact": "receipt raw0，但输出存在-ne CommandNotFoundException。",
+      "treatment": "明确不作为成功门禁证据；保留反证，采用直接tree及直接final format原件。",
+      "blocking": false
+    },
+    {
+      "fact": "原始日志含既有空行、CR或尾随空白。",
+      "treatment": "保持原件，不以日志空白要求清理或阻断产品；不把raw0或whitespace检查当事实验收。",
+      "blocking": false
+    }
+  ],
+  "unknown_boundaries": [
+    {
+      "object": "完整当前安装版本、对应reviewed_candidate及安装新会话采用",
+      "status": "UNKNOWN",
+      "owner": "部署owner",
+      "resume_condition": "另获部署授权后提供完整当前交付manifest、版本归属和原生新会话消费证据。"
+    },
+    {
+      "object": "P1所查deployment.json及历史候选Git来源",
+      "status": "UNKNOWN",
+      "owner": "历史证据owner",
+      "resume_condition": "提供原始来源或确认不可恢复；不遍历全部历史、不补造SHA。"
+    },
+    {
+      "object": "05登记D/local strict及整轮验收",
+      "status": "尚未由本次审查执行",
+      "owner": "主控",
+      "resume_condition": "消费本独审裁决后按既定Git登记合同推进；整轮门禁保持独立范围。"
+    }
+  ],
+  "reviewer_execution": {
+    "new_business_or_test_commands": [],
+    "file_writes": [],
+    "commits": [],
+    "delegations": [],
+    "final_head_rechecked": "8616468ab3384efad26095ca182255448076e081",
+    "final_dirty": [],
+    "runtime_identity_source": "CODEX_THREAD_ID和CODEX_SESSION_ID均返回01a1d636-91f8-73b2-92cd-e1933b28bda6"
+  },
+  "typesafe": {
+    "request": {
+      "state": {
+        "contract": {
+          "task": "05 Spike-Discovery release evidence index only",
+          "required": "Four layers, nine row fields, UTC date/scope/original pointers; UNKNOWN owner and recovery; SKILL links index and template_generation; no install/config/deployment writes, credentials read, root README change, second task status ledger, self final SHA or iteration pre-PASS. experiment successful command; decision/interfaces observations. Tests do not establish facts. No RED requirement.",
+          "candidate": "8616468ab3384efad26095ca182255448076e081",
+          "base": "8392193a0d9e883892f75780a63a1b16f67682c4"
+        },
+        "git_observed": {
+          "branch": "feat/iter-10-self-hosting-hardening",
+          "head": "8616468ab3384efad26095ca182255448076e081",
+          "status_short": "",
+          "changed_files": 60,
+          "changes": "SKILL one resource link; new release_status index, structural tests, Note, evidence/05 and 05 card. Root README, iteration README, 01-04 source/receipts absent from diff. Product/test/Note unchanged from 21acfe0b83122f10d105a65a8891667b4aa0977e; later commits add card and evidence."
+        },
+        "index_text": {
+          "source": "main d3bd97a and iter10 implementation-before baseline 8392193 separate",
+          "reviewed": "01-04 reviewed candidates from original APPROVED review.json, only original task scope; no whole-iteration approval",
+          "installation": "58 explicit historical paths in three roots equal main 58/58; 45/58 equal iter10 baseline; 36/58 historical frozen. Complete version UNKNOWN. iter_sync differs; templates/queries/cli/template_generation absent. First singular iter_query typo preserved, supplement observes plural iter_queries and iter_cli missing, tag lookup exit128.",
+          "consumption": "Native records separate from synthetic FS; 01 linked slice canceled, 02-04 completed, terminal status not approval. R7 historical CLOSED_LOCAL_MOCK_FS excludes provider/full media/production/Git branch. P1 deployment missing at specified location UNKNOWN.",
+          "unknowns": "Deployment owner: complete current manifest/version attribution and authorized new-session adoption. Historical evidence owner: supply original or confirm unrecoverable. Controller: later task registration/strict and total review.",
+          "pointers": "Project-relative receipts/native records and five byte captures; capture manifest gives original absolute source, capture time, scope."
+        },
+        "originals_read": {
+          "experiment": {
+            "status": "COMPLETED",
+            "raw_exit_code": 0,
+            "tree_terminal": true,
+            "start": "2026-11-13T18:33:45.406517+00:00",
+            "output": "1396-line raw output contains source/main commit, captures, 3x58 per-path booleans, entries, original review pointers; script only reads listed paths and writes own evidence"
+          },
+          "supplement": {
+            "status": "COMPLETED",
+            "raw_exit_code": 0,
+            "tree_terminal": true,
+            "at": "2026-11-13T18:36:33.343445+00:00",
+            "output": "plural query/CLI absent three roots; no tags; 01 canceled vs 02-04 completed"
+          },
+          "historical": "Read original manifest SC-FS-I01-20261112-R7 files_per_target58 and explicit .agents/SKILL/references/scripts/templates/tests items; git-final head d29ddc2, 205 tests,58 equal,no push; R7 full acceptance time 2026-11-12T10:12:51.023029Z; P1 README says maintenance source only and synthetic FS.",
+          "decision": "Four layers separate, bounded current file equality, full identity UNKNOWN; owner+conditions",
+          "interfaces": "Nine fields, four layers, UTC capture provenance, task cards own status",
+          "tests": "Implementer final output9 passed in0.65s; controller independent output9 passed in0.66s; both receipts COMPLETED/raw0/tree terminal true; coverage unchanged to C",
+          "note": "Direct tree raw0 output18 notes links verified; direct final format raw0 output18 notes verified",
+          "counterevidence": "slice-a-note-final nested powershell raw0 output contains '-ne' command error. Checkpoint and card explicitly exclude from success evidence; direct format rerun available.",
+          "scope": "controller scope raw0, output all60 changed files within scope; git names independently read"
+        }
+      },
+      "questions": {
+        "review_disposition": {
+          "type": "choice",
+          "instructions": "For the task05 frozen candidate and stated contract only, choose the review disposition warranted by the supplied observations. Decide whether the index and primary evidence meet that bounded deliverable. Treat installation identity and new-session adoption as UNKNOWN as allowed; do not treat test counts or native completion as fact approval.",
+          "criteria": {
+            "APPROVED": "The bounded index deliverable and required primary checks are supported; retained unknowns have owners/conditions and no demonstrated material contract defect.",
+            "CHANGES_REQUESTED": "An observed material mismatch or unsupported claim in the candidate requires correction within task05.",
+            "BLOCKED": "A necessary primary input or provenance is missing so task05 cannot be judged.",
+            "INSUFFICIENT": "The observations do not distinguish the dispositions."
+          }
+        }
+      }
+    },
+    "raw_response": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"model\":\"jev-1.14.0\",\"answers\":{\"review_disposition\":{\"type\":\"choice\",\"choice\":\"CHANGES_REQUESTED\",\"confidence\":0.23,\"probabilities\":{\"APPROVED\":0.4,\"BLOCKED\":0.16,\"CHANGES_REQUESTED\":0.42,\"INSUFFICIENT\":0.02}}},\"usage\":{\"input_tokens\":1695,\"output_tokens\":66}}"
+        }
+      ]
+    },
+    "application": "结果不明确：CHANGES_REQUESTED 0.42与APPROVED 0.40接近，confidence为0.23，且未提供具体缺陷。随后定点核对原始输出数量及五份捕获与来源字节，均一致；未重复刷分。Reviewer依据实际差异、原件和任务契约独立裁决APPROVED，不将TypeSafe结果冒作批准。"
+  },
+  "native_provenance": {
+    "request": "任务05独立Reviewer。你未参与本卡实现/测试/设计/RCA，不是主控1699/实现1720；只读，不写任何文件/卡/README/配置，不提交、不委派。不是唯一参与者，保护他人工作。cwd C:/Users/qingyu/.codeg/skills/iteration-manager/.worktrees/iter-10，branch feat/iter-10-self-hosting-hardening，BASE8392193a0d9e883892f75780a63a1b16f67682c4，冻结候选/contract C8616468ab3384efad26095ca182255448076e081；实际HEAD/dirty先核对，主管writer已claim、build/review-05/dispatch-valid.json READY。\n完整读SKILL/共同协议/任务卡schema、迭代README及05卡；实际BASE..C差异、references/release_status.md、tests/test_release_index.py、Note和evidence/05原件。仅本卡，不重做01—04。审查要求：source/reviewed candidate/installed/consumer四层字段/日期/范围/原件指针，未知owner与恢复条件；SKILL链接索引与template_generation；不写另一任务状态账/自引用最终SHA/本轮预PASS；副本只读显式manifest无凭据/配置/部署；根README不改；测试不代替事实。\nA原生task285eb86e-960e-4140-ade7-669a57dc1264 completed，源21acfe0，检查点a509cd5；最终指定三文件9passed，根controller-regression.json独立9passed；Note tree/format与scope实际通过。源/测试从21acfe0到C未变化，复用有效输出不再无目的重跑。Spike experiment/decision/interfaces原件，tdd不要求RED。\n当前读实测：历史manifest58路径三根与维护main相等，45/58与iter10基线相等；当前完整版本和新会话采用UNKNOWN；不能把58路径当完整当前manifest，不能把main当iter10已部署。首次错误单数iter_query.py原件保留，slice-a-entry-observation.json实测复数iter_queries及iter_cli缺失；当前未标签不造版本。检查原件是否真正支持索引，不只读总结。main/build历史少量原字节捕获到e05且记录来源/时间。P1所查deployment缺失如实UNKNOWN不绕查全历史。01被链native切片canceled，原最终APPROVED另外来自review，不把终态当批准；真实Git/FS合成区分。\n已知slice-a-note-final.json raw0但原始输出含-ne错误，明确排除成功证据并直接重跑format；不要将raw0冒门禁或丢掉这个反证。原始日志空白不改，索引/源/测试whitespace有效检查；不因日志既有空白阻断产品，无须清理。\n实际TypeSafe evaluate对应未决审查结论，state仅原始事实，保存请求响应在返回JSON；你自己依据diff/原件作最终verdict。返回纯JSON：reviewer真实身份、base/head/contract、verdict APPROVED/CHANGES_REQUESTED/BLOCKED，scope/spec/quality证据、issues含file:line/触发/期望/实际/严重性、checks三种及输出原件、沿用依据、unknown边界、typesafe原始结果。最高独审裁决，不写DONE/收据。\n5min检查点，6min停业务，7min正常返回；leaf 2026-11-13T18:49:31.913Z，hard 2026-11-13T18:51:01.913Z。不启动业务/测试命令；如认为原件不足返回具体缺口。",
+    "requested_at": "2026-11-13T18:41:01.913Z",
+    "dispatch": {
+      "task_id": "3521c397-6407-4026-ace5-8c1105b191ae",
+      "status": "running",
+      "child_conversation_id": 1721,
+      "agent_type": "codex",
+      "message": "Delegation successful. task_id=3521c397-6407-4026-ace5-8c1105b191ae. Call get_delegation_status with this id in the task_ids array (optionally wait_ms) to collect the result, or cancel_delegation to stop it."
+    },
+    "guard": {
+      "reason": "terminal",
+      "deadlineMs": 1794595771913,
+      "final": {
+        "task_id": "3521c397-6407-4026-ace5-8c1105b191ae",
+        "status": "completed",
+        "child_conversation_id": 1721,
+        "agent_type": "codex",
+        "text": "{\n  \"reviewer\": {\n    \"identity\": \"Codex independent reviewer / session 01a1d636-91f8-73b2-92cd-e1933b28bda6\",\n    \"runtime_role\": \"/root\",\n    \"independent\": true,\n    \"participation\": \"未参与任务05实现、测试、设计或RCA；不是主控1699或实现1720\",\n    \"read_only\": true\n  },\n  \"base_sha\": \"8392193a0d9e883892f75780a63a1b16f67682c4\",\n  \"head_sha\": \"8616468ab3384efad26095ca182255448076e081\",\n  \"contract_sha\": \"8616468ab3384efad26095ca182255448076e081\",\n  \"branch\": \"feat/iter-10-self-hosting-hardening\",\n  \"dirty\": [],\n  \"verdict\": \"APPROVED\",\n  \"verdict_basis\": \"实际差异、原始实验输出及历史原件支持任务05限定交付。四层事实、日期、范围、来源和UNKNOWN补齐责任清楚；未发现需要返修的实质缺陷。本裁决不表示部署、新会话采用或整轮验收通过。\",\n  \"scope\": {\n    \"result\": \"符合\",\n    \"evidence\": [\n      \"实际BASE..C共60个变更文件，限于05白名单、05卡及其证据目录。\",\n      \"SKILL.md仅增加发布索引和template_generation资源链接。\",\n      \"根docs/todos/README.md、迭代README、01—04源码及收据未在本次差异中修改。\",\n      \"slice-a-observe.py:21-64使用历史manifest显式路径及命名入口；未递归扫描安装目录或读取凭据、配置。\",\n      \"controller-scope.json.output.txt:1记录60个文件均在声明范围内；本次另读取实际Git变更清单核对。\"\n    ]\n  },\n  \"spec\": {\n    \"result\": \"符合\",\n    \"evidence\": [\n      \"references/release_status.md:5-16定义九字段及UTC、原件捕获和范围含义；18-58分列源码、已审候选、安装、实际消费。\",\n      \"references/release_status.md:22-34分别记录维护main、iter10实施前基线及01—04原收据候选，不把逐卡批准提升为整轮批准。\",\n      \"references/release_status.md:38-44明确58路径只是历史清单观察，完整安装版本UNKNOWN；说明单数入口错误及复数入口补测。\",\n      \"references/release_status.md:49-58区分原生切片终态、最终review批准、真实Git自用与合成FS。\",\n      \"references/release_status.md:60-65明确部署owner、历史证据owner、相应操作owner及主控的补齐条件。\",\n      \"SKILL.md:91同时链接release_status.md与template_generation.md；索引没有自身最终SHA、本轮预PASS或另一任务状态账。\"\n    ]\n  },\n  \"quality\": {\n    \"result\": \"符合\",\n    \"evidence\": [\n      \"完整读取SKILL、共同协议、任务卡schema、迭代README、05卡、发布索引、结构测试及Note；审查实际差异和关键原始输出。\",\n      \"原始实验逐文件记录支持三根各58/58等于main、45/58等于iter10基线、36/58等于历史冻结源；本次从原始输出重新汇总得到相同数量。\",\n      \"历史manifest实际含58条唯一relative路径、两个副本目标；观察脚本另比较维护main，未把manifest目标数冒称三份部署操作。\",\n      \"五份历史捕获与各自记录的原绝对来源逐字节相等；捕获清单保留时间和范围。\",\n      \"tests/test_release_index.py明确只检查结构、字段和链接，不承担事实批准。\"\n    ]\n  },\n  \"issues\": [],\n  \"checks\": [\n    {\n      \"name\": \"experiment\",\n      \"kind\": \"command\",\n      \"command\": \"python -B docs/todos/10-self-hosting-hardening/evidence/05/slice-a-observe.py\",\n      \"cwd\": \".\",\n      \"exit_code\": 0,\n      \"receipt\": \"docs/todos/10-self-hosting-hardening/evidence/05/slice-a-experiment-1.json\",\n      \"output\": \"docs/todos/10-self-hosting-hardening/evidence/05/slice-a-experiment-1.json.output.txt\",\n      \"summary\": \"COMPLETED、tree_terminal=true；原始逐文件布尔值、捕获来源及review指针支持限定观察。\",\n      \"supplement\": {\n        \"command\": \"python -B docs/todos/10-self-hosting-hardening/evidence/05/slice-a-observe-entries.py\",\n        \"exit_code\": 0,\n        \"receipt\": \"docs/todos/10-self-hosting-hardening/evidence/05/slice-a-experiment-entries-1.json\",\n        \"output\": \"docs/todos/10-self-hosting-hardening/evidence/05/slice-a-experiment-entries-1.json.output.txt\",\n        \"summary\": \"实际复数iter_queries.py及iter_cli.py在三根缺失；标签查询128保留UNKNOWN；01 canceled与02—04 completed分开记录。\"\n      }\n    },\n    {\n      \"name\": \"decision\",\n      \"kind\": \"observation\",\n      \"output\": \"docs/todos/10-self-hosting-hardening/evidence/05/slice-a-decision.json\",\n      \"summary\": \"有限清单OBSERVED、完整版本UNKNOWN的分类与原始实验一致；历史R7、P1及补齐责任没有外推。\"\n    },\n    {\n      \"name\": \"interfaces\",\n      \"kind\": \"observation\",\n      \"output\": \"docs/todos/10-self-hosting-hardening/evidence/05/slice-a-interfaces.json\",\n      \"summary\": \"四层九字段、UTC日期、原件捕获、UNKNOWN及状态真源边界与索引一致。\"\n    }\n  ],\n  \"reused_evidence\": [\n    {\n      \"coverage\": \"指定三文件结构、入口和既有契约回归\",\n      \"original_source_sha\": \"21acfe0b83122f10d105a65a8891667b4aa0977e\",\n      \"outputs\": [\n        \"docs/todos/10-self-hosting-hardening/evidence/05/slice-a-targeted-final.json.output.txt\",\n        \"docs/todos/10-self-hosting-hardening/evidence/05/controller-regression.json.output.txt\"\n      ],\n      \"result\": \"实现者9 passed in 0.65s；主控独立9 passed in 0.66s；对应receipt均COMPLETED/raw0/tree_terminal=true。\",\n      \"reuse_basis\": \"实际21acfe0..C变更不包含产品、测试、Note或上述原始实验和回归输出；未受影响证据沿用，不冒称Reviewer重新执行。\"\n    },\n    {\n      \"coverage\": \"Note目录、相对链接及格式\",\n      \"outputs\": [\n        \"docs/todos/10-self-hosting-hardening/evidence/05/slice-a-note-tree-1.json.output.txt\",\n        \"docs/todos/10-self-hosting-hardening/evidence/05/slice-a-note-format-final.json.output.txt\"\n      ],\n      \"result\": \"直接命令各raw0，输出分别为18 notes tree/links verified和18 notes verified。\",\n      \"reuse_basis\": \"Note及相关拓扑未变化；排除错误嵌套PowerShell命令后仍有有效直接命令证据。\"\n    },\n    {\n      \"coverage\": \"01—04既有批准及历史消费索引\",\n      \"outputs\": [\n        \"docs/todos/10-self-hosting-hardening/evidence/01/review.json\",\n        \"docs/todos/10-self-hosting-hardening/evidence/02/review.json\",\n        \"docs/todos/10-self-hosting-hardening/evidence/03/review.json\",\n        \"docs/todos/10-self-hosting-hardening/evidence/04/review.json\"\n      ],\n      \"reuse_basis\": \"仅核对索引引用的原候选、checks及批准范围，不重做01—04验收；原生completed/canceled均不替代这些批准。\"\n    }\n  ],\n  \"excluded_evidence\": [\n    {\n      \"file\": \"docs/todos/10-self-hosting-hardening/evidence/05/slice-a-note-final.json.output.txt:8-14\",\n      \"fact\": \"receipt raw0，但输出存在-ne CommandNotFoundException。\",\n      \"treatment\": \"明确不作为成功门禁证据；保留反证，采用直接tree及直接final format原件。\",\n      \"blocking\": false\n    },\n    {\n      \"fact\": \"原始日志含既有空行、CR或尾随空白。\",\n      \"treatment\": \"保持原件，不以日志空白要求清理或阻断产品；不把raw0或whitespace检查当事实验收。\",\n      \"blocking\": false\n    }\n  ],\n  \"unknown_boundaries\": [\n    {\n      \"object\": \"完整当前安装版本、对应reviewed_candidate及安装新会话采用\",\n      \"status\": \"UNKNOWN\",\n      \"owner\": \"部署owner\",\n      \"resume_condition\": \"另获部署授权后提供完整当前交付manifest、版本归属和原生新会话消费证据。\"\n    },\n    {\n      \"object\": \"P1所查deployment.json及历史候选Git来源\",\n      \"status\": \"UNKNOWN\",\n      \"owner\": \"历史证据owner\",\n      \"resume_condition\": \"提供原始来源或确认不可恢复；不遍历全部历史、不补造SHA。\"\n    },\n    {\n      \"object\": \"05登记D/local strict及整轮验收\",\n      \"status\": \"尚未由本次审查执行\",\n      \"owner\": \"主控\",\n      \"resume_condition\": \"消费本独审裁决后按既定Git登记合同推进；整轮门禁保持独立范围。\"\n    }\n  ],\n  \"reviewer_execution\": {\n    \"new_business_or_test_commands\": [],\n    \"file_writes\": [],\n    \"commits\": [],\n    \"delegations\": [],\n    \"final_head_rechecked\": \"8616468ab3384efad26095ca182255448076e081\",\n    \"final_dirty\": [],\n    \"runtime_identity_source\": \"CODEX_THREAD_ID和CODEX_SESSION_ID均返回01a1d636-91f8-73b2-92cd-e1933b28bda6\"\n  },\n  \"typesafe\": {\n    \"request\": {\n      \"state\": {\n        \"contract\": {\n          \"task\": \"05 Spike-Discovery release evidence index only\",\n          \"required\": \"Four layers, nine row fields, UTC date/scope/original pointers; UNKNOWN owner and recovery; SKILL links index and template_generation; no install/config/deployment writes, credentials read, root README change, second task status ledger, self final SHA or iteration pre-PASS. experiment successful command; decision/interfaces observations. Tests do not establish facts. No RED requirement.\",\n          \"candidate\": \"8616468ab3384efad26095ca182255448076e081\",\n          \"base\": \"8392193a0d9e883892f75780a63a1b16f67682c4\"\n        },\n        \"git_observed\": {\n          \"branch\": \"feat/iter-10-self-hosting-hardening\",\n          \"head\": \"8616468ab3384efad26095ca182255448076e081\",\n          \"status_short\": \"\",\n          \"changed_files\": 60,\n          \"changes\": \"SKILL one resource link; new release_status index, structural tests, Note, evidence/05 and 05 card. Root README, iteration README, 01-04 source/receipts absent from diff. Product/test/Note unchanged from 21acfe0b83122f10d105a65a8891667b4aa0977e; later commits add card and evidence.\"\n        },\n        \"index_text\": {\n          \"source\": \"main d3bd97a and iter10 implementation-before baseline 8392193 separate\",\n          \"reviewed\": \"01-04 reviewed candidates from original APPROVED review.json, only original task scope; no whole-iteration approval\",\n          \"installation\": \"58 explicit historical paths in three roots equal main 58/58; 45/58 equal iter10 baseline; 36/58 historical frozen. Complete version UNKNOWN. iter_sync differs; templates/queries/cli/template_generation absent. First singular iter_query typo preserved, supplement observes plural iter_queries and iter_cli missing, tag lookup exit128.\",\n          \"consumption\": \"Native records separate from synthetic FS; 01 linked slice canceled, 02-04 completed, terminal status not approval. R7 historical CLOSED_LOCAL_MOCK_FS excludes provider/full media/production/Git branch. P1 deployment missing at specified location UNKNOWN.\",\n          \"unknowns\": \"Deployment owner: complete current manifest/version attribution and authorized new-session adoption. Historical evidence owner: supply original or confirm unrecoverable. Controller: later task registration/strict and total review.\",\n          \"pointers\": \"Project-relative receipts/native records and five byte captures; capture manifest gives original absolute source, capture time, scope.\"\n        },\n        \"originals_read\": {\n          \"experiment\": {\n            \"status\": \"COMPLETED\",\n            \"raw_exit_code\": 0,\n            \"tree_terminal\": true,\n            \"start\": \"2026-11-13T18:33:45.406517+00:00\",\n            \"output\": \"1396-line raw output contains source/main commit, captures, 3x58 per-path booleans, entries, original review pointers; script only reads listed paths and writes own evidence\"\n          },\n          \"supplement\": {\n            \"status\": \"COMPLETED\",\n            \"raw_exit_code\": 0,\n            \"tree_terminal\": true,\n            \"at\": \"2026-11-13T18:36:33.343445+00:00\",\n            \"output\": \"plural query/CLI absent three roots; no tags; 01 canceled vs 02-04 completed\"\n          },\n          \"historical\": \"Read original manifest SC-FS-I01-20261112-R7 files_per_target58 and explicit .agents/SKILL/references/scripts/templates/tests items; git-final head d29ddc2, 205 tests,58 equal,no push; R7 full acceptance time 2026-11-12T10:12:51.023029Z; P1 README says maintenance source only and synthetic FS.\",\n          \"decision\": \"Four layers separate, bounded current file equality, full identity UNKNOWN; owner+conditions\",\n          \"interfaces\": \"Nine fields, four layers, UTC capture provenance, task cards own status\",\n          \"tests\": \"Implementer final output9 passed in0.65s; controller independent output9 passed in0.66s; both receipts COMPLETED/raw0/tree terminal true; coverage unchanged to C\",\n          \"note\": \"Direct tree raw0 output18 notes links verified; direct final format raw0 output18 notes verified\",\n          \"counterevidence\": \"slice-a-note-final nested powershell raw0 output contains '-ne' command error. Checkpoint and card explicitly exclude from success evidence; direct format rerun available.\",\n          \"scope\": \"controller scope raw0, output all60 changed files within scope; git names independently read\"\n        }\n      },\n      \"questions\": {\n        \"review_disposition\": {\n          \"type\": \"choice\",\n          \"instructions\": \"For the task05 frozen candidate and stated contract only, choose the review disposition warranted by the supplied observations. Decide whether the index and primary evidence meet that bounded deliverable. Treat installation identity and new-session adoption as UNKNOWN as allowed; do not treat test counts or native completion as fact approval.\",\n          \"criteria\": {\n            \"APPROVED\": \"The bounded index deliverable and required primary checks are supported; retained unknowns have owners/conditions and no demonstrated material contract defect.\",\n            \"CHANGES_REQUESTED\": \"An observed material mismatch or unsupported claim in the candidate requires correction within task05.\",\n            \"BLOCKED\": \"A necessary primary input or provenance is missing so task05 cannot be judged.\",\n            \"INSUFFICIENT\": \"The observations do not distinguish the dispositions.\"\n          }\n        }\n      }\n    },\n    \"raw_response\": {\n      \"content\": [\n        {\n          \"type\": \"text\",\n          \"text\": \"{\\\"model\\\":\\\"jev-1.14.0\\\",\\\"answers\\\":{\\\"review_disposition\\\":{\\\"type\\\":\\\"choice\\\",\\\"choice\\\":\\\"CHANGES_REQUESTED\\\",\\\"confidence\\\":0.23,\\\"probabilities\\\":{\\\"APPROVED\\\":0.4,\\\"BLOCKED\\\":0.16,\\\"CHANGES_REQUESTED\\\":0.42,\\\"INSUFFICIENT\\\":0.02}}},\\\"usage\\\":{\\\"input_tokens\\\":1695,\\\"output_tokens\\\":66}}\"\n        }\n      ]\n    },\n    \"application\": \"结果不明确：CHANGES_REQUESTED 0.42与APPROVED 0.40接近，confidence为0.23，且未提供具体缺陷。随后定点核对原始输出数量及五份捕获与来源字节，均一致；未重复刷分。Reviewer依据实际差异、原件和任务契约独立裁决APPROVED，不将TypeSafe结果冒作批准。\"\n  }\n}",
+        "duration_ms": 229216,
+        "progress": {
+          "steps": 22,
+          "marks": [
+            "ok",
+            "ok",
+            "ok",
+            "ok",
+            "ok",
+            "ok",
+            "ok",
+            "ok",
+            "ok",
+            "ok",
+            "ok",
+            "ok"
+          ],
+          "last_step": "$e='docs/todos/10-self-hosting-hardening/evidence/05'; $o=Get-Content -Raw \"$e/slice-a-experiment-1.json.output.txt\" | C…"
+        },
+        "raw": {
+          "content": [
+            {
+              "type": "text",
+              "text": "{\"tasks\":[{\"task_id\":\"3521c397-6407-4026-ace5-8c1105b191ae\",\"status\":\"completed\",\"child_conversation_id\":1721,\"agent_type\":\"codex\",\"text\":\"{\\n  \\\"reviewer\\\": {\\n    \\\"identity\\\": \\\"Codex independent reviewer / session 01a1d636-91f8-73b2-92cd-e1933b28bda6\\\",\\n    \\\"runtime_role\\\": \\\"/root\\\",\\n    \\\"independent\\\": true,\\n    \\\"participation\\\": \\\"未参与任务05实现、测试、设计或RCA；不是主控1699或实现1720\\\",\\n    \\\"read_only\\\": true\\n  },\\n  \\\"base_sha\\\": \\\"8392193a0d9e883892f75780a63a1b16f67682c4\\\",\\n  \\\"head_sha\\\": \\\"8616468ab3384efad26095ca182255448076e081\\\",\\n  \\\"contract_sha\\\": \\\"8616468ab3384efad26095ca182255448076e081\\\",\\n  \\\"branch\\\": \\\"feat/iter-10-self-hosting-hardening\\\",\\n  \\\"dirty\\\": [],\\n  \\\"verdict\\\": \\\"APPROVED\\\",\\n  \\\"verdict_basis\\\": \\\"实际差异、原始实验输出及历史原件支持任务05限定交付。四层事实、日期、范围、来源和UNKNOWN补齐责任清楚；未发现需要返修的实质缺陷。本裁决不表示部署、新会话采用或整轮验收通过。\\\",\\n  \\\"scope\\\": {\\n    \\\"result\\\": \\\"符合\\\",\\n    \\\"evidence\\\": [\\n      \\\"实际BASE..C共60个变更文件，限于05白名单、05卡及其证据目录。\\\",\\n      \\\"SKILL.md仅增加发布索引和template_generation资源链接。\\\",\\n      \\\"根docs/todos/README.md、迭代README、01—04源码及收据未在本次差异中修改。\\\",\\n      \\\"slice-a-observe.py:21-64使用历史manifest显式路径及命名入口；未递归扫描安装目录或读取凭据、配置。\\\",\\n      \\\"controller-scope.json.output.txt:1记录60个文件均在声明范围内；本次另读取实际Git变更清单核对。\\\"\\n    ]\\n  },\\n  \\\"spec\\\": {\\n    \\\"result\\\": \\\"符合\\\",\\n    \\\"evidence\\\": [\\n      \\\"references/release_status.md:5-16定义九字段及UTC、原件捕获和范围含义；18-58分列源码、已审候选、安装、实际消费。\\\",\\n      \\\"references/release_status.md:22-34分别记录维护main、iter10实施前基线及01—04原收据候选，不把逐卡批准提升为整轮批准。\\\",\\n      \\\"references/release_status.md:38-44明确58路径只是历史清单观察，完整安装版本UNKNOWN；说明单数入口错误及复数入口补测。\\\",\\n      \\\"references/release_status.md:49-58区分原生切片终态、最终review批准、真实Git自用与合成FS。\\\",\\n      \\\"references/release_status.md:60-65明确部署owner、历史证据owner、相应操作owner及主控的补齐条件。\\\",\\n      \\\"SKILL.md:91同时链接release_status.md与template_generation.md；索引没有自身最终SHA、本轮预PASS或另一任务状态账。\\\"\\n    ]\\n  },\\n  \\\"quality\\\": {\\n    \\\"result\\\": \\\"符合\\\",\\n    \\\"evidence\\\": [\\n      \\\"完整读取SKILL、共同协议、任务卡schema、迭代README、05卡、发布索引、结构测试及Note；审查实际差异和关键原始输出。\\\",\\n      \\\"原始实验逐文件记录支持三根各58/58等于main、45/58等于iter10基线、36/58等于历史冻结源；本次从原始输出重新汇总得到相同数量。\\\",\\n      \\\"历史manifest实际含58条唯一relative路径、两个副本目标；观察脚本另比较维护main，未把manifest目标数冒称三份部署操作。\\\",\\n      \\\"五份历史捕获与各自记录的原绝对来源逐字节相等；捕获清单保留时间和范围。\\\",\\n      \\\"tests/test_release_index.py明确只检查结构、字段和链接，不承担事实批准。\\\"\\n    ]\\n  },\\n  \\\"issues\\\": [],\\n  \\\"checks\\\": [\\n    {\\n      \\\"name\\\": \\\"experiment\\\",\\n      \\\"kind\\\": \\\"command\\\",\\n      \\\"command\\\": \\\"python -B docs/todos/10-self-hosting-hardening/evidence/05/slice-a-observe.py\\\",\\n      \\\"cwd\\\": \\\".\\\",\\n      \\\"exit_code\\\": 0,\\n      \\\"receipt\\\": \\\"docs/todos/10-self-hosting-hardening/evidence/05/slice-a-experiment-1.json\\\",\\n      \\\"output\\\": \\\"docs/todos/10-self-hosting-hardening/evidence/05/slice-a-experiment-1.json.output.txt\\\",\\n      \\\"summary\\\": \\\"COMPLETED、tree_terminal=true；原始逐文件布尔值、捕获来源及review指针支持限定观察。\\\",\\n      \\\"supplement\\\": {\\n        \\\"command\\\": \\\"python -B docs/todos/10-self-hosting-hardening/evidence/05/slice-a-observe-entries.py\\\",\\n        \\\"exit_code\\\": 0,\\n        \\\"receipt\\\": \\\"docs/todos/10-self-hosting-hardening/evidence/05/slice-a-experiment-entries-1.json\\\",\\n        \\\"output\\\": \\\"docs/todos/10-self-hosting-hardening/evidence/05/slice-a-experiment-entries-1.json.output.txt\\\",\\n        \\\"summary\\\": \\\"实际复数iter_queries.py及iter_cli.py在三根缺失；标签查询128保留UNKNOWN；01 canceled与02—04 completed分开记录。\\\"\\n      }\\n    },\\n    {\\n      \\\"name\\\": \\\"decision\\\",\\n      \\\"kind\\\": \\\"observation\\\",\\n      \\\"output\\\": \\\"docs/todos/10-self-hosting-hardening/evidence/05/slice-a-decision.json\\\",\\n      \\\"summary\\\": \\\"有限清单OBSERVED、完整版本UNKNOWN的分类与原始实验一致；历史R7、P1及补齐责任没有外推。\\\"\\n    },\\n    {\\n      \\\"name\\\": \\\"interfaces\\\",\\n      \\\"kind\\\": \\\"observation\\\",\\n      \\\"output\\\": \\\"docs/todos/10-self-hosting-hardening/evidence/05/slice-a-interfaces.json\\\",\\n      \\\"summary\\\": \\\"四层九字段、UTC日期、原件捕获、UNKNOWN及状态真源边界与索引一致。\\\"\\n    }\\n  ],\\n  \\\"reused_evidence\\\": [\\n    {\\n      \\\"coverage\\\": \\\"指定三文件结构、入口和既有契约回归\\\",\\n      \\\"original_source_sha\\\": \\\"21acfe0b83122f10d105a65a8891667b4aa0977e\\\",\\n      \\\"outputs\\\": [\\n        \\\"docs/todos/10-self-hosting-hardening/evidence/05/slice-a-targeted-final.json.output.txt\\\",\\n        \\\"docs/todos/10-self-hosting-hardening/evidence/05/controller-regression.json.output.txt\\\"\\n      ],\\n      \\\"result\\\": \\\"实现者9 passed in 0.65s；主控独立9 passed in 0.66s；对应receipt均COMPLETED/raw0/tree_terminal=true。\\\",\\n      \\\"reuse_basis\\\": \\\"实际21acfe0..C变更不包含产品、测试、Note或上述原始实验和回归输出；未受影响证据沿用，不冒称Reviewer重新执行。\\\"\\n    },\\n    {\\n      \\\"coverage\\\": \\\"Note目录、相对链接及格式\\\",\\n      \\\"outputs\\\": [\\n        \\\"docs/todos/10-self-hosting-hardening/evidence/05/slice-a-note-tree-1.json.output.txt\\\",\\n        \\\"docs/todos/10-self-hosting-hardening/evidence/05/slice-a-note-format-final.json.output.txt\\\"\\n      ],\\n      \\\"result\\\": \\\"直接命令各raw0，输出分别为18 notes tree/links verified和18 notes verified。\\\",\\n      \\\"reuse_basis\\\": \\\"Note及相关拓扑未变化；排除错误嵌套PowerShell命令后仍有有效直接命令证据。\\\"\\n    },\\n    {\\n      \\\"coverage\\\": \\\"01—04既有批准及历史消费索引\\\",\\n      \\\"outputs\\\": [\\n        \\\"docs/todos/10-self-hosting-hardening/evidence/01/review.json\\\",\\n        \\\"docs/todos/10-self-hosting-hardening/evidence/02/review.json\\\",\\n        \\\"docs/todos/10-self-hosting-hardening/evidence/03/review.json\\\",\\n        \\\"docs/todos/10-self-hosting-hardening/evidence/04/review.json\\\"\\n      ],\\n      \\\"reuse_basis\\\": \\\"仅核对索引引用的原候选、checks及批准范围，不重做01—04验收；原生completed/canceled均不替代这些批准。\\\"\\n    }\\n  ],\\n  \\\"excluded_evidence\\\": [\\n    {\\n      \\\"file\\\": \\\"docs/todos/10-self-hosting-hardening/evidence/05/slice-a-note-final.json.output.txt:8-14\\\",\\n      \\\"fact\\\": \\\"receipt raw0，但输出存在-ne CommandNotFoundException。\\\",\\n      \\\"treatment\\\": \\\"明确不作为成功门禁证据；保留反证，采用直接tree及直接final format原件。\\\",\\n      \\\"blocking\\\": false\\n    },\\n    {\\n      \\\"fact\\\": \\\"原始日志含既有空行、CR或尾随空白。\\\",\\n      \\\"treatment\\\": \\\"保持原件，不以日志空白要求清理或阻断产品；不把raw0或whitespace检查当事实验收。\\\",\\n      \\\"blocking\\\": false\\n    }\\n  ],\\n  \\\"unknown_boundaries\\\": [\\n    {\\n      \\\"object\\\": \\\"完整当前安装版本、对应reviewed_candidate及安装新会话采用\\\",\\n      \\\"status\\\": \\\"UNKNOWN\\\",\\n      \\\"owner\\\": \\\"部署owner\\\",\\n      \\\"resume_condition\\\": \\\"另获部署授权后提供完整当前交付manifest、版本归属和原生新会话消费证据。\\\"\\n    },\\n    {\\n      \\\"object\\\": \\\"P1所查deployment.json及历史候选Git来源\\\",\\n      \\\"status\\\": \\\"UNKNOWN\\\",\\n      \\\"owner\\\": \\\"历史证据owner\\\",\\n      \\\"resume_condition\\\": \\\"提供原始来源或确认不可恢复；不遍历全部历史、不补造SHA。\\\"\\n    },\\n    {\\n      \\\"object\\\": \\\"05登记D/local strict及整轮验收\\\",\\n      \\\"status\\\": \\\"尚未由本次审查执行\\\",\\n      \\\"owner\\\": \\\"主控\\\",\\n      \\\"resume_condition\\\": \\\"消费本独审裁决后按既定Git登记合同推进；整轮门禁保持独立范围。\\\"\\n    }\\n  ],\\n  \\\"reviewer_execution\\\": {\\n    \\\"new_business_or_test_commands\\\": [],\\n    \\\"file_writes\\\": [],\\n    \\\"commits\\\": [],\\n    \\\"delegations\\\": [],\\n    \\\"final_head_rechecked\\\": \\\"8616468ab3384efad26095ca182255448076e081\\\",\\n    \\\"final_dirty\\\": [],\\n    \\\"runtime_identity_source\\\": \\\"CODEX_THREAD_ID和CODEX_SESSION_ID均返回01a1d636-91f8-73b2-92cd-e1933b28bda6\\\"\\n  },\\n  \\\"typesafe\\\": {\\n    \\\"request\\\": {\\n      \\\"state\\\": {\\n        \\\"contract\\\": {\\n          \\\"task\\\": \\\"05 Spike-Discovery release evidence index only\\\",\\n          \\\"required\\\": \\\"Four layers, nine row fields, UTC date/scope/original pointers; UNKNOWN owner and recovery; SKILL links index and template_generation; no install/config/deployment writes, credentials read, root README change, second task status ledger, self final SHA or iteration pre-PASS. experiment successful command; decision/interfaces observations. Tests do not establish facts. No RED requirement.\\\",\\n          \\\"candidate\\\": \\\"8616468ab3384efad26095ca182255448076e081\\\",\\n          \\\"base\\\": \\\"8392193a0d9e883892f75780a63a1b16f67682c4\\\"\\n        },\\n        \\\"git_observed\\\": {\\n          \\\"branch\\\": \\\"feat/iter-10-self-hosting-hardening\\\",\\n          \\\"head\\\": \\\"8616468ab3384efad26095ca182255448076e081\\\",\\n          \\\"status_short\\\": \\\"\\\",\\n          \\\"changed_files\\\": 60,\\n          \\\"changes\\\": \\\"SKILL one resource link; new release_status index, structural tests, Note, evidence/05 and 05 card. Root README, iteration README, 01-04 source/receipts absent from diff. Product/test/Note unchanged from 21acfe0b83122f10d105a65a8891667b4aa0977e; later commits add card and evidence.\\\"\\n        },\\n        \\\"index_text\\\": {\\n          \\\"source\\\": \\\"main d3bd97a and iter10 implementation-before baseline 8392193 separate\\\",\\n          \\\"reviewed\\\": \\\"01-04 reviewed candidates from original APPROVED review.json, only original task scope; no whole-iteration approval\\\",\\n          \\\"installation\\\": \\\"58 explicit historical paths in three roots equal main 58/58; 45/58 equal iter10 baseline; 36/58 historical frozen. Complete version UNKNOWN. iter_sync differs; templates/queries/cli/template_generation absent. First singular iter_query typo preserved, supplement observes plural iter_queries and iter_cli missing, tag lookup exit128.\\\",\\n          \\\"consumption\\\": \\\"Native records separate from synthetic FS; 01 linked slice canceled, 02-04 completed, terminal status not approval. R7 historical CLOSED_LOCAL_MOCK_FS excludes provider/full media/production/Git branch. P1 deployment missing at specified location UNKNOWN.\\\",\\n          \\\"unknowns\\\": \\\"Deployment owner: complete current manifest/version attribution and authorized new-session adoption. Historical evidence owner: supply original or confirm unrecoverable. Controller: later task registration/strict and total review.\\\",\\n          \\\"pointers\\\": \\\"Project-relative receipts/native records and five byte captures; capture manifest gives original absolute source, capture time, scope.\\\"\\n        },\\n        \\\"originals_read\\\": {\\n          \\\"experiment\\\": {\\n            \\\"status\\\": \\\"COMPLETED\\\",\\n            \\\"raw_exit_code\\\": 0,\\n            \\\"tree_terminal\\\": true,\\n            \\\"start\\\": \\\"2026-11-13T18:33:45.406517+00:00\\\",\\n            \\\"output\\\": \\\"1396-line raw output contains source/main commit, captures, 3x58 per-path booleans, entries, original review pointers; script only reads listed paths and writes own evidence\\\"\\n          },\\n          \\\"supplement\\\": {\\n            \\\"status\\\": \\\"COMPLETED\\\",\\n            \\\"raw_exit_code\\\": 0,\\n            \\\"tree_terminal\\\": true,\\n            \\\"at\\\": \\\"2026-11-13T18:36:33.343445+00:00\\\",\\n            \\\"output\\\": \\\"plural query/CLI absent three roots; no tags; 01 canceled vs 02-04 completed\\\"\\n          },\\n          \\\"historical\\\": \\\"Read original manifest SC-FS-I01-20261112-R7 files_per_target58 and explicit .agents/SKILL/references/scripts/templates/tests items; git-final head d29ddc2, 205 tests,58 equal,no push; R7 full acceptance time 2026-11-12T10:12:51.023029Z; P1 README says maintenance source only and synthetic FS.\\\",\\n          \\\"decision\\\": \\\"Four layers separate, bounded current file equality, full identity UNKNOWN; owner+conditions\\\",\\n          \\\"interfaces\\\": \\\"Nine fields, four layers, UTC capture provenance, task cards own status\\\",\\n          \\\"tests\\\": \\\"Implementer final output9 passed in0.65s; controller independent output9 passed in0.66s; both receipts COMPLETED/raw0/tree terminal true; coverage unchanged to C\\\",\\n          \\\"note\\\": \\\"Direct tree raw0 output18 notes links verified; direct final format raw0 output18 notes verified\\\",\\n          \\\"counterevidence\\\": \\\"slice-a-note-final nested powershell raw0 output contains '-ne' command error. Checkpoint and card explicitly exclude from success evidence; direct format rerun available.\\\",\\n          \\\"scope\\\": \\\"controller scope raw0, output all60 changed files within scope; git names independently read\\\"\\n        }\\n      },\\n      \\\"questions\\\": {\\n        \\\"review_disposition\\\": {\\n          \\\"type\\\": \\\"choice\\\",\\n          \\\"instructions\\\": \\\"For the task05 frozen candidate and stated contract only, choose the review disposition warranted by the supplied observations. Decide whether the index and primary evidence meet that bounded deliverable. Treat installation identity and new-session adoption as UNKNOWN as allowed; do not treat test counts or native completion as fact approval.\\\",\\n          \\\"criteria\\\": {\\n            \\\"APPROVED\\\": \\\"The bounded index deliverable and required primary checks are supported; retained unknowns have owners/conditions and no demonstrated material contract defect.\\\",\\n            \\\"CHANGES_REQUESTED\\\": \\\"An observed material mismatch or unsupported claim in the candidate requires correction within task05.\\\",\\n            \\\"BLOCKED\\\": \\\"A necessary primary input or provenance is missing so task05 cannot be judged.\\\",\\n            \\\"INSUFFICIENT\\\": \\\"The observations do not distinguish the dispositions.\\\"\\n          }\\n        }\\n      }\\n    },\\n    \\\"raw_response\\\": {\\n      \\\"content\\\": [\\n        {\\n          \\\"type\\\": \\\"text\\\",\\n          \\\"text\\\": \\\"{\\\\\\\"model\\\\\\\":\\\\\\\"jev-1.14.0\\\\\\\",\\\\\\\"answers\\\\\\\":{\\\\\\\"review_disposition\\\\\\\":{\\\\\\\"type\\\\\\\":\\\\\\\"choice\\\\\\\",\\\\\\\"choice\\\\\\\":\\\\\\\"CHANGES_REQUESTED\\\\\\\",\\\\\\\"confidence\\\\\\\":0.23,\\\\\\\"probabilities\\\\\\\":{\\\\\\\"APPROVED\\\\\\\":0.4,\\\\\\\"BLOCKED\\\\\\\":0.16,\\\\\\\"CHANGES_REQUESTED\\\\\\\":0.42,\\\\\\\"INSUFFICIENT\\\\\\\":0.02}}},\\\\\\\"usage\\\\\\\":{\\\\\\\"input_tokens\\\\\\\":1695,\\\\\\\"output_tokens\\\\\\\":66}}\\\"\\n        }\\n      ]\\n    },\\n    \\\"application\\\": \\\"结果不明确：CHANGES_REQUESTED 0.42与APPROVED 0.40接近，confidence为0.23，且未提供具体缺陷。随后定点核对原始输出数量及五份捕获与来源字节，均一致；未重复刷分。Reviewer依据实际差异、原件和任务契约独立裁决APPROVED，不将TypeSafe结果冒作批准。\\\"\\n  }\\n}\",\"duration_ms\":229216,\"progress\":{\"steps\":22,\"marks\":[\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\"],\"last_step\":\"$e='docs/todos/10-self-hosting-hardening/evidence/05'; $o=Get-Content -Raw \\\"$e/slice-a-experiment-1.json.output.txt\\\" | C…\"}}]}"
+            }
+          ],
+          "structuredContent": {
+            "tasks": [
+              {
+                "task_id": "3521c397-6407-4026-ace5-8c1105b191ae",
+                "status": "completed",
+                "child_conversation_id": 1721,
+                "agent_type": "codex",
+                "text": "{\n  \"reviewer\": {\n    \"identity\": \"Codex independent reviewer / session 01a1d636-91f8-73b2-92cd-e1933b28bda6\",\n    \"runtime_role\": \"/root\",\n    \"independent\": true,\n    \"participation\": \"未参与任务05实现、测试、设计或RCA；不是主控1699或实现1720\",\n    \"read_only\": true\n  },\n  \"base_sha\": \"8392193a0d9e883892f75780a63a1b16f67682c4\",\n  \"head_sha\": \"8616468ab3384efad26095ca182255448076e081\",\n  \"contract_sha\": \"8616468ab3384efad26095ca182255448076e081\",\n  \"branch\": \"feat/iter-10-self-hosting-hardening\",\n  \"dirty\": [],\n  \"verdict\": \"APPROVED\",\n  \"verdict_basis\": \"实际差异、原始实验输出及历史原件支持任务05限定交付。四层事实、日期、范围、来源和UNKNOWN补齐责任清楚；未发现需要返修的实质缺陷。本裁决不表示部署、新会话采用或整轮验收通过。\",\n  \"scope\": {\n    \"result\": \"符合\",\n    \"evidence\": [\n      \"实际BASE..C共60个变更文件，限于05白名单、05卡及其证据目录。\",\n      \"SKILL.md仅增加发布索引和template_generation资源链接。\",\n      \"根docs/todos/README.md、迭代README、01—04源码及收据未在本次差异中修改。\",\n      \"slice-a-observe.py:21-64使用历史manifest显式路径及命名入口；未递归扫描安装目录或读取凭据、配置。\",\n      \"controller-scope.json.output.txt:1记录60个文件均在声明范围内；本次另读取实际Git变更清单核对。\"\n    ]\n  },\n  \"spec\": {\n    \"result\": \"符合\",\n    \"evidence\": [\n      \"references/release_status.md:5-16定义九字段及UTC、原件捕获和范围含义；18-58分列源码、已审候选、安装、实际消费。\",\n      \"references/release_status.md:22-34分别记录维护main、iter10实施前基线及01—04原收据候选，不把逐卡批准提升为整轮批准。\",\n      \"references/release_status.md:38-44明确58路径只是历史清单观察，完整安装版本UNKNOWN；说明单数入口错误及复数入口补测。\",\n      \"references/release_status.md:49-58区分原生切片终态、最终review批准、真实Git自用与合成FS。\",\n      \"references/release_status.md:60-65明确部署owner、历史证据owner、相应操作owner及主控的补齐条件。\",\n      \"SKILL.md:91同时链接release_status.md与template_generation.md；索引没有自身最终SHA、本轮预PASS或另一任务状态账。\"\n    ]\n  },\n  \"quality\": {\n    \"result\": \"符合\",\n    \"evidence\": [\n      \"完整读取SKILL、共同协议、任务卡schema、迭代README、05卡、发布索引、结构测试及Note；审查实际差异和关键原始输出。\",\n      \"原始实验逐文件记录支持三根各58/58等于main、45/58等于iter10基线、36/58等于历史冻结源；本次从原始输出重新汇总得到相同数量。\",\n      \"历史manifest实际含58条唯一relative路径、两个副本目标；观察脚本另比较维护main，未把manifest目标数冒称三份部署操作。\",\n      \"五份历史捕获与各自记录的原绝对来源逐字节相等；捕获清单保留时间和范围。\",\n      \"tests/test_release_index.py明确只检查结构、字段和链接，不承担事实批准。\"\n    ]\n  },\n  \"issues\": [],\n  \"checks\": [\n    {\n      \"name\": \"experiment\",\n      \"kind\": \"command\",\n      \"command\": \"python -B docs/todos/10-self-hosting-hardening/evidence/05/slice-a-observe.py\",\n      \"cwd\": \".\",\n      \"exit_code\": 0,\n      \"receipt\": \"docs/todos/10-self-hosting-hardening/evidence/05/slice-a-experiment-1.json\",\n      \"output\": \"docs/todos/10-self-hosting-hardening/evidence/05/slice-a-experiment-1.json.output.txt\",\n      \"summary\": \"COMPLETED、tree_terminal=true；原始逐文件布尔值、捕获来源及review指针支持限定观察。\",\n      \"supplement\": {\n        \"command\": \"python -B docs/todos/10-self-hosting-hardening/evidence/05/slice-a-observe-entries.py\",\n        \"exit_code\": 0,\n        \"receipt\": \"docs/todos/10-self-hosting-hardening/evidence/05/slice-a-experiment-entries-1.json\",\n        \"output\": \"docs/todos/10-self-hosting-hardening/evidence/05/slice-a-experiment-entries-1.json.output.txt\",\n        \"summary\": \"实际复数iter_queries.py及iter_cli.py在三根缺失；标签查询128保留UNKNOWN；01 canceled与02—04 completed分开记录。\"\n      }\n    },\n    {\n      \"name\": \"decision\",\n      \"kind\": \"observation\",\n      \"output\": \"docs/todos/10-self-hosting-hardening/evidence/05/slice-a-decision.json\",\n      \"summary\": \"有限清单OBSERVED、完整版本UNKNOWN的分类与原始实验一致；历史R7、P1及补齐责任没有外推。\"\n    },\n    {\n      \"name\": \"interfaces\",\n      \"kind\": \"observation\",\n      \"output\": \"docs/todos/10-self-hosting-hardening/evidence/05/slice-a-interfaces.json\",\n      \"summary\": \"四层九字段、UTC日期、原件捕获、UNKNOWN及状态真源边界与索引一致。\"\n    }\n  ],\n  \"reused_evidence\": [\n    {\n      \"coverage\": \"指定三文件结构、入口和既有契约回归\",\n      \"original_source_sha\": \"21acfe0b83122f10d105a65a8891667b4aa0977e\",\n      \"outputs\": [\n        \"docs/todos/10-self-hosting-hardening/evidence/05/slice-a-targeted-final.json.output.txt\",\n        \"docs/todos/10-self-hosting-hardening/evidence/05/controller-regression.json.output.txt\"\n      ],\n      \"result\": \"实现者9 passed in 0.65s；主控独立9 passed in 0.66s；对应receipt均COMPLETED/raw0/tree_terminal=true。\",\n      \"reuse_basis\": \"实际21acfe0..C变更不包含产品、测试、Note或上述原始实验和回归输出；未受影响证据沿用，不冒称Reviewer重新执行。\"\n    },\n    {\n      \"coverage\": \"Note目录、相对链接及格式\",\n      \"outputs\": [\n        \"docs/todos/10-self-hosting-hardening/evidence/05/slice-a-note-tree-1.json.output.txt\",\n        \"docs/todos/10-self-hosting-hardening/evidence/05/slice-a-note-format-final.json.output.txt\"\n      ],\n      \"result\": \"直接命令各raw0，输出分别为18 notes tree/links verified和18 notes verified。\",\n      \"reuse_basis\": \"Note及相关拓扑未变化；排除错误嵌套PowerShell命令后仍有有效直接命令证据。\"\n    },\n    {\n      \"coverage\": \"01—04既有批准及历史消费索引\",\n      \"outputs\": [\n        \"docs/todos/10-self-hosting-hardening/evidence/01/review.json\",\n        \"docs/todos/10-self-hosting-hardening/evidence/02/review.json\",\n        \"docs/todos/10-self-hosting-hardening/evidence/03/review.json\",\n        \"docs/todos/10-self-hosting-hardening/evidence/04/review.json\"\n      ],\n      \"reuse_basis\": \"仅核对索引引用的原候选、checks及批准范围，不重做01—04验收；原生completed/canceled均不替代这些批准。\"\n    }\n  ],\n  \"excluded_evidence\": [\n    {\n      \"file\": \"docs/todos/10-self-hosting-hardening/evidence/05/slice-a-note-final.json.output.txt:8-14\",\n      \"fact\": \"receipt raw0，但输出存在-ne CommandNotFoundException。\",\n      \"treatment\": \"明确不作为成功门禁证据；保留反证，采用直接tree及直接final format原件。\",\n      \"blocking\": false\n    },\n    {\n      \"fact\": \"原始日志含既有空行、CR或尾随空白。\",\n      \"treatment\": \"保持原件，不以日志空白要求清理或阻断产品；不把raw0或whitespace检查当事实验收。\",\n      \"blocking\": false\n    }\n  ],\n  \"unknown_boundaries\": [\n    {\n      \"object\": \"完整当前安装版本、对应reviewed_candidate及安装新会话采用\",\n      \"status\": \"UNKNOWN\",\n      \"owner\": \"部署owner\",\n      \"resume_condition\": \"另获部署授权后提供完整当前交付manifest、版本归属和原生新会话消费证据。\"\n    },\n    {\n      \"object\": \"P1所查deployment.json及历史候选Git来源\",\n      \"status\": \"UNKNOWN\",\n      \"owner\": \"历史证据owner\",\n      \"resume_condition\": \"提供原始来源或确认不可恢复；不遍历全部历史、不补造SHA。\"\n    },\n    {\n      \"object\": \"05登记D/local strict及整轮验收\",\n      \"status\": \"尚未由本次审查执行\",\n      \"owner\": \"主控\",\n      \"resume_condition\": \"消费本独审裁决后按既定Git登记合同推进；整轮门禁保持独立范围。\"\n    }\n  ],\n  \"reviewer_execution\": {\n    \"new_business_or_test_commands\": [],\n    \"file_writes\": [],\n    \"commits\": [],\n    \"delegations\": [],\n    \"final_head_rechecked\": \"8616468ab3384efad26095ca182255448076e081\",\n    \"final_dirty\": [],\n    \"runtime_identity_source\": \"CODEX_THREAD_ID和CODEX_SESSION_ID均返回01a1d636-91f8-73b2-92cd-e1933b28bda6\"\n  },\n  \"typesafe\": {\n    \"request\": {\n      \"state\": {\n        \"contract\": {\n          \"task\": \"05 Spike-Discovery release evidence index only\",\n          \"required\": \"Four layers, nine row fields, UTC date/scope/original pointers; UNKNOWN owner and recovery; SKILL links index and template_generation; no install/config/deployment writes, credentials read, root README change, second task status ledger, self final SHA or iteration pre-PASS. experiment successful command; decision/interfaces observations. Tests do not establish facts. No RED requirement.\",\n          \"candidate\": \"8616468ab3384efad26095ca182255448076e081\",\n          \"base\": \"8392193a0d9e883892f75780a63a1b16f67682c4\"\n        },\n        \"git_observed\": {\n          \"branch\": \"feat/iter-10-self-hosting-hardening\",\n          \"head\": \"8616468ab3384efad26095ca182255448076e081\",\n          \"status_short\": \"\",\n          \"changed_files\": 60,\n          \"changes\": \"SKILL one resource link; new release_status index, structural tests, Note, evidence/05 and 05 card. Root README, iteration README, 01-04 source/receipts absent from diff. Product/test/Note unchanged from 21acfe0b83122f10d105a65a8891667b4aa0977e; later commits add card and evidence.\"\n        },\n        \"index_text\": {\n          \"source\": \"main d3bd97a and iter10 implementation-before baseline 8392193 separate\",\n          \"reviewed\": \"01-04 reviewed candidates from original APPROVED review.json, only original task scope; no whole-iteration approval\",\n          \"installation\": \"58 explicit historical paths in three roots equal main 58/58; 45/58 equal iter10 baseline; 36/58 historical frozen. Complete version UNKNOWN. iter_sync differs; templates/queries/cli/template_generation absent. First singular iter_query typo preserved, supplement observes plural iter_queries and iter_cli missing, tag lookup exit128.\",\n          \"consumption\": \"Native records separate from synthetic FS; 01 linked slice canceled, 02-04 completed, terminal status not approval. R7 historical CLOSED_LOCAL_MOCK_FS excludes provider/full media/production/Git branch. P1 deployment missing at specified location UNKNOWN.\",\n          \"unknowns\": \"Deployment owner: complete current manifest/version attribution and authorized new-session adoption. Historical evidence owner: supply original or confirm unrecoverable. Controller: later task registration/strict and total review.\",\n          \"pointers\": \"Project-relative receipts/native records and five byte captures; capture manifest gives original absolute source, capture time, scope.\"\n        },\n        \"originals_read\": {\n          \"experiment\": {\n            \"status\": \"COMPLETED\",\n            \"raw_exit_code\": 0,\n            \"tree_terminal\": true,\n            \"start\": \"2026-11-13T18:33:45.406517+00:00\",\n            \"output\": \"1396-line raw output contains source/main commit, captures, 3x58 per-path booleans, entries, original review pointers; script only reads listed paths and writes own evidence\"\n          },\n          \"supplement\": {\n            \"status\": \"COMPLETED\",\n            \"raw_exit_code\": 0,\n            \"tree_terminal\": true,\n            \"at\": \"2026-11-13T18:36:33.343445+00:00\",\n            \"output\": \"plural query/CLI absent three roots; no tags; 01 canceled vs 02-04 completed\"\n          },\n          \"historical\": \"Read original manifest SC-FS-I01-20261112-R7 files_per_target58 and explicit .agents/SKILL/references/scripts/templates/tests items; git-final head d29ddc2, 205 tests,58 equal,no push; R7 full acceptance time 2026-11-12T10:12:51.023029Z; P1 README says maintenance source only and synthetic FS.\",\n          \"decision\": \"Four layers separate, bounded current file equality, full identity UNKNOWN; owner+conditions\",\n          \"interfaces\": \"Nine fields, four layers, UTC capture provenance, task cards own status\",\n          \"tests\": \"Implementer final output9 passed in0.65s; controller independent output9 passed in0.66s; both receipts COMPLETED/raw0/tree terminal true; coverage unchanged to C\",\n          \"note\": \"Direct tree raw0 output18 notes links verified; direct final format raw0 output18 notes verified\",\n          \"counterevidence\": \"slice-a-note-final nested powershell raw0 output contains '-ne' command error. Checkpoint and card explicitly exclude from success evidence; direct format rerun available.\",\n          \"scope\": \"controller scope raw0, output all60 changed files within scope; git names independently read\"\n        }\n      },\n      \"questions\": {\n        \"review_disposition\": {\n          \"type\": \"choice\",\n          \"instructions\": \"For the task05 frozen candidate and stated contract only, choose the review disposition warranted by the supplied observations. Decide whether the index and primary evidence meet that bounded deliverable. Treat installation identity and new-session adoption as UNKNOWN as allowed; do not treat test counts or native completion as fact approval.\",\n          \"criteria\": {\n            \"APPROVED\": \"The bounded index deliverable and required primary checks are supported; retained unknowns have owners/conditions and no demonstrated material contract defect.\",\n            \"CHANGES_REQUESTED\": \"An observed material mismatch or unsupported claim in the candidate requires correction within task05.\",\n            \"BLOCKED\": \"A necessary primary input or provenance is missing so task05 cannot be judged.\",\n            \"INSUFFICIENT\": \"The observations do not distinguish the dispositions.\"\n          }\n        }\n      }\n    },\n    \"raw_response\": {\n      \"content\": [\n        {\n          \"type\": \"text\",\n          \"text\": \"{\\\"model\\\":\\\"jev-1.14.0\\\",\\\"answers\\\":{\\\"review_disposition\\\":{\\\"type\\\":\\\"choice\\\",\\\"choice\\\":\\\"CHANGES_REQUESTED\\\",\\\"confidence\\\":0.23,\\\"probabilities\\\":{\\\"APPROVED\\\":0.4,\\\"BLOCKED\\\":0.16,\\\"CHANGES_REQUESTED\\\":0.42,\\\"INSUFFICIENT\\\":0.02}}},\\\"usage\\\":{\\\"input_tokens\\\":1695,\\\"output_tokens\\\":66}}\"\n        }\n      ]\n    },\n    \"application\": \"结果不明确：CHANGES_REQUESTED 0.42与APPROVED 0.40接近，confidence为0.23，且未提供具体缺陷。随后定点核对原始输出数量及五份捕获与来源字节，均一致；未重复刷分。Reviewer依据实际差异、原件和任务契约独立裁决APPROVED，不将TypeSafe结果冒作批准。\"\n  }\n}",
+                "duration_ms": 229216,
+                "progress": {
+                  "steps": 22,
+                  "marks": [
+                    "ok",
+                    "ok",
+                    "ok",
+                    "ok",
+                    "ok",
+                    "ok",
+                    "ok",
+                    "ok",
+                    "ok",
+                    "ok",
+                    "ok",
+                    "ok"
+                  ],
+                  "last_step": "$e='docs/todos/10-self-hosting-hardening/evidence/05'; $o=Get-Content -Raw \"$e/slice-a-experiment-1.json.output.txt\" | C…"
+                }
+              }
+            ]
+          },
+          "isError": false
+        }
+      },
+      "terminalConfirmed": true,
+      "observedAt": 1794595491321,
+      "lateByMs": 0,
+      "events": [
+        {
+          "kind": "query",
+          "startedAt": 1794595262061,
+          "returnedAt": 1794595322084,
+          "waitMs": 60000,
+          "result": {
+            "task_id": "3521c397-6407-4026-ace5-8c1105b191ae",
+            "status": "running",
+            "child_conversation_id": 1721,
+            "agent_type": "codex",
+            "message": "Running.\nLatest sub-agent reply: thinking: **Reviewing raw observations**",
+            "progress": {
+              "steps": 13,
+              "marks": [
+                "ok",
+                "ok",
+                "ok",
+                "ok",
+                "ok",
+                "ok",
+                "ok",
+                "ok",
+                "ok",
+                "ok",
+                "ok",
+                "ok"
+              ],
+              "last_step": "mcp.fastctx.read"
+            },
+            "raw": {
+              "content": [
+                {
+                  "type": "text",
+                  "text": "{\"tasks\":[{\"task_id\":\"3521c397-6407-4026-ace5-8c1105b191ae\",\"status\":\"running\",\"child_conversation_id\":1721,\"agent_type\":\"codex\",\"message\":\"Running.\\nLatest sub-agent reply: thinking: **Reviewing raw observations**\",\"progress\":{\"steps\":13,\"marks\":[\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\"],\"last_step\":\"mcp.fastctx.read\"}}]}"
+                }
+              ],
+              "structuredContent": {
+                "tasks": [
+                  {
+                    "task_id": "3521c397-6407-4026-ace5-8c1105b191ae",
+                    "status": "running",
+                    "child_conversation_id": 1721,
+                    "agent_type": "codex",
+                    "message": "Running.\nLatest sub-agent reply: thinking: **Reviewing raw observations**",
+                    "progress": {
+                      "steps": 13,
+                      "marks": [
+                        "ok",
+                        "ok",
+                        "ok",
+                        "ok",
+                        "ok",
+                        "ok",
+                        "ok",
+                        "ok",
+                        "ok",
+                        "ok",
+                        "ok",
+                        "ok"
+                      ],
+                      "last_step": "mcp.fastctx.read"
+                    }
+                  }
+                ]
+              },
+              "isError": false
+            }
+          }
+        },
+        {
+          "kind": "query",
+          "startedAt": 1794595322084,
+          "returnedAt": 1794595382119,
+          "waitMs": 60000,
+          "result": {
+            "task_id": "3521c397-6407-4026-ace5-8c1105b191ae",
+            "status": "running",
+            "child_conversation_id": 1721,
+            "agent_type": "codex",
+            "message": "Running.\nLatest sub-agent reply: thinking: **Verifying source and logs**",
+            "progress": {
+              "steps": 20,
+              "marks": [
+                "ok",
+                "ok",
+                "ok",
+                "ok",
+                "ok",
+                "ok",
+                "ok",
+                "ok",
+                "ok",
+                "ok",
+                "ok",
+                "ok"
+              ],
+              "last_step": "mcp.fastctx.read"
+            },
+            "raw": {
+              "content": [
+                {
+                  "type": "text",
+                  "text": "{\"tasks\":[{\"task_id\":\"3521c397-6407-4026-ace5-8c1105b191ae\",\"status\":\"running\",\"child_conversation_id\":1721,\"agent_type\":\"codex\",\"message\":\"Running.\\nLatest sub-agent reply: thinking: **Verifying source and logs**\",\"progress\":{\"steps\":20,\"marks\":[\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\"],\"last_step\":\"mcp.fastctx.read\"}}]}"
+                }
+              ],
+              "structuredContent": {
+                "tasks": [
+                  {
+                    "task_id": "3521c397-6407-4026-ace5-8c1105b191ae",
+                    "status": "running",
+                    "child_conversation_id": 1721,
+                    "agent_type": "codex",
+                    "message": "Running.\nLatest sub-agent reply: thinking: **Verifying source and logs**",
+                    "progress": {
+                      "steps": 20,
+                      "marks": [
+                        "ok",
+                        "ok",
+                        "ok",
+                        "ok",
+                        "ok",
+                        "ok",
+                        "ok",
+                        "ok",
+                        "ok",
+                        "ok",
+                        "ok",
+                        "ok"
+                      ],
+                      "last_step": "mcp.fastctx.read"
+                    }
+                  }
+                ]
+              },
+              "isError": false
+            }
+          }
+        },
+        {
+          "kind": "query",
+          "startedAt": 1794595382119,
+          "returnedAt": 1794595442133,
+          "waitMs": 60000,
+          "result": {
+            "task_id": "3521c397-6407-4026-ace5-8c1105b191ae",
+            "status": "running",
+            "child_conversation_id": 1721,
+            "agent_type": "codex",
+            "message": "Running.\nLatest sub-agent reply: thinking: **Reviewing the full diff**",
+            "progress": {
+              "steps": 22,
+              "marks": [
+                "ok",
+                "ok",
+                "ok",
+                "ok",
+                "ok",
+                "ok",
+                "ok",
+                "ok",
+                "ok",
+                "ok",
+                "ok",
+                "ok"
+              ],
+              "last_step": "$e='docs/todos/10-self-hosting-hardening/evidence/05'; $o=Get-Content -Raw \"$e/slice-a-experiment-1.json.output.txt\" | C…"
+            },
+            "raw": {
+              "content": [
+                {
+                  "type": "text",
+                  "text": "{\"tasks\":[{\"task_id\":\"3521c397-6407-4026-ace5-8c1105b191ae\",\"status\":\"running\",\"child_conversation_id\":1721,\"agent_type\":\"codex\",\"message\":\"Running.\\nLatest sub-agent reply: thinking: **Reviewing the full diff**\",\"progress\":{\"steps\":22,\"marks\":[\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\"],\"last_step\":\"$e='docs/todos/10-self-hosting-hardening/evidence/05'; $o=Get-Content -Raw \\\"$e/slice-a-experiment-1.json.output.txt\\\" | C…\"}}]}"
+                }
+              ],
+              "structuredContent": {
+                "tasks": [
+                  {
+                    "task_id": "3521c397-6407-4026-ace5-8c1105b191ae",
+                    "status": "running",
+                    "child_conversation_id": 1721,
+                    "agent_type": "codex",
+                    "message": "Running.\nLatest sub-agent reply: thinking: **Reviewing the full diff**",
+                    "progress": {
+                      "steps": 22,
+                      "marks": [
+                        "ok",
+                        "ok",
+                        "ok",
+                        "ok",
+                        "ok",
+                        "ok",
+                        "ok",
+                        "ok",
+                        "ok",
+                        "ok",
+                        "ok",
+                        "ok"
+                      ],
+                      "last_step": "$e='docs/todos/10-self-hosting-hardening/evidence/05'; $o=Get-Content -Raw \"$e/slice-a-experiment-1.json.output.txt\" | C…"
+                    }
+                  }
+                ]
+              },
+              "isError": false
+            }
+          }
+        },
+        {
+          "kind": "query",
+          "startedAt": 1794595442133,
+          "returnedAt": 1794595491321,
+          "waitMs": 60000,
+          "result": {
+            "task_id": "3521c397-6407-4026-ace5-8c1105b191ae",
+            "status": "completed",
+            "child_conversation_id": 1721,
+            "agent_type": "codex",
+            "text": "{\n  \"reviewer\": {\n    \"identity\": \"Codex independent reviewer / session 01a1d636-91f8-73b2-92cd-e1933b28bda6\",\n    \"runtime_role\": \"/root\",\n    \"independent\": true,\n    \"participation\": \"未参与任务05实现、测试、设计或RCA；不是主控1699或实现1720\",\n    \"read_only\": true\n  },\n  \"base_sha\": \"8392193a0d9e883892f75780a63a1b16f67682c4\",\n  \"head_sha\": \"8616468ab3384efad26095ca182255448076e081\",\n  \"contract_sha\": \"8616468ab3384efad26095ca182255448076e081\",\n  \"branch\": \"feat/iter-10-self-hosting-hardening\",\n  \"dirty\": [],\n  \"verdict\": \"APPROVED\",\n  \"verdict_basis\": \"实际差异、原始实验输出及历史原件支持任务05限定交付。四层事实、日期、范围、来源和UNKNOWN补齐责任清楚；未发现需要返修的实质缺陷。本裁决不表示部署、新会话采用或整轮验收通过。\",\n  \"scope\": {\n    \"result\": \"符合\",\n    \"evidence\": [\n      \"实际BASE..C共60个变更文件，限于05白名单、05卡及其证据目录。\",\n      \"SKILL.md仅增加发布索引和template_generation资源链接。\",\n      \"根docs/todos/README.md、迭代README、01—04源码及收据未在本次差异中修改。\",\n      \"slice-a-observe.py:21-64使用历史manifest显式路径及命名入口；未递归扫描安装目录或读取凭据、配置。\",\n      \"controller-scope.json.output.txt:1记录60个文件均在声明范围内；本次另读取实际Git变更清单核对。\"\n    ]\n  },\n  \"spec\": {\n    \"result\": \"符合\",\n    \"evidence\": [\n      \"references/release_status.md:5-16定义九字段及UTC、原件捕获和范围含义；18-58分列源码、已审候选、安装、实际消费。\",\n      \"references/release_status.md:22-34分别记录维护main、iter10实施前基线及01—04原收据候选，不把逐卡批准提升为整轮批准。\",\n      \"references/release_status.md:38-44明确58路径只是历史清单观察，完整安装版本UNKNOWN；说明单数入口错误及复数入口补测。\",\n      \"references/release_status.md:49-58区分原生切片终态、最终review批准、真实Git自用与合成FS。\",\n      \"references/release_status.md:60-65明确部署owner、历史证据owner、相应操作owner及主控的补齐条件。\",\n      \"SKILL.md:91同时链接release_status.md与template_generation.md；索引没有自身最终SHA、本轮预PASS或另一任务状态账。\"\n    ]\n  },\n  \"quality\": {\n    \"result\": \"符合\",\n    \"evidence\": [\n      \"完整读取SKILL、共同协议、任务卡schema、迭代README、05卡、发布索引、结构测试及Note；审查实际差异和关键原始输出。\",\n      \"原始实验逐文件记录支持三根各58/58等于main、45/58等于iter10基线、36/58等于历史冻结源；本次从原始输出重新汇总得到相同数量。\",\n      \"历史manifest实际含58条唯一relative路径、两个副本目标；观察脚本另比较维护main，未把manifest目标数冒称三份部署操作。\",\n      \"五份历史捕获与各自记录的原绝对来源逐字节相等；捕获清单保留时间和范围。\",\n      \"tests/test_release_index.py明确只检查结构、字段和链接，不承担事实批准。\"\n    ]\n  },\n  \"issues\": [],\n  \"checks\": [\n    {\n      \"name\": \"experiment\",\n      \"kind\": \"command\",\n      \"command\": \"python -B docs/todos/10-self-hosting-hardening/evidence/05/slice-a-observe.py\",\n      \"cwd\": \".\",\n      \"exit_code\": 0,\n      \"receipt\": \"docs/todos/10-self-hosting-hardening/evidence/05/slice-a-experiment-1.json\",\n      \"output\": \"docs/todos/10-self-hosting-hardening/evidence/05/slice-a-experiment-1.json.output.txt\",\n      \"summary\": \"COMPLETED、tree_terminal=true；原始逐文件布尔值、捕获来源及review指针支持限定观察。\",\n      \"supplement\": {\n        \"command\": \"python -B docs/todos/10-self-hosting-hardening/evidence/05/slice-a-observe-entries.py\",\n        \"exit_code\": 0,\n        \"receipt\": \"docs/todos/10-self-hosting-hardening/evidence/05/slice-a-experiment-entries-1.json\",\n        \"output\": \"docs/todos/10-self-hosting-hardening/evidence/05/slice-a-experiment-entries-1.json.output.txt\",\n        \"summary\": \"实际复数iter_queries.py及iter_cli.py在三根缺失；标签查询128保留UNKNOWN；01 canceled与02—04 completed分开记录。\"\n      }\n    },\n    {\n      \"name\": \"decision\",\n      \"kind\": \"observation\",\n      \"output\": \"docs/todos/10-self-hosting-hardening/evidence/05/slice-a-decision.json\",\n      \"summary\": \"有限清单OBSERVED、完整版本UNKNOWN的分类与原始实验一致；历史R7、P1及补齐责任没有外推。\"\n    },\n    {\n      \"name\": \"interfaces\",\n      \"kind\": \"observation\",\n      \"output\": \"docs/todos/10-self-hosting-hardening/evidence/05/slice-a-interfaces.json\",\n      \"summary\": \"四层九字段、UTC日期、原件捕获、UNKNOWN及状态真源边界与索引一致。\"\n    }\n  ],\n  \"reused_evidence\": [\n    {\n      \"coverage\": \"指定三文件结构、入口和既有契约回归\",\n      \"original_source_sha\": \"21acfe0b83122f10d105a65a8891667b4aa0977e\",\n      \"outputs\": [\n        \"docs/todos/10-self-hosting-hardening/evidence/05/slice-a-targeted-final.json.output.txt\",\n        \"docs/todos/10-self-hosting-hardening/evidence/05/controller-regression.json.output.txt\"\n      ],\n      \"result\": \"实现者9 passed in 0.65s；主控独立9 passed in 0.66s；对应receipt均COMPLETED/raw0/tree_terminal=true。\",\n      \"reuse_basis\": \"实际21acfe0..C变更不包含产品、测试、Note或上述原始实验和回归输出；未受影响证据沿用，不冒称Reviewer重新执行。\"\n    },\n    {\n      \"coverage\": \"Note目录、相对链接及格式\",\n      \"outputs\": [\n        \"docs/todos/10-self-hosting-hardening/evidence/05/slice-a-note-tree-1.json.output.txt\",\n        \"docs/todos/10-self-hosting-hardening/evidence/05/slice-a-note-format-final.json.output.txt\"\n      ],\n      \"result\": \"直接命令各raw0，输出分别为18 notes tree/links verified和18 notes verified。\",\n      \"reuse_basis\": \"Note及相关拓扑未变化；排除错误嵌套PowerShell命令后仍有有效直接命令证据。\"\n    },\n    {\n      \"coverage\": \"01—04既有批准及历史消费索引\",\n      \"outputs\": [\n        \"docs/todos/10-self-hosting-hardening/evidence/01/review.json\",\n        \"docs/todos/10-self-hosting-hardening/evidence/02/review.json\",\n        \"docs/todos/10-self-hosting-hardening/evidence/03/review.json\",\n        \"docs/todos/10-self-hosting-hardening/evidence/04/review.json\"\n      ],\n      \"reuse_basis\": \"仅核对索引引用的原候选、checks及批准范围，不重做01—04验收；原生completed/canceled均不替代这些批准。\"\n    }\n  ],\n  \"excluded_evidence\": [\n    {\n      \"file\": \"docs/todos/10-self-hosting-hardening/evidence/05/slice-a-note-final.json.output.txt:8-14\",\n      \"fact\": \"receipt raw0，但输出存在-ne CommandNotFoundException。\",\n      \"treatment\": \"明确不作为成功门禁证据；保留反证，采用直接tree及直接final format原件。\",\n      \"blocking\": false\n    },\n    {\n      \"fact\": \"原始日志含既有空行、CR或尾随空白。\",\n      \"treatment\": \"保持原件，不以日志空白要求清理或阻断产品；不把raw0或whitespace检查当事实验收。\",\n      \"blocking\": false\n    }\n  ],\n  \"unknown_boundaries\": [\n    {\n      \"object\": \"完整当前安装版本、对应reviewed_candidate及安装新会话采用\",\n      \"status\": \"UNKNOWN\",\n      \"owner\": \"部署owner\",\n      \"resume_condition\": \"另获部署授权后提供完整当前交付manifest、版本归属和原生新会话消费证据。\"\n    },\n    {\n      \"object\": \"P1所查deployment.json及历史候选Git来源\",\n      \"status\": \"UNKNOWN\",\n      \"owner\": \"历史证据owner\",\n      \"resume_condition\": \"提供原始来源或确认不可恢复；不遍历全部历史、不补造SHA。\"\n    },\n    {\n      \"object\": \"05登记D/local strict及整轮验收\",\n      \"status\": \"尚未由本次审查执行\",\n      \"owner\": \"主控\",\n      \"resume_condition\": \"消费本独审裁决后按既定Git登记合同推进；整轮门禁保持独立范围。\"\n    }\n  ],\n  \"reviewer_execution\": {\n    \"new_business_or_test_commands\": [],\n    \"file_writes\": [],\n    \"commits\": [],\n    \"delegations\": [],\n    \"final_head_rechecked\": \"8616468ab3384efad26095ca182255448076e081\",\n    \"final_dirty\": [],\n    \"runtime_identity_source\": \"CODEX_THREAD_ID和CODEX_SESSION_ID均返回01a1d636-91f8-73b2-92cd-e1933b28bda6\"\n  },\n  \"typesafe\": {\n    \"request\": {\n      \"state\": {\n        \"contract\": {\n          \"task\": \"05 Spike-Discovery release evidence index only\",\n          \"required\": \"Four layers, nine row fields, UTC date/scope/original pointers; UNKNOWN owner and recovery; SKILL links index and template_generation; no install/config/deployment writes, credentials read, root README change, second task status ledger, self final SHA or iteration pre-PASS. experiment successful command; decision/interfaces observations. Tests do not establish facts. No RED requirement.\",\n          \"candidate\": \"8616468ab3384efad26095ca182255448076e081\",\n          \"base\": \"8392193a0d9e883892f75780a63a1b16f67682c4\"\n        },\n        \"git_observed\": {\n          \"branch\": \"feat/iter-10-self-hosting-hardening\",\n          \"head\": \"8616468ab3384efad26095ca182255448076e081\",\n          \"status_short\": \"\",\n          \"changed_files\": 60,\n          \"changes\": \"SKILL one resource link; new release_status index, structural tests, Note, evidence/05 and 05 card. Root README, iteration README, 01-04 source/receipts absent from diff. Product/test/Note unchanged from 21acfe0b83122f10d105a65a8891667b4aa0977e; later commits add card and evidence.\"\n        },\n        \"index_text\": {\n          \"source\": \"main d3bd97a and iter10 implementation-before baseline 8392193 separate\",\n          \"reviewed\": \"01-04 reviewed candidates from original APPROVED review.json, only original task scope; no whole-iteration approval\",\n          \"installation\": \"58 explicit historical paths in three roots equal main 58/58; 45/58 equal iter10 baseline; 36/58 historical frozen. Complete version UNKNOWN. iter_sync differs; templates/queries/cli/template_generation absent. First singular iter_query typo preserved, supplement observes plural iter_queries and iter_cli missing, tag lookup exit128.\",\n          \"consumption\": \"Native records separate from synthetic FS; 01 linked slice canceled, 02-04 completed, terminal status not approval. R7 historical CLOSED_LOCAL_MOCK_FS excludes provider/full media/production/Git branch. P1 deployment missing at specified location UNKNOWN.\",\n          \"unknowns\": \"Deployment owner: complete current manifest/version attribution and authorized new-session adoption. Historical evidence owner: supply original or confirm unrecoverable. Controller: later task registration/strict and total review.\",\n          \"pointers\": \"Project-relative receipts/native records and five byte captures; capture manifest gives original absolute source, capture time, scope.\"\n        },\n        \"originals_read\": {\n          \"experiment\": {\n            \"status\": \"COMPLETED\",\n            \"raw_exit_code\": 0,\n            \"tree_terminal\": true,\n            \"start\": \"2026-11-13T18:33:45.406517+00:00\",\n            \"output\": \"1396-line raw output contains source/main commit, captures, 3x58 per-path booleans, entries, original review pointers; script only reads listed paths and writes own evidence\"\n          },\n          \"supplement\": {\n            \"status\": \"COMPLETED\",\n            \"raw_exit_code\": 0,\n            \"tree_terminal\": true,\n            \"at\": \"2026-11-13T18:36:33.343445+00:00\",\n            \"output\": \"plural query/CLI absent three roots; no tags; 01 canceled vs 02-04 completed\"\n          },\n          \"historical\": \"Read original manifest SC-FS-I01-20261112-R7 files_per_target58 and explicit .agents/SKILL/references/scripts/templates/tests items; git-final head d29ddc2, 205 tests,58 equal,no push; R7 full acceptance time 2026-11-12T10:12:51.023029Z; P1 README says maintenance source only and synthetic FS.\",\n          \"decision\": \"Four layers separate, bounded current file equality, full identity UNKNOWN; owner+conditions\",\n          \"interfaces\": \"Nine fields, four layers, UTC capture provenance, task cards own status\",\n          \"tests\": \"Implementer final output9 passed in0.65s; controller independent output9 passed in0.66s; both receipts COMPLETED/raw0/tree terminal true; coverage unchanged to C\",\n          \"note\": \"Direct tree raw0 output18 notes links verified; direct final format raw0 output18 notes verified\",\n          \"counterevidence\": \"slice-a-note-final nested powershell raw0 output contains '-ne' command error. Checkpoint and card explicitly exclude from success evidence; direct format rerun available.\",\n          \"scope\": \"controller scope raw0, output all60 changed files within scope; git names independently read\"\n        }\n      },\n      \"questions\": {\n        \"review_disposition\": {\n          \"type\": \"choice\",\n          \"instructions\": \"For the task05 frozen candidate and stated contract only, choose the review disposition warranted by the supplied observations. Decide whether the index and primary evidence meet that bounded deliverable. Treat installation identity and new-session adoption as UNKNOWN as allowed; do not treat test counts or native completion as fact approval.\",\n          \"criteria\": {\n            \"APPROVED\": \"The bounded index deliverable and required primary checks are supported; retained unknowns have owners/conditions and no demonstrated material contract defect.\",\n            \"CHANGES_REQUESTED\": \"An observed material mismatch or unsupported claim in the candidate requires correction within task05.\",\n            \"BLOCKED\": \"A necessary primary input or provenance is missing so task05 cannot be judged.\",\n            \"INSUFFICIENT\": \"The observations do not distinguish the dispositions.\"\n          }\n        }\n      }\n    },\n    \"raw_response\": {\n      \"content\": [\n        {\n          \"type\": \"text\",\n          \"text\": \"{\\\"model\\\":\\\"jev-1.14.0\\\",\\\"answers\\\":{\\\"review_disposition\\\":{\\\"type\\\":\\\"choice\\\",\\\"choice\\\":\\\"CHANGES_REQUESTED\\\",\\\"confidence\\\":0.23,\\\"probabilities\\\":{\\\"APPROVED\\\":0.4,\\\"BLOCKED\\\":0.16,\\\"CHANGES_REQUESTED\\\":0.42,\\\"INSUFFICIENT\\\":0.02}}},\\\"usage\\\":{\\\"input_tokens\\\":1695,\\\"output_tokens\\\":66}}\"\n        }\n      ]\n    },\n    \"application\": \"结果不明确：CHANGES_REQUESTED 0.42与APPROVED 0.40接近，confidence为0.23，且未提供具体缺陷。随后定点核对原始输出数量及五份捕获与来源字节，均一致；未重复刷分。Reviewer依据实际差异、原件和任务契约独立裁决APPROVED，不将TypeSafe结果冒作批准。\"\n  }\n}",
+            "duration_ms": 229216,
+            "progress": {
+              "steps": 22,
+              "marks": [
+                "ok",
+                "ok",
+                "ok",
+                "ok",
+                "ok",
+                "ok",
+                "ok",
+                "ok",
+                "ok",
+                "ok",
+                "ok",
+                "ok"
+              ],
+              "last_step": "$e='docs/todos/10-self-hosting-hardening/evidence/05'; $o=Get-Content -Raw \"$e/slice-a-experiment-1.json.output.txt\" | C…"
+            },
+            "raw": {
+              "content": [
+                {
+                  "type": "text",
+                  "text": "{\"tasks\":[{\"task_id\":\"3521c397-6407-4026-ace5-8c1105b191ae\",\"status\":\"completed\",\"child_conversation_id\":1721,\"agent_type\":\"codex\",\"text\":\"{\\n  \\\"reviewer\\\": {\\n    \\\"identity\\\": \\\"Codex independent reviewer / session 01a1d636-91f8-73b2-92cd-e1933b28bda6\\\",\\n    \\\"runtime_role\\\": \\\"/root\\\",\\n    \\\"independent\\\": true,\\n    \\\"participation\\\": \\\"未参与任务05实现、测试、设计或RCA；不是主控1699或实现1720\\\",\\n    \\\"read_only\\\": true\\n  },\\n  \\\"base_sha\\\": \\\"8392193a0d9e883892f75780a63a1b16f67682c4\\\",\\n  \\\"head_sha\\\": \\\"8616468ab3384efad26095ca182255448076e081\\\",\\n  \\\"contract_sha\\\": \\\"8616468ab3384efad26095ca182255448076e081\\\",\\n  \\\"branch\\\": \\\"feat/iter-10-self-hosting-hardening\\\",\\n  \\\"dirty\\\": [],\\n  \\\"verdict\\\": \\\"APPROVED\\\",\\n  \\\"verdict_basis\\\": \\\"实际差异、原始实验输出及历史原件支持任务05限定交付。四层事实、日期、范围、来源和UNKNOWN补齐责任清楚；未发现需要返修的实质缺陷。本裁决不表示部署、新会话采用或整轮验收通过。\\\",\\n  \\\"scope\\\": {\\n    \\\"result\\\": \\\"符合\\\",\\n    \\\"evidence\\\": [\\n      \\\"实际BASE..C共60个变更文件，限于05白名单、05卡及其证据目录。\\\",\\n      \\\"SKILL.md仅增加发布索引和template_generation资源链接。\\\",\\n      \\\"根docs/todos/README.md、迭代README、01—04源码及收据未在本次差异中修改。\\\",\\n      \\\"slice-a-observe.py:21-64使用历史manifest显式路径及命名入口；未递归扫描安装目录或读取凭据、配置。\\\",\\n      \\\"controller-scope.json.output.txt:1记录60个文件均在声明范围内；本次另读取实际Git变更清单核对。\\\"\\n    ]\\n  },\\n  \\\"spec\\\": {\\n    \\\"result\\\": \\\"符合\\\",\\n    \\\"evidence\\\": [\\n      \\\"references/release_status.md:5-16定义九字段及UTC、原件捕获和范围含义；18-58分列源码、已审候选、安装、实际消费。\\\",\\n      \\\"references/release_status.md:22-34分别记录维护main、iter10实施前基线及01—04原收据候选，不把逐卡批准提升为整轮批准。\\\",\\n      \\\"references/release_status.md:38-44明确58路径只是历史清单观察，完整安装版本UNKNOWN；说明单数入口错误及复数入口补测。\\\",\\n      \\\"references/release_status.md:49-58区分原生切片终态、最终review批准、真实Git自用与合成FS。\\\",\\n      \\\"references/release_status.md:60-65明确部署owner、历史证据owner、相应操作owner及主控的补齐条件。\\\",\\n      \\\"SKILL.md:91同时链接release_status.md与template_generation.md；索引没有自身最终SHA、本轮预PASS或另一任务状态账。\\\"\\n    ]\\n  },\\n  \\\"quality\\\": {\\n    \\\"result\\\": \\\"符合\\\",\\n    \\\"evidence\\\": [\\n      \\\"完整读取SKILL、共同协议、任务卡schema、迭代README、05卡、发布索引、结构测试及Note；审查实际差异和关键原始输出。\\\",\\n      \\\"原始实验逐文件记录支持三根各58/58等于main、45/58等于iter10基线、36/58等于历史冻结源；本次从原始输出重新汇总得到相同数量。\\\",\\n      \\\"历史manifest实际含58条唯一relative路径、两个副本目标；观察脚本另比较维护main，未把manifest目标数冒称三份部署操作。\\\",\\n      \\\"五份历史捕获与各自记录的原绝对来源逐字节相等；捕获清单保留时间和范围。\\\",\\n      \\\"tests/test_release_index.py明确只检查结构、字段和链接，不承担事实批准。\\\"\\n    ]\\n  },\\n  \\\"issues\\\": [],\\n  \\\"checks\\\": [\\n    {\\n      \\\"name\\\": \\\"experiment\\\",\\n      \\\"kind\\\": \\\"command\\\",\\n      \\\"command\\\": \\\"python -B docs/todos/10-self-hosting-hardening/evidence/05/slice-a-observe.py\\\",\\n      \\\"cwd\\\": \\\".\\\",\\n      \\\"exit_code\\\": 0,\\n      \\\"receipt\\\": \\\"docs/todos/10-self-hosting-hardening/evidence/05/slice-a-experiment-1.json\\\",\\n      \\\"output\\\": \\\"docs/todos/10-self-hosting-hardening/evidence/05/slice-a-experiment-1.json.output.txt\\\",\\n      \\\"summary\\\": \\\"COMPLETED、tree_terminal=true；原始逐文件布尔值、捕获来源及review指针支持限定观察。\\\",\\n      \\\"supplement\\\": {\\n        \\\"command\\\": \\\"python -B docs/todos/10-self-hosting-hardening/evidence/05/slice-a-observe-entries.py\\\",\\n        \\\"exit_code\\\": 0,\\n        \\\"receipt\\\": \\\"docs/todos/10-self-hosting-hardening/evidence/05/slice-a-experiment-entries-1.json\\\",\\n        \\\"output\\\": \\\"docs/todos/10-self-hosting-hardening/evidence/05/slice-a-experiment-entries-1.json.output.txt\\\",\\n        \\\"summary\\\": \\\"实际复数iter_queries.py及iter_cli.py在三根缺失；标签查询128保留UNKNOWN；01 canceled与02—04 completed分开记录。\\\"\\n      }\\n    },\\n    {\\n      \\\"name\\\": \\\"decision\\\",\\n      \\\"kind\\\": \\\"observation\\\",\\n      \\\"output\\\": \\\"docs/todos/10-self-hosting-hardening/evidence/05/slice-a-decision.json\\\",\\n      \\\"summary\\\": \\\"有限清单OBSERVED、完整版本UNKNOWN的分类与原始实验一致；历史R7、P1及补齐责任没有外推。\\\"\\n    },\\n    {\\n      \\\"name\\\": \\\"interfaces\\\",\\n      \\\"kind\\\": \\\"observation\\\",\\n      \\\"output\\\": \\\"docs/todos/10-self-hosting-hardening/evidence/05/slice-a-interfaces.json\\\",\\n      \\\"summary\\\": \\\"四层九字段、UTC日期、原件捕获、UNKNOWN及状态真源边界与索引一致。\\\"\\n    }\\n  ],\\n  \\\"reused_evidence\\\": [\\n    {\\n      \\\"coverage\\\": \\\"指定三文件结构、入口和既有契约回归\\\",\\n      \\\"original_source_sha\\\": \\\"21acfe0b83122f10d105a65a8891667b4aa0977e\\\",\\n      \\\"outputs\\\": [\\n        \\\"docs/todos/10-self-hosting-hardening/evidence/05/slice-a-targeted-final.json.output.txt\\\",\\n        \\\"docs/todos/10-self-hosting-hardening/evidence/05/controller-regression.json.output.txt\\\"\\n      ],\\n      \\\"result\\\": \\\"实现者9 passed in 0.65s；主控独立9 passed in 0.66s；对应receipt均COMPLETED/raw0/tree_terminal=true。\\\",\\n      \\\"reuse_basis\\\": \\\"实际21acfe0..C变更不包含产品、测试、Note或上述原始实验和回归输出；未受影响证据沿用，不冒称Reviewer重新执行。\\\"\\n    },\\n    {\\n      \\\"coverage\\\": \\\"Note目录、相对链接及格式\\\",\\n      \\\"outputs\\\": [\\n        \\\"docs/todos/10-self-hosting-hardening/evidence/05/slice-a-note-tree-1.json.output.txt\\\",\\n        \\\"docs/todos/10-self-hosting-hardening/evidence/05/slice-a-note-format-final.json.output.txt\\\"\\n      ],\\n      \\\"result\\\": \\\"直接命令各raw0，输出分别为18 notes tree/links verified和18 notes verified。\\\",\\n      \\\"reuse_basis\\\": \\\"Note及相关拓扑未变化；排除错误嵌套PowerShell命令后仍有有效直接命令证据。\\\"\\n    },\\n    {\\n      \\\"coverage\\\": \\\"01—04既有批准及历史消费索引\\\",\\n      \\\"outputs\\\": [\\n        \\\"docs/todos/10-self-hosting-hardening/evidence/01/review.json\\\",\\n        \\\"docs/todos/10-self-hosting-hardening/evidence/02/review.json\\\",\\n        \\\"docs/todos/10-self-hosting-hardening/evidence/03/review.json\\\",\\n        \\\"docs/todos/10-self-hosting-hardening/evidence/04/review.json\\\"\\n      ],\\n      \\\"reuse_basis\\\": \\\"仅核对索引引用的原候选、checks及批准范围，不重做01—04验收；原生completed/canceled均不替代这些批准。\\\"\\n    }\\n  ],\\n  \\\"excluded_evidence\\\": [\\n    {\\n      \\\"file\\\": \\\"docs/todos/10-self-hosting-hardening/evidence/05/slice-a-note-final.json.output.txt:8-14\\\",\\n      \\\"fact\\\": \\\"receipt raw0，但输出存在-ne CommandNotFoundException。\\\",\\n      \\\"treatment\\\": \\\"明确不作为成功门禁证据；保留反证，采用直接tree及直接final format原件。\\\",\\n      \\\"blocking\\\": false\\n    },\\n    {\\n      \\\"fact\\\": \\\"原始日志含既有空行、CR或尾随空白。\\\",\\n      \\\"treatment\\\": \\\"保持原件，不以日志空白要求清理或阻断产品；不把raw0或whitespace检查当事实验收。\\\",\\n      \\\"blocking\\\": false\\n    }\\n  ],\\n  \\\"unknown_boundaries\\\": [\\n    {\\n      \\\"object\\\": \\\"完整当前安装版本、对应reviewed_candidate及安装新会话采用\\\",\\n      \\\"status\\\": \\\"UNKNOWN\\\",\\n      \\\"owner\\\": \\\"部署owner\\\",\\n      \\\"resume_condition\\\": \\\"另获部署授权后提供完整当前交付manifest、版本归属和原生新会话消费证据。\\\"\\n    },\\n    {\\n      \\\"object\\\": \\\"P1所查deployment.json及历史候选Git来源\\\",\\n      \\\"status\\\": \\\"UNKNOWN\\\",\\n      \\\"owner\\\": \\\"历史证据owner\\\",\\n      \\\"resume_condition\\\": \\\"提供原始来源或确认不可恢复；不遍历全部历史、不补造SHA。\\\"\\n    },\\n    {\\n      \\\"object\\\": \\\"05登记D/local strict及整轮验收\\\",\\n      \\\"status\\\": \\\"尚未由本次审查执行\\\",\\n      \\\"owner\\\": \\\"主控\\\",\\n      \\\"resume_condition\\\": \\\"消费本独审裁决后按既定Git登记合同推进；整轮门禁保持独立范围。\\\"\\n    }\\n  ],\\n  \\\"reviewer_execution\\\": {\\n    \\\"new_business_or_test_commands\\\": [],\\n    \\\"file_writes\\\": [],\\n    \\\"commits\\\": [],\\n    \\\"delegations\\\": [],\\n    \\\"final_head_rechecked\\\": \\\"8616468ab3384efad26095ca182255448076e081\\\",\\n    \\\"final_dirty\\\": [],\\n    \\\"runtime_identity_source\\\": \\\"CODEX_THREAD_ID和CODEX_SESSION_ID均返回01a1d636-91f8-73b2-92cd-e1933b28bda6\\\"\\n  },\\n  \\\"typesafe\\\": {\\n    \\\"request\\\": {\\n      \\\"state\\\": {\\n        \\\"contract\\\": {\\n          \\\"task\\\": \\\"05 Spike-Discovery release evidence index only\\\",\\n          \\\"required\\\": \\\"Four layers, nine row fields, UTC date/scope/original pointers; UNKNOWN owner and recovery; SKILL links index and template_generation; no install/config/deployment writes, credentials read, root README change, second task status ledger, self final SHA or iteration pre-PASS. experiment successful command; decision/interfaces observations. Tests do not establish facts. No RED requirement.\\\",\\n          \\\"candidate\\\": \\\"8616468ab3384efad26095ca182255448076e081\\\",\\n          \\\"base\\\": \\\"8392193a0d9e883892f75780a63a1b16f67682c4\\\"\\n        },\\n        \\\"git_observed\\\": {\\n          \\\"branch\\\": \\\"feat/iter-10-self-hosting-hardening\\\",\\n          \\\"head\\\": \\\"8616468ab3384efad26095ca182255448076e081\\\",\\n          \\\"status_short\\\": \\\"\\\",\\n          \\\"changed_files\\\": 60,\\n          \\\"changes\\\": \\\"SKILL one resource link; new release_status index, structural tests, Note, evidence/05 and 05 card. Root README, iteration README, 01-04 source/receipts absent from diff. Product/test/Note unchanged from 21acfe0b83122f10d105a65a8891667b4aa0977e; later commits add card and evidence.\\\"\\n        },\\n        \\\"index_text\\\": {\\n          \\\"source\\\": \\\"main d3bd97a and iter10 implementation-before baseline 8392193 separate\\\",\\n          \\\"reviewed\\\": \\\"01-04 reviewed candidates from original APPROVED review.json, only original task scope; no whole-iteration approval\\\",\\n          \\\"installation\\\": \\\"58 explicit historical paths in three roots equal main 58/58; 45/58 equal iter10 baseline; 36/58 historical frozen. Complete version UNKNOWN. iter_sync differs; templates/queries/cli/template_generation absent. First singular iter_query typo preserved, supplement observes plural iter_queries and iter_cli missing, tag lookup exit128.\\\",\\n          \\\"consumption\\\": \\\"Native records separate from synthetic FS; 01 linked slice canceled, 02-04 completed, terminal status not approval. R7 historical CLOSED_LOCAL_MOCK_FS excludes provider/full media/production/Git branch. P1 deployment missing at specified location UNKNOWN.\\\",\\n          \\\"unknowns\\\": \\\"Deployment owner: complete current manifest/version attribution and authorized new-session adoption. Historical evidence owner: supply original or confirm unrecoverable. Controller: later task registration/strict and total review.\\\",\\n          \\\"pointers\\\": \\\"Project-relative receipts/native records and five byte captures; capture manifest gives original absolute source, capture time, scope.\\\"\\n        },\\n        \\\"originals_read\\\": {\\n          \\\"experiment\\\": {\\n            \\\"status\\\": \\\"COMPLETED\\\",\\n            \\\"raw_exit_code\\\": 0,\\n            \\\"tree_terminal\\\": true,\\n            \\\"start\\\": \\\"2026-11-13T18:33:45.406517+00:00\\\",\\n            \\\"output\\\": \\\"1396-line raw output contains source/main commit, captures, 3x58 per-path booleans, entries, original review pointers; script only reads listed paths and writes own evidence\\\"\\n          },\\n          \\\"supplement\\\": {\\n            \\\"status\\\": \\\"COMPLETED\\\",\\n            \\\"raw_exit_code\\\": 0,\\n            \\\"tree_terminal\\\": true,\\n            \\\"at\\\": \\\"2026-11-13T18:36:33.343445+00:00\\\",\\n            \\\"output\\\": \\\"plural query/CLI absent three roots; no tags; 01 canceled vs 02-04 completed\\\"\\n          },\\n          \\\"historical\\\": \\\"Read original manifest SC-FS-I01-20261112-R7 files_per_target58 and explicit .agents/SKILL/references/scripts/templates/tests items; git-final head d29ddc2, 205 tests,58 equal,no push; R7 full acceptance time 2026-11-12T10:12:51.023029Z; P1 README says maintenance source only and synthetic FS.\\\",\\n          \\\"decision\\\": \\\"Four layers separate, bounded current file equality, full identity UNKNOWN; owner+conditions\\\",\\n          \\\"interfaces\\\": \\\"Nine fields, four layers, UTC capture provenance, task cards own status\\\",\\n          \\\"tests\\\": \\\"Implementer final output9 passed in0.65s; controller independent output9 passed in0.66s; both receipts COMPLETED/raw0/tree terminal true; coverage unchanged to C\\\",\\n          \\\"note\\\": \\\"Direct tree raw0 output18 notes links verified; direct final format raw0 output18 notes verified\\\",\\n          \\\"counterevidence\\\": \\\"slice-a-note-final nested powershell raw0 output contains '-ne' command error. Checkpoint and card explicitly exclude from success evidence; direct format rerun available.\\\",\\n          \\\"scope\\\": \\\"controller scope raw0, output all60 changed files within scope; git names independently read\\\"\\n        }\\n      },\\n      \\\"questions\\\": {\\n        \\\"review_disposition\\\": {\\n          \\\"type\\\": \\\"choice\\\",\\n          \\\"instructions\\\": \\\"For the task05 frozen candidate and stated contract only, choose the review disposition warranted by the supplied observations. Decide whether the index and primary evidence meet that bounded deliverable. Treat installation identity and new-session adoption as UNKNOWN as allowed; do not treat test counts or native completion as fact approval.\\\",\\n          \\\"criteria\\\": {\\n            \\\"APPROVED\\\": \\\"The bounded index deliverable and required primary checks are supported; retained unknowns have owners/conditions and no demonstrated material contract defect.\\\",\\n            \\\"CHANGES_REQUESTED\\\": \\\"An observed material mismatch or unsupported claim in the candidate requires correction within task05.\\\",\\n            \\\"BLOCKED\\\": \\\"A necessary primary input or provenance is missing so task05 cannot be judged.\\\",\\n            \\\"INSUFFICIENT\\\": \\\"The observations do not distinguish the dispositions.\\\"\\n          }\\n        }\\n      }\\n    },\\n    \\\"raw_response\\\": {\\n      \\\"content\\\": [\\n        {\\n          \\\"type\\\": \\\"text\\\",\\n          \\\"text\\\": \\\"{\\\\\\\"model\\\\\\\":\\\\\\\"jev-1.14.0\\\\\\\",\\\\\\\"answers\\\\\\\":{\\\\\\\"review_disposition\\\\\\\":{\\\\\\\"type\\\\\\\":\\\\\\\"choice\\\\\\\",\\\\\\\"choice\\\\\\\":\\\\\\\"CHANGES_REQUESTED\\\\\\\",\\\\\\\"confidence\\\\\\\":0.23,\\\\\\\"probabilities\\\\\\\":{\\\\\\\"APPROVED\\\\\\\":0.4,\\\\\\\"BLOCKED\\\\\\\":0.16,\\\\\\\"CHANGES_REQUESTED\\\\\\\":0.42,\\\\\\\"INSUFFICIENT\\\\\\\":0.02}}},\\\\\\\"usage\\\\\\\":{\\\\\\\"input_tokens\\\\\\\":1695,\\\\\\\"output_tokens\\\\\\\":66}}\\\"\\n        }\\n      ]\\n    },\\n    \\\"application\\\": \\\"结果不明确：CHANGES_REQUESTED 0.42与APPROVED 0.40接近，confidence为0.23，且未提供具体缺陷。随后定点核对原始输出数量及五份捕获与来源字节，均一致；未重复刷分。Reviewer依据实际差异、原件和任务契约独立裁决APPROVED，不将TypeSafe结果冒作批准。\\\"\\n  }\\n}\",\"duration_ms\":229216,\"progress\":{\"steps\":22,\"marks\":[\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\"],\"last_step\":\"$e='docs/todos/10-self-hosting-hardening/evidence/05'; $o=Get-Content -Raw \\\"$e/slice-a-experiment-1.json.output.txt\\\" | C…\"}}]}"
+                }
+              ],
+              "structuredContent": {
+                "tasks": [
+                  {
+                    "task_id": "3521c397-6407-4026-ace5-8c1105b191ae",
+                    "status": "completed",
+                    "child_conversation_id": 1721,
+                    "agent_type": "codex",
+                    "text": "{\n  \"reviewer\": {\n    \"identity\": \"Codex independent reviewer / session 01a1d636-91f8-73b2-92cd-e1933b28bda6\",\n    \"runtime_role\": \"/root\",\n    \"independent\": true,\n    \"participation\": \"未参与任务05实现、测试、设计或RCA；不是主控1699或实现1720\",\n    \"read_only\": true\n  },\n  \"base_sha\": \"8392193a0d9e883892f75780a63a1b16f67682c4\",\n  \"head_sha\": \"8616468ab3384efad26095ca182255448076e081\",\n  \"contract_sha\": \"8616468ab3384efad26095ca182255448076e081\",\n  \"branch\": \"feat/iter-10-self-hosting-hardening\",\n  \"dirty\": [],\n  \"verdict\": \"APPROVED\",\n  \"verdict_basis\": \"实际差异、原始实验输出及历史原件支持任务05限定交付。四层事实、日期、范围、来源和UNKNOWN补齐责任清楚；未发现需要返修的实质缺陷。本裁决不表示部署、新会话采用或整轮验收通过。\",\n  \"scope\": {\n    \"result\": \"符合\",\n    \"evidence\": [\n      \"实际BASE..C共60个变更文件，限于05白名单、05卡及其证据目录。\",\n      \"SKILL.md仅增加发布索引和template_generation资源链接。\",\n      \"根docs/todos/README.md、迭代README、01—04源码及收据未在本次差异中修改。\",\n      \"slice-a-observe.py:21-64使用历史manifest显式路径及命名入口；未递归扫描安装目录或读取凭据、配置。\",\n      \"controller-scope.json.output.txt:1记录60个文件均在声明范围内；本次另读取实际Git变更清单核对。\"\n    ]\n  },\n  \"spec\": {\n    \"result\": \"符合\",\n    \"evidence\": [\n      \"references/release_status.md:5-16定义九字段及UTC、原件捕获和范围含义；18-58分列源码、已审候选、安装、实际消费。\",\n      \"references/release_status.md:22-34分别记录维护main、iter10实施前基线及01—04原收据候选，不把逐卡批准提升为整轮批准。\",\n      \"references/release_status.md:38-44明确58路径只是历史清单观察，完整安装版本UNKNOWN；说明单数入口错误及复数入口补测。\",\n      \"references/release_status.md:49-58区分原生切片终态、最终review批准、真实Git自用与合成FS。\",\n      \"references/release_status.md:60-65明确部署owner、历史证据owner、相应操作owner及主控的补齐条件。\",\n      \"SKILL.md:91同时链接release_status.md与template_generation.md；索引没有自身最终SHA、本轮预PASS或另一任务状态账。\"\n    ]\n  },\n  \"quality\": {\n    \"result\": \"符合\",\n    \"evidence\": [\n      \"完整读取SKILL、共同协议、任务卡schema、迭代README、05卡、发布索引、结构测试及Note；审查实际差异和关键原始输出。\",\n      \"原始实验逐文件记录支持三根各58/58等于main、45/58等于iter10基线、36/58等于历史冻结源；本次从原始输出重新汇总得到相同数量。\",\n      \"历史manifest实际含58条唯一relative路径、两个副本目标；观察脚本另比较维护main，未把manifest目标数冒称三份部署操作。\",\n      \"五份历史捕获与各自记录的原绝对来源逐字节相等；捕获清单保留时间和范围。\",\n      \"tests/test_release_index.py明确只检查结构、字段和链接，不承担事实批准。\"\n    ]\n  },\n  \"issues\": [],\n  \"checks\": [\n    {\n      \"name\": \"experiment\",\n      \"kind\": \"command\",\n      \"command\": \"python -B docs/todos/10-self-hosting-hardening/evidence/05/slice-a-observe.py\",\n      \"cwd\": \".\",\n      \"exit_code\": 0,\n      \"receipt\": \"docs/todos/10-self-hosting-hardening/evidence/05/slice-a-experiment-1.json\",\n      \"output\": \"docs/todos/10-self-hosting-hardening/evidence/05/slice-a-experiment-1.json.output.txt\",\n      \"summary\": \"COMPLETED、tree_terminal=true；原始逐文件布尔值、捕获来源及review指针支持限定观察。\",\n      \"supplement\": {\n        \"command\": \"python -B docs/todos/10-self-hosting-hardening/evidence/05/slice-a-observe-entries.py\",\n        \"exit_code\": 0,\n        \"receipt\": \"docs/todos/10-self-hosting-hardening/evidence/05/slice-a-experiment-entries-1.json\",\n        \"output\": \"docs/todos/10-self-hosting-hardening/evidence/05/slice-a-experiment-entries-1.json.output.txt\",\n        \"summary\": \"实际复数iter_queries.py及iter_cli.py在三根缺失；标签查询128保留UNKNOWN；01 canceled与02—04 completed分开记录。\"\n      }\n    },\n    {\n      \"name\": \"decision\",\n      \"kind\": \"observation\",\n      \"output\": \"docs/todos/10-self-hosting-hardening/evidence/05/slice-a-decision.json\",\n      \"summary\": \"有限清单OBSERVED、完整版本UNKNOWN的分类与原始实验一致；历史R7、P1及补齐责任没有外推。\"\n    },\n    {\n      \"name\": \"interfaces\",\n      \"kind\": \"observation\",\n      \"output\": \"docs/todos/10-self-hosting-hardening/evidence/05/slice-a-interfaces.json\",\n      \"summary\": \"四层九字段、UTC日期、原件捕获、UNKNOWN及状态真源边界与索引一致。\"\n    }\n  ],\n  \"reused_evidence\": [\n    {\n      \"coverage\": \"指定三文件结构、入口和既有契约回归\",\n      \"original_source_sha\": \"21acfe0b83122f10d105a65a8891667b4aa0977e\",\n      \"outputs\": [\n        \"docs/todos/10-self-hosting-hardening/evidence/05/slice-a-targeted-final.json.output.txt\",\n        \"docs/todos/10-self-hosting-hardening/evidence/05/controller-regression.json.output.txt\"\n      ],\n      \"result\": \"实现者9 passed in 0.65s；主控独立9 passed in 0.66s；对应receipt均COMPLETED/raw0/tree_terminal=true。\",\n      \"reuse_basis\": \"实际21acfe0..C变更不包含产品、测试、Note或上述原始实验和回归输出；未受影响证据沿用，不冒称Reviewer重新执行。\"\n    },\n    {\n      \"coverage\": \"Note目录、相对链接及格式\",\n      \"outputs\": [\n        \"docs/todos/10-self-hosting-hardening/evidence/05/slice-a-note-tree-1.json.output.txt\",\n        \"docs/todos/10-self-hosting-hardening/evidence/05/slice-a-note-format-final.json.output.txt\"\n      ],\n      \"result\": \"直接命令各raw0，输出分别为18 notes tree/links verified和18 notes verified。\",\n      \"reuse_basis\": \"Note及相关拓扑未变化；排除错误嵌套PowerShell命令后仍有有效直接命令证据。\"\n    },\n    {\n      \"coverage\": \"01—04既有批准及历史消费索引\",\n      \"outputs\": [\n        \"docs/todos/10-self-hosting-hardening/evidence/01/review.json\",\n        \"docs/todos/10-self-hosting-hardening/evidence/02/review.json\",\n        \"docs/todos/10-self-hosting-hardening/evidence/03/review.json\",\n        \"docs/todos/10-self-hosting-hardening/evidence/04/review.json\"\n      ],\n      \"reuse_basis\": \"仅核对索引引用的原候选、checks及批准范围，不重做01—04验收；原生completed/canceled均不替代这些批准。\"\n    }\n  ],\n  \"excluded_evidence\": [\n    {\n      \"file\": \"docs/todos/10-self-hosting-hardening/evidence/05/slice-a-note-final.json.output.txt:8-14\",\n      \"fact\": \"receipt raw0，但输出存在-ne CommandNotFoundException。\",\n      \"treatment\": \"明确不作为成功门禁证据；保留反证，采用直接tree及直接final format原件。\",\n      \"blocking\": false\n    },\n    {\n      \"fact\": \"原始日志含既有空行、CR或尾随空白。\",\n      \"treatment\": \"保持原件，不以日志空白要求清理或阻断产品；不把raw0或whitespace检查当事实验收。\",\n      \"blocking\": false\n    }\n  ],\n  \"unknown_boundaries\": [\n    {\n      \"object\": \"完整当前安装版本、对应reviewed_candidate及安装新会话采用\",\n      \"status\": \"UNKNOWN\",\n      \"owner\": \"部署owner\",\n      \"resume_condition\": \"另获部署授权后提供完整当前交付manifest、版本归属和原生新会话消费证据。\"\n    },\n    {\n      \"object\": \"P1所查deployment.json及历史候选Git来源\",\n      \"status\": \"UNKNOWN\",\n      \"owner\": \"历史证据owner\",\n      \"resume_condition\": \"提供原始来源或确认不可恢复；不遍历全部历史、不补造SHA。\"\n    },\n    {\n      \"object\": \"05登记D/local strict及整轮验收\",\n      \"status\": \"尚未由本次审查执行\",\n      \"owner\": \"主控\",\n      \"resume_condition\": \"消费本独审裁决后按既定Git登记合同推进；整轮门禁保持独立范围。\"\n    }\n  ],\n  \"reviewer_execution\": {\n    \"new_business_or_test_commands\": [],\n    \"file_writes\": [],\n    \"commits\": [],\n    \"delegations\": [],\n    \"final_head_rechecked\": \"8616468ab3384efad26095ca182255448076e081\",\n    \"final_dirty\": [],\n    \"runtime_identity_source\": \"CODEX_THREAD_ID和CODEX_SESSION_ID均返回01a1d636-91f8-73b2-92cd-e1933b28bda6\"\n  },\n  \"typesafe\": {\n    \"request\": {\n      \"state\": {\n        \"contract\": {\n          \"task\": \"05 Spike-Discovery release evidence index only\",\n          \"required\": \"Four layers, nine row fields, UTC date/scope/original pointers; UNKNOWN owner and recovery; SKILL links index and template_generation; no install/config/deployment writes, credentials read, root README change, second task status ledger, self final SHA or iteration pre-PASS. experiment successful command; decision/interfaces observations. Tests do not establish facts. No RED requirement.\",\n          \"candidate\": \"8616468ab3384efad26095ca182255448076e081\",\n          \"base\": \"8392193a0d9e883892f75780a63a1b16f67682c4\"\n        },\n        \"git_observed\": {\n          \"branch\": \"feat/iter-10-self-hosting-hardening\",\n          \"head\": \"8616468ab3384efad26095ca182255448076e081\",\n          \"status_short\": \"\",\n          \"changed_files\": 60,\n          \"changes\": \"SKILL one resource link; new release_status index, structural tests, Note, evidence/05 and 05 card. Root README, iteration README, 01-04 source/receipts absent from diff. Product/test/Note unchanged from 21acfe0b83122f10d105a65a8891667b4aa0977e; later commits add card and evidence.\"\n        },\n        \"index_text\": {\n          \"source\": \"main d3bd97a and iter10 implementation-before baseline 8392193 separate\",\n          \"reviewed\": \"01-04 reviewed candidates from original APPROVED review.json, only original task scope; no whole-iteration approval\",\n          \"installation\": \"58 explicit historical paths in three roots equal main 58/58; 45/58 equal iter10 baseline; 36/58 historical frozen. Complete version UNKNOWN. iter_sync differs; templates/queries/cli/template_generation absent. First singular iter_query typo preserved, supplement observes plural iter_queries and iter_cli missing, tag lookup exit128.\",\n          \"consumption\": \"Native records separate from synthetic FS; 01 linked slice canceled, 02-04 completed, terminal status not approval. R7 historical CLOSED_LOCAL_MOCK_FS excludes provider/full media/production/Git branch. P1 deployment missing at specified location UNKNOWN.\",\n          \"unknowns\": \"Deployment owner: complete current manifest/version attribution and authorized new-session adoption. Historical evidence owner: supply original or confirm unrecoverable. Controller: later task registration/strict and total review.\",\n          \"pointers\": \"Project-relative receipts/native records and five byte captures; capture manifest gives original absolute source, capture time, scope.\"\n        },\n        \"originals_read\": {\n          \"experiment\": {\n            \"status\": \"COMPLETED\",\n            \"raw_exit_code\": 0,\n            \"tree_terminal\": true,\n            \"start\": \"2026-11-13T18:33:45.406517+00:00\",\n            \"output\": \"1396-line raw output contains source/main commit, captures, 3x58 per-path booleans, entries, original review pointers; script only reads listed paths and writes own evidence\"\n          },\n          \"supplement\": {\n            \"status\": \"COMPLETED\",\n            \"raw_exit_code\": 0,\n            \"tree_terminal\": true,\n            \"at\": \"2026-11-13T18:36:33.343445+00:00\",\n            \"output\": \"plural query/CLI absent three roots; no tags; 01 canceled vs 02-04 completed\"\n          },\n          \"historical\": \"Read original manifest SC-FS-I01-20261112-R7 files_per_target58 and explicit .agents/SKILL/references/scripts/templates/tests items; git-final head d29ddc2, 205 tests,58 equal,no push; R7 full acceptance time 2026-11-12T10:12:51.023029Z; P1 README says maintenance source only and synthetic FS.\",\n          \"decision\": \"Four layers separate, bounded current file equality, full identity UNKNOWN; owner+conditions\",\n          \"interfaces\": \"Nine fields, four layers, UTC capture provenance, task cards own status\",\n          \"tests\": \"Implementer final output9 passed in0.65s; controller independent output9 passed in0.66s; both receipts COMPLETED/raw0/tree terminal true; coverage unchanged to C\",\n          \"note\": \"Direct tree raw0 output18 notes links verified; direct final format raw0 output18 notes verified\",\n          \"counterevidence\": \"slice-a-note-final nested powershell raw0 output contains '-ne' command error. Checkpoint and card explicitly exclude from success evidence; direct format rerun available.\",\n          \"scope\": \"controller scope raw0, output all60 changed files within scope; git names independently read\"\n        }\n      },\n      \"questions\": {\n        \"review_disposition\": {\n          \"type\": \"choice\",\n          \"instructions\": \"For the task05 frozen candidate and stated contract only, choose the review disposition warranted by the supplied observations. Decide whether the index and primary evidence meet that bounded deliverable. Treat installation identity and new-session adoption as UNKNOWN as allowed; do not treat test counts or native completion as fact approval.\",\n          \"criteria\": {\n            \"APPROVED\": \"The bounded index deliverable and required primary checks are supported; retained unknowns have owners/conditions and no demonstrated material contract defect.\",\n            \"CHANGES_REQUESTED\": \"An observed material mismatch or unsupported claim in the candidate requires correction within task05.\",\n            \"BLOCKED\": \"A necessary primary input or provenance is missing so task05 cannot be judged.\",\n            \"INSUFFICIENT\": \"The observations do not distinguish the dispositions.\"\n          }\n        }\n      }\n    },\n    \"raw_response\": {\n      \"content\": [\n        {\n          \"type\": \"text\",\n          \"text\": \"{\\\"model\\\":\\\"jev-1.14.0\\\",\\\"answers\\\":{\\\"review_disposition\\\":{\\\"type\\\":\\\"choice\\\",\\\"choice\\\":\\\"CHANGES_REQUESTED\\\",\\\"confidence\\\":0.23,\\\"probabilities\\\":{\\\"APPROVED\\\":0.4,\\\"BLOCKED\\\":0.16,\\\"CHANGES_REQUESTED\\\":0.42,\\\"INSUFFICIENT\\\":0.02}}},\\\"usage\\\":{\\\"input_tokens\\\":1695,\\\"output_tokens\\\":66}}\"\n        }\n      ]\n    },\n    \"application\": \"结果不明确：CHANGES_REQUESTED 0.42与APPROVED 0.40接近，confidence为0.23，且未提供具体缺陷。随后定点核对原始输出数量及五份捕获与来源字节，均一致；未重复刷分。Reviewer依据实际差异、原件和任务契约独立裁决APPROVED，不将TypeSafe结果冒作批准。\"\n  }\n}",
+                    "duration_ms": 229216,
+                    "progress": {
+                      "steps": 22,
+                      "marks": [
+                        "ok",
+                        "ok",
+                        "ok",
+                        "ok",
+                        "ok",
+                        "ok",
+                        "ok",
+                        "ok",
+                        "ok",
+                        "ok",
+                        "ok",
+                        "ok"
+                      ],
+                      "last_step": "$e='docs/todos/10-self-hosting-hardening/evidence/05'; $o=Get-Content -Raw \"$e/slice-a-experiment-1.json.output.txt\" | C…"
+                    }
+                  }
+                ]
+              },
+              "isError": false
+            }
+          }
+        }
+      ]
+    }
+  }
+}

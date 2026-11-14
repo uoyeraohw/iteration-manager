@@ -1,0 +1,376 @@
+{
+  "version": 1,
+  "task_id": "03",
+  "slice": "C",
+  "status": "TESTING",
+  "acceptance": "PENDING; implementer is not independent reviewer",
+  "base_sha": "f879bba28326af84fd9217a70c390a35887ec62b",
+  "starting_sha": "268f221742f2b22ff8faa88a53ac50b18947f57f",
+  "actual_sha": "b6991f5b230ec17f0657ee16202c69a16277506b",
+  "sha_meaning": "Implementation/tests/Note and raw evidence; checkpoint committed separately without amend",
+  "started_at": "2026-11-13T17:48:24Z",
+  "checkpoint_at": "2026-11-13T17:54:35.1278957+00:00",
+  "tree_terminal": true,
+  "active_commands": [],
+  "commands": [
+    {
+      "receipt": "docs/todos/10-self-hosting-hardening/evidence/03/slice-c-after-1751.json",
+      "argv": [
+        "python",
+        "-B",
+        "docs/todos/10-self-hosting-hardening/evidence/03/benchmark_projection.py",
+        "--label",
+        "after"
+      ],
+      "status": "COMPLETED",
+      "raw_exit_code": 0,
+      "tree_terminal": true,
+      "started_at": "2026-11-14T01:50:24.473085+08:00",
+      "ended_at": "2026-11-14T01:50:27.819416+08:00",
+      "output": "docs/todos/10-self-hosting-hardening/evidence/03/slice-c-after-1751.json.output.txt"
+    },
+    {
+      "receipt": "docs/todos/10-self-hosting-hardening/evidence/03/slice-c-cli-final-1753.json",
+      "argv": [
+        "python",
+        "-B",
+        "-m",
+        "pytest",
+        "-p",
+        "no:cacheprovider",
+        "tests/test_cli_compatibility.py",
+        "-q"
+      ],
+      "status": "COMPLETED",
+      "raw_exit_code": 0,
+      "tree_terminal": true,
+      "started_at": "2026-11-14T01:53:08.846823+08:00",
+      "ended_at": "2026-11-14T01:53:12.097375+08:00",
+      "output": "docs/todos/10-self-hosting-hardening/evidence/03/slice-c-cli-final-1753.json.output.txt"
+    },
+    {
+      "receipt": "docs/todos/10-self-hosting-hardening/evidence/03/slice-c-cli-green-1751.json",
+      "argv": [
+        "python",
+        "-B",
+        "-m",
+        "pytest",
+        "-p",
+        "no:cacheprovider",
+        "tests/test_cli_compatibility.py",
+        "-q"
+      ],
+      "status": "COMPLETED",
+      "raw_exit_code": 0,
+      "tree_terminal": true,
+      "started_at": "2026-11-14T01:50:10.676522+08:00",
+      "ended_at": "2026-11-14T01:50:13.8243+08:00",
+      "output": "docs/todos/10-self-hosting-hardening/evidence/03/slice-c-cli-green-1751.json.output.txt"
+    },
+    {
+      "receipt": "docs/todos/10-self-hosting-hardening/evidence/03/slice-c-cli-red-1749.json",
+      "argv": [
+        "python",
+        "-B",
+        "-m",
+        "pytest",
+        "-p",
+        "no:cacheprovider",
+        "tests/test_cli_compatibility.py",
+        "-q"
+      ],
+      "status": "COMPLETED",
+      "raw_exit_code": 1,
+      "tree_terminal": true,
+      "started_at": "2026-11-14T01:49:21.578486+08:00",
+      "ended_at": "2026-11-14T01:49:25.158722+08:00",
+      "output": "docs/todos/10-self-hosting-hardening/evidence/03/slice-c-cli-red-1749.json.output.txt"
+    },
+    {
+      "receipt": "docs/todos/10-self-hosting-hardening/evidence/03/slice-c-compatibility-1752.json",
+      "argv": [
+        "python",
+        "-B",
+        "docs/todos/10-self-hosting-hardening/evidence/03/slice-c-compatibility.py"
+      ],
+      "status": "COMPLETED",
+      "raw_exit_code": 1,
+      "tree_terminal": true,
+      "started_at": "2026-11-14T01:51:43.038631+08:00",
+      "ended_at": "2026-11-14T01:51:43.339756+08:00",
+      "output": "docs/todos/10-self-hosting-hardening/evidence/03/slice-c-compatibility-1752.json.output.txt"
+    },
+    {
+      "receipt": "docs/todos/10-self-hosting-hardening/evidence/03/slice-c-compatibility-1752b.json",
+      "argv": [
+        "python",
+        "-B",
+        "docs/todos/10-self-hosting-hardening/evidence/03/slice-c-compatibility.py"
+      ],
+      "status": "COMPLETED",
+      "raw_exit_code": 0,
+      "tree_terminal": true,
+      "started_at": "2026-11-14T01:51:59.590721+08:00",
+      "ended_at": "2026-11-14T01:51:59.885323+08:00",
+      "output": "docs/todos/10-self-hosting-hardening/evidence/03/slice-c-compatibility-1752b.json.output.txt"
+    },
+    {
+      "receipt": "docs/todos/10-self-hosting-hardening/evidence/03/slice-c-extract-1750.json",
+      "argv": [
+        "python",
+        "-B",
+        "docs/todos/10-self-hosting-hardening/evidence/03/slice-c-extract.py"
+      ],
+      "status": "COMPLETED",
+      "raw_exit_code": 0,
+      "tree_terminal": true,
+      "started_at": "2026-11-14T01:49:46.2956+08:00",
+      "ended_at": "2026-11-14T01:49:46.442137+08:00",
+      "output": "docs/todos/10-self-hosting-hardening/evidence/03/slice-c-extract-1750.json.output.txt"
+    },
+    {
+      "receipt": "docs/todos/10-self-hosting-hardening/evidence/03/slice-c-note-format-1751.json",
+      "argv": [
+        "npx.cmd",
+        "--no-install",
+        "tsx",
+        "C:/Users/qingyu/.codex/skills/write-notes-like-deepseek/scripts/verify-agent-note-format.ts"
+      ],
+      "status": "COMPLETED",
+      "raw_exit_code": 0,
+      "tree_terminal": true,
+      "started_at": "2026-11-14T01:51:22.223913+08:00",
+      "ended_at": "2026-11-14T01:51:25.146221+08:00",
+      "output": "docs/todos/10-self-hosting-hardening/evidence/03/slice-c-note-format-1751.json.output.txt"
+    },
+    {
+      "receipt": "docs/todos/10-self-hosting-hardening/evidence/03/slice-c-note-format-final-1753.json",
+      "argv": [
+        "npx.cmd",
+        "--no-install",
+        "tsx",
+        "C:/Users/qingyu/.codex/skills/write-notes-like-deepseek/scripts/verify-agent-note-format.ts"
+      ],
+      "status": "COMPLETED",
+      "raw_exit_code": 0,
+      "tree_terminal": true,
+      "started_at": "2026-11-14T01:53:28.834029+08:00",
+      "ended_at": "2026-11-14T01:53:31.386509+08:00",
+      "output": "docs/todos/10-self-hosting-hardening/evidence/03/slice-c-note-format-final-1753.json.output.txt"
+    },
+    {
+      "receipt": "docs/todos/10-self-hosting-hardening/evidence/03/slice-c-note-tree-1751.json",
+      "argv": [
+        "npx.cmd",
+        "--no-install",
+        "tsx",
+        "C:/Users/qingyu/.codex/skills/write-notes-like-deepseek/scripts/verify-agent-note-tree.ts"
+      ],
+      "status": "COMPLETED",
+      "raw_exit_code": 0,
+      "tree_terminal": true,
+      "started_at": "2026-11-14T01:51:19.076463+08:00",
+      "ended_at": "2026-11-14T01:51:21.749574+08:00",
+      "output": "docs/todos/10-self-hosting-hardening/evidence/03/slice-c-note-tree-1751.json.output.txt"
+    },
+    {
+      "receipt": "docs/todos/10-self-hosting-hardening/evidence/03/slice-c-note-tree-final-1753.json",
+      "argv": [
+        "npx.cmd",
+        "--no-install",
+        "tsx",
+        "C:/Users/qingyu/.codex/skills/write-notes-like-deepseek/scripts/verify-agent-note-tree.ts"
+      ],
+      "status": "COMPLETED",
+      "raw_exit_code": 0,
+      "tree_terminal": true,
+      "started_at": "2026-11-14T01:53:25.77914+08:00",
+      "ended_at": "2026-11-14T01:53:28.343523+08:00",
+      "output": "docs/todos/10-self-hosting-hardening/evidence/03/slice-c-note-tree-final-1753.json.output.txt"
+    },
+    {
+      "receipt": "docs/todos/10-self-hosting-hardening/evidence/03/slice-c-regression-1750.json",
+      "argv": [
+        "python",
+        "-B",
+        "-m",
+        "pytest",
+        "-p",
+        "no:cacheprovider",
+        "tests/test_query_contract.py",
+        "tests/test_cli_compatibility.py",
+        "tests/test_sync_compatibility.py",
+        "tests/test_completion_gates.py",
+        "tests/test_execution_readiness.py",
+        "tests/test_execution_report.py",
+        "tests/test_filesystem_delivery_controller.py",
+        "tests/test_worktree_concurrency.py",
+        "-q"
+      ],
+      "status": "COMPLETED",
+      "raw_exit_code": 0,
+      "tree_terminal": true,
+      "started_at": "2026-11-14T01:50:37.217663+08:00",
+      "ended_at": "2026-11-14T01:53:09.647771+08:00",
+      "output": "docs/todos/10-self-hosting-hardening/evidence/03/slice-c-regression-1750.json.output.txt"
+    },
+    {
+      "receipt": "docs/todos/10-self-hosting-hardening/evidence/03/slice-c-scope-1753.json",
+      "argv": [
+        "python",
+        "-B",
+        "C:/Users/qingyu/.codeg/skills/iteration-manager/build/frozen-tools/46ded3a/scripts/iter_sync.py",
+        "--check-scope",
+        "f879bba28326af84fd9217a70c390a35887ec62b",
+        "HEAD",
+        "docs/todos/10-self-hosting-hardening/03-query-cli-contract.md",
+        "--include-worktree"
+      ],
+      "status": "COMPLETED",
+      "raw_exit_code": 0,
+      "tree_terminal": true,
+      "started_at": "2026-11-14T01:53:45.658029+08:00",
+      "ended_at": "2026-11-14T01:53:46.696904+08:00",
+      "output": "docs/todos/10-self-hosting-hardening/evidence/03/slice-c-scope-1753.json.output.txt"
+    },
+    {
+      "receipt": "docs/todos/10-self-hosting-hardening/evidence/03/slice-c-scope-candidate-1754.json",
+      "argv": [
+        "python",
+        "-B",
+        "C:/Users/qingyu/.codeg/skills/iteration-manager/build/frozen-tools/46ded3a/scripts/iter_sync.py",
+        "--check-scope",
+        "f879bba28326af84fd9217a70c390a35887ec62b",
+        "HEAD",
+        "docs/todos/10-self-hosting-hardening/03-query-cli-contract.md",
+        "--include-worktree"
+      ],
+      "status": "COMPLETED",
+      "raw_exit_code": 0,
+      "tree_terminal": true,
+      "started_at": "2026-11-14T01:54:33.125149+08:00",
+      "ended_at": "2026-11-14T01:54:34.137648+08:00",
+      "output": "docs/todos/10-self-hosting-hardening/evidence/03/slice-c-scope-candidate-1754.json.output.txt"
+    }
+  ],
+  "benchmark": {
+    "before": [
+      {
+        "size": 10,
+        "repeat": 1,
+        "seconds": 0.13272730000608135,
+        "git_call_count": 1
+      },
+      {
+        "size": 10,
+        "repeat": 2,
+        "seconds": 0.11966129999200348,
+        "git_call_count": 1
+      },
+      {
+        "size": 10,
+        "repeat": 3,
+        "seconds": 0.12035120000655297,
+        "git_call_count": 1
+      },
+      {
+        "size": 100,
+        "repeat": 1,
+        "seconds": 0.6158059000008507,
+        "git_call_count": 1
+      },
+      {
+        "size": 100,
+        "repeat": 2,
+        "seconds": 0.6082395999983419,
+        "git_call_count": 1
+      },
+      {
+        "size": 100,
+        "repeat": 3,
+        "seconds": 0.6249414999911096,
+        "git_call_count": 1
+      }
+    ],
+    "after": [
+      {
+        "size": 10,
+        "repeat": 1,
+        "seconds": 0.14391179999802262,
+        "git_call_count": 1
+      },
+      {
+        "size": 10,
+        "repeat": 2,
+        "seconds": 0.1315158000070369,
+        "git_call_count": 1
+      },
+      {
+        "size": 10,
+        "repeat": 3,
+        "seconds": 0.13606459999573417,
+        "git_call_count": 1
+      },
+      {
+        "size": 100,
+        "repeat": 1,
+        "seconds": 0.7588083000009647,
+        "git_call_count": 1
+      },
+      {
+        "size": 100,
+        "repeat": 2,
+        "seconds": 0.7589429999934509,
+        "git_call_count": 1
+      },
+      {
+        "size": 100,
+        "repeat": 3,
+        "seconds": 0.7327065999998013,
+        "git_call_count": 1
+      }
+    ]
+  },
+  "compatibility": {
+    "new_api": "iter_cli.main(argv: list[str] | None=None)->int",
+    "legacy": "iter_sync.main() lazily dispatches; None on success and SystemExit/error behavior preserved",
+    "old_signatures": "unchanged; only added task_handoff_projection export",
+    "html_http": "unchanged",
+    "readiness": "only authorized test observation target migrated; exact original assertion preserved",
+    "red": "one valid CLI callable stub assertion RED; inherited A four field RED not replayed",
+    "supplemental_tests": "10 CLI cases not preceded by RED",
+    "final_cli": "11 passed in 0.93s",
+    "eight_file_run": "170 passed in 149.26s, raw exit 0, tree terminal true; loaded old main before final facade correction, not final-candidate whole-suite acceptance",
+    "note": "final tree/format exit 0",
+    "scope": "frozen BASE HEAD --include-worktree exit 0",
+    "performance_claim": null
+  },
+  "failures": [
+    "slice-c-compatibility-1752 original equality assertion rejected added helper export; corrected check requires every original signature unchanged and reports added exports; raw failure retained"
+  ],
+  "remaining_work": [
+    "D: rerun exact eight-file regression on b6991f5 final facade code with >149.26 seconds plus runner overhead; not started with insufficient remaining window",
+    "Controller: inspect BASE..final HEAD and dirty; independent review/acceptance, card/README and attempt/release registration"
+  ],
+  "direct_continuation": {
+    "source": "scripts/iter_cli.py; scripts/iter_sync.py::main",
+    "tests": "tests/test_cli_compatibility.py plus exact eight-file command in 03 card",
+    "prior": "handoff-b.json; implementation-checkpoint-b.json; test-seam-ruling.json",
+    "warning": "Do not rerun one-time slice-c-extract.py: it represents pre-final extraction, not recovery procedure"
+  },
+  "dirty_ownership": {
+    "controller_owned": [
+      "docs/todos/10-self-hosting-hardening/evidence/03/context-implementation-c.json",
+      "docs/todos/10-self-hosting-hardening/evidence/03/dispatch-c.json"
+    ],
+    "controller_files_staged": false,
+    "cards_readme_modified": false
+  },
+  "timing": {
+    "first_test_window_seconds": 276,
+    "actual_regression_seconds": 149.26,
+    "final_rerun_deferred": "remaining <149.26s plus overhead",
+    "session_total_seconds": "UNKNOWN until native return",
+    "test_writing_seconds": null
+  }
+}

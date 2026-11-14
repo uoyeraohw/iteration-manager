@@ -1,0 +1,39 @@
+{
+  "request": {
+    "state": {
+      "contract": "04 requires native desktop filter→detail→candidate/remaining→listed source→Escape; normal/empty/loading/disconnect; Git/FS identities; counts; readonly HTTP/symlink",
+      "observed": {
+        "viewport": [
+          1139,
+          869
+        ],
+        "git": "filter PASS yields 3 cards, task03 BASE f879bba... C542f2b..., listed receipt opened via native link popup; Escape closes; task04 original checkpoint7fe4b4d and remaining rendered",
+        "fs": "native card shows candidate_id synthetic-fs-current-a distinct original synthetic-fs-original-a and evidence/attempt.json, remaining two items; no SHA shown",
+        "states": "normal realtime; PASS filter no tasks; empty0/0; loading real HTTP6s then realtime; native manual refresh timestamp changed; own FS server stop→connection interrupted, same counts0/1 and card retained",
+        "screenshots": "root inspected Git overview, Git checkpoint modal, FS modal, empty, loading, disconnect at1139x869. Modal scrollbars; long paths wrap, close visible, no text overlaps in inspected views",
+        "tests": "implementation final five-file67passed; HTTP symlink actual creation/rejection no skip; root independent rerun pending",
+        "not_observed": "mobile, other viewport, deployment; not in04 contract"
+      }
+    },
+    "questions": {
+      "review_ready": {
+        "type": "choice",
+        "instructions": "仅判断任务04当前UI证据是否足以进入独立审查；不签发APPROVED。以列明桌面用户路径/四态/模式/视觉为标准；未要求的手机或部署不作前提。",
+        "criteria": {
+          "submit": "合同列明UI路径与四态原生证据齐备，可以提交独审；独审和回归门禁仍待完成",
+          "supplement": "有明确合同内行为或状态尚无证据，先补验",
+          "unknown": "事实不足以判断"
+        }
+      }
+    }
+  },
+  "response": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"model\":\"jev-1.14.0\",\"answers\":{\"review_ready\":{\"type\":\"choice\",\"choice\":\"submit\",\"confidence\":0.48,\"probabilities\":{\"submit\":0.65,\"supplement\":0.34,\"unknown\":0.01}}},\"usage\":{\"input_tokens\":768,\"output_tokens\":40}}"
+      }
+    ]
+  },
+  "application": "submit for nonparticipant review, not product approval; current facts independently inspected; no repeat scoring"
+}

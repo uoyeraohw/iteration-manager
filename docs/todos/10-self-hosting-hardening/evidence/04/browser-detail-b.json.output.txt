@@ -1,0 +1,139 @@
+[ego-browser:notice] Ego Lite update is available (current 0.6.2.8). Finish the current browser task, then ask the user before running `ego-browser upgrade`; re-read the ego-browser Skill afterward.
+GIT APPROVED DETAIL
+[p1 "迭代验收 · 10-self-hosting-hardening" | space "iteration10-self-hosting-board-20261114"(5): 1 managed, 0 untracked — p1* "迭代验收 · 10-self-hosting-hardening"]
+root
+  container
+    container
+      text "ITERATION / EVIDENCE FIRST"
+      heading
+        text "10-self-hosting-hardening"
+      paragraph
+        text "读取时间 2026-11-14T02:20:00.185658+08:00"
+      text "加载中 · 保留上次快照"
+      button [ref=1]
+        text "刷新"
+    container "当前结论"
+      text "迭代推进中"
+      paragraph
+        text "下一步：打开任务核对阻塞、缺失证据及恢复条件；先处理受影响的依赖。"
+      text "验收 PASS"
+      text "3 / 6"
+      text "声明 DONE"
+      text "3 / 6"
+      text "阻塞 / 未知"
+      text "0 / 3"
+    container "筛选任务"
+      button [ref=2]
+        text "全部"
+      button [ref=3]
+        text "阻塞 / 失败"
+      button [ref=4]
+        text "证据未知"
+      button [ref=5]
+        text "进行中"
+      button [ref=6]
+        text "待验收"
+      button [ref=7]
+        text "验收通过"
+    container "任务列表"
+      button "统一授权规则与跨入口场景，验收 PASS" [ref=8, loc=css:button[aria-label="统一授权规则与跨入口场景，验收 PASS"]]
+        text "#01"
+        text "Spike-Discovery"
+        heading
+          text "统一授权规则与跨入口场景"
+        text "验收 PASS · 声明 DONE"
+        paragraph
+          text "业务阶段 · 阶段清单已勾选完毕"
+        text "清单 3/3 (100%)"
+        text "工程阶段 · CHECKLIST_COMPLETE (未等同验收)"
+        text "修复 0 / 累计 0 · 重规划 0"
+        text "更新 2026-11-13T16:44:56.984232+00:00"
+      button "按类型与交付模式生成和检查任务卡，验收 PASS" [ref=9, loc=css:button[aria-label="按类型与交付模式生成和检查任务卡，验收 PASS"]]
+        text "#02"
+        text "Strict-TDD"
+        heading
+          text "按类型与交付模式生成和检查任务卡"
+        text "验收 PASS · 声明 DONE"
+        paragraph
+          text "业务阶段 · 阶段清单已勾选完毕"
+        text "清单 3/3 (100%)"
+        text "工程阶段 · CHECKLIST_COMPLETE (未等同验收)"
+        text "修复 0 / 累计 0 · 重规划 0"
+        text "更新 2026-11-13T17:27:41.977460+00:00"
+      button "稳定查询与CLI消费接口，保持旧入口兼容，验收 PASS" [ref=10, loc=css:button[aria-label="稳定查询与CLI消费接口，保持旧入口兼容，验收 PASS"]]
+        text "#03"
+        text "Strict-TDD"
+        heading
+          text "稳定查询与CLI消费接口，保持旧入口兼容"
+        text "验收 PASS · 声明 DONE"
+        paragraph
+          text "业务阶段 · 阶段清单已勾选完毕"
+        text "清单 3/3 (100%)"
+        text "工程阶段 · CHECKLIST_COMPLETE (未等同验收)"
+        text "修复 0 / 累计 0 · 重规划 1"
+        text "更新 2026-11-13T18:07:33.458803+00:00"
+    text "阶段清单的完成比例不是工时进度。声明 DONE、清单勾选和代理停止，都不能代替独立验收。"
+  dialog_modal "稳定查询与CLI消费接口，保持旧入口兼容" [ref=14]
+    container
+      heading
+        text "稳定查询与CLI消费接口，保持旧入口兼容"
+      button [ref=15]
+        text "关闭"
+    container
+      paragraph
+        text "声明 DONE / 验收 PASS"
+      paragraph
+        text "打开时快照 · 2026-11-14T02:20:00.185658+08:00"
+      heading
+        text "阻塞与恢复条件"
+      text "未记录阻塞原因；这不表示验收通过。"
+      heading
+        text "候选与验收发现"
+      text "卡片 03-query-cli-contract.md 类型 Strict-TDD Git BASE f879bba28326af84fd9217a70c390a35887ec62b 实现C 542f2b445f499b3a2e90d92a6ed6bba20cdb1bdb 无结构门禁发现；行为结论仍以独立审..."
+      heading
+        text "最近有效检查点（原候选）"
+      text "原候选 542f2b445f499b3a2e90d92a6ed6bba20cdb1bdb 阶段 evidence-inspection 独立Scope/Spec/Quality APPROVED，7项全部通过，无新发现 出处 build/review-03/attempt-review.json review-find..."
+      heading
+        text "剩余工作"
+      text "local strict 登记D"
+      heading
+        text "业务阶段清单（非工时）"
+      unordered_list
+        list_item
+          text "[x] Stage 1/3：冻结兼容矩阵，对缺失的统一投影字段取得有效断言RED"
+        list_item
+          text "[x] Stage 2/3：实现共享查询接口与CLI适配，iter_sync保留兼容门面，不修改HTML"
+        list_item
+          text "[x] Stage 3/3：通过导入/CLI/收据/只读回归并完成前后量测，冻结供看板消费的JSON接口"
+      heading
+        text "工程阶段与自治预算"
+      text "CHECKLIST_COMPLETE (未等同验收) 当前修复 0 / 累计 0 会诊 0 / 重规划 1 限额 {"round_limit":5,"total_limit":10,"consilium_limit":1,"replan_limit":2}"
+      heading
+        text "授权范围"
+      text "scripts/iter_sync.py scripts/iter_queries.py scripts/iter_cli.py scripts/iter_inventory.py scripts/iter_preflight.py scripts/iter_execution.py tests/test_sync_compatibility.py tests/test_execution_rea..."
+      heading
+        text "原始证据出处"
+      unordered_list
+        list_item
+          text "审查收据 · docs/todos/10-self-hosting-hardening/evidence/03/review.json"
+          anchor [ref=16, loc=href:/api/evidence?task=03-query-cli-contract.md&source=0, url=http://127.0.0.1:52019/api/evidence?task=03-query-cli-contract.md&source=0]
+            text "查看原文"
+        list_item
+          text "独立审查报告 · docs/todos/10-self-hosting-hardening/evidence/03/review-report.json"
+          anchor [ref=17, loc=href:/api/evidence?task=03-query-cli-contract.md&source=1, url=http://127.0.0.1:52019/api/evidence?task=03-query-cli-contract.md&source=1]
+            text "查看原文"
+        list_item
+          text "red 原始输出 · docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt"
+          anchor [ref=18, loc=href:/api/evidence?task=03-query-cli-contract.md&source=2, url=http://127.0.0.1:52019/api/evidence?task=03-query-cli-contract.md&source=2]
+            text "查看原文"
+        list_item
+          text "green 原始输出 · docs/todos/10-self-hosting-hardening/evidence/03/slice-b-green-core-1741.json.output.txt"
+          anchor [ref=19, loc=href:/api/evidence?task=03-query-cli-contract.md&source=3, url=http://127.0.0.1:52019/api/evidence?task=03-query-cli-contract.md&source=3]
+            text "查看原文"
+        list_item
+          text "regression 原始输出 · docs/todos/10-self-hosting-hardening/evidence/03/controller-final-regression.json.output.txt"
+          anchor [ref=20, loc=href:/api/evidence?task=03-query-cli-contract.md&source=4, url=http://127.0.0.1:52019/api/evidence?task=03-query-cli-contract.md&source=4]
+            text "查看原文"
+
+{ screenshot: 'C:/Users/qingyu/.codeg/skills/iteration-manager/.worktrees/iter-10/docs/todos/10-self-hosting-hardening/evidence/04/browser-git-detail-b.png' }
+

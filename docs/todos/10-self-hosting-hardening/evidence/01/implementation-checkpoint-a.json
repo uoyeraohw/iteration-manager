@@ -1,0 +1,145 @@
+{
+  "version": 1,
+  "kind": "normal-implementation-checkpoint",
+  "slice": "A",
+  "role": "implementer-not-reviewer",
+  "maximum_status": "TESTING",
+  "acceptance_verdict": "UNKNOWN",
+  "workspace": "C:/Users/qingyu/.codeg/skills/iteration-manager/.worktrees/iter-10",
+  "branch": "feat/iter-10-self-hosting-hardening",
+  "base_sha": "d3bd97ab16ffed6104034a887a01eb1b4d75dc0e",
+  "candidate": {
+    "kind": "git-checkpoint",
+    "binding": "Resolve the commit that contains this file: git log -1 --format=%H -- docs/todos/10-self-hosting-hardening/evidence/01/implementation-checkpoint-a.json; the full committed SHA is also returned in the native implementation reply."
+  },
+  "timing": {
+    "first_observed_utc": "2026-11-13T16:10:53Z",
+    "checkpoint_saved_utc": "2026-11-13 16:15:59 UTC",
+    "command_deadline_utc": "2026-11-13T16:18:32.000Z",
+    "leaf_deadline_utc": "2026-11-13T16:19:12.000Z",
+    "hard_deadline_utc": "2026-11-13T16:20:42.000Z",
+    "session_actual_start_utc": "UNKNOWN",
+    "pure_development_time": "UNKNOWN"
+  },
+  "modified_sources": [
+    "references/worktree_git_contract.md",
+    "references/superpowers_handbook.md",
+    "templates/root_readme.md",
+    "tests/test_prompt_sources.py",
+    "tests/test_authority_scenarios.py",
+    ".agents/notes/implemented/process/2026-11-13-authority-consistency.md"
+  ],
+  "artifacts": {
+    "interfaces": "docs/todos/10-self-hosting-hardening/evidence/01/authority-matrix.json",
+    "decision": ".agents/notes/implemented/process/2026-11-13-authority-consistency.md",
+    "typesafe": "docs/todos/10-self-hosting-hardening/evidence/01/typesafe-checkpoint-a.json",
+    "experiment": "docs/todos/10-self-hosting-hardening/evidence/01/delivery-regression-final-a.json",
+    "scope": "docs/todos/10-self-hosting-hardening/evidence/01/scope-checkpoint-a.json"
+  },
+  "commands": [
+    {
+      "receipt": "docs/todos/10-self-hosting-hardening/evidence/01/text-regression-checkpoint-a.json",
+      "raw_output": "docs/todos/10-self-hosting-hardening/evidence/01/text-regression-checkpoint-a.json.output.txt",
+      "child_record": "docs/todos/10-self-hosting-hardening/evidence/01/text-regression-checkpoint-a.json.child.json",
+      "status": "COMPLETED",
+      "raw_exit_code": 0,
+      "tree_terminal": true
+    },
+    {
+      "receipt": "docs/todos/10-self-hosting-hardening/evidence/01/note-tree-checkpoint-a.json",
+      "raw_output": "docs/todos/10-self-hosting-hardening/evidence/01/note-tree-checkpoint-a.json.output.txt",
+      "child_record": "docs/todos/10-self-hosting-hardening/evidence/01/note-tree-checkpoint-a.json.child.json",
+      "status": "COMPLETED",
+      "raw_exit_code": 0,
+      "tree_terminal": true
+    },
+    {
+      "receipt": "docs/todos/10-self-hosting-hardening/evidence/01/note-format-checkpoint-a.json",
+      "raw_output": "docs/todos/10-self-hosting-hardening/evidence/01/note-format-checkpoint-a.json.output.txt",
+      "child_record": "docs/todos/10-self-hosting-hardening/evidence/01/note-format-checkpoint-a.json.child.json",
+      "status": "COMPLETED",
+      "raw_exit_code": 0,
+      "tree_terminal": true
+    },
+    {
+      "receipt": "docs/todos/10-self-hosting-hardening/evidence/01/delivery-regression-checkpoint-a.json",
+      "raw_output": "docs/todos/10-self-hosting-hardening/evidence/01/delivery-regression-checkpoint-a.json.output.txt",
+      "child_record": "docs/todos/10-self-hosting-hardening/evidence/01/delivery-regression-checkpoint-a.json.child.json",
+      "status": "COMPLETED",
+      "raw_exit_code": 0,
+      "tree_terminal": true
+    },
+    {
+      "receipt": "docs/todos/10-self-hosting-hardening/evidence/01/delivery-regression-final-a.json",
+      "raw_output": "docs/todos/10-self-hosting-hardening/evidence/01/delivery-regression-final-a.json.output.txt",
+      "child_record": "docs/todos/10-self-hosting-hardening/evidence/01/delivery-regression-final-a.json.child.json",
+      "status": "COMPLETED",
+      "raw_exit_code": 0,
+      "tree_terminal": true
+    },
+    {
+      "receipt": "docs/todos/10-self-hosting-hardening/evidence/01/scope-checkpoint-a.json",
+      "raw_output": "docs/todos/10-self-hosting-hardening/evidence/01/scope-checkpoint-a.json.output.txt",
+      "child_record": "docs/todos/10-self-hosting-hardening/evidence/01/scope-checkpoint-a.json.child.json",
+      "status": "COMPLETED",
+      "raw_exit_code": 0,
+      "tree_terminal": true
+    }
+  ],
+  "results": {
+    "targeted": "9 passed in 0.58s",
+    "delivery_before_final_doc_adjustment": "11 passed in 0.62s",
+    "delivery_final": "11 passed in 0.78s",
+    "note_tree": "ok: 14 note(s) tree and relative links verified",
+    "note_format": "ok: 14 note(s) verified",
+    "scope": "All 39 changed files within declared scope; ownership is not inferred.",
+    "red": "Not required for non-TDD document task; no RED claimed.",
+    "native_sessions": "Not executed in slice A; all four observed_result values UNKNOWN."
+  },
+  "confirmed_conflicts": [
+    "Worktree original lines18-21: mandatory init commit, entire docs/todos staging, Prompt-before-commit.",
+    "Worktree original lines28-29 and mermaid Phase4: unconditional merge and destruction; replaced with separately authorized operations.",
+    "Handbook original line80: iteration goal as highest authority; constrained Ruling to current authority.",
+    "Directory write matrix previously granted full iteration write; now keeps unique card writer and explicit file scopes."
+  ],
+  "decisions": [
+    "Use real-source text assertions, not mock-session PASS, per TypeSafe source_assertions.",
+    "Retain execution/Worktree --verify-committed gate; no Git authority means uncommitted plan plus affected-action dependency.",
+    "Preserve four budgets, type checks, independent review, existing evidence and controller-only metadata ownership."
+  ],
+  "remaining_work": [
+    {
+      "owner": "root/iter10/controller",
+      "work": "Bridge four new native sessions for prompt_only/no_git_permission/preexisting_dirty/no_merge_permission using authority-matrix expectations; retain original call records and before/after disk/Git observations."
+    },
+    {
+      "owner": "implementer in a later authorized checkpoint",
+      "work": "Consume actual native evidence before replacing UNKNOWN observed_result; do not infer PASS from static tests."
+    },
+    {
+      "owner": "non-participant independent Reviewer",
+      "work": "Review actual BASE..final candidate, frozen contracts, original runner outputs, four native session evidence, Spike experiment/decision/interfaces and any remaining dirty."
+    },
+    {
+      "owner": "root/iter10/controller",
+      "work": "After actual executor terminal, record attempt/release and remaining-work handoff; after independent approval register receipt/status/D and run local strict. No successor before task01 PASS."
+    }
+  ],
+  "dirty_ownership": {
+    "controller": [
+      "docs/todos/10-self-hosting-hardening/01-authority-consistency.md",
+      "docs/todos/10-self-hosting-hardening/README.md",
+      "All preexisting evidence/01 preparation and baseline files; excluded from commit."
+    ],
+    "implementer": "Only modified_sources plus authority-matrix/typesafe/checkpoint and the six explicitly listed completed receipt/output/child triples.",
+    "cached_at_start": "empty"
+  },
+  "read_only_git_observation": {
+    "command": "git diff --check",
+    "exit_code": 2,
+    "findings": "trailing-whitespace diagnostics in controller-owned card/README CRLF lines; not repaired or staged. Default cached diff --check also returned 2 for Windows CRLF in untouched raw runner receipt/output bytes. Owned six-source cached diff --check returned 0; cached check with command-local core.whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol returned 0. Raw evidence bytes and persistent Git configuration remain unchanged."
+  },
+  "active_commands": [],
+  "command_terminal_basis": "All six frozen-runner receipts are COMPLETED with raw_exit_code 0 and tree_terminal true; no exec session remains running.",
+  "prohibited_actions_executed": []
+}

@@ -1,0 +1,45 @@
+{
+  "request": {
+    "state": {
+      "observed_at": "2026-11-13T17:33:05Z",
+      "deadline": "2026-11-13T17:36:56.363Z",
+      "facts": [
+        "Four tests have failed at the assertion that legacy generate_board_data cards contain delivery_mode,candidate_id,execution; all envelope calls succeed",
+        "10/100-card before measurement completed three times each; legacy compatibility baseline command exited 0",
+        "Existing envelope computes delivery mode, candidate ID and execution_summary inline; board has none of these fields",
+        "Full query/CLI extraction still requires three consumer module changes and eight-file task regression",
+        "Slice A may stop at before+RED or minimal shared projection GREEN"
+      ],
+      "options": {
+        "helper": "Extract pure handoff projection helper in iter_sync now, use in board and envelope; defer module/CLI extraction and final after/regression",
+        "red_only": "Commit only benchmark and valid RED now; defer all product code",
+        "full": "Attempt all module/CLI extraction and eight-file regression now"
+      }
+    },
+    "questions": {
+      "slice": {
+        "type": "choice",
+        "instructions": "Select the next bounded slice scope. Require reviewable progress, preserving all remaining contract gates and time for targeted tests, note validation and precise commit. Do not treat slice GREEN as task PASS.",
+        "criteria": {
+          "helper": "Minimal shared projection GREEN with existing behavior boundaries retained",
+          "red_only": "Before+RED checkpoint because additional implementation cannot safely complete",
+          "full": "Complete full task within remaining window",
+          "unknown": "Evidence insufficient to choose"
+        }
+      }
+    }
+  },
+  "response": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"model\":\"jev-1.14.0\",\"answers\":{\"slice\":{\"type\":\"choice\",\"choice\":\"helper\",\"confidence\":0.88,\"probabilities\":{\"full\":0.0,\"helper\":0.91,\"red_only\":0.09,\"unknown\":0.0}}},\"usage\":{\"input_tokens\":647,\"output_tokens\":46}}"
+      }
+    ]
+  },
+  "subsequent_evidence": {
+    "source": "tests/test_execution_readiness.py:544-563",
+    "literal": "handoff['candidate_id'] == ''",
+    "effect": "No product implementation in slice A. Preserve valid RED and ask contract owner to clarify whether known Git's filesystem-only candidate_id empty sentinel is inapplicable (preserved) or unknown (normalized); tests/test_execution_readiness.py is outside this implementation whitelist."
+  }
+}

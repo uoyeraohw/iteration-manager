@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "task_id": "03",
+  "type": "Strict-TDD",
+  "task_path": "docs/todos/10-self-hosting-hardening/03-query-cli-contract.md",
+  "base_sha": "f879bba28326af84fd9217a70c390a35887ec62b",
+  "head_sha": "542f2b445f499b3a2e90d92a6ed6bba20cdb1bdb",
+  "contract_sha": "542f2b445f499b3a2e90d92a6ed6bba20cdb1bdb",
+  "reviewer": "Codex independent reviewer / session 01a1d610-f583-76d0-8943-f401eece9af0",
+  "implementer": "Codex slice owners: A 1d7e1944-aba1-4815-9e82-d1a52fe96444; B 6f7b9a4a-e4a1-4af2-93ba-534e2dcb2c3b; C 60829fef-6d6f-45ae-87cf-2406882830cb",
+  "verdict": "APPROVED",
+  "review_report": "docs/todos/10-self-hosting-hardening/evidence/03/review-report.json",
+  "checks": [
+    {
+      "name": "red",
+      "kind": "command",
+      "command": "python -B -m pytest -p no:cacheprovider tests/test_query_contract.py::test_legacy_board_exposes_same_handoff_fields -q",
+      "cwd": ".",
+      "exit_code": 1,
+      "failure_kind": "assertion",
+      "output": "docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt",
+      "summary": "Four callable legacy board cases fail missing delivery_mode/candidate_id/execution assertions; not ImportError."
+    },
+    {
+      "name": "green",
+      "kind": "command",
+      "command": "python -B -m pytest -p no:cacheprovider tests/test_query_contract.py -q",
+      "cwd": ".",
+      "exit_code": 0,
+      "output": "docs/todos/10-self-hosting-hardening/evidence/03/slice-b-green-core-1741.json.output.txt",
+      "summary": "Four inherited legacy board projection cases pass; final regression also covers unchanged cases."
+    },
+    {
+      "name": "regression",
+      "kind": "command",
+      "command": "python -B -m pytest -p no:cacheprovider tests/test_query_contract.py tests/test_cli_compatibility.py tests/test_sync_compatibility.py tests/test_completion_gates.py tests/test_execution_readiness.py tests/test_execution_report.py tests/test_filesystem_delivery_controller.py tests/test_worktree_concurrency.py -q",
+      "cwd": ".",
+      "exit_code": 0,
+      "output": "docs/todos/10-self-hosting-hardening/evidence/03/controller-final-regression.json.output.txt",
+      "summary": "170 passed in 142.49s on final frozen source, runner and child COMPLETED/0/tree_terminal true."
+    }
+  ]
+}

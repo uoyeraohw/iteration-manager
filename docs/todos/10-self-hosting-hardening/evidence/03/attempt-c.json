@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "phase": "implementation",
+  "candidate": "af052c929ae1fff75387d1669af10aae4e0b4043",
+  "inputs": [
+    "docs/todos/10-self-hosting-hardening/03-query-cli-contract.md",
+    "scripts/iter_sync.py",
+    "scripts/iter_inventory.py",
+    "scripts/iter_preflight.py",
+    "scripts/iter_execution.py",
+    "docs/todos/10-self-hosting-hardening/evidence/03/identity-ruling.json",
+    "docs/todos/10-self-hosting-hardening/evidence/03/implementation-checkpoint-a.json",
+    "docs/todos/10-self-hosting-hardening/evidence/03/test-seam-ruling.json",
+    "docs/todos/10-self-hosting-hardening/evidence/03/implementation-checkpoint-b.json"
+  ],
+  "capabilities": [
+    "Codeg MCP codex independent session",
+    "Windows iter_run",
+    "pytest"
+  ],
+  "checkpoint": "CLI有效断言RED→11GREEN，after六次量测及旧签名兼容交付；最终八文件回归尚待补验",
+  "remaining_work": [
+    "D: rerun exact eight-file regression on b6991f5 final facade code with >149.26 seconds plus runner overhead; not started with insufficient remaining window",
+    "Controller: inspect BASE..final HEAD and dirty; independent review/acceptance, card/README and attempt/release registration"
+  ],
+  "executor_id": "60829fef-6d6f-45ae-87cf-2406882830cb",
+  "terminal_evidence": "docs/todos/10-self-hosting-hardening/evidence/03/native-terminal-c.json",
+  "progress": [
+    {
+      "kind": "red",
+      "summary": "可调用CLI stub1真实断言RED，补10项未先RED如实披露",
+      "evidence": "docs/todos/10-self-hosting-hardening/evidence/03/slice-c-cli-red-1749.json.output.txt"
+    },
+    {
+      "kind": "green",
+      "summary": "最终CLI11passed，旧签名保持，after10/100各三测Git调用1",
+      "evidence": "docs/todos/10-self-hosting-hardening/evidence/03/slice-c-cli-final-1753.json.output.txt"
+    }
+  ],
+  "commands": [
+    "docs/todos/10-self-hosting-hardening/evidence/03/slice-c-after-1751.json",
+    "docs/todos/10-self-hosting-hardening/evidence/03/slice-c-cli-final-1753.json",
+    "docs/todos/10-self-hosting-hardening/evidence/03/slice-c-cli-green-1751.json",
+    "docs/todos/10-self-hosting-hardening/evidence/03/slice-c-cli-red-1749.json",
+    "docs/todos/10-self-hosting-hardening/evidence/03/slice-c-compatibility-1752.json",
+    "docs/todos/10-self-hosting-hardening/evidence/03/slice-c-compatibility-1752b.json",
+    "docs/todos/10-self-hosting-hardening/evidence/03/slice-c-extract-1750.json",
+    "docs/todos/10-self-hosting-hardening/evidence/03/slice-c-note-format-1751.json",
+    "docs/todos/10-self-hosting-hardening/evidence/03/slice-c-note-format-final-1753.json",
+    "docs/todos/10-self-hosting-hardening/evidence/03/slice-c-note-tree-1751.json",
+    "docs/todos/10-self-hosting-hardening/evidence/03/slice-c-note-tree-final-1753.json",
+    "docs/todos/10-self-hosting-hardening/evidence/03/slice-c-regression-1750.json",
+    "docs/todos/10-self-hosting-hardening/evidence/03/slice-c-scope-1753.json",
+    "docs/todos/10-self-hosting-hardening/evidence/03/slice-c-scope-candidate-1754.json"
+  ],
+  "started_at": null,
+  "ended_at": null
+}

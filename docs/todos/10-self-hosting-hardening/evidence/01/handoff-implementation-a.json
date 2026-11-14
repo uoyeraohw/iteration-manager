@@ -1,0 +1,155 @@
+{
+  "TASK_HANDOFF": {
+    "schema_version": 1,
+    "task_id": "01",
+    "delivery_mode": "git",
+    "candidate_id": "",
+    "execution": {
+      "attempt_count": 1,
+      "no_progress_streak": 0,
+      "last_attempt": {
+        "source": "docs/todos/10-self-hosting-hardening/evidence/01/attempt-implementation-a.json",
+        "phase": "implementation",
+        "delivery_mode": "git",
+        "candidate": "5ff7c3af554f9effdf0a95050af24c767ca0878b",
+        "conditions": {
+          "inputs": [
+            "docs/todos/10-self-hosting-hardening/01-authority-consistency.md",
+            "references/superpowers_handbook.md",
+            "references/worktree_git_contract.md",
+            "templates/root_readme.md"
+          ],
+          "capabilities": [
+            "Codeg MCP codex independent session",
+            "Windows iter_run"
+          ],
+          "scope": [
+            ".agents/notes/implemented/process/2026-11-13-authority-consistency.md",
+            "docs/todos/10-self-hosting-hardening/evidence/01/",
+            "references/superpowers_handbook.md",
+            "references/worktree_git_contract.md",
+            "templates/root_readme.md",
+            "tests/test_authority_scenarios.py",
+            "tests/test_prompt_sources.py"
+          ]
+        },
+        "executor_id": "fcdae243-1628-427e-8f85-51ccfb4fef64",
+        "executor_state": "completed",
+        "terminal_evidence": "docs/todos/10-self-hosting-hardening/evidence/01/native-terminal-implementation-a.json",
+        "progress": [
+          {
+            "kind": "implementation",
+            "evidence": "docs/todos/10-self-hosting-hardening/evidence/01/implementation-checkpoint-a.json",
+            "summary": "授权边界文档/流程图与测试差异已提交，非单纯阅读"
+          },
+          {
+            "kind": "green",
+            "evidence": "docs/todos/10-self-hosting-hardening/evidence/01/delivery-regression-final-a.json.output.txt",
+            "summary": "11项文本/卡片回归通过"
+          }
+        ],
+        "checkpoint": "文档授权冲突修正、11项回归通过；真实四场景仍UNKNOWN",
+        "remaining_work": [
+          "四个真实新会话消费",
+          "新会话继承并汇总authority-matrix",
+          "独审",
+          "登记strict"
+        ],
+        "commands": [
+          {
+            "receipt": "docs/todos/10-self-hosting-hardening/evidence/01/delivery-regression-checkpoint-a.json",
+            "status": "COMPLETED",
+            "raw_exit_code": 0,
+            "started_at": "2026-11-13T16:14:16.607026+00:00",
+            "ended_at": "2026-11-13T16:14:20.013835+00:00"
+          },
+          {
+            "receipt": "docs/todos/10-self-hosting-hardening/evidence/01/delivery-regression-final-a.json",
+            "status": "COMPLETED",
+            "raw_exit_code": 0,
+            "started_at": "2026-11-13T16:14:51.388012+00:00",
+            "ended_at": "2026-11-13T16:14:55.488284+00:00"
+          },
+          {
+            "receipt": "docs/todos/10-self-hosting-hardening/evidence/01/note-format-checkpoint-a.json",
+            "status": "COMPLETED",
+            "raw_exit_code": 0,
+            "started_at": "2026-11-13T16:13:55.706967+00:00",
+            "ended_at": "2026-11-13T16:13:58.342096+00:00"
+          },
+          {
+            "receipt": "docs/todos/10-self-hosting-hardening/evidence/01/note-tree-checkpoint-a.json",
+            "status": "COMPLETED",
+            "raw_exit_code": 0,
+            "started_at": "2026-11-13T16:13:51.358301+00:00",
+            "ended_at": "2026-11-13T16:13:54.542208+00:00"
+          },
+          {
+            "receipt": "docs/todos/10-self-hosting-hardening/evidence/01/scope-checkpoint-a.json",
+            "status": "COMPLETED",
+            "raw_exit_code": 0,
+            "started_at": "2026-11-13T16:15:16.856585+00:00",
+            "ended_at": "2026-11-13T16:15:17.832364+00:00"
+          },
+          {
+            "receipt": "docs/todos/10-self-hosting-hardening/evidence/01/text-regression-checkpoint-a.json",
+            "status": "COMPLETED",
+            "raw_exit_code": 0,
+            "started_at": "2026-11-13T16:13:47.114132+00:00",
+            "ended_at": "2026-11-13T16:13:50.204893+00:00"
+          }
+        ],
+        "started_at": null,
+        "ended_at": null,
+        "session_seconds": null,
+        "command_seconds": 17.392657
+      },
+      "checkpoint": {
+        "candidate": "5ff7c3af554f9effdf0a95050af24c767ca0878b",
+        "phase": "implementation",
+        "summary": "文档授权冲突修正、11项回归通过；真实四场景仍UNKNOWN",
+        "progress": [
+          {
+            "kind": "implementation",
+            "evidence": "docs/todos/10-self-hosting-hardening/evidence/01/implementation-checkpoint-a.json",
+            "summary": "授权边界文档/流程图与测试差异已提交，非单纯阅读"
+          },
+          {
+            "kind": "green",
+            "evidence": "docs/todos/10-self-hosting-hardening/evidence/01/delivery-regression-final-a.json.output.txt",
+            "summary": "11项文本/卡片回归通过"
+          }
+        ],
+        "source": "docs/todos/10-self-hosting-hardening/evidence/01/attempt-implementation-a.json"
+      },
+      "remaining_work": [
+        "四个真实新会话消费",
+        "新会话继承并汇总authority-matrix",
+        "独审",
+        "登记strict"
+      ]
+    },
+    "task_name": "统一授权规则与跨入口场景",
+    "type": "Spike-Discovery",
+    "status": "IN_PROGRESS",
+    "commit_sha": "",
+    "base_sha": "",
+    "fix_rounds": 0,
+    "fix_total": 0,
+    "consilium_count": 0,
+    "replan_count": 0,
+    "writer": "",
+    "blocked_reason": "",
+    "is_blocked": false,
+    "review_status": "PENDING",
+    "acceptance_verdict": "UNKNOWN",
+    "evidence": {
+      "receipt": ""
+    },
+    "errors": [],
+    "files_changed_count": 0,
+    "files_changed": [],
+    "stage_current": "Stage 1/3：对照引用链形成冲突清单和四类场景的可观察预期",
+    "stage_progress": "0/3 (0%)"
+  }
+}

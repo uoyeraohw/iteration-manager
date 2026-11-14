@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "kind": "implementation-checkpoint",
+  "task_id": "02",
+  "role": "implementer-not-reviewer",
+  "workspace": "C:/Users/qingyu/.codeg/skills/iteration-manager/.worktrees/iter-10",
+  "branch": "feat/iter-10-self-hosting-hardening",
+  "base_sha": "2ecd3bc3f957ac1941b388e036a6427b717b6cc7",
+  "candidate_reference": "Git commit containing this checkpoint; final full SHA is returned in the native session",
+  "started_at": "2026-11-13T16:46:56Z",
+  "checkpoint_at": "2026-11-13T16:50:50Z",
+  "highest_status": "TESTING",
+  "acceptance_verdict": "PENDING",
+  "outcome": "progress",
+  "summary": "Callable pure API scaffold produced 19 assertion failures; structured renderer and basic generated-card precheck now pass the same 19 tests. Eight type/mode combinations are covered at core level only.",
+  "changed_files": [
+    "scripts/iter_templates.py",
+    "tests/test_template_generation.py",
+    ".agents/notes/implemented/process/2026-11-13-typed-template-generation.md",
+    "docs/todos/10-self-hosting-hardening/evidence/02/implementation-checkpoint-a.json",
+    "docs/todos/10-self-hosting-hardening/evidence/02/slice-a-*"
+  ],
+  "typesafe": {
+    "model": "jev-1.14.0",
+    "question": "Select direct structured rendering or placeholder/paragraph replacement given existing manual Git/TDD template and eight required combinations",
+    "choice": "structured",
+    "confidence": 1.0,
+    "alternatives": ["structured", "replacement", "insufficient"],
+    "application": "Render sections from validated spec and reuse TYPE_CHECKS, parse_card, scope_paths and contract_projection. No old-card migration."
+  },
+  "command_receipts": [
+    {"path": "slice-a-core-red.json", "status": "COMPLETED", "raw_exit_code": 1, "tree_terminal": true, "result": "19 assertion failures; callable scaffold returned empty card and no validation errors", "ended_at": "2026-11-13T16:48:22.880785Z"},
+    {"path": "slice-a-core-green.json", "status": "COMPLETED", "raw_exit_code": 1, "tree_terminal": true, "result": "8 failed, 11 passed; placeholder regex misclassified HTML section markers", "ended_at": "2026-11-13T16:49:18.796627Z"},
+    {"path": "slice-a-core-green-2.json", "status": "COMPLETED", "raw_exit_code": 0, "tree_terminal": true, "result": "19 passed in 0.50s", "ended_at": "2026-11-13T16:49:51.948302Z"},
+    {"path": "slice-a-note-tree.json", "status": "COMPLETED", "raw_exit_code": 0, "tree_terminal": true, "result": "15 notes tree and relative links verified", "ended_at": "2026-11-13T16:50:19.631724Z"},
+    {"path": "slice-a-note-format.json", "status": "COMPLETED", "raw_exit_code": 0, "tree_terminal": true, "result": "15 notes verified", "ended_at": "2026-11-13T16:50:23.179354Z"}
+  ],
+  "active_commands": [],
+  "diff_check_note": "Unrestricted cached diff --check reports CRLF as trailing whitespace in immutable runner JSON/output. Raw evidence is preserved without normalization; source/test/note/checkpoint paths are checked separately. This warning is not a product-test result.",
+  "remaining_work": [
+    "Implement independent CLI --render spec.json and --check card.md --delivery-mode git|filesystem, with stdout contract and exit 0/2; get targeted assertion RED before new behavior.",
+    "Complete input/checker boundary matrix: missing and wrong-shaped values, placeholder metadata, malformed/multiline Markdown and path injection, check mapping/text integrity, unknown fields/types/versions, candidate and mode mismatch, nonempty FS SHA, dynamic FS body. Existing basic validator is not a full strict precheck.",
+    "Assess placeholder grammar: current generic braces/angle placeholders can reject legitimate code notation; define supported unresolved-placeholder patterns with discriminating tests before extending.",
+    "Verify FS actual full-body freeze compatibility and Git contract projection, plus non-TDD no forced RED/true and Refactor before/after gate preservation at full task level.",
+    "Update only authorized task_detail and four type contracts as necessary, add references/template_generation.md usage/spec/CLI documentation, and synchronize the existing decision note.",
+    "Run the specified five-file delivery regression via frozen runner, final scope check and candidate review preparation. No regression or independent review was performed in slice A.",
+    "Controller registers actual attempt/release and state; implementer does not write card, README, review receipt or approval."
+  ],
+  "dirty_ownership": {
+    "preexisting": ["docs/todos/10-self-hosting-hardening/02-typed-template-generation.md", "evidence/02 preparation files context-implementation-a, dependency-01-envelope, dispatch-a, dispatch-native-a, inventory-a"],
+    "owner": "root/iter10/controller",
+    "implementation": "Only the explicit changed_files above belong to this slice; exclude controller card and preparation evidence from the implementation commit."
+  },
+  "time_accounting": "Individual command UTC intervals are in immutable runner receipts; code-writing/tool/model proportions are UNKNOWN."
+}

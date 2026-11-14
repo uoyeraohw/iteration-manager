@@ -1,0 +1,253 @@
+{
+  "version": 1,
+  "read_only": true,
+  "mode": "continue",
+  "readiness": "BLOCKED",
+  "tasks": [
+    {
+      "path": "docs/todos/10-self-hosting-hardening/01-authority-consistency.md",
+      "task_id": "01",
+      "readiness": "BLOCKED",
+      "phase": null,
+      "findings": [
+        "Task not dispatchable: DONE",
+        "Context missing task: 01"
+      ],
+      "acceptance_verdict": "PASS",
+      "status": "DONE",
+      "type": "Spike-Discovery",
+      "delivery_mode": "git",
+      "candidate": "7107ddb2f2256ceaea40e6ea0aeddd045220b99b",
+      "candidate_id": "",
+      "commit_sha": "997ee3753241d7f4ad5b3d68df7648d06e2adc4c",
+      "review_status": "APPROVED",
+      "receipt": "docs/todos/10-self-hosting-hardening/evidence/01/review.json",
+      "audit_findings": [],
+      "writer": "",
+      "blocked_reason": "",
+      "execution": {
+        "attempt_count": 3,
+        "no_progress_streak": 0,
+        "checkpoint": {
+          "candidate": "997ee3753241d7f4ad5b3d68df7648d06e2adc4c",
+          "phase": "evidence-inspection",
+          "summary": "非参与者独立审查APPROVED，原始scope/inspection/report-validation命令全部终态0；尚待登记D和strict",
+          "progress": [
+            {
+              "kind": "review-finding",
+              "evidence": "docs/todos/10-self-hosting-hardening/evidence/01/review-report.json",
+              "summary": "独立APPROVED，两个不阻断Minor分别保留原始时钟错误与A历史笔记措辞"
+            }
+          ],
+          "source": "build/review-01/attempt-review.json"
+        },
+        "remaining_work": [
+          "local strict",
+          "登记D"
+        ],
+        "last_attempt_source": "build/review-01/attempt-review.json"
+      }
+    },
+    {
+      "path": "docs/todos/10-self-hosting-hardening/02-typed-template-generation.md",
+      "task_id": "02",
+      "readiness": "BLOCKED",
+      "phase": null,
+      "findings": [
+        "Task not dispatchable: DONE",
+        "Context missing task: 02"
+      ],
+      "acceptance_verdict": "PASS",
+      "status": "DONE",
+      "type": "Strict-TDD",
+      "delivery_mode": "git",
+      "candidate": "7107ddb2f2256ceaea40e6ea0aeddd045220b99b",
+      "candidate_id": "",
+      "commit_sha": "03950f2ac4867291c3001daa10140e4da1efa81f",
+      "review_status": "APPROVED",
+      "receipt": "docs/todos/10-self-hosting-hardening/evidence/02/review.json",
+      "audit_findings": [],
+      "writer": "",
+      "blocked_reason": "",
+      "execution": {
+        "attempt_count": 5,
+        "no_progress_streak": 0,
+        "checkpoint": {
+          "candidate": "03950f2ac4867291c3001daa10140e4da1efa81f",
+          "phase": "evidence-inspection",
+          "summary": "独立复审APPROVED，F01关闭；45用例及4原反例独立通过、Scope通过",
+          "progress": [
+            {
+              "kind": "review-finding",
+              "evidence": "docs/todos/10-self-hosting-hardening/evidence/02/review-report.json",
+              "summary": "Scope/Spec/Quality通过，F01关闭，无新问题"
+            }
+          ],
+          "source": "build/review-02-final/attempt-review.json"
+        },
+        "remaining_work": [
+          "local strict",
+          "登记D"
+        ],
+        "last_attempt_source": "build/review-02-final/attempt-review.json"
+      }
+    },
+    {
+      "path": "docs/todos/10-self-hosting-hardening/03-query-cli-contract.md",
+      "task_id": "03",
+      "readiness": "BLOCKED",
+      "phase": null,
+      "findings": [
+        "Task not dispatchable: DONE",
+        "Context missing task: 03"
+      ],
+      "acceptance_verdict": "PASS",
+      "status": "DONE",
+      "type": "Strict-TDD",
+      "delivery_mode": "git",
+      "candidate": "7107ddb2f2256ceaea40e6ea0aeddd045220b99b",
+      "candidate_id": "",
+      "commit_sha": "542f2b445f499b3a2e90d92a6ed6bba20cdb1bdb",
+      "review_status": "APPROVED",
+      "receipt": "docs/todos/10-self-hosting-hardening/evidence/03/review.json",
+      "audit_findings": [],
+      "writer": "",
+      "blocked_reason": "",
+      "execution": {
+        "attempt_count": 4,
+        "no_progress_streak": 0,
+        "checkpoint": {
+          "candidate": "542f2b445f499b3a2e90d92a6ed6bba20cdb1bdb",
+          "phase": "evidence-inspection",
+          "summary": "独立Scope/Spec/Quality APPROVED，7项全部通过，无新发现",
+          "progress": [
+            {
+              "kind": "review-finding",
+              "evidence": "docs/todos/10-self-hosting-hardening/evidence/03/review-report.json",
+              "summary": "完整03合同通过，两主控裁决经独立原始源码/测试差异核验认可"
+            }
+          ],
+          "source": "build/review-03/attempt-review.json"
+        },
+        "remaining_work": [
+          "local strict",
+          "登记D"
+        ],
+        "last_attempt_source": "build/review-03/attempt-review.json"
+      }
+    },
+    {
+      "path": "docs/todos/10-self-hosting-hardening/04-board-handoff.md",
+      "task_id": "04",
+      "readiness": "BLOCKED",
+      "phase": null,
+      "findings": [
+        "Task not dispatchable: DONE",
+        "Context missing task: 04"
+      ],
+      "acceptance_verdict": "PASS",
+      "status": "DONE",
+      "type": "UI-Component",
+      "delivery_mode": "git",
+      "candidate": "7107ddb2f2256ceaea40e6ea0aeddd045220b99b",
+      "candidate_id": "",
+      "commit_sha": "9b9010afb8dbf0b0cf74f83c6c97605984319619",
+      "review_status": "APPROVED",
+      "receipt": "docs/todos/10-self-hosting-hardening/evidence/04/review.json",
+      "audit_findings": [],
+      "writer": "",
+      "blocked_reason": "",
+      "execution": {
+        "attempt_count": 2,
+        "no_progress_streak": 0,
+        "checkpoint": {
+          "candidate": "9b9010afb8dbf0b0cf74f83c6c97605984319619",
+          "phase": "evidence-inspection",
+          "summary": "04独立Scope/Spec/Quality APPROVED，原始交互、七图和匹配源码回归核对",
+          "progress": [
+            {
+              "kind": "review-finding",
+              "evidence": "docs/todos/10-self-hosting-hardening/evidence/04/review-report.json",
+              "summary": "APPROVED；无阻断缺口，未冒称部署"
+            }
+          ],
+          "source": "build/review-04/attempt-review.json"
+        },
+        "remaining_work": [
+          "登记D后local strict"
+        ],
+        "last_attempt_source": "build/review-04/attempt-review.json"
+      }
+    },
+    {
+      "path": "docs/todos/10-self-hosting-hardening/05-release-evidence-index.md",
+      "task_id": "05",
+      "readiness": "BLOCKED",
+      "phase": null,
+      "findings": [
+        "Task not dispatchable: DONE",
+        "Context missing task: 05"
+      ],
+      "acceptance_verdict": "PASS",
+      "status": "DONE",
+      "type": "Spike-Discovery",
+      "delivery_mode": "git",
+      "candidate": "7107ddb2f2256ceaea40e6ea0aeddd045220b99b",
+      "candidate_id": "",
+      "commit_sha": "dc5d868c6b90268a2eefc29966874c96d48dd122",
+      "review_status": "APPROVED",
+      "receipt": "docs/todos/10-self-hosting-hardening/evidence/05/review-final.json",
+      "audit_findings": [],
+      "writer": "",
+      "blocked_reason": "",
+      "execution": {
+        "attempt_count": 3,
+        "no_progress_streak": 0,
+        "checkpoint": {
+          "candidate": "dc5d868c6b90268a2eefc29966874c96d48dd122",
+          "phase": "evidence-inspection",
+          "summary": "05登记正文受影响独审APPROVED，原产品证据有效沿用",
+          "progress": [
+            {
+              "kind": "review-finding",
+              "evidence": "docs/todos/10-self-hosting-hardening/evidence/05/review-report-final.json",
+              "summary": "新合同绑定批准，陈旧投影登记后刷新"
+            }
+          ],
+          "source": "build/review-05/attempt-final.json"
+        },
+        "remaining_work": [
+          "登记D/local strict"
+        ],
+        "last_attempt_source": "build/review-05/attempt-final.json"
+      }
+    },
+    {
+      "path": "docs/todos/10-self-hosting-hardening/06-self-hosting-acceptance.md",
+      "task_id": "06",
+      "readiness": "READY",
+      "phase": "implementation",
+      "findings": [],
+      "acceptance_verdict": "UNKNOWN",
+      "status": "TODO",
+      "type": "Spike-Discovery",
+      "delivery_mode": "git",
+      "candidate": "7107ddb2f2256ceaea40e6ea0aeddd045220b99b",
+      "candidate_id": "",
+      "commit_sha": "",
+      "review_status": "PENDING",
+      "receipt": "",
+      "audit_findings": [],
+      "writer": "",
+      "blocked_reason": "",
+      "execution": {
+        "attempt_count": 0,
+        "no_progress_streak": 0,
+        "checkpoint": null,
+        "remaining_work": [],
+        "last_attempt_source": null
+      }
+    }
+  ],
+  "findings": []
+}

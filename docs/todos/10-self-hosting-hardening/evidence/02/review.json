@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "task_id": "02",
+  "base_sha": "2ecd3bc3f957ac1941b388e036a6427b717b6cc7",
+  "head_sha": "03950f2ac4867291c3001daa10140e4da1efa81f",
+  "contract_sha": "03950f2ac4867291c3001daa10140e4da1efa81f",
+  "reviewer": "01a1d5ee-843b-7490-92b4-557fa753af23",
+  "verdict": "APPROVED",
+  "type": "Strict-TDD",
+  "task_path": "docs/todos/10-self-hosting-hardening/02-typed-template-generation.md",
+  "implementer": "1709/5638876b-7be3-4bc9-a2da-af32c4941033 + 1710/72db3dfe-466c-424e-bb74-6511fd23e455 + 1712/091c5173-015d-4e58-b251-1bef0834c8c5",
+  "review_report": "docs/todos/10-self-hosting-hardening/evidence/02/review-report.json",
+  "checks": [
+    {
+      "name": "red",
+      "kind": "command",
+      "command": "python -B -m pytest -p no:cacheprovider tests/test_template_generation.py::test_leading_whitespace_roundtrip tests/test_template_generation.py::test_blank_checklist_text_remains_invalid -q",
+      "cwd": ".",
+      "exit_code": 1,
+      "output": "docs/todos/10-self-hosting-hardening/evidence/02/repair-c-red-cli-1718.json.output.txt",
+      "summary": "F01真实36项断言失败、9项边界通过；18个真实CLI --render退出2，非导入/编译错误。",
+      "receipt": "docs/todos/10-self-hosting-hardening/evidence/02/repair-c-red-cli-1718.json",
+      "origin": "committed-implementer-original",
+      "status": "COMPLETED",
+      "tree_terminal": true,
+      "started_at": "2026-11-13T17:16:55.146210+00:00",
+      "ended_at": "2026-11-13T17:17:03.318988+00:00",
+      "failure_kind": "assertion"
+    },
+    {
+      "name": "green",
+      "kind": "command",
+      "command": "python -B -m pytest -p no:cacheprovider tests/test_template_generation.py::test_leading_whitespace_roundtrip tests/test_template_generation.py::test_blank_checklist_text_remains_invalid -q",
+      "cwd": ".",
+      "exit_code": 0,
+      "output": "docs/todos/10-self-hosting-hardening/evidence/02/repair-c-green-1717.json.output.txt",
+      "summary": "同45用例通过；三字段、空格/制表符/换行、Git/FS、API/CLI往返及空白拒绝。",
+      "receipt": "docs/todos/10-self-hosting-hardening/evidence/02/repair-c-green-1717.json",
+      "origin": "committed-implementer-original",
+      "status": "COMPLETED",
+      "tree_terminal": true,
+      "started_at": "2026-11-13T17:17:17.159402+00:00",
+      "ended_at": "2026-11-13T17:17:26.803703+00:00"
+    },
+    {
+      "name": "regression",
+      "kind": "command",
+      "command": "python -B -m pytest -p no:cacheprovider tests/test_template_generation.py tests/test_prompt_sources.py tests/test_task_card_schema.py tests/test_filesystem_receipts.py tests/test_filesystem_r7_repairs.py -q",
+      "cwd": ".",
+      "exit_code": 0,
+      "output": "docs/todos/10-self-hosting-hardening/evidence/02/repair-c-regression-1717.json.output.txt",
+      "summary": "指定五文件156passed，含八组合、既有卡/提示词/FS收据与完整正文冻结回归。",
+      "receipt": "docs/todos/10-self-hosting-hardening/evidence/02/repair-c-regression-1717.json",
+      "origin": "committed-implementer-original",
+      "status": "COMPLETED",
+      "tree_terminal": true,
+      "started_at": "2026-11-13T17:17:34.776801+00:00",
+      "ended_at": "2026-11-13T17:17:53.676768+00:00"
+    }
+  ]
+}

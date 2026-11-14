@@ -1,0 +1,14 @@
+{
+  "byte_changed_paths": [
+    "docs/todos/10-self-hosting-hardening/evidence/01/dispatch-native-implementation-b.json"
+  ],
+  "disk_metadata_changed_paths": [
+    "docs/todos/10-self-hosting-hardening/evidence/01/dispatch-native-implementation-b.json"
+  ],
+  "git_changed_fields": [
+    "status"
+  ],
+  "byte_compared_file_count": 143,
+  "unchanged": false,
+  "exclusion": "Only parent-owned consumption-b evidence directory excluded; ignored files covered by disk size/mtime inventory, not byte comparison."
+}

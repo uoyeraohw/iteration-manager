@@ -1,0 +1,62 @@
+{
+  "read_only": true,
+  "readiness": "READY",
+  "task_path": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\.worktrees\\iter-10\\docs\\todos\\10-self-hosting-hardening\\01-authority-consistency.md",
+  "phase": "implementation",
+  "acceptance_verdict": "UNKNOWN",
+  "findings": [],
+  "observations": {
+    "authority": {
+      "status": "READY",
+      "summary": "用户已批准实施、精准提交和Worktree，禁止部署推送合流清理",
+      "evidence": "docs/todos/10-self-hosting-hardening/evidence/01/authority.txt"
+    },
+    "execution": {
+      "status": "READY",
+      "summary": "Codeg codex探针会话1701实际读取工作区及冻结必读文件成功，无拒绝；实现会话仍需完整消费",
+      "evidence": "docs/todos/10-self-hosting-hardening/evidence/01/capability-probe.json"
+    },
+    "verification": {
+      "status": "READY",
+      "summary": "冻结runner完整基线314 passed，COMPLETED/raw_exit_code0/tree_terminal=true；当前仅文档及受影响文本测试",
+      "evidence": "docs/todos/10-self-hosting-hardening/evidence/01/baseline-suite.json"
+    }
+  },
+  "task_id": "01",
+  "delivery_mode": "git",
+  "candidate": "d3bd97ab16ffed6104034a887a01eb1b4d75dc0e",
+  "execution": {
+    "attempt_count": 0,
+    "no_progress_streak": 0,
+    "last_attempt": null,
+    "checkpoint": null,
+    "remaining_work": []
+  },
+  "conditions": {
+    "inputs": [
+      "docs/todos/10-self-hosting-hardening/01-authority-consistency.md",
+      "references/superpowers_handbook.md",
+      "references/worktree_git_contract.md",
+      "templates/root_readme.md"
+    ],
+    "capabilities": [
+      "Codeg MCP codex independent session",
+      "Windows iter_run"
+    ],
+    "scope": [
+      ".agents/notes/implemented/process/2026-11-13-authority-consistency.md",
+      "docs/todos/10-self-hosting-hardening/evidence/01/",
+      "references/superpowers_handbook.md",
+      "references/worktree_git_contract.md",
+      "templates/root_readme.md",
+      "tests/test_authority_scenarios.py",
+      "tests/test_prompt_sources.py"
+    ]
+  },
+  "checkpoint": "修正授权文档和文本场景回归；正常检查点交付后由新会话续接真实消费",
+  "remaining_work": [
+    "独立审查",
+    "登记strict",
+    "真实四场景新会话"
+  ]
+}

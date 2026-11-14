@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "phase": "implementation",
+  "candidate": "c5238c16b1e9c5d941d8dec3c53d273f6a074e44",
+  "inputs": [
+    "tests/test_self_hosting.py",
+    "references/self_hosting_acceptance.md"
+  ],
+  "capabilities": [
+    "Codeg MCP codex independent session",
+    "Windows iter_run",
+    "pytest"
+  ],
+  "checkpoint": "14项跨模块隔离契约通过，真实03 A/B/C链索引和方法已交付",
+  "remaining_work": [
+    "主控最终候选全量与交叉核验",
+    "报告补齐/冻结独审",
+    "登记C/D和strict"
+  ],
+  "executor_id": "19637bc8-ff22-4810-b202-121b60285548",
+  "terminal_evidence": "docs/todos/10-self-hosting-hardening/evidence/06/native-terminal-a.json",
+  "progress": [
+    {
+      "kind": "green",
+      "summary": "14 passed, 真实链索引与Note校验通过",
+      "evidence": "docs/todos/10-self-hosting-hardening/evidence/06/slice-a-targeted-2.json.output.txt"
+    }
+  ],
+  "commands": [
+    "docs/todos/10-self-hosting-hardening/evidence/06/slice-a-targeted-1.json",
+    "docs/todos/10-self-hosting-hardening/evidence/06/slice-a-targeted-2.json",
+    "docs/todos/10-self-hosting-hardening/evidence/06/slice-a-frozen-strict-dry-run.json",
+    "docs/todos/10-self-hosting-hardening/evidence/06/slice-a-native-inventory.json",
+    "docs/todos/10-self-hosting-hardening/evidence/06/slice-a-native-inventory-2.json",
+    "docs/todos/10-self-hosting-hardening/evidence/06/slice-a-note-tree.json",
+    "docs/todos/10-self-hosting-hardening/evidence/06/slice-a-note-format.json"
+  ],
+  "started_at": null,
+  "ended_at": null
+}

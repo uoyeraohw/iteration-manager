@@ -1,0 +1,160 @@
+FFFF                                                                     [100%]
+================================== FAILURES ===================================
+__________ test_legacy_board_exposes_same_handoff_fields[False-git] ___________
+
+tmp_path = WindowsPath('C:/Users/qingyu/AppData/Local/Temp/pytest-of-qingyu/pytest-370/test_legacy_board_exposes_same0')
+mode = 'git', has_checkpoint = False
+
+    @pytest.mark.parametrize('mode', ['git', 'filesystem'])
+    @pytest.mark.parametrize('has_checkpoint', [False, True])
+    def test_legacy_board_exposes_same_handoff_fields(tmp_path, mode, has_checkpoint):
+        directory = tmp_path / 'docs/todos/03-contract'
+        directory.mkdir(parents=True)
+        metadata = dict(schema_version='1', task_id='03', status='IN_PROGRESS', type='Strict-TDD')
+        if mode == 'filesystem':
+            (directory / 'iteration-delivery.json').write_text(
+                json.dumps(dict(schema_version=1, mode=mode)), encoding='utf-8')
+            metadata.update(delivery_mode=mode, candidate_id='fs-candidate-a')
+        state = load_state(metadata)
+        if has_checkpoint:
+            state['events']['attempt-a'] = {'input': {'action': 'attempt', 'attempt': {
+                'candidate': 'fixed-candidate', 'phase': 'implementation',
+                'checkpoint': 'valid old-entry RED', 'remaining_work': ['extract query layer'],
+                'progress': [{'kind': 'red', 'evidence': 'red.txt', 'summary': 'assertion failure'}],
+                'source': 'attempt.json',
+            }}}
+        metadata['autonomy_state'] = json.dumps(state)
+        card = directory / '03-task.md'
+        card.write_text('---\n' + ''.join(f'{key}: {json.dumps(value)}\n' for key, value in metadata.items())
+                        + '---\n', encoding='utf-8')
+        before = {path: path.read_bytes() for path in directory.iterdir()}
+        handoff = render_task_envelope(card, tmp_path)['TASK_HANDOFF']
+        board_card = generate_board_data(directory)['cards'][0]
+        required = {'delivery_mode', 'candidate_id', 'execution'}
+>       assert required <= board_card.keys(), f'legacy board missing handoff fields: {required - board_card.keys()}'
+E       AssertionError: legacy board missing handoff fields: {'candidate_id', 'delivery_mode', 'execution'}
+E       assert {'candidate_id', 'delivery_mode', 'execution'} <= dict_keys(['id', 'name', 'filename', 'status', 'type', 'head_sha', 'base_sha', 'review_status', 'acceptance_verdict', ..., 'tdd_steps', 'replan_count', 'fix_rounds', 'fix_total', 'consilium_count', 'policy', 'is_blocked', 'blocked_reason'])
+E        +  where dict_keys(['id', 'name', 'filename', 'status', 'type', 'head_sha', 'base_sha', 'review_status', 'acceptance_verdict', ..., 'tdd_steps', 'replan_count', 'fix_rounds', 'fix_total', 'consilium_count', 'policy', 'is_blocked', 'blocked_reason']) = <built-in method keys of dict object at 0x0000017E307C8840>()
+E        +    where <built-in method keys of dict object at 0x0000017E307C8840> = {'acceptance_verdict': 'UNKNOWN', 'base_sha': '', 'blocked_reason': '', 'consilium_count': 0, ...}.keys
+
+tests\test_query_contract.py:36: AssertionError
+_______ test_legacy_board_exposes_same_handoff_fields[False-filesystem] _______
+
+tmp_path = WindowsPath('C:/Users/qingyu/AppData/Local/Temp/pytest-of-qingyu/pytest-370/test_legacy_board_exposes_same1')
+mode = 'filesystem', has_checkpoint = False
+
+    @pytest.mark.parametrize('mode', ['git', 'filesystem'])
+    @pytest.mark.parametrize('has_checkpoint', [False, True])
+    def test_legacy_board_exposes_same_handoff_fields(tmp_path, mode, has_checkpoint):
+        directory = tmp_path / 'docs/todos/03-contract'
+        directory.mkdir(parents=True)
+        metadata = dict(schema_version='1', task_id='03', status='IN_PROGRESS', type='Strict-TDD')
+        if mode == 'filesystem':
+            (directory / 'iteration-delivery.json').write_text(
+                json.dumps(dict(schema_version=1, mode=mode)), encoding='utf-8')
+            metadata.update(delivery_mode=mode, candidate_id='fs-candidate-a')
+        state = load_state(metadata)
+        if has_checkpoint:
+            state['events']['attempt-a'] = {'input': {'action': 'attempt', 'attempt': {
+                'candidate': 'fixed-candidate', 'phase': 'implementation',
+                'checkpoint': 'valid old-entry RED', 'remaining_work': ['extract query layer'],
+                'progress': [{'kind': 'red', 'evidence': 'red.txt', 'summary': 'assertion failure'}],
+                'source': 'attempt.json',
+            }}}
+        metadata['autonomy_state'] = json.dumps(state)
+        card = directory / '03-task.md'
+        card.write_text('---\n' + ''.join(f'{key}: {json.dumps(value)}\n' for key, value in metadata.items())
+                        + '---\n', encoding='utf-8')
+        before = {path: path.read_bytes() for path in directory.iterdir()}
+        handoff = render_task_envelope(card, tmp_path)['TASK_HANDOFF']
+        board_card = generate_board_data(directory)['cards'][0]
+        required = {'delivery_mode', 'candidate_id', 'execution'}
+>       assert required <= board_card.keys(), f'legacy board missing handoff fields: {required - board_card.keys()}'
+E       AssertionError: legacy board missing handoff fields: {'candidate_id', 'delivery_mode', 'execution'}
+E       assert {'candidate_id', 'delivery_mode', 'execution'} <= dict_keys(['id', 'name', 'filename', 'status', 'type', 'head_sha', 'base_sha', 'review_status', 'acceptance_verdict', ..., 'tdd_steps', 'replan_count', 'fix_rounds', 'fix_total', 'consilium_count', 'policy', 'is_blocked', 'blocked_reason'])
+E        +  where dict_keys(['id', 'name', 'filename', 'status', 'type', 'head_sha', 'base_sha', 'review_status', 'acceptance_verdict', ..., 'tdd_steps', 'replan_count', 'fix_rounds', 'fix_total', 'consilium_count', 'policy', 'is_blocked', 'blocked_reason']) = <built-in method keys of dict object at 0x0000017E307CD340>()
+E        +    where <built-in method keys of dict object at 0x0000017E307CD340> = {'acceptance_verdict': 'UNKNOWN', 'base_sha': '', 'blocked_reason': '', 'consilium_count': 0, ...}.keys
+
+tests\test_query_contract.py:36: AssertionError
+___________ test_legacy_board_exposes_same_handoff_fields[True-git] ___________
+
+tmp_path = WindowsPath('C:/Users/qingyu/AppData/Local/Temp/pytest-of-qingyu/pytest-370/test_legacy_board_exposes_same2')
+mode = 'git', has_checkpoint = True
+
+    @pytest.mark.parametrize('mode', ['git', 'filesystem'])
+    @pytest.mark.parametrize('has_checkpoint', [False, True])
+    def test_legacy_board_exposes_same_handoff_fields(tmp_path, mode, has_checkpoint):
+        directory = tmp_path / 'docs/todos/03-contract'
+        directory.mkdir(parents=True)
+        metadata = dict(schema_version='1', task_id='03', status='IN_PROGRESS', type='Strict-TDD')
+        if mode == 'filesystem':
+            (directory / 'iteration-delivery.json').write_text(
+                json.dumps(dict(schema_version=1, mode=mode)), encoding='utf-8')
+            metadata.update(delivery_mode=mode, candidate_id='fs-candidate-a')
+        state = load_state(metadata)
+        if has_checkpoint:
+            state['events']['attempt-a'] = {'input': {'action': 'attempt', 'attempt': {
+                'candidate': 'fixed-candidate', 'phase': 'implementation',
+                'checkpoint': 'valid old-entry RED', 'remaining_work': ['extract query layer'],
+                'progress': [{'kind': 'red', 'evidence': 'red.txt', 'summary': 'assertion failure'}],
+                'source': 'attempt.json',
+            }}}
+        metadata['autonomy_state'] = json.dumps(state)
+        card = directory / '03-task.md'
+        card.write_text('---\n' + ''.join(f'{key}: {json.dumps(value)}\n' for key, value in metadata.items())
+                        + '---\n', encoding='utf-8')
+        before = {path: path.read_bytes() for path in directory.iterdir()}
+        handoff = render_task_envelope(card, tmp_path)['TASK_HANDOFF']
+        board_card = generate_board_data(directory)['cards'][0]
+        required = {'delivery_mode', 'candidate_id', 'execution'}
+>       assert required <= board_card.keys(), f'legacy board missing handoff fields: {required - board_card.keys()}'
+E       AssertionError: legacy board missing handoff fields: {'candidate_id', 'delivery_mode', 'execution'}
+E       assert {'candidate_id', 'delivery_mode', 'execution'} <= dict_keys(['id', 'name', 'filename', 'status', 'type', 'head_sha', 'base_sha', 'review_status', 'acceptance_verdict', ..., 'tdd_steps', 'replan_count', 'fix_rounds', 'fix_total', 'consilium_count', 'policy', 'is_blocked', 'blocked_reason'])
+E        +  where dict_keys(['id', 'name', 'filename', 'status', 'type', 'head_sha', 'base_sha', 'review_status', 'acceptance_verdict', ..., 'tdd_steps', 'replan_count', 'fix_rounds', 'fix_total', 'consilium_count', 'policy', 'is_blocked', 'blocked_reason']) = <built-in method keys of dict object at 0x0000017E30732B40>()
+E        +    where <built-in method keys of dict object at 0x0000017E30732B40> = {'acceptance_verdict': 'UNKNOWN', 'base_sha': '', 'blocked_reason': '', 'consilium_count': 0, ...}.keys
+
+tests\test_query_contract.py:36: AssertionError
+_______ test_legacy_board_exposes_same_handoff_fields[True-filesystem] ________
+
+tmp_path = WindowsPath('C:/Users/qingyu/AppData/Local/Temp/pytest-of-qingyu/pytest-370/test_legacy_board_exposes_same3')
+mode = 'filesystem', has_checkpoint = True
+
+    @pytest.mark.parametrize('mode', ['git', 'filesystem'])
+    @pytest.mark.parametrize('has_checkpoint', [False, True])
+    def test_legacy_board_exposes_same_handoff_fields(tmp_path, mode, has_checkpoint):
+        directory = tmp_path / 'docs/todos/03-contract'
+        directory.mkdir(parents=True)
+        metadata = dict(schema_version='1', task_id='03', status='IN_PROGRESS', type='Strict-TDD')
+        if mode == 'filesystem':
+            (directory / 'iteration-delivery.json').write_text(
+                json.dumps(dict(schema_version=1, mode=mode)), encoding='utf-8')
+            metadata.update(delivery_mode=mode, candidate_id='fs-candidate-a')
+        state = load_state(metadata)
+        if has_checkpoint:
+            state['events']['attempt-a'] = {'input': {'action': 'attempt', 'attempt': {
+                'candidate': 'fixed-candidate', 'phase': 'implementation',
+                'checkpoint': 'valid old-entry RED', 'remaining_work': ['extract query layer'],
+                'progress': [{'kind': 'red', 'evidence': 'red.txt', 'summary': 'assertion failure'}],
+                'source': 'attempt.json',
+            }}}
+        metadata['autonomy_state'] = json.dumps(state)
+        card = directory / '03-task.md'
+        card.write_text('---\n' + ''.join(f'{key}: {json.dumps(value)}\n' for key, value in metadata.items())
+                        + '---\n', encoding='utf-8')
+        before = {path: path.read_bytes() for path in directory.iterdir()}
+        handoff = render_task_envelope(card, tmp_path)['TASK_HANDOFF']
+        board_card = generate_board_data(directory)['cards'][0]
+        required = {'delivery_mode', 'candidate_id', 'execution'}
+>       assert required <= board_card.keys(), f'legacy board missing handoff fields: {required - board_card.keys()}'
+E       AssertionError: legacy board missing handoff fields: {'candidate_id', 'delivery_mode', 'execution'}
+E       assert {'candidate_id', 'delivery_mode', 'execution'} <= dict_keys(['id', 'name', 'filename', 'status', 'type', 'head_sha', 'base_sha', 'review_status', 'acceptance_verdict', ..., 'tdd_steps', 'replan_count', 'fix_rounds', 'fix_total', 'consilium_count', 'policy', 'is_blocked', 'blocked_reason'])
+E        +  where dict_keys(['id', 'name', 'filename', 'status', 'type', 'head_sha', 'base_sha', 'review_status', 'acceptance_verdict', ..., 'tdd_steps', 'replan_count', 'fix_rounds', 'fix_total', 'consilium_count', 'policy', 'is_blocked', 'blocked_reason']) = <built-in method keys of dict object at 0x0000017E307CDD40>()
+E        +    where <built-in method keys of dict object at 0x0000017E307CDD40> = {'acceptance_verdict': 'UNKNOWN', 'base_sha': '', 'blocked_reason': '', 'consilium_count': 0, ...}.keys
+
+tests\test_query_contract.py:36: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_query_contract.py::test_legacy_board_exposes_same_handoff_fields[False-git]
+FAILED tests/test_query_contract.py::test_legacy_board_exposes_same_handoff_fields[False-filesystem]
+FAILED tests/test_query_contract.py::test_legacy_board_exposes_same_handoff_fields[True-git]
+FAILED tests/test_query_contract.py::test_legacy_board_exposes_same_handoff_fields[True-filesystem]
+4 failed in 1.58s

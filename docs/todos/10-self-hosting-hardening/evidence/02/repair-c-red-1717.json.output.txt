@@ -1,0 +1,454 @@
+FFFFFFFFFFFFFFFFFF.........                                              [100%]
+================================== FAILURES ===================================
+______________ test_leading_whitespace_roundtrip[git-  -stages] _______________
+
+field = 'stages', prefix = '  ', mode = 'git'
+tmp_path = WindowsPath('C:/Users/qingyu/AppData/Local/Temp/pytest-of-qingyu/pytest-365/test_leading_whitespace_roundt0')
+
+    @pytest.mark.parametrize("field", ["stages", "acceptance", "verification"])
+    @pytest.mark.parametrize("prefix", ["  ", "\t", "\n  "])
+    @pytest.mark.parametrize("mode", ["git", "filesystem"])
+    def test_leading_whitespace_roundtrip(field, prefix, mode, tmp_path):
+        spec = spec_for(mode=mode)
+        value = prefix + "Concrete requirement or command"
+        if field == "verification":
+            spec[field]["green"] = value
+        else:
+            spec[field] = [value]
+        card = render_task_card(spec)
+        assert value in card
+>       assert validate_generated_card(card, mode) == []
+E       AssertionError: assert ['Missing stages checklist'] == []
+E         
+E         Left contains one more item: 'Missing stages checklist'
+E         Use -v to get more diff
+
+tests\test_template_generation.py:221: AssertionError
+____________ test_leading_whitespace_roundtrip[git-  -acceptance] _____________
+
+field = 'acceptance', prefix = '  ', mode = 'git'
+tmp_path = WindowsPath('C:/Users/qingyu/AppData/Local/Temp/pytest-of-qingyu/pytest-365/test_leading_whitespace_roundt1')
+
+    @pytest.mark.parametrize("field", ["stages", "acceptance", "verification"])
+    @pytest.mark.parametrize("prefix", ["  ", "\t", "\n  "])
+    @pytest.mark.parametrize("mode", ["git", "filesystem"])
+    def test_leading_whitespace_roundtrip(field, prefix, mode, tmp_path):
+        spec = spec_for(mode=mode)
+        value = prefix + "Concrete requirement or command"
+        if field == "verification":
+            spec[field]["green"] = value
+        else:
+            spec[field] = [value]
+        card = render_task_card(spec)
+        assert value in card
+>       assert validate_generated_card(card, mode) == []
+E       AssertionError: assert ['Missing acc...ce checklist'] == []
+E         
+E         Left contains one more item: 'Missing acceptance checklist'
+E         Use -v to get more diff
+
+tests\test_template_generation.py:221: AssertionError
+___________ test_leading_whitespace_roundtrip[git-  -verification] ____________
+
+field = 'verification', prefix = '  ', mode = 'git'
+tmp_path = WindowsPath('C:/Users/qingyu/AppData/Local/Temp/pytest-of-qingyu/pytest-365/test_leading_whitespace_roundt2')
+
+    @pytest.mark.parametrize("field", ["stages", "acceptance", "verification"])
+    @pytest.mark.parametrize("prefix", ["  ", "\t", "\n  "])
+    @pytest.mark.parametrize("mode", ["git", "filesystem"])
+    def test_leading_whitespace_roundtrip(field, prefix, mode, tmp_path):
+        spec = spec_for(mode=mode)
+        value = prefix + "Concrete requirement or command"
+        if field == "verification":
+            spec[field]["green"] = value
+        else:
+            spec[field] = [value]
+        card = render_task_card(spec)
+        assert value in card
+>       assert validate_generated_card(card, mode) == []
+E       AssertionError: assert ['Missing req...check: green'] == []
+E         
+E         Left contains one more item: 'Missing required check: green'
+E         Use -v to get more diff
+
+tests\test_template_generation.py:221: AssertionError
+______________ test_leading_whitespace_roundtrip[git-\t-stages] _______________
+
+field = 'stages', prefix = '\t', mode = 'git'
+tmp_path = WindowsPath('C:/Users/qingyu/AppData/Local/Temp/pytest-of-qingyu/pytest-365/test_leading_whitespace_roundt3')
+
+    @pytest.mark.parametrize("field", ["stages", "acceptance", "verification"])
+    @pytest.mark.parametrize("prefix", ["  ", "\t", "\n  "])
+    @pytest.mark.parametrize("mode", ["git", "filesystem"])
+    def test_leading_whitespace_roundtrip(field, prefix, mode, tmp_path):
+        spec = spec_for(mode=mode)
+        value = prefix + "Concrete requirement or command"
+        if field == "verification":
+            spec[field]["green"] = value
+        else:
+            spec[field] = [value]
+        card = render_task_card(spec)
+        assert value in card
+>       assert validate_generated_card(card, mode) == []
+E       AssertionError: assert ['Missing stages checklist'] == []
+E         
+E         Left contains one more item: 'Missing stages checklist'
+E         Use -v to get more diff
+
+tests\test_template_generation.py:221: AssertionError
+____________ test_leading_whitespace_roundtrip[git-\t-acceptance] _____________
+
+field = 'acceptance', prefix = '\t', mode = 'git'
+tmp_path = WindowsPath('C:/Users/qingyu/AppData/Local/Temp/pytest-of-qingyu/pytest-365/test_leading_whitespace_roundt4')
+
+    @pytest.mark.parametrize("field", ["stages", "acceptance", "verification"])
+    @pytest.mark.parametrize("prefix", ["  ", "\t", "\n  "])
+    @pytest.mark.parametrize("mode", ["git", "filesystem"])
+    def test_leading_whitespace_roundtrip(field, prefix, mode, tmp_path):
+        spec = spec_for(mode=mode)
+        value = prefix + "Concrete requirement or command"
+        if field == "verification":
+            spec[field]["green"] = value
+        else:
+            spec[field] = [value]
+        card = render_task_card(spec)
+        assert value in card
+>       assert validate_generated_card(card, mode) == []
+E       AssertionError: assert ['Missing acc...ce checklist'] == []
+E         
+E         Left contains one more item: 'Missing acceptance checklist'
+E         Use -v to get more diff
+
+tests\test_template_generation.py:221: AssertionError
+___________ test_leading_whitespace_roundtrip[git-\t-verification] ____________
+
+field = 'verification', prefix = '\t', mode = 'git'
+tmp_path = WindowsPath('C:/Users/qingyu/AppData/Local/Temp/pytest-of-qingyu/pytest-365/test_leading_whitespace_roundt5')
+
+    @pytest.mark.parametrize("field", ["stages", "acceptance", "verification"])
+    @pytest.mark.parametrize("prefix", ["  ", "\t", "\n  "])
+    @pytest.mark.parametrize("mode", ["git", "filesystem"])
+    def test_leading_whitespace_roundtrip(field, prefix, mode, tmp_path):
+        spec = spec_for(mode=mode)
+        value = prefix + "Concrete requirement or command"
+        if field == "verification":
+            spec[field]["green"] = value
+        else:
+            spec[field] = [value]
+        card = render_task_card(spec)
+        assert value in card
+>       assert validate_generated_card(card, mode) == []
+E       AssertionError: assert ['Missing req...check: green'] == []
+E         
+E         Left contains one more item: 'Missing required check: green'
+E         Use -v to get more diff
+
+tests\test_template_generation.py:221: AssertionError
+_____________ test_leading_whitespace_roundtrip[git-\n  -stages] ______________
+
+field = 'stages', prefix = '\n  ', mode = 'git'
+tmp_path = WindowsPath('C:/Users/qingyu/AppData/Local/Temp/pytest-of-qingyu/pytest-365/test_leading_whitespace_roundt6')
+
+    @pytest.mark.parametrize("field", ["stages", "acceptance", "verification"])
+    @pytest.mark.parametrize("prefix", ["  ", "\t", "\n  "])
+    @pytest.mark.parametrize("mode", ["git", "filesystem"])
+    def test_leading_whitespace_roundtrip(field, prefix, mode, tmp_path):
+        spec = spec_for(mode=mode)
+        value = prefix + "Concrete requirement or command"
+        if field == "verification":
+            spec[field]["green"] = value
+        else:
+            spec[field] = [value]
+        card = render_task_card(spec)
+        assert value in card
+>       assert validate_generated_card(card, mode) == []
+E       AssertionError: assert ['Missing stages checklist'] == []
+E         
+E         Left contains one more item: 'Missing stages checklist'
+E         Use -v to get more diff
+
+tests\test_template_generation.py:221: AssertionError
+___________ test_leading_whitespace_roundtrip[git-\n  -acceptance] ____________
+
+field = 'acceptance', prefix = '\n  ', mode = 'git'
+tmp_path = WindowsPath('C:/Users/qingyu/AppData/Local/Temp/pytest-of-qingyu/pytest-365/test_leading_whitespace_roundt7')
+
+    @pytest.mark.parametrize("field", ["stages", "acceptance", "verification"])
+    @pytest.mark.parametrize("prefix", ["  ", "\t", "\n  "])
+    @pytest.mark.parametrize("mode", ["git", "filesystem"])
+    def test_leading_whitespace_roundtrip(field, prefix, mode, tmp_path):
+        spec = spec_for(mode=mode)
+        value = prefix + "Concrete requirement or command"
+        if field == "verification":
+            spec[field]["green"] = value
+        else:
+            spec[field] = [value]
+        card = render_task_card(spec)
+        assert value in card
+>       assert validate_generated_card(card, mode) == []
+E       AssertionError: assert ['Missing acc...ce checklist'] == []
+E         
+E         Left contains one more item: 'Missing acceptance checklist'
+E         Use -v to get more diff
+
+tests\test_template_generation.py:221: AssertionError
+__________ test_leading_whitespace_roundtrip[git-\n  -verification] ___________
+
+field = 'verification', prefix = '\n  ', mode = 'git'
+tmp_path = WindowsPath('C:/Users/qingyu/AppData/Local/Temp/pytest-of-qingyu/pytest-365/test_leading_whitespace_roundt8')
+
+    @pytest.mark.parametrize("field", ["stages", "acceptance", "verification"])
+    @pytest.mark.parametrize("prefix", ["  ", "\t", "\n  "])
+    @pytest.mark.parametrize("mode", ["git", "filesystem"])
+    def test_leading_whitespace_roundtrip(field, prefix, mode, tmp_path):
+        spec = spec_for(mode=mode)
+        value = prefix + "Concrete requirement or command"
+        if field == "verification":
+            spec[field]["green"] = value
+        else:
+            spec[field] = [value]
+        card = render_task_card(spec)
+        assert value in card
+>       assert validate_generated_card(card, mode) == []
+E       AssertionError: assert ['Missing req...check: green'] == []
+E         
+E         Left contains one more item: 'Missing required check: green'
+E         Use -v to get more diff
+
+tests\test_template_generation.py:221: AssertionError
+___________ test_leading_whitespace_roundtrip[filesystem-  -stages] ___________
+
+field = 'stages', prefix = '  ', mode = 'filesystem'
+tmp_path = WindowsPath('C:/Users/qingyu/AppData/Local/Temp/pytest-of-qingyu/pytest-365/test_leading_whitespace_roundt9')
+
+    @pytest.mark.parametrize("field", ["stages", "acceptance", "verification"])
+    @pytest.mark.parametrize("prefix", ["  ", "\t", "\n  "])
+    @pytest.mark.parametrize("mode", ["git", "filesystem"])
+    def test_leading_whitespace_roundtrip(field, prefix, mode, tmp_path):
+        spec = spec_for(mode=mode)
+        value = prefix + "Concrete requirement or command"
+        if field == "verification":
+            spec[field]["green"] = value
+        else:
+            spec[field] = [value]
+        card = render_task_card(spec)
+        assert value in card
+>       assert validate_generated_card(card, mode) == []
+E       AssertionError: assert ['Missing stages checklist'] == []
+E         
+E         Left contains one more item: 'Missing stages checklist'
+E         Use -v to get more diff
+
+tests\test_template_generation.py:221: AssertionError
+_________ test_leading_whitespace_roundtrip[filesystem-  -acceptance] _________
+
+field = 'acceptance', prefix = '  ', mode = 'filesystem'
+tmp_path = WindowsPath('C:/Users/qingyu/AppData/Local/Temp/pytest-of-qingyu/pytest-365/test_leading_whitespace_roundt10')
+
+    @pytest.mark.parametrize("field", ["stages", "acceptance", "verification"])
+    @pytest.mark.parametrize("prefix", ["  ", "\t", "\n  "])
+    @pytest.mark.parametrize("mode", ["git", "filesystem"])
+    def test_leading_whitespace_roundtrip(field, prefix, mode, tmp_path):
+        spec = spec_for(mode=mode)
+        value = prefix + "Concrete requirement or command"
+        if field == "verification":
+            spec[field]["green"] = value
+        else:
+            spec[field] = [value]
+        card = render_task_card(spec)
+        assert value in card
+>       assert validate_generated_card(card, mode) == []
+E       AssertionError: assert ['Missing acc...ce checklist'] == []
+E         
+E         Left contains one more item: 'Missing acceptance checklist'
+E         Use -v to get more diff
+
+tests\test_template_generation.py:221: AssertionError
+________ test_leading_whitespace_roundtrip[filesystem-  -verification] ________
+
+field = 'verification', prefix = '  ', mode = 'filesystem'
+tmp_path = WindowsPath('C:/Users/qingyu/AppData/Local/Temp/pytest-of-qingyu/pytest-365/test_leading_whitespace_roundt11')
+
+    @pytest.mark.parametrize("field", ["stages", "acceptance", "verification"])
+    @pytest.mark.parametrize("prefix", ["  ", "\t", "\n  "])
+    @pytest.mark.parametrize("mode", ["git", "filesystem"])
+    def test_leading_whitespace_roundtrip(field, prefix, mode, tmp_path):
+        spec = spec_for(mode=mode)
+        value = prefix + "Concrete requirement or command"
+        if field == "verification":
+            spec[field]["green"] = value
+        else:
+            spec[field] = [value]
+        card = render_task_card(spec)
+        assert value in card
+>       assert validate_generated_card(card, mode) == []
+E       AssertionError: assert ['Missing req...check: green'] == []
+E         
+E         Left contains one more item: 'Missing required check: green'
+E         Use -v to get more diff
+
+tests\test_template_generation.py:221: AssertionError
+___________ test_leading_whitespace_roundtrip[filesystem-\t-stages] ___________
+
+field = 'stages', prefix = '\t', mode = 'filesystem'
+tmp_path = WindowsPath('C:/Users/qingyu/AppData/Local/Temp/pytest-of-qingyu/pytest-365/test_leading_whitespace_roundt12')
+
+    @pytest.mark.parametrize("field", ["stages", "acceptance", "verification"])
+    @pytest.mark.parametrize("prefix", ["  ", "\t", "\n  "])
+    @pytest.mark.parametrize("mode", ["git", "filesystem"])
+    def test_leading_whitespace_roundtrip(field, prefix, mode, tmp_path):
+        spec = spec_for(mode=mode)
+        value = prefix + "Concrete requirement or command"
+        if field == "verification":
+            spec[field]["green"] = value
+        else:
+            spec[field] = [value]
+        card = render_task_card(spec)
+        assert value in card
+>       assert validate_generated_card(card, mode) == []
+E       AssertionError: assert ['Missing stages checklist'] == []
+E         
+E         Left contains one more item: 'Missing stages checklist'
+E         Use -v to get more diff
+
+tests\test_template_generation.py:221: AssertionError
+_________ test_leading_whitespace_roundtrip[filesystem-\t-acceptance] _________
+
+field = 'acceptance', prefix = '\t', mode = 'filesystem'
+tmp_path = WindowsPath('C:/Users/qingyu/AppData/Local/Temp/pytest-of-qingyu/pytest-365/test_leading_whitespace_roundt13')
+
+    @pytest.mark.parametrize("field", ["stages", "acceptance", "verification"])
+    @pytest.mark.parametrize("prefix", ["  ", "\t", "\n  "])
+    @pytest.mark.parametrize("mode", ["git", "filesystem"])
+    def test_leading_whitespace_roundtrip(field, prefix, mode, tmp_path):
+        spec = spec_for(mode=mode)
+        value = prefix + "Concrete requirement or command"
+        if field == "verification":
+            spec[field]["green"] = value
+        else:
+            spec[field] = [value]
+        card = render_task_card(spec)
+        assert value in card
+>       assert validate_generated_card(card, mode) == []
+E       AssertionError: assert ['Missing acc...ce checklist'] == []
+E         
+E         Left contains one more item: 'Missing acceptance checklist'
+E         Use -v to get more diff
+
+tests\test_template_generation.py:221: AssertionError
+________ test_leading_whitespace_roundtrip[filesystem-\t-verification] ________
+
+field = 'verification', prefix = '\t', mode = 'filesystem'
+tmp_path = WindowsPath('C:/Users/qingyu/AppData/Local/Temp/pytest-of-qingyu/pytest-365/test_leading_whitespace_roundt14')
+
+    @pytest.mark.parametrize("field", ["stages", "acceptance", "verification"])
+    @pytest.mark.parametrize("prefix", ["  ", "\t", "\n  "])
+    @pytest.mark.parametrize("mode", ["git", "filesystem"])
+    def test_leading_whitespace_roundtrip(field, prefix, mode, tmp_path):
+        spec = spec_for(mode=mode)
+        value = prefix + "Concrete requirement or command"
+        if field == "verification":
+            spec[field]["green"] = value
+        else:
+            spec[field] = [value]
+        card = render_task_card(spec)
+        assert value in card
+>       assert validate_generated_card(card, mode) == []
+E       AssertionError: assert ['Missing req...check: green'] == []
+E         
+E         Left contains one more item: 'Missing required check: green'
+E         Use -v to get more diff
+
+tests\test_template_generation.py:221: AssertionError
+__________ test_leading_whitespace_roundtrip[filesystem-\n  -stages] __________
+
+field = 'stages', prefix = '\n  ', mode = 'filesystem'
+tmp_path = WindowsPath('C:/Users/qingyu/AppData/Local/Temp/pytest-of-qingyu/pytest-365/test_leading_whitespace_roundt15')
+
+    @pytest.mark.parametrize("field", ["stages", "acceptance", "verification"])
+    @pytest.mark.parametrize("prefix", ["  ", "\t", "\n  "])
+    @pytest.mark.parametrize("mode", ["git", "filesystem"])
+    def test_leading_whitespace_roundtrip(field, prefix, mode, tmp_path):
+        spec = spec_for(mode=mode)
+        value = prefix + "Concrete requirement or command"
+        if field == "verification":
+            spec[field]["green"] = value
+        else:
+            spec[field] = [value]
+        card = render_task_card(spec)
+        assert value in card
+>       assert validate_generated_card(card, mode) == []
+E       AssertionError: assert ['Missing stages checklist'] == []
+E         
+E         Left contains one more item: 'Missing stages checklist'
+E         Use -v to get more diff
+
+tests\test_template_generation.py:221: AssertionError
+________ test_leading_whitespace_roundtrip[filesystem-\n  -acceptance] ________
+
+field = 'acceptance', prefix = '\n  ', mode = 'filesystem'
+tmp_path = WindowsPath('C:/Users/qingyu/AppData/Local/Temp/pytest-of-qingyu/pytest-365/test_leading_whitespace_roundt16')
+
+    @pytest.mark.parametrize("field", ["stages", "acceptance", "verification"])
+    @pytest.mark.parametrize("prefix", ["  ", "\t", "\n  "])
+    @pytest.mark.parametrize("mode", ["git", "filesystem"])
+    def test_leading_whitespace_roundtrip(field, prefix, mode, tmp_path):
+        spec = spec_for(mode=mode)
+        value = prefix + "Concrete requirement or command"
+        if field == "verification":
+            spec[field]["green"] = value
+        else:
+            spec[field] = [value]
+        card = render_task_card(spec)
+        assert value in card
+>       assert validate_generated_card(card, mode) == []
+E       AssertionError: assert ['Missing acc...ce checklist'] == []
+E         
+E         Left contains one more item: 'Missing acceptance checklist'
+E         Use -v to get more diff
+
+tests\test_template_generation.py:221: AssertionError
+_______ test_leading_whitespace_roundtrip[filesystem-\n  -verification] _______
+
+field = 'verification', prefix = '\n  ', mode = 'filesystem'
+tmp_path = WindowsPath('C:/Users/qingyu/AppData/Local/Temp/pytest-of-qingyu/pytest-365/test_leading_whitespace_roundt17')
+
+    @pytest.mark.parametrize("field", ["stages", "acceptance", "verification"])
+    @pytest.mark.parametrize("prefix", ["  ", "\t", "\n  "])
+    @pytest.mark.parametrize("mode", ["git", "filesystem"])
+    def test_leading_whitespace_roundtrip(field, prefix, mode, tmp_path):
+        spec = spec_for(mode=mode)
+        value = prefix + "Concrete requirement or command"
+        if field == "verification":
+            spec[field]["green"] = value
+        else:
+            spec[field] = [value]
+        card = render_task_card(spec)
+        assert value in card
+>       assert validate_generated_card(card, mode) == []
+E       AssertionError: assert ['Missing req...check: green'] == []
+E         
+E         Left contains one more item: 'Missing required check: green'
+E         Use -v to get more diff
+
+tests\test_template_generation.py:221: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_template_generation.py::test_leading_whitespace_roundtrip[git-  -stages]
+FAILED tests/test_template_generation.py::test_leading_whitespace_roundtrip[git-  -acceptance]
+FAILED tests/test_template_generation.py::test_leading_whitespace_roundtrip[git-  -verification]
+FAILED tests/test_template_generation.py::test_leading_whitespace_roundtrip[git-\t-stages]
+FAILED tests/test_template_generation.py::test_leading_whitespace_roundtrip[git-\t-acceptance]
+FAILED tests/test_template_generation.py::test_leading_whitespace_roundtrip[git-\t-verification]
+FAILED tests/test_template_generation.py::test_leading_whitespace_roundtrip[git-\n  -stages]
+FAILED tests/test_template_generation.py::test_leading_whitespace_roundtrip[git-\n  -acceptance]
+FAILED tests/test_template_generation.py::test_leading_whitespace_roundtrip[git-\n  -verification]
+FAILED tests/test_template_generation.py::test_leading_whitespace_roundtrip[filesystem-  -stages]
+FAILED tests/test_template_generation.py::test_leading_whitespace_roundtrip[filesystem-  -acceptance]
+FAILED tests/test_template_generation.py::test_leading_whitespace_roundtrip[filesystem-  -verification]
+FAILED tests/test_template_generation.py::test_leading_whitespace_roundtrip[filesystem-\t-stages]
+FAILED tests/test_template_generation.py::test_leading_whitespace_roundtrip[filesystem-\t-acceptance]
+FAILED tests/test_template_generation.py::test_leading_whitespace_roundtrip[filesystem-\t-verification]
+FAILED tests/test_template_generation.py::test_leading_whitespace_roundtrip[filesystem-\n  -stages]
+FAILED tests/test_template_generation.py::test_leading_whitespace_roundtrip[filesystem-\n  -acceptance]
+FAILED tests/test_template_generation.py::test_leading_whitespace_roundtrip[filesystem-\n  -verification]
+18 failed, 9 passed in 1.80s

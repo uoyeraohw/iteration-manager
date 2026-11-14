@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "phase": "implementation",
+  "candidate": "b4da0178c218060d4d5dccab3fb13b47e75ad705",
+  "inputs": [
+    "docs/todos/10-self-hosting-hardening/03-query-cli-contract.md",
+    "scripts/iter_sync.py",
+    "scripts/iter_inventory.py",
+    "scripts/iter_preflight.py",
+    "scripts/iter_execution.py"
+  ],
+  "capabilities": [
+    "Codeg MCP codex independent session",
+    "Windows iter_run",
+    "pytest"
+  ],
+  "checkpoint": "benchmark_before plus callable legacy-entry assertion RED; no product GREEN",
+  "remaining_work": [
+    "Controller clarify known Git candidate_id empty-string inapplicability sentinel versus UNKNOWN/null requirement; tests/test_execution_readiness.py:562 is outside implementation whitelist. No source or test outside scope was changed.",
+    "Implement shared projection GREEN against four retained RED cases. Preserve all old keys, old callable signatures, invalid-profile refusal and audit semantics; add unknown and no-cross-call-cache behavior coverage as needed.",
+    "Extract discover_task_files/audit_task_file/render_task_envelope to iter_queries without reverse iter_sync/CLI imports; inventory/preflight/execution consume query while preserving per-invocation audit reuse.",
+    "Implement iter_cli.main(argv=None)->int and lazy iter_sync main facade. Add tests/test_cli_compatibility.py preserving flags, positional arguments, implementation phase default, 0/1/2/3, unknown-option no writes, and timing help.",
+    "Run final after with exact retained benchmark script and inputs through frozen runner under newly authorized deadline. Reuse before and valid RED; do not fabricate after or promise speedup.",
+    "Run GREEN, all eight task-specified regression files, scope check and independent review on final candidate. Do not advance 04 before controller PASS."
+  ],
+  "executor_id": "1d7e1944-aba1-4815-9e82-d1a52fe96444",
+  "terminal_evidence": "docs/todos/10-self-hosting-hardening/evidence/03/native-terminal-a.json",
+  "progress": [
+    {
+      "kind": "red",
+      "summary": "旧可调用board缺三字段4断言失败，before量测及5项旧兼容baseline已交付",
+      "evidence": "docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt"
+    }
+  ],
+  "commands": [
+    "docs/todos/10-self-hosting-hardening/evidence/03/slice-a-before-1732.json",
+    "docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json",
+    "docs/todos/10-self-hosting-hardening/evidence/03/slice-a-baseline-1733.json",
+    "docs/todos/10-self-hosting-hardening/evidence/03/slice-a-note-validation-1734.json",
+    "docs/todos/10-self-hosting-hardening/evidence/03/slice-a-note-format-1735.json",
+    "docs/todos/10-self-hosting-hardening/evidence/03/slice-a-note-archive-1735.json"
+  ],
+  "started_at": null,
+  "ended_at": null
+}

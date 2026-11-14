@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "status": "TESTING",
+  "acceptance_verdict": "UNKNOWN",
+  "independent_review": "PENDING",
+  "started_at": "2026-11-13T18:11:06Z",
+  "checkpoint_at": "2026-11-13T18:16:51Z",
+  "base_sha": "2ce0705ebeeaee73f75a1dcd2882836dbc6b9d29",
+  "implementation_sha": "c2d90643cc391168e0e424843c761e9291629d99",
+  "source_changes": ["templates/board.html", "tests/test_board_handoff.py", "tests/test_board_truth.py", "tests/test_board_service.py", ".agents/notes/implemented/feature/2026-11-13-board-handoff.md"],
+  "checks": [
+    {"receipt":"slice-a-red-1812.json","exit_code":1,"tree_terminal":true,"result":"4 assertion failures, 1 passed; executable template; no ImportError"},
+    {"receipt":"slice-a-green-1814.json","exit_code":0,"tree_terminal":true,"result":"13 passed"},
+    {"receipt":"slice-a-regression-1815.json","exit_code":0,"tree_terminal":true,"result":"67 passed; before final refresh-button CSS"},
+    {"receipt":"slice-a-final-regression-1816.json","exit_code":0,"tree_terminal":true,"result":"67 passed in 19.67s; final product candidate"},
+    {"receipt":"slice-a-note-tree-1815.json","exit_code":0,"tree_terminal":true,"result":"17 notes tree/links verified"},
+    {"receipt":"slice-a-final-note-format-1816.json","exit_code":0,"tree_terminal":true,"result":"17 notes format verified"},
+    {"receipt":"slice-a-scope-1816.json","exit_code":0,"tree_terminal":true,"result":"frozen coordinator BASE..implementation HEAD plus worktree; root dirty included, not staged"}
+  ],
+  "whitespace": {"default_cached_check_exit":2,"cause":"Original runner receipts/output use CRLF; reported CR as trailing whitespace","cr_at_eol_cached_check_exit":0,"raw_evidence_preserved":true},
+  "windows_symlink": {"actual_creation":true,"http_escape_rejected":true,"skipped":false},
+  "visual": "UNVERIFIED: no real browser operated by this implementer",
+  "browser_four_states": "UNVERIFIED: root must observe normal/empty/loading/disconnected through native input",
+  "harness": {
+    "script":"docs/todos/10-self-hosting-hardening/evidence/04/browser_harness.py",
+    "usage":"docs/todos/10-self-hosting-hardening/evidence/04/browser_harness_usage.md",
+    "command":"python -B docs/todos/10-self-hosting-hardening/evidence/04/browser_harness.py --ready-file <fresh-ready.json> --stop-file <fresh-stop> --duration 120 --delay 6",
+    "runner":"C:/Users/qingyu/.codeg/skills/iteration-manager/build/frozen-tools/46ded3a/scripts/iter_run.py --deadline <new UTC with shutdown reserve> --evidence <unique project-relative receipt> -- <command>",
+    "ports":"Dynamic 127.0.0.1:0; ready JSON provides all ports and roots; no long-running service started in this slice",
+    "services":["real_git","synthetic_fs","synthetic_empty","synthetic_loading"],
+    "stop_contract":"Touch per-service ready.services[name].stop_file for disconnect; touch global stop_file or wait duration for all-service graceful shutdown; all own threads joined and temp fixtures removed",
+    "smoke_test":"Final regression exercises real HTTP FS/evidence/delay and normal shutdown; not native browser acceptance",
+    "browser_owner":"Root; existing ego-browser TaskSpace5/page p1; viewport 1139x869"
+  },
+  "remaining_work": [
+    "Root starts harness under frozen runner with fresh deadline/ready/stop/receipt paths",
+    "Root performs native Git/FS filter-detail-candidate-checkpoint-remaining-sources-Escape-refresh path",
+    "Root records all four observable states and actual visual quality at 1139x869; fixes require return to implementer",
+    "Non-participant independent review of final candidate and affected evidence",
+    "Root alone registers card/README, final candidate binding and strict gate after approval"
+  ],
+  "dirty_ownership": {
+    "root_modified":["docs/todos/10-self-hosting-hardening/04-board-handoff.md"],
+    "root_untracked_evidence":["browser-probe.json","browser-probe.json.child.json","browser-probe.json.output.txt","browser-probe.mjs","claim-a.json","context-implementation-a.json","dependency-03.json","dispatch-a.json","inventory-a.json","ui-entry.json"],
+    "root_files_staged":false,
+    "own_pending_at_checkpoint":["implementation-checkpoint-a.json","slice-a-scope-1816.json","slice-a-scope-1816.json.child.json","slice-a-scope-1816.json.output.txt"]
+  },
+  "active_commands": [],
+  "tree_terminal": true,
+  "delegation": "none",
+  "card_or_readme_written": false,
+  "self_approved": false
+}

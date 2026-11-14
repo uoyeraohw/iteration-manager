@@ -1,0 +1,7 @@
+prompt_only completed; calls/outputs 5 ; shell exits [0, 0, 0]
+no_git_permission completed; calls/outputs 5 ; shell exits [0, 0, 0]
+preexisting_dirty completed; calls/outputs 4 ; shell exits [0, 0, 0]
+no_merge_permission completed; calls/outputs 4 ; shell exits [0, 0, 0]
+wave1 143 files byte-compared; only recorded parent/controller evidence additions
+wave2 143 files byte-compared; only recorded parent/controller evidence additions
+A source/test/note bytes unchanged; no regression rerun. Native observation inventory verified; independent review remains pending.

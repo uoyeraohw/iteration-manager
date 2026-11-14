@@ -1,0 +1,121 @@
+{
+  "read_only": true,
+  "readiness": "READY",
+  "task_path": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\.worktrees\\iter-10\\docs\\todos\\10-self-hosting-hardening\\04-board-handoff.md",
+  "phase": "implementation",
+  "acceptance_verdict": "UNKNOWN",
+  "findings": [],
+  "observations": {
+    "authority": {
+      "status": "READY",
+      "summary": "06全量有效反例，按原04白名单定点重开；串行暂停06",
+      "evidence": "docs/todos/10-self-hosting-hardening/evidence/06/controller-full-regression.json"
+    },
+    "execution": {
+      "status": "READY",
+      "summary": "06实现1723及测试命令均终态，当前仅04修复者",
+      "evidence": "docs/todos/10-self-hosting-hardening/evidence/06/native-terminal-a.json"
+    },
+    "ui-entry": {
+      "status": "READY",
+      "summary": "04已实际原生桌面Git/FS交互与1139x869四态；本次仅隔离测试夹具，不改变模板或原生交互，沿用原件",
+      "evidence": "docs/todos/10-self-hosting-hardening/evidence/04/visual-observation.json"
+    },
+    "verification": {
+      "status": "READY",
+      "summary": "同harness实测8.562秒ready/exit0/stderr空，冻结runner可用",
+      "evidence": "docs/todos/10-self-hosting-hardening/evidence/06/controller-harness-diagnosis.json"
+    }
+  },
+  "task_id": "04",
+  "delivery_mode": "git",
+  "candidate": "6afa4de271ee90271f2c068a8060ed2590c8ff98",
+  "execution": {
+    "attempt_count": 2,
+    "no_progress_streak": 0,
+    "last_attempt": {
+      "source": "build/review-04/attempt-review.json",
+      "phase": "evidence-inspection",
+      "delivery_mode": "git",
+      "candidate": "9b9010afb8dbf0b0cf74f83c6c97605984319619",
+      "conditions": {
+        "inputs": [
+          "docs/todos/10-self-hosting-hardening/04-board-handoff.md",
+          "templates/board.html"
+        ],
+        "capabilities": [
+          "Codeg MCP codex independent review"
+        ],
+        "scope": [
+          ".agents/notes/implemented/feature/2026-11-13-board-handoff.md",
+          "docs/todos/10-self-hosting-hardening/evidence/04/",
+          "templates/board.html",
+          "tests/test_board_handoff.py",
+          "tests/test_board_service.py",
+          "tests/test_board_truth.py"
+        ]
+      },
+      "executor_id": "15039ddf-a469-47ed-9c5a-2a732ef24dbf",
+      "executor_state": "completed",
+      "terminal_evidence": "docs/todos/10-self-hosting-hardening/evidence/04/review-report.json",
+      "progress": [
+        {
+          "kind": "review-finding",
+          "evidence": "docs/todos/10-self-hosting-hardening/evidence/04/review-report.json",
+          "summary": "APPROVED；无阻断缺口，未冒称部署"
+        }
+      ],
+      "checkpoint": "04独立Scope/Spec/Quality APPROVED，原始交互、七图和匹配源码回归核对",
+      "remaining_work": [
+        "登记D后local strict"
+      ],
+      "commands": [],
+      "started_at": null,
+      "ended_at": null,
+      "session_seconds": null,
+      "command_seconds": null
+    },
+    "checkpoint": {
+      "candidate": "9b9010afb8dbf0b0cf74f83c6c97605984319619",
+      "phase": "evidence-inspection",
+      "summary": "04独立Scope/Spec/Quality APPROVED，原始交互、七图和匹配源码回归核对",
+      "progress": [
+        {
+          "kind": "review-finding",
+          "evidence": "docs/todos/10-self-hosting-hardening/evidence/04/review-report.json",
+          "summary": "APPROVED；无阻断缺口，未冒称部署"
+        }
+      ],
+      "source": "build/review-04/attempt-review.json"
+    },
+    "remaining_work": [
+      "登记D后local strict"
+    ]
+  },
+  "conditions": {
+    "inputs": [
+      "docs/todos/10-self-hosting-hardening/04-board-handoff.md",
+      "docs/todos/10-self-hosting-hardening/evidence/04/browser_harness.py",
+      "docs/todos/10-self-hosting-hardening/evidence/06/controller-harness-diagnosis.json.output.txt",
+      "tests/test_board_handoff.py"
+    ],
+    "capabilities": [
+      "Codeg MCP codex independent session",
+      "Windows iter_run",
+      "pytest"
+    ],
+    "scope": [
+      ".agents/notes/implemented/feature/2026-11-13-board-handoff.md",
+      "docs/todos/10-self-hosting-hardening/evidence/04/",
+      "templates/board.html",
+      "tests/test_board_handoff.py",
+      "tests/test_board_service.py",
+      "tests/test_board_truth.py"
+    ]
+  },
+  "checkpoint": "定点修复全量暴露的HTTP夹具ready时限耦合，保留真实UI默认行为和旧原件",
+  "remaining_work": [
+    "固定strict后回06全量",
+    "独立受影响审查及新绑定"
+  ]
+}

@@ -1,5 +1,7 @@
 # 🧩 [Refactor-Benchmark] 架构重构 / 性能优化型子任务模板
 
+新卡可用[结构化生成入口](../../references/template_generation.md)，spec.type设为Refactor-Benchmark，delivery_mode显式选择git或filesystem；不强制RED，benchmark_before/benchmark_after及独审门禁不变。
+
 完成证据遵守 `references/task_card_schema.md`，必需checks：baseline、regression、compatibility、benchmark_before、benchmark_after（compatibility为观测，前后量测条件与数值保留原始输出）。实现仅置TESTING；非参与者独审后，主管按Git的C/D或FS冻结合同登记收据与状态，再严格检查。不得仅凭勾选或APPROVED字段放行。
 
 > **适用范围**：模块重构、分层解耦、SQL/查询优化、并发加速、依赖升级、技术债消除。  

@@ -1,0 +1,463 @@
+{
+  "reviewer": {
+    "identity": "Codex independent reviewer",
+    "session_id": "01a1d63f-4402-7dd3-88cb-5f5b4e53e603",
+    "identity_source": "CODEX_SESSION_ID及CODEX_THREAD_ID",
+    "independent": true,
+    "participation": "未参与任务05实现、测试、设计或RCA",
+    "read_only": true
+  },
+  "base_sha": "8392193a0d9e883892f75780a63a1b16f67682c4",
+  "previous_reviewed_sha": "8616468ab3384efad26095ca182255448076e081",
+  "head_sha": "dc5d868c6b90268a2eefc29966874c96d48dd122",
+  "contract_sha": "dc5d868c6b90268a2eefc29966874c96d48dd122",
+  "branch": "feat/iter-10-self-hosting-hardening",
+  "verdict": "APPROVED",
+  "verdict_basis": "批准当前候选的受影响变动及证据沿用依据，可据此建立新绑定。普通引语改为规范动态状态前缀属于已审查的正文变化，必须绑定新contract；不能继续套用旧收据。本裁决未执行登记或固定strict，不表示任务05已经PASS。",
+  "scope": {
+    "result": "APPROVED",
+    "evidence": [
+      "实际8616468..dc5d868仅改变05卡、所属迭代README，以及首次新增原review-report.json和review.json，共4文件。",
+      "f915d10..dc5d868仅修改05卡；原review报告及收据没有被覆写。",
+      "SKILL、references、scripts、tests、Note及既有实验和回归证据在受审区间无变化。",
+      "冻结iter_contracts.py文本与46ded3a固定Git树相等；候选scripts/iter_contracts.py相对固定树也无差异。",
+      "06卡不在差异中，README:47、115仍为TODO/UNKNOWN。"
+    ]
+  },
+  "spec": {
+    "result": "APPROVED",
+    "evidence": [
+      "05-release-evidence-index.md:6、15保留TESTING/PENDING；:26采用精确的 > **当前状态**：前缀，说明仍待本次独审及固定strict。",
+      "冻结iter_contracts.py:252-263只规范化固定执行元数据、精确状态前缀、checkbox标记和ledger；原普通引语不属于动态豁免，因此原收据不能覆盖此次正文变化。",
+      "任务接口、scope、验收文字及README的iter:goal区域未改变。",
+      "05卡:21中原4个自治事件逐对象相等保留；仅追加审查attempt、release及重新claim。policy仍为5/10/1/2，四计数均保持0，没有清预算。",
+      "05卡:119保留失败登记及停止05放行、不推进06的说明。"
+    ]
+  },
+  "quality": {
+    "result": "APPROVED",
+    "evidence": [
+      "原1721报告的全部原审字段与保存的native completed最终JSON逐对象相等；原报告和review.json均绑定原C/contract8616468。",
+      "native-terminal-a.json保存1720执行终态completed。会话查询返回的pending_review元数据与执行终态分别处理，没有据此重定义完成。",
+      "controller-regression.json:18-24为COMPLETED、raw_exit_code=0、tree_terminal=true；原始输出:1-2为9 passed in 0.66s。",
+      "本次直接审查实际Git差异、冻结规则及证据沿用条件，没有重跑产品测试或原实验。",
+      "最终HEAD仍为dc5d868，git status为空。"
+    ]
+  },
+  "issues": [
+    {
+      "severity": "LOW",
+      "blocking": false,
+      "file": "docs/todos/10-self-hosting-hardening/README.md",
+      "lines": [
+        3,
+        46,
+        106,
+        114
+      ],
+      "actual": "可再生投影仍显示上次strict的05 DONE/FAIL、声明DONE5/6；当前05卡已恢复TESTING/PENDING。",
+      "expected": "主控后续登记并运行固定local strict时刷新投影，以实际卡片及验收结果为准。",
+      "impact": "缓存展示陈旧，但没有宣称05 PASS，不阻止本次候选新绑定批准。",
+      "owner": "主控"
+    }
+  ],
+  "reused_evidence": [
+    {
+      "coverage": "原任务05产品、四层事实索引及原件审查",
+      "paths": [
+        "docs/todos/10-self-hosting-hardening/evidence/05/review-report.json",
+        "docs/todos/10-self-hosting-hardening/evidence/05/review.json"
+      ],
+      "original_head_sha": "8616468ab3384efad26095ca182255448076e081",
+      "result": "1721原独审APPROVED",
+      "reuse_basis": "产品、测试、Note及原始实验证据未变；原报告内容与保存的原生最终返回一致。沿用其未受影响产品结论，不把旧收据冒作当前候选绑定。"
+    },
+    {
+      "coverage": "指定三文件受影响回归",
+      "paths": [
+        "docs/todos/10-self-hosting-hardening/evidence/05/controller-regression.json",
+        "docs/todos/10-self-hosting-hardening/evidence/05/controller-regression.json.output.txt"
+      ],
+      "executed_at": "2026-11-13T18:39:23.041569+00:00",
+      "result": "主控独立9 passed in 0.66s；COMPLETED/raw0/tree_terminal=true",
+      "reuse_basis": "覆盖产品、测试及原件未变。此次仅登记正文、状态和投影变化，不冒称在新候选重新执行。"
+    },
+    {
+      "coverage": "原实验、decision、interfaces及Note检查",
+      "source": "docs/todos/10-self-hosting-hardening/evidence/05/review-report.json:48-121",
+      "reuse_basis": "受审差异没有修改这些产物及其输入；沿用原独审已核验范围。原嵌套PowerShell错误输出继续排除，不因raw0恢复为成功证据。"
+    }
+  ],
+  "unknown_boundaries": [
+    {
+      "object": "新候选登记及固定local strict",
+      "status": "PENDING",
+      "owner": "主控",
+      "next_action": "以新路径追加本次报告及新收据，base绑定8392193，head和contract绑定dc5d868；保留原review.json及review-report.json。登记后执行固定strict，PASS前不得推进06。",
+      "reason": "冻结iter_contracts.py:298-314仅豁免候选中尚不存在的新注册报告和收据；覆写已经位于dc5d868中的旧报告或旧收据会造成scope漂移。"
+    },
+    {
+      "object": "完整安装版本及安装新会话采用",
+      "status": "UNKNOWN",
+      "owner": "部署owner",
+      "resume_condition": "另获部署授权，提供完整manifest、版本归属及原生消费证据。"
+    },
+    {
+      "object": "P1所查deployment.json及历史候选来源",
+      "status": "UNKNOWN",
+      "owner": "历史证据owner",
+      "resume_condition": "提供原始来源或确认不可恢复。"
+    },
+    {
+      "object": "任务06及整轮验收",
+      "status": "未执行",
+      "owner": "主控",
+      "resume_condition": "05新绑定登记和固定strict PASS后，按原串行契约推进。"
+    }
+  ],
+  "typesafe": {
+    "request": {
+      "state": {
+        "task": "任务05受影响定点独审；只读；判断8616468..dc5d868的变化是否允许为dc5d868新绑定，不将本裁决当local strict PASS。",
+        "contract": {
+          "git": "task_card_schema.md:85允许固定执行元数据、checkbox完成标记、ledger变化，其他正文与冻结规格一致；:102 README投影可再生；agent_protocol.md:123新候选须审受影响内容与沿用依据，旧APPROVED不能套用。",
+          "frozen_tool": "iter_contracts.py:246-263去掉固定执行元数据、ledger、checkbox标记；仅精确 > **当前状态**：等前缀后内容动态豁免。:298-314仅对C中不存在的新注册receipt/report免后续scope漂移。",
+          "serial": "05 PASS和有效收据齐备才开始06。"
+        },
+        "observations": {
+          "head": "dc5d868c6b90268a2eefc29966874c96d48dd122；分支feat/iter-10-self-hosting-hardening；dirty为空。",
+          "diff": "8616468..dc5d868仅4文件：05卡、迭代README、首次新增1721原review-report.json与review.json。产品SKILL/references/scripts/tests/Note无diff；已存在实验与回归原件无diff。f915d10..dc5d868仅05卡。",
+          "status_line": {
+            "old_C": "> 声明 TESTING；验收 UNKNOWN；四层索引及真实只读观察已交付，待非参与者独审。",
+            "failed_D": "> 声明 DONE；独立APPROVED；登记后由固定strict核对PASS。",
+            "new_C": "> **当前状态**：声明 TESTING；原产品独审APPROVED；登记正文修正待定点独审与固定strict。"
+          },
+          "card": "frontmatter TESTING/PENDING，仍指向旧C的原review.json。checkbox已勾选；ledger记载失败D、此次修正待独审及旧批准。接口、scope、验收文字与迭代goal无变化。",
+          "readme": "README:3,46,106,114仍为上次strict缓存：声明DONE5/6，05 DONE/FAIL，PASS4/6；与当前卡TESTING不一致。README:47,115为06 TODO/UNKNOWN。未写05 PASS。",
+          "budget": "原C四个事件逐对象相等保留；追加attempt-review、release-review、claim-review-final；policy5/10/1/2与round,total,consilium,replan均0未变。",
+          "checker": "冻结文件内容与46ded3a树文本相等；工作区scripts/iter_contracts.py相对固定树无diff。",
+          "prior_review": "1721 report APPROVED，base8392193/head及contract8616468；报告所有原审字段逐对象等于保存的native completed final JSON；原review.json同绑定。1720保存原生终态completed。会话元数据pending_review单独记录，不冒作执行终态。",
+          "regression": "controller-regression.json COMPLETED/raw_exit_code0/tree_terminal true，2026-11-13T18:39:23Z执行，output为9 passed in 0.66s；原产品/测试及此原件未变。当前不重跑。",
+          "registration": "尚未产生绑定新C的新receipt/report；本次只返回审查，不登记DONE。原review文件已在新C内，需保留，后续新注册用新路径。"
+        }
+      },
+      "questions": {
+        "affected_review": {
+          "type": "choice",
+          "instructions": "仅对所述受影响差异和原产品证据沿用依据作审查处置。区分新候选可批准、后续登记尚未完成，以及实质修复缺陷；判断陈旧README投影是否需要阻止本次新绑定批准。不要用旧批准替代新审查，不把后续新收据/strict当已完成。",
+          "criteria": {
+            "APPROVED": "差异满足受影响审查；可为新C建立新独审绑定。缓存投影及新收据/strict由后续登记完成，不构成本候选实质缺陷。",
+            "CHANGES_REQUESTED": "已观察到必须先修正候选内容才能批准新绑定的实质契约或正确性缺陷。",
+            "BLOCKED": "缺失必要证据或来源，无法完成该受影响审查。",
+            "INSUFFICIENT": "给定证据不足以区分以上处置。"
+          }
+        }
+      }
+    },
+    "raw_response": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"model\":\"jev-1.14.0\",\"answers\":{\"affected_review\":{\"type\":\"choice\",\"choice\":\"APPROVED\",\"confidence\":0.39,\"probabilities\":{\"APPROVED\":0.54,\"BLOCKED\":0.11,\"CHANGES_REQUESTED\":0.28,\"INSUFFICIENT\":0.07}}},\"usage\":{\"input_tokens\":1648,\"output_tokens\":60}}"
+        }
+      ]
+    },
+    "application": "实际用于判断受影响变动及陈旧投影是否阻止新绑定。APPROVED概率0.54、confidence0.39，结果不强；依据实际差异、冻结规则和未变证据独立裁决批准。将陈旧投影列为非阻断问题，保留新收据及strict待完成，不重复刷分。"
+  },
+  "execution": {
+    "file_writes": [],
+    "card_writes": [],
+    "git_writes": [],
+    "delegations": [],
+    "business_or_test_commands": [],
+    "registered_DONE": false,
+    "final_head": "dc5d868c6b90268a2eefc29966874c96d48dd122",
+    "final_dirty": [],
+    "started_observation_at": "2026-11-13T18:50:43.0800120Z",
+    "final_state_checked_at": "2026-11-13T18:52:38.1511070Z",
+    "checkpoint": "在5分钟检查点前完成读取及审查，未触及6分钟停读边界。"
+  },
+  "native_guard": {
+    "reason": "terminal",
+    "deadlineMs": 1794596341918,
+    "final": {
+      "task_id": "c2baae82-73d2-451d-aca4-6cb75ff76337",
+      "status": "completed",
+      "child_conversation_id": 1722,
+      "agent_type": "codex",
+      "text": "{\n  \"reviewer\": {\n    \"identity\": \"Codex independent reviewer\",\n    \"session_id\": \"01a1d63f-4402-7dd3-88cb-5f5b4e53e603\",\n    \"identity_source\": \"CODEX_SESSION_ID及CODEX_THREAD_ID\",\n    \"independent\": true,\n    \"participation\": \"未参与任务05实现、测试、设计或RCA\",\n    \"read_only\": true\n  },\n  \"base_sha\": \"8392193a0d9e883892f75780a63a1b16f67682c4\",\n  \"previous_reviewed_sha\": \"8616468ab3384efad26095ca182255448076e081\",\n  \"head_sha\": \"dc5d868c6b90268a2eefc29966874c96d48dd122\",\n  \"contract_sha\": \"dc5d868c6b90268a2eefc29966874c96d48dd122\",\n  \"branch\": \"feat/iter-10-self-hosting-hardening\",\n  \"verdict\": \"APPROVED\",\n  \"verdict_basis\": \"批准当前候选的受影响变动及证据沿用依据，可据此建立新绑定。普通引语改为规范动态状态前缀属于已审查的正文变化，必须绑定新contract；不能继续套用旧收据。本裁决未执行登记或固定strict，不表示任务05已经PASS。\",\n  \"scope\": {\n    \"result\": \"APPROVED\",\n    \"evidence\": [\n      \"实际8616468..dc5d868仅改变05卡、所属迭代README，以及首次新增原review-report.json和review.json，共4文件。\",\n      \"f915d10..dc5d868仅修改05卡；原review报告及收据没有被覆写。\",\n      \"SKILL、references、scripts、tests、Note及既有实验和回归证据在受审区间无变化。\",\n      \"冻结iter_contracts.py文本与46ded3a固定Git树相等；候选scripts/iter_contracts.py相对固定树也无差异。\",\n      \"06卡不在差异中，README:47、115仍为TODO/UNKNOWN。\"\n    ]\n  },\n  \"spec\": {\n    \"result\": \"APPROVED\",\n    \"evidence\": [\n      \"05-release-evidence-index.md:6、15保留TESTING/PENDING；:26采用精确的 > **当前状态**：前缀，说明仍待本次独审及固定strict。\",\n      \"冻结iter_contracts.py:252-263只规范化固定执行元数据、精确状态前缀、checkbox标记和ledger；原普通引语不属于动态豁免，因此原收据不能覆盖此次正文变化。\",\n      \"任务接口、scope、验收文字及README的iter:goal区域未改变。\",\n      \"05卡:21中原4个自治事件逐对象相等保留；仅追加审查attempt、release及重新claim。policy仍为5/10/1/2，四计数均保持0，没有清预算。\",\n      \"05卡:119保留失败登记及停止05放行、不推进06的说明。\"\n    ]\n  },\n  \"quality\": {\n    \"result\": \"APPROVED\",\n    \"evidence\": [\n      \"原1721报告的全部原审字段与保存的native completed最终JSON逐对象相等；原报告和review.json均绑定原C/contract8616468。\",\n      \"native-terminal-a.json保存1720执行终态completed。会话查询返回的pending_review元数据与执行终态分别处理，没有据此重定义完成。\",\n      \"controller-regression.json:18-24为COMPLETED、raw_exit_code=0、tree_terminal=true；原始输出:1-2为9 passed in 0.66s。\",\n      \"本次直接审查实际Git差异、冻结规则及证据沿用条件，没有重跑产品测试或原实验。\",\n      \"最终HEAD仍为dc5d868，git status为空。\"\n    ]\n  },\n  \"issues\": [\n    {\n      \"severity\": \"LOW\",\n      \"blocking\": false,\n      \"file\": \"docs/todos/10-self-hosting-hardening/README.md\",\n      \"lines\": [3, 46, 106, 114],\n      \"actual\": \"可再生投影仍显示上次strict的05 DONE/FAIL、声明DONE5/6；当前05卡已恢复TESTING/PENDING。\",\n      \"expected\": \"主控后续登记并运行固定local strict时刷新投影，以实际卡片及验收结果为准。\",\n      \"impact\": \"缓存展示陈旧，但没有宣称05 PASS，不阻止本次候选新绑定批准。\",\n      \"owner\": \"主控\"\n    }\n  ],\n  \"reused_evidence\": [\n    {\n      \"coverage\": \"原任务05产品、四层事实索引及原件审查\",\n      \"paths\": [\n        \"docs/todos/10-self-hosting-hardening/evidence/05/review-report.json\",\n        \"docs/todos/10-self-hosting-hardening/evidence/05/review.json\"\n      ],\n      \"original_head_sha\": \"8616468ab3384efad26095ca182255448076e081\",\n      \"result\": \"1721原独审APPROVED\",\n      \"reuse_basis\": \"产品、测试、Note及原始实验证据未变；原报告内容与保存的原生最终返回一致。沿用其未受影响产品结论，不把旧收据冒作当前候选绑定。\"\n    },\n    {\n      \"coverage\": \"指定三文件受影响回归\",\n      \"paths\": [\n        \"docs/todos/10-self-hosting-hardening/evidence/05/controller-regression.json\",\n        \"docs/todos/10-self-hosting-hardening/evidence/05/controller-regression.json.output.txt\"\n      ],\n      \"executed_at\": \"2026-11-13T18:39:23.041569+00:00\",\n      \"result\": \"主控独立9 passed in 0.66s；COMPLETED/raw0/tree_terminal=true\",\n      \"reuse_basis\": \"覆盖产品、测试及原件未变。此次仅登记正文、状态和投影变化，不冒称在新候选重新执行。\"\n    },\n    {\n      \"coverage\": \"原实验、decision、interfaces及Note检查\",\n      \"source\": \"docs/todos/10-self-hosting-hardening/evidence/05/review-report.json:48-121\",\n      \"reuse_basis\": \"受审差异没有修改这些产物及其输入；沿用原独审已核验范围。原嵌套PowerShell错误输出继续排除，不因raw0恢复为成功证据。\"\n    }\n  ],\n  \"unknown_boundaries\": [\n    {\n      \"object\": \"新候选登记及固定local strict\",\n      \"status\": \"PENDING\",\n      \"owner\": \"主控\",\n      \"next_action\": \"以新路径追加本次报告及新收据，base绑定8392193，head和contract绑定dc5d868；保留原review.json及review-report.json。登记后执行固定strict，PASS前不得推进06。\",\n      \"reason\": \"冻结iter_contracts.py:298-314仅豁免候选中尚不存在的新注册报告和收据；覆写已经位于dc5d868中的旧报告或旧收据会造成scope漂移。\"\n    },\n    {\n      \"object\": \"完整安装版本及安装新会话采用\",\n      \"status\": \"UNKNOWN\",\n      \"owner\": \"部署owner\",\n      \"resume_condition\": \"另获部署授权，提供完整manifest、版本归属及原生消费证据。\"\n    },\n    {\n      \"object\": \"P1所查deployment.json及历史候选来源\",\n      \"status\": \"UNKNOWN\",\n      \"owner\": \"历史证据owner\",\n      \"resume_condition\": \"提供原始来源或确认不可恢复。\"\n    },\n    {\n      \"object\": \"任务06及整轮验收\",\n      \"status\": \"未执行\",\n      \"owner\": \"主控\",\n      \"resume_condition\": \"05新绑定登记和固定strict PASS后，按原串行契约推进。\"\n    }\n  ],\n  \"typesafe\": {\n    \"request\": {\n      \"state\": {\n        \"task\": \"任务05受影响定点独审；只读；判断8616468..dc5d868的变化是否允许为dc5d868新绑定，不将本裁决当local strict PASS。\",\n        \"contract\": {\n          \"git\": \"task_card_schema.md:85允许固定执行元数据、checkbox完成标记、ledger变化，其他正文与冻结规格一致；:102 README投影可再生；agent_protocol.md:123新候选须审受影响内容与沿用依据，旧APPROVED不能套用。\",\n          \"frozen_tool\": \"iter_contracts.py:246-263去掉固定执行元数据、ledger、checkbox标记；仅精确 > **当前状态**：等前缀后内容动态豁免。:298-314仅对C中不存在的新注册receipt/report免后续scope漂移。\",\n          \"serial\": \"05 PASS和有效收据齐备才开始06。\"\n        },\n        \"observations\": {\n          \"head\": \"dc5d868c6b90268a2eefc29966874c96d48dd122；分支feat/iter-10-self-hosting-hardening；dirty为空。\",\n          \"diff\": \"8616468..dc5d868仅4文件：05卡、迭代README、首次新增1721原review-report.json与review.json。产品SKILL/references/scripts/tests/Note无diff；已存在实验与回归原件无diff。f915d10..dc5d868仅05卡。\",\n          \"status_line\": {\n            \"old_C\": \"> 声明 TESTING；验收 UNKNOWN；四层索引及真实只读观察已交付，待非参与者独审。\",\n            \"failed_D\": \"> 声明 DONE；独立APPROVED；登记后由固定strict核对PASS。\",\n            \"new_C\": \"> **当前状态**：声明 TESTING；原产品独审APPROVED；登记正文修正待定点独审与固定strict。\"\n          },\n          \"card\": \"frontmatter TESTING/PENDING，仍指向旧C的原review.json。checkbox已勾选；ledger记载失败D、此次修正待独审及旧批准。接口、scope、验收文字与迭代goal无变化。\",\n          \"readme\": \"README:3,46,106,114仍为上次strict缓存：声明DONE5/6，05 DONE/FAIL，PASS4/6；与当前卡TESTING不一致。README:47,115为06 TODO/UNKNOWN。未写05 PASS。\",\n          \"budget\": \"原C四个事件逐对象相等保留；追加attempt-review、release-review、claim-review-final；policy5/10/1/2与round,total,consilium,replan均0未变。\",\n          \"checker\": \"冻结文件内容与46ded3a树文本相等；工作区scripts/iter_contracts.py相对固定树无diff。\",\n          \"prior_review\": \"1721 report APPROVED，base8392193/head及contract8616468；报告所有原审字段逐对象等于保存的native completed final JSON；原review.json同绑定。1720保存原生终态completed。会话元数据pending_review单独记录，不冒作执行终态。\",\n          \"regression\": \"controller-regression.json COMPLETED/raw_exit_code0/tree_terminal true，2026-11-13T18:39:23Z执行，output为9 passed in 0.66s；原产品/测试及此原件未变。当前不重跑。\",\n          \"registration\": \"尚未产生绑定新C的新receipt/report；本次只返回审查，不登记DONE。原review文件已在新C内，需保留，后续新注册用新路径。\"\n        }\n      },\n      \"questions\": {\n        \"affected_review\": {\n          \"type\": \"choice\",\n          \"instructions\": \"仅对所述受影响差异和原产品证据沿用依据作审查处置。区分新候选可批准、后续登记尚未完成，以及实质修复缺陷；判断陈旧README投影是否需要阻止本次新绑定批准。不要用旧批准替代新审查，不把后续新收据/strict当已完成。\",\n          \"criteria\": {\n            \"APPROVED\": \"差异满足受影响审查；可为新C建立新独审绑定。缓存投影及新收据/strict由后续登记完成，不构成本候选实质缺陷。\",\n            \"CHANGES_REQUESTED\": \"已观察到必须先修正候选内容才能批准新绑定的实质契约或正确性缺陷。\",\n            \"BLOCKED\": \"缺失必要证据或来源，无法完成该受影响审查。\",\n            \"INSUFFICIENT\": \"给定证据不足以区分以上处置。\"\n          }\n        }\n      }\n    },\n    \"raw_response\": {\n      \"content\": [\n        {\n          \"type\": \"text\",\n          \"text\": \"{\\\"model\\\":\\\"jev-1.14.0\\\",\\\"answers\\\":{\\\"affected_review\\\":{\\\"type\\\":\\\"choice\\\",\\\"choice\\\":\\\"APPROVED\\\",\\\"confidence\\\":0.39,\\\"probabilities\\\":{\\\"APPROVED\\\":0.54,\\\"BLOCKED\\\":0.11,\\\"CHANGES_REQUESTED\\\":0.28,\\\"INSUFFICIENT\\\":0.07}}},\\\"usage\\\":{\\\"input_tokens\\\":1648,\\\"output_tokens\\\":60}}\"\n        }\n      ]\n    },\n    \"application\": \"实际用于判断受影响变动及陈旧投影是否阻止新绑定。APPROVED概率0.54、confidence0.39，结果不强；依据实际差异、冻结规则和未变证据独立裁决批准。将陈旧投影列为非阻断问题，保留新收据及strict待完成，不重复刷分。\"\n  },\n  \"execution\": {\n    \"file_writes\": [],\n    \"card_writes\": [],\n    \"git_writes\": [],\n    \"delegations\": [],\n    \"business_or_test_commands\": [],\n    \"registered_DONE\": false,\n    \"final_head\": \"dc5d868c6b90268a2eefc29966874c96d48dd122\",\n    \"final_dirty\": [],\n    \"started_observation_at\": \"2026-11-13T18:50:43.0800120Z\",\n    \"final_state_checked_at\": \"2026-11-13T18:52:38.1511070Z\",\n    \"checkpoint\": \"在5分钟检查点前完成读取及审查，未触及6分钟停读边界。\"\n  }\n}",
+      "duration_ms": 175519,
+      "progress": {
+        "steps": 24,
+        "marks": [
+          "ok",
+          "ok",
+          "ok",
+          "ok",
+          "ok",
+          "ok",
+          "ok",
+          "ok",
+          "ok",
+          "ok",
+          "ok",
+          "ok"
+        ],
+        "last_step": "git rev-parse HEAD; git status --porcelain=v1; Get-Date -AsUTC -Format o"
+      },
+      "raw": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"tasks\":[{\"task_id\":\"c2baae82-73d2-451d-aca4-6cb75ff76337\",\"status\":\"completed\",\"child_conversation_id\":1722,\"agent_type\":\"codex\",\"text\":\"{\\n  \\\"reviewer\\\": {\\n    \\\"identity\\\": \\\"Codex independent reviewer\\\",\\n    \\\"session_id\\\": \\\"01a1d63f-4402-7dd3-88cb-5f5b4e53e603\\\",\\n    \\\"identity_source\\\": \\\"CODEX_SESSION_ID及CODEX_THREAD_ID\\\",\\n    \\\"independent\\\": true,\\n    \\\"participation\\\": \\\"未参与任务05实现、测试、设计或RCA\\\",\\n    \\\"read_only\\\": true\\n  },\\n  \\\"base_sha\\\": \\\"8392193a0d9e883892f75780a63a1b16f67682c4\\\",\\n  \\\"previous_reviewed_sha\\\": \\\"8616468ab3384efad26095ca182255448076e081\\\",\\n  \\\"head_sha\\\": \\\"dc5d868c6b90268a2eefc29966874c96d48dd122\\\",\\n  \\\"contract_sha\\\": \\\"dc5d868c6b90268a2eefc29966874c96d48dd122\\\",\\n  \\\"branch\\\": \\\"feat/iter-10-self-hosting-hardening\\\",\\n  \\\"verdict\\\": \\\"APPROVED\\\",\\n  \\\"verdict_basis\\\": \\\"批准当前候选的受影响变动及证据沿用依据，可据此建立新绑定。普通引语改为规范动态状态前缀属于已审查的正文变化，必须绑定新contract；不能继续套用旧收据。本裁决未执行登记或固定strict，不表示任务05已经PASS。\\\",\\n  \\\"scope\\\": {\\n    \\\"result\\\": \\\"APPROVED\\\",\\n    \\\"evidence\\\": [\\n      \\\"实际8616468..dc5d868仅改变05卡、所属迭代README，以及首次新增原review-report.json和review.json，共4文件。\\\",\\n      \\\"f915d10..dc5d868仅修改05卡；原review报告及收据没有被覆写。\\\",\\n      \\\"SKILL、references、scripts、tests、Note及既有实验和回归证据在受审区间无变化。\\\",\\n      \\\"冻结iter_contracts.py文本与46ded3a固定Git树相等；候选scripts/iter_contracts.py相对固定树也无差异。\\\",\\n      \\\"06卡不在差异中，README:47、115仍为TODO/UNKNOWN。\\\"\\n    ]\\n  },\\n  \\\"spec\\\": {\\n    \\\"result\\\": \\\"APPROVED\\\",\\n    \\\"evidence\\\": [\\n      \\\"05-release-evidence-index.md:6、15保留TESTING/PENDING；:26采用精确的 > **当前状态**：前缀，说明仍待本次独审及固定strict。\\\",\\n      \\\"冻结iter_contracts.py:252-263只规范化固定执行元数据、精确状态前缀、checkbox标记和ledger；原普通引语不属于动态豁免，因此原收据不能覆盖此次正文变化。\\\",\\n      \\\"任务接口、scope、验收文字及README的iter:goal区域未改变。\\\",\\n      \\\"05卡:21中原4个自治事件逐对象相等保留；仅追加审查attempt、release及重新claim。policy仍为5/10/1/2，四计数均保持0，没有清预算。\\\",\\n      \\\"05卡:119保留失败登记及停止05放行、不推进06的说明。\\\"\\n    ]\\n  },\\n  \\\"quality\\\": {\\n    \\\"result\\\": \\\"APPROVED\\\",\\n    \\\"evidence\\\": [\\n      \\\"原1721报告的全部原审字段与保存的native completed最终JSON逐对象相等；原报告和review.json均绑定原C/contract8616468。\\\",\\n      \\\"native-terminal-a.json保存1720执行终态completed。会话查询返回的pending_review元数据与执行终态分别处理，没有据此重定义完成。\\\",\\n      \\\"controller-regression.json:18-24为COMPLETED、raw_exit_code=0、tree_terminal=true；原始输出:1-2为9 passed in 0.66s。\\\",\\n      \\\"本次直接审查实际Git差异、冻结规则及证据沿用条件，没有重跑产品测试或原实验。\\\",\\n      \\\"最终HEAD仍为dc5d868，git status为空。\\\"\\n    ]\\n  },\\n  \\\"issues\\\": [\\n    {\\n      \\\"severity\\\": \\\"LOW\\\",\\n      \\\"blocking\\\": false,\\n      \\\"file\\\": \\\"docs/todos/10-self-hosting-hardening/README.md\\\",\\n      \\\"lines\\\": [3, 46, 106, 114],\\n      \\\"actual\\\": \\\"可再生投影仍显示上次strict的05 DONE/FAIL、声明DONE5/6；当前05卡已恢复TESTING/PENDING。\\\",\\n      \\\"expected\\\": \\\"主控后续登记并运行固定local strict时刷新投影，以实际卡片及验收结果为准。\\\",\\n      \\\"impact\\\": \\\"缓存展示陈旧，但没有宣称05 PASS，不阻止本次候选新绑定批准。\\\",\\n      \\\"owner\\\": \\\"主控\\\"\\n    }\\n  ],\\n  \\\"reused_evidence\\\": [\\n    {\\n      \\\"coverage\\\": \\\"原任务05产品、四层事实索引及原件审查\\\",\\n      \\\"paths\\\": [\\n        \\\"docs/todos/10-self-hosting-hardening/evidence/05/review-report.json\\\",\\n        \\\"docs/todos/10-self-hosting-hardening/evidence/05/review.json\\\"\\n      ],\\n      \\\"original_head_sha\\\": \\\"8616468ab3384efad26095ca182255448076e081\\\",\\n      \\\"result\\\": \\\"1721原独审APPROVED\\\",\\n      \\\"reuse_basis\\\": \\\"产品、测试、Note及原始实验证据未变；原报告内容与保存的原生最终返回一致。沿用其未受影响产品结论，不把旧收据冒作当前候选绑定。\\\"\\n    },\\n    {\\n      \\\"coverage\\\": \\\"指定三文件受影响回归\\\",\\n      \\\"paths\\\": [\\n        \\\"docs/todos/10-self-hosting-hardening/evidence/05/controller-regression.json\\\",\\n        \\\"docs/todos/10-self-hosting-hardening/evidence/05/controller-regression.json.output.txt\\\"\\n      ],\\n      \\\"executed_at\\\": \\\"2026-11-13T18:39:23.041569+00:00\\\",\\n      \\\"result\\\": \\\"主控独立9 passed in 0.66s；COMPLETED/raw0/tree_terminal=true\\\",\\n      \\\"reuse_basis\\\": \\\"覆盖产品、测试及原件未变。此次仅登记正文、状态和投影变化，不冒称在新候选重新执行。\\\"\\n    },\\n    {\\n      \\\"coverage\\\": \\\"原实验、decision、interfaces及Note检查\\\",\\n      \\\"source\\\": \\\"docs/todos/10-self-hosting-hardening/evidence/05/review-report.json:48-121\\\",\\n      \\\"reuse_basis\\\": \\\"受审差异没有修改这些产物及其输入；沿用原独审已核验范围。原嵌套PowerShell错误输出继续排除，不因raw0恢复为成功证据。\\\"\\n    }\\n  ],\\n  \\\"unknown_boundaries\\\": [\\n    {\\n      \\\"object\\\": \\\"新候选登记及固定local strict\\\",\\n      \\\"status\\\": \\\"PENDING\\\",\\n      \\\"owner\\\": \\\"主控\\\",\\n      \\\"next_action\\\": \\\"以新路径追加本次报告及新收据，base绑定8392193，head和contract绑定dc5d868；保留原review.json及review-report.json。登记后执行固定strict，PASS前不得推进06。\\\",\\n      \\\"reason\\\": \\\"冻结iter_contracts.py:298-314仅豁免候选中尚不存在的新注册报告和收据；覆写已经位于dc5d868中的旧报告或旧收据会造成scope漂移。\\\"\\n    },\\n    {\\n      \\\"object\\\": \\\"完整安装版本及安装新会话采用\\\",\\n      \\\"status\\\": \\\"UNKNOWN\\\",\\n      \\\"owner\\\": \\\"部署owner\\\",\\n      \\\"resume_condition\\\": \\\"另获部署授权，提供完整manifest、版本归属及原生消费证据。\\\"\\n    },\\n    {\\n      \\\"object\\\": \\\"P1所查deployment.json及历史候选来源\\\",\\n      \\\"status\\\": \\\"UNKNOWN\\\",\\n      \\\"owner\\\": \\\"历史证据owner\\\",\\n      \\\"resume_condition\\\": \\\"提供原始来源或确认不可恢复。\\\"\\n    },\\n    {\\n      \\\"object\\\": \\\"任务06及整轮验收\\\",\\n      \\\"status\\\": \\\"未执行\\\",\\n      \\\"owner\\\": \\\"主控\\\",\\n      \\\"resume_condition\\\": \\\"05新绑定登记和固定strict PASS后，按原串行契约推进。\\\"\\n    }\\n  ],\\n  \\\"typesafe\\\": {\\n    \\\"request\\\": {\\n      \\\"state\\\": {\\n        \\\"task\\\": \\\"任务05受影响定点独审；只读；判断8616468..dc5d868的变化是否允许为dc5d868新绑定，不将本裁决当local strict PASS。\\\",\\n        \\\"contract\\\": {\\n          \\\"git\\\": \\\"task_card_schema.md:85允许固定执行元数据、checkbox完成标记、ledger变化，其他正文与冻结规格一致；:102 README投影可再生；agent_protocol.md:123新候选须审受影响内容与沿用依据，旧APPROVED不能套用。\\\",\\n          \\\"frozen_tool\\\": \\\"iter_contracts.py:246-263去掉固定执行元数据、ledger、checkbox标记；仅精确 > **当前状态**：等前缀后内容动态豁免。:298-314仅对C中不存在的新注册receipt/report免后续scope漂移。\\\",\\n          \\\"serial\\\": \\\"05 PASS和有效收据齐备才开始06。\\\"\\n        },\\n        \\\"observations\\\": {\\n          \\\"head\\\": \\\"dc5d868c6b90268a2eefc29966874c96d48dd122；分支feat/iter-10-self-hosting-hardening；dirty为空。\\\",\\n          \\\"diff\\\": \\\"8616468..dc5d868仅4文件：05卡、迭代README、首次新增1721原review-report.json与review.json。产品SKILL/references/scripts/tests/Note无diff；已存在实验与回归原件无diff。f915d10..dc5d868仅05卡。\\\",\\n          \\\"status_line\\\": {\\n            \\\"old_C\\\": \\\"> 声明 TESTING；验收 UNKNOWN；四层索引及真实只读观察已交付，待非参与者独审。\\\",\\n            \\\"failed_D\\\": \\\"> 声明 DONE；独立APPROVED；登记后由固定strict核对PASS。\\\",\\n            \\\"new_C\\\": \\\"> **当前状态**：声明 TESTING；原产品独审APPROVED；登记正文修正待定点独审与固定strict。\\\"\\n          },\\n          \\\"card\\\": \\\"frontmatter TESTING/PENDING，仍指向旧C的原review.json。checkbox已勾选；ledger记载失败D、此次修正待独审及旧批准。接口、scope、验收文字与迭代goal无变化。\\\",\\n          \\\"readme\\\": \\\"README:3,46,106,114仍为上次strict缓存：声明DONE5/6，05 DONE/FAIL，PASS4/6；与当前卡TESTING不一致。README:47,115为06 TODO/UNKNOWN。未写05 PASS。\\\",\\n          \\\"budget\\\": \\\"原C四个事件逐对象相等保留；追加attempt-review、release-review、claim-review-final；policy5/10/1/2与round,total,consilium,replan均0未变。\\\",\\n          \\\"checker\\\": \\\"冻结文件内容与46ded3a树文本相等；工作区scripts/iter_contracts.py相对固定树无diff。\\\",\\n          \\\"prior_review\\\": \\\"1721 report APPROVED，base8392193/head及contract8616468；报告所有原审字段逐对象等于保存的native completed final JSON；原review.json同绑定。1720保存原生终态completed。会话元数据pending_review单独记录，不冒作执行终态。\\\",\\n          \\\"regression\\\": \\\"controller-regression.json COMPLETED/raw_exit_code0/tree_terminal true，2026-11-13T18:39:23Z执行，output为9 passed in 0.66s；原产品/测试及此原件未变。当前不重跑。\\\",\\n          \\\"registration\\\": \\\"尚未产生绑定新C的新receipt/report；本次只返回审查，不登记DONE。原review文件已在新C内，需保留，后续新注册用新路径。\\\"\\n        }\\n      },\\n      \\\"questions\\\": {\\n        \\\"affected_review\\\": {\\n          \\\"type\\\": \\\"choice\\\",\\n          \\\"instructions\\\": \\\"仅对所述受影响差异和原产品证据沿用依据作审查处置。区分新候选可批准、后续登记尚未完成，以及实质修复缺陷；判断陈旧README投影是否需要阻止本次新绑定批准。不要用旧批准替代新审查，不把后续新收据/strict当已完成。\\\",\\n          \\\"criteria\\\": {\\n            \\\"APPROVED\\\": \\\"差异满足受影响审查；可为新C建立新独审绑定。缓存投影及新收据/strict由后续登记完成，不构成本候选实质缺陷。\\\",\\n            \\\"CHANGES_REQUESTED\\\": \\\"已观察到必须先修正候选内容才能批准新绑定的实质契约或正确性缺陷。\\\",\\n            \\\"BLOCKED\\\": \\\"缺失必要证据或来源，无法完成该受影响审查。\\\",\\n            \\\"INSUFFICIENT\\\": \\\"给定证据不足以区分以上处置。\\\"\\n          }\\n        }\\n      }\\n    },\\n    \\\"raw_response\\\": {\\n      \\\"content\\\": [\\n        {\\n          \\\"type\\\": \\\"text\\\",\\n          \\\"text\\\": \\\"{\\\\\\\"model\\\\\\\":\\\\\\\"jev-1.14.0\\\\\\\",\\\\\\\"answers\\\\\\\":{\\\\\\\"affected_review\\\\\\\":{\\\\\\\"type\\\\\\\":\\\\\\\"choice\\\\\\\",\\\\\\\"choice\\\\\\\":\\\\\\\"APPROVED\\\\\\\",\\\\\\\"confidence\\\\\\\":0.39,\\\\\\\"probabilities\\\\\\\":{\\\\\\\"APPROVED\\\\\\\":0.54,\\\\\\\"BLOCKED\\\\\\\":0.11,\\\\\\\"CHANGES_REQUESTED\\\\\\\":0.28,\\\\\\\"INSUFFICIENT\\\\\\\":0.07}}},\\\\\\\"usage\\\\\\\":{\\\\\\\"input_tokens\\\\\\\":1648,\\\\\\\"output_tokens\\\\\\\":60}}\\\"\\n        }\\n      ]\\n    },\\n    \\\"application\\\": \\\"实际用于判断受影响变动及陈旧投影是否阻止新绑定。APPROVED概率0.54、confidence0.39，结果不强；依据实际差异、冻结规则和未变证据独立裁决批准。将陈旧投影列为非阻断问题，保留新收据及strict待完成，不重复刷分。\\\"\\n  },\\n  \\\"execution\\\": {\\n    \\\"file_writes\\\": [],\\n    \\\"card_writes\\\": [],\\n    \\\"git_writes\\\": [],\\n    \\\"delegations\\\": [],\\n    \\\"business_or_test_commands\\\": [],\\n    \\\"registered_DONE\\\": false,\\n    \\\"final_head\\\": \\\"dc5d868c6b90268a2eefc29966874c96d48dd122\\\",\\n    \\\"final_dirty\\\": [],\\n    \\\"started_observation_at\\\": \\\"2026-11-13T18:50:43.0800120Z\\\",\\n    \\\"final_state_checked_at\\\": \\\"2026-11-13T18:52:38.1511070Z\\\",\\n    \\\"checkpoint\\\": \\\"在5分钟检查点前完成读取及审查，未触及6分钟停读边界。\\\"\\n  }\\n}\",\"duration_ms\":175519,\"progress\":{\"steps\":24,\"marks\":[\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\"],\"last_step\":\"git rev-parse HEAD; git status --porcelain=v1; Get-Date -AsUTC -Format o\"}}]}"
+          }
+        ],
+        "structuredContent": {
+          "tasks": [
+            {
+              "task_id": "c2baae82-73d2-451d-aca4-6cb75ff76337",
+              "status": "completed",
+              "child_conversation_id": 1722,
+              "agent_type": "codex",
+              "text": "{\n  \"reviewer\": {\n    \"identity\": \"Codex independent reviewer\",\n    \"session_id\": \"01a1d63f-4402-7dd3-88cb-5f5b4e53e603\",\n    \"identity_source\": \"CODEX_SESSION_ID及CODEX_THREAD_ID\",\n    \"independent\": true,\n    \"participation\": \"未参与任务05实现、测试、设计或RCA\",\n    \"read_only\": true\n  },\n  \"base_sha\": \"8392193a0d9e883892f75780a63a1b16f67682c4\",\n  \"previous_reviewed_sha\": \"8616468ab3384efad26095ca182255448076e081\",\n  \"head_sha\": \"dc5d868c6b90268a2eefc29966874c96d48dd122\",\n  \"contract_sha\": \"dc5d868c6b90268a2eefc29966874c96d48dd122\",\n  \"branch\": \"feat/iter-10-self-hosting-hardening\",\n  \"verdict\": \"APPROVED\",\n  \"verdict_basis\": \"批准当前候选的受影响变动及证据沿用依据，可据此建立新绑定。普通引语改为规范动态状态前缀属于已审查的正文变化，必须绑定新contract；不能继续套用旧收据。本裁决未执行登记或固定strict，不表示任务05已经PASS。\",\n  \"scope\": {\n    \"result\": \"APPROVED\",\n    \"evidence\": [\n      \"实际8616468..dc5d868仅改变05卡、所属迭代README，以及首次新增原review-report.json和review.json，共4文件。\",\n      \"f915d10..dc5d868仅修改05卡；原review报告及收据没有被覆写。\",\n      \"SKILL、references、scripts、tests、Note及既有实验和回归证据在受审区间无变化。\",\n      \"冻结iter_contracts.py文本与46ded3a固定Git树相等；候选scripts/iter_contracts.py相对固定树也无差异。\",\n      \"06卡不在差异中，README:47、115仍为TODO/UNKNOWN。\"\n    ]\n  },\n  \"spec\": {\n    \"result\": \"APPROVED\",\n    \"evidence\": [\n      \"05-release-evidence-index.md:6、15保留TESTING/PENDING；:26采用精确的 > **当前状态**：前缀，说明仍待本次独审及固定strict。\",\n      \"冻结iter_contracts.py:252-263只规范化固定执行元数据、精确状态前缀、checkbox标记和ledger；原普通引语不属于动态豁免，因此原收据不能覆盖此次正文变化。\",\n      \"任务接口、scope、验收文字及README的iter:goal区域未改变。\",\n      \"05卡:21中原4个自治事件逐对象相等保留；仅追加审查attempt、release及重新claim。policy仍为5/10/1/2，四计数均保持0，没有清预算。\",\n      \"05卡:119保留失败登记及停止05放行、不推进06的说明。\"\n    ]\n  },\n  \"quality\": {\n    \"result\": \"APPROVED\",\n    \"evidence\": [\n      \"原1721报告的全部原审字段与保存的native completed最终JSON逐对象相等；原报告和review.json均绑定原C/contract8616468。\",\n      \"native-terminal-a.json保存1720执行终态completed。会话查询返回的pending_review元数据与执行终态分别处理，没有据此重定义完成。\",\n      \"controller-regression.json:18-24为COMPLETED、raw_exit_code=0、tree_terminal=true；原始输出:1-2为9 passed in 0.66s。\",\n      \"本次直接审查实际Git差异、冻结规则及证据沿用条件，没有重跑产品测试或原实验。\",\n      \"最终HEAD仍为dc5d868，git status为空。\"\n    ]\n  },\n  \"issues\": [\n    {\n      \"severity\": \"LOW\",\n      \"blocking\": false,\n      \"file\": \"docs/todos/10-self-hosting-hardening/README.md\",\n      \"lines\": [3, 46, 106, 114],\n      \"actual\": \"可再生投影仍显示上次strict的05 DONE/FAIL、声明DONE5/6；当前05卡已恢复TESTING/PENDING。\",\n      \"expected\": \"主控后续登记并运行固定local strict时刷新投影，以实际卡片及验收结果为准。\",\n      \"impact\": \"缓存展示陈旧，但没有宣称05 PASS，不阻止本次候选新绑定批准。\",\n      \"owner\": \"主控\"\n    }\n  ],\n  \"reused_evidence\": [\n    {\n      \"coverage\": \"原任务05产品、四层事实索引及原件审查\",\n      \"paths\": [\n        \"docs/todos/10-self-hosting-hardening/evidence/05/review-report.json\",\n        \"docs/todos/10-self-hosting-hardening/evidence/05/review.json\"\n      ],\n      \"original_head_sha\": \"8616468ab3384efad26095ca182255448076e081\",\n      \"result\": \"1721原独审APPROVED\",\n      \"reuse_basis\": \"产品、测试、Note及原始实验证据未变；原报告内容与保存的原生最终返回一致。沿用其未受影响产品结论，不把旧收据冒作当前候选绑定。\"\n    },\n    {\n      \"coverage\": \"指定三文件受影响回归\",\n      \"paths\": [\n        \"docs/todos/10-self-hosting-hardening/evidence/05/controller-regression.json\",\n        \"docs/todos/10-self-hosting-hardening/evidence/05/controller-regression.json.output.txt\"\n      ],\n      \"executed_at\": \"2026-11-13T18:39:23.041569+00:00\",\n      \"result\": \"主控独立9 passed in 0.66s；COMPLETED/raw0/tree_terminal=true\",\n      \"reuse_basis\": \"覆盖产品、测试及原件未变。此次仅登记正文、状态和投影变化，不冒称在新候选重新执行。\"\n    },\n    {\n      \"coverage\": \"原实验、decision、interfaces及Note检查\",\n      \"source\": \"docs/todos/10-self-hosting-hardening/evidence/05/review-report.json:48-121\",\n      \"reuse_basis\": \"受审差异没有修改这些产物及其输入；沿用原独审已核验范围。原嵌套PowerShell错误输出继续排除，不因raw0恢复为成功证据。\"\n    }\n  ],\n  \"unknown_boundaries\": [\n    {\n      \"object\": \"新候选登记及固定local strict\",\n      \"status\": \"PENDING\",\n      \"owner\": \"主控\",\n      \"next_action\": \"以新路径追加本次报告及新收据，base绑定8392193，head和contract绑定dc5d868；保留原review.json及review-report.json。登记后执行固定strict，PASS前不得推进06。\",\n      \"reason\": \"冻结iter_contracts.py:298-314仅豁免候选中尚不存在的新注册报告和收据；覆写已经位于dc5d868中的旧报告或旧收据会造成scope漂移。\"\n    },\n    {\n      \"object\": \"完整安装版本及安装新会话采用\",\n      \"status\": \"UNKNOWN\",\n      \"owner\": \"部署owner\",\n      \"resume_condition\": \"另获部署授权，提供完整manifest、版本归属及原生消费证据。\"\n    },\n    {\n      \"object\": \"P1所查deployment.json及历史候选来源\",\n      \"status\": \"UNKNOWN\",\n      \"owner\": \"历史证据owner\",\n      \"resume_condition\": \"提供原始来源或确认不可恢复。\"\n    },\n    {\n      \"object\": \"任务06及整轮验收\",\n      \"status\": \"未执行\",\n      \"owner\": \"主控\",\n      \"resume_condition\": \"05新绑定登记和固定strict PASS后，按原串行契约推进。\"\n    }\n  ],\n  \"typesafe\": {\n    \"request\": {\n      \"state\": {\n        \"task\": \"任务05受影响定点独审；只读；判断8616468..dc5d868的变化是否允许为dc5d868新绑定，不将本裁决当local strict PASS。\",\n        \"contract\": {\n          \"git\": \"task_card_schema.md:85允许固定执行元数据、checkbox完成标记、ledger变化，其他正文与冻结规格一致；:102 README投影可再生；agent_protocol.md:123新候选须审受影响内容与沿用依据，旧APPROVED不能套用。\",\n          \"frozen_tool\": \"iter_contracts.py:246-263去掉固定执行元数据、ledger、checkbox标记；仅精确 > **当前状态**：等前缀后内容动态豁免。:298-314仅对C中不存在的新注册receipt/report免后续scope漂移。\",\n          \"serial\": \"05 PASS和有效收据齐备才开始06。\"\n        },\n        \"observations\": {\n          \"head\": \"dc5d868c6b90268a2eefc29966874c96d48dd122；分支feat/iter-10-self-hosting-hardening；dirty为空。\",\n          \"diff\": \"8616468..dc5d868仅4文件：05卡、迭代README、首次新增1721原review-report.json与review.json。产品SKILL/references/scripts/tests/Note无diff；已存在实验与回归原件无diff。f915d10..dc5d868仅05卡。\",\n          \"status_line\": {\n            \"old_C\": \"> 声明 TESTING；验收 UNKNOWN；四层索引及真实只读观察已交付，待非参与者独审。\",\n            \"failed_D\": \"> 声明 DONE；独立APPROVED；登记后由固定strict核对PASS。\",\n            \"new_C\": \"> **当前状态**：声明 TESTING；原产品独审APPROVED；登记正文修正待定点独审与固定strict。\"\n          },\n          \"card\": \"frontmatter TESTING/PENDING，仍指向旧C的原review.json。checkbox已勾选；ledger记载失败D、此次修正待独审及旧批准。接口、scope、验收文字与迭代goal无变化。\",\n          \"readme\": \"README:3,46,106,114仍为上次strict缓存：声明DONE5/6，05 DONE/FAIL，PASS4/6；与当前卡TESTING不一致。README:47,115为06 TODO/UNKNOWN。未写05 PASS。\",\n          \"budget\": \"原C四个事件逐对象相等保留；追加attempt-review、release-review、claim-review-final；policy5/10/1/2与round,total,consilium,replan均0未变。\",\n          \"checker\": \"冻结文件内容与46ded3a树文本相等；工作区scripts/iter_contracts.py相对固定树无diff。\",\n          \"prior_review\": \"1721 report APPROVED，base8392193/head及contract8616468；报告所有原审字段逐对象等于保存的native completed final JSON；原review.json同绑定。1720保存原生终态completed。会话元数据pending_review单独记录，不冒作执行终态。\",\n          \"regression\": \"controller-regression.json COMPLETED/raw_exit_code0/tree_terminal true，2026-11-13T18:39:23Z执行，output为9 passed in 0.66s；原产品/测试及此原件未变。当前不重跑。\",\n          \"registration\": \"尚未产生绑定新C的新receipt/report；本次只返回审查，不登记DONE。原review文件已在新C内，需保留，后续新注册用新路径。\"\n        }\n      },\n      \"questions\": {\n        \"affected_review\": {\n          \"type\": \"choice\",\n          \"instructions\": \"仅对所述受影响差异和原产品证据沿用依据作审查处置。区分新候选可批准、后续登记尚未完成，以及实质修复缺陷；判断陈旧README投影是否需要阻止本次新绑定批准。不要用旧批准替代新审查，不把后续新收据/strict当已完成。\",\n          \"criteria\": {\n            \"APPROVED\": \"差异满足受影响审查；可为新C建立新独审绑定。缓存投影及新收据/strict由后续登记完成，不构成本候选实质缺陷。\",\n            \"CHANGES_REQUESTED\": \"已观察到必须先修正候选内容才能批准新绑定的实质契约或正确性缺陷。\",\n            \"BLOCKED\": \"缺失必要证据或来源，无法完成该受影响审查。\",\n            \"INSUFFICIENT\": \"给定证据不足以区分以上处置。\"\n          }\n        }\n      }\n    },\n    \"raw_response\": {\n      \"content\": [\n        {\n          \"type\": \"text\",\n          \"text\": \"{\\\"model\\\":\\\"jev-1.14.0\\\",\\\"answers\\\":{\\\"affected_review\\\":{\\\"type\\\":\\\"choice\\\",\\\"choice\\\":\\\"APPROVED\\\",\\\"confidence\\\":0.39,\\\"probabilities\\\":{\\\"APPROVED\\\":0.54,\\\"BLOCKED\\\":0.11,\\\"CHANGES_REQUESTED\\\":0.28,\\\"INSUFFICIENT\\\":0.07}}},\\\"usage\\\":{\\\"input_tokens\\\":1648,\\\"output_tokens\\\":60}}\"\n        }\n      ]\n    },\n    \"application\": \"实际用于判断受影响变动及陈旧投影是否阻止新绑定。APPROVED概率0.54、confidence0.39，结果不强；依据实际差异、冻结规则和未变证据独立裁决批准。将陈旧投影列为非阻断问题，保留新收据及strict待完成，不重复刷分。\"\n  },\n  \"execution\": {\n    \"file_writes\": [],\n    \"card_writes\": [],\n    \"git_writes\": [],\n    \"delegations\": [],\n    \"business_or_test_commands\": [],\n    \"registered_DONE\": false,\n    \"final_head\": \"dc5d868c6b90268a2eefc29966874c96d48dd122\",\n    \"final_dirty\": [],\n    \"started_observation_at\": \"2026-11-13T18:50:43.0800120Z\",\n    \"final_state_checked_at\": \"2026-11-13T18:52:38.1511070Z\",\n    \"checkpoint\": \"在5分钟检查点前完成读取及审查，未触及6分钟停读边界。\"\n  }\n}",
+              "duration_ms": 175519,
+              "progress": {
+                "steps": 24,
+                "marks": [
+                  "ok",
+                  "ok",
+                  "ok",
+                  "ok",
+                  "ok",
+                  "ok",
+                  "ok",
+                  "ok",
+                  "ok",
+                  "ok",
+                  "ok",
+                  "ok"
+                ],
+                "last_step": "git rev-parse HEAD; git status --porcelain=v1; Get-Date -AsUTC -Format o"
+              }
+            }
+          ]
+        },
+        "isError": false
+      }
+    },
+    "terminalConfirmed": true,
+    "observedAt": 1794596007605,
+    "lateByMs": 0,
+    "events": [
+      {
+        "kind": "query",
+        "startedAt": 1794595837959,
+        "returnedAt": 1794595897985,
+        "waitMs": 60000,
+        "result": {
+          "task_id": "c2baae82-73d2-451d-aca4-6cb75ff76337",
+          "status": "running",
+          "child_conversation_id": 1722,
+          "agent_type": "codex",
+          "message": "Running.\nLatest sub-agent reply: thinking: **Reading the full report**",
+          "progress": {
+            "steps": 16,
+            "marks": [
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok"
+            ],
+            "last_step": "$p='docs/todos/10-self-hosting-hardening/05-release-evidence-index.md'; function Read-Autonomy($ref) { $s=(git show \"${r…"
+          },
+          "raw": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"tasks\":[{\"task_id\":\"c2baae82-73d2-451d-aca4-6cb75ff76337\",\"status\":\"running\",\"child_conversation_id\":1722,\"agent_type\":\"codex\",\"message\":\"Running.\\nLatest sub-agent reply: thinking: **Reading the full report**\",\"progress\":{\"steps\":16,\"marks\":[\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\"],\"last_step\":\"$p='docs/todos/10-self-hosting-hardening/05-release-evidence-index.md'; function Read-Autonomy($ref) { $s=(git show \\\"${r…\"}}]}"
+              }
+            ],
+            "structuredContent": {
+              "tasks": [
+                {
+                  "task_id": "c2baae82-73d2-451d-aca4-6cb75ff76337",
+                  "status": "running",
+                  "child_conversation_id": 1722,
+                  "agent_type": "codex",
+                  "message": "Running.\nLatest sub-agent reply: thinking: **Reading the full report**",
+                  "progress": {
+                    "steps": 16,
+                    "marks": [
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok"
+                    ],
+                    "last_step": "$p='docs/todos/10-self-hosting-hardening/05-release-evidence-index.md'; function Read-Autonomy($ref) { $s=(git show \"${r…"
+                  }
+                }
+              ]
+            },
+            "isError": false
+          }
+        }
+      },
+      {
+        "kind": "query",
+        "startedAt": 1794595897985,
+        "returnedAt": 1794595958002,
+        "waitMs": 60000,
+        "result": {
+          "task_id": "c2baae82-73d2-451d-aca4-6cb75ff76337",
+          "status": "running",
+          "child_conversation_id": 1722,
+          "agent_type": "codex",
+          "message": "Running.\nLatest sub-agent reply: thinking: **Restoring report status**",
+          "progress": {
+            "steps": 23,
+            "marks": [
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok"
+            ],
+            "last_step": "git rev-parse HEAD; git status --porcelain=v1; Get-Date -AsUTC -Format o"
+          },
+          "raw": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"tasks\":[{\"task_id\":\"c2baae82-73d2-451d-aca4-6cb75ff76337\",\"status\":\"running\",\"child_conversation_id\":1722,\"agent_type\":\"codex\",\"message\":\"Running.\\nLatest sub-agent reply: thinking: **Restoring report status**\",\"progress\":{\"steps\":23,\"marks\":[\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\"],\"last_step\":\"git rev-parse HEAD; git status --porcelain=v1; Get-Date -AsUTC -Format o\"}}]}"
+              }
+            ],
+            "structuredContent": {
+              "tasks": [
+                {
+                  "task_id": "c2baae82-73d2-451d-aca4-6cb75ff76337",
+                  "status": "running",
+                  "child_conversation_id": 1722,
+                  "agent_type": "codex",
+                  "message": "Running.\nLatest sub-agent reply: thinking: **Restoring report status**",
+                  "progress": {
+                    "steps": 23,
+                    "marks": [
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok"
+                    ],
+                    "last_step": "git rev-parse HEAD; git status --porcelain=v1; Get-Date -AsUTC -Format o"
+                  }
+                }
+              ]
+            },
+            "isError": false
+          }
+        }
+      },
+      {
+        "kind": "query",
+        "startedAt": 1794595958002,
+        "returnedAt": 1794596007605,
+        "waitMs": 60000,
+        "result": {
+          "task_id": "c2baae82-73d2-451d-aca4-6cb75ff76337",
+          "status": "completed",
+          "child_conversation_id": 1722,
+          "agent_type": "codex",
+          "text": "{\n  \"reviewer\": {\n    \"identity\": \"Codex independent reviewer\",\n    \"session_id\": \"01a1d63f-4402-7dd3-88cb-5f5b4e53e603\",\n    \"identity_source\": \"CODEX_SESSION_ID及CODEX_THREAD_ID\",\n    \"independent\": true,\n    \"participation\": \"未参与任务05实现、测试、设计或RCA\",\n    \"read_only\": true\n  },\n  \"base_sha\": \"8392193a0d9e883892f75780a63a1b16f67682c4\",\n  \"previous_reviewed_sha\": \"8616468ab3384efad26095ca182255448076e081\",\n  \"head_sha\": \"dc5d868c6b90268a2eefc29966874c96d48dd122\",\n  \"contract_sha\": \"dc5d868c6b90268a2eefc29966874c96d48dd122\",\n  \"branch\": \"feat/iter-10-self-hosting-hardening\",\n  \"verdict\": \"APPROVED\",\n  \"verdict_basis\": \"批准当前候选的受影响变动及证据沿用依据，可据此建立新绑定。普通引语改为规范动态状态前缀属于已审查的正文变化，必须绑定新contract；不能继续套用旧收据。本裁决未执行登记或固定strict，不表示任务05已经PASS。\",\n  \"scope\": {\n    \"result\": \"APPROVED\",\n    \"evidence\": [\n      \"实际8616468..dc5d868仅改变05卡、所属迭代README，以及首次新增原review-report.json和review.json，共4文件。\",\n      \"f915d10..dc5d868仅修改05卡；原review报告及收据没有被覆写。\",\n      \"SKILL、references、scripts、tests、Note及既有实验和回归证据在受审区间无变化。\",\n      \"冻结iter_contracts.py文本与46ded3a固定Git树相等；候选scripts/iter_contracts.py相对固定树也无差异。\",\n      \"06卡不在差异中，README:47、115仍为TODO/UNKNOWN。\"\n    ]\n  },\n  \"spec\": {\n    \"result\": \"APPROVED\",\n    \"evidence\": [\n      \"05-release-evidence-index.md:6、15保留TESTING/PENDING；:26采用精确的 > **当前状态**：前缀，说明仍待本次独审及固定strict。\",\n      \"冻结iter_contracts.py:252-263只规范化固定执行元数据、精确状态前缀、checkbox标记和ledger；原普通引语不属于动态豁免，因此原收据不能覆盖此次正文变化。\",\n      \"任务接口、scope、验收文字及README的iter:goal区域未改变。\",\n      \"05卡:21中原4个自治事件逐对象相等保留；仅追加审查attempt、release及重新claim。policy仍为5/10/1/2，四计数均保持0，没有清预算。\",\n      \"05卡:119保留失败登记及停止05放行、不推进06的说明。\"\n    ]\n  },\n  \"quality\": {\n    \"result\": \"APPROVED\",\n    \"evidence\": [\n      \"原1721报告的全部原审字段与保存的native completed最终JSON逐对象相等；原报告和review.json均绑定原C/contract8616468。\",\n      \"native-terminal-a.json保存1720执行终态completed。会话查询返回的pending_review元数据与执行终态分别处理，没有据此重定义完成。\",\n      \"controller-regression.json:18-24为COMPLETED、raw_exit_code=0、tree_terminal=true；原始输出:1-2为9 passed in 0.66s。\",\n      \"本次直接审查实际Git差异、冻结规则及证据沿用条件，没有重跑产品测试或原实验。\",\n      \"最终HEAD仍为dc5d868，git status为空。\"\n    ]\n  },\n  \"issues\": [\n    {\n      \"severity\": \"LOW\",\n      \"blocking\": false,\n      \"file\": \"docs/todos/10-self-hosting-hardening/README.md\",\n      \"lines\": [3, 46, 106, 114],\n      \"actual\": \"可再生投影仍显示上次strict的05 DONE/FAIL、声明DONE5/6；当前05卡已恢复TESTING/PENDING。\",\n      \"expected\": \"主控后续登记并运行固定local strict时刷新投影，以实际卡片及验收结果为准。\",\n      \"impact\": \"缓存展示陈旧，但没有宣称05 PASS，不阻止本次候选新绑定批准。\",\n      \"owner\": \"主控\"\n    }\n  ],\n  \"reused_evidence\": [\n    {\n      \"coverage\": \"原任务05产品、四层事实索引及原件审查\",\n      \"paths\": [\n        \"docs/todos/10-self-hosting-hardening/evidence/05/review-report.json\",\n        \"docs/todos/10-self-hosting-hardening/evidence/05/review.json\"\n      ],\n      \"original_head_sha\": \"8616468ab3384efad26095ca182255448076e081\",\n      \"result\": \"1721原独审APPROVED\",\n      \"reuse_basis\": \"产品、测试、Note及原始实验证据未变；原报告内容与保存的原生最终返回一致。沿用其未受影响产品结论，不把旧收据冒作当前候选绑定。\"\n    },\n    {\n      \"coverage\": \"指定三文件受影响回归\",\n      \"paths\": [\n        \"docs/todos/10-self-hosting-hardening/evidence/05/controller-regression.json\",\n        \"docs/todos/10-self-hosting-hardening/evidence/05/controller-regression.json.output.txt\"\n      ],\n      \"executed_at\": \"2026-11-13T18:39:23.041569+00:00\",\n      \"result\": \"主控独立9 passed in 0.66s；COMPLETED/raw0/tree_terminal=true\",\n      \"reuse_basis\": \"覆盖产品、测试及原件未变。此次仅登记正文、状态和投影变化，不冒称在新候选重新执行。\"\n    },\n    {\n      \"coverage\": \"原实验、decision、interfaces及Note检查\",\n      \"source\": \"docs/todos/10-self-hosting-hardening/evidence/05/review-report.json:48-121\",\n      \"reuse_basis\": \"受审差异没有修改这些产物及其输入；沿用原独审已核验范围。原嵌套PowerShell错误输出继续排除，不因raw0恢复为成功证据。\"\n    }\n  ],\n  \"unknown_boundaries\": [\n    {\n      \"object\": \"新候选登记及固定local strict\",\n      \"status\": \"PENDING\",\n      \"owner\": \"主控\",\n      \"next_action\": \"以新路径追加本次报告及新收据，base绑定8392193，head和contract绑定dc5d868；保留原review.json及review-report.json。登记后执行固定strict，PASS前不得推进06。\",\n      \"reason\": \"冻结iter_contracts.py:298-314仅豁免候选中尚不存在的新注册报告和收据；覆写已经位于dc5d868中的旧报告或旧收据会造成scope漂移。\"\n    },\n    {\n      \"object\": \"完整安装版本及安装新会话采用\",\n      \"status\": \"UNKNOWN\",\n      \"owner\": \"部署owner\",\n      \"resume_condition\": \"另获部署授权，提供完整manifest、版本归属及原生消费证据。\"\n    },\n    {\n      \"object\": \"P1所查deployment.json及历史候选来源\",\n      \"status\": \"UNKNOWN\",\n      \"owner\": \"历史证据owner\",\n      \"resume_condition\": \"提供原始来源或确认不可恢复。\"\n    },\n    {\n      \"object\": \"任务06及整轮验收\",\n      \"status\": \"未执行\",\n      \"owner\": \"主控\",\n      \"resume_condition\": \"05新绑定登记和固定strict PASS后，按原串行契约推进。\"\n    }\n  ],\n  \"typesafe\": {\n    \"request\": {\n      \"state\": {\n        \"task\": \"任务05受影响定点独审；只读；判断8616468..dc5d868的变化是否允许为dc5d868新绑定，不将本裁决当local strict PASS。\",\n        \"contract\": {\n          \"git\": \"task_card_schema.md:85允许固定执行元数据、checkbox完成标记、ledger变化，其他正文与冻结规格一致；:102 README投影可再生；agent_protocol.md:123新候选须审受影响内容与沿用依据，旧APPROVED不能套用。\",\n          \"frozen_tool\": \"iter_contracts.py:246-263去掉固定执行元数据、ledger、checkbox标记；仅精确 > **当前状态**：等前缀后内容动态豁免。:298-314仅对C中不存在的新注册receipt/report免后续scope漂移。\",\n          \"serial\": \"05 PASS和有效收据齐备才开始06。\"\n        },\n        \"observations\": {\n          \"head\": \"dc5d868c6b90268a2eefc29966874c96d48dd122；分支feat/iter-10-self-hosting-hardening；dirty为空。\",\n          \"diff\": \"8616468..dc5d868仅4文件：05卡、迭代README、首次新增1721原review-report.json与review.json。产品SKILL/references/scripts/tests/Note无diff；已存在实验与回归原件无diff。f915d10..dc5d868仅05卡。\",\n          \"status_line\": {\n            \"old_C\": \"> 声明 TESTING；验收 UNKNOWN；四层索引及真实只读观察已交付，待非参与者独审。\",\n            \"failed_D\": \"> 声明 DONE；独立APPROVED；登记后由固定strict核对PASS。\",\n            \"new_C\": \"> **当前状态**：声明 TESTING；原产品独审APPROVED；登记正文修正待定点独审与固定strict。\"\n          },\n          \"card\": \"frontmatter TESTING/PENDING，仍指向旧C的原review.json。checkbox已勾选；ledger记载失败D、此次修正待独审及旧批准。接口、scope、验收文字与迭代goal无变化。\",\n          \"readme\": \"README:3,46,106,114仍为上次strict缓存：声明DONE5/6，05 DONE/FAIL，PASS4/6；与当前卡TESTING不一致。README:47,115为06 TODO/UNKNOWN。未写05 PASS。\",\n          \"budget\": \"原C四个事件逐对象相等保留；追加attempt-review、release-review、claim-review-final；policy5/10/1/2与round,total,consilium,replan均0未变。\",\n          \"checker\": \"冻结文件内容与46ded3a树文本相等；工作区scripts/iter_contracts.py相对固定树无diff。\",\n          \"prior_review\": \"1721 report APPROVED，base8392193/head及contract8616468；报告所有原审字段逐对象等于保存的native completed final JSON；原review.json同绑定。1720保存原生终态completed。会话元数据pending_review单独记录，不冒作执行终态。\",\n          \"regression\": \"controller-regression.json COMPLETED/raw_exit_code0/tree_terminal true，2026-11-13T18:39:23Z执行，output为9 passed in 0.66s；原产品/测试及此原件未变。当前不重跑。\",\n          \"registration\": \"尚未产生绑定新C的新receipt/report；本次只返回审查，不登记DONE。原review文件已在新C内，需保留，后续新注册用新路径。\"\n        }\n      },\n      \"questions\": {\n        \"affected_review\": {\n          \"type\": \"choice\",\n          \"instructions\": \"仅对所述受影响差异和原产品证据沿用依据作审查处置。区分新候选可批准、后续登记尚未完成，以及实质修复缺陷；判断陈旧README投影是否需要阻止本次新绑定批准。不要用旧批准替代新审查，不把后续新收据/strict当已完成。\",\n          \"criteria\": {\n            \"APPROVED\": \"差异满足受影响审查；可为新C建立新独审绑定。缓存投影及新收据/strict由后续登记完成，不构成本候选实质缺陷。\",\n            \"CHANGES_REQUESTED\": \"已观察到必须先修正候选内容才能批准新绑定的实质契约或正确性缺陷。\",\n            \"BLOCKED\": \"缺失必要证据或来源，无法完成该受影响审查。\",\n            \"INSUFFICIENT\": \"给定证据不足以区分以上处置。\"\n          }\n        }\n      }\n    },\n    \"raw_response\": {\n      \"content\": [\n        {\n          \"type\": \"text\",\n          \"text\": \"{\\\"model\\\":\\\"jev-1.14.0\\\",\\\"answers\\\":{\\\"affected_review\\\":{\\\"type\\\":\\\"choice\\\",\\\"choice\\\":\\\"APPROVED\\\",\\\"confidence\\\":0.39,\\\"probabilities\\\":{\\\"APPROVED\\\":0.54,\\\"BLOCKED\\\":0.11,\\\"CHANGES_REQUESTED\\\":0.28,\\\"INSUFFICIENT\\\":0.07}}},\\\"usage\\\":{\\\"input_tokens\\\":1648,\\\"output_tokens\\\":60}}\"\n        }\n      ]\n    },\n    \"application\": \"实际用于判断受影响变动及陈旧投影是否阻止新绑定。APPROVED概率0.54、confidence0.39，结果不强；依据实际差异、冻结规则和未变证据独立裁决批准。将陈旧投影列为非阻断问题，保留新收据及strict待完成，不重复刷分。\"\n  },\n  \"execution\": {\n    \"file_writes\": [],\n    \"card_writes\": [],\n    \"git_writes\": [],\n    \"delegations\": [],\n    \"business_or_test_commands\": [],\n    \"registered_DONE\": false,\n    \"final_head\": \"dc5d868c6b90268a2eefc29966874c96d48dd122\",\n    \"final_dirty\": [],\n    \"started_observation_at\": \"2026-11-13T18:50:43.0800120Z\",\n    \"final_state_checked_at\": \"2026-11-13T18:52:38.1511070Z\",\n    \"checkpoint\": \"在5分钟检查点前完成读取及审查，未触及6分钟停读边界。\"\n  }\n}",
+          "duration_ms": 175519,
+          "progress": {
+            "steps": 24,
+            "marks": [
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok",
+              "ok"
+            ],
+            "last_step": "git rev-parse HEAD; git status --porcelain=v1; Get-Date -AsUTC -Format o"
+          },
+          "raw": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"tasks\":[{\"task_id\":\"c2baae82-73d2-451d-aca4-6cb75ff76337\",\"status\":\"completed\",\"child_conversation_id\":1722,\"agent_type\":\"codex\",\"text\":\"{\\n  \\\"reviewer\\\": {\\n    \\\"identity\\\": \\\"Codex independent reviewer\\\",\\n    \\\"session_id\\\": \\\"01a1d63f-4402-7dd3-88cb-5f5b4e53e603\\\",\\n    \\\"identity_source\\\": \\\"CODEX_SESSION_ID及CODEX_THREAD_ID\\\",\\n    \\\"independent\\\": true,\\n    \\\"participation\\\": \\\"未参与任务05实现、测试、设计或RCA\\\",\\n    \\\"read_only\\\": true\\n  },\\n  \\\"base_sha\\\": \\\"8392193a0d9e883892f75780a63a1b16f67682c4\\\",\\n  \\\"previous_reviewed_sha\\\": \\\"8616468ab3384efad26095ca182255448076e081\\\",\\n  \\\"head_sha\\\": \\\"dc5d868c6b90268a2eefc29966874c96d48dd122\\\",\\n  \\\"contract_sha\\\": \\\"dc5d868c6b90268a2eefc29966874c96d48dd122\\\",\\n  \\\"branch\\\": \\\"feat/iter-10-self-hosting-hardening\\\",\\n  \\\"verdict\\\": \\\"APPROVED\\\",\\n  \\\"verdict_basis\\\": \\\"批准当前候选的受影响变动及证据沿用依据，可据此建立新绑定。普通引语改为规范动态状态前缀属于已审查的正文变化，必须绑定新contract；不能继续套用旧收据。本裁决未执行登记或固定strict，不表示任务05已经PASS。\\\",\\n  \\\"scope\\\": {\\n    \\\"result\\\": \\\"APPROVED\\\",\\n    \\\"evidence\\\": [\\n      \\\"实际8616468..dc5d868仅改变05卡、所属迭代README，以及首次新增原review-report.json和review.json，共4文件。\\\",\\n      \\\"f915d10..dc5d868仅修改05卡；原review报告及收据没有被覆写。\\\",\\n      \\\"SKILL、references、scripts、tests、Note及既有实验和回归证据在受审区间无变化。\\\",\\n      \\\"冻结iter_contracts.py文本与46ded3a固定Git树相等；候选scripts/iter_contracts.py相对固定树也无差异。\\\",\\n      \\\"06卡不在差异中，README:47、115仍为TODO/UNKNOWN。\\\"\\n    ]\\n  },\\n  \\\"spec\\\": {\\n    \\\"result\\\": \\\"APPROVED\\\",\\n    \\\"evidence\\\": [\\n      \\\"05-release-evidence-index.md:6、15保留TESTING/PENDING；:26采用精确的 > **当前状态**：前缀，说明仍待本次独审及固定strict。\\\",\\n      \\\"冻结iter_contracts.py:252-263只规范化固定执行元数据、精确状态前缀、checkbox标记和ledger；原普通引语不属于动态豁免，因此原收据不能覆盖此次正文变化。\\\",\\n      \\\"任务接口、scope、验收文字及README的iter:goal区域未改变。\\\",\\n      \\\"05卡:21中原4个自治事件逐对象相等保留；仅追加审查attempt、release及重新claim。policy仍为5/10/1/2，四计数均保持0，没有清预算。\\\",\\n      \\\"05卡:119保留失败登记及停止05放行、不推进06的说明。\\\"\\n    ]\\n  },\\n  \\\"quality\\\": {\\n    \\\"result\\\": \\\"APPROVED\\\",\\n    \\\"evidence\\\": [\\n      \\\"原1721报告的全部原审字段与保存的native completed最终JSON逐对象相等；原报告和review.json均绑定原C/contract8616468。\\\",\\n      \\\"native-terminal-a.json保存1720执行终态completed。会话查询返回的pending_review元数据与执行终态分别处理，没有据此重定义完成。\\\",\\n      \\\"controller-regression.json:18-24为COMPLETED、raw_exit_code=0、tree_terminal=true；原始输出:1-2为9 passed in 0.66s。\\\",\\n      \\\"本次直接审查实际Git差异、冻结规则及证据沿用条件，没有重跑产品测试或原实验。\\\",\\n      \\\"最终HEAD仍为dc5d868，git status为空。\\\"\\n    ]\\n  },\\n  \\\"issues\\\": [\\n    {\\n      \\\"severity\\\": \\\"LOW\\\",\\n      \\\"blocking\\\": false,\\n      \\\"file\\\": \\\"docs/todos/10-self-hosting-hardening/README.md\\\",\\n      \\\"lines\\\": [3, 46, 106, 114],\\n      \\\"actual\\\": \\\"可再生投影仍显示上次strict的05 DONE/FAIL、声明DONE5/6；当前05卡已恢复TESTING/PENDING。\\\",\\n      \\\"expected\\\": \\\"主控后续登记并运行固定local strict时刷新投影，以实际卡片及验收结果为准。\\\",\\n      \\\"impact\\\": \\\"缓存展示陈旧，但没有宣称05 PASS，不阻止本次候选新绑定批准。\\\",\\n      \\\"owner\\\": \\\"主控\\\"\\n    }\\n  ],\\n  \\\"reused_evidence\\\": [\\n    {\\n      \\\"coverage\\\": \\\"原任务05产品、四层事实索引及原件审查\\\",\\n      \\\"paths\\\": [\\n        \\\"docs/todos/10-self-hosting-hardening/evidence/05/review-report.json\\\",\\n        \\\"docs/todos/10-self-hosting-hardening/evidence/05/review.json\\\"\\n      ],\\n      \\\"original_head_sha\\\": \\\"8616468ab3384efad26095ca182255448076e081\\\",\\n      \\\"result\\\": \\\"1721原独审APPROVED\\\",\\n      \\\"reuse_basis\\\": \\\"产品、测试、Note及原始实验证据未变；原报告内容与保存的原生最终返回一致。沿用其未受影响产品结论，不把旧收据冒作当前候选绑定。\\\"\\n    },\\n    {\\n      \\\"coverage\\\": \\\"指定三文件受影响回归\\\",\\n      \\\"paths\\\": [\\n        \\\"docs/todos/10-self-hosting-hardening/evidence/05/controller-regression.json\\\",\\n        \\\"docs/todos/10-self-hosting-hardening/evidence/05/controller-regression.json.output.txt\\\"\\n      ],\\n      \\\"executed_at\\\": \\\"2026-11-13T18:39:23.041569+00:00\\\",\\n      \\\"result\\\": \\\"主控独立9 passed in 0.66s；COMPLETED/raw0/tree_terminal=true\\\",\\n      \\\"reuse_basis\\\": \\\"覆盖产品、测试及原件未变。此次仅登记正文、状态和投影变化，不冒称在新候选重新执行。\\\"\\n    },\\n    {\\n      \\\"coverage\\\": \\\"原实验、decision、interfaces及Note检查\\\",\\n      \\\"source\\\": \\\"docs/todos/10-self-hosting-hardening/evidence/05/review-report.json:48-121\\\",\\n      \\\"reuse_basis\\\": \\\"受审差异没有修改这些产物及其输入；沿用原独审已核验范围。原嵌套PowerShell错误输出继续排除，不因raw0恢复为成功证据。\\\"\\n    }\\n  ],\\n  \\\"unknown_boundaries\\\": [\\n    {\\n      \\\"object\\\": \\\"新候选登记及固定local strict\\\",\\n      \\\"status\\\": \\\"PENDING\\\",\\n      \\\"owner\\\": \\\"主控\\\",\\n      \\\"next_action\\\": \\\"以新路径追加本次报告及新收据，base绑定8392193，head和contract绑定dc5d868；保留原review.json及review-report.json。登记后执行固定strict，PASS前不得推进06。\\\",\\n      \\\"reason\\\": \\\"冻结iter_contracts.py:298-314仅豁免候选中尚不存在的新注册报告和收据；覆写已经位于dc5d868中的旧报告或旧收据会造成scope漂移。\\\"\\n    },\\n    {\\n      \\\"object\\\": \\\"完整安装版本及安装新会话采用\\\",\\n      \\\"status\\\": \\\"UNKNOWN\\\",\\n      \\\"owner\\\": \\\"部署owner\\\",\\n      \\\"resume_condition\\\": \\\"另获部署授权，提供完整manifest、版本归属及原生消费证据。\\\"\\n    },\\n    {\\n      \\\"object\\\": \\\"P1所查deployment.json及历史候选来源\\\",\\n      \\\"status\\\": \\\"UNKNOWN\\\",\\n      \\\"owner\\\": \\\"历史证据owner\\\",\\n      \\\"resume_condition\\\": \\\"提供原始来源或确认不可恢复。\\\"\\n    },\\n    {\\n      \\\"object\\\": \\\"任务06及整轮验收\\\",\\n      \\\"status\\\": \\\"未执行\\\",\\n      \\\"owner\\\": \\\"主控\\\",\\n      \\\"resume_condition\\\": \\\"05新绑定登记和固定strict PASS后，按原串行契约推进。\\\"\\n    }\\n  ],\\n  \\\"typesafe\\\": {\\n    \\\"request\\\": {\\n      \\\"state\\\": {\\n        \\\"task\\\": \\\"任务05受影响定点独审；只读；判断8616468..dc5d868的变化是否允许为dc5d868新绑定，不将本裁决当local strict PASS。\\\",\\n        \\\"contract\\\": {\\n          \\\"git\\\": \\\"task_card_schema.md:85允许固定执行元数据、checkbox完成标记、ledger变化，其他正文与冻结规格一致；:102 README投影可再生；agent_protocol.md:123新候选须审受影响内容与沿用依据，旧APPROVED不能套用。\\\",\\n          \\\"frozen_tool\\\": \\\"iter_contracts.py:246-263去掉固定执行元数据、ledger、checkbox标记；仅精确 > **当前状态**：等前缀后内容动态豁免。:298-314仅对C中不存在的新注册receipt/report免后续scope漂移。\\\",\\n          \\\"serial\\\": \\\"05 PASS和有效收据齐备才开始06。\\\"\\n        },\\n        \\\"observations\\\": {\\n          \\\"head\\\": \\\"dc5d868c6b90268a2eefc29966874c96d48dd122；分支feat/iter-10-self-hosting-hardening；dirty为空。\\\",\\n          \\\"diff\\\": \\\"8616468..dc5d868仅4文件：05卡、迭代README、首次新增1721原review-report.json与review.json。产品SKILL/references/scripts/tests/Note无diff；已存在实验与回归原件无diff。f915d10..dc5d868仅05卡。\\\",\\n          \\\"status_line\\\": {\\n            \\\"old_C\\\": \\\"> 声明 TESTING；验收 UNKNOWN；四层索引及真实只读观察已交付，待非参与者独审。\\\",\\n            \\\"failed_D\\\": \\\"> 声明 DONE；独立APPROVED；登记后由固定strict核对PASS。\\\",\\n            \\\"new_C\\\": \\\"> **当前状态**：声明 TESTING；原产品独审APPROVED；登记正文修正待定点独审与固定strict。\\\"\\n          },\\n          \\\"card\\\": \\\"frontmatter TESTING/PENDING，仍指向旧C的原review.json。checkbox已勾选；ledger记载失败D、此次修正待独审及旧批准。接口、scope、验收文字与迭代goal无变化。\\\",\\n          \\\"readme\\\": \\\"README:3,46,106,114仍为上次strict缓存：声明DONE5/6，05 DONE/FAIL，PASS4/6；与当前卡TESTING不一致。README:47,115为06 TODO/UNKNOWN。未写05 PASS。\\\",\\n          \\\"budget\\\": \\\"原C四个事件逐对象相等保留；追加attempt-review、release-review、claim-review-final；policy5/10/1/2与round,total,consilium,replan均0未变。\\\",\\n          \\\"checker\\\": \\\"冻结文件内容与46ded3a树文本相等；工作区scripts/iter_contracts.py相对固定树无diff。\\\",\\n          \\\"prior_review\\\": \\\"1721 report APPROVED，base8392193/head及contract8616468；报告所有原审字段逐对象等于保存的native completed final JSON；原review.json同绑定。1720保存原生终态completed。会话元数据pending_review单独记录，不冒作执行终态。\\\",\\n          \\\"regression\\\": \\\"controller-regression.json COMPLETED/raw_exit_code0/tree_terminal true，2026-11-13T18:39:23Z执行，output为9 passed in 0.66s；原产品/测试及此原件未变。当前不重跑。\\\",\\n          \\\"registration\\\": \\\"尚未产生绑定新C的新receipt/report；本次只返回审查，不登记DONE。原review文件已在新C内，需保留，后续新注册用新路径。\\\"\\n        }\\n      },\\n      \\\"questions\\\": {\\n        \\\"affected_review\\\": {\\n          \\\"type\\\": \\\"choice\\\",\\n          \\\"instructions\\\": \\\"仅对所述受影响差异和原产品证据沿用依据作审查处置。区分新候选可批准、后续登记尚未完成，以及实质修复缺陷；判断陈旧README投影是否需要阻止本次新绑定批准。不要用旧批准替代新审查，不把后续新收据/strict当已完成。\\\",\\n          \\\"criteria\\\": {\\n            \\\"APPROVED\\\": \\\"差异满足受影响审查；可为新C建立新独审绑定。缓存投影及新收据/strict由后续登记完成，不构成本候选实质缺陷。\\\",\\n            \\\"CHANGES_REQUESTED\\\": \\\"已观察到必须先修正候选内容才能批准新绑定的实质契约或正确性缺陷。\\\",\\n            \\\"BLOCKED\\\": \\\"缺失必要证据或来源，无法完成该受影响审查。\\\",\\n            \\\"INSUFFICIENT\\\": \\\"给定证据不足以区分以上处置。\\\"\\n          }\\n        }\\n      }\\n    },\\n    \\\"raw_response\\\": {\\n      \\\"content\\\": [\\n        {\\n          \\\"type\\\": \\\"text\\\",\\n          \\\"text\\\": \\\"{\\\\\\\"model\\\\\\\":\\\\\\\"jev-1.14.0\\\\\\\",\\\\\\\"answers\\\\\\\":{\\\\\\\"affected_review\\\\\\\":{\\\\\\\"type\\\\\\\":\\\\\\\"choice\\\\\\\",\\\\\\\"choice\\\\\\\":\\\\\\\"APPROVED\\\\\\\",\\\\\\\"confidence\\\\\\\":0.39,\\\\\\\"probabilities\\\\\\\":{\\\\\\\"APPROVED\\\\\\\":0.54,\\\\\\\"BLOCKED\\\\\\\":0.11,\\\\\\\"CHANGES_REQUESTED\\\\\\\":0.28,\\\\\\\"INSUFFICIENT\\\\\\\":0.07}}},\\\\\\\"usage\\\\\\\":{\\\\\\\"input_tokens\\\\\\\":1648,\\\\\\\"output_tokens\\\\\\\":60}}\\\"\\n        }\\n      ]\\n    },\\n    \\\"application\\\": \\\"实际用于判断受影响变动及陈旧投影是否阻止新绑定。APPROVED概率0.54、confidence0.39，结果不强；依据实际差异、冻结规则和未变证据独立裁决批准。将陈旧投影列为非阻断问题，保留新收据及strict待完成，不重复刷分。\\\"\\n  },\\n  \\\"execution\\\": {\\n    \\\"file_writes\\\": [],\\n    \\\"card_writes\\\": [],\\n    \\\"git_writes\\\": [],\\n    \\\"delegations\\\": [],\\n    \\\"business_or_test_commands\\\": [],\\n    \\\"registered_DONE\\\": false,\\n    \\\"final_head\\\": \\\"dc5d868c6b90268a2eefc29966874c96d48dd122\\\",\\n    \\\"final_dirty\\\": [],\\n    \\\"started_observation_at\\\": \\\"2026-11-13T18:50:43.0800120Z\\\",\\n    \\\"final_state_checked_at\\\": \\\"2026-11-13T18:52:38.1511070Z\\\",\\n    \\\"checkpoint\\\": \\\"在5分钟检查点前完成读取及审查，未触及6分钟停读边界。\\\"\\n  }\\n}\",\"duration_ms\":175519,\"progress\":{\"steps\":24,\"marks\":[\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\",\"ok\"],\"last_step\":\"git rev-parse HEAD; git status --porcelain=v1; Get-Date -AsUTC -Format o\"}}]}"
+              }
+            ],
+            "structuredContent": {
+              "tasks": [
+                {
+                  "task_id": "c2baae82-73d2-451d-aca4-6cb75ff76337",
+                  "status": "completed",
+                  "child_conversation_id": 1722,
+                  "agent_type": "codex",
+                  "text": "{\n  \"reviewer\": {\n    \"identity\": \"Codex independent reviewer\",\n    \"session_id\": \"01a1d63f-4402-7dd3-88cb-5f5b4e53e603\",\n    \"identity_source\": \"CODEX_SESSION_ID及CODEX_THREAD_ID\",\n    \"independent\": true,\n    \"participation\": \"未参与任务05实现、测试、设计或RCA\",\n    \"read_only\": true\n  },\n  \"base_sha\": \"8392193a0d9e883892f75780a63a1b16f67682c4\",\n  \"previous_reviewed_sha\": \"8616468ab3384efad26095ca182255448076e081\",\n  \"head_sha\": \"dc5d868c6b90268a2eefc29966874c96d48dd122\",\n  \"contract_sha\": \"dc5d868c6b90268a2eefc29966874c96d48dd122\",\n  \"branch\": \"feat/iter-10-self-hosting-hardening\",\n  \"verdict\": \"APPROVED\",\n  \"verdict_basis\": \"批准当前候选的受影响变动及证据沿用依据，可据此建立新绑定。普通引语改为规范动态状态前缀属于已审查的正文变化，必须绑定新contract；不能继续套用旧收据。本裁决未执行登记或固定strict，不表示任务05已经PASS。\",\n  \"scope\": {\n    \"result\": \"APPROVED\",\n    \"evidence\": [\n      \"实际8616468..dc5d868仅改变05卡、所属迭代README，以及首次新增原review-report.json和review.json，共4文件。\",\n      \"f915d10..dc5d868仅修改05卡；原review报告及收据没有被覆写。\",\n      \"SKILL、references、scripts、tests、Note及既有实验和回归证据在受审区间无变化。\",\n      \"冻结iter_contracts.py文本与46ded3a固定Git树相等；候选scripts/iter_contracts.py相对固定树也无差异。\",\n      \"06卡不在差异中，README:47、115仍为TODO/UNKNOWN。\"\n    ]\n  },\n  \"spec\": {\n    \"result\": \"APPROVED\",\n    \"evidence\": [\n      \"05-release-evidence-index.md:6、15保留TESTING/PENDING；:26采用精确的 > **当前状态**：前缀，说明仍待本次独审及固定strict。\",\n      \"冻结iter_contracts.py:252-263只规范化固定执行元数据、精确状态前缀、checkbox标记和ledger；原普通引语不属于动态豁免，因此原收据不能覆盖此次正文变化。\",\n      \"任务接口、scope、验收文字及README的iter:goal区域未改变。\",\n      \"05卡:21中原4个自治事件逐对象相等保留；仅追加审查attempt、release及重新claim。policy仍为5/10/1/2，四计数均保持0，没有清预算。\",\n      \"05卡:119保留失败登记及停止05放行、不推进06的说明。\"\n    ]\n  },\n  \"quality\": {\n    \"result\": \"APPROVED\",\n    \"evidence\": [\n      \"原1721报告的全部原审字段与保存的native completed最终JSON逐对象相等；原报告和review.json均绑定原C/contract8616468。\",\n      \"native-terminal-a.json保存1720执行终态completed。会话查询返回的pending_review元数据与执行终态分别处理，没有据此重定义完成。\",\n      \"controller-regression.json:18-24为COMPLETED、raw_exit_code=0、tree_terminal=true；原始输出:1-2为9 passed in 0.66s。\",\n      \"本次直接审查实际Git差异、冻结规则及证据沿用条件，没有重跑产品测试或原实验。\",\n      \"最终HEAD仍为dc5d868，git status为空。\"\n    ]\n  },\n  \"issues\": [\n    {\n      \"severity\": \"LOW\",\n      \"blocking\": false,\n      \"file\": \"docs/todos/10-self-hosting-hardening/README.md\",\n      \"lines\": [3, 46, 106, 114],\n      \"actual\": \"可再生投影仍显示上次strict的05 DONE/FAIL、声明DONE5/6；当前05卡已恢复TESTING/PENDING。\",\n      \"expected\": \"主控后续登记并运行固定local strict时刷新投影，以实际卡片及验收结果为准。\",\n      \"impact\": \"缓存展示陈旧，但没有宣称05 PASS，不阻止本次候选新绑定批准。\",\n      \"owner\": \"主控\"\n    }\n  ],\n  \"reused_evidence\": [\n    {\n      \"coverage\": \"原任务05产品、四层事实索引及原件审查\",\n      \"paths\": [\n        \"docs/todos/10-self-hosting-hardening/evidence/05/review-report.json\",\n        \"docs/todos/10-self-hosting-hardening/evidence/05/review.json\"\n      ],\n      \"original_head_sha\": \"8616468ab3384efad26095ca182255448076e081\",\n      \"result\": \"1721原独审APPROVED\",\n      \"reuse_basis\": \"产品、测试、Note及原始实验证据未变；原报告内容与保存的原生最终返回一致。沿用其未受影响产品结论，不把旧收据冒作当前候选绑定。\"\n    },\n    {\n      \"coverage\": \"指定三文件受影响回归\",\n      \"paths\": [\n        \"docs/todos/10-self-hosting-hardening/evidence/05/controller-regression.json\",\n        \"docs/todos/10-self-hosting-hardening/evidence/05/controller-regression.json.output.txt\"\n      ],\n      \"executed_at\": \"2026-11-13T18:39:23.041569+00:00\",\n      \"result\": \"主控独立9 passed in 0.66s；COMPLETED/raw0/tree_terminal=true\",\n      \"reuse_basis\": \"覆盖产品、测试及原件未变。此次仅登记正文、状态和投影变化，不冒称在新候选重新执行。\"\n    },\n    {\n      \"coverage\": \"原实验、decision、interfaces及Note检查\",\n      \"source\": \"docs/todos/10-self-hosting-hardening/evidence/05/review-report.json:48-121\",\n      \"reuse_basis\": \"受审差异没有修改这些产物及其输入；沿用原独审已核验范围。原嵌套PowerShell错误输出继续排除，不因raw0恢复为成功证据。\"\n    }\n  ],\n  \"unknown_boundaries\": [\n    {\n      \"object\": \"新候选登记及固定local strict\",\n      \"status\": \"PENDING\",\n      \"owner\": \"主控\",\n      \"next_action\": \"以新路径追加本次报告及新收据，base绑定8392193，head和contract绑定dc5d868；保留原review.json及review-report.json。登记后执行固定strict，PASS前不得推进06。\",\n      \"reason\": \"冻结iter_contracts.py:298-314仅豁免候选中尚不存在的新注册报告和收据；覆写已经位于dc5d868中的旧报告或旧收据会造成scope漂移。\"\n    },\n    {\n      \"object\": \"完整安装版本及安装新会话采用\",\n      \"status\": \"UNKNOWN\",\n      \"owner\": \"部署owner\",\n      \"resume_condition\": \"另获部署授权，提供完整manifest、版本归属及原生消费证据。\"\n    },\n    {\n      \"object\": \"P1所查deployment.json及历史候选来源\",\n      \"status\": \"UNKNOWN\",\n      \"owner\": \"历史证据owner\",\n      \"resume_condition\": \"提供原始来源或确认不可恢复。\"\n    },\n    {\n      \"object\": \"任务06及整轮验收\",\n      \"status\": \"未执行\",\n      \"owner\": \"主控\",\n      \"resume_condition\": \"05新绑定登记和固定strict PASS后，按原串行契约推进。\"\n    }\n  ],\n  \"typesafe\": {\n    \"request\": {\n      \"state\": {\n        \"task\": \"任务05受影响定点独审；只读；判断8616468..dc5d868的变化是否允许为dc5d868新绑定，不将本裁决当local strict PASS。\",\n        \"contract\": {\n          \"git\": \"task_card_schema.md:85允许固定执行元数据、checkbox完成标记、ledger变化，其他正文与冻结规格一致；:102 README投影可再生；agent_protocol.md:123新候选须审受影响内容与沿用依据，旧APPROVED不能套用。\",\n          \"frozen_tool\": \"iter_contracts.py:246-263去掉固定执行元数据、ledger、checkbox标记；仅精确 > **当前状态**：等前缀后内容动态豁免。:298-314仅对C中不存在的新注册receipt/report免后续scope漂移。\",\n          \"serial\": \"05 PASS和有效收据齐备才开始06。\"\n        },\n        \"observations\": {\n          \"head\": \"dc5d868c6b90268a2eefc29966874c96d48dd122；分支feat/iter-10-self-hosting-hardening；dirty为空。\",\n          \"diff\": \"8616468..dc5d868仅4文件：05卡、迭代README、首次新增1721原review-report.json与review.json。产品SKILL/references/scripts/tests/Note无diff；已存在实验与回归原件无diff。f915d10..dc5d868仅05卡。\",\n          \"status_line\": {\n            \"old_C\": \"> 声明 TESTING；验收 UNKNOWN；四层索引及真实只读观察已交付，待非参与者独审。\",\n            \"failed_D\": \"> 声明 DONE；独立APPROVED；登记后由固定strict核对PASS。\",\n            \"new_C\": \"> **当前状态**：声明 TESTING；原产品独审APPROVED；登记正文修正待定点独审与固定strict。\"\n          },\n          \"card\": \"frontmatter TESTING/PENDING，仍指向旧C的原review.json。checkbox已勾选；ledger记载失败D、此次修正待独审及旧批准。接口、scope、验收文字与迭代goal无变化。\",\n          \"readme\": \"README:3,46,106,114仍为上次strict缓存：声明DONE5/6，05 DONE/FAIL，PASS4/6；与当前卡TESTING不一致。README:47,115为06 TODO/UNKNOWN。未写05 PASS。\",\n          \"budget\": \"原C四个事件逐对象相等保留；追加attempt-review、release-review、claim-review-final；policy5/10/1/2与round,total,consilium,replan均0未变。\",\n          \"checker\": \"冻结文件内容与46ded3a树文本相等；工作区scripts/iter_contracts.py相对固定树无diff。\",\n          \"prior_review\": \"1721 report APPROVED，base8392193/head及contract8616468；报告所有原审字段逐对象等于保存的native completed final JSON；原review.json同绑定。1720保存原生终态completed。会话元数据pending_review单独记录，不冒作执行终态。\",\n          \"regression\": \"controller-regression.json COMPLETED/raw_exit_code0/tree_terminal true，2026-11-13T18:39:23Z执行，output为9 passed in 0.66s；原产品/测试及此原件未变。当前不重跑。\",\n          \"registration\": \"尚未产生绑定新C的新receipt/report；本次只返回审查，不登记DONE。原review文件已在新C内，需保留，后续新注册用新路径。\"\n        }\n      },\n      \"questions\": {\n        \"affected_review\": {\n          \"type\": \"choice\",\n          \"instructions\": \"仅对所述受影响差异和原产品证据沿用依据作审查处置。区分新候选可批准、后续登记尚未完成，以及实质修复缺陷；判断陈旧README投影是否需要阻止本次新绑定批准。不要用旧批准替代新审查，不把后续新收据/strict当已完成。\",\n          \"criteria\": {\n            \"APPROVED\": \"差异满足受影响审查；可为新C建立新独审绑定。缓存投影及新收据/strict由后续登记完成，不构成本候选实质缺陷。\",\n            \"CHANGES_REQUESTED\": \"已观察到必须先修正候选内容才能批准新绑定的实质契约或正确性缺陷。\",\n            \"BLOCKED\": \"缺失必要证据或来源，无法完成该受影响审查。\",\n            \"INSUFFICIENT\": \"给定证据不足以区分以上处置。\"\n          }\n        }\n      }\n    },\n    \"raw_response\": {\n      \"content\": [\n        {\n          \"type\": \"text\",\n          \"text\": \"{\\\"model\\\":\\\"jev-1.14.0\\\",\\\"answers\\\":{\\\"affected_review\\\":{\\\"type\\\":\\\"choice\\\",\\\"choice\\\":\\\"APPROVED\\\",\\\"confidence\\\":0.39,\\\"probabilities\\\":{\\\"APPROVED\\\":0.54,\\\"BLOCKED\\\":0.11,\\\"CHANGES_REQUESTED\\\":0.28,\\\"INSUFFICIENT\\\":0.07}}},\\\"usage\\\":{\\\"input_tokens\\\":1648,\\\"output_tokens\\\":60}}\"\n        }\n      ]\n    },\n    \"application\": \"实际用于判断受影响变动及陈旧投影是否阻止新绑定。APPROVED概率0.54、confidence0.39，结果不强；依据实际差异、冻结规则和未变证据独立裁决批准。将陈旧投影列为非阻断问题，保留新收据及strict待完成，不重复刷分。\"\n  },\n  \"execution\": {\n    \"file_writes\": [],\n    \"card_writes\": [],\n    \"git_writes\": [],\n    \"delegations\": [],\n    \"business_or_test_commands\": [],\n    \"registered_DONE\": false,\n    \"final_head\": \"dc5d868c6b90268a2eefc29966874c96d48dd122\",\n    \"final_dirty\": [],\n    \"started_observation_at\": \"2026-11-13T18:50:43.0800120Z\",\n    \"final_state_checked_at\": \"2026-11-13T18:52:38.1511070Z\",\n    \"checkpoint\": \"在5分钟检查点前完成读取及审查，未触及6分钟停读边界。\"\n  }\n}",
+                  "duration_ms": 175519,
+                  "progress": {
+                    "steps": 24,
+                    "marks": [
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok",
+                      "ok"
+                    ],
+                    "last_step": "git rev-parse HEAD; git status --porcelain=v1; Get-Date -AsUTC -Format o"
+                  }
+                }
+              ]
+            },
+            "isError": false
+          }
+        }
+      }
+    ]
+  }
+}

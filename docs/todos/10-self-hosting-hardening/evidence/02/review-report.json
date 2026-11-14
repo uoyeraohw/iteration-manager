@@ -1,0 +1,592 @@
+{
+  "schema_version": 1,
+  "task_id": "02",
+  "archive_kind": "independent-review-original-archive",
+  "recorded_at": "2026-11-13T17:27:11.578422+00:00",
+  "original_files": {
+    "build/review-02-final/affected.json": "{\n  \"version\": 1,\n  \"argv\": [\n    \"python\",\n    \"-B\",\n    \"-m\",\n    \"pytest\",\n    \"-p\",\n    \"no:cacheprovider\",\n    \"tests/test_template_generation.py::test_leading_whitespace_roundtrip\",\n    \"tests/test_template_generation.py::test_blank_checklist_text_remains_invalid\",\n    \"-q\"\n  ],\n  \"cwd\": \"C:\\\\Users\\\\qingyu\\\\.codeg\\\\skills\\\\iteration-manager\\\\.worktrees\\\\iter-10\",\n  \"deadline\": \"2026-11-13T17:29:19.929000+00:00\",\n  \"cleanup_reserve_seconds\": 5,\n  \"status\": \"COMPLETED\",\n  \"deadline_checked_at\": \"2026-11-13T17:23:25.276679+00:00\",\n  \"started_at\": \"2026-11-13T17:23:25.283189+00:00\",\n  \"ended_at\": \"2026-11-13T17:23:35.263998+00:00\",\n  \"raw_exit_code\": 0,\n  \"tree_terminal\": true,\n  \"output\": \"build/review-02-final/affected.json.output.txt\",\n  \"container_pid\": 41472,\n  \"launcher_exit_code\": 0,\n  \"command\": {\n    \"status\": \"COMPLETED\",\n    \"raw_exit_code\": 0,\n    \"started_at\": \"2026-11-13T17:23:25.283189+00:00\",\n    \"pid\": 40144,\n    \"deadline_checked_at\": \"2026-11-13T17:23:25.276679+00:00\",\n    \"ended_at\": \"2026-11-13T17:23:35.248896+00:00\"\n  },\n  \"late_by_seconds\": 0\n}",
+    "build/review-02-final/affected.json.child.json": "{\"status\": \"COMPLETED\", \"raw_exit_code\": 0, \"started_at\": \"2026-11-13T17:23:25.283189+00:00\", \"pid\": 40144, \"deadline_checked_at\": \"2026-11-13T17:23:25.276679+00:00\", \"ended_at\": \"2026-11-13T17:23:35.248896+00:00\"}",
+    "build/review-02-final/affected.json.output.txt": ".............................................                            [100%]\n45 passed in 7.49s\n",
+    "build/review-02-final/context.json": "{\n  \"version\": 1,\n  \"tasks\": {\n    \"02\": {\n      \"phase\": \"evidence-inspection\",\n      \"candidate\": \"03950f2ac4867291c3001daa10140e4da1efa81f\",\n      \"inputs\": [\n        \"docs/todos/10-self-hosting-hardening/02-typed-template-generation.md\",\n        \"templates/task_detail.md\",\n        \"scripts/iter_contracts.py\",\n        \"scripts/iter_filesystem.py\",\n        \"docs/todos/10-self-hosting-hardening/evidence/02/review-initial-rejected.json\"\n      ],\n      \"capabilities\": [\n        \"Codeg MCP codex independent session\",\n        \"Windows iter_run\",\n        \"pytest\"\n      ],\n      \"dependencies\": [\n        \"docs/todos/10-self-hosting-hardening/01-authority-consistency.md\"\n      ],\n      \"tool_entry\": \"C:/Users/qingyu/.codeg/skills/iteration-manager/build/frozen-tools/46ded3a/scripts/iter_sync.py\",\n      \"checkpoint\": \"仅F01返修完成，有效36RED→45GREEN及156指定回归，等待受影响复审\",\n      \"remaining_work\": [\n        \"复审\",\n        \"登记D/strict\"\n      ],\n      \"observations\": {\n        \"authority\": {\n          \"status\": \"READY\",\n          \"summary\": \"用户批准六卡串行实施与精准提交，01已PASS；禁止部署推送合流清理\",\n          \"evidence\": \"docs/todos/10-self-hosting-hardening/evidence/01/authority.txt\"\n        },\n        \"execution\": {\n          \"status\": \"READY\",\n          \"summary\": \"实际同类型Codeg codex独立会话1702/1703已成功读写工作区及冻结契约，当前无活动实现命令；新owner仍完整读取\",\n          \"evidence\": \"docs/todos/10-self-hosting-hardening/evidence/01/implementation-checkpoint-a.json\"\n        },\n        \"verification\": {\n          \"status\": \"READY\",\n          \"summary\": \"完整基线314通过，任务01有效独审及D后strict通过；本卡按真实可调用行为取得RED，不将缺函数/导入错当RED\",\n          \"evidence\": \"docs/todos/10-self-hosting-hardening/evidence/02/dependency-01-envelope.json\"\n        }\n      }\n    }\n  }\n}\n",
+    "build/review-02-final/dispatch.json": "{\n  \"read_only\": true,\n  \"readiness\": \"READY\",\n  \"task_path\": \"C:\\\\Users\\\\qingyu\\\\.codeg\\\\skills\\\\iteration-manager\\\\.worktrees\\\\iter-10\\\\docs\\\\todos\\\\10-self-hosting-hardening\\\\02-typed-template-generation.md\",\n  \"phase\": \"evidence-inspection\",\n  \"acceptance_verdict\": \"UNKNOWN\",\n  \"findings\": [],\n  \"observations\": {\n    \"authority\": {\n      \"status\": \"READY\",\n      \"summary\": \"用户批准六卡串行实施与精准提交，01已PASS；禁止部署推送合流清理\",\n      \"evidence\": \"docs/todos/10-self-hosting-hardening/evidence/01/authority.txt\"\n    },\n    \"execution\": {\n      \"status\": \"READY\",\n      \"summary\": \"实际同类型Codeg codex独立会话1702/1703已成功读写工作区及冻结契约，当前无活动实现命令；新owner仍完整读取\",\n      \"evidence\": \"docs/todos/10-self-hosting-hardening/evidence/01/implementation-checkpoint-a.json\"\n    },\n    \"verification\": {\n      \"status\": \"READY\",\n      \"summary\": \"完整基线314通过，任务01有效独审及D后strict通过；本卡按真实可调用行为取得RED，不将缺函数/导入错当RED\",\n      \"evidence\": \"docs/todos/10-self-hosting-hardening/evidence/02/dependency-01-envelope.json\"\n    }\n  },\n  \"task_id\": \"02\",\n  \"delivery_mode\": \"git\",\n  \"candidate\": \"03950f2ac4867291c3001daa10140e4da1efa81f\",\n  \"execution\": {\n    \"attempt_count\": 4,\n    \"no_progress_streak\": 0,\n    \"last_attempt\": {\n      \"source\": \"docs/todos/10-self-hosting-hardening/evidence/02/attempt-c.json\",\n      \"phase\": \"implementation\",\n      \"delivery_mode\": \"git\",\n      \"candidate\": \"db63b4f7cb47b046e8c96f87f0732e012b32a812\",\n      \"conditions\": {\n        \"inputs\": [\n          \"docs/todos/10-self-hosting-hardening/02-typed-template-generation.md\",\n          \"docs/todos/10-self-hosting-hardening/evidence/02/review-initial-rejected.json\",\n          \"scripts/iter_contracts.py\",\n          \"scripts/iter_filesystem.py\",\n          \"templates/task_detail.md\"\n        ],\n        \"capabilities\": [\n          \"Codeg MCP codex independent session\",\n          \"Windows iter_run\",\n          \"pytest\"\n        ],\n        \"scope\": [\n          \".agents/notes/implemented/process/2026-11-13-typed-template-generation.md\",\n          \"docs/todos/10-self-hosting-hardening/evidence/02/\",\n          \"references/template_generation.md\",\n          \"scripts/iter_templates.py\",\n          \"templates/contracts/refactor_benchmark_contract.md\",\n          \"templates/contracts/spike_discovery_contract.md\",\n          \"templates/contracts/strict_tdd_contract.md\",\n          \"templates/contracts/ui_component_contract.md\",\n          \"templates/task_detail.md\",\n          \"tests/test_template_generation.py\"\n        ]\n      },\n      \"executor_id\": \"091c5173-015d-4e58-b251-1bef0834c8c5\",\n      \"executor_state\": \"completed\",\n      \"terminal_evidence\": \"docs/todos/10-self-hosting-hardening/evidence/02/native-terminal-c.json\",\n      \"progress\": [\n        {\n          \"kind\": \"red\",\n          \"evidence\": \"docs/todos/10-self-hosting-hardening/evidence/02/repair-c-red-cli-1718.json.output.txt\",\n          \"summary\": \"F01三字段/CLI36真实断言失败\"\n        },\n        {\n          \"kind\": \"green\",\n          \"evidence\": \"docs/todos/10-self-hosting-hardening/evidence/02/repair-c-regression-1717.json.output.txt\",\n          \"summary\": \"同45用例GREEN，指定156回归通过\"\n        }\n      ],\n      \"checkpoint\": \"F01 only: precheck extracts text within each checklist item and checks strip() nonemptiness, preserving leading whitespace including newline. No spec restriction or renderer normalization added.\",\n      \"remaining_work\": [\n        \"独立复审\",\n        \"登记D及strict\"\n      ],\n      \"commands\": [\n        {\n          \"receipt\": \"docs/todos/10-self-hosting-hardening/evidence/02/repair-c-green-1717.json\",\n          \"status\": \"COMPLETED\",\n          \"raw_exit_code\": 0,\n          \"started_at\": \"2026-11-13T17:17:17.159402+00:00\",\n          \"ended_at\": \"2026-11-13T17:17:26.803703+00:00\"\n        },\n        {\n          \"receipt\": \"docs/todos/10-self-hosting-hardening/evidence/02/repair-c-note-format-1718.json\",\n          \"status\": \"COMPLETED\",\n          \"raw_exit_code\": 0,\n          \"started_at\": \"2026-11-13T17:18:22.702033+00:00\",\n          \"ended_at\": \"2026-11-13T17:18:25.123047+00:00\"\n        },\n        {\n          \"receipt\": \"docs/todos/10-self-hosting-hardening/evidence/02/repair-c-note-tree-1718.json\",\n          \"status\": \"COMPLETED\",\n          \"raw_exit_code\": 0,\n          \"started_at\": \"2026-11-13T17:18:19.761187+00:00\",\n          \"ended_at\": \"2026-11-13T17:18:22.280151+00:00\"\n        },\n        {\n          \"receipt\": \"docs/todos/10-self-hosting-hardening/evidence/02/repair-c-red-1717.json\",\n          \"status\": \"COMPLETED\",\n          \"raw_exit_code\": 1,\n          \"started_at\": \"2026-11-13T17:16:36.946645+00:00\",\n          \"ended_at\": \"2026-11-13T17:16:41.078169+00:00\"\n        },\n        {\n          \"receipt\": \"docs/todos/10-self-hosting-hardening/evidence/02/repair-c-red-cli-1718.json\",\n          \"status\": \"COMPLETED\",\n          \"raw_exit_code\": 1,\n          \"started_at\": \"2026-11-13T17:16:55.146210+00:00\",\n          \"ended_at\": \"2026-11-13T17:17:03.318988+00:00\"\n        },\n        {\n          \"receipt\": \"docs/todos/10-self-hosting-hardening/evidence/02/repair-c-regression-1717.json\",\n          \"status\": \"COMPLETED\",\n          \"raw_exit_code\": 0,\n          \"started_at\": \"2026-11-13T17:17:34.776801+00:00\",\n          \"ended_at\": \"2026-11-13T17:17:53.676768+00:00\"\n        },\n        {\n          \"receipt\": \"docs/todos/10-self-hosting-hardening/evidence/02/repair-c-scope-1719.json\",\n          \"status\": \"COMPLETED\",\n          \"raw_exit_code\": 0,\n          \"started_at\": \"2026-11-13T17:19:04.186200+00:00\",\n          \"ended_at\": \"2026-11-13T17:19:05.104611+00:00\"\n        }\n      ],\n      \"started_at\": null,\n      \"ended_at\": null,\n      \"session_seconds\": null,\n      \"command_seconds\": 46.70695899999999\n    },\n    \"checkpoint\": {\n      \"candidate\": \"db63b4f7cb47b046e8c96f87f0732e012b32a812\",\n      \"phase\": \"implementation\",\n      \"summary\": \"F01 only: precheck extracts text within each checklist item and checks strip() nonemptiness, preserving leading whitespace including newline. No spec restriction or renderer normalization added.\",\n      \"progress\": [\n        {\n          \"kind\": \"red\",\n          \"evidence\": \"docs/todos/10-self-hosting-hardening/evidence/02/repair-c-red-cli-1718.json.output.txt\",\n          \"summary\": \"F01三字段/CLI36真实断言失败\"\n        },\n        {\n          \"kind\": \"green\",\n          \"evidence\": \"docs/todos/10-self-hosting-hardening/evidence/02/repair-c-regression-1717.json.output.txt\",\n          \"summary\": \"同45用例GREEN，指定156回归通过\"\n        }\n      ],\n      \"source\": \"docs/todos/10-self-hosting-hardening/evidence/02/attempt-c.json\"\n    },\n    \"remaining_work\": [\n      \"独立复审\",\n      \"登记D及strict\"\n    ]\n  },\n  \"conditions\": {\n    \"inputs\": [\n      \"docs/todos/10-self-hosting-hardening/02-typed-template-generation.md\",\n      \"docs/todos/10-self-hosting-hardening/evidence/02/review-initial-rejected.json\",\n      \"scripts/iter_contracts.py\",\n      \"scripts/iter_filesystem.py\",\n      \"templates/task_detail.md\"\n    ],\n    \"capabilities\": [\n      \"Codeg MCP codex independent session\",\n      \"Windows iter_run\",\n      \"pytest\"\n    ],\n    \"scope\": [\n      \".agents/notes/implemented/process/2026-11-13-typed-template-generation.md\",\n      \"docs/todos/10-self-hosting-hardening/evidence/02/\",\n      \"references/template_generation.md\",\n      \"scripts/iter_templates.py\",\n      \"templates/contracts/refactor_benchmark_contract.md\",\n      \"templates/contracts/spike_discovery_contract.md\",\n      \"templates/contracts/strict_tdd_contract.md\",\n      \"templates/contracts/ui_component_contract.md\",\n      \"templates/task_detail.md\",\n      \"tests/test_template_generation.py\"\n    ]\n  },\n  \"checkpoint\": \"仅F01返修完成，有效36RED→45GREEN及156指定回归，等待受影响复审\",\n  \"remaining_work\": [\n    \"复审\",\n    \"登记D/strict\"\n  ]\n}\n",
+    "build/review-02-final/leading-space-spec.json": "{\"version\": 1, \"task_id\": \"02\", \"iteration\": \"10-example\", \"task_name\": \"Generate typed cards\", \"type\": \"Strict-TDD\", \"delivery_mode\": \"git\", \"objective\": \"Render a task card without side effects\", \"consumes\": \"TYPE_CHECKS\", \"produces\": \"render_task_card(spec) -> str\", \"scope\": [\"scripts/example.py\", \"tests/\"], \"stages\": [\"Implement behavior\"], \"acceptance\": [\"Generated card is readable\"], \"verification\": {\"red\": \"Run the actual red check\", \"green\": \" python -m pytest tests -q\", \"regression\": \"Run the actual regression check\"}}",
+    "build/review-02-final/original-f01.json": "{\n  \"version\": 1,\n  \"argv\": [\n    \"python\",\n    \"-B\",\n    \"-m\",\n    \"pytest\",\n    \"-p\",\n    \"no:cacheprovider\",\n    \"build/review-02-final/test_original_f01.py\",\n    \"--basetemp\",\n    \"build/review-02-final/original-f01-tmp\",\n    \"-q\"\n  ],\n  \"cwd\": \"C:\\\\Users\\\\qingyu\\\\.codeg\\\\skills\\\\iteration-manager\\\\.worktrees\\\\iter-10\",\n  \"deadline\": \"2026-11-13T17:29:19.929000+00:00\",\n  \"cleanup_reserve_seconds\": 5,\n  \"status\": \"COMPLETED\",\n  \"deadline_checked_at\": \"2026-11-13T17:24:38.864795+00:00\",\n  \"started_at\": \"2026-11-13T17:24:38.872797+00:00\",\n  \"ended_at\": \"2026-11-13T17:24:41.826994+00:00\",\n  \"raw_exit_code\": 0,\n  \"tree_terminal\": true,\n  \"output\": \"build/review-02-final/original-f01.json.output.txt\",\n  \"container_pid\": 40316,\n  \"launcher_exit_code\": 0,\n  \"command\": {\n    \"status\": \"COMPLETED\",\n    \"raw_exit_code\": 0,\n    \"started_at\": \"2026-11-13T17:24:38.872797+00:00\",\n    \"pid\": 24824,\n    \"deadline_checked_at\": \"2026-11-13T17:24:38.864795+00:00\",\n    \"ended_at\": \"2026-11-13T17:24:41.811992+00:00\"\n  },\n  \"late_by_seconds\": 0\n}",
+    "build/review-02-final/original-f01.json.child.json": "{\"status\": \"COMPLETED\", \"raw_exit_code\": 0, \"started_at\": \"2026-11-13T17:24:38.872797+00:00\", \"pid\": 24824, \"deadline_checked_at\": \"2026-11-13T17:24:38.864795+00:00\", \"ended_at\": \"2026-11-13T17:24:41.811992+00:00\"}",
+    "build/review-02-final/original-f01.json.output.txt": "....                                                                     [100%]\n4 passed in 0.61s\n",
+    "build/review-02-final/reviewer-report.json": "{\n  \"schema_version\": 1,\n  \"task_id\": \"02\",\n  \"reviewer\": \"01a1d5ee-843b-7490-92b4-557fa753af23\",\n  \"reviewer_identity_source\": \"CODEX_SESSION_ID and CODEX_THREAD_ID observed in current process environment\",\n  \"role\": \"independent-affected-repair-reviewer\",\n  \"independence\": \"本会话未参与本卡实现、设计、开发测试或RCA；本次仅独立审查、只读验收与build内审查原件。未委派。\",\n  \"base_sha\": \"2ecd3bc3f957ac1941b388e036a6427b717b6cc7\",\n  \"head_sha\": \"03950f2ac4867291c3001daa10140e4da1efa81f\",\n  \"contract_sha\": \"03950f2ac4867291c3001daa10140e4da1efa81f\",\n  \"workspace\": \"C:/Users/qingyu/.codeg/skills/iteration-manager/.worktrees/iter-10\",\n  \"branch\": \"feat/iter-10-self-hosting-hardening\",\n  \"implementer\": \"091c5173-015d-4e58-b251-1bef0834c8c5\",\n  \"implementer_identity_kind\": \"repair delegation task ID, conversation 1712; original A/B IDs retained in their original evidence\",\n  \"review_package\": \"C:/Users/qingyu/.codeg/skills/iteration-manager/.git/worktrees/iter-10/iter_reviews/review_02_2ecd3bc_03950f2_20261114_012154_852633.md\",\n  \"verdict\": \"APPROVED\",\n  \"Scope\": {\n    \"verdict\": \"PASSED\",\n    \"evidence\": \"build/review-02-final/scope.json\",\n    \"summary\": \"冻结F实际检查BASE..C及worktree，90文件全部在范围；根docs/todos/README.md不在diff。\"\n  },\n  \"Spec\": {\n    \"verdict\": \"COMPLIANT\",\n    \"summary\": \"六项冻结验收均成立；F01允许的非空文本保持原文并可API/CLI往返，未新增输入限制。\"\n  },\n  \"Quality\": {\n    \"verdict\": \"APPROVED\",\n    \"summary\": \"修复仅在预检按项提取后strip判空；未改渲染、四类型check名、Git/FS收据算法或状态账。目标断言RED真实，原失败保留。\"\n  },\n  \"acceptance\": [\n    {\n      \"id\": 1,\n      \"result\": \"PASS\",\n      \"source\": \"task02 iter:acceptance item1\",\n      \"evidence\": [\n        \"scripts/iter_templates.py:38-69,162-171\",\n        \"tests/test_template_generation.py:59-68,111-130,209-251\",\n        \"docs\\\\todos\\\\10-self-hosting-hardening\\\\evidence\\\\02\\\\repair-c-red-cli-1718.json.output.txt\",\n        \"docs\\\\todos\\\\10-self-hosting-hardening\\\\evidence\\\\02\\\\repair-c-green-1717.json.output.txt\",\n        \"build/review-02-final/affected.json.output.txt\",\n        \"build/review-02-final/original-f01.json.output.txt\"\n      ],\n      \"summary\": \"必需字段/整数版本/形状/type/mode/FS candidate规则保留；三字段合法前导空白往返，纯空白仍拒绝。\"\n    },\n    {\n      \"id\": 2,\n      \"result\": \"PASS\",\n      \"source\": \"task02 iter:acceptance item2\",\n      \"evidence\": [\n        \"scripts/iter_templates.py:79-88\",\n        \"tests/test_template_generation.py:30-56\",\n        \"docs\\\\todos\\\\10-self-hosting-hardening\\\\evidence\\\\02\\\\repair-c-regression-1717.json.output.txt\"\n      ],\n      \"summary\": \"TODO、PENDING、false、UNASSESSED及空SHA；无伪造批准。\"\n    },\n    {\n      \"id\": 3,\n      \"result\": \"PASS\",\n      \"source\": \"task02 iter:acceptance item3\",\n      \"evidence\": [\n        \"scripts/iter_templates.py:22-26,86-95\",\n        \"tests/test_template_generation.py:28-56,175-206\",\n        \"docs\\\\todos\\\\10-self-hosting-hardening\\\\evidence\\\\02\\\\repair-c-regression-1717.json.output.txt\",\n        \"docs\\\\todos\\\\10-self-hosting-hardening\\\\evidence\\\\02\\\\review-initial-rejected.json#original_files[build/review-02/independent-path-0109.json.output.txt]\"\n      ],\n      \"summary\": \"八组合parse_card与预检、四type实际FS绑定及Git动态投影保持；FS完整正文先定稿再冻结，非TDD无强制RED/true。\"\n    },\n    {\n      \"id\": 4,\n      \"result\": \"PASS\",\n      \"source\": \"task02 iter:acceptance item4\",\n      \"evidence\": [\n        \"scripts/iter_templates.py:30-69,136-209\",\n        \"tests/test_template_generation.py:59-68,76-172,238-251\",\n        \"docs\\\\todos\\\\10-self-hosting-hardening\\\\evidence\\\\02\\\\repair-c-regression-1717.json.output.txt\"\n      ],\n      \"summary\": \"空scope/越界/缺关键段或checks/显式占位符拒绝；CLI只读输入与stdout输出、不覆盖/迁移；F01合法文本误拒已消除。\"\n    },\n    {\n      \"id\": 5,\n      \"result\": \"PASS\",\n      \"source\": \"task02 iter:acceptance item5\",\n      \"evidence\": [\n        \"scripts/iter_contracts.py:104-109\",\n        \"scripts/iter_templates.py:22-26,65-69,90\",\n        \"templates/contracts/refactor_benchmark_contract.md:3-5\",\n        \"references/template_generation.md:36-43\"\n      ],\n      \"summary\": \"Refactor仍有baseline、regression、compatibility、before/after；未新增第五type或放宽原门禁。\"\n    },\n    {\n      \"id\": 6,\n      \"result\": \"PASS\",\n      \"source\": \"task02 iter:acceptance item6\",\n      \"evidence\": [\n        \"docs\\\\todos\\\\10-self-hosting-hardening\\\\evidence\\\\02\\\\implementation-checkpoint-c.json\",\n        \"docs\\\\todos\\\\10-self-hosting-hardening\\\\evidence\\\\02\\\\native-terminal-c.json\",\n        \"docs\\\\todos\\\\10-self-hosting-hardening\\\\evidence\\\\02\\\\repair-c-red-cli-1718.json\",\n        \"docs\\\\todos\\\\10-self-hosting-hardening\\\\evidence\\\\02\\\\repair-c-green-1717.json\",\n        \"docs\\\\todos\\\\10-self-hosting-hardening\\\\evidence\\\\02\\\\repair-c-regression-1717.json\",\n        \"build/review-02-final/scope.json\"\n      ],\n      \"summary\": \"必需checks提交原件、同候选范围和真实终态齐备；实现者最高TESTING/UNKNOWN，本次为新的独立裁决，未套旧批准。\"\n    }\n  ],\n  \"findings\": [],\n  \"resolved_findings\": [\n    {\n      \"id\": \"F01\",\n      \"original_severity\": \"Important\",\n      \"original_candidate\": \"685ee752e1291c5652f3d7cf304dee6cb8842e43\",\n      \"status\": \"CLOSED\",\n      \"location\": \"scripts/iter_templates.py:162-171\",\n      \"basis\": \"原反例和CLI exit2核对有效，不重评原严重度。修复按清单边界提取再strip；保留原文、下一项不被借作必需check说明。新增45独立实跑及原初审4个原样反例均通过。\",\n      \"evidence\": [\n        \"docs\\\\todos\\\\10-self-hosting-hardening\\\\evidence\\\\02\\\\review-initial-rejected.json\",\n        \"build/review-02-final/affected.json\",\n        \"build/review-02-final/original-f01.json\"\n      ]\n    }\n  ],\n  \"checks\": [\n    {\n      \"name\": \"red\",\n      \"kind\": \"command\",\n      \"command\": \"python -B -m pytest -p no:cacheprovider tests/test_template_generation.py::test_leading_whitespace_roundtrip tests/test_template_generation.py::test_blank_checklist_text_remains_invalid -q\",\n      \"cwd\": \".\",\n      \"exit_code\": 1,\n      \"output\": \"docs/todos/10-self-hosting-hardening/evidence/02/repair-c-red-cli-1718.json.output.txt\",\n      \"summary\": \"F01真实36项断言失败、9项边界通过；18个真实CLI --render退出2，非导入/编译错误。\",\n      \"receipt\": \"docs/todos/10-self-hosting-hardening/evidence/02/repair-c-red-cli-1718.json\",\n      \"origin\": \"committed-implementer-original\",\n      \"status\": \"COMPLETED\",\n      \"tree_terminal\": true,\n      \"started_at\": \"2026-11-13T17:16:55.146210+00:00\",\n      \"ended_at\": \"2026-11-13T17:17:03.318988+00:00\",\n      \"failure_kind\": \"assertion\"\n    },\n    {\n      \"name\": \"green\",\n      \"kind\": \"command\",\n      \"command\": \"python -B -m pytest -p no:cacheprovider tests/test_template_generation.py::test_leading_whitespace_roundtrip tests/test_template_generation.py::test_blank_checklist_text_remains_invalid -q\",\n      \"cwd\": \".\",\n      \"exit_code\": 0,\n      \"output\": \"docs/todos/10-self-hosting-hardening/evidence/02/repair-c-green-1717.json.output.txt\",\n      \"summary\": \"同45用例通过；三字段、空格/制表符/换行、Git/FS、API/CLI往返及空白拒绝。\",\n      \"receipt\": \"docs/todos/10-self-hosting-hardening/evidence/02/repair-c-green-1717.json\",\n      \"origin\": \"committed-implementer-original\",\n      \"status\": \"COMPLETED\",\n      \"tree_terminal\": true,\n      \"started_at\": \"2026-11-13T17:17:17.159402+00:00\",\n      \"ended_at\": \"2026-11-13T17:17:26.803703+00:00\"\n    },\n    {\n      \"name\": \"regression\",\n      \"kind\": \"command\",\n      \"command\": \"python -B -m pytest -p no:cacheprovider tests/test_template_generation.py tests/test_prompt_sources.py tests/test_task_card_schema.py tests/test_filesystem_receipts.py tests/test_filesystem_r7_repairs.py -q\",\n      \"cwd\": \".\",\n      \"exit_code\": 0,\n      \"output\": \"docs/todos/10-self-hosting-hardening/evidence/02/repair-c-regression-1717.json.output.txt\",\n      \"summary\": \"指定五文件156passed，含八组合、既有卡/提示词/FS收据与完整正文冻结回归。\",\n      \"receipt\": \"docs/todos/10-self-hosting-hardening/evidence/02/repair-c-regression-1717.json\",\n      \"origin\": \"committed-implementer-original\",\n      \"status\": \"COMPLETED\",\n      \"tree_terminal\": true,\n      \"started_at\": \"2026-11-13T17:17:34.776801+00:00\",\n      \"ended_at\": \"2026-11-13T17:17:53.676768+00:00\"\n    },\n    {\n      \"name\": \"core-red-original\",\n      \"kind\": \"command\",\n      \"command\": \"python -B -m pytest -p no:cacheprovider tests/test_template_generation.py::test_render_core_combinations tests/test_template_generation.py::test_reject_invalid_spec tests/test_template_generation.py::test_check_rejects_empty_card_and_unknown_mode -q\",\n      \"cwd\": \".\",\n      \"exit_code\": 1,\n      \"output\": \"docs/todos/10-self-hosting-hardening/evidence/02/slice-a-core-red.json.output.txt\",\n      \"summary\": \"原A核心19项真实断言RED，历史原件保留，不冒称在新C重跑。\",\n      \"receipt\": \"docs/todos/10-self-hosting-hardening/evidence/02/slice-a-core-red.json\",\n      \"origin\": \"committed-implementer-original\",\n      \"status\": \"COMPLETED\",\n      \"tree_terminal\": true,\n      \"started_at\": \"2026-11-13T16:48:18.972629+00:00\",\n      \"ended_at\": \"2026-11-13T16:48:22.880785+00:00\",\n      \"failure_kind\": \"assertion\"\n    },\n    {\n      \"name\": \"core-green-original\",\n      \"kind\": \"command\",\n      \"command\": \"python -B -m pytest -p no:cacheprovider tests/test_template_generation.py::test_render_core_combinations tests/test_template_generation.py::test_reject_invalid_spec tests/test_template_generation.py::test_check_rejects_empty_card_and_unknown_mode -q\",\n      \"cwd\": \".\",\n      \"exit_code\": 0,\n      \"output\": \"docs/todos/10-self-hosting-hardening/evidence/02/slice-a-core-green-2.json.output.txt\",\n      \"summary\": \"原A修正后19passed；第一次GREEN的8失败/11通过仍保留。\",\n      \"receipt\": \"docs/todos/10-self-hosting-hardening/evidence/02/slice-a-core-green-2.json\",\n      \"origin\": \"committed-implementer-original\",\n      \"status\": \"COMPLETED\",\n      \"tree_terminal\": true,\n      \"started_at\": \"2026-11-13T16:49:49.182544+00:00\",\n      \"ended_at\": \"2026-11-13T16:49:51.948302+00:00\"\n    },\n    {\n      \"name\": \"cli-boundary-red-original\",\n      \"kind\": \"command\",\n      \"command\": \"python -B -m pytest -p no:cacheprovider tests/test_template_generation.py -q\",\n      \"cwd\": \".\",\n      \"exit_code\": 1,\n      \"output\": \"docs/todos/10-self-hosting-hardening/evidence/02/slice-b-cli-boundary-red.json.output.txt\",\n      \"summary\": \"原B真实CLI/边界17失败、57通过，历史原件。\",\n      \"receipt\": \"docs/todos/10-self-hosting-hardening/evidence/02/slice-b-cli-boundary-red.json\",\n      \"origin\": \"committed-implementer-original\",\n      \"status\": \"COMPLETED\",\n      \"tree_terminal\": true,\n      \"started_at\": \"2026-11-13T16:56:10.979696+00:00\",\n      \"ended_at\": \"2026-11-13T16:56:24.774354+00:00\",\n      \"failure_kind\": \"assertion\"\n    },\n    {\n      \"name\": \"cli-boundary-green-original\",\n      \"kind\": \"command\",\n      \"command\": \"python -B -m pytest -p no:cacheprovider tests/test_template_generation.py -q\",\n      \"cwd\": \".\",\n      \"exit_code\": 0,\n      \"output\": \"docs/todos/10-self-hosting-hardening/evidence/02/slice-b-cli-boundary-green.json.output.txt\",\n      \"summary\": \"原B同组74passed；不作为修复后预检的唯一证据。\",\n      \"receipt\": \"docs/todos/10-self-hosting-hardening/evidence/02/slice-b-cli-boundary-green.json\",\n      \"origin\": \"committed-implementer-original\",\n      \"status\": \"COMPLETED\",\n      \"tree_terminal\": true,\n      \"started_at\": \"2026-11-13T16:56:58.804424+00:00\",\n      \"ended_at\": \"2026-11-13T16:57:05.069757+00:00\"\n    },\n    {\n      \"name\": \"compatibility-supplement\",\n      \"kind\": \"command\",\n      \"command\": \"python -B -m pytest -p no:cacheprovider tests/test_template_generation.py -q\",\n      \"cwd\": \".\",\n      \"exit_code\": 0,\n      \"output\": \"docs/todos/10-self-hosting-hardening/evidence/02/slice-b-compatibility.json.output.txt\",\n      \"summary\": \"81passed中的补充7兼容断言未先RED，按原记录披露。\",\n      \"receipt\": \"docs/todos/10-self-hosting-hardening/evidence/02/slice-b-compatibility.json\",\n      \"origin\": \"committed-implementer-original\",\n      \"status\": \"COMPLETED\",\n      \"tree_terminal\": true,\n      \"started_at\": \"2026-11-13T16:57:29.008247+00:00\",\n      \"ended_at\": \"2026-11-13T16:57:36.018789+00:00\"\n    },\n    {\n      \"name\": \"repair-note-tree\",\n      \"kind\": \"command\",\n      \"command\": \"npx.cmd --no-install tsx C:/Users/qingyu/.codex/skills/write-notes-like-deepseek/scripts/verify-agent-note-tree.ts\",\n      \"cwd\": \".\",\n      \"exit_code\": 0,\n      \"output\": \"docs/todos/10-self-hosting-hardening/evidence/02/repair-c-note-tree-1718.json.output.txt\",\n      \"summary\": \"笔记树及相对链接15项通过，NO_COLOR警告保留。\",\n      \"receipt\": \"docs/todos/10-self-hosting-hardening/evidence/02/repair-c-note-tree-1718.json\",\n      \"origin\": \"committed-implementer-original\",\n      \"status\": \"COMPLETED\",\n      \"tree_terminal\": true,\n      \"started_at\": \"2026-11-13T17:18:19.761187+00:00\",\n      \"ended_at\": \"2026-11-13T17:18:22.280151+00:00\"\n    },\n    {\n      \"name\": \"repair-note-format\",\n      \"kind\": \"command\",\n      \"command\": \"npx.cmd --no-install tsx C:/Users/qingyu/.codex/skills/write-notes-like-deepseek/scripts/verify-agent-note-format.ts\",\n      \"cwd\": \".\",\n      \"exit_code\": 0,\n      \"output\": \"docs/todos/10-self-hosting-hardening/evidence/02/repair-c-note-format-1718.json.output.txt\",\n      \"summary\": \"笔记格式15项通过，NO_COLOR警告保留。\",\n      \"receipt\": \"docs/todos/10-self-hosting-hardening/evidence/02/repair-c-note-format-1718.json\",\n      \"origin\": \"committed-implementer-original\",\n      \"status\": \"COMPLETED\",\n      \"tree_terminal\": true,\n      \"started_at\": \"2026-11-13T17:18:22.702033+00:00\",\n      \"ended_at\": \"2026-11-13T17:18:25.123047+00:00\"\n    }\n  ],\n  \"independent_verification\": [\n    {\n      \"name\": \"scope\",\n      \"runner\": \"C:/Users/qingyu/.codeg/skills/iteration-manager/build/frozen-tools/46ded3a/scripts/iter_run.py\",\n      \"receipt\": \"build/review-02-final/scope.json\",\n      \"command\": \"python C:/Users/qingyu/.codeg/skills/iteration-manager/build/frozen-tools/46ded3a/scripts/iter_sync.py --check-scope 2ecd3bc3f957ac1941b388e036a6427b717b6cc7 03950f2ac4867291c3001daa10140e4da1efa81f docs/todos/10-self-hosting-hardening/02-typed-template-generation.md --include-worktree\",\n      \"cwd\": \".\",\n      \"exit_code\": 0,\n      \"output\": \"build/review-02-final/scope.json.output.txt\",\n      \"status\": \"COMPLETED\",\n      \"tree_terminal\": true,\n      \"started_at\": \"2026-11-13T17:22:48.007326+00:00\",\n      \"ended_at\": \"2026-11-13T17:22:48.943684+00:00\",\n      \"raw_output\": \"[IterSync:ScopeFirewall:PASSED] All 90 changed files within declared scope; ownership is not inferred.\\n\"\n    },\n    {\n      \"name\": \"affected\",\n      \"runner\": \"C:/Users/qingyu/.codeg/skills/iteration-manager/build/frozen-tools/46ded3a/scripts/iter_run.py\",\n      \"receipt\": \"build/review-02-final/affected.json\",\n      \"command\": \"python -B -m pytest -p no:cacheprovider tests/test_template_generation.py::test_leading_whitespace_roundtrip tests/test_template_generation.py::test_blank_checklist_text_remains_invalid -q\",\n      \"cwd\": \".\",\n      \"exit_code\": 0,\n      \"output\": \"build/review-02-final/affected.json.output.txt\",\n      \"status\": \"COMPLETED\",\n      \"tree_terminal\": true,\n      \"started_at\": \"2026-11-13T17:23:25.283189+00:00\",\n      \"ended_at\": \"2026-11-13T17:23:35.263998+00:00\",\n      \"raw_output\": \".............................................                            [100%]\\n45 passed in 7.49s\\n\"\n    },\n    {\n      \"name\": \"original-f01\",\n      \"runner\": \"C:/Users/qingyu/.codeg/skills/iteration-manager/build/frozen-tools/46ded3a/scripts/iter_run.py\",\n      \"receipt\": \"build/review-02-final/original-f01.json\",\n      \"command\": \"python -B -m pytest -p no:cacheprovider build/review-02-final/test_original_f01.py --basetemp build/review-02-final/original-f01-tmp -q\",\n      \"cwd\": \".\",\n      \"exit_code\": 0,\n      \"output\": \"build/review-02-final/original-f01.json.output.txt\",\n      \"status\": \"COMPLETED\",\n      \"tree_terminal\": true,\n      \"started_at\": \"2026-11-13T17:24:38.872797+00:00\",\n      \"ended_at\": \"2026-11-13T17:24:41.826994+00:00\",\n      \"raw_output\": \"....                                                                     [100%]\\n4 passed in 0.61s\\n\"\n    }\n  ],\n  \"reuse_basis\": [\n    {\n      \"coverage\": \"A核心有效RED及首次失败GREEN、最终19GREEN\",\n      \"original_candidate\": \"f5583e542a20e00cfe9e3eae3776f32cbe9d7ae9\",\n      \"evidence\": [\n        \"docs\\\\todos\\\\10-self-hosting-hardening\\\\evidence\\\\02\\\\slice-a-core-red.json\",\n        \"docs\\\\todos\\\\10-self-hosting-hardening\\\\evidence\\\\02\\\\slice-a-core-green.json\",\n        \"docs\\\\todos\\\\10-self-hosting-hardening\\\\evidence\\\\02\\\\slice-a-core-green-2.json\"\n      ],\n      \"changes_inputs_environment\": \"历史断言原件未修改；后续source变化已由B与C交付回归覆盖。初审已核对真实断言，当前核对原件receipt/child/输出和初审适用依据。Windows/Python执行环境路径一致，无相关变化记录。\",\n      \"action\": \"保留历史RED，不重演可调用stub；不称在C重跑。\"\n    },\n    {\n      \"coverage\": \"B CLI/边界17RED→74GREEN与7个未先RED兼容补测\",\n      \"original_candidate\": \"24a483eb7b0694ce67a5e6c0b50adb0d1cb5c160\",\n      \"evidence\": [\n        \"docs\\\\todos\\\\10-self-hosting-hardening\\\\evidence\\\\02\\\\slice-b-cli-boundary-red.json\",\n        \"docs\\\\todos\\\\10-self-hosting-hardening\\\\evidence\\\\02\\\\slice-b-cli-boundary-green.json\",\n        \"docs\\\\todos\\\\10-self-hosting-hardening\\\\evidence\\\\02\\\\slice-b-compatibility.json\"\n      ],\n      \"changes_inputs_environment\": \"685ee75之后只有预检F01与45新增测试及说明/笔记；渲染、TYPE_CHECKS、合同解析、FS绑定及原有测试输入均未变。新预检影响不靠旧111GREEN证明，C已指定五文件156回归。\",\n      \"action\": \"旧输出仅作来源与历史验证；用C的156回归覆盖预检影响，不重跑无关旧批准。\"\n    },\n    {\n      \"coverage\": \"初审13项八组合/四FS冻结/Git投影独立实测\",\n      \"original_candidate\": \"685ee752e1291c5652f3d7cf304dee6cb8842e43\",\n      \"evidence\": [\n        \"docs\\\\todos\\\\10-self-hosting-hardening\\\\evidence\\\\02\\\\review-initial-rejected.json#original_files[build/review-02/independent-path-0109.json.output.txt]\"\n      ],\n      \"changes_inputs_environment\": \"原13项输入及render/iter_contracts/iter_filesystem代码未变；预检改变已经C五文件156回归覆盖。原报告结论仍为CHANGES_REQUESTED，不沿用批准。\",\n      \"action\": \"沿用未变事实及路径证据；F01另独立实跑45项与原4反例。\"\n    },\n    {\n      \"coverage\": \"返修GREEN/指定五文件回归/笔记\",\n      \"original_candidate\": \"939bc4d5fcf198a0c0a07d8ad42ea442abace708 source; db63b4f7cb47b046e8c96f87f0732e012b32a812 delivery\",\n      \"evidence\": [\n        \"docs\\\\todos\\\\10-self-hosting-hardening\\\\evidence\\\\02\\\\repair-c-green-1717.json\",\n        \"docs\\\\todos\\\\10-self-hosting-hardening\\\\evidence\\\\02\\\\repair-c-regression-1717.json\",\n        \"docs\\\\todos\\\\10-self-hosting-hardening\\\\evidence\\\\02\\\\repair-c-note-tree-1718.json\",\n        \"docs\\\\todos\\\\10-self-hosting-hardening\\\\evidence\\\\02\\\\repair-c-note-format-1718.json\"\n      ],\n      \"changes_inputs_environment\": \"git diff939bc4d..C scripts/tests为空；后两提交仅证据/卡/README登记，笔记未再变。原回归输入未变，同Windows/Python，当前45实跑亦通过。\",\n      \"action\": \"沿用156passed及15项树/格式；独立只重跑受影响45断言，不无差别重复整套门禁。\"\n    },\n    {\n      \"coverage\": \"范围与候选绑定\",\n      \"evidence\": [\n        \"build/review-02-final/scope.json\"\n      ],\n      \"changes_inputs_environment\": \"候选由685ee75变为C，旧scope/任何旧收据不能给新候选放行。\",\n      \"action\": \"已实跑固定F的BASE C --include-worktree；新审查只绑定当前C/contract。\"\n    }\n  ],\n  \"rulings\": {\n    \"structured_rendering\": \"沿用已核对结论；本次不重新评分。\",\n    \"placeholder_grammar\": \"沿用显式占位符规则，四合同与旧卡未改。\",\n    \"repair\": \"接受按项提取strip判空，未收窄spec合同或隐式规范化渲染。\",\n    \"typesafe\": {\n      \"evidence\": \"build/review-02-final/typesafe-review.json\",\n      \"question\": \"仅F01在新候选能否关闭；未重评原严重度或未变设计\",\n      \"model\": \"jev-1.14.0\",\n      \"choice\": \"closed\",\n      \"confidence\": 0.09,\n      \"probabilities\": {\n        \"closed\": 0.39,\n        \"open\": 0.37,\n        \"unknown\": 0.24\n      },\n      \"application\": \"模型分布接近，未当作强批准证据或重复刷分。补充运行初审归档的4个原样反例，全部通过；结合独立45项及源代码边界，Codex据直接证据关闭F01。\"\n    }\n  },\n  \"tdd\": {\n    \"valid\": true,\n    \"core\": \"A19真实断言RED→19GREEN；首次8失败/11通过保留；B17断言RED/57通过→74GREEN。\",\n    \"repair\": \"初次API18失败/9通过的RED亦保留，不冒称已到CLI；后完整36失败/9通过→同45GREEN。\",\n    \"supplemental\": \"原7兼容补测未先RED，如实保留。Reviewer仅执行验收探针，不补造历史TDD。\"\n  },\n  \"reviewed_changes\": {\n    \"file_count\": 90,\n    \"files\": [\n      \".agents/notes/implemented/process/2026-11-13-typed-template-generation.md\",\n      \"docs/todos/10-self-hosting-hardening/02-typed-template-generation.md\",\n      \"docs/todos/10-self-hosting-hardening/README.md\",\n      \"docs/todos/10-self-hosting-hardening/evidence/02/attempt-a.json\",\n      \"docs/todos/10-self-hosting-hardening/evidence/02/attempt-b.json\",\n      \"docs/todos/10-self-hosting-hardening/evidence/02/attempt-c.json\",\n      \"docs/todos/10-self-hosting-hardening/evidence/02/context-implementation-a.json\",\n      \"docs/todos/10-self-hosting-hardening/evidence/02/context-implementation-b.json\",\n      \"docs/todos/10-self-hosting-hardening/evidence/02/context-implementation-c.json\",\n      \"docs/todos/10-self-hosting-hardening/evidence/02/dependency-01-envelope.json\",\n      \"docs/todos/10-self-hosting-hardening/evidence/02/dispatch-a.json\",\n      \"docs/todos/10-self-hosting-hardening/evidence/02/dispatch-b.json\",\n      \"docs/todos/10-self-hosting-hardening/evidence/02/dispatch-native-a.json\",\n      \"docs/todos/10-self-hosting-hardening/evidence/02/dispatch-native-b.json\",\n      \"docs/todos/10-self-hosting-hardening/evidence/02/handoff-a.json\",\n      \"docs/todos/10-self-hosting-hardening/evidence/02/handoff-b.json\",\n      \"docs/todos/10-self-hosting-hardening/evidence/02/handoff-c.json\",\n      \"docs/todos/10-self-hosting-hardening/evidence/02/implementation-checkpoint-a.json\",\n      \"docs/todos/10-self-hosting-hardening/evidence/02/implementation-checkpoint-b.json\",\n      \"docs/todos/10-self-hosting-hardening/evidence/02/implementation-checkpoint-c.json\",\n      \"docs/todos/10-self-hosting-hardening/evidence/02/inventory-a.json\",\n      \"docs/todos/10-self-hosting-hardening/evidence/02/native-terminal-a.json\",\n      \"docs/todos/10-self-hosting-hardening/evidence/02/native-terminal-b.json\",\n      \"docs/todos/10-self-hosting-hardening/evidence/02/native-terminal-c.json\",\n      \"docs/todos/10-self-hosting-hardening/evidence/02/repair-c-green-1717.json\",\n      \"docs/todos/10-self-hosting-hardening/evidence/02/repair-c-green-1717.json.child.json\",\n      \"docs/todos/10-self-hosting-hardening/evidence/02/repair-c-green-1717.json.output.txt\",\n      \"docs/todos/10-self-hosting-hardening/evidence/02/repair-c-note-format-1718.json\",\n      \"docs/todos/10-self-hosting-hardening/evidence/02/repair-c-note-format-1718.json.child.json\",\n      \"docs/todos/10-self-hosting-hardening/evidence/02/repair-c-note-format-1718.json.output.txt\",\n      \"docs/todos/10-self-hosting-hardening/evidence/02/repair-c-note-tree-1718.json\",\n      \"docs/todos/10-self-hosting-hardening/evidence/02/repair-c-note-tree-1718.json.child.json\",\n      \"docs/todos/10-self-hosting-hardening/evidence/02/repair-c-note-tree-1718.json.output.txt\",\n      \"docs/todos/10-self-hosting-hardening/evidence/02/repair-c-red-1717.json\",\n      \"docs/todos/10-self-hosting-hardening/evidence/02/repair-c-red-1717.json.child.json\",\n      \"docs/todos/10-self-hosting-hardening/evidence/02/repair-c-red-1717.json.output.txt\",\n      \"docs/todos/10-self-hosting-hardening/evidence/02/repair-c-red-cli-1718.json\",\n      \"docs/todos/10-self-hosting-hardening/evidence/02/repair-c-red-cli-1718.json.child.json\",\n      \"docs/todos/10-self-hosting-hardening/evidence/02/repair-c-red-cli-1718.json.output.txt\",\n      \"docs/todos/10-self-hosting-hardening/evidence/02/repair-c-regression-1717.json\",\n      \"docs/todos/10-self-hosting-hardening/evidence/02/repair-c-regression-1717.json.child.json\",\n      \"docs/todos/10-self-hosting-hardening/evidence/02/repair-c-regression-1717.json.output.txt\",\n      \"docs/todos/10-self-hosting-hardening/evidence/02/repair-c-scope-1719.json\",\n      \"docs/todos/10-self-hosting-hardening/evidence/02/repair-c-scope-1719.json.child.json\",\n      \"docs/todos/10-self-hosting-hardening/evidence/02/repair-c-scope-1719.json.output.txt\",\n      \"docs/todos/10-self-hosting-hardening/evidence/02/review-initial-rejected.json\",\n      \"docs/todos/10-self-hosting-hardening/evidence/02/slice-a-core-green-2.json\",\n      \"docs/todos/10-self-hosting-hardening/evidence/02/slice-a-core-green-2.json.child.json\",\n      \"docs/todos/10-self-hosting-hardening/evidence/02/slice-a-core-green-2.json.output.txt\",\n      \"docs/todos/10-self-hosting-hardening/evidence/02/slice-a-core-green.json\",\n      \"docs/todos/10-self-hosting-hardening/evidence/02/slice-a-core-green.json.child.json\",\n      \"docs/todos/10-self-hosting-hardening/evidence/02/slice-a-core-green.json.output.txt\",\n      \"docs/todos/10-self-hosting-hardening/evidence/02/slice-a-core-red.json\",\n      \"docs/todos/10-self-hosting-hardening/evidence/02/slice-a-core-red.json.child.json\",\n      \"docs/todos/10-self-hosting-hardening/evidence/02/slice-a-core-red.json.output.txt\",\n      \"docs/todos/10-self-hosting-hardening/evidence/02/slice-a-note-format.json\",\n      \"docs/todos/10-self-hosting-hardening/evidence/02/slice-a-note-format.json.child.json\",\n      \"docs/todos/10-self-hosting-hardening/evidence/02/slice-a-note-format.json.output.txt\",\n      \"docs/todos/10-self-hosting-hardening/evidence/02/slice-a-note-tree.json\",\n      \"docs/todos/10-self-hosting-hardening/evidence/02/slice-a-note-tree.json.child.json\",\n      \"docs/todos/10-self-hosting-hardening/evidence/02/slice-a-note-tree.json.output.txt\",\n      \"docs/todos/10-self-hosting-hardening/evidence/02/slice-b-cli-boundary-green.json\",\n      \"docs/todos/10-self-hosting-hardening/evidence/02/slice-b-cli-boundary-green.json.child.json\",\n      \"docs/todos/10-self-hosting-hardening/evidence/02/slice-b-cli-boundary-green.json.output.txt\",\n      \"docs/todos/10-self-hosting-hardening/evidence/02/slice-b-cli-boundary-red.json\",\n      \"docs/todos/10-self-hosting-hardening/evidence/02/slice-b-cli-boundary-red.json.child.json\",\n      \"docs/todos/10-self-hosting-hardening/evidence/02/slice-b-cli-boundary-red.json.output.txt\",\n      \"docs/todos/10-self-hosting-hardening/evidence/02/slice-b-compatibility.json\",\n      \"docs/todos/10-self-hosting-hardening/evidence/02/slice-b-compatibility.json.child.json\",\n      \"docs/todos/10-self-hosting-hardening/evidence/02/slice-b-compatibility.json.output.txt\",\n      \"docs/todos/10-self-hosting-hardening/evidence/02/slice-b-note-format.json\",\n      \"docs/todos/10-self-hosting-hardening/evidence/02/slice-b-note-format.json.child.json\",\n      \"docs/todos/10-self-hosting-hardening/evidence/02/slice-b-note-format.json.output.txt\",\n      \"docs/todos/10-self-hosting-hardening/evidence/02/slice-b-note-tree.json\",\n      \"docs/todos/10-self-hosting-hardening/evidence/02/slice-b-note-tree.json.child.json\",\n      \"docs/todos/10-self-hosting-hardening/evidence/02/slice-b-note-tree.json.output.txt\",\n      \"docs/todos/10-self-hosting-hardening/evidence/02/slice-b-regression.json\",\n      \"docs/todos/10-self-hosting-hardening/evidence/02/slice-b-regression.json.child.json\",\n      \"docs/todos/10-self-hosting-hardening/evidence/02/slice-b-regression.json.output.txt\",\n      \"docs/todos/10-self-hosting-hardening/evidence/02/slice-b-scope.json\",\n      \"docs/todos/10-self-hosting-hardening/evidence/02/slice-b-scope.json.child.json\",\n      \"docs/todos/10-self-hosting-hardening/evidence/02/slice-b-scope.json.output.txt\",\n      \"references/template_generation.md\",\n      \"scripts/iter_templates.py\",\n      \"templates/contracts/refactor_benchmark_contract.md\",\n      \"templates/contracts/spike_discovery_contract.md\",\n      \"templates/contracts/strict_tdd_contract.md\",\n      \"templates/contracts/ui_component_contract.md\",\n      \"templates/task_detail.md\",\n      \"tests/test_template_generation.py\"\n    ],\n    \"focus\": \"读取冻结卡、完整目标、必读协议、实际生产代码/测试/模板/说明/笔记差异；核对全部差异路径及原件结构/输出，返修差异按F01及证据有效性审查。未变原审材料按上述适用依据复用。\",\n    \"source_delta_from_initial\": \"validate_generated_card两处预检逻辑；其余为目标测试/doc/note和交接原件。\"\n  },\n  \"command_terminal\": {\n    \"active_commands\": [],\n    \"all_review_runner_commands_completed\": true,\n    \"all_review_runner_trees_terminal\": true,\n    \"repair_session\": \"091c5173-015d-4e58-b251-1bef0834c8c5 completed (native-terminal-c.json)\",\n    \"original_command_inventory\": \"19个A/B/C runner receipt均COMPLETED/tree_terminal=true；原始非零断言/中间失败按原件保留。\"\n  },\n  \"dirty\": {\n    \"initial\": [],\n    \"final\": [],\n    \"new_review_files\": \"仅build/review-02-final/内；未修改源码、卡、README、正式evidence或提交。\"\n  },\n  \"time\": {\n    \"first_observed_utc\": \"2026-11-13T17:22:30.8222192Z\",\n    \"checkpoint\": \"最终报告在5分钟检查点前完成；无等待/活动业务命令。\",\n    \"command_deadline\": \"2026-11-13T17:29:19.929Z\",\n    \"leaf_deadline\": \"2026-11-13T17:30:49.929Z\",\n    \"hard_deadline\": \"2026-11-13T17:32:19.929Z\",\n    \"report_created_at\": \"2026-11-13T17:26:14.189420+00:00\"\n  },\n  \"handoff\": {\n    \"owner\": \"root/controller\",\n    \"next\": \"本Reviewer终态后将本报告、TypeSafe及runner完整原文归档新的正式review-report.json；仅在有效登记与D后strict通过时放行后继。\",\n    \"highest_action\": \"返回审查结论，不登记DONE。\"\n  },\n  \"not_run\": \"未重跑无关初审矩阵、旧历史RED、全套156回归；有效156原件沿用。未运行登记后的local strict、任务06整轮全回归、部署/推送/合流/清理，这些属于后续各自阶段。\",\n  \"memory\": \"快速registry检索无匹配，不依赖历史记忆事实。\"\n}\n",
+    "build/review-02-final/root-native.json": "{\n  \"request\": \"任务02独立受影响返修复审。你未参与本卡实现/设计/测试/RCA，不能修代码/写卡/提交/委派。不是唯一参与者，不覆盖删除回滚其他工作。cwd C:/Users/qingyu/.codeg/skills/iteration-manager/.worktrees/iter-10，feat/iter-10-self-hosting-hardening，BASE=2ecd3bc3f957ac1941b388e036a6427b717b6cc7，C=contract=03950f2ac4867291c3001daa10140e4da1efa81f。先核对HEAD/dirty，读冻结C任务02卡、迭代README目标、全部实际diff。审查包 C:/Users/qingyu/.codeg/skills/iteration-manager/.git/worktrees/iter-10/iter_reviews/review_02_2ecd3bc_03950f2_20261114_012154_852633.md。\\n必读SKILL.md、references/agent_protocol.md、task_card_schema.md、templates/sdd_reviewer_prompt.md。正式协调器F=C:/Users/qingyu/.codeg/skills/iteration-manager/build/frozen-tools/46ded3a，不能候选自批。\\n原初审1711/01a1d5e0-35ab-73c3-ae08-0b022aebf086对685ee75 Scope PASSED、其它验收基本成立但F01 Important拒绝，完整报告/测试/输出在evidence/02/review-initial-rejected.json(original_files完整原文)，不用重演无变化已核对内容，但你须核对适用依据。F01为合法非空stages/acceptance/verification前导空白误拒，真实CLI exit2。原A/B有效核心19断言RED、CLI边界17RED/74GREEN，补7兼容未先RED如实标记。\\n返修切片C source939bc4d、deliverydb63b4f，checkpoint-c及repair-c-*原件。有效36断言RED→45GREEN，指定五文件156passed，笔记树/格式通过；只有precheck按项提取strip判空、测试/doc/note变化；源码/测试在回归后未变。保留空文本拒绝，未收窄合同，FS8组合/原收据不降级。检查全部验收、F01有效性及修复影响；无关原批准/测试不重复跑，新候选须新裁决，不能套旧批准。\\n必须实际Scope：F/scripts/iter_run.py --deadline 2026-11-13T17:29:19.929Z --evidence build/review-02-final/scope.json -- python F/scripts/iter_sync.py --check-scope BASE C docs/todos/10-self-hosting-hardening/02-typed-template-generation.md --include-worktree。实际替换F/BASE/C。额外必要精准验收也走此runner；PowerShell检查LASTEXITCODE并exit。所有审查新增文件、TypeSafe原件/报告只能build/review-02-final/，不得在evidence新增任何文件或改源码。根在终态后将完整原文归档新正式review-report.json。\\nTypeSafe用于实际未决裁决(state只事实)，不为未变决定重复评分。按实质证据判APPROVED/CHANGES_REQUESTED/UNKNOWN，不预设。5分钟检查点，业务6分钟停、7分钟前正常返回；leaf2026-11-13T17:30:49.929Z，hard2026-11-13T17:32:19.929Z。\\n写build/review-02-final/reviewer-report.json：真实reviewer标识、Scope/Spec/Quality、verdict、全部验收对应证据、findings、沿用依据（代码/输入/环境变化、重跑范围）、原件/命令终态。提供独立可登记checks至少red/green/regression，每项name kind command cwd='.' exit_code output 非空summary，red failure_kind='assertion'。checks.output应指C已提交原件，不能指build新产物作必需checks。返修red/green/regression可用正式repair-c输出，原核心RED继续报告。最高只返回审查结论，不登记DONE。无活动命令后简短返回报告路径/裁决，不部署推送合流清理。\",\n  \"requested_at\": \"2026-11-13T17:22:19.929Z\",\n  \"dispatch\": {\n    \"content\": [\n      {\n        \"type\": \"text\",\n        \"text\": \"Delegation successful. task_id=ad4701e4-889e-4c1a-8d6b-d9a4cfeed174. Call get_delegation_status with this id in the task_ids array (optionally wait_ms) to collect the result, or cancel_delegation to stop it.\"\n      }\n    ],\n    \"structuredContent\": {\n      \"task_id\": \"ad4701e4-889e-4c1a-8d6b-d9a4cfeed174\",\n      \"status\": \"running\",\n      \"child_conversation_id\": 1713,\n      \"agent_type\": \"codex\",\n      \"message\": \"Delegation successful. task_id=ad4701e4-889e-4c1a-8d6b-d9a4cfeed174. Call get_delegation_status with this id in the task_ids array (optionally wait_ms) to collect the result, or cancel_delegation to stop it.\"\n    },\n    \"isError\": false\n  },\n  \"guard\": {\n    \"reason\": \"terminal\",\n    \"deadlineMs\": 1794591049929,\n    \"final\": {\n      \"task_id\": \"ad4701e4-889e-4c1a-8d6b-d9a4cfeed174\",\n      \"status\": \"completed\",\n      \"child_conversation_id\": 1713,\n      \"agent_type\": \"codex\",\n      \"text\": \"裁决：**APPROVED**，F01关闭。\\n\\n报告：`build/review-02-final/reviewer-report.json`\\n\\nScope通过；独立复验45项及原4个反例通过，沿用156项回归原件。无活动命令，未登记DONE。\",\n      \"duration_ms\": 250752,\n      \"progress\": {\n        \"steps\": 23,\n        \"marks\": [\n          \"ok\",\n          \"ok\",\n          \"ok\",\n          \"ok\",\n          \"ok\",\n          \"ok\",\n          \"ok\",\n          \"ok\",\n          \"ok\",\n          \"ok\",\n          \"ok\",\n          \"ok\"\n        ],\n        \"last_step\": \"$r=Get-Content -Raw -Encoding utf8 build/review-02-final/reviewer-report.json|ConvertFrom-Json; $r | Select-Object revie…\"\n      },\n      \"raw\": {\n        \"content\": [\n          {\n            \"type\": \"text\",\n            \"text\": \"{\\\"tasks\\\":[{\\\"task_id\\\":\\\"ad4701e4-889e-4c1a-8d6b-d9a4cfeed174\\\",\\\"status\\\":\\\"completed\\\",\\\"child_conversation_id\\\":1713,\\\"agent_type\\\":\\\"codex\\\",\\\"text\\\":\\\"裁决：**APPROVED**，F01关闭。\\\\n\\\\n报告：`build/review-02-final/reviewer-report.json`\\\\n\\\\nScope通过；独立复验45项及原4个反例通过，沿用156项回归原件。无活动命令，未登记DONE。\\\",\\\"duration_ms\\\":250752,\\\"progress\\\":{\\\"steps\\\":23,\\\"marks\\\":[\\\"ok\\\",\\\"ok\\\",\\\"ok\\\",\\\"ok\\\",\\\"ok\\\",\\\"ok\\\",\\\"ok\\\",\\\"ok\\\",\\\"ok\\\",\\\"ok\\\",\\\"ok\\\",\\\"ok\\\"],\\\"last_step\\\":\\\"$r=Get-Content -Raw -Encoding utf8 build/review-02-final/reviewer-report.json|ConvertFrom-Json; $r | Select-Object revie…\\\"}}]}\"\n          }\n        ],\n        \"structuredContent\": {\n          \"tasks\": [\n            {\n              \"task_id\": \"ad4701e4-889e-4c1a-8d6b-d9a4cfeed174\",\n              \"status\": \"completed\",\n              \"child_conversation_id\": 1713,\n              \"agent_type\": \"codex\",\n              \"text\": \"裁决：**APPROVED**，F01关闭。\\n\\n报告：`build/review-02-final/reviewer-report.json`\\n\\nScope通过；独立复验45项及原4个反例通过，沿用156项回归原件。无活动命令，未登记DONE。\",\n              \"duration_ms\": 250752,\n              \"progress\": {\n                \"steps\": 23,\n                \"marks\": [\n                  \"ok\",\n                  \"ok\",\n                  \"ok\",\n                  \"ok\",\n                  \"ok\",\n                  \"ok\",\n                  \"ok\",\n                  \"ok\",\n                  \"ok\",\n                  \"ok\",\n                  \"ok\",\n                  \"ok\"\n                ],\n                \"last_step\": \"$r=Get-Content -Raw -Encoding utf8 build/review-02-final/reviewer-report.json|ConvertFrom-Json; $r | Select-Object revie…\"\n              }\n            }\n          ]\n        },\n        \"isError\": false\n      }\n    },\n    \"terminalConfirmed\": true,\n    \"observedAt\": 1794590790826,\n    \"lateByMs\": 0,\n    \"events\": [\n      {\n        \"kind\": \"query\",\n        \"startedAt\": 1794590548710,\n        \"returnedAt\": 1794590608730,\n        \"waitMs\": 60000,\n        \"result\": {\n          \"task_id\": \"ad4701e4-889e-4c1a-8d6b-d9a4cfeed174\",\n          \"status\": \"running\",\n          \"child_conversation_id\": 1713,\n          \"agent_type\": \"codex\",\n          \"message\": \"Running.\\nLatest sub-agent reply: thinking: **Running independent F01 tests**\",\n          \"progress\": {\n            \"steps\": 10,\n            \"marks\": [\n              \"ok\",\n              \"ok\",\n              \"ok\",\n              \"ok\",\n              \"ok\",\n              \"ok\",\n              \"ok\",\n              \"ok\",\n              \"ok\",\n              \"ok\"\n            ],\n            \"last_step\": \"$f='C:/Users/qingyu/.codeg/skills/iteration-manager/build/frozen-tools/46ded3a'; python \\\"$f/scripts/iter_run.py\\\" --deadl…\"\n          },\n          \"raw\": {\n            \"content\": [\n              {\n                \"type\": \"text\",\n                \"text\": \"{\\\"tasks\\\":[{\\\"task_id\\\":\\\"ad4701e4-889e-4c1a-8d6b-d9a4cfeed174\\\",\\\"status\\\":\\\"running\\\",\\\"child_conversation_id\\\":1713,\\\"agent_type\\\":\\\"codex\\\",\\\"message\\\":\\\"Running.\\\\nLatest sub-agent reply: thinking: **Running independent F01 tests**\\\",\\\"progress\\\":{\\\"steps\\\":10,\\\"marks\\\":[\\\"ok\\\",\\\"ok\\\",\\\"ok\\\",\\\"ok\\\",\\\"ok\\\",\\\"ok\\\",\\\"ok\\\",\\\"ok\\\",\\\"ok\\\",\\\"ok\\\"],\\\"last_step\\\":\\\"$f='C:/Users/qingyu/.codeg/skills/iteration-manager/build/frozen-tools/46ded3a'; python \\\\\\\"$f/scripts/iter_run.py\\\\\\\" --deadl…\\\"}}]}\"\n              }\n            ],\n            \"structuredContent\": {\n              \"tasks\": [\n                {\n                  \"task_id\": \"ad4701e4-889e-4c1a-8d6b-d9a4cfeed174\",\n                  \"status\": \"running\",\n                  \"child_conversation_id\": 1713,\n                  \"agent_type\": \"codex\",\n                  \"message\": \"Running.\\nLatest sub-agent reply: thinking: **Running independent F01 tests**\",\n                  \"progress\": {\n                    \"steps\": 10,\n                    \"marks\": [\n                      \"ok\",\n                      \"ok\",\n                      \"ok\",\n                      \"ok\",\n                      \"ok\",\n                      \"ok\",\n                      \"ok\",\n                      \"ok\",\n                      \"ok\",\n                      \"ok\"\n                    ],\n                    \"last_step\": \"$f='C:/Users/qingyu/.codeg/skills/iteration-manager/build/frozen-tools/46ded3a'; python \\\"$f/scripts/iter_run.py\\\" --deadl…\"\n                  }\n                }\n              ]\n            },\n            \"isError\": false\n          }\n        }\n      },\n      {\n        \"kind\": \"query\",\n        \"startedAt\": 1794590608730,\n        \"returnedAt\": 1794590668753,\n        \"waitMs\": 60000,\n        \"result\": {\n          \"task_id\": \"ad4701e4-889e-4c1a-8d6b-d9a4cfeed174\",\n          \"status\": \"running\",\n          \"child_conversation_id\": 1713,\n          \"agent_type\": \"codex\",\n          \"message\": \"Running.\\nLatest sub-agent reply: thinking: **Reviewing F01 evidence**\",\n          \"progress\": {\n            \"steps\": 17,\n            \"marks\": [\n              \"ok\",\n              \"ok\",\n              \"ok\",\n              \"ok\",\n              \"ok\",\n              \"ok\",\n              \"ok\",\n              \"ok\",\n              \"ok\",\n              \"ok\",\n              \"ok\",\n              \"ok\"\n            ],\n            \"last_step\": \"@'\\n{\\n  \\\"request\\\": {\\n    \\\"state\\\": {\\n      \\\"contract\\\": {\\n        \\\"candidate\\\": \\\"03950f2ac4867291c3001daa10140e4da1efa81f\\\",\\n…\"\n          },\n          \"raw\": {\n            \"content\": [\n              {\n                \"type\": \"text\",\n                \"text\": \"{\\\"tasks\\\":[{\\\"task_id\\\":\\\"ad4701e4-889e-4c1a-8d6b-d9a4cfeed174\\\",\\\"status\\\":\\\"running\\\",\\\"child_conversation_id\\\":1713,\\\"agent_type\\\":\\\"codex\\\",\\\"message\\\":\\\"Running.\\\\nLatest sub-agent reply: thinking: **Reviewing F01 evidence**\\\",\\\"progress\\\":{\\\"steps\\\":17,\\\"marks\\\":[\\\"ok\\\",\\\"ok\\\",\\\"ok\\\",\\\"ok\\\",\\\"ok\\\",\\\"ok\\\",\\\"ok\\\",\\\"ok\\\",\\\"ok\\\",\\\"ok\\\",\\\"ok\\\",\\\"ok\\\"],\\\"last_step\\\":\\\"@'\\\\n{\\\\n  \\\\\\\"request\\\\\\\": {\\\\n    \\\\\\\"state\\\\\\\": {\\\\n      \\\\\\\"contract\\\\\\\": {\\\\n        \\\\\\\"candidate\\\\\\\": \\\\\\\"03950f2ac4867291c3001daa10140e4da1efa81f\\\\\\\",\\\\n…\\\"}}]}\"\n              }\n            ],\n            \"structuredContent\": {\n              \"tasks\": [\n                {\n                  \"task_id\": \"ad4701e4-889e-4c1a-8d6b-d9a4cfeed174\",\n                  \"status\": \"running\",\n                  \"child_conversation_id\": 1713,\n                  \"agent_type\": \"codex\",\n                  \"message\": \"Running.\\nLatest sub-agent reply: thinking: **Reviewing F01 evidence**\",\n                  \"progress\": {\n                    \"steps\": 17,\n                    \"marks\": [\n                      \"ok\",\n                      \"ok\",\n                      \"ok\",\n                      \"ok\",\n                      \"ok\",\n                      \"ok\",\n                      \"ok\",\n                      \"ok\",\n                      \"ok\",\n                      \"ok\",\n                      \"ok\",\n                      \"ok\"\n                    ],\n                    \"last_step\": \"@'\\n{\\n  \\\"request\\\": {\\n    \\\"state\\\": {\\n      \\\"contract\\\": {\\n        \\\"candidate\\\": \\\"03950f2ac4867291c3001daa10140e4da1efa81f\\\",\\n…\"\n                  }\n                }\n              ]\n            },\n            \"isError\": false\n          }\n        }\n      },\n      {\n        \"kind\": \"query\",\n        \"startedAt\": 1794590668753,\n        \"returnedAt\": 1794590728764,\n        \"waitMs\": 60000,\n        \"result\": {\n          \"task_id\": \"ad4701e4-889e-4c1a-8d6b-d9a4cfeed174\",\n          \"status\": \"running\",\n          \"child_conversation_id\": 1713,\n          \"agent_type\": \"codex\",\n          \"message\": \"Running.\\nLatest sub-agent reply: thinking: **Generating acceptance report**\",\n          \"progress\": {\n            \"steps\": 21,\n            \"marks\": [\n              \"ok\",\n              \"ok\",\n              \"ok\",\n              \"ok\",\n              \"ok\",\n              \"ok\",\n              \"ok\",\n              \"ok\",\n              \"ok\",\n              \"ok\",\n              \"ok\",\n              \"ok\"\n            ],\n            \"last_step\": \"mcp.fastctx.grep\"\n          },\n          \"raw\": {\n            \"content\": [\n              {\n                \"type\": \"text\",\n                \"text\": \"{\\\"tasks\\\":[{\\\"task_id\\\":\\\"ad4701e4-889e-4c1a-8d6b-d9a4cfeed174\\\",\\\"status\\\":\\\"running\\\",\\\"child_conversation_id\\\":1713,\\\"agent_type\\\":\\\"codex\\\",\\\"message\\\":\\\"Running.\\\\nLatest sub-agent reply: thinking: **Generating acceptance report**\\\",\\\"progress\\\":{\\\"steps\\\":21,\\\"marks\\\":[\\\"ok\\\",\\\"ok\\\",\\\"ok\\\",\\\"ok\\\",\\\"ok\\\",\\\"ok\\\",\\\"ok\\\",\\\"ok\\\",\\\"ok\\\",\\\"ok\\\",\\\"ok\\\",\\\"ok\\\"],\\\"last_step\\\":\\\"mcp.fastctx.grep\\\"}}]}\"\n              }\n            ],\n            \"structuredContent\": {\n              \"tasks\": [\n                {\n                  \"task_id\": \"ad4701e4-889e-4c1a-8d6b-d9a4cfeed174\",\n                  \"status\": \"running\",\n                  \"child_conversation_id\": 1713,\n                  \"agent_type\": \"codex\",\n                  \"message\": \"Running.\\nLatest sub-agent reply: thinking: **Generating acceptance report**\",\n                  \"progress\": {\n                    \"steps\": 21,\n                    \"marks\": [\n                      \"ok\",\n                      \"ok\",\n                      \"ok\",\n                      \"ok\",\n                      \"ok\",\n                      \"ok\",\n                      \"ok\",\n                      \"ok\",\n                      \"ok\",\n                      \"ok\",\n                      \"ok\",\n                      \"ok\"\n                    ],\n                    \"last_step\": \"mcp.fastctx.grep\"\n                  }\n                }\n              ]\n            },\n            \"isError\": false\n          }\n        }\n      },\n      {\n        \"kind\": \"query\",\n        \"startedAt\": 1794590728764,\n        \"returnedAt\": 1794590788790,\n        \"waitMs\": 60000,\n        \"result\": {\n          \"task_id\": \"ad4701e4-889e-4c1a-8d6b-d9a4cfeed174\",\n          \"status\": \"running\",\n          \"child_conversation_id\": 1713,\n          \"agent_type\": \"codex\",\n          \"message\": \"Running.\\nLatest sub-agent reply: thinking: **Checking report completeness**\",\n          \"progress\": {\n            \"steps\": 23,\n            \"marks\": [\n              \"ok\",\n              \"ok\",\n              \"ok\",\n              \"ok\",\n              \"ok\",\n              \"ok\",\n              \"ok\",\n              \"ok\",\n              \"ok\",\n              \"ok\",\n              \"ok\",\n              \"ok\"\n            ],\n            \"last_step\": \"$r=Get-Content -Raw -Encoding utf8 build/review-02-final/reviewer-report.json|ConvertFrom-Json; $r | Select-Object revie…\"\n          },\n          \"raw\": {\n            \"content\": [\n              {\n                \"type\": \"text\",\n                \"text\": \"{\\\"tasks\\\":[{\\\"task_id\\\":\\\"ad4701e4-889e-4c1a-8d6b-d9a4cfeed174\\\",\\\"status\\\":\\\"running\\\",\\\"child_conversation_id\\\":1713,\\\"agent_type\\\":\\\"codex\\\",\\\"message\\\":\\\"Running.\\\\nLatest sub-agent reply: thinking: **Checking report completeness**\\\",\\\"progress\\\":{\\\"steps\\\":23,\\\"marks\\\":[\\\"ok\\\",\\\"ok\\\",\\\"ok\\\",\\\"ok\\\",\\\"ok\\\",\\\"ok\\\",\\\"ok\\\",\\\"ok\\\",\\\"ok\\\",\\\"ok\\\",\\\"ok\\\",\\\"ok\\\"],\\\"last_step\\\":\\\"$r=Get-Content -Raw -Encoding utf8 build/review-02-final/reviewer-report.json|ConvertFrom-Json; $r | Select-Object revie…\\\"}}]}\"\n              }\n            ],\n            \"structuredContent\": {\n              \"tasks\": [\n                {\n                  \"task_id\": \"ad4701e4-889e-4c1a-8d6b-d9a4cfeed174\",\n                  \"status\": \"running\",\n                  \"child_conversation_id\": 1713,\n                  \"agent_type\": \"codex\",\n                  \"message\": \"Running.\\nLatest sub-agent reply: thinking: **Checking report completeness**\",\n                  \"progress\": {\n                    \"steps\": 23,\n                    \"marks\": [\n                      \"ok\",\n                      \"ok\",\n                      \"ok\",\n                      \"ok\",\n                      \"ok\",\n                      \"ok\",\n                      \"ok\",\n                      \"ok\",\n                      \"ok\",\n                      \"ok\",\n                      \"ok\",\n                      \"ok\"\n                    ],\n                    \"last_step\": \"$r=Get-Content -Raw -Encoding utf8 build/review-02-final/reviewer-report.json|ConvertFrom-Json; $r | Select-Object revie…\"\n                  }\n                }\n              ]\n            },\n            \"isError\": false\n          }\n        }\n      },\n      {\n        \"kind\": \"query\",\n        \"startedAt\": 1794590788790,\n        \"returnedAt\": 1794590790826,\n        \"waitMs\": 51139,\n        \"result\": {\n          \"task_id\": \"ad4701e4-889e-4c1a-8d6b-d9a4cfeed174\",\n          \"status\": \"completed\",\n          \"child_conversation_id\": 1713,\n          \"agent_type\": \"codex\",\n          \"text\": \"裁决：**APPROVED**，F01关闭。\\n\\n报告：`build/review-02-final/reviewer-report.json`\\n\\nScope通过；独立复验45项及原4个反例通过，沿用156项回归原件。无活动命令，未登记DONE。\",\n          \"duration_ms\": 250752,\n          \"progress\": {\n            \"steps\": 23,\n            \"marks\": [\n              \"ok\",\n              \"ok\",\n              \"ok\",\n              \"ok\",\n              \"ok\",\n              \"ok\",\n              \"ok\",\n              \"ok\",\n              \"ok\",\n              \"ok\",\n              \"ok\",\n              \"ok\"\n            ],\n            \"last_step\": \"$r=Get-Content -Raw -Encoding utf8 build/review-02-final/reviewer-report.json|ConvertFrom-Json; $r | Select-Object revie…\"\n          },\n          \"raw\": {\n            \"content\": [\n              {\n                \"type\": \"text\",\n                \"text\": \"{\\\"tasks\\\":[{\\\"task_id\\\":\\\"ad4701e4-889e-4c1a-8d6b-d9a4cfeed174\\\",\\\"status\\\":\\\"completed\\\",\\\"child_conversation_id\\\":1713,\\\"agent_type\\\":\\\"codex\\\",\\\"text\\\":\\\"裁决：**APPROVED**，F01关闭。\\\\n\\\\n报告：`build/review-02-final/reviewer-report.json`\\\\n\\\\nScope通过；独立复验45项及原4个反例通过，沿用156项回归原件。无活动命令，未登记DONE。\\\",\\\"duration_ms\\\":250752,\\\"progress\\\":{\\\"steps\\\":23,\\\"marks\\\":[\\\"ok\\\",\\\"ok\\\",\\\"ok\\\",\\\"ok\\\",\\\"ok\\\",\\\"ok\\\",\\\"ok\\\",\\\"ok\\\",\\\"ok\\\",\\\"ok\\\",\\\"ok\\\",\\\"ok\\\"],\\\"last_step\\\":\\\"$r=Get-Content -Raw -Encoding utf8 build/review-02-final/reviewer-report.json|ConvertFrom-Json; $r | Select-Object revie…\\\"}}]}\"\n              }\n            ],\n            \"structuredContent\": {\n              \"tasks\": [\n                {\n                  \"task_id\": \"ad4701e4-889e-4c1a-8d6b-d9a4cfeed174\",\n                  \"status\": \"completed\",\n                  \"child_conversation_id\": 1713,\n                  \"agent_type\": \"codex\",\n                  \"text\": \"裁决：**APPROVED**，F01关闭。\\n\\n报告：`build/review-02-final/reviewer-report.json`\\n\\nScope通过；独立复验45项及原4个反例通过，沿用156项回归原件。无活动命令，未登记DONE。\",\n                  \"duration_ms\": 250752,\n                  \"progress\": {\n                    \"steps\": 23,\n                    \"marks\": [\n                      \"ok\",\n                      \"ok\",\n                      \"ok\",\n                      \"ok\",\n                      \"ok\",\n                      \"ok\",\n                      \"ok\",\n                      \"ok\",\n                      \"ok\",\n                      \"ok\",\n                      \"ok\",\n                      \"ok\"\n                    ],\n                    \"last_step\": \"$r=Get-Content -Raw -Encoding utf8 build/review-02-final/reviewer-report.json|ConvertFrom-Json; $r | Select-Object revie…\"\n                  }\n                }\n              ]\n            },\n            \"isError\": false\n          }\n        }\n      }\n    ]\n  }\n}\n",
+    "build/review-02-final/scope.json": "{\n  \"version\": 1,\n  \"argv\": [\n    \"python\",\n    \"C:/Users/qingyu/.codeg/skills/iteration-manager/build/frozen-tools/46ded3a/scripts/iter_sync.py\",\n    \"--check-scope\",\n    \"2ecd3bc3f957ac1941b388e036a6427b717b6cc7\",\n    \"03950f2ac4867291c3001daa10140e4da1efa81f\",\n    \"docs/todos/10-self-hosting-hardening/02-typed-template-generation.md\",\n    \"--include-worktree\"\n  ],\n  \"cwd\": \"C:\\\\Users\\\\qingyu\\\\.codeg\\\\skills\\\\iteration-manager\\\\.worktrees\\\\iter-10\",\n  \"deadline\": \"2026-11-13T17:29:19.929000+00:00\",\n  \"cleanup_reserve_seconds\": 5,\n  \"status\": \"COMPLETED\",\n  \"deadline_checked_at\": \"2026-11-13T17:22:47.998324+00:00\",\n  \"started_at\": \"2026-11-13T17:22:48.007326+00:00\",\n  \"ended_at\": \"2026-11-13T17:22:48.943684+00:00\",\n  \"raw_exit_code\": 0,\n  \"tree_terminal\": true,\n  \"output\": \"build/review-02-final/scope.json.output.txt\",\n  \"container_pid\": 39596,\n  \"launcher_exit_code\": 0,\n  \"command\": {\n    \"status\": \"COMPLETED\",\n    \"raw_exit_code\": 0,\n    \"started_at\": \"2026-11-13T17:22:48.007326+00:00\",\n    \"pid\": 42516,\n    \"deadline_checked_at\": \"2026-11-13T17:22:47.998324+00:00\",\n    \"ended_at\": \"2026-11-13T17:22:48.929677+00:00\"\n  },\n  \"late_by_seconds\": 0\n}",
+    "build/review-02-final/scope.json.child.json": "{\"status\": \"COMPLETED\", \"raw_exit_code\": 0, \"started_at\": \"2026-11-13T17:22:48.007326+00:00\", \"pid\": 42516, \"deadline_checked_at\": \"2026-11-13T17:22:47.998324+00:00\", \"ended_at\": \"2026-11-13T17:22:48.929677+00:00\"}",
+    "build/review-02-final/scope.json.output.txt": "[IterSync:ScopeFirewall:PASSED] All 90 changed files within declared scope; ownership is not inferred.\n",
+    "build/review-02-final/test_original_f01.py": "import sys\nimport json\nimport subprocess\nfrom pathlib import Path\n\nimport pytest\n\nROOT = Path(__file__).resolve().parents[2]\nsys.path.insert(0, str(ROOT / 'tests'))\nfrom test_template_generation import spec_for\nfrom iter_templates import render_task_card, validate_generated_card\n\n\n@pytest.mark.parametrize('field', ['verification', 'stages', 'acceptance'])\ndef test_nonempty_text_with_leading_whitespace(field):\n    spec = spec_for()\n    if field == 'verification':\n        spec[field]['green'] = ' python -m pytest tests -q'\n    else:\n        spec[field] = ['  Concrete requirement']\n    card = render_task_card(spec)\n    assert validate_generated_card(card, 'git') == []\n\n\ndef test_cli_accepts_nonempty_command_with_leading_space():\n    spec = spec_for()\n    spec['verification']['green'] = ' python -m pytest tests -q'\n    spec_path = Path(__file__).with_name('leading-space-spec.json')\n    spec_path.write_text(json.dumps(spec), encoding='utf-8')\n    result = subprocess.run([sys.executable, '-B', str(ROOT / 'scripts/iter_templates.py'), '--render', str(spec_path)], capture_output=True, text=True, encoding='utf-8')\n    assert result.returncode == 0, result.stdout\n\n",
+    "build/review-02-final/typesafe-review.json": "{\n  \"request\": {\n    \"state\": {\n      \"contract\": {\n        \"candidate\": \"03950f2ac4867291c3001daa10140e4da1efa81f\",\n        \"fields\": \"stages/acceptance nonempty text arrays; verification required-check names to nonempty command/observation strings. No leading-whitespace prohibition. CLI valid input exit0, invalid exit2.\",\n        \"priorFinding\": \"F01 Important: _text returned nonempty leading-whitespace text, renderer preserved it, precheck required immediate nonwhitespace; original actual CLI --render exit2. Prior severity accepted; not being rescored.\"\n      },\n      \"diff\": {\n        \"source\": \"Only validate_generated_card changed: items=re.findall(r'^- \\\\[ \\\\] (.*?)(?=^- \\\\[ \\\\] |\\\\Z)', block or '', re.M|re.S); missing checklist if not any(item.strip() for item in items). Required-check regex extracts suffix until next unchecked item or block end; missing required check if no match or not match.group(1).strip().\",\n        \"other\": \"Added three-field x space/tab/newline x Git/FS x API/CLI roundtrip tests, nine blank-text rejection cases, documentation/note. _text and renderer unchanged. No changes to iter_contracts/iter_filesystem/four-type receipt algorithms.\"\n      },\n      \"observations\": {\n        \"red\": \"Committed repair-c-red-cli-1718:36 AssertionError failures/9 passed, exit1; API errors Missing stages/acceptance/required green; actual CLI --render exits2 for18 cases.\",\n        \"green\": \"Committed repair-c-green-1717 same45 cases passed exit0; CLI --render then --check; assertion preserves original text.\",\n        \"regression\": \"Committed repair-c-regression-1717: exact five specified files156passed exit0. git diff939bc4d..03950f2 scripts tests empty; no changes since regression per checkpoint, subsequent commits evidence/card only.\",\n        \"independent\": \"Current reviewer frozen-F scope(BASE,C,--include-worktree):90files PASSED exit0, COMPLETED/tree_terminal=true. Current independent affected test run:45passed in7.49s exit0, COMPLETED/tree_terminal=true. Blank green check precedes populated regression; tests assert blank check is rejected.\"\n      }\n    },\n    \"questions\": {\n      \"f01_closure\": {\n        \"type\": \"choice\",\n        \"instructions\": \"Determine whether F01 can be closed on this repair candidate under the stated nonempty-input contract, considering API/real CLI acceptance of leading whitespace and blank-only rejection. Judge only this finding; do not re-score its accepted original severity.\",\n        \"criteria\": {\n          \"closed\": \"Observed repair and tests establish the F01 leading-whitespace paths work and blank-only paths remain rejected without a new input restriction.\",\n          \"open\": \"Observed source or tests show an F01 path still rejects valid input or the repair loses required blank-only rejection.\",\n          \"unknown\": \"Evidence is insufficient or contradictory to decide closure.\"\n        }\n      }\n    }\n  },\n  \"response\": {\n    \"content\": [\n      {\n        \"type\": \"text\",\n        \"text\": \"{\\\"model\\\":\\\"jev-1.14.0\\\",\\\"answers\\\":{\\\"f01_closure\\\":{\\\"type\\\":\\\"choice\\\",\\\"choice\\\":\\\"closed\\\",\\\"confidence\\\":0.09,\\\"probabilities\\\":{\\\"closed\\\":0.39,\\\"open\\\":0.37,\\\"unknown\\\":0.24}}},\\\"usage\\\":{\\\"input_tokens\\\":975,\\\"output_tokens\\\":43}}\"\n      }\n    ]\n  }\n}\n"
+  },
+  "reviewer_result": {
+    "schema_version": 1,
+    "task_id": "02",
+    "reviewer": "01a1d5ee-843b-7490-92b4-557fa753af23",
+    "reviewer_identity_source": "CODEX_SESSION_ID and CODEX_THREAD_ID observed in current process environment",
+    "role": "independent-affected-repair-reviewer",
+    "independence": "本会话未参与本卡实现、设计、开发测试或RCA；本次仅独立审查、只读验收与build内审查原件。未委派。",
+    "base_sha": "2ecd3bc3f957ac1941b388e036a6427b717b6cc7",
+    "head_sha": "03950f2ac4867291c3001daa10140e4da1efa81f",
+    "contract_sha": "03950f2ac4867291c3001daa10140e4da1efa81f",
+    "workspace": "C:/Users/qingyu/.codeg/skills/iteration-manager/.worktrees/iter-10",
+    "branch": "feat/iter-10-self-hosting-hardening",
+    "implementer": "091c5173-015d-4e58-b251-1bef0834c8c5",
+    "implementer_identity_kind": "repair delegation task ID, conversation 1712; original A/B IDs retained in their original evidence",
+    "review_package": "C:/Users/qingyu/.codeg/skills/iteration-manager/.git/worktrees/iter-10/iter_reviews/review_02_2ecd3bc_03950f2_20261114_012154_852633.md",
+    "verdict": "APPROVED",
+    "Scope": {
+      "verdict": "PASSED",
+      "evidence": "build/review-02-final/scope.json",
+      "summary": "冻结F实际检查BASE..C及worktree，90文件全部在范围；根docs/todos/README.md不在diff。"
+    },
+    "Spec": {
+      "verdict": "COMPLIANT",
+      "summary": "六项冻结验收均成立；F01允许的非空文本保持原文并可API/CLI往返，未新增输入限制。"
+    },
+    "Quality": {
+      "verdict": "APPROVED",
+      "summary": "修复仅在预检按项提取后strip判空；未改渲染、四类型check名、Git/FS收据算法或状态账。目标断言RED真实，原失败保留。"
+    },
+    "acceptance": [
+      {
+        "id": 1,
+        "result": "PASS",
+        "source": "task02 iter:acceptance item1",
+        "evidence": [
+          "scripts/iter_templates.py:38-69,162-171",
+          "tests/test_template_generation.py:59-68,111-130,209-251",
+          "docs\\todos\\10-self-hosting-hardening\\evidence\\02\\repair-c-red-cli-1718.json.output.txt",
+          "docs\\todos\\10-self-hosting-hardening\\evidence\\02\\repair-c-green-1717.json.output.txt",
+          "build/review-02-final/affected.json.output.txt",
+          "build/review-02-final/original-f01.json.output.txt"
+        ],
+        "summary": "必需字段/整数版本/形状/type/mode/FS candidate规则保留；三字段合法前导空白往返，纯空白仍拒绝。"
+      },
+      {
+        "id": 2,
+        "result": "PASS",
+        "source": "task02 iter:acceptance item2",
+        "evidence": [
+          "scripts/iter_templates.py:79-88",
+          "tests/test_template_generation.py:30-56",
+          "docs\\todos\\10-self-hosting-hardening\\evidence\\02\\repair-c-regression-1717.json.output.txt"
+        ],
+        "summary": "TODO、PENDING、false、UNASSESSED及空SHA；无伪造批准。"
+      },
+      {
+        "id": 3,
+        "result": "PASS",
+        "source": "task02 iter:acceptance item3",
+        "evidence": [
+          "scripts/iter_templates.py:22-26,86-95",
+          "tests/test_template_generation.py:28-56,175-206",
+          "docs\\todos\\10-self-hosting-hardening\\evidence\\02\\repair-c-regression-1717.json.output.txt",
+          "docs\\todos\\10-self-hosting-hardening\\evidence\\02\\review-initial-rejected.json#original_files[build/review-02/independent-path-0109.json.output.txt]"
+        ],
+        "summary": "八组合parse_card与预检、四type实际FS绑定及Git动态投影保持；FS完整正文先定稿再冻结，非TDD无强制RED/true。"
+      },
+      {
+        "id": 4,
+        "result": "PASS",
+        "source": "task02 iter:acceptance item4",
+        "evidence": [
+          "scripts/iter_templates.py:30-69,136-209",
+          "tests/test_template_generation.py:59-68,76-172,238-251",
+          "docs\\todos\\10-self-hosting-hardening\\evidence\\02\\repair-c-regression-1717.json.output.txt"
+        ],
+        "summary": "空scope/越界/缺关键段或checks/显式占位符拒绝；CLI只读输入与stdout输出、不覆盖/迁移；F01合法文本误拒已消除。"
+      },
+      {
+        "id": 5,
+        "result": "PASS",
+        "source": "task02 iter:acceptance item5",
+        "evidence": [
+          "scripts/iter_contracts.py:104-109",
+          "scripts/iter_templates.py:22-26,65-69,90",
+          "templates/contracts/refactor_benchmark_contract.md:3-5",
+          "references/template_generation.md:36-43"
+        ],
+        "summary": "Refactor仍有baseline、regression、compatibility、before/after；未新增第五type或放宽原门禁。"
+      },
+      {
+        "id": 6,
+        "result": "PASS",
+        "source": "task02 iter:acceptance item6",
+        "evidence": [
+          "docs\\todos\\10-self-hosting-hardening\\evidence\\02\\implementation-checkpoint-c.json",
+          "docs\\todos\\10-self-hosting-hardening\\evidence\\02\\native-terminal-c.json",
+          "docs\\todos\\10-self-hosting-hardening\\evidence\\02\\repair-c-red-cli-1718.json",
+          "docs\\todos\\10-self-hosting-hardening\\evidence\\02\\repair-c-green-1717.json",
+          "docs\\todos\\10-self-hosting-hardening\\evidence\\02\\repair-c-regression-1717.json",
+          "build/review-02-final/scope.json"
+        ],
+        "summary": "必需checks提交原件、同候选范围和真实终态齐备；实现者最高TESTING/UNKNOWN，本次为新的独立裁决，未套旧批准。"
+      }
+    ],
+    "findings": [],
+    "resolved_findings": [
+      {
+        "id": "F01",
+        "original_severity": "Important",
+        "original_candidate": "685ee752e1291c5652f3d7cf304dee6cb8842e43",
+        "status": "CLOSED",
+        "location": "scripts/iter_templates.py:162-171",
+        "basis": "原反例和CLI exit2核对有效，不重评原严重度。修复按清单边界提取再strip；保留原文、下一项不被借作必需check说明。新增45独立实跑及原初审4个原样反例均通过。",
+        "evidence": [
+          "docs\\todos\\10-self-hosting-hardening\\evidence\\02\\review-initial-rejected.json",
+          "build/review-02-final/affected.json",
+          "build/review-02-final/original-f01.json"
+        ]
+      }
+    ],
+    "checks": [
+      {
+        "name": "red",
+        "kind": "command",
+        "command": "python -B -m pytest -p no:cacheprovider tests/test_template_generation.py::test_leading_whitespace_roundtrip tests/test_template_generation.py::test_blank_checklist_text_remains_invalid -q",
+        "cwd": ".",
+        "exit_code": 1,
+        "output": "docs/todos/10-self-hosting-hardening/evidence/02/repair-c-red-cli-1718.json.output.txt",
+        "summary": "F01真实36项断言失败、9项边界通过；18个真实CLI --render退出2，非导入/编译错误。",
+        "receipt": "docs/todos/10-self-hosting-hardening/evidence/02/repair-c-red-cli-1718.json",
+        "origin": "committed-implementer-original",
+        "status": "COMPLETED",
+        "tree_terminal": true,
+        "started_at": "2026-11-13T17:16:55.146210+00:00",
+        "ended_at": "2026-11-13T17:17:03.318988+00:00",
+        "failure_kind": "assertion"
+      },
+      {
+        "name": "green",
+        "kind": "command",
+        "command": "python -B -m pytest -p no:cacheprovider tests/test_template_generation.py::test_leading_whitespace_roundtrip tests/test_template_generation.py::test_blank_checklist_text_remains_invalid -q",
+        "cwd": ".",
+        "exit_code": 0,
+        "output": "docs/todos/10-self-hosting-hardening/evidence/02/repair-c-green-1717.json.output.txt",
+        "summary": "同45用例通过；三字段、空格/制表符/换行、Git/FS、API/CLI往返及空白拒绝。",
+        "receipt": "docs/todos/10-self-hosting-hardening/evidence/02/repair-c-green-1717.json",
+        "origin": "committed-implementer-original",
+        "status": "COMPLETED",
+        "tree_terminal": true,
+        "started_at": "2026-11-13T17:17:17.159402+00:00",
+        "ended_at": "2026-11-13T17:17:26.803703+00:00"
+      },
+      {
+        "name": "regression",
+        "kind": "command",
+        "command": "python -B -m pytest -p no:cacheprovider tests/test_template_generation.py tests/test_prompt_sources.py tests/test_task_card_schema.py tests/test_filesystem_receipts.py tests/test_filesystem_r7_repairs.py -q",
+        "cwd": ".",
+        "exit_code": 0,
+        "output": "docs/todos/10-self-hosting-hardening/evidence/02/repair-c-regression-1717.json.output.txt",
+        "summary": "指定五文件156passed，含八组合、既有卡/提示词/FS收据与完整正文冻结回归。",
+        "receipt": "docs/todos/10-self-hosting-hardening/evidence/02/repair-c-regression-1717.json",
+        "origin": "committed-implementer-original",
+        "status": "COMPLETED",
+        "tree_terminal": true,
+        "started_at": "2026-11-13T17:17:34.776801+00:00",
+        "ended_at": "2026-11-13T17:17:53.676768+00:00"
+      },
+      {
+        "name": "core-red-original",
+        "kind": "command",
+        "command": "python -B -m pytest -p no:cacheprovider tests/test_template_generation.py::test_render_core_combinations tests/test_template_generation.py::test_reject_invalid_spec tests/test_template_generation.py::test_check_rejects_empty_card_and_unknown_mode -q",
+        "cwd": ".",
+        "exit_code": 1,
+        "output": "docs/todos/10-self-hosting-hardening/evidence/02/slice-a-core-red.json.output.txt",
+        "summary": "原A核心19项真实断言RED，历史原件保留，不冒称在新C重跑。",
+        "receipt": "docs/todos/10-self-hosting-hardening/evidence/02/slice-a-core-red.json",
+        "origin": "committed-implementer-original",
+        "status": "COMPLETED",
+        "tree_terminal": true,
+        "started_at": "2026-11-13T16:48:18.972629+00:00",
+        "ended_at": "2026-11-13T16:48:22.880785+00:00",
+        "failure_kind": "assertion"
+      },
+      {
+        "name": "core-green-original",
+        "kind": "command",
+        "command": "python -B -m pytest -p no:cacheprovider tests/test_template_generation.py::test_render_core_combinations tests/test_template_generation.py::test_reject_invalid_spec tests/test_template_generation.py::test_check_rejects_empty_card_and_unknown_mode -q",
+        "cwd": ".",
+        "exit_code": 0,
+        "output": "docs/todos/10-self-hosting-hardening/evidence/02/slice-a-core-green-2.json.output.txt",
+        "summary": "原A修正后19passed；第一次GREEN的8失败/11通过仍保留。",
+        "receipt": "docs/todos/10-self-hosting-hardening/evidence/02/slice-a-core-green-2.json",
+        "origin": "committed-implementer-original",
+        "status": "COMPLETED",
+        "tree_terminal": true,
+        "started_at": "2026-11-13T16:49:49.182544+00:00",
+        "ended_at": "2026-11-13T16:49:51.948302+00:00"
+      },
+      {
+        "name": "cli-boundary-red-original",
+        "kind": "command",
+        "command": "python -B -m pytest -p no:cacheprovider tests/test_template_generation.py -q",
+        "cwd": ".",
+        "exit_code": 1,
+        "output": "docs/todos/10-self-hosting-hardening/evidence/02/slice-b-cli-boundary-red.json.output.txt",
+        "summary": "原B真实CLI/边界17失败、57通过，历史原件。",
+        "receipt": "docs/todos/10-self-hosting-hardening/evidence/02/slice-b-cli-boundary-red.json",
+        "origin": "committed-implementer-original",
+        "status": "COMPLETED",
+        "tree_terminal": true,
+        "started_at": "2026-11-13T16:56:10.979696+00:00",
+        "ended_at": "2026-11-13T16:56:24.774354+00:00",
+        "failure_kind": "assertion"
+      },
+      {
+        "name": "cli-boundary-green-original",
+        "kind": "command",
+        "command": "python -B -m pytest -p no:cacheprovider tests/test_template_generation.py -q",
+        "cwd": ".",
+        "exit_code": 0,
+        "output": "docs/todos/10-self-hosting-hardening/evidence/02/slice-b-cli-boundary-green.json.output.txt",
+        "summary": "原B同组74passed；不作为修复后预检的唯一证据。",
+        "receipt": "docs/todos/10-self-hosting-hardening/evidence/02/slice-b-cli-boundary-green.json",
+        "origin": "committed-implementer-original",
+        "status": "COMPLETED",
+        "tree_terminal": true,
+        "started_at": "2026-11-13T16:56:58.804424+00:00",
+        "ended_at": "2026-11-13T16:57:05.069757+00:00"
+      },
+      {
+        "name": "compatibility-supplement",
+        "kind": "command",
+        "command": "python -B -m pytest -p no:cacheprovider tests/test_template_generation.py -q",
+        "cwd": ".",
+        "exit_code": 0,
+        "output": "docs/todos/10-self-hosting-hardening/evidence/02/slice-b-compatibility.json.output.txt",
+        "summary": "81passed中的补充7兼容断言未先RED，按原记录披露。",
+        "receipt": "docs/todos/10-self-hosting-hardening/evidence/02/slice-b-compatibility.json",
+        "origin": "committed-implementer-original",
+        "status": "COMPLETED",
+        "tree_terminal": true,
+        "started_at": "2026-11-13T16:57:29.008247+00:00",
+        "ended_at": "2026-11-13T16:57:36.018789+00:00"
+      },
+      {
+        "name": "repair-note-tree",
+        "kind": "command",
+        "command": "npx.cmd --no-install tsx C:/Users/qingyu/.codex/skills/write-notes-like-deepseek/scripts/verify-agent-note-tree.ts",
+        "cwd": ".",
+        "exit_code": 0,
+        "output": "docs/todos/10-self-hosting-hardening/evidence/02/repair-c-note-tree-1718.json.output.txt",
+        "summary": "笔记树及相对链接15项通过，NO_COLOR警告保留。",
+        "receipt": "docs/todos/10-self-hosting-hardening/evidence/02/repair-c-note-tree-1718.json",
+        "origin": "committed-implementer-original",
+        "status": "COMPLETED",
+        "tree_terminal": true,
+        "started_at": "2026-11-13T17:18:19.761187+00:00",
+        "ended_at": "2026-11-13T17:18:22.280151+00:00"
+      },
+      {
+        "name": "repair-note-format",
+        "kind": "command",
+        "command": "npx.cmd --no-install tsx C:/Users/qingyu/.codex/skills/write-notes-like-deepseek/scripts/verify-agent-note-format.ts",
+        "cwd": ".",
+        "exit_code": 0,
+        "output": "docs/todos/10-self-hosting-hardening/evidence/02/repair-c-note-format-1718.json.output.txt",
+        "summary": "笔记格式15项通过，NO_COLOR警告保留。",
+        "receipt": "docs/todos/10-self-hosting-hardening/evidence/02/repair-c-note-format-1718.json",
+        "origin": "committed-implementer-original",
+        "status": "COMPLETED",
+        "tree_terminal": true,
+        "started_at": "2026-11-13T17:18:22.702033+00:00",
+        "ended_at": "2026-11-13T17:18:25.123047+00:00"
+      }
+    ],
+    "independent_verification": [
+      {
+        "name": "scope",
+        "runner": "C:/Users/qingyu/.codeg/skills/iteration-manager/build/frozen-tools/46ded3a/scripts/iter_run.py",
+        "receipt": "build/review-02-final/scope.json",
+        "command": "python C:/Users/qingyu/.codeg/skills/iteration-manager/build/frozen-tools/46ded3a/scripts/iter_sync.py --check-scope 2ecd3bc3f957ac1941b388e036a6427b717b6cc7 03950f2ac4867291c3001daa10140e4da1efa81f docs/todos/10-self-hosting-hardening/02-typed-template-generation.md --include-worktree",
+        "cwd": ".",
+        "exit_code": 0,
+        "output": "build/review-02-final/scope.json.output.txt",
+        "status": "COMPLETED",
+        "tree_terminal": true,
+        "started_at": "2026-11-13T17:22:48.007326+00:00",
+        "ended_at": "2026-11-13T17:22:48.943684+00:00",
+        "raw_output": "[IterSync:ScopeFirewall:PASSED] All 90 changed files within declared scope; ownership is not inferred.\n"
+      },
+      {
+        "name": "affected",
+        "runner": "C:/Users/qingyu/.codeg/skills/iteration-manager/build/frozen-tools/46ded3a/scripts/iter_run.py",
+        "receipt": "build/review-02-final/affected.json",
+        "command": "python -B -m pytest -p no:cacheprovider tests/test_template_generation.py::test_leading_whitespace_roundtrip tests/test_template_generation.py::test_blank_checklist_text_remains_invalid -q",
+        "cwd": ".",
+        "exit_code": 0,
+        "output": "build/review-02-final/affected.json.output.txt",
+        "status": "COMPLETED",
+        "tree_terminal": true,
+        "started_at": "2026-11-13T17:23:25.283189+00:00",
+        "ended_at": "2026-11-13T17:23:35.263998+00:00",
+        "raw_output": ".............................................                            [100%]\n45 passed in 7.49s\n"
+      },
+      {
+        "name": "original-f01",
+        "runner": "C:/Users/qingyu/.codeg/skills/iteration-manager/build/frozen-tools/46ded3a/scripts/iter_run.py",
+        "receipt": "build/review-02-final/original-f01.json",
+        "command": "python -B -m pytest -p no:cacheprovider build/review-02-final/test_original_f01.py --basetemp build/review-02-final/original-f01-tmp -q",
+        "cwd": ".",
+        "exit_code": 0,
+        "output": "build/review-02-final/original-f01.json.output.txt",
+        "status": "COMPLETED",
+        "tree_terminal": true,
+        "started_at": "2026-11-13T17:24:38.872797+00:00",
+        "ended_at": "2026-11-13T17:24:41.826994+00:00",
+        "raw_output": "....                                                                     [100%]\n4 passed in 0.61s\n"
+      }
+    ],
+    "reuse_basis": [
+      {
+        "coverage": "A核心有效RED及首次失败GREEN、最终19GREEN",
+        "original_candidate": "f5583e542a20e00cfe9e3eae3776f32cbe9d7ae9",
+        "evidence": [
+          "docs\\todos\\10-self-hosting-hardening\\evidence\\02\\slice-a-core-red.json",
+          "docs\\todos\\10-self-hosting-hardening\\evidence\\02\\slice-a-core-green.json",
+          "docs\\todos\\10-self-hosting-hardening\\evidence\\02\\slice-a-core-green-2.json"
+        ],
+        "changes_inputs_environment": "历史断言原件未修改；后续source变化已由B与C交付回归覆盖。初审已核对真实断言，当前核对原件receipt/child/输出和初审适用依据。Windows/Python执行环境路径一致，无相关变化记录。",
+        "action": "保留历史RED，不重演可调用stub；不称在C重跑。"
+      },
+      {
+        "coverage": "B CLI/边界17RED→74GREEN与7个未先RED兼容补测",
+        "original_candidate": "24a483eb7b0694ce67a5e6c0b50adb0d1cb5c160",
+        "evidence": [
+          "docs\\todos\\10-self-hosting-hardening\\evidence\\02\\slice-b-cli-boundary-red.json",
+          "docs\\todos\\10-self-hosting-hardening\\evidence\\02\\slice-b-cli-boundary-green.json",
+          "docs\\todos\\10-self-hosting-hardening\\evidence\\02\\slice-b-compatibility.json"
+        ],
+        "changes_inputs_environment": "685ee75之后只有预检F01与45新增测试及说明/笔记；渲染、TYPE_CHECKS、合同解析、FS绑定及原有测试输入均未变。新预检影响不靠旧111GREEN证明，C已指定五文件156回归。",
+        "action": "旧输出仅作来源与历史验证；用C的156回归覆盖预检影响，不重跑无关旧批准。"
+      },
+      {
+        "coverage": "初审13项八组合/四FS冻结/Git投影独立实测",
+        "original_candidate": "685ee752e1291c5652f3d7cf304dee6cb8842e43",
+        "evidence": [
+          "docs\\todos\\10-self-hosting-hardening\\evidence\\02\\review-initial-rejected.json#original_files[build/review-02/independent-path-0109.json.output.txt]"
+        ],
+        "changes_inputs_environment": "原13项输入及render/iter_contracts/iter_filesystem代码未变；预检改变已经C五文件156回归覆盖。原报告结论仍为CHANGES_REQUESTED，不沿用批准。",
+        "action": "沿用未变事实及路径证据；F01另独立实跑45项与原4反例。"
+      },
+      {
+        "coverage": "返修GREEN/指定五文件回归/笔记",
+        "original_candidate": "939bc4d5fcf198a0c0a07d8ad42ea442abace708 source; db63b4f7cb47b046e8c96f87f0732e012b32a812 delivery",
+        "evidence": [
+          "docs\\todos\\10-self-hosting-hardening\\evidence\\02\\repair-c-green-1717.json",
+          "docs\\todos\\10-self-hosting-hardening\\evidence\\02\\repair-c-regression-1717.json",
+          "docs\\todos\\10-self-hosting-hardening\\evidence\\02\\repair-c-note-tree-1718.json",
+          "docs\\todos\\10-self-hosting-hardening\\evidence\\02\\repair-c-note-format-1718.json"
+        ],
+        "changes_inputs_environment": "git diff939bc4d..C scripts/tests为空；后两提交仅证据/卡/README登记，笔记未再变。原回归输入未变，同Windows/Python，当前45实跑亦通过。",
+        "action": "沿用156passed及15项树/格式；独立只重跑受影响45断言，不无差别重复整套门禁。"
+      },
+      {
+        "coverage": "范围与候选绑定",
+        "evidence": [
+          "build/review-02-final/scope.json"
+        ],
+        "changes_inputs_environment": "候选由685ee75变为C，旧scope/任何旧收据不能给新候选放行。",
+        "action": "已实跑固定F的BASE C --include-worktree；新审查只绑定当前C/contract。"
+      }
+    ],
+    "rulings": {
+      "structured_rendering": "沿用已核对结论；本次不重新评分。",
+      "placeholder_grammar": "沿用显式占位符规则，四合同与旧卡未改。",
+      "repair": "接受按项提取strip判空，未收窄spec合同或隐式规范化渲染。",
+      "typesafe": {
+        "evidence": "build/review-02-final/typesafe-review.json",
+        "question": "仅F01在新候选能否关闭；未重评原严重度或未变设计",
+        "model": "jev-1.14.0",
+        "choice": "closed",
+        "confidence": 0.09,
+        "probabilities": {
+          "closed": 0.39,
+          "open": 0.37,
+          "unknown": 0.24
+        },
+        "application": "模型分布接近，未当作强批准证据或重复刷分。补充运行初审归档的4个原样反例，全部通过；结合独立45项及源代码边界，Codex据直接证据关闭F01。"
+      }
+    },
+    "tdd": {
+      "valid": true,
+      "core": "A19真实断言RED→19GREEN；首次8失败/11通过保留；B17断言RED/57通过→74GREEN。",
+      "repair": "初次API18失败/9通过的RED亦保留，不冒称已到CLI；后完整36失败/9通过→同45GREEN。",
+      "supplemental": "原7兼容补测未先RED，如实保留。Reviewer仅执行验收探针，不补造历史TDD。"
+    },
+    "reviewed_changes": {
+      "file_count": 90,
+      "files": [
+        ".agents/notes/implemented/process/2026-11-13-typed-template-generation.md",
+        "docs/todos/10-self-hosting-hardening/02-typed-template-generation.md",
+        "docs/todos/10-self-hosting-hardening/README.md",
+        "docs/todos/10-self-hosting-hardening/evidence/02/attempt-a.json",
+        "docs/todos/10-self-hosting-hardening/evidence/02/attempt-b.json",
+        "docs/todos/10-self-hosting-hardening/evidence/02/attempt-c.json",
+        "docs/todos/10-self-hosting-hardening/evidence/02/context-implementation-a.json",
+        "docs/todos/10-self-hosting-hardening/evidence/02/context-implementation-b.json",
+        "docs/todos/10-self-hosting-hardening/evidence/02/context-implementation-c.json",
+        "docs/todos/10-self-hosting-hardening/evidence/02/dependency-01-envelope.json",
+        "docs/todos/10-self-hosting-hardening/evidence/02/dispatch-a.json",
+        "docs/todos/10-self-hosting-hardening/evidence/02/dispatch-b.json",
+        "docs/todos/10-self-hosting-hardening/evidence/02/dispatch-native-a.json",
+        "docs/todos/10-self-hosting-hardening/evidence/02/dispatch-native-b.json",
+        "docs/todos/10-self-hosting-hardening/evidence/02/handoff-a.json",
+        "docs/todos/10-self-hosting-hardening/evidence/02/handoff-b.json",
+        "docs/todos/10-self-hosting-hardening/evidence/02/handoff-c.json",
+        "docs/todos/10-self-hosting-hardening/evidence/02/implementation-checkpoint-a.json",
+        "docs/todos/10-self-hosting-hardening/evidence/02/implementation-checkpoint-b.json",
+        "docs/todos/10-self-hosting-hardening/evidence/02/implementation-checkpoint-c.json",
+        "docs/todos/10-self-hosting-hardening/evidence/02/inventory-a.json",
+        "docs/todos/10-self-hosting-hardening/evidence/02/native-terminal-a.json",
+        "docs/todos/10-self-hosting-hardening/evidence/02/native-terminal-b.json",
+        "docs/todos/10-self-hosting-hardening/evidence/02/native-terminal-c.json",
+        "docs/todos/10-self-hosting-hardening/evidence/02/repair-c-green-1717.json",
+        "docs/todos/10-self-hosting-hardening/evidence/02/repair-c-green-1717.json.child.json",
+        "docs/todos/10-self-hosting-hardening/evidence/02/repair-c-green-1717.json.output.txt",
+        "docs/todos/10-self-hosting-hardening/evidence/02/repair-c-note-format-1718.json",
+        "docs/todos/10-self-hosting-hardening/evidence/02/repair-c-note-format-1718.json.child.json",
+        "docs/todos/10-self-hosting-hardening/evidence/02/repair-c-note-format-1718.json.output.txt",
+        "docs/todos/10-self-hosting-hardening/evidence/02/repair-c-note-tree-1718.json",
+        "docs/todos/10-self-hosting-hardening/evidence/02/repair-c-note-tree-1718.json.child.json",
+        "docs/todos/10-self-hosting-hardening/evidence/02/repair-c-note-tree-1718.json.output.txt",
+        "docs/todos/10-self-hosting-hardening/evidence/02/repair-c-red-1717.json",
+        "docs/todos/10-self-hosting-hardening/evidence/02/repair-c-red-1717.json.child.json",
+        "docs/todos/10-self-hosting-hardening/evidence/02/repair-c-red-1717.json.output.txt",
+        "docs/todos/10-self-hosting-hardening/evidence/02/repair-c-red-cli-1718.json",
+        "docs/todos/10-self-hosting-hardening/evidence/02/repair-c-red-cli-1718.json.child.json",
+        "docs/todos/10-self-hosting-hardening/evidence/02/repair-c-red-cli-1718.json.output.txt",
+        "docs/todos/10-self-hosting-hardening/evidence/02/repair-c-regression-1717.json",
+        "docs/todos/10-self-hosting-hardening/evidence/02/repair-c-regression-1717.json.child.json",
+        "docs/todos/10-self-hosting-hardening/evidence/02/repair-c-regression-1717.json.output.txt",
+        "docs/todos/10-self-hosting-hardening/evidence/02/repair-c-scope-1719.json",
+        "docs/todos/10-self-hosting-hardening/evidence/02/repair-c-scope-1719.json.child.json",
+        "docs/todos/10-self-hosting-hardening/evidence/02/repair-c-scope-1719.json.output.txt",
+        "docs/todos/10-self-hosting-hardening/evidence/02/review-initial-rejected.json",
+        "docs/todos/10-self-hosting-hardening/evidence/02/slice-a-core-green-2.json",
+        "docs/todos/10-self-hosting-hardening/evidence/02/slice-a-core-green-2.json.child.json",
+        "docs/todos/10-self-hosting-hardening/evidence/02/slice-a-core-green-2.json.output.txt",
+        "docs/todos/10-self-hosting-hardening/evidence/02/slice-a-core-green.json",
+        "docs/todos/10-self-hosting-hardening/evidence/02/slice-a-core-green.json.child.json",
+        "docs/todos/10-self-hosting-hardening/evidence/02/slice-a-core-green.json.output.txt",
+        "docs/todos/10-self-hosting-hardening/evidence/02/slice-a-core-red.json",
+        "docs/todos/10-self-hosting-hardening/evidence/02/slice-a-core-red.json.child.json",
+        "docs/todos/10-self-hosting-hardening/evidence/02/slice-a-core-red.json.output.txt",
+        "docs/todos/10-self-hosting-hardening/evidence/02/slice-a-note-format.json",
+        "docs/todos/10-self-hosting-hardening/evidence/02/slice-a-note-format.json.child.json",
+        "docs/todos/10-self-hosting-hardening/evidence/02/slice-a-note-format.json.output.txt",
+        "docs/todos/10-self-hosting-hardening/evidence/02/slice-a-note-tree.json",
+        "docs/todos/10-self-hosting-hardening/evidence/02/slice-a-note-tree.json.child.json",
+        "docs/todos/10-self-hosting-hardening/evidence/02/slice-a-note-tree.json.output.txt",
+        "docs/todos/10-self-hosting-hardening/evidence/02/slice-b-cli-boundary-green.json",
+        "docs/todos/10-self-hosting-hardening/evidence/02/slice-b-cli-boundary-green.json.child.json",
+        "docs/todos/10-self-hosting-hardening/evidence/02/slice-b-cli-boundary-green.json.output.txt",
+        "docs/todos/10-self-hosting-hardening/evidence/02/slice-b-cli-boundary-red.json",
+        "docs/todos/10-self-hosting-hardening/evidence/02/slice-b-cli-boundary-red.json.child.json",
+        "docs/todos/10-self-hosting-hardening/evidence/02/slice-b-cli-boundary-red.json.output.txt",
+        "docs/todos/10-self-hosting-hardening/evidence/02/slice-b-compatibility.json",
+        "docs/todos/10-self-hosting-hardening/evidence/02/slice-b-compatibility.json.child.json",
+        "docs/todos/10-self-hosting-hardening/evidence/02/slice-b-compatibility.json.output.txt",
+        "docs/todos/10-self-hosting-hardening/evidence/02/slice-b-note-format.json",
+        "docs/todos/10-self-hosting-hardening/evidence/02/slice-b-note-format.json.child.json",
+        "docs/todos/10-self-hosting-hardening/evidence/02/slice-b-note-format.json.output.txt",
+        "docs/todos/10-self-hosting-hardening/evidence/02/slice-b-note-tree.json",
+        "docs/todos/10-self-hosting-hardening/evidence/02/slice-b-note-tree.json.child.json",
+        "docs/todos/10-self-hosting-hardening/evidence/02/slice-b-note-tree.json.output.txt",
+        "docs/todos/10-self-hosting-hardening/evidence/02/slice-b-regression.json",
+        "docs/todos/10-self-hosting-hardening/evidence/02/slice-b-regression.json.child.json",
+        "docs/todos/10-self-hosting-hardening/evidence/02/slice-b-regression.json.output.txt",
+        "docs/todos/10-self-hosting-hardening/evidence/02/slice-b-scope.json",
+        "docs/todos/10-self-hosting-hardening/evidence/02/slice-b-scope.json.child.json",
+        "docs/todos/10-self-hosting-hardening/evidence/02/slice-b-scope.json.output.txt",
+        "references/template_generation.md",
+        "scripts/iter_templates.py",
+        "templates/contracts/refactor_benchmark_contract.md",
+        "templates/contracts/spike_discovery_contract.md",
+        "templates/contracts/strict_tdd_contract.md",
+        "templates/contracts/ui_component_contract.md",
+        "templates/task_detail.md",
+        "tests/test_template_generation.py"
+      ],
+      "focus": "读取冻结卡、完整目标、必读协议、实际生产代码/测试/模板/说明/笔记差异；核对全部差异路径及原件结构/输出，返修差异按F01及证据有效性审查。未变原审材料按上述适用依据复用。",
+      "source_delta_from_initial": "validate_generated_card两处预检逻辑；其余为目标测试/doc/note和交接原件。"
+    },
+    "command_terminal": {
+      "active_commands": [],
+      "all_review_runner_commands_completed": true,
+      "all_review_runner_trees_terminal": true,
+      "repair_session": "091c5173-015d-4e58-b251-1bef0834c8c5 completed (native-terminal-c.json)",
+      "original_command_inventory": "19个A/B/C runner receipt均COMPLETED/tree_terminal=true；原始非零断言/中间失败按原件保留。"
+    },
+    "dirty": {
+      "initial": [],
+      "final": [],
+      "new_review_files": "仅build/review-02-final/内；未修改源码、卡、README、正式evidence或提交。"
+    },
+    "time": {
+      "first_observed_utc": "2026-11-13T17:22:30.8222192Z",
+      "checkpoint": "最终报告在5分钟检查点前完成；无等待/活动业务命令。",
+      "command_deadline": "2026-11-13T17:29:19.929Z",
+      "leaf_deadline": "2026-11-13T17:30:49.929Z",
+      "hard_deadline": "2026-11-13T17:32:19.929Z",
+      "report_created_at": "2026-11-13T17:26:14.189420+00:00"
+    },
+    "handoff": {
+      "owner": "root/controller",
+      "next": "本Reviewer终态后将本报告、TypeSafe及runner完整原文归档新的正式review-report.json；仅在有效登记与D后strict通过时放行后继。",
+      "highest_action": "返回审查结论，不登记DONE。"
+    },
+    "not_run": "未重跑无关初审矩阵、旧历史RED、全套156回归；有效156原件沿用。未运行登记后的local strict、任务06整轮全回归、部署/推送/合流/清理，这些属于后续各自阶段。",
+    "memory": "快速registry检索无匹配，不依赖历史记忆事实。"
+  },
+  "root_attempt_report": {
+    "version": 1,
+    "phase": "evidence-inspection",
+    "candidate": "03950f2ac4867291c3001daa10140e4da1efa81f",
+    "inputs": [
+      "docs/todos/10-self-hosting-hardening/02-typed-template-generation.md",
+      "templates/task_detail.md",
+      "scripts/iter_contracts.py",
+      "scripts/iter_filesystem.py",
+      "docs/todos/10-self-hosting-hardening/evidence/02/review-initial-rejected.json"
+    ],
+    "capabilities": [
+      "Codeg MCP codex independent session",
+      "Windows iter_run",
+      "pytest"
+    ],
+    "checkpoint": "独立复审APPROVED，F01关闭；45用例及4原反例独立通过、Scope通过",
+    "remaining_work": [
+      "登记D",
+      "local strict"
+    ],
+    "executor_id": "ad4701e4-889e-4c1a-8d6b-d9a4cfeed174",
+    "terminal_evidence": "docs/todos/10-self-hosting-hardening/evidence/02/review-report.json",
+    "progress": [
+      {
+        "kind": "review-finding",
+        "summary": "Scope/Spec/Quality通过，F01关闭，无新问题",
+        "evidence": "docs/todos/10-self-hosting-hardening/evidence/02/review-report.json"
+      }
+    ],
+    "commands": [
+      "build/review-02-final/scope.json",
+      "build/review-02-final/affected.json",
+      "build/review-02-final/original-f01.json"
+    ],
+    "started_at": null,
+    "ended_at": null
+  },
+  "registration_correction": {
+    "first_D": "1eed281",
+    "strict_exit": 2,
+    "diagnostic": "Successful command required: core-red-original; Successful command required: cli-boundary-red-original",
+    "cause": "根误把历史非零RED作为额外command check；冻结合同只允许必需red检查非零，非red名称均要求成功。",
+    "action": "正式收据checks只投影Reviewer已核对的red/green/regression三项；所有历史RED和额外结果仍完整保留本报告与原件，不改其真实退出码、不降低门禁。",
+    "original_strict_output": "Iteration Board: 10-self-hosting-hardening | FAIL\n声明DONE: 2/6 | 验收PASS: 1/6\n[DONE] 01. 统一授权规则与跨入口场景 | 验收:PASS\n  业务阶段: 阶段清单已勾选完毕 | 清单完成比例: 3/3 (100%) (非工时)\n  工程阶段: CHECKLIST_COMPLETE (未等同验收) | 修复轮次/累计: 0/0 | 重规划:0\n  阻塞: 未记录 | 更新时间: 2026-11-13T16:44:56.984232+00:00\n  证据 审查收据: docs/todos/10-self-hosting-hardening/evidence/01/review.json\n  证据 独立审查报告: docs/todos/10-self-hosting-hardening/evidence/01/review-report.json\n  证据 experiment 原始输出: docs/todos/10-self-hosting-hardening/evidence/01/consumption-b/verification.json.output.txt\n  证据 decision 原始输出: .agents/notes/implemented/process/2026-11-13-authority-consistency.md\n  证据 interfaces 原始输出: docs/todos/10-self-hosting-hardening/evidence/01/authority-matrix.json\n[DONE] 02. 按类型与交付模式生成和检查任务卡 | 验收:FAIL\n  业务阶段: 阶段清单已勾选完毕 | 清单完成比例: 3/3 (100%) (非工时)\n  工程阶段: CHECKLIST_COMPLETE (未等同验收) | 修复轮次/累计: 0/0 | 重规划:0\n  阻塞: 未记录 | 更新时间: 2026-11-13T17:27:41.977460+00:00\n  证据 审查收据: docs/todos/10-self-hosting-hardening/evidence/02/review.json\n  证据 独立审查报告: docs/todos/10-self-hosting-hardening/evidence/02/review-report.json\n  证据 red 原始输出: docs/todos/10-self-hosting-hardening/evidence/02/repair-c-red-cli-1718.json.output.txt\n  证据 green 原始输出: docs/todos/10-self-hosting-hardening/evidence/02/repair-c-green-1717.json.output.txt\n  证据 regression 原始输出: docs/todos/10-self-hosting-hardening/evidence/02/repair-c-regression-1717.json.output.txt\n  证据 core-red-original 原始输出: docs/todos/10-self-hosting-hardening/evidence/02/slice-a-core-red.json.output.txt\n  证据 core-green-original 原始输出: docs/todos/10-self-hosting-hardening/evidence/02/slice-a-core-green-2.json.output.txt\n  证据 cli-boundary-red-original 原始输出: docs/todos/10-self-hosting-hardening/evidence/02/slice-b-cli-boundary-red.json.output.txt\n  证据 cli-boundary-green-original 原始输出: docs/todos/10-self-hosting-hardening/evidence/02/slice-b-cli-boundary-green.json.output.txt\n  证据 compatibility-supplement 原始输出: docs/todos/10-self-hosting-hardening/evidence/02/slice-b-compatibility.json.output.txt\n  证据 repair-note-tree 原始输出: docs/todos/10-self-hosting-hardening/evidence/02/repair-c-note-tree-1718.json.output.txt\n  证据 repair-note-format 原始输出: docs/todos/10-self-hosting-hardening/evidence/02/repair-c-note-format-1718.json.output.txt\n[TODO] 03. 稳定查询与CLI消费接口，保持旧入口兼容 | 验收:UNKNOWN\n  业务阶段: Stage 1/3：冻结兼容矩阵，对缺失的统一投影字段取得有效断言RED | 清单完成比例: 0/3 (0%) (非工时)\n  工程阶段: 读取真实基线、当前变更和前置PASS；完成context、claim与同owner dispatch-check。 | 修复轮次/累计: 0/0 | 重规划:0\n  阻塞: 未记录 | 更新时间: 2026-11-13\n[TODO] 04. 看板展示Git/FS候选和可继承交接 | 验收:UNKNOWN\n  业务阶段: Stage 1/3：固定真实用户路径、视口和四态输入，基于03字段更新详情展示 | 清单完成比例: 0/3 (0%) (非工时)\n  工程阶段: 读取真实基线、当前变更和前置PASS；完成context、claim与同owner dispatch-check。 | 修复轮次/累计: 0/0 | 重规划:0\n  阻塞: 未记录 | 更新时间: 2026-11-13\n[TODO] 05. 建立源码、候选、安装与消费的发布证据索引 | 验收:UNKNOWN\n  业务阶段: Stage 1/3：盘点四层事实与现有原件，区分当前/历史/未知 | 清单完成比例: 0/3 (0%) (非工时)\n  工程阶段: 读取真实基线、当前变更和前置PASS；完成context、claim与同owner dispatch-check。 | 修复轮次/累计: 0/0 | 重规划:0\n  阻塞: 未记录 | 更新时间: 2026-11-13\n[TODO] 06. 真实自用链路与故障路径健壮性验收 | 验收:UNKNOWN\n  业务阶段: Stage 1/3：整理01—05真实消费证据，隔离夹具运行故障与恢复路径 | 清单完成比例: 0/3 (0%) (非工时)\n  工程阶段: 读取真实基线、当前变更和前置PASS；完成context、claim与同owner dispatch-check。 | 修复轮次/累计: 0/0 | 重规划:0\n  阻塞: 未记录 | 更新时间: 2026-11-13\n[IterSync:Local] Calibrated '10-self-hosting-hardening/README.md' -> [2/6] (33.3%) 🔴 验收失败 in 2140.22ms (Zero-Root-Touch preserved).\n"
+  }
+}

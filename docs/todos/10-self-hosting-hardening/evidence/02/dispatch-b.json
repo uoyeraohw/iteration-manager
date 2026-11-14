@@ -1,0 +1,184 @@
+{
+  "read_only": true,
+  "readiness": "READY",
+  "task_path": "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\.worktrees\\iter-10\\docs\\todos\\10-self-hosting-hardening\\02-typed-template-generation.md",
+  "phase": "implementation",
+  "acceptance_verdict": "UNKNOWN",
+  "findings": [],
+  "observations": {
+    "authority": {
+      "status": "READY",
+      "summary": "用户批准六卡串行实施与精准提交，01已PASS；禁止部署推送合流清理",
+      "evidence": "docs/todos/10-self-hosting-hardening/evidence/01/authority.txt"
+    },
+    "execution": {
+      "status": "READY",
+      "summary": "实际同类型Codeg codex独立会话1702/1703已成功读写工作区及冻结契约，当前无活动实现命令；新owner仍完整读取",
+      "evidence": "docs/todos/10-self-hosting-hardening/evidence/01/implementation-checkpoint-a.json"
+    },
+    "verification": {
+      "status": "READY",
+      "summary": "完整基线314通过，任务01有效独审及D后strict通过；本卡按真实可调用行为取得RED，不将缺函数/导入错当RED",
+      "evidence": "docs/todos/10-self-hosting-hardening/evidence/02/dependency-01-envelope.json"
+    }
+  },
+  "task_id": "02",
+  "delivery_mode": "git",
+  "candidate": "f5583e542a20e00cfe9e3eae3776f32cbe9d7ae9",
+  "execution": {
+    "attempt_count": 1,
+    "no_progress_streak": 0,
+    "last_attempt": {
+      "source": "docs/todos/10-self-hosting-hardening/evidence/02/attempt-a.json",
+      "phase": "implementation",
+      "delivery_mode": "git",
+      "candidate": "f5583e542a20e00cfe9e3eae3776f32cbe9d7ae9",
+      "conditions": {
+        "inputs": [
+          "docs/todos/10-self-hosting-hardening/02-typed-template-generation.md",
+          "scripts/iter_contracts.py",
+          "scripts/iter_filesystem.py",
+          "templates/task_detail.md"
+        ],
+        "capabilities": [
+          "Codeg MCP codex independent session",
+          "Windows iter_run",
+          "pytest"
+        ],
+        "scope": [
+          ".agents/notes/implemented/process/2026-11-13-typed-template-generation.md",
+          "docs/todos/10-self-hosting-hardening/evidence/02/",
+          "references/template_generation.md",
+          "scripts/iter_templates.py",
+          "templates/contracts/refactor_benchmark_contract.md",
+          "templates/contracts/spike_discovery_contract.md",
+          "templates/contracts/strict_tdd_contract.md",
+          "templates/contracts/ui_component_contract.md",
+          "templates/task_detail.md",
+          "tests/test_template_generation.py"
+        ]
+      },
+      "executor_id": "5638876b-7be3-4bc9-a2da-af32c4941033",
+      "executor_state": "completed",
+      "terminal_evidence": "docs/todos/10-self-hosting-hardening/evidence/02/native-terminal-a.json",
+      "progress": [
+        {
+          "kind": "red",
+          "evidence": "docs/todos/10-self-hosting-hardening/evidence/02/slice-a-core-red.json.output.txt",
+          "summary": "可导入可调用stub，19项行为断言失败，非导入环境失败"
+        },
+        {
+          "kind": "green",
+          "evidence": "docs/todos/10-self-hosting-hardening/evidence/02/slice-a-core-green-2.json.output.txt",
+          "summary": "八组合核心路径与基本预检19passed；初次GREEN误判HTML标记的失败原样保留"
+        }
+      ],
+      "checkpoint": "真实19项断言RED后八组合核心19项GREEN，CLI/边界/FS冻结/回归/文档待续",
+      "remaining_work": [
+        "CLI断言RED/GREEN",
+        "FS冻结兼容",
+        "文档及指定回归",
+        "独审/登记",
+        "输入/预检边界"
+      ],
+      "commands": [
+        {
+          "receipt": "docs/todos/10-self-hosting-hardening/evidence/02/slice-a-core-green-2.json",
+          "status": "COMPLETED",
+          "raw_exit_code": 0,
+          "started_at": "2026-11-13T16:49:49.182544+00:00",
+          "ended_at": "2026-11-13T16:49:51.948302+00:00"
+        },
+        {
+          "receipt": "docs/todos/10-self-hosting-hardening/evidence/02/slice-a-core-green.json",
+          "status": "COMPLETED",
+          "raw_exit_code": 1,
+          "started_at": "2026-11-13T16:49:15.142841+00:00",
+          "ended_at": "2026-11-13T16:49:18.796627+00:00"
+        },
+        {
+          "receipt": "docs/todos/10-self-hosting-hardening/evidence/02/slice-a-core-red.json",
+          "status": "COMPLETED",
+          "raw_exit_code": 1,
+          "started_at": "2026-11-13T16:48:18.972629+00:00",
+          "ended_at": "2026-11-13T16:48:22.880785+00:00"
+        },
+        {
+          "receipt": "docs/todos/10-self-hosting-hardening/evidence/02/slice-a-note-format.json",
+          "status": "COMPLETED",
+          "raw_exit_code": 0,
+          "started_at": "2026-11-13T16:50:20.754715+00:00",
+          "ended_at": "2026-11-13T16:50:23.179354+00:00"
+        },
+        {
+          "receipt": "docs/todos/10-self-hosting-hardening/evidence/02/slice-a-note-tree.json",
+          "status": "COMPLETED",
+          "raw_exit_code": 0,
+          "started_at": "2026-11-13T16:50:17.054497+00:00",
+          "ended_at": "2026-11-13T16:50:19.631724+00:00"
+        }
+      ],
+      "started_at": null,
+      "ended_at": null,
+      "session_seconds": null,
+      "command_seconds": 15.329566
+    },
+    "checkpoint": {
+      "candidate": "f5583e542a20e00cfe9e3eae3776f32cbe9d7ae9",
+      "phase": "implementation",
+      "summary": "真实19项断言RED后八组合核心19项GREEN，CLI/边界/FS冻结/回归/文档待续",
+      "progress": [
+        {
+          "kind": "red",
+          "evidence": "docs/todos/10-self-hosting-hardening/evidence/02/slice-a-core-red.json.output.txt",
+          "summary": "可导入可调用stub，19项行为断言失败，非导入环境失败"
+        },
+        {
+          "kind": "green",
+          "evidence": "docs/todos/10-self-hosting-hardening/evidence/02/slice-a-core-green-2.json.output.txt",
+          "summary": "八组合核心路径与基本预检19passed；初次GREEN误判HTML标记的失败原样保留"
+        }
+      ],
+      "source": "docs/todos/10-self-hosting-hardening/evidence/02/attempt-a.json"
+    },
+    "remaining_work": [
+      "CLI断言RED/GREEN",
+      "FS冻结兼容",
+      "文档及指定回归",
+      "独审/登记",
+      "输入/预检边界"
+    ]
+  },
+  "conditions": {
+    "inputs": [
+      "docs/todos/10-self-hosting-hardening/02-typed-template-generation.md",
+      "scripts/iter_contracts.py",
+      "scripts/iter_filesystem.py",
+      "templates/task_detail.md"
+    ],
+    "capabilities": [
+      "Codeg MCP codex independent session",
+      "Windows iter_run",
+      "pytest"
+    ],
+    "scope": [
+      ".agents/notes/implemented/process/2026-11-13-typed-template-generation.md",
+      "docs/todos/10-self-hosting-hardening/evidence/02/",
+      "references/template_generation.md",
+      "scripts/iter_templates.py",
+      "templates/contracts/refactor_benchmark_contract.md",
+      "templates/contracts/spike_discovery_contract.md",
+      "templates/contracts/strict_tdd_contract.md",
+      "templates/contracts/ui_component_contract.md",
+      "templates/task_detail.md",
+      "tests/test_template_generation.py"
+    ]
+  },
+  "checkpoint": "继承A的19断言RED及19GREEN；完成CLI和边界的新增有效RED→GREEN，保留文档/回归未完项",
+  "remaining_work": [
+    "CLI与边界",
+    "FS冻结兼容",
+    "文档回归",
+    "独审"
+  ]
+}

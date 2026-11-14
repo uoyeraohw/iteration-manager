@@ -1,0 +1,27 @@
+{
+  "request": {
+    "state": {
+      "source": "iter_sync.main is an existing ~375-line dispatcher using sys.argv, sys.exit, local argparse parsers, and sync/board functions; new contract requires iter_cli.main(argv=None)->int and lazy legacy facade; all old flags/positions/default phase and exits must remain.",
+      "scope": "Only CLI extraction and compatibility; no HTML/HTTP or runner changes."
+    },
+    "questions": {
+      "extraction": {
+        "type": "choice",
+        "instructions": "Choose an implementation approach preserving the specified CLI compatibility with minimal behavior changes.",
+        "criteria": {
+          "extract": "Move existing dispatcher intact to iter_cli as private dispatch(argv); public main copies argv and converts SystemExit and existing handled exceptions into integer exits; import required legacy functions explicitly. iter_sync.main lazily delegates.",
+          "rewrite": "Replace all dispatch branches with a new unified argparse parser.",
+          "unknown": "Evidence insufficient to select."
+        }
+      }
+    }
+  },
+  "response": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"model\":\"jev-1.14.0\",\"answers\":{\"extraction\":{\"type\":\"choice\",\"choice\":\"extract\",\"confidence\":1.0,\"probabilities\":{\"extract\":1.0,\"rewrite\":0.0,\"unknown\":0.0}}},\"usage\":{\"input_tokens\":470,\"output_tokens\":40}}"
+      }
+    ]
+  }
+}
