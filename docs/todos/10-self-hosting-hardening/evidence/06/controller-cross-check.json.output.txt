@@ -1,0 +1,123 @@
+{
+  "version": 1,
+  "candidate": "85031b14d58e0e65b794383ce98f4ba258aa5cc4",
+  "fixed_tool": "C:/Users/qingyu/.codeg/skills/iteration-manager/build/frozen-tools/46ded3a/scripts/iter_sync.py",
+  "comparison": "audit and handoff identity/status/binding/budget/execution",
+  "rows": [
+    {
+      "task": "01",
+      "status": "DONE",
+      "acceptance": "PASS",
+      "head": "997ee3753241d7f4ad5b3d68df7648d06e2adc4c",
+      "checkpoint": {
+        "candidate": "997ee3753241d7f4ad5b3d68df7648d06e2adc4c",
+        "phase": "evidence-inspection",
+        "summary": "非参与者独立审查APPROVED，原始scope/inspection/report-validation命令全部终态0；尚待登记D和strict",
+        "progress": [
+          {
+            "kind": "review-finding",
+            "evidence": "docs/todos/10-self-hosting-hardening/evidence/01/review-report.json",
+            "summary": "独立APPROVED，两个不阻断Minor分别保留原始时钟错误与A历史笔记措辞"
+          }
+        ],
+        "source": "build/review-01/attempt-review.json"
+      }
+    },
+    {
+      "task": "02",
+      "status": "DONE",
+      "acceptance": "PASS",
+      "head": "03950f2ac4867291c3001daa10140e4da1efa81f",
+      "checkpoint": {
+        "candidate": "03950f2ac4867291c3001daa10140e4da1efa81f",
+        "phase": "evidence-inspection",
+        "summary": "独立复审APPROVED，F01关闭；45用例及4原反例独立通过、Scope通过",
+        "progress": [
+          {
+            "kind": "review-finding",
+            "evidence": "docs/todos/10-self-hosting-hardening/evidence/02/review-report.json",
+            "summary": "Scope/Spec/Quality通过，F01关闭，无新问题"
+          }
+        ],
+        "source": "build/review-02-final/attempt-review.json"
+      }
+    },
+    {
+      "task": "03",
+      "status": "DONE",
+      "acceptance": "PASS",
+      "head": "542f2b445f499b3a2e90d92a6ed6bba20cdb1bdb",
+      "checkpoint": {
+        "candidate": "542f2b445f499b3a2e90d92a6ed6bba20cdb1bdb",
+        "phase": "evidence-inspection",
+        "summary": "独立Scope/Spec/Quality APPROVED，7项全部通过，无新发现",
+        "progress": [
+          {
+            "kind": "review-finding",
+            "evidence": "docs/todos/10-self-hosting-hardening/evidence/03/review-report.json",
+            "summary": "完整03合同通过，两主控裁决经独立原始源码/测试差异核验认可"
+          }
+        ],
+        "source": "build/review-03/attempt-review.json"
+      }
+    },
+    {
+      "task": "04",
+      "status": "DONE",
+      "acceptance": "PASS",
+      "head": "9b9010afb8dbf0b0cf74f83c6c97605984319619",
+      "checkpoint": {
+        "candidate": "9b9010afb8dbf0b0cf74f83c6c97605984319619",
+        "phase": "evidence-inspection",
+        "summary": "04独立Scope/Spec/Quality APPROVED，原始交互、七图和匹配源码回归核对",
+        "progress": [
+          {
+            "kind": "review-finding",
+            "evidence": "docs/todos/10-self-hosting-hardening/evidence/04/review-report.json",
+            "summary": "APPROVED；无阻断缺口，未冒称部署"
+          }
+        ],
+        "source": "build/review-04/attempt-review.json"
+      }
+    },
+    {
+      "task": "05",
+      "status": "DONE",
+      "acceptance": "PASS",
+      "head": "dc5d868c6b90268a2eefc29966874c96d48dd122",
+      "checkpoint": {
+        "candidate": "dc5d868c6b90268a2eefc29966874c96d48dd122",
+        "phase": "evidence-inspection",
+        "summary": "05登记正文受影响独审APPROVED，原产品证据有效沿用",
+        "progress": [
+          {
+            "kind": "review-finding",
+            "evidence": "docs/todos/10-self-hosting-hardening/evidence/05/review-report-final.json",
+            "summary": "新合同绑定批准，陈旧投影登记后刷新"
+          }
+        ],
+        "source": "build/review-05/attempt-final.json"
+      }
+    },
+    {
+      "task": "06",
+      "status": "TESTING",
+      "acceptance": "UNKNOWN",
+      "head": "",
+      "checkpoint": {
+        "candidate": "c5238c16b1e9c5d941d8dec3c53d273f6a074e44",
+        "phase": "implementation",
+        "summary": "14项跨模块隔离契约通过，真实03 A/B/C链索引和方法已交付",
+        "progress": [
+          {
+            "kind": "green",
+            "evidence": "docs/todos/10-self-hosting-hardening/evidence/06/slice-a-targeted-2.json.output.txt",
+            "summary": "14 passed, 真实链索引与Note校验通过"
+          }
+        ],
+        "source": "docs/todos/10-self-hosting-hardening/evidence/06/attempt-a.json"
+      }
+    }
+  ],
+  "result": "PASS"
+}

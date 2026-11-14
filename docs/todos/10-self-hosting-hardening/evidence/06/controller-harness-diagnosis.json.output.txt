@@ -1,0 +1,21 @@
+{
+  "candidate": "85031b14d58e0e65b794383ce98f4ba258aa5cc4",
+  "argv": [
+    "C:\\Users\\qingyu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+    "-B",
+    "C:\\Users\\qingyu\\.codeg\\skills\\iteration-manager\\.worktrees\\iter-10\\docs\\todos\\10-self-hosting-hardening\\evidence\\04\\browser_harness.py",
+    "--ready-file",
+    "C:\\Users\\qingyu\\AppData\\Local\\Temp\\iter06-harness-diagnosis-enl68tio\\ready.json",
+    "--stop-file",
+    "C:\\Users\\qingyu\\AppData\\Local\\Temp\\iter06-harness-diagnosis-enl68tio\\stop",
+    "--duration",
+    "12",
+    "--delay",
+    ".2"
+  ],
+  "ready": true,
+  "ready_seconds": 8.562000000005355,
+  "exit": 0,
+  "stdout": "{\"ready\": true, \"root\": \"C:\\\\Users\\\\qingyu\\\\.codeg\\\\skills\\\\iteration-manager\\\\.worktrees\\\\iter-10\", \"synthetic_root\": \"C:\\\\Users\\\\qingyu\\\\AppData\\\\Local\\\\Temp\\\\iter04-synthetic-zqv8mib9\", \"stop_file\": \"C:\\\\Users\\\\qingyu\\\\AppData\\\\Local\\\\Temp\\\\iter06-harness-diagnosis-enl68tio\\\\stop\", \"duration_seconds\": 12.0, \"services\": {\"real_git\": {\"url\": \"http://127.0.0.1:54318/\", \"port\": 54318, \"stop_file\": \"C:\\\\Users\\\\qingyu\\\\AppData\\\\Local\\\\Temp\\\\iter06-harness-diagnosis-enl68tio\\\\stop.real_git\", \"iter_dir\": \"C:\\\\Users\\\\qingyu\\\\.codeg\\\\skills\\\\iteration-manager\\\\.worktrees\\\\iter-10\\\\docs\\\\todos\\\\10-self-hosting-hardening\", \"synthetic\": false, \"total\": 6}, \"synthetic_fs\": {\"url\": \"http://127.0.0.1:54319/\", \"port\": 54319, \"stop_file\": \"C:\\\\Users\\\\qingyu\\\\AppData\\\\Local\\\\Temp\\\\iter06-harness-diagnosis-enl68tio\\\\stop.synthetic_fs\", \"iter_dir\": \"C:\\\\Users\\\\qingyu\\\\AppData\\\\Local\\\\Temp\\\\iter04-synthetic-zqv8mib9\\\\docs\\\\todos\\\\01-synthetic-fs\", \"synthetic\": true, \"total\": 1}, \"synthetic_empty\": {\"url\": \"http://127.0.0.1:54321/\", \"port\": 54321, \"stop_file\": \"C:\\\\Users\\\\qingyu\\\\AppData\\\\Local\\\\Temp\\\\iter06-harness-diagnosis-enl68tio\\\\stop.synthetic_empty\", \"iter_dir\": \"C:\\\\Users\\\\qingyu\\\\AppData\\\\Local\\\\Temp\\\\iter04-synthetic-zqv8mib9\\\\empty-synthetic\", \"synthetic\": true, \"total\": 0}, \"synthetic_loading\": {\"url\": \"http://127.0.0.1:54322/\", \"port\": 54322, \"stop_file\": \"C:\\\\Users\\\\qingyu\\\\AppData\\\\Local\\\\Temp\\\\iter06-harness-diagnosis-enl68tio\\\\stop.synthetic_loading\", \"iter_dir\": \"C:\\\\Users\\\\qingyu\\\\AppData\\\\Local\\\\Temp\\\\iter04-synthetic-zqv8mib9\\\\docs\\\\todos\\\\01-synthetic-fs\", \"synthetic\": true, \"total\": 1}}}\r\n{\"stopped\": true, \"active_commands\": []}\r\n",
+  "stderr": ""
+}
