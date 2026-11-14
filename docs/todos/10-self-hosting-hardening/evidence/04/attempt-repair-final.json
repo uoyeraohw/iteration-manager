@@ -1,0 +1,38 @@
+{
+  "version": 1,
+  "phase": "implementation",
+  "candidate": "493ecf2dbfc247247b7c7b2465d126c99117d106",
+  "inputs": [
+    "tests/test_board_handoff.py",
+    "docs/todos/10-self-hosting-hardening/evidence/04/browser_harness.py"
+  ],
+  "capabilities": [
+    "Codeg MCP codex independent session",
+    "Windows iter_run",
+    "pytest"
+  ],
+  "checkpoint": "隔离库存而非放宽8秒；有效RED/最小GREEN，最终69passed",
+  "remaining_work": [
+    "受影响独审及新绑定",
+    "固定strict后返回06全量"
+  ],
+  "executor_id": "6a14c232-1dd5-4d68-806f-39c192b8aa33",
+  "terminal_evidence": "docs/todos/10-self-hosting-hardening/evidence/04/native-terminal-repair-final.json",
+  "progress": [
+    {
+      "kind": "green",
+      "summary": "最终五文件69passed",
+      "evidence": "docs/todos/10-self-hosting-hardening/evidence/04/repair-final-five-files-final-b.json.output.txt"
+    }
+  ],
+  "commands": [
+    "docs/todos/10-self-hosting-hardening/evidence/04/repair-final-five-files-a.json",
+    "docs/todos/10-self-hosting-hardening/evidence/04/repair-final-five-files-final-b.json",
+    "docs/todos/10-self-hosting-hardening/evidence/04/repair-final-green-isolation-a.json",
+    "docs/todos/10-self-hosting-hardening/evidence/04/repair-final-note-format-a.json",
+    "docs/todos/10-self-hosting-hardening/evidence/04/repair-final-note-tree-a.json",
+    "docs/todos/10-self-hosting-hardening/evidence/04/repair-final-red-isolation-a.json"
+  ],
+  "started_at": null,
+  "ended_at": null
+}
