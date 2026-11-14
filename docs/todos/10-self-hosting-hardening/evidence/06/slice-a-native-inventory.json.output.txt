@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "C:\Users\qingyu\.codeg\skills\iteration-manager\.worktrees\iter-10\docs\todos\10-self-hosting-hardening\evidence\06\slice-a-inventory.py", line 75, in <module>
+    assert strict['status'] == 'COMPLETED' and strict['raw_exit_code'] == 0 and strict['tree_terminal']
+                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

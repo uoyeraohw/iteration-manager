@@ -1,0 +1,171 @@
+{
+  "version": 1,
+  "candidate": "7107ddb2f2256ceaea40e6ea0aeddd045220b99b",
+  "coordinator_commit": "46ded3a4696e3bdb531d06951fce7982fa9db1cd",
+  "cases": [
+    {
+      "id": "authority/context/writer/candidate/phase/dependency",
+      "layer": "synthetic",
+      "expected": "Cross-module refusal/persistence contract in isolated fixtures",
+      "observed": "14 tests passed in 16.36s; first run API signature misuse corrected; original failure retained",
+      "result": "PASS",
+      "evidence": [
+        "tests/test_self_hosting.py",
+        "docs/todos/10-self-hosting-hardening/evidence/06/slice-a-targeted-2.json",
+        "docs/todos/10-self-hosting-hardening/evidence/06/slice-a-targeted-2.json.output.txt"
+      ]
+    },
+    {
+      "id": "two-empty-attempts",
+      "layer": "synthetic",
+      "expected": "Cross-module refusal/persistence contract in isolated fixtures",
+      "observed": "14 tests passed in 16.36s; first run API signature misuse corrected; original failure retained",
+      "result": "PASS",
+      "evidence": [
+        "tests/test_self_hosting.py",
+        "docs/todos/10-self-hosting-hardening/evidence/06/slice-a-targeted-2.json",
+        "docs/todos/10-self-hosting-hardening/evidence/06/slice-a-targeted-2.json.output.txt"
+      ]
+    },
+    {
+      "id": "idempotency/payload/release/reclaim",
+      "layer": "synthetic",
+      "expected": "Cross-module refusal/persistence contract in isolated fixtures",
+      "observed": "14 tests passed in 16.36s; first run API signature misuse corrected; original failure retained",
+      "result": "PASS",
+      "evidence": [
+        "tests/test_self_hosting.py",
+        "docs/todos/10-self-hosting-hardening/evidence/06/slice-a-targeted-2.json",
+        "docs/todos/10-self-hosting-hardening/evidence/06/slice-a-targeted-2.json.output.txt"
+      ]
+    },
+    {
+      "id": "bad-number/unknown-DONE",
+      "layer": "synthetic",
+      "expected": "Cross-module refusal/persistence contract in isolated fixtures",
+      "observed": "14 tests passed in 16.36s; first run API signature misuse corrected; original failure retained",
+      "result": "PASS",
+      "evidence": [
+        "tests/test_self_hosting.py",
+        "docs/todos/10-self-hosting-hardening/evidence/06/slice-a-targeted-2.json",
+        "docs/todos/10-self-hosting-hardening/evidence/06/slice-a-targeted-2.json.output.txt"
+      ]
+    },
+    {
+      "id": "FS-source/evidence/body-drift",
+      "layer": "synthetic",
+      "expected": "Cross-module refusal/persistence contract in isolated fixtures",
+      "observed": "14 tests passed in 16.36s; first run API signature misuse corrected; original failure retained",
+      "result": "PASS",
+      "evidence": [
+        "tests/test_self_hosting.py",
+        "docs/todos/10-self-hosting-hardening/evidence/06/slice-a-targeted-2.json",
+        "docs/todos/10-self-hosting-hardening/evidence/06/slice-a-targeted-2.json.output.txt"
+      ]
+    },
+    {
+      "id": "feature-root-index",
+      "layer": "synthetic",
+      "expected": "Cross-module refusal/persistence contract in isolated fixtures",
+      "observed": "14 tests passed in 16.36s; first run API signature misuse corrected; original failure retained",
+      "result": "PASS",
+      "evidence": [
+        "tests/test_self_hosting.py",
+        "docs/todos/10-self-hosting-hardening/evidence/06/slice-a-targeted-2.json",
+        "docs/todos/10-self-hosting-hardening/evidence/06/slice-a-targeted-2.json.output.txt"
+      ]
+    },
+    {
+      "id": "native-complete-chain-03",
+      "layer": "native-self-use",
+      "expected": "inventory through independent C/D and frozen strict",
+      "observed": "03 target inventory READY, same controller claim/dispatch; distinct A/B/C completed; receipts/events/review bind actual candidates; current frozen dry-run shows03 PASS but overall exit2 due06 dirty; historical strict retained in controller/card record",
+      "result": "PASS",
+      "evidence": [
+        "docs/todos/10-self-hosting-hardening/evidence/06/native-chain-inventory.json",
+        "docs/todos/10-self-hosting-hardening/03-query-cli-contract.md",
+        "docs/todos/10-self-hosting-hardening/evidence/03/review.json",
+        "docs/todos/10-self-hosting-hardening/evidence/06/slice-a-frozen-strict-dry-run.json"
+      ]
+    },
+    {
+      "id": "normal-cross-session-continuation",
+      "layer": "native-self-use",
+      "expected": "New sessions consume valid checkpoints without inventing fresh RED",
+      "observed": "1714/A ->1715/B ->1716/C, context inputs explicitly include A/B; original before and RED retained; after slower, no speedup claim",
+      "result": "PASS",
+      "evidence": [
+        "docs/todos/10-self-hosting-hardening/evidence/03/context-implementation-b.json",
+        "docs/todos/10-self-hosting-hardening/evidence/03/context-implementation-c.json",
+        "docs/todos/10-self-hosting-hardening/evidence/06/native-chain-inventory.json"
+      ]
+    },
+    {
+      "id": "04-browser-reuse",
+      "layer": "native-self-use",
+      "expected": "Reuse unaffected native UI evidence",
+      "observed": "04 receipt lists real browser, screenshots, four states and 67-pass regression;06 changes no UI product",
+      "result": "PASS",
+      "evidence": [
+        "docs/todos/10-self-hosting-hardening/evidence/04/review.json",
+        "docs/todos/10-self-hosting-hardening/evidence/04/review-report.json"
+      ]
+    },
+    {
+      "id": "05-strict-body-drift",
+      "layer": "native-self-use",
+      "expected": "Reject registration prose drift and require affected review/new binding",
+      "observed": "Old/new reports retained; final receipt binds dc5d868; frozen dry-run reports prior five task verdicts PASS; overall command exit2 due06 dirty, not a new strict approval",
+      "result": "PASS",
+      "evidence": [
+        "docs/todos/10-self-hosting-hardening/05-release-evidence-index.md",
+        "docs/todos/10-self-hosting-hardening/evidence/05/review-report.json",
+        "docs/todos/10-self-hosting-hardening/evidence/05/review-final.json",
+        "docs/todos/10-self-hosting-hardening/evidence/05/review-report-final.json"
+      ]
+    },
+    {
+      "id": "runner/unknown/budgets/resume/FS-grant-existing-definitions",
+      "layer": "static",
+      "expected": "Reuse mature test definitions; final execution by controller",
+      "observed": "Existing test_iter_run/test_deadline_watch/test_autonomy/test_checkpoint_resume definitions retained; no full run this leaf",
+      "result": "PASS",
+      "evidence": [
+        "tests/test_iter_run.py",
+        "tests/test_deadline_watch.py",
+        "tests/test_autonomy.py",
+        "tests/test_checkpoint_resume.py"
+      ]
+    },
+    {
+      "id": "final-full-regression",
+      "layer": "synthetic",
+      "expected": "Final candidate full tests pass",
+      "observed": "Not run in this leaf; controller owns full run",
+      "result": "UNKNOWN",
+      "evidence": []
+    },
+    {
+      "id": "final-cross-check-and-independent-review",
+      "layer": "native-self-use",
+      "expected": "Frozen/candidate comparison and nonparticipant task06 review",
+      "observed": "Pending controller checkpoint; no self-approval",
+      "result": "UNKNOWN",
+      "evidence": []
+    }
+  ],
+  "unverified": [
+    {
+      "item": "final full regression plus existing runner/guard/budget/resume/FS-grant behavior",
+      "owner": "controller"
+    },
+    {
+      "item": "final candidate cross-check, scope, independent06 review, C/D and strict",
+      "owner": "controller"
+    },
+    {
+      "item": "deployment/full installed version/new installed session/external user business",
+      "owner": "separately authorized deployment or business owner"
+    }
+  ]
+}

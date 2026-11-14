@@ -1,0 +1,996 @@
+{
+  "version": 1,
+  "observed_candidate": "7107ddb2f2256ceaea40e6ea0aeddd045220b99b",
+  "cards": [
+    {
+      "task": "01",
+      "card": "docs/todos/10-self-hosting-hardening/01-authority-consistency.md",
+      "declared_status": "DONE",
+      "base": "d3bd97ab16ffed6104034a887a01eb1b4d75dc0e",
+      "candidate": "997ee3753241d7f4ad5b3d68df7648d06e2adc4c",
+      "review_receipt": "docs/todos/10-self-hosting-hardening/evidence/01/review.json",
+      "review_report": "docs/todos/10-self-hosting-hardening/evidence/01/review-report.json",
+      "verdict": "APPROVED",
+      "reviewer": "01a1d5c3-ca1a-74b1-b0de-c2223e059236",
+      "implementer": "1702/fcdae243-1628-427e-8f85-51ccfb4fef64 + 1703/6c6e933a-5d58-4dbb-aa57-3d953f675e2f",
+      "checks": [
+        {
+          "name": "experiment",
+          "kind": "command",
+          "command": "python -B docs/todos/10-self-hosting-hardening/evidence/01/consumption-b/verify-observations.py",
+          "cwd": ".",
+          "exit_code": 0,
+          "output": "docs/todos/10-self-hosting-hardening/evidence/01/consumption-b/verification.json.output.txt",
+          "receipt": "docs/todos/10-self-hosting-hardening/evidence/01/consumption-b/verification.json",
+          "basis": "Original receipt/child/output read; native evidence independently checked against original rollout lines and snapshots recalculated by reviewer",
+          "summary": "Original receipt/child/output read; native evidence independently checked against original rollout lines and snapshots recalculated by reviewer"
+        },
+        {
+          "name": "decision",
+          "kind": "observation",
+          "output": ".agents/notes/implemented/process/2026-11-13-authority-consistency.md",
+          "summary": "Decision and real alternatives align source authority, preserve execution gates and separate authorization; historical Slice A testing wording recorded as Minor"
+        },
+        {
+          "name": "interfaces",
+          "kind": "observation",
+          "output": "docs/todos/10-self-hosting-hardening/evidence/01/authority-matrix.json",
+          "summary": "version1 with four required IDs and authority/allowed/forbidden/source_paths/observed_result/evidence fields; all four PASS supported within read-only consumption scope"
+        }
+      ],
+      "parse_errors": [],
+      "events": [
+        {
+          "id": "iter10-01-claim-01",
+          "action": "claim",
+          "owner": "root/iter10/controller",
+          "at": "2026-11-13T16:10:10.745424+00:00",
+          "evidence": ""
+        },
+        {
+          "id": "iter10-01-attempt-a",
+          "action": "attempt",
+          "owner": "root/iter10/controller",
+          "at": "2026-11-13T16:18:21.808642+00:00",
+          "evidence": "docs/todos/10-self-hosting-hardening/evidence/01/attempt-implementation-a.json"
+        },
+        {
+          "id": "iter10-01-release-a",
+          "action": "release",
+          "owner": "root/iter10/controller",
+          "at": "2026-11-13T16:18:22.138908+00:00",
+          "evidence": "docs/todos/10-self-hosting-hardening/evidence/01/native-terminal-implementation-a.json"
+        },
+        {
+          "id": "iter10-01-claim-b",
+          "action": "claim",
+          "owner": "root/iter10/controller",
+          "at": "2026-11-13T16:19:30.265957+00:00",
+          "evidence": ""
+        },
+        {
+          "id": "iter10-01-attempt-b",
+          "action": "attempt",
+          "owner": "root/iter10/controller",
+          "at": "2026-11-13T16:31:36.838079+00:00",
+          "evidence": "docs/todos/10-self-hosting-hardening/evidence/01/attempt-implementation-b.json"
+        },
+        {
+          "id": "iter10-01-closeout-b",
+          "action": "closeout",
+          "owner": "root/iter10/controller",
+          "at": "2026-11-13T16:31:37.211266+00:00",
+          "evidence": "docs/todos/10-self-hosting-hardening/evidence/01/native-terminal-implementation-b.json"
+        },
+        {
+          "id": "iter10-01-resume-b-once",
+          "action": "resume-checkpoint",
+          "owner": "root/iter10/controller",
+          "at": "2026-11-13T16:33:39.086935+00:00",
+          "evidence": ""
+        },
+        {
+          "id": "iter10-01-attempt-review",
+          "action": "attempt",
+          "owner": "root/iter10/controller",
+          "at": "2026-11-13T16:44:56.623885+00:00",
+          "evidence": "build/review-01/attempt-review.json"
+        },
+        {
+          "id": "iter10-01-release-review",
+          "action": "release",
+          "owner": "root/iter10/controller",
+          "at": "2026-11-13T16:44:56.984232+00:00",
+          "evidence": "docs/todos/10-self-hosting-hardening/evidence/01/review-report.json"
+        }
+      ]
+    },
+    {
+      "task": "02",
+      "card": "docs/todos/10-self-hosting-hardening/02-typed-template-generation.md",
+      "declared_status": "DONE",
+      "base": "2ecd3bc3f957ac1941b388e036a6427b717b6cc7",
+      "candidate": "03950f2ac4867291c3001daa10140e4da1efa81f",
+      "review_receipt": "docs/todos/10-self-hosting-hardening/evidence/02/review.json",
+      "review_report": "docs/todos/10-self-hosting-hardening/evidence/02/review-report.json",
+      "verdict": "APPROVED",
+      "reviewer": "01a1d5ee-843b-7490-92b4-557fa753af23",
+      "implementer": "1709/5638876b-7be3-4bc9-a2da-af32c4941033 + 1710/72db3dfe-466c-424e-bb74-6511fd23e455 + 1712/091c5173-015d-4e58-b251-1bef0834c8c5",
+      "checks": [
+        {
+          "name": "red",
+          "kind": "command",
+          "command": "python -B -m pytest -p no:cacheprovider tests/test_template_generation.py::test_leading_whitespace_roundtrip tests/test_template_generation.py::test_blank_checklist_text_remains_invalid -q",
+          "cwd": ".",
+          "exit_code": 1,
+          "output": "docs/todos/10-self-hosting-hardening/evidence/02/repair-c-red-cli-1718.json.output.txt",
+          "summary": "F01真实36项断言失败、9项边界通过；18个真实CLI --render退出2，非导入/编译错误。",
+          "receipt": "docs/todos/10-self-hosting-hardening/evidence/02/repair-c-red-cli-1718.json",
+          "origin": "committed-implementer-original",
+          "status": "COMPLETED",
+          "tree_terminal": true,
+          "started_at": "2026-11-13T17:16:55.146210+00:00",
+          "ended_at": "2026-11-13T17:17:03.318988+00:00",
+          "failure_kind": "assertion"
+        },
+        {
+          "name": "green",
+          "kind": "command",
+          "command": "python -B -m pytest -p no:cacheprovider tests/test_template_generation.py::test_leading_whitespace_roundtrip tests/test_template_generation.py::test_blank_checklist_text_remains_invalid -q",
+          "cwd": ".",
+          "exit_code": 0,
+          "output": "docs/todos/10-self-hosting-hardening/evidence/02/repair-c-green-1717.json.output.txt",
+          "summary": "同45用例通过；三字段、空格/制表符/换行、Git/FS、API/CLI往返及空白拒绝。",
+          "receipt": "docs/todos/10-self-hosting-hardening/evidence/02/repair-c-green-1717.json",
+          "origin": "committed-implementer-original",
+          "status": "COMPLETED",
+          "tree_terminal": true,
+          "started_at": "2026-11-13T17:17:17.159402+00:00",
+          "ended_at": "2026-11-13T17:17:26.803703+00:00"
+        },
+        {
+          "name": "regression",
+          "kind": "command",
+          "command": "python -B -m pytest -p no:cacheprovider tests/test_template_generation.py tests/test_prompt_sources.py tests/test_task_card_schema.py tests/test_filesystem_receipts.py tests/test_filesystem_r7_repairs.py -q",
+          "cwd": ".",
+          "exit_code": 0,
+          "output": "docs/todos/10-self-hosting-hardening/evidence/02/repair-c-regression-1717.json.output.txt",
+          "summary": "指定五文件156passed，含八组合、既有卡/提示词/FS收据与完整正文冻结回归。",
+          "receipt": "docs/todos/10-self-hosting-hardening/evidence/02/repair-c-regression-1717.json",
+          "origin": "committed-implementer-original",
+          "status": "COMPLETED",
+          "tree_terminal": true,
+          "started_at": "2026-11-13T17:17:34.776801+00:00",
+          "ended_at": "2026-11-13T17:17:53.676768+00:00"
+        }
+      ],
+      "parse_errors": [],
+      "events": [
+        {
+          "id": "iter10-02-claim-a",
+          "action": "claim",
+          "owner": "root/iter10/controller",
+          "at": "2026-11-13T16:46:07.488709+00:00",
+          "evidence": ""
+        },
+        {
+          "id": "iter10-02-attempt-a",
+          "action": "attempt",
+          "owner": "root/iter10/controller",
+          "at": "2026-11-13T16:54:03.083165+00:00",
+          "evidence": "docs/todos/10-self-hosting-hardening/evidence/02/attempt-a.json"
+        },
+        {
+          "id": "iter10-02-release-a",
+          "action": "release",
+          "owner": "root/iter10/controller",
+          "at": "2026-11-13T16:54:03.412214+00:00",
+          "evidence": "docs/todos/10-self-hosting-hardening/evidence/02/native-terminal-a.json"
+        },
+        {
+          "id": "iter10-02-claim-b",
+          "action": "claim",
+          "owner": "root/iter10/controller",
+          "at": "2026-11-13T16:54:04.844259+00:00",
+          "evidence": ""
+        },
+        {
+          "id": "iter10-02-attempt-b",
+          "action": "attempt",
+          "owner": "root/iter10/controller",
+          "at": "2026-11-13T17:02:53.787150+00:00",
+          "evidence": "docs/todos/10-self-hosting-hardening/evidence/02/attempt-b.json"
+        },
+        {
+          "id": "iter10-02-release-b",
+          "action": "release",
+          "owner": "root/iter10/controller",
+          "at": "2026-11-13T17:02:54.126104+00:00",
+          "evidence": "docs/todos/10-self-hosting-hardening/evidence/02/native-terminal-b.json"
+        },
+        {
+          "id": "iter10-02-claim-review",
+          "action": "claim",
+          "owner": "root/iter10/controller",
+          "at": "2026-11-13T17:02:55.512138+00:00",
+          "evidence": ""
+        },
+        {
+          "id": "iter10-02-release-review-initial",
+          "action": "release",
+          "owner": "root/iter10/controller",
+          "at": "2026-11-13T17:13:40.807406+00:00",
+          "evidence": "docs/todos/10-self-hosting-hardening/evidence/02/review-initial-rejected.json"
+        },
+        {
+          "id": "iter10-02-claim-repair",
+          "action": "claim",
+          "owner": "root/iter10/controller",
+          "at": "2026-11-13T17:13:57.856282+00:00",
+          "evidence": ""
+        },
+        {
+          "id": "iter10-02-review-initial",
+          "action": "attempt",
+          "owner": "root/iter10/controller",
+          "at": "2026-11-13T17:13:58.289549+00:00",
+          "evidence": "build/review-02/attempt-initial.json"
+        },
+        {
+          "id": "iter10-02-attempt-c",
+          "action": "attempt",
+          "owner": "root/iter10/controller",
+          "at": "2026-11-13T17:21:31.158502+00:00",
+          "evidence": "docs/todos/10-self-hosting-hardening/evidence/02/attempt-c.json"
+        },
+        {
+          "id": "iter10-02-release-c",
+          "action": "release",
+          "owner": "root/iter10/controller",
+          "at": "2026-11-13T17:21:31.480793+00:00",
+          "evidence": "docs/todos/10-self-hosting-hardening/evidence/02/native-terminal-c.json"
+        },
+        {
+          "id": "iter10-02-claim-rereview",
+          "action": "claim",
+          "owner": "root/iter10/controller",
+          "at": "2026-11-13T17:21:32.136505+00:00",
+          "evidence": ""
+        },
+        {
+          "id": "iter10-02-attempt-final-review",
+          "action": "attempt",
+          "owner": "root/iter10/controller",
+          "at": "2026-11-13T17:27:11.993864+00:00",
+          "evidence": "build/review-02-final/attempt-review.json"
+        },
+        {
+          "id": "iter10-02-release-final-review",
+          "action": "release",
+          "owner": "root/iter10/controller",
+          "at": "2026-11-13T17:27:12.312241+00:00",
+          "evidence": "docs/todos/10-self-hosting-hardening/evidence/02/review-report.json"
+        }
+      ]
+    },
+    {
+      "task": "03",
+      "card": "docs/todos/10-self-hosting-hardening/03-query-cli-contract.md",
+      "declared_status": "DONE",
+      "base": "f879bba28326af84fd9217a70c390a35887ec62b",
+      "candidate": "542f2b445f499b3a2e90d92a6ed6bba20cdb1bdb",
+      "review_receipt": "docs/todos/10-self-hosting-hardening/evidence/03/review.json",
+      "review_report": "docs/todos/10-self-hosting-hardening/evidence/03/review-report.json",
+      "verdict": "APPROVED",
+      "reviewer": "Codex independent reviewer / session 01a1d610-f583-76d0-8943-f401eece9af0",
+      "implementer": "Codex slice owners: A 1d7e1944-aba1-4815-9e82-d1a52fe96444; B 6f7b9a4a-e4a1-4af2-93ba-534e2dcb2c3b; C 60829fef-6d6f-45ae-87cf-2406882830cb",
+      "checks": [
+        {
+          "name": "red",
+          "kind": "command",
+          "command": "python -B -m pytest -p no:cacheprovider tests/test_query_contract.py::test_legacy_board_exposes_same_handoff_fields -q",
+          "cwd": ".",
+          "exit_code": 1,
+          "failure_kind": "assertion",
+          "output": "docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt",
+          "summary": "Four callable legacy board cases fail missing delivery_mode/candidate_id/execution assertions; not ImportError."
+        },
+        {
+          "name": "green",
+          "kind": "command",
+          "command": "python -B -m pytest -p no:cacheprovider tests/test_query_contract.py -q",
+          "cwd": ".",
+          "exit_code": 0,
+          "output": "docs/todos/10-self-hosting-hardening/evidence/03/slice-b-green-core-1741.json.output.txt",
+          "summary": "Four inherited legacy board projection cases pass; final regression also covers unchanged cases."
+        },
+        {
+          "name": "regression",
+          "kind": "command",
+          "command": "python -B -m pytest -p no:cacheprovider tests/test_query_contract.py tests/test_cli_compatibility.py tests/test_sync_compatibility.py tests/test_completion_gates.py tests/test_execution_readiness.py tests/test_execution_report.py tests/test_filesystem_delivery_controller.py tests/test_worktree_concurrency.py -q",
+          "cwd": ".",
+          "exit_code": 0,
+          "output": "docs/todos/10-self-hosting-hardening/evidence/03/controller-final-regression.json.output.txt",
+          "summary": "170 passed in 142.49s on final frozen source, runner and child COMPLETED/0/tree_terminal true."
+        }
+      ],
+      "parse_errors": [],
+      "events": [
+        {
+          "id": "iter10-03-claim-a",
+          "action": "claim",
+          "owner": "root/iter10/controller",
+          "at": "2026-11-13T17:29:19.013221+00:00",
+          "evidence": ""
+        },
+        {
+          "id": "iter10-03-attempt-a",
+          "action": "attempt",
+          "owner": "root/iter10/controller",
+          "at": "2026-11-13T17:37:49.986548+00:00",
+          "evidence": "docs/todos/10-self-hosting-hardening/evidence/03/attempt-a.json"
+        },
+        {
+          "id": "iter10-03-release-a",
+          "action": "release",
+          "owner": "root/iter10/controller",
+          "at": "2026-11-13T17:37:50.313558+00:00",
+          "evidence": "docs/todos/10-self-hosting-hardening/evidence/03/native-terminal-a.json"
+        },
+        {
+          "id": "iter10-03-claim-b",
+          "action": "claim",
+          "owner": "root/iter10/controller",
+          "at": "2026-11-13T17:37:50.955989+00:00",
+          "evidence": ""
+        },
+        {
+          "id": "iter10-03-attempt-b",
+          "action": "attempt",
+          "owner": "root/iter10/controller",
+          "at": "2026-11-13T17:47:20.075624+00:00",
+          "evidence": "docs/todos/10-self-hosting-hardening/evidence/03/attempt-b.json"
+        },
+        {
+          "id": "iter10-03-release-b",
+          "action": "release",
+          "owner": "root/iter10/controller",
+          "at": "2026-11-13T17:47:20.407719+00:00",
+          "evidence": "docs/todos/10-self-hosting-hardening/evidence/03/native-terminal-b.json"
+        },
+        {
+          "id": "iter10-03-claim-c",
+          "action": "claim",
+          "owner": "root/iter10/controller",
+          "at": "2026-11-13T17:47:21.130740+00:00",
+          "evidence": ""
+        },
+        {
+          "id": "iter10-03-test-observation-scope",
+          "action": "replan",
+          "owner": "root/iter10/controller",
+          "at": "2026-11-13T17:47:21.491404+00:00",
+          "evidence": "docs/todos/10-self-hosting-hardening/evidence/03/test-seam-ruling.json"
+        },
+        {
+          "id": "iter10-03-attempt-c",
+          "action": "attempt",
+          "owner": "root/iter10/controller",
+          "at": "2026-11-13T17:55:58.253466+00:00",
+          "evidence": "docs/todos/10-self-hosting-hardening/evidence/03/attempt-c.json"
+        },
+        {
+          "id": "iter10-03-release-c",
+          "action": "release",
+          "owner": "root/iter10/controller",
+          "at": "2026-11-13T17:59:07.738999+00:00",
+          "evidence": "docs/todos/10-self-hosting-hardening/evidence/03/native-terminal-c.json"
+        },
+        {
+          "id": "iter10-03-claim-review",
+          "action": "claim",
+          "owner": "root/iter10/controller",
+          "at": "2026-11-13T17:59:08.404405+00:00",
+          "evidence": ""
+        },
+        {
+          "id": "iter10-03-attempt-review",
+          "action": "attempt",
+          "owner": "root/iter10/controller",
+          "at": "2026-11-13T18:07:32.899170+00:00",
+          "evidence": "build/review-03/attempt-review.json"
+        },
+        {
+          "id": "iter10-03-release-review",
+          "action": "release",
+          "owner": "root/iter10/controller",
+          "at": "2026-11-13T18:07:33.264648+00:00",
+          "evidence": "docs/todos/10-self-hosting-hardening/evidence/03/review-report.json"
+        }
+      ]
+    },
+    {
+      "task": "04",
+      "card": "docs/todos/10-self-hosting-hardening/04-board-handoff.md",
+      "declared_status": "DONE",
+      "base": "2ce0705ebeeaee73f75a1dcd2882836dbc6b9d29",
+      "candidate": "9b9010afb8dbf0b0cf74f83c6c97605984319619",
+      "review_receipt": "docs/todos/10-self-hosting-hardening/evidence/04/review.json",
+      "review_report": "docs/todos/10-self-hosting-hardening/evidence/04/review-report.json",
+      "verdict": "APPROVED",
+      "reviewer": "codeg/codex/1719/01a1d627-da6f-75c3-87c5-5431d61a2594",
+      "implementer": "codeg/codex/1718",
+      "checks": [
+        {
+          "name": "interaction",
+          "kind": "command",
+          "command": "ego-browser nodejs -e \"await import('file:///C:/Users/qingyu/.codeg/skills/iteration-manager/.worktrees/iter-10/docs/todos/10-self-hosting-hardening/evidence/04/browser-source-b.mjs')\"",
+          "cwd": ".",
+          "exit_code": 0,
+          "summary": "真实Git筛选/详情/列明来源原生popup/Escape；其它原生步骤见报告五个receipt",
+          "output": "docs/todos/10-self-hosting-hardening/evidence/04/browser-source-b.json.output.txt"
+        },
+        {
+          "name": "states",
+          "kind": "observation",
+          "summary": "正常/空/加载/断连均经真实HTTP和原生浏览器观测，索引指向完整原件",
+          "output": "docs/todos/10-self-hosting-hardening/evidence/04/states-observation.json"
+        },
+        {
+          "name": "visual",
+          "kind": "observation",
+          "summary": "1139x869桌面七图；主控及独立Reviewer实际看图",
+          "output": "docs/todos/10-self-hosting-hardening/evidence/04/visual-observation.json"
+        },
+        {
+          "name": "regression",
+          "kind": "command",
+          "command": "python -B -m pytest -p no:cacheprovider tests/test_board_handoff.py tests/test_board_truth.py tests/test_board_service.py tests/test_query_contract.py tests/test_filesystem_delivery_controller.py -q",
+          "cwd": ".",
+          "exit_code": 0,
+          "summary": "主控独立67passed；源码与最终C相同",
+          "output": "docs/todos/10-self-hosting-hardening/evidence/04/controller-regression-b.json.output.txt"
+        }
+      ],
+      "parse_errors": [],
+      "events": [
+        {
+          "id": "iter10-04-claim-a",
+          "action": "claim",
+          "owner": "root/iter10/controller",
+          "at": "2026-11-13T18:10:05.929322+00:00",
+          "evidence": ""
+        },
+        {
+          "id": "iter10-04-claim-b",
+          "action": "claim",
+          "owner": "root/iter10/controller",
+          "at": "2026-11-13T18:18:18.888694+00:00",
+          "evidence": ""
+        },
+        {
+          "id": "iter10-04-attempt-a",
+          "action": "attempt",
+          "owner": "root/iter10/controller",
+          "at": "2026-11-13T18:18:47.006666+00:00",
+          "evidence": "docs/todos/10-self-hosting-hardening/evidence/04/attempt-a-valid.json"
+        },
+        {
+          "id": "iter10-04-release-a",
+          "action": "release",
+          "owner": "root/iter10/controller",
+          "at": "2026-11-13T18:18:47.355134+00:00",
+          "evidence": "docs/todos/10-self-hosting-hardening/evidence/04/native-terminal-a.json"
+        },
+        {
+          "id": "iter10-04-claim-browser-b",
+          "action": "claim",
+          "owner": "root/iter10/controller",
+          "at": "2026-11-13T18:18:47.740318+00:00",
+          "evidence": ""
+        },
+        {
+          "id": "iter10-04-attempt-review",
+          "action": "attempt",
+          "owner": "root/iter10/controller",
+          "at": "2026-11-13T18:29:46.449909+00:00",
+          "evidence": "build/review-04/attempt-review.json"
+        },
+        {
+          "id": "iter10-04-release-review",
+          "action": "release",
+          "owner": "root/iter10/controller",
+          "at": "2026-11-13T18:29:46.773665+00:00",
+          "evidence": "docs/todos/10-self-hosting-hardening/evidence/04/review-report.json"
+        }
+      ]
+    },
+    {
+      "task": "05",
+      "card": "docs/todos/10-self-hosting-hardening/05-release-evidence-index.md",
+      "declared_status": "DONE",
+      "base": "8392193a0d9e883892f75780a63a1b16f67682c4",
+      "candidate": "dc5d868c6b90268a2eefc29966874c96d48dd122",
+      "review_receipt": "docs/todos/10-self-hosting-hardening/evidence/05/review-final.json",
+      "review_report": "docs/todos/10-self-hosting-hardening/evidence/05/review-report-final.json",
+      "verdict": "APPROVED",
+      "reviewer": "codeg/codex/1722/01a1d63f-4402-7dd3-88cb-5f5b4e53e603",
+      "implementer": "codeg/codex/1720",
+      "checks": [
+        {
+          "name": "experiment",
+          "kind": "command",
+          "command": "python -B docs/todos/10-self-hosting-hardening/evidence/05/slice-a-observe.py",
+          "cwd": ".",
+          "exit_code": 0,
+          "summary": "COMPLETED、tree_terminal=true；原始逐文件布尔值、捕获来源及review指针支持限定观察。",
+          "output": "docs/todos/10-self-hosting-hardening/evidence/05/slice-a-experiment-1.json.output.txt"
+        },
+        {
+          "name": "decision",
+          "kind": "observation",
+          "summary": "有限清单OBSERVED、完整版本UNKNOWN的分类与原始实验一致；历史R7、P1及补齐责任没有外推。",
+          "output": "docs/todos/10-self-hosting-hardening/evidence/05/slice-a-decision.json"
+        },
+        {
+          "name": "interfaces",
+          "kind": "observation",
+          "summary": "四层九字段、UTC日期、原件捕获、UNKNOWN及状态真源边界与索引一致。",
+          "output": "docs/todos/10-self-hosting-hardening/evidence/05/slice-a-interfaces.json"
+        }
+      ],
+      "parse_errors": [],
+      "events": [
+        {
+          "id": "iter10-05-claim-a",
+          "action": "claim",
+          "owner": "root/iter10/controller",
+          "at": "2026-11-13T18:31:40.172924+00:00",
+          "evidence": ""
+        },
+        {
+          "id": "iter10-05-attempt-a",
+          "action": "attempt",
+          "owner": "root/iter10/controller",
+          "at": "2026-11-13T18:39:21.616885+00:00",
+          "evidence": "docs/todos/10-self-hosting-hardening/evidence/05/attempt-a.json"
+        },
+        {
+          "id": "iter10-05-release-a",
+          "action": "release",
+          "owner": "root/iter10/controller",
+          "at": "2026-11-13T18:39:21.953421+00:00",
+          "evidence": "docs/todos/10-self-hosting-hardening/evidence/05/native-terminal-a.json"
+        },
+        {
+          "id": "iter10-05-claim-review",
+          "action": "claim",
+          "owner": "root/iter10/controller",
+          "at": "2026-11-13T18:39:59.785908+00:00",
+          "evidence": ""
+        },
+        {
+          "id": "iter10-05-attempt-review",
+          "action": "attempt",
+          "owner": "root/iter10/controller",
+          "at": "2026-11-13T18:45:40.509996+00:00",
+          "evidence": "build/review-05/attempt-review.json"
+        },
+        {
+          "id": "iter10-05-release-review",
+          "action": "release",
+          "owner": "root/iter10/controller",
+          "at": "2026-11-13T18:45:40.886052+00:00",
+          "evidence": "docs/todos/10-self-hosting-hardening/evidence/05/review-report.json"
+        },
+        {
+          "id": "iter10-05-claim-review-final",
+          "action": "claim",
+          "owner": "root/iter10/controller",
+          "at": "2026-11-13T18:50:07.132208+00:00",
+          "evidence": ""
+        },
+        {
+          "id": "iter10-05-attempt-review-final",
+          "action": "attempt",
+          "owner": "root/iter10/controller",
+          "at": "2026-11-13T18:54:56.182393+00:00",
+          "evidence": "build/review-05/attempt-final.json"
+        },
+        {
+          "id": "iter10-05-release-review-final",
+          "action": "release",
+          "owner": "root/iter10/controller",
+          "at": "2026-11-13T18:54:56.518826+00:00",
+          "evidence": "docs/todos/10-self-hosting-hardening/evidence/05/review-report-final.json"
+        }
+      ]
+    }
+  ],
+  "complete_chain": {
+    "task": "03",
+    "inventory": "docs/todos/10-self-hosting-hardening/evidence/03/inventory-a.json",
+    "inventory_target_readiness": "READY",
+    "claim": "docs/todos/10-self-hosting-hardening/evidence/03/claim-a.json",
+    "slices": [
+      {
+        "slice": "a",
+        "context": "docs/todos/10-self-hosting-hardening/evidence/03/context-implementation-a.json",
+        "context_candidate": "f879bba28326af84fd9217a70c390a35887ec62b",
+        "context_inputs": [
+          "docs/todos/10-self-hosting-hardening/03-query-cli-contract.md",
+          "scripts/iter_sync.py",
+          "scripts/iter_inventory.py",
+          "scripts/iter_preflight.py",
+          "scripts/iter_execution.py"
+        ],
+        "native": "docs/todos/10-self-hosting-hardening/evidence/03/native-terminal-a.json",
+        "task_id": "1d7e1944-aba1-4815-9e82-d1a52fe96444",
+        "session": 1714,
+        "terminal": "completed",
+        "terminal_confirmed": true,
+        "dispatch": "docs/todos/10-self-hosting-hardening/evidence/03/dispatch-a.json",
+        "readiness": "READY",
+        "attempt": "docs/todos/10-self-hosting-hardening/evidence/03/attempt-a.json",
+        "candidate": "b4da0178c218060d4d5dccab3fb13b47e75ad705",
+        "commands": [
+          {
+            "receipt": "docs/todos/10-self-hosting-hardening/evidence/03/slice-a-before-1732.json",
+            "candidate_at_attempt": "b4da0178c218060d4d5dccab3fb13b47e75ad705",
+            "status": "COMPLETED",
+            "raw_exit_code": 0,
+            "tree_terminal": true,
+            "output": "docs/todos/10-self-hosting-hardening/evidence/03/slice-a-before-1732.json.output.txt"
+          },
+          {
+            "receipt": "docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json",
+            "candidate_at_attempt": "b4da0178c218060d4d5dccab3fb13b47e75ad705",
+            "status": "COMPLETED",
+            "raw_exit_code": 1,
+            "tree_terminal": true,
+            "output": "docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt"
+          },
+          {
+            "receipt": "docs/todos/10-self-hosting-hardening/evidence/03/slice-a-baseline-1733.json",
+            "candidate_at_attempt": "b4da0178c218060d4d5dccab3fb13b47e75ad705",
+            "status": "COMPLETED",
+            "raw_exit_code": 0,
+            "tree_terminal": true,
+            "output": "docs/todos/10-self-hosting-hardening/evidence/03/slice-a-baseline-1733.json.output.txt"
+          },
+          {
+            "receipt": "docs/todos/10-self-hosting-hardening/evidence/03/slice-a-note-validation-1734.json",
+            "candidate_at_attempt": "b4da0178c218060d4d5dccab3fb13b47e75ad705",
+            "status": "COMPLETED",
+            "raw_exit_code": 0,
+            "tree_terminal": true,
+            "output": "docs/todos/10-self-hosting-hardening/evidence/03/slice-a-note-validation-1734.json.output.txt"
+          },
+          {
+            "receipt": "docs/todos/10-self-hosting-hardening/evidence/03/slice-a-note-format-1735.json",
+            "candidate_at_attempt": "b4da0178c218060d4d5dccab3fb13b47e75ad705",
+            "status": "COMPLETED",
+            "raw_exit_code": 0,
+            "tree_terminal": true,
+            "output": "docs/todos/10-self-hosting-hardening/evidence/03/slice-a-note-format-1735.json.output.txt"
+          },
+          {
+            "receipt": "docs/todos/10-self-hosting-hardening/evidence/03/slice-a-note-archive-1735.json",
+            "candidate_at_attempt": "b4da0178c218060d4d5dccab3fb13b47e75ad705",
+            "status": "COMPLETED",
+            "raw_exit_code": 0,
+            "tree_terminal": true,
+            "output": "docs/todos/10-self-hosting-hardening/evidence/03/slice-a-note-archive-1735.json.output.txt"
+          }
+        ],
+        "handoff": "docs/todos/10-self-hosting-hardening/evidence/03/handoff-a.json",
+        "released_writer": "",
+        "checkpoint": {
+          "candidate": "b4da0178c218060d4d5dccab3fb13b47e75ad705",
+          "phase": "implementation",
+          "summary": "benchmark_before plus callable legacy-entry assertion RED; no product GREEN",
+          "progress": [
+            {
+              "kind": "red",
+              "evidence": "docs/todos/10-self-hosting-hardening/evidence/03/slice-a-red-1733.json.output.txt",
+              "summary": "旧可调用board缺三字段4断言失败，before量测及5项旧兼容baseline已交付"
+            }
+          ],
+          "source": "docs/todos/10-self-hosting-hardening/evidence/03/attempt-a.json"
+        },
+        "remaining_work": [
+          "Controller clarify known Git candidate_id empty-string inapplicability sentinel versus UNKNOWN/null requirement; tests/test_execution_readiness.py:562 is outside implementation whitelist. No source or test outside scope was changed.",
+          "Extract discover_task_files/audit_task_file/render_task_envelope to iter_queries without reverse iter_sync/CLI imports; inventory/preflight/execution consume query while preserving per-invocation audit reuse.",
+          "Implement iter_cli.main(argv=None)->int and lazy iter_sync main facade. Add tests/test_cli_compatibility.py preserving flags, positional arguments, implementation phase default, 0/1/2/3, unknown-option no writes, and timing help.",
+          "Implement shared projection GREEN against four retained RED cases. Preserve all old keys, old callable signatures, invalid-profile refusal and audit semantics; add unknown and no-cross-call-cache behavior coverage as needed.",
+          "Run GREEN, all eight task-specified regression files, scope check and independent review on final candidate. Do not advance 04 before controller PASS.",
+          "Run final after with exact retained benchmark script and inputs through frozen runner under newly authorized deadline. Reuse before and valid RED; do not fabricate after or promise speedup."
+        ]
+      },
+      {
+        "slice": "b",
+        "context": "docs/todos/10-self-hosting-hardening/evidence/03/context-implementation-b.json",
+        "context_candidate": "2acec13c3e371b498b35e242f18d46f483fadb50",
+        "context_inputs": [
+          "docs/todos/10-self-hosting-hardening/03-query-cli-contract.md",
+          "scripts/iter_sync.py",
+          "scripts/iter_inventory.py",
+          "scripts/iter_preflight.py",
+          "scripts/iter_execution.py",
+          "docs/todos/10-self-hosting-hardening/evidence/03/identity-ruling.json",
+          "docs/todos/10-self-hosting-hardening/evidence/03/implementation-checkpoint-a.json"
+        ],
+        "native": "docs/todos/10-self-hosting-hardening/evidence/03/native-terminal-b.json",
+        "task_id": "6f7b9a4a-e4a1-4af2-93ba-534e2dcb2c3b",
+        "session": 1715,
+        "terminal": "completed",
+        "terminal_confirmed": true,
+        "dispatch": "docs/todos/10-self-hosting-hardening/evidence/03/dispatch-b.json",
+        "readiness": "READY",
+        "attempt": "docs/todos/10-self-hosting-hardening/evidence/03/attempt-b.json",
+        "candidate": "1aad3d326b0d4d2c72da87ce2962a808b85e0bf2",
+        "commands": [
+          {
+            "receipt": "docs/todos/10-self-hosting-hardening/evidence/03/slice-b-green-core-1741.json",
+            "candidate_at_attempt": "1aad3d326b0d4d2c72da87ce2962a808b85e0bf2",
+            "status": "COMPLETED",
+            "raw_exit_code": 0,
+            "tree_terminal": true,
+            "output": "docs/todos/10-self-hosting-hardening/evidence/03/slice-b-green-core-1741.json.output.txt"
+          },
+          {
+            "receipt": "docs/todos/10-self-hosting-hardening/evidence/03/slice-b-green-core-1742.json",
+            "candidate_at_attempt": "1aad3d326b0d4d2c72da87ce2962a808b85e0bf2",
+            "status": "COMPLETED",
+            "raw_exit_code": 2,
+            "tree_terminal": true,
+            "output": "docs/todos/10-self-hosting-hardening/evidence/03/slice-b-green-core-1742.json.output.txt"
+          },
+          {
+            "receipt": "docs/todos/10-self-hosting-hardening/evidence/03/slice-b-legacy-seam-1742.json",
+            "candidate_at_attempt": "1aad3d326b0d4d2c72da87ce2962a808b85e0bf2",
+            "status": "COMPLETED",
+            "raw_exit_code": 1,
+            "tree_terminal": true,
+            "output": "docs/todos/10-self-hosting-hardening/evidence/03/slice-b-legacy-seam-1742.json.output.txt"
+          },
+          {
+            "receipt": "docs/todos/10-self-hosting-hardening/evidence/03/slice-b-note-archive-1743.json",
+            "candidate_at_attempt": "1aad3d326b0d4d2c72da87ce2962a808b85e0bf2",
+            "status": "COMPLETED",
+            "raw_exit_code": 0,
+            "tree_terminal": true,
+            "output": "docs/todos/10-self-hosting-hardening/evidence/03/slice-b-note-archive-1743.json.output.txt"
+          },
+          {
+            "receipt": "docs/todos/10-self-hosting-hardening/evidence/03/slice-b-note-format-1743.json",
+            "candidate_at_attempt": "1aad3d326b0d4d2c72da87ce2962a808b85e0bf2",
+            "status": "COMPLETED",
+            "raw_exit_code": 0,
+            "tree_terminal": true,
+            "output": "docs/todos/10-self-hosting-hardening/evidence/03/slice-b-note-format-1743.json.output.txt"
+          },
+          {
+            "receipt": "docs/todos/10-self-hosting-hardening/evidence/03/slice-b-note-tree-1743.json",
+            "candidate_at_attempt": "1aad3d326b0d4d2c72da87ce2962a808b85e0bf2",
+            "status": "COMPLETED",
+            "raw_exit_code": 0,
+            "tree_terminal": true,
+            "output": "docs/todos/10-self-hosting-hardening/evidence/03/slice-b-note-tree-1743.json.output.txt"
+          },
+          {
+            "receipt": "docs/todos/10-self-hosting-hardening/evidence/03/slice-b-query-compat-1742.json",
+            "candidate_at_attempt": "1aad3d326b0d4d2c72da87ce2962a808b85e0bf2",
+            "status": "COMPLETED",
+            "raw_exit_code": 0,
+            "tree_terminal": true,
+            "output": "docs/todos/10-self-hosting-hardening/evidence/03/slice-b-query-compat-1742.json.output.txt"
+          },
+          {
+            "receipt": "docs/todos/10-self-hosting-hardening/evidence/03/slice-b-scope-1743.json",
+            "candidate_at_attempt": "1aad3d326b0d4d2c72da87ce2962a808b85e0bf2",
+            "status": "COMPLETED",
+            "raw_exit_code": 0,
+            "tree_terminal": true,
+            "output": "docs/todos/10-self-hosting-hardening/evidence/03/slice-b-scope-1743.json.output.txt"
+          }
+        ],
+        "handoff": "docs/todos/10-self-hosting-hardening/evidence/03/handoff-b.json",
+        "released_writer": "",
+        "checkpoint": {
+          "candidate": "1aad3d326b0d4d2c72da87ce2962a808b85e0bf2",
+          "phase": "implementation",
+          "summary": "Shared query extraction and consumer wiring; inherited four behavior RED cases now GREEN; query+legacy sync targeted suite 13 passed.",
+          "progress": [
+            {
+              "kind": "green",
+              "evidence": "docs/todos/10-self-hosting-hardening/evidence/03/slice-b-query-compat-1742.json.output.txt",
+              "summary": "4原RED已GREEN，查询+旧同步13passed，旧test观测点失败明确保留"
+            }
+          ],
+          "source": "docs/todos/10-self-hosting-hardening/evidence/03/attempt-b.json"
+        },
+        "remaining_work": [
+          "C: extract iter_cli.main(argv=None)->int and lazy iter_sync main facade; retain flags/positions/default phase/exits/timing help; create authorized CLI compatibility tests",
+          "C: run eight-file specified delivery regression with sufficient window, frozen scope check on final candidate, immutable diff review and independent acceptance",
+          "C: run exact benchmark_projection.py --label after with same 10/100 x3 fixture; reuse A before/RED without rerun",
+          "Controller owns card/README, attempt/release registration; no card/README written or staged by B",
+          "Controller: resolve old monkeypatch test observation seam before full regression acceptance; TypeSafe raw request/response slice-b-typesafe.json selects direct query wiring"
+        ]
+      },
+      {
+        "slice": "c",
+        "context": "docs/todos/10-self-hosting-hardening/evidence/03/context-implementation-c.json",
+        "context_candidate": "268f221742f2b22ff8faa88a53ac50b18947f57f",
+        "context_inputs": [
+          "docs/todos/10-self-hosting-hardening/03-query-cli-contract.md",
+          "scripts/iter_sync.py",
+          "scripts/iter_inventory.py",
+          "scripts/iter_preflight.py",
+          "scripts/iter_execution.py",
+          "docs/todos/10-self-hosting-hardening/evidence/03/identity-ruling.json",
+          "docs/todos/10-self-hosting-hardening/evidence/03/implementation-checkpoint-a.json",
+          "docs/todos/10-self-hosting-hardening/evidence/03/test-seam-ruling.json",
+          "docs/todos/10-self-hosting-hardening/evidence/03/implementation-checkpoint-b.json"
+        ],
+        "native": "docs/todos/10-self-hosting-hardening/evidence/03/native-terminal-c.json",
+        "task_id": "60829fef-6d6f-45ae-87cf-2406882830cb",
+        "session": 1716,
+        "terminal": "completed",
+        "terminal_confirmed": true,
+        "dispatch": "docs/todos/10-self-hosting-hardening/evidence/03/dispatch-c.json",
+        "readiness": "READY",
+        "attempt": "docs/todos/10-self-hosting-hardening/evidence/03/attempt-c.json",
+        "candidate": "af052c929ae1fff75387d1669af10aae4e0b4043",
+        "commands": [
+          {
+            "receipt": "docs/todos/10-self-hosting-hardening/evidence/03/slice-c-after-1751.json",
+            "candidate_at_attempt": "af052c929ae1fff75387d1669af10aae4e0b4043",
+            "status": "COMPLETED",
+            "raw_exit_code": 0,
+            "tree_terminal": true,
+            "output": "docs/todos/10-self-hosting-hardening/evidence/03/slice-c-after-1751.json.output.txt"
+          },
+          {
+            "receipt": "docs/todos/10-self-hosting-hardening/evidence/03/slice-c-cli-final-1753.json",
+            "candidate_at_attempt": "af052c929ae1fff75387d1669af10aae4e0b4043",
+            "status": "COMPLETED",
+            "raw_exit_code": 0,
+            "tree_terminal": true,
+            "output": "docs/todos/10-self-hosting-hardening/evidence/03/slice-c-cli-final-1753.json.output.txt"
+          },
+          {
+            "receipt": "docs/todos/10-self-hosting-hardening/evidence/03/slice-c-cli-green-1751.json",
+            "candidate_at_attempt": "af052c929ae1fff75387d1669af10aae4e0b4043",
+            "status": "COMPLETED",
+            "raw_exit_code": 0,
+            "tree_terminal": true,
+            "output": "docs/todos/10-self-hosting-hardening/evidence/03/slice-c-cli-green-1751.json.output.txt"
+          },
+          {
+            "receipt": "docs/todos/10-self-hosting-hardening/evidence/03/slice-c-cli-red-1749.json",
+            "candidate_at_attempt": "af052c929ae1fff75387d1669af10aae4e0b4043",
+            "status": "COMPLETED",
+            "raw_exit_code": 1,
+            "tree_terminal": true,
+            "output": "docs/todos/10-self-hosting-hardening/evidence/03/slice-c-cli-red-1749.json.output.txt"
+          },
+          {
+            "receipt": "docs/todos/10-self-hosting-hardening/evidence/03/slice-c-compatibility-1752.json",
+            "candidate_at_attempt": "af052c929ae1fff75387d1669af10aae4e0b4043",
+            "status": "COMPLETED",
+            "raw_exit_code": 1,
+            "tree_terminal": true,
+            "output": "docs/todos/10-self-hosting-hardening/evidence/03/slice-c-compatibility-1752.json.output.txt"
+          },
+          {
+            "receipt": "docs/todos/10-self-hosting-hardening/evidence/03/slice-c-compatibility-1752b.json",
+            "candidate_at_attempt": "af052c929ae1fff75387d1669af10aae4e0b4043",
+            "status": "COMPLETED",
+            "raw_exit_code": 0,
+            "tree_terminal": true,
+            "output": "docs/todos/10-self-hosting-hardening/evidence/03/slice-c-compatibility-1752b.json.output.txt"
+          },
+          {
+            "receipt": "docs/todos/10-self-hosting-hardening/evidence/03/slice-c-extract-1750.json",
+            "candidate_at_attempt": "af052c929ae1fff75387d1669af10aae4e0b4043",
+            "status": "COMPLETED",
+            "raw_exit_code": 0,
+            "tree_terminal": true,
+            "output": "docs/todos/10-self-hosting-hardening/evidence/03/slice-c-extract-1750.json.output.txt"
+          },
+          {
+            "receipt": "docs/todos/10-self-hosting-hardening/evidence/03/slice-c-note-format-1751.json",
+            "candidate_at_attempt": "af052c929ae1fff75387d1669af10aae4e0b4043",
+            "status": "COMPLETED",
+            "raw_exit_code": 0,
+            "tree_terminal": true,
+            "output": "docs/todos/10-self-hosting-hardening/evidence/03/slice-c-note-format-1751.json.output.txt"
+          },
+          {
+            "receipt": "docs/todos/10-self-hosting-hardening/evidence/03/slice-c-note-format-final-1753.json",
+            "candidate_at_attempt": "af052c929ae1fff75387d1669af10aae4e0b4043",
+            "status": "COMPLETED",
+            "raw_exit_code": 0,
+            "tree_terminal": true,
+            "output": "docs/todos/10-self-hosting-hardening/evidence/03/slice-c-note-format-final-1753.json.output.txt"
+          },
+          {
+            "receipt": "docs/todos/10-self-hosting-hardening/evidence/03/slice-c-note-tree-1751.json",
+            "candidate_at_attempt": "af052c929ae1fff75387d1669af10aae4e0b4043",
+            "status": "COMPLETED",
+            "raw_exit_code": 0,
+            "tree_terminal": true,
+            "output": "docs/todos/10-self-hosting-hardening/evidence/03/slice-c-note-tree-1751.json.output.txt"
+          },
+          {
+            "receipt": "docs/todos/10-self-hosting-hardening/evidence/03/slice-c-note-tree-final-1753.json",
+            "candidate_at_attempt": "af052c929ae1fff75387d1669af10aae4e0b4043",
+            "status": "COMPLETED",
+            "raw_exit_code": 0,
+            "tree_terminal": true,
+            "output": "docs/todos/10-self-hosting-hardening/evidence/03/slice-c-note-tree-final-1753.json.output.txt"
+          },
+          {
+            "receipt": "docs/todos/10-self-hosting-hardening/evidence/03/slice-c-regression-1750.json",
+            "candidate_at_attempt": "af052c929ae1fff75387d1669af10aae4e0b4043",
+            "status": "COMPLETED",
+            "raw_exit_code": 0,
+            "tree_terminal": true,
+            "output": "docs/todos/10-self-hosting-hardening/evidence/03/slice-c-regression-1750.json.output.txt"
+          },
+          {
+            "receipt": "docs/todos/10-self-hosting-hardening/evidence/03/slice-c-scope-1753.json",
+            "candidate_at_attempt": "af052c929ae1fff75387d1669af10aae4e0b4043",
+            "status": "COMPLETED",
+            "raw_exit_code": 0,
+            "tree_terminal": true,
+            "output": "docs/todos/10-self-hosting-hardening/evidence/03/slice-c-scope-1753.json.output.txt"
+          },
+          {
+            "receipt": "docs/todos/10-self-hosting-hardening/evidence/03/slice-c-scope-candidate-1754.json",
+            "candidate_at_attempt": "af052c929ae1fff75387d1669af10aae4e0b4043",
+            "status": "COMPLETED",
+            "raw_exit_code": 0,
+            "tree_terminal": true,
+            "output": "docs/todos/10-self-hosting-hardening/evidence/03/slice-c-scope-candidate-1754.json.output.txt"
+          }
+        ],
+        "handoff": "docs/todos/10-self-hosting-hardening/evidence/03/handoff-c.json",
+        "released_writer": "",
+        "checkpoint": {
+          "candidate": "af052c929ae1fff75387d1669af10aae4e0b4043",
+          "phase": "implementation",
+          "summary": "CLI有效断言RED→11GREEN，after六次量测及旧签名兼容交付；最终八文件回归尚待补验",
+          "progress": [
+            {
+              "kind": "red",
+              "evidence": "docs/todos/10-self-hosting-hardening/evidence/03/slice-c-cli-red-1749.json.output.txt",
+              "summary": "可调用CLI stub1真实断言RED，补10项未先RED如实披露"
+            },
+            {
+              "kind": "green",
+              "evidence": "docs/todos/10-self-hosting-hardening/evidence/03/slice-c-cli-final-1753.json.output.txt",
+              "summary": "最终CLI11passed，旧签名保持，after10/100各三测Git调用1"
+            }
+          ],
+          "source": "docs/todos/10-self-hosting-hardening/evidence/03/attempt-c.json"
+        },
+        "remaining_work": [
+          "Controller: inspect BASE..final HEAD and dirty; independent review/acceptance, card/README and attempt/release registration",
+          "D: rerun exact eight-file regression on b6991f5 final facade code with >149.26 seconds plus runner overhead; not started with insufficient remaining window"
+        ]
+      }
+    ],
+    "implementation_C": "542f2b445f499b3a2e90d92a6ed6bba20cdb1bdb",
+    "registration_D": "2ce0705ebeeaee73f75a1dcd2882836dbc6b9d29",
+    "strict_receipt": "docs/todos/10-self-hosting-hardening/evidence/06/slice-a-frozen-strict-dry-run.json",
+    "strict_meaning": "Current frozen dry-run: prior five task verdicts PASS; whole command exit2 because current06 candidate is uncommitted. Historical strict source remains controller/card record; no exit0 claim"
+  },
+  "reuse": {
+    "browser": "04 review.json checks retain native interaction, states, visual and 67-pass output; product unchanged by06",
+    "continuation": "03 B context consumes A checkpoint; C context consumes A+B and rulings; before/RED preserved",
+    "task01": "01 card events and implementation-checkpoint-a/b plus native-terminal-implementation-a/b retain additional continuation",
+    "task05": "05 review.json/review-report.json retained; review-final.json/review-report-final.json bind dc5d868 after correct strict body-drift refusal"
+  }
+}

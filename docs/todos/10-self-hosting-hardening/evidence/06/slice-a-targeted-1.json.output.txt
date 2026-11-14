@@ -1,0 +1,64 @@
+..........FFF.                                                           [100%]
+================================== FAILURES ===================================
+________ test_frozen_fs_drift_reaches_audit_envelope_and_board[source] ________
+
+tmp_path = WindowsPath('C:/Users/qingyu/AppData/Local/Temp/pytest-of-qingyu/pytest-387/test_frozen_fs_drift_reaches_a0')
+target = 'source'
+
+    @pytest.mark.parametrize('target', ['source', 'evidence', 'body'])
+    def test_frozen_fs_drift_reaches_audit_envelope_and_board(tmp_path, target):
+        card, _, _ = frozen_fixture(tmp_path)
+        assert audit_task_file(card)['verdict'] == 'PASS'
+        path = {'source': tmp_path/'src/a.py', 'evidence': tmp_path/'evidence/green.txt', 'body': card}[target]
+        path.write_text(path.read_text(encoding='utf-8') + '\nchanged after review\n', encoding='utf-8')
+        before = inventory(tmp_path)
+        assert audit_task_file(card)['verdict'] != 'PASS'
+        assert render_task_envelope(card, tmp_path)['TASK_HANDOFF']['acceptance_verdict'] != 'PASS'
+>       board = generate_board_data(card.parent, tmp_path)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       TypeError: generate_board_data() takes 1 positional argument but 2 were given
+
+tests\test_self_hosting.py:127: TypeError
+_______ test_frozen_fs_drift_reaches_audit_envelope_and_board[evidence] _______
+
+tmp_path = WindowsPath('C:/Users/qingyu/AppData/Local/Temp/pytest-of-qingyu/pytest-387/test_frozen_fs_drift_reaches_a1')
+target = 'evidence'
+
+    @pytest.mark.parametrize('target', ['source', 'evidence', 'body'])
+    def test_frozen_fs_drift_reaches_audit_envelope_and_board(tmp_path, target):
+        card, _, _ = frozen_fixture(tmp_path)
+        assert audit_task_file(card)['verdict'] == 'PASS'
+        path = {'source': tmp_path/'src/a.py', 'evidence': tmp_path/'evidence/green.txt', 'body': card}[target]
+        path.write_text(path.read_text(encoding='utf-8') + '\nchanged after review\n', encoding='utf-8')
+        before = inventory(tmp_path)
+        assert audit_task_file(card)['verdict'] != 'PASS'
+        assert render_task_envelope(card, tmp_path)['TASK_HANDOFF']['acceptance_verdict'] != 'PASS'
+>       board = generate_board_data(card.parent, tmp_path)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       TypeError: generate_board_data() takes 1 positional argument but 2 were given
+
+tests\test_self_hosting.py:127: TypeError
+_________ test_frozen_fs_drift_reaches_audit_envelope_and_board[body] _________
+
+tmp_path = WindowsPath('C:/Users/qingyu/AppData/Local/Temp/pytest-of-qingyu/pytest-387/test_frozen_fs_drift_reaches_a2')
+target = 'body'
+
+    @pytest.mark.parametrize('target', ['source', 'evidence', 'body'])
+    def test_frozen_fs_drift_reaches_audit_envelope_and_board(tmp_path, target):
+        card, _, _ = frozen_fixture(tmp_path)
+        assert audit_task_file(card)['verdict'] == 'PASS'
+        path = {'source': tmp_path/'src/a.py', 'evidence': tmp_path/'evidence/green.txt', 'body': card}[target]
+        path.write_text(path.read_text(encoding='utf-8') + '\nchanged after review\n', encoding='utf-8')
+        before = inventory(tmp_path)
+        assert audit_task_file(card)['verdict'] != 'PASS'
+        assert render_task_envelope(card, tmp_path)['TASK_HANDOFF']['acceptance_verdict'] != 'PASS'
+>       board = generate_board_data(card.parent, tmp_path)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       TypeError: generate_board_data() takes 1 positional argument but 2 were given
+
+tests\test_self_hosting.py:127: TypeError
+=========================== short test summary info ===========================
+FAILED tests/test_self_hosting.py::test_frozen_fs_drift_reaches_audit_envelope_and_board[source]
+FAILED tests/test_self_hosting.py::test_frozen_fs_drift_reaches_audit_envelope_and_board[evidence]
+FAILED tests/test_self_hosting.py::test_frozen_fs_drift_reaches_audit_envelope_and_board[body]
+3 failed, 11 passed in 17.76s
