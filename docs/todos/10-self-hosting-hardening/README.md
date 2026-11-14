@@ -1,6 +1,6 @@
 # 迭代10 · 规则一致性、使用简化与真实自用健壮性
 
-> **进度指示**：声明DONE [5/6] (83.3%) · 验收PASS [5/6] · 状态：🟡 进行中
+> **进度指示**：声明DONE [6/6] (100%) · 验收PASS [6/6] · 状态：🟢 验收通过
 > 分支：`feat/iter-10-self-hosting-hardening`；独立工作区：`.worktrees/iter-10`，从规划提交`d3bd97ab16ffed6104034a887a01eb1b4d75dc0e`创建。
 > 用户已批准启动实施、精准Git提交与独立Worktree；按六卡串行验收推进。禁止部署、推送、合流或清理。
 
@@ -44,7 +44,7 @@
 | 03 | 稳定查询与CLI消费接口，保持旧入口兼容 | Strict-TDD | 02 | 🟢 已完成 / 验收:PASS | [03-query-cli-contract.md](./03-query-cli-contract.md) |
 | 04 | 看板展示Git/FS候选和可继承交接 | UI-Component | 03 | 🟢 已完成 / 验收:PASS | [04-board-handoff.md](./04-board-handoff.md) |
 | 05 | 建立源码、候选、安装与消费的发布证据索引 | Spike-Discovery | 04 | 🟢 已完成 / 验收:PASS | [05-release-evidence-index.md](./05-release-evidence-index.md) |
-| 06 | 真实自用链路与故障路径健壮性验收 | Spike-Discovery | 05 | 🔵 待验收 / 验收:UNKNOWN | [06-self-hosting-acceptance.md](./06-self-hosting-acceptance.md) |
+| 06 | 真实自用链路与故障路径健壮性验收 | Spike-Discovery | 05 | 🟢 已完成 / 验收:PASS | [06-self-hosting-acceptance.md](./06-self-hosting-acceptance.md) |
 
 ### 规划取舍
 原五卡方案把查询/CLI与看板集中在一张卡，首轮TypeSafe的单一职责仅62.5，未过70门槛。现拆为03数据接口与04展示消费，源码范围不交叠；未改变的01、02、发布索引、最终自用评估沿用原结果，仅重评实质变化的03/04。不是重复刷分。
@@ -81,18 +81,24 @@
 
 ## 5. 整体验收
 
-- [ ] 六卡均有真实type证据、独立APPROVED、有效C/D绑定和PASS，未把退出0或声明DONE代替。
-- [ ] 任务01—05的原生真实自用至少覆盖一次完整调度/验收链和一次正常跨会话续接。
-- [ ] 八组合模板、旧CLI/导入、Git/FS真实看板及证据读取集成通过。
-- [ ] 隔离负例/恢复测试通过；静态、synthetic与native-self-use分层列证，不外推部署/外部业务通过。
+- [x] 六卡均有真实type证据、独立APPROVED、有效C/D绑定和PASS，未把退出0或声明DONE代替。
+- [x] 任务01—05的原生真实自用至少覆盖一次完整调度/验收链和一次正常跨会话续接。
+- [x] 八组合模板、旧CLI/导入、Git/FS真实看板及证据读取集成通过。
+- [x] 隔离负例/恢复测试通过；静态、synthetic与native-self-use分层列证，不外推部署/外部业务通过。
 - [ ] 最终候选完整回归、独立整轮报告、分支strict通过；源改动均被有效DONE白名单覆盖。
-- [ ] 无活动实现命令遗留；UNKNOWN命令状态明确阻断。根索引更新和部署留在相应授权操作，不破Zero-Root-Touch。
+- [x] 无活动实现命令遗留；UNKNOWN命令状态明确阻断。根索引更新和部署留在相应授权操作，不破Zero-Root-Touch。
 
 ## 6. 当前交接
 
-任务01已完成独立APPROVED与C/D登记，D=2ecd3bc3f957ac1941b388e036a6427b717b6cc7，固定工具local strict确认PASS。实际经历正常跨会话续接及一次deadline取消后的FUSED收尾、用户明确单次授权恢复，原始事件和四预算均保留。
-任务02已固定strict PASS；任务03共享查询/CLI候选独立APPROVED，最终八文件170passed。任务04完成真实桌面Git/FS交互及四态、67项独立回归、非参与者APPROVED，登记D=2b818080c35e0630ed40e89a19e6c59dd9605e11后固定strict确认4/6 PASS。05—06未提前派发，按依赖继续。
-历史维护结论不重开；当前源码基线与各安装现状分开，安装/消费事实由05只读核查。
+六卡均已独立APPROVED并登记有效C/D，冻结协调器local strict确认6/6 PASS。每卡状态及收据以卡片为准，本文只作交付导航。
+
+最终产品候选b3938b8完整493passed（321.63秒）；06冻结C=f03c007，登记D=2954082。从实跑候选到冻结C仅卡片与证据变化，产品/测试未变，独审1727核对后沿用。完整输出见[evidence/06/controller-full-regression-final.json.output.txt](evidence/06/controller-full-regression-final.json.output.txt)。
+
+真实自用验证了03 A/B/C正常跨会话继承、01一次真实deadline取消/FUSED及用户授权恢复、05登记正文漂移正确拒绝。首次全量490passed/1failed暴露04 HTTP测试依赖真实库存；定点返原责任域，以显式临时库存修复、保持8秒门限和默认入口，独立69passed与新批准后才重跑全量。
+
+[健壮性最终报告](evidence/06/robustness-report-final.json)保留一次主控06派发顺序FAIL：尚未消费协调输出即原生委派。该条不作为合规正例，后续派发已先消费READY；独审按原标准采用03完整链，裁定MEDIUM非阻断。脚本不自动拦截原生委派。
+
+安装与新安装会话消费、部署及外部用户业务仍UNKNOWN；本轮不部署、推送、合流或清理。整轮非参与者总审与最终分支strict尚待完成。
 
 ### 初始化实际消费
 - 现有解析器识别6张TODO卡；结构、链接、白名单无跨卡重叠及TypeSafe换算校验通过，见[evidence/planning/init-validation.json](evidence/planning/init-validation.json)。
@@ -103,7 +109,7 @@
 <!-- iter:projection -->
 ## 验收事实（阶段比例不是工时）
 
-声明DONE 5/6 · 验收PASS 5/6
+声明DONE 6/6 · 验收PASS 6/6
 
 | 任务 | 声明 | 验收 | 业务阶段 / 清单比例 | 工程阶段 | 阻塞原因 | 累计尝试 | 最后更新 |
 | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -112,5 +118,5 @@
 | 03-query-cli-contract.md | DONE | PASS | 阶段清单已勾选完毕 / 3/3 (100%) | CHECKLIST_COMPLETE (未等同验收) | 未记录 | 0 | 2026-11-13T18:07:33.458803+00:00 |
 | 04-board-handoff.md | DONE | PASS | 阶段清单已勾选完毕 / 3/3 (100%) | CHECKLIST_COMPLETE (未等同验收) | 未记录 | 0 | 2026-11-14T01:32:48.144107+00:00 |
 | 05-release-evidence-index.md | DONE | PASS | 阶段清单已勾选完毕 / 3/3 (100%) | CHECKLIST_COMPLETE (未等同验收) | 未记录 | 0 | 2026-11-13T18:54:56.518826+00:00 |
-| 06-self-hosting-acceptance.md | TESTING | UNKNOWN | Stage 1/3：整理01—05真实消费证据，隔离夹具运行故障与恢复路径 / 0/3 (0%) | 读取真实基线、当前变更和前置PASS；完成context、claim与同owner dispatch-check。 | 未记录 | 0 | 2026-11-14T01:10:27.224983+00:00 |
+| 06-self-hosting-acceptance.md | DONE | PASS | 阶段清单已勾选完毕 / 3/3 (100%) | CHECKLIST_COMPLETE (未等同验收) | 未记录 | 0 | 2026-11-14T01:50:16.238852+00:00 |
 <!-- /iter:projection -->
