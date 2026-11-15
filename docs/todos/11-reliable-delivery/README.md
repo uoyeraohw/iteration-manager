@@ -4,6 +4,19 @@
 > 2026-11-15最新授权：适配Linux并整理Windows/Linux开发指引；新增00前置任务，随后01—12逐项验收串行推进。当前状态以本页验收投影、任务卡和独立收据为准；实施、精准Git与Worktree授权保持。
 > 独立Worktree为`.worktrees/iter-11`，分支`feat/iter-11-reliable-delivery`。先完成[00平台适配](00-linux-runner-and-dev-guide.md)，不再要求另找Windows主机；原Windows-only拒绝保留为历史证据。迁移授权见[platform-migration-authorization.json](evidence/planning/platform-migration-authorization.json)。
 
+## 当前收口（2026-11-15 UTC）
+
+00—12共13卡均完成C/非参与者独审/D和冻结local strict，验收13/13 PASS；最终受审候选为 `f489377d2a2be14934ce86517006b82986cc7069`。该候选完整维护套件 **643 passed、2项Windows专属skip**（Python3.11.17/pytest9.2/MCP1.30，68.18秒），runner退出0且进程树终态；独立整轮总审Scope/Spec/Quality均APPROVED。**本次摘要登记后仍须执行最终冻结branch strict，当前待执行。**
+
+- [整轮独审](../../../build/iter11-closeout/20261115T073805Z/whole-review/report.json)、[全量摘要](../../../build/iter11-closeout/20261115T073805Z/full-suite-summary.json)、[原始输出](../../../build/iter11-closeout/20261115T073805Z/full-suite.json.output.txt)、[runner收据](../../../build/iter11-closeout/20261115T073805Z/full-suite.json)、[JUnit](../../../build/iter11-closeout/20261115T073805Z/full-suite.xml)。
+- [证据沿用](../../../build/iter11-closeout/20261115T073805Z/evidence-reuse.json)保留10集成130/临时payload11/Git漂移5、08合法合成Git/FS10/100卡三次量测、11选定06真实链/续接审计及12新鲜Codeg只读消费的各自原候选与边界；没有无故重跑量测或宣称提速。
+- [冻结工具校验](../../../build/iter11-closeout/20261115T073805Z/frozen-tools-check.json)：协调器91、获批Linux runner6、守卫2，共99份来源Git字节一致。固定器已知模式/旧报告缺陷保留，不让候选自证批准。
+- 收口原件主目录为 `/data/workspace/iteration-manager/build/iter11-closeout/20261115T073805Z/`；本Worktree保留字节一致副本，上述链接指向本地副本。[初次归档映射](../../../build/iter11-closeout/20261115T073805Z/archive-map-initial.json)记录两处SHA，后续报告/strict继续留双份。build为本机保留资产，不声称Git克隆包含这些原件。
+- Linux runner及[AGENTS双环境开发指引](../../../AGENTS.md)已交付；Windows当前复测、Python3.13完整套件、Gemini自动发现/配置注入、当前安装采用与完整外部FS业务仍未证实；FS时间中断grant仍不支持。安装清单/临时副本验证不等于部署。
+- 历史Codeg03 worker启动BLOCKED、04顺序FAIL、12旧授权解释及旧终态消费FAIL和缺失子退出UNKNOWN全部保留；后续明确授权、内核重启安全基线独审、标准replan1/2及新消费仅覆盖后续。11两处归属Ruling是同28条精确元数据路径；12宽泛授权Ruling已由独审否决。Deferred Minors仅原始输出空白，保留原件，详见总审。
+
+暂不部署、推送、合流或清理；主main与隔离分支保留。下文初始化/迁移/启动段落是带日期历史，当前任务状态看本摘要及验收投影。
+
 ## 1. 迭代核心目标与全局约束
 <!-- iter:goal -->
 让现有交付协议不误放行、容易正确使用、可可靠续接且证据可追溯；八项意见统一纳入本轮，使用iteration-manager真实管理自身。任务卡和既有autonomy事件是唯一任务真源。
@@ -130,11 +143,11 @@
 
 ## 7. 整轮验收
 
-- [ ] 十三卡具备各自type证据、非参与者批准、合法C/D绑定与PASS。
-- [ ] 完整链和真实新会话检查点继承有本轮原始证据，03/12的先消费后派发得到实际证明。
-- [ ] 10隔离跨模块反例、08合法Git/FS量测、06/07临时安装检查和05支持声明各有边界清楚的原件。
+- [x] 十三卡具备各自type证据、非参与者批准、合法C/D绑定与PASS。
+- [x] 完整链和真实新会话检查点继承有本轮原始证据，03/12的先消费后派发得到实际证明。
+- [x] 10隔离跨模块反例、08合法Git/FS量测、06/07临时安装检查和05支持声明各有边界清楚的原件。
 - [ ] 最终候选整轮集成/完整维护套件、独立总审及冻结最终branch strict通过。
-- [ ] 所有FAIL/UNKNOWN/BLOCKED、Deferred Minors和发布/自动发现/FS业务缺口如实保留，未越权部署或清理。
+- [x] 所有FAIL/UNKNOWN/BLOCKED、Deferred Minors和发布/自动发现/FS业务缺口如实保留，未越权部署或清理。
 
 <!-- iter:projection -->
 ## 验收事实（阶段比例不是工时）
