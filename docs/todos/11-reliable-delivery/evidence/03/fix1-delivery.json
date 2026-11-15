@@ -1,0 +1,36 @@
+{
+  "version": 1,
+  "native_implementer_thread_id": "01a1dd6e-e307-7d53-9be3-0f011688cd30",
+  "base_sha": "09e916a94aaf90a8281f4ed568beed4a4a4a2816",
+  "repair_parent_c1": "16640d1e7d83fc546e79e19995a0a91cf80c533e",
+  "source_manifest": "docs/todos/11-reliable-delivery/evidence/03/fix1-source-manifest.json",
+  "source_manifest_sha256": "49ed81e11baeca28d6dd8140554306d05f27f10470b88cb719075250f9bf358f",
+  "checks_proposal": "docs/todos/11-reliable-delivery/evidence/03/checks-proposal-v2.json",
+  "original_red": {
+    "receipt": "docs/todos/11-reliable-delivery/evidence/03/red-implementer-01.json",
+    "raw_exit_code": 1,
+    "tree_terminal": true,
+    "failed": 2,
+    "passed": 31,
+    "failure_kind": "assertion",
+    "reused": true
+  },
+  "supplemental_chronology": "New reverse-completion test and task12 routing correction were written after C1 review and before fix1 final run; no new RED claimed; production guard unchanged.",
+  "final_green_regression": {
+    "receipt": "docs/todos/11-reliable-delivery/evidence/03/fix1-final.json",
+    "output": "docs/todos/11-reliable-delivery/evidence/03/fix1-final.json.output.txt",
+    "status": "COMPLETED",
+    "raw_exit_code": 0,
+    "tree_terminal": true,
+    "passed": 34,
+    "failed": 0
+  },
+  "native_chain": "Original native-codeg-chain.json retained: frozen READY consumed before one actual Codeg dispatch; worker command startup BLOCKED by bwrap; native completed is not worker success.",
+  "remaining": [
+    "controller C2",
+    "independent review",
+    "controller D and frozen strict"
+  ],
+  "active_commands": false,
+  "commits_created": false
+}

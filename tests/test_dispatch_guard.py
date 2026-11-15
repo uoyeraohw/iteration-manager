@@ -44,6 +44,49 @@ console.log(JSON.stringify({before,calls,answer}));''')
     assert actual['answer']['delegation'] == {'status': 'unknown', 'id': 'd1'}
 
 
+def test_overlapping_requests_dispatch_in_reverse_completion_order_with_own_identity():
+    actual = run_js('''
+const second={...request,request_id:'r2',task_path:'/project/second.md',task_id:'04',
+ owner:'other-owner',phase:'review',candidate:'def',context:'/project/second.json'};
+function observation(req, id) {
+ return {...result,request_id:req.request_id,terminal_evidence:{source:'native-command',id},
+  argv:['python3','-B',req.tool_entry,'--dispatch-check',req.task_path,'--context',req.context,
+   '--phase',req.phase,'--owner',req.owner],
+  stdout:JSON.stringify({readiness:'READY',task_path:req.task_path,task_id:req.task_id,
+   phase:req.phase,candidate:req.candidate})};
+}
+let resolveFirst, resolveSecond;
+const firstCheck=new Promise(resolve=>{resolveFirst=resolve});
+const secondCheck=new Promise(resolve=>{resolveSecond=resolve});
+const events=[];
+const delegate=async(req, observed)=>{events.push({request:req,ready:observed});
+ return {id:req.request_id};};
+const firstWork=dispatchAfterReady({request,check:()=>firstCheck,dispatch:delegate});
+const secondWork=dispatchAfterReady({request:second,check:()=>secondCheck,dispatch:delegate});
+await Promise.resolve(); const before=events.length;
+resolveSecond(observation(second,'cmd-2'));
+const secondResult=await secondWork; const afterSecond=events.length;
+resolveFirst(observation(request,'cmd-1'));
+const firstResult=await firstWork;
+console.log(JSON.stringify({before,afterSecond,events,firstResult,secondResult}));''')
+    assert actual['before'] == 0
+    assert actual['afterSecond'] == 1
+    assert [event['request']['request_id'] for event in actual['events']] == ['r2', 'r1']
+    for event, identity in zip(actual['events'], [
+        ('r2', '/project/second.md', '04', 'other-owner', 'review', 'def', '/project/second.json'),
+        ('r1', '/project/card.md', '03', 'owner', 'implementation', 'abc', '/project/context.json'),
+    ]):
+        req, ready = event['request'], event['ready']
+        assert tuple(req[key] for key in ('request_id', 'task_path', 'task_id', 'owner',
+                                          'phase', 'candidate', 'context')) == identity
+        assert tuple(ready[key] for key in ('task_path', 'task_id', 'phase', 'candidate')) == (
+            identity[1], identity[2], identity[4], identity[5])
+    assert actual['firstResult']['delegation'] == {'id': 'r1'}
+    assert actual['secondResult']['delegation'] == {'id': 'r2'}
+    assert actual['firstResult']['check']['terminal_evidence']['id'] == 'cmd-1'
+    assert actual['secondResult']['check']['terminal_evidence']['id'] == 'cmd-2'
+
+
 @pytest.mark.parametrize('mutation', [
     "result.state='running'", "result.state='failed'", "result.state='unknown'",
     "result.exit_code=1", "result.exit_code='0'", "result.stdout='{'",

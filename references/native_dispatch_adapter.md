@@ -1,6 +1,6 @@
 # Native dispatch adapter
 
-`dispatchAfterReady({request, check, dispatch})` in `scripts/dispatch_guard.js` is plain JavaScript: copy the exact source into a persistent host JavaScript executor and run the check and dispatch callbacks in that same call. It does not depend on Node, run a process, discover a host tool, or intercept dispatches that bypass this entry. The controller retains the card and writer, confirms authorization and deadlines, and preserves the original native observations. Task 04 owns integration into default instructions.
+`dispatchAfterReady({request, check, dispatch})` in `scripts/dispatch_guard.js` is plain JavaScript: copy the exact source into a persistent host JavaScript executor and run the check and dispatch callbacks in that same call. It does not depend on Node, run a process, discover a host tool, or intercept dispatches that bypass this entry. The controller retains the card and writer, confirms authorization and deadlines, and preserves the original native observations. Task 12 owns integration into default instructions; task 04 covers navigation.
 
 The request contains nonempty strings `request_id`, `project_root`, `tool_entry`, `task_path`, `task_id`, `owner`, `phase`, `candidate`, and `context`. Use a unique request ID and the exact paths actually passed to the command. The CLI reports an absolute `task_path`, so use that exact absolute path in both request and argv. Use the same spelling for cwd and project root; no path normalization is performed. The guard snapshots the fields before awaiting the check.
 

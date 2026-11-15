@@ -1,0 +1,8 @@
+{
+  "scripts/dispatch_guard.js": "eb5a297e0d34558aeae5b79817ed643da445ddb8739254ab04c7e94a2635576d",
+  "tests/test_dispatch_guard.py": "4fdbe0671fefe2b3efeed506f4919014c5657bc41b758e54fec2399b0738f3e8",
+  "references/native_dispatch_adapter.md": "903a0474367ede6627cbea234377f855c4383c6888c61dd028806bdbd94aa355",
+  ".agents/notes/planned/iter11/03-native-dispatch-guard.md": "80a2b069929c51fea0d0cad063f7aa454f0d5797b76bffed2ae716b9c2413e7d",
+  "scripts/deadline_watch.js": "d96c6d87da8e415ecee2f0309eebb6cd7c6206803c134a25cacb55092f4b0064",
+  "tests/test_deadline_watch.py": "0bc8f665c1883242245482f6b7e0add5bba527619f98e2212a4c33f2aea1b311"
+}
