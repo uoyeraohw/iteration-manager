@@ -1,0 +1,194 @@
+{
+  "kind": "independent-review-record",
+  "candidate": "6065cd264738e4c7d56689ef3e4c2e9813217fa1",
+  "recorded_at": "2026-11-15T05:25:28.610956+00:00",
+  "independent_review": {
+    "candidate": "6065cd264738e4c7d56689ef3e4c2e9813217fa1",
+    "base": "3158e75869d5c4346c51256de878f14ea190f305",
+    "contract_sha": "3158e75869d5c4346c51256de878f14ea190f305",
+    "reviewer_uuid": "01a1dda4-bfb4-7c12-bd9d-3c56393a5447",
+    "independence": "Independent reviewer, same reviewer as review1; no task07 design, implementation, test authorship, RCA, or delegation. Distinct from excluded implementer 01a1dda0-8d6b-79c0-8739-a8409dec0d93, all task consumers and root controller. Verification is the specified scope check and read-only source mapping, not task implementation testing.",
+    "verdicts": {
+      "scope": "APPROVED",
+      "spec": "APPROVED",
+      "quality": "APPROVED",
+      "overall": "APPROVED"
+    },
+    "findings": [],
+    "rulings": [
+      {
+        "id": "F1",
+        "status": "ADDRESSED",
+        "file": "tests/test_harness_portability.py",
+        "line": 40,
+        "evidence": "The 11-passed literal is removed. The actual nested pytest command must succeed, its runner must be COMPLETED with terminal tree and raw exit 0, and output must be nonempty; pytest exit 5 covers empty collection. Real whitelist copy and no-history assertions remain. Fix regression and nested receipts show 13 and 11 passed respectively."
+      },
+      {
+        "id": "F2",
+        "status": "ADDRESSED",
+        "file": "docs/todos/11-reliable-delivery/07-portable-test-support.md",
+        "line": 96,
+        "evidence": "Ledger now presents all original runs, means, relative change and historical path counts with a descriptive-only qualification. Computed 1.888701 to 1.843643 seconds, -2.39%, agrees with raw samples. No speedup claim."
+      }
+    ],
+    "evidence_applicability_chronology": {
+      "identity_and_contract": "HEAD 6065cd is direct child of prior C d09888a; prior C is direct child of BASE. Branch feat/iter-11-reliable-delivery; clean tracked worktree. No explicit invalid delivery mode, no FS profile claim; Git base_sha binds BASE and head_sha awaits registration. Original card text/acceptance and iteration goal remain frozen; fix changes only allowed execution metadata, events and ledger. Fix budget is recorded as round 1/total 1, not reset.",
+      "baseline": "Original baseline runner 05:14:17-05:14:21 on BASE before extraction, 11 passed, completed, exit 0, terminal tree. Prior review inspected native chronology and baseline.",
+      "benchmark_before": "Initial before receipt preserved exit 1 TypeError before tests. Corrected before-v2 ran 05:14:42-05:14:47 before extraction; three successful selected-test runs, two historical consumer references. Original raw outputs and corrected measure script preserved.",
+      "benchmark_after": "Original after 05:15:29-05:15:35 used the same corrected script, Linux Python and sample, three selected-test runs and unique temporary paths; zero historical references. Fix changes only separate portability assertion and card/evidence, not selected tests, harness, shared scripts or measurement source; source-check confirms original hashes still match. Prior measurements remain applicable in their stated source and environment, not relabeled as a new run.",
+      "regression": "fix1-regression receipt records frozen runner and exact three requested test files; 05:21:38-05:21:45, 13 passed, exit 0, terminal tree. Nested fix1-payload receipt retains actual cwd /tmp/iter11-task07-fix1-regression/test_payload_copy_runs_handoff0/payload and records 11 passed, exit 0 and terminal tree; real whitelist copy excludes docs/todos, with two affected suites exercised. Nested receipt is not a root-project command receipt.",
+      "compatibility": "Prior review verified only ROOT parent index differs from historical harness, both original consumers route to support, isolated and nonisolated paths and HTTP boundaries are exercised, and historical evidence/04 is unchanged. The fix does not alter those inputs. HTTP/DOM checks do not constitute native browser evidence.",
+      "terminal_and_readiness": "fix1-native thread is excluded implementer and turn completed; fix1-terminal records native session completion separately from runner trees. Same-owner dispatch-check READY has acceptance_verdict UNKNOWN and is readiness only. Original root attempt rejected cross-project nested receipt; corrected root-only attempt retained original and nested raw evidence with true cwd.",
+      "type_checks": "All five Refactor-Benchmark checks have source-bound original or fix receipts and raw outputs: baseline, regression, compatibility observation, benchmark_before and benchmark_after. This type does not require Strict-TDD RED. Decisions and interfaces are documented in original delivery and fix handoff."
+    },
+    "source_mapping": {
+      "original_manifest": "docs/todos/11-reliable-delivery/evidence/07/source-manifest.json: 98 entries match prior C",
+      "fix_manifest": "docs/todos/11-reliable-delivery/evidence/07/fix1-source-manifest.json: 109 entries match current C",
+      "old_manifest_change_at_C": [
+        "tests/test_harness_portability.py"
+      ],
+      "retained_inputs": "All six fix1-delivery unchanged input SHA256 values match Git blobs at both candidates; historical evidence and iteration README unchanged against BASE.",
+      "receipt": "build/iter11-review/task07-review2/source-check.json",
+      "output": "build/iter11-review/task07-review2/source-check.json.output.txt"
+    },
+    "scope_receipt": {
+      "path": "build/iter11-review/task07-review2/scope-runner.json",
+      "output": "build/iter11-review/task07-review2/scope-runner.json.output.txt",
+      "status": "COMPLETED",
+      "raw_exit_code": 0,
+      "tree_terminal": true,
+      "result": "91 changed files passed physical scope check; implicit card scope applies. Known fdcc4cc mode/takeover defects limit this result to scope; delivery mode and frozen contract independently assessed."
+    },
+    "DeferredMinors": [
+      "Prior review's extra blank line at EOF in evidence/07/implementation-last-message.txt remains; preserve raw original and do not treat it as behavioral failure."
+    ],
+    "limitations": [
+      "Full suite, Windows Job Object execution, actual installation, deployment, new-session consumption and whole iteration are outside this approval.",
+      "No native browser observation; existing HTTP and DOM observations are not represented as browser evidence.",
+      "Three timing samples are descriptive and do not prove a performance improvement.",
+      "Existing effective suites were not rerun during review; source mapping and runner-wrapped scope check were the only new verification."
+    ],
+    "approval_scope": "APPROVED for the whole task07 candidate C against unchanged BASE specification and applicable type contract, preserving prior valid conclusions and reviewing F1/F2 plus fix diff; not just a finding-only closure. This report does not register D, run strict, approve iteration release, deploy, merge, or push."
+  },
+  "originals": {
+    "scope-runner.json.output.txt": {
+      "path": "build/iter11-review/task07-review2/scope-runner.json.output.txt",
+      "sha256": "c8a28e1fae5d78c530c8df7113e8dd4e93f719b3007baadfe72104fe12a7e4ea"
+    },
+    "review-native.jsonl": {
+      "path": "build/iter11-review/task07-review2/review-native.jsonl",
+      "sha256": "4b8a3aaa80cb253cb3d91f7603b18b5b88b76f6c35aa0d041d0e0e3200362a86"
+    },
+    "source-check.json.child.json": {
+      "path": "build/iter11-review/task07-review2/source-check.json.child.json",
+      "sha256": "73d85dcda438878827a60ebee2e51509dcfc1384150b18ca583679d49574db63"
+    },
+    "attempt.call.json": {
+      "path": "build/iter11-review/task07-review2/attempt.call.json",
+      "sha256": "0ee144a73e40df251363ca8b1f8188e5c042aa0a274a98845fea0812660adfe0"
+    },
+    "review-package.txt": {
+      "path": "build/iter11-review/task07-review2/review-package.txt",
+      "sha256": "2d34fac1cae76efca4697fdd39395499f1a258969c2ec5abd24dfc1dc68a845e"
+    },
+    "review-last-message.txt": {
+      "path": "build/iter11-review/task07-review2/review-last-message.txt",
+      "sha256": "87379b96c1f7607dec04d4b0bd8f171386ca5d71680404752062aa3894b8e963"
+    },
+    "terminal.json": {
+      "path": "build/iter11-review/task07-review2/terminal.json",
+      "sha256": "693615104d3f7697c6126e6496b561c4261e5862ec63daca573c8cb7b1fca122"
+    },
+    "review-native.stderr.txt": {
+      "path": "build/iter11-review/task07-review2/review-native.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "scope-runner.json": {
+      "path": "build/iter11-review/task07-review2/scope-runner.json",
+      "sha256": "cef97999b272e61c0277a5f3e22df577e807f74fd8830d50d58780a26b94f6fb"
+    },
+    "source-check.json": {
+      "path": "build/iter11-review/task07-review2/source-check.json",
+      "sha256": "95c370067e2775c045db4078631c52566fd5187ae31bf7299cf101144bce9c17"
+    },
+    "attempt.json": {
+      "path": "build/iter11-review/task07-review2/attempt.json",
+      "sha256": "423aad1653366f9080269d0da6cef9464ce9fac765748763ecbe70010080e955"
+    },
+    "dispatch-check.json": {
+      "path": "build/iter11-review/task07-review2/dispatch-check.json",
+      "sha256": "26b94ab862c67e1ddfe065bb58d7bf3f0ffd08dc53b9884487cf8dedf7412a01"
+    },
+    "review-brief.md": {
+      "path": "build/iter11-review/task07-review2/review-brief.md",
+      "sha256": "6f581008d5011e0d90dab911797b94dc29b2a8636448cdaa1b63bb781c905ceb"
+    },
+    "review-guard.json": {
+      "path": "build/iter11-review/task07-review2/review-guard.json",
+      "sha256": "25d34639e7dd7f3a6b3b4b7785d16fba735e86e9954dd23af56cef5afc57da97"
+    },
+    "context.json": {
+      "path": "build/iter11-review/task07-review2/context.json",
+      "sha256": "fa10a7b21cf044194ce98056b1e8e0798e615c35e7a8e1b9a4b89522eeba581f"
+    },
+    "verify_sources.py": {
+      "path": "build/iter11-review/task07-review2/verify_sources.py",
+      "sha256": "766375494cbea83eb9651c9133ab5c9ca68db8c87cfcce474936652ead252d49"
+    },
+    "release.call.json": {
+      "path": "build/iter11-review/task07-review2/release.call.json",
+      "sha256": "72cf54253163055dda71b7f1f66fb8b3cfa2dc650055d59ef2b4e8002cf92ce3"
+    },
+    "review-check-observation.json": {
+      "path": "build/iter11-review/task07-review2/review-check-observation.json",
+      "sha256": "aa41b085a87e56f1dbaf9d8f8c7a2ef3827f7850c7fac62a2439ce735134b3c6"
+    },
+    "scope-runner.json.child.json": {
+      "path": "build/iter11-review/task07-review2/scope-runner.json.child.json",
+      "sha256": "6f1d894ee8d874abdfed073a5502599629de9346f6992a6c7dfa17d894c97949"
+    },
+    "report.json": {
+      "path": "build/iter11-review/task07-review2/report.json",
+      "sha256": "7dbe0906bd8405a7b392edccae6ac709a219a36ec95104e2a2d36b974cee90d0"
+    },
+    "source-check.json.output.txt": {
+      "path": "build/iter11-review/task07-review2/source-check.json.output.txt",
+      "sha256": "26589ff294395acdb2cdfc2fe678cefbc1fc8c2b9b05f3bc9ecd73a1d8b0c7fc"
+    }
+  },
+  "scope_receipt": {
+    "version": 1,
+    "argv": [
+      "python3",
+      "-B",
+      "/data/workspace/iteration-manager/build/frozen-tools/fdcc4cce8863/scripts/iter_sync.py",
+      "--check-scope",
+      "3158e75869d5c4346c51256de878f14ea190f305",
+      "6065cd264738e4c7d56689ef3e4c2e9813217fa1",
+      "docs/todos/11-reliable-delivery/07-portable-test-support.md"
+    ],
+    "cwd": "/data/workspace/iteration-manager/.worktrees/iter-11",
+    "deadline": "2026-11-15T05:28:40.304903+00:00",
+    "cleanup_reserve_seconds": 5,
+    "status": "COMPLETED",
+    "deadline_checked_at": "2026-11-15T05:24:27.568061+00:00",
+    "started_at": "2026-11-15T05:24:27.573272+00:00",
+    "ended_at": "2026-11-15T05:24:27.683409+00:00",
+    "raw_exit_code": 0,
+    "tree_terminal": true,
+    "output": "build/iter11-review/task07-review2/scope-runner.json.output.txt",
+    "container_pid": 3475324,
+    "launcher_exit_code": 0,
+    "command": {
+      "status": "COMPLETED",
+      "raw_exit_code": 0,
+      "started_at": "2026-11-15T05:24:27.573272+00:00",
+      "tree_terminal": true,
+      "deadline_checked_at": "2026-11-15T05:24:27.568061+00:00",
+      "pid": 3475325,
+      "ended_at": "2026-11-15T05:24:27.660715+00:00"
+    },
+    "late_by_seconds": 0
+  },
+  "scope_output": "[IterSync:ScopeFirewall:PASSED] All 91 changed files within declared scope; ownership is not inferred.\n"
+}
