@@ -86,6 +86,8 @@ updated_at: "2026-11-15T05:12:33.297581+00:00"
 
 
 2026-11-15T05:12:33.298956+00:00：非参与Reviewer01a1dd96-f44b-7971-8cc6-9b6de8d5990b对C7e5476c8879edbd45227b82f8189fdf74aab81a9完整候选APPROVED，独审原件及物理范围已核对；登记D后另运行冻结strict。
+
+2026-11-15T05:13:34.106987+00:00：登记D f4610a4的附加actual-payload-smoke误用observation；冻结器仅允许指定名称观测，strict拒绝并保留原件build/iter11-review/task06-review2/local-strict.json/output。仅登记收据修正为command并绑定真实argv/cwd/exit；C2源码、规格及已审实证未变，无需重跑有效测试或重审源码。D2后strict成功才启动07。
 <!-- /iter:ledger -->
 
 ## 8. 接口依赖与执行边界

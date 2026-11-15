@@ -139,7 +139,7 @@
 <!-- iter:projection -->
 ## 验收事实（阶段比例不是工时）
 
-声明DONE 7/13 · 验收PASS 6/13
+声明DONE 7/13 · 验收PASS 7/13
 
 | 任务 | 声明 | 验收 | 业务阶段 / 清单比例 | 工程阶段 | 阻塞原因 | 累计尝试 | 最后更新 |
 | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -149,7 +149,7 @@
 | 03-native-dispatch-guard.md | DONE | PASS | 阶段清单已勾选完毕 / 3/3 (100%) | CHECKLIST_COMPLETE (未等同验收) | 未记录 | 1 | 2026-11-15T04:31:36.497630+00:00 |
 | 04-navigation-and-support.md | DONE | PASS | 阶段清单已勾选完毕 / 3/3 (100%) | CHECKLIST_COMPLETE (未等同验收) | 未记录 | 0 | 2026-11-15T04:43:19.905360+00:00 |
 | 05-support-matrix.md | DONE | PASS | 阶段清单已勾选完毕 / 3/3 (100%) | CHECKLIST_COMPLETE (未等同验收) | 未记录 | 1 | 2026-11-15T04:54:24.849199+00:00 |
-| 06-installation-provenance.md | DONE | FAIL | 阶段清单已勾选完毕 / 3/3 (100%) | CHECKLIST_COMPLETE (未等同验收) | 未记录 | 1 | 2026-11-15T05:12:33.297581+00:00 |
+| 06-installation-provenance.md | DONE | PASS | 阶段清单已勾选完毕 / 3/3 (100%) | CHECKLIST_COMPLETE (未等同验收) | 未记录 | 1 | 2026-11-15T05:12:33.297581+00:00 |
 | 07-portable-test-support.md | TODO | UNKNOWN | 取得原维护测试基线及同环境Before量测 / 0/3 (0%) | baseline：python -B -m pytest -p no:cacheprovider tests/test_board_handoff.py tests/test_board_service.py -q；在修改前保留实际维护基线，通过冻结runner。 | 未记录 | 0 | UNKNOWN |
 | 08-approved-chain-benchmark.md | TODO | UNKNOWN | 构造Git/FS合法批准库存，先断言每卡审计PASS / 0/3 (0%) | experiment：python -B tests/benchmarks/approval_chain.py --sizes 10 100 --repeats 3 --output docs/todos/11-reliable-delivery/evidence/08/measurements.json；先确认合法Git/FS库存每卡PASS，通过冻结runner。 | 未记录 | 0 | UNKNOWN |
 | 09-proportional-refactor-evidence.md | TODO | UNKNOWN | 用两种真实新卡规划样例确认当前成本与指标匹配问题 / 0/3 (0%) | experiment：python -B -m pytest -p no:cacheprovider tests/test_refactor_evidence_policy.py tests/test_template_generation.py tests/test_task_card_schema.py tests/test_completion_gates.py -q；通过冻结runner保留真实退出码，另按本卡验收完成实际消费或实验。 | 未记录 | 0 | UNKNOWN |

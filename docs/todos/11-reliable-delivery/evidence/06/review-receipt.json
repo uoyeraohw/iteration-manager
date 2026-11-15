@@ -41,9 +41,12 @@
     },
     {
       "name": "actual-payload-smoke",
-      "kind": "observation",
+      "kind": "command",
       "summary": "C1真实交付白名单111项；独立临时副本检查退出0，修改SKILL.md后退出2；runner COMPLETED、进程树终态。",
-      "output": "docs/todos/11-reliable-delivery/evidence/06/fix1-real-payload.json.output.txt"
+      "output": "docs/todos/11-reliable-delivery/evidence/06/fix1-real-payload.json.output.txt",
+      "command": "/data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B docs/todos/11-reliable-delivery/evidence/06/real-payload-smoke.py",
+      "cwd": ".",
+      "exit_code": 0
     }
   ]
 }
