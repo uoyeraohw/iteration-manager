@@ -1,0 +1,72 @@
+{
+  "native_session_uuid": "01a1dd65-6c80-70d0-b44f-edcf77bf8df3",
+  "base_sha": "ecf20784605017c80063000f5d3d42fa7920c680",
+  "source_manifest": "docs/todos/11-reliable-delivery/evidence/02/source-manifest.json",
+  "candidate": "uncommitted source/test/note candidate; Controller card metadata excluded",
+  "timeline": [
+    {
+      "receipt": "docs/todos/11-reliable-delivery/evidence/02/red-01.json",
+      "output": "docs/todos/11-reliable-delivery/evidence/02/red-01.json.output.txt",
+      "status": "COMPLETED",
+      "raw_exit_code": 1,
+      "tree_terminal": true,
+      "counts": "3 failed, 24 passed",
+      "classification": "assertion RED before production edit: real invalid UTF-8 legacy subprocess, mixed callable, fixture deletion after discovery"
+    },
+    {
+      "receipt": "docs/todos/11-reliable-delivery/evidence/02/red-02.json",
+      "output": "docs/todos/11-reliable-delivery/evidence/02/red-02.json.output.txt",
+      "status": "COMPLETED",
+      "raw_exit_code": 1,
+      "tree_terminal": true,
+      "counts": "4 failed, 24 passed",
+      "classification": "assertion RED before production edit adds standalone injected OSError"
+    },
+    {
+      "receipt": "docs/todos/11-reliable-delivery/evidence/02/green-01.json",
+      "output": "docs/todos/11-reliable-delivery/evidence/02/green-01.json.output.txt",
+      "status": "COMPLETED",
+      "raw_exit_code": 0,
+      "tree_terminal": true,
+      "counts": "28 passed",
+      "classification": "initial green, before added audit-read race and malformed-card case"
+    },
+    {
+      "receipt": "docs/todos/11-reliable-delivery/evidence/02/green-02.json",
+      "output": "docs/todos/11-reliable-delivery/evidence/02/green-02.json.output.txt",
+      "status": "COMPLETED",
+      "raw_exit_code": 0,
+      "tree_terminal": true,
+      "counts": "29 passed",
+      "classification": "final same-candidate green and regression; additional audit-read race and malformed-card case did not undergo RED"
+    }
+  ],
+  "matrix": {
+    "legacy_subprocess": "actual invalid UTF-8, JSON and healthy row",
+    "callable": "mixed real invalid UTF-8 and synthetic OSError; independent OSError",
+    "discovery_race": "synthetic explicit deletion after real discovery",
+    "audit_race": "synthetic explicit deletion after initial read, before audit; known missing retained",
+    "malformed": "numbered malformed card retained with finding, non-PASS",
+    "read_only": "fixture snapshots assert byte equality; race fixture explicitly removes only named card",
+    "compatibility": "legacy shape, healthy exact row, invalid directory/usage callable return 1, legacy raises ValueError and subprocess exits 1; existing discovery/CLI/sync suites"
+  },
+  "evidence_scope": "Native Linux runner and Python 3.11 execution; fault scenarios are synthetic fixtures except actual invalid UTF-8 bytes. Neither Windows, full maintenance suite, deployment, external business acceptance nor independent approval is established.",
+  "checks_reuse": "green-02 runs exact prescribed four-file selection on same source and test candidate; one execution serves green and regression. green-01 preceded a new direct audit race and malformed test and is not final regression.",
+  "pending": [
+    "Controller freeze and commit implementation C",
+    "independent review of C and frozen specification",
+    "Controller registration D",
+    "frozen coordinator local strict",
+    "iteration integration and full suite as separately required"
+  ],
+  "coordinator": "frozen fdcc4cce8863; no candidate self-approval",
+  "highest_permitted_state": "TESTING; card untouched",
+  "active_controlled_command": "none; all four receipts report COMPLETED and tree_terminal true",
+  "workspace_verification": {
+    "head": "ecf20784605017c80063000f5d3d42fa7920c680",
+    "scope": "Only iter_cli.py, new resilience test, planned note and task02 evidence are implementer changes; preexisting card and initial evidence are Controller-owned.",
+    "line_endings": "git ls-files --eol: i/crlf w/crlf; 414 CRLF and zero bare LF",
+    "diff_check": "git diff --check reports CR bytes on added CRLF lines; git -c core.whitespace=cr-at-eol diff --check exits 0",
+    "source_manifest_hashes": "verified after final test; exact source/test hashes recorded in source-manifest.json"
+  }
+}

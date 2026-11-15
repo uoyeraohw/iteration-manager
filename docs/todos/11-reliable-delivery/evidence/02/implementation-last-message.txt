@@ -1,0 +1,7 @@
+Task 02 implementation is ready for Controller handoff. [iter_cli.py](/data/workspace/iteration-manager/.worktrees/iter-11/scripts/iter_cli.py:16) now isolates failures per discovered card while preserving the legacy report shape and entry-point behavior.
+
+The frozen runner recorded assertion REDs before the source change. The final four-file GREEN/regression run passed **29 tests**, with `tree_terminal: true`. The tests cover actual invalid UTF-8, injected read errors, deletion races, malformed cards, healthy results, and byte preservation. The audit-read race and malformed-card test was added after the initial GREEN and did not itself undergo RED.
+
+Evidence and limits are recorded in [delivery.json](/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/02/delivery.json) and [source-manifest.json](/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/02/source-manifest.json). CRLF was preserved; the CRLF-aware diff check passed.
+
+The candidate remains uncommitted and unapproved. Controller C, independent review, D, and frozen local strict remain pending. No controlled command is active.

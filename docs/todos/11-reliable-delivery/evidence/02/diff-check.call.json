@@ -1,0 +1,15 @@
+{
+  "kind": "controller-command-observation",
+  "argv": [
+    "git",
+    "-c",
+    "core.whitespace=cr-at-eol",
+    "diff",
+    "--check"
+  ],
+  "started_at": "2026-11-15T04:16:29.139231+00:00",
+  "ended_at": "2026-11-15T04:16:29.143202+00:00",
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": ""
+}

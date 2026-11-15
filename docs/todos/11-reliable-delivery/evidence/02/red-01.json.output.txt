@@ -1,0 +1,76 @@
+FFF........................                                              [100%]
+=================================== FAILURES ===================================
+_____________________ test_legacy_subprocess_real_bad_utf8 _____________________
+
+tmp_path = PosixPath('/tmp/iter11-task02-red-01/test_legacy_subprocess_real_ba0')
+
+    def test_legacy_subprocess_real_bad_utf8(tmp_path):
+        (tmp_path / '01-healthy.md').write_text(HEALTHY, encoding='utf-8')
+        (tmp_path / '02-bad.md').write_bytes(b'\xffinvalid')
+        before = snapshot(tmp_path)
+        result = subprocess.run([sys.executable, '-B', iter_sync.__file__, '--takeover-report', str(tmp_path)],
+                                capture_output=True, text=True, check=False)
+>       assert result.returncode == 0, result.stderr
+E       AssertionError: [IterSync:Error] 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte
+E         
+E       assert 1 == 0
+E        +  where 1 = CompletedProcess(args=['/data/workspace/iteration-manager/build/iter11-maint-venv/bin/python', '-B', '/data/workspace/...ncode=1, stdout='', stderr="[IterSync:Error] 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte\n").returncode
+
+tests/test_takeover_resilience.py:45: AssertionError
+___________________ test_callable_mixed_encoding_and_oserror ___________________
+
+tmp_path = PosixPath('/tmp/iter11-task02-red-01/test_callable_mixed_encoding_a0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f2e41a5b1d0>
+capsys = <_pytest.capture.CaptureFixture object at 0x7f2e4279d210>
+
+    def test_callable_mixed_encoding_and_oserror(tmp_path, monkeypatch, capsys):
+        (tmp_path / '01-healthy.md').write_text(HEALTHY, encoding='utf-8')
+        (tmp_path / '02-bad.md').write_bytes(b'\xffinvalid')
+        bad = tmp_path / '03-oserror.md'
+        bad.write_text(HEALTHY, encoding='utf-8')
+        before = snapshot(tmp_path)
+        original = Path.read_text
+        def read(path, *args, **kwargs):
+            if path == bad:
+                raise OSError('synthetic read failure')
+            return original(path, *args, **kwargs)
+        with monkeypatch.context() as patch:
+            patch.setattr(Path, 'read_text', read)
+>           assert iter_cli.main(['--takeover-report', str(tmp_path)]) == 0
+E           AssertionError: assert 1 == 0
+E            +  where 1 = <function main at 0x7f2e41b6f880>(['--takeover-report', '/tmp/iter11-task02-red-01/test_callable_mixed_encoding_a0'])
+E            +    where <function main at 0x7f2e41b6f880> = iter_cli.main
+
+tests/test_takeover_resilience.py:63: AssertionError
+----------------------------- Captured stderr call -----------------------------
+[IterSync:Error] 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte
+___________________ test_discovered_card_deleted_before_read ___________________
+
+tmp_path = PosixPath('/tmp/iter11-task02-red-01/test_discovered_card_deleted_b0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f2e42fef550>
+capsys = <_pytest.capture.CaptureFixture object at 0x7f2e41c0b390>
+
+    def test_discovered_card_deleted_before_read(tmp_path, monkeypatch, capsys):
+        (tmp_path / '01-healthy.md').write_text(HEALTHY, encoding='utf-8')
+        deleted = tmp_path / '02-deleted.md'
+        deleted.write_text(HEALTHY, encoding='utf-8')
+        before = snapshot(tmp_path)
+        discover = iter_cli.discover_task_files
+        def remove_after_discovery(directory):
+            paths = discover(directory)
+            deleted.unlink()  # Explicit fixture action, not a write by the report.
+            return paths
+        monkeypatch.setattr(iter_cli, 'discover_task_files', remove_after_discovery)
+>       assert iter_cli.main(['--takeover-report', str(tmp_path)]) == 0
+E       AssertionError: assert 1 == 0
+E        +  where 1 = <function main at 0x7f2e41b6f880>(['--takeover-report', '/tmp/iter11-task02-red-01/test_discovered_card_deleted_b0'])
+E        +    where <function main at 0x7f2e41b6f880> = iter_cli.main
+
+tests/test_takeover_resilience.py:81: AssertionError
+----------------------------- Captured stderr call -----------------------------
+[IterSync:Error] [Errno 2] No such file or directory: '/tmp/iter11-task02-red-01/test_discovered_card_deleted_b0/02-deleted.md'
+=========================== short test summary info ============================
+FAILED tests/test_takeover_resilience.py::test_legacy_subprocess_real_bad_utf8
+FAILED tests/test_takeover_resilience.py::test_callable_mixed_encoding_and_oserror
+FAILED tests/test_takeover_resilience.py::test_discovered_card_deleted_before_read
+3 failed, 24 passed in 0.92s

@@ -13,6 +13,19 @@ from iter_sync import (
 )
 
 
+def _takeover_task(path: Path) -> dict:
+    """Keep each discovered card in the legacy report, even if reading fails."""
+    try:
+        meta, _, errors = parse_card(path.read_text(encoding='utf-8'))
+        audit = audit_task_file(path)
+        return dict(path=str(path), declared_status=audit['status'], acceptance_verdict=audit['verdict'],
+                    missing=[k for k in ('schema_version','type','task_id','review_receipt') if not meta.get(k)],
+                    findings=errors+audit['violations'])
+    except (OSError, UnicodeError, ValueError, TypeError, KeyError, RuntimeError) as error:
+        return dict(path=str(path), declared_status='UNKNOWN', acceptance_verdict='UNKNOWN',
+                    missing=None, findings=[str(error)])
+
+
 def main(argv: list[str] | None = None) -> int:
     """Run a command without terminating an importing caller."""
     try:
@@ -153,13 +166,7 @@ def _dispatch(argv):
         directory = Path(args[1])
         if not directory.is_dir():
             raise ValueError('Iteration directory not found')
-        tasks = []
-        for path in discover_task_files(directory):
-            meta, _, errors = parse_card(path.read_text(encoding='utf-8'))
-            audit = audit_task_file(path)
-            tasks.append(dict(path=str(path), declared_status=audit['status'], acceptance_verdict=audit['verdict'],
-                              missing=[k for k in ('schema_version','type','task_id','review_receipt') if not meta.get(k)],
-                              findings=errors+audit['violations']))
+        tasks = [_takeover_task(path) for path in discover_task_files(directory)]
         print(json.dumps(dict(read_only=True, tasks=tasks, next='Request migration/reverification authorization; preserve history'), ensure_ascii=False))
         return
     if args and args[0] == '--autonomy':

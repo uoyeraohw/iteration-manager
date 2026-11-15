@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "argv": [
+    "/data/workspace/iteration-manager/build/iter11-maint-venv/bin/python",
+    "-B",
+    "-m",
+    "pytest",
+    "-p",
+    "no:cacheprovider",
+    "tests/test_takeover_resilience.py",
+    "tests/test_task_discovery_compat.py",
+    "tests/test_cli_compatibility.py",
+    "tests/test_sync_compatibility.py",
+    "-q",
+    "--basetemp",
+    "/tmp/iter11-task02-green-02"
+  ],
+  "cwd": "/data/workspace/iteration-manager/.worktrees/iter-11",
+  "deadline": "2026-11-15T04:15:33.967000+00:00",
+  "cleanup_reserve_seconds": 5,
+  "status": "COMPLETED",
+  "deadline_checked_at": "2026-11-15T04:10:43.371262+00:00",
+  "started_at": "2026-11-15T04:10:43.373372+00:00",
+  "ended_at": "2026-11-15T04:10:44.890446+00:00",
+  "raw_exit_code": 0,
+  "tree_terminal": true,
+  "output": "docs/todos/11-reliable-delivery/evidence/02/green-02.json.output.txt",
+  "container_pid": 3449597,
+  "launcher_exit_code": 0,
+  "command": {
+    "status": "COMPLETED",
+    "raw_exit_code": 0,
+    "started_at": "2026-11-15T04:10:43.373372+00:00",
+    "tree_terminal": true,
+    "deadline_checked_at": "2026-11-15T04:10:43.371262+00:00",
+    "pid": 3449598,
+    "ended_at": "2026-11-15T04:10:44.867875+00:00"
+  },
+  "late_by_seconds": 0
+}
