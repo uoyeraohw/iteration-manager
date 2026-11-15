@@ -6,7 +6,7 @@
 
 ## 当前收口（2026-11-15 UTC）
 
-00—12共13卡均完成C/非参与者独审/D和冻结local strict，验收13/13 PASS；最终受审候选为 `f489377d2a2be14934ce86517006b82986cc7069`。该候选完整维护套件 **643 passed、2项Windows专属skip**（Python3.11.17/pytest9.2/MCP1.30，68.18秒），runner退出0且进程树终态；独立整轮总审Scope/Spec/Quality均APPROVED。**本次摘要登记后仍须执行最终冻结branch strict，当前待执行。**
+00—12共13卡均完成C/非参与者独审/D和冻结local strict，验收13/13 PASS；最终受审候选为 `f489377d2a2be14934ce86517006b82986cc7069`。该候选完整维护套件 **643 passed、2项Windows专属skip**（Python3.11.17/pytest9.2/MCP1.30，68.18秒），runner退出0且进程树终态；独立整轮总审Scope/Spec/Quality均APPROVED。冻结branch strict已对登记候选 `1432576f2aa7b75cee01abb0dcdbf52980368ccf` 实际通过；最后的证据登记HEAD再按相同冻结入口复核，见[最终收据](../../../build/iter11-closeout/20261115T073805Z/final-branch-strict.json)及[原始输出](../../../build/iter11-closeout/20261115T073805Z/final-branch-strict.json.output.txt)。
 
 - [整轮独审](../../../build/iter11-closeout/20261115T073805Z/whole-review/report.json)、[全量摘要](../../../build/iter11-closeout/20261115T073805Z/full-suite-summary.json)、[原始输出](../../../build/iter11-closeout/20261115T073805Z/full-suite.json.output.txt)、[runner收据](../../../build/iter11-closeout/20261115T073805Z/full-suite.json)、[JUnit](../../../build/iter11-closeout/20261115T073805Z/full-suite.xml)。
 - [证据沿用](../../../build/iter11-closeout/20261115T073805Z/evidence-reuse.json)保留10集成130/临时payload11/Git漂移5、08合法合成Git/FS10/100卡三次量测、11选定06真实链/续接审计及12新鲜Codeg只读消费的各自原候选与边界；没有无故重跑量测或宣称提速。
@@ -146,7 +146,7 @@
 - [x] 十三卡具备各自type证据、非参与者批准、合法C/D绑定与PASS。
 - [x] 完整链和真实新会话检查点继承有本轮原始证据，03/12的先消费后派发得到实际证明。
 - [x] 10隔离跨模块反例、08合法Git/FS量测、06/07临时安装检查和05支持声明各有边界清楚的原件。
-- [ ] 最终候选整轮集成/完整维护套件、独立总审及冻结最终branch strict通过。
+- [x] 最终候选整轮集成/完整维护套件、独立总审及冻结最终branch strict通过。
 - [x] 所有FAIL/UNKNOWN/BLOCKED、Deferred Minors和发布/自动发现/FS业务缺口如实保留，未越权部署或清理。
 
 <!-- iter:projection -->
