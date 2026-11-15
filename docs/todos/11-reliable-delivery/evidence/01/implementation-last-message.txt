@@ -1,0 +1,7 @@
+task01 的待审候选已完成，尚未提交或获得批准。共享交付模式解析已接入派发、DONE 审计和交接/看板投影，保留缺省 Git、旧卡缺收据 UNKNOWN 及既有坏 profile 异常边界。
+
+- **RED**：指定集合中 7 个行为断言失败、98 个通过；冻结合同中已有 `UNKNOWN` 或空模式的合成 DONE 卡被错误审计为 PASS。[收据与原始输出](/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/01/task01-red-0354.json)
+- **最终 GREEN / regression**：124 passed，退出 0，`tree_terminal: true`。两项规定的测试集合相同，因此复用这一次最终运行。[收据与原始输出](/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/01/task01-final-0355.json)
+- [交付记录](/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/01/delivery.json) 和 [源码哈希清单](/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/01/source-manifest.json) 记录了实际命令、覆盖与限制。原生会话 UUID 为 `01a1dd56-105c-79d0-9b73-7a708e7d9369`。
+
+剩余由主管观察会话终态并记录交接、冻结候选 C、安排独立审查、登记 D 和运行冻结协调器 strict。未重跑全量套件或 Windows 测试；没有修改任务卡、暂存或提交。

@@ -3,7 +3,7 @@ schema_version: 1
 iteration: "11-reliable-delivery"
 task_id: "01"
 task_name: "统一交付模式解析与完成审计"
-status: "TODO"
+status: "TESTING"
 type: "Strict-TDD"
 fix_rounds: 0
 replan_count: 0
@@ -11,11 +11,13 @@ is_blocked: false
 blocked_reason: ""
 typesafe_score: "80.100"
 typesafe_evidence: "docs/todos/11-reliable-delivery/evidence/planning/typesafe-summary.json"
-tdd_verified: false
+tdd_verified: true
 review_status: "PENDING"
 review_receipt: ""
-base_sha: ""
+base_sha: "1e99816564fa89d0b43db7a96fbc7c0dac1b6dd9"
 head_sha: ""
+autonomy_state: "{\"version\":1,\"policy\":{\"round_limit\":5,\"total_limit\":10,\"consilium_limit\":1,\"replan_limit\":2},\"round\":0,\"total\":0,\"consilium\":0,\"replan\":0,\"writer\":\"iter11-controller-linux-20261115\",\"events\":{\"iter11-01-claim-v1\":{\"input\":{\"action\":\"claim\",\"owner\":\"iter11-controller-linux-20261115\",\"reason\":\"\",\"evidence\":\"\",\"executor_state\":\"\"},\"result\":{\"task_id\":\"01-delivery-mode-consistency\",\"previous_rounds\":0,\"current_rounds\":0,\"fix_total\":0,\"consilium_count\":0,\"replan_count\":0,\"is_fused\":false,\"status\":\"TODO\",\"blocked_reason\":\"\",\"writer\":\"iter11-controller-linux-20261115\",\"consilium_bundle\":null},\"at\":\"2026-11-15T03:51:13.711862+00:00\"},\"iter11-01-attempt-v1\":{\"input\":{\"action\":\"attempt\",\"owner\":\"iter11-controller-linux-20261115\",\"reason\":\"\",\"evidence\":\"docs/todos/11-reliable-delivery/evidence/01/attempt.json\",\"executor_state\":\"completed\",\"attempt\":{\"report\":{\"version\":1,\"phase\":\"implementation\",\"candidate\":\"1e99816564fa89d0b43db7a96fbc7c0dac1b6dd9\",\"inputs\":[\"docs/todos/11-reliable-delivery/01-delivery-mode-consistency.md\",\"docs/todos/11-reliable-delivery/README.md\",\"AGENTS.md\",\"references/task_card_schema.md\",\"scripts/iter_contracts.py\",\"scripts/iter_queries.py\",\"scripts/iter_preflight.py\"],\"capabilities\":[\"native-codex-cli-implementer\",\"approved-frozen-linux-runner\",\"Python3.11.17-pytest9.2-mcp1.30\",\"independent-native-reviewer\"],\"checkpoint\":\"未知/空模式从合法冻结规格起存在的实际RED7项，最终GREEN与受影响回归124通过\",\"remaining_work\":[\"C独立审查\",\"批准后登记D和冻结local strict\",\"串行02\"],\"executor_id\":\"01a1dd56-105c-79d0-9b73-7a708e7d9369\",\"terminal_evidence\":\"docs/todos/11-reliable-delivery/evidence/01/implementation-terminal.json\",\"progress\":[{\"kind\":\"red\",\"summary\":\"合法Git绑定的UNKNOWN/空模式误PASS及非DONE模式缺错误，共7断言失败\",\"evidence\":\"docs/todos/11-reliable-delivery/evidence/01/task01-red-0354.json.output.txt\"},{\"kind\":\"implementation\",\"summary\":\"纯解析API复用于审计/派发/共享投影，无CLI依赖或跨调用缓存\",\"evidence\":\"docs/todos/11-reliable-delivery/evidence/01/source-manifest.json\"},{\"kind\":\"green\",\"summary\":\"最终相同124测试执行同时覆盖GREEN/regression；额外边界并未冒称RED\",\"evidence\":\"docs/todos/11-reliable-delivery/evidence/01/task01-final-0355.json.output.txt\"}],\"commands\":[\"docs/todos/11-reliable-delivery/evidence/01/task01-red-0354.json\",\"docs/todos/11-reliable-delivery/evidence/01/task01-green-0354.json\",\"docs/todos/11-reliable-delivery/evidence/01/task01-final-0355.json\"],\"started_at\":null,\"ended_at\":null},\"source\":\"docs/todos/11-reliable-delivery/evidence/01/attempt.json\",\"phase\":\"implementation\",\"delivery_mode\":\"git\",\"candidate\":\"1e99816564fa89d0b43db7a96fbc7c0dac1b6dd9\",\"conditions\":{\"inputs\":[\"AGENTS.md\",\"docs/todos/11-reliable-delivery/01-delivery-mode-consistency.md\",\"docs/todos/11-reliable-delivery/README.md\",\"references/task_card_schema.md\",\"scripts/iter_contracts.py\",\"scripts/iter_preflight.py\",\"scripts/iter_queries.py\"],\"capabilities\":[\"Python3.11.17-pytest9.2-mcp1.30\",\"approved-frozen-linux-runner\",\"independent-native-reviewer\",\"native-codex-cli-implementer\"],\"scope\":[\".agents/notes/planned/iter11/01-delivery-mode-consistency.md\",\"docs/todos/11-reliable-delivery/evidence/01/\",\"scripts/iter_contracts.py\",\"scripts/iter_preflight.py\",\"scripts/iter_queries.py\",\"tests/test_delivery_mode_consistency.py\",\"tests/test_execution_readiness.py\",\"tests/test_query_contract.py\"]},\"executor_id\":\"01a1dd56-105c-79d0-9b73-7a708e7d9369\",\"executor_state\":\"completed\",\"terminal_evidence\":\"docs/todos/11-reliable-delivery/evidence/01/implementation-terminal.json\",\"progress\":[{\"kind\":\"red\",\"evidence\":\"docs/todos/11-reliable-delivery/evidence/01/task01-red-0354.json.output.txt\",\"summary\":\"合法Git绑定的UNKNOWN/空模式误PASS及非DONE模式缺错误，共7断言失败\"},{\"kind\":\"implementation\",\"evidence\":\"docs/todos/11-reliable-delivery/evidence/01/source-manifest.json\",\"summary\":\"纯解析API复用于审计/派发/共享投影，无CLI依赖或跨调用缓存\"},{\"kind\":\"green\",\"evidence\":\"docs/todos/11-reliable-delivery/evidence/01/task01-final-0355.json.output.txt\",\"summary\":\"最终相同124测试执行同时覆盖GREEN/regression；额外边界并未冒称RED\"}],\"checkpoint\":\"未知/空模式从合法冻结规格起存在的实际RED7项，最终GREEN与受影响回归124通过\",\"remaining_work\":[\"C独立审查\",\"串行02\",\"批准后登记D和冻结local strict\"],\"commands\":[{\"receipt\":\"docs/todos/11-reliable-delivery/evidence/01/task01-final-0355.json\",\"status\":\"COMPLETED\",\"raw_exit_code\":0,\"started_at\":\"2026-11-15T03:54:22.152184+00:00\",\"ended_at\":\"2026-11-15T03:54:32.559770+00:00\"},{\"receipt\":\"docs/todos/11-reliable-delivery/evidence/01/task01-green-0354.json\",\"status\":\"COMPLETED\",\"raw_exit_code\":0,\"started_at\":\"2026-11-15T03:53:54.496832+00:00\",\"ended_at\":\"2026-11-15T03:54:03.540893+00:00\"},{\"receipt\":\"docs/todos/11-reliable-delivery/evidence/01/task01-red-0354.json\",\"status\":\"COMPLETED\",\"raw_exit_code\":1,\"started_at\":\"2026-11-15T03:53:18.577861+00:00\",\"ended_at\":\"2026-11-15T03:53:27.921194+00:00\"}],\"started_at\":null,\"ended_at\":null,\"session_seconds\":null,\"command_seconds\":28.79498}},\"result\":{\"task_id\":\"01-delivery-mode-consistency\",\"previous_rounds\":0,\"current_rounds\":0,\"fix_total\":0,\"consilium_count\":0,\"replan_count\":0,\"is_fused\":false,\"status\":\"IN_PROGRESS\",\"blocked_reason\":\"\",\"writer\":\"iter11-controller-linux-20261115\",\"consilium_bundle\":null},\"at\":\"2026-11-15T03:56:55.616187+00:00\"},\"iter11-01-release-v1\":{\"input\":{\"action\":\"release\",\"owner\":\"iter11-controller-linux-20261115\",\"reason\":\"\",\"evidence\":\"docs/todos/11-reliable-delivery/evidence/01/implementation-terminal.json\",\"executor_state\":\"completed\"},\"result\":{\"task_id\":\"01-delivery-mode-consistency\",\"previous_rounds\":0,\"current_rounds\":0,\"fix_total\":0,\"consilium_count\":0,\"replan_count\":0,\"is_fused\":false,\"status\":\"IN_PROGRESS\",\"blocked_reason\":\"\",\"writer\":\"\",\"consilium_bundle\":null},\"at\":\"2026-11-15T03:56:55.699807+00:00\"},\"iter11-01-review1-claim-v1\":{\"input\":{\"action\":\"claim\",\"owner\":\"iter11-controller-linux-20261115\",\"reason\":\"\",\"evidence\":\"\",\"executor_state\":\"\"},\"result\":{\"task_id\":\"01-delivery-mode-consistency\",\"previous_rounds\":0,\"current_rounds\":0,\"fix_total\":0,\"consilium_count\":0,\"replan_count\":0,\"is_fused\":false,\"status\":\"TESTING\",\"blocked_reason\":\"\",\"writer\":\"iter11-controller-linux-20261115\",\"consilium_bundle\":null},\"at\":\"2026-11-15T03:56:55.771656+00:00\"}},\"blocked_reason\":\"\"}"
+updated_at: "2026-11-15T03:56:55.771764+00:00"
 ---
 
 # 01 · 统一交付模式解析与完成审计
@@ -27,17 +29,17 @@ head_sha: ""
 
 ## 2. 业务阶段
 <!-- iter:stages -->
-- [ ] 冻结包含未知模式的合法Git绑定反例和兼容矩阵，取得目标断言RED
-- [ ] 共用纯解析规则，完成审计、派发与交接一致性GREEN
-- [ ] 完成Git/FS受影响回归和待审候选
+- [x] 冻结包含未知模式的合法Git绑定反例和兼容矩阵，取得目标断言RED
+- [x] 共用纯解析规则，完成审计、派发与交接一致性GREEN
+- [x] 完成Git/FS受影响回归和待审候选
 <!-- /iter:stages -->
 
 ## 3. 按类型验证规划
 核心行为先取得可编译测试的真实断言RED，再最小GREEN；环境错误不算RED。
 <!-- iter:verification -->
-- [ ] **red**：python -B -m pytest -p no:cacheprovider tests/test_delivery_mode_consistency.py tests/test_query_contract.py tests/test_execution_readiness.py tests/test_completion_gates.py tests/test_filesystem_receipts.py -q；由同一实现者先取得验收中具体行为断言失败，环境/导入失败不作RED；通过冻结runner。
-- [ ] **green**：python -B -m pytest -p no:cacheprovider tests/test_delivery_mode_consistency.py tests/test_query_contract.py tests/test_execution_readiness.py tests/test_completion_gates.py tests/test_filesystem_receipts.py -q；同一实现者最小修复后通过，保留原始输出；通过冻结runner。
-- [ ] **regression**：python -B -m pytest -p no:cacheprovider tests/test_delivery_mode_consistency.py tests/test_query_contract.py tests/test_execution_readiness.py tests/test_completion_gates.py tests/test_filesystem_receipts.py -q；覆盖本卡列出的直接接口/兼容范围，影响不明扩大；不代替整轮全量。
+- [x] **red**：python -B -m pytest -p no:cacheprovider tests/test_delivery_mode_consistency.py tests/test_query_contract.py tests/test_execution_readiness.py tests/test_completion_gates.py tests/test_filesystem_receipts.py -q；由同一实现者先取得验收中具体行为断言失败，环境/导入失败不作RED；通过冻结runner。
+- [x] **green**：python -B -m pytest -p no:cacheprovider tests/test_delivery_mode_consistency.py tests/test_query_contract.py tests/test_execution_readiness.py tests/test_completion_gates.py tests/test_filesystem_receipts.py -q；同一实现者最小修复后通过，保留原始输出；通过冻结runner。
+- [x] **regression**：python -B -m pytest -p no:cacheprovider tests/test_delivery_mode_consistency.py tests/test_query_contract.py tests/test_execution_readiness.py tests/test_completion_gates.py tests/test_filesystem_receipts.py -q；覆盖本卡列出的直接接口/兼容范围，影响不明扩大；不代替整轮全量。
 <!-- /iter:verification -->
 
 ## 4. 交付与冻结
@@ -69,6 +71,8 @@ head_sha: ""
 <!-- iter:ledger -->
 实际命令、原始证据、退出码、候选、检查点与剩余项在执行中记录；未执行不推断通过。
 独立审查结果由外部收据与报告提供。
+
+原生实现UUID 01a1dd56-105c-79d0-9b73-7a708e7d9369 已正常终态并登记attempt/release。未改产品时真实RED7断言失败/98通过；最小实现后最终124通过，同一最终执行覆盖green/regression。共享解析器拒绝未知/空与FS冲突；完整矩阵及否则合法Git冻结绑定负例见evidence/01/delivery.json。坏profile的envelope保留既有顶层error响应；交接兼容与本卡文字的适用关系交由独审核对。当前TESTING，尚无批准；后续02未启动。
 <!-- /iter:ledger -->
 
 ## 8. 接口依赖与执行边界

@@ -1,0 +1,162 @@
+..FFFFFFF............................................................... [ 68%]
+.................................                                        [100%]
+=================================== FAILURES ===================================
+_ test_done_git_mode_is_validated_at_frozen_contract[delivery_mode: UNKNOWN\n-FAIL] _
+
+git_repo_with_worktrees = (PosixPath('/tmp/iter11-task01-red-0354/test_done_git_mode_is_validate2/repo'), PosixPath('/tmp/iter11-task01-red-0354/test_done_git_mode_is_validate2/wt1'), PosixPath('/tmp/iter11-task01-red-0354/test_done_git_mode_is_validate2/wt2'))
+declaration = 'delivery_mode: UNKNOWN\n', expected = 'FAIL'
+
+    @pytest.mark.parametrize("declaration,expected", [("", "PASS"), ("delivery_mode: git\n", "PASS"), ("delivery_mode: UNKNOWN\n", "FAIL"), ("delivery_mode: \"\"\n", "FAIL")])
+    def test_done_git_mode_is_validated_at_frozen_contract(git_repo_with_worktrees, declaration, expected):
+        _, wt, _ = git_repo_with_worktrees
+        card, _, receipt = make_reviewed_candidate(wt, declaration=declaration)
+        frozen = run_cmd(["git", "show", receipt["contract_sha"] + ":" + card.relative_to(wt).as_posix()], wt).stdout
+        assert declaration in frozen
+        result = audit_task_file(card)
+>       assert result["verdict"] == expected, result
+E       AssertionError: {'file': '01-task.md', 'status': 'DONE', 'is_valid_done': True, 'verdict': 'PASS', ...}
+E       assert 'PASS' == 'FAIL'
+E         
+E         - FAIL
+E         + PASS
+
+tests/test_delivery_mode_consistency.py:74: AssertionError
+_ test_done_git_mode_is_validated_at_frozen_contract[delivery_mode: ""\n-FAIL] _
+
+git_repo_with_worktrees = (PosixPath('/tmp/iter11-task01-red-0354/test_done_git_mode_is_validate3/repo'), PosixPath('/tmp/iter11-task01-red-0354/test_done_git_mode_is_validate3/wt1'), PosixPath('/tmp/iter11-task01-red-0354/test_done_git_mode_is_validate3/wt2'))
+declaration = 'delivery_mode: ""\n', expected = 'FAIL'
+
+    @pytest.mark.parametrize("declaration,expected", [("", "PASS"), ("delivery_mode: git\n", "PASS"), ("delivery_mode: UNKNOWN\n", "FAIL"), ("delivery_mode: \"\"\n", "FAIL")])
+    def test_done_git_mode_is_validated_at_frozen_contract(git_repo_with_worktrees, declaration, expected):
+        _, wt, _ = git_repo_with_worktrees
+        card, _, receipt = make_reviewed_candidate(wt, declaration=declaration)
+        frozen = run_cmd(["git", "show", receipt["contract_sha"] + ":" + card.relative_to(wt).as_posix()], wt).stdout
+        assert declaration in frozen
+        result = audit_task_file(card)
+>       assert result["verdict"] == expected, result
+E       AssertionError: {'file': '01-task.md', 'status': 'DONE', 'is_valid_done': True, 'verdict': 'PASS', ...}
+E       assert 'PASS' == 'FAIL'
+E         
+E         - FAIL
+E         + PASS
+
+tests/test_delivery_mode_consistency.py:74: AssertionError
+____ test_invalid_modes_rejected_by_dispatch_audit_and_board[UNKNOWN-None] _____
+
+tmp_path = PosixPath('/tmp/iter11-task01-red-0354/test_invalid_modes_rejected_by0')
+mode = 'UNKNOWN', profile = None
+
+    @pytest.mark.parametrize("mode,profile", [("UNKNOWN", None), ("", None), ("filesystem", None), ("git", "valid"), ("UNKNOWN", "valid"), ("filesystem", "broken")])
+    def test_invalid_modes_rejected_by_dispatch_audit_and_board(tmp_path, mode, profile):
+        card, ctx, _ = fixture(tmp_path)
+        card.write_text(card.read_text().replace("delivery_mode: filesystem", "delivery_mode: " + json.dumps(mode)), encoding="utf-8")
+        path = card.parent / "iteration-delivery.json"
+        if profile is None:
+            path.unlink()
+        elif profile == "broken":
+            path.write_text('{}', encoding="utf-8")
+        proc = cli(tmp_path, '--preflight', card.parent, '--context', ctx.name)
+        assert proc.returncode != 0
+        audit = audit_task_file(card)
+>       assert audit['verdict'] != 'PASS' and audit['violations'], audit
+E       AssertionError: {'file': '01-task.md', 'status': 'IN_PROGRESS', 'is_valid_done': False, 'verdict': 'UNKNOWN', ...}
+E       assert ('UNKNOWN' != 'PASS' and [])
+
+tests/test_delivery_mode_consistency.py:89: AssertionError
+________ test_invalid_modes_rejected_by_dispatch_audit_and_board[-None] ________
+
+tmp_path = PosixPath('/tmp/iter11-task01-red-0354/test_invalid_modes_rejected_by1')
+mode = '', profile = None
+
+    @pytest.mark.parametrize("mode,profile", [("UNKNOWN", None), ("", None), ("filesystem", None), ("git", "valid"), ("UNKNOWN", "valid"), ("filesystem", "broken")])
+    def test_invalid_modes_rejected_by_dispatch_audit_and_board(tmp_path, mode, profile):
+        card, ctx, _ = fixture(tmp_path)
+        card.write_text(card.read_text().replace("delivery_mode: filesystem", "delivery_mode: " + json.dumps(mode)), encoding="utf-8")
+        path = card.parent / "iteration-delivery.json"
+        if profile is None:
+            path.unlink()
+        elif profile == "broken":
+            path.write_text('{}', encoding="utf-8")
+        proc = cli(tmp_path, '--preflight', card.parent, '--context', ctx.name)
+        assert proc.returncode != 0
+        audit = audit_task_file(card)
+>       assert audit['verdict'] != 'PASS' and audit['violations'], audit
+E       AssertionError: {'file': '01-task.md', 'status': 'IN_PROGRESS', 'is_valid_done': False, 'verdict': 'UNKNOWN', ...}
+E       assert ('UNKNOWN' != 'PASS' and [])
+
+tests/test_delivery_mode_consistency.py:89: AssertionError
+___ test_invalid_modes_rejected_by_dispatch_audit_and_board[filesystem-None] ___
+
+tmp_path = PosixPath('/tmp/iter11-task01-red-0354/test_invalid_modes_rejected_by2')
+mode = 'filesystem', profile = None
+
+    @pytest.mark.parametrize("mode,profile", [("UNKNOWN", None), ("", None), ("filesystem", None), ("git", "valid"), ("UNKNOWN", "valid"), ("filesystem", "broken")])
+    def test_invalid_modes_rejected_by_dispatch_audit_and_board(tmp_path, mode, profile):
+        card, ctx, _ = fixture(tmp_path)
+        card.write_text(card.read_text().replace("delivery_mode: filesystem", "delivery_mode: " + json.dumps(mode)), encoding="utf-8")
+        path = card.parent / "iteration-delivery.json"
+        if profile is None:
+            path.unlink()
+        elif profile == "broken":
+            path.write_text('{}', encoding="utf-8")
+        proc = cli(tmp_path, '--preflight', card.parent, '--context', ctx.name)
+        assert proc.returncode != 0
+        audit = audit_task_file(card)
+>       assert audit['verdict'] != 'PASS' and audit['violations'], audit
+E       AssertionError: {'file': '01-task.md', 'status': 'IN_PROGRESS', 'is_valid_done': False, 'verdict': 'UNKNOWN', ...}
+E       assert ('UNKNOWN' != 'PASS' and [])
+
+tests/test_delivery_mode_consistency.py:89: AssertionError
+______ test_invalid_modes_rejected_by_dispatch_audit_and_board[git-valid] ______
+
+tmp_path = PosixPath('/tmp/iter11-task01-red-0354/test_invalid_modes_rejected_by3')
+mode = 'git', profile = 'valid'
+
+    @pytest.mark.parametrize("mode,profile", [("UNKNOWN", None), ("", None), ("filesystem", None), ("git", "valid"), ("UNKNOWN", "valid"), ("filesystem", "broken")])
+    def test_invalid_modes_rejected_by_dispatch_audit_and_board(tmp_path, mode, profile):
+        card, ctx, _ = fixture(tmp_path)
+        card.write_text(card.read_text().replace("delivery_mode: filesystem", "delivery_mode: " + json.dumps(mode)), encoding="utf-8")
+        path = card.parent / "iteration-delivery.json"
+        if profile is None:
+            path.unlink()
+        elif profile == "broken":
+            path.write_text('{}', encoding="utf-8")
+        proc = cli(tmp_path, '--preflight', card.parent, '--context', ctx.name)
+        assert proc.returncode != 0
+        audit = audit_task_file(card)
+>       assert audit['verdict'] != 'PASS' and audit['violations'], audit
+E       AssertionError: {'file': '01-task.md', 'status': 'IN_PROGRESS', 'is_valid_done': False, 'verdict': 'UNKNOWN', ...}
+E       assert ('UNKNOWN' != 'PASS' and [])
+
+tests/test_delivery_mode_consistency.py:89: AssertionError
+____ test_invalid_modes_rejected_by_dispatch_audit_and_board[UNKNOWN-valid] ____
+
+tmp_path = PosixPath('/tmp/iter11-task01-red-0354/test_invalid_modes_rejected_by4')
+mode = 'UNKNOWN', profile = 'valid'
+
+    @pytest.mark.parametrize("mode,profile", [("UNKNOWN", None), ("", None), ("filesystem", None), ("git", "valid"), ("UNKNOWN", "valid"), ("filesystem", "broken")])
+    def test_invalid_modes_rejected_by_dispatch_audit_and_board(tmp_path, mode, profile):
+        card, ctx, _ = fixture(tmp_path)
+        card.write_text(card.read_text().replace("delivery_mode: filesystem", "delivery_mode: " + json.dumps(mode)), encoding="utf-8")
+        path = card.parent / "iteration-delivery.json"
+        if profile is None:
+            path.unlink()
+        elif profile == "broken":
+            path.write_text('{}', encoding="utf-8")
+        proc = cli(tmp_path, '--preflight', card.parent, '--context', ctx.name)
+        assert proc.returncode != 0
+        audit = audit_task_file(card)
+>       assert audit['verdict'] != 'PASS' and audit['violations'], audit
+E       AssertionError: {'file': '01-task.md', 'status': 'IN_PROGRESS', 'is_valid_done': False, 'verdict': 'UNKNOWN', ...}
+E       assert ('UNKNOWN' != 'PASS' and [])
+
+tests/test_delivery_mode_consistency.py:89: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_delivery_mode_consistency.py::test_done_git_mode_is_validated_at_frozen_contract[delivery_mode: UNKNOWN\n-FAIL]
+FAILED tests/test_delivery_mode_consistency.py::test_done_git_mode_is_validated_at_frozen_contract[delivery_mode: ""\n-FAIL]
+FAILED tests/test_delivery_mode_consistency.py::test_invalid_modes_rejected_by_dispatch_audit_and_board[UNKNOWN-None]
+FAILED tests/test_delivery_mode_consistency.py::test_invalid_modes_rejected_by_dispatch_audit_and_board[-None]
+FAILED tests/test_delivery_mode_consistency.py::test_invalid_modes_rejected_by_dispatch_audit_and_board[filesystem-None]
+FAILED tests/test_delivery_mode_consistency.py::test_invalid_modes_rejected_by_dispatch_audit_and_board[git-valid]
+FAILED tests/test_delivery_mode_consistency.py::test_invalid_modes_rejected_by_dispatch_audit_and_board[UNKNOWN-valid]
+7 failed, 98 passed in 8.31s

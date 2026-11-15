@@ -12,6 +12,18 @@ STATUSES = {
 }
 
 
+def resolve_delivery_mode(meta: dict, filesystem_enabled: bool) -> str:
+    """Resolve an explicit card declaration against the iteration profile."""
+    mode = meta.get("delivery_mode", "git")
+    if mode not in ("git", "filesystem"):
+        raise ValueError(f"Unknown delivery mode: {mode!r}")
+    if filesystem_enabled and mode != "filesystem":
+        raise ValueError("Filesystem profile present but task delivery_mode is not filesystem")
+    if not filesystem_enabled and mode == "filesystem":
+        raise ValueError("Task declared filesystem delivery_mode but iteration delivery profile is missing")
+    return mode
+
+
 def parse_card(content):
     """Read flat frontmatter only; body examples never supply metadata."""
     match = re.match(r"\A\ufeff?---[^\S\n]*\n(.*?)\n---[^\S\n]*(?:\n|$)", content, re.S)

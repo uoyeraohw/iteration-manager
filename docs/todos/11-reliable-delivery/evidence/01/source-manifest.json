@@ -1,0 +1,87 @@
+{
+  "base": "1e99816564fa89d0b43db7a96fbc7c0dac1b6dd9",
+  "observed_at": "2026-11-15T03:54:58.938313+00:00",
+  "sources": [
+    {
+      "path": "scripts/iter_contracts.py",
+      "bytes": 16520,
+      "sha256": "bb02f7005ea4359cc8a96d812e241c3155b22bfc90ecb5069629aec0c2134bf2"
+    },
+    {
+      "path": "scripts/iter_queries.py",
+      "bytes": 10046,
+      "sha256": "4af47e546320e085911534f214a6f5f867523c8ae87a48dcf6da5daff9ba2b75"
+    },
+    {
+      "path": "scripts/iter_preflight.py",
+      "bytes": 11076,
+      "sha256": "8940012712b0e241a0b4fa3a47ff8e512a975b6e2fdcad37b12a1b4b03b567dd"
+    },
+    {
+      "path": "scripts/iter_filesystem.py",
+      "bytes": 11485,
+      "sha256": "eaeaaf78f187719fcb13569e069ac49d66cd34d4148791c8168a04903d99da43"
+    },
+    {
+      "path": "scripts/iter_sync.py",
+      "bytes": 33258,
+      "sha256": "a3afb08fb8d021feb7b685e6ff4f6c97c3ed60645e111c1034320876bb8959f7"
+    },
+    {
+      "path": "scripts/iter_cli.py",
+      "bytes": 21873,
+      "sha256": "d17da7446ca4e9509b2f19864df2b987a1bded9e5c56f9baaa0db35f9836a7b0"
+    },
+    {
+      "path": "tests/test_delivery_mode_consistency.py",
+      "bytes": 10953,
+      "sha256": "7e77448a07b823132ec979f5f2c18dd151f6afe12a3efa7888a68abdefefaccb"
+    },
+    {
+      "path": "tests/test_query_contract.py",
+      "bytes": 5774,
+      "sha256": "9fce041a728c282a129307293286fc25568d96a4e85b62cd620f0c10d30aa1bc"
+    },
+    {
+      "path": "tests/test_execution_readiness.py",
+      "bytes": 38283,
+      "sha256": "cd70d3454121c9ca06c363d3560a57ca80be8804cd3b896179e2cdb1459b8fab"
+    },
+    {
+      "path": "tests/test_completion_gates.py",
+      "bytes": 9560,
+      "sha256": "95a46857965158b908660b271cb91844525c9ec7cd5a4a32cd4404aef387ec36"
+    },
+    {
+      "path": "tests/test_filesystem_receipts.py",
+      "bytes": 13297,
+      "sha256": "e858725650ddcd3e337403642d796197ae4d5c436a4bf31a2cf1beeb5b3ee70c"
+    },
+    {
+      "path": "tests/test_worktree_concurrency.py",
+      "bytes": 13041,
+      "sha256": "090660569fe6d31c040af740d359189ec391f2ea59ea6c84b5dd6105fca63c56"
+    },
+    {
+      "path": "tests/test_filesystem_delivery_controller.py",
+      "bytes": 12294,
+      "sha256": "ad9fe4600c95e39fb0d1383851adf6461891599398810055550ed28452093746"
+    },
+    {
+      "path": ".agents/notes/planned/iter11/01-delivery-mode-consistency.md",
+      "bytes": 1662,
+      "sha256": "f9ffac9a3ab78b7182c7c541139a840c5546041c16d22e1346184332f5f5ded4"
+    }
+  ],
+  "runner": {
+    "path": "/data/workspace/iteration-manager/build/frozen-runners/iter11-platform-v1/scripts/iter_run.py",
+    "bytes": 13151,
+    "sha256": "b8b22217ad1d8d1f02a9a4d3cb053f84f781888c4871e583f0a7ff27f3fe3ef1"
+  },
+  "runner_manifest": {
+    "path": "/data/workspace/iteration-manager/build/frozen-runners/iter11-platform-v1/manifest.json",
+    "bytes": 1899,
+    "sha256": "9d04d3559bf0bad2a9300813a73c5f41472ad3aebd2c9648bdde85b9123aa55d"
+  },
+  "note": "Hashes bind current working files, not a Git commit. Red ran with the initial test file; additional assertions were added before final run."
+}
