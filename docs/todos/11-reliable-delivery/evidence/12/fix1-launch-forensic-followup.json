@@ -1,0 +1,15 @@
+{
+  "original_unified_session_query": {
+    "session_id": 82825,
+    "result": "write_stdin failed: Unknown process id 82825",
+    "meaning": "No retained queryable launcher session; this does not establish original child/tree terminal."
+  },
+  "native_lifecycle_and_current_process_observation": {
+    "chunk_id": "193b87",
+    "wall_time_seconds": 0.136547818,
+    "exit_code": 0,
+    "original_token_count": 272,
+    "output": "{\n  \"observed_at\": \"2026-11-15T06:58:00.027707+00:00\",\n  \"native_source\": \"/data/home/.codex/sessions/2026/11/15/rollout-2026-11-15T06-05-39-01a1ddcf-b505-7cc1-baac-d53be61431ab.jsonl\",\n  \"native_lifecycle_events\": [\n    {\n      \"line\": 2,\n      \"timestamp\": \"2026-11-15T06:05:40.822Z\",\n      \"event\": \"task_started\",\n      \"turn_id\": \"01a1ddcf-b9ae-78c0-b9c1-4e9ddbb976f6\"\n    },\n    {\n      \"line\": 196,\n      \"timestamp\": \"2026-11-15T06:08:27.678Z\",\n      \"event\": \"task_complete\",\n      \"turn_id\": \"01a1ddcf-b9ae-78c0-b9c1-4e9ddbb976f6\"\n    },\n    {\n      \"line\": 200,\n      \"timestamp\": \"2026-11-15T06:48:04.939Z\",\n      \"event\": \"task_started\",\n      \"turn_id\": \"01a1ddf6-8c05-7141-906c-a0773a4c1423\"\n    },\n    {\n      \"line\": 293,\n      \"timestamp\": \"2026-11-15T06:49:26.483Z\",\n      \"event\": \"task_complete\",\n      \"turn_id\": \"01a1ddf6-8c05-7141-906c-a0773a4c1423\"\n    }\n  ],\n  \"current_matching_native_resume_processes\": [],\n  \"limit\": \"No matches and no logged turn in the interrupted launch interval do not establish a historical child/tree exit; unknown remains UNKNOWN.\"\n}\n"
+  },
+  "limitation": "Outer launcher exit143 is known; child/process-tree historical terminal remains UNKNOWN. No new business/test executor may be started solely from these observations."
+}

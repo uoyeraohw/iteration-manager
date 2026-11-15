@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "status": "PROPOSED; explicit user recovery authority pending",
+  "candidate_before_block_registration": "116092c569c4750ca42c4d5a7446f61a9966ab64",
+  "task": "docs/todos/11-reliable-delivery/12-workflow-sequence.md",
+  "scope": "Task12 only, then existing serial iteration closeout; original task goals/types/scopes and old card gates unchanged",
+  "findings": {
+    "F1": "No explicit checkpoint-resume authority in cited records; original controller extension of general implementation permission remains historical FAIL. A later approval covers future disposition only.",
+    "F2": "Independent scoped re-review ADDRESSED the ten native command inventory discrepancy.",
+    "F3": "Outer launch failed143 known; interrupted child/tree historical terminal UNKNOWN. No first native turn was logged in that interval and no matching process is currently observed; neither is a substitute for original terminal proof."
+  },
+  "steps": [
+    "Preserve original failed/unknown/blocked records, grants, raw outputs, source snapshots and all budget history; do not retroactively authorize or mark old execution PASS.",
+    "After explicit user disposition, complete native recovery/containment investigation and validate the current isolated baseline, process state and sole writer. If terminal evidence cannot be recovered, produce a separate safe rebaseline disposition preserving the original UNKNOWN and obtain independent review before any new business/test execution. Insufficient proof stays BLOCKED.",
+    "Use the remaining bounded replan mechanism only if needed to adopt the explicitly authorized recovery plan; record the actual budget event and standard policy effects, never manually clear counters or reuse the historical grant as authority.",
+    "After authority and safe execution preconditions are established, issue a fresh same-owner READY-bound source-consumption request with an adequate bounded window. If a real later execution deadline occurs, only use an external single-use grant after actual complete terminal evidence and a clean committed checkpoint, within the existing fixed resume cap.",
+    "Bind the affected final candidate and original/effective evidence, independently re-review open F1/F3 and new changes, register D and frozen local strict only on APPROVED.",
+    "Only after all13 cards PASS: final integration/full suite, independent whole-iteration review, final registration candidate frozen branch strict."
+  ],
+  "budget_observation": {
+    "round": 1,
+    "total": 1,
+    "consilium": 0,
+    "replan": 0,
+    "policy": {
+      "round_limit": 5,
+      "total_limit": 10,
+      "consilium_limit": 1,
+      "replan_limit": 2
+    }
+  },
+  "not_authorized": [
+    "deployment",
+    "push",
+    "merge",
+    "cleanup",
+    "global host permission/configuration changes"
+  ],
+  "approval_requested": "Explicit authorization for this Task12 recovery disposition and necessary bounded deadline recovery under its existing contracts, continuing the already authorized serial iteration. Historical FAIL/UNKNOWN remain unchanged; unknown execution is not automatically released."
+}

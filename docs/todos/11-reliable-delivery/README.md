@@ -155,5 +155,5 @@
 | 09-proportional-refactor-evidence.md | DONE | PASS | 阶段清单已勾选完毕 / 3/3 (100%) | CHECKLIST_COMPLETE (未等同验收) | 未记录 | 0 | 2026-11-15T05:39:34.550878+00:00 |
 | 10-integration-fault-paths.md | DONE | PASS | 阶段清单已勾选完毕 / 3/3 (100%) | CHECKLIST_COMPLETE (未等同验收) | 未记录 | 0 | 2026-11-15T05:46:01.903446+00:00 |
 | 11-native-self-use-audit.md | DONE | PASS | 阶段清单已勾选完毕 / 3/3 (100%) | CHECKLIST_COMPLETE (未等同验收) | 未记录 | 1 | 2026-11-15T06:04:55.785284+00:00 |
-| 12-workflow-sequence.md | TODO | UNKNOWN | 核对三种流程场景及权威来源 / 0/3 (0%) | experiment：python -B -m pytest -p no:cacheprovider tests/test_workflow_sequence.py tests/test_prompt_sources.py tests/test_task_card_schema.py -q；通过冻结runner保留真实退出码，另按本卡验收完成实际消费或实验。 | 未记录 | 0 | UNKNOWN |
+| 12-workflow-sequence.md | FUSED | BLOCKED | 阶段清单已勾选完毕 / 3/3 (100%) | CHECKLIST_COMPLETE (未等同验收) | Task12 recovery authority required (F1); UNKNOWN interrupted child/command-tree state (F3); metadata-only block, no new business/test execution before explicit compliant disposition | 1 | 2026-11-15T06:59:32.114679+00:00 |
 <!-- /iter:projection -->
