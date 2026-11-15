@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "task_id": "11",
+  "type": "Spike-Discovery",
+  "task_path": "docs/todos/11-reliable-delivery/11-native-self-use-audit.md",
+  "base_sha": "bc324d16f2adb7f36e18f1f826a16dd23343055a",
+  "head_sha": "131c42f2fc81cbcfa834c6fcd5cffd4b888c81b3",
+  "contract_sha": "bc324d16f2adb7f36e18f1f826a16dd23343055a",
+  "implementer": "01a1ddbf-5a2d-7d41-9870-7767991dc9d7",
+  "reviewer": "01a1ddc4-8039-73a2-825e-7381e4dedd5b",
+  "verdict": "APPROVED",
+  "review_report": "docs/todos/11-reliable-delivery/evidence/11/review-report.json",
+  "checks": [
+    {
+      "name": "experiment",
+      "kind": "command",
+      "command": "/data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B /data/workspace/iteration-manager/build/frozen-runners/iter11-platform-v1/scripts/iter_run.py --deadline 2026-11-15T06:02:33.873774+00:00 --evidence docs/todos/11-reliable-delivery/evidence/11/fix1-experiment-v2.json -- /data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B docs/todos/11-reliable-delivery/evidence/11/audit_native_chain.py --sources docs/todos/11-reliable-delivery/evidence/planning/native-source-index.json --output docs/todos/11-reliable-delivery/evidence/11/robustness-report.json",
+      "cwd": ".",
+      "exit_code": 0,
+      "summary": "Frozen runner completed with exit 0 and terminal tree; historical FAIL/BLOCKED remain separate, independent review pending.",
+      "output": "docs/todos/11-reliable-delivery/evidence/11/fix1-experiment-v2.json.output.txt"
+    },
+    {
+      "name": "decision",
+      "kind": "observation",
+      "command": null,
+      "cwd": ".",
+      "exit_code": null,
+      "summary": "F1 reproduction, input-validation decision, original evidence and limits for Controller ledger.",
+      "output": "docs/todos/11-reliable-delivery/evidence/11/fix1-ledger-summary.md"
+    },
+    {
+      "name": "interfaces",
+      "kind": "observation",
+      "command": null,
+      "cwd": ".",
+      "exit_code": null,
+      "summary": "main(argv=None), source/output contract and classified failure behavior; original proof checks remain subject to independent review.",
+      "output": "docs/todos/11-reliable-delivery/evidence/11/audit_native_chain.py"
+    }
+  ]
+}

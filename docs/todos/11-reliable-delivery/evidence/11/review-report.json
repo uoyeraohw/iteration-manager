@@ -1,0 +1,231 @@
+{
+  "kind": "independent-review-record",
+  "candidate": "131c42f2fc81cbcfa834c6fcd5cffd4b888c81b3",
+  "recorded_at": "2026-11-15T06:04:55.781196+00:00",
+  "independent_review": {
+    "candidate": "131c42f2fc81cbcfa834c6fcd5cffd4b888c81b3",
+    "base": "bc324d16f2adb7f36e18f1f826a16dd23343055a",
+    "contract_sha": "bc324d16f2adb7f36e18f1f826a16dd23343055a",
+    "reviewer_uuid": "01a1ddc4-8039-73a2-825e-7381e4dedd5b",
+    "independence": {
+      "statement": "Same independent reviewer as review 1; no task 11 design, implementation, test authorship, RCA or delegation. Review-only evidence verification is confined to this review directory.",
+      "excluded_actors": [
+        "01a1ddbf-5a2d-7d41-9870-7767991dc9d7",
+        "all task consumers",
+        "root controller"
+      ]
+    },
+    "verdicts": {
+      "scope": "APPROVED",
+      "spec": "APPROVED",
+      "quality": "APPROVED",
+      "overall": "APPROVED"
+    },
+    "findings": [],
+    "prior_findings": [
+      {
+        "id": "F1",
+        "severity": "major",
+        "status": "ADDRESSED",
+        "prior_candidate": "a1a9907fc343b8ba2c25895b03b89fb192c48e67",
+        "prior_report": "build/iter11-review/task11-review1/report.json",
+        "file": "docs/todos/11-reliable-delivery/evidence/11/audit_native_chain.py",
+        "line": 37,
+        "resolution": "Required index, stage, check, observation and source-file structures are validated before case construction; missing guard and related fields produce source-index UNKNOWN and exit 2 with report. Wrong shape returns FAIL/2, missing file BLOCKED/2, inverted copied events FAIL/2. All v2 raw runner receipts have terminal trees. Original issue is closed for this candidate."
+      }
+    ],
+    "scope_receipt": {
+      "path": "build/iter11-review/task11-review2/scope-runner.json",
+      "output": "build/iter11-review/task11-review2/scope-runner.json.output.txt",
+      "status": "COMPLETED",
+      "raw_exit_code": 0,
+      "tree_terminal": true,
+      "result": "188 changed files within declared physical scope; ownership is not inferred. Frozen coordinator known defects mean this is scope evidence only."
+    },
+    "evidence_applicability_chronology": [
+      "HEAD equals candidate on feat/iter-11-reliable-delivery, worktree tracked status clean; Git delivery profile absent. Task card and iteration goal requirements are unchanged from BASE except allowed execution metadata, stage/check marks and ledger. The actual fix delta changes the probe, derived report, task ledger and planned decision, with new in-scope evidence; it does not edit product code or tests.",
+      "Prior same-reviewer C1 report and raw original-chain observations remain applicable: source records for selected 06 and historic 03/04 are unchanged, and original raw command outputs and native logs were not overwritten. The pre-fix canonical report and index are preserved byte-identically to C1 as prefix-robustness-report.json and prefix-native-chain-index.json. 729fe27..bc324d1 prior ownership attribution added 28 exact paths before BASE without altering old raw evidence or acceptance; observed_head is the historical prior observation.",
+      "Task 11 Spike-Discovery checks are experiment, decision and interfaces; no RED is required. fix1-experiment-v2 used the prescribed source and output, frozen Linux runner, completed raw exit 0 and terminal tree at 05:58:22-05:58:23 UTC, before C. Canonical report records then-current C1, not the later commit. Decision and unchanged main(argv=None), sources/output interface are documented in fix1-ledger-summary and checks-proposal-v2.",
+      "V2 receipts and reports: missing guard UNKNOWN/2; missing related observations UNKNOWN/2; wrong event shape FAIL/2; absent copied source BLOCKED/2; copied inverted guard FAIL/2 at stage-1. The copied inversion source hash matched its changed guard, so failure is the actual event order check. Each receipt and nested command completed with terminal trees. The valid-chain report has 11 PASS, two historical BLOCKED and one historical FAIL; raw exit 0 only means the selected chain checks passed.",
+      "Selected 06 guard records use the same controller owner, matching candidate, phase, argv/cwd and request identities; terminal check consumption precedes dispatch, with original array order resolving millisecond ties. P=82b66d9 preserves the original assertion RED (22 failed/11 passed, exit 1); distinct consumer inherited its hash/time without a recorded rerun or budget reset, then implementer 01a1dd8e resumed and GREEN reports 39 passed. C1 6ee7605 review rejected F1, actual-payload clean/drift smoke covered 111 C1/C2-identical Git blobs; C2 7e5476c review and receipt approved, D1 f4610a4 strict rejected invalid check kind and D2 3158e75 corrected it with frozen local strict exit 0. This is the retained task 06 chain, not a new task 06 approval.",
+      "Original task 03 Codeg bwrap prevented worker command startup and remains BLOCKED; original task 04 dispatch after a BLOCKED check remains FAIL. Successful task 06 and current probe do not turn these observations into PASS.",
+      "Fix implementer resumed original session 01a1ddbf, recorded completed native turn and terminal wrapper. Controller same-owner dispatch-check was consumed before dispatch. The original leaf fix1-guard.json was a runner receipt; the controller open-x save refused overwrite. The original controller transcript event ordinal 3890 and SHA were checked, and its JSON literal independently extracted without execution equals the recovered fix1-dispatch-guard.json and fix1-terminal.json. The retained leaf receipt remains raw exit 2. This is controller bookkeeping, not independent approval.",
+      "Review evidence-check runner verifies source hashes and prefix bytes. Its preliminary trace-line diagnostic selected physical line 3890 rather than event ordinal 3890 and printed a mismatch; trace-check.json also failed because of the reviewer extraction method. Corrected trace-check-v2.json locates ordinal 3890 (physical line 3891), verifies the raw line SHA including newline and parses the nested json.loads literal: recovered guard and terminal both match. All review commands are terminal."
+    ],
+    "source_mapping": {
+      "fix_manifest": "docs/todos/11-reliable-delivery/evidence/11/fix1-source-manifest.json",
+      "index": "docs/todos/11-reliable-delivery/evidence/planning/native-source-index.json",
+      "ownership": "docs/todos/11-reliable-delivery/evidence/11/controller-artifact-ownership.json",
+      "verification_receipt": "build/iter11-review/task11-review2/review-evidence-check.json",
+      "result": "Fix manifest: 229 local bytes match, 207 also match C Git blobs and 22 are external or absent from C. Source index: 96 local hashes match, 67 match C Git blobs and 29 external or absent from C. Ownership: all 28 local and C Git blob hashes match. External build assets are local original evidence, not Git-blob-bound. Prior review independently checked task 06 payload 111 blobs and this fix did not change them.",
+      "trace_verification_receipt": "build/iter11-review/task11-review2/trace-check-v2.json"
+    },
+    "DeferredMinors": [
+      {
+        "file": "docs/todos/11-reliable-delivery/evidence/11/implementation-last-message.txt",
+        "line": 6,
+        "description": "Prior review noted blank line at EOF in retained raw message; preserve the original evidence."
+      }
+    ],
+    "limitations": [
+      "Approval is for task 11 candidate and its unchanged BASE contract; historical complete runtime identity and real nonparticipation cannot be proved by hashes alone.",
+      "External build evidence is byte-checked locally, but not all originals are committed as Git blobs.",
+      "FROZEN-KNOWN-01/02 remain; frozen coordinator scope pass is not semantic approval.",
+      "Current Windows, installation/deployment, external FS lifecycle, full suite and whole iteration remain outside this review. Task 12 and subsequent final integration, total review and branch strict remain pending."
+    ],
+    "approval_scope": "Whole task 11 candidate against unchanged frozen specification, with prior valid observations and limitations retained. This review does not register D, run task 11 local strict or approve iteration release."
+  },
+  "originals": {
+    "trace-check.py": {
+      "path": "build/iter11-review/task11-review2/trace-check.py",
+      "sha256": "f03479a14bd8d87547299aaac5137a5fdc0a9fa53fb2d8364b71ba5b07b966c6"
+    },
+    "scope-runner.json.output.txt": {
+      "path": "build/iter11-review/task11-review2/scope-runner.json.output.txt",
+      "sha256": "c2c58766462f3c0e8dbdd4970bc5b75c6c0083048e804f23292b4c6927b6abca"
+    },
+    "review-native.jsonl": {
+      "path": "build/iter11-review/task11-review2/review-native.jsonl",
+      "sha256": "8b285f64dcb995fa42bc9939e113e17e57200601c2907457f9d5f1277f2367fb"
+    },
+    "attempt.call.json": {
+      "path": "build/iter11-review/task11-review2/attempt.call.json",
+      "sha256": "f15cf3aefc1e3829553de85769e8bb9323540c4d4945e328eaa9200b5b0bfdca"
+    },
+    "review-package.txt": {
+      "path": "build/iter11-review/task11-review2/review-package.txt",
+      "sha256": "5c781b351890a9dfeba9d4243ed9888c48ca77ee3620c921c93f4f4042bd216e"
+    },
+    "review-last-message.txt": {
+      "path": "build/iter11-review/task11-review2/review-last-message.txt",
+      "sha256": "aa382b85845ce4c416301c5f0aa581216ba5484c44893c157a93645504ce8417"
+    },
+    "terminal.json": {
+      "path": "build/iter11-review/task11-review2/terminal.json",
+      "sha256": "91f9c7fb9b6de6c6120aad41d8d5e267e4ec57d4b562a91e193080a60c964cfb"
+    },
+    "review-native.stderr.txt": {
+      "path": "build/iter11-review/task11-review2/review-native.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "review-evidence-check.py": {
+      "path": "build/iter11-review/task11-review2/review-evidence-check.py",
+      "sha256": "f88b91b7bf46bc478cb7c4678fd48769302faee39324f11092c7a67a3e2020ba"
+    },
+    "scope-runner.json": {
+      "path": "build/iter11-review/task11-review2/scope-runner.json",
+      "sha256": "20591f0b889f29085517d1cf3a37b7bafd149d0ba7cbeefbcd30f1ae87936da4"
+    },
+    "trace-check.json.output.txt": {
+      "path": "build/iter11-review/task11-review2/trace-check.json.output.txt",
+      "sha256": "073ffdbf6223d7ed8858bf73b8e146b2255095305677574675f9f7513ef67b61"
+    },
+    "attempt.json": {
+      "path": "build/iter11-review/task11-review2/attempt.json",
+      "sha256": "9f47b5d2f695c79bb8c66fd9b57c23e77172de52fa5ad741c2adea3261cc8eae"
+    },
+    "trace-check.json.child.json": {
+      "path": "build/iter11-review/task11-review2/trace-check.json.child.json",
+      "sha256": "51e42329b7a44f04474c235887cdc93ebd539be5e10196b9626cbfd0a8b53f77"
+    },
+    "dispatch-check.json": {
+      "path": "build/iter11-review/task11-review2/dispatch-check.json",
+      "sha256": "7d01ea5d4102ec8d10758a81cb85aa80c16df160aa802dbdac8c2eb990bf0138"
+    },
+    "review-brief.md": {
+      "path": "build/iter11-review/task11-review2/review-brief.md",
+      "sha256": "5b1a842d37cc80b890a702954e994d9c26379e50cd16eee1618887b8619c54cd"
+    },
+    "trace-check-v2.py": {
+      "path": "build/iter11-review/task11-review2/trace-check-v2.py",
+      "sha256": "e4cb65c1498b6d564f3adc99815efd1b85f8fdbcfa6b14a558ffa15796310439"
+    },
+    "review-guard.json": {
+      "path": "build/iter11-review/task11-review2/review-guard.json",
+      "sha256": "3758d73295ee4a11fd82e92862b5373b06ab539a33b4b4cca1053bbf121a6a3d"
+    },
+    "context.json": {
+      "path": "build/iter11-review/task11-review2/context.json",
+      "sha256": "0fdfaccd178df8e0b0b30f06e77682e561368401e0e41c03c6be8e54250ec7fd"
+    },
+    "release.call.json": {
+      "path": "build/iter11-review/task11-review2/release.call.json",
+      "sha256": "bec9922bf4e5b309aa7f4decde1e06121f68f25a5177df1754bc1dfbad6fff78"
+    },
+    "review-check-observation.json": {
+      "path": "build/iter11-review/task11-review2/review-check-observation.json",
+      "sha256": "112dc640d036fd599af63da62ebd008b8540baadac3cbe13fb7e7ce8fe867d4d"
+    },
+    "trace-check-v2.json.child.json": {
+      "path": "build/iter11-review/task11-review2/trace-check-v2.json.child.json",
+      "sha256": "27f4afd3f926e60fd0399d4ea2d28c50d9b2da90a8454a3aebd5af4f21f3b20a"
+    },
+    "trace-check.json": {
+      "path": "build/iter11-review/task11-review2/trace-check.json",
+      "sha256": "7a8914b840257eef6521ea9c1d8a3c34dde08cd1995a80caf93f3d616e2254da"
+    },
+    "review-evidence-check.json.child.json": {
+      "path": "build/iter11-review/task11-review2/review-evidence-check.json.child.json",
+      "sha256": "5c16ecfe63aadf6517adccf7cfde052181c1c90e4efc878507e287fb12dc9242"
+    },
+    "scope-runner.json.child.json": {
+      "path": "build/iter11-review/task11-review2/scope-runner.json.child.json",
+      "sha256": "0f5312de5e1bb2495c3bfdbb496b7db2efe9a8e15b0fc8e6c9154d1a736555e3"
+    },
+    "report.json": {
+      "path": "build/iter11-review/task11-review2/report.json",
+      "sha256": "94b3e8ece9f78f41f110437e88397c9edd6a51a1378edbc7ad9cbe81ea5992bf"
+    },
+    "trace-check-v2.json.output.txt": {
+      "path": "build/iter11-review/task11-review2/trace-check-v2.json.output.txt",
+      "sha256": "d7810c0564094b6e470e3840a8f38607d07f443dad6d15142edc005546b0b3c7"
+    },
+    "review-evidence-check.json": {
+      "path": "build/iter11-review/task11-review2/review-evidence-check.json",
+      "sha256": "c4eb9374ca046deeeec0b5638968f15abd659065df8b6d9e3fb8acd12403d184"
+    },
+    "trace-check-v2.json": {
+      "path": "build/iter11-review/task11-review2/trace-check-v2.json",
+      "sha256": "ff12927cef70606dbb085a26e094dd087504e31e3f73d5dc7242832cc7564b96"
+    },
+    "review-evidence-check.json.output.txt": {
+      "path": "build/iter11-review/task11-review2/review-evidence-check.json.output.txt",
+      "sha256": "5e7caf7a62d73f309a2f3b60c599daef283f18fa876b7608fd4b2f1dd397ba72"
+    }
+  },
+  "scope_receipt": {
+    "version": 1,
+    "argv": [
+      "python3",
+      "-B",
+      "/data/workspace/iteration-manager/build/frozen-tools/fdcc4cce8863/scripts/iter_sync.py",
+      "--check-scope",
+      "bc324d16f2adb7f36e18f1f826a16dd23343055a",
+      "131c42f2fc81cbcfa834c6fcd5cffd4b888c81b3",
+      "docs/todos/11-reliable-delivery/11-native-self-use-audit.md"
+    ],
+    "cwd": "/data/workspace/iteration-manager/.worktrees/iter-11",
+    "deadline": "2026-11-15T06:08:54.064612+00:00",
+    "cleanup_reserve_seconds": 5,
+    "status": "COMPLETED",
+    "deadline_checked_at": "2026-11-15T06:03:14.899792+00:00",
+    "started_at": "2026-11-15T06:03:14.902879+00:00",
+    "ended_at": "2026-11-15T06:03:15.014527+00:00",
+    "raw_exit_code": 0,
+    "tree_terminal": true,
+    "output": "build/iter11-review/task11-review2/scope-runner.json.output.txt",
+    "container_pid": 3545216,
+    "launcher_exit_code": 0,
+    "command": {
+      "status": "COMPLETED",
+      "raw_exit_code": 0,
+      "started_at": "2026-11-15T06:03:14.902879+00:00",
+      "tree_terminal": true,
+      "deadline_checked_at": "2026-11-15T06:03:14.899792+00:00",
+      "pid": 3545217,
+      "ended_at": "2026-11-15T06:03:14.988618+00:00"
+    },
+    "late_by_seconds": 0
+  },
+  "scope_output": "[IterSync:ScopeFirewall:PASSED] All 188 changed files within declared scope; ownership is not inferred.\n"
+}
