@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "tasks": {
+    "06": {
+      "phase": "implementation",
+      "candidate": "6ee7605de94fde0dfb4454f512b9913fd7aa01ae",
+      "inputs": [
+        "AGENTS.md",
+        "docs/todos/11-reliable-delivery/06-installation-provenance.md",
+        "docs/todos/11-reliable-delivery/README.md",
+        "docs/todos/11-reliable-delivery/evidence/06/checkpoint-inheritance.json",
+        "docs/todos/11-reliable-delivery/evidence/06/red-attempt.json",
+        "docs/todos/11-reliable-delivery/evidence/06/red-checkpoint.json",
+        "references/task_card_schema.md",
+        "tests/test_install_provenance.py",
+        "docs/todos/11-reliable-delivery/evidence/06/preliminary-review1.json"
+      ],
+      "capabilities": [
+        "native-codex-cli-implementer",
+        "approved-frozen-linux-runner",
+        "Python3.11.17-pytest9.2-mcp1.30",
+        "independent-native-reviewer"
+      ],
+      "dependencies": [],
+      "tool_entry": "/data/workspace/iteration-manager/build/frozen-tools/fdcc4cce8863/scripts/iter_sync.py",
+      "checkpoint": "F1实际提交payload烟测补证据",
+      "remaining_work": [
+        "真实payload烟测",
+        "复审",
+        "D/strict"
+      ],
+      "required_observations": [
+        "serial-order"
+      ],
+      "observations": {
+        "authority": {
+          "status": "READY",
+          "summary": "用户实施/Git/Worktree/Linux授权；不部署推送合流清理",
+          "evidence": "docs/todos/11-reliable-delivery/evidence/planning/platform-migration-authorization.json"
+        },
+        "execution": {
+          "status": "READY",
+          "summary": "新消费者及RED原实现者均终态；明确沿用原RED不重跑；同一实现者续做剩余项",
+          "evidence": "docs/todos/11-reliable-delivery/evidence/06/checkpoint-consumer-terminal.json"
+        },
+        "verification": {
+          "status": "READY",
+          "summary": "冻结Linux runner与维护测试环境已实测",
+          "evidence": "build/iter11-review/task05-review2/local-strict.json"
+        },
+        "serial-order": {
+          "status": "READY",
+          "summary": "所有前卡实际audit有效且前卡冻结strict成功，仅启动本卡",
+          "evidence": "build/iter11-review/task05-review2/local-strict.json"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "candidate": "6ee7605de94fde0dfb4454f512b9913fd7aa01ae",
+  "base": "e66841186450dc6bbe138bf77aac87a2a8f1232a",
+  "reviewer_uuid": "01a1dd96-f44b-7971-8cc6-9b6de8d5990b",
+  "independence": {
+    "statement": "Fresh independent reviewer; did not design, implement, author tests, conduct RCA, or delegate task 06.",
+    "excluded_actors": [
+      "01a1dd8e-8b72-7b72-90b4-a8577ef8db2d",
+      "01a1dd90-f03a-70c1-866d-43d5ac3a936e"
+    ]
+  },
+  "verdicts": {
+    "scope": "APPROVED",
+    "spec": "NEEDS_FIX",
+    "quality": "NEEDS_FIX",
+    "overall": "NEEDS_FIX"
+  },
+  "findings": [
+    {
+      "id": "F1",
+      "severity": "major",
+      "category": "evidence / installation smoke",
+      "location": "tests/test_install_provenance.py:33",
+      "related_locations": [
+        "tests/test_install_provenance.py:50",
+        "tests/test_install_provenance.py:191",
+        "docs/todos/11-reliable-delivery/06-installation-provenance.md:33",
+        "docs/todos/11-reliable-delivery/06-installation-provenance.md:64",
+        "docs/todos/11-reliable-delivery/README.md:37"
+      ],
+      "scenario": "The sole recorded temporary installation exercise builds a new Git repository from six placeholder files (including SKILL.md containing only skill and scripts/query.py containing only query), then copies those files. It exercises real Git and drift rejection, but never generates a manifest from or checks a temporary copy of the actual iteration-manager delivery whitelist. Thus it cannot expose inventory, path, or byte compatibility problems in the real payload, and does not substantiate the card’s checked temporary installation smoke or iteration goal’s 06 installation path.",
+      "remediation": "Using the authorized frozen runner and a unique receipt, exercise a clean committed real task candidate or explicitly bound real delivery source and its actual whitelist in an isolated temporary installation: generate the manifest, check the copy, introduce and verify rejection of drift, preserve raw output/source binding and terminal receipt. Preserve the fixture test as separate negative and API evidence."
+    }
+  ],
+  "source_chronology_evidence": {
+    "frozen_spec": "Compared BASE and C: scope, acceptance and iteration goal markers are byte-identical. HEAD=C; C parent is 82b66d9 and that parent descends directly from BASE. Git default mode verified; no explicit delivery-mode override in card.",
+    "scope": "One physical frozen fdcc4cc scope check through approved runner: COMPLETED, raw exit 0, tree_terminal true, empty raw output. Diff also includes authorized task card, iteration README projection/administrative update and evidence. Known coordinator mode/takeover defects are not relied on for legality.",
+    "binding": "Both source manifests have 11 SHA256 entries independently matched to Git C blobs; final worktree also matches. RED checkpoint SHA256 entries independently match Git P blobs, including raw receipt, child and output. RED test P bytes are an exact prefix of C test bytes; six later supplemental tests are not claimed as RED.",
+    "chronology": "Native JSONL thread.started identifies original and resumed implementer 01a1dd8e; fresh consumer 01a1dd90. Original RED ended 04:55:03 before P and production implementation; raw output 22 failed assertion cases, 11 passed, receipt exit 1 COMPLETED tree terminal. P contains RED test and no production module. Consumer inheritance contains actual envelope, original BASE and times, ordered attempt/release/claim and budget 0/0; no rerun claimed. Resumed same implementer produced implementation; final selected GREEN/regression 39 passed, 05:01:07–05:01:09, exit 0 COMPLETED tree terminal. Earlier 37/38 runs precede additions and are not final evidence; C was committed later at 05:03:39.",
+    "applicability": "Final selected pytest and CLI compatibility input/source hashes map to C, Linux Python 3.11.17 pytest 9.2.0; no claim for other environments. Raw final output and runner receipt checked. Fixture Git commit is real but represents synthetic files, not actual skill payload (F1).",
+    "implementation": "Source resolves full Git commit and reads tree blobs; compares index, full inventory and actual bytes. Check validates schema, names and hashes before file reads, rejects links, and separates query presence from platform prerequisites and UNKNOWN execution. Duplicate JSON keys rejected by CLI; tests include malformed input, traversal, links, drift, index and unavailable pidfd. The documented offline copy trust boundary and no concurrent hostile replacement assumption are consistent with the specified scope."
+  },
+  "scope_receipt": {
+    "path": "build/iter11-review/task06-review1/scope-runner.json",
+    "raw_output": "build/iter11-review/task06-review1/scope-runner.json.output.txt",
+    "status": "COMPLETED",
+    "raw_exit_code": 0,
+    "tree_terminal": true,
+    "deadline": "2026-11-15T05:09:39.968Z"
+  },
+  "DeferredMinors": [],
+  "limitations": [
+    "No duplicate suite run during review.",
+    "Review dispatch-check is READY for same owner and C; READY is not approval.",
+    "Current Windows execution, installation/deployment, host discovery, external business validation and full suite were not tested.",
+    "Task 11 source-chain audit, D registration, strict and whole-iteration acceptance remain pending.",
+    "Historical task 04 root ordering FAIL and task 03 Codegworker bwrap BLOCKED are unchanged and not reclassified.",
+    "Independent copy checks trust the supplied manifest and do not authenticate arbitrary Git origin or signatures."
+  ],
+  "approval_scope": "Task 06 candidate and unchanged frozen task requirements only. Scope approved; overall approval withheld pending actual delivery-payload smoke evidence. No iteration, release or deployment approval."
+}

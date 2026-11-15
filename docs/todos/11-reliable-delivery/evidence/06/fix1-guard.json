@@ -1,0 +1,130 @@
+{
+  "request": {
+    "request_id": "fix1-1794719353208",
+    "project_root": "/data/workspace/iteration-manager/.worktrees/iter-11",
+    "tool_entry": "/data/workspace/iteration-manager/build/frozen-tools/fdcc4cce8863/scripts/iter_sync.py",
+    "task_path": "/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/06-installation-provenance.md",
+    "task_id": "06",
+    "owner": "iter11-controller-linux-20261115",
+    "phase": "implementation",
+    "candidate": "6ee7605de94fde0dfb4454f512b9913fd7aa01ae",
+    "context": "docs/todos/11-reliable-delivery/evidence/06/fix1-context.json"
+  },
+  "events": [
+    {
+      "kind": "check-start",
+      "at": 1794719353209
+    },
+    {
+      "kind": "check-terminal-consumed",
+      "at": 1794719353471,
+      "exit_code": 0,
+      "readiness": "READY"
+    },
+    {
+      "kind": "dispatch-call",
+      "at": 1794719353480
+    }
+  ],
+  "native_check": {
+    "kind": "controller-command-observation",
+    "argv": [
+      "python3",
+      "-B",
+      "/data/workspace/iteration-manager/build/frozen-tools/fdcc4cce8863/scripts/iter_sync.py",
+      "--dispatch-check",
+      "/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/06-installation-provenance.md",
+      "--context",
+      "docs/todos/11-reliable-delivery/evidence/06/fix1-context.json",
+      "--phase",
+      "implementation",
+      "--owner",
+      "iter11-controller-linux-20261115"
+    ],
+    "started_at": "2026-11-15T05:09:13.266797+00:00",
+    "ended_at": "2026-11-15T05:09:13.372751+00:00",
+    "exit_code": 0,
+    "stdout": "{\n  \"read_only\": true,\n  \"readiness\": \"READY\",\n  \"task_path\": \"/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/06-installation-provenance.md\",\n  \"phase\": \"implementation\",\n  \"acceptance_verdict\": \"UNKNOWN\",\n  \"findings\": [],\n  \"observations\": {\n    \"authority\": {\n      \"status\": \"READY\",\n      \"summary\": \"用户实施/Git/Worktree/Linux授权；不部署推送合流清理\",\n      \"evidence\": \"docs/todos/11-reliable-delivery/evidence/planning/platform-migration-authorization.json\"\n    },\n    \"execution\": {\n      \"status\": \"READY\",\n      \"summary\": \"新消费者及RED原实现者均终态；明确沿用原RED不重跑；同一实现者续做剩余项\",\n      \"evidence\": \"docs/todos/11-reliable-delivery/evidence/06/checkpoint-consumer-terminal.json\"\n    },\n    \"serial-order\": {\n      \"status\": \"READY\",\n      \"summary\": \"所有前卡实际audit有效且前卡冻结strict成功，仅启动本卡\",\n      \"evidence\": \"build/iter11-review/task05-review2/local-strict.json\"\n    },\n    \"verification\": {\n      \"status\": \"READY\",\n      \"summary\": \"冻结Linux runner与维护测试环境已实测\",\n      \"evidence\": \"build/iter11-review/task05-review2/local-strict.json\"\n    }\n  },\n  \"task_id\": \"06\",\n  \"delivery_mode\": \"git\",\n  \"candidate\": \"6ee7605de94fde0dfb4454f512b9913fd7aa01ae\",\n  \"execution\": {\n    \"attempt_count\": 4,\n    \"no_progress_streak\": 0,\n    \"last_attempt\": {\n      \"source\": \"build/iter11-review/task06-review1/attempt-v2.json\",\n      \"phase\": \"evidence-inspection\",\n      \"delivery_mode\": \"git\",\n      \"candidate\": \"6ee7605de94fde0dfb4454f512b9913fd7aa01ae\",\n      \"conditions\": {\n        \"inputs\": [\n          \"AGENTS.md\",\n          \"docs/todos/11-reliable-delivery/06-installation-provenance.md\",\n          \"docs/todos/11-reliable-delivery/README.md\",\n          \"docs/todos/11-reliable-delivery/evidence/06/checkpoint-inheritance.json\",\n          \"docs/todos/11-reliable-delivery/evidence/06/red-attempt.json\",\n          \"docs/todos/11-reliable-delivery/evidence/06/red-checkpoint.json\",\n          \"references/task_card_schema.md\",\n          \"tests/test_install_provenance.py\"\n        ],\n        \"capabilities\": [\n          \"Python3.11.17-pytest9.2-mcp1.30\",\n          \"approved-frozen-linux-runner\",\n          \"independent-native-reviewer\",\n          \"native-codex-cli-implementer\"\n        ],\n        \"scope\": [\n          \".agents/notes/planned/iter11/06-installation-provenance.md\",\n          \"docs/todos/11-reliable-delivery/evidence/06/\",\n          \"references/installation_verification.md\",\n          \"scripts/iter_install.py\",\n          \"tests/test_install_provenance.py\"\n        ]\n      },\n      \"executor_id\": \"01a1dd96-f44b-7971-8cc6-9b6de8d5990b\",\n      \"executor_state\": \"completed\",\n      \"terminal_evidence\": \"build/iter11-review/task06-review1/terminal.json\",\n      \"progress\": [\n        {\n          \"kind\": \"review-finding\",\n          \"evidence\": \"build/iter11-review/task06-review1/report.json\",\n          \"summary\": \"F1真实payload烟测缺口\"\n        }\n      ],\n      \"checkpoint\": \"F1实际交付payload烟测缺失，独审拒绝完成\",\n      \"remaining_work\": [\n        \"D/strict\",\n        \"原独审复审\",\n        \"补实际C白名单临时安装烟测\"\n      ],\n      \"commands\": [\n        {\n          \"receipt\": \"build/iter11-review/task06-review1/scope-runner.json\",\n          \"status\": \"COMPLETED\",\n          \"raw_exit_code\": 0,\n          \"started_at\": \"2026-11-15T05:03:49.073233+00:00\",\n          \"ended_at\": \"2026-11-15T05:03:49.237133+00:00\"\n        }\n      ],\n      \"started_at\": null,\n      \"ended_at\": null,\n      \"session_seconds\": null,\n      \"command_seconds\": 0.1639\n    },\n    \"checkpoint\": {\n      \"candidate\": \"6ee7605de94fde0dfb4454f512b9913fd7aa01ae\",\n      \"phase\": \"evidence-inspection\",\n      \"summary\": \"F1实际交付payload烟测缺失，独审拒绝完成\",\n      \"progress\": [\n        {\n          \"kind\": \"review-finding\",\n          \"evidence\": \"build/iter11-review/task06-review1/report.json\",\n          \"summary\": \"F1真实payload烟测缺口\"\n        }\n      ],\n      \"source\": \"build/iter11-review/task06-review1/attempt-v2.json\"\n    },\n    \"remaining_work\": [\n      \"D/strict\",\n      \"原独审复审\",\n      \"补实际C白名单临时安装烟测\"\n    ]\n  },\n  \"conditions\": {\n    \"inputs\": [\n      \"AGENTS.md\",\n      \"docs/todos/11-reliable-delivery/06-installation-provenance.md\",\n      \"docs/todos/11-reliable-delivery/README.md\",\n      \"docs/todos/11-reliable-delivery/evidence/06/checkpoint-inheritance.json\",\n      \"docs/todos/11-reliable-delivery/evidence/06/preliminary-review1.json\",\n      \"docs/todos/11-reliable-delivery/evidence/06/red-attempt.json\",\n      \"docs/todos/11-reliable-delivery/evidence/06/red-checkpoint.json\",\n      \"references/task_card_schema.md\",\n      \"tests/test_install_provenance.py\"\n    ],\n    \"capabilities\": [\n      \"Python3.11.17-pytest9.2-mcp1.30\",\n      \"approved-frozen-linux-runner\",\n      \"independent-native-reviewer\",\n      \"native-codex-cli-implementer\"\n    ],\n    \"scope\": [\n      \".agents/notes/planned/iter11/06-installation-provenance.md\",\n      \"docs/todos/11-reliable-delivery/evidence/06/\",\n      \"references/installation_verification.md\",\n      \"scripts/iter_install.py\",\n      \"tests/test_install_provenance.py\"\n    ]\n  },\n  \"checkpoint\": \"F1实际提交payload烟测补证据\",\n  \"remaining_work\": [\n    \"D/strict\",\n    \"复审\",\n    \"真实payload烟测\"\n  ]\n}\n",
+    "stderr": ""
+  },
+  "result": {
+    "dispatched": true,
+    "reason": "dispatched",
+    "check": {
+      "state": "completed",
+      "exit_code": 0,
+      "request_id": "fix1-1794719353208",
+      "cwd": "/data/workspace/iteration-manager/.worktrees/iter-11",
+      "argv": [
+        "python3",
+        "-B",
+        "/data/workspace/iteration-manager/build/frozen-tools/fdcc4cce8863/scripts/iter_sync.py",
+        "--dispatch-check",
+        "/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/06-installation-provenance.md",
+        "--context",
+        "docs/todos/11-reliable-delivery/evidence/06/fix1-context.json",
+        "--phase",
+        "implementation",
+        "--owner",
+        "iter11-controller-linux-20261115"
+      ],
+      "stdout": "{\n  \"read_only\": true,\n  \"readiness\": \"READY\",\n  \"task_path\": \"/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/06-installation-provenance.md\",\n  \"phase\": \"implementation\",\n  \"acceptance_verdict\": \"UNKNOWN\",\n  \"findings\": [],\n  \"observations\": {\n    \"authority\": {\n      \"status\": \"READY\",\n      \"summary\": \"用户实施/Git/Worktree/Linux授权；不部署推送合流清理\",\n      \"evidence\": \"docs/todos/11-reliable-delivery/evidence/planning/platform-migration-authorization.json\"\n    },\n    \"execution\": {\n      \"status\": \"READY\",\n      \"summary\": \"新消费者及RED原实现者均终态；明确沿用原RED不重跑；同一实现者续做剩余项\",\n      \"evidence\": \"docs/todos/11-reliable-delivery/evidence/06/checkpoint-consumer-terminal.json\"\n    },\n    \"serial-order\": {\n      \"status\": \"READY\",\n      \"summary\": \"所有前卡实际audit有效且前卡冻结strict成功，仅启动本卡\",\n      \"evidence\": \"build/iter11-review/task05-review2/local-strict.json\"\n    },\n    \"verification\": {\n      \"status\": \"READY\",\n      \"summary\": \"冻结Linux runner与维护测试环境已实测\",\n      \"evidence\": \"build/iter11-review/task05-review2/local-strict.json\"\n    }\n  },\n  \"task_id\": \"06\",\n  \"delivery_mode\": \"git\",\n  \"candidate\": \"6ee7605de94fde0dfb4454f512b9913fd7aa01ae\",\n  \"execution\": {\n    \"attempt_count\": 4,\n    \"no_progress_streak\": 0,\n    \"last_attempt\": {\n      \"source\": \"build/iter11-review/task06-review1/attempt-v2.json\",\n      \"phase\": \"evidence-inspection\",\n      \"delivery_mode\": \"git\",\n      \"candidate\": \"6ee7605de94fde0dfb4454f512b9913fd7aa01ae\",\n      \"conditions\": {\n        \"inputs\": [\n          \"AGENTS.md\",\n          \"docs/todos/11-reliable-delivery/06-installation-provenance.md\",\n          \"docs/todos/11-reliable-delivery/README.md\",\n          \"docs/todos/11-reliable-delivery/evidence/06/checkpoint-inheritance.json\",\n          \"docs/todos/11-reliable-delivery/evidence/06/red-attempt.json\",\n          \"docs/todos/11-reliable-delivery/evidence/06/red-checkpoint.json\",\n          \"references/task_card_schema.md\",\n          \"tests/test_install_provenance.py\"\n        ],\n        \"capabilities\": [\n          \"Python3.11.17-pytest9.2-mcp1.30\",\n          \"approved-frozen-linux-runner\",\n          \"independent-native-reviewer\",\n          \"native-codex-cli-implementer\"\n        ],\n        \"scope\": [\n          \".agents/notes/planned/iter11/06-installation-provenance.md\",\n          \"docs/todos/11-reliable-delivery/evidence/06/\",\n          \"references/installation_verification.md\",\n          \"scripts/iter_install.py\",\n          \"tests/test_install_provenance.py\"\n        ]\n      },\n      \"executor_id\": \"01a1dd96-f44b-7971-8cc6-9b6de8d5990b\",\n      \"executor_state\": \"completed\",\n      \"terminal_evidence\": \"build/iter11-review/task06-review1/terminal.json\",\n      \"progress\": [\n        {\n          \"kind\": \"review-finding\",\n          \"evidence\": \"build/iter11-review/task06-review1/report.json\",\n          \"summary\": \"F1真实payload烟测缺口\"\n        }\n      ],\n      \"checkpoint\": \"F1实际交付payload烟测缺失，独审拒绝完成\",\n      \"remaining_work\": [\n        \"D/strict\",\n        \"原独审复审\",\n        \"补实际C白名单临时安装烟测\"\n      ],\n      \"commands\": [\n        {\n          \"receipt\": \"build/iter11-review/task06-review1/scope-runner.json\",\n          \"status\": \"COMPLETED\",\n          \"raw_exit_code\": 0,\n          \"started_at\": \"2026-11-15T05:03:49.073233+00:00\",\n          \"ended_at\": \"2026-11-15T05:03:49.237133+00:00\"\n        }\n      ],\n      \"started_at\": null,\n      \"ended_at\": null,\n      \"session_seconds\": null,\n      \"command_seconds\": 0.1639\n    },\n    \"checkpoint\": {\n      \"candidate\": \"6ee7605de94fde0dfb4454f512b9913fd7aa01ae\",\n      \"phase\": \"evidence-inspection\",\n      \"summary\": \"F1实际交付payload烟测缺失，独审拒绝完成\",\n      \"progress\": [\n        {\n          \"kind\": \"review-finding\",\n          \"evidence\": \"build/iter11-review/task06-review1/report.json\",\n          \"summary\": \"F1真实payload烟测缺口\"\n        }\n      ],\n      \"source\": \"build/iter11-review/task06-review1/attempt-v2.json\"\n    },\n    \"remaining_work\": [\n      \"D/strict\",\n      \"原独审复审\",\n      \"补实际C白名单临时安装烟测\"\n    ]\n  },\n  \"conditions\": {\n    \"inputs\": [\n      \"AGENTS.md\",\n      \"docs/todos/11-reliable-delivery/06-installation-provenance.md\",\n      \"docs/todos/11-reliable-delivery/README.md\",\n      \"docs/todos/11-reliable-delivery/evidence/06/checkpoint-inheritance.json\",\n      \"docs/todos/11-reliable-delivery/evidence/06/preliminary-review1.json\",\n      \"docs/todos/11-reliable-delivery/evidence/06/red-attempt.json\",\n      \"docs/todos/11-reliable-delivery/evidence/06/red-checkpoint.json\",\n      \"references/task_card_schema.md\",\n      \"tests/test_install_provenance.py\"\n    ],\n    \"capabilities\": [\n      \"Python3.11.17-pytest9.2-mcp1.30\",\n      \"approved-frozen-linux-runner\",\n      \"independent-native-reviewer\",\n      \"native-codex-cli-implementer\"\n    ],\n    \"scope\": [\n      \".agents/notes/planned/iter11/06-installation-provenance.md\",\n      \"docs/todos/11-reliable-delivery/evidence/06/\",\n      \"references/installation_verification.md\",\n      \"scripts/iter_install.py\",\n      \"tests/test_install_provenance.py\"\n    ]\n  },\n  \"checkpoint\": \"F1实际提交payload烟测补证据\",\n  \"remaining_work\": [\n    \"D/strict\",\n    \"复审\",\n    \"真实payload烟测\"\n  ]\n}\n",
+      "stderr": "",
+      "terminal_evidence": {
+        "source": "docs/todos/11-reliable-delivery/evidence/06/fix1-check-observation.json",
+        "id": "2026-11-15T05:09:13.372751+00:00"
+      }
+    },
+    "delegation": {
+      "launch": {
+        "requestedAt": 1794719353208,
+        "leaf": 1794719713208,
+        "hard": 1794719803208,
+        "command": 1794719653208,
+        "launch": {
+          "chunk_id": "16ea33",
+          "wall_time_seconds": 1.002163653,
+          "session_id": 35992,
+          "original_token_count": 0,
+          "output": ""
+        },
+        "cmd": "timeout --signal=TERM --kill-after=5s 360s codex exec -C '/data/workspace/iteration-manager/.worktrees/iter-11' -s danger-full-access -c 'approval_policy=\"never\"' resume '01a1dd8e-8b72-7b72-90b4-a8577ef8db2d' --json -o '/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/06/fix1-last-message.txt' - < '/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/06/fix1-brief.md' > '/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/06/fix1-native.jsonl' 2> '/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/06/fix1-native.stderr.txt'"
+      },
+      "monitor": {
+        "reason": "terminal",
+        "deadlineMs": 1794719713208,
+        "final": {
+          "status": "completed",
+          "raw": {
+            "chunk_id": "4d4d11",
+            "wall_time_seconds": 49.353755313,
+            "exit_code": 0,
+            "original_token_count": 0,
+            "output": ""
+          }
+        },
+        "terminalConfirmed": true,
+        "observedAt": 1794719404027,
+        "lateByMs": 0,
+        "events": [
+          {
+            "kind": "query",
+            "startedAt": 1794719354666,
+            "returnedAt": 1794719404026,
+            "waitMs": 60000,
+            "result": {
+              "status": "completed",
+              "raw": {
+                "chunk_id": "4d4d11",
+                "wall_time_seconds": 49.353755313,
+                "exit_code": 0,
+                "original_token_count": 0,
+                "output": ""
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}
