@@ -1,7 +1,7 @@
 # 迭代11 · 可信路径一致性、使用成本与真实自用验证
 
 > 初始化：2026-11-14 UTC · 当前checkout：`/data/workspace/iteration-manager` · 基线：`fdcc4cce88635ee81573be5991de11de650659d8`。
-> 2026-11-15最新授权：适配Linux并整理Windows/Linux开发指引；新增00前置任务，随后01—12逐项验收串行推进。当前00—01完成独审和登记、02—12为TODO；冻结strict核对后产品验收2/13；实施、精准Git与Worktree授权保持。
+> 2026-11-15最新授权：适配Linux并整理Windows/Linux开发指引；新增00前置任务，随后01—12逐项验收串行推进。当前状态以本页验收投影、任务卡和独立收据为准；实施、精准Git与Worktree授权保持。
 > 独立Worktree为`.worktrees/iter-11`，分支`feat/iter-11-reliable-delivery`。先完成[00平台适配](00-linux-runner-and-dev-guide.md)，不再要求另找Windows主机；原Windows-only拒绝保留为历史证据。迁移授权见[platform-migration-authorization.json](evidence/planning/platform-migration-authorization.json)。
 
 ## 1. 迭代核心目标与全局约束

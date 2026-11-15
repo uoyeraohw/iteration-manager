@@ -3,7 +3,7 @@ schema_version: 1
 iteration: "11-reliable-delivery"
 task_id: "06"
 task_name: "提供安装来源清单与轻量自检"
-status: "TODO"
+status: "IN_PROGRESS"
 type: "Strict-TDD"
 fix_rounds: 0
 replan_count: 0
@@ -14,8 +14,10 @@ typesafe_evidence: "docs/todos/11-reliable-delivery/evidence/planning/typesafe-s
 tdd_verified: false
 review_status: "PENDING"
 review_receipt: ""
-base_sha: ""
+base_sha: "e66841186450dc6bbe138bf77aac87a2a8f1232a"
 head_sha: ""
+autonomy_state: "{\"version\":1,\"policy\":{\"round_limit\":5,\"total_limit\":10,\"consilium_limit\":1,\"replan_limit\":2},\"round\":0,\"total\":0,\"consilium\":0,\"replan\":0,\"writer\":\"\",\"events\":{\"iter11-06-claim-v1\":{\"input\":{\"action\":\"claim\",\"owner\":\"iter11-controller-linux-20261115\",\"reason\":\"\",\"evidence\":\"\",\"executor_state\":\"\"},\"result\":{\"task_id\":\"06-installation-provenance\",\"previous_rounds\":0,\"current_rounds\":0,\"fix_total\":0,\"consilium_count\":0,\"replan_count\":0,\"is_fused\":false,\"status\":\"TODO\",\"blocked_reason\":\"\",\"writer\":\"iter11-controller-linux-20261115\",\"consilium_bundle\":null},\"at\":\"2026-11-15T04:54:28.398693+00:00\"},\"iter11-06-red-attempt-v1\":{\"input\":{\"action\":\"attempt\",\"owner\":\"iter11-controller-linux-20261115\",\"reason\":\"\",\"evidence\":\"docs/todos/11-reliable-delivery/evidence/06/red-attempt.json\",\"executor_state\":\"completed\",\"attempt\":{\"report\":{\"phase\":\"implementation\",\"candidate\":\"e66841186450dc6bbe138bf77aac87a2a8f1232a\",\"inputs\":[\"docs/todos/11-reliable-delivery/06-installation-provenance.md\",\"docs/todos/11-reliable-delivery/README.md\",\"AGENTS.md\",\"references/task_card_schema.md\"],\"capabilities\":[\"native-codex-cli-implementer\",\"approved-frozen-linux-runner\",\"Python3.11.17-pytest9.2-mcp1.30\",\"independent-native-reviewer\"],\"version\":1,\"checkpoint\":\"正常RED检查点22行为断言失败11控制通过，尚无生产实现\",\"remaining_work\":[\"新会话继承RED证据\",\"同实现者生产实现/GREEN/regression/临时安装检查\",\"C独审/D/strict\"],\"executor_id\":\"01a1dd8e-8b72-7b72-90b4-a8577ef8db2d\",\"terminal_evidence\":\"docs/todos/11-reliable-delivery/evidence/06/implementation-terminal.json\",\"progress\":[{\"kind\":\"red\",\"summary\":\"22断言失败/11通过，无导入环境错误，测试侧无功能adapter\",\"evidence\":\"docs/todos/11-reliable-delivery/evidence/06/red-01.json.output.txt\"}],\"commands\":[\"docs/todos/11-reliable-delivery/evidence/06/red-01.json\"],\"started_at\":null,\"ended_at\":null},\"source\":\"docs/todos/11-reliable-delivery/evidence/06/red-attempt.json\",\"phase\":\"implementation\",\"delivery_mode\":\"git\",\"candidate\":\"e66841186450dc6bbe138bf77aac87a2a8f1232a\",\"conditions\":{\"inputs\":[\"AGENTS.md\",\"docs/todos/11-reliable-delivery/06-installation-provenance.md\",\"docs/todos/11-reliable-delivery/README.md\",\"references/task_card_schema.md\"],\"capabilities\":[\"Python3.11.17-pytest9.2-mcp1.30\",\"approved-frozen-linux-runner\",\"independent-native-reviewer\",\"native-codex-cli-implementer\"],\"scope\":[\".agents/notes/planned/iter11/06-installation-provenance.md\",\"docs/todos/11-reliable-delivery/evidence/06/\",\"references/installation_verification.md\",\"scripts/iter_install.py\",\"tests/test_install_provenance.py\"]},\"executor_id\":\"01a1dd8e-8b72-7b72-90b4-a8577ef8db2d\",\"executor_state\":\"completed\",\"terminal_evidence\":\"docs/todos/11-reliable-delivery/evidence/06/implementation-terminal.json\",\"progress\":[{\"kind\":\"red\",\"evidence\":\"docs/todos/11-reliable-delivery/evidence/06/red-01.json.output.txt\",\"summary\":\"22断言失败/11通过，无导入环境错误，测试侧无功能adapter\"}],\"checkpoint\":\"正常RED检查点22行为断言失败11控制通过，尚无生产实现\",\"remaining_work\":[\"C独审/D/strict\",\"同实现者生产实现/GREEN/regression/临时安装检查\",\"新会话继承RED证据\"],\"commands\":[{\"receipt\":\"docs/todos/11-reliable-delivery/evidence/06/red-01.json\",\"status\":\"COMPLETED\",\"raw_exit_code\":1,\"started_at\":\"2026-11-15T04:55:02.045633+00:00\",\"ended_at\":\"2026-11-15T04:55:03.527041+00:00\"}],\"started_at\":null,\"ended_at\":null,\"session_seconds\":null,\"command_seconds\":1.481408}},\"result\":{\"task_id\":\"06-installation-provenance\",\"previous_rounds\":0,\"current_rounds\":0,\"fix_total\":0,\"consilium_count\":0,\"replan_count\":0,\"is_fused\":false,\"status\":\"IN_PROGRESS\",\"blocked_reason\":\"\",\"writer\":\"iter11-controller-linux-20261115\",\"consilium_bundle\":null},\"at\":\"2026-11-15T04:57:04.584438+00:00\"},\"iter11-06-red-release-v1\":{\"input\":{\"action\":\"release\",\"owner\":\"iter11-controller-linux-20261115\",\"reason\":\"\",\"evidence\":\"docs/todos/11-reliable-delivery/evidence/06/implementation-terminal.json\",\"executor_state\":\"completed\"},\"result\":{\"task_id\":\"06-installation-provenance\",\"previous_rounds\":0,\"current_rounds\":0,\"fix_total\":0,\"consilium_count\":0,\"replan_count\":0,\"is_fused\":false,\"status\":\"IN_PROGRESS\",\"blocked_reason\":\"\",\"writer\":\"\",\"consilium_bundle\":null},\"at\":\"2026-11-15T04:57:04.675084+00:00\"}},\"blocked_reason\":\"\"}"
+updated_at: "2026-11-15T04:57:04.675201+00:00"
 ---
 
 # 06 · 提供安装来源清单与轻量自检
@@ -67,6 +69,8 @@ head_sha: ""
 <!-- iter:ledger -->
 实际命令、原始证据、退出码、候选、检查点与剩余项在执行中记录；未执行不推断通过。
 独立审查结果由外部收据与报告提供。
+
+2026-11-15正常RED检查点：原生实现者01a1dd8e-8b72-7b72-90b4-a8577ef8db2d仅测试22个真实行为断言失败、11控制通过，见evidence/06/red-checkpoint.json、red-01.json/output及原生记录；生产iter_install.py不存在。guard先消费本次终态READY才启动，原生会话与测试进程树已终态，attempt后正常release，预算0/0且非FUSED，不需中断grant。接续新会话须沿用同字节RED/原始时间，不重跑；实现/GREEN/regression/临时安装、独审及C/D/strict均待完成。
 <!-- /iter:ledger -->
 
 ## 8. 接口依赖与执行边界

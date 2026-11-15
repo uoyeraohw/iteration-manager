@@ -1,0 +1,38 @@
+{
+  "version": 1,
+  "kind": "normal_red_only_checkpoint",
+  "native_session_uuid": "01a1dd8e-8b72-7b72-90b4-a8577ef8db2d",
+  "base_sha": "e66841186450dc6bbe138bf77aac87a2a8f1232a",
+  "test_source": "tests/test_install_provenance.py",
+  "sha256": {
+    "tests/test_install_provenance.py": "4d38bc57eb45230f831ea1ac5389bb0ea954ff9c85061ee2569ab6a4b46656cd",
+    "docs/todos/11-reliable-delivery/evidence/06/red-01.json": "e0bfd904c1095b09e9933c4392d827acd3d882ffad0009f92d5f6e957226293e",
+    "docs/todos/11-reliable-delivery/evidence/06/red-01.json.child.json": "a1a14d2664fc4ce4886e46f65ed9765605530d6352b6b8098b0b161fbca7ab70",
+    "docs/todos/11-reliable-delivery/evidence/06/red-01.json.output.txt": "8ec3270ebe0677e3e2b1fbd2a4f9b76dbec32d78b4de92b42da62046686ae40b"
+  },
+  "raw_receipt": "docs/todos/11-reliable-delivery/evidence/06/red-01.json",
+  "raw_child": "docs/todos/11-reliable-delivery/evidence/06/red-01.json.child.json",
+  "raw_output": "docs/todos/11-reliable-delivery/evidence/06/red-01.json.output.txt",
+  "red": {
+    "status": "COMPLETED",
+    "tree_terminal": true,
+    "raw_exit_code": 1,
+    "failed_assertion_cases": 22,
+    "passed_cases": 11,
+    "errors": 0,
+    "failure_kind": "assertion",
+    "note": "The absent module is represented by a test-side inert adapter; assertions on missing behavior fail. Security side effects and capability results have not yet been exercised by production code."
+  },
+  "remaining_work": [
+    "production implementation and installation verification documentation",
+    "GREEN by same native session using unchanged RED test source",
+    "regression and isolated installation smoke, including Linux runner capability unavailable behavior",
+    "new read-only native checkpoint consumer to inherit RED",
+    "implementation commit C",
+    "independent review of C",
+    "controller registration commit D",
+    "local strict and subsequent iteration gates"
+  ],
+  "state": "IN_PROGRESS",
+  "approval": "none"
+}
