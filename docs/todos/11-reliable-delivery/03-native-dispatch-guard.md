@@ -3,7 +3,7 @@ schema_version: 1
 iteration: "11-reliable-delivery"
 task_id: "03"
 task_name: "连接就绪检查与真实委派的薄守卫"
-status: "TODO"
+status: "TESTING"
 type: "Strict-TDD"
 fix_rounds: 0
 replan_count: 0
@@ -11,11 +11,13 @@ is_blocked: false
 blocked_reason: ""
 typesafe_score: "86.450"
 typesafe_evidence: "docs/todos/11-reliable-delivery/evidence/planning/typesafe-summary.json"
-tdd_verified: false
+tdd_verified: true
 review_status: "PENDING"
 review_receipt: ""
-base_sha: ""
+base_sha: "09e916a94aaf90a8281f4ed568beed4a4a4a2816"
 head_sha: ""
+autonomy_state: "{\"version\":1,\"policy\":{\"round_limit\":5,\"total_limit\":10,\"consilium_limit\":1,\"replan_limit\":2},\"round\":0,\"total\":0,\"consilium\":0,\"replan\":0,\"writer\":\"iter11-controller-linux-20261115\",\"events\":{\"iter11-03-claim-v1\":{\"input\":{\"action\":\"claim\",\"owner\":\"iter11-controller-linux-20261115\",\"reason\":\"\",\"evidence\":\"\",\"executor_state\":\"\"},\"result\":{\"task_id\":\"03-native-dispatch-guard\",\"previous_rounds\":0,\"current_rounds\":0,\"fix_total\":0,\"consilium_count\":0,\"replan_count\":0,\"is_fused\":false,\"status\":\"TODO\",\"blocked_reason\":\"\",\"writer\":\"iter11-controller-linux-20261115\",\"consilium_bundle\":null},\"at\":\"2026-11-15T04:19:20.617011+00:00\"},\"iter11-03-attempt-v1\":{\"input\":{\"action\":\"attempt\",\"owner\":\"iter11-controller-linux-20261115\",\"reason\":\"\",\"evidence\":\"docs/todos/11-reliable-delivery/evidence/03/attempt.json\",\"executor_state\":\"completed\",\"attempt\":{\"report\":{\"phase\":\"implementation\",\"candidate\":\"09e916a94aaf90a8281f4ed568beed4a4a4a2816\",\"inputs\":[\"docs/todos/11-reliable-delivery/03-native-dispatch-guard.md\",\"docs/todos/11-reliable-delivery/README.md\",\"AGENTS.md\",\"scripts/deadline_watch.js\",\"references/execution_readiness.md\",\"tests/test_deadline_watch.py\"],\"capabilities\":[\"native-codex-cli-implementer\",\"approved-frozen-linux-runner\",\"Python3.11.17-pytest9.2-mcp1.30\",\"independent-native-reviewer\"],\"version\":1,\"checkpoint\":\"核心Promise/绑定检查2断言RED、最终33通过；真实冻结READY消费后仅1次Codeg调用，子shell启动BLOCKED原样保留\",\"remaining_work\":[\"C独审\",\"D/冻结strict\"],\"executor_id\":\"01a1dd6e-e307-7d53-9be3-0f011688cd30\",\"terminal_evidence\":\"docs/todos/11-reliable-delivery/evidence/03/implementation-terminal.json\",\"progress\":[{\"kind\":\"implementation\",\"summary\":\"核心Promise/绑定检查2断言RED、最终33通过；真实冻结READY消费后仅1次Codeg调用，子shell启动BLOCKED原样保留\",\"evidence\":\"docs/todos/11-reliable-delivery/evidence/03/delivery.json\"}],\"commands\":[\"docs/todos/11-reliable-delivery/evidence/03/red-implementer-01.json\",\"docs/todos/11-reliable-delivery/evidence/03/green-implementer-01.json\"],\"started_at\":null,\"ended_at\":null},\"source\":\"docs/todos/11-reliable-delivery/evidence/03/attempt.json\",\"phase\":\"implementation\",\"delivery_mode\":\"git\",\"candidate\":\"09e916a94aaf90a8281f4ed568beed4a4a4a2816\",\"conditions\":{\"inputs\":[\"AGENTS.md\",\"docs/todos/11-reliable-delivery/03-native-dispatch-guard.md\",\"docs/todos/11-reliable-delivery/README.md\",\"references/execution_readiness.md\",\"scripts/deadline_watch.js\",\"tests/test_deadline_watch.py\"],\"capabilities\":[\"Python3.11.17-pytest9.2-mcp1.30\",\"approved-frozen-linux-runner\",\"independent-native-reviewer\",\"native-codex-cli-implementer\"],\"scope\":[\".agents/notes/planned/iter11/03-native-dispatch-guard.md\",\"docs/todos/11-reliable-delivery/evidence/03/\",\"references/native_dispatch_adapter.md\",\"scripts/dispatch_guard.js\",\"tests/test_dispatch_guard.py\"]},\"executor_id\":\"01a1dd6e-e307-7d53-9be3-0f011688cd30\",\"executor_state\":\"completed\",\"terminal_evidence\":\"docs/todos/11-reliable-delivery/evidence/03/implementation-terminal.json\",\"progress\":[{\"kind\":\"implementation\",\"evidence\":\"docs/todos/11-reliable-delivery/evidence/03/delivery.json\",\"summary\":\"核心Promise/绑定检查2断言RED、最终33通过；真实冻结READY消费后仅1次Codeg调用，子shell启动BLOCKED原样保留\"}],\"checkpoint\":\"核心Promise/绑定检查2断言RED、最终33通过；真实冻结READY消费后仅1次Codeg调用，子shell启动BLOCKED原样保留\",\"remaining_work\":[\"C独审\",\"D/冻结strict\"],\"commands\":[{\"receipt\":\"docs/todos/11-reliable-delivery/evidence/03/green-implementer-01.json\",\"status\":\"COMPLETED\",\"raw_exit_code\":0,\"started_at\":\"2026-11-15T04:20:49.382420+00:00\",\"ended_at\":\"2026-11-15T04:20:50.950771+00:00\"},{\"receipt\":\"docs/todos/11-reliable-delivery/evidence/03/red-implementer-01.json\",\"status\":\"COMPLETED\",\"raw_exit_code\":1,\"started_at\":\"2026-11-15T04:20:20.665980+00:00\",\"ended_at\":\"2026-11-15T04:20:26.135577+00:00\"}],\"started_at\":null,\"ended_at\":null,\"session_seconds\":null,\"command_seconds\":7.037948}},\"result\":{\"task_id\":\"03-native-dispatch-guard\",\"previous_rounds\":0,\"current_rounds\":0,\"fix_total\":0,\"consilium_count\":0,\"replan_count\":0,\"is_fused\":false,\"status\":\"IN_PROGRESS\",\"blocked_reason\":\"\",\"writer\":\"iter11-controller-linux-20261115\",\"consilium_bundle\":null},\"at\":\"2026-11-15T04:25:02.691949+00:00\"},\"iter11-03-release-v1\":{\"input\":{\"action\":\"release\",\"owner\":\"iter11-controller-linux-20261115\",\"reason\":\"\",\"evidence\":\"docs/todos/11-reliable-delivery/evidence/03/implementation-terminal.json\",\"executor_state\":\"completed\"},\"result\":{\"task_id\":\"03-native-dispatch-guard\",\"previous_rounds\":0,\"current_rounds\":0,\"fix_total\":0,\"consilium_count\":0,\"replan_count\":0,\"is_fused\":false,\"status\":\"IN_PROGRESS\",\"blocked_reason\":\"\",\"writer\":\"\",\"consilium_bundle\":null},\"at\":\"2026-11-15T04:25:02.758812+00:00\"},\"iter11-03-review-claim-v1\":{\"input\":{\"action\":\"claim\",\"owner\":\"iter11-controller-linux-20261115\",\"reason\":\"\",\"evidence\":\"\",\"executor_state\":\"\"},\"result\":{\"task_id\":\"03-native-dispatch-guard\",\"previous_rounds\":0,\"current_rounds\":0,\"fix_total\":0,\"consilium_count\":0,\"replan_count\":0,\"is_fused\":false,\"status\":\"TESTING\",\"blocked_reason\":\"\",\"writer\":\"iter11-controller-linux-20261115\",\"consilium_bundle\":null},\"at\":\"2026-11-15T04:25:02.829038+00:00\"}},\"blocked_reason\":\"\"}"
+updated_at: "2026-11-15T04:25:02.829137+00:00"
 ---
 
 # 03 · 连接就绪检查与真实委派的薄守卫
@@ -27,17 +29,17 @@ head_sha: ""
 
 ## 2. 业务阶段
 <!-- iter:stages -->
-- [ ] 以可控Promise覆盖running/失败/乱序及身份不符，取得断言RED
-- [ ] 完成薄守卫GREEN及既有截止守卫兼容
-- [ ] 在实际Codeg schema可用时记录一条真实先检查后派发链，缺宿主则保留BLOCKED
+- [x] 以可控Promise覆盖running/失败/乱序及身份不符，取得断言RED
+- [x] 完成薄守卫GREEN及既有截止守卫兼容
+- [x] 在实际Codeg schema可用时记录一条真实先检查后派发链，缺宿主则保留BLOCKED
 <!-- /iter:stages -->
 
 ## 3. 按类型验证规划
 核心行为先取得可编译测试的真实断言RED，再最小GREEN；环境错误不算RED。
 <!-- iter:verification -->
-- [ ] **red**：python -B -m pytest -p no:cacheprovider tests/test_dispatch_guard.py tests/test_deadline_watch.py -q；由同一实现者先取得验收中具体行为断言失败，环境/导入失败不作RED；通过冻结runner。
-- [ ] **green**：python -B -m pytest -p no:cacheprovider tests/test_dispatch_guard.py tests/test_deadline_watch.py -q；同一实现者最小修复后通过，保留原始输出；通过冻结runner。
-- [ ] **regression**：python -B -m pytest -p no:cacheprovider tests/test_dispatch_guard.py tests/test_deadline_watch.py -q；覆盖本卡列出的直接接口/兼容范围，影响不明扩大；不代替整轮全量。
+- [x] **red**：python -B -m pytest -p no:cacheprovider tests/test_dispatch_guard.py tests/test_deadline_watch.py -q；由同一实现者先取得验收中具体行为断言失败，环境/导入失败不作RED；通过冻结runner。
+- [x] **green**：python -B -m pytest -p no:cacheprovider tests/test_dispatch_guard.py tests/test_deadline_watch.py -q；同一实现者最小修复后通过，保留原始输出；通过冻结runner。
+- [x] **regression**：python -B -m pytest -p no:cacheprovider tests/test_dispatch_guard.py tests/test_deadline_watch.py -q；覆盖本卡列出的直接接口/兼容范围，影响不明扩大；不代替整轮全量。
 <!-- /iter:verification -->
 
 ## 4. 交付与冻结
@@ -68,6 +70,8 @@ head_sha: ""
 <!-- iter:ledger -->
 实际命令、原始证据、退出码、候选、检查点与剩余项在执行中记录；未执行不推断通过。
 独立审查结果由外部收据与报告提供。
+
+2026-11-15T04:25:02.772945+00:00：核心Promise/绑定检查2断言RED、最终33通过；真实冻结READY消费后仅1次Codeg调用，子shell启动BLOCKED原样保留；原生实现会话01a1dd6e-e307-7d53-9be3-0f011688cd30和命令树已确认终态。原始证据/source manifest/type checks已核对，冻结C后独审，非整轮批准。
 <!-- /iter:ledger -->
 
 ## 8. 接口依赖与执行边界

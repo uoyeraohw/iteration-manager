@@ -1,0 +1,10 @@
+{
+  "guard_order": "PASS: same owner actual frozen check terminal READY consumed before one actual Codeg call",
+  "native_worker": "BLOCKED: bwrap cannot mount proc; command never started, no worker success claimed",
+  "evidence": "docs/todos/11-reliable-delivery/evidence/03/native-codeg-chain.json",
+  "ruling": "本卡验收守卫和真实顺序；保留宿主执行BLOCKED不冒充成功。编号历史语句指向04的默认接入由本轮goal及12卡明确归于12；04只做导航，不改派发规则。",
+  "remaining": [
+    "独审判定task03完整候选",
+    "Codeg宿主执行能力另待环境修复；不阻止受支持的原生Codex CLI路径"
+  ]
+}

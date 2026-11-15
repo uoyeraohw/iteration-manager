@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "base_sha": "09e916a94aaf90a8281f4ed568beed4a4a4a2816",
+  "worktree": "/data/workspace/iteration-manager/.worktrees/iter-11",
+  "created_at_utc": "2026-11-15T04:21:09.747479+00:00",
+  "files": {
+    "scripts/dispatch_guard.js": {
+      "sha256": "eb5a297e0d34558aeae5b79817ed643da445ddb8739254ab04c7e94a2635576d",
+      "role": "task03 candidate"
+    },
+    "references/native_dispatch_adapter.md": {
+      "sha256": "ab53866027f0c7b2481a6d1a662a9032e49d3702dc9c76a511a42457e9627b75",
+      "role": "task03 candidate"
+    },
+    "tests/test_dispatch_guard.py": {
+      "sha256": "4039de47659b80e402b4720ad42d3ff15e6cb3967471979f8e954377bd5306d0",
+      "role": "task03 candidate"
+    },
+    ".agents/notes/planned/iter11/03-native-dispatch-guard.md": {
+      "sha256": "80a2b069929c51fea0d0cad063f7aa454f0d5797b76bffed2ae716b9c2413e7d",
+      "role": "task03 candidate"
+    },
+    "scripts/deadline_watch.js": {
+      "sha256": "d96c6d87da8e415ecee2f0309eebb6cd7c6206803c134a25cacb55092f4b0064",
+      "role": "unchanged compatibility source"
+    }
+  },
+  "test_receipts": {
+    "docs/todos/11-reliable-delivery/evidence/03/red-implementer-01.json": "68f0600925295ee97fb2abdb8bc5fe5d3b4de944c6639b996b57472f95bd3be3",
+    "docs/todos/11-reliable-delivery/evidence/03/green-implementer-01.json": "2528a35b33d29227ad1fb04aa284da2aecbdb69da5398ec80587a0ae317cc8a7"
+  }
+}
