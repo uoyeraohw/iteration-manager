@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "started_at": "2026-11-15T02:49:08.276213+00:00",
+  "ended_at": "2026-11-15T02:49:08.317681+00:00",
+  "argv": [
+    "/usr/bin/python3",
+    "-B",
+    "/data/workspace/iteration-manager/build/frozen-tools/fdcc4cce8863/scripts/iter_templates.py",
+    "--check",
+    "docs/todos/11-reliable-delivery/evidence/planning/00-initial-card.md",
+    "--delivery-mode",
+    "git"
+  ],
+  "cwd": "/data/workspace/iteration-manager/.worktrees/iter-11",
+  "exit_code": 0,
+  "stdout": "{\"valid\": true, \"errors\": []}\n",
+  "stderr": "",
+  "earlier_current_card_check": {
+    "exit_code": 2,
+    "stdout": "{\"valid\": false, \"errors\": [\"Invalid initial typesafe_score\"]}",
+    "interpretation": "Initial-card-only validator correctly rejects an already evaluated planning card; preserve current actual score and separately validate its unscored initial form."
+  }
+}

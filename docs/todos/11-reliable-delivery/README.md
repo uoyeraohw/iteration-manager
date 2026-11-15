@@ -1,8 +1,8 @@
 # 迭代11 · 可信路径一致性、使用成本与真实自用验证
 
 > 初始化：2026-11-14 UTC · 当前checkout：`/data/workspace/iteration-manager` · 基线：`fdcc4cce88635ee81573be5991de11de650659d8`。
-> 2026-11-15 启动授权：允许实施、精准Git提交及独立Worktree；十二卡按编号串行，每卡验收PASS后才进入下一卡。产品验收仍为0/12。
-> 规划提交`80621f1c29e74c6398d1e8aa620af04189f1740c`已通过冻结规划门禁；独立Worktree为`.worktrees/iter-11`，分支`feat/iter-11-reliable-delivery`。第01卡正式执行被Windows runner能力阻断，尚未派发实现者。最新结果见[startup-report.json](evidence/startup/startup-report.json)。
+> 2026-11-15最新授权：适配Linux并整理Windows/Linux开发指引；新增00前置任务，随后01—12逐项验收串行推进。当前13卡TODO、产品验收0/13；实施、精准Git与Worktree授权保持。
+> 独立Worktree为`.worktrees/iter-11`，分支`feat/iter-11-reliable-delivery`。先完成[00平台适配](00-linux-runner-and-dev-guide.md)，不再要求另找Windows主机；原Windows-only拒绝保留为历史证据。迁移授权见[platform-migration-authorization.json](evidence/planning/platform-migration-authorization.json)。
 
 ## 1. 迭代核心目标与全局约束
 <!-- iter:goal -->
@@ -10,20 +10,20 @@
 
 ### 执行约定
 - 2026-11-15用户明确授权实施、精准Git提交和创建独立Worktree，覆盖原初始化授权的相应限制；暂不部署、推送、合流或清理。真实任务交付为Git，任务初态TODO/review PENDING/tdd_verified=false。原初始化授权和证据保留，不回写成已执行事实。
-- 维护源码基线与正式协调器固定fdcc4cce88635ee81573be5991de11de650659d8；候选门禁变更不自动升级协调器，不自证批准。
-- 按本次用户要求严格串行01→02→03→04→05→06→07→08→09→10→11→12；每卡完成type证据、非参与者批准、C/D绑定和冻结local strict验收PASS后才启动下一卡。硬依赖字段保留原意，不把用户串行调度改写为规格依赖；前卡阻断时不跳卡。一个卡片一个写者，源文件单一归属。独审不得参与本任务设计/实现/测试/RCA。
+- 维护源码基线与正式协调CLI固定fdcc4cce88635ee81573be5991de11de650659d8；仅runner按00显式平台迁移。候选门禁变更不自动升级协调器，不自证批准。
+- 按本次用户要求严格串行00→01→02→03→04→05→06→07→08→09→10→11→12；每卡完成type证据、非参与者批准、C/D绑定和冻结local strict验收PASS后才启动下一卡。硬依赖字段保留原意，不把用户串行调度改写为规格依赖；前卡阻断时不跳卡。一个卡片一个写者，源文件单一归属。独审不得参与本任务设计/实现/测试/RCA。
 - 默认预算5/10/1/2，连续两次无新增证据禁止原样第三次派发。会话与命令树终态分离，绝对UTC在真实派发时确定。
-- 正式业务/测试/验收由冻结Windows iter_run包装；当前Linux/Python3.13.5/Node22.23.3可做协调、精准Git提交和Worktree准备。Controller负责核验同候选Windows正式执行、真实Codeg适配能力及独审；基线和就绪门禁未齐不派发产品实施，不回退Linux裸跑。
-- 无新依赖/打包平台/调度数据库/第五type/跨调用批准缓存；不扩展Linux runner、FS时间中断grant或自动发现。按支持矩阵与实测决定后续投入。
+- 用户明确授权Linux适配，00先实现并独审当前平台runner，验收后仅将runner及直接依赖固定到`/data/workspace/iteration-manager/build/frozen-runners/iter11-platform-v1/`；保存C来源及逐文件SHA256，不追随候选。协调CLI仍固定fdcc4cc。00的GNU timeout限时引导例外只验证runner自身，记录真实bootstrap观察，不伪造旧runner收据。01前通过新冻结runner的完整干净基线；后续正式业务/测试/验收均走它。原十二卡中的Windows前提按此显式平台迁移接续，其余验收和预算不变。
+- 无新依赖/打包平台/调度数据库/第五type/跨调用批准缓存；Linux runner扩展仅按00本次授权实施；不扩展FS时间中断grant或自动发现。按支持矩阵与实测决定后续投入。
 - 不修改历史docs/todos/10或发布原件，不回写旧任务门禁；根索引仅本次main初始化登记，后续特性分支Zero-Root-Touch。
 - 沿用Git C→独审→登记D→local strict；完成全部卡、整轮集成/全量和独立总审后，对最终登记候选运行冻结branch strict。提前结构预检不替代收口。
 - 不执行真实安装同步、助手配置、远端推送、合流或清理。新manifest默认stdout和临时副本验证，不自动扩大部署白名单。
 - 冻结协调器含已知模式审计和旧接管读取缺陷，记录为FROZEN-KNOWN-01/02。相应负例的候选/固定差异是预期修复证据；实际管理卡仅合法Git且独立核对模式，不凭固定工具PASS放行非法卡。
 - 11交付并独审登记DONE后，Controller另完成独立整轮总审和最终branch strict，防止11自要求其尚未能通过的门禁。收口原件放主checkout的build/iter11-closeout/带UTC唯一目录；不写入已审任务scope，README只记摘要/引用。清理前按授权归档，未归档不得清理唯一原件。
-- 全部12卡PASS后由Controller统一整轮收口；10只做隔离联合验证，11只做选定真实链审计，12只修执行流程契约。三者不互设循环批准前提。
-- **实际固定入口**：`/data/workspace/iteration-manager/build/frozen-tools/fdcc4cce8863/scripts/iter_sync.py`；runner、模板生成器和截止守卫取同一快照。逐文件Git字节和SHA256清单见planning/coordinator-manifest.json；不可随候选自动更新。
+- 全部13卡PASS后由Controller统一整轮收口；10只做隔离联合验证，11只做选定真实链审计，12只修执行流程契约。三者不互设循环批准前提。
+- **实际固定入口**：`/data/workspace/iteration-manager/build/frozen-tools/fdcc4cce8863/scripts/iter_sync.py`；模板生成器和截止守卫取同一快照；runner在00通过前仍保留原快照，之后取明确批准的平台快照。逐文件Git字节和SHA256清单见planning/coordinator-manifest.json；不可随候选自动更新。
 - **三级验证**：内环按卡针对性测试；任务交付完成其type检查、直接兼容/回归与独审。全部卡PASS后的集成路径为01模式→02报告→03守卫→投影/事件/交接，以及06临时安装→07测试支持、08合法批准库存；最终全量为`python -B -m pytest -p no:cacheprovider tests -q`。
-- **正式命令入口**：在实际Windows工作区运行冻结`iter_run.py --deadline 实际UTC --evidence 项目相对唯一收据 -- python -B -m pytest -p no:cacheprovider ... -q`。这里是使用形式说明，绝对UTC和真实argv由本次派发即时生成，不原样执行省略号，不回退裸命令。
+- **正式命令入口**：在实际目标项目根目录使用当前平台已验收冻结的`iter_run.py --deadline 实际UTC --evidence 项目相对唯一收据 -- python -B -m pytest -p no:cacheprovider ... -q`。这里是使用形式说明，绝对UTC和真实argv由本次派发即时生成，不原样执行省略号，不回退裸命令。
 - **角色与时间**：主控/主管协调，不写产品；同一owner完成核心RED/GREEN及返修，非参与者独审。按真实schema确定原生工具，不猜助手ID；每次锁定绝对UTC和正常检查点，默认10分钟介入、至少90秒收尾，已知跑不完的门禁不启动。
 - **正式证据与临时输出**：逐卡`evidence/01/`至`evidence/12/`；规划原件在`evidence/planning/`；pytest临时目录和临时安装用独占临时根，运行资产在build，不覆盖原件、不清理他人输出。
 - **冻结器已知限制**：FROZEN-KNOWN-01未知模式DONE审计，FROZEN-KNOWN-02旧接管读取中断。实际管理卡均用合法Git缺省；Controller和独审显式核对模式。候选负例拒绝而固定器未拒绝属于预期修复差异，固定器PASS不能覆盖该语义缺口。
@@ -36,10 +36,11 @@
 5. 自用不自证且不循环收口：固定器缺陷保留，11审计实际链，全部卡PASS后Controller总审/最终strict，不改已审scope或嵌入巨型日志。
 <!-- /iter:goal -->
 
-## 2. 十二卡索引
+## 2. 十三卡索引
 
 | 卡 | 交付 | type | 硬依赖 | 初态 | 任务卡 |
 | --- | --- | --- | --- | --- | --- |
+| 00 | Linux截止入口与双环境开发指引 | Strict-TDD | 无 | TODO | [00-linux-runner-and-dev-guide.md](./00-linux-runner-and-dev-guide.md) |
 | 01 | 统一交付模式解析与完成审计 | Strict-TDD | 无 | TODO | [01-delivery-mode-consistency.md](./01-delivery-mode-consistency.md) |
 | 02 | 隔离旧接管报告的逐卡读取故障 | Strict-TDD | 无 | TODO | [02-takeover-report-isolation.md](./02-takeover-report-isolation.md) |
 | 03 | 连接就绪检查与真实委派的薄守卫 | Strict-TDD | 01 | TODO | [03-native-dispatch-guard.md](./03-native-dispatch-guard.md) |
@@ -53,7 +54,7 @@
 | 11 | 审计本轮真实自用链与检查点续接 | Spike-Discovery | 03, 10 | TODO | [11-native-self-use-audit.md](./11-native-self-use-audit.md) |
 | 12 | 统一默认派发与最终收口顺序 | Spike-Discovery | 03 | TODO | [12-workflow-sequence.md](./12-workflow-sequence.md) |
 
-依赖图无环；硬依赖维持规划结果。2026-11-15用户另要求按编号串行验收，因此当前不越过阻断卡推进独立后续任务；这是本轮调度约束，不改变任务技术依赖或验收要求。
+依赖图无环；硬依赖维持规划结果。2026-11-15用户另要求按00前置、01—12编号串行验收，因此当前不越过阻断卡推进独立后续任务；这是本轮调度约束，不改变任务技术依赖或验收要求。
 
 ## 3. 八项意见覆盖
 
@@ -94,7 +95,11 @@
 
 更正记录：08/09的两处旧卡号引用已更新，原始输入/生成结果保留。完整延迟工具目录确认Codeg schema已暴露，先前不可用判断不准确；仅03/11/12执行性按新事实做r4重评并通过，不另做设计重规划。原始误观察、请求/响应及更正见[initialization-corrections.json](evidence/planning/initialization-corrections.json)。
 
-## 5. 当前启动交接与初始化历史
+## 5. Linux迁移与历史启动交接
+
+最新要求已把00平台适配加入本轮，恢复条件改为在当前Linux上完成00、独审和冻结；不再等待Windows环境。真实TypeSafe四维为90.25/99.50/99.00/93.25，加权95.375，原件见[linux-typesafe-summary.json](evidence/planning/linux-typesafe-summary.json)。协作运行时已实际读取必读契约；Codeg本地子会话则因bwrap启动失败，二者分开记录，不能宣称Codeg链已通过。
+
+以下为Linux迁移授权前的启动历史；不代表最新恢复条件。
 
 2026-11-15已执行本次启动授权：精准提交125份归属规划/证据文件，冻结`--verify-committed`退出0后创建独立Worktree；当前执行位置为`/data/workspace/iteration-manager/.worktrees/iter-11`。主checkout保留main和规划提交，不从迭代分支回写根索引。
 
@@ -123,7 +128,7 @@
 
 ## 7. 整轮验收
 
-- [ ] 十二卡具备各自type证据、非参与者批准、合法C/D绑定与PASS。
+- [ ] 十三卡具备各自type证据、非参与者批准、合法C/D绑定与PASS。
 - [ ] 完整链和真实新会话检查点继承有本轮原始证据，03/12的先消费后派发得到实际证明。
 - [ ] 10隔离跨模块反例、08合法Git/FS量测、06/07临时安装检查和05支持声明各有边界清楚的原件。
 - [ ] 最终候选整轮集成/完整维护套件、独立总审及冻结最终branch strict通过。
@@ -132,10 +137,11 @@
 <!-- iter:projection -->
 ## 验收事实（阶段比例不是工时）
 
-声明DONE 0/12 · 验收PASS 0/12
+声明DONE 0/13 · 验收PASS 0/13
 
 | 任务 | 声明 | 验收 | 业务阶段 / 清单比例 | 工程阶段 | 阻塞原因 | 累计尝试 | 最后更新 |
 | --- | --- | --- | --- | --- | --- | --- | --- |
+| 00-linux-runner-and-dev-guide.md | TODO | UNKNOWN | 在当前Linux公共CLI构造有效的支持行为断言RED / 0/3 (0%) | red：同一实现者先新增Linux公共CLI测试；在旧runner上以真实断言如`exit125 != expected7`证明功能缺失。Python/pytest/导入失败不算RED。使用本卡专属GNU timeout引导入口，同调用记录绝对UTC、argv/cwd、stdout/stderr和实际exit；明确标记bootstrap，不伪造iter_run收据。 | 未记录 | 0 | UNKNOWN |
 | 01-delivery-mode-consistency.md | TODO | UNKNOWN | 冻结包含未知模式的合法Git绑定反例和兼容矩阵，取得目标断言RED / 0/3 (0%) | red：python -B -m pytest -p no:cacheprovider tests/test_delivery_mode_consistency.py tests/test_query_contract.py tests/test_execution_readiness.py tests/test_completion_gates.py tests/test_filesystem_receipts.py -q；由同一实现者先取得验收中具体行为断言失败，环境/导入失败不作RED；通过冻结runner。 | 未记录 | 0 | UNKNOWN |
 | 02-takeover-report-isolation.md | TODO | UNKNOWN | 对健康卡混合UnicodeError、OSError及发现后删除构造有效断言RED / 0/3 (0%) | red：python -B -m pytest -p no:cacheprovider tests/test_takeover_resilience.py tests/test_task_discovery_compat.py tests/test_cli_compatibility.py tests/test_sync_compatibility.py -q；由同一实现者先取得验收中具体行为断言失败，环境/导入失败不作RED；通过冻结runner。 | 未记录 | 0 | UNKNOWN |
 | 03-native-dispatch-guard.md | TODO | UNKNOWN | 以可控Promise覆盖running/失败/乱序及身份不符，取得断言RED / 0/3 (0%) | red：python -B -m pytest -p no:cacheprovider tests/test_dispatch_guard.py tests/test_deadline_watch.py -q；由同一实现者先取得验收中具体行为断言失败，环境/导入失败不作RED；通过冻结runner。 | 未记录 | 0 | UNKNOWN |

@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "source": "current user message, 2026-11-15",
+  "user_request": "请注意，当前插件，不限定于在win中开发及使用，当前开发环境为 Linux，请兼容并适配当前环境，然后在 AGENTS.md 中整理2个环境下开发的异同指引等。",
+  "interpretation": "User explicitly authorizes Linux platform implementation and Windows/Linux documentation, superseding the initialization exclusion of Linux runner expansion and the earlier requirement to obtain a Windows host. Existing implementation, precise Git/worktree authorization and serial acceptance remain.",
+  "order": ["00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"],
+  "runner_migration": "Only runner and direct dependencies migrate after task00 independent approval into build/frozen-runners/iter11-platform-v1; fdcc4cc coordination CLI remains fixed.",
+  "bootstrap_exception": "Task00-only, bounded GNU timeout testing of Linux runner before a usable runner exists. Save actual deadline, argv/cwd, stdout/stderr and exit as bootstrap observations, never fabricate a version1 runner receipt. Once usable, GREEN/regression/independent checks use new runner; subsequent tasks use the approved frozen snapshot.",
+  "preserve": ["old Windows-only frozen tool snapshot", "historical startup exit125 and BLOCKED inventory", "raw Codeg bwrap probe", "task scopes and acceptance semantics", "budget history", "independent review and C/D/strict"],
+  "native_runtime_ruling": "Codeg task66713f94 completed without starting a command because bwrap could not mount proc. This is a runtime launch failure rather than a repository-file permission decision. Verify the current collaboration tool in the same authorized checkout; do not claim Codeg chain PASS or change host permission settings.",
+  "not_authorized": ["deployment", "push", "merge", "cleanup", "global host permission/configuration changes"],
+  "scope_ruling": "New 00 owns runner, checkpoint platform contract and AGENTS. Task12 retains common workflow source ownership; the explicitly superseded Windows-only sentence is resolved by this authorization until its final workflow synchronization. No source scope overlap is introduced."
+}
