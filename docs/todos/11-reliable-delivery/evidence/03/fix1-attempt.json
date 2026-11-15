@@ -1,0 +1,42 @@
+{
+  "phase": "implementation",
+  "candidate": "16640d1e7d83fc546e79e19995a0a91cf80c533e",
+  "inputs": [
+    "docs/todos/11-reliable-delivery/03-native-dispatch-guard.md",
+    "docs/todos/11-reliable-delivery/README.md",
+    "AGENTS.md",
+    "scripts/deadline_watch.js",
+    "references/execution_readiness.md",
+    "tests/test_deadline_watch.py",
+    "docs/todos/11-reliable-delivery/evidence/03/preliminary-review1.json",
+    "docs/todos/11-reliable-delivery/evidence/03/native-codeg-chain.json"
+  ],
+  "capabilities": [
+    "native-codex-cli-implementer",
+    "approved-frozen-linux-runner",
+    "Python3.11.17-pytest9.2-mcp1.30",
+    "independent-native-reviewer"
+  ],
+  "version": 1,
+  "checkpoint": "F1新增真实重叠请求逆序Promise验证，M1改为12所有权；guard代码未变，原核心RED复用，最终34通过",
+  "remaining_work": [
+    "C独审",
+    "D/冻结strict"
+  ],
+  "executor_id": "01a1dd6e-e307-7d53-9be3-0f011688cd30",
+  "terminal_evidence": "docs/todos/11-reliable-delivery/evidence/03/fix1-terminal.json",
+  "progress": [
+    {
+      "kind": "implementation",
+      "summary": "F1新增真实重叠请求逆序Promise验证，M1改为12所有权；guard代码未变，原核心RED复用，最终34通过",
+      "evidence": "docs/todos/11-reliable-delivery/evidence/03/fix1-delivery.json"
+    }
+  ],
+  "commands": [
+    "docs/todos/11-reliable-delivery/evidence/03/red-implementer-01.json",
+    "docs/todos/11-reliable-delivery/evidence/03/green-implementer-01.json",
+    "docs/todos/11-reliable-delivery/evidence/03/fix1-final.json"
+  ],
+  "started_at": null,
+  "ended_at": null
+}

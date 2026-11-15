@@ -1,6 +1,6 @@
 # 派发前检查与可继承交接
 
-新建迭代或明确获准采用本流程时，从项目根目录使用冻结的工具版本：准备观察上下文 → `--preflight`盘点 → `--autonomy claim`领取唯一写者 → `--dispatch-check --owner <同一写者>` → READY后派发 → 查询真实终态 → 当前写者登记attempt → release或超时closeout → 输出envelope。preflight不要求先claim，不授予写权；逐卡dispatch-check必须确认已claim且owner匹配。检查只读，不保留另一个调度锁，主控须在整个派发期间维持唯一写者。整轮盘点不要求所有卡READY后才能做独立任务；已DONE卡不能再派发，会在逐卡结果中标为BLOCKED。
+新建迭代或明确获准采用本流程时，从项目根目录使用冻结的工具版本：准备观察上下文 → `--preflight`盘点 → `--autonomy claim`领取唯一写者 → 按[共同协议](agent_protocol.md#新流程的默认派发codeg-已验证的-tool-call-适配)由守卫执行同写者 `--dispatch-check` 后派发 → 查询真实终态 → 当前写者登记attempt → release或超时closeout → 输出envelope。preflight不要求先claim，不授予写权；逐卡dispatch-check必须确认已claim且owner匹配。检查只读，不保留另一个调度锁，主控须在整个派发期间维持唯一写者。整轮盘点不要求所有卡READY后才能做独立任务；已DONE卡不能再派发，会在逐卡结果中标为BLOCKED。
 
 旧claim/recover/release、旧卡及原strict门禁不新增context前提，也不会自动记录尝试。本工具不调用原生委派接口；新流程的主控必须在**每次实际派发前**消费检查结果。不得用旧claim绕过新流程的BLOCKED。`--preflight`/`--dispatch-check`只读，不跑业务测试、不写卡、不签发批准；READY只表示观察齐备，不是产品验收。
 
@@ -117,7 +117,7 @@ python <skill_root>/scripts/iter_sync.py --inventory docs/todos/01-demo --mode t
 `--inventory`只做读取，不能建立写者、终态、授权或context新鲜度；phase选择遵守前述`--phase`/`--phase-from-context`规则。领取写者后每次实际派发仍须调用原`--dispatch-check --phase <实际阶段> --owner <当前写者>`。不改旧CLI、任务卡或批准收据；新候选、真实验证和独立审查照旧。
 
 1. 逐卡读取preflight结果，选择无依赖和写冲突的READY卡；其他卡的BLOCKED不成为整轮停工条件。claim后检查同owner的dispatch-check，非READY不派发该步骤。
-2. READY后调用当前环境真实委派工具，保存实际会话ID；先读完整终态及原始命令收据，再由唯一写者记录attempt。只有原生查询确认终态，才能release或closeout；报告里的executor_id不是终态证明。
+2. 按[共同协议](agent_protocol.md#新流程的默认派发codeg-已验证的-tool-call-适配)消费守卫后调用当前环境真实委派工具，保存实际会话ID；先读完整终态及原始命令收据，再由唯一写者记录attempt。只有原生查询确认终态，才能release或closeout；报告里的executor_id不是终态证明。
 3. 下次会话从envelope.execution的checkpoint、source和remaining_work开始：核对原候选及适用范围，只做剩余工作。预算阻塞/未知终态不通过“换阶段”绕过；正常release不要求resume grant。
 4. 同候选重复回收、换窗口和汇总报告不触发另一轮全套验收。交付时在现有Brief/审查报告逐项列出：`检查/覆盖行为 → 原候选及证据路径 → 本次变更/输入/环境影响依据 → 沿用或重跑及责任人`；没有变化且证据有效则直接沿用，指定独立复验项仍实跑。影响不明扩大检查；新候选仍需受影响独审及新冻结绑定，不复制旧批准。
 5. 主管回收时核对交接字段与原始产物，主控接收后只补缺失项和跨任务门禁，不再逐卡派一名相同范围审查者。真实行为、type必需证据和独立审查仍保留。

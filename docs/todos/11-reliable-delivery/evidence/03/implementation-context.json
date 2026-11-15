@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "tasks": {
+    "03": {
+      "phase": "implementation",
+      "candidate": "09e916a94aaf90a8281f4ed568beed4a4a4a2816",
+      "inputs": [
+        "docs/todos/11-reliable-delivery/03-native-dispatch-guard.md",
+        "docs/todos/11-reliable-delivery/README.md",
+        "AGENTS.md",
+        "scripts/deadline_watch.js",
+        "references/execution_readiness.md",
+        "tests/test_deadline_watch.py"
+      ],
+      "capabilities": [
+        "native-codex-cli-implementer",
+        "approved-frozen-linux-runner",
+        "Python3.11.17-pytest9.2-mcp1.30",
+        "independent-native-reviewer"
+      ],
+      "dependencies": [
+        "01"
+      ],
+      "tool_entry": "/data/workspace/iteration-manager/build/frozen-tools/fdcc4cce8863/scripts/iter_sync.py",
+      "checkpoint": "可控Promise核心断言RED及薄守卫最小GREEN；真实宿主链由主控接续",
+      "remaining_work": [
+        "RED/GREEN",
+        "Codeg真实适配消费",
+        "C独审/D/strict"
+      ],
+      "required_observations": [
+        "serial-order"
+      ],
+      "observations": {
+        "authority": {
+          "status": "READY",
+          "summary": "用户实施/精准Git/Worktree授权和Linux适配；仅本卡scope；不部署推送合流清理",
+          "evidence": "docs/todos/11-reliable-delivery/evidence/planning/platform-migration-authorization.json"
+        },
+        "execution": {
+          "status": "READY",
+          "summary": "原生Codex实现者可用；Codeg MCP schema存在但原生子shell曾bwrap失败，代码实现不依赖该shell，实际消费单独核对",
+          "evidence": "docs/todos/11-reliable-delivery/evidence/planning/native-linux-probe.json"
+        },
+        "verification": {
+          "status": "READY",
+          "summary": "批准Linux冻结runner和Node/Python测试能力已实测",
+          "evidence": "build/iter11-review/task02-review1/local-strict.json"
+        },
+        "serial-order": {
+          "status": "READY",
+          "summary": "00/01/02均独审C/D及冻结strict通过3/13；仅启动03",
+          "evidence": "build/iter11-review/task02-review1/local-strict.json"
+        }
+      }
+    }
+  }
+}

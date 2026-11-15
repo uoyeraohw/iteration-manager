@@ -1,0 +1,47 @@
+[
+  {
+    "name": "baseline",
+    "kind": "command",
+    "command": "/data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B /data/workspace/iteration-manager/build/frozen-runners/iter11-platform-v1/scripts/iter_run.py --deadline 2026-11-15T05:21:27.927576+00:00 --evidence docs/todos/11-reliable-delivery/evidence/07/baseline-implementer.json -- /data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B -m pytest -p no:cacheprovider tests/test_board_handoff.py tests/test_board_service.py -q --basetemp /tmp/iter11-task07-baseline-implementer",
+    "cwd": ".",
+    "exit_code": 0,
+    "summary": "11 passed before extraction",
+    "output": "docs/todos/11-reliable-delivery/evidence/07/baseline-implementer.json.output.txt"
+  },
+  {
+    "name": "regression",
+    "kind": "command",
+    "command": "ITER_FROZEN_RUNNER=/data/workspace/iteration-manager/build/frozen-runners/iter11-platform-v1/scripts/iter_run.py ITER_COMMAND_DEADLINE=2026-11-15T05:21:27.927576+00:00 /data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B /data/workspace/iteration-manager/build/frozen-runners/iter11-platform-v1/scripts/iter_run.py --deadline 2026-11-15T05:21:27.927576+00:00 --evidence docs/todos/11-reliable-delivery/evidence/07/regression-v3.json -- /data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B -m pytest -p no:cacheprovider tests/test_board_handoff.py tests/test_board_service.py tests/test_harness_portability.py -q --basetemp /tmp/iter11-task07-regression-v3",
+    "cwd": ".",
+    "exit_code": 0,
+    "summary": "13 passed, including real whitelist temporary copy; nested receipt records 11 passed",
+    "output": "docs/todos/11-reliable-delivery/evidence/07/regression-v3.json.output.txt"
+  },
+  {
+    "name": "compatibility",
+    "kind": "observation",
+    "command": "/data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B /data/workspace/iteration-manager/build/frozen-runners/iter11-platform-v1/scripts/iter_run.py --deadline 2026-11-15T05:21:27.927576+00:00 --evidence docs/todos/11-reliable-delivery/evidence/07/compatibility-command.json -- /data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B docs/todos/11-reliable-delivery/evidence/07/compatibility.py",
+    "cwd": ".",
+    "exit_code": 0,
+    "summary": "Only root index changed; historical file equals BASE; HTTP and arguments exercised by regression",
+    "output": "docs/todos/11-reliable-delivery/evidence/07/compatibility-command.json.output.txt"
+  },
+  {
+    "name": "benchmark_before",
+    "kind": "command",
+    "command": "/data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B /data/workspace/iteration-manager/build/frozen-runners/iter11-platform-v1/scripts/iter_run.py --deadline 2026-11-15T05:21:27.927576+00:00 --evidence docs/todos/11-reliable-delivery/evidence/07/benchmark-before-v2.json -- /data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B docs/todos/11-reliable-delivery/evidence/07/measure.py before",
+    "cwd": ".",
+    "exit_code": 0,
+    "summary": "Three repetitions; 2 historical-path consumers",
+    "output": "docs/todos/11-reliable-delivery/evidence/07/benchmark-before-v2.json.output.txt"
+  },
+  {
+    "name": "benchmark_after",
+    "kind": "command",
+    "command": "/data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B /data/workspace/iteration-manager/build/frozen-runners/iter11-platform-v1/scripts/iter_run.py --deadline 2026-11-15T05:21:27.927576+00:00 --evidence docs/todos/11-reliable-delivery/evidence/07/benchmark-after.json -- /data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B docs/todos/11-reliable-delivery/evidence/07/measure.py after",
+    "cwd": ".",
+    "exit_code": 0,
+    "summary": "Three repetitions; 0 historical-path consumers",
+    "output": "docs/todos/11-reliable-delivery/evidence/07/benchmark-after.json.output.txt"
+  }
+]

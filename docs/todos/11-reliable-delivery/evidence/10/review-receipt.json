@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "task_id": "10",
+  "type": "Spike-Discovery",
+  "task_path": "docs/todos/11-reliable-delivery/10-integration-fault-paths.md",
+  "base_sha": "40d76d4456261a41bf1b67106becad17ecc28e29",
+  "head_sha": "e237a068fb39d21cd80b68a12dfe9cc0d4d21827",
+  "contract_sha": "40d76d4456261a41bf1b67106becad17ecc28e29",
+  "implementer": "01a1ddb8-4209-7662-991e-fcf18f1a74a2",
+  "reviewer": "01a1ddbb-385e-7642-9401-db08c0912af1",
+  "verdict": "APPROVED",
+  "review_report": "docs/todos/11-reliable-delivery/evidence/10/review-report.json",
+  "checks": [
+    {
+      "name": "experiment",
+      "kind": "command",
+      "command": "ITER_FROZEN_RUNNER=/data/workspace/iteration-manager/build/frozen-runners/iter11-platform-v1/scripts/iter_run.py ITER_COMMAND_DEADLINE=2026-11-15T05:47:25.679588+00:00 /data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B /data/workspace/iteration-manager/build/frozen-runners/iter11-platform-v1/scripts/iter_run.py --deadline 2026-11-15T05:47:25.679588+00:00 --evidence docs/todos/11-reliable-delivery/evidence/10/experiment-02.json -- /data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B -m pytest -p no:cacheprovider tests/test_self_hosting.py tests/test_execution_readiness.py tests/test_autonomy.py tests/test_checkpoint_resume.py -q --basetemp /tmp/iter11-task10-experiment-02",
+      "cwd": ".",
+      "exit_code": 0,
+      "summary": "130 passed; synthetic experiment, runner COMPLETED and tree terminal",
+      "output": "docs/todos/11-reliable-delivery/evidence/10/experiment-02.json.output.txt"
+    },
+    {
+      "name": "decision",
+      "kind": "observation",
+      "summary": "Dated decision, tradeoffs, source and limits in ledger summary",
+      "output": "docs/todos/11-reliable-delivery/evidence/10/ledger-summary.md"
+    },
+    {
+      "name": "interfaces",
+      "kind": "observation",
+      "summary": "Synthetic assertion interfaces and case results with source binding",
+      "output": "docs/todos/11-reliable-delivery/evidence/10/integration-report.json"
+    }
+  ]
+}

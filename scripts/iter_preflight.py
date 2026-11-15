@@ -2,7 +2,7 @@
 import json
 import subprocess
 from pathlib import Path
-from iter_contracts import parse_card, card_status, scope_paths, contained, TYPE_CHECKS
+from iter_contracts import parse_card, card_status, scope_paths, contained, TYPE_CHECKS, resolve_delivery_mode
 from iter_filesystem import load_profile
 
 
@@ -26,14 +26,11 @@ def candidate_identity(card, root, meta):
     if not card.resolve().is_relative_to(root):
         raise ValueError('Task leaves project root')
     fs_root = load_profile(card.parent)
-    if fs_root is not None:
-        if fs_root != root or meta.get('delivery_mode') != 'filesystem':
+    mode = resolve_delivery_mode(meta, fs_root is not None)
+    if mode == 'filesystem':
+        if fs_root != root:
             raise ValueError('Filesystem project/card identity mismatch')
         return 'filesystem', text(meta.get('candidate_id'), 'candidate_id')
-    if meta.get('delivery_mode') == 'filesystem':
-        raise ValueError('Filesystem card requires explicit valid delivery profile')
-    if meta.get('delivery_mode', 'git') != 'git':
-        raise ValueError('Unknown delivery mode; Git fallback is not allowed')
     proc = subprocess.run(['git', 'rev-parse', '--show-toplevel', 'HEAD'], cwd=root,
                           capture_output=True, text=True, encoding='utf-8', check=False)
     lines = proc.stdout.splitlines()

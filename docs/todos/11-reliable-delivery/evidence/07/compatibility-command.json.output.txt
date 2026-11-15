@@ -1,0 +1,49 @@
+{
+  "original_sha256": "295e7a6c08c5bb735c9db99d13cb326f3a553a787eff6919fcf1989be0130279",
+  "support_sha256": "03a96ca8561eea802a8df4089e7504a72feb42245c7a077953659e2de484ac52",
+  "comparison": "only parents[5] to parents[2]",
+  "history_git_status": "clean",
+  "payload_path": "/tmp/iter11-task07-regression-v2/test_payload_copy_runs_handoff0/payload",
+  "payload_history_exists": false,
+  "payload_receipt": {
+    "version": 1,
+    "argv": [
+      "/data/workspace/iteration-manager/build/iter11-maint-venv/bin/python",
+      "-B",
+      "-m",
+      "pytest",
+      "-p",
+      "no:cacheprovider",
+      "tests/test_board_handoff.py",
+      "tests/test_board_service.py",
+      "-q",
+      "--basetemp",
+      "/tmp/iter11-task07-regression-v2/test_payload_copy_runs_handoff0/installed-pytest"
+    ],
+    "cwd": "/tmp/iter11-task07-regression-v2/test_payload_copy_runs_handoff0/payload",
+    "deadline": "2026-11-15T05:21:27.927576+00:00",
+    "cleanup_reserve_seconds": 5,
+    "status": "COMPLETED",
+    "deadline_checked_at": "2026-11-15T05:15:46.690786+00:00",
+    "started_at": "2026-11-15T05:15:46.693682+00:00",
+    "ended_at": "2026-11-15T05:15:50.166661+00:00",
+    "raw_exit_code": 0,
+    "tree_terminal": true,
+    "output": "installed-copy-receipt.json.output.txt",
+    "container_pid": 3471707,
+    "launcher_exit_code": 0,
+    "command": {
+      "status": "COMPLETED",
+      "raw_exit_code": 0,
+      "started_at": "2026-11-15T05:15:46.693682+00:00",
+      "tree_terminal": true,
+      "deadline_checked_at": "2026-11-15T05:15:46.690786+00:00",
+      "pid": 3471708,
+      "ended_at": "2026-11-15T05:15:50.131768+00:00"
+    },
+    "late_by_seconds": 0
+  },
+  "payload_output": "...........                                                              [100%]\n11 passed in 2.91s\n",
+  "regression_coverage": "fixture isolation and real path, ready/stop, HTTP normal/loading/evidence/error, argument rejection",
+  "native_browser": "not run; no UI behavior change"
+}

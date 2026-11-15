@@ -1,0 +1,20 @@
+{
+  "kind": "controller-command-observation",
+  "argv": [
+    "python3",
+    "-B",
+    "/data/workspace/iteration-manager/build/frozen-tools/fdcc4cce8863/scripts/iter_sync.py",
+    "--autonomy",
+    "claim",
+    "docs/todos/11-reliable-delivery/03-native-dispatch-guard.md",
+    "--event-id",
+    "iter11-03-fix1-review-claim-v1",
+    "--owner",
+    "iter11-controller-linux-20261115"
+  ],
+  "started_at": "2026-11-15T04:29:49.960538+00:00",
+  "ended_at": "2026-11-15T04:29:50.032942+00:00",
+  "exit_code": 0,
+  "stdout": "{\"task_id\": \"03-native-dispatch-guard\", \"previous_rounds\": 1, \"current_rounds\": 1, \"fix_total\": 1, \"consilium_count\": 0, \"replan_count\": 0, \"is_fused\": false, \"status\": \"TESTING\", \"blocked_reason\": \"\", \"writer\": \"iter11-controller-linux-20261115\", \"consilium_bundle\": null}\n",
+  "stderr": ""
+}

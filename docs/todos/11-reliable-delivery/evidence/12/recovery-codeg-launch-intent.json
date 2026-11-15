@@ -1,0 +1,18 @@
+{
+  "request": {
+    "request_id": "iter11-task12-recovery-codeg-1794727780665",
+    "project_root": "/data/workspace/iteration-manager/.worktrees/iter-11",
+    "tool_entry": "/data/workspace/iteration-manager/build/frozen-tools/fdcc4cce8863/scripts/iter_sync.py",
+    "task_path": "/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/12-workflow-sequence.md",
+    "task_id": "12",
+    "owner": "iter11-controller-linux-20261115",
+    "phase": "evidence-inspection",
+    "candidate": "1454a69b8e22e157df93f9e706502ba90833fabc",
+    "context": "docs/todos/11-reliable-delivery/evidence/12/recovery-codeg-context.json"
+  },
+  "task": "You are a FRESH Codeg read-only source consumer, not implementer/reviewer. Worktree /data/workspace/iteration-manager/.worktrees/iter-11, HEAD 1454a69b8e22e157df93f9e706502ba90833fabc. Read docs/todos/11-reliable-delivery/evidence/12/consumer-brief-input.md FIRST, then docs/todos/11-reliable-delivery/evidence/12/consumer-input-manifest.json and all EIGHT ACTUAL listed source files. Compute SHA256 for each source and compare. Answer A/B/C from actual text with precise file/line citations and actions/block/recovery conditions; include source hashes and real session/thread identity if available. Do not infer underlying worker business execution from parent completed. Native CLI and Codeg are separate host evidence. Root has NEW explicit future recovery authorization and independent safe-baseline approval; historical failures/UNKNOWN remain. Do not try to authorize/approve or repair old records.\nOnly read actual sources through this host's authorized tools. If actual read permission fails, report exact failure and capability gap; do not change global configuration, use alternate copies or silently bypass a denied tool. No subagents/delegation, tests, business commands, file edits (including card/README/report), Git mutations, deployment/push/merge/cleanup. Read-only shell source reads/hash computations are authorized. Minimize tool overhead: batch the eight reads/hash comparisons into one read-only call if supported. Return concise source-backed A/B/C plus limits in final response; root saves original response.\nAbsolute cutoff 2026-11-15T07:36:20.665Z, leaf hard 2026-11-15T07:36:40.665Z. Work window 7min; finish normally with no active command before cutoff. If uncertain return UNKNOWN and exact remaining. This consumption alone is neither task approval nor full native worker execution.",
+  "requested_at": "2026-11-15T07:29:40.665Z",
+  "leaf_deadline": "2026-11-15T07:36:40.665Z",
+  "command_scope": "read-only sources only",
+  "pin": "/data/workspace/iteration-manager/build/frozen-adapters/iter11-dispatch-v1/"
+}

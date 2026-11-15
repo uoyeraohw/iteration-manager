@@ -1,0 +1,186 @@
+{
+  "kind": "independent-review-record",
+  "candidate": "712a059578827fd6f172f0e28914e5bf26a5f949",
+  "recorded_at": "2026-11-15T05:33:41.517892+00:00",
+  "independent_review": {
+    "candidate": "712a059578827fd6f172f0e28914e5bf26a5f949",
+    "base": "6a54aceb2fc540d20480f9cdb5e5a683359c8e1a",
+    "reviewer_uuid": "01a1ddb0-a8ee-7523-a4b4-fa07a604e9bf",
+    "independence": {
+      "statement": "Independent reviewer; no participation in task08 design, implementation, tests or RCA, and no delegation. Review verification includes the requested physical scope check and a small read-only sample audit.",
+      "excluded_actors": [
+        "implementer 01a1ddab-6c92-7843-84b6-2302d6156eb0",
+        "all task consumers",
+        "root controller"
+      ]
+    },
+    "verdicts": {
+      "scope": "APPROVED",
+      "spec": "APPROVED",
+      "quality": "APPROVED",
+      "overall": "APPROVED"
+    },
+    "findings": [],
+    "rulings": [
+      "C is the current HEAD and its sole parent is BASE; feat/iter-11-reliable-delivery is the iteration branch. The tracked worktree was clean at inspection. All changed files are task scope or the implicitly permitted task card; no root index or product files changed.",
+      "Compared BASE to C: frozen objective, type, interfaces, scope, acceptance and iteration goal remain unchanged; only allowed metadata, checkmarks and ledger were updated. Card is TESTING/PENDING with empty head_sha and no delivery_mode, thus Git under the legal default; no filesystem profile fallback is involved.",
+      "Spike-Discovery experiment, decision and interfaces are supplied. No RED is required or claimed. Candidate uses real audit, real Git and filesystem byte comparison; sample checks and reviews are explicitly synthetic, not execution or business approvals.",
+      "Four workload roots retain 10/100 cards and corresponding receipts. Code audits every card and checks board accepted equals N before timing; generated Git per-card base/C/registration and FS manifest, snapshots, contract and goal are read by real binding validators. Source drift and neighboring-card preservation were tested in both modes. Eight first/last cards were independently re-audited with a unique runner receipt.",
+      "The complete 2 modes x 2 sizes x 4 operations x 3 trials is recorded. Operation timing excludes fixture and HTTP server setup; actual HTTP response and body are checked. Git subprocess launches and Path read-return bytes have stated exclusions. Summary means and ranges match trials; three trials support neither tail latency nor speedup conclusions.",
+      "Retaining current behavior and investigating immutable commit/path reuse only within a single invocation are proportionate to measured repetition and source inspection. No product optimization, new dependency or cross-call cache is in the diff.",
+      "Frozen coordinator scope PASS is physical scope evidence only; known unknown-mode/takeover defects do not establish semantic acceptance. Controller READY is dispatch readiness, not acceptance."
+    ],
+    "evidence_applicability_chronology": {
+      "fixture_test_01": "05:26:59-05:27:01 UTC, exit 1 and terminal tree; original two Git failures exposed shared C crossing card scope. Retained raw output; this is fixture debugging, not a TDD RED claim.",
+      "fixture_tests_02_03": "05:27:17-05:27:20 and 05:27:31-05:27:33 UTC, exit 0, terminal tree; final test 03 reports 4 passed after per-card commits and final logging change.",
+      "experiment": "05:27:40-05:29:27 UTC, frozen Linux runner, exit 0 and terminal tree; 48 raw trial lines and measurements. Source at execution was BASE plus uncommitted hashes; C did not exist at the time.",
+      "subsequent_validation": "artifact validation 05:30:01 and delivery validation 05:30:31 UTC, completed exit 0 and terminal trees. Independently checked summary arithmetic and content instead of treating these structural outputs as acceptance.",
+      "implementation_terminal": "Native implementation log identifies 01a1ddab-6c92-7843-84b6-2302d6156eb0 and ends turn.completed; terminal monitor records completed exit 0. Command tree terminal verified separately in runner receipts. C committed 05:31:37 UTC after implementation.",
+      "source_mapping": "All 19 measurement source SHA256 values and all 50 source-manifest entries match bytes of Git blobs at C. The 19 include benchmark, fixture test and scripts. This connects precommit BASE-plus-hashes evidence to C; no retrospective C execution is implied.",
+      "sample_audit": "build/iter11-review/task08-review1/sample-audit.json and .output.txt: frozen runner exit 0, tree_terminal true; first and last cards in each of four retained workload roots PASS, no violations. This is a spot check, not a rerun of all 220 audits.",
+      "scope_receipt": "build/iter11-review/task08-review1/scope-runner.json and .output.txt: exact requested frozen physical check, COMPLETED, raw exit 0, tree_terminal true; output says all 44 changed files within scope."
+    },
+    "source_mapping": {
+      "measurement_sha256_entries": 19,
+      "source_manifest_sha256_entries": 50,
+      "mismatches": [],
+      "interpretation": "Precommit BASE plus observed source hashes matches C Git blobs; measured environment recorded as Linux AMD EPYC 4 vCPU, Python 3.11.17, Git 2.47.3."
+    },
+    "scope_receipt": "build/iter11-review/task08-review1/scope-runner.json",
+    "DeferredMinors": [
+      {
+        "id": "DM-01",
+        "severity": "minor",
+        "file": "docs/todos/11-reliable-delivery/evidence/08/fixture-test-01.json.output.txt",
+        "line": 14,
+        "scenario": "git diff --check BASE C reports trailing whitespace in preserved pytest raw output and a blank EOF line in implementation-last-message.txt. These are evidence bytes rather than source formatting.",
+        "remediation": "Preserve original raw evidence; if repository policy requires a clean diff-check, address the policy or presentation without modifying the original evidence."
+      }
+    ],
+    "limitations": [
+      "Synthetic small Spike workloads and synthetic approvals/check outputs are not actual human review or external business acceptance.",
+      "Results characterize three samples on the recorded Linux environment only; not production latency, robust tail latency, a speedup proof, or a Git versus FS equivalence.",
+      "Bytes cover Path.read_bytes and encoded Path.read_text returns, excluding Git subprocess, other file, kernel and socket I/O; HTTP was stdlib integration, not browser/UI acceptance.",
+      "Inventory readiness is BLOCKED for completed cards while acceptance is PASS; readiness is not conflated with acceptance.",
+      "Full suite, Windows, deployment, actual external business and whole iteration are outside this review."
+    ],
+    "approval_scope": "Whole task08 candidate C against unchanged BASE contract and goal only. This review does not register D, execute local strict, or approve the iteration, release, deployment, merge or push."
+  },
+  "originals": {
+    "scope-runner.json.output.txt": {
+      "path": "build/iter11-review/task08-review1/scope-runner.json.output.txt",
+      "sha256": "2721e367aea492615de1e5424770203a2f4c1de20575030082792ff6f2799362"
+    },
+    "review-native.jsonl": {
+      "path": "build/iter11-review/task08-review1/review-native.jsonl",
+      "sha256": "54d863770b1bb330e1bff53b7696c1c833a527bb31cb95090f93483f74762bf0"
+    },
+    "attempt.call.json": {
+      "path": "build/iter11-review/task08-review1/attempt.call.json",
+      "sha256": "4ac1ff32de5efee241f395a1b38eb02561f79e7d01719efbc3ac70dabf6fcbc6"
+    },
+    "review-package.txt": {
+      "path": "build/iter11-review/task08-review1/review-package.txt",
+      "sha256": "ebe65c45f8a9c1c9dc0000c92af6f0abb08f0c0e24332d8aeef3eab47127f350"
+    },
+    "sample-audit.json": {
+      "path": "build/iter11-review/task08-review1/sample-audit.json",
+      "sha256": "97e8677cd2e32f583aeb26e8a3fa4e8596ed616e6775ec60133fde5a08fca99a"
+    },
+    "review-last-message.txt": {
+      "path": "build/iter11-review/task08-review1/review-last-message.txt",
+      "sha256": "296aac103689896c06e8980d4adbf42b11d55cb0eb5c7a1c5fdb3836e8aca6a1"
+    },
+    "terminal.json": {
+      "path": "build/iter11-review/task08-review1/terminal.json",
+      "sha256": "449468ab42472be1a41b5f0bfb7166bd1b8b32c954f36a24e82a1413e927375d"
+    },
+    "review-native.stderr.txt": {
+      "path": "build/iter11-review/task08-review1/review-native.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "scope-runner.json": {
+      "path": "build/iter11-review/task08-review1/scope-runner.json",
+      "sha256": "706a957c67abbefb03baf2de5cd5b625afeced299e27ca8e46bf2c6c5ca1b97d"
+    },
+    "sample-audit.json.output.txt": {
+      "path": "build/iter11-review/task08-review1/sample-audit.json.output.txt",
+      "sha256": "7057e8c6be59115ac1d57e3c2207fa9a86353a70745ba83931445f75aea720aa"
+    },
+    "attempt.json": {
+      "path": "build/iter11-review/task08-review1/attempt.json",
+      "sha256": "c37e1f156fd5b789d68435c735bbb575f590ae821e45e834e13c7d684c6c89f1"
+    },
+    "dispatch-check.json": {
+      "path": "build/iter11-review/task08-review1/dispatch-check.json",
+      "sha256": "013497948f3bcc443a268f53d990b78f2c218ecf8790dbdb31103e79f6a270da"
+    },
+    "review-brief.md": {
+      "path": "build/iter11-review/task08-review1/review-brief.md",
+      "sha256": "e11bac537003f9aee414baf85d03bac5477192ef6e429519e77778a0fa57f3eb"
+    },
+    "review-guard.json": {
+      "path": "build/iter11-review/task08-review1/review-guard.json",
+      "sha256": "f72b3333a99ea8cd1c9633d8a931e1a65a63e63b2f227d8f47928704a1f3813e"
+    },
+    "context.json": {
+      "path": "build/iter11-review/task08-review1/context.json",
+      "sha256": "f18a8ee32b7ec6f293caa63832081b89cd40f8d894432ff77b949ca34f142b31"
+    },
+    "release.call.json": {
+      "path": "build/iter11-review/task08-review1/release.call.json",
+      "sha256": "6002d791605d6e13a99133377af1e2d36b7cad1da00349dfa1fca79745f83a25"
+    },
+    "review-check-observation.json": {
+      "path": "build/iter11-review/task08-review1/review-check-observation.json",
+      "sha256": "e4b4680068d298964b0a36d5b836e59f9914a55a05a16b988937a92d85552e48"
+    },
+    "scope-runner.json.child.json": {
+      "path": "build/iter11-review/task08-review1/scope-runner.json.child.json",
+      "sha256": "7aad9ac07032d00f777ef2d534ff7b8621171a4bea7dd5c67f3b908dc4f9f1e4"
+    },
+    "report.json": {
+      "path": "build/iter11-review/task08-review1/report.json",
+      "sha256": "0da623a10255c683eafabc664d3fc8dc6ec7d6df59637ea76d9a2435d58dbc38"
+    },
+    "sample-audit.json.child.json": {
+      "path": "build/iter11-review/task08-review1/sample-audit.json.child.json",
+      "sha256": "19d71729155a85e84a40b0b53067cfe53f7b4b769b2f4b72e73deacb65a2a3d8"
+    }
+  },
+  "scope_receipt": {
+    "version": 1,
+    "argv": [
+      "python3",
+      "-B",
+      "/data/workspace/iteration-manager/build/frozen-tools/fdcc4cce8863/scripts/iter_sync.py",
+      "--check-scope",
+      "6a54aceb2fc540d20480f9cdb5e5a683359c8e1a",
+      "712a059578827fd6f172f0e28914e5bf26a5f949",
+      "docs/todos/11-reliable-delivery/08-approved-chain-benchmark.md"
+    ],
+    "cwd": "/data/workspace/iteration-manager/.worktrees/iter-11",
+    "deadline": "2026-11-15T05:37:37.862809+00:00",
+    "cleanup_reserve_seconds": 5,
+    "status": "COMPLETED",
+    "deadline_checked_at": "2026-11-15T05:31:56.388887+00:00",
+    "started_at": "2026-11-15T05:31:56.392117+00:00",
+    "ended_at": "2026-11-15T05:31:56.553960+00:00",
+    "raw_exit_code": 0,
+    "tree_terminal": true,
+    "output": "build/iter11-review/task08-review1/scope-runner.json.output.txt",
+    "container_pid": 3517880,
+    "launcher_exit_code": 0,
+    "command": {
+      "status": "COMPLETED",
+      "raw_exit_code": 0,
+      "started_at": "2026-11-15T05:31:56.392117+00:00",
+      "tree_terminal": true,
+      "deadline_checked_at": "2026-11-15T05:31:56.388887+00:00",
+      "pid": 3517888,
+      "ended_at": "2026-11-15T05:31:56.499244+00:00"
+    },
+    "late_by_seconds": 0
+  },
+  "scope_output": "[IterSync:ScopeFirewall:PASSED] All 44 changed files within declared scope; ownership is not inferred.\n"
+}

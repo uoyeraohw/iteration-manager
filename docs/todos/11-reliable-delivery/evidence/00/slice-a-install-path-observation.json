@@ -1,0 +1,21 @@
+{
+  "kind": "read-only-install-path-observation",
+  "paths": {
+    "/data/home/.codeg/skills/iteration-manager": {
+      "is_symlink": false,
+      "resolved": "/data/home/.codeg/skills/iteration-manager",
+      "exists": true
+    },
+    "/data/home/.codex/skills/iteration-manager": {
+      "is_symlink": true,
+      "resolved": "/data/home/.codeg/skills/iteration-manager",
+      "exists": true
+    },
+    "/data/home/.gemini/config/skills/iteration-manager": {
+      "is_symlink": true,
+      "resolved": "/data/home/.codeg/skills/iteration-manager",
+      "exists": true
+    }
+  },
+  "deployed": false
+}

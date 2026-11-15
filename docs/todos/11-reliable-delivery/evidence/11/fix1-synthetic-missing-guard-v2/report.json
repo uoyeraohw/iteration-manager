@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "candidate": null,
+  "coordinator_commit": "fdcc4cce88635ee81573be5991de11de650659d8",
+  "cases": [
+    {
+      "id": "source-index",
+      "layer": "static",
+      "expected": "version 1 selected task 06",
+      "observed": "stages[0].guard missing; Controller must supply a complete valid source index",
+      "result": "UNKNOWN",
+      "evidence": [
+        "docs/todos/11-reliable-delivery/evidence/11/fix1-synthetic-missing-guard/sources.json"
+      ]
+    }
+  ],
+  "unverified": [
+    "Independent nonparticipant semantic review of this probe and original records is required.",
+    "Codeg worker execution, complete original environment identity, installation/deployment, current Windows and external FS lifecycle are UNKNOWN/BLOCKED.",
+    "Controller must complete all 13 cards including 12 before integration, full suite, independent total review and final branch strict.",
+    "Frozen coordinator FROZEN-KNOWN-01/02 cannot self-approve candidate.",
+    "Task 10 isolated static/synthetic results are linked at docs/todos/11-reliable-delivery/evidence/10/integration-report.json; no suite rerun here."
+  ]
+}

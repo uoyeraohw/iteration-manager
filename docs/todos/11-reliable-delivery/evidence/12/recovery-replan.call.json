@@ -1,0 +1,24 @@
+{
+  "kind": "controller-command-observation",
+  "argv": [
+    "python3",
+    "-B",
+    "/data/workspace/iteration-manager/build/frozen-tools/fdcc4cce8863/scripts/iter_sync.py",
+    "--autonomy",
+    "replan",
+    "docs/todos/11-reliable-delivery/12-workflow-sequence.md",
+    "--event-id",
+    "iter11-12-authorized-recovery-replan-v1",
+    "--owner",
+    "iter11-controller-linux-20261115",
+    "--evidence",
+    "docs/todos/11-reliable-delivery/evidence/12/recovery-independent-disposition.json",
+    "--reason",
+    "Explicit user approved submitted plan; independent future-safe-baseline disposition APPROVED; adopt bounded replan, preserve historical FAIL/UNKNOWN and cumulative budget; no old grant reuse"
+  ],
+  "started_at": "2026-11-15T07:28:58.548974+00:00",
+  "ended_at": "2026-11-15T07:28:58.702199+00:00",
+  "exit_code": 0,
+  "stdout": "{\"task_id\": \"12-workflow-sequence\", \"previous_rounds\": 1, \"current_rounds\": 0, \"fix_total\": 1, \"consilium_count\": 0, \"replan_count\": 1, \"is_fused\": false, \"status\": \"IN_PROGRESS\", \"blocked_reason\": \"\", \"writer\": \"iter11-controller-linux-20261115\", \"consilium_bundle\": null}\n",
+  "stderr": ""
+}

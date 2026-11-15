@@ -1,0 +1,113 @@
+{
+  "implementer_thread_id": "01a1dda0-8d6b-79c0-8739-a8409dec0d93",
+  "base": "3158e75869d5c4346c51256de878f14ea190f305",
+  "commands": {
+    "baseline-implementer": {
+      "command": "/data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B /data/workspace/iteration-manager/build/frozen-runners/iter11-platform-v1/scripts/iter_run.py --deadline 2026-11-15T05:21:27.927576+00:00 --evidence docs/todos/11-reliable-delivery/evidence/07/baseline-implementer.json -- /data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B -m pytest -p no:cacheprovider tests/test_board_handoff.py tests/test_board_service.py -q --basetemp /tmp/iter11-task07-baseline-implementer",
+      "receipt": "docs/todos/11-reliable-delivery/evidence/07/baseline-implementer.json",
+      "output": "docs/todos/11-reliable-delivery/evidence/07/baseline-implementer.json.output.txt",
+      "status": "COMPLETED",
+      "exit_code": 0,
+      "tree_terminal": true
+    },
+    "benchmark-before": {
+      "command": "/data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B /data/workspace/iteration-manager/build/frozen-runners/iter11-platform-v1/scripts/iter_run.py --deadline 2026-11-15T05:21:27.927576+00:00 --evidence docs/todos/11-reliable-delivery/evidence/07/benchmark-before.json -- /data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B docs/todos/11-reliable-delivery/evidence/07/measure.py before",
+      "receipt": "docs/todos/11-reliable-delivery/evidence/07/benchmark-before.json",
+      "output": "docs/todos/11-reliable-delivery/evidence/07/benchmark-before.json.output.txt",
+      "status": "COMPLETED",
+      "exit_code": 1,
+      "tree_terminal": true
+    },
+    "benchmark-before-v2": {
+      "command": "/data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B /data/workspace/iteration-manager/build/frozen-runners/iter11-platform-v1/scripts/iter_run.py --deadline 2026-11-15T05:21:27.927576+00:00 --evidence docs/todos/11-reliable-delivery/evidence/07/benchmark-before-v2.json -- /data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B docs/todos/11-reliable-delivery/evidence/07/measure.py before",
+      "receipt": "docs/todos/11-reliable-delivery/evidence/07/benchmark-before-v2.json",
+      "output": "docs/todos/11-reliable-delivery/evidence/07/benchmark-before-v2.json.output.txt",
+      "status": "COMPLETED",
+      "exit_code": 0,
+      "tree_terminal": true
+    },
+    "regression": {
+      "command": "ITER_FROZEN_RUNNER=/data/workspace/iteration-manager/build/frozen-runners/iter11-platform-v1/scripts/iter_run.py ITER_COMMAND_DEADLINE=2026-11-15T05:21:27.927576+00:00 /data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B /data/workspace/iteration-manager/build/frozen-runners/iter11-platform-v1/scripts/iter_run.py --deadline 2026-11-15T05:21:27.927576+00:00 --evidence docs/todos/11-reliable-delivery/evidence/07/regression.json -- /data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B -m pytest -p no:cacheprovider tests/test_board_handoff.py tests/test_board_service.py tests/test_harness_portability.py -q --basetemp /tmp/iter11-task07-regression",
+      "receipt": "docs/todos/11-reliable-delivery/evidence/07/regression.json",
+      "output": "docs/todos/11-reliable-delivery/evidence/07/regression.json.output.txt",
+      "status": "COMPLETED",
+      "exit_code": 0,
+      "tree_terminal": true
+    },
+    "benchmark-after": {
+      "command": "/data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B /data/workspace/iteration-manager/build/frozen-runners/iter11-platform-v1/scripts/iter_run.py --deadline 2026-11-15T05:21:27.927576+00:00 --evidence docs/todos/11-reliable-delivery/evidence/07/benchmark-after.json -- /data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B docs/todos/11-reliable-delivery/evidence/07/measure.py after",
+      "receipt": "docs/todos/11-reliable-delivery/evidence/07/benchmark-after.json",
+      "output": "docs/todos/11-reliable-delivery/evidence/07/benchmark-after.json.output.txt",
+      "status": "COMPLETED",
+      "exit_code": 0,
+      "tree_terminal": true
+    },
+    "regression-v2": {
+      "command": "ITER_FROZEN_RUNNER=/data/workspace/iteration-manager/build/frozen-runners/iter11-platform-v1/scripts/iter_run.py ITER_COMMAND_DEADLINE=2026-11-15T05:21:27.927576+00:00 /data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B /data/workspace/iteration-manager/build/frozen-runners/iter11-platform-v1/scripts/iter_run.py --deadline 2026-11-15T05:21:27.927576+00:00 --evidence docs/todos/11-reliable-delivery/evidence/07/regression-v2.json -- /data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B -m pytest -p no:cacheprovider tests/test_board_handoff.py tests/test_board_service.py tests/test_harness_portability.py -q --basetemp /tmp/iter11-task07-regression-v2",
+      "receipt": "docs/todos/11-reliable-delivery/evidence/07/regression-v2.json",
+      "output": "docs/todos/11-reliable-delivery/evidence/07/regression-v2.json.output.txt",
+      "status": "COMPLETED",
+      "exit_code": 0,
+      "tree_terminal": true
+    },
+    "compatibility-command": {
+      "command": "/data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B /data/workspace/iteration-manager/build/frozen-runners/iter11-platform-v1/scripts/iter_run.py --deadline 2026-11-15T05:21:27.927576+00:00 --evidence docs/todos/11-reliable-delivery/evidence/07/compatibility-command.json -- /data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B docs/todos/11-reliable-delivery/evidence/07/compatibility.py",
+      "receipt": "docs/todos/11-reliable-delivery/evidence/07/compatibility-command.json",
+      "output": "docs/todos/11-reliable-delivery/evidence/07/compatibility-command.json.output.txt",
+      "status": "COMPLETED",
+      "exit_code": 0,
+      "tree_terminal": true
+    },
+    "regression-v3": {
+      "command": "ITER_FROZEN_RUNNER=/data/workspace/iteration-manager/build/frozen-runners/iter11-platform-v1/scripts/iter_run.py ITER_COMMAND_DEADLINE=2026-11-15T05:21:27.927576+00:00 /data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B /data/workspace/iteration-manager/build/frozen-runners/iter11-platform-v1/scripts/iter_run.py --deadline 2026-11-15T05:21:27.927576+00:00 --evidence docs/todos/11-reliable-delivery/evidence/07/regression-v3.json -- /data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B -m pytest -p no:cacheprovider tests/test_board_handoff.py tests/test_board_service.py tests/test_harness_portability.py -q --basetemp /tmp/iter11-task07-regression-v3",
+      "receipt": "docs/todos/11-reliable-delivery/evidence/07/regression-v3.json",
+      "output": "docs/todos/11-reliable-delivery/evidence/07/regression-v3.json.output.txt",
+      "status": "COMPLETED",
+      "exit_code": 0,
+      "tree_terminal": true
+    }
+  },
+  "nested_payload_receipt": "docs/todos/11-reliable-delivery/evidence/07/installed-copy-receipt.json",
+  "nested_payload_receipt_original_cwd": "/tmp/iter11-task07-regression-v3/test_payload_copy_runs_handoff0/payload",
+  "nested_command": "/data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B /data/workspace/iteration-manager/build/frozen-runners/iter11-platform-v1/scripts/iter_run.py --deadline 2026-11-15T05:21:27.927576+00:00 --evidence installed-copy-receipt.json -- /data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B -m pytest -p no:cacheprovider tests/test_board_handoff.py tests/test_board_service.py -q --basetemp /tmp/iter11-task07-regression-v3/test_payload_copy_runs_handoff0/installed-pytest",
+  "environment": {
+    "platform": "Linux",
+    "python": "3.11.17",
+    "pytest": "9.2.0",
+    "mcp": "1.30.0",
+    "runner": "/data/workspace/iteration-manager/build/frozen-runners/iter11-platform-v1/scripts/iter_run.py",
+    "runner_sha256": "b8b22217ad1d8d1f02a9a4d3cb053f84f781888c4871e583f0a7ff27f3fe3ef1",
+    "coordinator": "/data/workspace/iteration-manager/build/frozen-tools/fdcc4cce8863/scripts/iter_sync.py",
+    "coordinator_version": "fdcc4cce88635ee81573be5991de11de650659d8",
+    "deadline": "2026-11-15T05:21:27.927576+00:00"
+  },
+  "decisions": "Extract identical historical harness except root index; use actual iter_install inventory to copy payload and explicitly pass frozen runner to nested test. Local default permits ordinary testing. No new ledger; ledger-summary is a card handoff.",
+  "measurements": {
+    "before_seconds": [
+      2.01556606288068,
+      2.013032219838351,
+      1.637503799982369
+    ],
+    "after_seconds": [
+      1.9049793588928878,
+      1.6704832690302283,
+      1.955465054139495
+    ],
+    "historical_consumers_before": 2,
+    "historical_consumers_after": 0
+  },
+  "limitations": [
+    "No performance improvement promised",
+    "No native browser, Windows, full suite, real installation or new-session consumption tested",
+    "Task06 C1/111-file smoke is not current payload evidence",
+    "Frozen coordinator known defects cannot self-approve"
+  ],
+  "remaining": [
+    "Controller card/event handoff",
+    "freeze C",
+    "independent review",
+    "register D",
+    "frozen local strict"
+  ],
+  "status": "implementation evidence only; no independent approval"
+}

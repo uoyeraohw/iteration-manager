@@ -1,0 +1,76 @@
+{
+  "candidate": "305f1d49d499ae3a5112358d57c2fefa48349261",
+  "base": "3de06e0e3715b9f65d7caaf3bdba872a33df0f8c",
+  "reviewer_uuid": "01a1dde3-9b87-73a3-9eea-deddd1dbdfd7",
+  "independence": {
+    "statement": "Independent review only; no Task12 design, implementation, testing, RCA or delegation participation.",
+    "excluded_actors": [
+      "01a1ddcf-b505-7cc1-baac-d53be61431ab (implementer)",
+      "01a1ddd7-05a1-7602-8c59-f04b24481f36 (Codeg source consumer; native task 083b45e8-276c-4509-8720-0c2c9c8ff6a4)",
+      "01a1dde0-b168-7760-9704-adc0fec19045 (native CLI consumer)",
+      "all other task consumers",
+      "root controller"
+    ]
+  },
+  "verdicts": {
+    "scope": "APPROVED",
+    "spec": "BLOCKED",
+    "quality": "NEEDS_FIX",
+    "overall": "BLOCKED"
+  },
+  "findings": [
+    {
+      "severity": "BLOCKER",
+      "id": "F1",
+      "file": "docs/todos/11-reliable-delivery/evidence/12/codeg-interruption-decision.json",
+      "line": 18,
+      "scenario": "After the 120-second consumer window was canceled and FUSED, the controller issued and consumed a resume-checkpoint grant. The cited authority is a controller interpretation of general implementation and serial progress. The provided platform-migration authorization quotes Linux adaptation; neither source identifies a user instruction explicitly authorizing checkpoint resumption. The unchanged baseline protocol at references/agent_protocol.md:91 and candidate :126 explicitly require user authorization for checkpoint resumption; checkpoint_execution.md:13 requires current explicit authority. This review prompt authorizes review, not retroactive proof of the earlier grant. The external grant and successful CLI result establish issuance/consumption, not its user authority. Therefore the subsequent Codeg consumption cannot yet establish an authorized Task12 completion.",
+      "remediation": "Provide the original user instruction and its scope showing that it explicitly authorized this checkpoint recovery, or obtain an authorized recovery disposition and new compliant evidence without rewriting the historical event. Reassess the affected candidate and consumption under the recovery contract."
+    },
+    {
+      "severity": "MAJOR",
+      "id": "F2",
+      "file": "docs/todos/11-reliable-delivery/evidence/12/codeg-interruption-terminal.json",
+      "line": 15,
+      "scenario": "The terminal inventory bound to the grant lists only experiment-04 and the controller check, omitting the consumer source-reading commands. The decision at codeg-interruption-decision.json:13 says those calls do not expose inner exit metadata, but the committed native excerpt lines 21, 29, 35-40, 48 and 54 actually contain ten CommandExecution item_completed events with completed status and exit_code 0. The initial bwrap failure was a not-started call. A canceled session and a list of unrelated completed commands do not by themselves bind the full relevant command inventory to the recovery, and the decision understates the available raw evidence.",
+      "remediation": "Preserve the original records, reconcile every actual native read command and its raw terminal event/exit against the interrupted session, record any remaining unknown explicitly, and supply a new auditable recovery disposition and appropriately bound committed evidence. Do not modify or fabricate historical observations."
+    }
+  ],
+  "evidence_applicability_and_chronology": [
+    "C is HEAD on feat/iter-11-reliable-delivery, clean tracked/untracked status as observed; C1 91ac9d9 and C2 305f1d49 descend from base. Frozen card objective, acceptance, scope and goal remain unchanged; card status and ledger changed as execution facts. Git mode is default: no explicit task delivery_mode and no iteration filesystem profile observed.",
+    "Task03 receipt binds APPROVED a7ba3e4d; 03 native parent TOOL-call result did not establish worker execution due to bwrap. Task04 erroneous BLOCKED-before-dispatch order remains historical FAIL, not erased.",
+    "Spike-Discovery requires experiment, decision, interfaces; no Strict-TDD RED claim is required. experiment-04 ran the specified three test files with frozen Linux runner; 10 passed, COMPLETED, raw exit 0 and tree_terminal true, 06:07:46-06:07:47 UTC. Earlier experiments predate source refinements and are not final-source evidence. Source manifest and native implementer chronology support applicability to frozen source; C1 and C2 product/test files are identical.",
+    "Controller v1 missing cwd was rejected invalid-check without delegation. v2 observed READY at 06:13:34.624Z before delegate call 06:13:34.628Z; the 120-second window ended without completed A/B/C and cancel/query returned canceled. Closeout exit 3 recorded FUSED, not PASS. 91ac9d9 preserved the closeout; external grant binds that HEAD, prior approved 3de06e0, closeout and committed terminal, expiry 06:40:50Z; resume-checkpoint succeeded at 06:20:50Z without budget reset. This chronology does not resolve F1/F2.",
+    "Fresh guarded READY precedes resume of the same native task at 06:21:24Z; completed source consumer returned hash-bound A/B/C; separate native CLI consumer completed with matching source report. These are source-reading observations and scenario judgments, not actual Codeg business-worker execution, test-chain approval or independent review.",
+    "Original delivery/checks/ledger PENDING statements describe earlier handoff; checks-proposal-v2 and later consumption manifest document later observations. They do not retroactively establish recovery authorization or correct the terminal inventory.",
+    "Physical scope receipt reports 89 changed files within scope. Independently observed only card metadata/ledger plus declared source and evidence changes, no root index or iteration README changes; scope success is not semantic approval. READY for reviewer is dispatch readiness with acceptance UNKNOWN."
+  ],
+  "source_mapping": {
+    "method": "SHA256 of git show C:path compared independently with recorded manifests; byte comparison C1 versus C2 for eight source files and three test files.",
+    "source_manifest_entries": 37,
+    "source_manifest_mismatches": [],
+    "consumer_binding_entries": 8,
+    "consumer_binding_mismatches": [],
+    "controller_raw_entries": 44,
+    "controller_raw_mismatches": [],
+    "c1_c2_source_and_tests": "11 of 11 byte-identical",
+    "native_original": "Both selected excerpts exactly match their indexed original lines. First original prefix of 68 lines hashes 82f47eecd038181bab0171304ad3a84f92c1a30f3dd8b1c67ad268da68f9d023; resumed 92-line source hashes 4e2f2298d20f6bef9caaa879bda0bf55a97168ab5c1b17574549d02506546beb; append-only growth is expected."
+  },
+  "scope_receipt": {
+    "path": "build/iter11-review/task12-review1/scope-runner.json",
+    "output": "build/iter11-review/task12-review1/scope-runner.json.output.txt",
+    "status": "COMPLETED",
+    "raw_exit_code": 0,
+    "launcher_exit_code": 0,
+    "tree_terminal": true,
+    "observed": "All 89 changed files within declared scope; ownership is not inferred. fdcc4cc known defects limit use to physical scope, not semantic legality or acceptance."
+  },
+  "DeferredMinors": [],
+  "limitations": [
+    "No repeated effective suite; no full suite, Windows execution, deployment, business-worker chain, branch strict, total review, or release assessed.",
+    "No source proves explicit checkpoint-resume authorization in the supplied review materials; a missing source is UNKNOWN rather than a finding that such authorization never existed.",
+    "Native completed events report command exit, not a separately observed runner process-tree receipt; read commands are not counted as business test execution.",
+    "Frozen-tool guard script is not present in the fdcc4cc snapshot; a fixed guard source and identity must be made explicit for future actual use rather than assuming it is in that snapshot."
+  ],
+  "approval_scope": "Whole Task12 frozen candidate against BASE/spec only; no approval granted. Review does not register D, run local strict, or decide iteration closeout."
+}

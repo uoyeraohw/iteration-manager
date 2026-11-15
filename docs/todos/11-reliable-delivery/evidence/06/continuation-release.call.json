@@ -1,0 +1,24 @@
+{
+  "kind": "controller-command-observation",
+  "argv": [
+    "python3",
+    "-B",
+    "/data/workspace/iteration-manager/build/frozen-tools/fdcc4cce8863/scripts/iter_sync.py",
+    "--autonomy",
+    "release",
+    "docs/todos/11-reliable-delivery/06-installation-provenance.md",
+    "--event-id",
+    "iter11-06-continuation-release-v1",
+    "--owner",
+    "iter11-controller-linux-20261115",
+    "--evidence",
+    "docs/todos/11-reliable-delivery/evidence/06/continuation-terminal.json",
+    "--executor-state",
+    "completed"
+  ],
+  "started_at": "2026-11-15T05:03:38.979795+00:00",
+  "ended_at": "2026-11-15T05:03:39.073743+00:00",
+  "exit_code": 0,
+  "stdout": "{\"task_id\": \"06-installation-provenance\", \"previous_rounds\": 0, \"current_rounds\": 0, \"fix_total\": 0, \"consilium_count\": 0, \"replan_count\": 0, \"is_fused\": false, \"status\": \"IN_PROGRESS\", \"blocked_reason\": \"\", \"writer\": \"\", \"consilium_bundle\": null}\n",
+  "stderr": ""
+}

@@ -1,0 +1,45 @@
+{
+  "phase": "implementation",
+  "candidate": "3158e75869d5c4346c51256de878f14ea190f305",
+  "inputs": [
+    "docs/todos/11-reliable-delivery/07-portable-test-support.md",
+    "docs/todos/11-reliable-delivery/README.md",
+    "AGENTS.md",
+    "references/task_card_schema.md",
+    "tests/test_board_handoff.py"
+  ],
+  "capabilities": [
+    "native-codex-cli-implementer",
+    "approved-frozen-linux-runner",
+    "Python3.11.17-pytest9.2-mcp1.30",
+    "independent-native-reviewer"
+  ],
+  "version": 1,
+  "checkpoint": "测试支持提取，Linux基线及3次Before/After与payload-only临时测试、直接回归已完成；历史原件未改",
+  "remaining_work": [
+    "C独审",
+    "D/冻结strict"
+  ],
+  "executor_id": "01a1dda0-8d6b-79c0-8739-a8409dec0d93",
+  "terminal_evidence": "docs/todos/11-reliable-delivery/evidence/07/implementation-terminal.json",
+  "progress": [
+    {
+      "kind": "implementation",
+      "summary": "测试支持提取，Linux基线及3次Before/After与payload-only临时测试、直接回归已完成；历史原件未改",
+      "evidence": "docs/todos/11-reliable-delivery/evidence/07/delivery.json"
+    }
+  ],
+  "commands": [
+    "docs/todos/11-reliable-delivery/evidence/07/regression.json",
+    "docs/todos/11-reliable-delivery/evidence/07/benchmark-before.json",
+    "docs/todos/11-reliable-delivery/evidence/07/regression-v2.json",
+    "docs/todos/11-reliable-delivery/evidence/07/compatibility-command.json",
+    "docs/todos/11-reliable-delivery/evidence/07/regression-v3.json",
+    "docs/todos/11-reliable-delivery/evidence/07/benchmark-after.json",
+    "docs/todos/11-reliable-delivery/evidence/07/installed-copy-receipt.json",
+    "docs/todos/11-reliable-delivery/evidence/07/benchmark-before-v2.json",
+    "docs/todos/11-reliable-delivery/evidence/07/baseline-implementer.json"
+  ],
+  "started_at": null,
+  "ended_at": null
+}

@@ -1,0 +1,694 @@
+{
+  "version": 1,
+  "tasks": {
+    "01": {
+      "phase": "implementation",
+      "candidate": "894dfd6d5d93d2ff99f6eddcaadbb88ee9ce44c3",
+      "inputs": [
+        "docs/todos/11-reliable-delivery/01-delivery-mode-consistency.md",
+        "docs/todos/11-reliable-delivery/README.md",
+        "docs/todos/11-reliable-delivery/evidence/planning/execution-authorization.json",
+        "docs/todos/11-reliable-delivery/evidence/startup/execution-observations.json"
+      ],
+      "capabilities": [
+        "implementation-authorized",
+        "serial-acceptance-required",
+        "linux-coordination-only",
+        "windows-job-runner-required",
+        "codeg-schema-exposed-runtime-unverified",
+        "independent-review-required"
+      ],
+      "dependencies": [],
+      "tool_entry": "/data/workspace/iteration-manager/build/frozen-tools/fdcc4cce8863/scripts/iter_sync.py",
+      "checkpoint": "仅启动协调；无产品RED、GREEN、实现或审查成果，不登记attempt",
+      "remaining_work": [
+        "提供同候选Windows正式执行环境并通过干净基线，核实原生读取/委派和独审能力",
+        "冻结包含未知模式的合法Git绑定反例和兼容矩阵，取得目标断言RED",
+        "共用纯解析规则，完成审计、派发与交接一致性GREEN",
+        "完成Git/FS受影响回归和待审候选"
+      ],
+      "observations": {
+        "authority": {
+          "status": "READY",
+          "summary": "用户已明确授权本轮实施、精准Git提交及独立Worktree；禁止部署/推送/合流/清理",
+          "evidence": "docs/todos/11-reliable-delivery/evidence/planning/execution-authorization.json"
+        },
+        "execution": {
+          "status": "BLOCKED",
+          "summary": "等待本次00前置Linux runner验收和冻结，不再等待Windows主机",
+          "evidence": "docs/todos/11-reliable-delivery/evidence/planning/platform-migration-authorization.json"
+        },
+        "verification": {
+          "status": "BLOCKED",
+          "summary": "冻结runner实际退出125，未启动pytest且未创建runner收据；正式干净基线及本卡type门禁尚未执行",
+          "evidence": "docs/todos/11-reliable-delivery/evidence/startup/baseline-launch.observation.json"
+        },
+        "serial-order": {
+          "status": "BLOCKED",
+          "summary": "用户要求00先验收后恢复01—12串行",
+          "evidence": "docs/todos/11-reliable-delivery/evidence/planning/platform-migration-authorization.json"
+        }
+      },
+      "required_observations": [
+        "serial-order"
+      ]
+    },
+    "02": {
+      "phase": "implementation",
+      "candidate": "894dfd6d5d93d2ff99f6eddcaadbb88ee9ce44c3",
+      "inputs": [
+        "docs/todos/11-reliable-delivery/02-takeover-report-isolation.md",
+        "docs/todos/11-reliable-delivery/README.md",
+        "docs/todos/11-reliable-delivery/evidence/planning/execution-authorization.json",
+        "docs/todos/11-reliable-delivery/evidence/startup/execution-observations.json"
+      ],
+      "capabilities": [
+        "implementation-authorized",
+        "serial-acceptance-required",
+        "linux-coordination-only",
+        "windows-job-runner-required",
+        "codeg-schema-exposed-runtime-unverified",
+        "independent-review-required"
+      ],
+      "dependencies": [],
+      "tool_entry": "/data/workspace/iteration-manager/build/frozen-tools/fdcc4cce8863/scripts/iter_sync.py",
+      "checkpoint": "仅启动协调；无产品RED、GREEN、实现或审查成果，不登记attempt",
+      "remaining_work": [
+        "提供同候选Windows正式执行环境并通过干净基线，核实原生读取/委派和独审能力",
+        "对健康卡混合UnicodeError、OSError及发现后删除构造有效断言RED",
+        "实现逐卡故障隔离并保留旧报告结构",
+        "完成CLI/发现兼容与只读回归"
+      ],
+      "observations": {
+        "authority": {
+          "status": "READY",
+          "summary": "用户已明确授权本轮实施、精准Git提交及独立Worktree；禁止部署/推送/合流/清理",
+          "evidence": "docs/todos/11-reliable-delivery/evidence/planning/execution-authorization.json"
+        },
+        "execution": {
+          "status": "BLOCKED",
+          "summary": "等待本次00前置Linux runner验收和冻结，不再等待Windows主机",
+          "evidence": "docs/todos/11-reliable-delivery/evidence/planning/platform-migration-authorization.json"
+        },
+        "verification": {
+          "status": "BLOCKED",
+          "summary": "冻结runner实际退出125，未启动pytest且未创建runner收据；正式干净基线及本卡type门禁尚未执行",
+          "evidence": "docs/todos/11-reliable-delivery/evidence/startup/baseline-launch.observation.json"
+        },
+        "serial-order": {
+          "status": "BLOCKED",
+          "summary": "用户要求00先验收后恢复01—12串行",
+          "evidence": "docs/todos/11-reliable-delivery/evidence/planning/platform-migration-authorization.json"
+        }
+      },
+      "required_observations": [
+        "serial-order"
+      ]
+    },
+    "03": {
+      "phase": "implementation",
+      "candidate": "894dfd6d5d93d2ff99f6eddcaadbb88ee9ce44c3",
+      "inputs": [
+        "docs/todos/11-reliable-delivery/03-native-dispatch-guard.md",
+        "docs/todos/11-reliable-delivery/README.md",
+        "docs/todos/11-reliable-delivery/evidence/planning/execution-authorization.json",
+        "docs/todos/11-reliable-delivery/evidence/startup/execution-observations.json"
+      ],
+      "capabilities": [
+        "implementation-authorized",
+        "serial-acceptance-required",
+        "linux-coordination-only",
+        "windows-job-runner-required",
+        "codeg-schema-exposed-runtime-unverified",
+        "independent-review-required"
+      ],
+      "dependencies": [
+        "docs/todos/11-reliable-delivery/01-delivery-mode-consistency.md"
+      ],
+      "tool_entry": "/data/workspace/iteration-manager/build/frozen-tools/fdcc4cce8863/scripts/iter_sync.py",
+      "checkpoint": "仅启动协调；无产品RED、GREEN、实现或审查成果，不登记attempt",
+      "remaining_work": [
+        "提供同候选Windows正式执行环境并通过干净基线，核实原生读取/委派和独审能力",
+        "以可控Promise覆盖running/失败/乱序及身份不符，取得断言RED",
+        "完成薄守卫GREEN及既有截止守卫兼容",
+        "在实际Codeg schema可用时记录一条真实先检查后派发链，缺宿主则保留BLOCKED"
+      ],
+      "observations": {
+        "authority": {
+          "status": "READY",
+          "summary": "用户已明确授权本轮实施、精准Git提交及独立Worktree；禁止部署/推送/合流/清理",
+          "evidence": "docs/todos/11-reliable-delivery/evidence/planning/execution-authorization.json"
+        },
+        "execution": {
+          "status": "BLOCKED",
+          "summary": "等待本次00前置Linux runner验收和冻结，不再等待Windows主机",
+          "evidence": "docs/todos/11-reliable-delivery/evidence/planning/platform-migration-authorization.json"
+        },
+        "verification": {
+          "status": "BLOCKED",
+          "summary": "冻结runner实际退出125，未启动pytest且未创建runner收据；正式干净基线及本卡type门禁尚未执行",
+          "evidence": "docs/todos/11-reliable-delivery/evidence/startup/baseline-launch.observation.json"
+        },
+        "serial-order": {
+          "status": "BLOCKED",
+          "summary": "用户要求00先验收后恢复01—12串行",
+          "evidence": "docs/todos/11-reliable-delivery/evidence/planning/platform-migration-authorization.json"
+        }
+      },
+      "required_observations": [
+        "serial-order"
+      ]
+    },
+    "04": {
+      "phase": "implementation",
+      "candidate": "894dfd6d5d93d2ff99f6eddcaadbb88ee9ce44c3",
+      "inputs": [
+        "docs/todos/11-reliable-delivery/04-navigation-and-support.md",
+        "docs/todos/11-reliable-delivery/README.md",
+        "docs/todos/11-reliable-delivery/evidence/planning/execution-authorization.json",
+        "docs/todos/11-reliable-delivery/evidence/startup/execution-observations.json"
+      ],
+      "capabilities": [
+        "implementation-authorized",
+        "serial-acceptance-required",
+        "linux-coordination-only",
+        "windows-job-runner-required",
+        "codeg-schema-exposed-runtime-unverified",
+        "independent-review-required"
+      ],
+      "dependencies": [],
+      "tool_entry": "/data/workspace/iteration-manager/build/frozen-tools/fdcc4cce8863/scripts/iter_sync.py",
+      "checkpoint": "仅启动协调；无产品RED、GREEN、实现或审查成果，不登记attempt",
+      "remaining_work": [
+        "提供同候选Windows正式执行环境并通过干净基线，核实原生读取/委派和独审能力",
+        "记录进入当前任务所需的直接文档及原件路径",
+        "更新入口和迭代模板的导航路由",
+        "运行导航检查并由新会话定位一次当前任务及失败证据"
+      ],
+      "observations": {
+        "authority": {
+          "status": "READY",
+          "summary": "用户已明确授权本轮实施、精准Git提交及独立Worktree；禁止部署/推送/合流/清理",
+          "evidence": "docs/todos/11-reliable-delivery/evidence/planning/execution-authorization.json"
+        },
+        "execution": {
+          "status": "BLOCKED",
+          "summary": "等待本次00前置Linux runner验收和冻结，不再等待Windows主机",
+          "evidence": "docs/todos/11-reliable-delivery/evidence/planning/platform-migration-authorization.json"
+        },
+        "verification": {
+          "status": "BLOCKED",
+          "summary": "冻结runner实际退出125，未启动pytest且未创建runner收据；正式干净基线及本卡type门禁尚未执行",
+          "evidence": "docs/todos/11-reliable-delivery/evidence/startup/baseline-launch.observation.json"
+        },
+        "serial-order": {
+          "status": "BLOCKED",
+          "summary": "用户要求00先验收后恢复01—12串行",
+          "evidence": "docs/todos/11-reliable-delivery/evidence/planning/platform-migration-authorization.json"
+        }
+      },
+      "required_observations": [
+        "serial-order"
+      ]
+    },
+    "05": {
+      "phase": "implementation",
+      "candidate": "894dfd6d5d93d2ff99f6eddcaadbb88ee9ce44c3",
+      "inputs": [
+        "docs/todos/11-reliable-delivery/05-support-matrix.md",
+        "docs/todos/11-reliable-delivery/README.md",
+        "docs/todos/11-reliable-delivery/evidence/planning/execution-authorization.json",
+        "docs/todos/11-reliable-delivery/evidence/startup/execution-observations.json"
+      ],
+      "capabilities": [
+        "implementation-authorized",
+        "serial-acceptance-required",
+        "linux-coordination-only",
+        "windows-job-runner-required",
+        "codeg-schema-exposed-runtime-unverified",
+        "independent-review-required"
+      ],
+      "dependencies": [],
+      "tool_entry": "/data/workspace/iteration-manager/build/frozen-tools/fdcc4cce8863/scripts/iter_sync.py",
+      "checkpoint": "仅启动协调；无产品RED、GREEN、实现或审查成果，不登记attempt",
+      "remaining_work": [
+        "提供同候选Windows正式执行环境并通过干净基线，核实原生读取/委派和独审能力",
+        "逐项核对契约与有日期的能力原件",
+        "生成支持矩阵和发布索引路由",
+        "执行结构/链接检查并由新会话正确识别未验证项"
+      ],
+      "observations": {
+        "authority": {
+          "status": "READY",
+          "summary": "用户已明确授权本轮实施、精准Git提交及独立Worktree；禁止部署/推送/合流/清理",
+          "evidence": "docs/todos/11-reliable-delivery/evidence/planning/execution-authorization.json"
+        },
+        "execution": {
+          "status": "BLOCKED",
+          "summary": "等待本次00前置Linux runner验收和冻结，不再等待Windows主机",
+          "evidence": "docs/todos/11-reliable-delivery/evidence/planning/platform-migration-authorization.json"
+        },
+        "verification": {
+          "status": "BLOCKED",
+          "summary": "冻结runner实际退出125，未启动pytest且未创建runner收据；正式干净基线及本卡type门禁尚未执行",
+          "evidence": "docs/todos/11-reliable-delivery/evidence/startup/baseline-launch.observation.json"
+        },
+        "serial-order": {
+          "status": "BLOCKED",
+          "summary": "用户要求00先验收后恢复01—12串行",
+          "evidence": "docs/todos/11-reliable-delivery/evidence/planning/platform-migration-authorization.json"
+        }
+      },
+      "required_observations": [
+        "serial-order"
+      ]
+    },
+    "06": {
+      "phase": "implementation",
+      "candidate": "894dfd6d5d93d2ff99f6eddcaadbb88ee9ce44c3",
+      "inputs": [
+        "docs/todos/11-reliable-delivery/06-installation-provenance.md",
+        "docs/todos/11-reliable-delivery/README.md",
+        "docs/todos/11-reliable-delivery/evidence/planning/execution-authorization.json",
+        "docs/todos/11-reliable-delivery/evidence/startup/execution-observations.json"
+      ],
+      "capabilities": [
+        "implementation-authorized",
+        "serial-acceptance-required",
+        "linux-coordination-only",
+        "windows-job-runner-required",
+        "codeg-schema-exposed-runtime-unverified",
+        "independent-review-required"
+      ],
+      "dependencies": [],
+      "tool_entry": "/data/workspace/iteration-manager/build/frozen-tools/fdcc4cce8863/scripts/iter_sync.py",
+      "checkpoint": "仅启动协调；无产品RED、GREEN、实现或审查成果，不登记attempt",
+      "remaining_work": [
+        "提供同候选Windows正式执行环境并通过干净基线，核实原生读取/委派和独审能力",
+        "对来源不符、坏清单、漂移/缺失/越界路径取得断言RED",
+        "生成和只读检查来源清单GREEN",
+        "在白名单临时安装做烟测，记录能力边界和待审候选"
+      ],
+      "observations": {
+        "authority": {
+          "status": "READY",
+          "summary": "用户已明确授权本轮实施、精准Git提交及独立Worktree；禁止部署/推送/合流/清理",
+          "evidence": "docs/todos/11-reliable-delivery/evidence/planning/execution-authorization.json"
+        },
+        "execution": {
+          "status": "BLOCKED",
+          "summary": "等待本次00前置Linux runner验收和冻结，不再等待Windows主机",
+          "evidence": "docs/todos/11-reliable-delivery/evidence/planning/platform-migration-authorization.json"
+        },
+        "verification": {
+          "status": "BLOCKED",
+          "summary": "冻结runner实际退出125，未启动pytest且未创建runner收据；正式干净基线及本卡type门禁尚未执行",
+          "evidence": "docs/todos/11-reliable-delivery/evidence/startup/baseline-launch.observation.json"
+        },
+        "serial-order": {
+          "status": "BLOCKED",
+          "summary": "用户要求00先验收后恢复01—12串行",
+          "evidence": "docs/todos/11-reliable-delivery/evidence/planning/platform-migration-authorization.json"
+        }
+      },
+      "required_observations": [
+        "serial-order"
+      ]
+    },
+    "07": {
+      "phase": "implementation",
+      "candidate": "894dfd6d5d93d2ff99f6eddcaadbb88ee9ce44c3",
+      "inputs": [
+        "docs/todos/11-reliable-delivery/07-portable-test-support.md",
+        "docs/todos/11-reliable-delivery/README.md",
+        "docs/todos/11-reliable-delivery/evidence/planning/execution-authorization.json",
+        "docs/todos/11-reliable-delivery/evidence/startup/execution-observations.json"
+      ],
+      "capabilities": [
+        "implementation-authorized",
+        "serial-acceptance-required",
+        "linux-coordination-only",
+        "windows-job-runner-required",
+        "codeg-schema-exposed-runtime-unverified",
+        "independent-review-required"
+      ],
+      "dependencies": [],
+      "tool_entry": "/data/workspace/iteration-manager/build/frozen-tools/fdcc4cce8863/scripts/iter_sync.py",
+      "checkpoint": "仅启动协调；无产品RED、GREEN、实现或审查成果，不登记attempt",
+      "remaining_work": [
+        "提供同候选Windows正式执行环境并通过干净基线，核实原生读取/委派和独审能力",
+        "取得原维护测试基线及同环境Before量测",
+        "提取测试支持并保持隔离模式/参数/HTTP行为",
+        "白名单临时副本复验、After量测与兼容观察"
+      ],
+      "observations": {
+        "authority": {
+          "status": "READY",
+          "summary": "用户已明确授权本轮实施、精准Git提交及独立Worktree；禁止部署/推送/合流/清理",
+          "evidence": "docs/todos/11-reliable-delivery/evidence/planning/execution-authorization.json"
+        },
+        "execution": {
+          "status": "BLOCKED",
+          "summary": "等待本次00前置Linux runner验收和冻结，不再等待Windows主机",
+          "evidence": "docs/todos/11-reliable-delivery/evidence/planning/platform-migration-authorization.json"
+        },
+        "verification": {
+          "status": "BLOCKED",
+          "summary": "冻结runner实际退出125，未启动pytest且未创建runner收据；正式干净基线及本卡type门禁尚未执行",
+          "evidence": "docs/todos/11-reliable-delivery/evidence/startup/baseline-launch.observation.json"
+        },
+        "serial-order": {
+          "status": "BLOCKED",
+          "summary": "用户要求00先验收后恢复01—12串行",
+          "evidence": "docs/todos/11-reliable-delivery/evidence/planning/platform-migration-authorization.json"
+        }
+      },
+      "required_observations": [
+        "serial-order"
+      ]
+    },
+    "08": {
+      "phase": "implementation",
+      "candidate": "894dfd6d5d93d2ff99f6eddcaadbb88ee9ce44c3",
+      "inputs": [
+        "docs/todos/11-reliable-delivery/08-approved-chain-benchmark.md",
+        "docs/todos/11-reliable-delivery/README.md",
+        "docs/todos/11-reliable-delivery/evidence/planning/execution-authorization.json",
+        "docs/todos/11-reliable-delivery/evidence/startup/execution-observations.json"
+      ],
+      "capabilities": [
+        "implementation-authorized",
+        "serial-acceptance-required",
+        "linux-coordination-only",
+        "windows-job-runner-required",
+        "codeg-schema-exposed-runtime-unverified",
+        "independent-review-required"
+      ],
+      "dependencies": [
+        "docs/todos/11-reliable-delivery/01-delivery-mode-consistency.md"
+      ],
+      "tool_entry": "/data/workspace/iteration-manager/build/frozen-tools/fdcc4cce8863/scripts/iter_sync.py",
+      "checkpoint": "仅启动协调；无产品RED、GREEN、实现或审查成果，不登记attempt",
+      "remaining_work": [
+        "提供同候选Windows正式执行环境并通过干净基线，核实原生读取/委派和独审能力",
+        "构造Git/FS合法批准库存，先断言每卡审计PASS",
+        "分层量测10/100卡各3次并保留原始数据",
+        "按单次调用剖析给出优化或维持现状的决策和后续接口"
+      ],
+      "observations": {
+        "authority": {
+          "status": "READY",
+          "summary": "用户已明确授权本轮实施、精准Git提交及独立Worktree；禁止部署/推送/合流/清理",
+          "evidence": "docs/todos/11-reliable-delivery/evidence/planning/execution-authorization.json"
+        },
+        "execution": {
+          "status": "BLOCKED",
+          "summary": "等待本次00前置Linux runner验收和冻结，不再等待Windows主机",
+          "evidence": "docs/todos/11-reliable-delivery/evidence/planning/platform-migration-authorization.json"
+        },
+        "verification": {
+          "status": "BLOCKED",
+          "summary": "冻结runner实际退出125，未启动pytest且未创建runner收据；正式干净基线及本卡type门禁尚未执行",
+          "evidence": "docs/todos/11-reliable-delivery/evidence/startup/baseline-launch.observation.json"
+        },
+        "serial-order": {
+          "status": "BLOCKED",
+          "summary": "用户要求00先验收后恢复01—12串行",
+          "evidence": "docs/todos/11-reliable-delivery/evidence/planning/platform-migration-authorization.json"
+        }
+      },
+      "required_observations": [
+        "serial-order"
+      ]
+    },
+    "09": {
+      "phase": "implementation",
+      "candidate": "894dfd6d5d93d2ff99f6eddcaadbb88ee9ce44c3",
+      "inputs": [
+        "docs/todos/11-reliable-delivery/09-proportional-refactor-evidence.md",
+        "docs/todos/11-reliable-delivery/README.md",
+        "docs/todos/11-reliable-delivery/evidence/planning/execution-authorization.json",
+        "docs/todos/11-reliable-delivery/evidence/startup/execution-observations.json"
+      ],
+      "capabilities": [
+        "implementation-authorized",
+        "serial-acceptance-required",
+        "linux-coordination-only",
+        "windows-job-runner-required",
+        "codeg-schema-exposed-runtime-unverified",
+        "independent-review-required"
+      ],
+      "dependencies": [],
+      "tool_entry": "/data/workspace/iteration-manager/build/frozen-tools/fdcc4cce8863/scripts/iter_sync.py",
+      "checkpoint": "仅启动协调；无产品RED、GREEN、实现或审查成果，不登记attempt",
+      "remaining_work": [
+        "提供同候选Windows正式执行环境并通过干净基线，核实原生读取/委派和独审能力",
+        "用两种真实新卡规划样例确认当前成本与指标匹配问题",
+        "更新目标对应的证据规则和生成说明",
+        "实际生成及新会话消费两类样例，核对旧卡要求保持"
+      ],
+      "observations": {
+        "authority": {
+          "status": "READY",
+          "summary": "用户已明确授权本轮实施、精准Git提交及独立Worktree；禁止部署/推送/合流/清理",
+          "evidence": "docs/todos/11-reliable-delivery/evidence/planning/execution-authorization.json"
+        },
+        "execution": {
+          "status": "BLOCKED",
+          "summary": "等待本次00前置Linux runner验收和冻结，不再等待Windows主机",
+          "evidence": "docs/todos/11-reliable-delivery/evidence/planning/platform-migration-authorization.json"
+        },
+        "verification": {
+          "status": "BLOCKED",
+          "summary": "冻结runner实际退出125，未启动pytest且未创建runner收据；正式干净基线及本卡type门禁尚未执行",
+          "evidence": "docs/todos/11-reliable-delivery/evidence/startup/baseline-launch.observation.json"
+        },
+        "serial-order": {
+          "status": "BLOCKED",
+          "summary": "用户要求00先验收后恢复01—12串行",
+          "evidence": "docs/todos/11-reliable-delivery/evidence/planning/platform-migration-authorization.json"
+        }
+      },
+      "required_observations": [
+        "serial-order"
+      ]
+    },
+    "10": {
+      "phase": "implementation",
+      "candidate": "894dfd6d5d93d2ff99f6eddcaadbb88ee9ce44c3",
+      "inputs": [
+        "docs/todos/11-reliable-delivery/10-integration-fault-paths.md",
+        "docs/todos/11-reliable-delivery/README.md",
+        "docs/todos/11-reliable-delivery/evidence/planning/execution-authorization.json",
+        "docs/todos/11-reliable-delivery/evidence/startup/execution-observations.json"
+      ],
+      "capabilities": [
+        "implementation-authorized",
+        "serial-acceptance-required",
+        "linux-coordination-only",
+        "windows-job-runner-required",
+        "codeg-schema-exposed-runtime-unverified",
+        "independent-review-required"
+      ],
+      "dependencies": [
+        "docs/todos/11-reliable-delivery/01-delivery-mode-consistency.md",
+        "docs/todos/11-reliable-delivery/02-takeover-report-isolation.md",
+        "docs/todos/11-reliable-delivery/03-native-dispatch-guard.md",
+        "docs/todos/11-reliable-delivery/06-installation-provenance.md",
+        "docs/todos/11-reliable-delivery/07-portable-test-support.md"
+      ],
+      "tool_entry": "/data/workspace/iteration-manager/build/frozen-tools/fdcc4cce8863/scripts/iter_sync.py",
+      "checkpoint": "仅启动协调；无产品RED、GREEN、实现或审查成果，不登记attempt",
+      "remaining_work": [
+        "提供同候选Windows正式执行环境并通过干净基线，核实原生读取/委派和独审能力",
+        "复用成熟夹具定义最少跨模块断言",
+        "运行隔离集成负例并保持原始失败",
+        "交付集成结果与未覆盖边界，最高TESTING"
+      ],
+      "observations": {
+        "authority": {
+          "status": "READY",
+          "summary": "用户已明确授权本轮实施、精准Git提交及独立Worktree；禁止部署/推送/合流/清理",
+          "evidence": "docs/todos/11-reliable-delivery/evidence/planning/execution-authorization.json"
+        },
+        "execution": {
+          "status": "BLOCKED",
+          "summary": "等待本次00前置Linux runner验收和冻结，不再等待Windows主机",
+          "evidence": "docs/todos/11-reliable-delivery/evidence/planning/platform-migration-authorization.json"
+        },
+        "verification": {
+          "status": "BLOCKED",
+          "summary": "冻结runner实际退出125，未启动pytest且未创建runner收据；正式干净基线及本卡type门禁尚未执行",
+          "evidence": "docs/todos/11-reliable-delivery/evidence/startup/baseline-launch.observation.json"
+        },
+        "serial-order": {
+          "status": "BLOCKED",
+          "summary": "用户要求00先验收后恢复01—12串行",
+          "evidence": "docs/todos/11-reliable-delivery/evidence/planning/platform-migration-authorization.json"
+        }
+      },
+      "required_observations": [
+        "serial-order"
+      ]
+    },
+    "11": {
+      "phase": "implementation",
+      "candidate": "894dfd6d5d93d2ff99f6eddcaadbb88ee9ce44c3",
+      "inputs": [
+        "docs/todos/11-reliable-delivery/11-native-self-use-audit.md",
+        "docs/todos/11-reliable-delivery/README.md",
+        "docs/todos/11-reliable-delivery/evidence/planning/execution-authorization.json",
+        "docs/todos/11-reliable-delivery/evidence/startup/execution-observations.json"
+      ],
+      "capabilities": [
+        "implementation-authorized",
+        "serial-acceptance-required",
+        "linux-coordination-only",
+        "windows-job-runner-required",
+        "codeg-schema-exposed-runtime-unverified",
+        "independent-review-required"
+      ],
+      "dependencies": [
+        "docs/todos/11-reliable-delivery/03-native-dispatch-guard.md",
+        "docs/todos/11-reliable-delivery/10-integration-fault-paths.md"
+      ],
+      "tool_entry": "/data/workspace/iteration-manager/build/frozen-tools/fdcc4cce8863/scripts/iter_sync.py",
+      "checkpoint": "仅启动协调；无产品RED、GREEN、实现或审查成果，不登记attempt",
+      "remaining_work": [
+        "提供同候选Windows正式执行环境并通过干净基线，核实原生读取/委派和独审能力",
+        "从Controller来源指针中选择一条完成链和一次正常续接",
+        "运行隔离审计探针并人工核对原生来源",
+        "交付报告及明确缺口供本卡独审，不执行整轮收口"
+      ],
+      "observations": {
+        "authority": {
+          "status": "READY",
+          "summary": "用户已明确授权本轮实施、精准Git提交及独立Worktree；禁止部署/推送/合流/清理",
+          "evidence": "docs/todos/11-reliable-delivery/evidence/planning/execution-authorization.json"
+        },
+        "execution": {
+          "status": "BLOCKED",
+          "summary": "等待本次00前置Linux runner验收和冻结，不再等待Windows主机",
+          "evidence": "docs/todos/11-reliable-delivery/evidence/planning/platform-migration-authorization.json"
+        },
+        "verification": {
+          "status": "BLOCKED",
+          "summary": "冻结runner实际退出125，未启动pytest且未创建runner收据；正式干净基线及本卡type门禁尚未执行",
+          "evidence": "docs/todos/11-reliable-delivery/evidence/startup/baseline-launch.observation.json"
+        },
+        "serial-order": {
+          "status": "BLOCKED",
+          "summary": "用户要求00先验收后恢复01—12串行",
+          "evidence": "docs/todos/11-reliable-delivery/evidence/planning/platform-migration-authorization.json"
+        }
+      },
+      "required_observations": [
+        "serial-order"
+      ]
+    },
+    "12": {
+      "phase": "implementation",
+      "candidate": "894dfd6d5d93d2ff99f6eddcaadbb88ee9ce44c3",
+      "inputs": [
+        "docs/todos/11-reliable-delivery/12-workflow-sequence.md",
+        "docs/todos/11-reliable-delivery/README.md",
+        "docs/todos/11-reliable-delivery/evidence/planning/execution-authorization.json",
+        "docs/todos/11-reliable-delivery/evidence/startup/execution-observations.json"
+      ],
+      "capabilities": [
+        "implementation-authorized",
+        "serial-acceptance-required",
+        "linux-coordination-only",
+        "windows-job-runner-required",
+        "codeg-schema-exposed-runtime-unverified",
+        "independent-review-required"
+      ],
+      "dependencies": [
+        "docs/todos/11-reliable-delivery/03-native-dispatch-guard.md"
+      ],
+      "tool_entry": "/data/workspace/iteration-manager/build/frozen-tools/fdcc4cce8863/scripts/iter_sync.py",
+      "checkpoint": "仅启动协调；无产品RED、GREEN、实现或审查成果，不登记attempt",
+      "remaining_work": [
+        "提供同候选Windows正式执行环境并通过干净基线，核实原生读取/委派和独审能力",
+        "核对三种流程场景及权威来源",
+        "统一协议/流程图/模板对03守卫和收口的引用",
+        "运行流程消费检查并保存真实原生顺序观察"
+      ],
+      "observations": {
+        "authority": {
+          "status": "READY",
+          "summary": "用户已明确授权本轮实施、精准Git提交及独立Worktree；禁止部署/推送/合流/清理",
+          "evidence": "docs/todos/11-reliable-delivery/evidence/planning/execution-authorization.json"
+        },
+        "execution": {
+          "status": "BLOCKED",
+          "summary": "等待本次00前置Linux runner验收和冻结，不再等待Windows主机",
+          "evidence": "docs/todos/11-reliable-delivery/evidence/planning/platform-migration-authorization.json"
+        },
+        "verification": {
+          "status": "BLOCKED",
+          "summary": "冻结runner实际退出125，未启动pytest且未创建runner收据；正式干净基线及本卡type门禁尚未执行",
+          "evidence": "docs/todos/11-reliable-delivery/evidence/startup/baseline-launch.observation.json"
+        },
+        "serial-order": {
+          "status": "BLOCKED",
+          "summary": "用户要求00先验收后恢复01—12串行",
+          "evidence": "docs/todos/11-reliable-delivery/evidence/planning/platform-migration-authorization.json"
+        }
+      },
+      "required_observations": [
+        "serial-order"
+      ]
+    },
+    "00": {
+      "phase": "implementation",
+      "candidate": "fe6923c91484f03c2c66d78e7abdef70a5d5bf36",
+      "inputs": [
+        "docs/todos/11-reliable-delivery/00-linux-runner-and-dev-guide.md",
+        "scripts/iter_run.py",
+        "scripts/iter_linux_job.py",
+        "tests/test_linux_runner.py",
+        "docs/todos/11-reliable-delivery/evidence/00/review1-preliminary-report.json",
+        "build/iter11-fix-runner/fe6923c91484/scripts/iter_run.py"
+      ],
+      "capabilities": [
+        "native-same-codex-cli-implementer",
+        "fixed-C-linux-test-driver",
+        "deterministic-real-supervisor-fault-injection"
+      ],
+      "dependencies": [],
+      "tool_entry": "/data/workspace/iteration-manager/build/frozen-tools/fdcc4cce8863/scripts/iter_sync.py",
+      "checkpoint": "F1在真实监督进程启动门闩注入SIGTERM和caller EOF的断言RED，最小修复后GREEN/受影响回归",
+      "remaining_work": [
+        "固定新C",
+        "按真实UUID核验的新独审",
+        "登记D/strict/冻结及01基线"
+      ],
+      "required_observations": [
+        "fix-scope"
+      ],
+      "observations": {
+        "authority": {
+          "status": "READY",
+          "summary": "Linux适配及原卡范围内返修；当前修复预算1/5、累计1/10，未扩大授权",
+          "evidence": "docs/todos/11-reliable-delivery/evidence/planning/platform-migration-authorization.json"
+        },
+        "execution": {
+          "status": "READY",
+          "summary": "原生实现会话01a1dd24-bea9-7580-bfbd-5afac812648b已正常终态，本次按实际UUID续接同一实现者，不重做原Linux RED",
+          "evidence": "docs/todos/11-reliable-delivery/evidence/00/slice-a-terminal.json"
+        },
+        "verification": {
+          "status": "READY",
+          "summary": "从已实测C导出固定测试驱动用于00返修，保持已知F1记录；受测工作区单独变化，非默认获准runner，须新独审后才供01使用",
+          "evidence": "build/iter11-fix-runner/fe6923c91484/manifest.json"
+        },
+        "fix-scope": {
+          "status": "READY",
+          "summary": "补原卡已要求的启动取消/权限拒绝负例，不改验收、类型、范围或预算",
+          "evidence": "docs/todos/11-reliable-delivery/evidence/00/review1-preliminary-report.json"
+        }
+      }
+    }
+  }
+}

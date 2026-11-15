@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/11/audit_native_chain.py", line 154, in <module>
+    if __name__=='__main__': raise SystemExit(main())
+                                              ^^^^^^
+  File "/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/11/audit_native_chain.py", line 107, in main
+    for i,st in enumerate(stages): case(f'stage-{i+1}', native_layer,'bound owner/candidate/check/dispatch/session/terminal/events', [st['guard'],st['native'],st['terminal'],*st['attempts'],*st['releases'],*st['runner_receipts']],lambda st=st:stage_check(st))
+                                                                                                                                      ~~^^^^^^^^^
+KeyError: 'guard'

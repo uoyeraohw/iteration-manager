@@ -1,0 +1,68 @@
+{
+  "version": 1,
+  "tasks": {
+    "12": {
+      "phase": "evidence-inspection",
+      "candidate": "3de06e0e3715b9f65d7caaf3bdba872a33df0f8c",
+      "inputs": [
+        "docs/todos/11-reliable-delivery/12-workflow-sequence.md",
+        "docs/todos/11-reliable-delivery/README.md",
+        "AGENTS.md",
+        "references/task_card_schema.md",
+        "references/agent_protocol.md",
+        "references/execution_readiness.md",
+        "references/worktree_git_contract.md",
+        "templates/assistants/iteration_planner.md",
+        "templates/assistants/iteration_controller.md",
+        "templates/assistants/task_tech_lead.md",
+        "templates/sdd_implementer_prompt.md",
+        "templates/sdd_reviewer_prompt.md",
+        "tests/test_prompt_sources.py",
+        "docs/todos/11-reliable-delivery/evidence/12/consumer-brief-input.md",
+        "docs/todos/11-reliable-delivery/evidence/12/consumer-input-manifest.json"
+      ],
+      "capabilities": [
+        "native-codex-cli-implementer",
+        "approved-frozen-linux-runner",
+        "Python3.11.17-pytest9.2-mcp1.30",
+        "independent-native-reviewer"
+      ],
+      "dependencies": [
+        "docs/todos/11-reliable-delivery/03-native-dispatch-guard.md"
+      ],
+      "tool_entry": "/data/workspace/iteration-manager/build/frozen-tools/fdcc4cce8863/scripts/iter_sync.py",
+      "checkpoint": "新指令Codeg原生只读入口探针；worker执行能力仍未验证",
+      "remaining_work": [
+        "采集实际Codeg结果及边界",
+        "独立消费",
+        "C独审",
+        "D/strict"
+      ],
+      "required_observations": [
+        "serial-order"
+      ],
+      "observations": {
+        "authority": {
+          "status": "READY",
+          "summary": "用户实施/Git/Worktree/Linux授权；不部署推送合流清理",
+          "evidence": "docs/todos/11-reliable-delivery/evidence/planning/platform-migration-authorization.json"
+        },
+        "execution": {
+          "status": "READY",
+          "summary": "本次仅调用已实测Codeg原生委派API的只读消费探针；worker曾bwrap失败，必须保留其真实结果，不是业务执行就绪",
+          "evidence": "docs/todos/11-reliable-delivery/evidence/03/native-codeg-chain.json"
+        },
+        "verification": {
+          "status": "READY",
+          "summary": "冻结Linux runner与维护测试环境已实测",
+          "evidence": "build/iter11-review/task11-review2/local-strict.json"
+        },
+        "serial-order": {
+          "status": "READY",
+          "summary": "所有前卡实际audit有效且前卡冻结strict成功，仅启动本卡",
+          "evidence": "build/iter11-review/task11-review2/local-strict.json"
+        }
+      }
+    }
+  }
+}

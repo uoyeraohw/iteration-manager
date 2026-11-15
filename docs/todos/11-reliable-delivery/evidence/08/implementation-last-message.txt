@@ -1,0 +1,8 @@
+Task 08’s measurement candidate and handoff are ready. The full Git/filesystem 10/100-card matrix completed with all synthetic cards accepted before timing and three trials for each of the four operations. The frozen runner recorded exit 0 and a terminal process tree.
+
+The fixture tests passed **4/4**. The initial Git fixture failure and its correction are preserved in the evidence. The decision is to retain the current implementation; the results identify possible within-call repetition but do not establish a speedup or reliable tail latency.
+
+The [delivery record](/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/08/delivery.json), [measurements](/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/08/measurements.json), [ledger summary](/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/08/ledger-summary.md), [checks proposal](/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/08/checks-proposal.json), and [source manifest](/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/08/source-manifest.json) are available for review.
+
+The synthetic receipts do not represent human or business approval. Candidate C, independent review, registration D, and frozen local strict remain with the controller. No command is active.
+

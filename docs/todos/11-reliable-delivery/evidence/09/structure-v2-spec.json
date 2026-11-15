@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "iteration": "example-planning",
+  "type": "Refactor-Benchmark",
+  "delivery_mode": "git",
+  "consumes": "Existing public interfaces and behavior tests",
+  "scope": [
+    "src/example/",
+    "tests/"
+  ],
+  "stages": [
+    "Capture baseline and before",
+    "Refactor, regress and measure after",
+    "Freeze for independent review"
+  ],
+  "task_id": "01",
+  "task_name": "Generated TODO example: reduce dependency edges",
+  "objective": "Preserve public behavior while reducing directed imports between src/example modules; no performance target.",
+  "produces": "Stable public API and fewer directed module dependency edges",
+  "acceptance": [
+    "Behavior and exceptions match baseline; independent review required",
+    "Count distinct directed imports between src/example Python modules by the same AST script before and after; target at most 4 edges"
+  ],
+  "verification": {
+    "baseline": "Before changes run python -m pytest tests/test_example.py -q to capture current behavior",
+    "regression": "Run python -m pytest tests/test_example.py -q after changes; covers affected public interfaces and exceptions",
+    "compatibility": "Observe public signatures and response behavior against baseline",
+    "benchmark_before": "Run python tools/count_edges.py src/example before changes; record commit, Python environment, AST counting rules, scope, command and edge count",
+    "benchmark_after": "Run the same python tools/count_edges.py src/example after changes with same environment and rules; record commit, count, change and target assessment"
+  }
+}

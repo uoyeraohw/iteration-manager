@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "phase": "evidence-inspection",
+  "candidate": "6b6b5515e6e0ea58c1d66d1de514811782441fc5",
+  "inputs": [
+    "SKILL.md",
+    "docs/todos/11-reliable-delivery/evidence/04/navigation-scenario.md"
+  ],
+  "capabilities": [
+    "native-codex-cli",
+    "approved-frozen-coordinator"
+  ],
+  "checkpoint": "主控误在BLOCKED后派发；原件保留FAIL，后续改走守卫",
+  "remaining_work": [
+    "C独审/D/strict"
+  ],
+  "executor_id": "01a1dd7d-fabf-7a82-829f-7c6b33a9f640",
+  "terminal_evidence": "docs/todos/11-reliable-delivery/evidence/04/consumer-terminal.json",
+  "progress": [
+    {
+      "kind": "review-finding",
+      "summary": "主控误在BLOCKED后派发；原件保留FAIL，后续改走守卫",
+      "evidence": "docs/todos/11-reliable-delivery/evidence/04/navigation-consumption.json"
+    }
+  ],
+  "commands": [],
+  "started_at": null,
+  "ended_at": null
+}

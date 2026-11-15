@@ -6,7 +6,7 @@ from pathlib import Path
 from iter_autonomy import load_state
 from iter_filesystem import load_profile, validate_filesystem_binding
 from iter_contracts import (card_status, parse_card, scope_paths, contained,
-                            validate_receipt, validate_binding, section)
+                            validate_receipt, validate_binding, section, resolve_delivery_mode)
 
 
 def _run_git(args: list, cwd: Path) -> subprocess.CompletedProcess:
@@ -67,30 +67,27 @@ def audit_task_file(file_path: Path) -> dict:
 
         iter_dir = file_path.resolve().parent
         fs_root = load_profile(iter_dir)
+        try:
+            delivery_mode = resolve_delivery_mode(meta, fs_root is not None)
+        except ValueError as error:
+            errors.append(str(error))
+            delivery_mode = None
 
         if status == "FUSED":
             errors.append("BLOCKED: Task is FUSED")
             verdict = "BLOCKED"
         elif status == "UNKNOWN":
             errors.append("UNKNOWN: missing or invalid status")
+        elif delivery_mode is None:
+            verdict = "FAIL"
         elif status == "DONE":
-            is_fs_card = meta.get("delivery_mode") == "filesystem"
-            if fs_root is not None:
-                if not is_fs_card:
-                    errors.append("Filesystem profile present but task delivery_mode is not filesystem")
-            else:
-                if is_fs_card:
-                    errors.append("Task declared filesystem delivery_mode but iteration delivery profile is missing")
-
             if meta.get("schema_version") != "1" or not meta.get("review_receipt"):
                 errors += ["UNKNOWN: legacy or missing schema_version", "UNKNOWN: missing review_receipt; do not synthesize approval"]
             else:
-                if fs_root is not None:
+                if delivery_mode == "filesystem":
                     root = fs_root
-                    delivery_mode = "filesystem"
                 else:
                     root = Path(_checked_git(["rev-parse", "--show-toplevel"], file_path.parent).strip()).resolve()
-                    delivery_mode = "git"
 
                 task_path = file_path.resolve().relative_to(root).as_posix()
                 receipt_path = contained(root, meta["review_receipt"])
@@ -125,16 +122,30 @@ def _render_task_envelope(task_file: Path, repo_dir: Path, audit_task):
         audit = audit_task(task_file)
         status = card_status(content)
         micro = parse_task_stages_and_micro_state(content, status)
-        projection = task_handoff_projection(task_file, meta, state)
+        profile_error = None
+        try:
+            projection = task_handoff_projection(task_file, meta, state)
+        except (OSError, ValueError, TypeError) as error:
+            # Only add a handoff for profile failures; other projection errors
+            # retain the legacy outer exception response.
+            try:
+                load_profile(task_file.resolve().parent)
+            except (OSError, ValueError, TypeError):
+                profile_error = str(error)
+                projection = dict(delivery_mode="UNKNOWN", candidate_id=None, execution=None)
+            else:
+                raise
         changed = []
-        if meta.get("base_sha") and meta.get("head_sha"):
+        if not profile_error and meta.get("base_sha") and meta.get("head_sha"):
             try:
                 base = resolve_commit(meta["base_sha"], repo_dir)
                 head = resolve_commit(meta["head_sha"], repo_dir)
                 changed = [p for p in _checked_git(["diff", "--name-only", "-z", base, head, "--"], repo_dir).split("\0") if p]
             except (RuntimeError, ValueError) as error:
                 errors.append(str(error))
-        return {"TASK_HANDOFF": dict(
+        if profile_error and profile_error not in audit["violations"]:
+            errors.append(profile_error)
+        result = {"TASK_HANDOFF": dict(
             schema_version=1, task_id=meta.get("task_id", task_file.stem),
             **projection,
             task_name=meta.get("task_name", task_file.stem), type=meta.get("type", "UNKNOWN"),
@@ -142,9 +153,12 @@ def _render_task_envelope(task_file: Path, repo_dir: Path, audit_task):
             fix_rounds=state["round"], fix_total=state["total"], consilium_count=state["consilium"],
             replan_count=state["replan"], writer=state["writer"], blocked_reason=state["blocked_reason"],
             is_blocked=bool(state["blocked_reason"]) or status == 'FUSED', review_status=meta.get("review_status", "PENDING"),
-            acceptance_verdict=audit["verdict"], evidence={"receipt":meta.get("review_receipt", "")},
+            acceptance_verdict="FAIL" if profile_error else audit["verdict"], evidence={"receipt":meta.get("review_receipt", "")},
             errors=errors+audit["violations"], files_changed_count=len(changed), files_changed=changed,
             stage_current=micro["stage_current"], stage_progress=micro["stage_progress"])}
+        if profile_error:
+            result["error"] = profile_error
+        return result
     except (OSError, ValueError, TypeError) as error:
         return {"error": str(error)}
 
@@ -191,8 +205,10 @@ def task_handoff_projection(task_file: Path, meta: dict, state: dict) -> dict:
     """Fields shared by board and envelope, without cross-call state."""
     from iter_execution import execution_summary
     fs_root = load_profile(task_file.resolve().parent)
-    mode = 'filesystem' if fs_root is not None and meta.get('delivery_mode') == 'filesystem' else (
-        'UNKNOWN' if meta.get('delivery_mode') == 'filesystem' or fs_root is not None else 'git')
+    try:
+        mode = resolve_delivery_mode(meta, fs_root is not None)
+    except ValueError:
+        mode = 'UNKNOWN'
     return dict(delivery_mode=mode,
                 candidate_id=meta.get('candidate_id', '') if mode == 'filesystem' else '',
                 execution=execution_summary(state))

@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "task_id": "09",
+  "type": "Spike-Discovery",
+  "task_path": "docs/todos/11-reliable-delivery/09-proportional-refactor-evidence.md",
+  "base_sha": "531c3ea6e31d2eb2a098272bfcf6cb6fe57a11b7",
+  "head_sha": "6c169e6331ac79ec85a41a531ab634fe09a4334e",
+  "contract_sha": "531c3ea6e31d2eb2a098272bfcf6cb6fe57a11b7",
+  "implementer": "01a1ddb2-e240-7a00-8468-ccfe63671cb1",
+  "reviewer": "01a1ddb6-460a-7a90-83ef-f698214a24f4",
+  "verdict": "APPROVED",
+  "review_report": "docs/todos/11-reliable-delivery/evidence/09/review-report.json",
+  "checks": [
+    {
+      "name": "experiment",
+      "kind": "command",
+      "command": "/data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B /data/workspace/iteration-manager/build/frozen-runners/iter11-platform-v1/scripts/iter_run.py --deadline 2026-11-15T05:41:32.525396+00:00 --evidence docs/todos/11-reliable-delivery/evidence/09/experiment.json -- /data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B -m pytest -p no:cacheprovider tests/test_refactor_evidence_policy.py tests/test_template_generation.py tests/test_task_card_schema.py tests/test_completion_gates.py -q --basetemp /tmp/iter11-task09-experiment-20261115",
+      "cwd": ".",
+      "exit_code": 0,
+      "summary": "160 passed; frozen runner command completed with terminal tree. Generated specimens were separately rendered and prechecked; native consumer remains pending.",
+      "output": "docs/todos/11-reliable-delivery/evidence/09/experiment.json.output.txt"
+    },
+    {
+      "name": "decision",
+      "kind": "observation",
+      "summary": "Dated choices, alternatives, sources, limits, and outstanding independent consumer in ledger summary.",
+      "output": "docs/todos/11-reliable-delivery/evidence/09/ledger-summary.md"
+    },
+    {
+      "name": "interfaces",
+      "kind": "observation",
+      "summary": "Policy, contract and generator guidance use unchanged type checks; semantic native consumption remains pending.",
+      "output": "docs/todos/11-reliable-delivery/evidence/09/ledger-summary.md"
+    }
+  ]
+}

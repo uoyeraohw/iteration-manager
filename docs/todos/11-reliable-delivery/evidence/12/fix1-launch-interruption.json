@@ -1,0 +1,27 @@
+{
+  "recorded_at": "2026-11-15T06:45:55.670145+00:00",
+  "source": "/data/home/.codex/sessions/2026/11/14/rollout-2026-11-14T16-31-36-01a1dae6-6cf3-7743-85e3-c2f7b2376eab.jsonl",
+  "original_line": 4430,
+  "original_line_sha256": "31852f94288cf657c29da685f9aa3b80f9d4763aec80d0c374de5f3878f6fe17",
+  "native_event": "docs/todos/11-reliable-delivery/evidence/12/fix1-launch-interrupted-native-event.jsonl",
+  "launcher_id": "exec-21b2120e-20ac-4eed-955c-913e6f9e6139",
+  "launcher_status": "failed",
+  "launcher_exit_code": 143,
+  "started_at_ms": 1794724510161,
+  "completed_at_ms": 1794724511745,
+  "reason": "Parent turn interrupted during status-question steering; this was not the execution deadline. Native command event proves launcher exit143; no child thread.started event or deliverable was produced.",
+  "child_executor_id": null,
+  "child_executor_state": "UNKNOWN; no native first event, do not invent a child result",
+  "observed_files": {
+    "docs/todos/11-reliable-delivery/evidence/12/fix1-native.jsonl": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "docs/todos/11-reliable-delivery/evidence/12/fix1-native.stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "current_observation": "Exact worktree/brief-related codex exec processes absent in current read-only process snapshots; this is not a fabricated historical child exit or process-tree receipt.",
+  "recovery": "Normal failed-launch bookkeeping and same fix-round retry, with fresh check and deadline; no timeout grant or budget reset."
+}

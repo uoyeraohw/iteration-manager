@@ -1,0 +1,7 @@
+F2 证据对账已完成，待独立复审：原生摘录中的 10 条读命令均有 `completed`、退出码 0 的事件；首次 bwrap 失败单列为未启动。原决策和终态文件保持不变。原生命令退出记录不证明其进程树终态。
+
+对账检查经冻结 runner 完成，退出 0，进程树已终止：[收据](/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/12/fix1-reconciliation-command.json)。原 `experiment-04` 的 10 项通过证据已沿用，未重跑套件。
+
+交接材料：[命令清单](/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/12/fix1-native-command-inventory.json)、[对账终态](/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/12/fix1-reconciled-terminal.json)、[处置草案](/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/12/fix1-recovery-disposition-draft.json)、[交付清单](/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/12/fix1-delivery.json)。
+
+**F1 仍为 BLOCKED**：待主控取得明确授权或合规处置，并完成受影响候选和消费证据的重新评估。尚未批准任务；当前无活动命令。

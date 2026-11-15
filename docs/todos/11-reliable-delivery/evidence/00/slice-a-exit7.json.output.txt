@@ -1,0 +1,1 @@
+task00 linux raw stdout

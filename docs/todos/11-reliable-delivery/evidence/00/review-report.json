@@ -1,0 +1,284 @@
+{
+  "kind": "independent-review-record",
+  "candidate": "3f949f807d3c2eb47b97a116bd6932da55778edd",
+  "base_sha": "894dfd6d5d93d2ff99f6eddcaadbb88ee9ce44c3",
+  "recorded_at": "2026-11-15T03:33:36.936706+00:00",
+  "independent_review": {
+    "candidate": "3f949f807d3c2eb47b97a116bd6932da55778edd",
+    "base_contract": "894dfd6d5d93d2ff99f6eddcaadbb88ee9ce44c3",
+    "branch": "feat/iter-11-reliable-delivery",
+    "reviewer": {
+      "native_thread_uuid": "01a1dd40-1011-7731-9c22-26d83fb705e7",
+      "identity_evidence": "CODEX_THREAD_ID and CODEX_SESSION_ID in this native process; build/iter11-review/review2/native.jsonl",
+      "declaration": "Fresh independent reviewer; did not participate in task design, implementation, test authorship, or RCA. Personally reviewed sources, contracts, raw evidence and ran the specified independent verification; no delegation. Distinct from implementer 01a1dd24-bea9-7580-bfbd-5afac812648b and previous reviewer 01a1dd31-fa0a-7433-b85e-adb42828e701."
+    },
+    "verdict": {
+      "spec": "APPROVED",
+      "quality": "APPROVED",
+      "overall": "APPROVED",
+      "scope": "task00 C2 Linux migration and dual-environment guidance only"
+    },
+    "f1": {
+      "verdict": "ADDRESSED",
+      "observations": "SIGTERM/SIGINT are blocked before pipe observation; handled and pending cancellations are checked before Popen and the mask stays blocked through Popen, with prior mask restored in child. EOF is ordered at its separate nonblocking observation; events after their observation/launch decision lead to cleanup, not an asserted simultaneous snapshot. No defect found in the specified ordering. Actual C1 RED has two assertion failures; C2 tests exercise handled and pending signals, EOF on both sides, post-decision signal and child mask.",
+      "source": [
+        "scripts/iter_linux_job.py:83-112",
+        "scripts/iter_linux_job.py:113-146",
+        "tests/test_linux_runner.py:218-385",
+        "references/checkpoint_execution.md:57"
+      ],
+      "raw": [
+        "docs/todos/11-reliable-delivery/evidence/00/fix1-red.json.output.txt",
+        "build/iter11-review/review2/independent-runner.json.output.txt"
+      ]
+    },
+    "acceptance_groups": [
+      {
+        "group": "capability and launch rejection",
+        "observation": "Dedicated supervisor verifies subreaper, proc children access and pidfd signal operation before READY; setup, missing pidfd and unsupported platform cases reject launch. Failed or missing supervisor proof is unknown.",
+        "source": [
+          "scripts/iter_linux_job.py:67-86",
+          "scripts/iter_run.py:48-50",
+          "tests/test_linux_runner.py:85-89",
+          "tests/test_linux_runner.py:129-156",
+          "tests/test_linux_runner.py:194-200"
+        ]
+      },
+      {
+        "group": "public argv, cwd, stdout and exit codes",
+        "observation": "Public CLI exit 7 and raw output recorded; direct argv/cwd and version 1 receipt inspected. Business 124/125 remain COMPLETED with their raw exit codes, distinct from runner timeout/error.",
+        "source": [
+          "scripts/iter_run.py:48-65",
+          "scripts/iter_run.py:233-243",
+          "tests/test_linux_runner.py:8-19",
+          "tests/test_linux_runner.py:38-44"
+        ],
+        "raw": [
+          "docs/todos/11-reliable-delivery/evidence/00/slice-a-exit7.json",
+          "docs/todos/11-reliable-delivery/evidence/00/slice-a-exit7.json.output.txt"
+        ]
+      },
+      {
+        "group": "expired and reserve no-start",
+        "observation": "Expired and less-than-five-second reserve paths return 124 without starting target; final supervisor check applies the same launch-before boundary.",
+        "source": [
+          "scripts/iter_run.py:77-85",
+          "scripts/iter_linux_job.py:88-105",
+          "tests/test_iter_run.py:28-35",
+          "tests/test_linux_runner.py:47-51"
+        ]
+      },
+      {
+        "group": "receipt and sidecar exclusivity and containment",
+        "observation": "Resolved receipt must remain in root; exclusive receipt and output reservations and exclusive child creation prevent overwrite. Tests cover path rejection, receipt/output/child collisions and no launch.",
+        "source": [
+          "scripts/iter_run.py:54-76",
+          "scripts/iter_linux_job.py:63",
+          "tests/test_iter_run.py:37-42",
+          "tests/test_iter_run.py:104-108",
+          "tests/test_linux_runner.py:54-60",
+          "tests/test_linux_runner.py:185-191"
+        ]
+      },
+      {
+        "group": "tree termination and isolation",
+        "observation": "Each command owns a supervisor; it becomes subreaper, uses pidfds on unreaped direct children, repeats adoption and wait until ECHILD, and returns unknown if proof fails. Targeted tests cover timeout, nested setsid/orphan descendants, delayed effects, unrelated and concurrent processes, handled SIGTERM and supervisor SIGKILL.",
+        "source": [
+          "scripts/iter_linux_job.py:21-47",
+          "scripts/iter_linux_job.py:67-81",
+          "scripts/iter_linux_job.py:113-146",
+          "scripts/iter_run.py:173-263",
+          "tests/test_linux_runner.py:63-83",
+          "tests/test_linux_runner.py:92-127",
+          "tests/test_linux_runner.py:157-183",
+          "tests/test_linux_runner.py:202-215"
+        ]
+      },
+      {
+        "group": "Windows preservation and platform reporting",
+        "observation": "BASE..C2 leaves iter_win_job.py and existing Windows Job path intact; two Windows-specific tests are skipped on Linux. No current Windows execution claimed.",
+        "source": [
+          "scripts/iter_run.py:86-170",
+          "tests/test_iter_run.py",
+          "AGENTS.md:71-72",
+          "AGENTS.md:227"
+        ],
+        "raw": [
+          "build/iter11-review/review2/independent-runner.json.output.txt"
+        ]
+      },
+      {
+        "group": "public compatibility and version1 consumers",
+        "observation": "run_check signature and CLI retained; version 1 receipt, raw exit and tree_terminal consumed by execution aggregation; regression receipt covers checkpoint, readiness, autonomy and schema tests. Coordination CLI remains fdcc4cc per iteration goal and authorization; this candidate runner does not approve itself.",
+        "source": [
+          "scripts/iter_run.py:48",
+          "scripts/iter_run.py:62-65",
+          "scripts/iter_run.py:266-281",
+          "scripts/iter_execution.py:71-89",
+          "docs/todos/11-reliable-delivery/README.md"
+        ],
+        "raw": [
+          "docs/todos/11-reliable-delivery/evidence/00/fix1-regression-final.json"
+        ]
+      },
+      {
+        "group": "AGENTS dual-environment guide",
+        "observation": "Identifies Linux source and observed installation links and historical Windows source/copies, shell/interpreter/venv and dependencies, evidence and temporary paths, Moli, mechanisms and deployment boundaries. It directs deadline and exit propagation to checkpoint_execution, which contains Bash $? and PowerShell LASTEXITCODE examples. Historical Windows evidence is separated from current Linux.",
+        "source": [
+          "AGENTS.md:67-117",
+          "AGENTS.md:132-159",
+          "AGENTS.md:204-227",
+          "references/checkpoint_execution.md:37-63"
+        ]
+      }
+    ],
+    "verification": {
+      "requested_invocations": 1,
+      "receipt": "build/iter11-review/review2/independent-runner.json",
+      "child": "build/iter11-review/review2/independent-runner.json.child.json",
+      "output": "build/iter11-review/review2/independent-runner.json.output.txt",
+      "result": "30 passed, 2 skipped in 23.75s",
+      "status": "COMPLETED",
+      "raw_exit_code": 0,
+      "tree_terminal": true,
+      "launcher_exit_code": 0,
+      "active_test_command_on_return": false
+    },
+    "reused_evidence": {
+      "regression": "docs/todos/11-reliable-delivery/evidence/00/fix1-regression-final.json",
+      "output": "docs/todos/11-reliable-delivery/evidence/00/fix1-regression-final.json.output.txt",
+      "result": "147 passed, 2 skipped, COMPLETED, raw exit 0, tree_terminal true",
+      "applicability": "All 13 source manifest paths matched C2 SHA256 and sizes. Fixed C1 repair driver manifest hash and all 17 driver files matched; it is a test driver, not approval or the C2 supervisor. C1..C2 actual changes and manifest inspected; independent target test used C2 runner. No unrelated/full suite rerun.",
+      "manifest": "docs/todos/11-reliable-delivery/evidence/00/fix1-source-manifest.json",
+      "driver_manifest": "build/iter11-fix-runner/fe6923c91484/manifest.json",
+      "red": "docs/todos/11-reliable-delivery/evidence/00/slice-a-red-bootstrap.json.output.txt is a real old CLI 125 vs expected 7 bootstrap observation, not a fabricated v1 receipt; fix1-red.json.output.txt records two real assertion failures."
+    },
+    "findings": [],
+    "limitations": [
+      "Windows Job tests were skipped on this Linux host; no current Windows rerun or unsupported platform/container escape claim.",
+      "Task00 approval is not iteration completion, D registration, frozen-runner export, local strict, full baseline, deployment, fresh-session adoption, or external business acceptance.",
+      "The common protocol Windows-only sentence remains assigned to task12 and is superseded for this authorized migration by platform-migration-authorization.json and checkpoint_execution.md.",
+      "Native implementer session start/end timestamps were not provided and remain null; terminal observation and turn.completed exist.",
+      "Prior preliminary F1 report is a finding, not an approval."
+    ],
+    "deferred_issues": [
+      "Task12 common protocol synchronization; post-approval D/local strict and runner freeze; full maintenance baseline before task01, per iteration goal."
+    ],
+    "worktree": "Branch and C2 checked before and after review; tracked worktree clean. Writes restricted to review2."
+  },
+  "scope_check": {
+    "argv": [
+      "python3",
+      "-B",
+      "/data/workspace/iteration-manager/build/frozen-tools/fdcc4cce8863/scripts/iter_sync.py",
+      "--check-scope",
+      "894dfd6d5d93d2ff99f6eddcaadbb88ee9ce44c3",
+      "3f949f807d3c2eb47b97a116bd6932da55778edd",
+      "docs/todos/11-reliable-delivery/00-linux-runner-and-dev-guide.md"
+    ],
+    "exit_code": 0,
+    "stdout": "[IterSync:ScopeFirewall:PASSED] All 102 changed files within declared scope; ownership is not inferred.\n",
+    "stderr": "",
+    "observed_at": "2026-11-15T03:32:39.466950+00:00"
+  },
+  "originals": {
+    "report.json": {
+      "path": "build/iter11-review/review2/report.json",
+      "sha256": "7b6242696495705d650146824ff26704b87f6224f9532ccb5f11d6fd2980289b"
+    },
+    "native.jsonl": {
+      "path": "build/iter11-review/review2/native.jsonl",
+      "sha256": "07e6536f9cb9c14cd7f92239cad57109661120d80aad77ad675ac19a4512955b"
+    },
+    "terminal.json": {
+      "path": "build/iter11-review/review2/terminal.json",
+      "sha256": "48638dac25d00e85d9c7cf1b3081ccb6a8e043b226d710fac021ec6bcf0837b5"
+    },
+    "brief.md": {
+      "path": "build/iter11-review/review2/brief.md",
+      "sha256": "9c79a570086956b7821d3f320b6b59f78aadae1ad1da884f8c879a0319ec4bef"
+    },
+    "context.json": {
+      "path": "build/iter11-review/review2/context.json",
+      "sha256": "9e07a78b3ebfdf5c100a98003c449099ab1e6a05e24cec53c56bdf7fe7f9e840"
+    },
+    "dispatch-check.json": {
+      "path": "build/iter11-review/review2/dispatch-check.json",
+      "sha256": "9e7788444b835ff403842ecda7f493113fb2867c30958a6f30e50eed377d9e8e"
+    },
+    "independent-runner.json": {
+      "path": "build/iter11-review/review2/independent-runner.json",
+      "sha256": "88750752acc8f5bf0609e93d7a71e153dd5421b11dab3a605e14041ae6502d4b"
+    },
+    "independent-runner.json.output.txt": {
+      "path": "build/iter11-review/review2/independent-runner.json.output.txt",
+      "sha256": "efd55cea54f2eaeb664ba97b2b7390b637feb472606f3fd04e6fb1665fab99f5"
+    }
+  },
+  "independent_command_receipt": {
+    "version": 1,
+    "argv": [
+      "/data/workspace/iteration-manager/build/iter11-venv/bin/python",
+      "-B",
+      "-m",
+      "pytest",
+      "-p",
+      "no:cacheprovider",
+      "tests/test_iter_run.py",
+      "tests/test_linux_runner.py",
+      "-q",
+      "--basetemp",
+      "build/iter11-review/review2/pytest"
+    ],
+    "cwd": "/data/workspace/iteration-manager/.worktrees/iter-11",
+    "deadline": "2026-11-15T03:33:43.353000+00:00",
+    "cleanup_reserve_seconds": 5,
+    "status": "COMPLETED",
+    "deadline_checked_at": "2026-11-15T03:28:53.368280+00:00",
+    "started_at": "2026-11-15T03:28:53.370422+00:00",
+    "ended_at": "2026-11-15T03:29:17.467407+00:00",
+    "raw_exit_code": 0,
+    "tree_terminal": true,
+    "output": "build/iter11-review/review2/independent-runner.json.output.txt",
+    "container_pid": 3434806,
+    "launcher_exit_code": 0,
+    "command": {
+      "status": "COMPLETED",
+      "raw_exit_code": 0,
+      "started_at": "2026-11-15T03:28:53.370422+00:00",
+      "tree_terminal": true,
+      "deadline_checked_at": "2026-11-15T03:28:53.368280+00:00",
+      "pid": 3434807,
+      "ended_at": "2026-11-15T03:29:17.451090+00:00"
+    },
+    "late_by_seconds": 0
+  },
+  "independent_output": "......ss........................                                         [100%]\n30 passed, 2 skipped in 23.75s\n",
+  "runner_snapshot": {
+    "kind": "approved-platform-runner-snapshot",
+    "source_commit": "3f949f807d3c2eb47b97a116bd6932da55778edd",
+    "coordinator_commit": "fdcc4cce88635ee81573be5991de11de650659d8",
+    "approved_by": "01a1dd40-1011-7731-9c22-26d83fb705e7",
+    "review_report": "build/iter11-review/review2/report.json",
+    "exported_at": "2026-11-15T03:32:39.474928+00:00",
+    "files": [
+      {
+        "path": "scripts/iter_run.py",
+        "bytes": 13151,
+        "sha256": "b8b22217ad1d8d1f02a9a4d3cb053f84f781888c4871e583f0a7ff27f3fe3ef1"
+      },
+      {
+        "path": "scripts/iter_linux_job.py",
+        "bytes": 7005,
+        "sha256": "68c76c0a9e23209c6e68d0242a0741e5c1bbe6c0019809c65a13034104fa987b"
+      },
+      {
+        "path": "scripts/iter_win_job.py",
+        "bytes": 3245,
+        "sha256": "93de97a15f75be1496c4f4e6a727a75e2ca2d89298245eef942bedb9c245c43d"
+      }
+    ],
+    "activation": "Use after task00 registration strict passes; no installation deployment or coordination CLI upgrade"
+  },
+  "limitations": "build originals retained under no-cleanup authorization; this is registration of independent verdict, not controller self-approval. Invalid attempt kind was rejected without card change; original invalid input/call preserved in build, valid review-finding resubmitted."
+}

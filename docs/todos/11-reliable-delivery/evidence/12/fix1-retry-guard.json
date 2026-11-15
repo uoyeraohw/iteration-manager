@@ -1,0 +1,146 @@
+{
+  "request": {
+    "request_id": "fix1-retry-1794725278457",
+    "project_root": "/data/workspace/iteration-manager/.worktrees/iter-11",
+    "tool_entry": "/data/workspace/iteration-manager/build/frozen-tools/fdcc4cce8863/scripts/iter_sync.py",
+    "task_path": "/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/12-workflow-sequence.md",
+    "task_id": "12",
+    "owner": "iter11-controller-linux-20261115",
+    "phase": "implementation",
+    "candidate": "305f1d49d499ae3a5112358d57c2fefa48349261",
+    "context": "docs/todos/11-reliable-delivery/evidence/12/fix1-retry-context.json"
+  },
+  "events": [
+    {
+      "kind": "check-start",
+      "at": 1794725278459
+    },
+    {
+      "kind": "check-terminal-consumed",
+      "at": 1794725278700,
+      "exit_code": 0,
+      "readiness": "READY"
+    },
+    {
+      "kind": "dispatch-call",
+      "at": 1794725278700
+    }
+  ],
+  "native_check": {
+    "kind": "controller-command-observation",
+    "argv": [
+      "python3",
+      "-B",
+      "/data/workspace/iteration-manager/build/frozen-tools/fdcc4cce8863/scripts/iter_sync.py",
+      "--dispatch-check",
+      "/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/12-workflow-sequence.md",
+      "--context",
+      "docs/todos/11-reliable-delivery/evidence/12/fix1-retry-context.json",
+      "--phase",
+      "implementation",
+      "--owner",
+      "iter11-controller-linux-20261115"
+    ],
+    "started_at": "2026-11-15T06:47:58.499731+00:00",
+    "ended_at": "2026-11-15T06:47:58.647162+00:00",
+    "exit_code": 0,
+    "stdout": "{\n  \"read_only\": true,\n  \"readiness\": \"READY\",\n  \"task_path\": \"/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/12-workflow-sequence.md\",\n  \"phase\": \"implementation\",\n  \"acceptance_verdict\": \"UNKNOWN\",\n  \"findings\": [],\n  \"observations\": {\n    \"authority\": {\n      \"status\": \"READY\",\n      \"summary\": \"用户实施/Git/Worktree/Linux授权；不部署推送合流清理\",\n      \"evidence\": \"docs/todos/11-reliable-delivery/evidence/planning/platform-migration-authorization.json\"\n    },\n    \"execution\": {\n      \"status\": \"READY\",\n      \"summary\": \"原生Codex受控调用已实测；本卡单写者与独立审查可用\",\n      \"evidence\": \"build/iter11-review/task11-review2/local-strict.json\"\n    },\n    \"serial-order\": {\n      \"status\": \"READY\",\n      \"summary\": \"所有前卡实际audit有效且前卡冻结strict成功，仅启动本卡\",\n      \"evidence\": \"build/iter11-review/task11-review2/local-strict.json\"\n    },\n    \"verification\": {\n      \"status\": \"READY\",\n      \"summary\": \"冻结Linux runner与维护测试环境已实测\",\n      \"evidence\": \"build/iter11-review/task11-review2/local-strict.json\"\n    }\n  },\n  \"task_id\": \"12\",\n  \"delivery_mode\": \"git\",\n  \"candidate\": \"305f1d49d499ae3a5112358d57c2fefa48349261\",\n  \"execution\": {\n    \"attempt_count\": 6,\n    \"no_progress_streak\": 1,\n    \"last_attempt\": {\n      \"source\": \"docs/todos/11-reliable-delivery/evidence/12/fix1-launch-interruption-attempt.json\",\n      \"phase\": \"implementation\",\n      \"delivery_mode\": \"git\",\n      \"candidate\": \"305f1d49d499ae3a5112358d57c2fefa48349261\",\n      \"conditions\": {\n        \"inputs\": [\n          \"AGENTS.md\",\n          \"docs/todos/11-reliable-delivery/12-workflow-sequence.md\",\n          \"docs/todos/11-reliable-delivery/README.md\",\n          \"docs/todos/11-reliable-delivery/evidence/12/codeg-probe-v2-native-excerpt.jsonl\",\n          \"docs/todos/11-reliable-delivery/evidence/12/review-round1-input.json\",\n          \"references/agent_protocol.md\",\n          \"references/execution_readiness.md\",\n          \"references/task_card_schema.md\",\n          \"references/worktree_git_contract.md\",\n          \"templates/assistants/iteration_controller.md\",\n          \"templates/assistants/iteration_planner.md\",\n          \"templates/assistants/task_tech_lead.md\",\n          \"templates/sdd_implementer_prompt.md\",\n          \"templates/sdd_reviewer_prompt.md\",\n          \"tests/test_prompt_sources.py\"\n        ],\n        \"capabilities\": [\n          \"Python3.11.17-pytest9.2-mcp1.30\",\n          \"approved-frozen-linux-runner\",\n          \"independent-native-reviewer\",\n          \"native-codex-cli-implementer\",\n          \"native-event-command-terminal-metadata-available\"\n        ],\n        \"scope\": [\n          \".agents/notes/planned/iter11/12-workflow-sequence.md\",\n          \"docs/todos/11-reliable-delivery/evidence/12/\",\n          \"references/agent_protocol.md\",\n          \"references/execution_readiness.md\",\n          \"references/worktree_git_contract.md\",\n          \"templates/assistants/iteration_controller.md\",\n          \"templates/assistants/iteration_planner.md\",\n          \"templates/assistants/task_tech_lead.md\",\n          \"templates/sdd_implementer_prompt.md\",\n          \"templates/sdd_reviewer_prompt.md\",\n          \"tests/test_prompt_sources.py\",\n          \"tests/test_workflow_sequence.py\"\n        ]\n      },\n      \"executor_id\": \"exec-21b2120e-20ac-4eed-955c-913e6f9e6139\",\n      \"executor_state\": \"failed\",\n      \"terminal_evidence\": \"docs/todos/11-reliable-delivery/evidence/12/fix1-launch-interruption.json\",\n      \"progress\": [],\n      \"checkpoint\": \"Fix1 launcher interrupted with native exit143 before child evidence; no evidence reconciliation delivered\",\n      \"remaining_work\": [\n        \"D/local strict\",\n        \"Explicit F1 recovery disposition\",\n        \"Finish F2 reconciliation in same fix round\",\n        \"Independent re-review\"\n      ],\n      \"commands\": [],\n      \"started_at\": null,\n      \"ended_at\": null,\n      \"session_seconds\": null,\n      \"command_seconds\": null\n    },\n    \"checkpoint\": {\n      \"candidate\": \"305f1d49d499ae3a5112358d57c2fefa48349261\",\n      \"phase\": \"evidence-inspection\",\n      \"summary\": \"Independent review BLOCKED: F1 recovery authority, F2 incomplete native command inventory\",\n      \"progress\": [\n        {\n          \"kind\": \"review-finding\",\n          \"evidence\": \"docs/todos/11-reliable-delivery/evidence/12/review-round1-input.json\",\n          \"summary\": \"F1 missing explicit checkpoint-resume authority; F2 ten completed native source-read commands omitted from terminal inventory\"\n        }\n      ],\n      \"source\": \"docs/todos/11-reliable-delivery/evidence/12/review-round1-attempt.json\"\n    },\n    \"remaining_work\": [\n      \"D/local strict\",\n      \"Explicit F1 recovery disposition\",\n      \"Finish F2 reconciliation in same fix round\",\n      \"Independent re-review\"\n    ]\n  },\n  \"conditions\": {\n    \"inputs\": [\n      \"AGENTS.md\",\n      \"docs/todos/11-reliable-delivery/12-workflow-sequence.md\",\n      \"docs/todos/11-reliable-delivery/README.md\",\n      \"docs/todos/11-reliable-delivery/evidence/12/codeg-probe-v2-native-excerpt.jsonl\",\n      \"docs/todos/11-reliable-delivery/evidence/12/fix1-launch-interruption.json\",\n      \"docs/todos/11-reliable-delivery/evidence/12/review-round1-input.json\",\n      \"references/agent_protocol.md\",\n      \"references/execution_readiness.md\",\n      \"references/task_card_schema.md\",\n      \"references/worktree_git_contract.md\",\n      \"templates/assistants/iteration_controller.md\",\n      \"templates/assistants/iteration_planner.md\",\n      \"templates/assistants/task_tech_lead.md\",\n      \"templates/sdd_implementer_prompt.md\",\n      \"templates/sdd_reviewer_prompt.md\",\n      \"tests/test_prompt_sources.py\"\n    ],\n    \"capabilities\": [\n      \"Python3.11.17-pytest9.2-mcp1.30\",\n      \"approved-frozen-linux-runner\",\n      \"independent-native-reviewer\",\n      \"native-codex-cli-implementer\",\n      \"native-event-command-terminal-metadata-available\"\n    ],\n    \"scope\": [\n      \".agents/notes/planned/iter11/12-workflow-sequence.md\",\n      \"docs/todos/11-reliable-delivery/evidence/12/\",\n      \"references/agent_protocol.md\",\n      \"references/execution_readiness.md\",\n      \"references/worktree_git_contract.md\",\n      \"templates/assistants/iteration_controller.md\",\n      \"templates/assistants/iteration_planner.md\",\n      \"templates/assistants/task_tech_lead.md\",\n      \"templates/sdd_implementer_prompt.md\",\n      \"templates/sdd_reviewer_prompt.md\",\n      \"tests/test_prompt_sources.py\",\n      \"tests/test_workflow_sequence.py\"\n    ]\n  },\n  \"checkpoint\": \"Complete F2 reconciliation after parent-turn launch interruption, same fix1; F1 remains pending\",\n  \"remaining_work\": [\n    \"D/local strict\",\n    \"Explicit F1 recovery disposition\",\n    \"Finish F2 reconciliation in same fix round\",\n    \"Independent re-review\"\n  ]\n}\n",
+    "stderr": ""
+  },
+  "result": {
+    "dispatched": true,
+    "reason": "dispatched",
+    "check": {
+      "kind": "controller-command-observation",
+      "argv": [
+        "python3",
+        "-B",
+        "/data/workspace/iteration-manager/build/frozen-tools/fdcc4cce8863/scripts/iter_sync.py",
+        "--dispatch-check",
+        "/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/12-workflow-sequence.md",
+        "--context",
+        "docs/todos/11-reliable-delivery/evidence/12/fix1-retry-context.json",
+        "--phase",
+        "implementation",
+        "--owner",
+        "iter11-controller-linux-20261115"
+      ],
+      "started_at": "2026-11-15T06:47:58.499731+00:00",
+      "ended_at": "2026-11-15T06:47:58.647162+00:00",
+      "exit_code": 0,
+      "stdout": "{\n  \"read_only\": true,\n  \"readiness\": \"READY\",\n  \"task_path\": \"/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/12-workflow-sequence.md\",\n  \"phase\": \"implementation\",\n  \"acceptance_verdict\": \"UNKNOWN\",\n  \"findings\": [],\n  \"observations\": {\n    \"authority\": {\n      \"status\": \"READY\",\n      \"summary\": \"用户实施/Git/Worktree/Linux授权；不部署推送合流清理\",\n      \"evidence\": \"docs/todos/11-reliable-delivery/evidence/planning/platform-migration-authorization.json\"\n    },\n    \"execution\": {\n      \"status\": \"READY\",\n      \"summary\": \"原生Codex受控调用已实测；本卡单写者与独立审查可用\",\n      \"evidence\": \"build/iter11-review/task11-review2/local-strict.json\"\n    },\n    \"serial-order\": {\n      \"status\": \"READY\",\n      \"summary\": \"所有前卡实际audit有效且前卡冻结strict成功，仅启动本卡\",\n      \"evidence\": \"build/iter11-review/task11-review2/local-strict.json\"\n    },\n    \"verification\": {\n      \"status\": \"READY\",\n      \"summary\": \"冻结Linux runner与维护测试环境已实测\",\n      \"evidence\": \"build/iter11-review/task11-review2/local-strict.json\"\n    }\n  },\n  \"task_id\": \"12\",\n  \"delivery_mode\": \"git\",\n  \"candidate\": \"305f1d49d499ae3a5112358d57c2fefa48349261\",\n  \"execution\": {\n    \"attempt_count\": 6,\n    \"no_progress_streak\": 1,\n    \"last_attempt\": {\n      \"source\": \"docs/todos/11-reliable-delivery/evidence/12/fix1-launch-interruption-attempt.json\",\n      \"phase\": \"implementation\",\n      \"delivery_mode\": \"git\",\n      \"candidate\": \"305f1d49d499ae3a5112358d57c2fefa48349261\",\n      \"conditions\": {\n        \"inputs\": [\n          \"AGENTS.md\",\n          \"docs/todos/11-reliable-delivery/12-workflow-sequence.md\",\n          \"docs/todos/11-reliable-delivery/README.md\",\n          \"docs/todos/11-reliable-delivery/evidence/12/codeg-probe-v2-native-excerpt.jsonl\",\n          \"docs/todos/11-reliable-delivery/evidence/12/review-round1-input.json\",\n          \"references/agent_protocol.md\",\n          \"references/execution_readiness.md\",\n          \"references/task_card_schema.md\",\n          \"references/worktree_git_contract.md\",\n          \"templates/assistants/iteration_controller.md\",\n          \"templates/assistants/iteration_planner.md\",\n          \"templates/assistants/task_tech_lead.md\",\n          \"templates/sdd_implementer_prompt.md\",\n          \"templates/sdd_reviewer_prompt.md\",\n          \"tests/test_prompt_sources.py\"\n        ],\n        \"capabilities\": [\n          \"Python3.11.17-pytest9.2-mcp1.30\",\n          \"approved-frozen-linux-runner\",\n          \"independent-native-reviewer\",\n          \"native-codex-cli-implementer\",\n          \"native-event-command-terminal-metadata-available\"\n        ],\n        \"scope\": [\n          \".agents/notes/planned/iter11/12-workflow-sequence.md\",\n          \"docs/todos/11-reliable-delivery/evidence/12/\",\n          \"references/agent_protocol.md\",\n          \"references/execution_readiness.md\",\n          \"references/worktree_git_contract.md\",\n          \"templates/assistants/iteration_controller.md\",\n          \"templates/assistants/iteration_planner.md\",\n          \"templates/assistants/task_tech_lead.md\",\n          \"templates/sdd_implementer_prompt.md\",\n          \"templates/sdd_reviewer_prompt.md\",\n          \"tests/test_prompt_sources.py\",\n          \"tests/test_workflow_sequence.py\"\n        ]\n      },\n      \"executor_id\": \"exec-21b2120e-20ac-4eed-955c-913e6f9e6139\",\n      \"executor_state\": \"failed\",\n      \"terminal_evidence\": \"docs/todos/11-reliable-delivery/evidence/12/fix1-launch-interruption.json\",\n      \"progress\": [],\n      \"checkpoint\": \"Fix1 launcher interrupted with native exit143 before child evidence; no evidence reconciliation delivered\",\n      \"remaining_work\": [\n        \"D/local strict\",\n        \"Explicit F1 recovery disposition\",\n        \"Finish F2 reconciliation in same fix round\",\n        \"Independent re-review\"\n      ],\n      \"commands\": [],\n      \"started_at\": null,\n      \"ended_at\": null,\n      \"session_seconds\": null,\n      \"command_seconds\": null\n    },\n    \"checkpoint\": {\n      \"candidate\": \"305f1d49d499ae3a5112358d57c2fefa48349261\",\n      \"phase\": \"evidence-inspection\",\n      \"summary\": \"Independent review BLOCKED: F1 recovery authority, F2 incomplete native command inventory\",\n      \"progress\": [\n        {\n          \"kind\": \"review-finding\",\n          \"evidence\": \"docs/todos/11-reliable-delivery/evidence/12/review-round1-input.json\",\n          \"summary\": \"F1 missing explicit checkpoint-resume authority; F2 ten completed native source-read commands omitted from terminal inventory\"\n        }\n      ],\n      \"source\": \"docs/todos/11-reliable-delivery/evidence/12/review-round1-attempt.json\"\n    },\n    \"remaining_work\": [\n      \"D/local strict\",\n      \"Explicit F1 recovery disposition\",\n      \"Finish F2 reconciliation in same fix round\",\n      \"Independent re-review\"\n    ]\n  },\n  \"conditions\": {\n    \"inputs\": [\n      \"AGENTS.md\",\n      \"docs/todos/11-reliable-delivery/12-workflow-sequence.md\",\n      \"docs/todos/11-reliable-delivery/README.md\",\n      \"docs/todos/11-reliable-delivery/evidence/12/codeg-probe-v2-native-excerpt.jsonl\",\n      \"docs/todos/11-reliable-delivery/evidence/12/fix1-launch-interruption.json\",\n      \"docs/todos/11-reliable-delivery/evidence/12/review-round1-input.json\",\n      \"references/agent_protocol.md\",\n      \"references/execution_readiness.md\",\n      \"references/task_card_schema.md\",\n      \"references/worktree_git_contract.md\",\n      \"templates/assistants/iteration_controller.md\",\n      \"templates/assistants/iteration_planner.md\",\n      \"templates/assistants/task_tech_lead.md\",\n      \"templates/sdd_implementer_prompt.md\",\n      \"templates/sdd_reviewer_prompt.md\",\n      \"tests/test_prompt_sources.py\"\n    ],\n    \"capabilities\": [\n      \"Python3.11.17-pytest9.2-mcp1.30\",\n      \"approved-frozen-linux-runner\",\n      \"independent-native-reviewer\",\n      \"native-codex-cli-implementer\",\n      \"native-event-command-terminal-metadata-available\"\n    ],\n    \"scope\": [\n      \".agents/notes/planned/iter11/12-workflow-sequence.md\",\n      \"docs/todos/11-reliable-delivery/evidence/12/\",\n      \"references/agent_protocol.md\",\n      \"references/execution_readiness.md\",\n      \"references/worktree_git_contract.md\",\n      \"templates/assistants/iteration_controller.md\",\n      \"templates/assistants/iteration_planner.md\",\n      \"templates/assistants/task_tech_lead.md\",\n      \"templates/sdd_implementer_prompt.md\",\n      \"templates/sdd_reviewer_prompt.md\",\n      \"tests/test_prompt_sources.py\",\n      \"tests/test_workflow_sequence.py\"\n    ]\n  },\n  \"checkpoint\": \"Complete F2 reconciliation after parent-turn launch interruption, same fix1; F1 remains pending\",\n  \"remaining_work\": [\n    \"D/local strict\",\n    \"Explicit F1 recovery disposition\",\n    \"Finish F2 reconciliation in same fix round\",\n    \"Independent re-review\"\n  ]\n}\n",
+      "stderr": "",
+      "state": "completed",
+      "request_id": "fix1-retry-1794725278457",
+      "cwd": "/data/workspace/iteration-manager/.worktrees/iter-11",
+      "terminal_evidence": {
+        "source": "docs/todos/11-reliable-delivery/evidence/12/fix1-retry-check-observation.json",
+        "id": "2026-11-15T06:47:58.647162+00:00"
+      }
+    },
+    "delegation": {
+      "launch": {
+        "chunk_id": "d989d7",
+        "wall_time_seconds": 1.001117817,
+        "session_id": 77086,
+        "original_token_count": 0,
+        "output": ""
+      },
+      "monitor": {
+        "reason": "terminal",
+        "deadlineMs": 1794725698457,
+        "final": {
+          "status": "completed",
+          "raw": {
+            "chunk_id": "308f0a",
+            "wall_time_seconds": 26.691497801,
+            "exit_code": 0,
+            "original_token_count": 0,
+            "output": ""
+          }
+        },
+        "terminalConfirmed": true,
+        "observedAt": 1794725366747,
+        "lateByMs": 0,
+        "events": [
+          {
+            "kind": "query",
+            "startedAt": 1794725280024,
+            "returnedAt": 1794725340032,
+            "waitMs": 60000,
+            "result": {
+              "status": "running",
+              "raw": {
+                "chunk_id": "a5cf09",
+                "wall_time_seconds": 60.000929926,
+                "session_id": 77086,
+                "original_token_count": 0,
+                "output": ""
+              }
+            }
+          },
+          {
+            "kind": "query",
+            "startedAt": 1794725340033,
+            "returnedAt": 1794725366747,
+            "waitMs": 60000,
+            "result": {
+              "status": "completed",
+              "raw": {
+                "chunk_id": "308f0a",
+                "wall_time_seconds": 26.691497801,
+                "exit_code": 0,
+                "original_token_count": 0,
+                "output": ""
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "adapter_sources": {
+    "dispatch": "/data/workspace/iteration-manager/build/frozen-adapters/iter11-dispatch-v1/dispatch_guard.js",
+    "deadline": "/data/workspace/iteration-manager/build/frozen-adapters/iter11-dispatch-v1/deadline_watch.js"
+  }
+}

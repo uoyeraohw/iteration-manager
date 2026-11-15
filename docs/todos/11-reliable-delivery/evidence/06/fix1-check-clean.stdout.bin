@@ -1,0 +1,29 @@
+{
+  "source": {
+    "source_commit": "6ee7605de94fde0dfb4454f512b9913fd7aa01ae",
+    "files_match": true,
+    "trust": "manifest supplied by caller; Git origin not reverified in copy"
+  },
+  "runtime_capabilities": {
+    "query": {
+      "status": "PRESENT",
+      "meaning": "file presence only; execution not tested"
+    },
+    "runner": {
+      "status": "UNKNOWN",
+      "platform": "linux",
+      "entry_present": true,
+      "backend_present": true,
+      "prerequisites": {
+        "pidfd_open_api": true,
+        "pidfd_send_signal_api": true,
+        "proc_children_accessible": true
+      },
+      "meaning": "not executed; OS prerequisites and complete chain unverified"
+    },
+    "complete_chain": {
+      "status": "UNKNOWN",
+      "meaning": "not tested"
+    }
+  }
+}

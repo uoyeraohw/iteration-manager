@@ -32,6 +32,41 @@
 
 中断、unknown或通信失败先查询原task_id及其会话/工作区，不重复派发；completed任务不能resume。需要返修时先确认原执行者终态，再以新任务携带剩余目标和已交证据，不重做已验收工作。仅在授权停止、超任务时限或无继续必要时，按工具schema使用cancel_delegation；取消后查询终态，不遗留活动命令。遵守用户时限；未另定时探索/审查以5分钟为检查点，累计10分钟必须介入停止并保留部分成果。
 
+### 新流程的默认派发：Codeg 已验证的 TOOL-call 适配
+
+新迭代或明确获准的新流程，在支持该路径的 Codeg 持久 JavaScript 执行器中必须消费冻结 `scripts/dispatch_guard.js` 的 `dispatchAfterReady({request, check, dispatch})`；不可先裸派发再补检查。先由同一写者完成 claim，核实当前候选、context内容和新鲜度、授权及截止；request 使用唯一 request_id、project_root、tool_entry、绝对 task_path、task_id、owner、phase、candidate、context。守卫的接口和信任边界见 [原生派发适配](native_dispatch_adapter.md)。下面是 Codeg TOOL-call 路径的适配骨架：调用前依实际宿主 schema 填入真实变量，保存原生调用原件；不是可直接执行的虚构 Brief。
+
+```javascript
+// 同一持久执行单元先载入冻结 dispatch_guard.js 完整函数体。
+// argv、projectRoot、request、delegateArgs 来自已核实的本次真实输入。
+const quote = s => "'" + s.replace(/'/g, "'\\''") + "'";
+const check = async r => {
+  const argv = [python, '-B', r.tool_entry, '--dispatch-check', r.task_path,
+    '--context', r.context, '--phase', r.phase, '--owner', r.owner];
+  // Python 包装仅将实际 argv/cwd/退出/stdout/stderr 打包，供原生终态读取。
+  const wrapper = 'import json,os,subprocess,sys; a=sys.argv[1:]; p=subprocess.run(a,capture_output=True,text=True); print(json.dumps(dict(argv=a,cwd=os.getcwd(),exit_code=p.returncode,stdout=p.stdout,stderr=p.stderr)))';
+  const cmd = [python, '-B', '-c', wrapper, ...argv].map(quote).join(' ');
+  const raw = await tools.exec_command({cmd, workdir:r.project_root});
+  // 保存 raw；未终态或外层失败不能伪装 completed。必要时依真实工具查询原句柄。
+  if (raw.session_id || raw.exit_code !== 0 || !raw.chunk_id)
+    return {state:'unknown', request_id:r.request_id, raw};
+  try {
+    return {...JSON.parse(raw.output), raw, state:'completed', request_id:r.request_id,
+      terminal_evidence:{source:'functions.exec/tools.exec_command', id:raw.chunk_id}};
+  } catch (_) { return {state:'unknown', request_id:r.request_id, raw}; }
+};
+const dispatch = async (r, ready) => {
+  // delegateArgs 使用当前真实 delegate_to_agent schema 和与 r 绑定的本次 Brief；派发前核实目标和参数。
+  return await tools.mcp__codeg_mcp__delegate_to_agent(delegateArgs);
+};
+const result = await dispatchAfterReady({request, check, dispatch});
+// 原样保存 result、check 原件和原生委派结果；dispatched 仅表示回调被调用。
+```
+
+检查 running、failed、非 READY、未知或绑定不符均不得原生派发。守卫校验 completed/退出0、实际 argv/cwd/request、终态来源及 READY 的 task/phase/candidate；owner 与 context 经真实 argv 绑定，claim、上下文新鲜度及回调原件须由主控独立核实，不能只信回调自报。dispatch 抛错或结果 UNKNOWN 时先查询原调用，不能盲重派。守卫不认证宿主来源、不能拦截绕过入口的调用，不建调度平台或第二状态账。缺少持久执行器、真实工具或终态证据时记录 BLOCKED、责任人及恢复条件，不回退裸派发。
+
+该路径只建立实际 Codeg TOOL-call 适配能力；子代理工具执行、读取指令或业务成功须分别以原生证据证明。历史 worker CLI 的 bwrap 启动失败保持 BLOCKED，父会话 completed 不证明子命令执行或模板消费；独立的 Native Codex CLI 路径须按其实际已证明的宿主能力执行，不代表 Codeg worker 成功。截止、查询和取消仍按下方真实原生工具语义及 deadline_watch 执行。
+
 ### 正常检查点与无进展重派限制
 
 派发Brief按以下顺序给齐：当前阶段/剩余目标 → 可直接消费的局部代码与契约入口 → 已核实根因及有效证据 → 授权文件/候选 → 本次检查点产物与验证命令 → 绝对截止/收尾/最高状态。引用原始产物，不要求新会话重新探索已确定的问题；保留必要读取和验证工具，不以普遍禁用工具换取表面速度。
@@ -74,7 +109,7 @@ text(result);
 
 单个守卫管理一个实际task，不接管业务调度或卡片写权；父级仍须核对完整子树。unknown/查询失败时尝试取消并保留实际查询结果，未确认终态保持BLOCKED。`wait_ms=0`是无限等待，轮询必须省略该字段。blocked_on事件必须呈报用户；等待用户时守卫仍运行，不自动延长授权期限。
 
-叶子的每个业务、测试和验收命令必须通过[统一截止入口](checkpoint_execution.md)`scripts/iter_run.py --deadline <明确UTC> --evidence <项目相对唯一receipt> -- <argv...>`执行；派发Brief提供确切command_deadline（不晚于取消点），入口内另留5秒回收。由入口同次核UTC、落原始输出及真实业务退出码，禁止先运行再补日志。PowerShell保存`$LASTEXITCODE`后须`exit $code`；shell退出0不代表pytest通过。124/125须看receipt状态，超时不算断言失败。原生命令补证仅作为新的来源证据，不改旧日志；进程列表不能补造历史退出码。当前入口仅支持Windows Job；入口或权限不可用就报告能力缺口，不回退裸命令。
+叶子的每个业务、测试和验收命令必须通过[统一截止入口](checkpoint_execution.md)`scripts/iter_run.py --deadline <明确UTC> --evidence <项目相对唯一receipt> -- <argv...>`执行；派发Brief提供确切command_deadline（不晚于取消点），入口内另留5秒回收。由入口同次核UTC、落原始输出及真实业务退出码，禁止先运行再补日志。PowerShell保存`$LASTEXITCODE`后须`exit $code`；shell退出0不代表pytest通过。124/125须看receipt状态，超时不算断言失败。原生命令补证仅作为新的来源证据，不改旧日志；进程列表不能补造历史退出码。按实际已验收平台及冻结入口使用；Windows Job 与 Linux 进程树能力分别核实，入口或权限不可用就报告能力缺口，不回退裸命令。
 
 叶子必读契约须在派发前确认其运行时具有实际读取权限；主控能读取不代表叶子能读取。出现真实拒绝时返回权限缺口，按宿主正式授权机制解决；不尝试其它工具或另一副本绕过。
 
@@ -105,6 +140,12 @@ executor-state只接受实际查询得到的completed/failed/canceled；unknown�
 测试作者、实现者、本任务RCA/方案设计参与者均不能担任独立Reviewer。独立Reviewer读取冻结规格、实际候选与原始输出，返回发现及裁决；主管可读冻结Diff并运行独立验收。实现者最高TESTING。会诊不是APPROVED；建议先核对正确性、契约、范围与授权，不自动采纳方案A，不放宽失败路径。
 
 Git：提交实现C及原始输出 → 独立审查C与冻结规格 → 主管登记JSON收据、报告及状态 → 提交登记D → `--local --strict`。head_sha绑定C，不冒填当前HEAD。FS：先定稿完整正文与证据、冻结候选 → 独立审查 → 只登记允许变化的元数据及收据 → 本地strict；不得在审查后修改ledger、勾选或显示状态。详见任务卡契约。合流、发布、删除另按授权执行。
+
+### Git 整轮收口的权威顺序
+
+每卡按上面的 C → 独立审查 → 登记 D → 冻结 `--local --strict` 完成；可在总审之前做可选 EARLY branch 结构预检，结果不是最终验收，也不是最后一张卡的完成前提。全部卡（包括最后一张）有效 DONE 且各自验收 PASS 后，Controller 才执行整轮集成路径与全量回归 → 独立整轮总审 → 对最终登记候选执行冻结 `--check-branch --strict`。总审导致候选变化时，受影响内容须重新独审并重新绑定；按证据复用合同核实受影响验证。最后一张卡不依赖尚未可运行的最终 branch strict。最终 strict 与独审均不能由被测候选自证批准。
+
+收口原始产物按迭代约定放主 checkout 的 `build/iter11-closeout/<唯一UTC目录>`（其他迭代使用其约定的持久位置），不写回已批准任务 scope；README 只记摘要及链接。保留原件，归档和清理另需授权，不为登记嵌入巨型 JSON。合流、推送、部署、清理分别授权。
 
 ## 分层验证与证据复用
 

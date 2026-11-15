@@ -1,0 +1,30 @@
+[
+  {
+    "name": "red",
+    "kind": "command",
+    "command": "/data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B -m pytest -p no:cacheprovider tests/test_dispatch_guard.py tests/test_deadline_watch.py -q --basetemp /tmp/iter11-task03-red-implementer-01",
+    "cwd": ".",
+    "exit_code": 1,
+    "summary": "核心目标2断言RED、31控制通过；测试侧无功能fallback非导入错误",
+    "output": "docs/todos/11-reliable-delivery/evidence/03/red-implementer-01.json.output.txt",
+    "failure_kind": "assertion"
+  },
+  {
+    "name": "green",
+    "kind": "command",
+    "command": "/data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B -m pytest -p no:cacheprovider tests/test_dispatch_guard.py tests/test_deadline_watch.py -q --basetemp /tmp/iter11-task03-green-implementer-01",
+    "cwd": ".",
+    "exit_code": 0,
+    "summary": "最终33通过；相同选择同时覆盖GREEN和regression",
+    "output": "docs/todos/11-reliable-delivery/evidence/03/green-implementer-01.json.output.txt"
+  },
+  {
+    "name": "regression",
+    "kind": "command",
+    "command": "/data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B -m pytest -p no:cacheprovider tests/test_dispatch_guard.py tests/test_deadline_watch.py -q --basetemp /tmp/iter11-task03-green-implementer-01",
+    "cwd": ".",
+    "exit_code": 0,
+    "summary": "最终33通过；相同选择同时覆盖GREEN和regression",
+    "output": "docs/todos/11-reliable-delivery/evidence/03/green-implementer-01.json.output.txt"
+  }
+]

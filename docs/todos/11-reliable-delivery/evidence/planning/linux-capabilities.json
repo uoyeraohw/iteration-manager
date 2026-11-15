@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "observed_at": "2026-11-15T02:52:09.392336+00:00",
+  "python": "3.13.5 (main, Aug 10 2026, 12:06:59) [GCC 14.2.0]",
+  "python_executable": "/data/workspace/iteration-manager/build/iter11-venv/bin/python",
+  "pytest": "9.2.0",
+  "timeout": "/usr/bin/timeout",
+  "subreaper_set_in_one_shot_probe": true,
+  "pidfd_open": true,
+  "pidfd_send_signal": true,
+  "proc": true,
+  "cgroup_writable": false,
+  "environment_setup": {
+    "reason": "System python3 had no pytest; not a behavior RED",
+    "isolated_venv": "/data/workspace/iteration-manager/build/iter11-venv",
+    "uv_venv_exit": 0,
+    "uv_pip_install_exit": 0,
+    "installed": {
+      "pytest": "9.2.0",
+      "iniconfig": "2.3.1",
+      "packaging": "26.3",
+      "pluggy": "1.7.0",
+      "pygments": "2.21.0"
+    }
+  },
+  "formal_runner": "task00 bootstrap only until platform runner exists"
+}

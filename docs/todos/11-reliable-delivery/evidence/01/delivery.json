@@ -1,0 +1,133 @@
+{
+  "base": "1e99816564fa89d0b43db7a96fbc7c0dac1b6dd9",
+  "native_uuid": "01a1dd56-105c-79d0-9b73-7a708e7d9369",
+  "native_evidence": "docs/todos/11-reliable-delivery/evidence/01/implementation-native.jsonl",
+  "candidate": "uncommitted working tree; implementer ceiling TESTING; no approval",
+  "changed_files": [
+    "scripts/iter_contracts.py",
+    "scripts/iter_queries.py",
+    "scripts/iter_preflight.py",
+    "tests/test_delivery_mode_consistency.py",
+    ".agents/notes/planned/iter11/01-delivery-mode-consistency.md",
+    "docs/todos/11-reliable-delivery/evidence/01/task01-red-0354.json",
+    "docs/todos/11-reliable-delivery/evidence/01/task01-red-0354.json.output.txt",
+    "docs/todos/11-reliable-delivery/evidence/01/task01-red-0354.json.child.json",
+    "docs/todos/11-reliable-delivery/evidence/01/task01-green-0354.json",
+    "docs/todos/11-reliable-delivery/evidence/01/task01-green-0354.json.output.txt",
+    "docs/todos/11-reliable-delivery/evidence/01/task01-green-0354.json.child.json",
+    "docs/todos/11-reliable-delivery/evidence/01/task01-final-0355.json",
+    "docs/todos/11-reliable-delivery/evidence/01/task01-final-0355.json.output.txt",
+    "docs/todos/11-reliable-delivery/evidence/01/task01-final-0355.json.child.json",
+    "docs/todos/11-reliable-delivery/evidence/01/source-manifest.json",
+    "docs/todos/11-reliable-delivery/evidence/01/delivery.json"
+  ],
+  "controller_owned_dirty": "docs/todos/11-reliable-delivery/01-delivery-mode-consistency.md and preexisting evidence/01 metadata are controller-owned and untouched",
+  "source_manifest": "docs/todos/11-reliable-delivery/evidence/01/source-manifest.json",
+  "commands": [
+    {
+      "purpose": "RED",
+      "receipt": "docs/todos/11-reliable-delivery/evidence/01/task01-red-0354.json",
+      "output": "docs/todos/11-reliable-delivery/evidence/01/task01-red-0354.json.output.txt",
+      "child": "docs/todos/11-reliable-delivery/evidence/01/task01-red-0354.json.child.json",
+      "runner": "/data/workspace/iteration-manager/build/frozen-runners/iter11-platform-v1/scripts/iter_run.py",
+      "deadline": "2026-11-15T03:59:44.827000+00:00",
+      "argv": [
+        "/data/workspace/iteration-manager/build/iter11-maint-venv/bin/python",
+        "-B",
+        "-m",
+        "pytest",
+        "-p",
+        "no:cacheprovider",
+        "tests/test_delivery_mode_consistency.py",
+        "tests/test_query_contract.py",
+        "tests/test_execution_readiness.py",
+        "tests/test_completion_gates.py",
+        "tests/test_filesystem_receipts.py",
+        "-q",
+        "--basetemp",
+        "/tmp/iter11-task01-red-0354"
+      ],
+      "exit": 1,
+      "status": "COMPLETED",
+      "tree_terminal": true,
+      "counts": "7 failed, 98 passed"
+    },
+    {
+      "purpose": "intermediate GREEN",
+      "receipt": "docs/todos/11-reliable-delivery/evidence/01/task01-green-0354.json",
+      "output": "docs/todos/11-reliable-delivery/evidence/01/task01-green-0354.json.output.txt",
+      "child": "docs/todos/11-reliable-delivery/evidence/01/task01-green-0354.json.child.json",
+      "runner": "/data/workspace/iteration-manager/build/frozen-runners/iter11-platform-v1/scripts/iter_run.py",
+      "deadline": "2026-11-15T03:59:44.827000+00:00",
+      "argv": [
+        "/data/workspace/iteration-manager/build/iter11-maint-venv/bin/python",
+        "-B",
+        "-m",
+        "pytest",
+        "-p",
+        "no:cacheprovider",
+        "tests/test_delivery_mode_consistency.py",
+        "tests/test_query_contract.py",
+        "tests/test_execution_readiness.py",
+        "tests/test_completion_gates.py",
+        "tests/test_filesystem_receipts.py",
+        "-q",
+        "--basetemp",
+        "/tmp/iter11-task01-green-0354"
+      ],
+      "exit": 0,
+      "status": "COMPLETED",
+      "tree_terminal": true,
+      "counts": "118 passed"
+    },
+    {
+      "purpose": "final GREEN and regression",
+      "receipt": "docs/todos/11-reliable-delivery/evidence/01/task01-final-0355.json",
+      "output": "docs/todos/11-reliable-delivery/evidence/01/task01-final-0355.json.output.txt",
+      "child": "docs/todos/11-reliable-delivery/evidence/01/task01-final-0355.json.child.json",
+      "runner": "/data/workspace/iteration-manager/build/frozen-runners/iter11-platform-v1/scripts/iter_run.py",
+      "deadline": "2026-11-15T03:59:44.827000+00:00",
+      "argv": [
+        "/data/workspace/iteration-manager/build/iter11-maint-venv/bin/python",
+        "-B",
+        "-m",
+        "pytest",
+        "-p",
+        "no:cacheprovider",
+        "tests/test_delivery_mode_consistency.py",
+        "tests/test_query_contract.py",
+        "tests/test_execution_readiness.py",
+        "tests/test_completion_gates.py",
+        "tests/test_filesystem_receipts.py",
+        "-q",
+        "--basetemp",
+        "/tmp/iter11-task01-final-0355"
+      ],
+      "exit": 0,
+      "status": "COMPLETED",
+      "tree_terminal": true,
+      "counts": "124 passed"
+    }
+  ],
+  "red_assertions": "Two frozen-contract DONE Git cases explicitly UNKNOWN and empty returned PASS instead of FAIL; five invalid non-DONE cases lacked mode violations. Valid absent/explicit git controls passed. All seven are assertion failures, not imports or environment failures. Synthetic fixture approval is not real task approval.",
+  "test_evolution": "RED used initial tests. Direct pure API, claimed-owner dispatch, profile DONE, and status boundaries were added after RED; they are supplemental GREEN coverage, not claimed as observed RED.",
+  "checks_reuse": "Final command exactly matches both prescribed GREEN and regression test selections, candidate, inputs and Python environment; the same single successful run supplies both checks, without an identical repeat. Intermediate GREEN preceded supplemental tests and is not final evidence.",
+  "acceptance_mapping": {
+    "frozen_invalid_git": "test_done_git_mode_is_validated_at_frozen_contract; unknown and empty present in contract commit, valid absent/git synthetic controls PASS",
+    "mode_matrix": "test_invalid_modes_rejected_by_dispatch_audit_and_board, test_valid_mode_dispatch_with_claimed_owner, test_valid_filesystem_done_control, test_done_filesystem_profile_errors_are_reported, test_pure_resolution_boundary",
+    "compatibility": "test_query_contract and test_execution_readiness plus missing receipt and FUSED/UNKNOWN boundary tests; profile errors preserve existing envelope outer error and board fallback; no CLI import or cross-call cache"
+  },
+  "limitations": [
+    "No independent review or real task approval; no C or D commit, local strict, merge, deployment or external business validation.",
+    "No current Windows test or full maintenance rerun; prior baseline is a different candidate. Python 3.13 signature limitation remains.",
+    "Broken profile envelope retains established top-level error rather than a TASK_HANDOFF object.",
+    "write-notes-like-deepseek skill was not available in discovered skill directories; decision rationale recorded in scoped project note."
+  ],
+  "remaining": [
+    "Controller observes native session terminal and records attempt/release",
+    "Controller freezes and commits candidate C under separate authorization",
+    "Independent nonparticipant reviews C and frozen specification",
+    "Controller registers D and runs approved frozen coordinator local strict; its known mode audit defect requires explicit handling"
+  ],
+  "active_commands": "All three task01-controlled test commands completed and their receipts report tree_terminal true; native session remains active until handoff."
+}

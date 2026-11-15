@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "tasks": {
+    "01": {
+      "phase": "implementation",
+      "candidate": "a1de6fc5229f1a5d18b1967936f4cf269abd15d3",
+      "inputs": [
+        "docs/todos/11-reliable-delivery/01-delivery-mode-consistency.md",
+        "scripts/iter_queries.py",
+        "tests/test_delivery_mode_consistency.py",
+        "docs/todos/11-reliable-delivery/evidence/01/preliminary-review1.json",
+        "docs/todos/11-reliable-delivery/evidence/01/fix1-controller-ruling.json"
+      ],
+      "capabilities": [
+        "native-codex-cli-implementer",
+        "approved-frozen-linux-runner",
+        "Python3.11.17-pytest9.2-mcp1.30",
+        "independent-native-reviewer"
+      ],
+      "dependencies": [],
+      "tool_entry": "/data/workspace/iteration-manager/build/frozen-tools/fdcc4cce8863/scripts/iter_sync.py",
+      "checkpoint": "同一作者对F1保留error并补UNKNOWN的消费者断言RED，再最小修复",
+      "remaining_work": [
+        "F1有效RED/GREEN",
+        "最终目标回归",
+        "新C复审/D/strict"
+      ],
+      "required_observations": [
+        "serial-order"
+      ],
+      "observations": {
+        "authority": {
+          "status": "READY",
+          "summary": "用户实施/精准Git/Worktree授权和Linux适配；仅本卡scope；不部署推送合流清理",
+          "evidence": "docs/todos/11-reliable-delivery/evidence/planning/platform-migration-authorization.json"
+        },
+        "execution": {
+          "status": "READY",
+          "summary": "首轮实现和独审均已真实终态，无活动写者；本次同一实现者恢复F1，预算1/1",
+          "evidence": "build/iter11-review/task01-review1/terminal.json"
+        },
+        "verification": {
+          "status": "READY",
+          "summary": "旧124覆盖保持，F1真实消费者断言必须先RED；固定Linux驱动和维护venv可用",
+          "evidence": "docs/todos/11-reliable-delivery/evidence/01/source-manifest.json"
+        },
+        "serial-order": {
+          "status": "READY",
+          "summary": "00最新C3独审/登记D及冻结local strict已PASS1/13；可按用户串行约束启动01",
+          "evidence": "build/iter11-review/review3/local-strict.json"
+        }
+      }
+    }
+  }
+}

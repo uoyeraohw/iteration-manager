@@ -1,0 +1,200 @@
+{
+  "version": 1,
+  "candidate": "a1a9907fc343b8ba2c25895b03b89fb192c48e67",
+  "coordinator_commit": "fdcc4cce88635ee81573be5991de11de650659d8",
+  "cases": [
+    {
+      "id": "source-hashes",
+      "layer": "static",
+      "expected": "all selected original SHA256 values match",
+      "observed": "docs/todos/11-reliable-delivery/evidence/11/synthetic-missing/intentionally-absent.json: [Errno 2] No such file or directory: '/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/11/synthetic-missing/intentionally-absent.json'; Controller must supply original; Controller must inspect or supply the original before redispatch",
+      "result": "BLOCKED",
+      "evidence": [
+        "docs/todos/11-reliable-delivery/evidence/11/synthetic-missing/sources-copy.json"
+      ]
+    },
+    {
+      "id": "frozen-tool-identity",
+      "layer": "static",
+      "expected": "frozen coordinator and platform runner match Git bytes and manifests",
+      "observed": "coordinator entry/contracts and all approved platform runner snapshot bytes match their source commits and manifests",
+      "result": "PASS",
+      "evidence": [
+        "docs/todos/11-reliable-delivery/evidence/planning/coordinator-manifest.json",
+        "/data/workspace/iteration-manager/build/frozen-runners/iter11-platform-v1/manifest.json"
+      ]
+    },
+    {
+      "id": "ownership",
+      "layer": "static",
+      "expected": "28 exact Controller input hashes",
+      "observed": "28 Controller-only input hashes match; 27 startup/migration originals plus index; no replan or budget reset",
+      "result": "PASS",
+      "evidence": [
+        "docs/todos/11-reliable-delivery/evidence/11/controller-artifact-ownership.json"
+      ]
+    },
+    {
+      "id": "stage-1",
+      "layer": "synthetic",
+      "expected": "bound owner/candidate/check/dispatch/session/terminal/events",
+      "observed": "01a1dd8e-8b72-7b72-90b4-a8577ef8db2d; implementation; completed check, dispatch, native and wrapper terminals, events and 1 runner receipts bound",
+      "result": "PASS",
+      "evidence": [
+        "docs/todos/11-reliable-delivery/evidence/06/implementation-guard.json",
+        "docs/todos/11-reliable-delivery/evidence/06/implementation-native.jsonl",
+        "docs/todos/11-reliable-delivery/evidence/06/implementation-terminal.json",
+        "docs/todos/11-reliable-delivery/evidence/06/red-attempt.json",
+        "docs/todos/11-reliable-delivery/evidence/06/red-attempt.call.json",
+        "docs/todos/11-reliable-delivery/evidence/06/red-release.call.json",
+        "docs/todos/11-reliable-delivery/evidence/06/red-01.json"
+      ]
+    },
+    {
+      "id": "stage-2",
+      "layer": "synthetic",
+      "expected": "bound owner/candidate/check/dispatch/session/terminal/events",
+      "observed": "01a1dd90-f03a-70c1-866d-43d5ac3a936e; evidence-inspection; completed check, dispatch, native and wrapper terminals, events and 0 runner receipts bound",
+      "result": "PASS",
+      "evidence": [
+        "docs/todos/11-reliable-delivery/evidence/06/checkpoint-consumer-guard.json",
+        "docs/todos/11-reliable-delivery/evidence/06/checkpoint-consumer-native.jsonl",
+        "docs/todos/11-reliable-delivery/evidence/06/checkpoint-consumer-terminal.json",
+        "docs/todos/11-reliable-delivery/evidence/06/checkpoint-consumer-attempt.json",
+        "docs/todos/11-reliable-delivery/evidence/06/checkpoint-consumer-attempt.call.json",
+        "docs/todos/11-reliable-delivery/evidence/06/checkpoint-consumer-release.call.json"
+      ]
+    },
+    {
+      "id": "stage-3",
+      "layer": "synthetic",
+      "expected": "bound owner/candidate/check/dispatch/session/terminal/events",
+      "observed": "01a1dd8e-8b72-7b72-90b4-a8577ef8db2d; implementation; completed check, dispatch, native and wrapper terminals, events and 3 runner receipts bound",
+      "result": "PASS",
+      "evidence": [
+        "docs/todos/11-reliable-delivery/evidence/06/continuation-guard.json",
+        "docs/todos/11-reliable-delivery/evidence/06/continuation-native.jsonl",
+        "docs/todos/11-reliable-delivery/evidence/06/continuation-terminal.json",
+        "docs/todos/11-reliable-delivery/evidence/06/continuation-attempt.json",
+        "docs/todos/11-reliable-delivery/evidence/06/continuation-attempt.call.json",
+        "docs/todos/11-reliable-delivery/evidence/06/continuation-release.call.json",
+        "docs/todos/11-reliable-delivery/evidence/06/green-final.json",
+        "docs/todos/11-reliable-delivery/evidence/06/green-final-02.json",
+        "docs/todos/11-reliable-delivery/evidence/06/green-final-03.json"
+      ]
+    },
+    {
+      "id": "stage-4",
+      "layer": "synthetic",
+      "expected": "bound owner/candidate/check/dispatch/session/terminal/events",
+      "observed": "01a1dd96-f44b-7971-8cc6-9b6de8d5990b; evidence-inspection; completed check, dispatch, native and wrapper terminals, events and 1 runner receipts bound",
+      "result": "PASS",
+      "evidence": [
+        "build/iter11-review/task06-review1/review-guard.json",
+        "build/iter11-review/task06-review1/review-native.jsonl",
+        "build/iter11-review/task06-review1/terminal.json",
+        "build/iter11-review/task06-review1/attempt-v2.json",
+        "build/iter11-review/task06-review1/attempt-v2.call.json",
+        "build/iter11-review/task06-review1/release.call.json",
+        "build/iter11-review/task06-review1/scope-runner.json"
+      ]
+    },
+    {
+      "id": "stage-5",
+      "layer": "synthetic",
+      "expected": "bound owner/candidate/check/dispatch/session/terminal/events",
+      "observed": "01a1dd8e-8b72-7b72-90b4-a8577ef8db2d; implementation; completed check, dispatch, native and wrapper terminals, events and 1 runner receipts bound",
+      "result": "PASS",
+      "evidence": [
+        "docs/todos/11-reliable-delivery/evidence/06/fix1-guard.json",
+        "docs/todos/11-reliable-delivery/evidence/06/fix1-native.jsonl",
+        "docs/todos/11-reliable-delivery/evidence/06/fix1-terminal.json",
+        "docs/todos/11-reliable-delivery/evidence/06/fix1-attempt.json",
+        "docs/todos/11-reliable-delivery/evidence/06/fix1-attempt.call.json",
+        "docs/todos/11-reliable-delivery/evidence/06/fix1-release.call.json",
+        "docs/todos/11-reliable-delivery/evidence/06/fix1-real-payload.json"
+      ]
+    },
+    {
+      "id": "stage-6",
+      "layer": "synthetic",
+      "expected": "bound owner/candidate/check/dispatch/session/terminal/events",
+      "observed": "01a1dd96-f44b-7971-8cc6-9b6de8d5990b; evidence-inspection; completed check, dispatch, native and wrapper terminals, events and 1 runner receipts bound",
+      "result": "PASS",
+      "evidence": [
+        "build/iter11-review/task06-review2/review-guard.json",
+        "build/iter11-review/task06-review2/review-native.jsonl",
+        "build/iter11-review/task06-review2/terminal.json",
+        "build/iter11-review/task06-review2/attempt.json",
+        "build/iter11-review/task06-review2/attempt.call.json",
+        "build/iter11-review/task06-review2/release.call.json",
+        "build/iter11-review/task06-review2/scope-runner.json"
+      ]
+    },
+    {
+      "id": "checkpoint-continuation",
+      "layer": "synthetic",
+      "expected": "original RED at P inherited without rerun/reset and same implementer GREEN",
+      "observed": "P=82b66d9f3c8e7a62df8e8be18d8cedac7a5877a6; distinct consumer inherited original RED hashes/times; same thread resumed GREEN; runtime identity beyond observed versions remains unknown",
+      "result": "PASS",
+      "evidence": [
+        "docs/todos/11-reliable-delivery/evidence/06/red-checkpoint.json",
+        "docs/todos/11-reliable-delivery/evidence/06/checkpoint-inheritance.json",
+        "docs/todos/11-reliable-delivery/evidence/06/envelope-before-continuation.call.json",
+        "docs/todos/11-reliable-delivery/evidence/06/continuation-terminal.json"
+      ]
+    },
+    {
+      "id": "review-registration",
+      "layer": "synthetic",
+      "expected": "C1/F1/C2 independent review and D1 rejection/D2 corrected frozen strict",
+      "observed": "C1=6ee7605de94fde0dfb4454f512b9913fd7aa01ae NEEDS_FIX; C2=7e5476c8879edbd45227b82f8189fdf74aab81a9 independent review; D1=f4610a43aaa895fef9e8a50569f779b0681338f6 rejected invalid kind; D2=3158e75869d5c4346c51256de878f14ea190f305 corrected and frozen local strict exit 0",
+      "result": "PASS",
+      "evidence": [
+        "docs/todos/11-reliable-delivery/evidence/06/review-report.json",
+        "docs/todos/11-reliable-delivery/evidence/06/review-receipt.json",
+        "build/iter11-review/task06-review2/local-strict-v2.json",
+        "docs/todos/11-reliable-delivery/evidence/06/preliminary-review1.json",
+        "build/iter11-review/task06-review2/local-strict.json",
+        "build/iter11-review/task06-review1/attempt.call.json"
+      ]
+    },
+    {
+      "id": "codeg-worker-environment",
+      "layer": "synthetic",
+      "expected": "retain actual historical observation and boundary",
+      "observed": "Codeg worker bwrap failed to mount proc; worker execution not established; host owner must repair environment.",
+      "result": "BLOCKED",
+      "evidence": [
+        "docs/todos/11-reliable-delivery/evidence/03/native-codeg-chain.json"
+      ]
+    },
+    {
+      "id": "codeg-assessment",
+      "layer": "synthetic",
+      "expected": "retain actual historical observation and boundary",
+      "observed": "BLOCKED: bwrap cannot mount proc; command never started, no worker success claimed",
+      "result": "BLOCKED",
+      "evidence": [
+        "docs/todos/11-reliable-delivery/evidence/03/native-consumption-assessment.json"
+      ]
+    },
+    {
+      "id": "root04-order-incident",
+      "layer": "synthetic",
+      "expected": "retain actual historical observation and boundary",
+      "observed": "Controller started native read-only consumer after dispatch-check returned BLOCKED for duplicate inputs; missing exit-code branch in orchestration; Controller owns correction; historical failure retained.",
+      "result": "FAIL",
+      "evidence": [
+        "docs/todos/11-reliable-delivery/evidence/04/dispatch-order-incident.json"
+      ]
+    }
+  ],
+  "unverified": [
+    "Independent nonparticipant semantic review of this probe and original records is required.",
+    "Codeg worker execution, complete original environment identity, installation/deployment, current Windows and external FS lifecycle are UNKNOWN/BLOCKED.",
+    "Controller must complete all 13 cards including 12 before integration, full suite, independent total review and final branch strict.",
+    "Frozen coordinator FROZEN-KNOWN-01/02 cannot self-approve candidate.",
+    "Task 10 isolated static/synthetic results are linked at docs/todos/11-reliable-delivery/evidence/10/integration-report.json; no suite rerun here."
+  ]
+}

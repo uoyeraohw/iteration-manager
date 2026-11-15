@@ -1,0 +1,29 @@
+[
+  {
+    "name": "experiment",
+    "kind": "command",
+    "command": "/data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B /data/workspace/iteration-manager/build/frozen-runners/iter11-platform-v1/scripts/iter_run.py --deadline 2026-11-15T05:57:39.166850+00:00 --evidence docs/todos/11-reliable-delivery/evidence/11/experiment-07.json -- /data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B docs/todos/11-reliable-delivery/evidence/11/audit_native_chain.py --sources docs/todos/11-reliable-delivery/evidence/planning/native-source-index.json --output docs/todos/11-reliable-delivery/evidence/11/robustness-report.json",
+    "cwd": ".",
+    "exit_code": 0,
+    "summary": "Actual frozen runner completed; selected-chain probe exited 0 and process tree terminal; report retains historical FAIL/BLOCKED, not semantic approval.",
+    "output": "docs/todos/11-reliable-delivery/evidence/11/experiment-07.json.output.txt"
+  },
+  {
+    "name": "decision",
+    "kind": "observation",
+    "command": null,
+    "cwd": ".",
+    "exit_code": null,
+    "summary": "Decision, original sources, boundaries, and tradeoffs for Controller ledger.",
+    "output": "docs/todos/11-reliable-delivery/evidence/11/ledger-summary.md"
+  },
+  {
+    "name": "interfaces",
+    "kind": "observation",
+    "command": null,
+    "cwd": ".",
+    "exit_code": null,
+    "summary": "main(argv=None), source/output paths and report schema; independent review required.",
+    "output": "docs/todos/11-reliable-delivery/evidence/11/audit_native_chain.py"
+  }
+]

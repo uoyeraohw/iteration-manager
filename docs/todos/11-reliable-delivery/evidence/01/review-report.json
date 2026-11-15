@@ -1,0 +1,136 @@
+{
+  "kind": "independent-review-record",
+  "candidate": "a178fbc65c6bc2cd9fed19e691571080e73e1e60",
+  "recorded_at": "2026-11-15T04:07:19.728467+00:00",
+  "independent_review": {
+    "candidate": "a178fbc65c6bc2cd9fed19e691571080e73e1e60",
+    "previous_candidate": "a1de6fc5229f1a5d18b1967936f4cf269abd15d3",
+    "base_contract": "1e99816564fa89d0b43db7a96fbc7c0dac1b6dd9",
+    "reviewer_uuid": "01a1dd5a-d17c-78d0-a389-42bd8a3ed379",
+    "implementer_uuid": "01a1dd56-105c-79d0-9b73-7a708e7d9369",
+    "independence": "Same reviewer resumed: CODEX_SESSION_ID, CODEX_THREAD_ID and review-native.jsonl thread.started agree. Distinct from implementer native thread ID. My only prior involvement was independent review; no design, implementation, test authorship, repair design or RCA; no delegation.",
+    "verdicts": {
+      "scope": "APPROVED",
+      "spec": "APPROVED",
+      "quality": "APPROVED",
+      "overall": "APPROVED"
+    },
+    "finding_F1": {
+      "status": "ADDRESSED",
+      "evidence": [
+        "scripts/iter_queries.py:125-163",
+        "scripts/iter_queries.py:204-214",
+        "tests/test_delivery_mode_consistency.py:77-99",
+        "tests/test_delivery_mode_consistency.py:188-220"
+      ],
+      "assessment": "For stable malformed profiles, envelope retains exact original top-level error and adds existing TASK_HANDOFF with UNKNOWN, source errors and FAIL. Board reports UNKNOWN and audit violation; dispatch/inventory remain blocked. Direct projection still raises original profile exception. Consumer tests cover malformed JSON and invalid schema with IN_PROGRESS, FUSED and invalid status; real CLI retains exit 0."
+    },
+    "ruling_assessment": "The controller ruling in docs/todos/11-reliable-delivery/evidence/01/fix1-controller-ruling.json reconciles the literal UNKNOWN/errors requirement and legacy error consumer contract without weakening acceptance or changing scope. Existing successful response structure and signatures are unchanged. Inventory checks top-level error; adding handoff does not make it READY.",
+    "classification_and_safety": "Envelope rechecks load_profile only after projection throws: a repeat profile exception produces UNKNOWN/FAIL and preserves the original thrown text; a successful second load re-raises the original exception to the legacy outer error path. Thus non-profile projection exceptions are not normally converted into a handoff, and neither path falls back to Git or approves. Repeated observations are not an atomic profile snapshot: concurrent changes can leave the original error-only response; no success is inferred in that case.",
+    "prior_supported_conclusions_retained": [
+      "Default and explicit Git valid controls and valid filesystem control; invalid and empty mode, missing profile and conflicts fail across consumers.",
+      "Frozen-contract unknown/empty Git DONE fixture has otherwise valid ancestry, receipt, checks, acceptance and frozen declaration; original RED was real and not specification drift.",
+      "One pure parser, no CLI dependency or cross-call acceptance cache; public imports/signatures and valid response paths retained. FUSED/UNKNOWN and legacy missing receipt behavior retained under previously checked normal profile conditions."
+    ],
+    "prior_evidence_applicability": "Previous independent report build/iter11-review/task01-review1/report.json matches committed preliminary-review1.json. C1..C2 changes in scripts/tests are limited to iter_queries.py and test_delivery_mode_consistency.py; affected code reviewed and new tests exercised by final 130 selection. Parser, preflight, filesystem loader, board, CLI and original frozen fixture remain unchanged. Original 124 is C1 evidence only, not a new C2 run.",
+    "evidence": {
+      "repair_red": {
+        "receipt": "docs/todos/11-reliable-delivery/evidence/01/fix1-red-0401.json",
+        "output": "docs/todos/11-reliable-delivery/evidence/01/fix1-red-0401.json.output.txt",
+        "child": "docs/todos/11-reliable-delivery/evidence/01/fix1-red-0401.json.child.json",
+        "result": "COMPLETED, exit 1, tree_terminal true; 7 assertion failures and 29 passed. Exact legacy error assertions passed before missing handoff assertions."
+      },
+      "repair_final": {
+        "receipt": "docs/todos/11-reliable-delivery/evidence/01/fix1-final-0401.json",
+        "output": "docs/todos/11-reliable-delivery/evidence/01/fix1-final-0401.json.output.txt",
+        "child": "docs/todos/11-reliable-delivery/evidence/01/fix1-final-0401.json.child.json",
+        "result": "COMPLETED, exit 0, tree_terminal true; 130 passed in prescribed five files. Identical GREEN and regression selections use the same run."
+      },
+      "chronology": "docs/todos/11-reliable-delivery/evidence/01/fix1-native.jsonl shows implementer UUID; test edits item_10, completed RED item_11, production edit item_15, final run item_17, turn.completed; fix1-terminal.json confirms native terminal exit 0.",
+      "source_binding": "All 15 entries in fix1-source-manifest.json match working bytes, SHA256 and C2 Git blobs; frozen runner and runner manifest match recorded hashes. This is a bounded source inventory, not a complete environment snapshot.",
+      "scope": {
+        "receipt": "build/iter11-review/task01-review2/scope-runner.json",
+        "child": "build/iter11-review/task01-review2/scope-runner.json.child.json",
+        "output": "build/iter11-review/task01-review2/scope-runner.json.output.txt",
+        "result": "COMPLETED, exit 0, tree_terminal true; all 54 changed files within declared scope, ownership not inferred. No root index or unrelated product source changed."
+      }
+    },
+    "findings": [],
+    "DeferredMinors": [],
+    "limitations": [
+      "The scope check uses frozen coordinator fdcc4cc; its known mode audit defect makes the result scope evidence only, not semantic approval.",
+      "No duplicate 130 test run, no Windows execution, full suite, entire iteration approval, deployment or external validation is claimed.",
+      "The review session remains active until normal return; scope command tree is terminal and no review command remains active."
+    ],
+    "approval_scope": "Task01 C2 independent review only. Approval does not register DONE, substitute for controller D/local strict or approve the whole iteration."
+  },
+  "originals": {
+    "report.json": {
+      "path": "build/iter11-review/task01-review2/report.json",
+      "sha256": "684b0ac4950403dce1608af00bb663ef1e7cef629c497816839ae62d8bf8afe2"
+    },
+    "review-native.jsonl": {
+      "path": "build/iter11-review/task01-review2/review-native.jsonl",
+      "sha256": "d3ed98b7b024f1621f31c22f2aa42bf2e39b2a80f3752cc3d5b3af9416182fc0"
+    },
+    "terminal.json": {
+      "path": "build/iter11-review/task01-review2/terminal.json",
+      "sha256": "c358d44528453e08c4ba8cebd694d368c055ecdc234939ccc98185fd454ab602"
+    },
+    "review-brief.md": {
+      "path": "build/iter11-review/task01-review2/review-brief.md",
+      "sha256": "5811e7aae6bb28b4d404fe7eafec45500c9f061f166ac90f81c439f3bd3862c6"
+    },
+    "context.json": {
+      "path": "build/iter11-review/task01-review2/context.json",
+      "sha256": "041c47686bb825a54fecded5ceaf4ff5eefff53522f4263ea13705c2d0cb7440"
+    },
+    "dispatch-check.json": {
+      "path": "build/iter11-review/task01-review2/dispatch-check.json",
+      "sha256": "b0275eda9b51bb42d722b5b984c2aa2748015c3b0cd6b63bc9cd811017371db1"
+    },
+    "scope-runner.json": {
+      "path": "build/iter11-review/task01-review2/scope-runner.json",
+      "sha256": "65fdb18ec06759f28ba6e13c9b24c3fb91741bb5e275bcc61f9ab44f6a92c96b"
+    },
+    "scope-runner.json.output.txt": {
+      "path": "build/iter11-review/task01-review2/scope-runner.json.output.txt",
+      "sha256": "2adbcf28d4525b96e3fe198af484b63893cd6b1fd058b16147ac3adf9e047a81"
+    }
+  },
+  "scope_receipt": {
+    "version": 1,
+    "argv": [
+      "python3",
+      "-B",
+      "/data/workspace/iteration-manager/build/frozen-tools/fdcc4cce8863/scripts/iter_sync.py",
+      "--check-scope",
+      "1e99816564fa89d0b43db7a96fbc7c0dac1b6dd9",
+      "a178fbc65c6bc2cd9fed19e691571080e73e1e60",
+      "docs/todos/11-reliable-delivery/01-delivery-mode-consistency.md"
+    ],
+    "cwd": "/data/workspace/iteration-manager/.worktrees/iter-11",
+    "deadline": "2026-11-15T04:08:24.746000+00:00",
+    "cleanup_reserve_seconds": 5,
+    "status": "COMPLETED",
+    "deadline_checked_at": "2026-11-15T04:04:32.733081+00:00",
+    "started_at": "2026-11-15T04:04:32.735318+00:00",
+    "ended_at": "2026-11-15T04:04:32.847123+00:00",
+    "raw_exit_code": 0,
+    "tree_terminal": true,
+    "output": "build/iter11-review/task01-review2/scope-runner.json.output.txt",
+    "container_pid": 3448232,
+    "launcher_exit_code": 0,
+    "command": {
+      "status": "COMPLETED",
+      "raw_exit_code": 0,
+      "started_at": "2026-11-15T04:04:32.735318+00:00",
+      "tree_terminal": true,
+      "deadline_checked_at": "2026-11-15T04:04:32.733081+00:00",
+      "pid": 3448233,
+      "ended_at": "2026-11-15T04:04:32.817643+00:00"
+    },
+    "late_by_seconds": 0
+  },
+  "scope_output": "[IterSync:ScopeFirewall:PASSED] All 54 changed files within declared scope; ownership is not inferred.\n"
+}

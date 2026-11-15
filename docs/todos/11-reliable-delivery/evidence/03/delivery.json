@@ -1,0 +1,34 @@
+{
+  "version": 1,
+  "native_implementer_thread_id": "01a1dd6e-e307-7d53-9be3-0f011688cd30",
+  "base_sha": "09e916a94aaf90a8281f4ed568beed4a4a4a2816",
+  "source_manifest": "docs/todos/11-reliable-delivery/evidence/03/source-manifest.json",
+  "source_manifest_sha256": "5eaeef8f1d7a09985f7d1d7b823b8d949b8a2b784621b0c3fcc3f08ea81f5a79",
+  "red": {
+    "receipt": "docs/todos/11-reliable-delivery/evidence/03/red-implementer-01.json",
+    "status": "COMPLETED",
+    "raw_exit_code": 1,
+    "tree_terminal": true,
+    "failed": 2,
+    "passed": 31,
+    "failure_kind": "assertion",
+    "fallback": "test-side async nonfunctional fallback; no production module existed"
+  },
+  "green_and_regression": {
+    "receipt": "docs/todos/11-reliable-delivery/evidence/03/green-implementer-01.json",
+    "status": "COMPLETED",
+    "raw_exit_code": 0,
+    "tree_terminal": true,
+    "passed": 33,
+    "failed": 0
+  },
+  "native_consumption": "NOT RUN by implementer; controller must execute and retain actual host chain; success, failure or unknown is independent of synthetic guard tests",
+  "remaining": [
+    "controller actual native check and dispatch chain",
+    "controller candidate C",
+    "independent review",
+    "controller D and frozen local strict"
+  ],
+  "active_commands": false,
+  "commits_created": false
+}

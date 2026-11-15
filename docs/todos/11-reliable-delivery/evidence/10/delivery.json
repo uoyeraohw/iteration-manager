@@ -1,0 +1,76 @@
+{
+  "version": 1,
+  "implementer_thread_id": "01a1ddb8-4209-7662-991e-fcf18f1a74a2",
+  "base_sha": "40d76d4456261a41bf1b67106becad17ecc28e29",
+  "candidate": "base 40d76d4456261a41bf1b67106becad17ecc28e29 plus source-manifest.json hashes; implementation commit pending",
+  "coordinator_commit": "fdcc4cce88635ee81573be5991de11de650659d8",
+  "environment": {
+    "platform": "Linux",
+    "python": "/data/workspace/iteration-manager/build/iter11-maint-venv/bin/python",
+    "python_version": "3.11.17",
+    "pytest": "9.2.0",
+    "mcp": "1.30.0",
+    "runner": "/data/workspace/iteration-manager/build/frozen-runners/iter11-platform-v1/scripts/iter_run.py",
+    "runner_sha256": "b8b22217ad1d8d1f02a9a4d3cb053f84f781888c4871e583f0a7ff27f3fe3ef1",
+    "deadline": "2026-11-15T05:47:25.679588+00:00"
+  },
+  "commands": [
+    {
+      "command": "ITER_FROZEN_RUNNER=/data/workspace/iteration-manager/build/frozen-runners/iter11-platform-v1/scripts/iter_run.py ITER_COMMAND_DEADLINE=2026-11-15T05:47:25.679588+00:00 /data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B /data/workspace/iteration-manager/build/frozen-runners/iter11-platform-v1/scripts/iter_run.py --deadline 2026-11-15T05:47:25.679588+00:00 --evidence docs/todos/11-reliable-delivery/evidence/10/experiment-01.json -- /data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B -m pytest -p no:cacheprovider tests/test_self_hosting.py tests/test_execution_readiness.py tests/test_autonomy.py tests/test_checkpoint_resume.py -q --basetemp /tmp/iter11-task10-experiment-01",
+      "receipt": "docs/todos/11-reliable-delivery/evidence/10/experiment-01.json",
+      "output": "docs/todos/11-reliable-delivery/evidence/10/experiment-01.json.output.txt",
+      "status": "COMPLETED",
+      "exit_code": 1,
+      "tree_terminal": true
+    },
+    {
+      "command": "ITER_FROZEN_RUNNER=/data/workspace/iteration-manager/build/frozen-runners/iter11-platform-v1/scripts/iter_run.py ITER_COMMAND_DEADLINE=2026-11-15T05:47:25.679588+00:00 /data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B /data/workspace/iteration-manager/build/frozen-runners/iter11-platform-v1/scripts/iter_run.py --deadline 2026-11-15T05:47:25.679588+00:00 --evidence docs/todos/11-reliable-delivery/evidence/10/experiment-02.json -- /data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B -m pytest -p no:cacheprovider tests/test_self_hosting.py tests/test_execution_readiness.py tests/test_autonomy.py tests/test_checkpoint_resume.py -q --basetemp /tmp/iter11-task10-experiment-02",
+      "receipt": "docs/todos/11-reliable-delivery/evidence/10/experiment-02.json",
+      "output": "docs/todos/11-reliable-delivery/evidence/10/experiment-02.json.output.txt",
+      "status": "COMPLETED",
+      "exit_code": 0,
+      "tree_terminal": true
+    },
+    {
+      "command": "/data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B /data/workspace/iteration-manager/build/frozen-runners/iter11-platform-v1/scripts/iter_run.py --deadline 2026-11-15T05:47:25.679588+00:00 --evidence docs/todos/11-reliable-delivery/evidence/10/git-drift-01.json -- /data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B -m pytest -p no:cacheprovider tests/test_completion_gates.py::test_reviewed_scope_and_contract_drift_rejected -q --basetemp /tmp/iter11-task10-git-drift-01",
+      "receipt": "docs/todos/11-reliable-delivery/evidence/10/git-drift-01.json",
+      "output": "docs/todos/11-reliable-delivery/evidence/10/git-drift-01.json.output.txt",
+      "status": "COMPLETED",
+      "exit_code": 0,
+      "tree_terminal": true
+    }
+  ],
+  "nested_payload": {
+    "command": "/data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B /data/workspace/iteration-manager/build/frozen-runners/iter11-platform-v1/scripts/iter_run.py --deadline 2026-11-15T05:47:25.679588+00:00 --evidence installed-copy-receipt.json -- /data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B -m pytest -p no:cacheprovider tests/test_board_handoff.py tests/test_board_service.py -q --basetemp /tmp/iter11-task10-experiment-02/test_install_drift_survives_pr0/nested/installed-pytest",
+    "cwd": "/tmp/iter11-task10-experiment-02/test_install_drift_survives_pr0/nested/payload",
+    "receipt": "docs/todos/11-reliable-delivery/evidence/10/payload-receipt.json",
+    "original_receipt": "installed-copy-receipt.json",
+    "output": "docs/todos/11-reliable-delivery/evidence/10/payload-receipt.json.output.txt",
+    "status": "COMPLETED",
+    "exit_code": 0,
+    "tree_terminal": true
+  },
+  "decisions": "Use candidate symbols and established synthetic fixtures; no coordinator self-approval. Do not duplicate mature suites. The first run failed due to two test-interface mistakes and is preserved; corrected source is bound by manifest.",
+  "applicability": "Experiment 02 includes mature FS drift and checkpoint refusal cases in this same environment/candidate. Git drift rerun because query/audit source changed since task01 receipt. Nested payload uses current support test source, not the older task07 result. Synthetic manifest is not proof of Git origin.",
+  "interfaces": [
+    "tests/test_self_hosting.py",
+    "docs/todos/11-reliable-delivery/evidence/10/integration-report.json",
+    "docs/todos/11-reliable-delivery/evidence/10/checks-proposal.json",
+    "docs/todos/11-reliable-delivery/evidence/10/source-manifest.json",
+    "docs/todos/11-reliable-delivery/evidence/10/ledger-summary.md"
+  ],
+  "limitations": [
+    "Native self-use or real delegation and adoption",
+    "Real installation, deployment or trusted manifest origin",
+    "Windows and browser acceptance",
+    "Independent review, C/D and frozen local strict, whole-branch and full-suite gates"
+  ],
+  "remaining": [
+    "Controller observes native terminal and records attempt/release",
+    "freeze candidate C",
+    "independent review",
+    "register D",
+    "frozen local strict"
+  ],
+  "status": "implementation evidence only; at most TESTING; no approval"
+}

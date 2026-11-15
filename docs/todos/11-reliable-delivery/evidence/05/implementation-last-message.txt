@@ -1,0 +1,8 @@
+Task 05’s implementation checkpoint is ready for the controller. The [support matrix](/data/workspace/iteration-manager/.worktrees/iter-11/references/support_matrix.md) records the dated evidence and limitations; the release index adds a route without rewriting its historical entries.
+
+The prescribed experiment passed **5 tests**. Its [runner receipt](/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/05/experiment-final.json) reports `COMPLETED`, raw exit `0`, and `tree_terminal: true`. The separate [consumer scenario](/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/05/consumer-scenario.md) is prepared, and its eight local links resolved.
+
+The [delivery record](/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/05/delivery.json), checks proposal, decision report, and source manifest are present. Native session UUID: `01a1dd84-62f5-7fb2-a5b6-23520a7a04e7`. No commands remain active.
+
+The fresh-session consumer interpretation is **pending before C**, followed by independent review, D registration, and frozen strict under the controller. No commit or deployment was made.
+

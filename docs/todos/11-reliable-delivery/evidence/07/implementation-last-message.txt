@@ -1,0 +1,8 @@
+Task07 提取和交接证据已完成，待协调方冻结候选并安排独立审查。
+
+- 修改前基线 **11 项通过**；最终回归 **13 项通过**。无历史目录的白名单临时副本中，受影响测试 **11 项通过**。
+- 三次 Before 耗时为 **2.016、2.013、1.638 秒**；After 为 **1.905、1.670、1.955 秒**。历史路径消费者由 **2 处降至 0 处**，不据此承诺性能提升。
+- 历史 harness 与 BASE 字节一致；提取文件仅调整了项目根定位层级。首次量测脚本的错误和修正后的结果均已保留。
+
+交接材料见 [delivery.json](/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/07/delivery.json)、[checks-proposal.json](/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/07/checks-proposal.json) 和 [ledger-summary.md](/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/07/ledger-summary.md)。所有正式命令已终止；未运行真实浏览器或完整套件，也未实际安装。实现提交 C、独立审查、登记 D 和 frozen local strict 仍待完成。
+

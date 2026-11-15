@@ -1,0 +1,10 @@
+{
+  "reason": "Leaf negative-control runner receipt used fix1-guard.json; parent save refused overwrite. Exact dispatch trace recovered from immutable own native transcript event command AST without evaluating it; original runner receipt untouched.",
+  "source": "/data/home/.codex/sessions/2026/11/14/rollout-2026-11-14T16-31-36-01a1dae6-6cf3-7743-85e3-c2f7b2376eab.jsonl",
+  "event_ordinal": 3890,
+  "event_timestamp": "2026-11-15T05:59:09.835Z",
+  "event_line_sha256": "9dcfc9d2641b149ad40c169610308ab84deb5e94235eac26e2192c6c2ab831ba",
+  "request_id": "fix1-1794722202774",
+  "guard": "docs/todos/11-reliable-delivery/evidence/11/fix1-dispatch-guard.json",
+  "terminal": "docs/todos/11-reliable-delivery/evidence/11/fix1-terminal.json"
+}

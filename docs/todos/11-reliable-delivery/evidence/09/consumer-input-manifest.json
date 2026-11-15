@@ -1,0 +1,16 @@
+{
+  "sha256": {
+    "references/refactor_evidence.md": "1c05f911485c47eb590edf8443e4fb05f662f2e4848f4a06b823f3eb073b9fd6",
+    "templates/contracts/refactor_benchmark_contract.md": "a30a2cc31ce947e9f4e01d11708aca60d9a3e91d50169a54ea0d21dad4c4c978",
+    "docs/todos/11-reliable-delivery/evidence/09/structure-v2-spec.json": "fb891203d6bd3017285ed09b79e15f83229dc072b454d63f71f383e915d4964f",
+    "docs/todos/11-reliable-delivery/evidence/09/structure-v2-card.md": "ced3c9ee55400ee13dc3804304f00d8a6f390fc20245cf17f89ab4f94e33b371",
+    "docs/todos/11-reliable-delivery/evidence/09/performance-v2-spec.json": "e5eebe56e1bf47aa60722b38ac7b14cdf58921221ad7cd8090c8ad00481726dd",
+    "docs/todos/11-reliable-delivery/evidence/09/performance-v2-card.md": "00c3140066e46d66cb1567a468039a72809377c5e27d401e38ea835ec1cddc37",
+    "docs/todos/11-reliable-delivery/evidence/09/consumer-brief-input.md": "8ab9a758931d0d434e1b76dc3eabd84193414806eb29e0c5b0553b17152322c7"
+  },
+  "additional_read_only_context": [
+    "docs/todos/11-reliable-delivery/07-portable-test-support.md",
+    "docs/todos/11-reliable-delivery/README.md"
+  ],
+  "status": "PENDING: no native consumer has run"
+}

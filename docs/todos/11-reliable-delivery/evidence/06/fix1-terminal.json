@@ -1,0 +1,51 @@
+{
+  "launch": {
+    "requestedAt": 1794719353208,
+    "leaf": 1794719713208,
+    "hard": 1794719803208,
+    "command": 1794719653208,
+    "launch": {
+      "chunk_id": "16ea33",
+      "wall_time_seconds": 1.002163653,
+      "session_id": 35992,
+      "original_token_count": 0,
+      "output": ""
+    },
+    "cmd": "timeout --signal=TERM --kill-after=5s 360s codex exec -C '/data/workspace/iteration-manager/.worktrees/iter-11' -s danger-full-access -c 'approval_policy=\"never\"' resume '01a1dd8e-8b72-7b72-90b4-a8577ef8db2d' --json -o '/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/06/fix1-last-message.txt' - < '/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/06/fix1-brief.md' > '/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/06/fix1-native.jsonl' 2> '/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/06/fix1-native.stderr.txt'"
+  },
+  "monitor": {
+    "reason": "terminal",
+    "deadlineMs": 1794719713208,
+    "final": {
+      "status": "completed",
+      "raw": {
+        "chunk_id": "4d4d11",
+        "wall_time_seconds": 49.353755313,
+        "exit_code": 0,
+        "original_token_count": 0,
+        "output": ""
+      }
+    },
+    "terminalConfirmed": true,
+    "observedAt": 1794719404027,
+    "lateByMs": 0,
+    "events": [
+      {
+        "kind": "query",
+        "startedAt": 1794719354666,
+        "returnedAt": 1794719404026,
+        "waitMs": 60000,
+        "result": {
+          "status": "completed",
+          "raw": {
+            "chunk_id": "4d4d11",
+            "wall_time_seconds": 49.353755313,
+            "exit_code": 0,
+            "original_token_count": 0,
+            "output": ""
+          }
+        }
+      }
+    ]
+  }
+}

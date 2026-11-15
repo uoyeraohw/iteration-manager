@@ -1,0 +1,67 @@
+{
+  "candidate": "d09888af23991785f96ea98d902821b002961534",
+  "base": "3158e75869d5c4346c51256de878f14ea190f305",
+  "contract_sha": "3158e75869d5c4346c51256de878f14ea190f305",
+  "reviewer_uuid": "01a1dda4-bfb4-7c12-bd9d-3c56393a5447",
+  "independence": "Independent reviewer; did not design, implement, test, or perform RCA for task 07, and did not delegate. Distinct from excluded implementer 01a1dda0-8d6b-79c0-8739-a8409dec0d93, task consumers and root controller. Review verification consists of the requested scope check and read-only evidence mapping, not implementation testing.",
+  "verdicts": {
+    "scope": "APPROVED",
+    "spec": "NEEDS_FIX",
+    "quality": "NEEDS_FIX",
+    "overall": "NEEDS_FIX"
+  },
+  "findings": [
+    {
+      "id": "F1",
+      "severity": "P2",
+      "file": "tests/test_harness_portability.py",
+      "line": 39,
+      "scenario": "The temporary payload test requires the literal substring '11 passed'. If a valid test is added to either affected suite, pytest reports e.g. 12 passed and this portability test fails despite all tests and the nested runner succeeding. The support intended for future maintenance thus makes normal suite growth appear broken.",
+      "remediation": "Validate the completed terminal receipt and pytest success without hard-coding the current total; if a nonempty collection must be guaranteed, use a count-independent result or structured collection evidence. Preserve the payload-without-history exercise."
+    },
+    {
+      "id": "F2",
+      "severity": "P2",
+      "file": "docs/todos/11-reliable-delivery/07-portable-test-support.md",
+      "line": 83,
+      "scenario": "The ledger lists three durations per phase and the dependency counts but provides neither the Before versus After comparison table nor the calculated change requested by Refactor-Benchmark contract Step 4 and acceptance (templates/contracts/refactor_benchmark_contract.md:26,33). The measurements are available, but the mandatory type deliverable is incomplete.",
+      "remediation": "Add a clearly labeled comparison table in the task ledger and calculate a stated comparable aggregate change from the preserved samples. State that the small sample is descriptive and makes no performance guarantee; reuse the existing valid raw evidence rather than rerunning it. Freeze a new candidate and obtain review of the change."
+    }
+  ],
+  "evidence_applicability_chronology": {
+    "identity_and_frozen_spec": "HEAD is C, branch feat/iter-11-reliable-delivery, C is the direct child of BASE, clean tracked worktree; task body changes are permitted execution metadata, checkboxes and ledger; goal README is unchanged. Git mode is implicit legal Git with base_sha set, no FS configuration claimed; C remains TESTING/PENDING, head_sha empty pending D. No budget reset.",
+    "readiness": "dispatch-check.json was same-owner READY with acceptance_verdict UNKNOWN; it is readiness evidence only.",
+    "baseline": "baseline-implementer receipt 05:14:17-05:14:21, 11 passed, exit 0 and terminal tree; native log initial status showed BASE and no changed test files before run. Native log item_16 extraction occurs after baseline and corrected before.",
+    "benchmark_before": "benchmark-before initially exited 1 with JSONEncoder flush TypeError before tests. Original failure retained. Corrected script and before-v2 ran 05:14:42-05:14:47 before extraction; three runs each 3 passed, exit 0; 2 historical references. Native implementation log records correction before extraction.",
+    "benchmark_after": "Same corrected measure.py, Linux Python 3.11.17, same selected tests and three repetitions with unique phase temporary roots; after 05:15:29-05:15:35, each 3 passed, exit 0, 0 historical references. Before seconds 2.015566, 2.013032, 1.637504; after 1.904979, 1.670483, 1.955465. Descriptive reviewer arithmetic: mean 1.888701 vs 1.843643 seconds, 2.39% decrease; this does not replace the contract-required ledger deliverable or establish a performance claim.",
+    "regression": "regression-v3 runs exact three requested files with frozen runner and external basetemp, 13 passed; exit 0 and terminal tree. Earlier v1/v2 retained. The 11-test nested payload run used actual iter_install inventory, absent docs/todos, and the true payload cwd /tmp/iter11-task07-regression-v3/test_payload_copy_runs_handoff0/payload; copied receipt and raw output show 11 passed, exit 0, terminal tree. It is not a project-root receipt.",
+    "compatibility": "Historical harness at BASE and C and all historical evidence/04 are unchanged; new file differs only in ROOT parent index from 5 to 2, resolving to the same checkout root. Both handoff consumers now use support path. Existing parametrized test exercises isolated and nonisolated real inventory root with synthetic checkout, and HTTP lifecycle/argument checks are exercised by regression. No inference of real browser acceptance.",
+    "attempt": "Original root attempt including the copied nested receipt was rejected (attempt.call.json exit 2: requires project runner receipt); retry2 preserves raw original and lists only root command receipts, exit 0; nested receipt remains separately inspectable with its actual cwd. No budget reset or product change was used.",
+    "terminal": "implementation native log thread id matches excluded implementer, turn completed; implementation-terminal.json confirms native process completion. Individual original receipts and child receipts show terminal trees and exit codes; see receipt-check.json.output.txt. Initial failed benchmark is explicitly not a successful check."
+  },
+  "source_mapping": {
+    "manifest": "docs/todos/11-reliable-delivery/evidence/07/source-manifest.json",
+    "count": 98,
+    "result": "Every recorded SHA256 matches the bytes of its Git blob at C; 0 mismatches. Goal README and all historical evidence/04 unchanged against BASE.",
+    "receipt": "build/iter11-review/task07-review1/source-check.json",
+    "output": "build/iter11-review/task07-review1/source-check.json.output.txt"
+  },
+  "scope_receipt": {
+    "path": "build/iter11-review/task07-review1/scope-runner.json",
+    "output": "build/iter11-review/task07-review1/scope-runner.json.output.txt",
+    "status": "COMPLETED",
+    "raw_exit_code": 0,
+    "tree_terminal": true,
+    "result": "63 changed files passed physical scope check; card is implicitly in scope. Frozen fdcc4cc has known mode/takeover defects, so this result establishes scope only; Git legality and frozen text independently checked."
+  },
+  "DeferredMinors": [
+    "git diff --check reports an extra blank line at EOF in evidence/07/implementation-last-message.txt; no effect on task behavior or original output preservation."
+  ],
+  "limitations": [
+    "No full suite, Windows Job Object run, deployment, installed production copy, new-session consumption, or real browser observation was performed or approved.",
+    "HTTP/DOM checks are not native browser evidence; no new browser claim is made.",
+    "All comparisons apply to the supplied Linux environment and sampled inputs; measured runtime differences do not establish a speedup.",
+    "No independently repeated existing test suite; original candidate-bound evidence and minimal runner-wrapped read-only checks were inspected."
+  ],
+  "approval_scope": "Scope verdict concerns task07 physical scope only. Overall NEEDS_FIX evaluates whole C against task07 frozen specification and type contract; it is not task approval or a finding-only closure. No D registration, strict, iteration release, merge, push or deployment."
+}

@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "kind": "coordination-command",
+  "argv": [
+    "git",
+    "worktree",
+    "add",
+    ".worktrees/iter-11",
+    "-b",
+    "feat/iter-11-reliable-delivery",
+    "main"
+  ],
+  "cwd": "/data/workspace/iteration-manager",
+  "head": "80621f1c29e74c6398d1e8aa620af04189f1740c",
+  "started_at": "2026-11-15T02:23:41.355895+00:00",
+  "ended_at": "2026-11-15T02:23:41.491572+00:00",
+  "exit_code": 0,
+  "stdout": "worktree-add.stdout.txt",
+  "stderr": "worktree-add.stderr.txt"
+}

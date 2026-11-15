@@ -1,0 +1,29 @@
+[
+  {
+    "name": "experiment",
+    "kind": "command",
+    "command": "/data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B /data/workspace/iteration-manager/build/frozen-runners/iter11-platform-v1/scripts/iter_run.py --deadline 2026-11-15T06:14:28.191357+00:00 --evidence docs/todos/11-reliable-delivery/evidence/12/experiment-04.json -- /data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B -m pytest -p no:cacheprovider tests/test_workflow_sequence.py tests/test_prompt_sources.py tests/test_task_card_schema.py -q --basetemp /tmp/iter11-task12-3Zi61t",
+    "cwd": ".",
+    "exit_code": 0,
+    "summary": "Frozen runner completed, process tree terminal; 10 passed including synthetic callback scenarios. Native consumption remains pending.",
+    "output": "docs/todos/11-reliable-delivery/evidence/12/experiment-04.json.output.txt"
+  },
+  {
+    "name": "decision",
+    "kind": "observation",
+    "command": null,
+    "cwd": ".",
+    "exit_code": null,
+    "summary": "Source-backed decisions, constraints, evidence and limitations; not an approval.",
+    "output": "docs/todos/11-reliable-delivery/evidence/12/ledger-summary.md"
+  },
+  {
+    "name": "interfaces",
+    "kind": "observation",
+    "command": null,
+    "cwd": ".",
+    "exit_code": null,
+    "summary": "Guard callback contract, authority and per-card/final sequence recorded; actual new-source consumption pending.",
+    "output": "docs/todos/11-reliable-delivery/evidence/12/ledger-summary.md"
+  }
+]

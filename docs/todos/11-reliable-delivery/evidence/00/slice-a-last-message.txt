@@ -1,0 +1,10 @@
+Task00 is ready for Controller handoff as a **TESTING candidate**. The Linux runner, tests, and Windows/Linux guidance are in the worktree; independent review and approval remain outstanding.
+
+- [Delivery checkpoint](/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/00/slice-a-delivery.json) lists the changed files, evidence, and remaining steps.
+- [RED bootstrap](/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/00/slice-a-red-bootstrap.json) exited 1 on the intended assertion: the old CLI returned 125 instead of 7.
+- [Formal GREEN](/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/00/slice-a-green-v2.json) exited 0: 24 passed, 2 Windows-only skips.
+- [Affected regression](/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/00/slice-a-regression-v2.json) exited 0: 141 passed, 2 skipped. Both formal receipts record `tree_terminal: true`.
+- The [real exit-7 receipt](/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/00/slice-a-exit7.json) preserves the business exit and raw stdout.
+
+Windows execution was not rerun. No task00 test or runner command remained active at the checkpoint, and the pre-existing task-card changes were preserved.
+

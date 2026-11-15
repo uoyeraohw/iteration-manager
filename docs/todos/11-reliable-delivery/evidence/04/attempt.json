@@ -1,0 +1,39 @@
+{
+  "phase": "implementation",
+  "candidate": "6b6b5515e6e0ea58c1d66d1de514811782441fc5",
+  "inputs": [
+    "docs/todos/11-reliable-delivery/04-navigation-and-support.md",
+    "docs/todos/11-reliable-delivery/README.md",
+    "AGENTS.md",
+    "references/task_card_schema.md",
+    "SKILL.md",
+    "templates/iteration_readme.md"
+  ],
+  "capabilities": [
+    "native-codex-cli-implementer",
+    "approved-frozen-linux-runner",
+    "Python3.11.17-pytest9.2-mcp1.30",
+    "independent-native-reviewer"
+  ],
+  "version": 1,
+  "checkpoint": "导航实验6通过；有效守卫后的新会话定位01目标/交接/Strict-TDD与原始失败，缺件UNKNOWN且未加载迭代10全文；原调度FAIL保留",
+  "remaining_work": [
+    "C独审",
+    "D/冻结strict"
+  ],
+  "executor_id": "01a1dd7a-d83f-7803-8c9b-7c75e2ce3a78",
+  "terminal_evidence": "docs/todos/11-reliable-delivery/evidence/04/implementation-terminal.json",
+  "progress": [
+    {
+      "kind": "implementation",
+      "summary": "导航实验6通过；有效守卫后的新会话定位01目标/交接/Strict-TDD与原始失败，缺件UNKNOWN且未加载迭代10全文；原调度FAIL保留",
+      "evidence": "docs/todos/11-reliable-delivery/evidence/04/delivery.json"
+    }
+  ],
+  "commands": [
+    "docs/todos/11-reliable-delivery/evidence/04/navigation-experiment-0434.json",
+    "docs/todos/11-reliable-delivery/evidence/04/navigation-experiment-final-0435.json"
+  ],
+  "started_at": null,
+  "ended_at": null
+}

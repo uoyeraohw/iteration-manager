@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "phase": "evidence-inspection",
+  "candidate": "6b6b5515e6e0ea58c1d66d1de514811782441fc5",
+  "inputs": [
+    "SKILL.md",
+    "docs/todos/11-reliable-delivery/evidence/04/navigation-scenario.md"
+  ],
+  "capabilities": [
+    "native-codex-cli",
+    "approved-frozen-coordinator"
+  ],
+  "checkpoint": "守卫消费真实READY后新会话正确定位01与缺失原件UNKNOWN",
+  "remaining_work": [
+    "C独审/D/strict"
+  ],
+  "executor_id": "01a1dd7f-c903-7ef2-a6df-87c03f15383c",
+  "terminal_evidence": "docs/todos/11-reliable-delivery/evidence/04/consumer-v2-terminal.json",
+  "progress": [
+    {
+      "kind": "review-finding",
+      "summary": "守卫消费真实READY后新会话正确定位01与缺失原件UNKNOWN",
+      "evidence": "docs/todos/11-reliable-delivery/evidence/04/navigation-consumption-v2.json"
+    }
+  ],
+  "commands": [],
+  "started_at": null,
+  "ended_at": null
+}

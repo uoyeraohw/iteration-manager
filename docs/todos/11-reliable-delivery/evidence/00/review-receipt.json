@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "task_id": "00",
+  "type": "Strict-TDD",
+  "task_path": "docs/todos/11-reliable-delivery/00-linux-runner-and-dev-guide.md",
+  "base_sha": "894dfd6d5d93d2ff99f6eddcaadbb88ee9ce44c3",
+  "head_sha": "3f949f807d3c2eb47b97a116bd6932da55778edd",
+  "contract_sha": "894dfd6d5d93d2ff99f6eddcaadbb88ee9ce44c3",
+  "implementer": "01a1dd24-bea9-7580-bfbd-5afac812648b",
+  "reviewer": "01a1dd40-1011-7731-9c22-26d83fb705e7",
+  "verdict": "APPROVED",
+  "review_report": "docs/todos/11-reliable-delivery/evidence/00/review-report.json",
+  "checks": [
+    {
+      "name": "red",
+      "kind": "command",
+      "command": "/data/workspace/iteration-manager/build/iter11-venv/bin/python -B -m pytest -p no:cacheprovider tests/test_linux_runner.py -q",
+      "cwd": ".",
+      "exit_code": 1,
+      "summary": "原Windows-only公共CLI真实断言125 != 7；task00专用bootstrap观察，不冒作v1 runner收据",
+      "output": "docs/todos/11-reliable-delivery/evidence/00/slice-a-red-bootstrap.json.output.txt",
+      "failure_kind": "assertion"
+    },
+    {
+      "name": "green",
+      "kind": "command",
+      "command": "/data/workspace/iteration-manager/build/iter11-venv/bin/python -B -m pytest -p no:cacheprovider tests/test_iter_run.py tests/test_linux_runner.py -q",
+      "cwd": ".",
+      "exit_code": 0,
+      "summary": "最终Linux及F1核心测试30通过、2 Windows跳过；真实固定驱动终态",
+      "output": "docs/todos/11-reliable-delivery/evidence/00/fix1-green-final.json.output.txt"
+    },
+    {
+      "name": "regression",
+      "kind": "command",
+      "command": "/data/workspace/iteration-manager/build/iter11-venv/bin/python -B -m pytest -p no:cacheprovider tests/test_iter_run.py tests/test_linux_runner.py tests/test_checkpoint_resume.py tests/test_execution_readiness.py tests/test_autonomy.py tests/test_prompt_sources.py tests/test_task_card_schema.py -q",
+      "cwd": ".",
+      "exit_code": 0,
+      "summary": "受影响runner/checkpoint/readiness/autonomy/prompt/schema回归147通过、2跳过",
+      "output": "docs/todos/11-reliable-delivery/evidence/00/fix1-regression-final.json.output.txt"
+    }
+  ]
+}

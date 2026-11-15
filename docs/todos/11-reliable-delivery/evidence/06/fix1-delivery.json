@@ -1,0 +1,38 @@
+{
+  "version": 1,
+  "kind": "F1-actual-payload-smoke",
+  "native_session_uuid": "01a1dd8e-8b72-7b72-90b4-a8577ef8db2d",
+  "candidate_commit": "6ee7605de94fde0dfb4454f512b9913fd7aa01ae",
+  "experiment": "docs/todos/11-reliable-delivery/evidence/06/real-payload-smoke.py",
+  "runner_receipt": "docs/todos/11-reliable-delivery/evidence/06/fix1-real-payload.json",
+  "runner_output": "docs/todos/11-reliable-delivery/evidence/06/fix1-real-payload.json.output.txt",
+  "manifest": "docs/todos/11-reliable-delivery/evidence/06/fix1-real-payload-manifest.json",
+  "inventory": "docs/todos/11-reliable-delivery/evidence/06/fix1-real-payload-inventory.json",
+  "source_manifest": "docs/todos/11-reliable-delivery/evidence/06/fix1-source-manifest.json",
+  "checks_proposal": "docs/todos/11-reliable-delivery/evidence/06/checks-proposal-v2.json",
+  "result": {
+    "file_count": 111,
+    "clean_check_exit": 0,
+    "drift_check_exit": 2,
+    "runner_status": "COMPLETED",
+    "raw_exit_code": 0,
+    "tree_terminal": true
+  },
+  "temporary_root": "/tmp/iter11-task06-real-payload-bw6ghsyv",
+  "temporary_source": "/tmp/iter11-task06-real-payload-bw6ghsyv/source",
+  "temporary_installation": "/tmp/iter11-task06-real-payload-bw6ghsyv/installation",
+  "applicability": "Original RED and 39-pass GREEN retained; 11 previously registered source hashes independently matched current bytes and C1 Git blobs; no pytest rerun or product changes.",
+  "limitations": [
+    "The temporary copy intentionally remains drifted.",
+    "Manifest trust, concurrency and host adoption limitations remain.",
+    "Windows execution, real deployment and full execution chain remain unverified."
+  ],
+  "remaining_work": [
+    "controller records attempt and release",
+    "freeze C2",
+    "same independent reviewer",
+    "controller registration D",
+    "frozen strict"
+  ],
+  "status": "TESTING; no approval"
+}

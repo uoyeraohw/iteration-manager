@@ -1,0 +1,76 @@
+{
+  "candidate": "16640d1e7d83fc546e79e19995a0a91cf80c533e",
+  "base": "09e916a94aaf90a8281f4ed568beed4a4a4a2816",
+  "reviewer_uuid": "01a1dd74-1002-7902-82f6-7905eee29cbd",
+  "independence": {
+    "statement": "Fresh independent reviewer; did not design, implement, author tests, perform RCA, or delegate this task.",
+    "excluded_implementer": "01a1dd6e-e307-7d53-9be3-0f011688cd30",
+    "distinct": true
+  },
+  "verdicts": {
+    "scope": "APPROVED",
+    "spec": "NEEDS_FIX",
+    "quality": "NEEDS_FIX",
+    "overall": "NEEDS_FIX"
+  },
+  "findings": [
+    {
+      "id": "F1",
+      "severity": "major",
+      "category": "spec and quality / missing required verification",
+      "file": "tests/test_dispatch_guard.py",
+      "line": 35,
+      "related": "docs/todos/11-reliable-delivery/03-native-dispatch-guard.md:30",
+      "scenario": "The frozen task explicitly requires controlled-Promise coverage of out-of-order completion. The only pending-Promise case starts a single guard call and resolves that same call; the negative matrix supplies pre-mutated observations to separate, sequential invocations. No test creates overlapping requests and resolves them in reverse order, so it cannot detect a cross-request binding or dispatch mix-up in that scenario. The 31 passing RED controls used the nonfunctional fallback and do not establish the missing behavior. Code inspection indicates per-call state, but it cannot replace the expressly required test evidence.",
+      "remediation": "Have the implementer add a meaningful controlled overlapping-request reverse-completion case that checks each request, READY identity and dispatch independently, then retain appropriate runner evidence and submit the resulting candidate for independent review."
+    }
+  ],
+  "source_and_chronology": {
+    "manifest": "docs/todos/11-reliable-delivery/evidence/03/source-manifest.json",
+    "manifest_sha256": "5eaeef8f1d7a09985f7d1d7b823b8d949b8a2b784621b0c3fcc3f08ea81f5a79",
+    "manifest_delivery_binding": "matched",
+    "manifest_git_c_mapping": "All five listed source SHA256 values and both receipt SHA256 values independently matched Git C blobs and worktree bytes; deadline_watch.js unchanged from base. Raw red/green outputs and child receipts independently matched C blobs.",
+    "implementer_native": "implementation-native.jsonl line 1 thread.started matches excluded implementer; event item_16 writes test, item_17 runs RED, item_21 writes production source, item_22 runs GREEN.",
+    "red": "Frozen runner: completed, exit 1, tree_terminal true; 2 behavior assertion failures and 31 passed; explicit test-side nonfunctional fallback before production. 04:20:20.665980–04:20:26.135577 UTC.",
+    "green_regression": "Frozen runner: completed, exit 0, tree_terminal true; 33 passed, exact two-file selection tests/test_dispatch_guard.py and tests/test_deadline_watch.py. 04:20:49.382420–04:20:50.950771 UTC. One run serves identical green and regression selections.",
+    "applicability": "Python 3.11 maintenance venv, Linux, Node synthetic callbacks, same source bytes and base inputs as C; does not prove Windows, host worker execution, integration or full suite. No duplicate suite executed."
+  },
+  "native_consumption": {
+    "evidence": "docs/todos/11-reliable-delivery/evidence/03/native-codeg-chain.json",
+    "request_id": "iter11-task03-codeg-native-1794716607541",
+    "candidate_at_consumption": "09e916a94aaf90a8281f4ed568beed4a4a4a2816",
+    "candidate_interpretation": "Actual invocation before C commit bound the then-current BASE plus manifest-matched guard source; it is not a claim that the later C commit existed at check time.",
+    "identities": "Actual frozen CLI argv, absolute card, cwd, owner, context, phase, request ID and READY task/candidate agree in retained native record. Observed check start 1794716607704, terminal consumed 1794716607879, one dispatch call 1794716607884.",
+    "delegation_id": "c941414c-0691-44bb-886b-c6dd369193ac",
+    "terminal": "Native query returned completed, but worker reports bwrap mount proc failure, exit 1, and command never started. Worker product command and successful Codeg shell remain BLOCKED; no success inferred. The task requires real schema ordering, not fabricated worker success.",
+    "trust_boundary": "Callback-provided argv/cwd and terminal references do not authenticate execution or context freshness; controller and reviewer must inspect original observations and current authorization. Guard snapshots request fields and confines effect to calls through this entry."
+  },
+  "scope_receipt": {
+    "path": "build/iter11-review/task03-review2/scope-runner.json",
+    "raw_output": "build/iter11-review/task03-review2/scope-runner.json.output.txt",
+    "child": "build/iter11-review/task03-review2/scope-runner.json.child.json",
+    "result": "One actual frozen scope invocation completed; raw exit 0, launcher exit 0, tree_terminal true, 34 paths within scope; output expressly says ownership not inferred. Independently inspected diff, frozen card and goal: code and evidence in declared scope, task-card status/ledger edits are lifecycle changes; no goal/scope/acceptance modification. Git delivery default, base ancestor of C, C is actual HEAD. Frozen known mode/takeover defects not treated as semantic approval."
+  },
+  "contract_review": {
+    "behavior": "Guard awaits check; verifies completed, integer exit zero, exact argv/cwd/request ID, terminal evidence and single JSON READY identities; invokes dispatch once; catches check and dispatch exceptions without retry, returns unknown native result. No Node API/global scheduler/cross-call cache; deadline_watch unchanged. Tested negative matrix covers running, failed/unknown, invalid exit, malformed/multiple JSON, non-READY, all READY identities, request ID, cwd, argv tool/card/context/phase/owner and terminal proof; missing concurrent reverse-order case is F1.",
+    "review_dispatch": "build/iter11-review/task03-review2/dispatch-check.json reports same owner, evidence-inspection, exit 0 READY and candidate C; READY is not acceptance approval."
+  },
+  "DeferredMinors": [
+    {
+      "id": "M1",
+      "severity": "minor",
+      "file": "references/native_dispatch_adapter.md",
+      "line": 3,
+      "issue": "Adapter assigns default instruction integration to task 04, while frozen iteration goal identifies task 12 for default consumption, task 12 explicitly owns workflow integration, and task 04 explicitly excludes dispatch rules. Frozen task03 acceptance also contains the older 04 reference. This is a misleading routing statement, but task03 scope calls for guard and standalone contract and does not itself require future integration to have occurred.",
+      "remediation": "Correct the adapter ownership reference in an authorized change and preserve frozen task-card history; ensure task12 implements and independently verifies default consumption. The controller ruling alone does not change frozen requirements."
+    }
+  ],
+  "limitations": [
+    "Native Codeg worker shell execution BLOCKED by bwrap; native completed status is not worker success.",
+    "No Windows Job Objects execution, deployment, whole iteration acceptance, complete maintenance suite or default-workflow integration reviewed or claimed.",
+    "The native check was run before C existed, with exact guard source bound by manifest; it does not constitute a check at C.",
+    "No tests rerun by reviewer; F1 is established by inspecting the complete direct tests and receipt selection."
+  ],
+  "approval_scope": "Scope only approved for frozen C against BASE; whole task is NEEDS_FIX until the explicitly required out-of-order Promise evidence is supplied and the resulting candidate receives a fresh independent review. No completion, D/strict or whole-iteration approval.",
+  "active_commands": false
+}

@@ -1,0 +1,22 @@
+{
+  "kind": "controller-command-observation",
+  "argv": [
+    "python3",
+    "-B",
+    "/data/workspace/iteration-manager/build/frozen-tools/fdcc4cce8863/scripts/iter_sync.py",
+    "--autonomy",
+    "release",
+    "docs/todos/11-reliable-delivery/02-takeover-report-isolation.md",
+    "--event-id",
+    "iter11-02-release-implementation-v1",
+    "--owner",
+    "iter11-controller-linux-20261115",
+    "--executor-state",
+    "completed"
+  ],
+  "started_at": "2026-11-15T04:16:03.376768+00:00",
+  "ended_at": "2026-11-15T04:16:03.459406+00:00",
+  "exit_code": 2,
+  "stdout": "{\"error\": \"Release requires terminal executor evidence\", \"is_fused\": true, \"status\": \"BLOCKED\"}\n",
+  "stderr": ""
+}

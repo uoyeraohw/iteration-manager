@@ -1,0 +1,83 @@
+{
+  "launch": {
+    "requestedAt": 1794722736253,
+    "leaf": 1794723336253,
+    "hard": 1794723426253,
+    "command": 1794723276253,
+    "launch": {
+      "chunk_id": "f46e91",
+      "wall_time_seconds": 1.001310002,
+      "session_id": 81662,
+      "original_token_count": 0,
+      "output": ""
+    },
+    "cmd": "timeout --signal=TERM --kill-after=5s 600s codex exec -C '/data/workspace/iteration-manager/.worktrees/iter-11' -s danger-full-access -c 'approval_policy=\"never\"' --json -o '/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/12/implementation-last-message.txt' - < '/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/12/implementation-brief.md' > '/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/12/implementation-native.jsonl' 2> '/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/12/implementation-native.stderr.txt'"
+  },
+  "monitor": {
+    "reason": "terminal",
+    "deadlineMs": 1794723336253,
+    "final": {
+      "status": "completed",
+      "raw": {
+        "chunk_id": "1eed74",
+        "wall_time_seconds": 50.388427575,
+        "exit_code": 0,
+        "original_token_count": 0,
+        "output": ""
+      }
+    },
+    "terminalConfirmed": true,
+    "observedAt": 1794722908074,
+    "lateByMs": 0,
+    "events": [
+      {
+        "kind": "query",
+        "startedAt": 1794722737656,
+        "returnedAt": 1794722797660,
+        "waitMs": 60000,
+        "result": {
+          "status": "running",
+          "raw": {
+            "chunk_id": "ead461",
+            "wall_time_seconds": 60.001207188,
+            "session_id": 81662,
+            "original_token_count": 0,
+            "output": ""
+          }
+        }
+      },
+      {
+        "kind": "query",
+        "startedAt": 1794722797660,
+        "returnedAt": 1794722857664,
+        "waitMs": 60000,
+        "result": {
+          "status": "running",
+          "raw": {
+            "chunk_id": "044c71",
+            "wall_time_seconds": 60.00169442,
+            "session_id": 81662,
+            "original_token_count": 0,
+            "output": ""
+          }
+        }
+      },
+      {
+        "kind": "query",
+        "startedAt": 1794722857664,
+        "returnedAt": 1794722908074,
+        "waitMs": 60000,
+        "result": {
+          "status": "completed",
+          "raw": {
+            "chunk_id": "1eed74",
+            "wall_time_seconds": 50.388427575,
+            "exit_code": 0,
+            "original_token_count": 0,
+            "output": ""
+          }
+        }
+      }
+    ]
+  }
+}

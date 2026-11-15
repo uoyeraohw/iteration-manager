@@ -1,0 +1,23 @@
+[
+  {
+    "name": "experiment",
+    "kind": "command",
+    "command": "/data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B -m pytest -p no:cacheprovider tests/test_navigation_paths.py tests/test_prompt_sources.py -q --basetemp /tmp/iter11-task04-final-0435",
+    "cwd": ".",
+    "exit_code": 0,
+    "summary": "冻结 Linux runner 实际完成；6 passed；tree_terminal=true",
+    "output": "docs/todos/11-reliable-delivery/evidence/04/navigation-experiment-final-0435.json.output.txt"
+  },
+  {
+    "name": "decision",
+    "kind": "observation",
+    "summary": "当前任务导航决定、来源和未完成实际消费的限制",
+    "output": "docs/todos/11-reliable-delivery/evidence/04/navigation-decision-interfaces.md"
+  },
+  {
+    "name": "interfaces",
+    "kind": "observation",
+    "summary": "直接路线、模板槽位、链接与历史字节核对",
+    "output": "docs/todos/11-reliable-delivery/evidence/04/navigation-decision-interfaces.md"
+  }
+]

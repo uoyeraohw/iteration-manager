@@ -1,0 +1,24 @@
+{
+  "kind": "controller-command-observation",
+  "argv": [
+    "python3",
+    "-B",
+    "/data/workspace/iteration-manager/build/frozen-tools/fdcc4cce8863/scripts/iter_sync.py",
+    "--autonomy",
+    "fix",
+    "docs/todos/11-reliable-delivery/11-native-self-use-audit.md",
+    "--event-id",
+    "iter11-11-fix1-v1",
+    "--owner",
+    "iter11-controller-linux-20261115",
+    "--evidence",
+    "docs/todos/11-reliable-delivery/evidence/11/preliminary-review1.json",
+    "--reason",
+    "F1必需源索引字段缺失触发KeyError而非分类报告/exit2"
+  ],
+  "started_at": "2026-11-15T05:56:33.502447+00:00",
+  "ended_at": "2026-11-15T05:56:33.572515+00:00",
+  "exit_code": 0,
+  "stdout": "{\"task_id\": \"11-native-self-use-audit\", \"previous_rounds\": 0, \"current_rounds\": 1, \"fix_total\": 1, \"consilium_count\": 0, \"replan_count\": 0, \"is_fused\": false, \"status\": \"TESTING\", \"blocked_reason\": \"\", \"writer\": \"iter11-controller-linux-20261115\", \"consilium_bundle\": null}\n",
+  "stderr": ""
+}

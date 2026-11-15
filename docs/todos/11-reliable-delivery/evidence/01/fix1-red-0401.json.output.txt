@@ -1,0 +1,260 @@
+.........F....................FFFFFF                                     [100%]
+=================================== FAILURES ===================================
+__ test_invalid_modes_rejected_by_dispatch_audit_and_board[filesystem-broken] __
+
+tmp_path = PosixPath('/tmp/iter11-task01-fix1-red-0401/test_invalid_modes_rejected_by5')
+mode = 'filesystem', profile = 'broken'
+
+    @pytest.mark.parametrize("mode,profile", [("UNKNOWN", None), ("", None), ("filesystem", None), ("git", "valid"), ("UNKNOWN", "valid"), ("filesystem", "broken")])
+    def test_invalid_modes_rejected_by_dispatch_audit_and_board(tmp_path, mode, profile):
+        card, ctx, _ = fixture(tmp_path)
+        card.write_text(card.read_text().replace("delivery_mode: filesystem", "delivery_mode: " + json.dumps(mode)), encoding="utf-8")
+        path = card.parent / "iteration-delivery.json"
+        if profile is None:
+            path.unlink()
+        elif profile == "broken":
+            path.write_text('{}', encoding="utf-8")
+        assert cli(tmp_path, '--autonomy', 'claim', card, '--event-id', 'claim', '--owner', 'lead').returncode == 0
+        proc = cli(tmp_path, '--dispatch-check', card, '--context', ctx.name, '--owner', 'lead')
+        assert proc.returncode == 3
+        assert any(word in ' '.join(json.loads(proc.stdout)['findings']).lower() for word in ('delivery', 'profile'))
+        audit = audit_task_file(card)
+        assert audit['verdict'] != 'PASS' and audit['violations'], audit
+        board = generate_board_data(card.parent)['cards'][0]
+        assert board['delivery_mode'] == 'UNKNOWN' and board['findings'], board
+        envelope = render_task_envelope(card, tmp_path)
+        if profile == 'broken':
+            assert envelope.get('error') == 'Unsupported delivery profile schema keys'
+>       assert 'TASK_HANDOFF' in envelope, envelope
+E       AssertionError: {'error': 'Unsupported delivery profile schema keys'}
+E       assert 'TASK_HANDOFF' in {'error': 'Unsupported delivery profile schema keys'}
+
+tests/test_delivery_mode_consistency.py:97: AssertionError
+_ test_broken_profile_envelope_retains_error_and_unknown_handoff[IN_PROGRESS-{-expected0] _
+
+tmp_path = PosixPath('/tmp/iter11-task01-fix1-red-0401/test_broken_profile_envelope_r0')
+raw = '{'
+expected = 'Corrupt iteration-delivery.json: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)'
+status = 'IN_PROGRESS'
+
+    @pytest.mark.parametrize('raw,expected', [
+        ('{', 'Corrupt iteration-delivery.json: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)'),
+        ('{}', 'Unsupported delivery profile schema keys'),
+    ])
+    @pytest.mark.parametrize('status', ['IN_PROGRESS', 'FUSED', 'invalid'])
+    def test_broken_profile_envelope_retains_error_and_unknown_handoff(tmp_path, raw, expected, status):
+        from iter_autonomy import load_state
+        from iter_contracts import parse_card
+        from iter_queries import task_handoff_projection
+        card, ctx, _ = fixture(tmp_path)
+        card.write_text(card.read_text().replace('status: IN_PROGRESS', 'status: ' + status), encoding='utf-8')
+        (card.parent / 'iteration-delivery.json').write_text(raw, encoding='utf-8')
+        meta, _, _ = parse_card(card.read_text())
+        with pytest.raises(ValueError) as error:
+            task_handoff_projection(card, meta, load_state(meta))
+        assert str(error.value) == expected
+        assert audit_task_file(card)['verdict'] != 'PASS'
+        board = generate_board_data(card.parent)['cards'][0]
+        assert board['delivery_mode'] == 'UNKNOWN' and expected in board['findings']
+        inventory = cli(tmp_path, '--inventory', card.parent, '--mode', 'continue', '--context', ctx.name)
+        assert inventory.returncode == 3 and expected in inventory.stdout
+        response = cli(tmp_path, '--render-envelope', card, tmp_path)
+        assert response.returncode == 0  # Existing CLI contract exposes the error in JSON.
+        envelope = json.loads(response.stdout)
+        assert envelope['error'] == expected
+>       assert 'TASK_HANDOFF' in envelope, envelope
+E       AssertionError: {'error': 'Corrupt iteration-delivery.json: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)'}
+E       assert 'TASK_HANDOFF' in {'error': 'Corrupt iteration-delivery.json: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)'}
+
+tests/test_delivery_mode_consistency.py:213: AssertionError
+_ test_broken_profile_envelope_retains_error_and_unknown_handoff[IN_PROGRESS-{}-Unsupported delivery profile schema keys] _
+
+tmp_path = PosixPath('/tmp/iter11-task01-fix1-red-0401/test_broken_profile_envelope_r1')
+raw = '{}', expected = 'Unsupported delivery profile schema keys'
+status = 'IN_PROGRESS'
+
+    @pytest.mark.parametrize('raw,expected', [
+        ('{', 'Corrupt iteration-delivery.json: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)'),
+        ('{}', 'Unsupported delivery profile schema keys'),
+    ])
+    @pytest.mark.parametrize('status', ['IN_PROGRESS', 'FUSED', 'invalid'])
+    def test_broken_profile_envelope_retains_error_and_unknown_handoff(tmp_path, raw, expected, status):
+        from iter_autonomy import load_state
+        from iter_contracts import parse_card
+        from iter_queries import task_handoff_projection
+        card, ctx, _ = fixture(tmp_path)
+        card.write_text(card.read_text().replace('status: IN_PROGRESS', 'status: ' + status), encoding='utf-8')
+        (card.parent / 'iteration-delivery.json').write_text(raw, encoding='utf-8')
+        meta, _, _ = parse_card(card.read_text())
+        with pytest.raises(ValueError) as error:
+            task_handoff_projection(card, meta, load_state(meta))
+        assert str(error.value) == expected
+        assert audit_task_file(card)['verdict'] != 'PASS'
+        board = generate_board_data(card.parent)['cards'][0]
+        assert board['delivery_mode'] == 'UNKNOWN' and expected in board['findings']
+        inventory = cli(tmp_path, '--inventory', card.parent, '--mode', 'continue', '--context', ctx.name)
+        assert inventory.returncode == 3 and expected in inventory.stdout
+        response = cli(tmp_path, '--render-envelope', card, tmp_path)
+        assert response.returncode == 0  # Existing CLI contract exposes the error in JSON.
+        envelope = json.loads(response.stdout)
+        assert envelope['error'] == expected
+>       assert 'TASK_HANDOFF' in envelope, envelope
+E       AssertionError: {'error': 'Unsupported delivery profile schema keys'}
+E       assert 'TASK_HANDOFF' in {'error': 'Unsupported delivery profile schema keys'}
+
+tests/test_delivery_mode_consistency.py:213: AssertionError
+_ test_broken_profile_envelope_retains_error_and_unknown_handoff[FUSED-{-expected0] _
+
+tmp_path = PosixPath('/tmp/iter11-task01-fix1-red-0401/test_broken_profile_envelope_r2')
+raw = '{'
+expected = 'Corrupt iteration-delivery.json: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)'
+status = 'FUSED'
+
+    @pytest.mark.parametrize('raw,expected', [
+        ('{', 'Corrupt iteration-delivery.json: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)'),
+        ('{}', 'Unsupported delivery profile schema keys'),
+    ])
+    @pytest.mark.parametrize('status', ['IN_PROGRESS', 'FUSED', 'invalid'])
+    def test_broken_profile_envelope_retains_error_and_unknown_handoff(tmp_path, raw, expected, status):
+        from iter_autonomy import load_state
+        from iter_contracts import parse_card
+        from iter_queries import task_handoff_projection
+        card, ctx, _ = fixture(tmp_path)
+        card.write_text(card.read_text().replace('status: IN_PROGRESS', 'status: ' + status), encoding='utf-8')
+        (card.parent / 'iteration-delivery.json').write_text(raw, encoding='utf-8')
+        meta, _, _ = parse_card(card.read_text())
+        with pytest.raises(ValueError) as error:
+            task_handoff_projection(card, meta, load_state(meta))
+        assert str(error.value) == expected
+        assert audit_task_file(card)['verdict'] != 'PASS'
+        board = generate_board_data(card.parent)['cards'][0]
+        assert board['delivery_mode'] == 'UNKNOWN' and expected in board['findings']
+        inventory = cli(tmp_path, '--inventory', card.parent, '--mode', 'continue', '--context', ctx.name)
+        assert inventory.returncode == 3 and expected in inventory.stdout
+        response = cli(tmp_path, '--render-envelope', card, tmp_path)
+        assert response.returncode == 0  # Existing CLI contract exposes the error in JSON.
+        envelope = json.loads(response.stdout)
+        assert envelope['error'] == expected
+>       assert 'TASK_HANDOFF' in envelope, envelope
+E       AssertionError: {'error': 'Corrupt iteration-delivery.json: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)'}
+E       assert 'TASK_HANDOFF' in {'error': 'Corrupt iteration-delivery.json: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)'}
+
+tests/test_delivery_mode_consistency.py:213: AssertionError
+_ test_broken_profile_envelope_retains_error_and_unknown_handoff[FUSED-{}-Unsupported delivery profile schema keys] _
+
+tmp_path = PosixPath('/tmp/iter11-task01-fix1-red-0401/test_broken_profile_envelope_r3')
+raw = '{}', expected = 'Unsupported delivery profile schema keys'
+status = 'FUSED'
+
+    @pytest.mark.parametrize('raw,expected', [
+        ('{', 'Corrupt iteration-delivery.json: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)'),
+        ('{}', 'Unsupported delivery profile schema keys'),
+    ])
+    @pytest.mark.parametrize('status', ['IN_PROGRESS', 'FUSED', 'invalid'])
+    def test_broken_profile_envelope_retains_error_and_unknown_handoff(tmp_path, raw, expected, status):
+        from iter_autonomy import load_state
+        from iter_contracts import parse_card
+        from iter_queries import task_handoff_projection
+        card, ctx, _ = fixture(tmp_path)
+        card.write_text(card.read_text().replace('status: IN_PROGRESS', 'status: ' + status), encoding='utf-8')
+        (card.parent / 'iteration-delivery.json').write_text(raw, encoding='utf-8')
+        meta, _, _ = parse_card(card.read_text())
+        with pytest.raises(ValueError) as error:
+            task_handoff_projection(card, meta, load_state(meta))
+        assert str(error.value) == expected
+        assert audit_task_file(card)['verdict'] != 'PASS'
+        board = generate_board_data(card.parent)['cards'][0]
+        assert board['delivery_mode'] == 'UNKNOWN' and expected in board['findings']
+        inventory = cli(tmp_path, '--inventory', card.parent, '--mode', 'continue', '--context', ctx.name)
+        assert inventory.returncode == 3 and expected in inventory.stdout
+        response = cli(tmp_path, '--render-envelope', card, tmp_path)
+        assert response.returncode == 0  # Existing CLI contract exposes the error in JSON.
+        envelope = json.loads(response.stdout)
+        assert envelope['error'] == expected
+>       assert 'TASK_HANDOFF' in envelope, envelope
+E       AssertionError: {'error': 'Unsupported delivery profile schema keys'}
+E       assert 'TASK_HANDOFF' in {'error': 'Unsupported delivery profile schema keys'}
+
+tests/test_delivery_mode_consistency.py:213: AssertionError
+_ test_broken_profile_envelope_retains_error_and_unknown_handoff[invalid-{-expected0] _
+
+tmp_path = PosixPath('/tmp/iter11-task01-fix1-red-0401/test_broken_profile_envelope_r4')
+raw = '{'
+expected = 'Corrupt iteration-delivery.json: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)'
+status = 'invalid'
+
+    @pytest.mark.parametrize('raw,expected', [
+        ('{', 'Corrupt iteration-delivery.json: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)'),
+        ('{}', 'Unsupported delivery profile schema keys'),
+    ])
+    @pytest.mark.parametrize('status', ['IN_PROGRESS', 'FUSED', 'invalid'])
+    def test_broken_profile_envelope_retains_error_and_unknown_handoff(tmp_path, raw, expected, status):
+        from iter_autonomy import load_state
+        from iter_contracts import parse_card
+        from iter_queries import task_handoff_projection
+        card, ctx, _ = fixture(tmp_path)
+        card.write_text(card.read_text().replace('status: IN_PROGRESS', 'status: ' + status), encoding='utf-8')
+        (card.parent / 'iteration-delivery.json').write_text(raw, encoding='utf-8')
+        meta, _, _ = parse_card(card.read_text())
+        with pytest.raises(ValueError) as error:
+            task_handoff_projection(card, meta, load_state(meta))
+        assert str(error.value) == expected
+        assert audit_task_file(card)['verdict'] != 'PASS'
+        board = generate_board_data(card.parent)['cards'][0]
+        assert board['delivery_mode'] == 'UNKNOWN' and expected in board['findings']
+        inventory = cli(tmp_path, '--inventory', card.parent, '--mode', 'continue', '--context', ctx.name)
+        assert inventory.returncode == 3 and expected in inventory.stdout
+        response = cli(tmp_path, '--render-envelope', card, tmp_path)
+        assert response.returncode == 0  # Existing CLI contract exposes the error in JSON.
+        envelope = json.loads(response.stdout)
+        assert envelope['error'] == expected
+>       assert 'TASK_HANDOFF' in envelope, envelope
+E       AssertionError: {'error': 'Corrupt iteration-delivery.json: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)'}
+E       assert 'TASK_HANDOFF' in {'error': 'Corrupt iteration-delivery.json: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)'}
+
+tests/test_delivery_mode_consistency.py:213: AssertionError
+_ test_broken_profile_envelope_retains_error_and_unknown_handoff[invalid-{}-Unsupported delivery profile schema keys] _
+
+tmp_path = PosixPath('/tmp/iter11-task01-fix1-red-0401/test_broken_profile_envelope_r5')
+raw = '{}', expected = 'Unsupported delivery profile schema keys'
+status = 'invalid'
+
+    @pytest.mark.parametrize('raw,expected', [
+        ('{', 'Corrupt iteration-delivery.json: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)'),
+        ('{}', 'Unsupported delivery profile schema keys'),
+    ])
+    @pytest.mark.parametrize('status', ['IN_PROGRESS', 'FUSED', 'invalid'])
+    def test_broken_profile_envelope_retains_error_and_unknown_handoff(tmp_path, raw, expected, status):
+        from iter_autonomy import load_state
+        from iter_contracts import parse_card
+        from iter_queries import task_handoff_projection
+        card, ctx, _ = fixture(tmp_path)
+        card.write_text(card.read_text().replace('status: IN_PROGRESS', 'status: ' + status), encoding='utf-8')
+        (card.parent / 'iteration-delivery.json').write_text(raw, encoding='utf-8')
+        meta, _, _ = parse_card(card.read_text())
+        with pytest.raises(ValueError) as error:
+            task_handoff_projection(card, meta, load_state(meta))
+        assert str(error.value) == expected
+        assert audit_task_file(card)['verdict'] != 'PASS'
+        board = generate_board_data(card.parent)['cards'][0]
+        assert board['delivery_mode'] == 'UNKNOWN' and expected in board['findings']
+        inventory = cli(tmp_path, '--inventory', card.parent, '--mode', 'continue', '--context', ctx.name)
+        assert inventory.returncode == 3 and expected in inventory.stdout
+        response = cli(tmp_path, '--render-envelope', card, tmp_path)
+        assert response.returncode == 0  # Existing CLI contract exposes the error in JSON.
+        envelope = json.loads(response.stdout)
+        assert envelope['error'] == expected
+>       assert 'TASK_HANDOFF' in envelope, envelope
+E       AssertionError: {'error': 'Unsupported delivery profile schema keys'}
+E       assert 'TASK_HANDOFF' in {'error': 'Unsupported delivery profile schema keys'}
+
+tests/test_delivery_mode_consistency.py:213: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_delivery_mode_consistency.py::test_invalid_modes_rejected_by_dispatch_audit_and_board[filesystem-broken]
+FAILED tests/test_delivery_mode_consistency.py::test_broken_profile_envelope_retains_error_and_unknown_handoff[IN_PROGRESS-{-expected0]
+FAILED tests/test_delivery_mode_consistency.py::test_broken_profile_envelope_retains_error_and_unknown_handoff[IN_PROGRESS-{}-Unsupported delivery profile schema keys]
+FAILED tests/test_delivery_mode_consistency.py::test_broken_profile_envelope_retains_error_and_unknown_handoff[FUSED-{-expected0]
+FAILED tests/test_delivery_mode_consistency.py::test_broken_profile_envelope_retains_error_and_unknown_handoff[FUSED-{}-Unsupported delivery profile schema keys]
+FAILED tests/test_delivery_mode_consistency.py::test_broken_profile_envelope_retains_error_and_unknown_handoff[invalid-{-expected0]
+FAILED tests/test_delivery_mode_consistency.py::test_broken_profile_envelope_retains_error_and_unknown_handoff[invalid-{}-Unsupported delivery profile schema keys]
+7 failed, 29 passed in 2.56s

@@ -1,0 +1,78 @@
+{
+  "thread_id": "01a1ddb2-e240-7a00-8468-ccfe63671cb1",
+  "candidate": {
+    "base": "531c3ea6e31d2eb2a098272bfcf6cb6fe57a11b7",
+    "state": "uncommitted working tree; C not yet created"
+  },
+  "commands": [
+    {
+      "command": "/data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B /data/workspace/iteration-manager/build/frozen-runners/iter11-platform-v1/scripts/iter_run.py --deadline 2026-11-15T05:41:32.525396+00:00 --evidence docs/todos/11-reliable-delivery/evidence/09/specimens-run.json -- /data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B docs/todos/11-reliable-delivery/evidence/09/specimens.py",
+      "receipt": "docs/todos/11-reliable-delivery/evidence/09/specimens-run.json",
+      "raw_output": "docs/todos/11-reliable-delivery/evidence/09/specimens-run.json.output.txt",
+      "status": "COMPLETED",
+      "raw_exit_code": 0,
+      "tree_terminal": true
+    },
+    {
+      "command": "/data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B /data/workspace/iteration-manager/build/frozen-runners/iter11-platform-v1/scripts/iter_run.py --deadline 2026-11-15T05:41:32.525396+00:00 --evidence docs/todos/11-reliable-delivery/evidence/09/experiment.json -- /data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B -m pytest -p no:cacheprovider tests/test_refactor_evidence_policy.py tests/test_template_generation.py tests/test_task_card_schema.py tests/test_completion_gates.py -q --basetemp /tmp/iter11-task09-experiment-20261115",
+      "receipt": "docs/todos/11-reliable-delivery/evidence/09/experiment.json",
+      "raw_output": "docs/todos/11-reliable-delivery/evidence/09/experiment.json.output.txt",
+      "status": "COMPLETED",
+      "raw_exit_code": 0,
+      "tree_terminal": true
+    },
+    {
+      "command": "/data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B /data/workspace/iteration-manager/build/frozen-runners/iter11-platform-v1/scripts/iter_run.py --deadline 2026-11-15T05:41:32.525396+00:00 --evidence docs/todos/11-reliable-delivery/evidence/09/specimens-v2-run.json -- /data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B docs/todos/11-reliable-delivery/evidence/09/specimens-v2.py",
+      "receipt": "docs/todos/11-reliable-delivery/evidence/09/specimens-v2-run.json",
+      "raw_output": "docs/todos/11-reliable-delivery/evidence/09/specimens-v2-run.json.output.txt",
+      "status": "COMPLETED",
+      "raw_exit_code": 0,
+      "tree_terminal": true
+    },
+    {
+      "command": "/data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B /data/workspace/iteration-manager/build/frozen-runners/iter11-platform-v1/scripts/iter_run.py --deadline 2026-11-15T05:41:32.525396+00:00 --evidence docs/todos/11-reliable-delivery/evidence/09/delivery-validation.json -- /data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B docs/todos/11-reliable-delivery/evidence/09/validate-delivery.py",
+      "receipt": "docs/todos/11-reliable-delivery/evidence/09/delivery-validation.json",
+      "raw_output": "docs/todos/11-reliable-delivery/evidence/09/delivery-validation.json.output.txt",
+      "status": "COMPLETED",
+      "raw_exit_code": 0,
+      "tree_terminal": true
+    }
+  ],
+  "decisions": [
+    "Use objective repeatable structural metrics for structural-only goals; require real comparable performance metrics for performance goals.",
+    "Retain exact four types, schema 1, five checks, receipt binding and existing task 07 requirements."
+  ],
+  "tradeoffs": [
+    "Nonempty text validation cannot establish the semantic suitability of an evidence plan; independent review and native consumption remain necessary.",
+    "Synthetic workloads prove only declared workload behavior."
+  ],
+  "sources": [
+    "task09 card and iteration goal",
+    "references/task_card_schema.md",
+    "references/template_generation.md",
+    "scripts/iter_contracts.py",
+    "templates/contracts/refactor_benchmark_contract.md",
+    "task07 card, authorized Linux platform migration",
+    "existing typed-template generation decision note"
+  ],
+  "environment": "Linux; Python 3.11.17, pytest 9.2.0, MCP 1.30.0; frozen platform runner; coordinator fdcc4cc unchanged. Results do not establish Windows or other Python environments.",
+  "limitations": [
+    "Planning examples only; no example business execution or performance measurement.",
+    "Native consumer PENDING/UNKNOWN; static checks do not prove assistant consumption.",
+    "No full suite or independent review; frozen coordinator known defects cannot self-approve."
+  ],
+  "remaining": [
+    "Distinct read-only native consumer and assessment by root",
+    "C implementation commit",
+    "independent review",
+    "D registration",
+    "frozen local strict"
+  ],
+  "artifacts": {
+    "ledger_summary": "docs/todos/11-reliable-delivery/evidence/09/ledger-summary.md",
+    "checks_proposal": "docs/todos/11-reliable-delivery/evidence/09/checks-proposal.json",
+    "source_manifest": "docs/todos/11-reliable-delivery/evidence/09/source-manifest.json",
+    "consumer_brief": "docs/todos/11-reliable-delivery/evidence/09/consumer-brief-input.md",
+    "consumer_manifest": "docs/todos/11-reliable-delivery/evidence/09/consumer-input-manifest.json"
+  }
+}

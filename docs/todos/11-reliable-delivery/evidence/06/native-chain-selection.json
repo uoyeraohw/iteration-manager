@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "selected_at": "2026-11-15T04:54:28.568032+00:00",
+  "task_id": "06",
+  "observed_base": "e66841186450dc6bbe138bf77aac87a2a8f1232a",
+  "selection": "预先选定06为11审计的真实完整Git链和正常检查点续接；不是完成或批准",
+  "plan": [
+    "guarded原生实现者交付有效RED正常检查点",
+    "真实终态/attempt/release和精准检查点提交",
+    "新原生只读会话从真实envelope继承RED/剩余项，不重跑",
+    "原实现者guarded继续GREEN",
+    "C独立review/D/冻结strict"
+  ],
+  "unknown_before_execution": {
+    "implementer_uuid": null,
+    "new_consumer_uuid": null,
+    "C": null,
+    "D": null,
+    "outcome": null
+  },
+  "retain_failures": [
+    "03 Codegworker bwrap BLOCKED",
+    "04 root ordering actual FAIL retained separately"
+  ],
+  "not_a_state_ledger": true
+}

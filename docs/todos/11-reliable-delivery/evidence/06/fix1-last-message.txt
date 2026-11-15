@@ -1,0 +1,7 @@
+F1 的真实载荷烟测已完成，使用原实现者会话 `01a1dd8e-8b72-7b72-90b4-a8577ef8db2d`。
+
+隔离克隆精确检出 C1 `6ee7605de94fde0dfb4454f512b9913fd7aa01ae`。Git tree 和生成的清单均包含 **111 个实际交付文件**；独立临时副本检查退出 0，修改副本的 `SKILL.md` 后检查退出 2。[冻结 runner 收据](/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/06/fix1-real-payload.json)显示命令正常完成、进程树已终止。
+
+[文件清单与哈希](/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/06/fix1-real-payload-inventory.json)、[交接记录](/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/06/fix1-delivery.json)、[检查建议](/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/06/checks-proposal-v2.json)和[账本摘要](/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/06/fix1-ledger-summary.md)已保存。临时源码和副本保留，副本处于故意制造的漂移状态。
+
+产品源码和测试未改变；原 RED 与 39 项 GREEN 证据继续适用，未重复运行 pytest。运行器和完整执行链在烟测报告中仍为 UNKNOWN；当前 Windows 执行、真实部署及宿主采用未验证。状态仍为 **TESTING**，C2、同一独立审查者复审、D 和冻结 strict 待主控处理。

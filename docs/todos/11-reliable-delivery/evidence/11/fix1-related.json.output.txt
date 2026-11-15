@@ -1,0 +1,1 @@
+{"selected_chain_valid": false, "case_counts": {"PASS": 0, "FAIL": 0, "UNKNOWN": 1, "BLOCKED": 0}, "output": "docs/todos/11-reliable-delivery/evidence/11/fix1-synthetic-missing-related/report.json"}

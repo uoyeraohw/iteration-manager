@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "kind": "coordination-command",
+  "argv": [
+    "python3",
+    "-B",
+    "/data/workspace/iteration-manager/build/frozen-tools/fdcc4cce8863/scripts/iter_sync.py",
+    "--verify-committed"
+  ],
+  "cwd": "/data/workspace/iteration-manager",
+  "head": "80621f1c29e74c6398d1e8aa620af04189f1740c",
+  "started_at": "2026-11-15T02:23:25.365013+00:00",
+  "ended_at": "2026-11-15T02:23:26.775815+00:00",
+  "exit_code": 0,
+  "stdout": "verify-committed.stdout.txt",
+  "stderr": "verify-committed.stderr.txt"
+}

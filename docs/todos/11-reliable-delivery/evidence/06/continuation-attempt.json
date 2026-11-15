@@ -1,0 +1,43 @@
+{
+  "phase": "implementation",
+  "candidate": "82b66d9f3c8e7a62df8e8be18d8cedac7a5877a6",
+  "inputs": [
+    "AGENTS.md",
+    "docs/todos/11-reliable-delivery/06-installation-provenance.md",
+    "docs/todos/11-reliable-delivery/README.md",
+    "docs/todos/11-reliable-delivery/evidence/06/checkpoint-inheritance.json",
+    "docs/todos/11-reliable-delivery/evidence/06/red-attempt.json",
+    "docs/todos/11-reliable-delivery/evidence/06/red-checkpoint.json",
+    "references/task_card_schema.md",
+    "tests/test_install_provenance.py"
+  ],
+  "capabilities": [
+    "native-codex-cli-implementer",
+    "approved-frozen-linux-runner",
+    "Python3.11.17-pytest9.2-mcp1.30",
+    "independent-native-reviewer"
+  ],
+  "version": 1,
+  "checkpoint": "原RED22断言失败11控制通过；新会话正常继承后原实现者最小实现，最终39通过；来源字节一致性与运行能力分列，未部署",
+  "remaining_work": [
+    "C独审",
+    "D/冻结strict"
+  ],
+  "executor_id": "01a1dd8e-8b72-7b72-90b4-a8577ef8db2d",
+  "terminal_evidence": "docs/todos/11-reliable-delivery/evidence/06/continuation-terminal.json",
+  "progress": [
+    {
+      "kind": "implementation",
+      "summary": "原RED22断言失败11控制通过；新会话正常继承后原实现者最小实现，最终39通过；来源字节一致性与运行能力分列，未部署",
+      "evidence": "docs/todos/11-reliable-delivery/evidence/06/continuation-delivery.json"
+    }
+  ],
+  "commands": [
+    "docs/todos/11-reliable-delivery/evidence/06/red-01.json",
+    "docs/todos/11-reliable-delivery/evidence/06/green-final-02.json",
+    "docs/todos/11-reliable-delivery/evidence/06/green-final.json",
+    "docs/todos/11-reliable-delivery/evidence/06/green-final-03.json"
+  ],
+  "started_at": null,
+  "ended_at": null
+}

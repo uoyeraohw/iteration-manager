@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "argv": [
+    "timeout",
+    "--kill-after=5s",
+    "90s",
+    "codex",
+    "exec",
+    "-C",
+    "/data/workspace/iteration-manager/.worktrees/iter-11",
+    "-s",
+    "danger-full-access",
+    "-c",
+    "approval_policy=\"never\"",
+    "--ephemeral",
+    "--json",
+    "-"
+  ],
+  "cwd": "/data/workspace/iteration-manager/.worktrees/iter-11",
+  "started_at": "2026-11-15T02:53:02.847787+00:00",
+  "ended_at": "2026-11-15T02:53:12.941663+00:00",
+  "exit_code": 0,
+  "stdout": "cli-runtime-probe.stdout.jsonl",
+  "stderr": "cli-runtime-probe.stderr.txt",
+  "scope": "read-only runtime observation; no global config changes"
+}

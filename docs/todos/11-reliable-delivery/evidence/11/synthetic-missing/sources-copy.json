@@ -1,0 +1,811 @@
+{
+  "version": 1,
+  "recorded_at": "2026-11-15T05:47:08.490303+00:00",
+  "observed_head": "729fe270e52c324b01147eafb01b2e31013f8a2b",
+  "sources": [
+    {
+      "task_id": "06",
+      "task_path": "docs/todos/11-reliable-delivery/06-installation-provenance.md",
+      "selection": "docs/todos/11-reliable-delivery/evidence/06/native-chain-selection.json",
+      "inventory": "docs/todos/11-reliable-delivery/evidence/06/inventory.call.json",
+      "stages": [
+        {
+          "session_id": "01a1dd8e-8b72-7b72-90b4-a8577ef8db2d",
+          "candidate": "e66841186450dc6bbe138bf77aac87a2a8f1232a",
+          "phase": "implementation",
+          "context": "docs/todos/11-reliable-delivery/evidence/06/implementation-context.json",
+          "guard": "docs/todos/11-reliable-delivery/evidence/06/implementation-guard.json",
+          "native": "docs/todos/11-reliable-delivery/evidence/06/implementation-native.jsonl",
+          "terminal": "docs/todos/11-reliable-delivery/evidence/06/implementation-terminal.json",
+          "check": {
+            "argv": [
+              "python3",
+              "-B",
+              "/data/workspace/iteration-manager/build/frozen-tools/fdcc4cce8863/scripts/iter_sync.py",
+              "--dispatch-check",
+              "/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/06-installation-provenance.md",
+              "--context",
+              "docs/todos/11-reliable-delivery/evidence/06/implementation-context.json",
+              "--phase",
+              "implementation",
+              "--owner",
+              "iter11-controller-linux-20261115"
+            ],
+            "cwd": "/data/workspace/iteration-manager/.worktrees/iter-11",
+            "request_id": "iter11Task06Red-1794718468621",
+            "terminal_evidence": {
+              "source": "functions.exec/tools.exec_command",
+              "id": "f3f3e0"
+            },
+            "utc_events": [
+              {
+                "kind": "check-start",
+                "utc": "2026-11-15T04:54:28.624000+00:00",
+                "ordinal": 0
+              },
+              {
+                "kind": "check-terminal-consumed",
+                "utc": "2026-11-15T04:54:28.788000+00:00",
+                "ordinal": 1
+              },
+              {
+                "kind": "dispatch-call",
+                "utc": "2026-11-15T04:54:28.789000+00:00",
+                "ordinal": 2
+              }
+            ]
+          },
+          "tool_session_id": 86721,
+          "claims": [
+            "docs/todos/11-reliable-delivery/evidence/06/claim.call.json"
+          ],
+          "attempts": [
+            "docs/todos/11-reliable-delivery/evidence/06/red-attempt.json",
+            "docs/todos/11-reliable-delivery/evidence/06/red-attempt.call.json"
+          ],
+          "releases": [
+            "docs/todos/11-reliable-delivery/evidence/06/red-release.call.json"
+          ],
+          "runner_receipts": [
+            "docs/todos/11-reliable-delivery/evidence/06/red-01.json"
+          ]
+        },
+        {
+          "session_id": "01a1dd90-f03a-70c1-866d-43d5ac3a936e",
+          "candidate": "82b66d9f3c8e7a62df8e8be18d8cedac7a5877a6",
+          "phase": "evidence-inspection",
+          "context": "docs/todos/11-reliable-delivery/evidence/06/checkpoint-consumer-context.json",
+          "guard": "docs/todos/11-reliable-delivery/evidence/06/checkpoint-consumer-guard.json",
+          "native": "docs/todos/11-reliable-delivery/evidence/06/checkpoint-consumer-native.jsonl",
+          "terminal": "docs/todos/11-reliable-delivery/evidence/06/checkpoint-consumer-terminal.json",
+          "check": {
+            "argv": [
+              "python3",
+              "-B",
+              "/data/workspace/iteration-manager/build/frozen-tools/fdcc4cce8863/scripts/iter_sync.py",
+              "--dispatch-check",
+              "/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/06-installation-provenance.md",
+              "--context",
+              "docs/todos/11-reliable-delivery/evidence/06/checkpoint-consumer-context.json",
+              "--phase",
+              "evidence-inspection",
+              "--owner",
+              "iter11-controller-linux-20261115"
+            ],
+            "cwd": "/data/workspace/iteration-manager/.worktrees/iter-11",
+            "request_id": "iter11Task06CheckpointConsumer-1794718625035",
+            "terminal_evidence": {
+              "source": "functions.exec/tools.exec_command",
+              "id": "41614b"
+            },
+            "utc_events": [
+              {
+                "kind": "check-start",
+                "utc": "2026-11-15T04:57:05.035000+00:00",
+                "ordinal": 0
+              },
+              {
+                "kind": "check-terminal-consumed",
+                "utc": "2026-11-15T04:57:05.206000+00:00",
+                "ordinal": 1
+              },
+              {
+                "kind": "dispatch-call",
+                "utc": "2026-11-15T04:57:05.206000+00:00",
+                "ordinal": 2
+              }
+            ]
+          },
+          "tool_session_id": 85009,
+          "claims": [
+            "docs/todos/11-reliable-delivery/evidence/06/checkpoint-consumer-claim.call.json"
+          ],
+          "attempts": [
+            "docs/todos/11-reliable-delivery/evidence/06/checkpoint-consumer-attempt.json",
+            "docs/todos/11-reliable-delivery/evidence/06/checkpoint-consumer-attempt.call.json"
+          ],
+          "releases": [
+            "docs/todos/11-reliable-delivery/evidence/06/checkpoint-consumer-release.call.json"
+          ],
+          "runner_receipts": []
+        },
+        {
+          "session_id": "01a1dd8e-8b72-7b72-90b4-a8577ef8db2d",
+          "candidate": "82b66d9f3c8e7a62df8e8be18d8cedac7a5877a6",
+          "phase": "implementation",
+          "context": "docs/todos/11-reliable-delivery/evidence/06/continuation-context.json",
+          "guard": "docs/todos/11-reliable-delivery/evidence/06/continuation-guard.json",
+          "native": "docs/todos/11-reliable-delivery/evidence/06/continuation-native.jsonl",
+          "terminal": "docs/todos/11-reliable-delivery/evidence/06/continuation-terminal.json",
+          "check": {
+            "argv": [
+              "python3",
+              "-B",
+              "/data/workspace/iteration-manager/build/frozen-tools/fdcc4cce8863/scripts/iter_sync.py",
+              "--dispatch-check",
+              "/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/06-installation-provenance.md",
+              "--context",
+              "docs/todos/11-reliable-delivery/evidence/06/continuation-context.json",
+              "--phase",
+              "implementation",
+              "--owner",
+              "iter11-controller-linux-20261115"
+            ],
+            "cwd": "/data/workspace/iteration-manager/.worktrees/iter-11",
+            "request_id": "iter11Task06Green-1794718767880",
+            "terminal_evidence": {
+              "source": "functions.exec/tools.exec_command",
+              "id": "c166d6"
+            },
+            "utc_events": [
+              {
+                "kind": "check-start",
+                "utc": "2026-11-15T04:59:27.880000+00:00",
+                "ordinal": 0
+              },
+              {
+                "kind": "check-terminal-consumed",
+                "utc": "2026-11-15T04:59:28.029000+00:00",
+                "ordinal": 1
+              },
+              {
+                "kind": "dispatch-call",
+                "utc": "2026-11-15T04:59:28.029000+00:00",
+                "ordinal": 2
+              }
+            ]
+          },
+          "tool_session_id": 30587,
+          "claims": [
+            "docs/todos/11-reliable-delivery/evidence/06/continuation-claim.call.json"
+          ],
+          "attempts": [
+            "docs/todos/11-reliable-delivery/evidence/06/continuation-attempt.json",
+            "docs/todos/11-reliable-delivery/evidence/06/continuation-attempt.call.json"
+          ],
+          "releases": [
+            "docs/todos/11-reliable-delivery/evidence/06/continuation-release.call.json"
+          ],
+          "runner_receipts": [
+            "docs/todos/11-reliable-delivery/evidence/06/green-final.json",
+            "docs/todos/11-reliable-delivery/evidence/06/green-final-02.json",
+            "docs/todos/11-reliable-delivery/evidence/06/green-final-03.json"
+          ]
+        },
+        {
+          "session_id": "01a1dd96-f44b-7971-8cc6-9b6de8d5990b",
+          "candidate": "6ee7605de94fde0dfb4454f512b9913fd7aa01ae",
+          "phase": "evidence-inspection",
+          "context": "build/iter11-review/task06-review1/context.json",
+          "guard": "build/iter11-review/task06-review1/review-guard.json",
+          "native": "build/iter11-review/task06-review1/review-native.jsonl",
+          "terminal": "build/iter11-review/task06-review1/terminal.json",
+          "check": {
+            "argv": [
+              "python3",
+              "-B",
+              "/data/workspace/iteration-manager/build/frozen-tools/fdcc4cce8863/scripts/iter_sync.py",
+              "--dispatch-check",
+              "/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/06-installation-provenance.md",
+              "--context",
+              "build/iter11-review/task06-review1/context.json",
+              "--phase",
+              "evidence-inspection",
+              "--owner",
+              "iter11-controller-linux-20261115"
+            ],
+            "cwd": "/data/workspace/iteration-manager/.worktrees/iter-11",
+            "request_id": "iter11Task06Review-1794719019799",
+            "terminal_evidence": {
+              "source": "functions.exec/tools.exec_command",
+              "id": "095d4f"
+            },
+            "utc_events": [
+              {
+                "kind": "check-start",
+                "utc": "2026-11-15T05:03:39.799000+00:00",
+                "ordinal": 0
+              },
+              {
+                "kind": "check-terminal-consumed",
+                "utc": "2026-11-15T05:03:39.967000+00:00",
+                "ordinal": 1
+              },
+              {
+                "kind": "dispatch-call",
+                "utc": "2026-11-15T05:03:39.968000+00:00",
+                "ordinal": 2
+              }
+            ]
+          },
+          "tool_session_id": 93774,
+          "claims": [
+            "docs/todos/11-reliable-delivery/evidence/06/continuation-review-claim.call.json"
+          ],
+          "attempts": [
+            "build/iter11-review/task06-review1/attempt-v2.json",
+            "build/iter11-review/task06-review1/attempt-v2.call.json"
+          ],
+          "releases": [
+            "build/iter11-review/task06-review1/release.call.json"
+          ],
+          "runner_receipts": [
+            "build/iter11-review/task06-review1/scope-runner.json"
+          ]
+        },
+        {
+          "session_id": "01a1dd8e-8b72-7b72-90b4-a8577ef8db2d",
+          "candidate": "6ee7605de94fde0dfb4454f512b9913fd7aa01ae",
+          "phase": "implementation",
+          "context": "docs/todos/11-reliable-delivery/evidence/06/fix1-context.json",
+          "guard": "docs/todos/11-reliable-delivery/evidence/06/fix1-guard.json",
+          "native": "docs/todos/11-reliable-delivery/evidence/06/fix1-native.jsonl",
+          "terminal": "docs/todos/11-reliable-delivery/evidence/06/fix1-terminal.json",
+          "check": {
+            "argv": [
+              "python3",
+              "-B",
+              "/data/workspace/iteration-manager/build/frozen-tools/fdcc4cce8863/scripts/iter_sync.py",
+              "--dispatch-check",
+              "/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/06-installation-provenance.md",
+              "--context",
+              "docs/todos/11-reliable-delivery/evidence/06/fix1-context.json",
+              "--phase",
+              "implementation",
+              "--owner",
+              "iter11-controller-linux-20261115"
+            ],
+            "cwd": "/data/workspace/iteration-manager/.worktrees/iter-11",
+            "request_id": "fix1-1794719353208",
+            "terminal_evidence": {
+              "source": "docs/todos/11-reliable-delivery/evidence/06/fix1-check-observation.json",
+              "id": "2026-11-15T05:09:13.372751+00:00"
+            },
+            "utc_events": [
+              {
+                "kind": "check-start",
+                "utc": "2026-11-15T05:09:13.209000+00:00",
+                "ordinal": 0
+              },
+              {
+                "kind": "check-terminal-consumed",
+                "utc": "2026-11-15T05:09:13.471000+00:00",
+                "ordinal": 1
+              },
+              {
+                "kind": "dispatch-call",
+                "utc": "2026-11-15T05:09:13.480000+00:00",
+                "ordinal": 2
+              }
+            ]
+          },
+          "tool_session_id": 35992,
+          "claims": [
+            "docs/todos/11-reliable-delivery/evidence/06/fix1-claim.call.json"
+          ],
+          "attempts": [
+            "docs/todos/11-reliable-delivery/evidence/06/fix1-attempt.json",
+            "docs/todos/11-reliable-delivery/evidence/06/fix1-attempt.call.json"
+          ],
+          "releases": [
+            "docs/todos/11-reliable-delivery/evidence/06/fix1-release.call.json"
+          ],
+          "runner_receipts": [
+            "docs/todos/11-reliable-delivery/evidence/06/fix1-real-payload.json"
+          ]
+        },
+        {
+          "session_id": "01a1dd96-f44b-7971-8cc6-9b6de8d5990b",
+          "candidate": "7e5476c8879edbd45227b82f8189fdf74aab81a9",
+          "phase": "evidence-inspection",
+          "context": "build/iter11-review/task06-review2/context.json",
+          "guard": "build/iter11-review/task06-review2/review-guard.json",
+          "native": "build/iter11-review/task06-review2/review-native.jsonl",
+          "terminal": "build/iter11-review/task06-review2/terminal.json",
+          "check": {
+            "argv": [
+              "python3",
+              "-B",
+              "/data/workspace/iteration-manager/build/frozen-tools/fdcc4cce8863/scripts/iter_sync.py",
+              "--dispatch-check",
+              "/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/06-installation-provenance.md",
+              "--context",
+              "build/iter11-review/task06-review2/context.json",
+              "--phase",
+              "evidence-inspection",
+              "--owner",
+              "iter11-controller-linux-20261115"
+            ],
+            "cwd": "/data/workspace/iteration-manager/.worktrees/iter-11",
+            "request_id": "review-1794719482318",
+            "terminal_evidence": {
+              "source": "build/iter11-review/task06-review2/review-check-observation.json",
+              "id": "2026-11-15T05:11:22.453127+00:00"
+            },
+            "utc_events": [
+              {
+                "kind": "check-start",
+                "utc": "2026-11-15T05:11:22.318000+00:00",
+                "ordinal": 0
+              },
+              {
+                "kind": "check-terminal-consumed",
+                "utc": "2026-11-15T05:11:22.535000+00:00",
+                "ordinal": 1
+              },
+              {
+                "kind": "dispatch-call",
+                "utc": "2026-11-15T05:11:22.535000+00:00",
+                "ordinal": 2
+              }
+            ]
+          },
+          "tool_session_id": 96794,
+          "claims": [
+            "docs/todos/11-reliable-delivery/evidence/06/fix1-review-claim.call.json"
+          ],
+          "attempts": [
+            "build/iter11-review/task06-review2/attempt.json",
+            "build/iter11-review/task06-review2/attempt.call.json"
+          ],
+          "releases": [
+            "build/iter11-review/task06-review2/release.call.json"
+          ],
+          "runner_receipts": [
+            "build/iter11-review/task06-review2/scope-runner.json"
+          ]
+        }
+      ],
+      "commits": {
+        "base": "e66841186450dc6bbe138bf77aac87a2a8f1232a",
+        "checkpoint": "82b66d9f3c8e7a62df8e8be18d8cedac7a5877a6",
+        "candidate": "7e5476c8879edbd45227b82f8189fdf74aab81a9",
+        "registration": [
+          "f4610a43aaa895fef9e8a50569f779b0681338f6",
+          "3158e75869d5c4346c51256de878f14ea190f305"
+        ],
+        "D": "3158e75869d5c4346c51256de878f14ea190f305"
+      },
+      "inheritance": "docs/todos/11-reliable-delivery/evidence/06/checkpoint-inheritance.json",
+      "checkpoint": "docs/todos/11-reliable-delivery/evidence/06/red-checkpoint.json",
+      "envelope": "docs/todos/11-reliable-delivery/evidence/06/envelope-before-continuation.call.json",
+      "review_report": "docs/todos/11-reliable-delivery/evidence/06/review-report.json",
+      "review_receipt": "docs/todos/11-reliable-delivery/evidence/06/review-receipt.json",
+      "local_strict": "build/iter11-review/task06-review2/local-strict-v2.json",
+      "local_strict_call": "build/iter11-review/task06-review2/strict-call-v2.json",
+      "retained_rejections": [
+        "docs/todos/11-reliable-delivery/evidence/06/preliminary-review1.json",
+        "build/iter11-review/task06-review2/local-strict.json",
+        "build/iter11-review/task06-review1/attempt.call.json"
+      ],
+      "extra_sources": [
+        "docs/todos/11-reliable-delivery/evidence/06/source-manifest.json",
+        "docs/todos/11-reliable-delivery/evidence/06/continuation-source-manifest.json",
+        "docs/todos/11-reliable-delivery/evidence/06/fix1-source-manifest.json",
+        "docs/todos/11-reliable-delivery/evidence/06/fix1-real-payload-inventory.json",
+        "docs/todos/11-reliable-delivery/evidence/06/fix1-real-payload-manifest.json"
+      ]
+    }
+  ],
+  "related_observations": [
+    {
+      "id": "codeg-worker-environment",
+      "path": "docs/todos/11-reliable-delivery/evidence/03/native-codeg-chain.json"
+    },
+    {
+      "id": "codeg-assessment",
+      "path": "docs/todos/11-reliable-delivery/evidence/03/native-consumption-assessment.json"
+    },
+    {
+      "id": "root04-order-incident",
+      "path": "docs/todos/11-reliable-delivery/evidence/04/dispatch-order-incident.json"
+    }
+  ],
+  "source_files": [
+    {
+      "path": "docs/todos/11-reliable-delivery/evidence/11/synthetic-missing/intentionally-absent.json",
+      "sha256": "d71a9d18da3405a56efb09b2487f3e67ae6edbbb3ef7164fe35ba310057d3a9b"
+    },
+    {
+      "path": "build/iter11-review/task06-review1/attempt-v2.json",
+      "sha256": "74d73b74a2d48989aecc012c3f238be847c12765ab5f91f3f0cecea1fda1a573"
+    },
+    {
+      "path": "build/iter11-review/task06-review1/attempt.call.json",
+      "sha256": "cee290ca237d93c19f6c7c9cc6c4459fa166acde71750a1f378aeadf0a3bd556"
+    },
+    {
+      "path": "build/iter11-review/task06-review1/context.json",
+      "sha256": "b7724a24900c5aa643fdff919673fe8af6f83e4bcabf8877b7b6ef3a4a163034"
+    },
+    {
+      "path": "build/iter11-review/task06-review1/release.call.json",
+      "sha256": "af08584ae87ffb853abfb38b81f936346ec592358ab8f976b305f486cd672e8a"
+    },
+    {
+      "path": "build/iter11-review/task06-review1/review-guard.json",
+      "sha256": "4238eb4391f8cd4d99b8e3989d3f9525823abcf21c7f6c65442f0341b6fdb813"
+    },
+    {
+      "path": "build/iter11-review/task06-review1/review-native.jsonl",
+      "sha256": "f6247c2b71349e844f9efb02536b3c13155ddaec243895b0e8773c51c9ea062f"
+    },
+    {
+      "path": "build/iter11-review/task06-review1/scope-runner.json",
+      "sha256": "3ea69eed4097814c331906f8907a8b4f805f0b1f500435e210a34b04e2d321ac"
+    },
+    {
+      "path": "build/iter11-review/task06-review1/scope-runner.json.child.json",
+      "sha256": "1ec29bef551e2a9d1232fd81c4820ab474f37079f9a7ae9dd226e4d0b75dcb45"
+    },
+    {
+      "path": "build/iter11-review/task06-review1/scope-runner.json.output.txt",
+      "sha256": "c75a9756a4b1a52743bddf32121355b17af939782d5f3a705f3a2214946ea507"
+    },
+    {
+      "path": "build/iter11-review/task06-review1/terminal.json",
+      "sha256": "810f239840d015afe2bddcb3b6bb0f15ad25704546356a625404478d067e6d2a"
+    },
+    {
+      "path": "build/iter11-review/task06-review2/attempt.call.json",
+      "sha256": "27f0aa9e7216f90960bda427aa96839c4e36c3fcd63fe71a91f76d2b68114fb2"
+    },
+    {
+      "path": "build/iter11-review/task06-review2/attempt.json",
+      "sha256": "008ba994ea1c7923b7c83d7397c816d2e9123c1ec90f0cf49b6327f48cd471d3"
+    },
+    {
+      "path": "build/iter11-review/task06-review2/context.json",
+      "sha256": "0a30c98661392f4804d1aad8de86278ba88b6dada645c6c68087e87565e34af0"
+    },
+    {
+      "path": "build/iter11-review/task06-review2/local-strict-v2.json",
+      "sha256": "8415bc78dc88c85c22c0542b9fcee21cebfed14c979fe85a28668f40ad3a7495"
+    },
+    {
+      "path": "build/iter11-review/task06-review2/local-strict-v2.json.child.json",
+      "sha256": "5437025d1359f6c37c309cf457b9dee956e2fa3bff82da3207a70a9d6a20f260"
+    },
+    {
+      "path": "build/iter11-review/task06-review2/local-strict-v2.json.output.txt",
+      "sha256": "1e5f9f2f36fd680d8414c4d03ffc4e5268604644018407c2d73ec68709d5b9fc"
+    },
+    {
+      "path": "build/iter11-review/task06-review2/local-strict.json",
+      "sha256": "f4d3ae3217b39e420ed1676ef97843358d2cf93e593ccb3bdb7d46a5aada3645"
+    },
+    {
+      "path": "build/iter11-review/task06-review2/local-strict.json.child.json",
+      "sha256": "536b947e0327299947b413c8e66a2b72ff2cac48bb395a4a0ecd62f580698627"
+    },
+    {
+      "path": "build/iter11-review/task06-review2/local-strict.json.output.txt",
+      "sha256": "b8927abd2d425aefbf75be72c61c82a26bb17770a3bf51b3f4acee69d3c79b6c"
+    },
+    {
+      "path": "build/iter11-review/task06-review2/release.call.json",
+      "sha256": "e045bdc77c3c403ba398be64923f098a8d6943d565261bdf9e493fd6b8277942"
+    },
+    {
+      "path": "build/iter11-review/task06-review2/review-check-observation.json",
+      "sha256": "b0a6c98b5e9b43674f91042ef6661cd1618415b106d73ddecb6de061dc70b928"
+    },
+    {
+      "path": "build/iter11-review/task06-review2/review-guard.json",
+      "sha256": "7400beffdde167720562ea5d5914f11d3151e6f147baadddfcb7126d26deee52"
+    },
+    {
+      "path": "build/iter11-review/task06-review2/review-native.jsonl",
+      "sha256": "9e7960736980a057533f68b8836a0da2572d25ef520115b56caacabf0b2a4d16"
+    },
+    {
+      "path": "build/iter11-review/task06-review2/scope-runner.json",
+      "sha256": "4ffe55f29af5335e5cb22e07d2033a96465ab4402057483a60389ff2728dbb6a"
+    },
+    {
+      "path": "build/iter11-review/task06-review2/scope-runner.json.child.json",
+      "sha256": "41d6212643c37e9b246f532de9de5d882454dd5b1ccbbd0c0685cc22be9ba459"
+    },
+    {
+      "path": "build/iter11-review/task06-review2/scope-runner.json.output.txt",
+      "sha256": "f0637d4a4b0d626c6e329f6fc00ad77d7906cdc8d64b1c20bced1788e118e066"
+    },
+    {
+      "path": "build/iter11-review/task06-review2/strict-call-v2.json",
+      "sha256": "ee9ba7f3a8530243c262853b11ab612fcaf43982afc5e4bc1c32e547c84618d4"
+    },
+    {
+      "path": "build/iter11-review/task06-review2/terminal.json",
+      "sha256": "364b693abbadaba5802aabdb3b7ea030f429146187ed90bf1f71614ce4522c2a"
+    },
+    {
+      "path": "docs/todos/11-reliable-delivery/06-installation-provenance.md",
+      "sha256": "8bdb2590889e7deff1a7705d8a61924a963bfd4a2a8360be69094ee364b23e50"
+    },
+    {
+      "path": "docs/todos/11-reliable-delivery/evidence/03/native-codeg-chain.json",
+      "sha256": "852363a6fd5c8f018028030bc02002d48f955bcc241bf8b087b9147c0e8a4ce4"
+    },
+    {
+      "path": "docs/todos/11-reliable-delivery/evidence/03/native-consumption-assessment.json",
+      "sha256": "2e114776c2978f58e1a6244044243dd2365e8ab64bdac3d1513ef461483e99d7"
+    },
+    {
+      "path": "docs/todos/11-reliable-delivery/evidence/04/dispatch-order-incident.json",
+      "sha256": "2122fc08215007557350af7b188c81f48cc241c8af6b266e29456333e4ab195e"
+    },
+    {
+      "path": "docs/todos/11-reliable-delivery/evidence/06/checkpoint-consumer-attempt.call.json",
+      "sha256": "b8792082cd73b920fe4fbfd3391be9da73deef8a99c31de8d1446af43455b987"
+    },
+    {
+      "path": "docs/todos/11-reliable-delivery/evidence/06/checkpoint-consumer-attempt.json",
+      "sha256": "df355dd47ca864f3a77b18ec23c40d902ef18b8beb5980bb18917216c14d5e9a"
+    },
+    {
+      "path": "docs/todos/11-reliable-delivery/evidence/06/checkpoint-consumer-claim.call.json",
+      "sha256": "536c3548d8c9cdd4f521e5bc3729fda43eb16fa1ae60aa0cba80d763acc65430"
+    },
+    {
+      "path": "docs/todos/11-reliable-delivery/evidence/06/checkpoint-consumer-context.json",
+      "sha256": "a531af6f85a0bbe99a8e315629e52500384e41ad0b574fdbce3a98aaf96dcc6f"
+    },
+    {
+      "path": "docs/todos/11-reliable-delivery/evidence/06/checkpoint-consumer-guard.json",
+      "sha256": "1b32c442eec36c1ea9bc466b84cef13405f15464ff7e791dae11b87464820662"
+    },
+    {
+      "path": "docs/todos/11-reliable-delivery/evidence/06/checkpoint-consumer-native.jsonl",
+      "sha256": "1761d30990e99783d271a740fa3a0b2870ba74dc3d275838b10b2e75ad5107fb"
+    },
+    {
+      "path": "docs/todos/11-reliable-delivery/evidence/06/checkpoint-consumer-release.call.json",
+      "sha256": "03488acf292642be6c8dbb33d33b87174bc262296766f68b32fb2a9223e3d9bc"
+    },
+    {
+      "path": "docs/todos/11-reliable-delivery/evidence/06/checkpoint-consumer-terminal.json",
+      "sha256": "d6494c2a559d8c5725d4d32d3cb889ca6c547177243b34ccba3ff81452ed2af6"
+    },
+    {
+      "path": "docs/todos/11-reliable-delivery/evidence/06/checkpoint-inheritance.json",
+      "sha256": "291ed8b880d597cb87a2060e225c5f2bf0ed9d770e8c050be2753d4a9ec9b637"
+    },
+    {
+      "path": "docs/todos/11-reliable-delivery/evidence/06/claim.call.json",
+      "sha256": "a26cff820685f3559c7ace85af6cf3359d8de1c95fe836eab7a6fd3c8b0f5a06"
+    },
+    {
+      "path": "docs/todos/11-reliable-delivery/evidence/06/continuation-attempt.call.json",
+      "sha256": "dbddd40bd036a74a3f76d4566742f38ffb481f6877cc1fcc706a2be286f26ab7"
+    },
+    {
+      "path": "docs/todos/11-reliable-delivery/evidence/06/continuation-attempt.json",
+      "sha256": "69b019902c60a6d5301787399d7a289feea0c520632494256655970583612276"
+    },
+    {
+      "path": "docs/todos/11-reliable-delivery/evidence/06/continuation-claim.call.json",
+      "sha256": "f56ddbc38dfd5aeedcad5fe0be38615000334a8cb5112722fed1e3c68e4f6671"
+    },
+    {
+      "path": "docs/todos/11-reliable-delivery/evidence/06/continuation-context.json",
+      "sha256": "d505d50bb2dae222d7ead34136a9129650a0fceb16191008a78033078137c270"
+    },
+    {
+      "path": "docs/todos/11-reliable-delivery/evidence/06/continuation-guard.json",
+      "sha256": "a141e83fb88f9201aa131cc2820624986e80dc3b8e1a0dd776cac2141109568a"
+    },
+    {
+      "path": "docs/todos/11-reliable-delivery/evidence/06/continuation-native.jsonl",
+      "sha256": "626cfe76d53fd2f63e023220ef66912950549c594358069313dc93f82ab1da4c"
+    },
+    {
+      "path": "docs/todos/11-reliable-delivery/evidence/06/continuation-release.call.json",
+      "sha256": "cfa4827dc9dca6d2079fe6b09b83ad2e854756a8e35ac6d54c32dbc62f9ac40a"
+    },
+    {
+      "path": "docs/todos/11-reliable-delivery/evidence/06/continuation-review-claim.call.json",
+      "sha256": "46f33e7b8331a9e539fd083207479df50d5175e325b5f6ed3f0218475223462e"
+    },
+    {
+      "path": "docs/todos/11-reliable-delivery/evidence/06/continuation-source-manifest.json",
+      "sha256": "6caf53757505eaeb469a2efc4956c9cfeb5e14c17fdffa427305451cbb055199"
+    },
+    {
+      "path": "docs/todos/11-reliable-delivery/evidence/06/continuation-terminal.json",
+      "sha256": "dbb7a3013a8e8db2a4ed8f648ed9aef897e8a94526b456fc5bd7ffc739856d9d"
+    },
+    {
+      "path": "docs/todos/11-reliable-delivery/evidence/06/envelope-before-continuation.call.json",
+      "sha256": "0865f38db6786042f51d1d3dc4b4cf135ee375a75e32d5b316bb83123eda51bd"
+    },
+    {
+      "path": "docs/todos/11-reliable-delivery/evidence/06/fix1-attempt.call.json",
+      "sha256": "553046ccf2e9c8c01ce5f1e9e65a38b9883ed3bcfb408f215db8ef89097ab5f4"
+    },
+    {
+      "path": "docs/todos/11-reliable-delivery/evidence/06/fix1-attempt.json",
+      "sha256": "da350f0cdc9954c2c56ccfbee796f056d7c97b0c676b860cf42b4054fe917ddd"
+    },
+    {
+      "path": "docs/todos/11-reliable-delivery/evidence/06/fix1-check-observation.json",
+      "sha256": "0130a02663c56340ee1f1848b0b9af472c26ce0be99159cff4ce0f90454c09b7"
+    },
+    {
+      "path": "docs/todos/11-reliable-delivery/evidence/06/fix1-claim.call.json",
+      "sha256": "8ce1ae0a38cb5499e0fda96ef8e6f95f7c888034a5394630decb31dd88fe6cca"
+    },
+    {
+      "path": "docs/todos/11-reliable-delivery/evidence/06/fix1-context.json",
+      "sha256": "392736de92b3d918b2a16c72b8a7880f5d057bdacc8476b5f2bf41b43340f602"
+    },
+    {
+      "path": "docs/todos/11-reliable-delivery/evidence/06/fix1-guard.json",
+      "sha256": "d6ad5ccf8d311052dc767ece597a2a5606bf6dc14d7f67b79a5821edadf0c5c5"
+    },
+    {
+      "path": "docs/todos/11-reliable-delivery/evidence/06/fix1-native.jsonl",
+      "sha256": "73d896d78d509dd40d5fab1cfe5d1af4a0f85b6ee9a2b43cd047ae6907abe2a2"
+    },
+    {
+      "path": "docs/todos/11-reliable-delivery/evidence/06/fix1-real-payload-inventory.json",
+      "sha256": "1a527dddfb174f033284562473832bd0aaefb296844c0009d94eb86364186532"
+    },
+    {
+      "path": "docs/todos/11-reliable-delivery/evidence/06/fix1-real-payload-manifest.json",
+      "sha256": "fe13d78b6d29def496ffbe8714894f604891fae5d60b163ff8ff70db52f9d17f"
+    },
+    {
+      "path": "docs/todos/11-reliable-delivery/evidence/06/fix1-real-payload.json",
+      "sha256": "a8dd00f3c87479dcd2b7c991006b8b305475736aae76875be97a762eec93e0ad"
+    },
+    {
+      "path": "docs/todos/11-reliable-delivery/evidence/06/fix1-real-payload.json.child.json",
+      "sha256": "11173089d553d2a666a9f595cfaf0f71763e464412318018f990dc739778ac02"
+    },
+    {
+      "path": "docs/todos/11-reliable-delivery/evidence/06/fix1-real-payload.json.output.txt",
+      "sha256": "33d4cdbdd362c4d3adad6a04da7f8bb91dd42bf3aac70d40f7d2bd2d3815601a"
+    },
+    {
+      "path": "docs/todos/11-reliable-delivery/evidence/06/fix1-release.call.json",
+      "sha256": "7d0ab5c7598fdf8e382708ca4ad90d7c4147ad4e0642dc285934f7daed7d987e"
+    },
+    {
+      "path": "docs/todos/11-reliable-delivery/evidence/06/fix1-review-claim.call.json",
+      "sha256": "481d0928b6c93377741f016f2010da402c3b3447d357baffa2e55abdda190aeb"
+    },
+    {
+      "path": "docs/todos/11-reliable-delivery/evidence/06/fix1-source-manifest.json",
+      "sha256": "3901352eaa7a66ab59c150de6530ea35b95c27189393030593a72c74da7f56f7"
+    },
+    {
+      "path": "docs/todos/11-reliable-delivery/evidence/06/fix1-terminal.json",
+      "sha256": "5e4fe182b4a142980378be7b9527b5e5a8d7141874f6162aa1442e3656f8bd30"
+    },
+    {
+      "path": "docs/todos/11-reliable-delivery/evidence/06/green-final-02.json",
+      "sha256": "f930d8e0fb2bc7aabbf92fc900477e6dfc379101341148a8523af187eaf326db"
+    },
+    {
+      "path": "docs/todos/11-reliable-delivery/evidence/06/green-final-02.json.child.json",
+      "sha256": "5662a66534a54672ac0b17642c4405bcba0646544490b1ecaabd362e501fe823"
+    },
+    {
+      "path": "docs/todos/11-reliable-delivery/evidence/06/green-final-02.json.output.txt",
+      "sha256": "70eb63bbbd76cab97d0278104f8a6467eebba464fe32af0efb6466280801af40"
+    },
+    {
+      "path": "docs/todos/11-reliable-delivery/evidence/06/green-final-03.json",
+      "sha256": "e4bb50207b94978ec9f4675ed29c30a098f5ddf0af4d8517a061844540a7e983"
+    },
+    {
+      "path": "docs/todos/11-reliable-delivery/evidence/06/green-final-03.json.child.json",
+      "sha256": "0dab49f4bcde38edb0602ea291a13f2571abf45352e07e9d3702b07fe75b5c08"
+    },
+    {
+      "path": "docs/todos/11-reliable-delivery/evidence/06/green-final-03.json.output.txt",
+      "sha256": "622797b5ffa734efca28499c3aa153a96d8e282f745c391b82e0e1c762d4c8e2"
+    },
+    {
+      "path": "docs/todos/11-reliable-delivery/evidence/06/green-final.json",
+      "sha256": "c21be73648f456254899bc139c499a457a4e92098569e103405cab5bcc1db511"
+    },
+    {
+      "path": "docs/todos/11-reliable-delivery/evidence/06/green-final.json.child.json",
+      "sha256": "31dd03e09919e12a6397a86cd4f8b5fc04430944326ef143d7c94f1f5e6f6b18"
+    },
+    {
+      "path": "docs/todos/11-reliable-delivery/evidence/06/green-final.json.output.txt",
+      "sha256": "6a3b1d86d8bdcfd897811e82bd64efc796ed097522f91dca8000afdb12d8180f"
+    },
+    {
+      "path": "docs/todos/11-reliable-delivery/evidence/06/implementation-context.json",
+      "sha256": "aa19846e6a0546ad5271260536bc8f37dcc7103b7a5e7c2c7857c54e4b69dd5f"
+    },
+    {
+      "path": "docs/todos/11-reliable-delivery/evidence/06/implementation-guard.json",
+      "sha256": "f615aa196692c9285f405b0c416a256ae2c16623316743e5a192caf5b12c9e53"
+    },
+    {
+      "path": "docs/todos/11-reliable-delivery/evidence/06/implementation-native.jsonl",
+      "sha256": "17970cc54fb098cb37939312f442c4a41fa98747ed6f79fc78d66e6fa6f01fb2"
+    },
+    {
+      "path": "docs/todos/11-reliable-delivery/evidence/06/implementation-terminal.json",
+      "sha256": "00d867bb59d343a1b8566fc20c7280e8f47ed346786a092bb8dddf10a9fcae04"
+    },
+    {
+      "path": "docs/todos/11-reliable-delivery/evidence/06/inventory.call.json",
+      "sha256": "284c45f502665c466fa4e0e5cd7499d3e22fb1b0cda70c341e4e50b6693598b4"
+    },
+    {
+      "path": "docs/todos/11-reliable-delivery/evidence/06/native-chain-selection.json",
+      "sha256": "173af862ce1662f407476637edeb7b99d803e0a0b5d3f63dee916b884b36d755"
+    },
+    {
+      "path": "docs/todos/11-reliable-delivery/evidence/06/preliminary-review1.json",
+      "sha256": "ba3d3db05ac15917ed675ac905d51cc4e06e7c3f485ec07930c8bfbd04d461af"
+    },
+    {
+      "path": "docs/todos/11-reliable-delivery/evidence/06/red-01.json",
+      "sha256": "e0bfd904c1095b09e9933c4392d827acd3d882ffad0009f92d5f6e957226293e"
+    },
+    {
+      "path": "docs/todos/11-reliable-delivery/evidence/06/red-01.json.child.json",
+      "sha256": "a1a14d2664fc4ce4886e46f65ed9765605530d6352b6b8098b0b161fbca7ab70"
+    },
+    {
+      "path": "docs/todos/11-reliable-delivery/evidence/06/red-01.json.output.txt",
+      "sha256": "8ec3270ebe0677e3e2b1fbd2a4f9b76dbec32d78b4de92b42da62046686ae40b"
+    },
+    {
+      "path": "docs/todos/11-reliable-delivery/evidence/06/red-attempt.call.json",
+      "sha256": "2dc5aeb334bcee36282b0967bfe47968857d6c5a9e9c0ebd332bc5d05c6ed787"
+    },
+    {
+      "path": "docs/todos/11-reliable-delivery/evidence/06/red-attempt.json",
+      "sha256": "34131920b5cd5dafc64b791ea3727dc856f305becb26e1796abea4437e8f03ee"
+    },
+    {
+      "path": "docs/todos/11-reliable-delivery/evidence/06/red-checkpoint.json",
+      "sha256": "ded13a7b113dd7e21b08f7a970bf19398b21759528d7d942a460fd29e58e0739"
+    },
+    {
+      "path": "docs/todos/11-reliable-delivery/evidence/06/red-release.call.json",
+      "sha256": "8318c1a839575c418f2b2aed264d834e50a48db1701c829e816b3729e45ec4c9"
+    },
+    {
+      "path": "docs/todos/11-reliable-delivery/evidence/06/review-receipt.json",
+      "sha256": "fa4c372b43928e168fcb9c315aab6cc4c13663da7e0bb34384fa9be3ac7cbecb"
+    },
+    {
+      "path": "docs/todos/11-reliable-delivery/evidence/06/review-report.json",
+      "sha256": "a64bf0650882e6691ac67eac0d5e5924d6819a85b6f18a299de3137d39f3b762"
+    },
+    {
+      "path": "docs/todos/11-reliable-delivery/evidence/06/source-manifest.json",
+      "sha256": "6caf53757505eaeb469a2efc4956c9cfeb5e14c17fdffa427305451cbb055199"
+    }
+  ],
+  "note": "Observed immutable source pointers and identities only; no task scheduling, acceptance status or approval is provided by this index."
+}

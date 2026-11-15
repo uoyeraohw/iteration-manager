@@ -1,0 +1,72 @@
+{
+  "kind": "fix2-doc-source-checkpoint",
+  "observed_at": "2026-11-15T03:44:17.112684+00:00",
+  "head": "48e731ed266a35c06c9146aff9eaaf866c3a2e3f",
+  "approved_runner_commit": "3f949f807d3c2eb47b97a116bd6932da55778edd",
+  "documents": [
+    {
+      "path": "AGENTS.md",
+      "bytes": 23933,
+      "sha256": "555ab375fd436c0bbd0dce948ad782d28b191bb2a9eedac42652b4603706a112"
+    }
+  ],
+  "runner_snapshot": "/data/workspace/iteration-manager/build/frozen-runners/iter11-platform-v1",
+  "runner_manifest": "/data/workspace/iteration-manager/build/frozen-runners/iter11-platform-v1/manifest.json",
+  "runner_files": [
+    {
+      "path": "scripts/iter_checkpoint.py",
+      "sha256": "9e68f7c264dbfd56a347a612bcb646f89e3679cb4baf6637dceccd9904804889",
+      "bytes": 7835,
+      "commit": "3f949f807d3c2eb47b97a116bd6932da55778edd",
+      "frozen_sha256": "9e68f7c264dbfd56a347a612bcb646f89e3679cb4baf6637dceccd9904804889",
+      "worktree_sha256": "9e68f7c264dbfd56a347a612bcb646f89e3679cb4baf6637dceccd9904804889",
+      "matches": true
+    },
+    {
+      "path": "scripts/iter_contracts.py",
+      "sha256": "96f50129aa27774b5d14e5e9beaa54381785d8df2e12d5a3581d6daa406a5481",
+      "bytes": 15892,
+      "commit": "3f949f807d3c2eb47b97a116bd6932da55778edd",
+      "frozen_sha256": "96f50129aa27774b5d14e5e9beaa54381785d8df2e12d5a3581d6daa406a5481",
+      "worktree_sha256": "96f50129aa27774b5d14e5e9beaa54381785d8df2e12d5a3581d6daa406a5481",
+      "matches": true
+    },
+    {
+      "path": "scripts/iter_filesystem.py",
+      "sha256": "eaeaaf78f187719fcb13569e069ac49d66cd34d4148791c8168a04903d99da43",
+      "bytes": 11485,
+      "commit": "3f949f807d3c2eb47b97a116bd6932da55778edd",
+      "frozen_sha256": "eaeaaf78f187719fcb13569e069ac49d66cd34d4148791c8168a04903d99da43",
+      "worktree_sha256": "eaeaaf78f187719fcb13569e069ac49d66cd34d4148791c8168a04903d99da43",
+      "matches": true
+    },
+    {
+      "path": "scripts/iter_linux_job.py",
+      "sha256": "68c76c0a9e23209c6e68d0242a0741e5c1bbe6c0019809c65a13034104fa987b",
+      "bytes": 7005,
+      "commit": "3f949f807d3c2eb47b97a116bd6932da55778edd",
+      "frozen_sha256": "68c76c0a9e23209c6e68d0242a0741e5c1bbe6c0019809c65a13034104fa987b",
+      "worktree_sha256": "68c76c0a9e23209c6e68d0242a0741e5c1bbe6c0019809c65a13034104fa987b",
+      "matches": true
+    },
+    {
+      "path": "scripts/iter_run.py",
+      "sha256": "b8b22217ad1d8d1f02a9a4d3cb053f84f781888c4871e583f0a7ff27f3fe3ef1",
+      "bytes": 13151,
+      "commit": "3f949f807d3c2eb47b97a116bd6932da55778edd",
+      "frozen_sha256": "b8b22217ad1d8d1f02a9a4d3cb053f84f781888c4871e583f0a7ff27f3fe3ef1",
+      "worktree_sha256": "b8b22217ad1d8d1f02a9a4d3cb053f84f781888c4871e583f0a7ff27f3fe3ef1",
+      "matches": true
+    },
+    {
+      "path": "scripts/iter_win_job.py",
+      "sha256": "93de97a15f75be1496c4f4e6a727a75e2ca2d89298245eef942bedb9c245c43d",
+      "bytes": 3245,
+      "commit": "3f949f807d3c2eb47b97a116bd6932da55778edd",
+      "frozen_sha256": "93de97a15f75be1496c4f4e6a727a75e2ca2d89298245eef942bedb9c245c43d",
+      "worktree_sha256": "93de97a15f75be1496c4f4e6a727a75e2ca2d89298245eef942bedb9c245c43d",
+      "matches": true
+    }
+  ],
+  "scope": "working-tree hash and verified C2 mapping; not a commit or approval"
+}

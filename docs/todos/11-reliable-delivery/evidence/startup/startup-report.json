@@ -1,0 +1,106 @@
+{
+  "version": 1,
+  "kind": "iteration-startup-coordination-report",
+  "recorded_at": "2026-11-15T02:27:04.992462+00:00",
+  "result": "BLOCKED",
+  "blocker": "Windows Job Object formal runner unavailable on current Linux host; no formal baseline or product execution started",
+  "workspace": "/data/workspace/iteration-manager/.worktrees/iter-11",
+  "branch": "feat/iter-11-reliable-delivery",
+  "observed_candidate": "80621f1c29e74c6398d1e8aa620af04189f1740c",
+  "planning_commit": "80621f1c29e74c6398d1e8aa620af04189f1740c",
+  "planning_files_committed": 125,
+  "frozen_coordinator": {
+    "source": "fdcc4cce88635ee81573be5991de11de650659d8",
+    "files_checked": 91,
+    "mismatches": []
+  },
+  "planning_commit_gate": {
+    "exit_code": 0,
+    "source": "verify-committed.coordination.json"
+  },
+  "worktree_creation": {
+    "exit_code": 0,
+    "source": "worktree-add.coordination.json"
+  },
+  "formal_baseline": {
+    "launcher_exit": 125,
+    "product_command_started": false,
+    "runner_receipt_created": false,
+    "source": "baseline-launch.observation.json"
+  },
+  "inventory": {
+    "readiness": "BLOCKED",
+    "exit_code": 3,
+    "tasks": 12,
+    "todo": 12,
+    "acceptance_unknown": 12,
+    "acceptance_pass": 0,
+    "attempts": 0,
+    "writers": 0,
+    "source": "startup-inventory.stdout.txt"
+  },
+  "dispatch_decision": {
+    "first_task": "01",
+    "decision": "DO_NOT_CLAIM_OR_DISPATCH",
+    "reason": "Consumed actual BLOCKED inventory; clean formal baseline missing",
+    "later_tasks": "DO_NOT_START: user serial acceptance constraint"
+  },
+  "robustness_observations": [
+    {
+      "layer": "actual coordination",
+      "finding": "Authorized precise planning commit and frozen gate precede isolated Worktree creation",
+      "sources": [
+        "verify-committed.coordination.json",
+        "worktree-add.coordination.json"
+      ]
+    },
+    {
+      "layer": "actual capability rejection",
+      "finding": "Frozen runner rejects Linux before product launch, preserving explicit error and no fake runner receipt",
+      "sources": [
+        "baseline-launch.stderr.txt",
+        "baseline-launch.observation.json"
+      ]
+    },
+    {
+      "layer": "actual readiness consumption",
+      "finding": "Native dispatch not invoked after BLOCKED inventory; card statuses, writers and budgets unchanged",
+      "sources": [
+        "startup-context.json",
+        "startup-inventory.stdout.txt"
+      ]
+    }
+  ],
+  "not_proven": [
+    "product fixes",
+    "pytest results",
+    "valid TDD RED or GREEN",
+    "Codeg target contract read access",
+    "native dispatch-query-cancel chain",
+    "independent task approval",
+    "full iteration robustness"
+  ],
+  "scope": {
+    "source_changed": false,
+    "task_cards_changed": false,
+    "root_index_changed_on_iteration_branch": false,
+    "deployment": false,
+    "push": false,
+    "merge": false,
+    "cleanup": false
+  },
+  "ssh_capability_observation": {
+    "ssh_config_exists": false,
+    "configured_host_aliases": [],
+    "private_keys_or_tokens_read": false
+  },
+  "required_input": "Accessible Windows execution entry and workspace for the same candidate; do not relax frozen gates or use a Linux bare-command fallback.",
+  "next_steps": [
+    "Verify same candidate and frozen 91-file snapshot in authorized Windows workspace",
+    "Verify actual native executor contract access and independent reviewer capability",
+    "Run clean formal baseline through frozen Windows runner",
+    "Rebuild fresh context at actual candidate; inventory, claim, consume same-owner dispatch-check before real task 01 delegation",
+    "Accept each task before starting the next; preserve original command and session evidence"
+  ],
+  "candidate_note": "All observations bind the actual planning commit. The subsequent coordination-evidence commit does not retag observations or create READY authority."
+}

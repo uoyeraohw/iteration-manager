@@ -78,6 +78,7 @@ def test_parent_exit_does_not_let_orphan_escape(tmp_path):
     assert not (tmp_path/'orphan').exists()
 
 
+@pytest.mark.skipif(os.name != 'nt', reason='Windows Job mock')
 def test_cleanup_unknown_cannot_pass_business_exit(tmp_path, monkeypatch):
     import iter_win_job
     original = iter_win_job.Job.stop
@@ -90,6 +91,7 @@ def test_cleanup_unknown_cannot_pass_business_exit(tmp_path, monkeypatch):
     assert record['status'] == 'CLEANUP_UNKNOWN' and record['raw_exit_code'] == 0
 
 
+@pytest.mark.skipif(os.name != 'nt', reason='Windows Job mock')
 def test_attachment_failure_never_launches_target(tmp_path, monkeypatch):
     import iter_win_job
     def refuse(self, process):

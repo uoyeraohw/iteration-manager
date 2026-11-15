@@ -1,0 +1,1 @@
+PASS: manifest hashes, thread, candidate, check fields, nonempty outputs and command terminals

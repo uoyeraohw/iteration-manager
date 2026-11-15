@@ -1,0 +1,84 @@
+{
+  "read_only": true,
+  "readiness": "READY",
+  "task_path": "/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/00-linux-runner-and-dev-guide.md",
+  "phase": "implementation",
+  "acceptance_verdict": "UNKNOWN",
+  "findings": [],
+  "observations": {
+    "authority": {
+      "status": "READY",
+      "summary": "最新用户明确授权Linux适配、AGENTS指引及既有实施/Git/Worktree；00前置",
+      "evidence": "docs/todos/11-reliable-delivery/evidence/planning/platform-migration-authorization.json"
+    },
+    "bootstrap-scope": {
+      "status": "READY",
+      "summary": "task00专用bootstrap观察与正式runner收据明确分开，GNU timeout最长180秒；主控CLI仍冻结fdcc4cc",
+      "evidence": "docs/todos/11-reliable-delivery/evidence/00/bootstrap_command.py"
+    },
+    "execution": {
+      "status": "READY",
+      "summary": "当前原生Codex CLI以与主控相同的danger-full-access调用成功读取必读契约，Git及runnerSHA已核；不修改全局配置，Codeg bwrap故障另记",
+      "evidence": "docs/todos/11-reliable-delivery/evidence/planning/cli-runtime-probe.stdout.jsonl"
+    },
+    "serial-order": {
+      "status": "READY",
+      "summary": "00为显式新增前置，原01—12未开始，单卡无共享写冲突",
+      "evidence": "docs/todos/11-reliable-delivery/evidence/planning/platform-migration-authorization.json"
+    },
+    "verification": {
+      "status": "READY",
+      "summary": "隔离venv的pytest9.2.0、GNU timeout、/proc/subreaper/pidfd已实际核实；仅00获准有界引导测试，后续新runner未获批准前不派发01",
+      "evidence": "docs/todos/11-reliable-delivery/evidence/planning/linux-capabilities.json"
+    }
+  },
+  "task_id": "00",
+  "delivery_mode": "git",
+  "candidate": "894dfd6d5d93d2ff99f6eddcaadbb88ee9ce44c3",
+  "execution": {
+    "attempt_count": 0,
+    "no_progress_streak": 0,
+    "last_attempt": null,
+    "checkpoint": null,
+    "remaining_work": []
+  },
+  "conditions": {
+    "inputs": [
+      "AGENTS.md",
+      "docs/todos/11-reliable-delivery/00-linux-runner-and-dev-guide.md",
+      "docs/todos/11-reliable-delivery/README.md",
+      "docs/todos/11-reliable-delivery/evidence/00/bootstrap_command.py",
+      "docs/todos/11-reliable-delivery/evidence/planning/cli-runtime-probe.json",
+      "docs/todos/11-reliable-delivery/evidence/planning/linux-capabilities.json",
+      "docs/todos/11-reliable-delivery/evidence/planning/platform-migration-authorization.json",
+      "references/checkpoint_execution.md",
+      "scripts/iter_run.py",
+      "scripts/iter_win_job.py",
+      "tests/test_iter_run.py"
+    ],
+    "capabilities": [
+      "GNU-timeout-task00-bootstrap",
+      "Linux-proc-subreaper-pidfd",
+      "independent-native-review-required",
+      "native-codex-cli-exec-session"
+    ],
+    "scope": [
+      ".agents/notes/planned/iter11/00-linux-runner.md",
+      "AGENTS.md",
+      "docs/todos/11-reliable-delivery/evidence/00/",
+      "references/checkpoint_execution.md",
+      "scripts/iter_linux_job.py",
+      "scripts/iter_run.py",
+      "tests/test_iter_run.py",
+      "tests/test_linux_runner.py"
+    ]
+  },
+  "checkpoint": "有效Linux公共CLI断言RED及可审的Linux后端/测试差异；GREEN和文档按剩余窗口交付",
+  "remaining_work": [
+    "AGENTS双环境指引",
+    "Linux后代与中断路径GREEN",
+    "冻结runner后完整基线",
+    "受影响回归",
+    "独审与C/D/strict"
+  ]
+}

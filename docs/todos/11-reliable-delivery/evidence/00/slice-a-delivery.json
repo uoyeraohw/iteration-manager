@@ -1,0 +1,95 @@
+{
+  "base": "894dfd6d5d93d2ff99f6eddcaadbb88ee9ce44c3",
+  "branch": "feat/iter-11-reliable-delivery",
+  "checkpoint_utc": "2026-11-15T03:03:58.272719+00:00",
+  "implementer_modified_files": [
+    "scripts/iter_run.py",
+    "scripts/iter_linux_job.py",
+    "tests/test_iter_run.py",
+    "tests/test_linux_runner.py",
+    "AGENTS.md",
+    "references/checkpoint_execution.md",
+    ".agents/notes/planned/iter11/00-linux-runner.md",
+    "docs/todos/11-reliable-delivery/evidence/00/slice-a-red-bootstrap.json",
+    "docs/todos/11-reliable-delivery/evidence/00/slice-a-red-bootstrap.json.output.txt",
+    "docs/todos/11-reliable-delivery/evidence/00/slice-a-initial-bootstrap.json",
+    "docs/todos/11-reliable-delivery/evidence/00/slice-a-initial-bootstrap.json.output.txt",
+    "docs/todos/11-reliable-delivery/evidence/00/slice-a-development-bootstrap.json",
+    "docs/todos/11-reliable-delivery/evidence/00/slice-a-development-bootstrap.json.output.txt",
+    "docs/todos/11-reliable-delivery/evidence/00/slice-a-green.json",
+    "docs/todos/11-reliable-delivery/evidence/00/slice-a-green.json.output.txt",
+    "docs/todos/11-reliable-delivery/evidence/00/slice-a-green.json.child.json",
+    "docs/todos/11-reliable-delivery/evidence/00/slice-a-regression.json",
+    "docs/todos/11-reliable-delivery/evidence/00/slice-a-regression.json.output.txt",
+    "docs/todos/11-reliable-delivery/evidence/00/slice-a-regression.json.child.json",
+    "docs/todos/11-reliable-delivery/evidence/00/slice-a-green-final.json",
+    "docs/todos/11-reliable-delivery/evidence/00/slice-a-green-final.json.output.txt",
+    "docs/todos/11-reliable-delivery/evidence/00/slice-a-green-final.json.child.json",
+    "docs/todos/11-reliable-delivery/evidence/00/slice-a-regression-final.json",
+    "docs/todos/11-reliable-delivery/evidence/00/slice-a-regression-final.json.output.txt",
+    "docs/todos/11-reliable-delivery/evidence/00/slice-a-regression-final.json.child.json",
+    "docs/todos/11-reliable-delivery/evidence/00/slice-a-exit7.json",
+    "docs/todos/11-reliable-delivery/evidence/00/slice-a-exit7.json.output.txt",
+    "docs/todos/11-reliable-delivery/evidence/00/slice-a-exit7.json.child.json",
+    "docs/todos/11-reliable-delivery/evidence/00/slice-a-green-v2.json",
+    "docs/todos/11-reliable-delivery/evidence/00/slice-a-green-v2.json.output.txt",
+    "docs/todos/11-reliable-delivery/evidence/00/slice-a-green-v2.json.child.json",
+    "docs/todos/11-reliable-delivery/evidence/00/slice-a-regression-v2.json",
+    "docs/todos/11-reliable-delivery/evidence/00/slice-a-regression-v2.json.output.txt",
+    "docs/todos/11-reliable-delivery/evidence/00/slice-a-regression-v2.json.child.json",
+    "docs/todos/11-reliable-delivery/evidence/00/slice-a-delivery.json"
+  ],
+  "preexisting_dirty_preserved": [
+    "docs/todos/11-reliable-delivery/00-linux-runner-and-dev-guide.md",
+    "other coordination and bootstrap evidence in evidence/00"
+  ],
+  "red": {
+    "bootstrap": "docs/todos/11-reliable-delivery/evidence/00/slice-a-red-bootstrap.json",
+    "output": "docs/todos/11-reliable-delivery/evidence/00/slice-a-red-bootstrap.json.output.txt",
+    "exit_code": 1,
+    "assertion": "public CLI returned 125 instead of expected 7 because the unchanged runner rejected Linux",
+    "formal_runner_receipt": false
+  },
+  "formal_green": {
+    "receipt": "docs/todos/11-reliable-delivery/evidence/00/slice-a-green-v2.json",
+    "exit_code": 0,
+    "passed": 24,
+    "skipped": 2,
+    "tree_terminal": true
+  },
+  "formal_regression": {
+    "receipt": "docs/todos/11-reliable-delivery/evidence/00/slice-a-regression-v2.json",
+    "exit_code": 0,
+    "passed": 141,
+    "skipped": 2,
+    "tree_terminal": true
+  },
+  "public_cli_exit7": {
+    "receipt": "docs/todos/11-reliable-delivery/evidence/00/slice-a-exit7.json",
+    "exit_code": 7,
+    "raw_exit_code": 7,
+    "tree_terminal": true,
+    "output": "docs/todos/11-reliable-delivery/evidence/00/slice-a-exit7.json.output.txt"
+  },
+  "completed": [
+    "Linux gated per-command subreaper, pidfd cleanup and receipt integration",
+    "business exit 124/125, deadline, evidence collisions and path rejection tests",
+    "orphan, deep setsid, timeout, unrelated process and concurrent isolation tests",
+    "capability failure, unproved cleanup, supervisor hard kill and handled SIGTERM tests",
+    "Windows-only mocked tests explicitly skipped on Linux",
+    "Windows/Linux guidance and planned decision note",
+    "git diff --check"
+  ],
+  "remaining": [
+    "Controller inspects candidate and raw receipts, establishes native session and command terminal facts, and records attempt/release",
+    "Controller commits exact candidate C after terminal, then independent nonparticipant reviews C and frozen specification; register D and run local strict only after approval",
+    "After task00 approval, Controller freezes the runner and direct dependencies and runs the required full maintenance baseline before task01",
+    "Windows actual execution was not rerun here; historical Windows evidence remains historical"
+  ],
+  "active_commands": "No task00-owned test or runner commands active at checkpoint; unrelated pre-existing processes were left alone.",
+  "unknowns": [
+    "Hard-killed supervisor cannot prove descendant termination; receipt remains CLEANUP_UNKNOWN.",
+    "No independent review or approval has occurred."
+  ],
+  "delivery_status": "TESTING candidate; no approval claimed"
+}

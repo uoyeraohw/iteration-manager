@@ -1,0 +1,8 @@
+已完成 task06 的 **RED-only 正常检查点**，状态仍为 **IN_PROGRESS**。
+
+- [测试源码]( /data/workspace/iteration-manager/.worktrees/iter-11/tests/test_install_provenance.py) 的 SHA256：`4d38bc57eb45230f831ea1ac5389bb0ea954ff9c85061ee2569ab6a4b46656cd`。
+- 指定 runner 的[原始收据]( /data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/06/red-01.json)和[输出]( /data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/06/red-01.json.output.txt)显示：**22 个断言失败、11 个通过、0 个错误**；退出码 1，`COMPLETED`，`tree_terminal: true`。
+- [检查点]( /data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/06/red-checkpoint.json)记录了原生会话 UUID、BASE、哈希、原始证据和剩余工作。
+
+缺失模块由测试侧惰性适配器表示；这些 RED 证明所要求的接口行为尚不存在。安全边界与运行时能力结果仍须在实现后实际验证，尤其是 Linux runner 不可用时不能显示 READY。未编写生产代码、运行 GREEN 或全量测试，也未进行提交或审批。命令已结束，可由主控记录 attempt、release 和检查点提交。
+

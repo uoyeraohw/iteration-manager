@@ -1,0 +1,45 @@
+{
+  "phase": "implementation",
+  "candidate": "6ee7605de94fde0dfb4454f512b9913fd7aa01ae",
+  "inputs": [
+    "AGENTS.md",
+    "docs/todos/11-reliable-delivery/06-installation-provenance.md",
+    "docs/todos/11-reliable-delivery/README.md",
+    "docs/todos/11-reliable-delivery/evidence/06/checkpoint-inheritance.json",
+    "docs/todos/11-reliable-delivery/evidence/06/red-attempt.json",
+    "docs/todos/11-reliable-delivery/evidence/06/red-checkpoint.json",
+    "references/task_card_schema.md",
+    "tests/test_install_provenance.py",
+    "docs/todos/11-reliable-delivery/evidence/06/preliminary-review1.json"
+  ],
+  "capabilities": [
+    "native-codex-cli-implementer",
+    "approved-frozen-linux-runner",
+    "Python3.11.17-pytest9.2-mcp1.30",
+    "independent-native-reviewer"
+  ],
+  "version": 1,
+  "checkpoint": "F1补证据：当前真实C1白名单临时副本清单/检查通过、注入漂移拒绝；原39项沿用，生产测试未变",
+  "remaining_work": [
+    "C独审",
+    "D/冻结strict"
+  ],
+  "executor_id": "01a1dd8e-8b72-7b72-90b4-a8577ef8db2d",
+  "terminal_evidence": "docs/todos/11-reliable-delivery/evidence/06/fix1-terminal.json",
+  "progress": [
+    {
+      "kind": "implementation",
+      "summary": "F1补证据：当前真实C1白名单临时副本清单/检查通过、注入漂移拒绝；原39项沿用，生产测试未变",
+      "evidence": "docs/todos/11-reliable-delivery/evidence/06/fix1-delivery.json"
+    }
+  ],
+  "commands": [
+    "docs/todos/11-reliable-delivery/evidence/06/red-01.json",
+    "docs/todos/11-reliable-delivery/evidence/06/green-final-02.json",
+    "docs/todos/11-reliable-delivery/evidence/06/green-final.json",
+    "docs/todos/11-reliable-delivery/evidence/06/fix1-real-payload.json",
+    "docs/todos/11-reliable-delivery/evidence/06/green-final-03.json"
+  ],
+  "started_at": null,
+  "ended_at": null
+}

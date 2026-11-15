@@ -1,0 +1,167 @@
+{
+  "kind": "independent-review-record",
+  "candidate": "7e5476c8879edbd45227b82f8189fdf74aab81a9",
+  "recorded_at": "2026-11-15T05:12:33.295222+00:00",
+  "independent_review": {
+    "candidate": "7e5476c8879edbd45227b82f8189fdf74aab81a9",
+    "base": "e66841186450dc6bbe138bf77aac87a2a8f1232a",
+    "reviewer_uuid": "01a1dd96-f44b-7971-8cc6-9b6de8d5990b",
+    "independence": {
+      "statement": "Same independent reviewer as review1, resumed for this scoped re-review; no task design, implementation, test authorship, RCA, or delegation.",
+      "excluded_actors": [
+        "01a1dd8e-8b72-7b72-90b4-a8577ef8db2d",
+        "01a1dd90-f03a-70c1-866d-43d5ac3a936e",
+        "all task consumers",
+        "root controller"
+      ]
+    },
+    "verdicts": {
+      "scope": "APPROVED",
+      "spec": "APPROVED",
+      "quality": "APPROVED",
+      "overall": "APPROVED"
+    },
+    "findings": [],
+    "prior_findings": [
+      {
+        "id": "F1",
+        "severity": "major",
+        "status": "ADDRESSED",
+        "location": "tests/test_install_provenance.py:33",
+        "scenario": "Initial smoke exercised a synthetic six-file repository rather than the actual delivery payload.",
+        "resolution": "fix1-real-payload.json and raw outputs record an isolated clone of C1, actual committed 111-file whitelist, clean installation exit 0 and injected SKILL.md drift exit 2; independent checks matched all 111 C1/C2 blob IDs, SHA256 values, inventory, preserved source and installation files."
+      }
+    ],
+    "evidence_applicability": {
+      "candidate_and_spec": "HEAD equals C2, whose parent is C1; BASE-to-C2 scope, acceptance, and iteration goal marked regions are byte-identical. No explicit invalid delivery mode; Git delivery applicable. C1-to-C2 changes are card state/ledger and task evidence only; product, tests and delivery whitelist tree unchanged.",
+      "source_mapping": "All 11 entries in each of original and continuation source manifests and all 41 entries of fix1 source manifest match SHA256 of C2 Git blobs. C1 and C2 have identical 111-file whitelist trees. All 111 manifest paths and inventory entries equal that tree; every recorded SHA256 and Git blob matches actual C1 blobs, source checkout and preserved temporary installation; SKILL.md contains exactly the recorded deliberate drift.",
+      "chronology": "Original native implementer 01a1dd8e obtained 22 assertion failures and 11 passes, exit 1 and terminal tree before production code; RED test in P 82b66d9 is an exact prefix of the final test. A different consumer 01a1dd90 inherited the actual envelope and original candidate/time without rerun or reset; same implementer resumed and produced final 39-pass GREEN/regression, exit 0 and terminal tree. Six supplemental tests were added later and are not claimed as RED. Original 37/38 results predate additions. Same implementer resumed for fix1; native thread and terminal confirmed. Fix1 run occurred before C2 and is bound to C1, whose delivery tree equals C2.",
+      "smoke": "Runner fix1-real-payload.json COMPLETED, raw exit 0, tree_terminal true. Raw experiment output records clean detached clone, manifest generation, 111-file inventory, clean copy check exit 0 and drift check exit 2; raw drift stderr identifies SKILL.md bytes. Query PRESENT indicates file presence; runner and complete chain UNKNOWN. No duplicate test suite run.",
+      "contracts": "Prior semantic review remains applicable: source generation resolves a full commit, compares index and committed whitelist bytes; copy checker validates schema, paths and hashes, refuses symlinks, and does not claim runtime execution. Offline checker explicitly trusts a supplied manifest and does not authenticate arbitrary Git origin or signatures; concurrent hostile replacement is outside its stated boundary.",
+      "dispatch": "Same-owner evidence-inspection dispatch-check READY for C2, exit 0; this is a readiness observation, not approval."
+    },
+    "scope_receipt": {
+      "path": "build/iter11-review/task06-review2/scope-runner.json",
+      "raw_output": "build/iter11-review/task06-review2/scope-runner.json.output.txt",
+      "status": "COMPLETED",
+      "raw_exit_code": 0,
+      "tree_terminal": true,
+      "deadline": "2026-11-15T05:17:16.378397+00:00",
+      "interpretation": "Frozen scope evidence only; known mode/takeover defects do not establish semantic legality."
+    },
+    "DeferredMinors": [],
+    "limitations": [
+      "No rerun of the already-effective RED/GREEN/regression suite.",
+      "Manifest provenance requires a trusted generator; no signature or arbitrary origin authentication.",
+      "Windows execution, live deployment, host adoption, external business use, full execution chain and full maintenance suite remain unverified.",
+      "Task 11 source-chain audit, controller registration D, frozen local strict, full iteration acceptance and release remain pending.",
+      "Historical task 04 root ordering FAIL and task 03 Codegworker bwrap BLOCKED remain separate and are not reclassified."
+    ],
+    "approval_scope": "Whole task 06 candidate C2 against its unchanged frozen task specification and applicable Linux migration; does not register D, constitute strict PASS, or approve the iteration, release or deployment."
+  },
+  "originals": {
+    "scope-runner.json.output.txt": {
+      "path": "build/iter11-review/task06-review2/scope-runner.json.output.txt",
+      "sha256": "f0637d4a4b0d626c6e329f6fc00ad77d7906cdc8d64b1c20bced1788e118e066"
+    },
+    "review-native.jsonl": {
+      "path": "build/iter11-review/task06-review2/review-native.jsonl",
+      "sha256": "9e7960736980a057533f68b8836a0da2572d25ef520115b56caacabf0b2a4d16"
+    },
+    "attempt.call.json": {
+      "path": "build/iter11-review/task06-review2/attempt.call.json",
+      "sha256": "27f0aa9e7216f90960bda427aa96839c4e36c3fcd63fe71a91f76d2b68114fb2"
+    },
+    "review-package.txt": {
+      "path": "build/iter11-review/task06-review2/review-package.txt",
+      "sha256": "a2bc45facca1740b473dfb5aab51ce49a6c26fe086a250090684e8d21b2a62f7"
+    },
+    "review-last-message.txt": {
+      "path": "build/iter11-review/task06-review2/review-last-message.txt",
+      "sha256": "21008902cbdd9c992149c5c5809be1a5b87b84363a24a771bb649a91e8838359"
+    },
+    "terminal.json": {
+      "path": "build/iter11-review/task06-review2/terminal.json",
+      "sha256": "364b693abbadaba5802aabdb3b7ea030f429146187ed90bf1f71614ce4522c2a"
+    },
+    "review-native.stderr.txt": {
+      "path": "build/iter11-review/task06-review2/review-native.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "scope-runner.json": {
+      "path": "build/iter11-review/task06-review2/scope-runner.json",
+      "sha256": "4ffe55f29af5335e5cb22e07d2033a96465ab4402057483a60389ff2728dbb6a"
+    },
+    "attempt.json": {
+      "path": "build/iter11-review/task06-review2/attempt.json",
+      "sha256": "008ba994ea1c7923b7c83d7397c816d2e9123c1ec90f0cf49b6327f48cd471d3"
+    },
+    "dispatch-check.json": {
+      "path": "build/iter11-review/task06-review2/dispatch-check.json",
+      "sha256": "d0083e50778d489a379137d937ae30cd89ebcccbbc8739ae9b81d0790dbba509"
+    },
+    "review-brief.md": {
+      "path": "build/iter11-review/task06-review2/review-brief.md",
+      "sha256": "3d2a883429ac37c82ef648db86a3b027479340b6a4886b68a00872dd4f3c1c45"
+    },
+    "review-guard.json": {
+      "path": "build/iter11-review/task06-review2/review-guard.json",
+      "sha256": "7400beffdde167720562ea5d5914f11d3151e6f147baadddfcb7126d26deee52"
+    },
+    "context.json": {
+      "path": "build/iter11-review/task06-review2/context.json",
+      "sha256": "0a30c98661392f4804d1aad8de86278ba88b6dada645c6c68087e87565e34af0"
+    },
+    "release.call.json": {
+      "path": "build/iter11-review/task06-review2/release.call.json",
+      "sha256": "e045bdc77c3c403ba398be64923f098a8d6943d565261bdf9e493fd6b8277942"
+    },
+    "review-check-observation.json": {
+      "path": "build/iter11-review/task06-review2/review-check-observation.json",
+      "sha256": "b0a6c98b5e9b43674f91042ef6661cd1618415b106d73ddecb6de061dc70b928"
+    },
+    "scope-runner.json.child.json": {
+      "path": "build/iter11-review/task06-review2/scope-runner.json.child.json",
+      "sha256": "41d6212643c37e9b246f532de9de5d882454dd5b1ccbbd0c0685cc22be9ba459"
+    },
+    "report.json": {
+      "path": "build/iter11-review/task06-review2/report.json",
+      "sha256": "04e5bfd50b5f4c0fe10a4d1e60b1b1d67680b387fff560bdec1b27532da0e291"
+    }
+  },
+  "scope_receipt": {
+    "version": 1,
+    "argv": [
+      "python3",
+      "-B",
+      "/data/workspace/iteration-manager/build/frozen-tools/fdcc4cce8863/scripts/iter_sync.py",
+      "--check-scope",
+      "e66841186450dc6bbe138bf77aac87a2a8f1232a",
+      "7e5476c8879edbd45227b82f8189fdf74aab81a9",
+      "docs/todos/11-reliable-delivery/06-installation-provenance.md"
+    ],
+    "cwd": "/data/workspace/iteration-manager/.worktrees/iter-11",
+    "deadline": "2026-11-15T05:17:16.378397+00:00",
+    "cleanup_reserve_seconds": 5,
+    "status": "COMPLETED",
+    "deadline_checked_at": "2026-11-15T05:11:31.061514+00:00",
+    "started_at": "2026-11-15T05:11:31.064743+00:00",
+    "ended_at": "2026-11-15T05:11:31.227749+00:00",
+    "raw_exit_code": 0,
+    "tree_terminal": true,
+    "output": "build/iter11-review/task06-review2/scope-runner.json.output.txt",
+    "container_pid": 3467897,
+    "launcher_exit_code": 0,
+    "command": {
+      "status": "COMPLETED",
+      "raw_exit_code": 0,
+      "started_at": "2026-11-15T05:11:31.064743+00:00",
+      "tree_terminal": true,
+      "deadline_checked_at": "2026-11-15T05:11:31.061514+00:00",
+      "pid": 3467898,
+      "ended_at": "2026-11-15T05:11:31.171874+00:00"
+    },
+    "late_by_seconds": 0
+  },
+  "scope_output": "[IterSync:ScopeFirewall:PASSED] All 112 changed files within declared scope; ownership is not inferred.\n"
+}

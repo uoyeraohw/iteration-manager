@@ -1,0 +1,269 @@
+{
+  "kind": "independent-review-record",
+  "recorded_at": "2026-11-15T03:48:53.289459+00:00",
+  "candidate": "8fa3dd83721d331d498c5dbd7ca8a3a70eb4e877",
+  "independent_review": {
+    "candidate": "8fa3dd83721d331d498c5dbd7ca8a3a70eb4e877",
+    "base_contract": "894dfd6d5d93d2ff99f6eddcaadbb88ee9ce44c3",
+    "reviewer_uuid": "01a1dd50-d5f2-7971-8ff0-022d481da389",
+    "independence": {
+      "declaration": "Fresh native session; I did not participate in task design, implementation, test authorship or RCA, and did not delegate. UUID differs from implementer and prior reviewer; local role aliases do not establish identity.",
+      "identity_evidence": "build/iter11-review/review3/native.jsonl thread.started",
+      "excluded_implementer": "01a1dd24-bea9-7580-bfbd-5afac812648b"
+    },
+    "verdict": {
+      "scope": "PASS",
+      "spec": "APPROVED",
+      "quality": "APPROVED",
+      "overall": "APPROVED",
+      "applies_to": "Task00 C3, including prior independently reviewed unchanged C2 implementation and new documentation; not iteration completion, Windows rerun, installation or deployment."
+    },
+    "findings": [],
+    "scope": {
+      "receipt": "build/iter11-review/review3/scope-runner.json",
+      "output": "build/iter11-review/review3/scope-runner.json.output.txt",
+      "status": "COMPLETED",
+      "launcher_exit_code": 0,
+      "raw_exit_code": 0,
+      "tree_terminal": true,
+      "observation": "Frozen coordinator check reported 122 changed files within declared scope; ownership not inferred. Actual BASE..C3 Git diff has no docs/todos/README.md change. Current C3 branch clean; same-owner dispatch-check READY is readiness, not acceptance."
+    },
+    "prior_review": {
+      "candidate": "3f949f807d3c2eb47b97a116bd6932da55778edd",
+      "review_uuid": "01a1dd40-1011-7731-9c22-26d83fb705e7",
+      "source": "docs/todos/11-reliable-delivery/evidence/00/review-report.json",
+      "result": "Spec and Quality APPROVED; F1 ADDRESSED; all acceptance groups reviewed. Reused only for unchanged C2 implementation, not new documentation. Prior D and local strict do not approve C3."
+    },
+    "source_matching": {
+      "manifest": "docs/todos/11-reliable-delivery/evidence/00/fix2-source-manifest.json",
+      "observation": "Independently SHA256 compared all six listed frozen runner files with manifest, worktree, C2 and C3 Git blobs; all match. Git diff C2..C3 has no scripts, tests or references changes; 48e731e..C3 has no scripts, tests, references or templates changes. Actual baseline source/test applies to C3 as unchanged product/test source; documents and metadata differ. Initial three-file snapshot lacked iter_checkpoint and pytest never started; retained failure and initial manifest, completed same-C2 six-file closure is not an upgrade.",
+      "snapshot": "/data/workspace/iteration-manager/build/frozen-runners/iter11-platform-v1/manifest.json"
+    },
+    "evidence_reuse": {
+      "independent_targeted": "build/iter11-review/review2/independent-runner.json: COMPLETED, exit 0, tree terminal; 30 passed, 2 skipped on C2 Python 3.13",
+      "regression": "docs/todos/11-reliable-delivery/evidence/00/fix1-regression-final.json: COMPLETED, exit 0, tree terminal; 147 passed, 2 skipped on C2 Python 3.13",
+      "full": "build/iter11-platform-baseline/python311-mcp1-full.json: 48e731e product/test source, Python 3.11.17, pytest 9.2.0, MCP 1.30.0, external basetemp; COMPLETED exit 0 tree_terminal true, 513 passed and 2 Windows skips",
+      "retained_failure": "build/iter11-platform-baseline/complete-deps-full.json: Python 3.13 internal basetemp missing MCP, exit 1 tree terminal, 509 passed 4 failed 2 skipped. Python 3.11 external probe passed three affected tests while MCP 2.x FastMCP import failed; MCP 1.x probe passed. Python 3.13 Path signature test limitation remains unresolved.",
+      "new_tests": "No pytest repeated for explanatory documentation per requested scope."
+    },
+    "documentation_assessment": {
+      "verdict": "PASS",
+      "evidence": [
+        "AGENTS.md:69",
+        "AGENTS.md:99",
+        "AGENTS.md:103",
+        "AGENTS.md:107",
+        "AGENTS.md:121",
+        "AGENTS.md:138",
+        "AGENTS.md:154",
+        "AGENTS.md:217"
+      ],
+      "observations": [
+        "Guide separates stdlib CLI and optional full-suite MCP 1.x; setup uses isolated venv and quoted mcp<2 in Bash and PowerShell. No new packaging or global install.",
+        "Current full versus targeted environments and failure limitations match original outputs; no all-version or current Windows passing claim.",
+        "Examples use a unique external basetemp and test ancestor Git, actual deadline and unique project-relative receipt placeholders, frozen runner, and immediate shell exit capture. Bash blocks passed bash -n; Git links in AGENTS resolve. PowerShell syntax and logic assessed by inspection only, executable unavailable here.",
+        "Platform process mechanisms, Moli lifecycle, historical Windows independent copies versus observed Linux links, and deployment boundaries remain stated. Linux symlinks checked live; no installation adopted or deployed."
+      ]
+    },
+    "limitations": [
+      "PowerShell and Windows Job execution not run or verified in this Linux review.",
+      "No new full or targeted pytest run; evidence reuse is bounded by recorded candidate, environment and inputs.",
+      "C3 report is an independent review, not D registration, strict acceptance, whole-iteration approval, deployment or external consumption.",
+      "Native session UTC start/end are not independently established here and are left unspecified."
+    ]
+  },
+  "originals": {
+    "report.json": {
+      "path": "build/iter11-review/review3/report.json",
+      "sha256": "22b701ceb3e2c5c35ea0195fee7e018039cdef9cd948c993f784edbd4c94240c"
+    },
+    "native.jsonl": {
+      "path": "build/iter11-review/review3/native.jsonl",
+      "sha256": "32649dbb210c3884adecefe669b7fd9dd3c69fe3480ab5ae591e409ba9e737e7"
+    },
+    "terminal.json": {
+      "path": "build/iter11-review/review3/terminal.json",
+      "sha256": "5098266ab56b4fa5784ad01197540bef70975295653e83b940e06872a14b6877"
+    },
+    "brief.md": {
+      "path": "build/iter11-review/review3/brief.md",
+      "sha256": "ea617b5688eb7934b57b52488e87e8fafa33ab82eb592a4545bf2e89927cc247"
+    },
+    "context.json": {
+      "path": "build/iter11-review/review3/context.json",
+      "sha256": "c9529f4cf089375d10a2986125fbc9ef0a6eb614bb034cb0becd262b479b1858"
+    },
+    "dispatch-check.json": {
+      "path": "build/iter11-review/review3/dispatch-check.json",
+      "sha256": "ecf7ca8e2bd72322938fb62f2719aaf84fdc1e206d88d69ecf524abd75fe2d36"
+    },
+    "scope-runner.json": {
+      "path": "build/iter11-review/review3/scope-runner.json",
+      "sha256": "b158bebf3c676d42ab62633d640d1511d879bc571e93c1460c1e5691d37f8c44"
+    },
+    "scope-runner.json.output.txt": {
+      "path": "build/iter11-review/review3/scope-runner.json.output.txt",
+      "sha256": "36606f37a4a89ddc8ac191f98ff2b344237944ae00cf5abd18b87d0571c5392f"
+    }
+  },
+  "scope_receipt": {
+    "version": 1,
+    "argv": [
+      "python3",
+      "-B",
+      "/data/workspace/iteration-manager/build/frozen-tools/fdcc4cce8863/scripts/iter_sync.py",
+      "--check-scope",
+      "894dfd6d5d93d2ff99f6eddcaadbb88ee9ce44c3",
+      "8fa3dd83721d331d498c5dbd7ca8a3a70eb4e877",
+      "docs/todos/11-reliable-delivery/00-linux-runner-and-dev-guide.md"
+    ],
+    "cwd": "/data/workspace/iteration-manager/.worktrees/iter-11",
+    "deadline": "2026-11-15T03:49:58.181000+00:00",
+    "cleanup_reserve_seconds": 5,
+    "status": "COMPLETED",
+    "deadline_checked_at": "2026-11-15T03:47:17.767644+00:00",
+    "started_at": "2026-11-15T03:47:17.769830+00:00",
+    "ended_at": "2026-11-15T03:47:17.930658+00:00",
+    "raw_exit_code": 0,
+    "tree_terminal": true,
+    "output": "build/iter11-review/review3/scope-runner.json.output.txt",
+    "container_pid": 3441143,
+    "launcher_exit_code": 0,
+    "command": {
+      "status": "COMPLETED",
+      "raw_exit_code": 0,
+      "started_at": "2026-11-15T03:47:17.769830+00:00",
+      "tree_terminal": true,
+      "deadline_checked_at": "2026-11-15T03:47:17.767644+00:00",
+      "pid": 3441144,
+      "ended_at": "2026-11-15T03:47:17.873607+00:00"
+    },
+    "late_by_seconds": 0
+  },
+  "scope_output": "[IterSync:ScopeFirewall:PASSED] All 122 changed files within declared scope; ownership is not inferred.\n",
+  "full_baseline": {
+    "version": 1,
+    "argv": [
+      "/data/workspace/iteration-manager/build/iter11-maint-venv/bin/python",
+      "-B",
+      "-m",
+      "pytest",
+      "-p",
+      "no:cacheprovider",
+      "tests",
+      "-q",
+      "--basetemp",
+      "/tmp/iter11-fullbaseline-20261115T0339"
+    ],
+    "cwd": "/data/workspace/iteration-manager/.worktrees/iter-11",
+    "deadline": "2026-11-15T03:44:57.729000+00:00",
+    "cleanup_reserve_seconds": 5,
+    "status": "COMPLETED",
+    "deadline_checked_at": "2026-11-15T03:39:57.813596+00:00",
+    "started_at": "2026-11-15T03:39:57.816635+00:00",
+    "ended_at": "2026-11-15T03:41:02.946668+00:00",
+    "raw_exit_code": 0,
+    "tree_terminal": true,
+    "output": "build/iter11-platform-baseline/python311-mcp1-full.json.output.txt",
+    "container_pid": 3437931,
+    "launcher_exit_code": 0,
+    "command": {
+      "status": "COMPLETED",
+      "raw_exit_code": 0,
+      "started_at": "2026-11-15T03:39:57.816635+00:00",
+      "tree_terminal": true,
+      "deadline_checked_at": "2026-11-15T03:39:57.813596+00:00",
+      "pid": 3437932,
+      "ended_at": "2026-11-15T03:41:02.889107+00:00"
+    },
+    "late_by_seconds": 0
+  },
+  "full_output": "........................................................................ [ 13%]\n........................................................................ [ 27%]\n........................................................................ [ 41%]\n............................................ss.......................... [ 55%]\n........................................................................ [ 69%]\n........................................................................ [ 83%]\n........................................................................ [ 97%]\n...........                                                              [100%]\n513 passed, 2 skipped in 64.23s (0:01:04)\n",
+  "environment": {
+    "kind": "environment-investigation",
+    "observed_at": "2026-11-15T03:41:17.003018+00:00",
+    "candidate": "48e731ed266a35c06c9146aff9eaaf866c3a2e3f",
+    "current": {
+      "python": "3.11.17 (main, Oct  3 2026, 01:05:36) [Clang 22.1.3 ]",
+      "executable": "/data/workspace/iteration-manager/build/iter11-maint-venv/bin/python",
+      "pytest": "9.2.0",
+      "mcp": "1.30.0"
+    },
+    "installed_distributions": "annotated-types==0.8.0\nanyio==4.16.0\nattrs==26.1.0\ncertifi==2026.10.23\ncffi==2.1.1\nclick==8.5.1\ncryptography==50.0.2\nh11==0.16.0\nhttpcore==1.0.9\nhttpcore2==2.16.0\nhttpx==0.28.1\nhttpx-sse==0.4.3\nhttpx2==2.16.0\nidna==3.20\niniconfig==2.3.1\njsonschema==4.26.0\njsonschema-specifications==2025.9.1\nmcp==1.30.0\nmcp-types==2.3.0\nopentelemetry-api==1.45.2\npackaging==26.3\npluggy==1.7.0\npycparser==3.12\npydantic==2.14.3\npydantic-core==2.50.4\npydantic-settings==2.16.3\npygments==2.21.0\npyjwt==2.15.1\npytest==9.2.0\npython-dotenv==1.2.4\npython-multipart==0.0.33\nreferencing==0.37.0\nrpds-py==2026.9.1\nsse-starlette==3.7.0\nstarlette==1.10.0\ntruststore==0.10.5\ntyping-extensions==4.16.0\ntyping-inspection==0.4.5\nuvicorn==0.54.0\n",
+    "observations": [
+      {
+        "issue": "Git ancestor leaks into test fixtures",
+        "evidence": "build/iter11-platform-baseline/complete-deps-full.json.output.txt",
+        "corroboration": "build/iter11-platform-baseline/environment-probe.json.output.txt",
+        "resolution": "Unique basetemp outside Git checkout for tests treating tmp_path as a non-Git project"
+      },
+      {
+        "issue": "Python3.13 pathlib private module representation",
+        "evidence": "tests/test_query_contract.py:60 and initial full output",
+        "corroboration": "Python3.11 same assertion passed in environment-probe",
+        "resolution": "Current full maintenance verification uses installed Python3.11.17; no claim of Python3.13 full-suite PASS. Core Linux runner3.13 targeted147 passed retained"
+      },
+      {
+        "issue": "Optional MCP SDK missing, then2.x API incompatible",
+        "evidence": [
+          "build/iter11-platform-baseline/complete-deps-full.json.output.txt",
+          "build/iter11-platform-baseline/environment-probe.json.output.txt"
+        ],
+        "corroboration": "build/iter11-platform-baseline/mcp-v1-probe.json.output.txt",
+        "resolution": "Existing FastMCP service requires mcp1.x; installed mcp1.30.0 in isolated maintenance venv. Ordinary CLI remains stdlib-only"
+      }
+    ],
+    "source_changes": false
+  },
+  "runner_snapshot": {
+    "kind": "approved-platform-runner-snapshot",
+    "source_commit": "3f949f807d3c2eb47b97a116bd6932da55778edd",
+    "coordinator_commit": "fdcc4cce88635ee81573be5991de11de650659d8",
+    "approved_by": "01a1dd40-1011-7731-9c22-26d83fb705e7",
+    "review_report": "build/iter11-review/review2/report.json",
+    "exported_at": "2026-11-15T03:32:39.474928+00:00",
+    "files": [
+      {
+        "path": "scripts/iter_checkpoint.py",
+        "bytes": 7835,
+        "sha256": "9e68f7c264dbfd56a347a612bcb646f89e3679cb4baf6637dceccd9904804889"
+      },
+      {
+        "path": "scripts/iter_contracts.py",
+        "bytes": 15892,
+        "sha256": "96f50129aa27774b5d14e5e9beaa54381785d8df2e12d5a3581d6daa406a5481"
+      },
+      {
+        "path": "scripts/iter_filesystem.py",
+        "bytes": 11485,
+        "sha256": "eaeaaf78f187719fcb13569e069ac49d66cd34d4148791c8168a04903d99da43"
+      },
+      {
+        "path": "scripts/iter_linux_job.py",
+        "bytes": 7005,
+        "sha256": "68c76c0a9e23209c6e68d0242a0741e5c1bbe6c0019809c65a13034104fa987b"
+      },
+      {
+        "path": "scripts/iter_run.py",
+        "bytes": 13151,
+        "sha256": "b8b22217ad1d8d1f02a9a4d3cb053f84f781888c4871e583f0a7ff27f3fe3ef1"
+      },
+      {
+        "path": "scripts/iter_win_job.py",
+        "bytes": 3245,
+        "sha256": "93de97a15f75be1496c4f4e6a727a75e2ca2d89298245eef942bedb9c245c43d"
+      }
+    ],
+    "activation": "Task00 D48e731e frozen local strict passed; complete same-C import closure now ready for baseline",
+    "dependency_inventory_correction": {
+      "record": "build/iter11-platform-baseline/snapshot-import-failure.json",
+      "initial_manifest": "manifest-initial-incomplete.json",
+      "added_same_commit_files": [
+        "scripts/iter_checkpoint.py",
+        "scripts/iter_contracts.py",
+        "scripts/iter_filesystem.py"
+      ],
+      "meaning": "Snapshot completeness correction; unchanged approved source commit. Initial three files remain byte-identical."
+    }
+  }
+}

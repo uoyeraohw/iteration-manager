@@ -1,0 +1,142 @@
+................FF                                                       [100%]
+=================================== FAILURES ===================================
+_____ test_prelaunch_cancellation_wins_after_request_consumption[sigterm] ______
+
+tmp_path = PosixPath('/tmp/codeg-acp/16270-e611e698/pytest-of-user/pytest-9/test_prelaunch_cancellation_wi0')
+event = 'sigterm'
+
+    @pytest.mark.parametrize('event', ['sigterm', 'caller_eof'])
+    def test_prelaunch_cancellation_wins_after_request_consumption(tmp_path, event):
+        """A real supervisor pauses inside the first timestamp after parsing the request."""
+        scripts = Path(iter_run.__file__).parent
+        worker = '''
+    import os, sys, time
+    sys.path.insert(0, sys.argv[1])
+    import iter_linux_job as job
+    original = job.stamp
+    first = True
+    def gate_stamp():
+        global first
+        if first:
+            first = False
+            open(sys.argv[3], 'w').close()
+            until = time.monotonic() + 5
+            while not os.path.exists(sys.argv[4]):
+                if time.monotonic() > until:
+                    raise RuntimeError('test gate timed out')
+                time.sleep(.005)
+        return original()
+    job.stamp = gate_stamp
+    job.supervise(sys.argv[2])
+    '''
+        child = tmp_path / 'child.json'
+        entered = tmp_path / 'entered'
+        release = tmp_path / 'release'
+        target = tmp_path / 'target-effect'
+        proc = subprocess.Popen([sys.executable, '-B', '-c', worker, str(scripts), str(child),
+                                 str(entered), str(release)], stdin=subprocess.PIPE,
+                                stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        try:
+            until = time.monotonic() + 5
+            while time.monotonic() < until:
+                try:
+                    if json.loads(child.read_text())['status'] == 'READY':
+                        break
+                except (OSError, ValueError, KeyError):
+                    pass
+                assert proc.poll() is None, proc.stderr.read().decode()
+                time.sleep(.01)
+            else:
+                pytest.fail('supervisor did not reach READY')
+            request = {'argv': [sys.executable, '-c', f'open({str(target)!r}, "w").close()'],
+                       'launch_before': deadline(20)}
+            proc.stdin.write((json.dumps(request) + '\n').encode()); proc.stdin.flush()
+            until = time.monotonic() + 5
+            while not entered.exists() and time.monotonic() < until:
+                time.sleep(.01)
+            assert entered.exists(), 'supervisor did not consume request'
+            if event == 'sigterm':
+                proc.send_signal(signal.SIGTERM)
+                time.sleep(.05)  # allow the installed handler to run before release
+            else:
+                proc.stdin.close()
+            release.touch()
+            assert proc.wait(timeout=5) == 0
+            record = json.loads(child.read_text())
+>           assert record['started_at'] is None and record.get('pid') is None, record
+E           AssertionError: {'status': 'INTERRUPTED', 'raw_exit_code': -9, 'started_at': '2026-11-15T03:21:23.043241+00:00', 'tree_terminal': True, ...}
+E           assert ('2026-11-15T03:21:23.043241+00:00' is None)
+
+tests/test_linux_runner.py:276: AssertionError
+____ test_prelaunch_cancellation_wins_after_request_consumption[caller_eof] ____
+
+tmp_path = PosixPath('/tmp/codeg-acp/16270-e611e698/pytest-of-user/pytest-9/test_prelaunch_cancellation_wi1')
+event = 'caller_eof'
+
+    @pytest.mark.parametrize('event', ['sigterm', 'caller_eof'])
+    def test_prelaunch_cancellation_wins_after_request_consumption(tmp_path, event):
+        """A real supervisor pauses inside the first timestamp after parsing the request."""
+        scripts = Path(iter_run.__file__).parent
+        worker = '''
+    import os, sys, time
+    sys.path.insert(0, sys.argv[1])
+    import iter_linux_job as job
+    original = job.stamp
+    first = True
+    def gate_stamp():
+        global first
+        if first:
+            first = False
+            open(sys.argv[3], 'w').close()
+            until = time.monotonic() + 5
+            while not os.path.exists(sys.argv[4]):
+                if time.monotonic() > until:
+                    raise RuntimeError('test gate timed out')
+                time.sleep(.005)
+        return original()
+    job.stamp = gate_stamp
+    job.supervise(sys.argv[2])
+    '''
+        child = tmp_path / 'child.json'
+        entered = tmp_path / 'entered'
+        release = tmp_path / 'release'
+        target = tmp_path / 'target-effect'
+        proc = subprocess.Popen([sys.executable, '-B', '-c', worker, str(scripts), str(child),
+                                 str(entered), str(release)], stdin=subprocess.PIPE,
+                                stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        try:
+            until = time.monotonic() + 5
+            while time.monotonic() < until:
+                try:
+                    if json.loads(child.read_text())['status'] == 'READY':
+                        break
+                except (OSError, ValueError, KeyError):
+                    pass
+                assert proc.poll() is None, proc.stderr.read().decode()
+                time.sleep(.01)
+            else:
+                pytest.fail('supervisor did not reach READY')
+            request = {'argv': [sys.executable, '-c', f'open({str(target)!r}, "w").close()'],
+                       'launch_before': deadline(20)}
+            proc.stdin.write((json.dumps(request) + '\n').encode()); proc.stdin.flush()
+            until = time.monotonic() + 5
+            while not entered.exists() and time.monotonic() < until:
+                time.sleep(.01)
+            assert entered.exists(), 'supervisor did not consume request'
+            if event == 'sigterm':
+                proc.send_signal(signal.SIGTERM)
+                time.sleep(.05)  # allow the installed handler to run before release
+            else:
+                proc.stdin.close()
+            release.touch()
+            assert proc.wait(timeout=5) == 0
+            record = json.loads(child.read_text())
+>           assert record['started_at'] is None and record.get('pid') is None, record
+E           AssertionError: {'status': 'INTERRUPTED', 'raw_exit_code': -9, 'started_at': '2026-11-15T03:21:23.127454+00:00', 'tree_terminal': True, ...}
+E           assert ('2026-11-15T03:21:23.127454+00:00' is None)
+
+tests/test_linux_runner.py:276: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_linux_runner.py::test_prelaunch_cancellation_wins_after_request_consumption[sigterm]
+FAILED tests/test_linux_runner.py::test_prelaunch_cancellation_wins_after_request_consumption[caller_eof]
+2 failed, 16 passed in 9.62s

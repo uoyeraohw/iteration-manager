@@ -1,0 +1,51 @@
+{
+  "native_session_uuid": "01a1dd84-62f5-7fb2-a5b6-23520a7a04e7",
+  "base": "bfeabf74937e4e36ce04da9082ef312ba572806c",
+  "candidate": "uncommitted task05 worktree on base; C pending controller",
+  "environment": {
+    "os": "Linux",
+    "python": "3.11.17",
+    "pytest": "9.2.0",
+    "mcp": "1.30.0",
+    "runner": "/data/workspace/iteration-manager/build/frozen-runners/iter11-platform-v1/scripts/iter_run.py",
+    "cwd": "/data/workspace/iteration-manager/.worktrees/iter-11"
+  },
+  "commands": [
+    {
+      "receipt": "docs/todos/11-reliable-delivery/evidence/05/experiment-01.json",
+      "status": "COMPLETED",
+      "raw_exit_code": 0,
+      "tree_terminal": true,
+      "result": "5 passed before source clarification; superseded by final"
+    },
+    {
+      "receipt": "docs/todos/11-reliable-delivery/evidence/05/experiment-final.json",
+      "status": "COMPLETED",
+      "raw_exit_code": 0,
+      "tree_terminal": true,
+      "result": "5 passed on final source"
+    },
+    {
+      "receipt": "docs/todos/11-reliable-delivery/evidence/05/scenario-links.json",
+      "status": "COMPLETED",
+      "raw_exit_code": 0,
+      "tree_terminal": true,
+      "result": "8 links; no missing"
+    }
+  ],
+  "source_evidence_applicability": "C2 runner approved; full Linux baseline on 48e731e and source reuse assessed in task00 C3 review. Windows release 493 historical; Codeg worker blocked despite successful native invocation; FS grant unsupported; installation and Gemini auto discovery unknown. Historical and build evidence not necessarily in installed package.",
+  "limitations": [
+    "Native fresh-session consumer pending; scenario is not consumption evidence",
+    "Structure checks do not establish semantic truth or independent approval",
+    "No Windows current run, full external FS business lifecycle or new deployment"
+  ],
+  "remaining_root_gates": [
+    "Obtain independent fresh-session consumer interpretation before C",
+    "Freeze C and obtain independent review",
+    "Register D and run frozen local strict",
+    "Perform later iteration gates"
+  ],
+  "active_commands": "none after receipt inspection",
+  "checks_proposal": "docs/todos/11-reliable-delivery/evidence/05/checks-proposal.json",
+  "source_manifest": "docs/todos/11-reliable-delivery/evidence/05/source-manifest.json"
+}

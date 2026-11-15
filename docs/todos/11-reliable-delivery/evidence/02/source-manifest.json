@@ -1,0 +1,24 @@
+{
+  "native_session_uuid": "01a1dd65-6c80-70d0-b44f-edcf77bf8df3",
+  "base_sha": "ecf20784605017c80063000f5d3d42fa7920c680",
+  "candidate": "uncommitted working tree; no C yet",
+  "changed_source_and_tests": [
+    "scripts/iter_cli.py",
+    "tests/test_takeover_resilience.py",
+    ".agents/notes/planned/iter11/02-takeover-report-isolation.md"
+  ],
+  "read_only_test_dependencies": [
+    "tests/test_task_discovery_compat.py",
+    "tests/test_cli_compatibility.py",
+    "tests/test_sync_compatibility.py"
+  ],
+  "sha256": {
+    "scripts/iter_cli.py": "cb18b63af85ef4c0f572764e6f1dabd9a3b6d2bd1b6e32bd4f0b2fa12a0833c1",
+    "tests/test_takeover_resilience.py": "990f7c946e9a673bac4df882c25ee5b10c00410b5a70cfe5a8e0914ad75b29f6",
+    ".agents/notes/planned/iter11/02-takeover-report-isolation.md": "d9ce1b0db2f4e6a627e0a03409e9afd5be1cc7352558f4927fd5da4fa1169d0b",
+    "tests/test_task_discovery_compat.py": "5c6fff1965582cfcc9808aaae79372104709788e31cc131e0039f2194a51d161",
+    "tests/test_cli_compatibility.py": "479d5341fc31865400d37f0d0e2ed8a63d765f61fe29456431411ecdf9e390b1",
+    "tests/test_sync_compatibility.py": "fe8b3c445060ff25f7cb68fa6d58ca4c8f04cbb5e0a8be3e5f9bd14c174237d0"
+  },
+  "source_line_endings": "CRLF preserved; no whole-file reformat"
+}

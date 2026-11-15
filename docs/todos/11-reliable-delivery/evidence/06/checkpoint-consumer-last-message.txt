@@ -1,0 +1,12 @@
+已完成正常检查点继承，并写入 [checkpoint-inheritance.json](/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/06/checkpoint-inheritance.json)。其中保存了本次实际冻结 CLI 的完整 envelope 输出和新会话 ID。
+
+- 工作树根为 `/data/workspace/iteration-manager/.worktrees/iter-11`，当前 HEAD **P** 为 `82b66d9f3c8e7a62df8e8be18d8cedac7a5877a6`。原始 RED 执行候选为 `e66841186450dc6bbe138bf77aac87a2a8f1232a`；P 的检查点提交没有在 P 上重新运行 RED。
+- 原实现者会话为 `01a1dd8e-8b72-7b72-90b4-a8577ef8db2d`；本次新会话为 `01a1dd90-f03a-70c1-866d-43d5ac3a936e`。
+- [原始 runner 收据](/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/06/red-01.json)与[输出](/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/06/red-01.json.output.txt)显示：2026-11-15 04:55:02.045633 至 04:55:03.527041 UTC，**22 项断言失败、11 项通过、无环境或导入错误**；命令 `COMPLETED`、退出码 1、命令树已终态。原生会话也已正常完成。
+- 测试文件在保存的 RED、当前工作树和 P 的 Git blob 中 SHA256 均为 `4d38bc57eb45230f831ea1ac5389bb0ea954ff9c85061ee2569ab6a4b46656cd`；原始收据、子收据及输出哈希也与检查点一致。生产 `scripts/iter_install.py` 尚不存在；失败使用测试侧的惰性缺失行为适配器，生产安全边界和能力行为尚未验证。
+- 任务卡事件显示正常 **attempt → release → 新 claim**，没有 FUSED 或预算重置；四项计数均为 0。同 owner 的派发检查为 READY。实际 envelope 的 `last_attempt` 和 `checkpoint` 均指向原候选及 RED 证据，任务状态为 `IN_PROGRESS`，**验收仍为 UNKNOWN**。
+
+原始 RED 可在源码和环境保持不变的条件下作为续接证据复用，无需重跑。已核对测试字节、相关兼容测试未变化，以及当前 Python 3.11.17、pytest 9.2.0、MCP 1.30.0 版本；完整环境身份未独立证明。
+
+剩余合同工作交回原实现者：生产实现和文档、使用相同 RED 测试源码取得 GREEN、回归及隔离临时安装检查；随后按合同完成实现候选 C 的独立审查、登记 D 和 strict。尚无完成批准，未运行测试。
+

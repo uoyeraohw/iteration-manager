@@ -138,3 +138,106 @@ def test_feature_branch_root_sync_refusal_is_byte_preserving(git_repo_with_workt
     proc = cli(worktree, worktree)
     assert proc.returncode != 0 and 'Zero-Root-Touch' in proc.stdout + proc.stderr
     assert root_index.read_bytes() == before
+
+
+def test_bad_utf8_takeover_and_inventory_share_complete_inventory(tmp_path):
+    card, context, _ = fixture(tmp_path)
+    bad = card.with_name('02-bad.md')
+    bad.write_bytes(b'\xffinvalid')
+    before = inventory(tmp_path)
+    takeover = cli(tmp_path, '--takeover-report', card.parent)
+    scanned = cli(tmp_path, '--inventory', card.parent, '--mode', 'takeover', '--context', context.name)
+    assert takeover.returncode == 0 and scanned.returncode == 3
+    old = {str(row['path']).split('/')[-1]: row for row in json.loads(takeover.stdout)['tasks']}
+    new = {str(row['path']).split('/')[-1]: row for row in json.loads(scanned.stdout)['tasks']}
+    assert set(old) == set(new) == {card.name, bad.name}
+    assert old[bad.name]['acceptance_verdict'] != 'PASS'
+    assert new[bad.name]['acceptance_verdict'] != 'PASS'
+    assert inventory(tmp_path) == before
+
+
+def test_invalid_frozen_done_mode_remains_rejected_in_handoff_and_board(git_repo_with_worktrees):
+    from test_delivery_mode_consistency import make_reviewed_candidate
+    _, root, _ = git_repo_with_worktrees
+    card, _, _ = make_reviewed_candidate(root, declaration='delivery_mode: UNKNOWN\n')
+    before = card.read_bytes()
+    audit = audit_task_file(card)
+    handoff = render_task_envelope(card, root)['TASK_HANDOFF']
+    board = generate_board_data(card.parent)
+    assert audit['verdict'] == 'FAIL' and any('delivery' in v.lower() for v in audit['violations'])
+    assert handoff['delivery_mode'] == 'UNKNOWN' and handoff['acceptance_verdict'] != 'PASS'
+    assert board['cards'][0]['delivery_mode'] == 'UNKNOWN'
+    assert board['cards'][0]['acceptance_verdict'] != 'PASS' and board['accepted'] == 0
+    assert card.read_bytes() == before
+
+
+@pytest.mark.parametrize('fault', ['failed', 'nonmatching'])
+def test_actual_guard_pending_and_rejection_preserve_real_event_and_handoff(tmp_path, fault):
+    import subprocess
+    from pathlib import Path
+    import iter_sync
+    card, context, _ = fixture(tmp_path)
+    claim(tmp_path, card)
+    checked = dispatch(tmp_path, card, context)
+    assert checked.returncode == 0, checked.stdout + checked.stderr
+    before = inventory(tmp_path)
+    handoff = render_task_envelope(card, tmp_path)['TASK_HANDOFF']
+    req = dict(request_id='fixture', project_root=str(tmp_path), tool_entry=iter_sync.__file__,
+               task_path=str(card), task_id='01', owner='lead', phase='implementation',
+               candidate='candidate-1', context=context.name)
+    observation = dict(state='completed', exit_code=0, cwd=str(tmp_path), request_id='fixture',
+                       argv=['python3', '-B', iter_sync.__file__, '--dispatch-check', str(card),
+                             '--context', context.name, '--phase', 'implementation', '--owner', 'lead'],
+                       terminal_evidence={'source': 'synthetic', 'id': 'check'},
+                       stdout=checked.stdout, stderr=checked.stderr)
+    source = (Path(iter_sync.__file__).parent / 'dispatch_guard.js').read_text(encoding='utf-8')
+    script = source + '\n(async()=>{\n' + 'const request=' + json.dumps(req) + ';const result=' + json.dumps(observation) + ';\n' + '''
+let resolve, calls=0; const pending=new Promise(r=>resolve=r);
+const work=dispatchAfterReady({request,check:()=>pending,dispatch:async()=>{calls++}});
+await Promise.resolve(); const before=calls;
+''' + ("result.state='failed';" if fault == 'failed' else "const r=JSON.parse(result.stdout);r.candidate='different';result.stdout=JSON.stringify(r);") + '''
+resolve(result); const answer=await work; console.log(JSON.stringify({before,calls,answer}));
+})().catch(e=>{console.error(e);process.exitCode=1});'''
+    proc = subprocess.run(['node', '-e', script], capture_output=True, text=True, timeout=10)
+    assert proc.returncode == 0, proc.stderr
+    result = json.loads(proc.stdout)
+    assert result['before'] == result['calls'] == 0 and result['answer']['dispatched'] is False
+    assert inventory(tmp_path) == before
+    assert render_task_envelope(card, tmp_path)['TASK_HANDOFF'] == handoff
+
+
+def test_install_drift_survives_projection_and_current_payload_harness(tmp_path, monkeypatch):
+    import hashlib
+    import shutil
+    from pathlib import Path
+    from iter_install import _inventory, check_installation
+    from iter_sync import sync_local_iteration
+    from test_harness_portability import test_payload_copy_runs_handoff_and_service_with_frozen_runner
+    import test_harness_portability as portable
+    root = Path(__file__).resolve().parents[1]
+    payload = tmp_path / 'payload'
+    payload.mkdir()
+    names = _inventory(root)
+    for name in names:
+        dest = payload / name
+        dest.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copyfile(root / name, dest)
+    manifest = {'version': 1, 'source_commit': 'a' * 40, 'files': [
+        {'path': name, 'sha256': hashlib.sha256((payload / name).read_bytes()).hexdigest()}
+        for name in sorted(names)]}
+    assert check_installation(payload, manifest)['source']['files_match'] is True
+    (payload / 'scripts/iter_queries.py').write_bytes(b'drift')
+    with pytest.raises(ValueError, match='installation bytes differ: scripts/iter_queries.py'):
+        check_installation(payload, manifest)
+    project = tmp_path / 'project'; project.mkdir()
+    card, _, _ = fixture(project)
+    sync_local_iteration(card.parent)
+    with pytest.raises(ValueError, match='installation bytes differ: scripts/iter_queries.py'):
+        check_installation(payload, manifest)
+    assert not (payload / 'docs').exists()
+    shutil.copyfile(root / 'scripts/iter_queries.py', payload / 'scripts/iter_queries.py')
+    assert check_installation(payload, manifest)['source']['files_match'] is True
+    # Exercise the actual current payload tests with their established frozen-runner harness.
+    monkeypatch.setattr(portable, 'ROOT', payload)
+    nested = tmp_path / 'nested'; nested.mkdir()
+    test_payload_copy_runs_handoff_and_service_with_frozen_runner(nested)

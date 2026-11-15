@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "phase": "evidence-inspection",
+  "candidate": "bfeabf74937e4e36ce04da9082ef312ba572806c",
+  "inputs": [
+    "references/support_matrix.md",
+    "docs/todos/11-reliable-delivery/evidence/05/consumer-scenario.md"
+  ],
+  "capabilities": [
+    "native-codex-cli",
+    "approved-frozen-coordinator"
+  ],
+  "checkpoint": "新会话正确区分Linux实测、Windows历史、Codegworker阻断和FS/Gemini未知",
+  "remaining_work": [
+    "C独审/D/strict"
+  ],
+  "executor_id": "01a1dd86-9427-7f93-a004-2ce8b0d74ac7",
+  "terminal_evidence": "docs/todos/11-reliable-delivery/evidence/05/consumer-terminal.json",
+  "progress": [
+    {
+      "kind": "review-finding",
+      "summary": "支持边界实际消费及原件核验，无扩大声明",
+      "evidence": "docs/todos/11-reliable-delivery/evidence/05/support-consumption.json"
+    }
+  ],
+  "commands": [],
+  "started_at": null,
+  "ended_at": null
+}

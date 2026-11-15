@@ -26,7 +26,7 @@
 - **工作区内相对路径准则（防跨目录串写）**：进入 `.worktrees/iter-{XX}` 后，所有子智能体必须读写**当前 Worktree 下的 `docs/todos/{XX}-*/` 文件**，严禁通过指向主仓库原工作区的绝对路径去修改主工作区中的 `docs/todos/` 文件！
 - **黄金合流平衡点**：
   1. **子任务级（Per-Task）**：Git模式按实现C → 非参与者独审 → 主管登记D → `--local --strict` 顺序推进；提交须有授权且只包含本次归属文件，卡片及迭代README由唯一卡片写者维护；
-  2. **单迭代级（Per-Iteration）**：全部任务验收PASS并通过迭代末独立总审及分支strict后，交付候选与证据；未授权合流时保留Worktree与分支，不合入main、不推送、不清理。
+  2. **单迭代级（Per-Iteration）**：按[共同协议](agent_protocol.md#git-整轮收口的权威顺序)在全部任务验收PASS后完成集成/全量、独立总审及最终分支strict后，交付候选与证据；未授权合流时保留Worktree与分支，不合入main、不推送、不清理。
 
 ### 1.3 Zero-Root-Touch 目录级物理隔离原则
 **最安全的防冲突机制是不产生任何交叉写集合：**
@@ -69,9 +69,12 @@ flowchart TD
         T3 --> T4["--local --strict 核对验收PASS"]
     end
 
-    subgraph Phase3 ["阶段三：迭代末总审与合规预检 (Pre-Merge Gate)"]
-        F1["运行 iter_sync.py --check-branch --strict 验证零触碰与四态门禁"] --> F2["派发 Final Whole-Branch Reviewer 全分支总审"]
-        F2 --> F3["汇总展示全部 Rulings 与 Deferred Minors 并呈报合流菜单"]
+    subgraph Phase3 ["阶段三：迭代收口，顺序以共同协议为准"]
+        E["可选 EARLY branch 结构预检：不是最终验收"]
+        F0["全部卡有效DONE及本地验收PASS"] --> F1["Controller整轮集成与全量回归"]
+        F1 --> F2["独立整轮总审；变化须受影响重审"]
+        F2 --> F3["最终登记候选冻结 --check-branch --strict"]
+        F3 --> F4["汇总 Rulings 与 Deferred Minors"]
     end
 
     subgraph Phase4 ["阶段四：按各自授权收尾"]
@@ -81,7 +84,10 @@ flowchart TD
         M2 --> M3["另有清理授权且证据已持久化才移除Worktree / 分支"]
     end
 
-    Phase0 --> Phase1 --> Phase2 --> Phase3 --> Phase4
+    Phase0 --> Phase1 --> Phase2
+    T4 -.-> E
+    T4 --> F0
+    F4 --> Phase4
 ```
 
 ### 阶段一：启动期隔离探针与基线验证（融合 `using-git-worktrees`）

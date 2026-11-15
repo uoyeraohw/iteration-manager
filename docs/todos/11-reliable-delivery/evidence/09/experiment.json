@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "argv": [
+    "/data/workspace/iteration-manager/build/iter11-maint-venv/bin/python",
+    "-B",
+    "-m",
+    "pytest",
+    "-p",
+    "no:cacheprovider",
+    "tests/test_refactor_evidence_policy.py",
+    "tests/test_template_generation.py",
+    "tests/test_task_card_schema.py",
+    "tests/test_completion_gates.py",
+    "-q",
+    "--basetemp",
+    "/tmp/iter11-task09-experiment-20261115"
+  ],
+  "cwd": "/data/workspace/iteration-manager/.worktrees/iter-11",
+  "deadline": "2026-11-15T05:41:32.525396+00:00",
+  "cleanup_reserve_seconds": 5,
+  "status": "COMPLETED",
+  "deadline_checked_at": "2026-11-15T05:35:05.515877+00:00",
+  "started_at": "2026-11-15T05:35:05.520804+00:00",
+  "ended_at": "2026-11-15T05:35:11.820509+00:00",
+  "raw_exit_code": 0,
+  "tree_terminal": true,
+  "output": "docs/todos/11-reliable-delivery/evidence/09/experiment.json.output.txt",
+  "container_pid": 3520567,
+  "launcher_exit_code": 0,
+  "command": {
+    "status": "COMPLETED",
+    "raw_exit_code": 0,
+    "started_at": "2026-11-15T05:35:05.520804+00:00",
+    "tree_terminal": true,
+    "deadline_checked_at": "2026-11-15T05:35:05.515877+00:00",
+    "pid": 3520568,
+    "ended_at": "2026-11-15T05:35:11.769502+00:00"
+  },
+  "late_by_seconds": 0
+}

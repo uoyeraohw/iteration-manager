@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "task_id": "05",
+  "type": "Spike-Discovery",
+  "task_path": "docs/todos/11-reliable-delivery/05-support-matrix.md",
+  "base_sha": "bfeabf74937e4e36ce04da9082ef312ba572806c",
+  "head_sha": "c55d146ee9f810896ac888f96e828ebe9124f8ac",
+  "contract_sha": "bfeabf74937e4e36ce04da9082ef312ba572806c",
+  "implementer": "01a1dd84-62f5-7fb2-a5b6-23520a7a04e7",
+  "reviewer": "01a1dd8a-0d20-7f20-aeb8-00fa7a7d381d",
+  "verdict": "APPROVED",
+  "review_report": "docs/todos/11-reliable-delivery/evidence/05/review-report.json",
+  "checks": [
+    {
+      "name": "experiment",
+      "kind": "command",
+      "command": "/data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B -m pytest -p no:cacheprovider tests/test_support_matrix.py tests/test_release_index.py -q --basetemp /tmp/iter11-task05-experiment-final",
+      "cwd": ".",
+      "exit_code": 0,
+      "summary": "5 passed; frozen runner COMPLETED, raw 0, tree_terminal true; format and links only",
+      "output": "docs/todos/11-reliable-delivery/evidence/05/experiment-final.json.output.txt"
+    },
+    {
+      "name": "decision",
+      "kind": "observation",
+      "summary": "Dated evidence-bounded decisions with unknown owners and conditions; independent review and native consumption pending",
+      "output": "docs/todos/11-reliable-delivery/evidence/05/matrix-decision.md"
+    },
+    {
+      "name": "interfaces",
+      "kind": "observation",
+      "summary": "Matrix fields, evidence links and release-index route documented and checked; installed package evidence limits explicit",
+      "output": "docs/todos/11-reliable-delivery/evidence/05/matrix-decision.md"
+    }
+  ]
+}

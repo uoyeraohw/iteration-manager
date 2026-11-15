@@ -1,0 +1,9 @@
+Task 03 implementation is ready for controller handoff. The guard, adapter contract, tests, decision note, and evidence are in the authorized scope. No commit was created; no commands remain active.
+
+- **RED:** 2 assertion failures and 31 passes, using an explicit test-side nonfunctional fallback before the production module existed. The [RED receipt](/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/03/red-implementer-01.json) records exit 1 and a terminal command tree.
+- **GREEN and regression:** 33 passed. The [receipt](/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/03/green-implementer-01.json) records exit 0 and a terminal command tree.
+- **Source binding:** [source manifest](/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/03/source-manifest.json); guard SHA-256 `eb5a297e0d34558aeae5b79817ed643da445ddb8739254ab04c7e94a2635576d`. The existing deadline guard remained unchanged.
+- **Implementer native thread UUID:** `01a1dd6e-e307-7d53-9be3-0f011688cd30`. The [delivery record](/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/03/delivery.json) binds the evidence and remaining work.
+
+Real Codeg consumption remains for the controller: run the actual check and dispatch chain, retain its native result, then proceed with C, independent review, D, and frozen local strict. The synthetic tests do not establish native consumption or its outcome.
+

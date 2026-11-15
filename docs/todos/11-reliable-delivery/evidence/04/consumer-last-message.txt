@@ -1,0 +1,5 @@
+Wrote the observation to [navigation-consumption.json](/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/04/navigation-consumption.json). It records the actual thread ID, routes, `iter:goal`, full envelope output and missing-file exception.
+
+The frozen CLI exited **0** and reported task 01 as **DONE / PASS**, with recorded review **APPROVED** and commit/checkpoint candidate `a178fbc65c6bc2cd9fed19e691571080e73e1e60`. Its `candidate_id` field was empty. The original RED, final run and review evidence were located and read; their candidate and review limits are recorded in the JSON.
+
+The intentionally absent probe produced `FileNotFoundError` and exit **1**. Its result remains **UNKNOWN**; it does not invalidate task 01’s receipt. Navigation did not require the iteration 10 README or historical full logs. No tests were run, and no commands remain active. This is task 04 candidate consumption, not independent approval or a deployment claim.

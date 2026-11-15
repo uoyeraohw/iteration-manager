@@ -1,0 +1,26 @@
+{
+  "original_directory": "build/iter11-review/task12-review2",
+  "sha256": {
+    "build/iter11-review/task12-review2/scope-runner.json.output.txt": "f17f1b6590925544d9cc2388f5f431d811278ea317f50d5d91446763a391505a",
+    "build/iter11-review/task12-review2/review-native.jsonl": "df74c956fc1353afc328bd2887f5f5aa7611dd7b3e9ce5932d8ef8941dbc6057",
+    "build/iter11-review/task12-review2/review-package.txt": "d5abb3c190986e5afa58b27acbe9e3eaf4643f7edeb5a4d0081528418b55f808",
+    "build/iter11-review/task12-review2/review-last-message.txt": "3195ddd7d8ab3c1f0d464485ecbf54a8dac3ce88823825108a20eba94c441eb4",
+    "build/iter11-review/task12-review2/review-native.stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "build/iter11-review/task12-review2/scope-runner.json": "cee4f37884167d6cddb3f01753bd2d4274ad24b416b7c102cf00d8eb2bde2d3d",
+    "build/iter11-review/task12-review2/independent-check.py": "4ae69103b314d473f7d13710ec6a8ae00221b9030e25bd93efb4abdc1acc4dd6",
+    "build/iter11-review/task12-review2/independent-check.json": "5a1dd770a60707537b86276b4ac6c39ec305a03a85dbaf9d6fc553e6977bd743",
+    "build/iter11-review/task12-review2/full-range-diff.txt": "4e354863a610d226b15832ab68e2eeb707f9b18577330c4f7773e52cf524df0e",
+    "build/iter11-review/task12-review2/dispatch-check.json": "8297f9ceb80a08fd1afae4be579e38c0721f89aa5973c3b851a9cf65f72d7b9e",
+    "build/iter11-review/task12-review2/review-brief.md": "3865a3704067e7540e37c3ed45efe3a70887eb51e4879c4f7f2f4817d962ffb2",
+    "build/iter11-review/task12-review2/independent-check.json.child.json": "65df3f93196e5e5aa65f5918a3b0f050cd1e54224dcac6922293742ca6c7ceeb",
+    "build/iter11-review/task12-review2/review-guard.json": "398f4a7c9158d52da8cde3ceb71cba4c00a0d3e591af9f5e0aac293203e10eae",
+    "build/iter11-review/task12-review2/independent-check.json.output.txt": "fc11d2a48bcabecfec06943fd345775f664660c18b452f24680ec53585909846",
+    "build/iter11-review/task12-review2/context.json": "6e220c37b2a762c6442939217f4926861ee73de5c7ac14e08b23902b3162c066",
+    "build/iter11-review/task12-review2/review-launch-intent.json": "6e949847b6ff642435fa1a8832ad9fe4cc0ace1a3edad4e9f20698a7a15e9aeb",
+    "build/iter11-review/task12-review2/review-check-observation.json": "f792f567695b38ce3742f9dc993725afe1c9a415907c2f45ce5d9eff135c1326",
+    "build/iter11-review/task12-review2/review-launch-start.json": "fcdd1fa489d03b4dd0c95bf7aac936f239c81512c631505406b5e72653d8a41a",
+    "build/iter11-review/task12-review2/scope-runner.json.child.json": "2f305a6fd15800d3e882d3957830b16255dd5625b686dea4bcb62665a95b0ef8",
+    "build/iter11-review/task12-review2/report.json": "1eedeec94a578ed342a63c4c520be081fc298f37670c16dba4e58687fe5cfa03"
+  },
+  "scope": "F2 addressed; F1 and new F3 remain blockers, no approval"
+}

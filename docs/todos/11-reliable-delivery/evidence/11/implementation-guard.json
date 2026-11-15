@@ -1,0 +1,210 @@
+{
+  "request": {
+    "request_id": "implementation-1794721665249",
+    "project_root": "/data/workspace/iteration-manager/.worktrees/iter-11",
+    "tool_entry": "/data/workspace/iteration-manager/build/frozen-tools/fdcc4cce8863/scripts/iter_sync.py",
+    "task_path": "/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/11-native-self-use-audit.md",
+    "task_id": "11",
+    "owner": "iter11-controller-linux-20261115",
+    "phase": "implementation",
+    "candidate": "bc324d16f2adb7f36e18f1f826a16dd23343055a",
+    "context": "docs/todos/11-reliable-delivery/evidence/11/implementation-context.json"
+  },
+  "events": [
+    {
+      "kind": "check-start",
+      "at": 1794721665249
+    },
+    {
+      "kind": "check-terminal-consumed",
+      "at": 1794721665562,
+      "exit_code": 0,
+      "readiness": "READY"
+    },
+    {
+      "kind": "dispatch-call",
+      "at": 1794721665563
+    }
+  ],
+  "native_check": {
+    "kind": "controller-command-observation",
+    "argv": [
+      "python3",
+      "-B",
+      "/data/workspace/iteration-manager/build/frozen-tools/fdcc4cce8863/scripts/iter_sync.py",
+      "--dispatch-check",
+      "/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/11-native-self-use-audit.md",
+      "--context",
+      "docs/todos/11-reliable-delivery/evidence/11/implementation-context.json",
+      "--phase",
+      "implementation",
+      "--owner",
+      "iter11-controller-linux-20261115"
+    ],
+    "started_at": "2026-11-15T05:47:45.287606+00:00",
+    "ended_at": "2026-11-15T05:47:45.502209+00:00",
+    "exit_code": 0,
+    "stdout": "{\n  \"read_only\": true,\n  \"readiness\": \"READY\",\n  \"task_path\": \"/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/11-native-self-use-audit.md\",\n  \"phase\": \"implementation\",\n  \"acceptance_verdict\": \"UNKNOWN\",\n  \"findings\": [],\n  \"observations\": {\n    \"authority\": {\n      \"status\": \"READY\",\n      \"summary\": \"用户实施/Git/Worktree/Linux授权；不部署推送合流清理\",\n      \"evidence\": \"docs/todos/11-reliable-delivery/evidence/planning/platform-migration-authorization.json\"\n    },\n    \"execution\": {\n      \"status\": \"READY\",\n      \"summary\": \"原生Codex受控调用已实测；本卡单写者与独立审查可用\",\n      \"evidence\": \"build/iter11-review/task10-review1/local-strict.json\"\n    },\n    \"serial-order\": {\n      \"status\": \"READY\",\n      \"summary\": \"所有前卡实际audit有效且前卡冻结strict成功，仅启动本卡\",\n      \"evidence\": \"build/iter11-review/task10-review1/local-strict.json\"\n    },\n    \"verification\": {\n      \"status\": \"READY\",\n      \"summary\": \"冻结Linux runner与维护测试环境已实测\",\n      \"evidence\": \"build/iter11-review/task10-review1/local-strict.json\"\n    }\n  },\n  \"task_id\": \"11\",\n  \"delivery_mode\": \"git\",\n  \"candidate\": \"bc324d16f2adb7f36e18f1f826a16dd23343055a\",\n  \"execution\": {\n    \"attempt_count\": 0,\n    \"no_progress_streak\": 0,\n    \"last_attempt\": null,\n    \"checkpoint\": null,\n    \"remaining_work\": []\n  },\n  \"conditions\": {\n    \"inputs\": [\n      \"AGENTS.md\",\n      \"docs/todos/11-reliable-delivery/11-native-self-use-audit.md\",\n      \"docs/todos/11-reliable-delivery/README.md\",\n      \"docs/todos/11-reliable-delivery/evidence/planning/00-initial-card.md\",\n      \"docs/todos/11-reliable-delivery/evidence/planning/00-initial-precheck.json\",\n      \"docs/todos/11-reliable-delivery/evidence/planning/cli-runtime-probe.json\",\n      \"docs/todos/11-reliable-delivery/evidence/planning/cli-runtime-probe.stderr.txt\",\n      \"docs/todos/11-reliable-delivery/evidence/planning/cli-runtime-probe.stdout.jsonl\",\n      \"docs/todos/11-reliable-delivery/evidence/planning/collaboration-linux-probe.json\",\n      \"docs/todos/11-reliable-delivery/evidence/planning/linux-capabilities.json\",\n      \"docs/todos/11-reliable-delivery/evidence/planning/linux-typesafe-request.json\",\n      \"docs/todos/11-reliable-delivery/evidence/planning/linux-typesafe-response.json\",\n      \"docs/todos/11-reliable-delivery/evidence/planning/linux-typesafe-summary.json\",\n      \"docs/todos/11-reliable-delivery/evidence/planning/native-linux-probe.json\",\n      \"docs/todos/11-reliable-delivery/evidence/planning/native-source-index.json\",\n      \"docs/todos/11-reliable-delivery/evidence/planning/platform-migration-authorization.json\",\n      \"docs/todos/11-reliable-delivery/evidence/startup/baseline-launch.observation.json\",\n      \"docs/todos/11-reliable-delivery/evidence/startup/baseline-launch.stderr.txt\",\n      \"docs/todos/11-reliable-delivery/evidence/startup/baseline-launch.stdout.txt\",\n      \"docs/todos/11-reliable-delivery/evidence/startup/execution-observations.json\",\n      \"docs/todos/11-reliable-delivery/evidence/startup/startup-context.json\",\n      \"docs/todos/11-reliable-delivery/evidence/startup/startup-inventory.coordination.json\",\n      \"docs/todos/11-reliable-delivery/evidence/startup/startup-inventory.stderr.txt\",\n      \"docs/todos/11-reliable-delivery/evidence/startup/startup-inventory.stdout.txt\",\n      \"docs/todos/11-reliable-delivery/evidence/startup/startup-report.json\",\n      \"docs/todos/11-reliable-delivery/evidence/startup/verify-committed.coordination.json\",\n      \"docs/todos/11-reliable-delivery/evidence/startup/verify-committed.stderr.txt\",\n      \"docs/todos/11-reliable-delivery/evidence/startup/verify-committed.stdout.txt\",\n      \"docs/todos/11-reliable-delivery/evidence/startup/worktree-add.coordination.json\",\n      \"docs/todos/11-reliable-delivery/evidence/startup/worktree-add.stderr.txt\",\n      \"docs/todos/11-reliable-delivery/evidence/startup/worktree-add.stdout.txt\",\n      \"references/task_card_schema.md\"\n    ],\n    \"capabilities\": [\n      \"Python3.11.17-pytest9.2-mcp1.30\",\n      \"approved-frozen-linux-runner\",\n      \"independent-native-reviewer\",\n      \"native-codex-cli-implementer\"\n    ],\n    \"scope\": [\n      \".agents/notes/planned/iter11/11-native-self-use-audit.md\",\n      \"docs/todos/11-reliable-delivery/evidence/11/\",\n      \"docs/todos/11-reliable-delivery/evidence/planning/00-initial-card.md\",\n      \"docs/todos/11-reliable-delivery/evidence/planning/00-initial-precheck.json\",\n      \"docs/todos/11-reliable-delivery/evidence/planning/cli-runtime-probe.json\",\n      \"docs/todos/11-reliable-delivery/evidence/planning/cli-runtime-probe.stderr.txt\",\n      \"docs/todos/11-reliable-delivery/evidence/planning/cli-runtime-probe.stdout.jsonl\",\n      \"docs/todos/11-reliable-delivery/evidence/planning/collaboration-linux-probe.json\",\n      \"docs/todos/11-reliable-delivery/evidence/planning/linux-capabilities.json\",\n      \"docs/todos/11-reliable-delivery/evidence/planning/linux-typesafe-request.json\",\n      \"docs/todos/11-reliable-delivery/evidence/planning/linux-typesafe-response.json\",\n      \"docs/todos/11-reliable-delivery/evidence/planning/linux-typesafe-summary.json\",\n      \"docs/todos/11-reliable-delivery/evidence/planning/native-linux-probe.json\",\n      \"docs/todos/11-reliable-delivery/evidence/planning/native-source-index.json\",\n      \"docs/todos/11-reliable-delivery/evidence/planning/platform-migration-authorization.json\",\n      \"docs/todos/11-reliable-delivery/evidence/startup/baseline-launch.observation.json\",\n      \"docs/todos/11-reliable-delivery/evidence/startup/baseline-launch.stderr.txt\",\n      \"docs/todos/11-reliable-delivery/evidence/startup/baseline-launch.stdout.txt\",\n      \"docs/todos/11-reliable-delivery/evidence/startup/execution-observations.json\",\n      \"docs/todos/11-reliable-delivery/evidence/startup/startup-context.json\",\n      \"docs/todos/11-reliable-delivery/evidence/startup/startup-inventory.coordination.json\",\n      \"docs/todos/11-reliable-delivery/evidence/startup/startup-inventory.stderr.txt\",\n      \"docs/todos/11-reliable-delivery/evidence/startup/startup-inventory.stdout.txt\",\n      \"docs/todos/11-reliable-delivery/evidence/startup/startup-report.json\",\n      \"docs/todos/11-reliable-delivery/evidence/startup/verify-committed.coordination.json\",\n      \"docs/todos/11-reliable-delivery/evidence/startup/verify-committed.stderr.txt\",\n      \"docs/todos/11-reliable-delivery/evidence/startup/verify-committed.stdout.txt\",\n      \"docs/todos/11-reliable-delivery/evidence/startup/worktree-add.coordination.json\",\n      \"docs/todos/11-reliable-delivery/evidence/startup/worktree-add.stderr.txt\",\n      \"docs/todos/11-reliable-delivery/evidence/startup/worktree-add.stdout.txt\"\n    ]\n  },\n  \"checkpoint\": \"交付本卡已授权范围与按type原始证据\",\n  \"remaining_work\": [\n    \"C独审\",\n    \"D/冻结strict\",\n    \"本卡实现/实验\"\n  ]\n}\n",
+    "stderr": ""
+  },
+  "result": {
+    "dispatched": true,
+    "reason": "dispatched",
+    "check": {
+      "state": "completed",
+      "exit_code": 0,
+      "request_id": "implementation-1794721665249",
+      "cwd": "/data/workspace/iteration-manager/.worktrees/iter-11",
+      "argv": [
+        "python3",
+        "-B",
+        "/data/workspace/iteration-manager/build/frozen-tools/fdcc4cce8863/scripts/iter_sync.py",
+        "--dispatch-check",
+        "/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/11-native-self-use-audit.md",
+        "--context",
+        "docs/todos/11-reliable-delivery/evidence/11/implementation-context.json",
+        "--phase",
+        "implementation",
+        "--owner",
+        "iter11-controller-linux-20261115"
+      ],
+      "stdout": "{\n  \"read_only\": true,\n  \"readiness\": \"READY\",\n  \"task_path\": \"/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/11-native-self-use-audit.md\",\n  \"phase\": \"implementation\",\n  \"acceptance_verdict\": \"UNKNOWN\",\n  \"findings\": [],\n  \"observations\": {\n    \"authority\": {\n      \"status\": \"READY\",\n      \"summary\": \"用户实施/Git/Worktree/Linux授权；不部署推送合流清理\",\n      \"evidence\": \"docs/todos/11-reliable-delivery/evidence/planning/platform-migration-authorization.json\"\n    },\n    \"execution\": {\n      \"status\": \"READY\",\n      \"summary\": \"原生Codex受控调用已实测；本卡单写者与独立审查可用\",\n      \"evidence\": \"build/iter11-review/task10-review1/local-strict.json\"\n    },\n    \"serial-order\": {\n      \"status\": \"READY\",\n      \"summary\": \"所有前卡实际audit有效且前卡冻结strict成功，仅启动本卡\",\n      \"evidence\": \"build/iter11-review/task10-review1/local-strict.json\"\n    },\n    \"verification\": {\n      \"status\": \"READY\",\n      \"summary\": \"冻结Linux runner与维护测试环境已实测\",\n      \"evidence\": \"build/iter11-review/task10-review1/local-strict.json\"\n    }\n  },\n  \"task_id\": \"11\",\n  \"delivery_mode\": \"git\",\n  \"candidate\": \"bc324d16f2adb7f36e18f1f826a16dd23343055a\",\n  \"execution\": {\n    \"attempt_count\": 0,\n    \"no_progress_streak\": 0,\n    \"last_attempt\": null,\n    \"checkpoint\": null,\n    \"remaining_work\": []\n  },\n  \"conditions\": {\n    \"inputs\": [\n      \"AGENTS.md\",\n      \"docs/todos/11-reliable-delivery/11-native-self-use-audit.md\",\n      \"docs/todos/11-reliable-delivery/README.md\",\n      \"docs/todos/11-reliable-delivery/evidence/planning/00-initial-card.md\",\n      \"docs/todos/11-reliable-delivery/evidence/planning/00-initial-precheck.json\",\n      \"docs/todos/11-reliable-delivery/evidence/planning/cli-runtime-probe.json\",\n      \"docs/todos/11-reliable-delivery/evidence/planning/cli-runtime-probe.stderr.txt\",\n      \"docs/todos/11-reliable-delivery/evidence/planning/cli-runtime-probe.stdout.jsonl\",\n      \"docs/todos/11-reliable-delivery/evidence/planning/collaboration-linux-probe.json\",\n      \"docs/todos/11-reliable-delivery/evidence/planning/linux-capabilities.json\",\n      \"docs/todos/11-reliable-delivery/evidence/planning/linux-typesafe-request.json\",\n      \"docs/todos/11-reliable-delivery/evidence/planning/linux-typesafe-response.json\",\n      \"docs/todos/11-reliable-delivery/evidence/planning/linux-typesafe-summary.json\",\n      \"docs/todos/11-reliable-delivery/evidence/planning/native-linux-probe.json\",\n      \"docs/todos/11-reliable-delivery/evidence/planning/native-source-index.json\",\n      \"docs/todos/11-reliable-delivery/evidence/planning/platform-migration-authorization.json\",\n      \"docs/todos/11-reliable-delivery/evidence/startup/baseline-launch.observation.json\",\n      \"docs/todos/11-reliable-delivery/evidence/startup/baseline-launch.stderr.txt\",\n      \"docs/todos/11-reliable-delivery/evidence/startup/baseline-launch.stdout.txt\",\n      \"docs/todos/11-reliable-delivery/evidence/startup/execution-observations.json\",\n      \"docs/todos/11-reliable-delivery/evidence/startup/startup-context.json\",\n      \"docs/todos/11-reliable-delivery/evidence/startup/startup-inventory.coordination.json\",\n      \"docs/todos/11-reliable-delivery/evidence/startup/startup-inventory.stderr.txt\",\n      \"docs/todos/11-reliable-delivery/evidence/startup/startup-inventory.stdout.txt\",\n      \"docs/todos/11-reliable-delivery/evidence/startup/startup-report.json\",\n      \"docs/todos/11-reliable-delivery/evidence/startup/verify-committed.coordination.json\",\n      \"docs/todos/11-reliable-delivery/evidence/startup/verify-committed.stderr.txt\",\n      \"docs/todos/11-reliable-delivery/evidence/startup/verify-committed.stdout.txt\",\n      \"docs/todos/11-reliable-delivery/evidence/startup/worktree-add.coordination.json\",\n      \"docs/todos/11-reliable-delivery/evidence/startup/worktree-add.stderr.txt\",\n      \"docs/todos/11-reliable-delivery/evidence/startup/worktree-add.stdout.txt\",\n      \"references/task_card_schema.md\"\n    ],\n    \"capabilities\": [\n      \"Python3.11.17-pytest9.2-mcp1.30\",\n      \"approved-frozen-linux-runner\",\n      \"independent-native-reviewer\",\n      \"native-codex-cli-implementer\"\n    ],\n    \"scope\": [\n      \".agents/notes/planned/iter11/11-native-self-use-audit.md\",\n      \"docs/todos/11-reliable-delivery/evidence/11/\",\n      \"docs/todos/11-reliable-delivery/evidence/planning/00-initial-card.md\",\n      \"docs/todos/11-reliable-delivery/evidence/planning/00-initial-precheck.json\",\n      \"docs/todos/11-reliable-delivery/evidence/planning/cli-runtime-probe.json\",\n      \"docs/todos/11-reliable-delivery/evidence/planning/cli-runtime-probe.stderr.txt\",\n      \"docs/todos/11-reliable-delivery/evidence/planning/cli-runtime-probe.stdout.jsonl\",\n      \"docs/todos/11-reliable-delivery/evidence/planning/collaboration-linux-probe.json\",\n      \"docs/todos/11-reliable-delivery/evidence/planning/linux-capabilities.json\",\n      \"docs/todos/11-reliable-delivery/evidence/planning/linux-typesafe-request.json\",\n      \"docs/todos/11-reliable-delivery/evidence/planning/linux-typesafe-response.json\",\n      \"docs/todos/11-reliable-delivery/evidence/planning/linux-typesafe-summary.json\",\n      \"docs/todos/11-reliable-delivery/evidence/planning/native-linux-probe.json\",\n      \"docs/todos/11-reliable-delivery/evidence/planning/native-source-index.json\",\n      \"docs/todos/11-reliable-delivery/evidence/planning/platform-migration-authorization.json\",\n      \"docs/todos/11-reliable-delivery/evidence/startup/baseline-launch.observation.json\",\n      \"docs/todos/11-reliable-delivery/evidence/startup/baseline-launch.stderr.txt\",\n      \"docs/todos/11-reliable-delivery/evidence/startup/baseline-launch.stdout.txt\",\n      \"docs/todos/11-reliable-delivery/evidence/startup/execution-observations.json\",\n      \"docs/todos/11-reliable-delivery/evidence/startup/startup-context.json\",\n      \"docs/todos/11-reliable-delivery/evidence/startup/startup-inventory.coordination.json\",\n      \"docs/todos/11-reliable-delivery/evidence/startup/startup-inventory.stderr.txt\",\n      \"docs/todos/11-reliable-delivery/evidence/startup/startup-inventory.stdout.txt\",\n      \"docs/todos/11-reliable-delivery/evidence/startup/startup-report.json\",\n      \"docs/todos/11-reliable-delivery/evidence/startup/verify-committed.coordination.json\",\n      \"docs/todos/11-reliable-delivery/evidence/startup/verify-committed.stderr.txt\",\n      \"docs/todos/11-reliable-delivery/evidence/startup/verify-committed.stdout.txt\",\n      \"docs/todos/11-reliable-delivery/evidence/startup/worktree-add.coordination.json\",\n      \"docs/todos/11-reliable-delivery/evidence/startup/worktree-add.stderr.txt\",\n      \"docs/todos/11-reliable-delivery/evidence/startup/worktree-add.stdout.txt\"\n    ]\n  },\n  \"checkpoint\": \"交付本卡已授权范围与按type原始证据\",\n  \"remaining_work\": [\n    \"C独审\",\n    \"D/冻结strict\",\n    \"本卡实现/实验\"\n  ]\n}\n",
+      "stderr": "",
+      "terminal_evidence": {
+        "source": "docs/todos/11-reliable-delivery/evidence/11/implementation-check-observation.json",
+        "id": "2026-11-15T05:47:45.502209+00:00"
+      }
+    },
+    "delegation": {
+      "launch": {
+        "requestedAt": 1794721665249,
+        "leaf": 1794722325249,
+        "hard": 1794722415249,
+        "command": 1794722265249,
+        "launch": {
+          "chunk_id": "bab0a6",
+          "wall_time_seconds": 1.000747961,
+          "session_id": 36154,
+          "original_token_count": 0,
+          "output": ""
+        },
+        "cmd": "timeout --signal=TERM --kill-after=5s 660s codex exec -C '/data/workspace/iteration-manager/.worktrees/iter-11' -s danger-full-access -c 'approval_policy=\"never\"' --json -o '/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/11/implementation-last-message.txt' - < '/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/11/implementation-brief.md' > '/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/11/implementation-native.jsonl' 2> '/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/11/implementation-native.stderr.txt'"
+      },
+      "monitor": {
+        "reason": "terminal",
+        "deadlineMs": 1794722325249,
+        "final": {
+          "status": "completed",
+          "raw": {
+            "chunk_id": "c3c222",
+            "wall_time_seconds": 3.673902094,
+            "exit_code": 0,
+            "original_token_count": 0,
+            "output": ""
+          }
+        },
+        "terminalConfirmed": true,
+        "observedAt": 1794721970522,
+        "lateByMs": 0,
+        "events": [
+          {
+            "kind": "query",
+            "startedAt": 1794721666733,
+            "returnedAt": 1794721726741,
+            "waitMs": 60000,
+            "result": {
+              "status": "running",
+              "raw": {
+                "chunk_id": "411e7b",
+                "wall_time_seconds": 60.001627179,
+                "session_id": 36154,
+                "original_token_count": 0,
+                "output": ""
+              }
+            }
+          },
+          {
+            "kind": "query",
+            "startedAt": 1794721726742,
+            "returnedAt": 1794721786747,
+            "waitMs": 60000,
+            "result": {
+              "status": "running",
+              "raw": {
+                "chunk_id": "0acfb6",
+                "wall_time_seconds": 60.00163042,
+                "session_id": 36154,
+                "original_token_count": 0,
+                "output": ""
+              }
+            }
+          },
+          {
+            "kind": "query",
+            "startedAt": 1794721786747,
+            "returnedAt": 1794721846750,
+            "waitMs": 60000,
+            "result": {
+              "status": "running",
+              "raw": {
+                "chunk_id": "21c7ab",
+                "wall_time_seconds": 60.001275069,
+                "session_id": 36154,
+                "original_token_count": 0,
+                "output": ""
+              }
+            }
+          },
+          {
+            "kind": "query",
+            "startedAt": 1794721846750,
+            "returnedAt": 1794721906754,
+            "waitMs": 60000,
+            "result": {
+              "status": "running",
+              "raw": {
+                "chunk_id": "46d665",
+                "wall_time_seconds": 60.001370819,
+                "session_id": 36154,
+                "original_token_count": 0,
+                "output": ""
+              }
+            }
+          },
+          {
+            "kind": "query",
+            "startedAt": 1794721906754,
+            "returnedAt": 1794721966765,
+            "waitMs": 60000,
+            "result": {
+              "status": "running",
+              "raw": {
+                "chunk_id": "f4fd41",
+                "wall_time_seconds": 60.000999148,
+                "session_id": 36154,
+                "original_token_count": 0,
+                "output": ""
+              }
+            }
+          },
+          {
+            "kind": "query",
+            "startedAt": 1794721966765,
+            "returnedAt": 1794721970518,
+            "waitMs": 60000,
+            "result": {
+              "status": "completed",
+              "raw": {
+                "chunk_id": "c3c222",
+                "wall_time_seconds": 3.673902094,
+                "exit_code": 0,
+                "original_token_count": 0,
+                "output": ""
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

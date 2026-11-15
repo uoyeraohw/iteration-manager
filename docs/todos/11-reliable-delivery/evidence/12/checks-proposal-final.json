@@ -1,0 +1,29 @@
+[
+  {
+    "name": "experiment",
+    "kind": "command",
+    "command": "/data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B /data/workspace/iteration-manager/build/frozen-runners/iter11-platform-v1/scripts/iter_run.py --deadline 2026-11-15T06:14:28.191357+00:00 --evidence docs/todos/11-reliable-delivery/evidence/12/experiment-04.json -- /data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B -m pytest -p no:cacheprovider tests/test_workflow_sequence.py tests/test_prompt_sources.py tests/test_task_card_schema.py -q --basetemp /tmp/iter11-task12-3Zi61t",
+    "cwd": ".",
+    "exit_code": 0,
+    "summary": "Valid experiment-04 reused: unchanged product/test source; ten passed under frozen runner. Fresh recovery authority/source consumption assessed separately.",
+    "output": "docs/todos/11-reliable-delivery/evidence/12/experiment-04.json.output.txt"
+  },
+  {
+    "name": "decision",
+    "kind": "observation",
+    "command": null,
+    "cwd": ".",
+    "exit_code": null,
+    "summary": "Future authorization and independent safe-rebaseline adopted by standard replan; old FAIL/UNKNOWN preserved; exact six-command native evidence inventory and source applicability bound.",
+    "output": "docs/todos/11-reliable-delivery/evidence/12/recovery-final-evidence.json"
+  },
+  {
+    "name": "interfaces",
+    "kind": "observation",
+    "command": null,
+    "cwd": ".",
+    "exit_code": null,
+    "summary": "Fresh authorized guarded Codeg source consumer: eight SHA256 matches and correct A/B/C with six native read exits; prior independent Native CLI same-source reading retained as separate host evidence.",
+    "output": "docs/todos/11-reliable-delivery/evidence/12/recovery-codeg-result.md"
+  }
+]

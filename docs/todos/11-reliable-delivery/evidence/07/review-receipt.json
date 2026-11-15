@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "task_id": "07",
+  "type": "Refactor-Benchmark",
+  "task_path": "docs/todos/11-reliable-delivery/07-portable-test-support.md",
+  "base_sha": "3158e75869d5c4346c51256de878f14ea190f305",
+  "head_sha": "6065cd264738e4c7d56689ef3e4c2e9813217fa1",
+  "contract_sha": "3158e75869d5c4346c51256de878f14ea190f305",
+  "implementer": "01a1dda0-8d6b-79c0-8739-a8409dec0d93",
+  "reviewer": "01a1dda4-bfb4-7c12-bd9d-3c56393a5447",
+  "verdict": "APPROVED",
+  "review_report": "docs/todos/11-reliable-delivery/evidence/07/review-report.json",
+  "checks": [
+    {
+      "name": "baseline",
+      "kind": "command",
+      "command": "/data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B /data/workspace/iteration-manager/build/frozen-runners/iter11-platform-v1/scripts/iter_run.py --deadline 2026-11-15T05:21:27.927576+00:00 --evidence docs/todos/11-reliable-delivery/evidence/07/baseline-implementer.json -- /data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B -m pytest -p no:cacheprovider tests/test_board_handoff.py tests/test_board_service.py -q --basetemp /tmp/iter11-task07-baseline-implementer",
+      "cwd": ".",
+      "exit_code": 0,
+      "summary": "11 passed before extraction; retained original candidate and timestamp (see fix1-delivery.json)",
+      "output": "docs/todos/11-reliable-delivery/evidence/07/baseline-implementer.json.output.txt"
+    },
+    {
+      "name": "regression",
+      "kind": "command",
+      "command": "ITER_FROZEN_RUNNER=/data/workspace/iteration-manager/build/frozen-runners/iter11-platform-v1/scripts/iter_run.py ITER_COMMAND_DEADLINE=2026-11-15T05:26:15.296230+00:00 /data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B /data/workspace/iteration-manager/build/frozen-runners/iter11-platform-v1/scripts/iter_run.py --deadline 2026-11-15T05:26:15.296230+00:00 --evidence docs/todos/11-reliable-delivery/evidence/07/fix1-regression.json -- /data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B -m pytest -p no:cacheprovider tests/test_board_handoff.py tests/test_board_service.py tests/test_harness_portability.py -q --basetemp /tmp/iter11-task07-fix1-regression",
+      "cwd": ".",
+      "exit_code": 0,
+      "summary": "13 passed; real whitelist payload run completed with nonempty result and no fixed count",
+      "output": "docs/todos/11-reliable-delivery/evidence/07/fix1-regression.json.output.txt"
+    },
+    {
+      "name": "compatibility",
+      "kind": "observation",
+      "command": "/data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B /data/workspace/iteration-manager/build/frozen-runners/iter11-platform-v1/scripts/iter_run.py --deadline 2026-11-15T05:21:27.927576+00:00 --evidence docs/todos/11-reliable-delivery/evidence/07/compatibility-command.json -- /data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B docs/todos/11-reliable-delivery/evidence/07/compatibility.py",
+      "cwd": ".",
+      "exit_code": 0,
+      "summary": "Only root index changed; historical file equals BASE; HTTP and arguments exercised by regression; retained original candidate and timestamp (see fix1-delivery.json)",
+      "output": "docs/todos/11-reliable-delivery/evidence/07/compatibility-command.json.output.txt"
+    },
+    {
+      "name": "benchmark_before",
+      "kind": "command",
+      "command": "/data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B /data/workspace/iteration-manager/build/frozen-runners/iter11-platform-v1/scripts/iter_run.py --deadline 2026-11-15T05:21:27.927576+00:00 --evidence docs/todos/11-reliable-delivery/evidence/07/benchmark-before-v2.json -- /data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B docs/todos/11-reliable-delivery/evidence/07/measure.py before",
+      "cwd": ".",
+      "exit_code": 0,
+      "summary": "Three repetitions; 2 historical-path consumers; retained original candidate and timestamp (see fix1-delivery.json)",
+      "output": "docs/todos/11-reliable-delivery/evidence/07/benchmark-before-v2.json.output.txt"
+    },
+    {
+      "name": "benchmark_after",
+      "kind": "command",
+      "command": "/data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B /data/workspace/iteration-manager/build/frozen-runners/iter11-platform-v1/scripts/iter_run.py --deadline 2026-11-15T05:21:27.927576+00:00 --evidence docs/todos/11-reliable-delivery/evidence/07/benchmark-after.json -- /data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B docs/todos/11-reliable-delivery/evidence/07/measure.py after",
+      "cwd": ".",
+      "exit_code": 0,
+      "summary": "Three repetitions; 0 historical-path consumers; retained original candidate and timestamp (see fix1-delivery.json)",
+      "output": "docs/todos/11-reliable-delivery/evidence/07/benchmark-after.json.output.txt"
+    }
+  ]
+}

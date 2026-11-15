@@ -42,7 +42,7 @@
 | `scripts/iter_preflight.py`、`iter_inventory.py` | 派发就绪检查及只读整合盘点 |
 | `scripts/iter_execution.py`、`iter_timing.py` | attempt 汇总、去重耗时与可选会话轨迹；不产生批准 |
 | `scripts/iter_templates.py` | 结构化 spec 渲染和新卡预检；默认只输出 stdout |
-| `scripts/iter_run.py`、`iter_win_job.py` | 截止命令执行、Windows 进程树回收、原始输出及命令收据 |
+| `scripts/iter_run.py`、`iter_win_job.py`、`iter_linux_job.py` | 截止命令执行、平台进程树回收、原始输出及命令收据 |
 | `scripts/deadline_watch.js` | 可注入实际委派接口的截止守卫，不负责业务调度 |
 | `scripts/skill_readonly_mcp.py` | 获准后提供逐项文件白名单的只读 MCP 通路 |
 | `tests/` | pytest 行为、兼容、负例与集成测试 |
@@ -67,9 +67,9 @@
 ### 环境与改动方式
 
 - 主体是 Python 脚本，核心 CLI 使用标准库及同目录模块；Git 模式还需要 `git` 可执行文件。
-- 测试使用 `pytest`；Node 用于截止守卫和看板 DOM 替身测试。守卫本身不使用 Node API，应放入支持持久异步的工具执行器；Node 测试不证明真实委派的查询/取消链。可选只读 MCP 服务另外需要 Python MCP SDK，普通 CLI 不依赖它。
+- 测试使用 `pytest`；完整维护套件还测试可选只读 MCP 服务，需要提供 `mcp<2` 的 1.x SDK（现有服务使用 `mcp.server.fastmcp.FastMCP`）。MCP 2.x 的 API 不兼容该服务；普通核心 CLI 仍只依赖标准库及同目录模块。SDK 和 pytest 安装在隔离测试环境，不是新增产品依赖。Node 用于截止守卫和看板 DOM 替身测试；Node 测试不证明真实委派的查询/取消链。
 - 当前仓库没有依赖锁文件或统一安装/构建入口，不默认执行 `npm install` 或新增打包体系。脚本含 Python 3.10+ 语法；这不等于已经验证所有这些版本。
-- `iter_run.py` 当前仅支持 Windows Job Object；不可用时拒绝启动目标，不回退裸命令或 `taskkill`。不要把查询功能可跨平台理解为整条执行链跨平台。
+- `iter_run.py` 在 Windows 使用 Job Object，在 Linux 使用逐命令独立 subreaper 监督进程、`/proc` 和 pidfd；必要能力不可用时不启动目标，不回退裸命令、`taskkill` 或仅用 `killpg`。其他平台拒绝。源码支持与实际平台验证、独审批准分别核对。
 - 修改前核对 cwd、分支、完整 HEAD、dirty 及归属，亲自读取目标代码、直接契约、调用方和测试。保留既有未跟踪目录、其他人的变更和历史输出。
 - 沿用现有 Python 命名、模块分工与 UTF-8 文档风格；核心能力优先复用标准库。不要顺手全仓格式化、增加依赖或抽象。
 - 变更外部输入时在解析边界校验，保留未知/坏输入的拒绝行为；不能用空值、默认批准或回退 Git 掩盖错误。
@@ -98,19 +98,66 @@
 | 看板 | `tests/test_board_truth.py`、`tests/test_board_service.py`、`tests/test_board_handoff.py`；涉及 UI 时补真实路径与视觉观察 |
 | 截止、恢复、时间 | `tests/test_iter_run.py`、`tests/test_deadline_watch.py`、`tests/test_checkpoint_resume.py` 及受影响 timing 测试 |
 
-规则/模板常用负载：
+Linux 本次维护 checkout 为 `/data/workspace/iteration-manager/.worktrees/iter-11`。当前完整维护基线使用 `/data/workspace/iteration-manager/build/iter11-maint-venv/bin/python`：Python 3.11.17、pytest 9.2.0、MCP 1.30.0，测试临时根在 Git 工作树外。该环境的实际基线为 513 passed、2 个 Windows 专属 skip；这是指定候选、环境和输入的观察，不是其他环境或 Windows 当前通过的证明。
 
-```powershell
-python -B -m pytest -p no:cacheprovider tests/test_prompt_sources.py tests/test_task_card_schema.py -q
+`/data/workspace/iteration-manager/build/iter11-venv/bin/python` 是 Python 3.13.5、pytest 9.2.0 的 runner 针对性环境，曾取得 30 passed/2 skipped 和受影响回归 147 passed/2 skipped；它没有完整维护套件通过证据。首次完整基线使用 Python 3.13、工作树内 basetemp 且缺 MCP，得到 509 passed、4 failed、2 skipped：非 Git 夹具继承外层 Git、`pathlib.Path` 签名字符串差异及缺少 MCP 分别造成失败；Python 3.13 的该签名测试限制未解决。原始来源和适用候选见 [任务00及其证据](docs/todos/11-reliable-delivery/00-linux-runner-and-dev-guide.md)。不据此声称所有 Python 版本兼容。
+
+系统可用 `python3`，不假设 `python` 存在。Windows 使用实际环境的 Python 和 PowerShell；选择实际解释器创建独立 venv，不全局安装或改变仓库打包体系。下面的安装示例用于准备测试环境，版本解析可能随时间变化；要复现本次版本，可将安装参数改为 `pytest==9.2.0` 和 `mcp==1.30.0` 并核实解析结果。
+
+Linux Bash 示例（选择可用的 Python 3.11；从维护项目根运行）：
+
+```bash
+python3.11 -m venv build/maintenance-venv
+build/maintenance-venv/bin/python -m pip install pytest 'mcp<2'
 ```
 
-整轮最终候选的完整维护套件：
+Windows PowerShell 示例（按实际可用解释器调整 `py -3.11`）：
 
 ```powershell
-python -B -m pytest -p no:cacheprovider tests -q
+py -3.11 -m venv build/maintenance-venv
+$py = (Resolve-Path 'build/maintenance-venv/Scripts/python.exe').Path
+& $py -m pip install pytest 'mcp<2'
 ```
+
+正式测试及验收从维护项目根通过约定的冻结 runner、真实 UTC 截止及项目相对唯一收据执行。完整维护套件使用每次唯一、位于任何 Git 工作树之外的 pytest `--basetemp`：否则本应为非 Git 项目的临时夹具可能继承外层仓库。先核实外部临时目录没有 Git 祖先并有足够空间；不要复用或清理其他运行的临时目录。下面的变量必须替换为本次实际授权值。
+
+Linux Bash：
+
+```bash
+py=/data/workspace/iteration-manager/build/iter11-maint-venv/bin/python
+runner=/data/workspace/iteration-manager/build/frozen-runners/iter11-platform-v1/scripts/iter_run.py
+deadline_utc='替换为本次明确UTC截止'
+receipt='替换为项目相对唯一收据.json'
+if git -C /tmp rev-parse --show-toplevel >/dev/null 2>&1; then
+  printf '%s\n' '/tmp 位于 Git 工作树内，请选择其他外部临时目录' >&2
+  exit 2
+fi
+test_root=$(mktemp -d /tmp/iter-maint-XXXXXX)
+"$py" -B "$runner" --deadline "$deadline_utc" --evidence "$receipt" -- "$py" -B -m pytest -p no:cacheprovider tests -q --basetemp "$test_root"
+code=$?
+exit "$code"
+```
+
+Windows PowerShell（先将 `$runner` 指向该次约定的 Windows runner）：
+
+```powershell
+$py = (Resolve-Path 'build/maintenance-venv/Scripts/python.exe').Path
+$runner = '替换为本次约定的 iter_run.py 绝对路径'
+$deadline = '替换为本次明确UTC截止'
+$receipt = '替换为项目相对唯一收据.json'
+git -C $env:TEMP rev-parse --show-toplevel 2>$null
+if ($LASTEXITCODE -eq 0) { throw 'TEMP 位于 Git 工作树内，请选择其他外部临时目录' }
+$testRoot = Join-Path $env:TEMP ("iter-maint-" + [guid]::NewGuid().ToString('N'))
+& $py -B $runner --deadline $deadline --evidence $receipt -- $py -B -m pytest -p no:cacheprovider tests -q --basetemp $testRoot
+$code = $LASTEXITCODE
+exit $code
+```
+
+规则/模板针对性负载为 `-m pytest -p no:cacheprovider tests/test_prompt_sources.py tests/test_task_card_schema.py -q`；正式门禁同样经 runner 包装。Bash 立即读取 `$?`，PowerShell 立即读取 `$LASTEXITCODE`，并结合收据状态区分业务退出与超时/入口错误。
 
 开发内环针对性检查；任务交付补齐对应 type 与受影响回归；迭代收口保留集成、全量及独立总审。已有任务明确要求的门禁不缩减。同候选/输入/环境下有效证据可沿用，指定独立复验仍实跑。修改检查器本身时，正式协调门禁使用迭代约定的冻结版本，不能由被测候选自证批准，见 [真实自用方法](references/self_hosting_acceptance.md)。
+
+浏览器工作遵守本机默认 Moli 和按需 CDP 生命周期：用 `/data/home/.local/bin/moli`，只回收本次启动的服务。Git、worktree、证据及角色规则在两平台一致。
 
 ## 6. 在业务项目中使用 Skill
 
@@ -143,6 +190,16 @@ python -B "$skillRoot/scripts/iter_sync.py" --render-envelope $card
 python -B "$skillRoot/scripts/iter_sync.py" --execution-report $iteration
 python -B "$skillRoot/scripts/iter_sync.py" --board $iteration
 ```
+
+Linux Bash 从目标项目根使用实际安装根，例如：
+
+```bash
+skill_root=/absolute/path/to/iteration-manager
+python3 -B "$skill_root/scripts/iter_sync.py" --help
+python3 -B "$skill_root/scripts/iter_sync.py" --takeover-report docs/todos/01-example
+```
+
+`python3` 所在环境须具备相应依赖；维护测试可用上文 venv。Git/worktree、只读与写入授权和独立审查在两平台相同。
 
 核实候选、终态、授权和证据可沿用时选 `--mode continue`；历史来源或收据不明时选 `--mode takeover`，不因“新会话”自动迁移。实际 context 的结构见 [执行检查](references/execution_readiness.md)：
 
@@ -189,10 +246,12 @@ python -B "$skillRoot/scripts/iter_templates.py" --check card.md --delivery-mode
 
 ## 8. 维护源、部署和最新发布资料
 
-唯一维护源为 `C:/Users/qingyu/.codeg/skills/iteration-manager`。以下是独立安装副本，不是链接或同一 Git 工作区：
+2026-11-14 Windows 发布记录中的维护源为 `C:/Users/qingyu/.codeg/skills/iteration-manager`；本次 Linux 工作源是上述 checkout，不等同于该 Windows 路径或安装部署。历史 Windows 环境的以下安装副本彼此独立，不是链接或同一 Git 工作区：
 
 - Codex：`C:/Users/qingyu/.codex/skills/iteration-manager`。
 - Gemini：`C:/Users/qingyu/.gemini/config/skills/iteration-manager`。
+
+2026-11-15 本机只读观察：Linux 的 `/data/home/.codeg/skills/iteration-manager` 是已安装目录，`/data/home/.codex/skills/iteration-manager` 和 `/data/home/.gemini/config/skills/iteration-manager` 均指向该目录的符号链接；与上述历史 Windows 独立副本不同。它不是本次 worktree，本次未同步或验证其采用候选，使用时重新核对实际路径与版本。
 
 副本同步是另一个获准部署动作，不是 `/iter sync` 的功能。现有交付白名单是 `SKILL.md`、`scripts/`、`references/`、`templates/`、`tests/`、`.agents/notes/`；不复制 `.git`、`.gitignore`、维护 `docs/todos/`、`build/`、缓存或历史备份。本文件 `AGENTS.md` 不在既有白名单内，不因新增而自动部署。
 
@@ -207,3 +266,5 @@ python -B "$skillRoot/scripts/iter_templates.py" --check card.md --delivery-mode
 2026-11-14 发布记录中的 493 项通过是该发布候选的历史实测，不是本次或未来版本的测试结果。已验证的是显式安装根消费；Gemini CLI 自动发现、当前助手自动注入及真实 FS 业务生命周期不能据此认定通过。完整维护套件应在维护仓库运行，安装副本缺少部分测试依赖的维护 harness；不为跑副本全量而擅自扩大部署清单。
 
 交付时给出实际修改、适用候选、检查及原始证据、真实缺口；不要把源码完成、安装落盘、新会话采用和外部业务通过合并成一个 PASS。
+
+本次 Linux 源码及测试证据以 task00 原始收据和独立审查为准；历史 Windows 验证见有日期发布记录，本次 Linux 会话未重跑 Windows Job 实测。安装落盘、新会话消费及外部业务验证分别核实。

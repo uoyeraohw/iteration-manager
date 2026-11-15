@@ -1,0 +1,86 @@
+{
+  "version": 1,
+  "tasks": {
+    "11": {
+      "phase": "implementation",
+      "candidate": "a1a9907fc343b8ba2c25895b03b89fb192c48e67",
+      "inputs": [
+        "docs/todos/11-reliable-delivery/11-native-self-use-audit.md",
+        "docs/todos/11-reliable-delivery/README.md",
+        "AGENTS.md",
+        "references/task_card_schema.md",
+        "docs/todos/11-reliable-delivery/evidence/planning/00-initial-card.md",
+        "docs/todos/11-reliable-delivery/evidence/planning/00-initial-precheck.json",
+        "docs/todos/11-reliable-delivery/evidence/planning/cli-runtime-probe.json",
+        "docs/todos/11-reliable-delivery/evidence/planning/cli-runtime-probe.stderr.txt",
+        "docs/todos/11-reliable-delivery/evidence/planning/cli-runtime-probe.stdout.jsonl",
+        "docs/todos/11-reliable-delivery/evidence/planning/collaboration-linux-probe.json",
+        "docs/todos/11-reliable-delivery/evidence/planning/linux-capabilities.json",
+        "docs/todos/11-reliable-delivery/evidence/planning/linux-typesafe-request.json",
+        "docs/todos/11-reliable-delivery/evidence/planning/linux-typesafe-response.json",
+        "docs/todos/11-reliable-delivery/evidence/planning/linux-typesafe-summary.json",
+        "docs/todos/11-reliable-delivery/evidence/planning/native-linux-probe.json",
+        "docs/todos/11-reliable-delivery/evidence/planning/platform-migration-authorization.json",
+        "docs/todos/11-reliable-delivery/evidence/startup/baseline-launch.observation.json",
+        "docs/todos/11-reliable-delivery/evidence/startup/baseline-launch.stderr.txt",
+        "docs/todos/11-reliable-delivery/evidence/startup/baseline-launch.stdout.txt",
+        "docs/todos/11-reliable-delivery/evidence/startup/execution-observations.json",
+        "docs/todos/11-reliable-delivery/evidence/startup/startup-context.json",
+        "docs/todos/11-reliable-delivery/evidence/startup/startup-inventory.coordination.json",
+        "docs/todos/11-reliable-delivery/evidence/startup/startup-inventory.stderr.txt",
+        "docs/todos/11-reliable-delivery/evidence/startup/startup-inventory.stdout.txt",
+        "docs/todos/11-reliable-delivery/evidence/startup/startup-report.json",
+        "docs/todos/11-reliable-delivery/evidence/startup/verify-committed.coordination.json",
+        "docs/todos/11-reliable-delivery/evidence/startup/verify-committed.stderr.txt",
+        "docs/todos/11-reliable-delivery/evidence/startup/verify-committed.stdout.txt",
+        "docs/todos/11-reliable-delivery/evidence/startup/worktree-add.coordination.json",
+        "docs/todos/11-reliable-delivery/evidence/startup/worktree-add.stderr.txt",
+        "docs/todos/11-reliable-delivery/evidence/startup/worktree-add.stdout.txt",
+        "docs/todos/11-reliable-delivery/evidence/planning/native-source-index.json",
+        "docs/todos/11-reliable-delivery/evidence/11/preliminary-review1.json"
+      ],
+      "capabilities": [
+        "native-codex-cli-implementer",
+        "approved-frozen-linux-runner",
+        "Python3.11.17-pytest9.2-mcp1.30",
+        "independent-native-reviewer"
+      ],
+      "dependencies": [
+        "docs/todos/11-reliable-delivery/03-native-dispatch-guard.md",
+        "docs/todos/11-reliable-delivery/10-integration-fault-paths.md"
+      ],
+      "tool_entry": "/data/workspace/iteration-manager/build/frozen-tools/fdcc4cce8863/scripts/iter_sync.py",
+      "checkpoint": "F1输入结构校验定向返修",
+      "remaining_work": [
+        "缺字段controls/修正",
+        "原独审复审",
+        "D/strict"
+      ],
+      "required_observations": [
+        "serial-order"
+      ],
+      "observations": {
+        "authority": {
+          "status": "READY",
+          "summary": "用户实施/Git/Worktree/Linux授权；不部署推送合流清理",
+          "evidence": "docs/todos/11-reliable-delivery/evidence/planning/platform-migration-authorization.json"
+        },
+        "execution": {
+          "status": "READY",
+          "summary": "原生Codex受控调用已实测；本卡单写者与独立审查可用",
+          "evidence": "build/iter11-review/task10-review1/local-strict.json"
+        },
+        "verification": {
+          "status": "READY",
+          "summary": "冻结Linux runner与维护测试环境已实测",
+          "evidence": "build/iter11-review/task10-review1/local-strict.json"
+        },
+        "serial-order": {
+          "status": "READY",
+          "summary": "所有前卡实际audit有效且前卡冻结strict成功，仅启动本卡",
+          "evidence": "build/iter11-review/task10-review1/local-strict.json"
+        }
+      }
+    }
+  }
+}

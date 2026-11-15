@@ -1,0 +1,5 @@
+F1 修复已完成，交付待审候选。坏 profile 的 envelope 现在保留原顶层 `error` 和原文，同时提供模式为 `UNKNOWN`、含来源错误的 `TASK_HANDOFF`；直接投影仍抛出原异常。
+
+本轮 [RED](/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/01/fix1-red-0401.json) 为 7 个目标断言失败、29 个通过。最终 [GREEN / regression](/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/01/fix1-final-0401.json) 为 **130 passed**，退出 0，命令树已终止；同一次运行覆盖两项相同的规定测试集合。
+
+[交付记录](/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/01/fix1-delivery.json) 和 [源码哈希清单](/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/01/fix1-source-manifest.json) 已写入。尚需主管冻结 C2、安排独立范围复审，并在批准后登记 D 和运行冻结协调器 strict。未提交、标记 DONE 或部署。

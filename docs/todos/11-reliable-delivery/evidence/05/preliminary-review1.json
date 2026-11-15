@@ -1,0 +1,60 @@
+{
+  "candidate": "a08ab82d84e27366d625f8e58bc4fd16acacce20",
+  "base": "bfeabf74937e4e36ce04da9082ef312ba572806c",
+  "contract_sha": "bfeabf74937e4e36ce04da9082ef312ba572806c",
+  "reviewer_uuid": "01a1dd8a-0d20-7f20-aeb8-00fa7a7d381d",
+  "independence": {
+    "statement": "Fresh independent review; no participation in this task design, implementation, test authorship or RCA and no delegation.",
+    "excluded_implementer": "01a1dd84-62f5-7fb2-a5b6-23520a7a04e7",
+    "excluded_consumer": "01a1dd86-9427-7f93-a004-2ce8b0d74ac7",
+    "identity_source": "CODEX_THREAD_ID and build/iter11-review/task05-review1/review-native.jsonl"
+  },
+  "verdicts": {
+    "scope": "APPROVED",
+    "spec": "NEEDS_FIX",
+    "quality": "APPROVED",
+    "overall": "NEEDS_FIX"
+  },
+  "findings": [
+    {
+      "id": "F1",
+      "severity": "major",
+      "category": "spec",
+      "location": "docs/todos/11-reliable-delivery/05-support-matrix.md:41,69-74",
+      "scenario": "The frozen decision check requires the actual conclusions, limitations, sources and tradeoffs in both the card ledger and an independent report. At C the ledger has only a generic summary of five tests, eight links, a consumer, and terminal status; it does not identify the underlying source records, the concrete limits or the publication decision and its tradeoff. A reader using the task card as the source of truth cannot trace or assess the required decision from that ledger. The external matrix-decision and planned note contain material information, but are not cited by the ledger and do not fulfill its explicit in-card requirement. The checked decision box therefore overstates completion of this specific requirement.",
+      "remediation": "Record in the card ledger the dated decision, material limitations and tradeoffs, and direct pointers to the actual source and experiment/consumer evidence; preserve UNKNOWN/BLOCKED and the frozen contract. Deliver a new candidate and independent re-review before approval."
+    }
+  ],
+  "scope": {
+    "receipt": "build/iter11-review/task05-review1/scope-runner.json",
+    "child": "build/iter11-review/task05-review1/scope-runner.json.child.json",
+    "output": "build/iter11-review/task05-review1/scope-runner.json.output.txt",
+    "status": "COMPLETED",
+    "raw_exit_code": 0,
+    "launcher_exit_code": 0,
+    "tree_terminal": true,
+    "result": "47 changed paths passed frozen scope; independently inspected actual BASE..C name list and card diff. The task card is implicitly allowed, product changes are matrix, release route, and structural test, plus authorized decision note and task evidence. No root index or historical release change. Frozen coordinator result is scope evidence only, not mode or semantic approval. No explicit FS profile is introduced; task is Git C with BASE its direct parent.",
+    "dispatch": "Same-owner evidence-inspection dispatch-check READY and acceptance UNKNOWN at build/iter11-review/task05-review1/dispatch-check.json; readiness is not approval."
+  },
+  "contract_and_source": {
+    "contract": "Compared iter_contracts.contract_projection for BASE and C: equal. Iteration README is byte unchanged BASE..C, including iter:goal. HEAD is C; no tracked or untracked dirty files observed.",
+    "manifest": "Independently SHA256 mapped all 25 tracked non-card manifest entries to C Git blobs: all match. Two ignored build baseline originals match their filesystem hashes and were checked against their raw receipt/output, not nonexistent Git blobs. Card manifest original eaa6a520... differs from C 5ffae5ba...; recovered exact original bytes from implementation-native.jsonl item_1 last cat, SHA256 equals manifest eaa6a520..., and its normalized contract equals BASE; C projection also equals BASE. Allowed execution metadata, checklist and ledger changed. The note current hash refers to an intermediate controller state; not asserted to equal final C. No nonmetadata drift excused.",
+    "runner_snapshot": "All six frozen runner files independently SHA256 matched snapshot manifest and C2 Git blobs. C3 independent review records source equivalence of 48e731e product/test to C3; verified empty diff for scripts/tests/references/templates 48e731e..C3. This is a bounded historical applicability observation, not a full run on C."
+  },
+  "chronology_and_evidence": {
+    "type": "Spike-Discovery, not Strict-TDD: RED chronology is not applicable. Experiment, decision and interfaces are required.",
+    "implementer": "implementation-native.jsonl thread.started identifies 01a1dd84-62f5-7fb2-a5b6-23520a7a04e7; native trace records matrix creation, final clarification before experiment-final, and final source manifest. implementation-terminal and guard show completed session, separate from runner receipts.",
+    "experiments": "experiment-final 04:44:32 UTC, frozen runner COMPLETED raw 0 tree_terminal true and child agrees; raw output 5 passed. scenario-links 04:44:37 UTC, COMPLETED raw 0 tree_terminal true, raw output eight links and no missing. Earlier experiment-01 is retained, superseded by final. Manifest product, tests, authorities and historical source hashes bind inputs to C; tests prove structure and links, not semantic truth. No duplicate suite run.",
+    "consumer": "Distinct native thread 01a1dd86-9427-7f93-a004-2ce8b0d74ac7, guard and terminal confirmed completed, answers in support-consumption.json at 04:46 after implementation and before C at 04:49:33. Native trace shows source reads and actual output creation; consumer correctly distinguishes candidates, unknowns and boundaries. This is real consumption and not independent review or approval. Earlier delivery/decision pending text is an accurately timed handoff, not a claim the later consumer did not occur.",
+    "linux": "C2 3f949f807d3c2eb47b97a116bd6932da55778edd approved Linux runner; independent targeted 3.13.5 receipt raw 0/tree terminal, 30 passed/2 skipped. 48e731ed266a35c06c9146aff9eaaf866c3a2e3f full 3.11.17/pytest 9.2.0/MCP 1.30.0 raw 0/tree terminal 513 passed/2 skips; C3 8fa3dd83721d331d498c5dbd7ca8a3a70eb4e877 reviewed reuse only for unchanged source. Not a full test of C.",
+    "semantics": "Windows 493 is 2026-11-14 historical release 26652bad2fcfb7c883d8e9a8bcad4aeb96160816, current Windows UNKNOWN. Task03 native READY then real successful delegation call but worker bwrap proc mount failure, command did not start; completed is not success. FS normal release/claim does not establish interruption grant (unsupported) or full external business (unknown). Explicit Windows Codex and Antigravity consumption does not prove Gemini CLI discovery/config injection. Linux symlinks are not historical Windows independent copies. Matrix is BASE dated observation, not later tasks or current deployment. Release status changes only add route. Matrix explicitly discloses maintenance-only history/build links may be missing from installed package. These claims align with inspected primary observations and contracts."
+  },
+  "DeferredMinors": [],
+  "limitations": [
+    "No Windows execution, deployment, installation adoption, future tasks 06-12, current whole-suite run, whole-iteration acceptance or external FS business validation was authorized or inferred.",
+    "Task05 approval must bind a candidate satisfying all frozen requirements. D registration and frozen local strict are controller steps following a successful re-review; they have not been performed here.",
+    "The scope check does not establish ownership, delivery-mode safety or semantic truth; those were inspected separately."
+  ],
+  "approval_scope": "Scope and technical quality of candidate C were reviewed; overall approval withheld because F1 remains open. This report is not a completion receipt, D, local strict or whole-iteration approval.",
+  "active_commands": "none on normal return"
+}

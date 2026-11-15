@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "recorded_at": "2026-11-15T07:20:55.698915+00:00",
+  "source": "current exact user instruction",
+  "user_request": "授权按照已提交的计划继续执行",
+  "native_source": "/data/home/.codex/sessions/2026/11/14/rollout-2026-11-14T16-31-36-01a1dae6-6cf3-7743-85e3-c2f7b2376eab.jsonl",
+  "native_line_numbers": [
+    4660,
+    4661
+  ],
+  "native_exact_lines": "docs/todos/11-reliable-delivery/evidence/12/recovery-user-authorization-source.jsonl",
+  "approved_plan_commit": "ac3bd4c0d86e76fe977180bf2489408eeeee4211",
+  "approved_plan_path": "docs/todos/11-reliable-delivery/evidence/12/controller-recovery-plan.json",
+  "approved_plan_sha256": "ae3e2a6fd58d346b6a09bec6175e5d40780424d479a45666e4f0a20ef5ea4a2a",
+  "scope": "Execute submitted recovery disposition and existing serial iteration to completion, including necessary bounded time-interruption recovery under existing contracts. No retrospective validation of old grant; prior FAIL/UNKNOWN retained.",
+  "not_authorized": [
+    "deployment",
+    "push",
+    "merge",
+    "cleanup",
+    "global host permission/configuration changes"
+  ]
+}

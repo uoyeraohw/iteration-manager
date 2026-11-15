@@ -1,0 +1,24 @@
+{
+  "kind": "controller-command-observation",
+  "argv": [
+    "python3",
+    "-B",
+    "/data/workspace/iteration-manager/build/frozen-tools/fdcc4cce8863/scripts/iter_sync.py",
+    "--autonomy",
+    "fix",
+    "docs/todos/11-reliable-delivery/01-delivery-mode-consistency.md",
+    "--event-id",
+    "iter11-01-fix1-budget-v1",
+    "--owner",
+    "iter11-controller-linux-20261115",
+    "--evidence",
+    "docs/todos/11-reliable-delivery/evidence/01/preliminary-review1.json",
+    "--reason",
+    "F1 broken FS profile envelope lacks required UNKNOWN while preserving legacy error contract"
+  ],
+  "started_at": "2026-11-15T04:00:21.304499+00:00",
+  "ended_at": "2026-11-15T04:00:21.391840+00:00",
+  "exit_code": 0,
+  "stdout": "{\"task_id\": \"01-delivery-mode-consistency\", \"previous_rounds\": 0, \"current_rounds\": 1, \"fix_total\": 1, \"consilium_count\": 0, \"replan_count\": 0, \"is_fused\": false, \"status\": \"TESTING\", \"blocked_reason\": \"\", \"writer\": \"iter11-controller-linux-20261115\", \"consilium_bundle\": null}\n",
+  "stderr": ""
+}

@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "type": "draft; not authorization or execution",
+  "finding_F2": "Original inventory incomplete; retrospective reconciliation produced, subject to independent review.",
+  "finding_F1": "BLOCKED: original explicit checkpoint-resume authority is absent from cited records; prior general-authorization interpretation remains historical FAIL. No inference that authorization never existed.",
+  "historic_grant": "Issued/consumed as recorded, but authority unestablished; this draft cannot retroactively validate it or bind a new inventory to it.",
+  "required_next": "Controller obtain explicit authority/recovery disposition, reassess affected candidate and obtain new compliant consumption and independent review under the recovery contract; no grant or resume is authorized by this draft.",
+  "sources": [
+    "docs/todos/11-reliable-delivery/evidence/12/fix1-native-command-inventory.json",
+    "docs/todos/11-reliable-delivery/evidence/12/fix1-reconciled-terminal.json",
+    "docs/todos/11-reliable-delivery/evidence/12/review-round1-input.json"
+  ],
+  "scope": "Evidence reconciliation only; no product/iteration approval, new grant, card mutation or delegation."
+}

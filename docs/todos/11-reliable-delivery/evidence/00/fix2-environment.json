@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "argv": [
+    "/data/workspace/iteration-manager/build/iter11-maint-venv/bin/python",
+    "-B",
+    "-c",
+    "import json, sys, importlib.metadata as m; from mcp.server.fastmcp import FastMCP; print(json.dumps({\"python\": sys.version, \"executable\": sys.executable, \"pytest\": m.version(\"pytest\"), \"mcp\": m.version(\"mcp\"), \"fastmcp_import\": True}))"
+  ],
+  "cwd": "/data/workspace/iteration-manager/.worktrees/iter-11",
+  "deadline": "2026-11-15T03:46:51.061000+00:00",
+  "cleanup_reserve_seconds": 5,
+  "status": "COMPLETED",
+  "deadline_checked_at": "2026-11-15T03:43:39.504695+00:00",
+  "started_at": "2026-11-15T03:43:39.507071+00:00",
+  "ended_at": "2026-11-15T03:43:40.371664+00:00",
+  "raw_exit_code": 0,
+  "tree_terminal": true,
+  "output": "docs/todos/11-reliable-delivery/evidence/00/fix2-environment.json.output.txt",
+  "container_pid": 3440794,
+  "launcher_exit_code": 0,
+  "command": {
+    "status": "COMPLETED",
+    "raw_exit_code": 0,
+    "started_at": "2026-11-15T03:43:39.507071+00:00",
+    "tree_terminal": true,
+    "deadline_checked_at": "2026-11-15T03:43:39.504695+00:00",
+    "pid": 3440795,
+    "ended_at": "2026-11-15T03:43:40.360641+00:00"
+  },
+  "late_by_seconds": 0
+}

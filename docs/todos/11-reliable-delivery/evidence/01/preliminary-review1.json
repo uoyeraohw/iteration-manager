@@ -1,0 +1,82 @@
+{
+  "candidate": "a1de6fc5229f1a5d18b1967936f4cf269abd15d3",
+  "base_contract": "1e99816564fa89d0b43db7a96fbc7c0dac1b6dd9",
+  "reviewer_uuid": "01a1dd5a-d17c-78d0-a389-42bd8a3ed379",
+  "implementer_uuid": "01a1dd56-105c-79d0-9b73-7a708e7d9369",
+  "independence": "Fresh native session; I did not participate in task design, implementation, test authorship or RCA; no delegation. Native thread.started and CODEX_SESSION_ID/CODEX_THREAD_ID agree and differ from implementation native JSONL.",
+  "verdicts": {
+    "scope": "APPROVED",
+    "spec": "NEEDS_FIX",
+    "quality": "NEEDS_FIX",
+    "overall": "NEEDS_FIX"
+  },
+  "findings": [
+    {
+      "id": "F1",
+      "severity": "major",
+      "file": "scripts/iter_queries.py",
+      "lines": [
+        125,
+        145,
+        190
+      ],
+      "test_file": "tests/test_delivery_mode_consistency.py:94-99",
+      "contract": "BASE task01 section 6 acceptance: 覆盖缺省git、显式git、合法filesystem、显式空串、未知模式、坏profile、缺profile及卡/profile冲突；dispatch非READY，审计非PASS，交接/看板显示UNKNOWN并列错误。 Section 1 and acceptance also preserve existing JSON and return/exception contracts.",
+      "scenario": "For malformed iteration-delivery.json, load_profile raises before projection produces mode; _render_task_envelope catches it and returns only {error: ...}. The board provides UNKNOWN and audit violations, but envelope has no TASK_HANDOFF.delivery_mode UNKNOWN. The test explicitly accepts only top-level error for this case, so 124 passing cannot prove the literal matrix.",
+      "remediation": "Resolve the frozen specification tension with the authorized controller: provide the required UNKNOWN mode and error while preserving the established failure response as far as the binding compatibility contract permits, or obtain an explicit approved contract clarification before treating the exception as acceptable. Add a real consumer assertion for the agreed response and reverify affected compatibility; do not silently waive the literal acceptance."
+    }
+  ],
+  "acceptance_mapping": [
+    {
+      "criterion": "Valid Git frozen declaration negative with otherwise valid evidence",
+      "result": "SUPPORTED",
+      "evidence": "tests/test_delivery_mode_consistency.py:12-74; RED raw output reports actual PASS for UNKNOWN/empty and valid default/explicit Git controls passed. Fixture writes declaration before contract commit, uses that commit for head and contract, separate registration commit, synthetic checks and complete acceptance. This establishes rejection was not caused by binding drift; synthetic receipt is not a real approval."
+    },
+    {
+      "criterion": "Delivery matrix at dispatch, audit, envelope and board",
+      "result": "NOT FULLY MET",
+      "evidence": "tests/test_delivery_mode_consistency.py:77-106,139-185; scripts/iter_queries.py:69-108,117-146,187-197; scripts/iter_sync.py:476-520; malformed profile envelope lacks UNKNOWN as F1. Other mode conflicts show UNKNOWN and source audit errors; bad profile board lists audit violation; valid Git/FS controls include actual dispatch and DONE audits."
+    },
+    {
+      "criterion": "Shared parser, compatibility and no cache",
+      "result": "SUPPORTED WITH F1 CONTRACT TENSION",
+      "evidence": "scripts/iter_contracts.py:15-25; scripts/iter_preflight.py:24-38; scripts/iter_queries.py:59-109,187-197; no CLI import or cross-call acceptance cache introduced. FUSED/UNKNOWN and default legacy missing receipt retain expected results; broken-profile top-level error matches BASE behavior, which does not waive acceptance."
+    },
+    {
+      "criterion": "Strict TDD and targeted regression",
+      "result": "SUPPORTED FOR OBSERVED INPUTS",
+      "evidence": "Native implementation JSONL item_18 RED precedes product changes; red receipt completed exit 1 tree terminal, output 7 assertion failures 98 passed; final receipt completed exit 0 tree terminal, 124 passed. Supplemental tests added after RED not represented as RED. Identical prescribed GREEN/regression test selections allow one run; it does not validate F1."
+    }
+  ],
+  "rulings": [
+    "Do not treat existing broken-profile error response as satisfying the separately frozen UNKNOWN projection requirement; both requirements must be reconciled explicitly.",
+    "Frozen coordinator fdcc4cc has known mode audit defect; its scope result is not semantic acceptance and candidate does not approve itself. Management task cards use legal default Git.",
+    "No state registration or task completion approval follows this report."
+  ],
+  "deferred_minors": [],
+  "observed_commands": [
+    {
+      "purpose": "required physical scope",
+      "receipt": "build/iter11-review/task01-review1/scope-runner.json",
+      "output": "build/iter11-review/task01-review1/scope-runner.json.output.txt",
+      "child": "build/iter11-review/task01-review1/scope-runner.json.child.json",
+      "status": "COMPLETED",
+      "exit": 0,
+      "tree_terminal": true,
+      "result": "All 31 changed files within declared scope; ownership is not inferred. Independent diff shows no root index or unrelated accepted source changes."
+    }
+  ],
+  "reused_evidence": {
+    "red": "docs/todos/11-reliable-delivery/evidence/01/task01-red-0354.json and .output.txt and .child.json",
+    "final": "docs/todos/11-reliable-delivery/evidence/01/task01-final-0355.json and .output.txt and .child.json",
+    "manifest": "docs/todos/11-reliable-delivery/evidence/01/source-manifest.json",
+    "applicability": "All 14 listed source/test/note byte lengths and SHA256 match current files and candidate Git blobs; frozen runner and manifest hashes match. The final receipt records the prescribed selected suite in this worktree with exit 0 and terminal tree. No duplicate test run. Additional dependencies outside the manifest have no changed candidate diff; this is not a full reproducible environment snapshot.",
+    "native_terminal": "docs/todos/11-reliable-delivery/evidence/01/implementation-terminal.json and implementation-native.jsonl show implementer completed, exit 0, matching native UUID and turn.completed."
+  },
+  "cannot_verify": [
+    "No current Windows Job Object execution, full-iteration tests or overall iteration acceptance is claimed.",
+    "No independent rerun of the 124 tests; valid raw evidence reused as instructed.",
+    "The current review session is active until return; scope command tree is terminal and no review command remains active."
+  ],
+  "review_scope": "Task01 candidate only; no deployment, merge, push, task state or other product changes."
+}

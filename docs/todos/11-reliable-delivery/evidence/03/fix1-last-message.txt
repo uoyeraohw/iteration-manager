@@ -1,0 +1,7 @@
+Task 03 repair is ready for C2 and independent review. The new test covers two overlapping requests resolved in reverse order, including no premature dispatch and separate request, READY, and terminal-evidence bindings. The adapter now assigns default integration to task 12.
+
+The [final runner receipt](/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/03/fix1-final.json) records **34 passed**, exit 0, and a terminal command tree. The original core RED is reused; the supplemental test is not claimed as a new RED. The production guard remains unchanged.
+
+The [fix1 delivery](/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/03/fix1-delivery.json), [source manifest](/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/03/fix1-source-manifest.json), and [checks proposal](/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/03/checks-proposal-v2.json) are prepared. Implementer native UUID: `01a1dd6e-e307-7d53-9be3-0f011688cd30`.
+
+The retained native chain shows READY consumed before one Codeg call; the worker command startup remains **BLOCKED** by `bwrap`. No commands remain active and no commit was created. Controller C2, independent review, D, and frozen strict remain.

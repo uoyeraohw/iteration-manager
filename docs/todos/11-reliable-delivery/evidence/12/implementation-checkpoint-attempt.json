@@ -1,0 +1,49 @@
+{
+  "phase": "implementation",
+  "candidate": "3de06e0e3715b9f65d7caaf3bdba872a33df0f8c",
+  "inputs": [
+    "docs/todos/11-reliable-delivery/12-workflow-sequence.md",
+    "docs/todos/11-reliable-delivery/README.md",
+    "AGENTS.md",
+    "references/task_card_schema.md",
+    "references/agent_protocol.md",
+    "references/execution_readiness.md",
+    "references/worktree_git_contract.md",
+    "templates/assistants/iteration_planner.md",
+    "templates/assistants/iteration_controller.md",
+    "templates/assistants/task_tech_lead.md",
+    "templates/sdd_implementer_prompt.md",
+    "templates/sdd_reviewer_prompt.md",
+    "tests/test_prompt_sources.py"
+  ],
+  "capabilities": [
+    "native-codex-cli-implementer",
+    "approved-frozen-linux-runner",
+    "Python3.11.17-pytest9.2-mcp1.30",
+    "independent-native-reviewer"
+  ],
+  "version": 1,
+  "checkpoint": "新权威流程/引用及指定实验10通过；原生Codeg与独立消费待验",
+  "remaining_work": [
+    "真实入口探针与新会话消费",
+    "C独审",
+    "D/strict"
+  ],
+  "executor_id": "01a1ddcf-b505-7cc1-baac-d53be61431ab",
+  "terminal_evidence": "docs/todos/11-reliable-delivery/evidence/12/implementation-terminal.json",
+  "progress": [
+    {
+      "kind": "implementation",
+      "summary": "新权威流程/引用及指定实验10通过；原生Codeg与独立消费待验",
+      "evidence": "docs/todos/11-reliable-delivery/evidence/12/delivery.json"
+    }
+  ],
+  "commands": [
+    "docs/todos/11-reliable-delivery/evidence/12/experiment-02.json",
+    "docs/todos/11-reliable-delivery/evidence/12/experiment-03.json",
+    "docs/todos/11-reliable-delivery/evidence/12/experiment-01.json",
+    "docs/todos/11-reliable-delivery/evidence/12/experiment-04.json"
+  ],
+  "started_at": null,
+  "ended_at": null
+}

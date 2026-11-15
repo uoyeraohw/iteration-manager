@@ -1,0 +1,155 @@
+{
+  "thread_id": "01a1ddab-6c92-7843-84b6-2302d6156eb0",
+  "candidate": {
+    "base": "6a54aceb2fc540d20480f9cdb5e5a683359c8e1a",
+    "source_manifest": "docs/todos/11-reliable-delivery/evidence/08/source-manifest.json",
+    "uncommitted_source_hashes": {
+      "scripts/iter_autonomy.py": "5faec682f4cd52d91ebdeb578125f3b4d21c3c22965a5516e07b46567ecf55ba",
+      "scripts/iter_checkpoint.py": "9e68f7c264dbfd56a347a612bcb646f89e3679cb4baf6637dceccd9904804889",
+      "scripts/iter_cli.py": "cb18b63af85ef4c0f572764e6f1dabd9a3b6d2bd1b6e32bd4f0b2fa12a0833c1",
+      "scripts/iter_contracts.py": "bb02f7005ea4359cc8a96d812e241c3155b22bfc90ecb5069629aec0c2134bf2",
+      "scripts/iter_execution.py": "1116403fbbd8d2ba302f6fe2d684b7f8732475d6cbfe9e6ae956de2e0146fdb7",
+      "scripts/iter_filesystem.py": "eaeaaf78f187719fcb13569e069ac49d66cd34d4148791c8168a04903d99da43",
+      "scripts/iter_install.py": "5de6a0e1c943e8b620c064fdf9e498c1243d10bf18b5a112d54cca0cff749226",
+      "scripts/iter_inventory.py": "dbd7a1aed109c05225670fabeef4ac225929acfa8911072b77fdbff6a708f5f2",
+      "scripts/iter_linux_job.py": "68c76c0a9e23209c6e68d0242a0741e5c1bbe6c0019809c65a13034104fa987b",
+      "scripts/iter_preflight.py": "8940012712b0e241a0b4fa3a47ff8e512a975b6e2fdcad37b12a1b4b03b567dd",
+      "scripts/iter_queries.py": "02b0982e8d247e2fbc18b6c247a01e4e9a9e2eeefb60b6cb904b5c85340f7fef",
+      "scripts/iter_run.py": "b8b22217ad1d8d1f02a9a4d3cb053f84f781888c4871e583f0a7ff27f3fe3ef1",
+      "scripts/iter_sync.py": "a3afb08fb8d021feb7b685e6ff4f6c97c3ed60645e111c1034320876bb8959f7",
+      "scripts/iter_templates.py": "d54cea21b9a518450a0af87f384fb88527502f8b3d160eee019399a4641924c8",
+      "scripts/iter_timing.py": "e88a335f83e01b857b8f50de9fafa4ebdeace9486fa048269d4d6027585dc88b",
+      "scripts/iter_win_job.py": "93de97a15f75be1496c4f4e6a727a75e2ca2d89298245eef942bedb9c245c43d",
+      "scripts/skill_readonly_mcp.py": "357416cc3e72341560de1022426a004fec8f9265a29e0f95bbe90a8a9cc6e120",
+      "tests/benchmarks/approval_chain.py": "bfdbe1ee78b92c938e0044d651df82dac56b28b2bf00c641afc9a372bc149b28",
+      "tests/test_approval_benchmark_fixture.py": "b294a619b79e66e6c3458b01d86f78daad1455e587871d30664178f3f01c859a"
+    },
+    "qualification": "BASE plus measured source hashes; no future C claimed"
+  },
+  "environment": {
+    "python": "3.11.17 (main, Oct  3 2026, 01:05:36) [Clang 22.1.3 ]",
+    "platform": "Linux-6.18.54-instabox-x86_64-with-glibc2.41",
+    "cpu": "",
+    "cpu_count": 4,
+    "cpu_model": "AMD EPYC",
+    "memory_kib": "8155564 kB",
+    "git": "git version 2.47.3"
+  },
+  "frozen_tools": {
+    "runner": {
+      "path": "/data/workspace/iteration-manager/build/frozen-runners/iter11-platform-v1/scripts/iter_run.py",
+      "sha256": "b8b22217ad1d8d1f02a9a4d3cb053f84f781888c4871e583f0a7ff27f3fe3ef1"
+    },
+    "coordinator": {
+      "path": "/data/workspace/iteration-manager/build/frozen-tools/fdcc4cce8863/scripts/iter_sync.py",
+      "sha256": "a3afb08fb8d021feb7b685e6ff4f6c97c3ed60645e111c1034320876bb8959f7",
+      "usage": "not used for candidate self-approval"
+    },
+    "python": {
+      "path": "/data/workspace/iteration-manager/build/iter11-maint-venv/bin/python",
+      "sha256": "a2886d92ebf115fde6eb05569bda5ce2d09113adad3264a267b29f7dbff2c076"
+    }
+  },
+  "commands": [
+    {
+      "command": "/data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B /data/workspace/iteration-manager/build/frozen-runners/iter11-platform-v1/scripts/iter_run.py --deadline 2026-11-15T05:38:52.888334+00:00 --evidence docs/todos/11-reliable-delivery/evidence/08/fixture-test-01.json -- /data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B -m pytest -p no:cacheprovider tests/test_approval_benchmark_fixture.py -q --basetemp /tmp/iter11-task08-fixture-test-01",
+      "receipt": "docs/todos/11-reliable-delivery/evidence/08/fixture-test-01.json",
+      "raw_output": "docs/todos/11-reliable-delivery/evidence/08/fixture-test-01.json.output.txt",
+      "status": "COMPLETED",
+      "exit_code": 1,
+      "tree_terminal": true
+    },
+    {
+      "command": "/data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B /data/workspace/iteration-manager/build/frozen-runners/iter11-platform-v1/scripts/iter_run.py --deadline 2026-11-15T05:38:52.888334+00:00 --evidence docs/todos/11-reliable-delivery/evidence/08/fixture-test-02.json -- /data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B -m pytest -p no:cacheprovider tests/test_approval_benchmark_fixture.py -q --basetemp /tmp/iter11-task08-fixture-test-02",
+      "receipt": "docs/todos/11-reliable-delivery/evidence/08/fixture-test-02.json",
+      "raw_output": "docs/todos/11-reliable-delivery/evidence/08/fixture-test-02.json.output.txt",
+      "status": "COMPLETED",
+      "exit_code": 0,
+      "tree_terminal": true
+    },
+    {
+      "command": "/data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B /data/workspace/iteration-manager/build/frozen-runners/iter11-platform-v1/scripts/iter_run.py --deadline 2026-11-15T05:38:52.888334+00:00 --evidence docs/todos/11-reliable-delivery/evidence/08/fixture-test-03.json -- /data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B -m pytest -p no:cacheprovider tests/test_approval_benchmark_fixture.py -q --basetemp /tmp/iter11-task08-fixture-test-03",
+      "receipt": "docs/todos/11-reliable-delivery/evidence/08/fixture-test-03.json",
+      "raw_output": "docs/todos/11-reliable-delivery/evidence/08/fixture-test-03.json.output.txt",
+      "status": "COMPLETED",
+      "exit_code": 0,
+      "tree_terminal": true
+    },
+    {
+      "command": "/data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B /data/workspace/iteration-manager/build/frozen-runners/iter11-platform-v1/scripts/iter_run.py --deadline 2026-11-15T05:38:52.888334+00:00 --evidence docs/todos/11-reliable-delivery/evidence/08/experiment-01.json -- /data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B tests/benchmarks/approval_chain.py --sizes 10 100 --repeats 3 --output docs/todos/11-reliable-delivery/evidence/08/measurements.json",
+      "receipt": "docs/todos/11-reliable-delivery/evidence/08/experiment-01.json",
+      "raw_output": "docs/todos/11-reliable-delivery/evidence/08/experiment-01.json.output.txt",
+      "status": "COMPLETED",
+      "exit_code": 0,
+      "tree_terminal": true
+    },
+    {
+      "command": "/data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B /data/workspace/iteration-manager/build/frozen-runners/iter11-platform-v1/scripts/iter_run.py --deadline 2026-11-15T05:38:52.888334+00:00 --evidence docs/todos/11-reliable-delivery/evidence/08/artifact-validation-01.json -- /data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B -c 'import hashlib,json,statistics; from pathlib import Path; p=Path(\"docs/todos/11-reliable-delivery/evidence/08\"); d=json.loads((p/\"measurements.json\").read_text()); assert d[\"base\"]==\"6a54aceb2fc540d20480f9cdb5e5a683359c8e1a\"; assert all(hashlib.sha256(Path(k).read_bytes()).hexdigest()==v for k,v in d[\"source_sha256\"].items()); assert {(w[\"mode\"],w[\"size\"]) for w in d[\"workloads\"]}=={(m,n) for m in (\"git\",\"filesystem\") for n in (10,100)}; assert all(w[\"approved_count\"]==w[\"size\"] and set(w[\"operations\"])=={\"board\",\"all_envelopes\",\"inventory\",\"http_evidence\"} for w in d[\"workloads\"]); assert all(len(o[\"trials\"])==3 and o[\"mean_seconds\"]==statistics.mean(t[\"seconds\"] for t in o[\"trials\"]) and o[\"range_seconds\"]==[min(t[\"seconds\"] for t in o[\"trials\"]),max(t[\"seconds\"] for t in o[\"trials\"])] and all(t[\"seconds\"]>0 and t[\"path_read_bytes\"]>0 and t[\"git_calls\"]>=0 for t in o[\"trials\"]) for w in d[\"workloads\"] for o in w[\"operations\"].values()); assert all(t[\"detail\"]==\"BLOCKED\" for w in d[\"workloads\"] for t in w[\"operations\"][\"inventory\"][\"trials\"]); assert (Path(\".agents/notes/planned/iter11\")/\"../../../../docs/todos/11-reliable-delivery/evidence/08/ledger-summary.md\").resolve().is_file(); print(\"PASS: four approved workloads, 48 trials, source hashes, statistics, blocked readiness and decision link verified\")'",
+      "receipt": "docs/todos/11-reliable-delivery/evidence/08/artifact-validation-01.json",
+      "raw_output": "docs/todos/11-reliable-delivery/evidence/08/artifact-validation-01.json.output.txt",
+      "status": "COMPLETED",
+      "exit_code": 0,
+      "tree_terminal": true
+    },
+    {
+      "command": "/data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B /data/workspace/iteration-manager/build/frozen-runners/iter11-platform-v1/scripts/iter_run.py --deadline 2026-11-15T05:38:52.888334+00:00 --evidence docs/todos/11-reliable-delivery/evidence/08/delivery-validation-01.json -- /data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B -c 'import hashlib,json,os; from pathlib import Path; p=Path(\"docs/todos/11-reliable-delivery/evidence/08\"); m=json.loads((p/\"source-manifest.json\").read_text()); assert set(m)=={\"sha256\"} and all(hashlib.sha256(Path(k).read_bytes()).hexdigest()==v for k,v in m[\"sha256\"].items()); d=json.loads((p/\"delivery.json\").read_text()); assert d[\"thread_id\"]==os.environ[\"CODEX_THREAD_ID\"] and d[\"candidate\"][\"base\"]==\"6a54aceb2fc540d20480f9cdb5e5a683359c8e1a\"; c=json.loads((p/\"checks-proposal.json\").read_text()); assert [(x[\"name\"],x[\"kind\"]) for x in c]==[(\"experiment\",\"command\"),(\"decision\",\"observation\"),(\"interfaces\",\"observation\")]; assert all(Path(x[\"output\"]).is_file() and Path(x[\"output\"]).stat().st_size for x in c); assert c[0][\"exit_code\"]==0 and c[0][\"cwd\"]==\".\"; assert all(Path(x[\"receipt\"]).is_file() and Path(x[\"raw_output\"]).stat().st_size for x in d[\"commands\"]); assert all(x[\"tree_terminal\"] for x in d[\"commands\"]); print(\"PASS: manifest hashes, thread, candidate, check fields, nonempty outputs and command terminals\")'",
+      "receipt": "docs/todos/11-reliable-delivery/evidence/08/delivery-validation-01.json",
+      "raw_output": "docs/todos/11-reliable-delivery/evidence/08/delivery-validation-01.json.output.txt",
+      "status": "COMPLETED",
+      "exit_code": 0,
+      "tree_terminal": true
+    }
+  ],
+  "workloads": [
+    {
+      "mode": "git",
+      "size": 10,
+      "approved_count": 10,
+      "root": "/tmp/iter11-task08-git-10-o8lld2f7/project"
+    },
+    {
+      "mode": "git",
+      "size": 100,
+      "approved_count": 100,
+      "root": "/tmp/iter11-task08-git-100-hshnhcmp/project"
+    },
+    {
+      "mode": "filesystem",
+      "size": 10,
+      "approved_count": 10,
+      "root": "/tmp/iter11-task08-filesystem-10-tcoyvd70/project"
+    },
+    {
+      "mode": "filesystem",
+      "size": 100,
+      "approved_count": 100,
+      "root": "/tmp/iter11-task08-filesystem-100-4qkuj3m4/project"
+    }
+  ],
+  "decisions": [
+    "Maintain implementation; investigate only evidence-based intra-call repetition after controlled comparison.",
+    "Retain initial failed fixture test: shared Git candidate exceeded each card scope; sequential candidates corrected fixture.",
+    "Synthetic receipts, reviews and check outputs do not assert real execution, human approval, or external business success."
+  ],
+  "tradeoffs": [
+    "Per-card synthetic Git commits preserve isolated frozen scope at construction cost excluded from timings.",
+    "Path read methods measure only explicitly scoped Python bytes, not full operating-system or subprocess I/O."
+  ],
+  "limitations": [
+    "Three samples do not establish tail latency or speedup.",
+    "HTTP stdlib integration is not browser/UI evidence.",
+    "Small synthetic Spike files and this recorded Linux/Python/Git environment only; task 07 is not a performance baseline.",
+    "Inventory readiness BLOCKED for DONE cards is separate from PASS acceptance.",
+    "No FS recovery, platform extension, or cross-call cache."
+  ],
+  "artifacts": {
+    "measurements": "docs/todos/11-reliable-delivery/evidence/08/measurements.json",
+    "ledger_summary": "docs/todos/11-reliable-delivery/evidence/08/ledger-summary.md",
+    "checks_proposal": "docs/todos/11-reliable-delivery/evidence/08/checks-proposal.json",
+    "decision_note": ".agents/notes/planned/iter11/08-approved-chain-benchmark.md"
+  },
+  "remaining": [
+    "Controller owns card and events; implementer leaves highest TESTING without automatic approval.",
+    "Commit candidate C; independent review of C and frozen specification; registration D; frozen local strict."
+  ]
+}

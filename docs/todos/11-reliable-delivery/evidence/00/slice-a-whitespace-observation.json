@@ -1,0 +1,10 @@
+{
+  "kind": "raw-evidence-whitespace-observation",
+  "recorded_at": "2026-11-15T03:10:54.839756+00:00",
+  "all_staged_diff_check_exit": 2,
+  "raw_diagnostics": [
+    "slice-a-last-message.txt: new blank line at EOF",
+    "slice-a-red-bootstrap.json.output.txt: pytest assertion rendering has trailing whitespace"
+  ],
+  "decision": "Preserve original raw outputs byte-for-byte. Apply whitespace style check to source, contracts, cards and navigation; do not rewrite command evidence to appease formatting."
+}

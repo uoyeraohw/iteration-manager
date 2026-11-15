@@ -1,0 +1,5 @@
+structure render exit=0
+structure precheck exit=0 stdout={"valid": true, "errors": []} stderr=
+performance render exit=0
+performance precheck exit=0 stdout={"valid": true, "errors": []} stderr=
+Generated TODO examples only; no business commands, measurements or approval executed.

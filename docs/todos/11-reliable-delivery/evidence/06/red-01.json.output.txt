@@ -1,0 +1,640 @@
+FFFFFFFFFFFFFFFFFFFFFF...........                                        [100%]
+=================================== FAILURES ===================================
+_______ test_build_manifest_is_exact_committed_whitelist_and_byte_hashes _______
+
+source = (PosixPath('/tmp/iter11-task06-red-01/test_build_manifest_is_exact_c0/source'), '288f580888ed87e6595e873e9419cbf527dba80c')
+
+    def test_build_manifest_is_exact_committed_whitelist_and_byte_hashes(source):
+        root, commit = source
+        manifest = install.build_install_manifest(root, commit)
+>       assert isinstance(manifest, dict), 'build_install_manifest must return a provenance manifest'
+E       AssertionError: build_install_manifest must return a provenance manifest
+E       assert False
+E        +  where False = isinstance(None, dict)
+
+tests/test_install_provenance.py:88: AssertionError
+__________ test_make_manifest_cli_prints_json_without_writing_source ___________
+
+source = (PosixPath('/tmp/iter11-task06-red-01/test_make_manifest_cli_prints_0/source'), '288f580888ed87e6595e873e9419cbf527dba80c')
+capsys = <_pytest.capture.CaptureFixture object at 0x7f04686aa090>
+
+    def test_make_manifest_cli_prints_json_without_writing_source(source, capsys):
+        root, commit = source
+        before = git(root, 'status', '--porcelain', '--untracked-files=all')
+>       assert install.main(['--make-manifest', '--root', str(root), '--source-commit', commit]) == 0
+E       AssertionError: assert 1 == 0
+E        +  where 1 = main(['--make-manifest', '--root', '/tmp/iter11-task06-red-01/test_make_manifest_cli_prints_0/source', '--source-commit', '288f580888ed87e6595e873e9419cbf527dba80c'])
+E        +    where main = <test_install_provenance.MissingInstallationBehavior object at 0x7f04684803d0>.main
+
+tests/test_install_provenance.py:99: AssertionError
+_________ test_make_manifest_rejects_unverified_source[tracked_bytes] __________
+
+source = (PosixPath('/tmp/iter11-task06-red-01/test_make_manifest_rejects_unv0/source'), '288f580888ed87e6595e873e9419cbf527dba80c')
+change = 'tracked_bytes'
+
+    @pytest.mark.parametrize('change', ['tracked_bytes', 'untracked_whitelist', 'old_commit', 'unknown_commit', 'abbreviated_commit'])
+    def test_make_manifest_rejects_unverified_source(source, change):
+        root, commit = source
+        if change == 'tracked_bytes':
+            (root / 'SKILL.md').write_bytes(b'changed')
+        elif change == 'untracked_whitelist':
+            (root / 'scripts/new.py').write_bytes(b'uncommitted')
+        elif change == 'old_commit':
+            (root / 'SKILL.md').write_bytes(b'new committed bytes')
+            git(root, 'add', 'SKILL.md')
+            git(root, 'commit', '-qm', 'different source')
+        elif change == 'unknown_commit':
+            commit = 'f' * 40
+        else:
+            commit = commit[:7]
+>       assert install.main(['--make-manifest', '--root', str(root), '--source-commit', commit]) == 2
+E       AssertionError: assert 1 == 2
+E        +  where 1 = main(['--make-manifest', '--root', '/tmp/iter11-task06-red-01/test_make_manifest_rejects_unv0/source', '--source-commit', '288f580888ed87e6595e873e9419cbf527dba80c'])
+E        +    where main = <test_install_provenance.MissingInstallationBehavior object at 0x7f04684803d0>.main
+
+tests/test_install_provenance.py:120: AssertionError
+______ test_make_manifest_rejects_unverified_source[untracked_whitelist] _______
+
+source = (PosixPath('/tmp/iter11-task06-red-01/test_make_manifest_rejects_unv1/source'), '288f580888ed87e6595e873e9419cbf527dba80c')
+change = 'untracked_whitelist'
+
+    @pytest.mark.parametrize('change', ['tracked_bytes', 'untracked_whitelist', 'old_commit', 'unknown_commit', 'abbreviated_commit'])
+    def test_make_manifest_rejects_unverified_source(source, change):
+        root, commit = source
+        if change == 'tracked_bytes':
+            (root / 'SKILL.md').write_bytes(b'changed')
+        elif change == 'untracked_whitelist':
+            (root / 'scripts/new.py').write_bytes(b'uncommitted')
+        elif change == 'old_commit':
+            (root / 'SKILL.md').write_bytes(b'new committed bytes')
+            git(root, 'add', 'SKILL.md')
+            git(root, 'commit', '-qm', 'different source')
+        elif change == 'unknown_commit':
+            commit = 'f' * 40
+        else:
+            commit = commit[:7]
+>       assert install.main(['--make-manifest', '--root', str(root), '--source-commit', commit]) == 2
+E       AssertionError: assert 1 == 2
+E        +  where 1 = main(['--make-manifest', '--root', '/tmp/iter11-task06-red-01/test_make_manifest_rejects_unv1/source', '--source-commit', '288f580888ed87e6595e873e9419cbf527dba80c'])
+E        +    where main = <test_install_provenance.MissingInstallationBehavior object at 0x7f04684803d0>.main
+
+tests/test_install_provenance.py:120: AssertionError
+___________ test_make_manifest_rejects_unverified_source[old_commit] ___________
+
+source = (PosixPath('/tmp/iter11-task06-red-01/test_make_manifest_rejects_unv2/source'), '288f580888ed87e6595e873e9419cbf527dba80c')
+change = 'old_commit'
+
+    @pytest.mark.parametrize('change', ['tracked_bytes', 'untracked_whitelist', 'old_commit', 'unknown_commit', 'abbreviated_commit'])
+    def test_make_manifest_rejects_unverified_source(source, change):
+        root, commit = source
+        if change == 'tracked_bytes':
+            (root / 'SKILL.md').write_bytes(b'changed')
+        elif change == 'untracked_whitelist':
+            (root / 'scripts/new.py').write_bytes(b'uncommitted')
+        elif change == 'old_commit':
+            (root / 'SKILL.md').write_bytes(b'new committed bytes')
+            git(root, 'add', 'SKILL.md')
+            git(root, 'commit', '-qm', 'different source')
+        elif change == 'unknown_commit':
+            commit = 'f' * 40
+        else:
+            commit = commit[:7]
+>       assert install.main(['--make-manifest', '--root', str(root), '--source-commit', commit]) == 2
+E       AssertionError: assert 1 == 2
+E        +  where 1 = main(['--make-manifest', '--root', '/tmp/iter11-task06-red-01/test_make_manifest_rejects_unv2/source', '--source-commit', '288f580888ed87e6595e873e9419cbf527dba80c'])
+E        +    where main = <test_install_provenance.MissingInstallationBehavior object at 0x7f04684803d0>.main
+
+tests/test_install_provenance.py:120: AssertionError
+_________ test_make_manifest_rejects_unverified_source[unknown_commit] _________
+
+source = (PosixPath('/tmp/iter11-task06-red-01/test_make_manifest_rejects_unv3/source'), '288f580888ed87e6595e873e9419cbf527dba80c')
+change = 'unknown_commit'
+
+    @pytest.mark.parametrize('change', ['tracked_bytes', 'untracked_whitelist', 'old_commit', 'unknown_commit', 'abbreviated_commit'])
+    def test_make_manifest_rejects_unverified_source(source, change):
+        root, commit = source
+        if change == 'tracked_bytes':
+            (root / 'SKILL.md').write_bytes(b'changed')
+        elif change == 'untracked_whitelist':
+            (root / 'scripts/new.py').write_bytes(b'uncommitted')
+        elif change == 'old_commit':
+            (root / 'SKILL.md').write_bytes(b'new committed bytes')
+            git(root, 'add', 'SKILL.md')
+            git(root, 'commit', '-qm', 'different source')
+        elif change == 'unknown_commit':
+            commit = 'f' * 40
+        else:
+            commit = commit[:7]
+>       assert install.main(['--make-manifest', '--root', str(root), '--source-commit', commit]) == 2
+E       AssertionError: assert 1 == 2
+E        +  where 1 = main(['--make-manifest', '--root', '/tmp/iter11-task06-red-01/test_make_manifest_rejects_unv3/source', '--source-commit', 'ffffffffffffffffffffffffffffffffffffffff'])
+E        +    where main = <test_install_provenance.MissingInstallationBehavior object at 0x7f04684803d0>.main
+
+tests/test_install_provenance.py:120: AssertionError
+_______ test_make_manifest_rejects_unverified_source[abbreviated_commit] _______
+
+source = (PosixPath('/tmp/iter11-task06-red-01/test_make_manifest_rejects_unv4/source'), '288f580888ed87e6595e873e9419cbf527dba80c')
+change = 'abbreviated_commit'
+
+    @pytest.mark.parametrize('change', ['tracked_bytes', 'untracked_whitelist', 'old_commit', 'unknown_commit', 'abbreviated_commit'])
+    def test_make_manifest_rejects_unverified_source(source, change):
+        root, commit = source
+        if change == 'tracked_bytes':
+            (root / 'SKILL.md').write_bytes(b'changed')
+        elif change == 'untracked_whitelist':
+            (root / 'scripts/new.py').write_bytes(b'uncommitted')
+        elif change == 'old_commit':
+            (root / 'SKILL.md').write_bytes(b'new committed bytes')
+            git(root, 'add', 'SKILL.md')
+            git(root, 'commit', '-qm', 'different source')
+        elif change == 'unknown_commit':
+            commit = 'f' * 40
+        else:
+            commit = commit[:7]
+>       assert install.main(['--make-manifest', '--root', str(root), '--source-commit', commit]) == 2
+E       AssertionError: assert 1 == 2
+E        +  where 1 = main(['--make-manifest', '--root', '/tmp/iter11-task06-red-01/test_make_manifest_rejects_unv4/source', '--source-commit', '288f580'])
+E        +    where main = <test_install_provenance.MissingInstallationBehavior object at 0x7f04684803d0>.main
+
+tests/test_install_provenance.py:120: AssertionError
+________________ test_clean_install_checks_without_modification ________________
+
+tmp_path = PosixPath('/tmp/iter11-task06-red-01/test_clean_install_checks_with0')
+installation = (PosixPath('/tmp/iter11-task06-red-01/test_clean_install_checks_with0/installed'), {'version': 1, 'source_commit': '28... {'path': '.agents/notes/decision.md', 'sha256': '834608781b00d5df58e3ae55a6b15c201aeebacc26ec99a1035fd75b83e16760'}]})
+
+    def test_clean_install_checks_without_modification(tmp_path, installation):
+        root, manifest = installation
+        before = {name: (root / name).read_bytes() for name in FILES}
+>       assert check_cli(tmp_path, root, manifest) == 0
+E       AssertionError: assert 1 == 0
+E        +  where 1 = check_cli(PosixPath('/tmp/iter11-task06-red-01/test_clean_install_checks_with0'), PosixPath('/tmp/iter11-task06-red-01/test_clean_install_checks_with0/installed'), {'version': 1, 'source_commit': '288f580888ed87e6595e873e9419cbf527dba80c', 'files': [{'path': 'SKILL.md', 'sha256': '..., {'path': '.agents/notes/decision.md', 'sha256': '834608781b00d5df58e3ae55a6b15c201aeebacc26ec99a1035fd75b83e16760'}]})
+
+tests/test_install_provenance.py:126: AssertionError
+___________ test_install_check_rejects_damage_without_repair[drift] ____________
+
+tmp_path = PosixPath('/tmp/iter11-task06-red-01/test_install_check_rejects_dam0')
+installation = (PosixPath('/tmp/iter11-task06-red-01/test_install_check_rejects_dam0/installed'), {'version': 1, 'source_commit': '28... {'path': '.agents/notes/decision.md', 'sha256': '834608781b00d5df58e3ae55a6b15c201aeebacc26ec99a1035fd75b83e16760'}]})
+damage = 'drift'
+
+    @pytest.mark.parametrize('damage', ['drift', 'missing', 'outside_link'])
+    def test_install_check_rejects_damage_without_repair(tmp_path, installation, damage):
+        root, manifest = installation
+        target = root / 'scripts/query.py'
+        if damage == 'drift':
+            target.write_bytes(b'drift')
+        else:
+            target.unlink()
+            if damage == 'outside_link':
+                secret = tmp_path / 'secret'
+                secret.write_bytes(FILES['scripts/query.py'])
+                target.symlink_to(secret)
+>       assert check_cli(tmp_path, root, manifest) == 2
+E       AssertionError: assert 1 == 2
+E        +  where 1 = check_cli(PosixPath('/tmp/iter11-task06-red-01/test_install_check_rejects_dam0'), PosixPath('/tmp/iter11-task06-red-01/test_install_check_rejects_dam0/installed'), {'version': 1, 'source_commit': '288f580888ed87e6595e873e9419cbf527dba80c', 'files': [{'path': 'SKILL.md', 'sha256': '..., {'path': '.agents/notes/decision.md', 'sha256': '834608781b00d5df58e3ae55a6b15c201aeebacc26ec99a1035fd75b83e16760'}]})
+
+tests/test_install_provenance.py:148: AssertionError
+__________ test_install_check_rejects_damage_without_repair[missing] ___________
+
+tmp_path = PosixPath('/tmp/iter11-task06-red-01/test_install_check_rejects_dam1')
+installation = (PosixPath('/tmp/iter11-task06-red-01/test_install_check_rejects_dam1/installed'), {'version': 1, 'source_commit': '28... {'path': '.agents/notes/decision.md', 'sha256': '834608781b00d5df58e3ae55a6b15c201aeebacc26ec99a1035fd75b83e16760'}]})
+damage = 'missing'
+
+    @pytest.mark.parametrize('damage', ['drift', 'missing', 'outside_link'])
+    def test_install_check_rejects_damage_without_repair(tmp_path, installation, damage):
+        root, manifest = installation
+        target = root / 'scripts/query.py'
+        if damage == 'drift':
+            target.write_bytes(b'drift')
+        else:
+            target.unlink()
+            if damage == 'outside_link':
+                secret = tmp_path / 'secret'
+                secret.write_bytes(FILES['scripts/query.py'])
+                target.symlink_to(secret)
+>       assert check_cli(tmp_path, root, manifest) == 2
+E       AssertionError: assert 1 == 2
+E        +  where 1 = check_cli(PosixPath('/tmp/iter11-task06-red-01/test_install_check_rejects_dam1'), PosixPath('/tmp/iter11-task06-red-01/test_install_check_rejects_dam1/installed'), {'version': 1, 'source_commit': '288f580888ed87e6595e873e9419cbf527dba80c', 'files': [{'path': 'SKILL.md', 'sha256': '..., {'path': '.agents/notes/decision.md', 'sha256': '834608781b00d5df58e3ae55a6b15c201aeebacc26ec99a1035fd75b83e16760'}]})
+
+tests/test_install_provenance.py:148: AssertionError
+________ test_install_check_rejects_damage_without_repair[outside_link] ________
+
+tmp_path = PosixPath('/tmp/iter11-task06-red-01/test_install_check_rejects_dam2')
+installation = (PosixPath('/tmp/iter11-task06-red-01/test_install_check_rejects_dam2/installed'), {'version': 1, 'source_commit': '67... {'path': '.agents/notes/decision.md', 'sha256': '834608781b00d5df58e3ae55a6b15c201aeebacc26ec99a1035fd75b83e16760'}]})
+damage = 'outside_link'
+
+    @pytest.mark.parametrize('damage', ['drift', 'missing', 'outside_link'])
+    def test_install_check_rejects_damage_without_repair(tmp_path, installation, damage):
+        root, manifest = installation
+        target = root / 'scripts/query.py'
+        if damage == 'drift':
+            target.write_bytes(b'drift')
+        else:
+            target.unlink()
+            if damage == 'outside_link':
+                secret = tmp_path / 'secret'
+                secret.write_bytes(FILES['scripts/query.py'])
+                target.symlink_to(secret)
+>       assert check_cli(tmp_path, root, manifest) == 2
+E       AssertionError: assert 1 == 2
+E        +  where 1 = check_cli(PosixPath('/tmp/iter11-task06-red-01/test_install_check_rejects_dam2'), PosixPath('/tmp/iter11-task06-red-01/test_install_check_rejects_dam2/installed'), {'version': 1, 'source_commit': '6711c83bf5402f374f7af4c480838c2c669e7d9b', 'files': [{'path': 'SKILL.md', 'sha256': '..., {'path': '.agents/notes/decision.md', 'sha256': '834608781b00d5df58e3ae55a6b15c201aeebacc26ec99a1035fd75b83e16760'}]})
+
+tests/test_install_provenance.py:148: AssertionError
+__ test_check_rejects_bad_manifest_before_reading_external_data[unknown_key] ___
+
+tmp_path = PosixPath('/tmp/iter11-task06-red-01/test_check_rejects_bad_manifes0')
+installation = (PosixPath('/tmp/iter11-task06-red-01/test_check_rejects_bad_manifes0/installed'), {'version': 1, 'source_commit': '67... {'path': '.agents/notes/decision.md', 'sha256': '834608781b00d5df58e3ae55a6b15c201aeebacc26ec99a1035fd75b83e16760'}]})
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f04683f1d90>
+mutation = 'unknown_key'
+
+    @pytest.mark.parametrize('mutation', ['unknown_key', 'file_unknown_key', 'duplicate', 'traversal', 'absolute', 'outside_whitelist', 'bad_digest', 'bad_commit', 'bad_version', 'empty_files'])
+    def test_check_rejects_bad_manifest_before_reading_external_data(tmp_path, installation, monkeypatch, mutation):
+        root, original = installation
+        manifest = copy.deepcopy(original)
+        secret = tmp_path / 'secret'
+        secret.write_bytes(b'do not read')
+        if mutation == 'unknown_key': manifest['surprise'] = True
+        elif mutation == 'file_unknown_key': manifest['files'][0]['surprise'] = True
+        elif mutation == 'duplicate': manifest['files'].append(copy.deepcopy(manifest['files'][0]))
+        elif mutation == 'traversal': manifest['files'][0]['path'] = '../secret'
+        elif mutation == 'absolute': manifest['files'][0]['path'] = str(secret)
+        elif mutation == 'outside_whitelist':
+            (root / 'private.txt').write_bytes(b'outside')
+            manifest['files'][0]['path'] = 'private.txt'
+        elif mutation == 'bad_digest': manifest['files'][0]['sha256'] = 'not-a-sha256'
+        elif mutation == 'bad_commit': manifest['source_commit'] = 'unknown'
+        elif mutation == 'bad_version': manifest['version'] = 2
+        else: manifest['files'] = []
+        original_open = Path.open
+        def guarded_open(path, *args, **kwargs):
+            assert path.resolve() != secret.resolve(), 'attempted to read outside installation'
+            assert path != root / 'private.txt', 'attempted to read outside delivery whitelist'
+            return original_open(path, *args, **kwargs)
+        monkeypatch.setattr(Path, 'open', guarded_open)
+>       assert check_cli(tmp_path, root, manifest) == 2
+E       AssertionError: assert 1 == 2
+E        +  where 1 = check_cli(PosixPath('/tmp/iter11-task06-red-01/test_check_rejects_bad_manifes0'), PosixPath('/tmp/iter11-task06-red-01/test_check_rejects_bad_manifes0/installed'), {'version': 1, 'source_commit': '6711c83bf5402f374f7af4c480838c2c669e7d9b', 'files': [{'path': 'SKILL.md', 'sha256': '...s/notes/decision.md', 'sha256': '834608781b00d5df58e3ae55a6b15c201aeebacc26ec99a1035fd75b83e16760'}], 'surprise': True})
+
+tests/test_install_provenance.py:181: AssertionError
+_ test_check_rejects_bad_manifest_before_reading_external_data[file_unknown_key] _
+
+tmp_path = PosixPath('/tmp/iter11-task06-red-01/test_check_rejects_bad_manifes1')
+installation = (PosixPath('/tmp/iter11-task06-red-01/test_check_rejects_bad_manifes1/installed'), {'version': 1, 'source_commit': '67... {'path': '.agents/notes/decision.md', 'sha256': '834608781b00d5df58e3ae55a6b15c201aeebacc26ec99a1035fd75b83e16760'}]})
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f04684a7850>
+mutation = 'file_unknown_key'
+
+    @pytest.mark.parametrize('mutation', ['unknown_key', 'file_unknown_key', 'duplicate', 'traversal', 'absolute', 'outside_whitelist', 'bad_digest', 'bad_commit', 'bad_version', 'empty_files'])
+    def test_check_rejects_bad_manifest_before_reading_external_data(tmp_path, installation, monkeypatch, mutation):
+        root, original = installation
+        manifest = copy.deepcopy(original)
+        secret = tmp_path / 'secret'
+        secret.write_bytes(b'do not read')
+        if mutation == 'unknown_key': manifest['surprise'] = True
+        elif mutation == 'file_unknown_key': manifest['files'][0]['surprise'] = True
+        elif mutation == 'duplicate': manifest['files'].append(copy.deepcopy(manifest['files'][0]))
+        elif mutation == 'traversal': manifest['files'][0]['path'] = '../secret'
+        elif mutation == 'absolute': manifest['files'][0]['path'] = str(secret)
+        elif mutation == 'outside_whitelist':
+            (root / 'private.txt').write_bytes(b'outside')
+            manifest['files'][0]['path'] = 'private.txt'
+        elif mutation == 'bad_digest': manifest['files'][0]['sha256'] = 'not-a-sha256'
+        elif mutation == 'bad_commit': manifest['source_commit'] = 'unknown'
+        elif mutation == 'bad_version': manifest['version'] = 2
+        else: manifest['files'] = []
+        original_open = Path.open
+        def guarded_open(path, *args, **kwargs):
+            assert path.resolve() != secret.resolve(), 'attempted to read outside installation'
+            assert path != root / 'private.txt', 'attempted to read outside delivery whitelist'
+            return original_open(path, *args, **kwargs)
+        monkeypatch.setattr(Path, 'open', guarded_open)
+>       assert check_cli(tmp_path, root, manifest) == 2
+E       AssertionError: assert 1 == 2
+E        +  where 1 = check_cli(PosixPath('/tmp/iter11-task06-red-01/test_check_rejects_bad_manifes1'), PosixPath('/tmp/iter11-task06-red-01/test_check_rejects_bad_manifes1/installed'), {'version': 1, 'source_commit': '6711c83bf5402f374f7af4c480838c2c669e7d9b', 'files': [{'path': 'SKILL.md', 'sha256': '..., {'path': '.agents/notes/decision.md', 'sha256': '834608781b00d5df58e3ae55a6b15c201aeebacc26ec99a1035fd75b83e16760'}]})
+
+tests/test_install_provenance.py:181: AssertionError
+___ test_check_rejects_bad_manifest_before_reading_external_data[duplicate] ____
+
+tmp_path = PosixPath('/tmp/iter11-task06-red-01/test_check_rejects_bad_manifes2')
+installation = (PosixPath('/tmp/iter11-task06-red-01/test_check_rejects_bad_manifes2/installed'), {'version': 1, 'source_commit': '67... {'path': '.agents/notes/decision.md', 'sha256': '834608781b00d5df58e3ae55a6b15c201aeebacc26ec99a1035fd75b83e16760'}]})
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f04687cc790>
+mutation = 'duplicate'
+
+    @pytest.mark.parametrize('mutation', ['unknown_key', 'file_unknown_key', 'duplicate', 'traversal', 'absolute', 'outside_whitelist', 'bad_digest', 'bad_commit', 'bad_version', 'empty_files'])
+    def test_check_rejects_bad_manifest_before_reading_external_data(tmp_path, installation, monkeypatch, mutation):
+        root, original = installation
+        manifest = copy.deepcopy(original)
+        secret = tmp_path / 'secret'
+        secret.write_bytes(b'do not read')
+        if mutation == 'unknown_key': manifest['surprise'] = True
+        elif mutation == 'file_unknown_key': manifest['files'][0]['surprise'] = True
+        elif mutation == 'duplicate': manifest['files'].append(copy.deepcopy(manifest['files'][0]))
+        elif mutation == 'traversal': manifest['files'][0]['path'] = '../secret'
+        elif mutation == 'absolute': manifest['files'][0]['path'] = str(secret)
+        elif mutation == 'outside_whitelist':
+            (root / 'private.txt').write_bytes(b'outside')
+            manifest['files'][0]['path'] = 'private.txt'
+        elif mutation == 'bad_digest': manifest['files'][0]['sha256'] = 'not-a-sha256'
+        elif mutation == 'bad_commit': manifest['source_commit'] = 'unknown'
+        elif mutation == 'bad_version': manifest['version'] = 2
+        else: manifest['files'] = []
+        original_open = Path.open
+        def guarded_open(path, *args, **kwargs):
+            assert path.resolve() != secret.resolve(), 'attempted to read outside installation'
+            assert path != root / 'private.txt', 'attempted to read outside delivery whitelist'
+            return original_open(path, *args, **kwargs)
+        monkeypatch.setattr(Path, 'open', guarded_open)
+>       assert check_cli(tmp_path, root, manifest) == 2
+E       AssertionError: assert 1 == 2
+E        +  where 1 = check_cli(PosixPath('/tmp/iter11-task06-red-01/test_check_rejects_bad_manifes2'), PosixPath('/tmp/iter11-task06-red-01/test_check_rejects_bad_manifes2/installed'), {'version': 1, 'source_commit': '6711c83bf5402f374f7af4c480838c2c669e7d9b', 'files': [{'path': 'SKILL.md', 'sha256': '...ath': '.agents/notes/decision.md', 'sha256': '834608781b00d5df58e3ae55a6b15c201aeebacc26ec99a1035fd75b83e16760'}, ...]})
+
+tests/test_install_provenance.py:181: AssertionError
+___ test_check_rejects_bad_manifest_before_reading_external_data[traversal] ____
+
+tmp_path = PosixPath('/tmp/iter11-task06-red-01/test_check_rejects_bad_manifes3')
+installation = (PosixPath('/tmp/iter11-task06-red-01/test_check_rejects_bad_manifes3/installed'), {'version': 1, 'source_commit': '67... {'path': '.agents/notes/decision.md', 'sha256': '834608781b00d5df58e3ae55a6b15c201aeebacc26ec99a1035fd75b83e16760'}]})
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f0468481290>
+mutation = 'traversal'
+
+    @pytest.mark.parametrize('mutation', ['unknown_key', 'file_unknown_key', 'duplicate', 'traversal', 'absolute', 'outside_whitelist', 'bad_digest', 'bad_commit', 'bad_version', 'empty_files'])
+    def test_check_rejects_bad_manifest_before_reading_external_data(tmp_path, installation, monkeypatch, mutation):
+        root, original = installation
+        manifest = copy.deepcopy(original)
+        secret = tmp_path / 'secret'
+        secret.write_bytes(b'do not read')
+        if mutation == 'unknown_key': manifest['surprise'] = True
+        elif mutation == 'file_unknown_key': manifest['files'][0]['surprise'] = True
+        elif mutation == 'duplicate': manifest['files'].append(copy.deepcopy(manifest['files'][0]))
+        elif mutation == 'traversal': manifest['files'][0]['path'] = '../secret'
+        elif mutation == 'absolute': manifest['files'][0]['path'] = str(secret)
+        elif mutation == 'outside_whitelist':
+            (root / 'private.txt').write_bytes(b'outside')
+            manifest['files'][0]['path'] = 'private.txt'
+        elif mutation == 'bad_digest': manifest['files'][0]['sha256'] = 'not-a-sha256'
+        elif mutation == 'bad_commit': manifest['source_commit'] = 'unknown'
+        elif mutation == 'bad_version': manifest['version'] = 2
+        else: manifest['files'] = []
+        original_open = Path.open
+        def guarded_open(path, *args, **kwargs):
+            assert path.resolve() != secret.resolve(), 'attempted to read outside installation'
+            assert path != root / 'private.txt', 'attempted to read outside delivery whitelist'
+            return original_open(path, *args, **kwargs)
+        monkeypatch.setattr(Path, 'open', guarded_open)
+>       assert check_cli(tmp_path, root, manifest) == 2
+E       AssertionError: assert 1 == 2
+E        +  where 1 = check_cli(PosixPath('/tmp/iter11-task06-red-01/test_check_rejects_bad_manifes3'), PosixPath('/tmp/iter11-task06-red-01/test_check_rejects_bad_manifes3/installed'), {'version': 1, 'source_commit': '6711c83bf5402f374f7af4c480838c2c669e7d9b', 'files': [{'path': '../secret', 'sha256': ..., {'path': '.agents/notes/decision.md', 'sha256': '834608781b00d5df58e3ae55a6b15c201aeebacc26ec99a1035fd75b83e16760'}]})
+
+tests/test_install_provenance.py:181: AssertionError
+____ test_check_rejects_bad_manifest_before_reading_external_data[absolute] ____
+
+tmp_path = PosixPath('/tmp/iter11-task06-red-01/test_check_rejects_bad_manifes4')
+installation = (PosixPath('/tmp/iter11-task06-red-01/test_check_rejects_bad_manifes4/installed'), {'version': 1, 'source_commit': '67... {'path': '.agents/notes/decision.md', 'sha256': '834608781b00d5df58e3ae55a6b15c201aeebacc26ec99a1035fd75b83e16760'}]})
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f04685ad350>
+mutation = 'absolute'
+
+    @pytest.mark.parametrize('mutation', ['unknown_key', 'file_unknown_key', 'duplicate', 'traversal', 'absolute', 'outside_whitelist', 'bad_digest', 'bad_commit', 'bad_version', 'empty_files'])
+    def test_check_rejects_bad_manifest_before_reading_external_data(tmp_path, installation, monkeypatch, mutation):
+        root, original = installation
+        manifest = copy.deepcopy(original)
+        secret = tmp_path / 'secret'
+        secret.write_bytes(b'do not read')
+        if mutation == 'unknown_key': manifest['surprise'] = True
+        elif mutation == 'file_unknown_key': manifest['files'][0]['surprise'] = True
+        elif mutation == 'duplicate': manifest['files'].append(copy.deepcopy(manifest['files'][0]))
+        elif mutation == 'traversal': manifest['files'][0]['path'] = '../secret'
+        elif mutation == 'absolute': manifest['files'][0]['path'] = str(secret)
+        elif mutation == 'outside_whitelist':
+            (root / 'private.txt').write_bytes(b'outside')
+            manifest['files'][0]['path'] = 'private.txt'
+        elif mutation == 'bad_digest': manifest['files'][0]['sha256'] = 'not-a-sha256'
+        elif mutation == 'bad_commit': manifest['source_commit'] = 'unknown'
+        elif mutation == 'bad_version': manifest['version'] = 2
+        else: manifest['files'] = []
+        original_open = Path.open
+        def guarded_open(path, *args, **kwargs):
+            assert path.resolve() != secret.resolve(), 'attempted to read outside installation'
+            assert path != root / 'private.txt', 'attempted to read outside delivery whitelist'
+            return original_open(path, *args, **kwargs)
+        monkeypatch.setattr(Path, 'open', guarded_open)
+>       assert check_cli(tmp_path, root, manifest) == 2
+E       AssertionError: assert 1 == 2
+E        +  where 1 = check_cli(PosixPath('/tmp/iter11-task06-red-01/test_check_rejects_bad_manifes4'), PosixPath('/tmp/iter11-task06-red-01/test_check_rejects_bad_manifes4/installed'), {'version': 1, 'source_commit': '6711c83bf5402f374f7af4c480838c2c669e7d9b', 'files': [{'path': '/tmp/iter11-task06-red..., {'path': '.agents/notes/decision.md', 'sha256': '834608781b00d5df58e3ae55a6b15c201aeebacc26ec99a1035fd75b83e16760'}]})
+
+tests/test_install_provenance.py:181: AssertionError
+_ test_check_rejects_bad_manifest_before_reading_external_data[outside_whitelist] _
+
+tmp_path = PosixPath('/tmp/iter11-task06-red-01/test_check_rejects_bad_manifes5')
+installation = (PosixPath('/tmp/iter11-task06-red-01/test_check_rejects_bad_manifes5/installed'), {'version': 1, 'source_commit': '67... {'path': '.agents/notes/decision.md', 'sha256': '834608781b00d5df58e3ae55a6b15c201aeebacc26ec99a1035fd75b83e16760'}]})
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f04684b8a10>
+mutation = 'outside_whitelist'
+
+    @pytest.mark.parametrize('mutation', ['unknown_key', 'file_unknown_key', 'duplicate', 'traversal', 'absolute', 'outside_whitelist', 'bad_digest', 'bad_commit', 'bad_version', 'empty_files'])
+    def test_check_rejects_bad_manifest_before_reading_external_data(tmp_path, installation, monkeypatch, mutation):
+        root, original = installation
+        manifest = copy.deepcopy(original)
+        secret = tmp_path / 'secret'
+        secret.write_bytes(b'do not read')
+        if mutation == 'unknown_key': manifest['surprise'] = True
+        elif mutation == 'file_unknown_key': manifest['files'][0]['surprise'] = True
+        elif mutation == 'duplicate': manifest['files'].append(copy.deepcopy(manifest['files'][0]))
+        elif mutation == 'traversal': manifest['files'][0]['path'] = '../secret'
+        elif mutation == 'absolute': manifest['files'][0]['path'] = str(secret)
+        elif mutation == 'outside_whitelist':
+            (root / 'private.txt').write_bytes(b'outside')
+            manifest['files'][0]['path'] = 'private.txt'
+        elif mutation == 'bad_digest': manifest['files'][0]['sha256'] = 'not-a-sha256'
+        elif mutation == 'bad_commit': manifest['source_commit'] = 'unknown'
+        elif mutation == 'bad_version': manifest['version'] = 2
+        else: manifest['files'] = []
+        original_open = Path.open
+        def guarded_open(path, *args, **kwargs):
+            assert path.resolve() != secret.resolve(), 'attempted to read outside installation'
+            assert path != root / 'private.txt', 'attempted to read outside delivery whitelist'
+            return original_open(path, *args, **kwargs)
+        monkeypatch.setattr(Path, 'open', guarded_open)
+>       assert check_cli(tmp_path, root, manifest) == 2
+E       AssertionError: assert 1 == 2
+E        +  where 1 = check_cli(PosixPath('/tmp/iter11-task06-red-01/test_check_rejects_bad_manifes5'), PosixPath('/tmp/iter11-task06-red-01/test_check_rejects_bad_manifes5/installed'), {'version': 1, 'source_commit': '6711c83bf5402f374f7af4c480838c2c669e7d9b', 'files': [{'path': 'private.txt', 'sha256'..., {'path': '.agents/notes/decision.md', 'sha256': '834608781b00d5df58e3ae55a6b15c201aeebacc26ec99a1035fd75b83e16760'}]})
+
+tests/test_install_provenance.py:181: AssertionError
+___ test_check_rejects_bad_manifest_before_reading_external_data[bad_digest] ___
+
+tmp_path = PosixPath('/tmp/iter11-task06-red-01/test_check_rejects_bad_manifes6')
+installation = (PosixPath('/tmp/iter11-task06-red-01/test_check_rejects_bad_manifes6/installed'), {'version': 1, 'source_commit': '67... {'path': '.agents/notes/decision.md', 'sha256': '834608781b00d5df58e3ae55a6b15c201aeebacc26ec99a1035fd75b83e16760'}]})
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f04684a6f50>
+mutation = 'bad_digest'
+
+    @pytest.mark.parametrize('mutation', ['unknown_key', 'file_unknown_key', 'duplicate', 'traversal', 'absolute', 'outside_whitelist', 'bad_digest', 'bad_commit', 'bad_version', 'empty_files'])
+    def test_check_rejects_bad_manifest_before_reading_external_data(tmp_path, installation, monkeypatch, mutation):
+        root, original = installation
+        manifest = copy.deepcopy(original)
+        secret = tmp_path / 'secret'
+        secret.write_bytes(b'do not read')
+        if mutation == 'unknown_key': manifest['surprise'] = True
+        elif mutation == 'file_unknown_key': manifest['files'][0]['surprise'] = True
+        elif mutation == 'duplicate': manifest['files'].append(copy.deepcopy(manifest['files'][0]))
+        elif mutation == 'traversal': manifest['files'][0]['path'] = '../secret'
+        elif mutation == 'absolute': manifest['files'][0]['path'] = str(secret)
+        elif mutation == 'outside_whitelist':
+            (root / 'private.txt').write_bytes(b'outside')
+            manifest['files'][0]['path'] = 'private.txt'
+        elif mutation == 'bad_digest': manifest['files'][0]['sha256'] = 'not-a-sha256'
+        elif mutation == 'bad_commit': manifest['source_commit'] = 'unknown'
+        elif mutation == 'bad_version': manifest['version'] = 2
+        else: manifest['files'] = []
+        original_open = Path.open
+        def guarded_open(path, *args, **kwargs):
+            assert path.resolve() != secret.resolve(), 'attempted to read outside installation'
+            assert path != root / 'private.txt', 'attempted to read outside delivery whitelist'
+            return original_open(path, *args, **kwargs)
+        monkeypatch.setattr(Path, 'open', guarded_open)
+>       assert check_cli(tmp_path, root, manifest) == 2
+E       AssertionError: assert 1 == 2
+E        +  where 1 = check_cli(PosixPath('/tmp/iter11-task06-red-01/test_check_rejects_bad_manifes6'), PosixPath('/tmp/iter11-task06-red-01/test_check_rejects_bad_manifes6/installed'), {'version': 1, 'source_commit': '6711c83bf5402f374f7af4c480838c2c669e7d9b', 'files': [{'path': 'SKILL.md', 'sha256': '..., {'path': '.agents/notes/decision.md', 'sha256': '834608781b00d5df58e3ae55a6b15c201aeebacc26ec99a1035fd75b83e16760'}]})
+
+tests/test_install_provenance.py:181: AssertionError
+___ test_check_rejects_bad_manifest_before_reading_external_data[bad_commit] ___
+
+tmp_path = PosixPath('/tmp/iter11-task06-red-01/test_check_rejects_bad_manifes7')
+installation = (PosixPath('/tmp/iter11-task06-red-01/test_check_rejects_bad_manifes7/installed'), {'version': 1, 'source_commit': '67... {'path': '.agents/notes/decision.md', 'sha256': '834608781b00d5df58e3ae55a6b15c201aeebacc26ec99a1035fd75b83e16760'}]})
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f046848f2d0>
+mutation = 'bad_commit'
+
+    @pytest.mark.parametrize('mutation', ['unknown_key', 'file_unknown_key', 'duplicate', 'traversal', 'absolute', 'outside_whitelist', 'bad_digest', 'bad_commit', 'bad_version', 'empty_files'])
+    def test_check_rejects_bad_manifest_before_reading_external_data(tmp_path, installation, monkeypatch, mutation):
+        root, original = installation
+        manifest = copy.deepcopy(original)
+        secret = tmp_path / 'secret'
+        secret.write_bytes(b'do not read')
+        if mutation == 'unknown_key': manifest['surprise'] = True
+        elif mutation == 'file_unknown_key': manifest['files'][0]['surprise'] = True
+        elif mutation == 'duplicate': manifest['files'].append(copy.deepcopy(manifest['files'][0]))
+        elif mutation == 'traversal': manifest['files'][0]['path'] = '../secret'
+        elif mutation == 'absolute': manifest['files'][0]['path'] = str(secret)
+        elif mutation == 'outside_whitelist':
+            (root / 'private.txt').write_bytes(b'outside')
+            manifest['files'][0]['path'] = 'private.txt'
+        elif mutation == 'bad_digest': manifest['files'][0]['sha256'] = 'not-a-sha256'
+        elif mutation == 'bad_commit': manifest['source_commit'] = 'unknown'
+        elif mutation == 'bad_version': manifest['version'] = 2
+        else: manifest['files'] = []
+        original_open = Path.open
+        def guarded_open(path, *args, **kwargs):
+            assert path.resolve() != secret.resolve(), 'attempted to read outside installation'
+            assert path != root / 'private.txt', 'attempted to read outside delivery whitelist'
+            return original_open(path, *args, **kwargs)
+        monkeypatch.setattr(Path, 'open', guarded_open)
+>       assert check_cli(tmp_path, root, manifest) == 2
+E       AssertionError: assert 1 == 2
+E        +  where 1 = check_cli(PosixPath('/tmp/iter11-task06-red-01/test_check_rejects_bad_manifes7'), PosixPath('/tmp/iter11-task06-red-01/test_check_rejects_bad_manifes7/installed'), {'version': 1, 'source_commit': 'unknown', 'files': [{'path': 'SKILL.md', 'sha256': '3088e5b60779a95389e4ed08d2ecee6ea..., {'path': '.agents/notes/decision.md', 'sha256': '834608781b00d5df58e3ae55a6b15c201aeebacc26ec99a1035fd75b83e16760'}]})
+
+tests/test_install_provenance.py:181: AssertionError
+__ test_check_rejects_bad_manifest_before_reading_external_data[bad_version] ___
+
+tmp_path = PosixPath('/tmp/iter11-task06-red-01/test_check_rejects_bad_manifes8')
+installation = (PosixPath('/tmp/iter11-task06-red-01/test_check_rejects_bad_manifes8/installed'), {'version': 1, 'source_commit': '67... {'path': '.agents/notes/decision.md', 'sha256': '834608781b00d5df58e3ae55a6b15c201aeebacc26ec99a1035fd75b83e16760'}]})
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f046879ad50>
+mutation = 'bad_version'
+
+    @pytest.mark.parametrize('mutation', ['unknown_key', 'file_unknown_key', 'duplicate', 'traversal', 'absolute', 'outside_whitelist', 'bad_digest', 'bad_commit', 'bad_version', 'empty_files'])
+    def test_check_rejects_bad_manifest_before_reading_external_data(tmp_path, installation, monkeypatch, mutation):
+        root, original = installation
+        manifest = copy.deepcopy(original)
+        secret = tmp_path / 'secret'
+        secret.write_bytes(b'do not read')
+        if mutation == 'unknown_key': manifest['surprise'] = True
+        elif mutation == 'file_unknown_key': manifest['files'][0]['surprise'] = True
+        elif mutation == 'duplicate': manifest['files'].append(copy.deepcopy(manifest['files'][0]))
+        elif mutation == 'traversal': manifest['files'][0]['path'] = '../secret'
+        elif mutation == 'absolute': manifest['files'][0]['path'] = str(secret)
+        elif mutation == 'outside_whitelist':
+            (root / 'private.txt').write_bytes(b'outside')
+            manifest['files'][0]['path'] = 'private.txt'
+        elif mutation == 'bad_digest': manifest['files'][0]['sha256'] = 'not-a-sha256'
+        elif mutation == 'bad_commit': manifest['source_commit'] = 'unknown'
+        elif mutation == 'bad_version': manifest['version'] = 2
+        else: manifest['files'] = []
+        original_open = Path.open
+        def guarded_open(path, *args, **kwargs):
+            assert path.resolve() != secret.resolve(), 'attempted to read outside installation'
+            assert path != root / 'private.txt', 'attempted to read outside delivery whitelist'
+            return original_open(path, *args, **kwargs)
+        monkeypatch.setattr(Path, 'open', guarded_open)
+>       assert check_cli(tmp_path, root, manifest) == 2
+E       AssertionError: assert 1 == 2
+E        +  where 1 = check_cli(PosixPath('/tmp/iter11-task06-red-01/test_check_rejects_bad_manifes8'), PosixPath('/tmp/iter11-task06-red-01/test_check_rejects_bad_manifes8/installed'), {'version': 2, 'source_commit': '6711c83bf5402f374f7af4c480838c2c669e7d9b', 'files': [{'path': 'SKILL.md', 'sha256': '..., {'path': '.agents/notes/decision.md', 'sha256': '834608781b00d5df58e3ae55a6b15c201aeebacc26ec99a1035fd75b83e16760'}]})
+
+tests/test_install_provenance.py:181: AssertionError
+__ test_check_rejects_bad_manifest_before_reading_external_data[empty_files] ___
+
+tmp_path = PosixPath('/tmp/iter11-task06-red-01/test_check_rejects_bad_manifes9')
+installation = (PosixPath('/tmp/iter11-task06-red-01/test_check_rejects_bad_manifes9/installed'), {'version': 1, 'source_commit': '67... {'path': '.agents/notes/decision.md', 'sha256': '834608781b00d5df58e3ae55a6b15c201aeebacc26ec99a1035fd75b83e16760'}]})
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f04684fda10>
+mutation = 'empty_files'
+
+    @pytest.mark.parametrize('mutation', ['unknown_key', 'file_unknown_key', 'duplicate', 'traversal', 'absolute', 'outside_whitelist', 'bad_digest', 'bad_commit', 'bad_version', 'empty_files'])
+    def test_check_rejects_bad_manifest_before_reading_external_data(tmp_path, installation, monkeypatch, mutation):
+        root, original = installation
+        manifest = copy.deepcopy(original)
+        secret = tmp_path / 'secret'
+        secret.write_bytes(b'do not read')
+        if mutation == 'unknown_key': manifest['surprise'] = True
+        elif mutation == 'file_unknown_key': manifest['files'][0]['surprise'] = True
+        elif mutation == 'duplicate': manifest['files'].append(copy.deepcopy(manifest['files'][0]))
+        elif mutation == 'traversal': manifest['files'][0]['path'] = '../secret'
+        elif mutation == 'absolute': manifest['files'][0]['path'] = str(secret)
+        elif mutation == 'outside_whitelist':
+            (root / 'private.txt').write_bytes(b'outside')
+            manifest['files'][0]['path'] = 'private.txt'
+        elif mutation == 'bad_digest': manifest['files'][0]['sha256'] = 'not-a-sha256'
+        elif mutation == 'bad_commit': manifest['source_commit'] = 'unknown'
+        elif mutation == 'bad_version': manifest['version'] = 2
+        else: manifest['files'] = []
+        original_open = Path.open
+        def guarded_open(path, *args, **kwargs):
+            assert path.resolve() != secret.resolve(), 'attempted to read outside installation'
+            assert path != root / 'private.txt', 'attempted to read outside delivery whitelist'
+            return original_open(path, *args, **kwargs)
+        monkeypatch.setattr(Path, 'open', guarded_open)
+>       assert check_cli(tmp_path, root, manifest) == 2
+E       AssertionError: assert 1 == 2
+E        +  where 1 = check_cli(PosixPath('/tmp/iter11-task06-red-01/test_check_rejects_bad_manifes9'), PosixPath('/tmp/iter11-task06-red-01/test_check_rejects_bad_manifes9/installed'), {'version': 1, 'source_commit': '6711c83bf5402f374f7af4c480838c2c669e7d9b', 'files': []})
+
+tests/test_install_provenance.py:181: AssertionError
+____________________ test_check_cli_rejects_malformed_json _____________________
+
+tmp_path = PosixPath('/tmp/iter11-task06-red-01/test_check_cli_rejects_malform0')
+installation = (PosixPath('/tmp/iter11-task06-red-01/test_check_cli_rejects_malform0/installed'), {'version': 1, 'source_commit': '67... {'path': '.agents/notes/decision.md', 'sha256': '834608781b00d5df58e3ae55a6b15c201aeebacc26ec99a1035fd75b83e16760'}]})
+
+    def test_check_cli_rejects_malformed_json(tmp_path, installation):
+        root, _ = installation
+        path = tmp_path / 'broken.json'
+        path.write_text('{', encoding='utf-8')
+>       assert install.main(['--check', '--root', str(root), '--manifest', str(path)]) == 2
+E       AssertionError: assert 1 == 2
+E        +  where 1 = main(['--check', '--root', '/tmp/iter11-task06-red-01/test_check_cli_rejects_malform0/installed', '--manifest', '/tmp/iter11-task06-red-01/test_check_cli_rejects_malform0/broken.json'])
+E        +    where main = <test_install_provenance.MissingInstallationBehavior object at 0x7f04684803d0>.main
+
+tests/test_install_provenance.py:188: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_install_provenance.py::test_build_manifest_is_exact_committed_whitelist_and_byte_hashes
+FAILED tests/test_install_provenance.py::test_make_manifest_cli_prints_json_without_writing_source
+FAILED tests/test_install_provenance.py::test_make_manifest_rejects_unverified_source[tracked_bytes]
+FAILED tests/test_install_provenance.py::test_make_manifest_rejects_unverified_source[untracked_whitelist]
+FAILED tests/test_install_provenance.py::test_make_manifest_rejects_unverified_source[old_commit]
+FAILED tests/test_install_provenance.py::test_make_manifest_rejects_unverified_source[unknown_commit]
+FAILED tests/test_install_provenance.py::test_make_manifest_rejects_unverified_source[abbreviated_commit]
+FAILED tests/test_install_provenance.py::test_clean_install_checks_without_modification
+FAILED tests/test_install_provenance.py::test_install_check_rejects_damage_without_repair[drift]
+FAILED tests/test_install_provenance.py::test_install_check_rejects_damage_without_repair[missing]
+FAILED tests/test_install_provenance.py::test_install_check_rejects_damage_without_repair[outside_link]
+FAILED tests/test_install_provenance.py::test_check_rejects_bad_manifest_before_reading_external_data[unknown_key]
+FAILED tests/test_install_provenance.py::test_check_rejects_bad_manifest_before_reading_external_data[file_unknown_key]
+FAILED tests/test_install_provenance.py::test_check_rejects_bad_manifest_before_reading_external_data[duplicate]
+FAILED tests/test_install_provenance.py::test_check_rejects_bad_manifest_before_reading_external_data[traversal]
+FAILED tests/test_install_provenance.py::test_check_rejects_bad_manifest_before_reading_external_data[absolute]
+FAILED tests/test_install_provenance.py::test_check_rejects_bad_manifest_before_reading_external_data[outside_whitelist]
+FAILED tests/test_install_provenance.py::test_check_rejects_bad_manifest_before_reading_external_data[bad_digest]
+FAILED tests/test_install_provenance.py::test_check_rejects_bad_manifest_before_reading_external_data[bad_commit]
+FAILED tests/test_install_provenance.py::test_check_rejects_bad_manifest_before_reading_external_data[bad_version]
+FAILED tests/test_install_provenance.py::test_check_rejects_bad_manifest_before_reading_external_data[empty_files]
+FAILED tests/test_install_provenance.py::test_check_cli_rejects_malformed_json
+22 failed, 11 passed in 0.85s

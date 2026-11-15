@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "argv": [
+    "/data/workspace/iteration-manager/build/iter11-maint-venv/bin/python",
+    "-B",
+    "docs/todos/11-reliable-delivery/evidence/07/compatibility.py"
+  ],
+  "cwd": "/data/workspace/iteration-manager/.worktrees/iter-11",
+  "deadline": "2026-11-15T05:21:27.927576+00:00",
+  "cleanup_reserve_seconds": 5,
+  "status": "COMPLETED",
+  "deadline_checked_at": "2026-11-15T05:15:56.516569+00:00",
+  "started_at": "2026-11-15T05:15:56.520193+00:00",
+  "ended_at": "2026-11-15T05:15:56.634455+00:00",
+  "raw_exit_code": 0,
+  "tree_terminal": true,
+  "output": "docs/todos/11-reliable-delivery/evidence/07/compatibility-command.json.output.txt",
+  "container_pid": 3471862,
+  "launcher_exit_code": 0,
+  "command": {
+    "status": "COMPLETED",
+    "raw_exit_code": 0,
+    "started_at": "2026-11-15T05:15:56.520193+00:00",
+    "tree_terminal": true,
+    "deadline_checked_at": "2026-11-15T05:15:56.516569+00:00",
+    "pid": 3471863,
+    "ended_at": "2026-11-15T05:15:56.585607+00:00"
+  },
+  "late_by_seconds": 0
+}

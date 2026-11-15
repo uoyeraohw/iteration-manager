@@ -1,0 +1,122 @@
+{
+  "kind": "controller-artifact-ownership-ruling",
+  "recorded_at": "2026-11-15T05:47:08.504251+00:00",
+  "observed_candidate": "729fe270e52c324b01147eafb01b2e31013f8a2b",
+  "files": [
+    {
+      "path": "docs/todos/11-reliable-delivery/evidence/planning/00-initial-card.md",
+      "sha256": "42ec941a109f4023cbb2b153c6820590762d229e56c5ac059e4f87c1a135415b"
+    },
+    {
+      "path": "docs/todos/11-reliable-delivery/evidence/planning/00-initial-precheck.json",
+      "sha256": "a6bf1d1b32418fd10b489032a0108b76d071c079c514cbbb1a648711a55892a3"
+    },
+    {
+      "path": "docs/todos/11-reliable-delivery/evidence/planning/cli-runtime-probe.json",
+      "sha256": "cb12f478abc24ea08e95a63dc351d2d0d391b805a75c2cd78d31fab8a55e30ec"
+    },
+    {
+      "path": "docs/todos/11-reliable-delivery/evidence/planning/cli-runtime-probe.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/todos/11-reliable-delivery/evidence/planning/cli-runtime-probe.stdout.jsonl",
+      "sha256": "db98367f52bed636d35cff09e85c92ec5638487cdb97af3b391eb090df94d961"
+    },
+    {
+      "path": "docs/todos/11-reliable-delivery/evidence/planning/collaboration-linux-probe.json",
+      "sha256": "225ea7d807565c9b67dd9d68b45c718d242d3a929d4e43bf7e261054790491db"
+    },
+    {
+      "path": "docs/todos/11-reliable-delivery/evidence/planning/linux-capabilities.json",
+      "sha256": "3d177581a265d6c19a54d43dd4c229a3461eb777cb2592ae565b28f5ac9812be"
+    },
+    {
+      "path": "docs/todos/11-reliable-delivery/evidence/planning/linux-typesafe-request.json",
+      "sha256": "97c8a332d8d4dd607674a85611e0dada630cfa1d07dbb7edd96a7655e772e576"
+    },
+    {
+      "path": "docs/todos/11-reliable-delivery/evidence/planning/linux-typesafe-response.json",
+      "sha256": "d09ff4f44b1bdcccec9febc5f9beba2da5d762fdf5ada5104b05521109bfb593"
+    },
+    {
+      "path": "docs/todos/11-reliable-delivery/evidence/planning/linux-typesafe-summary.json",
+      "sha256": "cbfdedcc5b0aa70ae506b363c3e3d7f8baacc784ad79a7808c06fd22e3507ec9"
+    },
+    {
+      "path": "docs/todos/11-reliable-delivery/evidence/planning/native-linux-probe.json",
+      "sha256": "e3ec98ef00a5b39990094b4e02b9b30412df92cb1aec319a8d1aae68b95c8455"
+    },
+    {
+      "path": "docs/todos/11-reliable-delivery/evidence/planning/platform-migration-authorization.json",
+      "sha256": "aa0ea4a46e6fc8e328faf61cc90225d50522d7e2b6b0e14dbcf6dea9675f0591"
+    },
+    {
+      "path": "docs/todos/11-reliable-delivery/evidence/startup/baseline-launch.observation.json",
+      "sha256": "2b7a46d8e1eee8f87ce4c4eafae803c22dd97ea2f9891f928e768d5135c22fbf"
+    },
+    {
+      "path": "docs/todos/11-reliable-delivery/evidence/startup/baseline-launch.stderr.txt",
+      "sha256": "346d85a7f03451862a7117c829ee3c6fed9ad3c6ed9b2eeaea75e69a410f1def"
+    },
+    {
+      "path": "docs/todos/11-reliable-delivery/evidence/startup/baseline-launch.stdout.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/todos/11-reliable-delivery/evidence/startup/execution-observations.json",
+      "sha256": "1b469c58f5a7579eb711b1cdecfebb521eb5e240792100ff1baa73ed9a59495d"
+    },
+    {
+      "path": "docs/todos/11-reliable-delivery/evidence/startup/startup-context.json",
+      "sha256": "6962b4b6730ec907e7cb1fc22e74daed0561697f8660bda3aa29dabb77ac4b3a"
+    },
+    {
+      "path": "docs/todos/11-reliable-delivery/evidence/startup/startup-inventory.coordination.json",
+      "sha256": "5d4329259178e3b04290940f130688ffb2f68557dab55fd2f2dba8e86a1a4983"
+    },
+    {
+      "path": "docs/todos/11-reliable-delivery/evidence/startup/startup-inventory.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/todos/11-reliable-delivery/evidence/startup/startup-inventory.stdout.txt",
+      "sha256": "d49dabf75c7f635ea9efcf1b0046fc6db940a92234d9bc8678b42c43cd133bed"
+    },
+    {
+      "path": "docs/todos/11-reliable-delivery/evidence/startup/startup-report.json",
+      "sha256": "8b9a737ae07e6931ed281214b4132146068e37a5b67f6c77ada3f688e57fc29d"
+    },
+    {
+      "path": "docs/todos/11-reliable-delivery/evidence/startup/verify-committed.coordination.json",
+      "sha256": "2b5c062899512aa3627cc165c3c066826e86121b2f57f9ba4d4678c5201354dc"
+    },
+    {
+      "path": "docs/todos/11-reliable-delivery/evidence/startup/verify-committed.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/todos/11-reliable-delivery/evidence/startup/verify-committed.stdout.txt",
+      "sha256": "045893fe5bf8b57b902d29e260988353640b3bac715c63a4a47a1b50fa3ee899"
+    },
+    {
+      "path": "docs/todos/11-reliable-delivery/evidence/startup/worktree-add.coordination.json",
+      "sha256": "89267c173ba5f164a7631b5b75470d4b994ab8b9a481ab3136bc12d9cc197c5c"
+    },
+    {
+      "path": "docs/todos/11-reliable-delivery/evidence/startup/worktree-add.stderr.txt",
+      "sha256": "cf1247e1fdde56322fd9d733c57fa142775eba691d4ffc10e87bc23d8b4c0d75"
+    },
+    {
+      "path": "docs/todos/11-reliable-delivery/evidence/startup/worktree-add.stdout.txt",
+      "sha256": "05a981981d26c789b24e1a2791093d2bf2abf7846fe962ff0ba6132cbabf9b59"
+    },
+    {
+      "path": "docs/todos/11-reliable-delivery/evidence/planning/native-source-index.json",
+      "sha256": "53f321eb5ba6b9014c75020485f8ba1b080fa1f9ea9df1ad005f985c4a3e7db2"
+    }
+  ],
+  "reason": "分支结构预检发现启动/迁移27份原件未纳入任何卡；来源索引是原11Consumes明确要求的Controller产物。仅补28条精确元数据归属，禁止修改既有原件，不新增产品或验收职责。",
+  "not_a_replan": "不变更目标/接口/type/checks/依赖/门禁；普通范围归属裁决，不清预算，不给任何历史结果补PASS。",
+  "remaining": "11独立审查核对来源和归属；全部卡通过后的最终branch strict仍必须实际运行。"
+}

@@ -1,0 +1,89 @@
+{
+  "kind": "independent-future-recovery-disposition",
+  "original_report": "build/iter11-review/task12-recovery/report.json",
+  "original_sha256": "8c486bbbfaec5f0ea5cbb0ad067fd8f1afbdcfb789c2bae3e54baaea47d84430",
+  "reviewer": "/root/task12_recovery_review",
+  "native_terminal": "collaboration completed/final response received 2026-11-15T07:29 UTC",
+  "report": {
+    "candidate": "6f3d785e82ea9b7680c01655bda8e98ba9970ea1",
+    "metadata_base": "ac3bd4c0d86e76fe977180bf2489408eeeee4211",
+    "reviewer": "/root/task12_recovery_review",
+    "reviewed_at": "2026-11-15T07:28:17.397356+00:00",
+    "independence": {
+      "statement": "New independent reviewer; no participation in Task12 design, implementation, testing, RCA, recovery-plan design or prior reviews. Only scoped read-only disposition review and these two ignored reports.",
+      "excluded_actors": [
+        "01a1ddcf-b505-7cc1-baac-d53be61431ab",
+        "01a1ddd7-05a1-7602-8c59-f04b24481f36",
+        "01a1dde0-b168-7760-9704-adc0fec19045",
+        "01a1dde3-9b87-73a3-9eea-deddd1dbdfd7",
+        "root controller"
+      ]
+    },
+    "scope": "Safe committed baseline for FUTURE bounded recovery and fresh source consumption only. This is not Task12 approval, a resume grant, a command receipt, or iteration acceptance.",
+    "verdicts": {
+      "spec": "APPROVED",
+      "quality": "APPROVED",
+      "overall": "APPROVED"
+    },
+    "whole_task_approved": false,
+    "findings": [],
+    "finding_dispositions": {
+      "F1": {
+        "future_recovery": "ADDRESSED",
+        "historical_status": "Original unsupported authority remains FAIL; old grant is not validated.",
+        "evidence": [
+          "docs/todos/11-reliable-delivery/evidence/12/recovery-user-authorization-source.jsonl:1-2",
+          "docs/todos/11-reliable-delivery/evidence/12/recovery-user-authorization.json:5-15",
+          "docs/todos/11-reliable-delivery/evidence/12/controller-recovery-plan.json:13-18"
+        ],
+        "reason": "Exact user authorization matches original native source lines 4660/4661. The approved plan exists at ac3bd4c, committed 06:59:34 UTC before the 07:15:11 user instruction, and its SHA256 matches ae3e2a6fd58d346b6a09bec6175e5d40780424d479a45666e4f0a20ef5ea4a2a. Authorization permits this future recovery disposition, not retrospective checkpoint approval."
+      },
+      "F3": {
+        "future_recovery": "ADDRESSED by separately authorized safe baseline disposition",
+        "historical_status": "Original release/dispatch evidence failure remains FAIL. Exact interrupted child exit and original in-call tree proof remain UNKNOWN.",
+        "evidence": [
+          "docs/todos/11-reliable-delivery/evidence/12/recovery-kernel-boot-observation.json:4-15",
+          "docs/todos/11-reliable-delivery/evidence/12/recovery-kernel-boot-observation.json:18-32",
+          "docs/todos/11-reliable-delivery/evidence/12/fix1-launch-interrupted-native-event.jsonl:1",
+          "docs/todos/11-reliable-delivery/evidence/12/fix1-retry-launch-intent.json:14"
+        ],
+        "reason": "Live btime 1794724515 and boot_id 5995c32a-9f25-468e-bfaa-2546bef271d4 match committed observation; MACHINE.md bytes/hash match and the same machine ID appears in pre-boot native evidence. Interrupted outer command ended 06:35:11.745, current boot is 06:35:15 and retry request is 06:47:58.457. Prior-kernel processes cannot persist through that boot. This establishes cessation of the old kernel execution for current recovery, without inventing a child exit, reconstructing a runner receipt, or proving what the controller knew during the earlier release."
+      },
+      "F2": {
+        "future_recovery": "UNCHANGED; previously ADDRESSED within review2 scope",
+        "historical_status": "No reopening or new approval of original grant.",
+        "evidence": [
+          "build/iter11-review/task12-review2/report.json:27-30"
+        ],
+        "reason": "The metadata-only candidate does not alter the native reconciliation sources or product implementation; existing scoped F2 disposition remains applicable."
+      }
+    },
+    "rulings": [
+      "The candidate is clean on feat/iter-11-reliable-delivery; six-file metadata diff adds evidence and ledger only. Card remains FUSED, no writer, round=1,total=1,consilium=0,replan=0; policy 5/10/1/2. All eight proposal source hashes match current committed files.",
+      "Register the independent disposition before business execution. Use the ordinary bounded replan event authorized by the committed plan: consumes replan 1 of 2, normal round reset to 0, cumulative total remains 1, consilium remains 0. Preserve all old events and failure/unknown evidence; do not manually clear counters or reuse the unsupported grant.",
+      "Future dispatch still requires actual current claim, same owner, fresh current-candidate/context READY binding through approved frozen dispatch guard, adequate bounded work window of at least five minutes for this source-consumption slice, exact UTC deadlines and running deadline monitor. This review does not substitute for those checks.",
+      "Any future native Codex CLI launch must itself be inside approved frozen Linux iter_run with unique receipt and raw output, in addition to wrapping child business/test commands. Verify native session terminal and complete command-tree terminal independently before release. Codeg source consumption needs its own native evidence.",
+      "No new time-resume grant is justified by this authorization block. A later real execution deadline requires the existing clean-checkpoint, full native terminal evidence, explicit authorization and single-use/cap conditions. Unknown new execution remains blocked.",
+      "Fresh source consumption, final Task12 candidate independent review, D registration and frozen local strict remain pending. All-card completion and final integration/full suite/independent iteration review/final branch strict remain separate gates. No deployment, push, merge, cleanup or global host change is approved."
+    ],
+    "checks_performed": [
+      "Read scoped brief and review-package.diff, actual six-file Git diff, candidate/branch/status and committed plan timestamp.",
+      "Read AGENTS.md, recovery clauses of agent_protocol.md, checkpoint_execution.md, execution_readiness.md, card state/events, supplied evidence and prior scoped review2 report.",
+      "Compared authorization excerpt byte-for-byte with exact original native lines 4660/4661, and interrupted native event with exact original line 4430; all match.",
+      "Hashed approved-plan Git blob, current MACHINE.md and eight source files against supplied bindings; all match.",
+      "Read live /proc/stat btime, boot_id, uptime; verified same-machine identifier in earlier native excerpt and current MACHINE.md.",
+      "Read preserved retry/review terminal records. Scoped /proc command-line observation found no matching fix1 or implementer codex exec process; treated only as current corroboration, never historical termination proof.",
+      "Parsed card autonomy_state confirming empty writer, blocked state, retained events and budgets. An initial diagnostic attempted dictionary slicing and failed after earlier read checks; corrected read-only parsing confirmed the state. rg unavailable; used Python and grep. No tests, suites, delegation, tracked edits or state restoration."
+    ],
+    "cannot_verify": [
+      "Exact historical interrupted child exit code, whether a child began, or the original complete tree receipt; remain UNKNOWN.",
+      "What the controller knew at the original release; later OS evidence cannot repair historical evidence consumption.",
+      "Codeg completed status is session-level and cached result is absent; it is not proof of worker commands, template consumption or command-tree exit.",
+      "Reboot proof covers processes belonging to the prior kernel only, not arbitrary later or remote execution. Subsequent fresh dispatch must check its own live preconditions and terminal evidence.",
+      "Future frozen-runner compliance and new consumer outcome are proposed controls, not yet executed evidence. No new product/test validation or whole-task acceptance is asserted."
+    ],
+    "DeferredMinors": [],
+    "blocking_conditions": []
+  },
+  "scope": "Future recovery only, not whole Task12 approval"
+}

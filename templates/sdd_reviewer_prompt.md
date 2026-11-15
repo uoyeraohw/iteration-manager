@@ -31,7 +31,7 @@ skill_root使用本迭代冻结的实际入口。获取实际返回的审查包�
 python <skill_root>/scripts/iter_run.py --deadline {command_deadline_utc} --evidence {scope_receipt_path} -- python <skill_root>/scripts/iter_sync.py --check-scope {BASE_SHA} {HEAD_SHA} {任务卡路径}
 ```
 - 非零时读诊断：区分越权、卡片配置、Git错误，输出阻断原因，不把环境错误说成越权。不得撤销任何文件。
-- 退出0只表示范围检查通过，不代替规格/行为/证据审查。当前范围为iter:scope（第5节）。Git迭代末总审使用--check-branch --strict，不拿单任务白名单审整轮；FS本地strict不能替代Git分支门禁。
+- 退出0只表示范围检查通过，不代替规格/行为/证据审查。当前范围为iter:scope（第5节）。Git迭代末总审及最终冻结 --check-branch --strict 的先后遵守共同协议，不拿单任务白名单审整轮；FS本地strict不能替代Git分支门禁。
 
 ---
 

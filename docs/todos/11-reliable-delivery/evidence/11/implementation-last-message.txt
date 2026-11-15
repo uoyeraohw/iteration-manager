@@ -1,0 +1,6 @@
+Task 11 probe and handoff are ready for independent review. The final frozen-runner experiment exited **0** with a terminal process tree; the missing-source and order-inversion controls each exited **2**, as required. Earlier probe failures and their receipts are retained.
+
+The [report](/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/11/robustness-report.json) preserves the task 03 Codeg worker **BLOCKED** observation and task 04 ordering **FAIL**. The [delivery handoff](/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/11/delivery.json) records commands, receipts, identities and remaining work; the [ledger summary](/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/11/ledger-summary.md) is ready for the Controller to consume.
+
+Independent review, implementation commit C, registration D and frozen local strict remain with the Controller. No approval is claimed.
+

@@ -1,0 +1,176 @@
+{
+  "version": 1,
+  "implementer_thread_id": "01a1ddbf-5a2d-7d41-9870-7767991dc9d7",
+  "base": "bc324d16f2adb7f36e18f1f826a16dd23343055a",
+  "candidate_observed": "bc324d16f2adb7f36e18f1f826a16dd23343055a",
+  "coordinator_commit": "fdcc4cce88635ee81573be5991de11de650659d8",
+  "commands": [
+    {
+      "name": "experiment-01",
+      "command": "/data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B /data/workspace/iteration-manager/build/frozen-runners/iter11-platform-v1/scripts/iter_run.py --deadline 2026-11-15T05:57:39.166850+00:00 --evidence docs/todos/11-reliable-delivery/evidence/11/experiment-01.json -- /data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B docs/todos/11-reliable-delivery/evidence/11/audit_native_chain.py --sources docs/todos/11-reliable-delivery/evidence/planning/native-source-index.json --output docs/todos/11-reliable-delivery/evidence/11/robustness-report.json",
+      "receipt": "docs/todos/11-reliable-delivery/evidence/11/experiment-01.json",
+      "output": "docs/todos/11-reliable-delivery/evidence/11/experiment-01.json.output.txt",
+      "exit_code": 2,
+      "status": "COMPLETED",
+      "tree_terminal": true
+    },
+    {
+      "name": "experiment-02",
+      "command": "/data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B /data/workspace/iteration-manager/build/frozen-runners/iter11-platform-v1/scripts/iter_run.py --deadline 2026-11-15T05:57:39.166850+00:00 --evidence docs/todos/11-reliable-delivery/evidence/11/experiment-02.json -- /data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B docs/todos/11-reliable-delivery/evidence/11/audit_native_chain.py --sources docs/todos/11-reliable-delivery/evidence/planning/native-source-index.json --output docs/todos/11-reliable-delivery/evidence/11/robustness-report.json",
+      "receipt": "docs/todos/11-reliable-delivery/evidence/11/experiment-02.json",
+      "output": "docs/todos/11-reliable-delivery/evidence/11/experiment-02.json.output.txt",
+      "exit_code": 2,
+      "status": "COMPLETED",
+      "tree_terminal": true
+    },
+    {
+      "name": "experiment-03",
+      "command": "/data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B /data/workspace/iteration-manager/build/frozen-runners/iter11-platform-v1/scripts/iter_run.py --deadline 2026-11-15T05:57:39.166850+00:00 --evidence docs/todos/11-reliable-delivery/evidence/11/experiment-03.json -- /data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B docs/todos/11-reliable-delivery/evidence/11/audit_native_chain.py --sources docs/todos/11-reliable-delivery/evidence/planning/native-source-index.json --output docs/todos/11-reliable-delivery/evidence/11/robustness-report.json",
+      "receipt": "docs/todos/11-reliable-delivery/evidence/11/experiment-03.json",
+      "output": "docs/todos/11-reliable-delivery/evidence/11/experiment-03.json.output.txt",
+      "exit_code": 0,
+      "status": "COMPLETED",
+      "tree_terminal": true
+    },
+    {
+      "name": "experiment-04",
+      "command": "/data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B /data/workspace/iteration-manager/build/frozen-runners/iter11-platform-v1/scripts/iter_run.py --deadline 2026-11-15T05:57:39.166850+00:00 --evidence docs/todos/11-reliable-delivery/evidence/11/experiment-04.json -- /data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B docs/todos/11-reliable-delivery/evidence/11/audit_native_chain.py --sources docs/todos/11-reliable-delivery/evidence/planning/native-source-index.json --output docs/todos/11-reliable-delivery/evidence/11/robustness-report.json",
+      "receipt": "docs/todos/11-reliable-delivery/evidence/11/experiment-04.json",
+      "output": "docs/todos/11-reliable-delivery/evidence/11/experiment-04.json.output.txt",
+      "exit_code": 2,
+      "status": "COMPLETED",
+      "tree_terminal": true
+    },
+    {
+      "name": "experiment-05",
+      "command": "/data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B /data/workspace/iteration-manager/build/frozen-runners/iter11-platform-v1/scripts/iter_run.py --deadline 2026-11-15T05:57:39.166850+00:00 --evidence docs/todos/11-reliable-delivery/evidence/11/experiment-05.json -- /data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B docs/todos/11-reliable-delivery/evidence/11/audit_native_chain.py --sources docs/todos/11-reliable-delivery/evidence/planning/native-source-index.json --output docs/todos/11-reliable-delivery/evidence/11/robustness-report.json",
+      "receipt": "docs/todos/11-reliable-delivery/evidence/11/experiment-05.json",
+      "output": "docs/todos/11-reliable-delivery/evidence/11/experiment-05.json.output.txt",
+      "exit_code": 0,
+      "status": "COMPLETED",
+      "tree_terminal": true
+    },
+    {
+      "name": "experiment-06",
+      "command": "/data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B /data/workspace/iteration-manager/build/frozen-runners/iter11-platform-v1/scripts/iter_run.py --deadline 2026-11-15T05:57:39.166850+00:00 --evidence docs/todos/11-reliable-delivery/evidence/11/experiment-06.json -- /data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B docs/todos/11-reliable-delivery/evidence/11/audit_native_chain.py --sources docs/todos/11-reliable-delivery/evidence/planning/native-source-index.json --output docs/todos/11-reliable-delivery/evidence/11/robustness-report.json",
+      "receipt": "docs/todos/11-reliable-delivery/evidence/11/experiment-06.json",
+      "output": "docs/todos/11-reliable-delivery/evidence/11/experiment-06.json.output.txt",
+      "exit_code": 0,
+      "status": "COMPLETED",
+      "tree_terminal": true
+    },
+    {
+      "name": "missing-control",
+      "command": "/data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B /data/workspace/iteration-manager/build/frozen-runners/iter11-platform-v1/scripts/iter_run.py --deadline 2026-11-15T05:57:39.166850+00:00 --evidence docs/todos/11-reliable-delivery/evidence/11/missing-control.json -- /data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B docs/todos/11-reliable-delivery/evidence/11/audit_native_chain.py --sources docs/todos/11-reliable-delivery/evidence/11/synthetic-missing/sources-copy.json --output docs/todos/11-reliable-delivery/evidence/11/synthetic-missing/report.json",
+      "receipt": "docs/todos/11-reliable-delivery/evidence/11/missing-control.json",
+      "output": "docs/todos/11-reliable-delivery/evidence/11/missing-control.json.output.txt",
+      "exit_code": 2,
+      "status": "COMPLETED",
+      "tree_terminal": true
+    },
+    {
+      "name": "inversion-control",
+      "command": "/data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B /data/workspace/iteration-manager/build/frozen-runners/iter11-platform-v1/scripts/iter_run.py --deadline 2026-11-15T05:57:39.166850+00:00 --evidence docs/todos/11-reliable-delivery/evidence/11/inversion-control.json -- /data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B docs/todos/11-reliable-delivery/evidence/11/audit_native_chain.py --sources docs/todos/11-reliable-delivery/evidence/11/synthetic-inversion/sources-copy.json --output docs/todos/11-reliable-delivery/evidence/11/synthetic-inversion/report.json",
+      "receipt": "docs/todos/11-reliable-delivery/evidence/11/inversion-control.json",
+      "output": "docs/todos/11-reliable-delivery/evidence/11/inversion-control.json.output.txt",
+      "exit_code": 2,
+      "status": "COMPLETED",
+      "tree_terminal": true
+    },
+    {
+      "name": "missing-control-02",
+      "command": "/data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B /data/workspace/iteration-manager/build/frozen-runners/iter11-platform-v1/scripts/iter_run.py --deadline 2026-11-15T05:57:39.166850+00:00 --evidence docs/todos/11-reliable-delivery/evidence/11/missing-control-02.json -- /data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B docs/todos/11-reliable-delivery/evidence/11/audit_native_chain.py --sources docs/todos/11-reliable-delivery/evidence/11/synthetic-missing/sources-copy.json --output docs/todos/11-reliable-delivery/evidence/11/synthetic-missing-v2/report.json",
+      "receipt": "docs/todos/11-reliable-delivery/evidence/11/missing-control-02.json",
+      "output": "docs/todos/11-reliable-delivery/evidence/11/missing-control-02.json.output.txt",
+      "exit_code": 2,
+      "status": "COMPLETED",
+      "tree_terminal": true
+    },
+    {
+      "name": "inversion-control-02",
+      "command": "/data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B /data/workspace/iteration-manager/build/frozen-runners/iter11-platform-v1/scripts/iter_run.py --deadline 2026-11-15T05:57:39.166850+00:00 --evidence docs/todos/11-reliable-delivery/evidence/11/inversion-control-02.json -- /data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B docs/todos/11-reliable-delivery/evidence/11/audit_native_chain.py --sources docs/todos/11-reliable-delivery/evidence/11/synthetic-inversion/sources-copy.json --output docs/todos/11-reliable-delivery/evidence/11/synthetic-inversion-v2/report.json",
+      "receipt": "docs/todos/11-reliable-delivery/evidence/11/inversion-control-02.json",
+      "output": "docs/todos/11-reliable-delivery/evidence/11/inversion-control-02.json.output.txt",
+      "exit_code": 2,
+      "status": "COMPLETED",
+      "tree_terminal": true
+    },
+    {
+      "name": "missing-control-03",
+      "command": "/data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B /data/workspace/iteration-manager/build/frozen-runners/iter11-platform-v1/scripts/iter_run.py --deadline 2026-11-15T05:57:39.166850+00:00 --evidence docs/todos/11-reliable-delivery/evidence/11/missing-control-03.json -- /data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B docs/todos/11-reliable-delivery/evidence/11/audit_native_chain.py --sources docs/todos/11-reliable-delivery/evidence/11/synthetic-missing/sources-copy.json --output docs/todos/11-reliable-delivery/evidence/11/synthetic-missing-v3/report.json",
+      "receipt": "docs/todos/11-reliable-delivery/evidence/11/missing-control-03.json",
+      "output": "docs/todos/11-reliable-delivery/evidence/11/missing-control-03.json.output.txt",
+      "exit_code": 2,
+      "status": "COMPLETED",
+      "tree_terminal": true
+    },
+    {
+      "name": "inversion-control-03",
+      "command": "/data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B /data/workspace/iteration-manager/build/frozen-runners/iter11-platform-v1/scripts/iter_run.py --deadline 2026-11-15T05:57:39.166850+00:00 --evidence docs/todos/11-reliable-delivery/evidence/11/inversion-control-03.json -- /data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B docs/todos/11-reliable-delivery/evidence/11/audit_native_chain.py --sources docs/todos/11-reliable-delivery/evidence/11/synthetic-inversion/sources-copy.json --output docs/todos/11-reliable-delivery/evidence/11/synthetic-inversion-v3/report.json",
+      "receipt": "docs/todos/11-reliable-delivery/evidence/11/inversion-control-03.json",
+      "output": "docs/todos/11-reliable-delivery/evidence/11/inversion-control-03.json.output.txt",
+      "exit_code": 2,
+      "status": "COMPLETED",
+      "tree_terminal": true
+    },
+    {
+      "name": "experiment-07",
+      "command": "/data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B /data/workspace/iteration-manager/build/frozen-runners/iter11-platform-v1/scripts/iter_run.py --deadline 2026-11-15T05:57:39.166850+00:00 --evidence docs/todos/11-reliable-delivery/evidence/11/experiment-07.json -- /data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B docs/todos/11-reliable-delivery/evidence/11/audit_native_chain.py --sources docs/todos/11-reliable-delivery/evidence/planning/native-source-index.json --output docs/todos/11-reliable-delivery/evidence/11/robustness-report.json",
+      "receipt": "docs/todos/11-reliable-delivery/evidence/11/experiment-07.json",
+      "output": "docs/todos/11-reliable-delivery/evidence/11/experiment-07.json.output.txt",
+      "exit_code": 0,
+      "status": "COMPLETED",
+      "tree_terminal": true
+    },
+    {
+      "name": "missing-control-04",
+      "command": "/data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B /data/workspace/iteration-manager/build/frozen-runners/iter11-platform-v1/scripts/iter_run.py --deadline 2026-11-15T05:57:39.166850+00:00 --evidence docs/todos/11-reliable-delivery/evidence/11/missing-control-04.json -- /data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B docs/todos/11-reliable-delivery/evidence/11/audit_native_chain.py --sources docs/todos/11-reliable-delivery/evidence/11/synthetic-missing/sources-copy.json --output docs/todos/11-reliable-delivery/evidence/11/synthetic-missing-v4/report.json",
+      "receipt": "docs/todos/11-reliable-delivery/evidence/11/missing-control-04.json",
+      "output": "docs/todos/11-reliable-delivery/evidence/11/missing-control-04.json.output.txt",
+      "exit_code": 2,
+      "status": "COMPLETED",
+      "tree_terminal": true
+    },
+    {
+      "name": "inversion-control-04",
+      "command": "/data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B /data/workspace/iteration-manager/build/frozen-runners/iter11-platform-v1/scripts/iter_run.py --deadline 2026-11-15T05:57:39.166850+00:00 --evidence docs/todos/11-reliable-delivery/evidence/11/inversion-control-04.json -- /data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B docs/todos/11-reliable-delivery/evidence/11/audit_native_chain.py --sources docs/todos/11-reliable-delivery/evidence/11/synthetic-inversion/sources-copy.json --output docs/todos/11-reliable-delivery/evidence/11/synthetic-inversion-v4/report.json",
+      "receipt": "docs/todos/11-reliable-delivery/evidence/11/inversion-control-04.json",
+      "output": "docs/todos/11-reliable-delivery/evidence/11/inversion-control-04.json.output.txt",
+      "exit_code": 2,
+      "status": "COMPLETED",
+      "tree_terminal": true
+    }
+  ],
+  "decision": "Selected 06 real Codex CLI source probe, normal RED checkpoint and continuation only. It checks structural and raw bindings; independent nonparticipant review is required.",
+  "tradeoffs": [
+    "Report is not state, approval or scheduling. Millisecond ties use original event ordinal.",
+    "Original runtime identity beyond observed versions remains unknown; no test suite rerun or 13-card gate in this task."
+  ],
+  "source_mapping": {
+    "index": "docs/todos/11-reliable-delivery/evidence/planning/native-source-index.json",
+    "selection": "docs/todos/11-reliable-delivery/evidence/06/native-chain-selection.json",
+    "p": "82b66d9f3c8e7a62df8e8be18d8cedac7a5877a6",
+    "c1": "6ee7605de94fde0dfb4454f512b9913fd7aa01ae",
+    "c2": "7e5476c8879edbd45227b82f8189fdf74aab81a9",
+    "d1": "f4610a43aaa895fef9e8a50569f779b0681338f6",
+    "d2": "3158e75869d5c4346c51256de878f14ea190f305",
+    "index_observed_head": "729fe270e52c324b01147eafb01b2e31013f8a2b",
+    "ownership": "docs/todos/11-reliable-delivery/evidence/11/controller-artifact-ownership.json"
+  },
+  "environment": "Linux, maintenance Python 3.11.17, pytest 9.2, MCP 1.30; approved frozen runner platform snapshot and fixed fdcc4cc coordinator. No current Windows inference.",
+  "limitations": [
+    "Task03 Codeg worker bwrap BLOCKED; task04 actual ordering FAIL retained.",
+    "Install/deploy/current Windows/FS external lifecycle unknown.",
+    "Historical review independence and probe semantic correctness require nonparticipant inspection.",
+    "FROZEN-KNOWN-01/02 remain; frozen coordinator does not self-approve."
+  ],
+  "remaining": [
+    "Controller creates implementation C, obtains independent nonparticipant review, registers D and executes frozen local strict.",
+    "Controller waits for all 13 cards including 12 before integration/full suite/total review/branch strict."
+  ],
+  "checks_proposal": "docs/todos/11-reliable-delivery/evidence/11/checks-proposal.json",
+  "ledger_summary": "docs/todos/11-reliable-delivery/evidence/11/ledger-summary.md",
+  "source_manifest": "docs/todos/11-reliable-delivery/evidence/11/source-manifest.json",
+  "approval": "none",
+  "CODEX_THREAD_ID": "01a1ddbf-5a2d-7d41-9870-7767991dc9d7"
+}

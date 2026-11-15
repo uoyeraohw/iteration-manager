@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "task_id": "01",
+  "type": "Strict-TDD",
+  "task_path": "docs/todos/11-reliable-delivery/01-delivery-mode-consistency.md",
+  "base_sha": "1e99816564fa89d0b43db7a96fbc7c0dac1b6dd9",
+  "head_sha": "a178fbc65c6bc2cd9fed19e691571080e73e1e60",
+  "contract_sha": "1e99816564fa89d0b43db7a96fbc7c0dac1b6dd9",
+  "implementer": "01a1dd56-105c-79d0-9b73-7a708e7d9369",
+  "reviewer": "01a1dd5a-d17c-78d0-a389-42bd8a3ed379",
+  "verdict": "APPROVED",
+  "review_report": "docs/todos/11-reliable-delivery/evidence/01/review-report.json",
+  "checks": [
+    {
+      "name": "red",
+      "kind": "command",
+      "command": "/data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B -m pytest -p no:cacheprovider tests/test_delivery_mode_consistency.py tests/test_query_contract.py tests/test_execution_readiness.py tests/test_completion_gates.py tests/test_filesystem_receipts.py -q --basetemp /tmp/iter11-task01-red-0354",
+      "cwd": ".",
+      "exit_code": 1,
+      "summary": "合法冻结UNKNOWN/空模式误PASS等7项真实断言RED，98控制通过；非规格漂移",
+      "output": "docs/todos/11-reliable-delivery/evidence/01/task01-red-0354.json.output.txt",
+      "failure_kind": "assertion"
+    },
+    {
+      "name": "green",
+      "kind": "command",
+      "command": "/data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B -m pytest -p no:cacheprovider tests/test_delivery_mode_consistency.py tests/test_query_contract.py tests/test_execution_readiness.py tests/test_completion_gates.py tests/test_filesystem_receipts.py -q --basetemp /tmp/iter11-task01-fix1-final-0401",
+      "cwd": ".",
+      "exit_code": 0,
+      "summary": "共享模式与坏profile交接修复后目标130通过",
+      "output": "docs/todos/11-reliable-delivery/evidence/01/fix1-final-0401.json.output.txt"
+    },
+    {
+      "name": "regression",
+      "kind": "command",
+      "command": "/data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B -m pytest -p no:cacheprovider tests/test_delivery_mode_consistency.py tests/test_query_contract.py tests/test_execution_readiness.py tests/test_completion_gates.py tests/test_filesystem_receipts.py -q --basetemp /tmp/iter11-task01-fix1-final-0401",
+      "cwd": ".",
+      "exit_code": 0,
+      "summary": "相同最终五文件执行覆盖查询、就绪、Git完成及FS收据回归130通过；按协议复用同次有效证据",
+      "output": "docs/todos/11-reliable-delivery/evidence/01/fix1-final-0401.json.output.txt"
+    }
+  ]
+}

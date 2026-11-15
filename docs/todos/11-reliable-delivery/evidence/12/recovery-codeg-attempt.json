@@ -1,0 +1,50 @@
+{
+  "phase": "evidence-inspection",
+  "candidate": "1454a69b8e22e157df93f9e706502ba90833fabc",
+  "inputs": [
+    "docs/todos/11-reliable-delivery/12-workflow-sequence.md",
+    "docs/todos/11-reliable-delivery/README.md",
+    "AGENTS.md",
+    "references/task_card_schema.md",
+    "references/agent_protocol.md",
+    "references/execution_readiness.md",
+    "references/worktree_git_contract.md",
+    "templates/assistants/iteration_planner.md",
+    "templates/assistants/iteration_controller.md",
+    "templates/assistants/task_tech_lead.md",
+    "templates/sdd_implementer_prompt.md",
+    "templates/sdd_reviewer_prompt.md",
+    "tests/test_prompt_sources.py",
+    "docs/todos/11-reliable-delivery/evidence/12/consumer-brief-input.md",
+    "docs/todos/11-reliable-delivery/evidence/12/consumer-input-manifest.json",
+    "docs/todos/11-reliable-delivery/evidence/12/recovery-user-authorization.json",
+    "docs/todos/11-reliable-delivery/evidence/12/recovery-independent-disposition.json"
+  ],
+  "capabilities": [
+    "native-codex-cli-implementer",
+    "approved-frozen-linux-runner",
+    "Python3.11.17-pytest9.2-mcp1.30",
+    "independent-native-reviewer",
+    "actual-Codeg-readonly-consumption-api",
+    "fresh-consumer-420second-window"
+  ],
+  "version": 1,
+  "checkpoint": "Explicit future authority + independently approved safe rebaseline + fresh Codeg source consumption complete",
+  "remaining_work": [
+    "Final affected C independent review",
+    "D/local strict",
+    "Iteration-wide gates"
+  ],
+  "executor_id": "3c184acd-30e5-4285-8bba-ccf0fb13c788",
+  "terminal_evidence": "docs/todos/11-reliable-delivery/evidence/12/recovery-codeg-terminal.json",
+  "progress": [
+    {
+      "kind": "implementation",
+      "summary": "Fresh Codeg consumer verified eight current source hashes and A/B/C; six native read-only commands completed exit0",
+      "evidence": "docs/todos/11-reliable-delivery/evidence/12/recovery-codeg-result.md"
+    }
+  ],
+  "commands": [],
+  "started_at": null,
+  "ended_at": null
+}

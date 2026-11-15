@@ -1,0 +1,21 @@
+{
+  "kind": "controller-command-observation",
+  "argv": [
+    "python3",
+    "-B",
+    "/data/workspace/iteration-manager/build/frozen-tools/fdcc4cce8863/scripts/iter_sync.py",
+    "--dispatch-check",
+    "docs/todos/11-reliable-delivery/03-native-dispatch-guard.md",
+    "--context",
+    "docs/todos/11-reliable-delivery/evidence/03/implementation-context-v2.json",
+    "--phase",
+    "implementation",
+    "--owner",
+    "iter11-controller-linux-20261115"
+  ],
+  "started_at": "2026-11-15T04:19:53.976686+00:00",
+  "ended_at": "2026-11-15T04:19:54.107889+00:00",
+  "exit_code": 0,
+  "stdout": "{\n  \"read_only\": true,\n  \"readiness\": \"READY\",\n  \"task_path\": \"/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/03-native-dispatch-guard.md\",\n  \"phase\": \"implementation\",\n  \"acceptance_verdict\": \"UNKNOWN\",\n  \"findings\": [],\n  \"observations\": {\n    \"authority\": {\n      \"status\": \"READY\",\n      \"summary\": \"用户实施/精准Git/Worktree授权和Linux适配；仅本卡scope；不部署推送合流清理\",\n      \"evidence\": \"docs/todos/11-reliable-delivery/evidence/planning/platform-migration-authorization.json\"\n    },\n    \"execution\": {\n      \"status\": \"READY\",\n      \"summary\": \"原生Codex实现者可用；Codeg MCP schema存在但原生子shell曾bwrap失败，代码实现不依赖该shell，实际消费单独核对\",\n      \"evidence\": \"docs/todos/11-reliable-delivery/evidence/planning/native-linux-probe.json\"\n    },\n    \"serial-order\": {\n      \"status\": \"READY\",\n      \"summary\": \"00/01/02均独审C/D及冻结strict通过3/13；仅启动03\",\n      \"evidence\": \"build/iter11-review/task02-review1/local-strict.json\"\n    },\n    \"verification\": {\n      \"status\": \"READY\",\n      \"summary\": \"批准Linux冻结runner和Node/Python测试能力已实测\",\n      \"evidence\": \"build/iter11-review/task02-review1/local-strict.json\"\n    }\n  },\n  \"task_id\": \"03\",\n  \"delivery_mode\": \"git\",\n  \"candidate\": \"09e916a94aaf90a8281f4ed568beed4a4a4a2816\",\n  \"execution\": {\n    \"attempt_count\": 0,\n    \"no_progress_streak\": 0,\n    \"last_attempt\": null,\n    \"checkpoint\": null,\n    \"remaining_work\": []\n  },\n  \"conditions\": {\n    \"inputs\": [\n      \"AGENTS.md\",\n      \"docs/todos/11-reliable-delivery/03-native-dispatch-guard.md\",\n      \"docs/todos/11-reliable-delivery/README.md\",\n      \"references/execution_readiness.md\",\n      \"scripts/deadline_watch.js\",\n      \"tests/test_deadline_watch.py\"\n    ],\n    \"capabilities\": [\n      \"Python3.11.17-pytest9.2-mcp1.30\",\n      \"approved-frozen-linux-runner\",\n      \"independent-native-reviewer\",\n      \"native-codex-cli-implementer\"\n    ],\n    \"scope\": [\n      \".agents/notes/planned/iter11/03-native-dispatch-guard.md\",\n      \"docs/todos/11-reliable-delivery/evidence/03/\",\n      \"references/native_dispatch_adapter.md\",\n      \"scripts/dispatch_guard.js\",\n      \"tests/test_dispatch_guard.py\"\n    ]\n  },\n  \"checkpoint\": \"可控Promise核心断言RED及薄守卫最小GREEN；真实宿主链由主控接续\",\n  \"remaining_work\": [\n    \"Codeg真实适配消费\",\n    \"C独审/D/strict\",\n    \"RED/GREEN\"\n  ]\n}\n",
+  "stderr": ""
+}

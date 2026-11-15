@@ -1,0 +1,19 @@
+{
+  "sha256": {
+    "references/agent_protocol.md": "2b741176951d6bbe3a5ec125031bba8b5f2030e608b49e40ac0e50ee64a44163",
+    "references/execution_readiness.md": "0be61f90079d5ba62842daece48f46881bd533fcdc48ce7cc015545335acaf05",
+    "references/worktree_git_contract.md": "2f9199de428593c5dbd0999c17582f0a2a47b0d2474a731550d4e80736ef0373",
+    "templates/assistants/iteration_planner.md": "2f8e0a31828db9635fb83aed5a333ee19178b6b3ad798c1b9b4b0f50e0eb6bc4",
+    "templates/assistants/iteration_controller.md": "e1f30e7661e0b2058375f48abfa1e749f176d0ab58d3df1f23362cd1b9be3747",
+    "templates/assistants/task_tech_lead.md": "2f78dd7445e06f77c61f63ed44cdb4149a9987743b3b94ed3debf56d877f0b1b",
+    "templates/sdd_implementer_prompt.md": "15cd0b50b9faa12fbd062d0ada6af73338ba8cc16861b54297c87d61aab8498e",
+    "templates/sdd_reviewer_prompt.md": "22067ebc67949289388d475bad26715049d83b20649be51601f4dfa4a0bc3fb5"
+  },
+  "scenarios": [
+    "A",
+    "B",
+    "C"
+  ],
+  "authority": "references/agent_protocol.md",
+  "status": "fresh read-only consumption pending"
+}

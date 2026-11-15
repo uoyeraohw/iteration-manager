@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "source": "actual collaboration agent /root/linux_access_probe final response",
+  "agent": "/root/linux_access_probe",
+  "candidate": "03977903c3852a669db978f97a6f0e042a321dc3",
+  "cwd": "/data/workspace/iteration-manager/.worktrees/iter-11",
+  "platform": "Linux 6.18.54-instabox x86_64 glibc2.41",
+  "python3": "3.13.5",
+  "branch": "feat/iter-11-reliable-delivery",
+  "contracts_read": [
+    "AGENTS.md",
+    "SKILL.md",
+    "references/agent_protocol.md",
+    "references/checkpoint_execution.md",
+    "scripts/iter_run.py"
+  ],
+  "runner_sha256": "fddfb131d8e7b02964f0ad97bc790f0f165d8a1d447ae8a2e73d1839a21c787b",
+  "initial_python_invocation": "python not found, exit127; python3 works",
+  "file_changes": false,
+  "tests_run": false,
+  "claim": false,
+  "interpretation": "Permitted collaboration runtime can read required contracts; native Codeg runtime failure remains separately recorded, not a product PASS."
+}

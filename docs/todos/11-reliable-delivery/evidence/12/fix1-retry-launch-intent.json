@@ -1,0 +1,18 @@
+{
+  "request": {
+    "request_id": "fix1-retry-1794725278457",
+    "project_root": "/data/workspace/iteration-manager/.worktrees/iter-11",
+    "tool_entry": "/data/workspace/iteration-manager/build/frozen-tools/fdcc4cce8863/scripts/iter_sync.py",
+    "task_path": "/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/12-workflow-sequence.md",
+    "task_id": "12",
+    "owner": "iter11-controller-linux-20261115",
+    "phase": "implementation",
+    "candidate": "305f1d49d499ae3a5112358d57c2fefa48349261",
+    "context": "docs/todos/11-reliable-delivery/evidence/12/fix1-retry-context.json"
+  },
+  "cmd": "timeout --signal=TERM --kill-after=5s 420s codex exec -C '/data/workspace/iteration-manager/.worktrees/iter-11' -s danger-full-access -c 'approval_policy=\"never\"' resume '01a1ddcf-b505-7cc1-baac-d53be61431ab' --json -o '/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/12/fix1-retry-last-message.txt' - < '/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/12/fix1-retry-brief.md' > '/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/12/fix1-retry-native.jsonl' 2> '/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/12/fix1-retry-native.stderr.txt'",
+  "requestedAt": 1794725278457,
+  "leaf": 1794725698457,
+  "guard_source": "/data/workspace/iteration-manager/build/frozen-adapters/iter11-dispatch-v1/dispatch_guard.js",
+  "deadline_source": "/data/workspace/iteration-manager/build/frozen-adapters/iter11-dispatch-v1/deadline_watch.js"
+}

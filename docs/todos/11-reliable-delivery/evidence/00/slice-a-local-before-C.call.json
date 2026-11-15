@@ -1,0 +1,14 @@
+{
+  "kind": "coordination-command",
+  "argv": [
+    "python3",
+    "-B",
+    "/data/workspace/iteration-manager/build/frozen-tools/fdcc4cce8863/scripts/iter_sync.py",
+    "--local",
+    "docs/todos/11-reliable-delivery"
+  ],
+  "cwd": "/data/workspace/iteration-manager/.worktrees/iter-11",
+  "started_at": "2026-11-15T03:09:37.686705+00:00",
+  "ended_at": "2026-11-15T03:09:37.791211+00:00",
+  "exit_code": 0
+}

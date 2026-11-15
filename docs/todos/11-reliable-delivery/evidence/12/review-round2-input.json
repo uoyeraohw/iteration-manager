@@ -1,0 +1,90 @@
+{
+  "candidate": "116092c569c4750ca42c4d5a7446f61a9966ab64",
+  "base": "3de06e0e3715b9f65d7caaf3bdba872a33df0f8c",
+  "fix_base": "305f1d49d499ae3a5112358d57c2fefa48349261",
+  "reviewer_uuid": "01a1dde3-9b87-73a3-9eea-deddd1dbdfd7",
+  "independence": {
+    "statement": "Same independent reviewer as round 1; no Task12 design, implementation, testing, RCA or delegation participation.",
+    "excluded_actors": [
+      "01a1ddcf-b505-7cc1-baac-d53be61431ab (implementer and fix author)",
+      "01a1ddd7-05a1-7602-8c59-f04b24481f36 (Codeg consumer; task 083b45e8-276c-4509-8720-0c2c9c8ff6a4)",
+      "01a1dde0-b168-7760-9704-adc0fec19045 (native CLI consumer)",
+      "all other task consumers",
+      "root controller"
+    ]
+  },
+  "verdicts": {
+    "scope": "APPROVED",
+    "spec": "BLOCKED",
+    "quality": "NEEDS_FIX",
+    "overall": "BLOCKED"
+  },
+  "finding_dispositions": {
+    "F1": {
+      "disposition": "NOT ADDRESSED",
+      "reason": "Explicit recovery authority and compliant disposition remain absent; the draft does not establish authorization."
+    },
+    "F2": {
+      "disposition": "ADDRESSED",
+      "reason": "The scoped retrospective inventory and correction accurately reconcile the ten native events and six call/output pairs against original bytes. This closes the inventory discrepancy only; the new inventory is not retroactively bound to the historic grant and cannot establish F1 or prove command-tree terminal."
+    }
+  },
+  "findings": [
+    {
+      "severity": "BLOCKER",
+      "id": "F1",
+      "file": "docs/todos/11-reliable-delivery/evidence/12/fix1-recovery-disposition-draft.json",
+      "line": 5,
+      "scenario": "No original user instruction explicitly authorizing the historical checkpoint resume or approved recovery disposition has been supplied. General implementation permission and this scoped review are not that authority. The preserved old grant and later completed consumer do not prove it.",
+      "remediation": "Obtain the actual explicit authority or an authorized recovery disposition, preserve the historical record, and reassess and obtain compliant evidence under the recovery contract."
+    },
+    {
+      "severity": "BLOCKER",
+      "id": "F3",
+      "file": "docs/todos/11-reliable-delivery/evidence/12/fix1-launch-interruption.json",
+      "line": 14,
+      "scenario": "The interrupted fix launcher event establishes that the outer command failed with 143, while the record explicitly leaves the child executor UNKNOWN and disclaims a process-tree receipt. Zero child JSONL and a later process snapshot do not establish that a child never started or that the full tree stopped. Nevertheless the controller recorded failed and released the writer in fix1-launch-interruption-release.call.json:16, then started another resume of the same implementer in fix1-retry-launch-intent.json:13. The contracts references/agent_protocol.md:33,124,132 and references/execution_readiness.md:84 require unknown execution state to remain blocked until terminal is established; a READY check does not prove the old child was terminal. The retry and reconciliation were real, but their safe dispatch precondition remains unproven.",
+      "remediation": "Preserve the exit143 and retry history. Obtain native evidence that the interrupted execution and its command tree had terminated, or retain UNKNOWN/BLOCKED and obtain an authorized recovery disposition. Reassess the affected retry, candidate and evidence without inferring a historical child result from the empty file or process snapshot."
+    }
+  ],
+  "evidence_applicability_and_chronology": [
+    "HEAD is C on feat/iter-11-reliable-delivery, descended from fix base. The working card has a post-C controller review claim and updated timestamp; review applies to committed C, not the dirty card. Committed task scope, acceptance and iteration goal equal BASE; no product, test, script or template changes occurred in fix diff. Git delivery is the default with no explicit card delivery mode or iteration filesystem profile.",
+    "Task type is Spike-Discovery: experiment, decision and interfaces, not Strict-TDD RED. experiment-04 remains the existing frozen-runner 10-passed observation and was not repeated. The fix1 checks proposal acknowledges incomplete interfaces while F1 remains blocked.",
+    "The original Codeg v1 missing-cwd refusal, v2 READY then native dispatch, 120-second interruption/cancellation, FUSED and historic grant/resume remain as recorded. Six call/output pairs and ten native CommandExecution completed/exit0 events were independently matched to exact indexed original lines. The first bwrap call did not start the target; process starts and separate runner tree termination for the ten reads are not established. Historical decision, terminal, excerpt and grant-copy are byte-identical to fix base.",
+    "The fix author ran fix1-reconcile.py via the frozen runner on 06:48:47 UTC; its receipt is COMPLETED, raw exit 0, tree_terminal true. This proves the reconciliation command tree ended, not the earlier consumer command trees or user authority. F2 correction is retrospective and does not replace the original grant terminal.",
+    "Original parent native line 4430 exactly matches the committed preserved event: launcher failed exit143. The child state is explicitly UNKNOWN, no first child event or deliverable exists and the two observed output files are empty. Release marked the launcher failed, then a fresh READY preceded another launch; retry native JSONL records the original implementer UUID and turn.completed. No new Codeg consumer grant/resume was performed; the retry is a native CLI implementer resume. The original child/tree uncertainty is F3.",
+    "Pinned dispatch_guard.js and deadline_watch.js match the independently approved Task03 commit bytes and recorded SHA256; the adapter record explicitly says earlier calls used worktree copies and does not claim these earlier calls used the later frozen path. The fdcc4cc coordinator remains distinct.",
+    "Same-owner review dispatch check returned READY with acceptance UNKNOWN. The scope command reported 135 changed files in scope; fdcc4cc known mode/takeover defects limit this evidence to physical scope and do not establish acceptance."
+  ],
+  "source_mapping": {
+    "independent_check_receipt": "build/iter11-review/task12-review2/independent-check.json",
+    "output": "build/iter11-review/task12-review2/independent-check.json.output.txt",
+    "status": "COMPLETED",
+    "raw_exit_code": 0,
+    "tree_terminal": true,
+    "source_manifest_entries": 37,
+    "fix1_source_manifest_entries": 52,
+    "git_blob_mismatches": [],
+    "consumer_calls": 6,
+    "consumer_commands": 10,
+    "mapping": "Exact line hashes, call IDs/output IDs, event IDs, argv/cwd, status, exit, native thread/turn and output hashes independently compared against committed excerpt and indexed original. Event interval maps call to command, not a native per-command call ID.",
+    "launcher_original": "Preserved event matches original native session line 4430 byte-for-byte and SHA256 31852f94288cf657c29da685f9aa3b80f9d4763aec80d0c374de5f3878f6fe17."
+  },
+  "scope_receipt": {
+    "path": "build/iter11-review/task12-review2/scope-runner.json",
+    "output": "build/iter11-review/task12-review2/scope-runner.json.output.txt",
+    "status": "COMPLETED",
+    "raw_exit_code": 0,
+    "launcher_exit_code": 0,
+    "tree_terminal": true,
+    "observed": "All 135 changed files within declared scope; ownership is not inferred."
+  },
+  "DeferredMinors": [],
+  "limitations": [
+    "F2 addressed only as a retrospective evidence reconciliation; no approval of historic grant, current whole task or recovery follows.",
+    "F3 is an evidence and dispatch-precondition gap, not a claim that the prior child was actually running or caused overlapping writes.",
+    "No suite was repeated; no Windows, full suite, business-worker execution, final branch strict, D registration, local strict, deployment or iteration release was assessed.",
+    "Working card includes the controller review claim after candidate C; no tracked files were edited by reviewer."
+  ],
+  "approval_scope": "Scoped re-review of F2 and new fix breakage against BASE and C. F1 remains NOT ADDRESSED; no whole-task approval, D, strict or iteration release."
+}

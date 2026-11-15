@@ -1,0 +1,52 @@
+Building synthetic git workload size=10: /tmp/iter11-task08-git-10-o8lld2f7/project
+project 10 board trial 1: 0.557396s, git=221, path_read_bytes=36360
+project 10 board trial 2: 0.579669s, git=221, path_read_bytes=36360
+project 10 board trial 3: 0.536697s, git=221, path_read_bytes=36360
+project 10 all_envelopes trial 1: 0.611796s, git=250, path_read_bytes=24830
+project 10 all_envelopes trial 2: 0.736256s, git=250, path_read_bytes=24830
+project 10 all_envelopes trial 3: 0.673029s, git=250, path_read_bytes=24830
+project 10 inventory trial 1: 0.662628s, git=260, path_read_bytes=31070
+project 10 inventory trial 2: 0.609003s, git=260, path_read_bytes=31070
+project 10 inventory trial 3: 0.669044s, git=260, path_read_bytes=31070
+project 10 http_evidence trial 1: 0.565818s, git=222, path_read_bytes=36427
+project 10 http_evidence trial 2: 0.565093s, git=222, path_read_bytes=36427
+project 10 http_evidence trial 3: 0.554558s, git=222, path_read_bytes=36427
+Building synthetic git workload size=100: /tmp/iter11-task08-git-100-hshnhcmp/project
+project 100 board trial 1: 6.126205s, git=2201, path_read_bytes=363600
+project 100 board trial 2: 6.028806s, git=2201, path_read_bytes=363600
+project 100 board trial 3: 6.041805s, git=2201, path_read_bytes=363600
+project 100 all_envelopes trial 1: 6.565923s, git=2500, path_read_bytes=248300
+project 100 all_envelopes trial 2: 6.712906s, git=2500, path_read_bytes=248300
+project 100 all_envelopes trial 3: 6.838619s, git=2500, path_read_bytes=248300
+project 100 inventory trial 1: 6.993406s, git=2600, path_read_bytes=310700
+project 100 inventory trial 2: 7.278882s, git=2600, path_read_bytes=310700
+project 100 inventory trial 3: 7.330348s, git=2600, path_read_bytes=310700
+project 100 http_evidence trial 1: 6.117778s, git=2202, path_read_bytes=363667
+project 100 http_evidence trial 2: 6.051517s, git=2202, path_read_bytes=363667
+project 100 http_evidence trial 3: 5.817311s, git=2202, path_read_bytes=363667
+Building synthetic filesystem workload size=10: /tmp/iter11-task08-filesystem-10-tcoyvd70/project
+project 10 board trial 1: 0.023843s, git=0, path_read_bytes=55610
+project 10 board trial 2: 0.023922s, git=0, path_read_bytes=55610
+project 10 board trial 3: 0.024786s, git=0, path_read_bytes=55610
+project 10 all_envelopes trial 1: 0.021030s, git=0, path_read_bytes=42750
+project 10 all_envelopes trial 2: 0.021535s, git=0, path_read_bytes=42750
+project 10 all_envelopes trial 3: 0.020269s, git=0, path_read_bytes=42750
+project 10 inventory trial 1: 0.023457s, git=0, path_read_bytes=49010
+project 10 inventory trial 2: 0.024136s, git=0, path_read_bytes=49010
+project 10 inventory trial 3: 0.022821s, git=0, path_read_bytes=49010
+project 10 http_evidence trial 1: 0.031412s, git=0, path_read_bytes=55727
+project 10 http_evidence trial 2: 0.023629s, git=0, path_read_bytes=55727
+project 10 http_evidence trial 3: 0.026776s, git=0, path_read_bytes=55727
+Building synthetic filesystem workload size=100: /tmp/iter11-task08-filesystem-100-4qkuj3m4/project
+project 100 board trial 1: 0.268886s, git=0, path_read_bytes=555650
+project 100 board trial 2: 0.259304s, git=0, path_read_bytes=555650
+project 100 board trial 3: 0.230447s, git=0, path_read_bytes=555650
+project 100 all_envelopes trial 1: 0.209524s, git=0, path_read_bytes=427500
+project 100 all_envelopes trial 2: 0.203399s, git=0, path_read_bytes=427500
+project 100 all_envelopes trial 3: 0.212212s, git=0, path_read_bytes=427500
+project 100 inventory trial 1: 0.256578s, git=0, path_read_bytes=490100
+project 100 inventory trial 2: 0.270144s, git=0, path_read_bytes=490100
+project 100 inventory trial 3: 0.291111s, git=0, path_read_bytes=490100
+project 100 http_evidence trial 1: 0.243352s, git=0, path_read_bytes=555767
+project 100 http_evidence trial 2: 0.235924s, git=0, path_read_bytes=555767
+project 100 http_evidence trial 3: 0.236904s, git=0, path_read_bytes=555767

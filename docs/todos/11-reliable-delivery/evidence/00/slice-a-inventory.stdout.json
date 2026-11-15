@@ -1,0 +1,405 @@
+{
+  "version": 1,
+  "read_only": true,
+  "mode": "continue",
+  "readiness": "BLOCKED",
+  "tasks": [
+    {
+      "path": "docs/todos/11-reliable-delivery/00-linux-runner-and-dev-guide.md",
+      "task_id": "00",
+      "readiness": "READY",
+      "phase": "implementation",
+      "findings": [],
+      "acceptance_verdict": "UNKNOWN",
+      "status": "TODO",
+      "type": "Strict-TDD",
+      "delivery_mode": "git",
+      "candidate": "894dfd6d5d93d2ff99f6eddcaadbb88ee9ce44c3",
+      "candidate_id": "",
+      "commit_sha": "",
+      "review_status": "PENDING",
+      "receipt": "",
+      "audit_findings": [],
+      "writer": "",
+      "blocked_reason": "",
+      "execution": {
+        "attempt_count": 0,
+        "no_progress_streak": 0,
+        "checkpoint": null,
+        "remaining_work": [],
+        "last_attempt_source": null
+      }
+    },
+    {
+      "path": "docs/todos/11-reliable-delivery/01-delivery-mode-consistency.md",
+      "task_id": "01",
+      "readiness": "BLOCKED",
+      "phase": "implementation",
+      "findings": [
+        "execution: 等待本次00前置Linux runner验收和冻结，不再等待Windows主机",
+        "serial-order: 用户要求00先验收后恢复01—12串行",
+        "verification: 冻结runner实际退出125，未启动pytest且未创建runner收据；正式干净基线及本卡type门禁尚未执行"
+      ],
+      "acceptance_verdict": "UNKNOWN",
+      "status": "TODO",
+      "type": "Strict-TDD",
+      "delivery_mode": "git",
+      "candidate": "894dfd6d5d93d2ff99f6eddcaadbb88ee9ce44c3",
+      "candidate_id": "",
+      "commit_sha": "",
+      "review_status": "PENDING",
+      "receipt": "",
+      "audit_findings": [],
+      "writer": "",
+      "blocked_reason": "",
+      "execution": {
+        "attempt_count": 0,
+        "no_progress_streak": 0,
+        "checkpoint": null,
+        "remaining_work": [],
+        "last_attempt_source": null
+      }
+    },
+    {
+      "path": "docs/todos/11-reliable-delivery/02-takeover-report-isolation.md",
+      "task_id": "02",
+      "readiness": "BLOCKED",
+      "phase": "implementation",
+      "findings": [
+        "execution: 等待本次00前置Linux runner验收和冻结，不再等待Windows主机",
+        "serial-order: 用户要求00先验收后恢复01—12串行",
+        "verification: 冻结runner实际退出125，未启动pytest且未创建runner收据；正式干净基线及本卡type门禁尚未执行"
+      ],
+      "acceptance_verdict": "UNKNOWN",
+      "status": "TODO",
+      "type": "Strict-TDD",
+      "delivery_mode": "git",
+      "candidate": "894dfd6d5d93d2ff99f6eddcaadbb88ee9ce44c3",
+      "candidate_id": "",
+      "commit_sha": "",
+      "review_status": "PENDING",
+      "receipt": "",
+      "audit_findings": [],
+      "writer": "",
+      "blocked_reason": "",
+      "execution": {
+        "attempt_count": 0,
+        "no_progress_streak": 0,
+        "checkpoint": null,
+        "remaining_work": [],
+        "last_attempt_source": null
+      }
+    },
+    {
+      "path": "docs/todos/11-reliable-delivery/03-native-dispatch-guard.md",
+      "task_id": "03",
+      "readiness": "BLOCKED",
+      "phase": "implementation",
+      "findings": [
+        "execution: 等待本次00前置Linux runner验收和冻结，不再等待Windows主机",
+        "serial-order: 用户要求00先验收后恢复01—12串行",
+        "verification: 冻结runner实际退出125，未启动pytest且未创建runner收据；正式干净基线及本卡type门禁尚未执行",
+        "Dependency has no valid completion evidence: docs/todos/11-reliable-delivery/01-delivery-mode-consistency.md"
+      ],
+      "acceptance_verdict": "UNKNOWN",
+      "status": "TODO",
+      "type": "Strict-TDD",
+      "delivery_mode": "git",
+      "candidate": "894dfd6d5d93d2ff99f6eddcaadbb88ee9ce44c3",
+      "candidate_id": "",
+      "commit_sha": "",
+      "review_status": "PENDING",
+      "receipt": "",
+      "audit_findings": [],
+      "writer": "",
+      "blocked_reason": "",
+      "execution": {
+        "attempt_count": 0,
+        "no_progress_streak": 0,
+        "checkpoint": null,
+        "remaining_work": [],
+        "last_attempt_source": null
+      }
+    },
+    {
+      "path": "docs/todos/11-reliable-delivery/04-navigation-and-support.md",
+      "task_id": "04",
+      "readiness": "BLOCKED",
+      "phase": "implementation",
+      "findings": [
+        "execution: 等待本次00前置Linux runner验收和冻结，不再等待Windows主机",
+        "serial-order: 用户要求00先验收后恢复01—12串行",
+        "verification: 冻结runner实际退出125，未启动pytest且未创建runner收据；正式干净基线及本卡type门禁尚未执行"
+      ],
+      "acceptance_verdict": "UNKNOWN",
+      "status": "TODO",
+      "type": "Spike-Discovery",
+      "delivery_mode": "git",
+      "candidate": "894dfd6d5d93d2ff99f6eddcaadbb88ee9ce44c3",
+      "candidate_id": "",
+      "commit_sha": "",
+      "review_status": "PENDING",
+      "receipt": "",
+      "audit_findings": [],
+      "writer": "",
+      "blocked_reason": "",
+      "execution": {
+        "attempt_count": 0,
+        "no_progress_streak": 0,
+        "checkpoint": null,
+        "remaining_work": [],
+        "last_attempt_source": null
+      }
+    },
+    {
+      "path": "docs/todos/11-reliable-delivery/05-support-matrix.md",
+      "task_id": "05",
+      "readiness": "BLOCKED",
+      "phase": "implementation",
+      "findings": [
+        "execution: 等待本次00前置Linux runner验收和冻结，不再等待Windows主机",
+        "serial-order: 用户要求00先验收后恢复01—12串行",
+        "verification: 冻结runner实际退出125，未启动pytest且未创建runner收据；正式干净基线及本卡type门禁尚未执行"
+      ],
+      "acceptance_verdict": "UNKNOWN",
+      "status": "TODO",
+      "type": "Spike-Discovery",
+      "delivery_mode": "git",
+      "candidate": "894dfd6d5d93d2ff99f6eddcaadbb88ee9ce44c3",
+      "candidate_id": "",
+      "commit_sha": "",
+      "review_status": "PENDING",
+      "receipt": "",
+      "audit_findings": [],
+      "writer": "",
+      "blocked_reason": "",
+      "execution": {
+        "attempt_count": 0,
+        "no_progress_streak": 0,
+        "checkpoint": null,
+        "remaining_work": [],
+        "last_attempt_source": null
+      }
+    },
+    {
+      "path": "docs/todos/11-reliable-delivery/06-installation-provenance.md",
+      "task_id": "06",
+      "readiness": "BLOCKED",
+      "phase": "implementation",
+      "findings": [
+        "execution: 等待本次00前置Linux runner验收和冻结，不再等待Windows主机",
+        "serial-order: 用户要求00先验收后恢复01—12串行",
+        "verification: 冻结runner实际退出125，未启动pytest且未创建runner收据；正式干净基线及本卡type门禁尚未执行"
+      ],
+      "acceptance_verdict": "UNKNOWN",
+      "status": "TODO",
+      "type": "Strict-TDD",
+      "delivery_mode": "git",
+      "candidate": "894dfd6d5d93d2ff99f6eddcaadbb88ee9ce44c3",
+      "candidate_id": "",
+      "commit_sha": "",
+      "review_status": "PENDING",
+      "receipt": "",
+      "audit_findings": [],
+      "writer": "",
+      "blocked_reason": "",
+      "execution": {
+        "attempt_count": 0,
+        "no_progress_streak": 0,
+        "checkpoint": null,
+        "remaining_work": [],
+        "last_attempt_source": null
+      }
+    },
+    {
+      "path": "docs/todos/11-reliable-delivery/07-portable-test-support.md",
+      "task_id": "07",
+      "readiness": "BLOCKED",
+      "phase": "implementation",
+      "findings": [
+        "execution: 等待本次00前置Linux runner验收和冻结，不再等待Windows主机",
+        "serial-order: 用户要求00先验收后恢复01—12串行",
+        "verification: 冻结runner实际退出125，未启动pytest且未创建runner收据；正式干净基线及本卡type门禁尚未执行"
+      ],
+      "acceptance_verdict": "UNKNOWN",
+      "status": "TODO",
+      "type": "Refactor-Benchmark",
+      "delivery_mode": "git",
+      "candidate": "894dfd6d5d93d2ff99f6eddcaadbb88ee9ce44c3",
+      "candidate_id": "",
+      "commit_sha": "",
+      "review_status": "PENDING",
+      "receipt": "",
+      "audit_findings": [],
+      "writer": "",
+      "blocked_reason": "",
+      "execution": {
+        "attempt_count": 0,
+        "no_progress_streak": 0,
+        "checkpoint": null,
+        "remaining_work": [],
+        "last_attempt_source": null
+      }
+    },
+    {
+      "path": "docs/todos/11-reliable-delivery/08-approved-chain-benchmark.md",
+      "task_id": "08",
+      "readiness": "BLOCKED",
+      "phase": "implementation",
+      "findings": [
+        "execution: 等待本次00前置Linux runner验收和冻结，不再等待Windows主机",
+        "serial-order: 用户要求00先验收后恢复01—12串行",
+        "verification: 冻结runner实际退出125，未启动pytest且未创建runner收据；正式干净基线及本卡type门禁尚未执行",
+        "Dependency has no valid completion evidence: docs/todos/11-reliable-delivery/01-delivery-mode-consistency.md"
+      ],
+      "acceptance_verdict": "UNKNOWN",
+      "status": "TODO",
+      "type": "Spike-Discovery",
+      "delivery_mode": "git",
+      "candidate": "894dfd6d5d93d2ff99f6eddcaadbb88ee9ce44c3",
+      "candidate_id": "",
+      "commit_sha": "",
+      "review_status": "PENDING",
+      "receipt": "",
+      "audit_findings": [],
+      "writer": "",
+      "blocked_reason": "",
+      "execution": {
+        "attempt_count": 0,
+        "no_progress_streak": 0,
+        "checkpoint": null,
+        "remaining_work": [],
+        "last_attempt_source": null
+      }
+    },
+    {
+      "path": "docs/todos/11-reliable-delivery/09-proportional-refactor-evidence.md",
+      "task_id": "09",
+      "readiness": "BLOCKED",
+      "phase": "implementation",
+      "findings": [
+        "execution: 等待本次00前置Linux runner验收和冻结，不再等待Windows主机",
+        "serial-order: 用户要求00先验收后恢复01—12串行",
+        "verification: 冻结runner实际退出125，未启动pytest且未创建runner收据；正式干净基线及本卡type门禁尚未执行"
+      ],
+      "acceptance_verdict": "UNKNOWN",
+      "status": "TODO",
+      "type": "Spike-Discovery",
+      "delivery_mode": "git",
+      "candidate": "894dfd6d5d93d2ff99f6eddcaadbb88ee9ce44c3",
+      "candidate_id": "",
+      "commit_sha": "",
+      "review_status": "PENDING",
+      "receipt": "",
+      "audit_findings": [],
+      "writer": "",
+      "blocked_reason": "",
+      "execution": {
+        "attempt_count": 0,
+        "no_progress_streak": 0,
+        "checkpoint": null,
+        "remaining_work": [],
+        "last_attempt_source": null
+      }
+    },
+    {
+      "path": "docs/todos/11-reliable-delivery/10-integration-fault-paths.md",
+      "task_id": "10",
+      "readiness": "BLOCKED",
+      "phase": "implementation",
+      "findings": [
+        "execution: 等待本次00前置Linux runner验收和冻结，不再等待Windows主机",
+        "serial-order: 用户要求00先验收后恢复01—12串行",
+        "verification: 冻结runner实际退出125，未启动pytest且未创建runner收据；正式干净基线及本卡type门禁尚未执行",
+        "Dependency has no valid completion evidence: docs/todos/11-reliable-delivery/01-delivery-mode-consistency.md",
+        "Dependency has no valid completion evidence: docs/todos/11-reliable-delivery/02-takeover-report-isolation.md",
+        "Dependency has no valid completion evidence: docs/todos/11-reliable-delivery/03-native-dispatch-guard.md",
+        "Dependency has no valid completion evidence: docs/todos/11-reliable-delivery/06-installation-provenance.md",
+        "Dependency has no valid completion evidence: docs/todos/11-reliable-delivery/07-portable-test-support.md"
+      ],
+      "acceptance_verdict": "UNKNOWN",
+      "status": "TODO",
+      "type": "Spike-Discovery",
+      "delivery_mode": "git",
+      "candidate": "894dfd6d5d93d2ff99f6eddcaadbb88ee9ce44c3",
+      "candidate_id": "",
+      "commit_sha": "",
+      "review_status": "PENDING",
+      "receipt": "",
+      "audit_findings": [],
+      "writer": "",
+      "blocked_reason": "",
+      "execution": {
+        "attempt_count": 0,
+        "no_progress_streak": 0,
+        "checkpoint": null,
+        "remaining_work": [],
+        "last_attempt_source": null
+      }
+    },
+    {
+      "path": "docs/todos/11-reliable-delivery/11-native-self-use-audit.md",
+      "task_id": "11",
+      "readiness": "BLOCKED",
+      "phase": "implementation",
+      "findings": [
+        "execution: 等待本次00前置Linux runner验收和冻结，不再等待Windows主机",
+        "serial-order: 用户要求00先验收后恢复01—12串行",
+        "verification: 冻结runner实际退出125，未启动pytest且未创建runner收据；正式干净基线及本卡type门禁尚未执行",
+        "Dependency has no valid completion evidence: docs/todos/11-reliable-delivery/03-native-dispatch-guard.md",
+        "Dependency has no valid completion evidence: docs/todos/11-reliable-delivery/10-integration-fault-paths.md"
+      ],
+      "acceptance_verdict": "UNKNOWN",
+      "status": "TODO",
+      "type": "Spike-Discovery",
+      "delivery_mode": "git",
+      "candidate": "894dfd6d5d93d2ff99f6eddcaadbb88ee9ce44c3",
+      "candidate_id": "",
+      "commit_sha": "",
+      "review_status": "PENDING",
+      "receipt": "",
+      "audit_findings": [],
+      "writer": "",
+      "blocked_reason": "",
+      "execution": {
+        "attempt_count": 0,
+        "no_progress_streak": 0,
+        "checkpoint": null,
+        "remaining_work": [],
+        "last_attempt_source": null
+      }
+    },
+    {
+      "path": "docs/todos/11-reliable-delivery/12-workflow-sequence.md",
+      "task_id": "12",
+      "readiness": "BLOCKED",
+      "phase": "implementation",
+      "findings": [
+        "execution: 等待本次00前置Linux runner验收和冻结，不再等待Windows主机",
+        "serial-order: 用户要求00先验收后恢复01—12串行",
+        "verification: 冻结runner实际退出125，未启动pytest且未创建runner收据；正式干净基线及本卡type门禁尚未执行",
+        "Dependency has no valid completion evidence: docs/todos/11-reliable-delivery/03-native-dispatch-guard.md"
+      ],
+      "acceptance_verdict": "UNKNOWN",
+      "status": "TODO",
+      "type": "Spike-Discovery",
+      "delivery_mode": "git",
+      "candidate": "894dfd6d5d93d2ff99f6eddcaadbb88ee9ce44c3",
+      "candidate_id": "",
+      "commit_sha": "",
+      "review_status": "PENDING",
+      "receipt": "",
+      "audit_findings": [],
+      "writer": "",
+      "blocked_reason": "",
+      "execution": {
+        "attempt_count": 0,
+        "no_progress_streak": 0,
+        "checkpoint": null,
+        "remaining_work": [],
+        "last_attempt_source": null
+      }
+    }
+  ],
+  "findings": []
+}

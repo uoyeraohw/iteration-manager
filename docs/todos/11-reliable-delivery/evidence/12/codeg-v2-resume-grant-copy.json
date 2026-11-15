@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "grant_id": "iter11-12-codeg-v2-resume-v1",
+  "workspace": "/data/workspace/iteration-manager/.worktrees/iter-11",
+  "card": "docs/todos/11-reliable-delivery/12-workflow-sequence.md",
+  "head": "91ac9d9b8e0acfd980e3033b2fbcb494873fc686",
+  "checkpoint_sha": "3de06e0e3715b9f65d7caaf3bdba872a33df0f8c",
+  "closeout_event_id": "iter11-12-codeg-probe-v2-closeout-v1",
+  "terminal_evidence": "docs/todos/11-reliable-delivery/evidence/12/codeg-interruption-terminal.json",
+  "expires_at": "2026-11-15T06:40:50.720886+00:00"
+}

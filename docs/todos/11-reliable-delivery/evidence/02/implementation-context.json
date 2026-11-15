@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "tasks": {
+    "02": {
+      "phase": "implementation",
+      "candidate": "ecf20784605017c80063000f5d3d42fa7920c680",
+      "inputs": [
+        "docs/todos/11-reliable-delivery/02-takeover-report-isolation.md",
+        "docs/todos/11-reliable-delivery/README.md",
+        "scripts/iter_cli.py",
+        "scripts/iter_inventory.py",
+        "tests/test_task_discovery_compat.py",
+        "tests/test_cli_compatibility.py",
+        "tests/test_sync_compatibility.py"
+      ],
+      "capabilities": [
+        "native-codex-cli-implementer",
+        "approved-frozen-linux-runner",
+        "Python3.11.17-pytest9.2-mcp1.30",
+        "independent-native-reviewer"
+      ],
+      "dependencies": [],
+      "tool_entry": "/data/workspace/iteration-manager/build/frozen-tools/fdcc4cce8863/scripts/iter_sync.py",
+      "checkpoint": "健康卡混合Unicode/OSError和发现后删除，单份JSON保留全部库存的真实断言RED",
+      "remaining_work": [
+        "核心RED",
+        "逐卡隔离及目标回归",
+        "C独审/D/strict"
+      ],
+      "required_observations": [
+        "serial-order"
+      ],
+      "observations": {
+        "authority": {
+          "status": "READY",
+          "summary": "用户实施/精准Git/Worktree授权和Linux适配；仅本卡scope；不部署推送合流清理",
+          "evidence": "docs/todos/11-reliable-delivery/evidence/planning/platform-migration-authorization.json"
+        },
+        "execution": {
+          "status": "READY",
+          "summary": "01所有执行和复审原生会话真实终态，当前合法Git卡；新02原生实现者与独审可用",
+          "evidence": "build/iter11-review/task01-review2/terminal.json"
+        },
+        "verification": {
+          "status": "READY",
+          "summary": "固定C2平台runner六文件逐字节来源已核验，完整维护基线513通过2Windows跳过；正式命令用维护venv和仓外唯一tmp",
+          "evidence": "build/iter11-platform-baseline/python311-mcp1-full.json"
+        },
+        "serial-order": {
+          "status": "READY",
+          "summary": "00/01均完成独审、C/D及冻结local strict，实际PASS2/13，本次只启动02",
+          "evidence": "build/iter11-review/task01-review2/local-strict.json"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "version": 1,
+  "model": "jev-1.14.0",
+  "dimensions": {
+    "granularity": {
+      "type": "score",
+      "score": 3.61,
+      "confidence": 0.68,
+      "legend": {
+        "0": "No verifiable delivery",
+        "1": "Unbounded unrelated projects",
+        "2": "Useful objective but boundaries or checkpoints missing",
+        "3": "Coherent platform capability with concrete files, staged checkpoints and acceptance",
+        "4": "Small cohesive delivery, bounded stages, exact interfaces and tests cover completion"
+      },
+      "probabilities": {
+        "0": 0.01,
+        "1": 0,
+        "2": 0,
+        "3": 0.35,
+        "4": 0.64
+      },
+      "normalized": 90.25,
+      "weight": 0.3
+    },
+    "clarity": {
+      "type": "score",
+      "score": 3.98,
+      "confidence": 0.98,
+      "legend": {
+        "0": "No acceptance",
+        "1": "Only subjective claims",
+        "2": "Some outcomes measurable but key success/failure boundaries missing",
+        "3": "Core behavior and failure boundaries have objective checks and commands",
+        "4": "Core, cleanup, isolation, platform and evidence failure boundaries explicit and reproducible"
+      },
+      "probabilities": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "3": 0.02,
+        "4": 0.98
+      },
+      "normalized": 99.5,
+      "weight": 0.3
+    },
+    "single_responsibility": {
+      "type": "score",
+      "score": 3.96,
+      "confidence": 0.98,
+      "legend": {
+        "0": "Many unrelated deliverables",
+        "1": "Multiple independent subsystems without boundary",
+        "2": "Mostly related but ownership or responsibility unclear",
+        "3": "One platform-capability outcome with relevant documentation/tests and clear ownership",
+        "4": "Cohesive outcome, existing public contract preserved, no unrelated features or shared mutable ownership"
+      },
+      "probabilities": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "3": 0.03,
+        "4": 0.97
+      },
+      "normalized": 99,
+      "weight": 0.2
+    },
+    "actionability": {
+      "type": "score",
+      "score": 3.73,
+      "confidence": 0.77,
+      "legend": {
+        "0": "Cannot execute and no recovery",
+        "1": "Critical capabilities missing without alternative",
+        "2": "Plan partly executable but major path unspecified",
+        "3": "Available runtime, bounded bootstrap, mechanism, commands and review path defined",
+        "4": "Prerequisites observed, interfaces and migration concrete, risky paths and independent acceptance specified"
+      },
+      "probabilities": {
+        "0": 0,
+        "1": 0.01,
+        "2": 0.03,
+        "3": 0.19,
+        "4": 0.77
+      },
+      "normalized": 93.25,
+      "weight": 0.2
+    }
+  },
+  "total": 95.375,
+  "result": "PASS",
+  "rule": "30/30/20/20; total>=80; each>=70; confidence not a score",
+  "prior_cards": "Original12 remain unchanged; this evaluation only covers the new00 capability. Prior evaluations retain original timestamps and applicable deliverable scope."
+}

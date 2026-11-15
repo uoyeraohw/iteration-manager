@@ -1,0 +1,1 @@
+{"selected_chain_valid": true, "case_counts": {"PASS": 10, "FAIL": 1, "UNKNOWN": 0, "BLOCKED": 2}, "output": "docs/todos/11-reliable-delivery/evidence/11/robustness-report.json"}

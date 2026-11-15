@@ -1,0 +1,131 @@
+{
+  "request": {
+    "request_id": "iter11Task06CheckpointConsumer-1794718625035",
+    "project_root": "/data/workspace/iteration-manager/.worktrees/iter-11",
+    "tool_entry": "/data/workspace/iteration-manager/build/frozen-tools/fdcc4cce8863/scripts/iter_sync.py",
+    "task_path": "/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/06-installation-provenance.md",
+    "task_id": "06",
+    "owner": "iter11-controller-linux-20261115",
+    "phase": "evidence-inspection",
+    "candidate": "82b66d9f3c8e7a62df8e8be18d8cedac7a5877a6",
+    "context": "docs/todos/11-reliable-delivery/evidence/06/checkpoint-consumer-context.json"
+  },
+  "events": [
+    {
+      "kind": "check-start",
+      "at": 1794718625035,
+      "argv": [
+        "python3",
+        "-B",
+        "/data/workspace/iteration-manager/build/frozen-tools/fdcc4cce8863/scripts/iter_sync.py",
+        "--dispatch-check",
+        "/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/06-installation-provenance.md",
+        "--context",
+        "docs/todos/11-reliable-delivery/evidence/06/checkpoint-consumer-context.json",
+        "--phase",
+        "evidence-inspection",
+        "--owner",
+        "iter11-controller-linux-20261115"
+      ],
+      "cwd": "/data/workspace/iteration-manager/.worktrees/iter-11"
+    },
+    {
+      "kind": "check-terminal-consumed",
+      "at": 1794718625206,
+      "exit_code": 0,
+      "readiness": "READY"
+    },
+    {
+      "kind": "dispatch-call",
+      "at": 1794718625206,
+      "request_id": "iter11Task06CheckpointConsumer-1794718625035"
+    }
+  ],
+  "native_check": {
+    "chunk_id": "41614b",
+    "wall_time_seconds": 0.00001752,
+    "exit_code": 0,
+    "original_token_count": 1742,
+    "output": "{\"argv\": [\"python3\", \"-B\", \"/data/workspace/iteration-manager/build/frozen-tools/fdcc4cce8863/scripts/iter_sync.py\", \"--dispatch-check\", \"/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/06-installation-provenance.md\", \"--context\", \"docs/todos/11-reliable-delivery/evidence/06/checkpoint-consumer-context.json\", \"--phase\", \"evidence-inspection\", \"--owner\", \"iter11-controller-linux-20261115\"], \"cwd\": \"/data/workspace/iteration-manager/.worktrees/iter-11\", \"exit_code\": 0, \"stdout\": \"{\\n  \\\"read_only\\\": true,\\n  \\\"readiness\\\": \\\"READY\\\",\\n  \\\"task_path\\\": \\\"/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/06-installation-provenance.md\\\",\\n  \\\"phase\\\": \\\"evidence-inspection\\\",\\n  \\\"acceptance_verdict\\\": \\\"UNKNOWN\\\",\\n  \\\"findings\\\": [],\\n  \\\"observations\\\": {\\n    \\\"authority\\\": {\\n      \\\"status\\\": \\\"READY\\\",\\n      \\\"summary\\\": \\\"\\u7528\\u6237\\u5b9e\\u65bd/Git/Worktree/Linux\\u6388\\u6743\\uff1b\\u4e0d\\u90e8\\u7f72\\u63a8\\u9001\\u5408\\u6d41\\u6e05\\u7406\\\",\\n      \\\"evidence\\\": \\\"docs/todos/11-reliable-delivery/evidence/planning/platform-migration-authorization.json\\\"\\n    },\\n    \\\"execution\\\": {\\n      \\\"status\\\": \\\"READY\\\",\\n      \\\"summary\\\": \\\"RED\\u4f1a\\u8bdd\\u548c\\u547d\\u4ee4\\u7ec8\\u6001\\uff0c\\u5df2attempt/release\\u53ca\\u6b63\\u5e38\\u68c0\\u67e5\\u70b9\\u63d0\\u4ea4\\uff0c\\u65e0\\u6d3b\\u52a8\\u6267\\u884c\\u8005\\\",\\n      \\\"evidence\\\": \\\"docs/todos/11-reliable-delivery/evidence/06/implementation-terminal.json\\\"\\n    },\\n    \\\"serial-order\\\": {\\n      \\\"status\\\": \\\"READY\\\",\\n      \\\"summary\\\": \\\"\\u6240\\u6709\\u524d\\u5361\\u5b9e\\u9645audit\\u6709\\u6548\\u4e14\\u524d\\u5361\\u51bb\\u7ed3strict\\u6210\\u529f\\uff0c\\u4ec5\\u542f\\u52a8\\u672c\\u5361\\\",\\n      \\\"evidence\\\": \\\"build/iter11-review/task05-review2/local-strict.json\\\"\\n    },\\n    \\\"verification\\\": {\\n      \\\"status\\\": \\\"READY\\\",\\n      \\\"summary\\\": \\\"\\u51bb\\u7ed3Linux runner\\u4e0e\\u7ef4\\u62a4\\u6d4b\\u8bd5\\u73af\\u5883\\u5df2\\u5b9e\\u6d4b\\\",\\n      \\\"evidence\\\": \\\"build/iter11-review/task05-review2/local-strict.json\\\"\\n    }\\n  },\\n  \\\"task_id\\\": \\\"06\\\",\\n  \\\"delivery_mode\\\": \\\"git\\\",\\n  \\\"candidate\\\": \\\"82b66d9f3c8e7a62df8e8be18d8cedac7a5877a6\\\",\\n  \\\"execution\\\": {\\n    \\\"attempt_count\\\": 1,\\n    \\\"no_progress_streak\\\": 0,\\n    \\\"last_attempt\\\": {\\n      \\\"source\\\": \\\"docs/todos/11-reliable-delivery/evidence/06/red-attempt.json\\\",\\n      \\\"phase\\\": \\\"implementation\\\",\\n      \\\"delivery_mode\\\": \\\"git\\\",\\n      \\\"candidate\\\": \\\"e66841186450dc6bbe138bf77aac87a2a8f1232a\\\",\\n      \\\"conditions\\\": {\\n        \\\"inputs\\\": [\\n          \\\"AGENTS.md\\\",\\n          \\\"docs/todos/11-reliable-delivery/06-installation-provenance.md\\\",\\n          \\\"docs/todos/11-reliable-delivery/README.md\\\",\\n          \\\"references/task_card_schema.md\\\"\\n        ],\\n        \\\"capabilities\\\": [\\n          \\\"Python3.11.17-pytest9.2-mcp1.30\\\",\\n          \\\"approved-frozen-linux-runner\\\",\\n          \\\"independent-native-reviewer\\\",\\n          \\\"native-codex-cli-implementer\\\"\\n        ],\\n        \\\"scope\\\": [\\n          \\\".agents/notes/planned/iter11/06-installation-provenance.md\\\",\\n          \\\"docs/todos/11-reliable-delivery/evidence/06/\\\",\\n          \\\"references/installation_verification.md\\\",\\n          \\\"scripts/iter_install.py\\\",\\n          \\\"tests/test_install_provenance.py\\\"\\n        ]\\n      },\\n      \\\"executor_id\\\": \\\"01a1dd8e-8b72-7b72-90b4-a8577ef8db2d\\\",\\n      \\\"executor_state\\\": \\\"completed\\\",\\n      \\\"terminal_evidence\\\": \\\"docs/todos/11-reliable-delivery/evidence/06/implementation-terminal.json\\\",\\n      \\\"progress\\\": [\\n        {\\n          \\\"kind\\\": \\\"red\\\",\\n          \\\"evidence\\\": \\\"docs/todos/11-reliable-delivery/evidence/06/red-01.json.output.txt\\\",\\n          \\\"summary\\\": \\\"22\\u65ad\\u8a00\\u5931\\u8d25/11\\u901a\\u8fc7\\uff0c\\u65e0\\u5bfc\\u5165\\u73af\\u5883\\u9519\\u8bef\\uff0c\\u6d4b\\u8bd5\\u4fa7\\u65e0\\u529f\\u80fdadapter\\\"\\n        }\\n      ],\\n      \\\"checkpoint\\\": \\\"\\u6b63\\u5e38RED\\u68c0\\u67e5\\u70b922\\u884c\\u4e3a\\u65ad\\u8a00\\u5931\\u8d2511\\u63a7\\u5236\\u901a\\u8fc7\\uff0c\\u5c1a\\u65e0\\u751f\\u4ea7\\u5b9e\\u73b0\\\",\\n      \\\"remaining_work\\\": [\\n        \\\"C\\u72ec\\u5ba1/D/strict\\\",\\n        \\\"\\u540c\\u5b9e\\u73b0\\u8005\\u751f\\u4ea7\\u5b9e\\u73b0/GREEN/regression/\\u4e34\\u65f6\\u5b89\\u88c5\\u68c0\\u67e5\\\",\\n        \\\"\\u65b0\\u4f1a\\u8bdd\\u7ee7\\u627fRED\\u8bc1\\u636e\\\"\\n      ],\\n      \\\"commands\\\": [\\n        {\\n          \\\"receipt\\\": \\\"docs/todos/11-reliable-delivery/evidence/06/red-01.json\\\",\\n          \\\"status\\\": \\\"COMPLETED\\\",\\n          \\\"raw_exit_code\\\": 1,\\n          \\\"started_at\\\": \\\"2026-11-15T04:55:02.045633+00:00\\\",\\n          \\\"ended_at\\\": \\\"2026-11-15T04:55:03.527041+00:00\\\"\\n        }\\n      ],\\n      \\\"started_at\\\": null,\\n      \\\"ended_at\\\": null,\\n      \\\"session_seconds\\\": null,\\n      \\\"command_seconds\\\": 1.481408\\n    },\\n    \\\"checkpoint\\\": {\\n      \\\"candidate\\\": \\\"e66841186450dc6bbe138bf77aac87a2a8f1232a\\\",\\n      \\\"phase\\\": \\\"implementation\\\",\\n      \\\"summary\\\": \\\"\\u6b63\\u5e38RED\\u68c0\\u67e5\\u70b922\\u884c\\u4e3a\\u65ad\\u8a00\\u5931\\u8d2511\\u63a7\\u5236\\u901a\\u8fc7\\uff0c\\u5c1a\\u65e0\\u751f\\u4ea7\\u5b9e\\u73b0\\\",\\n      \\\"progress\\\": [\\n        {\\n          \\\"kind\\\": \\\"red\\\",\\n          \\\"evidence\\\": \\\"docs/todos/11-reliable-delivery/evidence/06/red-01.json.output.txt\\\",\\n          \\\"summary\\\": \\\"22\\u65ad\\u8a00\\u5931\\u8d25/11\\u901a\\u8fc7\\uff0c\\u65e0\\u5bfc\\u5165\\u73af\\u5883\\u9519\\u8bef\\uff0c\\u6d4b\\u8bd5\\u4fa7\\u65e0\\u529f\\u80fdadapter\\\"\\n        }\\n      ],\\n      \\\"source\\\": \\\"docs/todos/11-reliable-delivery/evidence/06/red-attempt.json\\\"\\n    },\\n    \\\"remaining_work\\\": [\\n      \\\"C\\u72ec\\u5ba1/D/strict\\\",\\n      \\\"\\u540c\\u5b9e\\u73b0\\u8005\\u751f\\u4ea7\\u5b9e\\u73b0/GREEN/regression/\\u4e34\\u65f6\\u5b89\\u88c5\\u68c0\\u67e5\\\",\\n      \\\"\\u65b0\\u4f1a\\u8bdd\\u7ee7\\u627fRED\\u8bc1\\u636e\\\"\\n    ]\\n  },\\n  \\\"conditions\\\": {\\n    \\\"inputs\\\": [\\n      \\\"AGENTS.md\\\",\\n      \\\"docs/todos/11-reliable-delivery/06-installation-provenance.md\\\",\\n      \\\"docs/todos/11-reliable-delivery/README.md\\\",\\n      \\\"docs/todos/11-reliable-delivery/evidence/06/red-attempt.json\\\",\\n      \\\"docs/todos/11-reliable-delivery/evidence/06/red-checkpoint.json\\\",\\n      \\\"references/task_card_schema.md\\\",\\n      \\\"tests/test_install_provenance.py\\\"\\n    ],\\n    \\\"capabilities\\\": [\\n      \\\"Python3.11.17-pytest9.2-mcp1.30\\\",\\n      \\\"approved-frozen-linux-runner\\\",\\n      \\\"independent-native-reviewer\\\",\\n      \\\"native-codex-cli-implementer\\\"\\n    ],\\n    \\\"scope\\\": [\\n      \\\".agents/notes/planned/iter11/06-installation-provenance.md\\\",\\n      \\\"docs/todos/11-reliable-delivery/evidence/06/\\\",\\n      \\\"references/installation_verification.md\\\",\\n      \\\"scripts/iter_install.py\\\",\\n      \\\"tests/test_install_provenance.py\\\"\\n    ]\\n  },\\n  \\\"checkpoint\\\": \\\"\\u65b0\\u539f\\u751f\\u53ea\\u8bfb\\u4f1a\\u8bdd\\u4ece\\u771f\\u5b9eenvelope\\u7ee7\\u627fRED\\u548c\\u5269\\u4f59\\u9879\\\",\\n  \\\"remaining_work\\\": [\\n    \\\"\\u539f\\u5b9e\\u73b0\\u8005GREEN\\\",\\n    \\\"\\u786e\\u8ba4\\u7ee7\\u627f\\u6b63\\u786e\\u4e0d\\u91cd\\u8dd1\\\"\\n  ]\\n}\\n\", \"stderr\": \"\"}\n"
+  },
+  "result": {
+    "dispatched": true,
+    "reason": "dispatched",
+    "check": {
+      "argv": [
+        "python3",
+        "-B",
+        "/data/workspace/iteration-manager/build/frozen-tools/fdcc4cce8863/scripts/iter_sync.py",
+        "--dispatch-check",
+        "/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/06-installation-provenance.md",
+        "--context",
+        "docs/todos/11-reliable-delivery/evidence/06/checkpoint-consumer-context.json",
+        "--phase",
+        "evidence-inspection",
+        "--owner",
+        "iter11-controller-linux-20261115"
+      ],
+      "cwd": "/data/workspace/iteration-manager/.worktrees/iter-11",
+      "exit_code": 0,
+      "stdout": "{\n  \"read_only\": true,\n  \"readiness\": \"READY\",\n  \"task_path\": \"/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/06-installation-provenance.md\",\n  \"phase\": \"evidence-inspection\",\n  \"acceptance_verdict\": \"UNKNOWN\",\n  \"findings\": [],\n  \"observations\": {\n    \"authority\": {\n      \"status\": \"READY\",\n      \"summary\": \"用户实施/Git/Worktree/Linux授权；不部署推送合流清理\",\n      \"evidence\": \"docs/todos/11-reliable-delivery/evidence/planning/platform-migration-authorization.json\"\n    },\n    \"execution\": {\n      \"status\": \"READY\",\n      \"summary\": \"RED会话和命令终态，已attempt/release及正常检查点提交，无活动执行者\",\n      \"evidence\": \"docs/todos/11-reliable-delivery/evidence/06/implementation-terminal.json\"\n    },\n    \"serial-order\": {\n      \"status\": \"READY\",\n      \"summary\": \"所有前卡实际audit有效且前卡冻结strict成功，仅启动本卡\",\n      \"evidence\": \"build/iter11-review/task05-review2/local-strict.json\"\n    },\n    \"verification\": {\n      \"status\": \"READY\",\n      \"summary\": \"冻结Linux runner与维护测试环境已实测\",\n      \"evidence\": \"build/iter11-review/task05-review2/local-strict.json\"\n    }\n  },\n  \"task_id\": \"06\",\n  \"delivery_mode\": \"git\",\n  \"candidate\": \"82b66d9f3c8e7a62df8e8be18d8cedac7a5877a6\",\n  \"execution\": {\n    \"attempt_count\": 1,\n    \"no_progress_streak\": 0,\n    \"last_attempt\": {\n      \"source\": \"docs/todos/11-reliable-delivery/evidence/06/red-attempt.json\",\n      \"phase\": \"implementation\",\n      \"delivery_mode\": \"git\",\n      \"candidate\": \"e66841186450dc6bbe138bf77aac87a2a8f1232a\",\n      \"conditions\": {\n        \"inputs\": [\n          \"AGENTS.md\",\n          \"docs/todos/11-reliable-delivery/06-installation-provenance.md\",\n          \"docs/todos/11-reliable-delivery/README.md\",\n          \"references/task_card_schema.md\"\n        ],\n        \"capabilities\": [\n          \"Python3.11.17-pytest9.2-mcp1.30\",\n          \"approved-frozen-linux-runner\",\n          \"independent-native-reviewer\",\n          \"native-codex-cli-implementer\"\n        ],\n        \"scope\": [\n          \".agents/notes/planned/iter11/06-installation-provenance.md\",\n          \"docs/todos/11-reliable-delivery/evidence/06/\",\n          \"references/installation_verification.md\",\n          \"scripts/iter_install.py\",\n          \"tests/test_install_provenance.py\"\n        ]\n      },\n      \"executor_id\": \"01a1dd8e-8b72-7b72-90b4-a8577ef8db2d\",\n      \"executor_state\": \"completed\",\n      \"terminal_evidence\": \"docs/todos/11-reliable-delivery/evidence/06/implementation-terminal.json\",\n      \"progress\": [\n        {\n          \"kind\": \"red\",\n          \"evidence\": \"docs/todos/11-reliable-delivery/evidence/06/red-01.json.output.txt\",\n          \"summary\": \"22断言失败/11通过，无导入环境错误，测试侧无功能adapter\"\n        }\n      ],\n      \"checkpoint\": \"正常RED检查点22行为断言失败11控制通过，尚无生产实现\",\n      \"remaining_work\": [\n        \"C独审/D/strict\",\n        \"同实现者生产实现/GREEN/regression/临时安装检查\",\n        \"新会话继承RED证据\"\n      ],\n      \"commands\": [\n        {\n          \"receipt\": \"docs/todos/11-reliable-delivery/evidence/06/red-01.json\",\n          \"status\": \"COMPLETED\",\n          \"raw_exit_code\": 1,\n          \"started_at\": \"2026-11-15T04:55:02.045633+00:00\",\n          \"ended_at\": \"2026-11-15T04:55:03.527041+00:00\"\n        }\n      ],\n      \"started_at\": null,\n      \"ended_at\": null,\n      \"session_seconds\": null,\n      \"command_seconds\": 1.481408\n    },\n    \"checkpoint\": {\n      \"candidate\": \"e66841186450dc6bbe138bf77aac87a2a8f1232a\",\n      \"phase\": \"implementation\",\n      \"summary\": \"正常RED检查点22行为断言失败11控制通过，尚无生产实现\",\n      \"progress\": [\n        {\n          \"kind\": \"red\",\n          \"evidence\": \"docs/todos/11-reliable-delivery/evidence/06/red-01.json.output.txt\",\n          \"summary\": \"22断言失败/11通过，无导入环境错误，测试侧无功能adapter\"\n        }\n      ],\n      \"source\": \"docs/todos/11-reliable-delivery/evidence/06/red-attempt.json\"\n    },\n    \"remaining_work\": [\n      \"C独审/D/strict\",\n      \"同实现者生产实现/GREEN/regression/临时安装检查\",\n      \"新会话继承RED证据\"\n    ]\n  },\n  \"conditions\": {\n    \"inputs\": [\n      \"AGENTS.md\",\n      \"docs/todos/11-reliable-delivery/06-installation-provenance.md\",\n      \"docs/todos/11-reliable-delivery/README.md\",\n      \"docs/todos/11-reliable-delivery/evidence/06/red-attempt.json\",\n      \"docs/todos/11-reliable-delivery/evidence/06/red-checkpoint.json\",\n      \"references/task_card_schema.md\",\n      \"tests/test_install_provenance.py\"\n    ],\n    \"capabilities\": [\n      \"Python3.11.17-pytest9.2-mcp1.30\",\n      \"approved-frozen-linux-runner\",\n      \"independent-native-reviewer\",\n      \"native-codex-cli-implementer\"\n    ],\n    \"scope\": [\n      \".agents/notes/planned/iter11/06-installation-provenance.md\",\n      \"docs/todos/11-reliable-delivery/evidence/06/\",\n      \"references/installation_verification.md\",\n      \"scripts/iter_install.py\",\n      \"tests/test_install_provenance.py\"\n    ]\n  },\n  \"checkpoint\": \"新原生只读会话从真实envelope继承RED和剩余项\",\n  \"remaining_work\": [\n    \"原实现者GREEN\",\n    \"确认继承正确不重跑\"\n  ]\n}\n",
+      "stderr": "",
+      "state": "completed",
+      "request_id": "iter11Task06CheckpointConsumer-1794718625035",
+      "terminal_evidence": {
+        "source": "functions.exec/tools.exec_command",
+        "id": "41614b"
+      }
+    },
+    "delegation": {
+      "launch": {
+        "requestedAt": 1794718625207,
+        "leaf": 1794718805207,
+        "hard": 1794718895207,
+        "command": 1794718745207,
+        "launch": {
+          "chunk_id": "a647d6",
+          "wall_time_seconds": 1.001914503,
+          "session_id": 85009,
+          "original_token_count": 0,
+          "output": ""
+        },
+        "cmd": "timeout --signal=TERM --kill-after=5s 180s codex exec -C '/data/workspace/iteration-manager/.worktrees/iter-11' -s danger-full-access -c 'approval_policy=\"never\"' --json -o '/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/06/checkpoint-consumer-last-message.txt' - < '/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/06/checkpoint-consumer-brief.md' > '/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/06/checkpoint-consumer-native.jsonl' 2> '/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/06/checkpoint-consumer-native.stderr.txt'"
+      },
+      "monitor": {
+        "reason": "terminal",
+        "deadlineMs": 1794718805207,
+        "final": {
+          "status": "completed",
+          "raw": {
+            "chunk_id": "0e279a",
+            "wall_time_seconds": 29.693184027,
+            "exit_code": 0,
+            "original_token_count": 0,
+            "output": ""
+          }
+        },
+        "terminalConfirmed": true,
+        "observedAt": 1794718656101,
+        "lateByMs": 0,
+        "events": [
+          {
+            "kind": "query",
+            "startedAt": 1794718626402,
+            "returnedAt": 1794718656101,
+            "waitMs": 60000,
+            "result": {
+              "status": "completed",
+              "raw": {
+                "chunk_id": "0e279a",
+                "wall_time_seconds": 29.693184027,
+                "exit_code": 0,
+                "original_token_count": 0,
+                "output": ""
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/07/measure.py", line 17, in <module>
+    print(json.dumps({'phase': a.phase, 'historical_path_consumers': count, 'python': sys.executable,
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/home/.local/share/uv/python/cpython-3.11.17-linux-x86_64-gnu/lib/python3.11/json/__init__.py", line 234, in dumps
+    return cls(
+           ^^^^
+TypeError: JSONEncoder.__init__() got an unexpected keyword argument 'flush'

@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "kind": "runner-launch-observation",
+  "candidate": "80621f1c29e74c6398d1e8aa620af04189f1740c",
+  "argv": [
+    "/usr/bin/python3",
+    "-B",
+    "/data/workspace/iteration-manager/build/frozen-tools/fdcc4cce8863/scripts/iter_run.py",
+    "--deadline",
+    "2026-11-15T02:27:20.956614+00:00",
+    "--evidence",
+    "docs/todos/11-reliable-delivery/evidence/startup/baseline-runner.json",
+    "--",
+    "/usr/bin/python3",
+    "-B",
+    "-m",
+    "pytest",
+    "-p",
+    "no:cacheprovider",
+    "tests",
+    "-q"
+  ],
+  "cwd": "/data/workspace/iteration-manager/.worktrees/iter-11",
+  "deadline": "2026-11-15T02:27:20.956614+00:00",
+  "started_at": "2026-11-15T02:24:20.956782+00:00",
+  "ended_at": "2026-11-15T02:24:21.003358+00:00",
+  "exit_code": 125,
+  "stdout": "baseline-launch.stdout.txt",
+  "stderr": "baseline-launch.stderr.txt",
+  "runner_receipt_created": false,
+  "interpretation": "Formal baseline BLOCKED before command launch; this is neither pytest execution nor behavior RED."
+}

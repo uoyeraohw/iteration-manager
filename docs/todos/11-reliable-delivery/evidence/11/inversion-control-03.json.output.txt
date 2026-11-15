@@ -1,0 +1,1 @@
+{"selected_chain_valid": false, "case_counts": {"PASS": 10, "FAIL": 2, "UNKNOWN": 0, "BLOCKED": 2}, "output": "docs/todos/11-reliable-delivery/evidence/11/synthetic-inversion-v3/report.json"}

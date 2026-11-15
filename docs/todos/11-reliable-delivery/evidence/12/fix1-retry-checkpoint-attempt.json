@@ -1,0 +1,51 @@
+{
+  "phase": "implementation",
+  "candidate": "305f1d49d499ae3a5112358d57c2fefa48349261",
+  "inputs": [
+    "docs/todos/11-reliable-delivery/12-workflow-sequence.md",
+    "docs/todos/11-reliable-delivery/README.md",
+    "AGENTS.md",
+    "references/task_card_schema.md",
+    "references/agent_protocol.md",
+    "references/execution_readiness.md",
+    "references/worktree_git_contract.md",
+    "templates/assistants/iteration_planner.md",
+    "templates/assistants/iteration_controller.md",
+    "templates/assistants/task_tech_lead.md",
+    "templates/sdd_implementer_prompt.md",
+    "templates/sdd_reviewer_prompt.md",
+    "tests/test_prompt_sources.py",
+    "docs/todos/11-reliable-delivery/evidence/12/review-round1-input.json",
+    "docs/todos/11-reliable-delivery/evidence/12/codeg-probe-v2-native-excerpt.jsonl",
+    "docs/todos/11-reliable-delivery/evidence/12/fix1-launch-interruption.json"
+  ],
+  "capabilities": [
+    "native-codex-cli-implementer",
+    "approved-frozen-linux-runner",
+    "Python3.11.17-pytest9.2-mcp1.30",
+    "independent-native-reviewer",
+    "native-event-command-terminal-metadata-available"
+  ],
+  "version": 1,
+  "checkpoint": "F2 ten native source commands reconciled; F1 authority remains BLOCKED, no task approval",
+  "remaining_work": [
+    "F2 independent scoped re-review",
+    "Explicit F1 recovery disposition and compliant new consumption",
+    "C re-review",
+    "D/local strict"
+  ],
+  "executor_id": "01a1ddcf-b505-7cc1-baac-d53be61431ab",
+  "terminal_evidence": "docs/todos/11-reliable-delivery/evidence/12/fix1-retry-terminal.json",
+  "progress": [
+    {
+      "kind": "implementation",
+      "summary": "F2 ten native source commands reconciled; F1 authority remains BLOCKED, no task approval",
+      "evidence": "docs/todos/11-reliable-delivery/evidence/12/fix1-delivery.json"
+    }
+  ],
+  "commands": [
+    "docs/todos/11-reliable-delivery/evidence/12/fix1-reconciliation-command.json"
+  ],
+  "started_at": null,
+  "ended_at": null
+}

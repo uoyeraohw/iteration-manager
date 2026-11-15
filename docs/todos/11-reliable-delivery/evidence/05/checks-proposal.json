@@ -1,0 +1,23 @@
+[
+  {
+    "name": "experiment",
+    "kind": "command",
+    "command": "/data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B -m pytest -p no:cacheprovider tests/test_support_matrix.py tests/test_release_index.py -q --basetemp /tmp/iter11-task05-experiment-final",
+    "cwd": ".",
+    "exit_code": 0,
+    "summary": "5 passed; frozen runner COMPLETED, raw 0, tree_terminal true; format and links only",
+    "output": "docs/todos/11-reliable-delivery/evidence/05/experiment-final.json.output.txt"
+  },
+  {
+    "name": "decision",
+    "kind": "observation",
+    "summary": "Dated evidence-bounded decisions with unknown owners and conditions; independent review and native consumption pending",
+    "output": "docs/todos/11-reliable-delivery/evidence/05/matrix-decision.md"
+  },
+  {
+    "name": "interfaces",
+    "kind": "observation",
+    "summary": "Matrix fields, evidence links and release-index route documented and checked; installed package evidence limits explicit",
+    "output": "docs/todos/11-reliable-delivery/evidence/05/matrix-decision.md"
+  }
+]

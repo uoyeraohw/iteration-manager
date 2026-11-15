@@ -1,0 +1,169 @@
+{
+  "kind": "independent-review-record",
+  "candidate": "6c169e6331ac79ec85a41a531ab634fe09a4334e",
+  "recorded_at": "2026-11-15T05:39:34.547704+00:00",
+  "independent_review": {
+    "candidate": "6c169e6331ac79ec85a41a531ab634fe09a4334e",
+    "base": "531c3ea6e31d2eb2a098272bfcf6cb6fe57a11b7",
+    "contract_sha": "531c3ea6e31d2eb2a098272bfcf6cb6fe57a11b7",
+    "reviewer_uuid": "01a1ddb6-460a-7a90-83ef-f698214a24f4",
+    "independence": {
+      "statement": "I reviewed task 09 independently and did not participate in its design, implementation, tests or RCA; no delegation.",
+      "excluded_actors": [
+        "01a1ddb2-e240-7a00-8468-ccfe63671cb1 (implementer)",
+        "01a1ddb5-4c59-77f3-b33f-dd419071ba31 (actual native consumer, validation participant)",
+        "all other task consumers",
+        "root controller"
+      ]
+    },
+    "verdicts": {
+      "scope": "APPROVED",
+      "spec": "APPROVED",
+      "quality": "APPROVED",
+      "overall": "APPROVED"
+    },
+    "findings": [],
+    "rulings": [
+      "Future-only structural and performance evidence guide preserves behavior baseline, affected regression, compatibility, independent review, actual comparable before/after and UNKNOWN/BLOCKED; both goals require both forms of evidence.",
+      "Four types, schema 1 and five exact Refactor-Benchmark checks and receipt semantics remain unchanged. Existing task 07 retains three before and three after elapsed-time and dependency-count observations; iteration goal explicitly authorizes Linux platform migration without relaxing other checks.",
+      "Frozen card and iteration goal were compared against BASE: card changes are permitted execution metadata, checkbox and ledger updates; no scope, objective, verification or acceptance changes; iteration goal unchanged. Direct parent is BASE; valid default Git mode, no iteration filesystem profile and clean tracked/untracked status.",
+      "Spike-Discovery requires experiment, decision and interfaces; assertion RED is not applicable. Experiment and original record support 160 passing targeted tests; decision and interfaces have reviewable sources and tradeoffs.",
+      "V2 actual renderer and precheck succeeded for both TODO specimens; first structural specimen scope mismatch was preserved and corrected. Both are plans, no business result implied. Tests cover each absent check in spec, generated card and receipt; 160 passing results establish those exercised paths but do not establish semantic approval.",
+      "Consumer independently interpreted the two examples and old 07; this was task validation participation, not independent review. Unspecified import edge handling, dataset construction, p95 calculation and repetitions remain unknown until real planning/execution, as consumer explicitly records."
+    ],
+    "evidence_applicability_and_chronology": {
+      "experiment": "experiment.json and experiment.json.output.txt: four specified pytest files, 2026-11-15 05:35:05-05:35:11 UTC, 160 passed, exit 0, tree terminal; runs on uncommitted BASE working tree, not on C. Native implementation log shows policy and tests written before this run; later correction concerns example scope and separate evidence files. Source manifest content matches frozen source/test blobs. No duplicated suite run.",
+      "specimens": "specimens-run.json 05:34:59, experiment 05:35:05, corrected specimens-v2-run.json 05:35:26, delivery-validation.json 05:35:59; each COMPLETED exit 0 tree terminal. V2 raw output records each render and precheck.",
+      "native": "implementation-native.jsonl thread 01a1ddb2-e240-7a00-8468-ccfe63671cb1; implementation-terminal.json reports completed/exit 0; consumer-native.jsonl thread 01a1ddb5-4c59-77f3-b33f-dd419071ba31, observed 05:37:23 and consumer-terminal/guard completed/exit 0 before commit C 05:37:40.",
+      "delivery": "delivery.json and checks-proposal.json are pre-consumption checkpoint records; their pending statements reflect their original time, not present consumer status. delivery-validation ran before final addition of its own receipt and updated handoff/manifest; do not treat its success as validation of those later bytes. Current frozen manifest and blobs separately compared.",
+      "dispatch": "dispatch-check.json same owner, candidate C and READY; acceptance explicitly UNKNOWN. READY is dispatch readiness only."
+    },
+    "source_mapping": {
+      "manifest": "docs/todos/11-reliable-delivery/evidence/09/source-manifest.json",
+      "comparison": "All 40 SHA-256 entries independently compared with corresponding C Git blob bytes and current working bytes; all match. Seven consumer manifest entries independently compared with C blobs and working bytes; all match. All 11 consumer observed actual source hashes, including task 07, goal and AGENTS, also match C blobs.",
+      "test_scope": "tests/test_refactor_evidence_policy.py, tests/test_template_generation.py, tests/test_task_card_schema.py, tests/test_completion_gates.py plus scripts/iter_templates.py, scripts/iter_contracts.py and applicable policy/contracts. Manifest created after tests; native chronology and source match support applicability, but no independent per-file hash was captured at experiment start."
+    },
+    "scope_receipt": {
+      "path": "build/iter11-review/task09-review1/scope-runner.json",
+      "output": "build/iter11-review/task09-review1/scope-runner.json.output.txt",
+      "status": "COMPLETED",
+      "raw_exit_code": 0,
+      "tree_terminal": true,
+      "result": "66 changed paths within declared scope; ownership not inferred. Frozen fdcc4cc known defects limit this to physical scope evidence; independent semantic and Git-mode review applied."
+    },
+    "DeferredMinors": [],
+    "limitations": [
+      "Review concerns only task 09 candidate C and unchanged BASE contract. No fresh full suite, Windows execution, deployment, downstream business execution, iteration-wide approval, D registration or strict completion is claimed.",
+      "Generated sample measurement methods have unresolved details and are not actual measurements. Historical pre-consumption pending statements remain as chronological checkpoint records.",
+      "The task07 original results and other task approvals were not independently re-reviewed; checked its preserved written obligations and authorized Linux migration.",
+      "Source manifest was assembled after the experiment; applicability also relies on original native command chronology, not a contemporaneous pre-test hash."
+    ],
+    "approval_scope": "Whole task 09 candidate against unchanged task09 specification and iteration goal only; not a subset or finding-only closure. Controller must separately register D and run frozen local strict; no release or whole-iteration approval.",
+    "created_at": "2026-11-15T05:38:49.055420+00:00"
+  },
+  "originals": {
+    "scope-runner.json.output.txt": {
+      "path": "build/iter11-review/task09-review1/scope-runner.json.output.txt",
+      "sha256": "1b82a8f3dff44fc22d5ca534155307d9e724a6c9abcb87b85d954ae79d503510"
+    },
+    "review-native.jsonl": {
+      "path": "build/iter11-review/task09-review1/review-native.jsonl",
+      "sha256": "ca3f331fa1c87229f3dba4f0a5ffbdaf992da26d5b8926e6b1fbb8a3d0ff1976"
+    },
+    "attempt.call.json": {
+      "path": "build/iter11-review/task09-review1/attempt.call.json",
+      "sha256": "124b1e530b5558c09656a49229fd878f782974f7cedc6841653b71a5b2786777"
+    },
+    "review-package.txt": {
+      "path": "build/iter11-review/task09-review1/review-package.txt",
+      "sha256": "dfb1eba22c6dc6c2f676d261cede07167eea8348f4c36c628a3dfcdd63ac2a5e"
+    },
+    "review-last-message.txt": {
+      "path": "build/iter11-review/task09-review1/review-last-message.txt",
+      "sha256": "47db04c773d66868b9fce242425e5df82e57e5512bcba6e1ce9b9b2f2f4457e2"
+    },
+    "terminal.json": {
+      "path": "build/iter11-review/task09-review1/terminal.json",
+      "sha256": "b3a0f9f4c423afeadbeb4b865d047f414df937060b6cd1ba49ff4c1c5493d641"
+    },
+    "review-native.stderr.txt": {
+      "path": "build/iter11-review/task09-review1/review-native.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "scope-runner.json": {
+      "path": "build/iter11-review/task09-review1/scope-runner.json",
+      "sha256": "3fcf1b0ed512d967b11ba90107053030e0d4eb42dca6e3b74ffc2dd95be49a2b"
+    },
+    "attempt.json": {
+      "path": "build/iter11-review/task09-review1/attempt.json",
+      "sha256": "9f34e46e55513c943b7f98d518d09a3f157b955b54660e0f7e9e94cb600b5c08"
+    },
+    "dispatch-check.json": {
+      "path": "build/iter11-review/task09-review1/dispatch-check.json",
+      "sha256": "b7a9107c1b3e999b2cebea42b46eb0533acda23f9413a0f91ffa06b33fc0d80f"
+    },
+    "review-brief.md": {
+      "path": "build/iter11-review/task09-review1/review-brief.md",
+      "sha256": "e265522b89af532943fbc5b2524148679bb8e6e5f35b795faabd688fc101667d"
+    },
+    "review-guard.json": {
+      "path": "build/iter11-review/task09-review1/review-guard.json",
+      "sha256": "9f2eb7271006467a49301a45902b963c73822ccbc2f30252ed992163c7bf94b9"
+    },
+    "context.json": {
+      "path": "build/iter11-review/task09-review1/context.json",
+      "sha256": "2f6afd8afb450217bde6cd68bd6ed3c49fac1d88f83dfb3249084097df8ffc1f"
+    },
+    "release.call.json": {
+      "path": "build/iter11-review/task09-review1/release.call.json",
+      "sha256": "644a17695486d90d021bbb577f48b772a2f71a6373e4b5c923a5a9c84c01203c"
+    },
+    "review-check-observation.json": {
+      "path": "build/iter11-review/task09-review1/review-check-observation.json",
+      "sha256": "ed72b84e36bfdb20deb8283c875c1501d9b49ea46cde5f92ba1dfe3fcb2d9daa"
+    },
+    "scope-runner.json.child.json": {
+      "path": "build/iter11-review/task09-review1/scope-runner.json.child.json",
+      "sha256": "555a4afca4c6a45edfe411edbcce6d0577deb873da5baebf883bbf61ef21f7c8"
+    },
+    "report.json": {
+      "path": "build/iter11-review/task09-review1/report.json",
+      "sha256": "f401da76f906a32fc64f6fb00615f919e84d9d98096f4637d15677e9ce5023ff"
+    }
+  },
+  "scope_receipt": {
+    "version": 1,
+    "argv": [
+      "python3",
+      "-B",
+      "/data/workspace/iteration-manager/build/frozen-tools/fdcc4cce8863/scripts/iter_sync.py",
+      "--check-scope",
+      "531c3ea6e31d2eb2a098272bfcf6cb6fe57a11b7",
+      "6c169e6331ac79ec85a41a531ab634fe09a4334e",
+      "docs/todos/11-reliable-delivery/09-proportional-refactor-evidence.md"
+    ],
+    "cwd": "/data/workspace/iteration-manager/.worktrees/iter-11",
+    "deadline": "2026-11-15T05:43:41.085493+00:00",
+    "cleanup_reserve_seconds": 5,
+    "status": "COMPLETED",
+    "deadline_checked_at": "2026-11-15T05:38:01.547016+00:00",
+    "started_at": "2026-11-15T05:38:01.549517+00:00",
+    "ended_at": "2026-11-15T05:38:01.661227+00:00",
+    "raw_exit_code": 0,
+    "tree_terminal": true,
+    "output": "build/iter11-review/task09-review1/scope-runner.json.output.txt",
+    "container_pid": 3522852,
+    "launcher_exit_code": 0,
+    "command": {
+      "status": "COMPLETED",
+      "raw_exit_code": 0,
+      "started_at": "2026-11-15T05:38:01.549517+00:00",
+      "tree_terminal": true,
+      "deadline_checked_at": "2026-11-15T05:38:01.547016+00:00",
+      "pid": 3522853,
+      "ended_at": "2026-11-15T05:38:01.636025+00:00"
+    },
+    "late_by_seconds": 0
+  },
+  "scope_output": "[IterSync:ScopeFirewall:PASSED] All 66 changed files within declared scope; ownership is not inferred.\n"
+}

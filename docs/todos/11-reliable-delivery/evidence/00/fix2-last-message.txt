@@ -1,0 +1,5 @@
+The documentation-only follow-up is ready for independent review as a **TESTING candidate**. [AGENTS.md](/data/workspace/iteration-manager/.worktrees/iter-11/AGENTS.md) now covers isolated Windows and Linux setup, MCP 1.x, external pytest temporary roots, and the distinct Python 3.11 and 3.13 results.
+
+The [environment probe](/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/00/fix2-environment.json) confirmed Python 3.11.17, pytest 9.2.0, MCP 1.30.0, and the FastMCP import. All six frozen runner files match C2 and the worktree, as recorded in the [source manifest](/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/00/fix2-source-manifest.json). Documentation checks passed; pytest was not rerun.
+
+The [delivery checkpoint](/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/00/fix2-delivery.json) records the reused baseline evidence and remaining C3 review, D, strict, and task01 steps. Windows and PowerShell were not executed in this slice.

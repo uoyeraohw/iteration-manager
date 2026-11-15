@@ -1,0 +1,8 @@
+Task 12 已交付正常检查点，候选尚未提交，最高状态为 **TESTING**。共同协议、Codeg 守卫派发说明和收口流程图已更新；交接材料及源码哈希已生成。
+
+最终指定实验 **10 passed**，冻结 runner 记录退出码 0、进程树已终止：[原始收据]( /data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/12/experiment-04.json )。这些结构和合成测试不证明真实宿主消费。
+
+交接文件：[delivery.json](/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/12/delivery.json)、[ledger-summary.md](/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/12/ledger-summary.md)、[source-manifest.json](/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/12/source-manifest.json)、[consumer-brief-input.md](/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/12/consumer-brief-input.md)。
+
+真实 Codeg 守卫探针及新源消费、独立 Native Codex CLI 消费仍待主控执行；之后仍需 C、独立审查、D 和冻结 local strict。当前没有活动命令。
+

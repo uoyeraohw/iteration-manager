@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "iteration": "example-planning",
+  "type": "Refactor-Benchmark",
+  "delivery_mode": "git",
+  "consumes": "Existing public interfaces and behavior tests",
+  "scope": [
+    "src/example.py",
+    "tests/"
+  ],
+  "stages": [
+    "Capture baseline and before",
+    "Refactor, regress and measure after",
+    "Freeze for independent review"
+  ],
+  "task_id": "02",
+  "task_name": "Generated TODO example: improve query latency",
+  "objective": "Preserve query behavior and reduce p95 latency at a fixed workload by at least 15 percent.",
+  "produces": "Stable query results and measured lower p95 latency",
+  "acceptance": [
+    "Behavior and exceptions match baseline; independent review required",
+    "Actual p95 latency in milliseconds improves at least 15 percent under the same environment, dataset and workload"
+  ],
+  "verification": {
+    "baseline": "Before changes run python -m pytest tests/test_query.py -q to capture current query behavior",
+    "regression": "Run python -m pytest tests/test_query.py -q after changes; covers affected query and error paths",
+    "compatibility": "Observe public query signatures and results against baseline",
+    "benchmark_before": "Run python tools/bench_query.py --rows 10000 --requests 1000 before changes; record commit, hardware, OS, Python, dataset, workload, command and p95 milliseconds",
+    "benchmark_after": "Run the identical python tools/bench_query.py --rows 10000 --requests 1000 on the same environment and workload after changes; record commit, p95 milliseconds, percent change and target assessment"
+  }
+}
