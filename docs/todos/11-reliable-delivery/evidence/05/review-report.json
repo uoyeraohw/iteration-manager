@@ -1,0 +1,176 @@
+{
+  "kind": "independent-review-record",
+  "candidate": "c55d146ee9f810896ac888f96e828ebe9124f8ac",
+  "recorded_at": "2026-11-15T04:54:24.848054+00:00",
+  "independent_review": {
+    "candidate": "c55d146ee9f810896ac888f96e828ebe9124f8ac",
+    "base": "bfeabf74937e4e36ce04da9082ef312ba572806c",
+    "contract_sha": "bfeabf74937e4e36ce04da9082ef312ba572806c",
+    "previous_candidate": "a08ab82d84e27366d625f8e58bc4fd16acacce20",
+    "reviewer_uuid": "01a1dd8a-0d20-7f20-aeb8-00fa7a7d381d",
+    "independence": {
+      "statement": "Same independent reviewer resumed as instructed; no participation in task design, implementation, test authorship or RCA and no delegation. I reviewed C1 and the controller-recorded F1 repair; the controller retained card and metadata ownership.",
+      "excluded_implementer": "01a1dd84-62f5-7fb2-a5b6-23520a7a04e7",
+      "excluded_consumer": "01a1dd86-9427-7f93-a004-2ce8b0d74ac7",
+      "identity_source": "actual CODEX_THREAD_ID; same identity as review1 report and review-native.jsonl"
+    },
+    "verdicts": {
+      "scope": "APPROVED",
+      "spec": "APPROVED",
+      "quality": "APPROVED",
+      "overall": "APPROVED"
+    },
+    "findings": [],
+    "rulings": [
+      {
+        "id": "F1",
+        "previous_severity": "major",
+        "status": "ADDRESSED",
+        "location": "docs/todos/11-reliable-delivery/05-support-matrix.md:75-78",
+        "evidence": "The ledger now records the dated choice, publication tradeoff, evidence references for experiment and native consumer, limited Linux runner and baseline applicability, historical Windows, blocked worker, FS and Gemini limitations and owners/conditions via the matrix. Independent decision, constraints and sources are also recorded in this report. The frozen decision check at card line 41 is met. Controller preserved fix round/total 1/1 and review1 report; no product or test modification."
+      }
+    ],
+    "scope_receipt": {
+      "receipt": "build/iter11-review/task05-review2/scope-runner.json",
+      "child": "build/iter11-review/task05-review2/scope-runner.json.child.json",
+      "raw_output": "build/iter11-review/task05-review2/scope-runner.json.output.txt",
+      "status": "COMPLETED",
+      "raw_exit_code": 0,
+      "launcher_exit_code": 0,
+      "tree_terminal": true,
+      "output": "[IterSync:ScopeFirewall:PASSED] All 50 changed files within declared scope; ownership is not inferred.",
+      "interpretation": "This is physical scope evidence only. Independently inspected BASE..C changed paths and C1..C2 diff, Git delivery and frozen projection; known coordinator mode/takeover defects do not establish semantic acceptance."
+    },
+    "scope_and_contract": {
+      "ancestry": "C2 directly follows C1, which directly follows BASE; HEAD C2 and tracked/untracked worktree clean at review.",
+      "delta": "C1..C2 changes only the task card, adds exact preliminary review, fix budget command observation and review2 claim observation. Card changes are execution metadata/autonomy and ledger. No product, matrix, test, authority, iteration README or goal change. BASE..C product changes are authorized matrix, release route and structural test; remaining changes are task card, decision note and evidence.",
+      "frozen_contract": "Independently compared contract_projection of BASE, C1 and C2: equal. Entire iteration README identical BASE..C2. No explicit FS profile or task mode introduced; iteration goal specifies Git delivery. C/D binding and subsequent strict remain controller responsibilities.",
+      "dispatch": "build/iter11-review/task05-review2/dispatch-check.json records same owner evidence-inspection READY at actual candidate, exit 0, acceptance UNKNOWN; this is readiness only."
+    },
+    "source_evidence_applicability": {
+      "manifest": "Independently mapped 25 tracked non-card SHA256 entries to C2 Git blobs and verified they equal C1; all match. Two ignored build baseline originals matched filesystem SHA256 and raw sources. The manifest card original eaa6a520fed585fa31bd239875b83a9dda9aaae943e0e5595f7dbc62bd33d896 was recovered exactly from implementation-native.jsonl item_1 final cat; its normalized projection matches BASE, as do C1 and C2. Raw card differs because permitted lifecycle metadata, checklist and ledger changed; no nonmetadata drift excused. The manifest note current hash describes an intermediate lifecycle snapshot, not the final C2 bytes.",
+      "prior_review": "preliminary-review1.json in C2 is byte-identical to build/iter11-review/task05-review1/report.json. C1..C2 contains no product, test, history, authority or goal change; therefore prior supported semantic, experiment, consumer and quality conclusions remain applicable with the examined F1 repair.",
+      "runner": "The six platform frozen runner files were previously independently matched by SHA256 against their manifest and task00 runner C2 3f949f807d3c2eb47b97a116bd6932da55778edd. The independent targeted Python 3.13.5 runner receipt reports 30 passed and 2 Windows skips, raw exit 0 and tree terminal. The full baseline at 48e731ed266a35c06c9146aff9eaaf866c3a2e3f reports Python 3.11.17, pytest 9.2.0, MCP 1.30.0, 513 passed and 2 Windows skips, raw 0/tree terminal; C3 8fa3dd83721d331d498c5dbd7ca8a3a70eb4e877 review checked unchanged product/test source applicability. No arbitrary C2 full-suite claim."
+    },
+    "chronology_and_checks": {
+      "type": "Spike-Discovery: experiment, decision and interfaces, not Strict-TDD; no RED claim required.",
+      "implementation": "implementation-native.jsonl thread.started 01a1dd84-62f5-7fb2-a5b6-23520a7a04e7 and implementation-terminal/guard identify the native implementation and completed session. The trace records final matrix clarification before final experiment and source manifest. Controller repair is ledger/metadata only, no new implementation or test authorship.",
+      "experiment": "experiment-final.json and its child report COMPLETED, raw exit 0 and tree_terminal true; raw output 5 passed on the preserved product and test inputs. scenario-links.json and child report COMPLETED, raw 0/tree terminal; output eight links and none missing. These checks prove structure and link resolution, not the semantic truth or approval. No duplicate effective suite was run.",
+      "consumption": "consumer-native.jsonl thread.started 01a1dd86-9427-7f93-a004-2ce8b0d74ac7 and terminal/guard confirm a distinct actual read-only consumer and completed session; support-consumption.json records interpretation at 04:46 before C1 and C2. Its source-limited answers distinguish runners, worker failure, Windows, FS, Gemini and installation, and are validation, not independent review. Pending language in earlier delivery is a chronological handoff superseded by later recorded consumption, not an approval claim.",
+      "decision_and_interfaces": "Card ledger lines 75-78 and matrix-decision.md document the measured decisions, sources, limits and tradeoffs; support_matrix.md exposes the required eight columns and release_status.md adds only its link. Sources and consumer retain their stated scope."
+    },
+    "semantic_assessment": {
+      "linux": "Query capability does not prove supervised execution. Linux runner approval is bound to task00 C2 and frozen snapshot; 3.13 targeted evidence and 3.11 full baseline are separate, with C3 source-reuse assessment.",
+      "windows": "493 is the 2026-11-14 Windows release 26652bad2fcfb7c883d8e9a8bcad4aeb96160816 historical observation; current Windows is UNKNOWN.",
+      "codeg": "Task03 records READY then actual successful native delegation call, but worker bwrap could not mount proc; command did not start. completed is not successful execution.",
+      "filesystem": "Normal FS local binding and release/claim do not imply an interruption grant or full external business acceptance. FS interruption grant is unsupported; full external lifecycle unknown.",
+      "installation_and_hosts": "Historical Windows Codex and Antigravity consumed explicitly named independent installation roots. Gemini CLI discovery and configuration injection remain UNKNOWN. Linux Codex/Gemini symlinks to Codeg are a separate dated topology observation, not Windows copies or proof of current candidate installation. Maintenance history/build links may be absent from installed package as explicitly stated.",
+      "snapshot": "The matrix is a dated BASE bfeabf74937e4e36ce04da9082ef312ba572806c source observation, not a claim about future 06-12 or a fresh whole-suite, Windows or deployment result. Status, source, dates, platform/host, owner and conditions were assessed in prior review and preserved by unchanged mapping."
+    },
+    "DeferredMinors": [],
+    "limitations": [
+      "No Windows Job execution, new full maintenance suite, deployment, installation adoption, Gemini automatic discovery or full external FS business lifecycle is asserted.",
+      "This is independent approval of the whole current task candidate against its frozen specification, not D registration, local strict, whole-iteration acceptance, merge, push or deployment.",
+      "The frozen scope coordinator output is not used as evidence for the known mode/takeover defects; Git legality and source semantics were checked separately."
+    ],
+    "approval_scope": "APPROVED for task05 candidate c55d146ee9f810896ac888f96e828ebe9124f8ac against BASE contract bfeabf74937e4e36ce04da9082ef312ba572806c, including F1 closure and unchanged-source reuse of prior review. Controller still must record an appropriately bound review receipt and D and run the frozen local strict.",
+    "active_commands": "none on normal return"
+  },
+  "originals": {
+    "scope-runner.json.output.txt": {
+      "path": "build/iter11-review/task05-review2/scope-runner.json.output.txt",
+      "sha256": "77446ed683b6b3fef25c619cabc6ba396d86de661ae10f0c461cc5e41191fc5b"
+    },
+    "review-native.jsonl": {
+      "path": "build/iter11-review/task05-review2/review-native.jsonl",
+      "sha256": "db8390d5e90f49f5341e693353e894aa2d5846aa508f0970d8c19debb0631dd2"
+    },
+    "attempt.call.json": {
+      "path": "build/iter11-review/task05-review2/attempt.call.json",
+      "sha256": "b2951596d526cd9a7326d0eed6cd7aaf0e89d4afab1901d41c150fe5655b2503"
+    },
+    "review-last-message.txt": {
+      "path": "build/iter11-review/task05-review2/review-last-message.txt",
+      "sha256": "61727d17ba2fe88963a5d172aa72cf8addff387c6d7eddc4757ddf1d6a9ba1f0"
+    },
+    "terminal.json": {
+      "path": "build/iter11-review/task05-review2/terminal.json",
+      "sha256": "6d14619160b564dcc599a972e69088a90bd9429861baed5ddc5f1e15130b5bc2"
+    },
+    "review-native.stderr.txt": {
+      "path": "build/iter11-review/task05-review2/review-native.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "scope-runner.json": {
+      "path": "build/iter11-review/task05-review2/scope-runner.json",
+      "sha256": "e66d82013767afd4bcd0f627bab1ae77e2ac9834b8ec06901d724453be7a131d"
+    },
+    "attempt.json": {
+      "path": "build/iter11-review/task05-review2/attempt.json",
+      "sha256": "4294aa795df69e0a21c4930da36ffce502c487ea1ec0dd0f887aba08bcdbae01"
+    },
+    "dispatch-check.json": {
+      "path": "build/iter11-review/task05-review2/dispatch-check.json",
+      "sha256": "7fc5116630e17886b4e9402d93acc1be73792d36e2bc4fe4455b744b589cc436"
+    },
+    "review-brief.md": {
+      "path": "build/iter11-review/task05-review2/review-brief.md",
+      "sha256": "183fe61777f5383d39acd783ea5a1be099b42ea9e9ece2ac02c7c37621eed5e0"
+    },
+    "review-guard.json": {
+      "path": "build/iter11-review/task05-review2/review-guard.json",
+      "sha256": "f632139ec8b466b8e2ab021f160cb2bcca9e1382c6ace3910fff79ac932513a2"
+    },
+    "context.json": {
+      "path": "build/iter11-review/task05-review2/context.json",
+      "sha256": "323d4d521f9b5ecd5be240ba3b6bbee4644268d60aedfd7f9e13a94b7483e506"
+    },
+    "release.call.json": {
+      "path": "build/iter11-review/task05-review2/release.call.json",
+      "sha256": "58d623b67accc78cbe2631c8d0f22b3fd82d97398176ff9f03e1aa79b5c36dee"
+    },
+    "scope-runner.json.child.json": {
+      "path": "build/iter11-review/task05-review2/scope-runner.json.child.json",
+      "sha256": "e87cb58627f095f6f81209bf7e3904ce63970090de268c7a3e53e0286ea1b1ce"
+    },
+    "report.json": {
+      "path": "build/iter11-review/task05-review2/report.json",
+      "sha256": "04dd2f0d99d9a7aef9fd0da57779a5eb9723e569590c4e815481d26f40b541cd"
+    }
+  },
+  "scope_receipt": {
+    "version": 1,
+    "argv": [
+      "python3",
+      "-B",
+      "/data/workspace/iteration-manager/build/frozen-tools/fdcc4cce8863/scripts/iter_sync.py",
+      "--check-scope",
+      "bfeabf74937e4e36ce04da9082ef312ba572806c",
+      "c55d146ee9f810896ac888f96e828ebe9124f8ac",
+      "docs/todos/11-reliable-delivery/05-support-matrix.md"
+    ],
+    "cwd": "/data/workspace/iteration-manager/.worktrees/iter-11",
+    "deadline": "2026-11-15T04:56:20.433000+00:00",
+    "cleanup_reserve_seconds": 5,
+    "status": "COMPLETED",
+    "deadline_checked_at": "2026-11-15T04:52:27.558950+00:00",
+    "started_at": "2026-11-15T04:52:27.561839+00:00",
+    "ended_at": "2026-11-15T04:52:27.673062+00:00",
+    "raw_exit_code": 0,
+    "tree_terminal": true,
+    "output": "build/iter11-review/task05-review2/scope-runner.json.output.txt",
+    "container_pid": 3459313,
+    "launcher_exit_code": 0,
+    "command": {
+      "status": "COMPLETED",
+      "raw_exit_code": 0,
+      "started_at": "2026-11-15T04:52:27.561839+00:00",
+      "tree_terminal": true,
+      "deadline_checked_at": "2026-11-15T04:52:27.558950+00:00",
+      "pid": 3459314,
+      "ended_at": "2026-11-15T04:52:27.644559+00:00"
+    },
+    "late_by_seconds": 0
+  },
+  "scope_output": "[IterSync:ScopeFirewall:PASSED] All 50 changed files within declared scope; ownership is not inferred.\n"
+}
