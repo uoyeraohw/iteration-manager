@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "task_id": "04",
+  "type": "Spike-Discovery",
+  "task_path": "docs/todos/11-reliable-delivery/04-navigation-and-support.md",
+  "base_sha": "6b6b5515e6e0ea58c1d66d1de514811782441fc5",
+  "head_sha": "676b21d9ef28f4c444a880cf122452d0361e4173",
+  "contract_sha": "6b6b5515e6e0ea58c1d66d1de514811782441fc5",
+  "implementer": "01a1dd7a-d83f-7803-8c9b-7c75e2ce3a78",
+  "reviewer": "01a1dd82-2b7b-7311-8bce-566019503bae",
+  "verdict": "APPROVED",
+  "review_report": "docs/todos/11-reliable-delivery/evidence/04/review-report.json",
+  "checks": [
+    {
+      "name": "experiment",
+      "kind": "command",
+      "command": "/data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B -m pytest -p no:cacheprovider tests/test_navigation_paths.py tests/test_prompt_sources.py -q --basetemp /tmp/iter11-task04-final-0435",
+      "cwd": ".",
+      "exit_code": 0,
+      "summary": "冻结 Linux runner 实际完成；6 passed；tree_terminal=true",
+      "output": "docs/todos/11-reliable-delivery/evidence/04/navigation-experiment-final-0435.json.output.txt"
+    },
+    {
+      "name": "decision",
+      "kind": "observation",
+      "summary": "当前任务导航决定、来源和未完成实际消费的限制",
+      "output": "docs/todos/11-reliable-delivery/evidence/04/navigation-decision-interfaces.md"
+    },
+    {
+      "name": "interfaces",
+      "kind": "observation",
+      "summary": "直接路线、模板槽位、链接与历史字节核对",
+      "output": "docs/todos/11-reliable-delivery/evidence/04/navigation-decision-interfaces.md"
+    }
+  ]
+}

@@ -139,7 +139,7 @@
 <!-- iter:projection -->
 ## 验收事实（阶段比例不是工时）
 
-声明DONE 4/13 · 验收PASS 4/13
+声明DONE 5/13 · 验收PASS 5/13
 
 | 任务 | 声明 | 验收 | 业务阶段 / 清单比例 | 工程阶段 | 阻塞原因 | 累计尝试 | 最后更新 |
 | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -147,7 +147,7 @@
 | 01-delivery-mode-consistency.md | DONE | PASS | 阶段清单已勾选完毕 / 3/3 (100%) | CHECKLIST_COMPLETE (未等同验收) | 未记录 | 1 | 2026-11-15T04:07:19.729474+00:00 |
 | 02-takeover-report-isolation.md | DONE | PASS | 阶段清单已勾选完毕 / 3/3 (100%) | CHECKLIST_COMPLETE (未等同验收) | 未记录 | 0 | 2026-11-15T04:18:48.386112+00:00 |
 | 03-native-dispatch-guard.md | DONE | PASS | 阶段清单已勾选完毕 / 3/3 (100%) | CHECKLIST_COMPLETE (未等同验收) | 未记录 | 1 | 2026-11-15T04:31:36.497630+00:00 |
-| 04-navigation-and-support.md | TODO | UNKNOWN | 记录进入当前任务所需的直接文档及原件路径 / 0/3 (0%) | experiment：python -B -m pytest -p no:cacheprovider tests/test_navigation_paths.py tests/test_prompt_sources.py -q；通过冻结runner保留真实退出码，另按本卡验收完成实际消费或实验。 | 未记录 | 0 | UNKNOWN |
+| 04-navigation-and-support.md | DONE | PASS | 阶段清单已勾选完毕 / 3/3 (100%) | CHECKLIST_COMPLETE (未等同验收) | 未记录 | 0 | 2026-11-15T04:43:19.905360+00:00 |
 | 05-support-matrix.md | TODO | UNKNOWN | 逐项核对契约与有日期的能力原件 / 0/3 (0%) | experiment：python -B -m pytest -p no:cacheprovider tests/test_support_matrix.py tests/test_release_index.py -q；通过冻结runner保留真实退出码，另按本卡验收完成实际消费或实验。 | 未记录 | 0 | UNKNOWN |
 | 06-installation-provenance.md | TODO | UNKNOWN | 对来源不符、坏清单、漂移/缺失/越界路径取得断言RED / 0/3 (0%) | red：python -B -m pytest -p no:cacheprovider tests/test_install_provenance.py tests/test_cli_compatibility.py -q；由同一实现者先取得验收中具体行为断言失败，环境/导入失败不作RED；通过冻结runner。 | 未记录 | 0 | UNKNOWN |
 | 07-portable-test-support.md | TODO | UNKNOWN | 取得原维护测试基线及同环境Before量测 / 0/3 (0%) | baseline：python -B -m pytest -p no:cacheprovider tests/test_board_handoff.py tests/test_board_service.py -q；在修改前保留实际维护基线，通过冻结runner。 | 未记录 | 0 | UNKNOWN |

@@ -1,0 +1,180 @@
+{
+  "kind": "independent-review-record",
+  "candidate": "676b21d9ef28f4c444a880cf122452d0361e4173",
+  "recorded_at": "2026-11-15T04:43:19.901757+00:00",
+  "independent_review": {
+    "candidate": "676b21d9ef28f4c444a880cf122452d0361e4173",
+    "base": "6b6b5515e6e0ea58c1d66d1de514811782441fc5",
+    "contract_sha": "6b6b5515e6e0ea58c1d66d1de514811782441fc5",
+    "reviewer_uuid": "01a1dd82-2b7b-7311-8bce-566019503bae",
+    "independence": {
+      "statement": "Fresh reviewer; I did not design, implement, author tests, perform RCA, validate the task as consumer, or delegate. I independently reviewed C and its evidence. The controller remains the card writer.",
+      "excluded_implementer": "01a1dd7a-d83f-7803-8c9b-7c75e2ce3a78",
+      "excluded_consumers_observed": [
+        "01a1dd7d-fabf-7a82-829f-7c6b33a9f640",
+        "01a1dd7f-c903-7ef2-a6df-87c03f15383c"
+      ],
+      "other_excluded": "All validation participants, including the user-specified 01a1dd7e prefix; no matching full UUID was established from task04 evidence, so it is not invented."
+    },
+    "verdicts": {
+      "scope": "APPROVED",
+      "spec": "APPROVED",
+      "quality": "APPROVED",
+      "overall": "APPROVED"
+    },
+    "findings": [],
+    "acceptance_mapping": [
+      {
+        "criterion": "Fresh continue navigation for task01, missing original UNKNOWN, no historical iteration10 README",
+        "evidence": "docs/todos/11-reliable-delivery/evidence/04/consumer-v2-native.jsonl; navigation-consumption-v2.json; consumer-v2-guard.json; consumer-v2-terminal.json",
+        "assessment": "Distinct thread read candidate SKILL and authority routes, current goal, card, strict type, actual frozen envelope and original task01 failure/final/review. Envelope identified task01 C2 a178fbc65c6bc2cd9fed19e691571080e73e1e60 PASS. Missing probe actually failed FileNotFoundError and remains UNKNOWN for that artifact. Trace does not read historical iter10 README."
+      },
+      {
+        "criterion": "Role/authorization/truth and direct protocol/card/four-type/Git-FS/CLI routes preserved without workflow rewrite",
+        "evidence": "SKILL.md:9, SKILL.md:18, SKILL.md:22, SKILL.md:24, SKILL.md:26, SKILL.md:30; references/agent_protocol.md; references/task_card_schema.md",
+        "assessment": "Routes and boundary summaries retained; all direct SKILL local link targets exist. Protocol, type contracts, assistants and CLI unchanged in BASE..C."
+      },
+      {
+        "criterion": "Iteration template handoff/evidence slots, local existing links, no embedded logs, historical bytes unchanged",
+        "evidence": "templates/iteration_readme.md:32; docs/todos/11-reliable-delivery/evidence/04/historical-before.json; historical-after.json",
+        "assessment": "Slots direct future authors to use existing project-local links and mark missing evidence; placeholders do not assert an existing project target. No raw response embedded. All 50 tracked historical iteration10 README and release files match manifest and BASE/C bytes. Link validity of future filled-in projects is a consumer responsibility, not established by placeholders."
+      },
+      {
+        "criterion": "Specified Spike experiment and actual new consumption",
+        "evidence": "docs/todos/11-reliable-delivery/evidence/04/navigation-experiment-final-0435.json; navigation-experiment-final-0435.json.child.json; navigation-experiment-final-0435.json.output.txt; checks-proposal.json; navigation-decision-interfaces.md",
+        "assessment": "Specified pytest argv through frozen runner recorded 6 passed, raw exit 0, tree_terminal true. Decision/interfaces are observations; native consumption separately reviewed. Spike requires no invented RED."
+      }
+    ],
+    "scope_receipt": {
+      "path": "build/iter11-review/task04-review1/scope-runner.json",
+      "raw_output": "build/iter11-review/task04-review1/scope-runner.json.output.txt",
+      "child": "build/iter11-review/task04-review1/scope-runner.json.child.json",
+      "status": "COMPLETED",
+      "raw_exit_code": 0,
+      "tree_terminal": true,
+      "observed": "ScopeFirewall PASSED 54 paths; independently checked task04 whitelist, implicit card allowance, unchanged goal and Git default mode. Scope check is not semantic acceptance or ownership proof."
+    },
+    "source_chronology_applicability": {
+      "head": "C HEAD, clean tracked/untracked Git status; C parent is BASE. BASE and C iteration README identical and task01 card identical; no iteration-delivery.json at either commit, hence normal Git delivery. Card diff limited to mutable metadata, checkbox and ledger; goal unchanged.",
+      "manifest": "Independently SHA256 hashed Git C blobs for all 13 source-manifest.json entries; all match. Covers source, tests, directly relevant authorities and CLI/query source. Final experiment occurred after final navigation edits, on uncommitted BASE worktree; its tested 13 named inputs match C. Consumer v2 was also on the uncommitted BASE worktree after final edits; C changes relative to BASE are restricted to task04 source/card/evidence and manifest confirms relevant source. The README and task01 card consumed are byte-identical BASE/C.",
+      "experiment": "Implementation native thread started 01a1dd7a-d83f-7803-8c9b-7c75e2ce3a78; raw transcript contains source edits before final 04:33:53 experiment; runner and child show exit 0 and command tree terminal, 6 passed output. Python 3.11.17 Linux maintenance environment as recorded; no fresh suite rerun under user instruction. Experiment is structural, actual navigation is separate.",
+      "consumer": "Guard consumed deduplicated current context and real check terminal READY exit 0 before dispatch; native thread 01a1dd7f-c903-7ef2-a6df-87c03f15383c distinct from implementer and reviewer. Native launch terminal completed exit 0. Native transcript independently shows the listed reads, actual frozen CLI call, evidence and missing probe. Scenario file read after initial navigation.",
+      "historical_failure": "consumer-dispatch-check.json records exit 3 BLOCKED Duplicate value: inputs; dispatch-order-incident.json explicitly FAIL. Original consumer thread 01a1dd7d-fabf-7a82-829f-7c6b33a9f640 was launched afterward and is not counted as valid ordered consumption. Preserve incident for task11 robustness audit; corrected v2 is independent later evidence, not retroactive PASS.",
+      "handoff": "delivery.json and decision/interfaces pending-native statements truthfully describe earlier implementer handoff; v2 was produced later before C. Review claim and same-owner dispatch-check READY observed separately; READY is not approval."
+    },
+    "DeferredMinors": [
+      {
+        "severity": "minor",
+        "file": "docs/todos/11-reliable-delivery/evidence/04/implementation-last-message.txt",
+        "line": 10,
+        "scenario": "git diff --check reports an extra blank line at EOF in historical handoff text; it does not affect navigation or evidence meaning.",
+        "disposition": "Deferred; preserve original evidence."
+      }
+    ],
+    "limitations": [
+      "No complete suite rerun, Windows Job Object execution, deployment, installed skill adoption, or whole-iteration acceptance reviewed.",
+      "Future instantiated template links must be checked in their actual project and relative to the README location.",
+      "APPROVED is a reviewer verdict for current task04 C and frozen specification, not DONE, a registered receipt, D, strict, merge, deployment or iteration acceptance.",
+      "Frozen coordinator fdcc4cc has known mode/takeover defects; scope output used only as scope evidence and Git delivery/semantics examined separately."
+    ],
+    "approval_scope": "Entire task04 candidate C against unchanged BASE task card and iteration goal, including Spike experiment, semantic routes, template and valid navigation consumption; task04 independent review only.",
+    "reviewed_at_utc": "2026-11-15T04:42:11.425975+00:00"
+  },
+  "originals": {
+    "scope-runner.json.output.txt": {
+      "path": "build/iter11-review/task04-review1/scope-runner.json.output.txt",
+      "sha256": "2adbcf28d4525b96e3fe198af484b63893cd6b1fd058b16147ac3adf9e047a81"
+    },
+    "review-native.jsonl": {
+      "path": "build/iter11-review/task04-review1/review-native.jsonl",
+      "sha256": "6b6051cc8a8cfe2536f888c3edbe514ec38f0b8080b8fceb5991af8a69080045"
+    },
+    "attempt.call.json": {
+      "path": "build/iter11-review/task04-review1/attempt.call.json",
+      "sha256": "8829e518496bb15d66f0bb68c0cb4a7217337ac9e367a33ce7aed1fedbe37dae"
+    },
+    "review-last-message.txt": {
+      "path": "build/iter11-review/task04-review1/review-last-message.txt",
+      "sha256": "cf7cc903bc3ffd83cb05d296e9832785cab6e4543a17b8148376d0d94db1e824"
+    },
+    "terminal.json": {
+      "path": "build/iter11-review/task04-review1/terminal.json",
+      "sha256": "5c367aca81e600d4c5065df39e2b8dc40753eaa9962936c85c39bcc0e6dfef5d"
+    },
+    "review-native.stderr.txt": {
+      "path": "build/iter11-review/task04-review1/review-native.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "scope-runner.json": {
+      "path": "build/iter11-review/task04-review1/scope-runner.json",
+      "sha256": "02ebb441803333671dfaf8f899a97c6c81e7ff4dc3cf4c2353086cbfb718ff8e"
+    },
+    "attempt.json": {
+      "path": "build/iter11-review/task04-review1/attempt.json",
+      "sha256": "dee181e5724836d449a512f4fa8b2309516151d70774639538c74cc94f3fa044"
+    },
+    "dispatch-check.json": {
+      "path": "build/iter11-review/task04-review1/dispatch-check.json",
+      "sha256": "35639018a912c2b1f6dc67a656981783fb6f7ff8cac631a80a8b35541ac53956"
+    },
+    "review-brief.md": {
+      "path": "build/iter11-review/task04-review1/review-brief.md",
+      "sha256": "2439272f6247106250b5194c41c9f558d036d8f5afb73d8f6387d8814d1c26c8"
+    },
+    "review-guard.json": {
+      "path": "build/iter11-review/task04-review1/review-guard.json",
+      "sha256": "4f76ce93041ad75fc83a52bcf3c68d087d48709d2d3f3fe866145e0e2839fecd"
+    },
+    "context.json": {
+      "path": "build/iter11-review/task04-review1/context.json",
+      "sha256": "6be359715f45bc83582ef4a5cb340feca01449812796ca8855a5ef34d2a3ec6f"
+    },
+    "release.call.json": {
+      "path": "build/iter11-review/task04-review1/release.call.json",
+      "sha256": "ec9a7842f98877d433c82dded8df25e55511bff03eca79e5be81eeef7afe6685"
+    },
+    "scope-runner.json.child.json": {
+      "path": "build/iter11-review/task04-review1/scope-runner.json.child.json",
+      "sha256": "48e23c1e0fd3a0137cb6f8b18c5e1566a50994ef1decc0eacb68d962eda769ce"
+    },
+    "report.json": {
+      "path": "build/iter11-review/task04-review1/report.json",
+      "sha256": "e659b12151f26b921362e4a7f169da141bf6801a7eecfe91b8cc8cb7a6e2ef27"
+    }
+  },
+  "scope_receipt": {
+    "version": 1,
+    "argv": [
+      "python3",
+      "-B",
+      "/data/workspace/iteration-manager/build/frozen-tools/fdcc4cce8863/scripts/iter_sync.py",
+      "--check-scope",
+      "6b6b5515e6e0ea58c1d66d1de514811782441fc5",
+      "676b21d9ef28f4c444a880cf122452d0361e4173",
+      "docs/todos/11-reliable-delivery/04-navigation-and-support.md"
+    ],
+    "cwd": "/data/workspace/iteration-manager/.worktrees/iter-11",
+    "deadline": "2026-11-15T04:44:57.332000+00:00",
+    "cleanup_reserve_seconds": 5,
+    "status": "COMPLETED",
+    "deadline_checked_at": "2026-11-15T04:41:09.406219+00:00",
+    "started_at": "2026-11-15T04:41:09.409376+00:00",
+    "ended_at": "2026-11-15T04:41:09.570645+00:00",
+    "raw_exit_code": 0,
+    "tree_terminal": true,
+    "output": "build/iter11-review/task04-review1/scope-runner.json.output.txt",
+    "container_pid": 3456655,
+    "launcher_exit_code": 0,
+    "command": {
+      "status": "COMPLETED",
+      "raw_exit_code": 0,
+      "started_at": "2026-11-15T04:41:09.409376+00:00",
+      "tree_terminal": true,
+      "deadline_checked_at": "2026-11-15T04:41:09.406219+00:00",
+      "pid": 3456656,
+      "ended_at": "2026-11-15T04:41:09.532844+00:00"
+    },
+    "late_by_seconds": 0
+  },
+  "scope_output": "[IterSync:ScopeFirewall:PASSED] All 54 changed files within declared scope; ownership is not inferred.\n"
+}
