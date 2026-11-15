@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "task_id": "02",
+  "type": "Strict-TDD",
+  "task_path": "docs/todos/11-reliable-delivery/02-takeover-report-isolation.md",
+  "base_sha": "ecf20784605017c80063000f5d3d42fa7920c680",
+  "head_sha": "29065a7babb37829791917d5d6c1fdb0d1bea70b",
+  "contract_sha": "ecf20784605017c80063000f5d3d42fa7920c680",
+  "implementer": "01a1dd65-6c80-70d0-b44f-edcf77bf8df3",
+  "reviewer": "01a1dd6c-46a0-7841-8501-8803fe518748",
+  "verdict": "APPROVED",
+  "review_report": "docs/todos/11-reliable-delivery/evidence/02/review-report.json",
+  "checks": [
+    {
+      "name": "red",
+      "kind": "command",
+      "command": "/data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B -m pytest -p no:cacheprovider tests/test_takeover_resilience.py tests/test_task_discovery_compat.py tests/test_cli_compatibility.py tests/test_sync_compatibility.py -q --basetemp /tmp/iter11-task02-red-02",
+      "cwd": ".",
+      "exit_code": 1,
+      "summary": "真实读取/OSError/删除竞态4失败24通过，非环境错误",
+      "output": "docs/todos/11-reliable-delivery/evidence/02/red-02.json.output.txt",
+      "failure_kind": "assertion"
+    },
+    {
+      "name": "green",
+      "kind": "command",
+      "command": "/data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B -m pytest -p no:cacheprovider tests/test_takeover_resilience.py tests/test_task_discovery_compat.py tests/test_cli_compatibility.py tests/test_sync_compatibility.py -q --basetemp /tmp/iter11-task02-green-02",
+      "cwd": ".",
+      "exit_code": 0,
+      "summary": "最终29通过",
+      "output": "docs/todos/11-reliable-delivery/evidence/02/green-02.json.output.txt"
+    },
+    {
+      "name": "regression",
+      "kind": "command",
+      "command": "/data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B -m pytest -p no:cacheprovider tests/test_takeover_resilience.py tests/test_task_discovery_compat.py tests/test_cli_compatibility.py tests/test_sync_compatibility.py -q --basetemp /tmp/iter11-task02-green-02",
+      "cwd": ".",
+      "exit_code": 0,
+      "summary": "同选择最终29通过覆盖既有CLI/发现/同步兼容，复用一次有效执行",
+      "output": "docs/todos/11-reliable-delivery/evidence/02/green-02.json.output.txt"
+    }
+  ]
+}

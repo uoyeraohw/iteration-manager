@@ -1,0 +1,146 @@
+{
+  "kind": "independent-review-record",
+  "candidate": "29065a7babb37829791917d5d6c1fdb0d1bea70b",
+  "recorded_at": "2026-11-15T04:18:48.384864+00:00",
+  "independent_review": {
+    "candidate": "29065a7babb37829791917d5d6c1fdb0d1bea70b",
+    "base": "ecf20784605017c80063000f5d3d42fa7920c680",
+    "reviewer_uuid": "01a1dd6c-46a0-7841-8501-8803fe518748",
+    "independence": {
+      "implementer_uuid": "01a1dd65-6c80-70d0-b44f-edcf77bf8df3",
+      "statement": "Fresh independent reviewer; no task design, implementation, test authorship, RCA or delegation. UUID obtained from CODEX_THREAD_ID."
+    },
+    "verdicts": {
+      "scope": "APPROVED",
+      "spec": "APPROVED",
+      "quality": "APPROVED",
+      "overall": "APPROVED"
+    },
+    "findings": [],
+    "scope_analysis": {
+      "result": "Frozen scope command reported all 35 changed paths within declared scope. Actual diff consists of iter_cli, new test, note, task02 card coordinator metadata/ledger and task02 evidence; card specification and acceptance text are unchanged. Scope result establishes physical boundary only, not ownership or correctness of frozen coordinator takeover/mode logic.",
+      "receipt": "build/iter11-review/task02-review1/scope-runner.json",
+      "output": "build/iter11-review/task02-review1/scope-runner.json.output.txt",
+      "status": "COMPLETED",
+      "raw_exit_code": 0,
+      "tree_terminal": true
+    },
+    "source_analysis": {
+      "binding": "Independently hashed git show C blobs for all six source-manifest SHA256 entries: all match, including changed production, test and note plus three read-only test dependencies. The manifest describes the precommit candidate; these blob hashes bind it to C.",
+      "behavior": "scripts/iter_cli.py:16-26 isolates individual parse/audit failures as UNKNOWN with findings and null unknown missing; lines 163-170 retain directory/argument checks outside the per-card catch and emit one JSON after discovery. Healthy row uses original parse/audit expression. iter_queries.py:59-105 already catches read errors during audit and returns FAIL, retaining known missing from initial parse. The broad TypeError/KeyError/RuntimeError/ValueError catches are confined to an individual card and produce a non-PASS diagnostic, though may also turn programming errors into per-card diagnostics. Discovery and global validation remain outside. iter_cli.main catches and returns 1 for global errors; iter_sync.main calls _dispatch directly and preserves exceptions.",
+      "tests": "tests/test_takeover_resilience.py covers actual invalid UTF-8, mixed injected OSError, discovered deletion, audit-read deletion, malformed card, exact healthy row and report fields, bytes and global errors through callable and legacy subprocess. Fault injection is synthetic except invalid bytes."
+    },
+    "chronology_analysis": {
+      "source": "docs/todos/11-reliable-delivery/evidence/02/implementation-native.jsonl",
+      "thread": "01a1dd65-6c80-70d0-b44f-edcf77bf8df3",
+      "sequence": "Native item 17 red-01; item 22 adds OSError test and runs red-02; item 24 first production edit; item 25 green-01; item 28 adds audit-race/malformed test and runs green-02; turn.completed. Original red outputs show behavior assertion failures: 3 failed/24 passed and 4 failed/24 passed, exit 1, terminal trees. Final green-02 is 29 passed, exit 0, terminal tree; same four-file selection prescribed for GREEN and regression, with unique basetemp. Added audit-race/malformed test did not undergo RED, explicitly disclosed; strict TDD contract requires core RED, not RED for all supplemental cases.",
+      "terminal": "implementation-terminal.json records native session completed exit 0, terminalConfirmed true; four runner receipts each report COMPLETED and tree_terminal true."
+    },
+    "evidence": {
+      "dispatch": "build/iter11-review/task02-review1/dispatch-check.json reports READY, exit 0, same owner and candidate; root consumption as supplied.",
+      "manifest": "docs/todos/11-reliable-delivery/evidence/02/source-manifest.json",
+      "raw": "docs/todos/11-reliable-delivery/evidence/02/{red-01,red-02,green-01,green-02}.json and corresponding .json.output.txt",
+      "no_duplicate_suite": "No duplicate test suite run."
+    },
+    "DeferredMinors": [],
+    "limitations": [
+      "Approval is restricted to task02 C and frozen task specification on inspected Linux evidence; injected failures do not prove every operating-system or external scenario.",
+      "No Windows verification, full suite, whole iteration acceptance, D registration, local strict, deployment, new-session adoption or external business acceptance.",
+      "Physical scope tool does not establish semantic correctness of its known takeover/mode defects."
+    ],
+    "approval_scope": "Independent task02 candidate review only; controller must separately register D and perform frozen local strict and remaining iteration gates."
+  },
+  "originals": {
+    "scope-runner.json.output.txt": {
+      "path": "build/iter11-review/task02-review1/scope-runner.json.output.txt",
+      "sha256": "5143deb5844e64ac65872af64330b98a2b34d628c761f6962457e09dd165595f"
+    },
+    "review-native.jsonl": {
+      "path": "build/iter11-review/task02-review1/review-native.jsonl",
+      "sha256": "4c9c1778dc1f4170a97ae7cbba232161922ed2c7f827e69e33eab362cecf6754"
+    },
+    "attempt.call.json": {
+      "path": "build/iter11-review/task02-review1/attempt.call.json",
+      "sha256": "b3660408c203971920d265352ebc3088d5e92c005ae0f8c6ed10a67295f23df5"
+    },
+    "review-last-message.txt": {
+      "path": "build/iter11-review/task02-review1/review-last-message.txt",
+      "sha256": "da9822e5cd35bcf50123c6b11ce6e13ba9e1bcee4e2161af2194c43375ef1c7f"
+    },
+    "terminal.json": {
+      "path": "build/iter11-review/task02-review1/terminal.json",
+      "sha256": "68ac920c326c315aea660d9956d6516e9356a8e858cc23b84fc4b79df8e60b26"
+    },
+    "review-native.stderr.txt": {
+      "path": "build/iter11-review/task02-review1/review-native.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "scope-runner.json": {
+      "path": "build/iter11-review/task02-review1/scope-runner.json",
+      "sha256": "bc78d6f891f4d94b611eee3657a5131462c12c4f01bb369a1c853209cc9ea42a"
+    },
+    "attempt.json": {
+      "path": "build/iter11-review/task02-review1/attempt.json",
+      "sha256": "fa41047582173af942d5ad5d914781225eccbb5b8bd9f97782308e5f7bfbd8c1"
+    },
+    "dispatch-check.json": {
+      "path": "build/iter11-review/task02-review1/dispatch-check.json",
+      "sha256": "14741ffd40e36b48fb2e8fe73007d113e599b2c73390d4bea21aa1c7e5db8d14"
+    },
+    "review-brief.md": {
+      "path": "build/iter11-review/task02-review1/review-brief.md",
+      "sha256": "5a566732b345707d0c6cd9a02dbec3ff6139d59c220a8a22782bc44167849490"
+    },
+    "context.json": {
+      "path": "build/iter11-review/task02-review1/context.json",
+      "sha256": "7493e71cd167b3d46e8402e61f1ae47b4d6a4d4e0a8dc740417d265562654028"
+    },
+    "release.call.json": {
+      "path": "build/iter11-review/task02-review1/release.call.json",
+      "sha256": "7997094827aca109506282632bf02fc88537726b56273a3870b94029f7c83f4c"
+    },
+    "scope-runner.json.child.json": {
+      "path": "build/iter11-review/task02-review1/scope-runner.json.child.json",
+      "sha256": "04e06ec861a1fc6b1abe460acb56c38d93e55cca9c0f4c4074655ea855843591"
+    },
+    "report.json": {
+      "path": "build/iter11-review/task02-review1/report.json",
+      "sha256": "a6a3d90e4658c2951107c28198df24d2fb24171d8e65c9ed53c58158392e2745"
+    }
+  },
+  "scope_receipt": {
+    "version": 1,
+    "argv": [
+      "python3",
+      "-B",
+      "/data/workspace/iteration-manager/build/frozen-tools/fdcc4cce8863/scripts/iter_sync.py",
+      "--check-scope",
+      "ecf20784605017c80063000f5d3d42fa7920c680",
+      "29065a7babb37829791917d5d6c1fdb0d1bea70b",
+      "docs/todos/11-reliable-delivery/02-takeover-report-isolation.md"
+    ],
+    "cwd": "/data/workspace/iteration-manager/.worktrees/iter-11",
+    "deadline": "2026-11-15T04:20:59.736000+00:00",
+    "cleanup_reserve_seconds": 5,
+    "status": "COMPLETED",
+    "deadline_checked_at": "2026-11-15T04:17:13.989660+00:00",
+    "started_at": "2026-11-15T04:17:13.992957+00:00",
+    "ended_at": "2026-11-15T04:17:14.103831+00:00",
+    "raw_exit_code": 0,
+    "tree_terminal": true,
+    "output": "build/iter11-review/task02-review1/scope-runner.json.output.txt",
+    "container_pid": 3450321,
+    "launcher_exit_code": 0,
+    "command": {
+      "status": "COMPLETED",
+      "raw_exit_code": 0,
+      "started_at": "2026-11-15T04:17:13.992957+00:00",
+      "tree_terminal": true,
+      "deadline_checked_at": "2026-11-15T04:17:13.989660+00:00",
+      "pid": 3450322,
+      "ended_at": "2026-11-15T04:17:14.075527+00:00"
+    },
+    "late_by_seconds": 0
+  },
+  "scope_output": "[IterSync:ScopeFirewall:PASSED] All 35 changed files within declared scope; ownership is not inferred.\n"
+}
