@@ -2,7 +2,7 @@
 
 > 初始化：2026-11-14 UTC · 当前checkout：`/data/workspace/iteration-manager` · 基线：`fdcc4cce88635ee81573be5991de11de650659d8`。
 > 2026-11-15 启动授权：允许实施、精准Git提交及独立Worktree；十二卡按编号串行，每卡验收PASS后才进入下一卡。产品验收仍为0/12。
-> 正在从main提交规划并准备`feat/iter-11-reliable-delivery` / `.worktrees/iter-11`；正式执行前须补齐Windows runner。最新授权见[execution-authorization.json](evidence/planning/execution-authorization.json)。
+> 规划提交`80621f1c29e74c6398d1e8aa620af04189f1740c`已通过冻结规划门禁；独立Worktree为`.worktrees/iter-11`，分支`feat/iter-11-reliable-delivery`。第01卡正式执行被Windows runner能力阻断，尚未派发实现者。最新结果见[startup-report.json](evidence/startup/startup-report.json)。
 
 ## 1. 迭代核心目标与全局约束
 <!-- iter:goal -->
@@ -94,7 +94,15 @@
 
 更正记录：08/09的两处旧卡号引用已更新，原始输入/生成结果保留。完整延迟工具目录确认Codeg schema已暴露，先前不可用判断不准确；仅03/11/12执行性按新事实做r4重评并通过，不另做设计重规划。原始误观察、请求/响应及更正见[initialization-corrections.json](evidence/planning/initialization-corrections.json)。
 
-## 5. 初始化历史与启动交接
+## 5. 当前启动交接与初始化历史
+
+2026-11-15已执行本次启动授权：精准提交125份归属规划/证据文件，冻结`--verify-committed`退出0后创建独立Worktree；当前执行位置为`/data/workspace/iteration-manager/.worktrees/iter-11`。主checkout保留main和规划提交，不从迭代分支回写根索引。
+
+- **当前结论**：第01卡就绪BLOCKED，十二卡仍为TODO/验收UNKNOWN，0次attempt、0个写者、无活动产品执行者。没有产品实现、pytest、RED/GREEN、独审或完成收据。
+- **实测能力缺口**：同调用以确切UTC截止尝试冻结runner基线入口，实际退出125并报告`This runner requires Windows Job Objects; no command started`，未生成runner收据，pytest未启动。此为启动拒绝观察，不是行为RED或测试失败。见[原始错误](evidence/startup/baseline-launch.stderr.txt)及[完整调用观察](evidence/startup/baseline-launch.observation.json)。
+- **真实自用观察**：91个冻结文件再次核对一致；规划门禁成功；同候选完整盘点退出3，第01卡execution/verification均BLOCKED，后续卡还受本次串行约束阻断。主控已消费结果，因此没有claim、派发或伪造attempt。见[盘点原件](evidence/startup/startup-inventory.stdout.txt)。这些事实仅覆盖启动协调和能力拒绝路径，不代表完整原生交付链健壮性已通过。
+- **恢复条件**：环境所有者提供可访问的Windows执行入口与工作区；Controller在同一适用候选核对冻结工具、实际Codeg读取/委派能力、独审角色及正式干净基线，再生成新鲜context、claim和同owner dispatch-check。旧[startup-context.json](evidence/startup/startup-context.json)只绑定规划提交`80621f1`，是历史BLOCKED观察；后续证据登记提交不把它自动变成当前READY。
+- **串行边界**：第01卡完成type证据、独审、C/D和local strict验收PASS前不启动02—12；不修改硬依赖或降低门禁。暂不部署、推送、合流或清理。
 
 以下初始化观察截至2026-11-14；其中授权、提交和Worktree状态已由2026-11-15启动记录接续，不能作为最新执行结论。原始观察文件保持不变。
 

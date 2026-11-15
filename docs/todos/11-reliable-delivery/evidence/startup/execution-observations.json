@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "observed_at": "2026-11-15T02:24:21.003358+00:00",
+  "workspace": "/data/workspace/iteration-manager/.worktrees/iter-11",
+  "branch": "feat/iter-11-reliable-delivery",
+  "candidate": "80621f1c29e74c6398d1e8aa620af04189f1740c",
+  "platform": "Linux-6.18.54-instabox-x86_64-with-glibc2.41",
+  "python": "3.13.5",
+  "node": "v22.23.3",
+  "frozen_source": "fdcc4cce88635ee81573be5991de11de650659d8",
+  "frozen_files_checked": 91,
+  "frozen_mismatches": [],
+  "formal_runner": "BLOCKED: actual launcher exits 125; requires Windows Job Objects; no command started; no runner receipt created",
+  "product_baseline": "NOT_STARTED",
+  "native_codegen": "delegate/query/cancel schemas EXPOSED; target runtime/access and native chain UNVERIFIED; no delegation performed",
+  "independent_reviewer": "UNVERIFIED; planning checker is excluded",
+  "authority": "READY: current explicit implementation/Git/worktree authorization",
+  "serial_order": "01 through 12, previous acceptance PASS required",
+  "product_attempts": 0,
+  "active_executors": 0,
+  "windows_executables": {
+    "cmd.exe": null,
+    "powershell.exe": null,
+    "pwsh": null,
+    "wine": null
+  },
+  "recovery": "Provide accessible Windows execution workspace for this same candidate and verify frozen tool bytes, baseline, native contract read access and independent review before dispatch."
+}
