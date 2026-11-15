@@ -1,0 +1,76 @@
+{
+  "kind": "fix1-source-checkpoint",
+  "base_candidate": "fe6923c91484f03c2c66d78e7abdef70a5d5bf36",
+  "observed_at": "2026-11-15T03:25:02.054487+00:00",
+  "files": [
+    {
+      "path": "scripts/iter_run.py",
+      "bytes": 13151,
+      "sha256": "b8b22217ad1d8d1f02a9a4d3cb053f84f781888c4871e583f0a7ff27f3fe3ef1"
+    },
+    {
+      "path": "scripts/iter_linux_job.py",
+      "bytes": 7005,
+      "sha256": "68c76c0a9e23209c6e68d0242a0741e5c1bbe6c0019809c65a13034104fa987b"
+    },
+    {
+      "path": "scripts/iter_win_job.py",
+      "bytes": 3245,
+      "sha256": "93de97a15f75be1496c4f4e6a727a75e2ca2d89298245eef942bedb9c245c43d"
+    },
+    {
+      "path": "tests/test_iter_run.py",
+      "bytes": 5062,
+      "sha256": "fc44866de74623f6c513647e0a5a4cb7abee3e15bd723863878e15a183df91cc"
+    },
+    {
+      "path": "tests/test_linux_runner.py",
+      "bytes": 18017,
+      "sha256": "d03953a0c934c94560c4d15db789ed346a38752e9adf9d8f1eb65d66626851a1"
+    },
+    {
+      "path": "tests/test_checkpoint_resume.py",
+      "bytes": 11536,
+      "sha256": "18a502677b7491ccd8207af117837c1591d5988a308831734c6da44e2a6901dd"
+    },
+    {
+      "path": "tests/test_execution_readiness.py",
+      "bytes": 38283,
+      "sha256": "cd70d3454121c9ca06c363d3560a57ca80be8804cd3b896179e2cdb1459b8fab"
+    },
+    {
+      "path": "tests/test_autonomy.py",
+      "bytes": 11508,
+      "sha256": "21a9d46dbcee880572007ecc67923043e2636fc18675abdbdc4725bae13b990f"
+    },
+    {
+      "path": "tests/test_prompt_sources.py",
+      "bytes": 2526,
+      "sha256": "a82cb13d42fd11f4089d7c3355bf033724e08d2c9a89d482ef98c920d1be5b32"
+    },
+    {
+      "path": "tests/test_task_card_schema.py",
+      "bytes": 862,
+      "sha256": "4c9176716994059d0cc94f85896b1c29170e033a2933ab55c2c11810e433de1b"
+    },
+    {
+      "path": "AGENTS.md",
+      "bytes": 20405,
+      "sha256": "eefd7b870a0a504a8bb85a1ec31b0413ccad02d2c4e928ea486e11fbd6948bac"
+    },
+    {
+      "path": "references/checkpoint_execution.md",
+      "bytes": 8124,
+      "sha256": "20e2150b71afa5b87893458db9c5610d8b144b38b6dc3a3260b5b66c21e2082a"
+    },
+    {
+      "path": ".agents/notes/planned/iter11/00-linux-runner.md",
+      "bytes": 2117,
+      "sha256": "6a261dd38cd50be582c56fa8f2f1a32762199ec9fa07001a5f5d864daa5e0222"
+    }
+  ],
+  "fixed_driver_manifest": "build/iter11-fix-runner/fe6923c91484/manifest.json",
+  "fixed_driver_manifest_sha256": "4b1b5f036a0d93f93f40760d6502f745c18f4c723589db46a6be08bc44af5394",
+  "fixed_driver_files_match": true,
+  "scope": "working-tree input hashes, not a commit or approval"
+}

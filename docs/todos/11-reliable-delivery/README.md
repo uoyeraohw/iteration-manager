@@ -97,7 +97,7 @@
 
 ## 5. Linux迁移与历史启动交接
 
-00已交付TESTING候选：Linux后端、AGENTS双环境指引、有效RED及最新GREEN24通过/2跳过、受影响回归141通过/2跳过；独审/批准尚未完成。原件见[evidence/00/slice-a-delivery.json](evidence/00/slice-a-delivery.json)。
+00的独审发现启动取消竞争窗口F1，已登记一次返修；同一实现者真实断言RED后交付修复，最新GREEN30通过/2 Windows跳过、受影响回归147通过/2跳过。Linux后端及AGENTS双环境指引当前仍为TESTING，等待新候选独审；原件见[evidence/00/fix1-delivery.json](evidence/00/fix1-delivery.json)。
 
 最新要求已把00平台适配加入本轮，恢复条件改为在当前Linux上完成00、独审和冻结；不再等待Windows环境。真实TypeSafe四维为90.25/99.50/99.00/93.25，加权95.375，原件见[linux-typesafe-summary.json](evidence/planning/linux-typesafe-summary.json)。协作运行时已实际读取必读契约；Codeg本地子会话则因bwrap启动失败，二者分开记录，不能宣称Codeg链已通过。
 
@@ -143,7 +143,7 @@
 
 | 任务 | 声明 | 验收 | 业务阶段 / 清单比例 | 工程阶段 | 阻塞原因 | 累计尝试 | 最后更新 |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| 00-linux-runner-and-dev-guide.md | TESTING | UNKNOWN | 整理双环境指引、完成受影响回归及独立验收，冻结获准runner供后续卡使用 / 2/3 (66.7%) | CHECKLIST_COMPLETE (未等同验收) | 未记录 | 0 | 2026-11-15T03:08:41.538360+00:00 |
+| 00-linux-runner-and-dev-guide.md | TESTING | UNKNOWN | 整理双环境指引、完成受影响回归及独立验收，冻结获准runner供后续卡使用 / 2/3 (66.7%) | CHECKLIST_COMPLETE (未等同验收) | 未记录 | 1 | 2026-11-15T03:26:54.684025+00:00 |
 | 01-delivery-mode-consistency.md | TODO | UNKNOWN | 冻结包含未知模式的合法Git绑定反例和兼容矩阵，取得目标断言RED / 0/3 (0%) | red：python -B -m pytest -p no:cacheprovider tests/test_delivery_mode_consistency.py tests/test_query_contract.py tests/test_execution_readiness.py tests/test_completion_gates.py tests/test_filesystem_receipts.py -q；由同一实现者先取得验收中具体行为断言失败，环境/导入失败不作RED；通过冻结runner。 | 未记录 | 0 | UNKNOWN |
 | 02-takeover-report-isolation.md | TODO | UNKNOWN | 对健康卡混合UnicodeError、OSError及发现后删除构造有效断言RED / 0/3 (0%) | red：python -B -m pytest -p no:cacheprovider tests/test_takeover_resilience.py tests/test_task_discovery_compat.py tests/test_cli_compatibility.py tests/test_sync_compatibility.py -q；由同一实现者先取得验收中具体行为断言失败，环境/导入失败不作RED；通过冻结runner。 | 未记录 | 0 | UNKNOWN |
 | 03-native-dispatch-guard.md | TODO | UNKNOWN | 以可控Promise覆盖running/失败/乱序及身份不符，取得断言RED / 0/3 (0%) | red：python -B -m pytest -p no:cacheprovider tests/test_dispatch_guard.py tests/test_deadline_watch.py -q；由同一实现者先取得验收中具体行为断言失败，环境/导入失败不作RED；通过冻结runner。 | 未记录 | 0 | UNKNOWN |

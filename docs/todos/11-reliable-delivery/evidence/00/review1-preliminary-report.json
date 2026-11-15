@@ -1,0 +1,56 @@
+{
+  "candidate": "fe6923c91484f03c2c66d78e7abdef70a5d5bf36",
+  "base": "894dfd6d5d93d2ff99f6eddcaadbb88ee9ce44c3",
+  "verdict": "BLOCKED",
+  "scope": "Task00 Linux migration and dual-platform guidance only; not iteration approval or task state.",
+  "independence": {
+    "status": "BLOCKED",
+    "declaration": "This execution is identified by the harness as /root, explicitly excluded by the request. No independent reviewer identity can be asserted. This report is preliminary and cannot be used as an independent approval. No delegation or prior implementation-session resume/fork was performed in this turn."
+  },
+  "findings": [
+    {
+      "id": "F1",
+      "severity": "high",
+      "file": "scripts/iter_linux_job.py",
+      "line": 81,
+      "related_lines": [
+        83,
+        85,
+        87
+      ],
+      "scenario": "After readline and the interrupted check, SIGTERM can arrive while parsing the request or checking the deadline. The signal handler only sets interrupted and execution still reaches Popen; the target can perform side effects before the subsequent cleanup. Similarly, after the launch request is consumed, caller death and pipe EOF are not checked again before Popen. The existing SIGTERM test waits until the target starts and does not exercise this window. This is a source-derived race, not a reproduced failure.",
+      "remediation": "Design and verify a launch/cancellation handshake that prevents launch when cancellation or caller loss wins the gate, with deterministic tests covering interruption and caller death at the boundary; retain fail-closed terminal evidence."
+    }
+  ],
+  "acceptance_observations": {
+    "launch_and_capabilities": "iter_linux_job.py:57-78 installs handlers, sets and reads back subreaper, reads proc children and probes pidfd before READY; subprocess isolation leaves the long-lived caller unchanged. Launch race F1 remains unresolved. No fault injection beyond the requested test run was performed.",
+    "descendant_termination": "iter_linux_job.py:21-47 opens pidfds for direct children, sends SIGKILL, reaps and requires waitpid ECHILD; repeated adoption handles parent-first exits and setsid. Tests cover nested orphans, timeout, unrelated processes and concurrent calls. Supervisor hard kill cannot prove or guarantee cleanup and is reported unknown; race F1 is separately open.",
+    "receipt_deadline_and_paths": "iter_run.py:48-85 reserves receipt/output exclusively, resolves workspace path and enforces five-second reserve; lines 222-250 distinguish launcher status, business exits and unproved cleanup. Exit7 and 124/125 exercised; no guarantee is inferred from exit code alone. F1 leaves launch interruption unsatisfied.",
+    "windows": "Windows Job implementation is unchanged in BASE..C; two Windows Job mock tests are explicitly skipped on Linux. Historical Windows support is not a fresh Windows execution result; Windows behavior cannot be independently verified here.",
+    "guidance": "AGENTS.md and checkpoint_execution.md distinguish Bash/python3 and PowerShell, working roots, per-platform process mechanisms, historical independent Windows installations versus observed Linux symlinks, deployment authorization and evidence limits. The current Linux symlinks are supported by the dated observation; actual installation adoption is unverified.",
+    "compatibility_and_ownership": "Version 1 receipt shape remains in iter_run.py; Windows branch is retained. Regression includes checkpoint, readiness, autonomy, prompt and card schema tests. Formal coordination remains frozen fdcc4cc per goal and release evidence. Task01-12 ownership and task12 common-protocol reconciliation remain per the iteration goal; no whole-iteration result is inferred.",
+    "lifecycle": "Native terminal JSON and JSONL, attempt and normal release are recorded; native session start/end in attempt are null. Card is TESTING with review PENDING; dispatch-check READY is dispatch readiness, not acceptance."
+  },
+  "validation": {
+    "command": "/data/workspace/iteration-manager/build/iter11-venv/bin/python -B scripts/iter_run.py --deadline 2026-11-15T03:18:20.044Z --evidence build/iter11-review/review1/independent-runner.json -- /data/workspace/iteration-manager/build/iter11-venv/bin/python -B -m pytest -p no:cacheprovider tests/test_iter_run.py tests/test_linux_runner.py -q --basetemp build/iter11-review/review1/pytest",
+    "receipt": "build/iter11-review/review1/independent-runner.json",
+    "child_receipt": "build/iter11-review/review1/independent-runner.json.child.json",
+    "output": "build/iter11-review/review1/independent-runner.json.output.txt",
+    "result": "24 passed, 2 skipped in 23.13s; runner exit 0, status COMPLETED, raw_exit_code 0, tree_terminal true; ended 03:13:54 UTC before command deadline. Session completed and reaped."
+  },
+  "reused_evidence": {
+    "manifest": "docs/todos/11-reliable-delivery/evidence/00/slice-a-source-manifest.json",
+    "manifest_check": "All seven listed source files match C working-tree byte count and SHA256. Regression-only test files and Windows job file have no BASE..C diff. This supports applicability to the unchanged inputs, not independent approval.",
+    "red": "docs/todos/11-reliable-delivery/evidence/00/slice-a-red-bootstrap.json and .output.txt: actual 125 versus expected 7, 1 failed; expressly non-version1 bounded GNU timeout bootstrap.",
+    "green": "docs/todos/11-reliable-delivery/evidence/00/slice-a-green-v2.json and .output.txt: 24 passed, 2 skipped, raw exit 0, tree_terminal true.",
+    "regression": "docs/todos/11-reliable-delivery/evidence/00/slice-a-regression-v2.json and .output.txt: 141 passed, 2 skipped, raw exit 0, tree_terminal true; not rerun.",
+    "exit7": "docs/todos/11-reliable-delivery/evidence/00/slice-a-exit7.json and .output.txt: raw exit 7, stdout preserved, tree_terminal true.",
+    "historical": "Earlier green and regression variants remain historical observations; no claim that they were rerun at C."
+  },
+  "limitations": [
+    "Excluded /root identity prevents the requested independent verdict; a fresh eligible reviewer must independently inspect the candidate and this preliminary finding.",
+    "F1 follows from control flow and has not been reproduced by a dedicated fault injection.",
+    "No fresh Windows Job execution, full suite, deployment, installed-candidate consumption or external business lifecycle was verified.",
+    "No task card, source, history, configuration or unrelated process was changed."
+  ]
+}

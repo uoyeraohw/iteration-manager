@@ -1,0 +1,7 @@
+{
+  "kind": "review-identity-ruling",
+  "recorded_at": "2026-11-15T03:18:56.274850+00:00",
+  "native_reviewer_thread": "01a1dd31-fa0a-7433-b85e-adb42828e701",
+  "native_implementer_thread": "01a1dd24-bea9-7580-bfbd-5afac812648b",
+  "ruling": "Fresh native CLI sessions each label their local collaboration tree /root; this alias is relative to the separate session and does not identify the same Controller. Independence is checked using actual distinct native thread UUID and absence of design/implementation/test-authorship/RCA participation, not a repeated local alias. The preliminary BLOCKED report is preserved and is not used as approval; F1 is sent to the original implementer for reproduction/fix and a new fresh reviewer will assess final C."
+}

@@ -56,6 +56,10 @@ def supervise(child_path):
         interrupted = True
     signal.signal(signal.SIGTERM, stop)
     signal.signal(signal.SIGINT, stop)
+    cancellation_signals = {signal.SIGTERM, signal.SIGINT}
+    # A supervisor must be able to handle cancellation even if its caller
+    # inherited a blocked mask; this changes only this dedicated process.
+    signal.pthread_sigmask(signal.SIG_UNBLOCK, cancellation_signals)
     with open(child_path, 'x', encoding='utf-8') as stream:
         def save():
             stream.seek(0); json.dump(state, stream); stream.truncate()
@@ -82,10 +86,30 @@ def supervise(child_path):
                 state.update(status='NOT_STARTED', tree_terminal=True, ended_at=stamp()); save(); return
             request = json.loads(line)
             state['deadline_checked_at'] = stamp()
-            if datetime.now(timezone.utc) >= datetime.fromisoformat(request['launch_before']):
-                state.update(status='NOT_STARTED', tree_terminal=True, ended_at=stamp()); save(); return
-            proc = subprocess.Popen(request['argv'], stdin=subprocess.DEVNULL, close_fds=True)
-            state.update(status='RUNNING', pid=proc.pid, started_at=stamp()); save()
+            launch_before = datetime.fromisoformat(request['launch_before'])
+            # Serialize handled signals with the final launch decision. EOF is
+            # ordered at its nonblocking observation; a later EOF or signal is
+            # cancellation after launch has won and triggers tree cleanup.
+            previous_mask = signal.pthread_sigmask(signal.SIG_BLOCK, cancellation_signals)
+            try:
+                readable, _, _ = select.select([sys.stdin], [], [], 0)
+                caller_lost = bool(readable) and not os.read(sys.stdin.fileno(), 1)
+                # Unexpected extra input is not part of the one-request protocol.
+                if readable and not caller_lost:
+                    raise ValueError('Unexpected data after launch request')
+                canceled = interrupted or bool(signal.sigpending() & cancellation_signals)
+                expired = datetime.now(timezone.utc) >= launch_before
+                if caller_lost or canceled or expired:
+                    state.update(status='NOT_STARTED', tree_terminal=True, ended_at=stamp())
+                    save()
+                    return
+                # This pending-signal observation commits launch. Signals remain
+                # blocked through Popen, and the child restores the prior mask.
+                proc = subprocess.Popen(request['argv'], stdin=subprocess.DEVNULL, close_fds=True,
+                                        preexec_fn=lambda: signal.pthread_sigmask(signal.SIG_SETMASK, previous_mask))
+                state.update(status='RUNNING', pid=proc.pid, started_at=stamp()); save()
+            finally:
+                signal.pthread_sigmask(signal.SIG_SETMASK, previous_mask)
             root_done = False
             timed_out = False
             while not root_done and not interrupted:

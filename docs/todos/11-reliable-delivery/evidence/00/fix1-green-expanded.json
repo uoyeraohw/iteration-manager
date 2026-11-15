@@ -1,0 +1,36 @@
+{
+  "version": 1,
+  "argv": [
+    "/data/workspace/iteration-manager/build/iter11-venv/bin/python",
+    "-B",
+    "-m",
+    "pytest",
+    "-p",
+    "no:cacheprovider",
+    "tests/test_iter_run.py",
+    "tests/test_linux_runner.py",
+    "-q"
+  ],
+  "cwd": "/data/workspace/iteration-manager/.worktrees/iter-11",
+  "deadline": "2026-11-15T03:25:00+00:00",
+  "cleanup_reserve_seconds": 5,
+  "status": "COMPLETED",
+  "deadline_checked_at": "2026-11-15T03:22:23.384812+00:00",
+  "started_at": "2026-11-15T03:22:23.385351+00:00",
+  "ended_at": "2026-11-15T03:22:47.166399+00:00",
+  "raw_exit_code": 0,
+  "tree_terminal": true,
+  "output": "docs/todos/11-reliable-delivery/evidence/00/fix1-green-expanded.json.output.txt",
+  "container_pid": 3432845,
+  "launcher_exit_code": 0,
+  "command": {
+    "status": "COMPLETED",
+    "raw_exit_code": 0,
+    "started_at": "2026-11-15T03:22:23.385351+00:00",
+    "tree_terminal": true,
+    "deadline_checked_at": "2026-11-15T03:22:23.384812+00:00",
+    "pid": 3432846,
+    "ended_at": "2026-11-15T03:22:47.155925+00:00"
+  },
+  "late_by_seconds": 0
+}

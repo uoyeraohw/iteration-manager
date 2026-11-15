@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "phase": "implementation",
+  "candidate": "fe6923c91484f03c2c66d78e7abdef70a5d5bf36",
+  "inputs": [
+    "docs/todos/11-reliable-delivery/00-linux-runner-and-dev-guide.md",
+    "docs/todos/11-reliable-delivery/README.md",
+    "docs/todos/11-reliable-delivery/evidence/00/review1-preliminary-report.json",
+    "docs/todos/11-reliable-delivery/evidence/00/fix1-implementer-brief.md",
+    "scripts/iter_linux_job.py",
+    "tests/test_linux_runner.py",
+    "references/checkpoint_execution.md"
+  ],
+  "capabilities": [
+    "native-codex-cli-exec-session",
+    "Linux-proc-subreaper-pidfd",
+    "fixed-C1-repair-test-driver",
+    "independent-native-review-required"
+  ],
+  "checkpoint": "F1有效断言RED两失败；最终GREEN30通过/2skip，回归147通过/2skip；启动取消门闩修复",
+  "remaining_work": [
+    "新C独立审查",
+    "批准后登记D和local strict",
+    "冻结已批准runner并运行01前完整维护基线"
+  ],
+  "executor_id": "01a1dd24-bea9-7580-bfbd-5afac812648b",
+  "terminal_evidence": "docs/todos/11-reliable-delivery/evidence/00/fix1-terminal.json",
+  "progress": [
+    {
+      "kind": "red",
+      "summary": "真实监督进程在请求消费后已收到SIGTERM或EOF仍启动；两断言在未改产品上失败",
+      "evidence": "docs/todos/11-reliable-delivery/evidence/00/fix1-red.json.output.txt"
+    },
+    {
+      "kind": "implementation",
+      "summary": "最后启动门闩、信号屏蔽及子信号掩码恢复、双环境契约同步",
+      "evidence": "docs/todos/11-reliable-delivery/evidence/00/fix1-source-manifest.json"
+    },
+    {
+      "kind": "green",
+      "summary": "最终30/2skip、147/2skip；真实固定测试驱动收据",
+      "evidence": "docs/todos/11-reliable-delivery/evidence/00/fix1-regression-final.json.output.txt"
+    }
+  ],
+  "commands": [
+    "docs/todos/11-reliable-delivery/evidence/00/fix1-green-expanded.json",
+    "docs/todos/11-reliable-delivery/evidence/00/fix1-green-final.json",
+    "docs/todos/11-reliable-delivery/evidence/00/fix1-green.json",
+    "docs/todos/11-reliable-delivery/evidence/00/fix1-red.json",
+    "docs/todos/11-reliable-delivery/evidence/00/fix1-regression-final.json",
+    "docs/todos/11-reliable-delivery/evidence/00/fix1-regression.json"
+  ],
+  "started_at": null,
+  "ended_at": null
+}

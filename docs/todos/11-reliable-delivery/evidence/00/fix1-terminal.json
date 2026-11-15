@@ -1,0 +1,93 @@
+{
+  "kind": "native-cli-terminal-observation",
+  "executor_id": "01a1dd24-bea9-7580-bfbd-5afac812648b",
+  "session_id": 74295,
+  "launch": {
+    "requestedAt": 1794712844919,
+    "hard": 1794713444919,
+    "leaf": 1794713354919,
+    "command": 1794713314919,
+    "launch": {
+      "chunk_id": "44c487",
+      "wall_time_seconds": 1.000794212,
+      "session_id": 74295,
+      "original_token_count": 0,
+      "output": ""
+    },
+    "cmd": "timeout --signal=TERM --kill-after=5s 500s codex exec -C '/data/workspace/iteration-manager/.worktrees/iter-11' -s danger-full-access -c 'approval_policy=\"never\"' resume 01a1dd24-bea9-7580-bfbd-5afac812648b --json -o '/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/00/fix1-last-message.txt' - < '/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/00/fix1-implementer-brief.md' > '/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/00/fix1-native.jsonl' 2> '/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/00/fix1-native.stderr.txt'"
+  },
+  "monitor": {
+    "reason": "terminal",
+    "deadlineMs": 1794713354919,
+    "final": {
+      "status": "completed",
+      "raw": {
+        "chunk_id": "40d207",
+        "wall_time_seconds": 19.698375363,
+        "exit_code": 0,
+        "original_token_count": 0,
+        "output": ""
+      }
+    },
+    "terminalConfirmed": true,
+    "observedAt": 1794713111176,
+    "lateByMs": 0,
+    "events": [
+      {
+        "kind": "query",
+        "startedAt": 1794712846609,
+        "returnedAt": 1794712906723,
+        "waitMs": 60000,
+        "result": {
+          "status": "running",
+          "raw": {
+            "chunk_id": "775c52",
+            "wall_time_seconds": 60.00192383,
+            "session_id": 74295,
+            "original_token_count": 0,
+            "output": ""
+          }
+        }
+      },
+      {
+        "kind": "query",
+        "startedAt": 1794712906723,
+        "returnedAt": 1794713091465,
+        "waitMs": 60000,
+        "result": {
+          "status": "running",
+          "raw": {
+            "chunk_id": "1926a0",
+            "wall_time_seconds": 60.006586287,
+            "session_id": 74295,
+            "original_token_count": 0,
+            "output": ""
+          }
+        }
+      },
+      {
+        "kind": "checkpoint",
+        "dueAt": 1794713024919,
+        "observedAt": 1794713091465
+      },
+      {
+        "kind": "query",
+        "startedAt": 1794713091465,
+        "returnedAt": 1794713111176,
+        "waitMs": 53454,
+        "result": {
+          "status": "completed",
+          "raw": {
+            "chunk_id": "40d207",
+            "wall_time_seconds": 19.698375363,
+            "exit_code": 0,
+            "original_token_count": 0,
+            "output": ""
+          }
+        }
+      }
+    ]
+  },
+  "session_state": "completed",
+  "limitation": "Native session timestamps are not provided; monitor request/observation times are not substituted for them."
+}

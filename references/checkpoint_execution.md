@@ -54,7 +54,7 @@ Bash 的 `$?` 读取刚结束命令的退出码；PowerShell 使用 `$LASTEXITCO
 
 argv 直接传递，shell=False；不得把整串 shell 文本当 argv 或用外层 exit0 代替业务结果。协调性的原生查询、只读检查、领取/释放/收尾及精准 Git 提交不需要包装，避免把 receipt 的最终写入误提交成已完成记录。
 
-入口排他保留 receipt 和 `.output.txt`，引导进程另写 `.child.json`；已有文件不覆盖。启动前同调用核 UTC，剩余不足5秒不启动；业务在 deadline 前5秒停止等待，余量用于回收。Windows Job Object 在开启启动门闩前接管引导进程，目标及后代继承容器；正常根进程提前退出也回收后代，只有 ActiveProcesses=0 才登记 tree_terminal。Job 不可用则不启动目标，不改用 taskkill。Linux 每个命令启动专属监督进程，先验证 subreaper、`/proc` 和 pidfd 能力，再打开目标启动门闩；监督进程收养孤儿并以 pidfd 逐层回收自己的子进程，只有确认无子进程才证明终态。长期调用者不设 subreaper；仅 killpg 不能证明 setsid 或孤儿终态。能力或准备失败不启动目标，其他平台启动前拒绝。正常可处理 SIGTERM 请求回收；监督进程被强杀或证明缺失时结果未知，不从外层状态补造。
+入口排他保留 receipt 和 `.output.txt`，引导进程另写 `.child.json`；已有文件不覆盖。启动前同调用核 UTC，剩余不足5秒不启动；业务在 deadline 前5秒停止等待，余量用于回收。Windows Job Object 在开启启动门闩前接管引导进程，目标及后代继承容器；正常根进程提前退出也回收后代，只有 ActiveProcesses=0 才登记 tree_terminal。Job 不可用则不启动目标，不改用 taskkill。Linux 每个命令启动专属监督进程，先验证 subreaper、`/proc` 和 pidfd 能力，再打开目标启动门闩；监督进程收养孤儿并以 pidfd 逐层回收自己的子进程，只有确认无子进程才证明终态。长期调用者不设 subreaper；仅 killpg 不能证明 setsid 或孤儿终态。能力或准备失败不启动目标，其他平台启动前拒绝。最终启动门闩在专属监督进程内屏蔽 SIGTERM/SIGINT，先非阻塞观察调用方管道 EOF，再检查已处理或待处理的取消信号和截止；任一在对应检查中获知则不启动。管道与信号分别按各自观察点排序，均通过后启动决定获胜，屏蔽持续到目标创建，子进程在 exec 前恢复监督进程进入门闩前的信号掩码；此后收到取消或 EOF 时回收已启动树，不声称观察点之后的异步事件能撤销启动决定。正常可处理 SIGTERM 请求回收；监督进程被强杀或证明缺失时结果未知，不从外层状态补造。
 
 receipt 分别保存 argv/cwd、核验/起止 UTC、原始输出、实际业务 raw_exit_code、launcher_exit_code 和状态。COMPLETED 才可按业务退出码判断；TIMED_OUT/NOT_STARTED 返回124，CLEANUP_UNKNOWN/ERROR返回125。业务本身也可能退出124/125，必须看 receipt 状态。强杀时拿不到业务退出码则保留 null，不把 launcher 被杀码当断言失败。RUNNING/不完整记录和外层会话 cancelled 不能证明命令已终态。
 

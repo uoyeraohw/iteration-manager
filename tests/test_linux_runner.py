@@ -213,3 +213,173 @@ def test_concurrent_timeout_does_not_kill_other_call(tmp_path):
     receipt = json.loads((tmp_path / 'other.json').read_text())
     assert receipt['status'] == 'COMPLETED' and receipt['tree_terminal'] is True
     assert (tmp_path / receipt['output']).read_text().strip() == 'survived'
+
+
+@pytest.mark.parametrize('event', ['sigterm', 'caller_eof'])
+def test_prelaunch_cancellation_wins_after_request_consumption(tmp_path, event):
+    """A real supervisor pauses inside the first timestamp after parsing the request."""
+    scripts = Path(iter_run.__file__).parent
+    worker = '''
+import os, sys, time, signal
+sys.path.insert(0, sys.argv[1])
+import iter_linux_job as job
+original_signal = signal.signal
+def register(signum, handler):
+    if signum == signal.SIGTERM:
+        def observed(signum, frame):
+            handler(signum, frame)
+            open(sys.argv[5], 'w').close()
+        return original_signal(signum, observed)
+    return original_signal(signum, handler)
+signal.signal = register
+original = job.stamp
+first = True
+def gate_stamp():
+    global first
+    if first:
+        first = False
+        open(sys.argv[3], 'w').close()
+        until = time.monotonic() + 5
+        while not os.path.exists(sys.argv[4]):
+            if time.monotonic() > until:
+                raise RuntimeError('test gate timed out')
+            time.sleep(.005)
+    return original()
+job.stamp = gate_stamp
+job.supervise(sys.argv[2])
+'''
+    child = tmp_path / 'child.json'
+    entered = tmp_path / 'entered'
+    release = tmp_path / 'release'
+    target = tmp_path / 'target-effect'
+    handled = tmp_path / 'signal-handled'
+    proc = subprocess.Popen([sys.executable, '-B', '-c', worker, str(scripts), str(child),
+                             str(entered), str(release), str(handled)], stdin=subprocess.PIPE,
+                            stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    try:
+        until = time.monotonic() + 5
+        while time.monotonic() < until:
+            try:
+                if json.loads(child.read_text())['status'] == 'READY':
+                    break
+            except (OSError, ValueError, KeyError):
+                pass
+            assert proc.poll() is None, proc.stderr.read().decode()
+            time.sleep(.01)
+        else:
+            pytest.fail('supervisor did not reach READY')
+        request = {'argv': [sys.executable, '-c', f'open({str(target)!r}, "w").close()'],
+                   'launch_before': deadline(20)}
+        proc.stdin.write((json.dumps(request) + '\n').encode()); proc.stdin.flush()
+        until = time.monotonic() + 5
+        while not entered.exists() and time.monotonic() < until:
+            time.sleep(.01)
+        assert entered.exists(), 'supervisor did not consume request'
+        if event == 'sigterm':
+            proc.send_signal(signal.SIGTERM)
+            until = time.monotonic() + 5
+            while not handled.exists() and time.monotonic() < until:
+                time.sleep(.005)
+            assert handled.exists(), 'supervisor did not handle SIGTERM before release'
+        else:
+            proc.stdin.close()
+        release.touch()
+        assert proc.wait(timeout=5) == 0
+        record = json.loads(child.read_text())
+        assert record['started_at'] is None and record.get('pid') is None, record
+        assert record['status'] == 'NOT_STARTED' and record['tree_terminal'] is True
+        assert not target.exists()
+    finally:
+        release.touch(exist_ok=True)
+        if proc.stdin and not proc.stdin.closed:
+            proc.stdin.close()
+        if proc.poll() is None:
+            proc.terminate(); proc.wait(timeout=5)
+        proc.stdout.close(); proc.stderr.close()
+
+
+@pytest.mark.parametrize('timing', ['pending_at_gate', 'after_launch_decision', 'caller_eof_after_decision'])
+def test_cancellation_order_around_final_gate(tmp_path, timing):
+    """Inject into the real supervisor with SIGTERM blocked at the gate."""
+    scripts = Path(iter_run.__file__).parent
+    worker = '''
+import os, signal, sys, time
+sys.path.insert(0, sys.argv[1])
+import iter_linux_job as job
+if sys.argv[3] == 'pending_at_gate':
+    original = job.select.select
+    def inject(*args):
+        assert signal.SIGTERM in signal.pthread_sigmask(signal.SIG_BLOCK, set())
+        os.kill(os.getpid(), signal.SIGTERM)
+        return original(*args)
+    job.select.select = inject
+else:
+    original = job.subprocess.Popen
+    def inject(*args, **kwargs):
+        assert signal.SIGTERM in signal.pthread_sigmask(signal.SIG_BLOCK, set())
+        if sys.argv[3] == 'caller_eof_after_decision':
+            open(sys.argv[4], 'w').close()
+            until = time.monotonic() + 5
+            while not os.path.exists(sys.argv[5]):
+                if time.monotonic() > until: raise RuntimeError('gate wait timed out')
+                time.sleep(.005)
+        else:
+            os.kill(os.getpid(), signal.SIGTERM)
+        return original(*args, **kwargs)
+    job.subprocess.Popen = inject
+job.supervise(sys.argv[2])
+'''
+    child = tmp_path / 'child.json'
+    entered = tmp_path / 'decision-won'
+    release = tmp_path / 'release-decision'
+    proc = subprocess.Popen([sys.executable, '-B', '-c', worker, str(scripts), str(child), timing,
+                             str(entered), str(release)],
+                            stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    try:
+        until = time.monotonic() + 5
+        while time.monotonic() < until:
+            try:
+                if json.loads(child.read_text())['status'] == 'READY':
+                    break
+            except (OSError, ValueError, KeyError):
+                pass
+            if proc.poll() is not None:
+                pytest.fail('supervisor exited before READY: ' + proc.stderr.read().decode())
+            time.sleep(.01)
+        else:
+            pytest.fail('supervisor did not reach READY')
+        request = {'argv': [sys.executable, '-c', 'import time; time.sleep(10)'],
+                   'launch_before': deadline(20)}
+        proc.stdin.write((json.dumps(request) + '\n').encode()); proc.stdin.flush()
+        if timing == 'caller_eof_after_decision':
+            until = time.monotonic() + 5
+            while not entered.exists() and time.monotonic() < until:
+                time.sleep(.005)
+            assert entered.exists(), 'launch decision did not complete'
+            proc.stdin.close()
+            release.touch()
+        assert proc.wait(timeout=5) == 0
+        record = json.loads(child.read_text())
+        assert record['tree_terminal'] is True
+        if timing == 'pending_at_gate':
+            assert record['status'] == 'NOT_STARTED' and record['started_at'] is None
+            assert record.get('pid') is None
+        else:
+            assert record['status'] == 'INTERRUPTED' and record['started_at'] is not None
+            assert record.get('pid') is not None
+    finally:
+        release.touch(exist_ok=True)
+        if proc.stdin and not proc.stdin.closed:
+            proc.stdin.close()
+        if proc.poll() is None:
+            proc.terminate(); proc.wait(timeout=5)
+        proc.stdout.close(); proc.stderr.close()
+
+
+def test_target_does_not_inherit_gate_signal_mask(tmp_path):
+    code = ('import signal, sys; '
+            'blocked = signal.pthread_sigmask(signal.SIG_BLOCK, set()); '
+            'sys.exit(9 if signal.SIGTERM in blocked or signal.SIGINT in blocked else 0)')
+    assert iter_run.run_check([sys.executable, '-c', code], deadline(), 'mask.json', tmp_path) == 0
+    record = json.loads((tmp_path / 'mask.json').read_text())
+    assert record['status'] == 'COMPLETED' and record['tree_terminal'] is True

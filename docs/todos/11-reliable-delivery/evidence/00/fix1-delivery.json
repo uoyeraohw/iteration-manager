@@ -1,0 +1,77 @@
+{
+  "base_candidate": "fe6923c91484f03c2c66d78e7abdef70a5d5bf36",
+  "checkpoint_utc": "2026-11-15T03:25:02.054915+00:00",
+  "delivery_status": "TESTING candidate, independent approval pending",
+  "changed_files": [
+    "scripts/iter_linux_job.py",
+    "tests/test_linux_runner.py",
+    "references/checkpoint_execution.md",
+    ".agents/notes/planned/iter11/00-linux-runner.md",
+    "docs/todos/11-reliable-delivery/evidence/00/fix1-red.json",
+    "docs/todos/11-reliable-delivery/evidence/00/fix1-red.json.child.json",
+    "docs/todos/11-reliable-delivery/evidence/00/fix1-red.json.output.txt",
+    "docs/todos/11-reliable-delivery/evidence/00/fix1-green.json",
+    "docs/todos/11-reliable-delivery/evidence/00/fix1-green.json.child.json",
+    "docs/todos/11-reliable-delivery/evidence/00/fix1-green.json.output.txt",
+    "docs/todos/11-reliable-delivery/evidence/00/fix1-green-expanded.json",
+    "docs/todos/11-reliable-delivery/evidence/00/fix1-green-expanded.json.child.json",
+    "docs/todos/11-reliable-delivery/evidence/00/fix1-green-expanded.json.output.txt",
+    "docs/todos/11-reliable-delivery/evidence/00/fix1-green-final.json",
+    "docs/todos/11-reliable-delivery/evidence/00/fix1-green-final.json.child.json",
+    "docs/todos/11-reliable-delivery/evidence/00/fix1-green-final.json.output.txt",
+    "docs/todos/11-reliable-delivery/evidence/00/fix1-regression.json",
+    "docs/todos/11-reliable-delivery/evidence/00/fix1-regression.json.child.json",
+    "docs/todos/11-reliable-delivery/evidence/00/fix1-regression.json.output.txt",
+    "docs/todos/11-reliable-delivery/evidence/00/fix1-regression-final.json",
+    "docs/todos/11-reliable-delivery/evidence/00/fix1-regression-final.json.child.json",
+    "docs/todos/11-reliable-delivery/evidence/00/fix1-regression-final.json.output.txt",
+    "docs/todos/11-reliable-delivery/evidence/00/fix1-source-manifest.json",
+    "docs/todos/11-reliable-delivery/evidence/00/fix1-delivery.json"
+  ],
+  "source_manifest": "docs/todos/11-reliable-delivery/evidence/00/fix1-source-manifest.json",
+  "fixed_driver": "build/iter11-fix-runner/fe6923c91484/scripts/iter_run.py",
+  "fixed_driver_manifest_match": true,
+  "red": {
+    "receipt": "docs/todos/11-reliable-delivery/evidence/00/fix1-red.json",
+    "output": "docs/todos/11-reliable-delivery/evidence/00/fix1-red.json.output.txt",
+    "runner_exit": 1,
+    "raw_exit_code": 1,
+    "tree_terminal": true,
+    "assertions": "SIGTERM handled after request consumption and caller EOF before gate both produced a target pid and non-null started_at on unchanged source",
+    "result": "2 failed, 16 passed"
+  },
+  "green": {
+    "receipt": "docs/todos/11-reliable-delivery/evidence/00/fix1-green-final.json",
+    "runner_exit": 0,
+    "raw_exit_code": 0,
+    "tree_terminal": true,
+    "result": "30 passed, 2 skipped"
+  },
+  "regression": {
+    "receipt": "docs/todos/11-reliable-delivery/evidence/00/fix1-regression-final.json",
+    "runner_exit": 0,
+    "raw_exit_code": 0,
+    "tree_terminal": true,
+    "result": "147 passed, 2 skipped"
+  },
+  "gate_semantics": "Observe caller EOF at the pipe check; block SIGTERM/SIGINT across final pending-signal check and spawn. An event observed at its check wins cancellation; after its observation or committed launch the event requests cleanup. Signals are restored in the child before exec. No atomic simultaneous snapshot is claimed.",
+  "completed": [
+    "Deterministic real-supervisor RED for both F1 scenarios",
+    "Tests of pending signal, post-decision signal, post-decision EOF, and child signal mask",
+    "Fixed-driver target and affected regression with raw receipts",
+    "Fixed driver files verified against its manifest",
+    "git diff --check"
+  ],
+  "remaining": [
+    "Controller observes native terminal and command outcomes, records attempt/release, and commits exact authorized candidate C",
+    "Fresh independent reviewer with distinct verifiable native UUID reviews C, frozen spec and F1; preliminary report is not an approval",
+    "After independent approval, Controller registers receipt and status D and runs local strict",
+    "Controller freezes approved runner and direct dependencies, then runs full maintenance baseline before task01",
+    "Windows Job execution remains historical and was not rerun"
+  ],
+  "active_commands": "No task00-owned tests or runners active at checkpoint; unrelated processes untouched",
+  "limits": [
+    "F1 gate ordering is based on the documented separate observations, not an impossible simultaneous view of asynchronous events",
+    "Forced supervisor death remains cleanup unknown; no review or approval claimed"
+  ]
+}

@@ -1,0 +1,8 @@
+F1 is ready for independent review as a **TESTING candidate**. The supervisor now checks caller EOF at the final gate and blocks cancellation signals through the launch decision. Events observed before their respective gate checks prevent launch; events after the decision trigger cleanup.
+
+- [RED receipt](/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/00/fix1-red.json): both SIGTERM and caller-EOF assertions failed on the unchanged candidate, with exit 1.
+- [Final GREEN](/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/00/fix1-green-final.json): 30 passed, 2 Windows-only skips.
+- [Final regression](/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/00/fix1-regression-final.json): 147 passed, 2 skips. Both successful receipts record `tree_terminal: true`.
+- [Source manifest](/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/00/fix1-source-manifest.json) and [delivery checkpoint](/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/00/fix1-delivery.json) contain the hashes, evidence, and remaining Controller steps.
+
+No task00 test or runner command remains active. Independent review, C/D registration, strict validation, runner freeze, and the full baseline remain outstanding; Windows execution was not rerun.
