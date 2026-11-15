@@ -1,0 +1,1 @@
+PASS: hashes, original runner receipts and raw output, check proposal, exact type keys, and rendered specimens verified; consumer pending

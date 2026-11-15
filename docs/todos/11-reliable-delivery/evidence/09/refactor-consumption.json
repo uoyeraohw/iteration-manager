@@ -1,0 +1,126 @@
+{
+  "role": "Fresh read-only native consumer; not independent Reviewer or implementer",
+  "codex_thread_id": "01a1ddb5-4c59-77f3-b33f-dd419071ba31",
+  "observed_git_head": "531c3ea6e31d2eb2a098272bfcf6cb6fe57a11b7",
+  "observed_utc": "2026-11-15T05:37:23.913754+00:00",
+  "input_hash_checks": {
+    "references/refactor_evidence.md": {
+      "expected_sha256": "1c05f911485c47eb590edf8443e4fb05f662f2e4848f4a06b823f3eb073b9fd6",
+      "actual_sha256": "1c05f911485c47eb590edf8443e4fb05f662f2e4848f4a06b823f3eb073b9fd6",
+      "matches": true
+    },
+    "templates/contracts/refactor_benchmark_contract.md": {
+      "expected_sha256": "a30a2cc31ce947e9f4e01d11708aca60d9a3e91d50169a54ea0d21dad4c4c978",
+      "actual_sha256": "a30a2cc31ce947e9f4e01d11708aca60d9a3e91d50169a54ea0d21dad4c4c978",
+      "matches": true
+    },
+    "docs/todos/11-reliable-delivery/evidence/09/structure-v2-spec.json": {
+      "expected_sha256": "fb891203d6bd3017285ed09b79e15f83229dc072b454d63f71f383e915d4964f",
+      "actual_sha256": "fb891203d6bd3017285ed09b79e15f83229dc072b454d63f71f383e915d4964f",
+      "matches": true
+    },
+    "docs/todos/11-reliable-delivery/evidence/09/structure-v2-card.md": {
+      "expected_sha256": "ced3c9ee55400ee13dc3804304f00d8a6f390fc20245cf17f89ab4f94e33b371",
+      "actual_sha256": "ced3c9ee55400ee13dc3804304f00d8a6f390fc20245cf17f89ab4f94e33b371",
+      "matches": true
+    },
+    "docs/todos/11-reliable-delivery/evidence/09/performance-v2-spec.json": {
+      "expected_sha256": "e5eebe56e1bf47aa60722b38ac7b14cdf58921221ad7cd8090c8ad00481726dd",
+      "actual_sha256": "e5eebe56e1bf47aa60722b38ac7b14cdf58921221ad7cd8090c8ad00481726dd",
+      "matches": true
+    },
+    "docs/todos/11-reliable-delivery/evidence/09/performance-v2-card.md": {
+      "expected_sha256": "00c3140066e46d66cb1567a468039a72809377c5e27d401e38ea835ec1cddc37",
+      "actual_sha256": "00c3140066e46d66cb1567a468039a72809377c5e27d401e38ea835ec1cddc37",
+      "matches": true
+    },
+    "docs/todos/11-reliable-delivery/evidence/09/consumer-brief-input.md": {
+      "expected_sha256": "8ab9a758931d0d434e1b76dc3eabd84193414806eb29e0c5b0553b17152322c7",
+      "actual_sha256": "8ab9a758931d0d434e1b76dc3eabd84193414806eb29e0c5b0553b17152322c7",
+      "matches": true
+    },
+    "docs/todos/11-reliable-delivery/07-portable-test-support.md": {
+      "actual_sha256": "4e9da1c5fde22003fd21289da57a59645713dea0dbfd8ed79ec481b4c5fa0ef3",
+      "manifest_expected_sha256": null
+    },
+    "docs/todos/11-reliable-delivery/README.md": {
+      "actual_sha256": "f361ee6501b7c242b638ab6353f893637b4cad1154567158659dfdc65fa889b7",
+      "manifest_expected_sha256": null
+    },
+    "AGENTS.md": {
+      "actual_sha256": "555ab375fd436c0bbd0dce948ad782d28b191bb2a9eedac42652b4603706a112",
+      "manifest_expected_sha256": null
+    },
+    "docs/todos/11-reliable-delivery/evidence/09/consumer-input-manifest.json": {
+      "actual_sha256": "c0d45a49c3637d2bbb1833338df1949ca761f8e3b0629f0140a57c1dee36d1de",
+      "manifest_expected_sha256": null
+    }
+  },
+  "answers": {
+    "1_metrics_and_comparability": [
+      {
+        "specimen": "structure",
+        "answer": "Count distinct directed import edges between Python modules in src/example, unit edges, using the same AST script, counting rules, scope and environment before and after; record candidates, command, raw values, change and assessment against at most 4 edges. Preserve behavior and exceptions. There is no performance target. Different scope, rules or environment, missing successful runs/raw data, or a generated card alone cannot establish a comparable before/after result; edge counts do not prove performance.",
+        "sources": [
+          "docs/todos/11-reliable-delivery/evidence/09/structure-v2-card.md:23-26",
+          "docs/todos/11-reliable-delivery/evidence/09/structure-v2-card.md:38-42",
+          "docs/todos/11-reliable-delivery/evidence/09/structure-v2-card.md:57-65",
+          "docs/todos/11-reliable-delivery/evidence/09/structure-v2-spec.json:18-29",
+          "references/refactor_evidence.md:3-9"
+        ]
+      },
+      {
+        "specimen": "performance",
+        "answer": "Measure actual p95 query latency in milliseconds; the target is at least 15 percent reduction. Compare real before/after using identical measurement command, environment, dataset and workload, with the example specifying 10,000 rows and 1,000 requests; retain candidate, hardware, OS, Python, dataset, method, raw output, values, percent change and target assessment. Incomparable conditions, absent raw successful measurements, inferred values or a structure count do not establish performance; synthetic workload only supports its stated scope.",
+        "sources": [
+          "docs/todos/11-reliable-delivery/evidence/09/performance-v2-card.md:23-26",
+          "docs/todos/11-reliable-delivery/evidence/09/performance-v2-card.md:38-42",
+          "docs/todos/11-reliable-delivery/evidence/09/performance-v2-card.md:57-65",
+          "docs/todos/11-reliable-delivery/evidence/09/performance-v2-spec.json:18-29",
+          "references/refactor_evidence.md:8-9"
+        ]
+      }
+    ],
+    "2_obligations": {
+      "answer": "Five exact checks are baseline, regression, compatibility, benchmark_before and benchmark_after. Take affected behavior baseline before changes, broaden to full suite if scope is unclear or specified, and add protection if coverage is inadequate. Run affected regression after, observe public interface and behavior compatibility, and retain successful commands and raw before/after results; compatibility is an observation, the other four successful commands. Preserve task-specific and iteration full-suite requirements. Freeze candidate and evidence for a reviewer who did not participate in design, implementation, tests or RCA; implementer reaches at most TESTING, then authorized registration under Git C/D or FS freeze and strict. No fabricated RED. Generation and structural precheck establish neither actual execution nor approval or metric validity; both specimens are TODO, PENDING and unchecked.",
+      "sources": [
+        "templates/contracts/refactor_benchmark_contract.md:3-13",
+        "references/refactor_evidence.md:3-11",
+        "docs/todos/11-reliable-delivery/evidence/09/structure-v2-card.md:2-18",
+        "docs/todos/11-reliable-delivery/evidence/09/structure-v2-card.md:28-47",
+        "docs/todos/11-reliable-delivery/evidence/09/performance-v2-card.md:2-18",
+        "docs/todos/11-reliable-delivery/evidence/09/performance-v2-card.md:28-47"
+      ]
+    },
+    "3_existing_07": {
+      "answer": "The existing frozen task retains baseline, affected regression and compatibility, plus three before and three after harness measurements with the same script, Python environment and sample parameters, reporting each elapsed time in seconds and historical-path dependency count; retain raw evidence and no claim of speedup. Its original text names Windows, but the iteration goal expressly authorizes continuation on Linux with the approved frozen platform runner while other acceptance and budgets remain unchanged. The new policy explicitly preserves frozen and stricter existing requirements; it does not remove repeats or rewrite task 07. Task 07 also requires preserved interface, isolation, HTTP behavior and historical bytes, and a whitelist-only temporary copy. Its ledger reports actual measurements and review, but this consumer did not audit their underlying receipts or grant approval.",
+      "sources": [
+        "docs/todos/11-reliable-delivery/07-portable-test-support.md:25-28",
+        "docs/todos/11-reliable-delivery/07-portable-test-support.md:37-48",
+        "docs/todos/11-reliable-delivery/07-portable-test-support.md:62-67",
+        "docs/todos/11-reliable-delivery/07-portable-test-support.md:79-84",
+        "docs/todos/11-reliable-delivery/07-portable-test-support.md:93-105",
+        "docs/todos/11-reliable-delivery/07-portable-test-support.md:108-108",
+        "docs/todos/11-reliable-delivery/README.md:12-16",
+        "references/refactor_evidence.md:3-9"
+      ]
+    },
+    "4_uncertainties_conflicts": {
+      "answer": "The original task 07 Windows wording and the later explicit iteration-wide Linux migration appear different; the iteration goal supplies the authorized platform continuation while preserving the other obligations, not an unqualified Windows pass. For the examples, exact AST treatment of ambiguous imports, dataset construction, p95 calculation and performance repetition count are not specified in the supplied cards/specs: UNKNOWN until actual measurement definitions and comparable conditions are established. This prevents assuming reproducibility from these texts alone; no example measurements or script execution were examined. Manifest status says no native consumer has run; it is a static input statement and is stale as a description of this present consumption, not an approval.",
+      "sources": [
+        "docs/todos/11-reliable-delivery/07-portable-test-support.md:43-44",
+        "docs/todos/11-reliable-delivery/README.md:16-16",
+        "references/refactor_evidence.md:7-9",
+        "docs/todos/11-reliable-delivery/evidence/09/structure-v2-spec.json:20-29",
+        "docs/todos/11-reliable-delivery/evidence/09/performance-v2-spec.json:20-29",
+        "docs/todos/11-reliable-delivery/evidence/09/consumer-input-manifest.json:13-18"
+      ]
+    }
+  },
+  "limitations": [
+    "No specimen commands, formal tests, independent review or approval were performed.",
+    "The existing 07 ledger is reported as a source statement; underlying receipts were outside the specified read and were not independently verified.",
+    "This report is consumption evidence only. Root must freeze C, obtain independent review, register D and run strict.",
+    "Manifest includes expected hashes for seven inputs; additional context, AGENTS and manifest itself have observed hashes only, so they have no manifest comparison."
+  ]
+}

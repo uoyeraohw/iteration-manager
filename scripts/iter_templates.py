@@ -22,7 +22,7 @@ _META_FIELDS = {
 _TYPE_GUIDANCE = {
     "Strict-TDD": "核心行为先取得可编译测试的真实断言RED，再最小GREEN；环境错误不算RED。",
     "UI-Component": "先走真实用户路径，再检查正常、空、加载、错误四态及约定视口和实际视觉。",
-    "Refactor-Benchmark": "保持外部行为与接口；同环境同数据量取得benchmark_before与benchmark_after实测。",
+    "Refactor-Benchmark": "保持行为与接口；按目标选择可重复结构指标或真实性能指标，取得可比benchmark_before/benchmark_after实测；性能目标须记录单位、环境、规模、命令和目标，见references/refactor_evidence.md。",
     "Spike-Discovery": "隔离实验，保留可复查决定与后续接口，不虚构测试或批准。",
 }
 

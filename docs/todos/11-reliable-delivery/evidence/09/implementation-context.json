@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "tasks": {
+    "09": {
+      "phase": "implementation",
+      "candidate": "531c3ea6e31d2eb2a098272bfcf6cb6fe57a11b7",
+      "inputs": [
+        "docs/todos/11-reliable-delivery/09-proportional-refactor-evidence.md",
+        "docs/todos/11-reliable-delivery/README.md",
+        "AGENTS.md",
+        "references/task_card_schema.md",
+        "templates/contracts/refactor_benchmark_contract.md",
+        "scripts/iter_templates.py",
+        "tests/test_template_generation.py"
+      ],
+      "capabilities": [
+        "native-codex-cli-implementer",
+        "approved-frozen-linux-runner",
+        "Python3.11.17-pytest9.2-mcp1.30",
+        "independent-native-reviewer"
+      ],
+      "dependencies": [],
+      "tool_entry": "/data/workspace/iteration-manager/build/frozen-tools/fdcc4cce8863/scripts/iter_sync.py",
+      "checkpoint": "交付本卡已授权范围与按type原始证据",
+      "remaining_work": [
+        "本卡实现/实验",
+        "C独审",
+        "D/冻结strict"
+      ],
+      "required_observations": [
+        "serial-order"
+      ],
+      "observations": {
+        "authority": {
+          "status": "READY",
+          "summary": "用户实施/Git/Worktree/Linux授权；不部署推送合流清理",
+          "evidence": "docs/todos/11-reliable-delivery/evidence/planning/platform-migration-authorization.json"
+        },
+        "execution": {
+          "status": "READY",
+          "summary": "原生Codex受控调用已实测；本卡单写者与独立审查可用",
+          "evidence": "build/iter11-review/task08-review1/local-strict.json"
+        },
+        "verification": {
+          "status": "READY",
+          "summary": "冻结Linux runner与维护测试环境已实测",
+          "evidence": "build/iter11-review/task08-review1/local-strict.json"
+        },
+        "serial-order": {
+          "status": "READY",
+          "summary": "所有前卡实际audit有效且前卡冻结strict成功，仅启动本卡",
+          "evidence": "build/iter11-review/task08-review1/local-strict.json"
+        }
+      }
+    }
+  }
+}

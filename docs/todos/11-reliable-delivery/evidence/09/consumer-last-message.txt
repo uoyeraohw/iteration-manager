@@ -1,0 +1,7 @@
+Recorded the consumption report in [refactor-consumption.json](/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/09/refactor-consumption.json). All seven manifest-listed SHA-256 hashes matched current bytes.
+
+The structure specimen calls for comparable counts of distinct directed import edges, with a target of at most four. The performance specimen calls for comparable measured p95 latency in milliseconds, with a target reduction of at least 15%. Neither generated TODO card establishes a measured result or approval.
+
+Both retain the five checks, behavior baseline, affected regression, compatibility observation and independent review. Task 07 retains three before and three after measurements, elapsed time and historical-path dependency counts; the iteration goal explicitly authorizes its Linux platform migration. The new policy does not weaken its frozen requirements.
+
+The supplied examples leave details such as import-counting treatment, dataset construction and p95 calculation unspecified; those remain **UNKNOWN** until established. I did not run specimen commands, tests or an independent review. Root still needs to freeze C, obtain independent review, register D and run strict.

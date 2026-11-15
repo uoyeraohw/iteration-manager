@@ -1,0 +1,130 @@
+{
+  "request": {
+    "request_id": "consumer-1794721007781",
+    "project_root": "/data/workspace/iteration-manager/.worktrees/iter-11",
+    "tool_entry": "/data/workspace/iteration-manager/build/frozen-tools/fdcc4cce8863/scripts/iter_sync.py",
+    "task_path": "/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/09-proportional-refactor-evidence.md",
+    "task_id": "09",
+    "owner": "iter11-controller-linux-20261115",
+    "phase": "evidence-inspection",
+    "candidate": "531c3ea6e31d2eb2a098272bfcf6cb6fe57a11b7",
+    "context": "docs/todos/11-reliable-delivery/evidence/09/consumer-context.json"
+  },
+  "events": [
+    {
+      "kind": "check-start",
+      "at": 1794721007781
+    },
+    {
+      "kind": "check-terminal-consumed",
+      "at": 1794721007990,
+      "exit_code": 0,
+      "readiness": "READY"
+    },
+    {
+      "kind": "dispatch-call",
+      "at": 1794721007990
+    }
+  ],
+  "native_check": {
+    "kind": "controller-command-observation",
+    "argv": [
+      "python3",
+      "-B",
+      "/data/workspace/iteration-manager/build/frozen-tools/fdcc4cce8863/scripts/iter_sync.py",
+      "--dispatch-check",
+      "/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/09-proportional-refactor-evidence.md",
+      "--context",
+      "docs/todos/11-reliable-delivery/evidence/09/consumer-context.json",
+      "--phase",
+      "evidence-inspection",
+      "--owner",
+      "iter11-controller-linux-20261115"
+    ],
+    "started_at": "2026-11-15T05:36:47.814649+00:00",
+    "ended_at": "2026-11-15T05:36:47.885867+00:00",
+    "exit_code": 0,
+    "stdout": "{\n  \"read_only\": true,\n  \"readiness\": \"READY\",\n  \"task_path\": \"/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/09-proportional-refactor-evidence.md\",\n  \"phase\": \"evidence-inspection\",\n  \"acceptance_verdict\": \"UNKNOWN\",\n  \"findings\": [],\n  \"observations\": {\n    \"authority\": {\n      \"status\": \"READY\",\n      \"summary\": \"用户实施/Git/Worktree/Linux授权；不部署推送合流清理\",\n      \"evidence\": \"docs/todos/11-reliable-delivery/evidence/planning/platform-migration-authorization.json\"\n    },\n    \"execution\": {\n      \"status\": \"READY\",\n      \"summary\": \"原生Codex受控调用已实测；本卡单写者与独立审查可用\",\n      \"evidence\": \"build/iter11-review/task08-review1/local-strict.json\"\n    },\n    \"serial-order\": {\n      \"status\": \"READY\",\n      \"summary\": \"所有前卡实际audit有效且前卡冻结strict成功，仅启动本卡\",\n      \"evidence\": \"build/iter11-review/task08-review1/local-strict.json\"\n    },\n    \"verification\": {\n      \"status\": \"READY\",\n      \"summary\": \"冻结Linux runner与维护测试环境已实测\",\n      \"evidence\": \"build/iter11-review/task08-review1/local-strict.json\"\n    }\n  },\n  \"task_id\": \"09\",\n  \"delivery_mode\": \"git\",\n  \"candidate\": \"531c3ea6e31d2eb2a098272bfcf6cb6fe57a11b7\",\n  \"execution\": {\n    \"attempt_count\": 1,\n    \"no_progress_streak\": 0,\n    \"last_attempt\": {\n      \"source\": \"docs/todos/11-reliable-delivery/evidence/09/implementation-checkpoint-attempt.json\",\n      \"phase\": \"implementation\",\n      \"delivery_mode\": \"git\",\n      \"candidate\": \"531c3ea6e31d2eb2a098272bfcf6cb6fe57a11b7\",\n      \"conditions\": {\n        \"inputs\": [\n          \"AGENTS.md\",\n          \"docs/todos/11-reliable-delivery/09-proportional-refactor-evidence.md\",\n          \"docs/todos/11-reliable-delivery/README.md\",\n          \"references/task_card_schema.md\",\n          \"scripts/iter_templates.py\",\n          \"templates/contracts/refactor_benchmark_contract.md\",\n          \"tests/test_template_generation.py\"\n        ],\n        \"capabilities\": [\n          \"Python3.11.17-pytest9.2-mcp1.30\",\n          \"approved-frozen-linux-runner\",\n          \"independent-native-reviewer\",\n          \"native-codex-cli-implementer\"\n        ],\n        \"scope\": [\n          \".agents/notes/planned/iter11/09-proportional-refactor-evidence.md\",\n          \"docs/todos/11-reliable-delivery/evidence/09/\",\n          \"references/refactor_evidence.md\",\n          \"scripts/iter_templates.py\",\n          \"templates/contracts/refactor_benchmark_contract.md\",\n          \"tests/test_refactor_evidence_policy.py\",\n          \"tests/test_template_generation.py\"\n        ]\n      },\n      \"executor_id\": \"01a1ddb2-e240-7a00-8468-ccfe63671cb1\",\n      \"executor_state\": \"completed\",\n      \"terminal_evidence\": \"docs/todos/11-reliable-delivery/evidence/09/implementation-terminal.json\",\n      \"progress\": [\n        {\n          \"kind\": \"implementation\",\n          \"evidence\": \"docs/todos/11-reliable-delivery/evidence/09/delivery.json\",\n          \"summary\": \"新规则与两类spec实际生成/预检和定向实验完成；新会话消费待验\"\n        }\n      ],\n      \"checkpoint\": \"新规则与两类spec实际生成/预检和定向实验完成；新会话消费待验\",\n      \"remaining_work\": [\n        \"C独审\",\n        \"D/strict\",\n        \"独立新会话实际消费\"\n      ],\n      \"commands\": [\n        {\n          \"receipt\": \"docs/todos/11-reliable-delivery/evidence/09/delivery-validation.json\",\n          \"status\": \"COMPLETED\",\n          \"raw_exit_code\": 0,\n          \"started_at\": \"2026-11-15T05:35:59.847716+00:00\",\n          \"ended_at\": \"2026-11-15T05:36:00.879494+00:00\"\n        },\n        {\n          \"receipt\": \"docs/todos/11-reliable-delivery/evidence/09/experiment.json\",\n          \"status\": \"COMPLETED\",\n          \"raw_exit_code\": 0,\n          \"started_at\": \"2026-11-15T05:35:05.520804+00:00\",\n          \"ended_at\": \"2026-11-15T05:35:11.820509+00:00\"\n        },\n        {\n          \"receipt\": \"docs/todos/11-reliable-delivery/evidence/09/specimens-run.json\",\n          \"status\": \"COMPLETED\",\n          \"raw_exit_code\": 0,\n          \"started_at\": \"2026-11-15T05:34:59.544035+00:00\",\n          \"ended_at\": \"2026-11-15T05:34:59.754681+00:00\"\n        },\n        {\n          \"receipt\": \"docs/todos/11-reliable-delivery/evidence/09/specimens-v2-run.json\",\n          \"status\": \"COMPLETED\",\n          \"raw_exit_code\": 0,\n          \"started_at\": \"2026-11-15T05:35:26.297846+00:00\",\n          \"ended_at\": \"2026-11-15T05:35:26.560659+00:00\"\n        }\n      ],\n      \"started_at\": null,\n      \"ended_at\": null,\n      \"session_seconds\": null,\n      \"command_seconds\": 7.8049420000000005\n    },\n    \"checkpoint\": {\n      \"candidate\": \"531c3ea6e31d2eb2a098272bfcf6cb6fe57a11b7\",\n      \"phase\": \"implementation\",\n      \"summary\": \"新规则与两类spec实际生成/预检和定向实验完成；新会话消费待验\",\n      \"progress\": [\n        {\n          \"kind\": \"implementation\",\n          \"evidence\": \"docs/todos/11-reliable-delivery/evidence/09/delivery.json\",\n          \"summary\": \"新规则与两类spec实际生成/预检和定向实验完成；新会话消费待验\"\n        }\n      ],\n      \"source\": \"docs/todos/11-reliable-delivery/evidence/09/implementation-checkpoint-attempt.json\"\n    },\n    \"remaining_work\": [\n      \"C独审\",\n      \"D/strict\",\n      \"独立新会话实际消费\"\n    ]\n  },\n  \"conditions\": {\n    \"inputs\": [\n      \"AGENTS.md\",\n      \"docs/todos/11-reliable-delivery/09-proportional-refactor-evidence.md\",\n      \"docs/todos/11-reliable-delivery/README.md\",\n      \"docs/todos/11-reliable-delivery/evidence/09/consumer-brief-input.md\",\n      \"docs/todos/11-reliable-delivery/evidence/09/consumer-input-manifest.json\",\n      \"references/task_card_schema.md\",\n      \"scripts/iter_templates.py\",\n      \"templates/contracts/refactor_benchmark_contract.md\",\n      \"tests/test_template_generation.py\"\n    ],\n    \"capabilities\": [\n      \"Python3.11.17-pytest9.2-mcp1.30\",\n      \"approved-frozen-linux-runner\",\n      \"independent-native-reviewer\",\n      \"native-codex-cli-implementer\"\n    ],\n    \"scope\": [\n      \".agents/notes/planned/iter11/09-proportional-refactor-evidence.md\",\n      \"docs/todos/11-reliable-delivery/evidence/09/\",\n      \"references/refactor_evidence.md\",\n      \"scripts/iter_templates.py\",\n      \"templates/contracts/refactor_benchmark_contract.md\",\n      \"tests/test_refactor_evidence_policy.py\",\n      \"tests/test_template_generation.py\"\n    ]\n  },\n  \"checkpoint\": \"真实新会话消费候选文档及场景\",\n  \"remaining_work\": [\n    \"C独审\",\n    \"D/strict\",\n    \"消费核对\"\n  ]\n}\n",
+    "stderr": ""
+  },
+  "result": {
+    "dispatched": true,
+    "reason": "dispatched",
+    "check": {
+      "state": "completed",
+      "exit_code": 0,
+      "request_id": "consumer-1794721007781",
+      "cwd": "/data/workspace/iteration-manager/.worktrees/iter-11",
+      "argv": [
+        "python3",
+        "-B",
+        "/data/workspace/iteration-manager/build/frozen-tools/fdcc4cce8863/scripts/iter_sync.py",
+        "--dispatch-check",
+        "/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/09-proportional-refactor-evidence.md",
+        "--context",
+        "docs/todos/11-reliable-delivery/evidence/09/consumer-context.json",
+        "--phase",
+        "evidence-inspection",
+        "--owner",
+        "iter11-controller-linux-20261115"
+      ],
+      "stdout": "{\n  \"read_only\": true,\n  \"readiness\": \"READY\",\n  \"task_path\": \"/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/09-proportional-refactor-evidence.md\",\n  \"phase\": \"evidence-inspection\",\n  \"acceptance_verdict\": \"UNKNOWN\",\n  \"findings\": [],\n  \"observations\": {\n    \"authority\": {\n      \"status\": \"READY\",\n      \"summary\": \"用户实施/Git/Worktree/Linux授权；不部署推送合流清理\",\n      \"evidence\": \"docs/todos/11-reliable-delivery/evidence/planning/platform-migration-authorization.json\"\n    },\n    \"execution\": {\n      \"status\": \"READY\",\n      \"summary\": \"原生Codex受控调用已实测；本卡单写者与独立审查可用\",\n      \"evidence\": \"build/iter11-review/task08-review1/local-strict.json\"\n    },\n    \"serial-order\": {\n      \"status\": \"READY\",\n      \"summary\": \"所有前卡实际audit有效且前卡冻结strict成功，仅启动本卡\",\n      \"evidence\": \"build/iter11-review/task08-review1/local-strict.json\"\n    },\n    \"verification\": {\n      \"status\": \"READY\",\n      \"summary\": \"冻结Linux runner与维护测试环境已实测\",\n      \"evidence\": \"build/iter11-review/task08-review1/local-strict.json\"\n    }\n  },\n  \"task_id\": \"09\",\n  \"delivery_mode\": \"git\",\n  \"candidate\": \"531c3ea6e31d2eb2a098272bfcf6cb6fe57a11b7\",\n  \"execution\": {\n    \"attempt_count\": 1,\n    \"no_progress_streak\": 0,\n    \"last_attempt\": {\n      \"source\": \"docs/todos/11-reliable-delivery/evidence/09/implementation-checkpoint-attempt.json\",\n      \"phase\": \"implementation\",\n      \"delivery_mode\": \"git\",\n      \"candidate\": \"531c3ea6e31d2eb2a098272bfcf6cb6fe57a11b7\",\n      \"conditions\": {\n        \"inputs\": [\n          \"AGENTS.md\",\n          \"docs/todos/11-reliable-delivery/09-proportional-refactor-evidence.md\",\n          \"docs/todos/11-reliable-delivery/README.md\",\n          \"references/task_card_schema.md\",\n          \"scripts/iter_templates.py\",\n          \"templates/contracts/refactor_benchmark_contract.md\",\n          \"tests/test_template_generation.py\"\n        ],\n        \"capabilities\": [\n          \"Python3.11.17-pytest9.2-mcp1.30\",\n          \"approved-frozen-linux-runner\",\n          \"independent-native-reviewer\",\n          \"native-codex-cli-implementer\"\n        ],\n        \"scope\": [\n          \".agents/notes/planned/iter11/09-proportional-refactor-evidence.md\",\n          \"docs/todos/11-reliable-delivery/evidence/09/\",\n          \"references/refactor_evidence.md\",\n          \"scripts/iter_templates.py\",\n          \"templates/contracts/refactor_benchmark_contract.md\",\n          \"tests/test_refactor_evidence_policy.py\",\n          \"tests/test_template_generation.py\"\n        ]\n      },\n      \"executor_id\": \"01a1ddb2-e240-7a00-8468-ccfe63671cb1\",\n      \"executor_state\": \"completed\",\n      \"terminal_evidence\": \"docs/todos/11-reliable-delivery/evidence/09/implementation-terminal.json\",\n      \"progress\": [\n        {\n          \"kind\": \"implementation\",\n          \"evidence\": \"docs/todos/11-reliable-delivery/evidence/09/delivery.json\",\n          \"summary\": \"新规则与两类spec实际生成/预检和定向实验完成；新会话消费待验\"\n        }\n      ],\n      \"checkpoint\": \"新规则与两类spec实际生成/预检和定向实验完成；新会话消费待验\",\n      \"remaining_work\": [\n        \"C独审\",\n        \"D/strict\",\n        \"独立新会话实际消费\"\n      ],\n      \"commands\": [\n        {\n          \"receipt\": \"docs/todos/11-reliable-delivery/evidence/09/delivery-validation.json\",\n          \"status\": \"COMPLETED\",\n          \"raw_exit_code\": 0,\n          \"started_at\": \"2026-11-15T05:35:59.847716+00:00\",\n          \"ended_at\": \"2026-11-15T05:36:00.879494+00:00\"\n        },\n        {\n          \"receipt\": \"docs/todos/11-reliable-delivery/evidence/09/experiment.json\",\n          \"status\": \"COMPLETED\",\n          \"raw_exit_code\": 0,\n          \"started_at\": \"2026-11-15T05:35:05.520804+00:00\",\n          \"ended_at\": \"2026-11-15T05:35:11.820509+00:00\"\n        },\n        {\n          \"receipt\": \"docs/todos/11-reliable-delivery/evidence/09/specimens-run.json\",\n          \"status\": \"COMPLETED\",\n          \"raw_exit_code\": 0,\n          \"started_at\": \"2026-11-15T05:34:59.544035+00:00\",\n          \"ended_at\": \"2026-11-15T05:34:59.754681+00:00\"\n        },\n        {\n          \"receipt\": \"docs/todos/11-reliable-delivery/evidence/09/specimens-v2-run.json\",\n          \"status\": \"COMPLETED\",\n          \"raw_exit_code\": 0,\n          \"started_at\": \"2026-11-15T05:35:26.297846+00:00\",\n          \"ended_at\": \"2026-11-15T05:35:26.560659+00:00\"\n        }\n      ],\n      \"started_at\": null,\n      \"ended_at\": null,\n      \"session_seconds\": null,\n      \"command_seconds\": 7.8049420000000005\n    },\n    \"checkpoint\": {\n      \"candidate\": \"531c3ea6e31d2eb2a098272bfcf6cb6fe57a11b7\",\n      \"phase\": \"implementation\",\n      \"summary\": \"新规则与两类spec实际生成/预检和定向实验完成；新会话消费待验\",\n      \"progress\": [\n        {\n          \"kind\": \"implementation\",\n          \"evidence\": \"docs/todos/11-reliable-delivery/evidence/09/delivery.json\",\n          \"summary\": \"新规则与两类spec实际生成/预检和定向实验完成；新会话消费待验\"\n        }\n      ],\n      \"source\": \"docs/todos/11-reliable-delivery/evidence/09/implementation-checkpoint-attempt.json\"\n    },\n    \"remaining_work\": [\n      \"C独审\",\n      \"D/strict\",\n      \"独立新会话实际消费\"\n    ]\n  },\n  \"conditions\": {\n    \"inputs\": [\n      \"AGENTS.md\",\n      \"docs/todos/11-reliable-delivery/09-proportional-refactor-evidence.md\",\n      \"docs/todos/11-reliable-delivery/README.md\",\n      \"docs/todos/11-reliable-delivery/evidence/09/consumer-brief-input.md\",\n      \"docs/todos/11-reliable-delivery/evidence/09/consumer-input-manifest.json\",\n      \"references/task_card_schema.md\",\n      \"scripts/iter_templates.py\",\n      \"templates/contracts/refactor_benchmark_contract.md\",\n      \"tests/test_template_generation.py\"\n    ],\n    \"capabilities\": [\n      \"Python3.11.17-pytest9.2-mcp1.30\",\n      \"approved-frozen-linux-runner\",\n      \"independent-native-reviewer\",\n      \"native-codex-cli-implementer\"\n    ],\n    \"scope\": [\n      \".agents/notes/planned/iter11/09-proportional-refactor-evidence.md\",\n      \"docs/todos/11-reliable-delivery/evidence/09/\",\n      \"references/refactor_evidence.md\",\n      \"scripts/iter_templates.py\",\n      \"templates/contracts/refactor_benchmark_contract.md\",\n      \"tests/test_refactor_evidence_policy.py\",\n      \"tests/test_template_generation.py\"\n    ]\n  },\n  \"checkpoint\": \"真实新会话消费候选文档及场景\",\n  \"remaining_work\": [\n    \"C独审\",\n    \"D/strict\",\n    \"消费核对\"\n  ]\n}\n",
+      "stderr": "",
+      "terminal_evidence": {
+        "source": "docs/todos/11-reliable-delivery/evidence/09/consumer-check-observation.json",
+        "id": "2026-11-15T05:36:47.885867+00:00"
+      }
+    },
+    "delegation": {
+      "launch": {
+        "requestedAt": 1794721007781,
+        "leaf": 1794721307781,
+        "hard": 1794721397781,
+        "command": 1794721247781,
+        "launch": {
+          "chunk_id": "fbc6bf",
+          "wall_time_seconds": 1.001125562,
+          "session_id": 70284,
+          "original_token_count": 0,
+          "output": ""
+        },
+        "cmd": "timeout --signal=TERM --kill-after=5s 300s codex exec -C '/data/workspace/iteration-manager/.worktrees/iter-11' -s danger-full-access -c 'approval_policy=\"never\"' --json -o '/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/09/consumer-last-message.txt' - < '/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/09/consumer-brief.md' > '/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/09/consumer-native.jsonl' 2> '/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/09/consumer-native.stderr.txt'"
+      },
+      "monitor": {
+        "reason": "terminal",
+        "deadlineMs": 1794721307781,
+        "final": {
+          "status": "completed",
+          "raw": {
+            "chunk_id": "e1dbb1",
+            "wall_time_seconds": 38.430092566,
+            "exit_code": 0,
+            "original_token_count": 0,
+            "output": ""
+          }
+        },
+        "terminalConfirmed": true,
+        "observedAt": 1794721047598,
+        "lateByMs": 0,
+        "events": [
+          {
+            "kind": "query",
+            "startedAt": 1794721009159,
+            "returnedAt": 1794721047598,
+            "waitMs": 60000,
+            "result": {
+              "status": "completed",
+              "raw": {
+                "chunk_id": "e1dbb1",
+                "wall_time_seconds": 38.430092566,
+                "exit_code": 0,
+                "original_token_count": 0,
+                "output": ""
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}
