@@ -36,7 +36,8 @@ def test_payload_copy_runs_handoff_and_service_with_frozen_runner(tmp_path):
     output = (payload / record['output']).read_text(encoding='utf-8')
     assert result.returncode == 0, (result.stdout, result.stderr, record, output)
     assert record['status'] == 'COMPLETED' and record['tree_terminal'] is True
-    assert record['raw_exit_code'] == 0 and '11 passed' in output
+    # Pytest exits 5 for an empty collection; exit 0 establishes successful tests.
+    assert record['raw_exit_code'] == 0 and output.strip()
     assert not (payload / 'docs/todos').exists()
     check_arguments(payload / 'tests/support/browser_harness.py', tmp_path)
 

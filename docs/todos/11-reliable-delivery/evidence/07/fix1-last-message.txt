@@ -1,0 +1,7 @@
+F1/F2 修正已交接：临时副本测试改为检查成功退出、runner 终态和非空输出，不再固定测试数量。指定回归 **13 项通过**，其中临时白名单副本内 **11 项通过**；两层命令树均已终止。
+
+原始量测已按输入哈希核对并沿用：Before 均值 **1.888701 秒**，After 均值 **1.843643 秒**，相对变化 **−2.39%**；历史路径消费者由 **2 降至 0**。三次样本仅供描述，不构成性能保证。
+
+供协调方追加任务卡的表格和证据见 [fix1-ledger-summary.md](/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/07/fix1-ledger-summary.md)、[fix1-delivery.json](/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/07/fix1-delivery.json) 和 [checks-proposal-v2.json](/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/07/checks-proposal-v2.json)。
+
+仍需协调方追加表格、冻结新 C、取得独立复审、登记 D 并运行 frozen local strict。

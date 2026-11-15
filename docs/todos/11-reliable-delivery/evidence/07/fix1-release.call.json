@@ -1,0 +1,24 @@
+{
+  "kind": "controller-command-observation",
+  "argv": [
+    "python3",
+    "-B",
+    "/data/workspace/iteration-manager/build/frozen-tools/fdcc4cce8863/scripts/iter_sync.py",
+    "--autonomy",
+    "release",
+    "docs/todos/11-reliable-delivery/07-portable-test-support.md",
+    "--event-id",
+    "iter11-07-fix1-release-v1",
+    "--owner",
+    "iter11-controller-linux-20261115",
+    "--evidence",
+    "docs/todos/11-reliable-delivery/evidence/07/fix1-terminal.json",
+    "--executor-state",
+    "completed"
+  ],
+  "started_at": "2026-11-15T05:22:39.907125+00:00",
+  "ended_at": "2026-11-15T05:22:39.972861+00:00",
+  "exit_code": 0,
+  "stdout": "{\"task_id\": \"07-portable-test-support\", \"previous_rounds\": 1, \"current_rounds\": 1, \"fix_total\": 1, \"consilium_count\": 0, \"replan_count\": 0, \"is_fused\": false, \"status\": \"TESTING\", \"blocked_reason\": \"\", \"writer\": \"\", \"consilium_bundle\": null}\n",
+  "stderr": ""
+}

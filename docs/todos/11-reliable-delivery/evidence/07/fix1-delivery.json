@@ -1,0 +1,134 @@
+{
+  "implementer_thread_id": "01a1dda0-8d6b-79c0-8739-a8409dec0d93",
+  "base": "d09888af23991785f96ea98d902821b002961534",
+  "original_base": "3158e75869d5c4346c51256de878f14ea190f305",
+  "finding_scope": [
+    "F1",
+    "F2"
+  ],
+  "regression": {
+    "command": "ITER_FROZEN_RUNNER=/data/workspace/iteration-manager/build/frozen-runners/iter11-platform-v1/scripts/iter_run.py ITER_COMMAND_DEADLINE=2026-11-15T05:26:15.296230+00:00 /data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B /data/workspace/iteration-manager/build/frozen-runners/iter11-platform-v1/scripts/iter_run.py --deadline 2026-11-15T05:26:15.296230+00:00 --evidence docs/todos/11-reliable-delivery/evidence/07/fix1-regression.json -- /data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B -m pytest -p no:cacheprovider tests/test_board_handoff.py tests/test_board_service.py tests/test_harness_portability.py -q --basetemp /tmp/iter11-task07-fix1-regression",
+    "receipt": "docs/todos/11-reliable-delivery/evidence/07/fix1-regression.json",
+    "output": "docs/todos/11-reliable-delivery/evidence/07/fix1-regression.json.output.txt",
+    "started_at": "2026-11-15T05:21:38.034218+00:00",
+    "ended_at": "2026-11-15T05:21:45.978242+00:00",
+    "status": "COMPLETED",
+    "exit_code": 0,
+    "tree_terminal": true
+  },
+  "nested_payload": {
+    "command": "/data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B /data/workspace/iteration-manager/build/frozen-runners/iter11-platform-v1/scripts/iter_run.py --deadline 2026-11-15T05:26:15.296230+00:00 --evidence installed-copy-receipt.json -- /data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B -m pytest -p no:cacheprovider tests/test_board_handoff.py tests/test_board_service.py -q --basetemp /tmp/iter11-task07-fix1-regression/test_payload_copy_runs_handoff0/installed-pytest",
+    "receipt": "docs/todos/11-reliable-delivery/evidence/07/fix1-payload-receipt.json",
+    "output": "docs/todos/11-reliable-delivery/evidence/07/fix1-payload-receipt.json.output.txt",
+    "actual_cwd": "/tmp/iter11-task07-fix1-regression/test_payload_copy_runs_handoff0/payload",
+    "status": "COMPLETED",
+    "exit_code": 0,
+    "tree_terminal": true
+  },
+  "retained_checks": {
+    "baseline": {
+      "receipt": "docs/todos/11-reliable-delivery/evidence/07/baseline-implementer.json",
+      "started_at": "2026-11-15T05:14:17.713123+00:00",
+      "ended_at": "2026-11-15T05:14:21.392737+00:00",
+      "original_candidate": "3158e75869d5c4346c51256de878f14ea190f305",
+      "status": "COMPLETED",
+      "exit_code": 0,
+      "tree_terminal": true
+    },
+    "compatibility": {
+      "receipt": "docs/todos/11-reliable-delivery/evidence/07/compatibility-command.json",
+      "started_at": "2026-11-15T05:15:56.520193+00:00",
+      "ended_at": "2026-11-15T05:15:56.634455+00:00",
+      "original_candidate": "d09888af23991785f96ea98d902821b002961534",
+      "status": "COMPLETED",
+      "exit_code": 0,
+      "tree_terminal": true
+    },
+    "benchmark_before": {
+      "receipt": "docs/todos/11-reliable-delivery/evidence/07/benchmark-before-v2.json",
+      "started_at": "2026-11-15T05:14:42.102796+00:00",
+      "ended_at": "2026-11-15T05:14:47.856578+00:00",
+      "original_candidate": "3158e75869d5c4346c51256de878f14ea190f305",
+      "status": "COMPLETED",
+      "exit_code": 0,
+      "tree_terminal": true
+    },
+    "benchmark_after": {
+      "receipt": "docs/todos/11-reliable-delivery/evidence/07/benchmark-after.json",
+      "started_at": "2026-11-15T05:15:29.737267+00:00",
+      "ended_at": "2026-11-15T05:15:35.369484+00:00",
+      "original_candidate": "d09888af23991785f96ea98d902821b002961534",
+      "status": "COMPLETED",
+      "exit_code": 0,
+      "tree_terminal": true
+    }
+  },
+  "measurement": {
+    "before": {
+      "receipt": "docs/todos/11-reliable-delivery/evidence/07/benchmark-before-v2.json",
+      "started_at": "2026-11-15T05:14:42.102796+00:00",
+      "ended_at": "2026-11-15T05:14:47.856578+00:00",
+      "candidate": "3158e75869d5c4346c51256de878f14ea190f305",
+      "consumer_count": 2,
+      "samples": [
+        2.01556606288068,
+        2.013032219838351,
+        1.637503799982369
+      ],
+      "mean": 1.8887006942338
+    },
+    "after": {
+      "receipt": "docs/todos/11-reliable-delivery/evidence/07/benchmark-after.json",
+      "started_at": "2026-11-15T05:15:29.737267+00:00",
+      "ended_at": "2026-11-15T05:15:35.369484+00:00",
+      "candidate": "d09888af23991785f96ea98d902821b002961534",
+      "consumer_count": 0,
+      "samples": [
+        1.9049793588928878,
+        1.6704832690302283,
+        1.955465054139495
+      ],
+      "mean": 1.843642560687537
+    }
+  },
+  "relative_change_percent": -2.385668289519106,
+  "unchanged_input_sha256": {
+    "docs/todos/11-reliable-delivery/evidence/07/measure.py": "9442b31dc90f0c0031a49ae9be53e5709695a58fafc50fdc12b4b279ef7becb3",
+    "tests/test_board_handoff.py": "e2967d426ddfa61bbb061968a8cb25c34415da1d90abb2ce02e8e67ab471952e",
+    "tests/test_board_service.py": "17ad201585c3a2ffe67d405fbbbba0b080a5fb7b652d4b578a3d5fcd809d58f1",
+    "tests/support/browser_harness.py": "03a96ca8561eea802a8df4089e7504a72feb42245c7a077953659e2de484ac52",
+    "scripts/iter_sync.py": "a3afb08fb8d021feb7b685e6ff4f6c97c3ed60645e111c1034320876bb8959f7",
+    "scripts/iter_autonomy.py": "5faec682f4cd52d91ebdeb578125f3b4d21c3c22965a5516e07b46567ecf55ba"
+  },
+  "original_manifest_check": {
+    "source": "docs/todos/11-reliable-delivery/evidence/07/source-manifest.json",
+    "entries": 98,
+    "changed": [
+      "tests/test_harness_portability.py"
+    ],
+    "reason": "F1 count-independent result assertion"
+  },
+  "environment": {
+    "platform": "Linux",
+    "python": "3.11.17",
+    "pytest": "9.2.0",
+    "mcp": "1.30.0",
+    "runner": "/data/workspace/iteration-manager/build/frozen-runners/iter11-platform-v1/scripts/iter_run.py",
+    "runner_sha256": "b8b22217ad1d8d1f02a9a4d3cb053f84f781888c4871e583f0a7ff27f3fe3ef1",
+    "coordinator": "fdcc4cce88635ee81573be5991de11de650659d8",
+    "deadline": "2026-11-15T05:26:15.296230+00:00"
+  },
+  "decision": "Pytest zero exit means a nonempty successful run; terminal receipt and nonempty output are additionally required. Keep original measured inputs and samples; do not infer a speedup.",
+  "limitations": [
+    "No full suite, native browser, Windows, deployment, or real installed copy",
+    "Three timing samples are descriptive",
+    "frozen coordinator known defects cannot self-approve"
+  ],
+  "remaining": [
+    "controller appends table before C",
+    "new C",
+    "independent review",
+    "D registration",
+    "frozen local strict"
+  ]
+}

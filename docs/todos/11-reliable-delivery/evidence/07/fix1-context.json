@@ -1,0 +1,56 @@
+{
+  "version": 1,
+  "tasks": {
+    "07": {
+      "phase": "implementation",
+      "candidate": "d09888af23991785f96ea98d902821b002961534",
+      "inputs": [
+        "docs/todos/11-reliable-delivery/07-portable-test-support.md",
+        "docs/todos/11-reliable-delivery/README.md",
+        "AGENTS.md",
+        "references/task_card_schema.md",
+        "tests/test_board_handoff.py",
+        "docs/todos/11-reliable-delivery/evidence/07/preliminary-review1.json"
+      ],
+      "capabilities": [
+        "native-codex-cli-implementer",
+        "approved-frozen-linux-runner",
+        "Python3.11.17-pytest9.2-mcp1.30",
+        "independent-native-reviewer"
+      ],
+      "dependencies": [],
+      "tool_entry": "/data/workspace/iteration-manager/build/frozen-tools/fdcc4cce8863/scripts/iter_sync.py",
+      "checkpoint": "F1/F2定向返修",
+      "remaining_work": [
+        "修测试/补比较表",
+        "原独审复审",
+        "D/strict"
+      ],
+      "required_observations": [
+        "serial-order"
+      ],
+      "observations": {
+        "authority": {
+          "status": "READY",
+          "summary": "用户实施/Git/Worktree/Linux授权；不部署推送合流清理",
+          "evidence": "docs/todos/11-reliable-delivery/evidence/planning/platform-migration-authorization.json"
+        },
+        "execution": {
+          "status": "READY",
+          "summary": "原生Codex受控调用已实测；本卡单写者与独立审查可用",
+          "evidence": "build/iter11-review/task06-review2/local-strict-v2.json"
+        },
+        "verification": {
+          "status": "READY",
+          "summary": "冻结Linux runner与维护测试环境已实测",
+          "evidence": "build/iter11-review/task06-review2/local-strict-v2.json"
+        },
+        "serial-order": {
+          "status": "READY",
+          "summary": "所有前卡实际audit有效且前卡冻结strict成功，仅启动本卡",
+          "evidence": "build/iter11-review/task06-review2/local-strict-v2.json"
+        }
+      }
+    }
+  }
+}
