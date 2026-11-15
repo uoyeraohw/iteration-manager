@@ -1,0 +1,56 @@
+{
+  "version": 1,
+  "kind": "retrospective reconciliation, not replacement for original grant terminal",
+  "original_terminal": {
+    "path": "docs/todos/11-reliable-delivery/evidence/12/codeg-interruption-terminal.json",
+    "sha256": "fab5085b8bb65dfa4a12de2e15e676e76ec1de6caec64cde3a4467b1947ace27",
+    "commands": [
+      {
+        "id": "task12-experiment-04",
+        "status": "completed",
+        "exit_code": 0,
+        "source": "docs/todos/11-reliable-delivery/evidence/12/experiment-04.json"
+      },
+      {
+        "id": "iter11-task12-codeg-v2-1794723214346-check",
+        "status": "completed",
+        "exit_code": 0,
+        "source": "docs/todos/11-reliable-delivery/evidence/12/codeg-probe-v2-check-observation.json"
+      }
+    ]
+  },
+  "original_decision": {
+    "path": "docs/todos/11-reliable-delivery/evidence/12/codeg-interruption-decision.json",
+    "sha256": "5f875aead0b6230493a0c518e85acd07c92508931b22a4a0c1343e7082847ee1",
+    "correction": "The original claim that source-reading calls exposed no inner exit metadata is contradicted by ten native terminal events."
+  },
+  "session": {
+    "task_id": "083b45e8-276c-4509-8720-0c2c9c8ff6a4",
+    "status": "canceled",
+    "status_source": "docs/todos/11-reliable-delivery/evidence/12/codeg-probe-v2-chain.json",
+    "turn_aborted_event": {
+      "path": "docs/todos/11-reliable-delivery/evidence/12/codeg-probe-v2-native-excerpt.jsonl",
+      "line": 59,
+      "line_sha256_including_newline": "2371883a1fdad603ee7ddaadca9419ff7d522c84bf710b5887944fd046a66827",
+      "timestamp": "2026-11-15T06:15:24.401Z",
+      "ordinal": 67
+    }
+  },
+  "native_inventory": "docs/todos/11-reliable-delivery/evidence/12/fix1-native-command-inventory.json",
+  "native_completed_count": 10,
+  "native_command_ids": [
+    "exec-8ab4cc65-d73a-4fa2-8531-383d929dd495",
+    "exec-3ebd2bdb-d82c-479e-aaa9-83af29674778",
+    "exec-8636abde-9545-4dd3-abc4-0adc0b1ab756",
+    "exec-e12979c7-3100-4dff-81e9-df87ff4e4edf",
+    "exec-d839a07c-acc8-43f6-a37c-79ed011cf48e",
+    "exec-a2649b2d-f462-4c2f-a0b6-3b548b4a46e8",
+    "exec-51d7fb94-01eb-4847-8c97-11fd7e3d053e",
+    "exec-08529fd8-6fe9-443f-b0d3-3f22a344b057",
+    "exec-9dfa64ad-ce76-47c1-b701-54a23b5bd204",
+    "exec-05d129b8-05e1-490e-a90a-435bde2a59bc"
+  ],
+  "not_started_call_id": "call_846c18c0438d43029cd9942499b34a74",
+  "omission": "Original grant terminal omitted all ten source-reading CommandExecution items; its two entries are other commands.",
+  "unknown": "No CommandExecution item_started timestamps or independent runner process-tree terminal receipts for those ten commands. This record is not retroactively bound to the consumed grant."
+}

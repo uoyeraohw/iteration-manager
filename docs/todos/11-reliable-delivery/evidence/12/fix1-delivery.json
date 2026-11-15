@@ -1,0 +1,42 @@
+{
+  "thread_id": "01a1ddcf-b505-7cc1-baac-d53be61431ab",
+  "base": "305f1d49d499ae3a5112358d57c2fefa48349261",
+  "status": "CHECKPOINT; highest TESTING; F1 BLOCKED; no approval",
+  "command": "/data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B /data/workspace/iteration-manager/build/frozen-runners/iter11-platform-v1/scripts/iter_run.py --deadline 2026-11-15T06:53:58.360614+00:00 --evidence docs/todos/11-reliable-delivery/evidence/12/fix1-reconciliation-command.json -- /data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B docs/todos/11-reliable-delivery/evidence/12/fix1-reconcile.py",
+  "receipt": "docs/todos/11-reliable-delivery/evidence/12/fix1-reconciliation-command.json",
+  "output": "docs/todos/11-reliable-delivery/evidence/12/fix1-reconciliation-command.json.output.txt",
+  "exit_code": 0,
+  "tree_terminal": true,
+  "reused_experiment": {
+    "command": "/data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B /data/workspace/iteration-manager/build/frozen-runners/iter11-platform-v1/scripts/iter_run.py --deadline 2026-11-15T06:14:28.191357+00:00 --evidence docs/todos/11-reliable-delivery/evidence/12/experiment-04.json -- /data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B -m pytest -p no:cacheprovider tests/test_workflow_sequence.py tests/test_prompt_sources.py tests/test_task_card_schema.py -q --basetemp /tmp/iter11-task12-3Zi61t",
+    "receipt": "docs/todos/11-reliable-delivery/evidence/12/experiment-04.json",
+    "output": "docs/todos/11-reliable-delivery/evidence/12/experiment-04.json.output.txt",
+    "exit_code": 0,
+    "status": "COMPLETED",
+    "tree_terminal": true,
+    "candidate_note": "final source"
+  },
+  "decision": "docs/todos/11-reliable-delivery/evidence/12/fix1-ledger-summary.md",
+  "inventory": "docs/todos/11-reliable-delivery/evidence/12/fix1-native-command-inventory.json",
+  "reconciled_terminal": "docs/todos/11-reliable-delivery/evidence/12/fix1-reconciled-terminal.json",
+  "recovery_disposition_draft": "docs/todos/11-reliable-delivery/evidence/12/fix1-recovery-disposition-draft.json",
+  "checks_proposal": "docs/todos/11-reliable-delivery/evidence/12/fix1-checks-proposal.json",
+  "source_manifest": "docs/todos/11-reliable-delivery/evidence/12/fix1-source-manifest.json",
+  "findings": {
+    "F2": "Ten completed native command records and not-started bwrap reconciled; independent review pending.",
+    "F1": "BLOCKED: no explicit checkpoint-resume authority in cited sources; original interpretation remains historical FAIL. Draft does not authorize grant or consumption."
+  },
+  "applicability": "Linux Python 3.11.17 and frozen platform runner; native observations limited to the specific canceled Codeg task; no separate process-tree evidence for its native read commands.",
+  "limitations": [
+    "No product/test change or suite rerun. No grant, resume, new delegation, card/README edit, deployment, push, merge or cleanup.",
+    "Existing native command terminal exit metadata is not independently observed runner process-tree termination; process start timestamps unknown.",
+    "Retrospective inventory is not retroactively bound to the historical grant; original files preserved.",
+    "Frozen coordinator fdcc4cc known defects cannot self-approve candidate; F1 prevents final interfaces/acceptance."
+  ],
+  "remaining": [
+    "Controller obtain explicit authority or authorized recovery disposition and compliant new consumption, without rewriting history",
+    "Freeze affected candidate and obtain independent affected re-review",
+    "Controller register D and run frozen local strict",
+    "After all valid DONE, Controller integration/full suite, independent total review, final frozen branch strict"
+  ]
+}

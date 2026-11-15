@@ -1,0 +1,590 @@
+{
+  "version": 1,
+  "source": {
+    "path": "docs/todos/11-reliable-delivery/evidence/12/codeg-probe-v2-native-excerpt.jsonl",
+    "sha256": "794da4df789e5eb6e9106f683fdebfd17049b0eba2b119597d8227eeaeb1174c",
+    "committed_base": "305f1d49d499ae3a5112358d57c2fefa48349261"
+  },
+  "session_task_id": "083b45e8-276c-4509-8720-0c2c9c8ff6a4",
+  "calls": [
+    {
+      "call_id": "call_846c18c0438d43029cd9942499b34a74",
+      "call_source": {
+        "path": "docs/todos/11-reliable-delivery/evidence/12/codeg-probe-v2-native-excerpt.jsonl",
+        "line": 13,
+        "line_sha256_including_newline": "8615493b423b866be6b791a06a5d9e695bce25a9cf28001afa70169ee8840821",
+        "timestamp": "2026-11-15T06:13:46.224Z",
+        "ordinal": 15
+      },
+      "output_source": {
+        "path": "docs/todos/11-reliable-delivery/evidence/12/codeg-probe-v2-native-excerpt.jsonl",
+        "line": 14,
+        "line_sha256_including_newline": "c0d6c33664a13ba06362824469b23605d1900ba709a28fcc254d5ece7a17968d",
+        "timestamp": "2026-11-15T06:13:46.586Z",
+        "ordinal": 17
+      },
+      "call_input": "const r = await tools.exec_command({cmd:\"cat /data/home/.codex/skills/using-superpowers/SKILL.md && cat /data/home/MACHINE.md && cat docs/todos/11-reliable-delivery/evidence/12/consumer-brief-input.md && cat docs/todos/11-reliable-delivery/evidence/12/consumer-input-manifest.json\",\"workdir\":\"/data/workspace/iteration-manager/.worktrees/iter-11\",\"max_output_tokens\":12000}); text(r.output);\n",
+      "call_input_sha256_utf8": "0b2f7e0d048e00b4b72d67812af5f5ed402bfdcb6b6e03e92616f095e6b71723",
+      "tool_output_sha256_utf8": "993403e9b15cbe2dc3f83e40220c736bf80692a5ffb1a8991f8a46aa7649d636",
+      "command_ids": []
+    },
+    {
+      "call_id": "call_686f20ea0bd84381a3353d256dc94a95",
+      "call_source": {
+        "path": "docs/todos/11-reliable-delivery/evidence/12/codeg-probe-v2-native-excerpt.jsonl",
+        "line": 20,
+        "line_sha256_including_newline": "8c498313a26adf9560d5b390f81a2414e815f496aca425e0386e1e9f5d442b6a",
+        "timestamp": "2026-11-15T06:13:54.202Z",
+        "ordinal": 23
+      },
+      "output_source": {
+        "path": "docs/todos/11-reliable-delivery/evidence/12/codeg-probe-v2-native-excerpt.jsonl",
+        "line": 22,
+        "line_sha256_including_newline": "a6ee62ebf0434278e1f66cad857b25ff238bb3c53305f1ef0809b3564360d7d4",
+        "timestamp": "2026-11-15T06:13:58.590Z",
+        "ordinal": 26
+      },
+      "call_input": "const r = await tools.exec_command({cmd:\"cat /data/home/.codex/skills/using-superpowers/SKILL.md /data/home/MACHINE.md docs/todos/11-reliable-delivery/evidence/12/consumer-brief-input.md docs/todos/11-reliable-delivery/evidence/12/consumer-input-manifest.json\",\"workdir\":\"/data/workspace/iteration-manager/.worktrees/iter-11\",\"sandbox_permissions\":\"require_escalated\",\"justification\":\"可否允许只读读取指定任务输入和本机说明？默认沙箱因 /proc 挂载失败，命令未启动。\",\"max_output_tokens\":16000}); text(r.output);\n",
+      "call_input_sha256_utf8": "b1b1ae4794d7da599a89d7a317438f4f78074a7d110dfa8e44606c1b03ce0a9f",
+      "tool_output_sha256_utf8": "6e4043a12b3801571ae40b57a04e95310cec7450caad43ca9983859debd25d24",
+      "command_ids": [
+        "exec-8ab4cc65-d73a-4fa2-8531-383d929dd495"
+      ]
+    },
+    {
+      "call_id": "call_25652ec97f5947b481515e10bb87e291",
+      "call_source": {
+        "path": "docs/todos/11-reliable-delivery/evidence/12/codeg-probe-v2-native-excerpt.jsonl",
+        "line": 28,
+        "line_sha256_including_newline": "b3d700b3937a5c3b5d46b7d5e150e62bbc98fec9d0d48461098366d458414fd5",
+        "timestamp": "2026-11-15T06:14:07.037Z",
+        "ordinal": 32
+      },
+      "output_source": {
+        "path": "docs/todos/11-reliable-delivery/evidence/12/codeg-probe-v2-native-excerpt.jsonl",
+        "line": 30,
+        "line_sha256_including_newline": "c2b6c0c8e579c0301e28d95406c4e9ff80018444ddfd2748564ed1bd99707f3f",
+        "timestamp": "2026-11-15T06:14:12.087Z",
+        "ordinal": 35
+      },
+      "call_input": "const r = await tools.exec_command({cmd:\"sha256sum references/agent_protocol.md references/execution_readiness.md references/worktree_git_contract.md templates/assistants/iteration_planner.md templates/assistants/iteration_controller.md templates/assistants/task_tech_lead.md templates/sdd_implementer_prompt.md templates/sdd_reviewer_prompt.md\\nwc -l references/agent_protocol.md references/execution_readiness.md references/worktree_git_contract.md templates/assistants/iteration_planner.md templates/assistants/iteration_controller.md templates/assistants/task_tech_lead.md templates/sdd_implementer_prompt.md templates/sdd_reviewer_prompt.md\\nfor f in references/agent_protocol.md references/execution_readiness.md references/worktree_git_contract.md templates/assistants/iteration_planner.md templates/assistants/iteration_controller.md templates/assistants/task_tech_lead.md templates/sdd_implementer_prompt.md templates/sdd_reviewer_prompt.md; do nl -ba \\\"$f\\\"; done\",\"workdir\":\"/data/workspace/iteration-manager/.worktrees/iter-11\",\"sandbox_permissions\":\"require_escalated\",\"justification\":\"允许继续只读计算清单八个文件的 SHA256 并读取带行号的原文，以完成用户指定的消费核对？\",\"max_output_tokens\":40000}); text(r.output);\n",
+      "call_input_sha256_utf8": "f1927c840fddf459e7d5f6f1e86b90fea96fd8a9fe9361de64d38529a4efb801",
+      "tool_output_sha256_utf8": "fb29309c36b7032f5ad7e64c9b482d158460e98583eaaf4a6400e20b31727bf7",
+      "command_ids": [
+        "exec-3ebd2bdb-d82c-479e-aaa9-83af29674778"
+      ]
+    },
+    {
+      "call_id": "call_83d0d3017bb44bcb9404dbe291b4eb07",
+      "call_source": {
+        "path": "docs/todos/11-reliable-delivery/evidence/12/codeg-probe-v2-native-excerpt.jsonl",
+        "line": 34,
+        "line_sha256_including_newline": "0ff4bc1bb694cdbbd937aecd019c6622793bda84e46317652c1d2cad6798a86a",
+        "timestamp": "2026-11-15T06:14:18.965Z",
+        "ordinal": 39
+      },
+      "output_source": {
+        "path": "docs/todos/11-reliable-delivery/evidence/12/codeg-probe-v2-native-excerpt.jsonl",
+        "line": 41,
+        "line_sha256_including_newline": "8b2457fc027ea87d352b8667b524105b9ad192366f9b738af34913aff401c1c2",
+        "timestamp": "2026-11-15T06:14:23.012Z",
+        "ordinal": 47
+      },
+      "call_input": "const results = await Promise.all([\"references/agent_protocol.md\",\"references/execution_readiness.md\",\"references/worktree_git_contract.md\",\"templates/assistants/iteration_planner.md\",\"templates/assistants/iteration_controller.md\",\"templates/assistants/task_tech_lead.md\"].map(f=>tools.exec_command({cmd:`nl -ba '${f}'`,workdir:\"/data/workspace/iteration-manager/.worktrees/iter-11\",sandbox_permissions:\"require_escalated\",justification:\"允许只读读取已指定的源文件全文及行号，以核对场景判断？\",max_output_tokens:12000}))); for (let i=0;i<results.length;i++) text(JSON.stringify({file:[\"protocol\",\"readiness\",\"git\",\"planner\",\"controller\",\"lead\"][i],output:results[i].output}));\n",
+      "call_input_sha256_utf8": "e7b9b441a770360ed2d988b8ba93d3407448de2c8b2a8b39978435e2e520520a",
+      "tool_output_sha256_utf8": "5c4901385f5dd34c7183618b5665006d6fe854ca304e54f702d24c799696380d",
+      "command_ids": [
+        "exec-8636abde-9545-4dd3-abc4-0adc0b1ab756",
+        "exec-e12979c7-3100-4dff-81e9-df87ff4e4edf",
+        "exec-d839a07c-acc8-43f6-a37c-79ed011cf48e",
+        "exec-a2649b2d-f462-4c2f-a0b6-3b548b4a46e8",
+        "exec-51d7fb94-01eb-4847-8c97-11fd7e3d053e",
+        "exec-08529fd8-6fe9-443f-b0d3-3f22a344b057"
+      ]
+    },
+    {
+      "call_id": "call_bf55570042574b86b2acc47d749a2c75",
+      "call_source": {
+        "path": "docs/todos/11-reliable-delivery/evidence/12/codeg-probe-v2-native-excerpt.jsonl",
+        "line": 47,
+        "line_sha256_including_newline": "a2fbfe02fc68474fcc03c2d009ac0c46d87b182db0730ae32232a9e213dfd535",
+        "timestamp": "2026-11-15T06:14:29.823Z",
+        "ordinal": 53
+      },
+      "output_source": {
+        "path": "docs/todos/11-reliable-delivery/evidence/12/codeg-probe-v2-native-excerpt.jsonl",
+        "line": 49,
+        "line_sha256_including_newline": "a131f373b1ba6de376c8bc9841c8d0f9677a41b75f0aee0f9a4b0224aca2e522",
+        "timestamp": "2026-11-15T06:14:33.003Z",
+        "ordinal": 56
+      },
+      "call_input": "const r = await tools.exec_command({cmd:\"sed -n '136,196p' references/agent_protocol.md | nl -ba -v136\\nnl -ba references/execution_readiness.md\\nnl -ba references/worktree_git_contract.md\",\"workdir\":\"/data/workspace/iteration-manager/.worktrees/iter-11\",\"sandbox_permissions\":\"require_escalated\",\"justification\":\"允许只读查看收口、恢复与 Git 契约的完整带行号原文？\",\"max_output_tokens\":25000}); text(r.output);\n",
+      "call_input_sha256_utf8": "7278d1257b182820c91f68b398a409dd65bd2a1045267f755327015820b34ce5",
+      "tool_output_sha256_utf8": "c5faec7a17f0c2b6558bdbb097130803766201577240a2b5e569b8444da23fa1",
+      "command_ids": [
+        "exec-9dfa64ad-ce76-47c1-b701-54a23b5bd204"
+      ]
+    },
+    {
+      "call_id": "call_5d7fc913dbc54b629a15cfddd207e868",
+      "call_source": {
+        "path": "docs/todos/11-reliable-delivery/evidence/12/codeg-probe-v2-native-excerpt.jsonl",
+        "line": 53,
+        "line_sha256_including_newline": "63d58b52c31391f5d8f4c253387e93db5df2b4fb85ecf7b151497b1ec87d5dcc",
+        "timestamp": "2026-11-15T06:14:42.627Z",
+        "ordinal": 60
+      },
+      "output_source": {
+        "path": "docs/todos/11-reliable-delivery/evidence/12/codeg-probe-v2-native-excerpt.jsonl",
+        "line": 55,
+        "line_sha256_including_newline": "65e263b666e0d28c59517c4cc3502ff2ae2de8f96faff89fca48c09047dbc136",
+        "timestamp": "2026-11-15T06:14:46.675Z",
+        "ordinal": 63
+      },
+      "call_input": "const r = await tools.exec_command({cmd:\"sed -n '96,124p' references/execution_readiness.md | nl -ba -v96\\nnl -ba templates/sdd_implementer_prompt.md\\nnl -ba templates/sdd_reviewer_prompt.md\",\"workdir\":\"/data/workspace/iteration-manager/.worktrees/iter-11\",\"sandbox_permissions\":\"require_escalated\",\"justification\":\"允许只读补全被输出截断的源文本，确保八个清单文件均已实际读取？\",\"max_output_tokens\":12000}); text(r.output);\n",
+      "call_input_sha256_utf8": "1390988018a19f7c3bb09720896cd38182e0f9eb76dfb5c23087eed3464ed08c",
+      "tool_output_sha256_utf8": "1ecf46ea8123d6c4f5868733c93c0f5f8e712331d020746f2b4435d9fa751b0e",
+      "command_ids": [
+        "exec-05d129b8-05e1-490e-a90a-435bde2a59bc"
+      ]
+    }
+  ],
+  "commands": [
+    {
+      "id": "exec-8ab4cc65-d73a-4fa2-8531-383d929dd495",
+      "process_id": "28125",
+      "cwd": "file:///data/workspace/iteration-manager/.worktrees/iter-11",
+      "argv": [
+        "/bin/bash",
+        "-lc",
+        "cat /data/home/.codex/skills/using-superpowers/SKILL.md /data/home/MACHINE.md docs/todos/11-reliable-delivery/evidence/12/consumer-brief-input.md docs/todos/11-reliable-delivery/evidence/12/consumer-input-manifest.json"
+      ],
+      "status": "completed",
+      "exit_code": 0,
+      "event_source": {
+        "path": "docs/todos/11-reliable-delivery/evidence/12/codeg-probe-v2-native-excerpt.jsonl",
+        "line": 21,
+        "line_sha256_including_newline": "b5b6c6db0cb2f7869a4b0ea5c99b4a5e4ca6b58d05ce2b0d96122201bc5d4591",
+        "timestamp": "2026-11-15T06:13:58.551Z",
+        "ordinal": 25
+      },
+      "native_thread_id": "01a1ddd7-05a1-7602-8c59-f04b24481f36",
+      "native_turn_id": "01a1ddd7-08c0-74f1-a647-90e96af5a59e",
+      "native_source": "unified_exec_startup",
+      "aggregated_output_sha256_utf8": "ceb294c5814e78fd46aeb7725ade1abe223de5713390c74c8c19e10006953d9d",
+      "call_id": "call_686f20ea0bd84381a3353d256dc94a95",
+      "call_source": {
+        "path": "docs/todos/11-reliable-delivery/evidence/12/codeg-probe-v2-native-excerpt.jsonl",
+        "line": 20,
+        "line_sha256_including_newline": "8c498313a26adf9560d5b390f81a2414e815f496aca425e0386e1e9f5d442b6a",
+        "timestamp": "2026-11-15T06:13:54.202Z",
+        "ordinal": 23
+      },
+      "tool_output_source": {
+        "path": "docs/todos/11-reliable-delivery/evidence/12/codeg-probe-v2-native-excerpt.jsonl",
+        "line": 22,
+        "line_sha256_including_newline": "a6ee62ebf0434278e1f66cad857b25ff238bb3c53305f1ef0809b3564360d7d4",
+        "timestamp": "2026-11-15T06:13:58.590Z",
+        "ordinal": 26
+      },
+      "native_command_started_at": null,
+      "start_note": "No CommandExecution item_started event in this excerpt; call timestamp is not process start.",
+      "runner_tree_terminal": "UNKNOWN; native exit is not runner process-tree proof"
+    },
+    {
+      "id": "exec-3ebd2bdb-d82c-479e-aaa9-83af29674778",
+      "process_id": "68028",
+      "cwd": "file:///data/workspace/iteration-manager/.worktrees/iter-11",
+      "argv": [
+        "/bin/bash",
+        "-lc",
+        "sha256sum references/agent_protocol.md references/execution_readiness.md references/worktree_git_contract.md templates/assistants/iteration_planner.md templates/assistants/iteration_controller.md templates/assistants/task_tech_lead.md templates/sdd_implementer_prompt.md templates/sdd_reviewer_prompt.md\nwc -l references/agent_protocol.md references/execution_readiness.md references/worktree_git_contract.md templates/assistants/iteration_planner.md templates/assistants/iteration_controller.md templates/assistants/task_tech_lead.md templates/sdd_implementer_prompt.md templates/sdd_reviewer_prompt.md\nfor f in references/agent_protocol.md references/execution_readiness.md references/worktree_git_contract.md templates/assistants/iteration_planner.md templates/assistants/iteration_controller.md templates/assistants/task_tech_lead.md templates/sdd_implementer_prompt.md templates/sdd_reviewer_prompt.md; do nl -ba \"$f\"; done"
+      ],
+      "status": "completed",
+      "exit_code": 0,
+      "event_source": {
+        "path": "docs/todos/11-reliable-delivery/evidence/12/codeg-probe-v2-native-excerpt.jsonl",
+        "line": 29,
+        "line_sha256_including_newline": "c6a5a7de5a84fcb25c07313a5ccae4a27238f8c340890c88d34b2d421b47f358",
+        "timestamp": "2026-11-15T06:14:12.053Z",
+        "ordinal": 34
+      },
+      "native_thread_id": "01a1ddd7-05a1-7602-8c59-f04b24481f36",
+      "native_turn_id": "01a1ddd7-08c0-74f1-a647-90e96af5a59e",
+      "native_source": "unified_exec_startup",
+      "aggregated_output_sha256_utf8": "3008e496f46edfe9428f53a80bcef29a047a45ca0728262df91685c8e54e52fc",
+      "call_id": "call_25652ec97f5947b481515e10bb87e291",
+      "call_source": {
+        "path": "docs/todos/11-reliable-delivery/evidence/12/codeg-probe-v2-native-excerpt.jsonl",
+        "line": 28,
+        "line_sha256_including_newline": "b3d700b3937a5c3b5d46b7d5e150e62bbc98fec9d0d48461098366d458414fd5",
+        "timestamp": "2026-11-15T06:14:07.037Z",
+        "ordinal": 32
+      },
+      "tool_output_source": {
+        "path": "docs/todos/11-reliable-delivery/evidence/12/codeg-probe-v2-native-excerpt.jsonl",
+        "line": 30,
+        "line_sha256_including_newline": "c2b6c0c8e579c0301e28d95406c4e9ff80018444ddfd2748564ed1bd99707f3f",
+        "timestamp": "2026-11-15T06:14:12.087Z",
+        "ordinal": 35
+      },
+      "native_command_started_at": null,
+      "start_note": "No CommandExecution item_started event in this excerpt; call timestamp is not process start.",
+      "runner_tree_terminal": "UNKNOWN; native exit is not runner process-tree proof"
+    },
+    {
+      "id": "exec-8636abde-9545-4dd3-abc4-0adc0b1ab756",
+      "process_id": "84401",
+      "cwd": "file:///data/workspace/iteration-manager/.worktrees/iter-11",
+      "argv": [
+        "/bin/bash",
+        "-lc",
+        "nl -ba 'templates/assistants/iteration_planner.md'"
+      ],
+      "status": "completed",
+      "exit_code": 0,
+      "event_source": {
+        "path": "docs/todos/11-reliable-delivery/evidence/12/codeg-probe-v2-native-excerpt.jsonl",
+        "line": 35,
+        "line_sha256_including_newline": "39ec2ceb4c21e08a68273a3deb4c1004e2a07ec2ab3279b743b5e99106039176",
+        "timestamp": "2026-11-15T06:14:22.406Z",
+        "ordinal": 41
+      },
+      "native_thread_id": "01a1ddd7-05a1-7602-8c59-f04b24481f36",
+      "native_turn_id": "01a1ddd7-08c0-74f1-a647-90e96af5a59e",
+      "native_source": "unified_exec_startup",
+      "aggregated_output_sha256_utf8": "0694e3d1a5fcb71982867f9619ee28e99c289cbb8680f8d053c7b554cd02590f",
+      "call_id": "call_83d0d3017bb44bcb9404dbe291b4eb07",
+      "call_source": {
+        "path": "docs/todos/11-reliable-delivery/evidence/12/codeg-probe-v2-native-excerpt.jsonl",
+        "line": 34,
+        "line_sha256_including_newline": "0ff4bc1bb694cdbbd937aecd019c6622793bda84e46317652c1d2cad6798a86a",
+        "timestamp": "2026-11-15T06:14:18.965Z",
+        "ordinal": 39
+      },
+      "tool_output_source": {
+        "path": "docs/todos/11-reliable-delivery/evidence/12/codeg-probe-v2-native-excerpt.jsonl",
+        "line": 41,
+        "line_sha256_including_newline": "8b2457fc027ea87d352b8667b524105b9ad192366f9b738af34913aff401c1c2",
+        "timestamp": "2026-11-15T06:14:23.012Z",
+        "ordinal": 47
+      },
+      "native_command_started_at": null,
+      "start_note": "No CommandExecution item_started event in this excerpt; call timestamp is not process start.",
+      "runner_tree_terminal": "UNKNOWN; native exit is not runner process-tree proof"
+    },
+    {
+      "id": "exec-e12979c7-3100-4dff-81e9-df87ff4e4edf",
+      "process_id": "85333",
+      "cwd": "file:///data/workspace/iteration-manager/.worktrees/iter-11",
+      "argv": [
+        "/bin/bash",
+        "-lc",
+        "nl -ba 'references/worktree_git_contract.md'"
+      ],
+      "status": "completed",
+      "exit_code": 0,
+      "event_source": {
+        "path": "docs/todos/11-reliable-delivery/evidence/12/codeg-probe-v2-native-excerpt.jsonl",
+        "line": 36,
+        "line_sha256_including_newline": "e4b658974b01a5cb2f22f2829f73aec8347ff211125fd90f552dd57c781fef69",
+        "timestamp": "2026-11-15T06:14:22.544Z",
+        "ordinal": 42
+      },
+      "native_thread_id": "01a1ddd7-05a1-7602-8c59-f04b24481f36",
+      "native_turn_id": "01a1ddd7-08c0-74f1-a647-90e96af5a59e",
+      "native_source": "unified_exec_startup",
+      "aggregated_output_sha256_utf8": "376db007febf4e7fea783edd86d977410f031c03a9eb6182427c5a92bb8751e3",
+      "call_id": "call_83d0d3017bb44bcb9404dbe291b4eb07",
+      "call_source": {
+        "path": "docs/todos/11-reliable-delivery/evidence/12/codeg-probe-v2-native-excerpt.jsonl",
+        "line": 34,
+        "line_sha256_including_newline": "0ff4bc1bb694cdbbd937aecd019c6622793bda84e46317652c1d2cad6798a86a",
+        "timestamp": "2026-11-15T06:14:18.965Z",
+        "ordinal": 39
+      },
+      "tool_output_source": {
+        "path": "docs/todos/11-reliable-delivery/evidence/12/codeg-probe-v2-native-excerpt.jsonl",
+        "line": 41,
+        "line_sha256_including_newline": "8b2457fc027ea87d352b8667b524105b9ad192366f9b738af34913aff401c1c2",
+        "timestamp": "2026-11-15T06:14:23.012Z",
+        "ordinal": 47
+      },
+      "native_command_started_at": null,
+      "start_note": "No CommandExecution item_started event in this excerpt; call timestamp is not process start.",
+      "runner_tree_terminal": "UNKNOWN; native exit is not runner process-tree proof"
+    },
+    {
+      "id": "exec-d839a07c-acc8-43f6-a37c-79ed011cf48e",
+      "process_id": "33392",
+      "cwd": "file:///data/workspace/iteration-manager/.worktrees/iter-11",
+      "argv": [
+        "/bin/bash",
+        "-lc",
+        "nl -ba 'templates/assistants/task_tech_lead.md'"
+      ],
+      "status": "completed",
+      "exit_code": 0,
+      "event_source": {
+        "path": "docs/todos/11-reliable-delivery/evidence/12/codeg-probe-v2-native-excerpt.jsonl",
+        "line": 37,
+        "line_sha256_including_newline": "ebf18116abb5c822915d885fb4c9a2fcefbbe0d718acca661a0a4c4fad3b1531",
+        "timestamp": "2026-11-15T06:14:22.551Z",
+        "ordinal": 43
+      },
+      "native_thread_id": "01a1ddd7-05a1-7602-8c59-f04b24481f36",
+      "native_turn_id": "01a1ddd7-08c0-74f1-a647-90e96af5a59e",
+      "native_source": "unified_exec_startup",
+      "aggregated_output_sha256_utf8": "8a1e532cbcf0d1008bd2ad25ac001d6aed95b1a2f26ea182a3cd6b956c7f9bfc",
+      "call_id": "call_83d0d3017bb44bcb9404dbe291b4eb07",
+      "call_source": {
+        "path": "docs/todos/11-reliable-delivery/evidence/12/codeg-probe-v2-native-excerpt.jsonl",
+        "line": 34,
+        "line_sha256_including_newline": "0ff4bc1bb694cdbbd937aecd019c6622793bda84e46317652c1d2cad6798a86a",
+        "timestamp": "2026-11-15T06:14:18.965Z",
+        "ordinal": 39
+      },
+      "tool_output_source": {
+        "path": "docs/todos/11-reliable-delivery/evidence/12/codeg-probe-v2-native-excerpt.jsonl",
+        "line": 41,
+        "line_sha256_including_newline": "8b2457fc027ea87d352b8667b524105b9ad192366f9b738af34913aff401c1c2",
+        "timestamp": "2026-11-15T06:14:23.012Z",
+        "ordinal": 47
+      },
+      "native_command_started_at": null,
+      "start_note": "No CommandExecution item_started event in this excerpt; call timestamp is not process start.",
+      "runner_tree_terminal": "UNKNOWN; native exit is not runner process-tree proof"
+    },
+    {
+      "id": "exec-a2649b2d-f462-4c2f-a0b6-3b548b4a46e8",
+      "process_id": "89868",
+      "cwd": "file:///data/workspace/iteration-manager/.worktrees/iter-11",
+      "argv": [
+        "/bin/bash",
+        "-lc",
+        "nl -ba 'templates/assistants/iteration_controller.md'"
+      ],
+      "status": "completed",
+      "exit_code": 0,
+      "event_source": {
+        "path": "docs/todos/11-reliable-delivery/evidence/12/codeg-probe-v2-native-excerpt.jsonl",
+        "line": 38,
+        "line_sha256_including_newline": "2b6b9494b2b1df3ede1ca027b9f69b5f25c2fa042174ecbb2919d85bbe1fbbd1",
+        "timestamp": "2026-11-15T06:14:22.827Z",
+        "ordinal": 44
+      },
+      "native_thread_id": "01a1ddd7-05a1-7602-8c59-f04b24481f36",
+      "native_turn_id": "01a1ddd7-08c0-74f1-a647-90e96af5a59e",
+      "native_source": "unified_exec_startup",
+      "aggregated_output_sha256_utf8": "64392a3a559e5173cf8d6c17bcfe94c13308981766d186bae33842eb014f6dfc",
+      "call_id": "call_83d0d3017bb44bcb9404dbe291b4eb07",
+      "call_source": {
+        "path": "docs/todos/11-reliable-delivery/evidence/12/codeg-probe-v2-native-excerpt.jsonl",
+        "line": 34,
+        "line_sha256_including_newline": "0ff4bc1bb694cdbbd937aecd019c6622793bda84e46317652c1d2cad6798a86a",
+        "timestamp": "2026-11-15T06:14:18.965Z",
+        "ordinal": 39
+      },
+      "tool_output_source": {
+        "path": "docs/todos/11-reliable-delivery/evidence/12/codeg-probe-v2-native-excerpt.jsonl",
+        "line": 41,
+        "line_sha256_including_newline": "8b2457fc027ea87d352b8667b524105b9ad192366f9b738af34913aff401c1c2",
+        "timestamp": "2026-11-15T06:14:23.012Z",
+        "ordinal": 47
+      },
+      "native_command_started_at": null,
+      "start_note": "No CommandExecution item_started event in this excerpt; call timestamp is not process start.",
+      "runner_tree_terminal": "UNKNOWN; native exit is not runner process-tree proof"
+    },
+    {
+      "id": "exec-51d7fb94-01eb-4847-8c97-11fd7e3d053e",
+      "process_id": "49045",
+      "cwd": "file:///data/workspace/iteration-manager/.worktrees/iter-11",
+      "argv": [
+        "/bin/bash",
+        "-lc",
+        "nl -ba 'references/execution_readiness.md'"
+      ],
+      "status": "completed",
+      "exit_code": 0,
+      "event_source": {
+        "path": "docs/todos/11-reliable-delivery/evidence/12/codeg-probe-v2-native-excerpt.jsonl",
+        "line": 39,
+        "line_sha256_including_newline": "010b3733572f130bd4ae377a92abd5efe31447a0501daaf5e47293eb5fe3847e",
+        "timestamp": "2026-11-15T06:14:22.880Z",
+        "ordinal": 45
+      },
+      "native_thread_id": "01a1ddd7-05a1-7602-8c59-f04b24481f36",
+      "native_turn_id": "01a1ddd7-08c0-74f1-a647-90e96af5a59e",
+      "native_source": "unified_exec_startup",
+      "aggregated_output_sha256_utf8": "db8f8c552203c7a5a4ce11392befbadaa5dbdf030c63328af084d40f6d8997fc",
+      "call_id": "call_83d0d3017bb44bcb9404dbe291b4eb07",
+      "call_source": {
+        "path": "docs/todos/11-reliable-delivery/evidence/12/codeg-probe-v2-native-excerpt.jsonl",
+        "line": 34,
+        "line_sha256_including_newline": "0ff4bc1bb694cdbbd937aecd019c6622793bda84e46317652c1d2cad6798a86a",
+        "timestamp": "2026-11-15T06:14:18.965Z",
+        "ordinal": 39
+      },
+      "tool_output_source": {
+        "path": "docs/todos/11-reliable-delivery/evidence/12/codeg-probe-v2-native-excerpt.jsonl",
+        "line": 41,
+        "line_sha256_including_newline": "8b2457fc027ea87d352b8667b524105b9ad192366f9b738af34913aff401c1c2",
+        "timestamp": "2026-11-15T06:14:23.012Z",
+        "ordinal": 47
+      },
+      "native_command_started_at": null,
+      "start_note": "No CommandExecution item_started event in this excerpt; call timestamp is not process start.",
+      "runner_tree_terminal": "UNKNOWN; native exit is not runner process-tree proof"
+    },
+    {
+      "id": "exec-08529fd8-6fe9-443f-b0d3-3f22a344b057",
+      "process_id": "10589",
+      "cwd": "file:///data/workspace/iteration-manager/.worktrees/iter-11",
+      "argv": [
+        "/bin/bash",
+        "-lc",
+        "nl -ba 'references/agent_protocol.md'"
+      ],
+      "status": "completed",
+      "exit_code": 0,
+      "event_source": {
+        "path": "docs/todos/11-reliable-delivery/evidence/12/codeg-probe-v2-native-excerpt.jsonl",
+        "line": 40,
+        "line_sha256_including_newline": "1a27c38a2cb217f6cc24bca3ea463aedc9f5f4b3f2bba5d4adea0c35e0bb0978",
+        "timestamp": "2026-11-15T06:14:22.997Z",
+        "ordinal": 46
+      },
+      "native_thread_id": "01a1ddd7-05a1-7602-8c59-f04b24481f36",
+      "native_turn_id": "01a1ddd7-08c0-74f1-a647-90e96af5a59e",
+      "native_source": "unified_exec_startup",
+      "aggregated_output_sha256_utf8": "c937ba826b21c28c6de2cec0c674229960c2fffd296d3770dc06edad442661d0",
+      "call_id": "call_83d0d3017bb44bcb9404dbe291b4eb07",
+      "call_source": {
+        "path": "docs/todos/11-reliable-delivery/evidence/12/codeg-probe-v2-native-excerpt.jsonl",
+        "line": 34,
+        "line_sha256_including_newline": "0ff4bc1bb694cdbbd937aecd019c6622793bda84e46317652c1d2cad6798a86a",
+        "timestamp": "2026-11-15T06:14:18.965Z",
+        "ordinal": 39
+      },
+      "tool_output_source": {
+        "path": "docs/todos/11-reliable-delivery/evidence/12/codeg-probe-v2-native-excerpt.jsonl",
+        "line": 41,
+        "line_sha256_including_newline": "8b2457fc027ea87d352b8667b524105b9ad192366f9b738af34913aff401c1c2",
+        "timestamp": "2026-11-15T06:14:23.012Z",
+        "ordinal": 47
+      },
+      "native_command_started_at": null,
+      "start_note": "No CommandExecution item_started event in this excerpt; call timestamp is not process start.",
+      "runner_tree_terminal": "UNKNOWN; native exit is not runner process-tree proof"
+    },
+    {
+      "id": "exec-9dfa64ad-ce76-47c1-b701-54a23b5bd204",
+      "process_id": "98043",
+      "cwd": "file:///data/workspace/iteration-manager/.worktrees/iter-11",
+      "argv": [
+        "/bin/bash",
+        "-lc",
+        "sed -n '136,196p' references/agent_protocol.md | nl -ba -v136\nnl -ba references/execution_readiness.md\nnl -ba references/worktree_git_contract.md"
+      ],
+      "status": "completed",
+      "exit_code": 0,
+      "event_source": {
+        "path": "docs/todos/11-reliable-delivery/evidence/12/codeg-probe-v2-native-excerpt.jsonl",
+        "line": 48,
+        "line_sha256_including_newline": "1f59614b4e79dc271fc0c9283f916b076327ebaea7ef7eae792e7dc31b439a50",
+        "timestamp": "2026-11-15T06:14:32.976Z",
+        "ordinal": 55
+      },
+      "native_thread_id": "01a1ddd7-05a1-7602-8c59-f04b24481f36",
+      "native_turn_id": "01a1ddd7-08c0-74f1-a647-90e96af5a59e",
+      "native_source": "unified_exec_startup",
+      "aggregated_output_sha256_utf8": "5ed3cd2a912ba291adb04e260de59c48855a4d337a5954f0ea8356eecea7486e",
+      "call_id": "call_bf55570042574b86b2acc47d749a2c75",
+      "call_source": {
+        "path": "docs/todos/11-reliable-delivery/evidence/12/codeg-probe-v2-native-excerpt.jsonl",
+        "line": 47,
+        "line_sha256_including_newline": "a2fbfe02fc68474fcc03c2d009ac0c46d87b182db0730ae32232a9e213dfd535",
+        "timestamp": "2026-11-15T06:14:29.823Z",
+        "ordinal": 53
+      },
+      "tool_output_source": {
+        "path": "docs/todos/11-reliable-delivery/evidence/12/codeg-probe-v2-native-excerpt.jsonl",
+        "line": 49,
+        "line_sha256_including_newline": "a131f373b1ba6de376c8bc9841c8d0f9677a41b75f0aee0f9a4b0224aca2e522",
+        "timestamp": "2026-11-15T06:14:33.003Z",
+        "ordinal": 56
+      },
+      "native_command_started_at": null,
+      "start_note": "No CommandExecution item_started event in this excerpt; call timestamp is not process start.",
+      "runner_tree_terminal": "UNKNOWN; native exit is not runner process-tree proof"
+    },
+    {
+      "id": "exec-05d129b8-05e1-490e-a90a-435bde2a59bc",
+      "process_id": "28216",
+      "cwd": "file:///data/workspace/iteration-manager/.worktrees/iter-11",
+      "argv": [
+        "/bin/bash",
+        "-lc",
+        "sed -n '96,124p' references/execution_readiness.md | nl -ba -v96\nnl -ba templates/sdd_implementer_prompt.md\nnl -ba templates/sdd_reviewer_prompt.md"
+      ],
+      "status": "completed",
+      "exit_code": 0,
+      "event_source": {
+        "path": "docs/todos/11-reliable-delivery/evidence/12/codeg-probe-v2-native-excerpt.jsonl",
+        "line": 54,
+        "line_sha256_including_newline": "2e36ce8f48094bff0428e18bcbc532bf91ea9a9b35256e1b073ff945aaf20764",
+        "timestamp": "2026-11-15T06:14:46.657Z",
+        "ordinal": 62
+      },
+      "native_thread_id": "01a1ddd7-05a1-7602-8c59-f04b24481f36",
+      "native_turn_id": "01a1ddd7-08c0-74f1-a647-90e96af5a59e",
+      "native_source": "unified_exec_startup",
+      "aggregated_output_sha256_utf8": "d7fa3944fec8780b8faca8343be96b18f3f2202087b91f581ea59a066ca16fbf",
+      "call_id": "call_5d7fc913dbc54b629a15cfddd207e868",
+      "call_source": {
+        "path": "docs/todos/11-reliable-delivery/evidence/12/codeg-probe-v2-native-excerpt.jsonl",
+        "line": 53,
+        "line_sha256_including_newline": "63d58b52c31391f5d8f4c253387e93db5df2b4fb85ecf7b151497b1ec87d5dcc",
+        "timestamp": "2026-11-15T06:14:42.627Z",
+        "ordinal": 60
+      },
+      "tool_output_source": {
+        "path": "docs/todos/11-reliable-delivery/evidence/12/codeg-probe-v2-native-excerpt.jsonl",
+        "line": 55,
+        "line_sha256_including_newline": "65e263b666e0d28c59517c4cc3502ff2ae2de8f96faff89fca48c09047dbc136",
+        "timestamp": "2026-11-15T06:14:46.675Z",
+        "ordinal": 63
+      },
+      "native_command_started_at": null,
+      "start_note": "No CommandExecution item_started event in this excerpt; call timestamp is not process start.",
+      "runner_tree_terminal": "UNKNOWN; native exit is not runner process-tree proof"
+    }
+  ],
+  "not_started": {
+    "call_id": "call_846c18c0438d43029cd9942499b34a74",
+    "call_source": {
+      "path": "docs/todos/11-reliable-delivery/evidence/12/codeg-probe-v2-native-excerpt.jsonl",
+      "line": 13,
+      "line_sha256_including_newline": "8615493b423b866be6b791a06a5d9e695bce25a9cf28001afa70169ee8840821",
+      "timestamp": "2026-11-15T06:13:46.224Z",
+      "ordinal": 15
+    },
+    "output_source": {
+      "path": "docs/todos/11-reliable-delivery/evidence/12/codeg-probe-v2-native-excerpt.jsonl",
+      "line": 14,
+      "line_sha256_including_newline": "c0d6c33664a13ba06362824469b23605d1900ba709a28fcc254d5ece7a17968d",
+      "timestamp": "2026-11-15T06:13:46.586Z",
+      "ordinal": 17
+    },
+    "reason": "bwrap failed to mount /proc before command launch",
+    "command_exit_code": null,
+    "command_id": null
+  },
+  "limitations": [
+    "Invocation timestamps are tool-call timestamps; individual process start times are unknown.",
+    "Tool-call group association follows event ordering inside each call/output interval; no per-item call ID is present.",
+    "Raw native exit/status are not independently proven runner tree termination.",
+    "Excerpt covers observed session events; process-tree state beyond native observations remains UNKNOWN."
+  ]
+}

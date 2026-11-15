@@ -1,0 +1,60 @@
+{
+  "launch": {
+    "chunk_id": "d989d7",
+    "wall_time_seconds": 1.001117817,
+    "session_id": 77086,
+    "original_token_count": 0,
+    "output": ""
+  },
+  "monitor": {
+    "reason": "terminal",
+    "deadlineMs": 1794725698457,
+    "final": {
+      "status": "completed",
+      "raw": {
+        "chunk_id": "308f0a",
+        "wall_time_seconds": 26.691497801,
+        "exit_code": 0,
+        "original_token_count": 0,
+        "output": ""
+      }
+    },
+    "terminalConfirmed": true,
+    "observedAt": 1794725366747,
+    "lateByMs": 0,
+    "events": [
+      {
+        "kind": "query",
+        "startedAt": 1794725280024,
+        "returnedAt": 1794725340032,
+        "waitMs": 60000,
+        "result": {
+          "status": "running",
+          "raw": {
+            "chunk_id": "a5cf09",
+            "wall_time_seconds": 60.000929926,
+            "session_id": 77086,
+            "original_token_count": 0,
+            "output": ""
+          }
+        }
+      },
+      {
+        "kind": "query",
+        "startedAt": 1794725340033,
+        "returnedAt": 1794725366747,
+        "waitMs": 60000,
+        "result": {
+          "status": "completed",
+          "raw": {
+            "chunk_id": "308f0a",
+            "wall_time_seconds": 26.691497801,
+            "exit_code": 0,
+            "original_token_count": 0,
+            "output": ""
+          }
+        }
+      }
+    ]
+  }
+}

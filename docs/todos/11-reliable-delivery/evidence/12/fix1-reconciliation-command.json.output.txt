@@ -1,0 +1,2 @@
+PASS: 6 tool calls and outputs; 10 unique completed native commands matched exact lines/IDs/exit metadata; bwrap not started; original 3 committed sources and review input unchanged.
+Native command process starts and independent tree terminals UNKNOWN; F1 BLOCKED; no recovery authorization or approval inferred.
