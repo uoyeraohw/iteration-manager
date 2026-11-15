@@ -1,0 +1,134 @@
+{
+  "source": "/data/home/.codex/sessions/2026/11/15/rollout-2026-11-15T07-29-43-01a1de1c-ab55-7fc1-afb2-967831d7e712.jsonl",
+  "source_sha256": "55c3e7285650ae6a6ec5d3b2f1c2b66543fde1fdfcf5b6a1e28cc15232702025",
+  "original_line_numbers": [
+    1,
+    2,
+    13,
+    14,
+    16,
+    18,
+    19,
+    23,
+    25,
+    26,
+    30,
+    32,
+    33,
+    37,
+    39,
+    41,
+    42,
+    46,
+    48,
+    49,
+    50,
+    54,
+    58
+  ],
+  "excerpt": "docs/todos/11-reliable-delivery/evidence/12/recovery-codeg-native-excerpt.jsonl",
+  "unchanged_original_bytes": true,
+  "commands": [
+    {
+      "line": 18,
+      "line_sha256": "e19f220ccd63f3ff8434cb28a23592b9106f237352a9d60ffe88d2b1fc48a386",
+      "id": "exec-52758325-2334-4fe8-bf48-2e76ee81ba8f",
+      "process_id": "65479",
+      "argv": [
+        "/bin/bash",
+        "-lc",
+        "cat docs/todos/11-reliable-delivery/evidence/12/consumer-brief-input.md"
+      ],
+      "cwd": "file:///data/workspace/iteration-manager/.worktrees/iter-11",
+      "status": "completed",
+      "exit_code": 0,
+      "started_at_ms": 1794727790396,
+      "completed_at_ms": 1794727790397
+    },
+    {
+      "line": 25,
+      "line_sha256": "ffad0b1d9941253c3585e0c1b61fee0016b588eb0a1fbdb289dd37299055e2f3",
+      "id": "exec-f0d69df0-cc69-4477-b391-0c5d09232f6c",
+      "process_id": "66246",
+      "argv": [
+        "/bin/bash",
+        "-lc",
+        "cat docs/todos/11-reliable-delivery/evidence/12/consumer-input-manifest.json"
+      ],
+      "cwd": "file:///data/workspace/iteration-manager/.worktrees/iter-11",
+      "status": "completed",
+      "exit_code": 0,
+      "started_at_ms": 1794727797397,
+      "completed_at_ms": 1794727797397
+    },
+    {
+      "line": 32,
+      "line_sha256": "e57c4fa778e70d7359c6992470a43f512b687200c6694be119696db426fde244",
+      "id": "exec-19e1c317-8251-4f1f-b6a1-044764016c3a",
+      "process_id": "31913",
+      "argv": [
+        "/bin/bash",
+        "-lc",
+        "python3 - <<'PY'\nimport hashlib,json,pathlib\nm=json.loads(pathlib.Path('docs/todos/11-reliable-delivery/evidence/12/consumer-input-manifest.json').read_text())\nfor name,expected in m['sha256'].items():\n p=pathlib.Path(name)\n try:\n  b=p.read_bytes(); actual=hashlib.sha256(b).hexdigest()\n  print(f'\\n===== {name} SHA256 {actual} MATCH {actual == expected} =====')\n  for i,line in enumerate(b.decode('utf-8').splitlines(),1): print(f'{i:4} {line}')\n except Exception as e: print(f'READ FAILURE {name}: {type(e).__name__}: {e}')\nPY"
+      ],
+      "cwd": "file:///data/workspace/iteration-manager/.worktrees/iter-11",
+      "status": "completed",
+      "exit_code": 0,
+      "started_at_ms": 1794727803674,
+      "completed_at_ms": 1794727803674
+    },
+    {
+      "line": 41,
+      "line_sha256": "fac6920d0388c35963820b6f93282acf079dd26c55cfb0a6c910030d1f84e181",
+      "id": "exec-cc13693a-eea6-4215-8329-cddc8e8f021a",
+      "process_id": "61857",
+      "argv": [
+        "/bin/bash",
+        "-lc",
+        "python3 - <<'PY'\nimport hashlib,json,pathlib,re\nm=json.loads(pathlib.Path('docs/todos/11-reliable-delivery/evidence/12/consumer-input-manifest.json').read_text())\nfor n,expected in m['sha256'].items():\n p=pathlib.Path(n); b=p.read_bytes(); print('\\n###',n,hashlib.sha256(b).hexdigest(),'MATCH',hashlib.sha256(b).hexdigest()==expected)\n lines=b.decode().splitlines()\n for i,line in enumerate(lines,1):\n  if re.search(r'branch|总审|集成|全量|清理|原件|README|沿用|预检|恢复|dispatchAfterReady|bwrap|Native Codex|UNKNOWN|独审|冻结',line,re.I): print(f'{i}: {line}')\nPY"
+      ],
+      "cwd": "file:///data/workspace/iteration-manager/.worktrees/iter-11",
+      "status": "completed",
+      "exit_code": 0,
+      "started_at_ms": 1794727811491,
+      "completed_at_ms": 1794727811492
+    },
+    {
+      "line": 48,
+      "line_sha256": "40bc9640de4f6799a000e9d4500f8f63431f572435d9373d395d5d4d7c481f03",
+      "id": "exec-8d318162-c15c-460e-9a60-d94eb318e37b",
+      "process_id": "75628",
+      "argv": [
+        "/bin/bash",
+        "-lc",
+        "git rev-parse HEAD"
+      ],
+      "cwd": "file:///data/workspace/iteration-manager/.worktrees/iter-11",
+      "status": "completed",
+      "exit_code": 0,
+      "started_at_ms": 1794727819243,
+      "completed_at_ms": 1794727819243
+    },
+    {
+      "line": 49,
+      "line_sha256": "0c40a8bf5157afe3617fa53a58380a58a0b8cc98c65bd541c5da0edb2dbab5e4",
+      "id": "exec-dd6648e0-63f5-40ff-aa13-f85eeccc1c1c",
+      "process_id": "92442",
+      "argv": [
+        "/bin/bash",
+        "-lc",
+        "python3 - <<'PY'\nimport json,hashlib,pathlib,os\nm=json.loads(pathlib.Path('docs/todos/11-reliable-delivery/evidence/12/consumer-input-manifest.json').read_text())\nfor n,h in m['sha256'].items():\n a=hashlib.sha256(pathlib.Path(n).read_bytes()).hexdigest(); print(n,a,'MATCH' if a==h else 'MISMATCH')\nfor k in ('CODEG_SESSION_ID','CODEX_THREAD_ID','CODEX_SESSION_ID','THREAD_ID'):\n print(k,os.environ.get(k,'UNKNOWN'))\nPY"
+      ],
+      "cwd": "file:///data/workspace/iteration-manager/.worktrees/iter-11",
+      "status": "completed",
+      "exit_code": 0,
+      "started_at_ms": 1794727819273,
+      "completed_at_ms": 1794727819274
+    }
+  ],
+  "command_count": 6,
+  "all_native_reads_completed_exit0": true,
+  "native_thread": "01a1de1c-ab55-7fc1-afb2-967831d7e712",
+  "codeg_task_id": "3c184acd-30e5-4285-8bba-ccf0fb13c788",
+  "scope": "All six read-only native command completion events; no runner receipt fabricated, not business execution; every source hash matched, final A/B/C returned"
+}

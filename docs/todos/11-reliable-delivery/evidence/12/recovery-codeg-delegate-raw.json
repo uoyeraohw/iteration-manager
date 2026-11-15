@@ -1,0 +1,16 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "Delegation successful. task_id=3c184acd-30e5-4285-8bba-ccf0fb13c788. Call get_delegation_status with this id in the task_ids array (optionally wait_ms) to collect the result, or cancel_delegation to stop it."
+    }
+  ],
+  "structuredContent": {
+    "task_id": "3c184acd-30e5-4285-8bba-ccf0fb13c788",
+    "status": "running",
+    "child_conversation_id": 142,
+    "agent_type": "codex",
+    "message": "Delegation successful. task_id=3c184acd-30e5-4285-8bba-ccf0fb13c788. Call get_delegation_status with this id in the task_ids array (optionally wait_ms) to collect the result, or cancel_delegation to stop it."
+  },
+  "isError": false
+}
