@@ -186,3 +186,74 @@ def test_check_cli_rejects_malformed_json(tmp_path, installation):
     path = tmp_path / 'broken.json'
     path.write_text('{', encoding='utf-8')
     assert install.main(['--check', '--root', str(root), '--manifest', str(path)]) == 2
+
+
+def test_generated_manifest_checks_real_committed_copy_then_detects_drift(tmp_path, source):
+    root, commit = source
+    manifest = install.build_install_manifest(root, commit)
+    copy_root = tmp_path / 'copy'
+    copy_root.mkdir()
+    for entry in manifest['files']:
+        destination = copy_root / entry['path']
+        destination.parent.mkdir(parents=True, exist_ok=True)
+        destination.write_bytes((root / entry['path']).read_bytes())
+    assert check_cli(tmp_path, copy_root, manifest) == 0
+    (copy_root / 'templates/card.md').write_bytes(b'altered')
+    assert check_cli(tmp_path, copy_root, manifest) == 2
+    assert (copy_root / 'templates/card.md').read_bytes() == b'altered'
+
+
+def test_query_presence_does_not_imply_runner_or_chain_ready(tmp_path, installation):
+    root, manifest = installation
+    path = root / 'scripts/iter_queries.py'
+    path.write_bytes(b'query module')
+    manifest['files'].append({'path': 'scripts/iter_queries.py',
+                              'sha256': hashlib.sha256(path.read_bytes()).hexdigest()})
+    result = install.check_installation(root, manifest)
+    assert result['source']['files_match'] is True
+    assert result['runtime_capabilities']['query']['status'] == 'PRESENT'
+    assert result['runtime_capabilities']['runner']['status'] == 'UNAVAILABLE'
+    assert result['runtime_capabilities']['complete_chain']['status'] != 'READY'
+
+
+def test_unlisted_file_and_linked_directory_are_rejected(tmp_path, installation):
+    root, manifest = installation
+    extra = root / 'scripts/extra.py'
+    extra.write_bytes(b'not in manifest')
+    assert check_cli(tmp_path, root, manifest) == 2
+    extra.unlink()
+    outside = tmp_path / 'outside'
+    outside.mkdir()
+    (root / 'scripts/linked').symlink_to(outside, target_is_directory=True)
+    assert check_cli(tmp_path, root, manifest) == 2
+
+
+def test_duplicate_json_keys_rejected(tmp_path, installation):
+    root, _ = installation
+    path = tmp_path / 'duplicates.json'
+    path.write_text('{"version":1,"version":1,"source_commit":"' + 'a' * 40 + '","files":[]}', encoding='utf-8')
+    assert install.main(['--check', '--root', str(root), '--manifest', str(path)]) == 2
+
+
+def test_linux_missing_pidfd_api_prevents_runner_readiness(installation, monkeypatch):
+    if sys.platform != 'linux':
+        pytest.skip('Linux prerequisite')
+    root, manifest = installation
+    for name in ('scripts/iter_run.py', 'scripts/iter_linux_job.py'):
+        data = name.encode()
+        (root / name).write_bytes(data)
+        manifest['files'].append({'path': name, 'sha256': hashlib.sha256(data).hexdigest()})
+    monkeypatch.delattr(install.os, 'pidfd_open', raising=False)
+    capabilities = install.check_installation(root, manifest)['runtime_capabilities']
+    assert capabilities['runner']['prerequisites']['pidfd_open_api'] is False
+    assert capabilities['runner']['status'] == 'UNAVAILABLE'
+    assert capabilities['complete_chain']['status'] != 'READY'
+
+
+def test_source_index_drift_rejected_even_if_worktree_matches_commit(source):
+    root, commit = source
+    path = root / 'SKILL.md'
+    path.write_bytes(b'staged different bytes')
+    git(root, 'add', 'SKILL.md')
+    path.write_bytes(FILES['SKILL.md'])
+    assert install.main(['--make-manifest', '--root', str(root), '--source-commit', commit]) == 2

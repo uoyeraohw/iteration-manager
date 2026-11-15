@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "kind": "continuation_implementer_handoff",
+  "native_session_uuid": "01a1dd8e-8b72-7b72-90b4-a8577ef8db2d",
+  "base_sha": "e66841186450dc6bbe138bf77aac87a2a8f1232a",
+  "checkpoint_parent": "82b66d9f3c8e7a62df8e8be18d8cedac7a5877a6",
+  "candidate": "uncommitted source hashes in continuation-source-manifest.json; C pending",
+  "environment": {
+    "platform": "Linux",
+    "python": "/data/workspace/iteration-manager/build/iter11-maint-venv/bin/python",
+    "python_version": "3.11.17",
+    "pytest_version": "9.2.0",
+    "runner": "/data/workspace/iteration-manager/build/frozen-runners/iter11-platform-v1/scripts/iter_run.py"
+  },
+  "commands": [
+    {
+      "kind": "inherited_red",
+      "command": "/data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B /data/workspace/iteration-manager/build/frozen-runners/iter11-platform-v1/scripts/iter_run.py --deadline 2026-11-15T04:58:28.789Z --evidence docs/todos/11-reliable-delivery/evidence/06/red-01.json -- /data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B -m pytest -p no:cacheprovider tests/test_install_provenance.py tests/test_cli_compatibility.py -q --basetemp /tmp/iter11-task06-red-01",
+      "receipt": "docs/todos/11-reliable-delivery/evidence/06/red-01.json",
+      "output": "docs/todos/11-reliable-delivery/evidence/06/red-01.json.output.txt",
+      "result": "22 assertion failures, 11 passed, 0 errors, exit 1, COMPLETED, tree_terminal true"
+    },
+    {
+      "kind": "first_green_before_capability_addition",
+      "receipt": "docs/todos/11-reliable-delivery/evidence/06/green-final.json",
+      "output": "docs/todos/11-reliable-delivery/evidence/06/green-final.json.output.txt",
+      "result": "37 passed, exit 0, COMPLETED, tree_terminal true; earlier candidate only"
+    },
+    {
+      "kind": "green_before_index_drift_addition",
+      "command": "/data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B /data/workspace/iteration-manager/build/frozen-runners/iter11-platform-v1/scripts/iter_run.py --deadline 2026-11-15T05:06:58.030Z --evidence docs/todos/11-reliable-delivery/evidence/06/green-final-02.json -- /data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B -m pytest -p no:cacheprovider tests/test_install_provenance.py tests/test_cli_compatibility.py -q --basetemp /tmp/iter11-task06-green-final-02",
+      "receipt": "docs/todos/11-reliable-delivery/evidence/06/green-final-02.json",
+      "output": "docs/todos/11-reliable-delivery/evidence/06/green-final-02.json.output.txt",
+      "result": "38 passed, exit 0, COMPLETED, tree_terminal true; earlier candidate only"
+    },
+    {
+      "kind": "final_green_and_regression",
+      "command": "/data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B /data/workspace/iteration-manager/build/frozen-runners/iter11-platform-v1/scripts/iter_run.py --deadline 2026-11-15T05:06:58.030Z --evidence docs/todos/11-reliable-delivery/evidence/06/green-final-03.json -- /data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B -m pytest -p no:cacheprovider tests/test_install_provenance.py tests/test_cli_compatibility.py -q --basetemp /tmp/iter11-task06-green-final-03",
+      "receipt": "docs/todos/11-reliable-delivery/evidence/06/green-final-03.json",
+      "output": "docs/todos/11-reliable-delivery/evidence/06/green-final-03.json.output.txt",
+      "result": "39 passed, exit 0, COMPLETED, tree_terminal true"
+    }
+  ],
+  "source_manifest": "docs/todos/11-reliable-delivery/evidence/06/continuation-source-manifest.json",
+  "checks_proposal": "docs/todos/11-reliable-delivery/evidence/06/checks-proposal.json",
+  "applicability": "Original RED test bytes preserved as a prefix; six supplemental tests added after RED and covered by final GREEN. Source and CLI compatibility files bound by SHA256. No full suite run.",
+  "limitations": [
+    "Manifest must come from a trusted generator: a copy cannot verify the commit or authenticity on its own.",
+    "Concurrent adversarial replacement of directory entries is not protected.",
+    "Runtime capability reports presence and selected prerequisites, not execution; full chain and current Windows runtime unverified.",
+    "No installation, deployment, native consumer adoption or external business verification."
+  ],
+  "remaining_work": [
+    "Controller record attempt and release",
+    "freeze precise implementation commit C",
+    "independent review of C",
+    "controller registration commit D",
+    "frozen local strict and subsequent iteration gates"
+  ],
+  "status": "TESTING candidate; no approval or DONE"
+}

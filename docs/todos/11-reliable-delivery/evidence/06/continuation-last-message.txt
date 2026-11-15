@@ -1,0 +1,9 @@
+task06 的实现候选已交接，同一原生实现者 UUID 为 `01a1dd8e-8b72-7b72-90b4-a8577ef8db2d`。当前最高状态为 **TESTING 候选**；C、独立审查、D 和冻结 strict 均待主控处理。
+
+[安装来源检查实现](/data/workspace/iteration-manager/.worktrees/iter-11/scripts/iter_install.py)现在核对完整 Git 提交、暂存区、交付白名单和文件字节；独立副本检查拒绝清单错误、路径越界、符号链接及漂移，并将运行时能力分开报告。[使用说明](/data/workspace/iteration-manager/.worktrees/iter-11/references/installation_verification.md)记录了信任边界和平台限制。
+
+原始 RED 测试内容保留，续接后追加了六项测试。最终[冻结 runner 收据](/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/06/green-final-03.json)及其[输出](/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/06/green-final-03.json.output.txt)记录 **39 passed、退出 0、进程树终止**；同一次运行用于 GREEN 和指定直接回归。测试包含真实临时 Git 提交生成清单、临时副本检查、漂移拒绝和暂存区漂移拒绝。
+
+[交接记录](/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/06/continuation-delivery.json)、[源码哈希](/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/06/continuation-source-manifest.json)、[检查建议](/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/06/checks-proposal.json)和[账本摘要](/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/06/ledger-summary.md)已写入。没有活动命令。
+
+独立副本依赖可信清单，不能自行证明清单来源；检查也不防敌对并发替换。当前 Windows 运行、部署及新会话消费未验证。

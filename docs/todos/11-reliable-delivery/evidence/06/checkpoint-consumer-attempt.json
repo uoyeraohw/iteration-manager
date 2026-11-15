@@ -1,0 +1,37 @@
+{
+  "phase": "evidence-inspection",
+  "candidate": "82b66d9f3c8e7a62df8e8be18d8cedac7a5877a6",
+  "inputs": [
+    "AGENTS.md",
+    "docs/todos/11-reliable-delivery/06-installation-provenance.md",
+    "docs/todos/11-reliable-delivery/README.md",
+    "docs/todos/11-reliable-delivery/evidence/06/red-attempt.json",
+    "docs/todos/11-reliable-delivery/evidence/06/red-checkpoint.json",
+    "references/task_card_schema.md",
+    "tests/test_install_provenance.py"
+  ],
+  "capabilities": [
+    "native-codex-cli-implementer",
+    "approved-frozen-linux-runner",
+    "Python3.11.17-pytest9.2-mcp1.30",
+    "independent-native-reviewer"
+  ],
+  "version": 1,
+  "checkpoint": "新原生会话从真实envelope继承22断言RED及原候选/时间，无重跑且未知验收不冒PASS",
+  "remaining_work": [
+    "原实现者生产/GREEN/regression/临时安装",
+    "C独审/D/strict"
+  ],
+  "executor_id": "01a1dd90-f03a-70c1-866d-43d5ac3a936e",
+  "terminal_evidence": "docs/todos/11-reliable-delivery/evidence/06/checkpoint-consumer-terminal.json",
+  "progress": [
+    {
+      "kind": "review-finding",
+      "summary": "验证RED源工作树及P字节一致；attempt/release/claim正常、预算0/0保留",
+      "evidence": "docs/todos/11-reliable-delivery/evidence/06/checkpoint-inheritance.json"
+    }
+  ],
+  "commands": [],
+  "started_at": null,
+  "ended_at": null
+}
