@@ -1,0 +1,18 @@
+{
+  "kind": "controller-command-observation",
+  "argv": [
+    "python3",
+    "-B",
+    "/data/workspace/iteration-manager/build/frozen-tools/fdcc4cce8863/scripts/iter_sync.py",
+    "--check-scope",
+    "40d76d4456261a41bf1b67106becad17ecc28e29",
+    "HEAD",
+    "docs/todos/11-reliable-delivery/10-integration-fault-paths.md",
+    "--include-worktree"
+  ],
+  "started_at": "2026-11-15T05:43:08.583242+00:00",
+  "ended_at": "2026-11-15T05:43:08.682514+00:00",
+  "exit_code": 0,
+  "stdout": "[IterSync:ScopeFirewall:PASSED] All 35 changed files within declared scope; ownership is not inferred.\n",
+  "stderr": ""
+}

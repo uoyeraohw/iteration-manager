@@ -1,0 +1,82 @@
+..............F...F..................................................... [ 55%]
+..........................................................               [100%]
+=================================== FAILURES ===================================
+________ test_bad_utf8_takeover_and_inventory_share_complete_inventory _________
+
+tmp_path = PosixPath('/tmp/iter11-task10-experiment-01/test_bad_utf8_takeover_and_inv0')
+
+    def test_bad_utf8_takeover_and_inventory_share_complete_inventory(tmp_path):
+        card, context, _ = fixture(tmp_path)
+        bad = card.with_name('02-bad.md')
+        bad.write_bytes(b'\xffinvalid')
+        before = inventory(tmp_path)
+        takeover = cli(tmp_path, '--takeover-report', card.parent)
+        scanned = cli(tmp_path, '--inventory', card.parent, '--mode', 'takeover', '--context', context.name)
+        assert takeover.returncode == 0 and scanned.returncode == 3
+        old = {str(row['path']).split('/')[-1]: row for row in json.loads(takeover.stdout)['tasks']}
+>       new = {str(row['task_path']).split('/')[-1]: row for row in json.loads(scanned.stdout)['tasks']}
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_self_hosting.py:152: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+.0 = <list_iterator object at 0x7f105e253fd0>
+
+>   new = {str(row['task_path']).split('/')[-1]: row for row in json.loads(scanned.stdout)['tasks']}
+               ^^^^^^^^^^^^^^^^
+E   KeyError: 'task_path'
+
+tests/test_self_hosting.py:152: KeyError
+______ test_install_drift_survives_projection_and_current_payload_harness ______
+
+tmp_path = PosixPath('/tmp/iter11-task10-experiment-01/test_install_drift_survives_pr0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f105d7b9dd0>
+
+    def test_install_drift_survives_projection_and_current_payload_harness(tmp_path, monkeypatch):
+        import hashlib
+        import os
+        import shutil
+        from pathlib import Path
+        from iter_install import _inventory, check_installation
+        from iter_sync import sync_local_iteration
+        from test_harness_portability import test_payload_copy_runs_handoff_and_service_with_frozen_runner
+        import test_harness_portability as portable
+        root = Path(__file__).resolve().parents[1]
+        payload = tmp_path / 'payload'
+        payload.mkdir()
+        names = _inventory(root)
+        for name in names:
+            dest = payload / name
+            dest.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copyfile(root / name, dest)
+        manifest = {'version': 1, 'source_commit': 'a' * 40, 'files': [
+            {'path': name, 'sha256': hashlib.sha256((payload / name).read_bytes()).hexdigest()}
+            for name in sorted(names)]}
+        assert check_installation(payload, manifest)['source']['files_match'] is True
+        (payload / 'scripts/iter_queries.py').write_bytes(b'drift')
+>       assert check_installation(payload, manifest)['source']['files_match'] is False
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_self_hosting.py:231: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+installation_root = PosixPath('/tmp/iter11-task10-experiment-01/test_install_drift_survives_pr0/payload')
+manifest = {'version': 1, 'source_commit': 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', 'files': [{'path': '.agents/notes/implemen...lesystem-r7-acceptance-repair.md', 'sha256': '54eff691fdcc66b1a5edb89d5951002520a62d144991ae8fb68ddf4f43b790db'}, ...]}
+
+    def check_installation(installation_root: Path, manifest: dict) -> dict:
+        entries = _manifest(manifest)  # Validate every path before opening any installation file.
+        root = Path(installation_root).resolve(strict=True)
+        if not root.is_dir():
+            raise ValueError('installation root must be a directory')
+        if _inventory(root) != set(entries):
+            raise ValueError('installation inventory differs from manifest')
+        for name, digest in entries.items():
+            if hashlib.sha256(_read(root, name)).hexdigest() != digest:
+>               raise ValueError('installation bytes differ: ' + name)
+E               ValueError: installation bytes differ: scripts/iter_queries.py
+
+scripts/iter_install.py:147: ValueError
+=========================== short test summary info ============================
+FAILED tests/test_self_hosting.py::test_bad_utf8_takeover_and_inventory_share_complete_inventory
+FAILED tests/test_self_hosting.py::test_install_drift_survives_projection_and_current_payload_harness
+2 failed, 128 passed in 11.16s

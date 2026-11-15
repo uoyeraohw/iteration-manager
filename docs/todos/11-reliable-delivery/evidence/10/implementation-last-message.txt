@@ -1,0 +1,5 @@
+Task 10’s isolated integration candidate is ready for review. The required experiment passed **130 tests**; the temporary installation payload passed **11 tests**, and the existing Git-drift cases passed **5 tests**. All three receipts report completed command trees. The first experiment’s two test-interface failures are preserved in the evidence.
+
+The [integration report](/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/10/integration-report.json) records synthetic case results, and the [delivery handoff](/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/10/delivery.json) links the commands, receipts, source manifest and remaining work.
+
+These results do not establish native self-use or approval. C, independent review, D and frozen local strict remain with the controller. No task-owned command remains active.

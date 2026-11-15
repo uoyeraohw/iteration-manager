@@ -1,0 +1,7 @@
+# 2026-11-15 · Isolated fault-path connections
+
+Decision: exercise the candidate modules through established temporary fixtures, while the fixed fdcc4cc coordinator remains the official management entry and cannot approve the candidate. Reuse the mature execution and checkpoint cases and test production JavaScript against an actual synthetic fixture dispatch-check response. A pending or rejected check must not mutate the event or handoff. This is synthetic integration, not native delegation.
+
+For installation use a byte-bound synthetic manifest over a temporary copy, show drift remains rejected after a separate project projection rebuild, restore the copy and run the current installed payload's handoff and service tests without docs. The supplied manifest is not Git origin attestation. This trades a small focused connection test for duplicating existing suites; the temporary payload test invokes the existing portability harness. Candidate source and evidence hashes, outcomes and limitations are in task10's evidence bundle. No product, actual card, ownership, or autonomy budget was changed.
+
+Interfaces: `tests/test_self_hosting.py` consumes existing fixture APIs, `dispatchAfterReady`, `check_installation`, and `sync_local_iteration`; `integration-report.json` provides synthetic cases for later independent review. Unknown command terminal and FS Git-grant refusal stay covered by the mature checkpoint cases in the experiment. Independent review, candidate C, registration D and frozen strict remain subsequent coordinator work.

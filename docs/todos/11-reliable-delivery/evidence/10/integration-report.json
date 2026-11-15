@@ -1,0 +1,133 @@
+{
+  "version": 1,
+  "candidate": "base 40d76d4456261a41bf1b67106becad17ecc28e29 plus source-manifest.json hashes; implementation commit pending",
+  "coordinator_commit": "fdcc4cce88635ee81573be5991de11de650659d8",
+  "cases": [
+    {
+      "id": "mixed-utf8-takeover-inventory",
+      "layer": "synthetic",
+      "expected": "Both reports retain good and undecodable card; damaged card not PASS; bytes preserved",
+      "observed": "Complete two-card inventory and rejection observed",
+      "result": "PASS",
+      "evidence": {
+        "command": "ITER_FROZEN_RUNNER=/data/workspace/iteration-manager/build/frozen-runners/iter11-platform-v1/scripts/iter_run.py ITER_COMMAND_DEADLINE=2026-11-15T05:47:25.679588+00:00 /data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B /data/workspace/iteration-manager/build/frozen-runners/iter11-platform-v1/scripts/iter_run.py --deadline 2026-11-15T05:47:25.679588+00:00 --evidence docs/todos/11-reliable-delivery/evidence/10/experiment-02.json -- /data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B -m pytest -p no:cacheprovider tests/test_self_hosting.py tests/test_execution_readiness.py tests/test_autonomy.py tests/test_checkpoint_resume.py -q --basetemp /tmp/iter11-task10-experiment-02",
+        "receipt": "docs/todos/11-reliable-delivery/evidence/10/experiment-02.json",
+        "output": "docs/todos/11-reliable-delivery/evidence/10/experiment-02.json.output.txt"
+      }
+    },
+    {
+      "id": "invalid-frozen-mode",
+      "layer": "synthetic",
+      "expected": "Frozen UNKNOWN delivery_mode DONE fails audit and stays UNKNOWN/not PASS through handoff and board",
+      "observed": "Synthetic reviewed Git candidate rejected by all projections",
+      "result": "PASS",
+      "evidence": {
+        "command": "ITER_FROZEN_RUNNER=/data/workspace/iteration-manager/build/frozen-runners/iter11-platform-v1/scripts/iter_run.py ITER_COMMAND_DEADLINE=2026-11-15T05:47:25.679588+00:00 /data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B /data/workspace/iteration-manager/build/frozen-runners/iter11-platform-v1/scripts/iter_run.py --deadline 2026-11-15T05:47:25.679588+00:00 --evidence docs/todos/11-reliable-delivery/evidence/10/experiment-02.json -- /data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B -m pytest -p no:cacheprovider tests/test_self_hosting.py tests/test_execution_readiness.py tests/test_autonomy.py tests/test_checkpoint_resume.py -q --basetemp /tmp/iter11-task10-experiment-02",
+        "receipt": "docs/todos/11-reliable-delivery/evidence/10/experiment-02.json",
+        "output": "docs/todos/11-reliable-delivery/evidence/10/experiment-02.json.output.txt"
+      }
+    },
+    {
+      "id": "guard-event-handoff",
+      "layer": "synthetic",
+      "expected": "Pending, failed and mismatching READY produce zero dispatch and preserve card/event bytes and handoff",
+      "observed": "Production JavaScript exercised against synthetic callback and actual fixture check output",
+      "result": "PASS",
+      "evidence": {
+        "command": "ITER_FROZEN_RUNNER=/data/workspace/iteration-manager/build/frozen-runners/iter11-platform-v1/scripts/iter_run.py ITER_COMMAND_DEADLINE=2026-11-15T05:47:25.679588+00:00 /data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B /data/workspace/iteration-manager/build/frozen-runners/iter11-platform-v1/scripts/iter_run.py --deadline 2026-11-15T05:47:25.679588+00:00 --evidence docs/todos/11-reliable-delivery/evidence/10/experiment-02.json -- /data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B -m pytest -p no:cacheprovider tests/test_self_hosting.py tests/test_execution_readiness.py tests/test_autonomy.py tests/test_checkpoint_resume.py -q --basetemp /tmp/iter11-task10-experiment-02",
+        "receipt": "docs/todos/11-reliable-delivery/evidence/10/experiment-02.json",
+        "output": "docs/todos/11-reliable-delivery/evidence/10/experiment-02.json.output.txt"
+      }
+    },
+    {
+      "id": "readiness-gates",
+      "layer": "synthetic",
+      "expected": "Foreign owner, phase, candidate, dependency and missing inputs reject without mutation",
+      "observed": "Existing fixture assertions reject and preserve inventory/handoff",
+      "result": "PASS",
+      "evidence": {
+        "command": "ITER_FROZEN_RUNNER=/data/workspace/iteration-manager/build/frozen-runners/iter11-platform-v1/scripts/iter_run.py ITER_COMMAND_DEADLINE=2026-11-15T05:47:25.679588+00:00 /data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B /data/workspace/iteration-manager/build/frozen-runners/iter11-platform-v1/scripts/iter_run.py --deadline 2026-11-15T05:47:25.679588+00:00 --evidence docs/todos/11-reliable-delivery/evidence/10/experiment-02.json -- /data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B -m pytest -p no:cacheprovider tests/test_self_hosting.py tests/test_execution_readiness.py tests/test_autonomy.py tests/test_checkpoint_resume.py -q --basetemp /tmp/iter11-task10-experiment-02",
+        "receipt": "docs/todos/11-reliable-delivery/evidence/10/experiment-02.json",
+        "output": "docs/todos/11-reliable-delivery/evidence/10/experiment-02.json.output.txt"
+      }
+    },
+    {
+      "id": "progress-and-replay",
+      "layer": "synthetic",
+      "expected": "Two empty attempts block third; changed idempotent payload rejects without card mutation",
+      "observed": "Existing event/dispatch/inventory and handoff assertions passed",
+      "result": "PASS",
+      "evidence": {
+        "command": "ITER_FROZEN_RUNNER=/data/workspace/iteration-manager/build/frozen-runners/iter11-platform-v1/scripts/iter_run.py ITER_COMMAND_DEADLINE=2026-11-15T05:47:25.679588+00:00 /data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B /data/workspace/iteration-manager/build/frozen-runners/iter11-platform-v1/scripts/iter_run.py --deadline 2026-11-15T05:47:25.679588+00:00 --evidence docs/todos/11-reliable-delivery/evidence/10/experiment-02.json -- /data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B -m pytest -p no:cacheprovider tests/test_self_hosting.py tests/test_execution_readiness.py tests/test_autonomy.py tests/test_checkpoint_resume.py -q --basetemp /tmp/iter11-task10-experiment-02",
+        "receipt": "docs/todos/11-reliable-delivery/evidence/10/experiment-02.json",
+        "output": "docs/todos/11-reliable-delivery/evidence/10/experiment-02.json.output.txt"
+      }
+    },
+    {
+      "id": "filesystem-drift",
+      "layer": "synthetic",
+      "expected": "Source, evidence and body drift remain non-PASS through audit, envelope and board",
+      "observed": "Existing three fixture variations passed",
+      "result": "PASS",
+      "evidence": {
+        "command": "ITER_FROZEN_RUNNER=/data/workspace/iteration-manager/build/frozen-runners/iter11-platform-v1/scripts/iter_run.py ITER_COMMAND_DEADLINE=2026-11-15T05:47:25.679588+00:00 /data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B /data/workspace/iteration-manager/build/frozen-runners/iter11-platform-v1/scripts/iter_run.py --deadline 2026-11-15T05:47:25.679588+00:00 --evidence docs/todos/11-reliable-delivery/evidence/10/experiment-02.json -- /data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B -m pytest -p no:cacheprovider tests/test_self_hosting.py tests/test_execution_readiness.py tests/test_autonomy.py tests/test_checkpoint_resume.py -q --basetemp /tmp/iter11-task10-experiment-02",
+        "receipt": "docs/todos/11-reliable-delivery/evidence/10/experiment-02.json",
+        "output": "docs/todos/11-reliable-delivery/evidence/10/experiment-02.json.output.txt"
+      }
+    },
+    {
+      "id": "git-drift",
+      "layer": "synthetic",
+      "expected": "Reviewed source, card objective, acceptance, goal and evidence drift invalidates DONE",
+      "observed": "Five mature parameter cases passed on current candidate",
+      "result": "PASS",
+      "evidence": {
+        "command": "/data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B /data/workspace/iteration-manager/build/frozen-runners/iter11-platform-v1/scripts/iter_run.py --deadline 2026-11-15T05:47:25.679588+00:00 --evidence docs/todos/11-reliable-delivery/evidence/10/git-drift-01.json -- /data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B -m pytest -p no:cacheprovider tests/test_completion_gates.py::test_reviewed_scope_and_contract_drift_rejected -q --basetemp /tmp/iter11-task10-git-drift-01",
+        "receipt": "docs/todos/11-reliable-delivery/evidence/10/git-drift-01.json",
+        "output": "docs/todos/11-reliable-delivery/evidence/10/git-drift-01.json.output.txt"
+      }
+    },
+    {
+      "id": "checkpoint-rejection",
+      "layer": "synthetic",
+      "expected": "FS cannot use Git resume grant and unknown command terminal rejects without card writes",
+      "observed": "Existing checkpoint fixture cases passed",
+      "result": "PASS",
+      "evidence": {
+        "command": "ITER_FROZEN_RUNNER=/data/workspace/iteration-manager/build/frozen-runners/iter11-platform-v1/scripts/iter_run.py ITER_COMMAND_DEADLINE=2026-11-15T05:47:25.679588+00:00 /data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B /data/workspace/iteration-manager/build/frozen-runners/iter11-platform-v1/scripts/iter_run.py --deadline 2026-11-15T05:47:25.679588+00:00 --evidence docs/todos/11-reliable-delivery/evidence/10/experiment-02.json -- /data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B -m pytest -p no:cacheprovider tests/test_self_hosting.py tests/test_execution_readiness.py tests/test_autonomy.py tests/test_checkpoint_resume.py -q --basetemp /tmp/iter11-task10-experiment-02",
+        "receipt": "docs/todos/11-reliable-delivery/evidence/10/experiment-02.json",
+        "output": "docs/todos/11-reliable-delivery/evidence/10/experiment-02.json.output.txt"
+      }
+    },
+    {
+      "id": "installation-projection",
+      "layer": "synthetic",
+      "expected": "Manifest byte mismatch remains failure across separate fixture project projection rebuild",
+      "observed": "ValueError before and after rebuild; restored bytes verify",
+      "result": "PASS",
+      "evidence": {
+        "command": "ITER_FROZEN_RUNNER=/data/workspace/iteration-manager/build/frozen-runners/iter11-platform-v1/scripts/iter_run.py ITER_COMMAND_DEADLINE=2026-11-15T05:47:25.679588+00:00 /data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B /data/workspace/iteration-manager/build/frozen-runners/iter11-platform-v1/scripts/iter_run.py --deadline 2026-11-15T05:47:25.679588+00:00 --evidence docs/todos/11-reliable-delivery/evidence/10/experiment-02.json -- /data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B -m pytest -p no:cacheprovider tests/test_self_hosting.py tests/test_execution_readiness.py tests/test_autonomy.py tests/test_checkpoint_resume.py -q --basetemp /tmp/iter11-task10-experiment-02",
+        "receipt": "docs/todos/11-reliable-delivery/evidence/10/experiment-02.json",
+        "output": "docs/todos/11-reliable-delivery/evidence/10/experiment-02.json.output.txt"
+      }
+    },
+    {
+      "id": "payload-harness",
+      "layer": "synthetic",
+      "expected": "Current installed payload support tests execute without docs",
+      "observed": "Nested frozen runner: 11 passed, exit 0, terminal tree; temporary payload only",
+      "result": "PASS",
+      "evidence": {
+        "command": "/data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B /data/workspace/iteration-manager/build/frozen-runners/iter11-platform-v1/scripts/iter_run.py --deadline 2026-11-15T05:47:25.679588+00:00 --evidence installed-copy-receipt.json -- /data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B -m pytest -p no:cacheprovider tests/test_board_handoff.py tests/test_board_service.py -q --basetemp /tmp/iter11-task10-experiment-02/test_install_drift_survives_pr0/nested/installed-pytest",
+        "receipt": "docs/todos/11-reliable-delivery/evidence/10/payload-receipt.json",
+        "output": "docs/todos/11-reliable-delivery/evidence/10/payload-receipt.json.output.txt"
+      }
+    }
+  ],
+  "unverified": [
+    "Native self-use or real delegation and adoption",
+    "Real installation, deployment or trusted manifest origin",
+    "Windows and browser acceptance",
+    "Independent review, C/D and frozen local strict, whole-branch and full-suite gates"
+  ]
+}
