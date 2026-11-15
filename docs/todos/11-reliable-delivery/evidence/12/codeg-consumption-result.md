@@ -1,0 +1,36 @@
+已完成本次 **只读指令消费**。以下 A/B/C 是对给定场景的条件判断，不是对 Task12 或整轮的审查批准。
+
+已先读取 [consumer-brief-input.md](/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/12/consumer-brief-input.md) 和 [consumer-input-manifest.json](/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/12/consumer-input-manifest.json)，再读取清单中的八个源。实际计算的 SHA256 均与 manifest 一致：
+
+| 源文件 | SHA256 |
+|---|---|
+| [agent_protocol.md](/data/workspace/iteration-manager/.worktrees/iter-11/references/agent_protocol.md) | `2b741176951d6bbe3a5ec125031bba8b5f2030e608b49e40ac0e50ee64a44163` |
+| [execution_readiness.md](/data/workspace/iteration-manager/.worktrees/iter-11/references/execution_readiness.md) | `0be61f90079d5ba62842daece48f46881bd533fcdc48ce7cc015545335acaf05` |
+| [worktree_git_contract.md](/data/workspace/iteration-manager/.worktrees/iter-11/references/worktree_git_contract.md) | `2f9199de428593c5dbd0999c17582f0a2a47b0d2474a731550d4e80736ef0373` |
+| [iteration_planner.md](/data/workspace/iteration-manager/.worktrees/iter-11/templates/assistants/iteration_planner.md) | `2f8e0a31828db9635fb83aed5a333ee19178b6b3ad798c1b9b4b0f50e0eb6bc4` |
+| [iteration_controller.md](/data/workspace/iteration-manager/.worktrees/iter-11/templates/assistants/iteration_controller.md) | `e1f30e7661e0b2058375f48abfa1e749f176d0ab58d3df1f23362cd1b9be3747` |
+| [task_tech_lead.md](/data/workspace/iteration-manager/.worktrees/iter-11/templates/assistants/task_tech_lead.md) | `2f78dd7445e06f77c61f63ed44cdb4149a9987743b3b94ed3debf56d877f0b1b` |
+| [sdd_implementer_prompt.md](/data/workspace/iteration-manager/.worktrees/iter-11/templates/sdd_implementer_prompt.md) | `15cd0b50b9faa12fbd062d0ada6af73338ba8cc16861b54297c87d61aab8498e` |
+| [sdd_reviewer_prompt.md](/data/workspace/iteration-manager/.worktrees/iter-11/templates/sdd_reviewer_prompt.md) | `22067ebc67949289388d475bad26715049d83b20649be51601f4dfa4a0bc3fb5` |
+
+**A｜Codeg 新流程。** 已 claim 后，在支持该路径的 Codeg 持久 JavaScript 执行器中，使用冻结的 `dispatchAfterReady({request, check, dispatch})`，由守卫执行同写者的 `--dispatch-check`。检查仍 running、失败、非 READY、未知或绑定不符时，**不得原生派发**。随后另一次检查若真实终态为退出 0、READY，且题设绑定匹配，还须独立核实 claim、context 新鲜度、授权、截止及回调原件；满足这些及实际能力条件后，才能通过守卫调用真实原生派发工具，并保存检查和调用原件。守卫的 `dispatched` 只表示回调被调用，READY 也不是验收 PASS。见 [共同协议第 37 行](/data/workspace/iteration-manager/.worktrees/iter-11/references/agent_protocol.md:37)、[第 63 行](/data/workspace/iteration-manager/.worktrees/iter-11/references/agent_protocol.md:63)、[第 66 行](/data/workspace/iteration-manager/.worktrees/iter-11/references/agent_protocol.md:66) 和 [就绪契约第 3 行](/data/workspace/iteration-manager/.worktrees/iter-11/references/execution_readiness.md:3)。
+
+派发调用抛错或结果 UNKNOWN 时，先查询原调用，不能盲目重派；原生终态无法确认则保持 UNKNOWN/BLOCKED。缺持久执行器、真实工具或终态证据时，记录阻断、责任人和恢复条件，补齐后再检查，不能回退裸派发。回收时分别核对会话和命令终态，再由唯一写者登记 attempt，之后 release 或按合同 closeout；命令终态未知不因会话完成而消失。见 [共同协议第 66 行](/data/workspace/iteration-manager/.worktrees/iter-11/references/agent_protocol.md:66)、[第 132 行](/data/workspace/iteration-manager/.worktrees/iter-11/references/agent_protocol.md:132) 和 [就绪契约第 80 行](/data/workspace/iteration-manager/.worktrees/iter-11/references/execution_readiness.md:80)。
+
+**Codeg TOOL-call 与 worker 实际执行是两层证据。** 源文明确说历史 worker CLI 的 bwrap 启动失败保持 BLOCKED；父会话 completed 不证明子命令执行或模板消费。Native Codex CLI 是另一宿主路径，须按其实际已证明的能力判断，不能据此声称 Codeg worker 成功。见 [共同协议第 68 行](/data/workspace/iteration-manager/.worktrees/iter-11/references/agent_protocol.md:68)。
+
+**B｜提前检查分支。** 可以做可选的 EARLY branch 结构预检；它既不是最终验收，也不是最后一张卡完成的前提。该卡仍须按 **实现及原始输出 C → 独立审查 C 和冻结规格 → 登记收据、报告及状态并提交 D → 冻结 `--local --strict`** 完成；收据 `head_sha` 绑定 C。独审尚缺时不能用预检宣布该卡或整轮完成。见 [共同协议第 142 行](/data/workspace/iteration-manager/.worktrees/iter-11/references/agent_protocol.md:142)、[第 146 行](/data/workspace/iteration-manager/.worktrees/iter-11/references/agent_protocol.md:146)，以及 [技术主管模板第 11 行](/data/workspace/iteration-manager/.worktrees/iter-11/templates/assistants/task_tech_lead.md:11)。
+
+同一候选、输入和相关环境下的有效证据可在独立核对原始输出及适用范围后沿用；指定的独立复验仍须实跑。新候选要逐项核对影响，受影响检查重跑；影响不明扩大检查。沿用测试输出不等于沿用失效批准。见 [共同协议第 162 行](/data/workspace/iteration-manager/.worktrees/iter-11/references/agent_protocol.md:162) 和 [Reviewer 模板第 45 行](/data/workspace/iteration-manager/.worktrees/iter-11/templates/sdd_reviewer_prompt.md:45)。
+
+**C｜最后一张卡为 12。** 在题设的全部卡均有效 DONE、各自验收 PASS 成立后，Controller 才按顺序执行：
+
+1. 整轮集成路径和全量回归。
+2. 独立整轮总审，聚焦跨任务接口、集成路径、Review Focus 和全量回归；不逐卡重演有效审查。
+3. 对**最终登记候选**执行冻结的 `--check-branch --strict`。
+
+总审若导致候选变化，须对受影响内容重新独审、重新绑定，并按影响核实需要重跑的验证；最终 strict 和独审均不能由被测候选自证批准。见 [共同协议第 146 行](/data/workspace/iteration-manager/.worktrees/iter-11/references/agent_protocol.md:146)、[第 160 行](/data/workspace/iteration-manager/.worktrees/iter-11/references/agent_protocol.md:160) 和 [Controller 模板第 12 行](/data/workspace/iteration-manager/.worktrees/iter-11/templates/assistants/iteration_controller.md:12)。
+
+本迭代收口原始产物按约定放在主 checkout 的 `build/iter11-closeout/<唯一UTC目录>`，README 只记摘要和链接；保留原件，不写回已批准任务 scope。归档、清理、合流、推送和部署分别需要授权；清理 worktree 前还须持久化原始输出、最终报告和收据。见 [共同协议第 148 行](/data/workspace/iteration-manager/.worktrees/iter-11/references/agent_protocol.md:148) 和 [Worktree 契约第 13 行](/data/workspace/iteration-manager/.worktrees/iter-11/references/worktree_git_contract.md:13)。
+
+本次没有运行测试、执行 Git 变更、派发 worker、写文件或批准结果。默认沙箱的首次读取命令因 `bwrap` 挂载 `/proc` 失败而未启动；随后使用获准的只读执行路径完成读取和哈希计算。**Windows 历史验证未在本机复跑**；本次也未验证 Codeg worker 或 Native Codex CLI 的实际执行能力，其当前结果保持 UNKNOWN。

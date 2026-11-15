@@ -1,0 +1,243 @@
+{
+  "role": "Fresh independent Native Codex CLI source consumer; not implementer or reviewer",
+  "codex_thread_id": "01a1dde0-b168-7760-9704-adc0fec19045",
+  "candidate": {
+    "base_and_observed_head": "91ac9d9b8e0acfd980e3033b2fbcb494873fc686",
+    "qualification": "HEAD was read with git rev-parse; working tree was dirty, including task 12 card and existing untracked evidence. This SHA identifies HEAD, not a claim that every worktree byte equals the commit."
+  },
+  "inputs": {
+    "brief": {
+      "path": "docs/todos/11-reliable-delivery/evidence/12/consumer-brief-input.md",
+      "sha256": "e8899ef061215865f4d2d1f83cb9e1b46d4ff74c6f269069bed997f6d7864758",
+      "read_first": true
+    },
+    "manifest": {
+      "path": "docs/todos/11-reliable-delivery/evidence/12/consumer-input-manifest.json",
+      "sha256": "ec6adc80344f80ee2d7235321e1630e12e69df52b628e9856e46040bfe566bd9"
+    },
+    "sources": [
+      {
+        "path": "references/agent_protocol.md",
+        "sha256": "2b741176951d6bbe3a5ec125031bba8b5f2030e608b49e40ac0e50ee64a44163",
+        "manifest_match": true
+      },
+      {
+        "path": "references/execution_readiness.md",
+        "sha256": "0be61f90079d5ba62842daece48f46881bd533fcdc48ce7cc015545335acaf05",
+        "manifest_match": true
+      },
+      {
+        "path": "references/worktree_git_contract.md",
+        "sha256": "2f9199de428593c5dbd0999c17582f0a2a47b0d2474a731550d4e80736ef0373",
+        "manifest_match": true
+      },
+      {
+        "path": "templates/assistants/iteration_planner.md",
+        "sha256": "2f8e0a31828db9635fb83aed5a333ee19178b6b3ad798c1b9b4b0f50e0eb6bc4",
+        "manifest_match": true
+      },
+      {
+        "path": "templates/assistants/iteration_controller.md",
+        "sha256": "e1f30e7661e0b2058375f48abfa1e749f176d0ab58d3df1f23362cd1b9be3747",
+        "manifest_match": true
+      },
+      {
+        "path": "templates/assistants/task_tech_lead.md",
+        "sha256": "2f78dd7445e06f77c61f63ed44cdb4149a9987743b3b94ed3debf56d877f0b1b",
+        "manifest_match": true
+      },
+      {
+        "path": "templates/sdd_implementer_prompt.md",
+        "sha256": "15cd0b50b9faa12fbd062d0ada6af73338ba8cc16861b54297c87d61aab8498e",
+        "manifest_match": true
+      },
+      {
+        "path": "templates/sdd_reviewer_prompt.md",
+        "sha256": "22067ebc67949289388d475bad26715049d83b20649be51601f4dfa4a0bc3fb5",
+        "manifest_match": true
+      }
+    ]
+  },
+  "scenarios": {
+    "A": [
+      {
+        "answer": "For a new or explicitly authorized flow on a Codeg host supporting its persistent JavaScript executor, the same writer must have claimed; verify actual candidate, fresh context, authority and deadline, then invoke the frozen dispatchAfterReady({request, check, dispatch}) with the uniquely bound request and actual dispatch-check. Do not dispatch while the check is running, failed, non-READY, unknown, or mismatched. A check is not itself a native dispatch or acceptance.",
+        "citations": [
+          {
+            "file": "references/agent_protocol.md",
+            "lines": "35-37",
+            "wording": "必须消费冻结 scripts/dispatch_guard.js 的 dispatchAfterReady({request, check, dispatch}); 不可先裸派发再补检查"
+          },
+          {
+            "file": "references/agent_protocol.md",
+            "lines": "62-66",
+            "wording": "检查 running、failed、非 READY、未知或绑定不符均不得原生派发"
+          },
+          {
+            "file": "references/execution_readiness.md",
+            "lines": "3-5",
+            "wording": "逐卡dispatch-check必须确认已claim且owner匹配; READY只表示观察齐备，不是产品验收"
+          }
+        ]
+      },
+      {
+        "answer": "For the later separate real terminal exit 0 READY, native dispatch is conditionally permitted through the guard callback only when its completed/exit, actual argv/cwd/request, terminal source and READY task/phase/candidate checks match, the actual argv binds owner/context, and the controller independently confirms claim, context freshness, authority, callback evidence, required capabilities and time. Use the actual host schema, preserve raw check and native call/result. READY alone does not prove any worker action or product acceptance.",
+        "citations": [
+          {
+            "file": "references/agent_protocol.md",
+            "lines": "37-37",
+            "wording": "request 使用唯一 request_id、project_root、tool_entry、绝对 task_path、task_id、owner、phase、candidate、context"
+          },
+          {
+            "file": "references/agent_protocol.md",
+            "lines": "58-68",
+            "wording": "dispatched 仅表示回调被调用; claim、上下文新鲜度及回调原件须由主控独立核实"
+          },
+          {
+            "file": "references/execution_readiness.md",
+            "lines": "40-48",
+            "wording": "candidate必须匹配实际项目完整HEAD或显式FS配置下的candidate_id; 退出0为READY，2为NEEDS_INPUT，3为BLOCKED"
+          }
+        ]
+      },
+      {
+        "answer": "If dispatch throws or is UNKNOWN, query the original call/task and session, preserve the raw result, and do not blindly redispatch; unconfirmed terminal stays UNKNOWN/BLOCKED. Missing persistent executor, real native tools or terminal evidence blocks that path until the responsible party supplies the missing capability/evidence; never bypass with naked dispatch. If needed, a host with no nested delegation returns a self-contained brief to a capable parent. Deadline monitoring also requires the frozen deadline_watch with waiting, clock and cancellation in one persistent execution; unavailable capability blocks dispatch.",
+        "citations": [
+          {
+            "file": "references/agent_protocol.md",
+            "lines": "9-9",
+            "wording": "没有下级委派能力时，技术主管返回所需角色的自包含Brief"
+          },
+          {
+            "file": "references/agent_protocol.md",
+            "lines": "31-33",
+            "wording": "中断、unknown或通信失败先查询原task_id及其会话/工作区，不重复派发"
+          },
+          {
+            "file": "references/agent_protocol.md",
+            "lines": "66-66",
+            "wording": "dispatch 抛错或结果 UNKNOWN 时先查询原调用，不能盲重派; 缺少持久执行器、真实工具或终态证据时记录 BLOCKED、责任人及恢复条件，不回退裸派发"
+          },
+          {
+            "file": "references/agent_protocol.md",
+            "lines": "84-90",
+            "wording": "无这种运行能力时，在派发前返回能力缺口，不退回逐轮模型估时"
+          },
+          {
+            "file": "references/agent_protocol.md",
+            "lines": "130-132",
+            "wording": "终态无法确认时保留UNKNOWN/BLOCKED，不关闭或重复启动执行者"
+          }
+        ]
+      },
+      {
+        "answer": "The Codeg TOOL-call adapter, actual source reading by a worker, and actual worker business execution are separate evidence claims. Synthetic tests can illustrate behavior but do not prove a real host call, actual source consumption or business execution. Historical worker CLI bwrap startup failure stays BLOCKED; parent completed does not prove child command execution or template consumption. This independent Native Codex CLI is another host; this report proves only this session read the listed source files and hashes, not Codeg worker success. The provided assertion about a single-use resumed Codeg consumer is context, not independently examined here or an authority/approval.",
+        "citations": [
+          {
+            "file": "references/agent_protocol.md",
+            "lines": "63-68",
+            "wording": "该路径只建立实际 Codeg TOOL-call 适配能力；子代理工具执行、读取指令或业务成功须分别以原生证据证明"
+          },
+          {
+            "file": "references/agent_protocol.md",
+            "lines": "68-68",
+            "wording": "历史 worker CLI 的 bwrap 启动失败保持 BLOCKED，父会话 completed 不证明子命令执行或模板消费；独立的 Native Codex CLI 路径须按其实际已证明的宿主能力执行"
+          },
+          {
+            "file": "references/execution_readiness.md",
+            "lines": "78-80",
+            "wording": "不能把会话停止当命令停止"
+          }
+        ]
+      }
+    ],
+    "B": [
+      {
+        "answer": "An EARLY branch structural precheck is optional and may happen before the iteration review, but is neither final acceptance nor a prerequisite for completing the last card. An unfinished card still follows authorized implementation C and original outputs → independent review of C and frozen specification → register receipt, report and state with head_sha=C → registration commit D → frozen local strict. Do not declare the iteration complete from the early check or a card status; all valid DONE and acceptance PASS are prerequisites for iteration integration/full regression, independent final review and final frozen branch strict.",
+        "citations": [
+          {
+            "file": "references/agent_protocol.md",
+            "lines": "140-146",
+            "wording": "Git：提交实现C及原始输出 → 独立审查C与冻结规格 → 主管登记JSON收据、报告及状态 → 提交登记D → --local --strict; 可在总审之前做可选 EARLY branch 结构预检，结果不是最终验收，也不是最后一张卡的完成前提"
+          },
+          {
+            "file": "templates/assistants/iteration_controller.md",
+            "lines": "10-12",
+            "wording": "不把DONE/停止/退出0当PASS; 提前结构预检不是最终验收"
+          },
+          {
+            "file": "references/execution_readiness.md",
+            "lines": "111-113",
+            "wording": "尚未完成的任务缺review_receipt本身不等于失败或需要提前审查"
+          }
+        ]
+      },
+      {
+        "answer": "Reuse valid evidence for the same candidate, inputs and relevant environment after examining the raw output and recording scope and source. For a changed candidate, identify effect per check: rerun affected checks; retain unaffected output only when the covered code/contract, inputs and relevant environment are verified unchanged, preserving original candidate and time. Independent rechecks explicitly required still run; unclear effects require expanded checking. Test-output reuse is not approval reuse; affected review and new freeze-bound receipt are required when the old binding fails.",
+        "citations": [
+          {
+            "file": "references/agent_protocol.md",
+            "lines": "152-164",
+            "wording": "同一候选、输入和相关环境的有效证据可直接复用; 沿用测试输出不等于沿用批准"
+          },
+          {
+            "file": "templates/sdd_reviewer_prompt.md",
+            "lines": "20-22",
+            "wording": "指定独立复验仍实跑。新候选形成受影响审查和新冻结绑定，不复用失效批准"
+          }
+        ]
+      }
+    ],
+    "C": [
+      {
+        "answer": "Conditioned on the scenario’s stated facts, all cards including 12 have valid DONE and acceptance PASS. Controller next performs the iteration integration path and full regression, then independent iteration-wide review, then frozen --check-branch --strict on the final registration candidate. The final strict and independent review cannot be self-approved by the candidate under test. The independent iteration review focuses on cross-task interfaces, integration, Review Focus and full regression, using valid card conclusions and raw evidence without redoing each card review.",
+        "citations": [
+          {
+            "file": "references/agent_protocol.md",
+            "lines": "144-146",
+            "wording": "全部卡（包括最后一张）有效 DONE 且各自验收 PASS 后，Controller 才执行整轮集成路径与全量回归 → 独立整轮总审 → 对最终登记候选执行冻结 --check-branch --strict"
+          },
+          {
+            "file": "references/agent_protocol.md",
+            "lines": "158-160",
+            "wording": "整轮总审读取有效单卡结论及原始证据，聚焦跨任务接口、集成与Review Focus，不逐卡重演已通过审查"
+          },
+          {
+            "file": "templates/assistants/iteration_planner.md",
+            "lines": "13-13",
+            "wording": "不让最后一张卡依赖最终strict"
+          }
+        ]
+      },
+      {
+        "answer": "If final review causes candidate changes, assess affected verification, rerun affected checks, independently rereview affected content and establish a new binding before final strict; verified unaffected outputs may be reused under the source conditions. Preserve closeout originals in the main checkout build/iter11-closeout/<unique UTC directory>, outside approved task scope; README records a summary and links, not giant embedded JSON. Preserve originals; archive and cleanup require separate authorization. Merge, push, deployment and cleanup each require their own authorization.",
+        "citations": [
+          {
+            "file": "references/agent_protocol.md",
+            "lines": "146-148",
+            "wording": "总审导致候选变化时，受影响内容须重新独审并重新绑定; 收口原始产物按迭代约定放主 checkout 的 build/iter11-closeout/<唯一UTC目录> ... README 只记摘要及链接"
+          },
+          {
+            "file": "references/agent_protocol.md",
+            "lines": "162-164",
+            "wording": "受影响检查实际重跑; 新候选须独立审查受影响内容与沿用依据，生成符合当前冻结绑定的新收据"
+          },
+          {
+            "file": "references/worktree_git_contract.md",
+            "lines": "9-13",
+            "wording": "Git提交、合流、推送、发布和清理分别按各自授权执行，验收通过不产生这些权限"
+          }
+        ]
+      }
+    ]
+  },
+  "observed_discrepancies": [
+    "All eight calculated source SHA256 values matched the input manifest; no mismatch observed. The HEAD matches the provided BASE, but the worktree has pre-existing modifications and untracked evidence, so HEAD alone does not establish a clean candidate. No comparison with Codeg result or chain logs was made, by scope."
+  ],
+  "limitations": [
+    "A/B/C are conditional interpretations of the supplied synthetic scenarios, not live dispatch, review, test, business execution or actual iteration status. No tests or business commands were run. No subagents were used.",
+    "No underlying worker completion, Codeg source consumption or successful business execution is inferred from a parent session result. No current Codeg host capability or terminal was verified.",
+    "Windows was not retested in this session. This is source consumption, not an approval or iteration acceptance.",
+    "Other referenced contracts and historical evidence were outside the requested source scope; their detailed behavior is not independently verified here."
+  ]
+}
