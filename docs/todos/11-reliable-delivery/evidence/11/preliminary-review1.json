@@ -1,0 +1,84 @@
+{
+  "candidate": "a1a9907fc343b8ba2c25895b03b89fb192c48e67",
+  "base": "bc324d16f2adb7f36e18f1f826a16dd23343055a",
+  "contract_sha": "bc324d16f2adb7f36e18f1f826a16dd23343055a",
+  "reviewer_uuid": "01a1ddc4-8039-73a2-825e-7381e4dedd5b",
+  "independence": {
+    "statement": "Independent reviewer; no participation in task 11 design, implementation, tests, RCA, or delegation. Review-only negative inputs and checks are isolated in this review directory.",
+    "excluded_actors": [
+      "01a1ddbf-5a2d-7d41-9870-7767991dc9d7",
+      "all task consumers",
+      "root controller"
+    ]
+  },
+  "verdicts": {
+    "scope": "APPROVED",
+    "spec": "NEEDS_FIX",
+    "quality": "NEEDS_FIX",
+    "overall": "NEEDS_FIX"
+  },
+  "findings": [
+    {
+      "id": "F1",
+      "severity": "major",
+      "category": "spec and quality",
+      "file": "docs/todos/11-reliable-delivery/evidence/11/audit_native_chain.py",
+      "line": 107,
+      "related_lines": [
+        136
+      ],
+      "scenario": "A copied otherwise valid sources index with the required first-stage guard path removed raises KeyError while constructing case evidence, outside the exception-handling case function. The frozen runner reports raw exit 1 and a traceback, with no robustness report or classified FAIL/UNKNOWN/BLOCKED. Omitting related_observations likewise raises KeyError at line 136. This violates the frozen task acceptance requiring missing entries to produce a classified result and exit 2, and breaks the advertised main/CLI failure contract. The supplied missing-file control exercises a different path and does not cover missing required fields.",
+      "remediation": "Validate the complete source-index structure before dereferencing it, including stage and related-observation fields; route malformed or missing fields through classified report generation and return 2. Preserve original evidence and add targeted copied-input controls for missing required fields and verify both report and exit code through the frozen runner.",
+      "evidence": [
+        "build/iter11-review/task11-review1/missing-guard.json",
+        "build/iter11-review/task11-review1/missing-guard-runner.json",
+        "build/iter11-review/task11-review1/missing-guard-runner.json.output.txt",
+        "build/iter11-review/task11-review1/malformed-runner.json",
+        "build/iter11-review/task11-review1/malformed-runner.json.output.txt",
+        "docs/todos/11-reliable-delivery/11-native-self-use-audit.md:87"
+      ]
+    }
+  ],
+  "scope_receipt": {
+    "path": "build/iter11-review/task11-review1/scope-runner.json",
+    "output": "build/iter11-review/task11-review1/scope-runner.json.output.txt",
+    "status": "COMPLETED",
+    "raw_exit_code": 0,
+    "tree_terminal": true,
+    "result": "96 changed files in declared physical scope; tool explicitly does not infer ownership. Frozen known defects do not supply semantic or Git-delivery approval."
+  },
+  "evidence_applicability_chronology": [
+    "HEAD and branch match C and feat/iter-11-reliable-delivery; tracked worktree clean at review. BASE to C card diff changes execution metadata, checkboxes and ledger; task requirements and iteration goal remain frozen. Git mode is implicit and no invalid filesystem configuration was used in this review.",
+    "729fe27..bc324d1 modifies only task 11 card, source index and adds ownership record. Card adds 28 exact attribution rows and ledger ruling before BASE; no old startup raw file, product code, tests or acceptance text changed in that interval. Source index observed_head 729fe27 is a prior observation, not C.",
+    "Task 11 is Spike-Discovery; experiment-07 used frozen Linux runner, exit 0, COMPLETED and terminal tree before C, candidate observed was BASE. Its result means selected-chain checks passed; report separately preserves historical FAIL/BLOCKED. Decision and interfaces are documented; RED is not a task 11 type requirement. No duplicate suite was run.",
+    "Six task 06 guard records contain same owner and phase/candidate/context identities and recorded check-start, terminal consumption and dispatch in that order, including tied timestamps in original ordinal order. Nested and direct native check formats differ; argv/cwd and request identity were read in raw records. READY is only dispatch readiness.",
+    "06 P=82b66d9; initial receipt and raw output show 22 assertion failures, 11 passed, exit 1 with terminal tree. New consumer 01a1dd90-f03a-70c1-866d-43d5ac3a936e observed original RED hashes/time and envelope without recorded RED rerun or budget reset; original implementer 01a1dd8e-8b72-7b72-90b4-a8577ef8db2d resumed and final GREEN reports 39 passed. Historical complete runtime identity remains unverified.",
+    "06 C1=6ee7605 was independently NEEDS_FIX for F1; the real-payload smoke records clean 0 and drift 2, 111 files, with matching C1/C2 blobs. C2=7e5476c records independent review APPROVED and matching receipt. D1=f4610a4 local strict rejected invalid check kind with exit 2; D2=3158e75 corrected the registration and frozen local strict exit 0 with terminal tree. This reports the chain, not a fresh whole-task 06 approval.",
+    "Original 03 Codeg worker could not start the shell due to bwrap proc mount error: BLOCKED. Original 04 incident records dispatch after a BLOCKED check: FAIL. Neither is converted to success by 06 or selected-chain probe exit 0.",
+    "Supplied missing-control-04 is a missing inventory path and yields source-hashes BLOCKED/2. Inversion-control-04 points to a copied guard whose updated hash matches and whose events put dispatch before terminal consumption; stage-1 fails event order/2. Both receipts are COMPLETED with terminal trees, and neither result is merely an unchanged original hash mismatch.",
+    "Review negative controls have distinct receipts. Removing a required guard yields raw exit 1 and KeyError rather than classified exit 2; removing related_observations independently gives the same class of uncaught failure. No original source was modified."
+  ],
+  "source_mapping": {
+    "source_index": "docs/todos/11-reliable-delivery/evidence/planning/native-source-index.json",
+    "task_source_manifest": "docs/todos/11-reliable-delivery/evidence/11/source-manifest.json",
+    "ownership": "docs/todos/11-reliable-delivery/evidence/11/controller-artifact-ownership.json",
+    "review_check": "build/iter11-review/task11-review1/source-check-runner.json",
+    "result": "96 indexed bytes match declared SHA256: 67 also match C Git blobs and 29 are external or absent from C. Task manifest 155 bytes match: 133 also match C blobs, 22 external or absent from C. All 28 ownership bytes match worktree and C blobs. External build assets are byte-verified against original index, not Git-blob-bound.",
+    "payload_check": "build/iter11-review/task11-review1/payload-check-runner.json",
+    "payload_result": "111 payload inventory/manifest/tree paths match and each C1 blob hash and C2 bytes match; completed, exit 0, tree terminal."
+  },
+  "DeferredMinors": [
+    {
+      "file": "docs/todos/11-reliable-delivery/evidence/11/implementation-last-message.txt",
+      "line": 6,
+      "description": "git diff --check reports a blank line at EOF in retained raw message; do not rewrite original evidence for cosmetic cleanup."
+    }
+  ],
+  "limitations": [
+    "Historical complete environment identity and actual reviewer nonparticipation cannot be independently established from hashes alone.",
+    "29 source-index entries and 22 task-manifest entries are external or not in C; their bytes were checked locally but are not represented as C Git blobs.",
+    "Frozen coordinator fdcc4cc has known unknown-mode and takeover defects; its physical scope result is not semantic approval.",
+    "Current Windows, installation/deployment, external filesystem lifecycle, full suite and whole iteration are outside this review. Task 12, task 11 registration D/local strict and final integration, total review and branch strict remain pending."
+  ],
+  "approval_scope": "Scope verdict covers task 11 C physical and declared scope only. Overall NEEDS_FIX is for the entire frozen task 11 candidate against unchanged BASE specification; no approval, D registration, local strict or iteration release is granted."
+}

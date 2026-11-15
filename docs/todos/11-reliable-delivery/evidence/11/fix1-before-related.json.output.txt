@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/11/audit_native_chain.py", line 154, in <module>
+    if __name__=='__main__': raise SystemExit(main())
+                                              ^^^^^^
+  File "/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/11/audit_native_chain.py", line 136, in main
+    for observation in source['related_observations']:
+                       ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'related_observations'

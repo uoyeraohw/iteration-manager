@@ -34,6 +34,77 @@ def git(*args):
 
 def ancestor(a,b): git('merge-base','--is-ancestor',a,b)
 
+def validate_source_index(source):
+    """Reject malformed controller input before building case evidence."""
+    def mapping(value, where):
+        require(isinstance(value, dict), f'{where} must be an object')
+        return value
+    def field(parent, key, where):
+        require(key in parent, f'{where}.{key} missing', 'UNKNOWN')
+        return parent[key]
+    def string(value, where):
+        require(isinstance(value, str) and bool(value.strip()), f'{where} must be a nonempty string')
+        return value
+    def strings(value, where, minimum=1):
+        require(isinstance(value, list) and len(value) >= minimum, f'{where} must be a list with at least {minimum} entries')
+        for i, item in enumerate(value): string(item, f'{where}[{i}]')
+    top=mapping(source, 'source-index')
+    require(type(field(top, 'version', 'source-index')) is int and top['version']==1, 'source-index.version must be 1')
+    string(field(top, 'observed_head', 'source-index'), 'source-index.observed_head')
+    sources=field(top, 'sources', 'source-index')
+    require(isinstance(sources,list) and len(sources)==1, 'source-index.sources must contain one selected source')
+    selected=mapping(sources[0], 'sources[0]')
+    for key in ('task_id','task_path','selection','inventory','inheritance','checkpoint','envelope','review_report','review_receipt','local_strict','local_strict_call'):
+        string(field(selected,key,'sources[0]'),f'sources[0].{key}')
+    require(selected['task_id']=='06','selected source must be task 06')
+    for key,minimum in (('retained_rejections',3),('extra_sources',5)):
+        strings(field(selected,key,'sources[0]'),f'sources[0].{key}',minimum)
+    commits=mapping(field(selected,'commits','sources[0]'),'sources[0].commits')
+    for key in ('base','checkpoint','candidate','D'):
+        string(field(commits,key,'commits'),f'commits.{key}')
+    strings(field(commits,'registration','commits'),'commits.registration',2)
+    require(len(commits['registration'])==2,'commits.registration must contain two commits')
+    stages=field(selected,'stages','sources[0]')
+    require(isinstance(stages,list) and len(stages)==6,'stages must contain six entries')
+    for i,stage in enumerate(stages):
+        where=f'stages[{i}]'; stage=mapping(stage,where)
+        for key in ('session_id','candidate','phase','context','guard','native','terminal'):
+            string(field(stage,key,where),f'{where}.{key}')
+        sid=field(stage,'tool_session_id',where)
+        require(type(sid) is int and sid>0,f'{where}.tool_session_id must be a positive integer')
+        for key,minimum in (('claims',1),('attempts',2),('releases',1),('runner_receipts',0)):
+            strings(field(stage,key,where),f'{where}.{key}',minimum)
+        check=mapping(field(stage,'check',where),f'{where}.check')
+        for key in ('cwd','request_id'): string(field(check,key,f'{where}.check'),f'{where}.check.{key}')
+        strings(field(check,'argv',f'{where}.check'),f'{where}.check.argv')
+        terminal=mapping(field(check,'terminal_evidence',f'{where}.check'),f'{where}.check.terminal_evidence')
+        for key in ('source','id'): string(field(terminal,key,'terminal_evidence'),f'terminal_evidence.{key}')
+        events=field(check,'utc_events',f'{where}.check')
+        require(isinstance(events,list) and len(events)==3,f'{where}.check.utc_events must contain three entries')
+        for j,event in enumerate(events):
+            ew=f'{where}.check.utc_events[{j}]'; event=mapping(event,ew)
+            for key in ('kind','utc'): string(field(event,key,ew),f'{ew}.{key}')
+            ordinal=field(event,'ordinal',ew); require(type(ordinal) is int and ordinal>=0,f'{ew}.ordinal must be a nonnegative integer')
+            try: parsed=datetime.fromisoformat(event['utc'])
+            except ValueError: raise Finding('FAIL',f'{ew}.utc must be an ISO timestamp')
+            require(parsed.tzinfo is not None and parsed.utcoffset() is not None,f'{ew}.utc must include a timezone')
+    observations=field(top,'related_observations','source-index')
+    require(isinstance(observations,list) and len(observations)>=3,'related_observations must be a list with all retained cases')
+    ids=[]
+    for i,observation in enumerate(observations):
+        where=f'related_observations[{i}]'; observation=mapping(observation,where)
+        ids.append(string(field(observation,'id',where),f'{where}.id'))
+        string(field(observation,'path',where),f'{where}.path')
+    require(len(ids)==len(set(ids)) and {'codeg-worker-environment','codeg-assessment','root04-order-incident'}<=set(ids),'related observations missing or duplicate')
+    entries=field(top,'source_files','source-index')
+    require(isinstance(entries,list) and bool(entries),'source_files must be a nonempty list')
+    for i,entry in enumerate(entries):
+        where=f'source_files[{i}]'; entry=mapping(entry,where)
+        string(field(entry,'path',where),f'{where}.path')
+        digest=string(field(entry,'sha256',where),f'{where}.sha256')
+        require(len(digest)==64 and all(c in '0123456789abcdef' for c in digest),f'{where}.sha256 must be lowercase SHA256')
+    return selected,stages
+
 def main(argv=None):
     parser=argparse.ArgumentParser(); parser.add_argument('--sources',required=True); parser.add_argument('--output',required=True); args=parser.parse_args(argv)
     cases=[]; fatal=False; source=None
@@ -42,15 +113,14 @@ def main(argv=None):
         nonlocal fatal
         try: observed=fn(); result='PASS'
         except Finding as e: observed=e.detail+'; Controller must inspect or supply the original before redispatch'; result=e.result; fatal=True
-        except (KeyError, TypeError, ValueError, IndexError, OSError) as e: observed=f'malformed or incomplete record: {e}; Controller must supply valid original'; result='UNKNOWN'; fatal=True
+        except (KeyError, TypeError, ValueError, IndexError, OSError, AttributeError, StopIteration, OverflowError) as e: observed=f'malformed or incomplete record: {e}; Controller must supply valid original'; result='UNKNOWN'; fatal=True
         cases.append(dict(id=id,layer=layer,expected=expected,observed=observed,result=result,evidence=evidence))
     try:
-        source=obj(args.sources); require(source['version']==1 and len(source['sources'])==1 and source['sources'][0]['task_id']=='06','expected one selected task 06')
-        s=source['sources'][0]; stages=s['stages']; require(len(stages)==6,'six stage sources required')
+        source=obj(args.sources); s,stages=validate_source_index(source)
         candidate=git('rev-parse','HEAD').decode().strip()
-    except (Finding,KeyError,TypeError) as e:
+    except (Finding,KeyError,TypeError,ValueError,IndexError,AttributeError) as e:
         result=e.result if isinstance(e,Finding) else 'UNKNOWN'; detail=e.detail if isinstance(e,Finding) else str(e)
-        cases.append(dict(id='source-index',layer='static',expected='version 1 selected task 06',observed=detail,result=result,evidence=[args.sources])); fatal=True; candidate=None; s={}; stages=[]
+        cases.append(dict(id='source-index',layer='static',expected='version 1 selected task 06',observed=detail+'; Controller must supply a complete valid source index',result=result,evidence=[args.sources])); fatal=True; candidate=None; s={}; stages=[]; source=None
     def hashes():
         entries=source['source_files']; require(bool(entries),'empty source inventory'); paths=[e['path'] for e in entries]; require(len(paths)==len(set(paths)),'duplicate source hash entries'); required=[s[k] for k in ('selection','inventory','inheritance','checkpoint','envelope','review_report','review_receipt','local_strict','local_strict_call')]+s['retained_rejections']+s['extra_sources'];
         for st in stages:
@@ -144,6 +214,7 @@ def main(argv=None):
                     require(data['result']=='FAIL','root04 original failure missing'); result='FAIL'; detail=data['cause']+'; Controller owns correction; historical failure retained.'
                 else: raise Finding('UNKNOWN','unrecognized observation; Controller must classify')
             except Finding as e: result=e.result; detail=e.detail; fatal=True
+            except (KeyError, TypeError, ValueError, IndexError, AttributeError) as e: result='UNKNOWN'; detail=f'malformed observation: {e}; Controller must supply valid original'; fatal=True
             cases.append(dict(id=observation['id'],layer=native_layer,expected='retain actual historical observation and boundary',observed=detail,result=result,evidence=[observation['path']]))
     unverified=['Independent nonparticipant semantic review of this probe and original records is required.', 'Codeg worker execution, complete original environment identity, installation/deployment, current Windows and external FS lifecycle are UNKNOWN/BLOCKED.', 'Controller must complete all 13 cards including 12 before integration, full suite, independent total review and final branch strict.', 'Frozen coordinator FROZEN-KNOWN-01/02 cannot self-approve candidate.', 'Task 10 isolated static/synthetic results are linked at docs/todos/11-reliable-delivery/evidence/10/integration-report.json; no suite rerun here.']
     out=Path(args.output); out.parent.mkdir(parents=True,exist_ok=True)

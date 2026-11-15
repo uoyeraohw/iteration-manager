@@ -1,0 +1,96 @@
+{
+  "version": 1,
+  "sources": "docs/todos/11-reliable-delivery/evidence/11/synthetic-missing/sources-copy.json",
+  "selected_task": "06",
+  "source_index_observed_head": "729fe270e52c324b01147eafb01b2e31013f8a2b",
+  "case_evidence": {
+    "source-hashes": [
+      "docs/todos/11-reliable-delivery/evidence/11/synthetic-missing/sources-copy.json"
+    ],
+    "frozen-tool-identity": [
+      "docs/todos/11-reliable-delivery/evidence/planning/coordinator-manifest.json",
+      "/data/workspace/iteration-manager/build/frozen-runners/iter11-platform-v1/manifest.json"
+    ],
+    "ownership": [
+      "docs/todos/11-reliable-delivery/evidence/11/controller-artifact-ownership.json"
+    ],
+    "stage-1": [
+      "docs/todos/11-reliable-delivery/evidence/06/implementation-guard.json",
+      "docs/todos/11-reliable-delivery/evidence/06/implementation-native.jsonl",
+      "docs/todos/11-reliable-delivery/evidence/06/implementation-terminal.json",
+      "docs/todos/11-reliable-delivery/evidence/06/red-attempt.json",
+      "docs/todos/11-reliable-delivery/evidence/06/red-attempt.call.json",
+      "docs/todos/11-reliable-delivery/evidence/06/red-release.call.json",
+      "docs/todos/11-reliable-delivery/evidence/06/red-01.json"
+    ],
+    "stage-2": [
+      "docs/todos/11-reliable-delivery/evidence/06/checkpoint-consumer-guard.json",
+      "docs/todos/11-reliable-delivery/evidence/06/checkpoint-consumer-native.jsonl",
+      "docs/todos/11-reliable-delivery/evidence/06/checkpoint-consumer-terminal.json",
+      "docs/todos/11-reliable-delivery/evidence/06/checkpoint-consumer-attempt.json",
+      "docs/todos/11-reliable-delivery/evidence/06/checkpoint-consumer-attempt.call.json",
+      "docs/todos/11-reliable-delivery/evidence/06/checkpoint-consumer-release.call.json"
+    ],
+    "stage-3": [
+      "docs/todos/11-reliable-delivery/evidence/06/continuation-guard.json",
+      "docs/todos/11-reliable-delivery/evidence/06/continuation-native.jsonl",
+      "docs/todos/11-reliable-delivery/evidence/06/continuation-terminal.json",
+      "docs/todos/11-reliable-delivery/evidence/06/continuation-attempt.json",
+      "docs/todos/11-reliable-delivery/evidence/06/continuation-attempt.call.json",
+      "docs/todos/11-reliable-delivery/evidence/06/continuation-release.call.json",
+      "docs/todos/11-reliable-delivery/evidence/06/green-final.json",
+      "docs/todos/11-reliable-delivery/evidence/06/green-final-02.json",
+      "docs/todos/11-reliable-delivery/evidence/06/green-final-03.json"
+    ],
+    "stage-4": [
+      "build/iter11-review/task06-review1/review-guard.json",
+      "build/iter11-review/task06-review1/review-native.jsonl",
+      "build/iter11-review/task06-review1/terminal.json",
+      "build/iter11-review/task06-review1/attempt-v2.json",
+      "build/iter11-review/task06-review1/attempt-v2.call.json",
+      "build/iter11-review/task06-review1/release.call.json",
+      "build/iter11-review/task06-review1/scope-runner.json"
+    ],
+    "stage-5": [
+      "docs/todos/11-reliable-delivery/evidence/06/fix1-guard.json",
+      "docs/todos/11-reliable-delivery/evidence/06/fix1-native.jsonl",
+      "docs/todos/11-reliable-delivery/evidence/06/fix1-terminal.json",
+      "docs/todos/11-reliable-delivery/evidence/06/fix1-attempt.json",
+      "docs/todos/11-reliable-delivery/evidence/06/fix1-attempt.call.json",
+      "docs/todos/11-reliable-delivery/evidence/06/fix1-release.call.json",
+      "docs/todos/11-reliable-delivery/evidence/06/fix1-real-payload.json"
+    ],
+    "stage-6": [
+      "build/iter11-review/task06-review2/review-guard.json",
+      "build/iter11-review/task06-review2/review-native.jsonl",
+      "build/iter11-review/task06-review2/terminal.json",
+      "build/iter11-review/task06-review2/attempt.json",
+      "build/iter11-review/task06-review2/attempt.call.json",
+      "build/iter11-review/task06-review2/release.call.json",
+      "build/iter11-review/task06-review2/scope-runner.json"
+    ],
+    "checkpoint-continuation": [
+      "docs/todos/11-reliable-delivery/evidence/06/red-checkpoint.json",
+      "docs/todos/11-reliable-delivery/evidence/06/checkpoint-inheritance.json",
+      "docs/todos/11-reliable-delivery/evidence/06/envelope-before-continuation.call.json",
+      "docs/todos/11-reliable-delivery/evidence/06/continuation-terminal.json"
+    ],
+    "review-registration": [
+      "docs/todos/11-reliable-delivery/evidence/06/review-report.json",
+      "docs/todos/11-reliable-delivery/evidence/06/review-receipt.json",
+      "build/iter11-review/task06-review2/local-strict-v2.json",
+      "docs/todos/11-reliable-delivery/evidence/06/preliminary-review1.json",
+      "build/iter11-review/task06-review2/local-strict.json",
+      "build/iter11-review/task06-review1/attempt.call.json"
+    ],
+    "codeg-worker-environment": [
+      "docs/todos/11-reliable-delivery/evidence/03/native-codeg-chain.json"
+    ],
+    "codeg-assessment": [
+      "docs/todos/11-reliable-delivery/evidence/03/native-consumption-assessment.json"
+    ],
+    "root04-order-incident": [
+      "docs/todos/11-reliable-delivery/evidence/04/dispatch-order-incident.json"
+    ]
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "sources": "docs/todos/11-reliable-delivery/evidence/11/fix1-synthetic-missing-guard/sources.json",
+  "selected_task": "06",
+  "source_index_observed_head": null,
+  "case_evidence": {
+    "source-index": [
+      "docs/todos/11-reliable-delivery/evidence/11/fix1-synthetic-missing-guard/sources.json"
+    ]
+  }
+}

@@ -1,0 +1,5 @@
+F1 is ready for re-review. The probe now validates the source-index structure before dereferencing it and produces classified reports for the reproduced missing fields.
+
+The final frozen-runner experiment exited **0**. Both missing-field controls returned **UNKNOWN/2**, the malformed-shape and inversion controls returned **FAIL/2**, and the missing-file control returned **BLOCKED/2**. All had terminal command trees. The pre-fix report and index copies match C1 byte-for-byte.
+
+The [fix handoff](/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/11/fix1-delivery.json) records the commands and receipts; the [ledger summary](/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/11/fix1-ledger-summary.md) records the correction and remaining limits. The same independent reviewer must re-review the whole task after the new C; D and frozen local strict remain with the Controller.

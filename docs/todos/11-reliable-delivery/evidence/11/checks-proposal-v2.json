@@ -1,0 +1,29 @@
+[
+  {
+    "name": "experiment",
+    "kind": "command",
+    "command": "/data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B /data/workspace/iteration-manager/build/frozen-runners/iter11-platform-v1/scripts/iter_run.py --deadline 2026-11-15T06:02:33.873774+00:00 --evidence docs/todos/11-reliable-delivery/evidence/11/fix1-experiment-v2.json -- /data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B docs/todos/11-reliable-delivery/evidence/11/audit_native_chain.py --sources docs/todos/11-reliable-delivery/evidence/planning/native-source-index.json --output docs/todos/11-reliable-delivery/evidence/11/robustness-report.json",
+    "cwd": ".",
+    "exit_code": 0,
+    "summary": "Frozen runner completed with exit 0 and terminal tree; historical FAIL/BLOCKED remain separate, independent review pending.",
+    "output": "docs/todos/11-reliable-delivery/evidence/11/fix1-experiment-v2.json.output.txt"
+  },
+  {
+    "name": "decision",
+    "kind": "observation",
+    "command": null,
+    "cwd": ".",
+    "exit_code": null,
+    "summary": "F1 reproduction, input-validation decision, original evidence and limits for Controller ledger.",
+    "output": "docs/todos/11-reliable-delivery/evidence/11/fix1-ledger-summary.md"
+  },
+  {
+    "name": "interfaces",
+    "kind": "observation",
+    "command": null,
+    "cwd": ".",
+    "exit_code": null,
+    "summary": "main(argv=None), source/output contract and classified failure behavior; original proof checks remain subject to independent review.",
+    "output": "docs/todos/11-reliable-delivery/evidence/11/audit_native_chain.py"
+  }
+]
