@@ -1,7 +1,7 @@
 # 迭代11 · 可信路径一致性、使用成本与真实自用验证
 
 > 初始化：2026-11-14 UTC · 当前checkout：`/data/workspace/iteration-manager` · 基线：`fdcc4cce88635ee81573be5991de11de650659d8`。
-> 2026-11-15最新授权：适配Linux并整理Windows/Linux开发指引；新增00前置任务，随后01—12逐项验收串行推进。当前00完成独审和登记、01—12为TODO；冻结strict核对后产品验收1/13；实施、精准Git与Worktree授权保持。
+> 2026-11-15最新授权：适配Linux并整理Windows/Linux开发指引；新增00前置任务，随后01—12逐项验收串行推进。当前00—01完成独审和登记、02—12为TODO；冻结strict核对后产品验收2/13；实施、精准Git与Worktree授权保持。
 > 独立Worktree为`.worktrees/iter-11`，分支`feat/iter-11-reliable-delivery`。先完成[00平台适配](00-linux-runner-and-dev-guide.md)，不再要求另找Windows主机；原Windows-only拒绝保留为历史证据。迁移授权见[platform-migration-authorization.json](evidence/planning/platform-migration-authorization.json)。
 
 ## 1. 迭代核心目标与全局约束
@@ -139,12 +139,12 @@
 <!-- iter:projection -->
 ## 验收事实（阶段比例不是工时）
 
-声明DONE 1/13 · 验收PASS 1/13
+声明DONE 2/13 · 验收PASS 2/13
 
 | 任务 | 声明 | 验收 | 业务阶段 / 清单比例 | 工程阶段 | 阻塞原因 | 累计尝试 | 最后更新 |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | 00-linux-runner-and-dev-guide.md | DONE | PASS | 阶段清单已勾选完毕 / 3/3 (100%) | CHECKLIST_COMPLETE (未等同验收) | 未记录 | 2 | 2026-11-15T03:48:53.290510+00:00 |
-| 01-delivery-mode-consistency.md | TESTING | UNKNOWN | 阶段清单已勾选完毕 / 3/3 (100%) | CHECKLIST_COMPLETE (未等同验收) | 未记录 | 1 | 2026-11-15T04:03:28.229766+00:00 |
+| 01-delivery-mode-consistency.md | DONE | PASS | 阶段清单已勾选完毕 / 3/3 (100%) | CHECKLIST_COMPLETE (未等同验收) | 未记录 | 1 | 2026-11-15T04:07:19.729474+00:00 |
 | 02-takeover-report-isolation.md | TODO | UNKNOWN | 对健康卡混合UnicodeError、OSError及发现后删除构造有效断言RED / 0/3 (0%) | red：python -B -m pytest -p no:cacheprovider tests/test_takeover_resilience.py tests/test_task_discovery_compat.py tests/test_cli_compatibility.py tests/test_sync_compatibility.py -q；由同一实现者先取得验收中具体行为断言失败，环境/导入失败不作RED；通过冻结runner。 | 未记录 | 0 | UNKNOWN |
 | 03-native-dispatch-guard.md | TODO | UNKNOWN | 以可控Promise覆盖running/失败/乱序及身份不符，取得断言RED / 0/3 (0%) | red：python -B -m pytest -p no:cacheprovider tests/test_dispatch_guard.py tests/test_deadline_watch.py -q；由同一实现者先取得验收中具体行为断言失败，环境/导入失败不作RED；通过冻结runner。 | 未记录 | 0 | UNKNOWN |
 | 04-navigation-and-support.md | TODO | UNKNOWN | 记录进入当前任务所需的直接文档及原件路径 / 0/3 (0%) | experiment：python -B -m pytest -p no:cacheprovider tests/test_navigation_paths.py tests/test_prompt_sources.py -q；通过冻结runner保留真实退出码，另按本卡验收完成实际消费或实验。 | 未记录 | 0 | UNKNOWN |
