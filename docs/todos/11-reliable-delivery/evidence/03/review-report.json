@@ -1,0 +1,169 @@
+{
+  "kind": "independent-review-record",
+  "candidate": "a7ba3e4d9156af2d05b9605024e041721a268664",
+  "recorded_at": "2026-11-15T04:31:36.496363+00:00",
+  "independent_review": {
+    "candidate": "a7ba3e4d9156af2d05b9605024e041721a268664",
+    "base": "09e916a94aaf90a8281f4ed568beed4a4a4a2816",
+    "prior_candidate": "16640d1e7d83fc546e79e19995a0a91cf80c533e",
+    "reviewer_uuid": "01a1dd74-1002-7902-82f6-7905eee29cbd",
+    "independence": {
+      "statement": "Same independent reviewer resumed solely to review F1/M1 repair and candidate applicability. Previously authored only independent review; no task design, implementation, test authorship, RCA or delegation.",
+      "excluded_implementer": "01a1dd6e-e307-7d53-9be3-0f011688cd30",
+      "distinct": true,
+      "prior_report": "docs/todos/11-reliable-delivery/evidence/03/preliminary-review1.json"
+    },
+    "verdicts": {
+      "scope": "APPROVED",
+      "spec": "APPROVED",
+      "quality": "APPROVED",
+      "overall": "APPROVED"
+    },
+    "findings": [],
+    "rulings": [
+      {
+        "id": "F1",
+        "status": "ADDRESSED",
+        "file": "tests/test_dispatch_guard.py",
+        "line": 47,
+        "evidence": "Two simultaneous guard calls with distinct request IDs, card paths, owner, context, phase and candidate use separately controlled Promises. Second resolves first; asserts zero early callbacks, one after second, order r2/r1, exact request and READY identities, per-call delegation and terminal reference. Final 34-pass runner receipt covers this actual test.",
+        "assessment": "Explicit out-of-order verification gap closed; no new supplemental RED claimed."
+      },
+      {
+        "id": "M1",
+        "status": "ADDRESSED",
+        "file": "references/native_dispatch_adapter.md",
+        "line": 3,
+        "evidence": "Standalone adapter now assigns default instruction integration to task 12 and navigation to 04, consistent with goal and task 04/12 cards.",
+        "assessment": "Frozen task03 historical acceptance still references 04; preserved unchanged. The iteration goal and explicit later-card scopes assign actual integration to 12; future integration is not a present task03 deliverable. Controller ruling was assessed against these authorities, not accepted as a substitute for them."
+      }
+    ],
+    "source_and_chronology": {
+      "original_manifest": "docs/todos/11-reliable-delivery/evidence/03/source-manifest.json",
+      "original_manifest_sha256": "5eaeef8f1d7a09985f7d1d7b823b8d949b8a2b784621b0c3fcc3f08ea81f5a79",
+      "repair_manifest": "docs/todos/11-reliable-delivery/evidence/03/fix1-source-manifest.json",
+      "repair_manifest_sha256": "49ed81e11baeca28d6dd8140554306d05f27f10470b88cb719075250f9bf358f",
+      "mapping": "All six direct repair-manifest SHA256 values independently match C Git blobs and worktree. Original manifest binds C1 source and both retained receipt blobs; guard, note and deadline-watch remain identical at C2, while test and adapter intentionally changed. Both delivery manifest digests match. Raw original RED/GREEN outputs and child receipts, fix final receipt/output/child, native chain and fix native stream independently match C blobs and worktree. Prior report copy is byte-identical.",
+      "original_native_thread": "implementation-native.jsonl thread.started and fix1-native.jsonl thread.started both 01a1dd6e-e307-7d53-9be3-0f011688cd30; fix session completed and no active commands.",
+      "strict_tdd": "Original session events test write -> actual core assertion RED -> production guard write -> GREEN. RED completed with raw exit 1, tree_terminal true, 2 assertion failures/31 passed using explicit nonfunctional test fallback, prior to production. Original guard source is unchanged at C2; core RED remains applicable to that implementation, not a new RED for the supplemental test.",
+      "fix_chronology": "Same implementer wrote supplemental test and adapter correction before frozen runner final. Final receipt started 2026-11-15T04:28:31.358715Z, completed 04:28:33.176413Z, raw exit 0, launcher exit 0 and tree_terminal true; child agrees; raw output 34 passed. checks-proposal-v2 binds original red and identical final two-file GREEN/regression selection. No duplicated suite by reviewer.",
+      "environment": "Linux, maintenance Python 3.11 venv, pytest and Node callback tests; direct unchanged source/dependencies and exact selected inputs bind the final test to C2. These results do not establish Windows or native worker shell success."
+    },
+    "native_consumption": {
+      "source": "docs/todos/11-reliable-delivery/evidence/03/native-codeg-chain.json",
+      "applicability": "Byte-identical to C1, guard source unchanged and SHA bound; observation used BASE as then-current candidate before C1/C2 existed and is not recast as a check at C2.",
+      "order_and_identity": "Same-owner actual frozen CLI check: absolute task/cwd/tool, owner, context, request and candidate identities match; start 1794716607704, terminal exit 0 READY consumed 1794716607879, one Codeg dispatch 1794716607884. Native task c941414c-0691-44bb-886b-c6dd369193ac subsequently queried terminal.",
+      "worker": "Worker reported bwrap cannot mount proc, exit 1, and command never started. Completed native session is not worker success. This task requires actual schema order, not fabricated worker command success.",
+      "boundary": "Guard only governs calls through its entry; callbacks are trusted observation adapters. Binding does not authenticate native origin or context freshness, which controller and reviewer must independently verify."
+    },
+    "scope_receipt": {
+      "path": "build/iter11-review/task03-review3/scope-runner.json",
+      "output": "build/iter11-review/task03-review3/scope-runner.json.output.txt",
+      "child": "build/iter11-review/task03-review3/scope-runner.json.child.json",
+      "result": "Exactly one requested physical frozen scope check completed, raw exit 0, launcher exit 0, tree_terminal true; 56 changed paths in scope, ownership not inferred. Independently inspected C1..C2 changes, original full diff, card and frozen goal: task lifecycle/evidence changes and declared source scope; no frozen acceptance/goal edits. C1 ancestor of C2, C2 actual HEAD, clean tracked worktree, Git default delivery. Frozen coordinator known mode/takeover defects are not used as semantic approval."
+    },
+    "contract_assessment": "Prior review inspected full guard and negative matrix, preserved original contracts and found no other blockers; identical guard and deadline source retain that assessment. READY must match actual request, terminal, argv/cwd and JSON identities; failures do not dispatch; valid READY invokes once; unknown/throw is not retried. No Node API, global scheduler or cross-call cache. New test closes prior explicit missing requirement. Same-owner review dispatch-check READY for C2 is readiness only, not task approval.",
+    "DeferredMinors": [],
+    "limitations": [
+      "Codeg worker shell startup BLOCKED by bwrap; no successful Codeg shell or product command claimed.",
+      "Native order observation bound then-current BASE and exact guard source, not a later C2 dispatch-check.",
+      "Windows execution, full suite, deployment, default workflow integration and whole iteration acceptance are outside this review.",
+      "Frozen task03 wording retains historical task04 reference; task12 owns future default integration under frozen iteration goal and its explicit card."
+    ],
+    "approval_scope": "Independent task03 scope/spec/quality approval of entire candidate a7ba3e4d9156af2d05b9605024e041721a268664 against frozen BASE and goal, including F1/M1 repair and still-applicable original evidence. This does not itself register DONE, provide D/local strict, approve task12 integration, deployment or whole iteration.",
+    "active_commands": false
+  },
+  "originals": {
+    "scope-runner.json.output.txt": {
+      "path": "build/iter11-review/task03-review3/scope-runner.json.output.txt",
+      "sha256": "f2ca2e56372db6ad49e7dad34a8067f99cd3e7cf3657cd395e90e7eb94cdc603"
+    },
+    "review-native.jsonl": {
+      "path": "build/iter11-review/task03-review3/review-native.jsonl",
+      "sha256": "6d6c9dedfda59a429a216f6b93d3b7cbdd3a9ce10ecdc412d2817dc0912e4d10"
+    },
+    "attempt.call.json": {
+      "path": "build/iter11-review/task03-review3/attempt.call.json",
+      "sha256": "7866e47444578fbea57d45cd0f9bf391b9f5cad0785fd3f328ab038d508acb92"
+    },
+    "review-last-message.txt": {
+      "path": "build/iter11-review/task03-review3/review-last-message.txt",
+      "sha256": "80f0d02202eed9ea4e61a1bec8bbcc84071c00868654c74b0d7cce5d4e354b8b"
+    },
+    "terminal.json": {
+      "path": "build/iter11-review/task03-review3/terminal.json",
+      "sha256": "34013282b6b2f82e2f5a5294295f3f73d28e8374f79dc05e74e41bdceaef5a21"
+    },
+    "review-native.stderr.txt": {
+      "path": "build/iter11-review/task03-review3/review-native.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "scope-runner.json": {
+      "path": "build/iter11-review/task03-review3/scope-runner.json",
+      "sha256": "270449bbf6c5ef694d1f8e37cf549e807404ae078e033a6f7ee1168518f24729"
+    },
+    "attempt.json": {
+      "path": "build/iter11-review/task03-review3/attempt.json",
+      "sha256": "e8e29e7f082bdb15f6edc5c6c906700cab93dd2465e2f24d3d19dff333af2cc2"
+    },
+    "dispatch-check.json": {
+      "path": "build/iter11-review/task03-review3/dispatch-check.json",
+      "sha256": "a25fa99e2cb133a06931a00d7772f952b5387728b77f3234830e35b23a7db2a7"
+    },
+    "review-brief.md": {
+      "path": "build/iter11-review/task03-review3/review-brief.md",
+      "sha256": "685c1ae84814739aba12f0c308564390d32565f76e45084364bf613275395acf"
+    },
+    "context.json": {
+      "path": "build/iter11-review/task03-review3/context.json",
+      "sha256": "86b4026483e60e1be2e51e4df31e4ddbaab1767e40b6f053a4c641205c6c703f"
+    },
+    "release.call.json": {
+      "path": "build/iter11-review/task03-review3/release.call.json",
+      "sha256": "0dfb0152b8b54ba6628ccb5882a0ca1bfdbc15513ca0397d149991f54f5e137f"
+    },
+    "scope-runner.json.child.json": {
+      "path": "build/iter11-review/task03-review3/scope-runner.json.child.json",
+      "sha256": "2f8d0d897b584e5b0fd80794b9f0ca43a89573a6b5197b8f689a2657bf8746e6"
+    },
+    "report.json": {
+      "path": "build/iter11-review/task03-review3/report.json",
+      "sha256": "41926b65e425bc51ca51a07502b5d0228710735e2cf4d4f6b19a6175fbaa6001"
+    }
+  },
+  "scope_receipt": {
+    "version": 1,
+    "argv": [
+      "python3",
+      "-B",
+      "/data/workspace/iteration-manager/build/frozen-tools/fdcc4cce8863/scripts/iter_sync.py",
+      "--check-scope",
+      "09e916a94aaf90a8281f4ed568beed4a4a4a2816",
+      "a7ba3e4d9156af2d05b9605024e041721a268664",
+      "docs/todos/11-reliable-delivery/03-native-dispatch-guard.md"
+    ],
+    "cwd": "/data/workspace/iteration-manager/.worktrees/iter-11",
+    "deadline": "2026-11-15T04:34:04.537000+00:00",
+    "cleanup_reserve_seconds": 5,
+    "status": "COMPLETED",
+    "deadline_checked_at": "2026-11-15T04:30:10.663175+00:00",
+    "started_at": "2026-11-15T04:30:10.665496+00:00",
+    "ended_at": "2026-11-15T04:30:10.828538+00:00",
+    "raw_exit_code": 0,
+    "tree_terminal": true,
+    "output": "build/iter11-review/task03-review3/scope-runner.json.output.txt",
+    "container_pid": 3453212,
+    "launcher_exit_code": 0,
+    "command": {
+      "status": "COMPLETED",
+      "raw_exit_code": 0,
+      "started_at": "2026-11-15T04:30:10.665496+00:00",
+      "tree_terminal": true,
+      "deadline_checked_at": "2026-11-15T04:30:10.663175+00:00",
+      "pid": 3453213,
+      "ended_at": "2026-11-15T04:30:10.769878+00:00"
+    },
+    "late_by_seconds": 0
+  },
+  "scope_output": "[IterSync:ScopeFirewall:PASSED] All 56 changed files within declared scope; ownership is not inferred.\n"
+}
