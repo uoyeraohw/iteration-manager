@@ -15,7 +15,7 @@
       "name": "red",
       "kind": "command",
       "command": "/data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B -m pytest -p no:cacheprovider tests/test_dispatch_guard.py tests/test_deadline_watch.py -q --basetemp /tmp/iter11-task03-red-implementer-01",
-      "cwd": "/data/workspace/iteration-manager/.worktrees/iter-11",
+      "cwd": ".",
       "exit_code": 1,
       "summary": "Original core assertion RED reused: 2 failed, 31 passed; test-side nonfunctional fallback.",
       "output": "docs/todos/11-reliable-delivery/evidence/03/red-implementer-01.json.output.txt",
@@ -25,7 +25,7 @@
       "name": "green",
       "kind": "command",
       "command": "/data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B -m pytest -p no:cacheprovider tests/test_dispatch_guard.py tests/test_deadline_watch.py -q --basetemp /tmp/iter11-task03-fix1-final",
-      "cwd": "/data/workspace/iteration-manager/.worktrees/iter-11",
+      "cwd": ".",
       "exit_code": 0,
       "summary": "34 passed, includes supplemental reverse-order overlapping requests.",
       "output": "docs/todos/11-reliable-delivery/evidence/03/fix1-final.json.output.txt"
@@ -34,7 +34,7 @@
       "name": "regression",
       "kind": "command",
       "command": "/data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B -m pytest -p no:cacheprovider tests/test_dispatch_guard.py tests/test_deadline_watch.py -q --basetemp /tmp/iter11-task03-fix1-final",
-      "cwd": "/data/workspace/iteration-manager/.worktrees/iter-11",
+      "cwd": ".",
       "exit_code": 0,
       "summary": "Same final run and selection: 34 passed.",
       "output": "docs/todos/11-reliable-delivery/evidence/03/fix1-final.json.output.txt"
