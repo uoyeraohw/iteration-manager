@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "task_id": "06",
+  "type": "Strict-TDD",
+  "task_path": "docs/todos/11-reliable-delivery/06-installation-provenance.md",
+  "base_sha": "e66841186450dc6bbe138bf77aac87a2a8f1232a",
+  "head_sha": "7e5476c8879edbd45227b82f8189fdf74aab81a9",
+  "contract_sha": "e66841186450dc6bbe138bf77aac87a2a8f1232a",
+  "implementer": "01a1dd8e-8b72-7b72-90b4-a8577ef8db2d",
+  "reviewer": "01a1dd96-f44b-7971-8cc6-9b6de8d5990b",
+  "verdict": "APPROVED",
+  "review_report": "docs/todos/11-reliable-delivery/evidence/06/review-report.json",
+  "checks": [
+    {
+      "name": "red",
+      "kind": "command",
+      "command": "/data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B /data/workspace/iteration-manager/build/frozen-runners/iter11-platform-v1/scripts/iter_run.py --deadline 2026-11-15T04:58:28.789Z --evidence docs/todos/11-reliable-delivery/evidence/06/red-01.json -- /data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B -m pytest -p no:cacheprovider tests/test_install_provenance.py tests/test_cli_compatibility.py -q --basetemp /tmp/iter11-task06-red-01",
+      "cwd": ".",
+      "exit_code": 1,
+      "failure_kind": "assertion",
+      "summary": "原 BASE 的可收集行为断言 RED：22 failed，11 passed；缺失实现使用测试侧惰性适配器。",
+      "output": "docs/todos/11-reliable-delivery/evidence/06/red-01.json.output.txt"
+    },
+    {
+      "name": "green",
+      "kind": "command",
+      "command": "/data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B /data/workspace/iteration-manager/build/frozen-runners/iter11-platform-v1/scripts/iter_run.py --deadline 2026-11-15T05:06:58.030Z --evidence docs/todos/11-reliable-delivery/evidence/06/green-final-03.json -- /data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B -m pytest -p no:cacheprovider tests/test_install_provenance.py tests/test_cli_compatibility.py -q --basetemp /tmp/iter11-task06-green-final-03",
+      "cwd": ".",
+      "exit_code": 0,
+      "summary": "同一原生实现者续接，最终候选 39 passed；进程树终止。",
+      "output": "docs/todos/11-reliable-delivery/evidence/06/green-final-03.json.output.txt"
+    },
+    {
+      "name": "regression",
+      "kind": "command",
+      "command": "/data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B /data/workspace/iteration-manager/build/frozen-runners/iter11-platform-v1/scripts/iter_run.py --deadline 2026-11-15T05:06:58.030Z --evidence docs/todos/11-reliable-delivery/evidence/06/green-final-03.json -- /data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B -m pytest -p no:cacheprovider tests/test_install_provenance.py tests/test_cli_compatibility.py -q --basetemp /tmp/iter11-task06-green-final-03",
+      "cwd": ".",
+      "exit_code": 0,
+      "summary": "复用相同目标与 CLI 兼容范围的最终运行：39 passed；含临时 Git 来源及安装漂移案例。",
+      "output": "docs/todos/11-reliable-delivery/evidence/06/green-final-03.json.output.txt"
+    },
+    {
+      "name": "actual-payload-smoke",
+      "kind": "observation",
+      "summary": "C1真实交付白名单111项；独立临时副本检查退出0，修改SKILL.md后退出2；runner COMPLETED、进程树终态。",
+      "output": "docs/todos/11-reliable-delivery/evidence/06/fix1-real-payload.json.output.txt"
+    }
+  ]
+}
