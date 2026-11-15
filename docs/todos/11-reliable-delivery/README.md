@@ -139,7 +139,7 @@
 <!-- iter:projection -->
 ## 验收事实（阶段比例不是工时）
 
-声明DONE 9/13 · 验收PASS 9/13
+声明DONE 10/13 · 验收PASS 10/13
 
 | 任务 | 声明 | 验收 | 业务阶段 / 清单比例 | 工程阶段 | 阻塞原因 | 累计尝试 | 最后更新 |
 | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -152,7 +152,7 @@
 | 06-installation-provenance.md | DONE | PASS | 阶段清单已勾选完毕 / 3/3 (100%) | CHECKLIST_COMPLETE (未等同验收) | 未记录 | 1 | 2026-11-15T05:12:33.297581+00:00 |
 | 07-portable-test-support.md | DONE | PASS | 阶段清单已勾选完毕 / 3/3 (100%) | CHECKLIST_COMPLETE (未等同验收) | 未记录 | 1 | 2026-11-15T05:25:28.613692+00:00 |
 | 08-approved-chain-benchmark.md | DONE | PASS | 阶段清单已勾选完毕 / 3/3 (100%) | CHECKLIST_COMPLETE (未等同验收) | 未记录 | 0 | 2026-11-15T05:33:41.520933+00:00 |
-| 09-proportional-refactor-evidence.md | TODO | UNKNOWN | 用两种真实新卡规划样例确认当前成本与指标匹配问题 / 0/3 (0%) | experiment：python -B -m pytest -p no:cacheprovider tests/test_refactor_evidence_policy.py tests/test_template_generation.py tests/test_task_card_schema.py tests/test_completion_gates.py -q；通过冻结runner保留真实退出码，另按本卡验收完成实际消费或实验。 | 未记录 | 0 | UNKNOWN |
+| 09-proportional-refactor-evidence.md | DONE | PASS | 阶段清单已勾选完毕 / 3/3 (100%) | CHECKLIST_COMPLETE (未等同验收) | 未记录 | 0 | 2026-11-15T05:39:34.550878+00:00 |
 | 10-integration-fault-paths.md | TODO | UNKNOWN | 复用成熟夹具定义最少跨模块断言 / 0/3 (0%) | experiment：python -B -m pytest -p no:cacheprovider tests/test_self_hosting.py tests/test_execution_readiness.py tests/test_autonomy.py tests/test_checkpoint_resume.py -q；通过冻结runner保留真实退出码，另按本卡验收完成实际消费或实验。 | 未记录 | 0 | UNKNOWN |
 | 11-native-self-use-audit.md | TODO | UNKNOWN | 从Controller来源指针中选择一条完成链和一次正常续接 / 0/3 (0%) | experiment：python -B docs/todos/11-reliable-delivery/evidence/11/audit_native_chain.py --sources docs/todos/11-reliable-delivery/evidence/planning/native-source-index.json --output docs/todos/11-reliable-delivery/evidence/11/robustness-report.json；缺原件返回2不补造，通过冻结runner。 | 未记录 | 0 | UNKNOWN |
 | 12-workflow-sequence.md | TODO | UNKNOWN | 核对三种流程场景及权威来源 / 0/3 (0%) | experiment：python -B -m pytest -p no:cacheprovider tests/test_workflow_sequence.py tests/test_prompt_sources.py tests/test_task_card_schema.py -q；通过冻结runner保留真实退出码，另按本卡验收完成实际消费或实验。 | 未记录 | 0 | UNKNOWN |
