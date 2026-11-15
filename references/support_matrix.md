@@ -1,0 +1,21 @@
+# 支持矩阵：2026-11-15 源码观察快照
+
+本矩阵是工作树 BASE `bfeabf74937e4e36ce04da9082ef312ba572806c` 上的观察，不是安装版本或未来任务的结果。`SOURCE` 为合同/源码支持，`TESTED` 为限定环境实测，`APPROVED` 为指定候选独审，`HISTORICAL` 为历史观察，`UNKNOWN` 为未证实，`BLOCKED` 为实际阻断，`UNSUPPORTED` 为合同明确不支持。状态不相互替代；每行的限制包含适用边界和补齐责任。
+
+| capability | platform | host | status | observed_at | source_candidate | evidence | limitation |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| 只读查询 | Linux / Windows | Python CLI | SOURCE; TESTED 限定环境 | 2026-11-15 | bfeabf74937e4e36ce04da9082ef312ba572806c | [查询层](../scripts/iter_queries.py), [维护基线](../docs/todos/11-reliable-delivery/00-linux-runner-and-dev-guide.md) | 查询与正式命令树是不同能力；环境owner须在目标平台运行具体查询并保存输出，不据此推断runner或宿主可用。 |
+| Linux正式runner | Linux | Native Codex CLI / Python 3.11.17 | APPROVED; TESTED | 2026-11-15 | 3f949f807d3c2eb47b97a116bd6932da55778edd | [C2独审](../docs/todos/11-reliable-delivery/evidence/00/review-report.json), [命令合同](checkpoint_execution.md) | 平台快照六文件来自C2；环境owner须检查subreaper、proc、pidfd及实际收据；不是安装或Windows通过。 |
+| Linux维护全量基线 | Linux | Python 3.11.17 / pytest 9.2.0 / MCP 1.30.0 | TESTED; 复用适用性 APPROVED | 2026-11-15 | 48e731ed266a35c06c9146aff9eaaf866c3a2e3f | [原始收据](../build/iter11-platform-baseline/python311-mcp1-full.json), [原始输出](../build/iter11-platform-baseline/python311-mcp1-full.json.output.txt), [C3复审](../docs/todos/11-reliable-delivery/evidence/00/review-report-v2.json) | 513 passed、2 Windows skip；仅该环境及当时产品/测试源码，C3复审确认相关源码不变并允许复用。环境owner在其他候选或环境须重新核对适用性；不是本卡全量实测。 |
+| Windows正式runner | Windows | Python / Job Object | HISTORICAL; 当前 UNKNOWN | 2026-11-14 | 26652bad2fcfb7c883d8e9a8bcad4aeb96160816 | [Windows发布原件](../docs/releases/iteration10-20261114/README.md), [命令合同](checkpoint_execution.md) | 历史主干493 passed，具体发布环境；本Linux会话未重跑Windows。Windows环境owner须在目标版本执行Job Object及命令树终态测试并保留收据，才能声明当前通过。 |
+| Git批准链 | Linux | Native Codex CLI / 冻结协调器 | SOURCE; TESTED 限本轮已登记卡 | 2026-11-15 | bfeabf74937e4e36ce04da9082ef312ba572806c | [任务卡合同](task_card_schema.md), [任务00](../docs/todos/11-reliable-delivery/00-linux-runner-and-dev-guide.md) | C独审、D登记及strict须逐卡核对；控制者对本卡及整轮取得独立审查和对应strict，不能以已有卡批准替代。 |
+| Codeg原生派发与worker | Linux | Codeg MCP / worker shell | 调用成功; BLOCKED worker | 2026-11-15 | 09e916a94aaf90a8281f4ed568beed4a4a4a2816 | [任务03原生链](../docs/todos/11-reliable-delivery/evidence/03/native-codeg-chain.json) | READY后调用一次成功；worker的bwrap挂载proc被拒，命令未执行，completed不等于通过。环境owner修复启动条件，控制者重新取得真实命令及终态证据后才能判断链可用。 |
+| FS本地绑定与正常交接 | 跨平台合同；夹具及历史现场 | Python CLI | SOURCE; HISTORICAL 限定 | 2026-11-15 | bfeabf74937e4e36ce04da9082ef312ba572806c | [FS合同](task_card_schema.md), [检查点合同](checkpoint_execution.md), [FS历史决定](../.agents/notes/implemented/architecture/2026-11-12-filesystem-delivery.md) | 合法profile下本地绑定与正常release/claim；不替代Git分支或全局strict。消费者须核对profile、冻结和实际收据；环境owner须在目标环境验证。 |
+| FS时间中断grant | 所有平台 | resume-checkpoint | UNSUPPORTED | 2026-11-15 | bfeabf74937e4e36ce04da9082ef312ba572806c | [检查点合同](checkpoint_execution.md) | 当前grant仅Git，FS即使在Git仓库也拒绝。控制者保持阻断；产品owner须授权并制定FS恢复方案，实施、独审及目标环境验证后才能改变结论。 |
+| FS完整外部业务生命周期 | 未指定 | 外部业务 | UNKNOWN | 2026-11-14 | 26652bad2fcfb7c883d8e9a8bcad4aeb96160816 | [发布限制](../docs/releases/iteration10-20261114/README.md) | 合成和历史本地样例不证明完整外部业务；业务owner须提供真实目标、授权、原始全生命周期及独立验收。 |
+| 显式安装根消费 | Windows | Codex / Antigravity | HISTORICAL TESTED | 2026-11-14 | 26652bad2fcfb7c883d8e9a8bcad4aeb96160816 | [发布与消费原件](../docs/releases/iteration10-20261114/README.md) | 两个新会话显式消费当时独立副本；不证明当前Linux安装采用本候选。部署owner须获授权、核验清单与目标，再由新会话实际消费。 |
+| Linux安装路径关系 | Linux | Codex / Gemini / Codeg | OBSERVED | 2026-11-15 | UNKNOWN | [本机观察](../docs/todos/11-reliable-delivery/evidence/00/slice-a-install-path-observation.json) | Codex与Gemini链接到Codeg目录；这不是历史Windows独立副本，也不证明当前候选已安装。部署owner须比对实际manifest及新会话消费。 |
+| Gemini CLI自动发现和配置注入 | Windows / Linux | Gemini CLI | UNKNOWN | 2026-11-14 | 26652bad2fcfb7c883d8e9a8bcad4aeb96160816 | [发布限制](../docs/releases/iteration10-20261114/README.md) | Antigravity显式消费Gemini副本不证明Gemini CLI发现或注入；宿主owner须在目标版本新会话记录原生发现和配置注入结果。 |
+| 当前新安装与消费 | Linux | 任意宿主 | UNKNOWN | 2026-11-15 | bfeabf74937e4e36ce04da9082ef312ba572806c | [发布范围](../docs/releases/iteration10-20261114/README.md) | 本任务没有部署；部署owner另获授权后核验实际清单、落盘及原生新会话。 |
+
+上述本地相对链接在维护仓库中解析；历史发布原件、任务卡及build原件不属于既有安装白名单，安装包中这些链接可能缺失，不能假称安装副本包含完整证据快照。消费者应从维护仓库或单独保存的原始证据读取；部署owner如需可离线审计，须另获授权提供证据包。结构测试不代替事实复核或新会话消费。

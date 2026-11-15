@@ -1,0 +1,12 @@
+已完成 task05 只读语义消费，并写入唯一证据文件 [support-consumption.json](/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/05/support-consumption.json)。本会话的 `CODEX_THREAD_ID` 为 `01a1dd86-9427-7f93-a004-2ce8b0d74ac7`。
+
+主要结论：
+
+- Linux 查询证据不足以证明 runner。2026-11-15 独审批准的是 C2 `3f949f807d3c2eb47b97a116bd6932da55778edd` 的 Linux 范围；六文件冻结快照来自该候选。独立定向验证使用 Python 3.13.5；另一次 Python 3.11.17 全量基线在 `48e731ed266a35c06c9146aff9eaaf866c3a2e3f` 上取得 513 passed、2 Windows skips。当前矩阵 BASE 与这些源码的逐字节对应关系未由本次独立核验。
+- 当前 Windows 通过情况为 **UNKNOWN**。493 passed 是 2026-11-14 候选 `26652bad2fcfb7c883d8e9a8bcad4aeb96160816` 的历史结果；当前 Linux 会话没有重跑 Windows Job。
+- Codeg 的历史原生调用成功，但 worker shell 因 `bwrap` 无法挂载 `/proc` 而未启动命令，故该观察为 **BLOCKED**。
+- FS 正常交接不证明时间中断恢复：FS 使用 Git interruption grant 明确 **UNSUPPORTED**；完整外部 FS 业务生命周期仍为 **UNKNOWN**。
+- Antigravity 显式消费 Gemini 副本没有证明 Gemini CLI 自动发现或配置注入，两者均为 **UNKNOWN**。当前工作树候选是否已安装并被新会话消费也为 **UNKNOWN**。
+
+证据文件记录了各缺口的责任角色、补证条件和原始来源。矩阵在上述限定范围内未发现具体的无证支持声明；本次结果不是独立审查或批准。未运行测试，未进行 Git、部署或委派操作；返回时没有活动命令。
+

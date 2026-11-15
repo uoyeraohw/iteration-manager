@@ -1,0 +1,7 @@
+{
+  "path": "docs/todos/11-reliable-delivery/05-support-matrix.md",
+  "observed_original_sha256": "eaa6a520fed585fa31bd239875b83a9dda9aaae943e0e5595f7dbc62bd33d896",
+  "current_sha256": "7047148429c5a3cfe4ab78757a8c7863b66507d794ad207f5a67b23e8740be22",
+  "normalized_contract_matches_base": true,
+  "reason": "Controller events changed allowed execution metadata after implementation manifest; raw manifest preserved."
+}

@@ -1,0 +1,32 @@
+{
+  "sha256": {
+    "references/support_matrix.md": "7e258e2d07332ab0f192c05ce83b1ecc4f3ad65503d487f931a496aa07593e55",
+    "references/release_status.md": "d16b46bd66d661d2ada48ce257efbbfba30c235acd6b387a3490f994437a18e9",
+    "tests/test_support_matrix.py": "dad8f83783059651bd084a2ba92889827ccf6db2155a7dd77f706cc4283cfab0",
+    ".agents/notes/planned/iter11/05-support-matrix.md": "af58a6404dc211ff469a0229d5824aa4863032d6db5190c9ba534b471708d31d",
+    "SKILL.md": "a6a93c464effecb00a328129befcf933336f24ed45434f473494db751028ecfb",
+    "AGENTS.md": "555ab375fd436c0bbd0dce948ad782d28b191bb2a9eedac42652b4603706a112",
+    "references/agent_protocol.md": "bd77cadd4718448eafca867bbad264bba349fcbf2b6b576c3476fb7052c5441a",
+    "references/task_card_schema.md": "b3ae5d59850d0a0e8bc3b66797fe23535103f762d6c996192aa447c13c07c44c",
+    "references/checkpoint_execution.md": "20e2150b71afa5b87893458db9c5610d8b144b38b6dc3a3260b5b66c21e2082a",
+    "references/native_dispatch_adapter.md": "903a0474367ede6627cbea234377f855c4383c6888c61dd028806bdbd94aa355",
+    "templates/contracts/spike_discovery_contract.md": "be7abd863d7e6d7465ffc3d6a99d5d129771cb59386dbf14330413f855f5df47",
+    "scripts/iter_queries.py": "02b0982e8d247e2fbc18b6c247a01e4e9a9e2eeefb60b6cb904b5c85340f7fef",
+    "scripts/iter_cli.py": "cb18b63af85ef4c0f572764e6f1dabd9a3b6d2bd1b6e32bd4f0b2fa12a0833c1",
+    "tests/test_release_index.py": "60c0a1c192ce9dce413e9b4562482a9d5678e74ce9e2dbb3ac5a9c8cfd897372",
+    "docs/todos/11-reliable-delivery/README.md": "c771c4d2cd7d9eec0246d8d6d66fc2f2d27b595e439b126f0cead2c4a9354629",
+    "docs/todos/11-reliable-delivery/05-support-matrix.md": "eaa6a520fed585fa31bd239875b83a9dda9aaae943e0e5595f7dbc62bd33d896",
+    "docs/todos/11-reliable-delivery/00-linux-runner-and-dev-guide.md": "a734b68f46a73dccdd8485a36f09edbd62b95bcc4ef3c9e2f1f30d887d86a519",
+    "docs/todos/11-reliable-delivery/evidence/00/review-report.json": "85241ae43c3f24fefb145cdfe45584b1c17c45706c16feca12803fbb04910b8d",
+    "docs/todos/11-reliable-delivery/evidence/00/review-report-v2.json": "7028d5c52d93c07c429c928ea1eafe2ed627d2b6526b2567959d834f9cd28ae1",
+    "docs/todos/11-reliable-delivery/evidence/00/slice-a-install-path-observation.json": "f181e77bbb17c294f8bc2002b602716c87f27dd595f3fa2addd1bab465765b74",
+    "docs/todos/11-reliable-delivery/evidence/03/native-codeg-chain.json": "852363a6fd5c8f018028030bc02002d48f955bcc241bf8b087b9147c0e8a4ce4",
+    "docs/releases/iteration10-20261114/README.md": "7ddf4c4318b13b140ea1a60a0c19ab146e4dbf79ee10aab6bbe79d155d22a10c",
+    "docs/releases/iteration10-20261114/evidence/main-tests.json": "780b89a864bd0a894abe694a3fe68561a27bb10dc77604b1fb7f6993d79545a1",
+    "docs/releases/iteration10-20261114/evidence/main-tests.json.output.txt": "09725699faacecd8db3dd0d49f6fcd6d4d043280b384369e07b3ffa8d712ee6b",
+    ".agents/notes/implemented/architecture/2026-11-12-filesystem-delivery.md": "10609225ffe6e21a726c5ff15727cf942d6c2ab16b4dbb022e1cfd92c664cda8",
+    ".agents/notes/implemented/bug-fix/2026-11-12-filesystem-r7-acceptance-repair.md": "54eff691fdcc66b1a5edb89d5951002520a62d144991ae8fb68ddf4f43b790db",
+    "build/iter11-platform-baseline/python311-mcp1-full.json": "1b8cf88ae73a2e5cd3cd9ddf4354cafd3f6a39b1a82d5105b8b1f4f9be6b1453",
+    "build/iter11-platform-baseline/python311-mcp1-full.json.output.txt": "d2087f31ab6cfdf5d37ed09ac7c2c77ee6df79133e8dd13da1e824621e7229d9"
+  }
+}

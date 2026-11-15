@@ -1,0 +1,122 @@
+{
+  "kind": "native-read-only-support-matrix-consumption",
+  "consumer_role": "fresh native semantic consumer; not independent reviewer or implementer",
+  "CODEX_THREAD_ID": "01a1dd86-9427-7f93-a004-2ce8b0d74ac7",
+  "observed_at_utc": "2026-11-15T04:46:21.797955+00:00",
+  "matrix_source": "references/support_matrix.md",
+  "matrix_observed_at": "2026-11-15",
+  "matrix_base": "bfeabf74937e4e36ce04da9082ef312ba572806c",
+  "read_paths": [
+    "~/MACHINE.md",
+    "/data/home/.codex/skills/using-superpowers/SKILL.md",
+    "/data/home/.codex/memories/MEMORY.md (targeted search)",
+    "SKILL.md",
+    "references/support_matrix.md",
+    "references/agent_protocol.md (targeted)",
+    "references/task_card_schema.md (targeted)",
+    "references/checkpoint_execution.md (targeted)",
+    "docs/todos/11-reliable-delivery/00-linux-runner-and-dev-guide.md (targeted)",
+    "docs/todos/11-reliable-delivery/evidence/00/review-report.json",
+    "docs/todos/11-reliable-delivery/evidence/00/review-report-v2.json",
+    "docs/todos/11-reliable-delivery/evidence/00/fix2-source-manifest.json",
+    "docs/todos/11-reliable-delivery/evidence/00/slice-a-install-path-observation.json",
+    "docs/todos/11-reliable-delivery/evidence/03/native-codeg-chain.json",
+    "build/iter11-platform-baseline/python311-mcp1-full.json",
+    "build/iter11-platform-baseline/python311-mcp1-full.json.child.json",
+    "build/iter11-platform-baseline/python311-mcp1-full.json.output.txt (tail)",
+    "build/iter11-review/review2/independent-runner.json",
+    "/data/workspace/iteration-manager/build/frozen-runners/iter11-platform-v1/manifest.json",
+    ".agents/notes/implemented/architecture/2026-11-12-filesystem-delivery.md (targeted)",
+    "docs/releases/iteration10-20261114/README.md (targeted)",
+    "docs/releases/iteration10-20261114/evidence/main-tests.json",
+    "docs/releases/iteration10-20261114/evidence/gemini-session-native.json",
+    "docs/todos/11-reliable-delivery/evidence/05/consumer-scenario.md (after independent answers)"
+  ],
+  "answers": [
+    {
+      "question": "Does Linux query evidence prove Linux runner?",
+      "answer": "No. Query behavior and command-tree supervision are separate. Runner approval and execution depend on task00 evidence, not the query row.",
+      "evidence": [
+        "references/support_matrix.md",
+        "docs/todos/11-reliable-delivery/evidence/00/review-report.json"
+      ],
+      "role_and_condition": "Environment owner checks actual target Linux subreaper, /proc, pidfd and command receipt; applicable candidate and environment must be established."
+    },
+    {
+      "question": "What runner source and environment was tested?",
+      "answer": "C2 3f949f807d3c2eb47b97a116bd6932da55778edd was independently approved 2026-11-15 for task00 Linux scope. The frozen platform snapshot contains six same-C2 files: iter_checkpoint.py, iter_contracts.py, iter_filesystem.py, iter_linux_job.py, iter_run.py, iter_win_job.py. Independent targeted runner verification used Python 3.13.5 and recorded 30 passed, 2 Windows skips, exit 0 and tree terminal. Separately the full baseline used source/test candidate 48e731ed266a35c06c9146aff9eaaf866c3a2e3f, Python 3.11.17, pytest 9.2.0, MCP 1.30.0 and external /tmp basetemp; 513 passed, 2 Windows skips, exit 0 and tree terminal. C3 8fa3dd83721d331d498c5dbd7ca8a3a70eb4e877 review checked six-file equality to C2 and baseline product/test source applicability to C3. The baseline is not a new full test of this matrix candidate; exact bfe source equivalence is not independently checked here.",
+      "evidence": [
+        "docs/todos/11-reliable-delivery/evidence/00/review-report.json",
+        "docs/todos/11-reliable-delivery/evidence/00/review-report-v2.json",
+        "/data/workspace/iteration-manager/build/frozen-runners/iter11-platform-v1/manifest.json",
+        "build/iter11-review/review2/independent-runner.json",
+        "build/iter11-platform-baseline/python311-mcp1-full.json",
+        "build/iter11-platform-baseline/python311-mcp1-full.json.output.txt"
+      ],
+      "role_and_condition": "Environment owner must verify snapshot applicability and target platform capabilities; independent review is tied to its named candidate, not automatic approval of the whole current worktree."
+    },
+    {
+      "question": "Is current Windows proved?",
+      "answer": "UNKNOWN for current candidate. Historical Windows release 2026-11-14 candidate 26652bad2fcfb7c883d8e9a8bcad4aeb96160816 recorded 493 passed, raw exit 0 and tree terminal. Linux task00 skips Windows tests and does not rerun Windows Job.",
+      "evidence": [
+        "docs/releases/iteration10-20261114/README.md",
+        "docs/releases/iteration10-20261114/evidence/main-tests.json",
+        "docs/todos/11-reliable-delivery/evidence/00/review-report.json"
+      ],
+      "role_and_condition": "Windows environment owner runs target-version Job Object and command-tree terminal checks and retains raw receipts."
+    },
+    {
+      "question": "Is Codeg worker shell usable here?",
+      "answer": "BLOCKED in observed native attempt 2026-11-15 at candidate 09e916a94aaf90a8281f4ed568beed4a4a4a2816. READY check was completed and dispatch call succeeded, but worker shell failed with bwrap: Can't mount proc on /proc: Operation not permitted, exit 1; command did not start. Native session completed is not successful command execution.",
+      "evidence": [
+        "docs/todos/11-reliable-delivery/evidence/03/native-codeg-chain.json"
+      ],
+      "role_and_condition": "Environment owner repairs launch conditions; controller obtains fresh actual command and terminal evidence before claiming usability."
+    },
+    {
+      "question": "Does normal filesystem release prove interruption Git grant or full business lifecycle?",
+      "answer": "No. Normal release/claim is a distinct handoff. FS time-interruption resume grant is UNSUPPORTED, even inside a Git repository; checkpoint contract only authorizes Git clean-HEAD grant. Full external FS business lifecycle remains UNKNOWN; historical local sample and synthetic checks are not full external business acceptance.",
+      "evidence": [
+        "references/checkpoint_execution.md",
+        "references/task_card_schema.md",
+        ".agents/notes/implemented/architecture/2026-11-12-filesystem-delivery.md",
+        "docs/releases/iteration10-20261114/README.md"
+      ],
+      "role_and_condition": "Controller keeps interruption blocked; product owner authorizes and defines an FS recovery solution, then implementation, independent review and target-environment validation are required. Business owner provides authorized real target, raw lifecycle evidence and independent acceptance."
+    },
+    {
+      "question": "Does Gemini replica consumption prove Gemini CLI discovery or configuration injection?",
+      "answer": "No. On 2026-11-14 Antigravity explicitly consumed the Windows Gemini replica of release 26652bad2fcfb7c883d8e9a8bcad4aeb96160816. Gemini CLI native auto-discovery and configuration injection are UNKNOWN. Linux observation of Codex and Gemini links to the Codeg directory does not prove either behavior.",
+      "evidence": [
+        "docs/releases/iteration10-20261114/README.md",
+        "docs/releases/iteration10-20261114/evidence/gemini-session-native.json",
+        "docs/todos/11-reliable-delivery/evidence/00/slice-a-install-path-observation.json"
+      ],
+      "role_and_condition": "Host owner records native discovery and injected configuration in a fresh session on the target host and version."
+    },
+    {
+      "question": "Is current worktree deployed, installed and consumed?",
+      "answer": "UNKNOWN as to candidate adoption; no deployment or installation performed in this consumption. Historical 2026-11-15 path observation says deployed false and establishes topology only. Historic Windows release and prior installed directory do not prove this candidate installed or newly consumed.",
+      "evidence": [
+        "docs/todos/11-reliable-delivery/evidence/00/slice-a-install-path-observation.json",
+        "references/support_matrix.md",
+        "docs/releases/iteration10-20261114/README.md"
+      ],
+      "role_and_condition": "Deployment owner obtains separate authorization, compares candidate and actual installation manifest, records deployment and then native fresh-session consumption."
+    }
+  ],
+  "scenario_comparison": "Read after forming the answers: scenario expectations agree at the stated scope. Its current-runner wording should be read as the named approved C2 snapshot and applicable baseline, not proof that arbitrary current worktree or installation is identical.",
+  "conclusion": "Semantic boundaries in the matrix are supported for the cited observations; no concrete unproven support claim identified within those boundaries. Exact current bfe runner byte equivalence and current target capabilities were not independently checked, so current deployment, host operation and whole-task approval remain unproved. This is not independent review or approval.",
+  "limits": [
+    "No tests run, no Git operations, deployment, push, merge, cleanup or delegation.",
+    "Only this evidence file is authorized to be written.",
+    "Source and status are dated observations, not universal platform guarantees.",
+    "The task03 READY/dispatch record is historical evidence, not a claim that this consumer personally performed a dispatch-check.",
+    "A first attempted relative read of build/frozen-runners/iter11-platform-v1/manifest.json failed; actual manifest is under the main checkout absolute build path."
+  ],
+  "requested_at": "2026-11-15T04:45:46.786Z",
+  "leaf_deadline": "2026-11-15T04:48:46.786Z",
+  "cancel_at": "2026-11-15T04:48:36.786Z",
+  "hard_deadline": "2026-11-15T04:50:16.786Z",
+  "command_cutoff": "2026-11-15T04:47:46.786Z"
+}
