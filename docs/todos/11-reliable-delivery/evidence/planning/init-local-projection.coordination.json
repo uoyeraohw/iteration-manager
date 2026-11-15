@@ -1,0 +1,20 @@
+{
+  "kind": "initialization-coordination",
+  "coordination_only": true,
+  "product_verification": false,
+  "argv": [
+    "/usr/bin/python3",
+    "-B",
+    "/data/workspace/iteration-manager/build/frozen-tools/fdcc4cce8863/scripts/iter_sync.py",
+    "--local",
+    "/data/workspace/iteration-manager/docs/todos/11-reliable-delivery"
+  ],
+  "cwd": "/data/workspace/iteration-manager",
+  "started_at": "2026-11-14T17:07:22.336593+00:00",
+  "ended_at": "2026-11-14T17:07:22.484671+00:00",
+  "exit_code": 0,
+  "stdout": "docs/todos/11-reliable-delivery/evidence/planning/init-local-projection.stdout.txt",
+  "stderr": "docs/todos/11-reliable-delivery/evidence/planning/init-local-projection.stderr.txt",
+  "expected_exit_code": 0,
+  "observed_as_expected": true
+}

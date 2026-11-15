@@ -1,0 +1,61 @@
+{
+  "kind": "iteration-initialization-verification",
+  "verified_at": "2026-11-14T17:16:19.472581+00:00",
+  "baseline": "fdcc4cce88635ee81573be5991de11de650659d8",
+  "iteration": "11-reliable-delivery",
+  "planning_quality": {
+    "result": "PASS",
+    "cards": 12,
+    "model": "jev-1.14.0",
+    "minimum_total": 80.10000000000001,
+    "maximum_total": 91.925,
+    "all_dimensions_at_least": 70,
+    "requests_preserved": 4,
+    "design_revisions": 2,
+    "fourth_call": "factual native-capability correction"
+  },
+  "artifacts": {
+    "cards": 12,
+    "initial_status": "TODO",
+    "review_status": "PENDING",
+    "tdd_verified": false,
+    "source_scope_overlap": false,
+    "dependencies_acyclic": true,
+    "opinions_covered": 8,
+    "new_card_cli_prechecks": 14,
+    "coordinator_files": 91,
+    "local_links_checked": 28
+  },
+  "coordination": {
+    "commands": 19,
+    "all_observed_as_expected": true,
+    "inventory_readiness": "BLOCKED",
+    "inventory_exit": 3,
+    "planning_commit_gate_exit": 2,
+    "attempts": 0
+  },
+  "capabilities": {
+    "codeg_tool_schemas": "EXPOSED",
+    "codeg_target_execution": "UNVERIFIED",
+    "windows_formal_runner_on_current_linux": "BLOCKED"
+  },
+  "whitespace": {
+    "preserved_root_style": "CRLF",
+    "default_check_exit": 2,
+    "default_output": "docs/todos/README.md:13: trailing whitespace.\n+- [迭代11：可信路径一致性、使用成本与真实自用验证（12卡TODO，规划TypeSafe通过，未提交/未实施）](11-reliable-delivery/README.md)\ndocs/todos/README.md:22: trailing whitespace.\n+声明DONE 6/18 · 验收PASS 6/18\ndocs/todos/README.md:36: trailing whitespace.\n+| 11-reliable-delivery | 0/12 | 0/12 | PENDING |\n",
+    "style_aware_check_exit": 0,
+    "note": "Original index uses CRLF; scoped cr-at-eol validation preserves that format without repository config changes."
+  },
+  "product_tests_run": false,
+  "product_acceptance": "NOT_EVALUATED",
+  "independent_product_approval": false,
+  "git_commit_performed": false,
+  "worktree_created": false,
+  "deployment_performed": false,
+  "outstanding": [
+    "产品执行/Git与Worktree授权在启动时核对",
+    "提交规划并通过verify-committed",
+    "提供同候选Windows正式runner环境",
+    "实测Codeg目标工作区、原生链及独审能力"
+  ]
+}

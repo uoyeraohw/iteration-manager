@@ -1,0 +1,36 @@
+{
+  "version": 1,
+  "task_id": "09",
+  "iteration": "11-reliable-delivery",
+  "task_name": "使新重构任务的量测匹配实际目标",
+  "type": "Spike-Discovery",
+  "delivery_mode": "git",
+  "objective": "为未来行为保持型重构与性能优化提供两套可消费规划说明：前者量测与结构目标相关的客观指标，后者量测性能；保留四type及既有五项检查，不追溯降低旧卡门禁。",
+  "consumes": "现有Refactor-Benchmark五项TYPE_CHECKS与schema1；既有合成量测限制；render_task_card(spec)及模板消费路径。08批准库存量测结果完成后交叉核对，不是本卡的硬依赖。",
+  "produces": "references/refactor_evidence.md的两类目标/指标/证据选择规则；templates/contracts/refactor_benchmark_contract.md与scripts/iter_templates.py生成说明一致；verification键集不变，不加第五type或必填元数据。",
+  "scope": [
+    "templates/contracts/refactor_benchmark_contract.md",
+    "references/refactor_evidence.md",
+    "scripts/iter_templates.py",
+    "tests/test_template_generation.py",
+    "tests/test_refactor_evidence_policy.py",
+    ".agents/notes/planned/iter11/09-proportional-refactor-evidence.md",
+    "docs/todos/11-reliable-delivery/evidence/09/"
+  ],
+  "stages": [
+    "用两种真实新卡规划样例确认当前成本与指标匹配问题",
+    "更新目标对应的证据规则和生成说明",
+    "实际生成及新会话消费两类样例，核对旧卡要求保持"
+  ],
+  "acceptance": [
+    "行为保持型新任务仍有基线/兼容/回归/独审；benchmark_before/after可测任务约定的依赖数、重复入口数等可重复结构指标，无性能目标时不强制延迟/吞吐提升。",
+    "性能优化型明确同环境/规模/命令/单位与目标，仍要求真实Before/After性能证据；不以结构指标替代既定性能目标。",
+    "四type、schema1、五项检查名与收据绑定保持；既有卡、冻结规格及本轮07的Before/After要求不修改，不把未知指标当无须验证。",
+    "两种spec均经实际生成/预检；缺baseline、regression或任一既定检查仍拒绝。模板结构检查与真实助手是否选对指标分别留证。"
+  ],
+  "verification": {
+    "experiment": "python -B -m pytest -p no:cacheprovider tests/test_refactor_evidence_policy.py tests/test_template_generation.py tests/test_task_card_schema.py tests/test_completion_gates.py -q；通过冻结runner保留真实退出码，另按本卡验收完成实际消费或实验。",
+    "decision": "在本卡ledger及独立报告记录实测结论、限制、来源和取舍；未知保持UNKNOWN/BLOCKED，不以结构检查代替语义验收。",
+    "interfaces": "references/refactor_evidence.md的两类目标/指标/证据选择规则；templates/contracts/refactor_benchmark_contract.md与scripts/iter_templates.py生成说明一致；verification键集不变，不加第五type或必填元数据。；核对消费者与现有合同兼容，冻结可复查产物。"
+  }
+}

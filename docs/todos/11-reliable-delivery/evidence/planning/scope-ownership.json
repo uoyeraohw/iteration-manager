@@ -1,0 +1,156 @@
+[
+  {
+    "task_id": "01",
+    "paths": [
+      "scripts/iter_contracts.py",
+      "scripts/iter_queries.py",
+      "scripts/iter_preflight.py",
+      "tests/test_delivery_mode_consistency.py",
+      "tests/test_query_contract.py",
+      "tests/test_execution_readiness.py",
+      ".agents/notes/planned/iter11/01-delivery-mode-consistency.md",
+      "docs/todos/11-reliable-delivery/evidence/01/"
+    ],
+    "dependencies": []
+  },
+  {
+    "task_id": "02",
+    "paths": [
+      "scripts/iter_cli.py",
+      "tests/test_takeover_resilience.py",
+      "tests/test_task_discovery_compat.py",
+      "tests/test_cli_compatibility.py",
+      ".agents/notes/planned/iter11/02-takeover-report-isolation.md",
+      "docs/todos/11-reliable-delivery/evidence/02/"
+    ],
+    "dependencies": []
+  },
+  {
+    "task_id": "03",
+    "paths": [
+      "scripts/dispatch_guard.js",
+      "references/native_dispatch_adapter.md",
+      "tests/test_dispatch_guard.py",
+      ".agents/notes/planned/iter11/03-native-dispatch-guard.md",
+      "docs/todos/11-reliable-delivery/evidence/03/"
+    ],
+    "dependencies": [
+      "01"
+    ]
+  },
+  {
+    "task_id": "04",
+    "paths": [
+      "SKILL.md",
+      "templates/iteration_readme.md",
+      "tests/test_navigation_paths.py",
+      ".agents/notes/planned/iter11/04-navigation-paths.md",
+      "docs/todos/11-reliable-delivery/evidence/04/"
+    ],
+    "dependencies": []
+  },
+  {
+    "task_id": "05",
+    "paths": [
+      "references/support_matrix.md",
+      "references/release_status.md",
+      "tests/test_support_matrix.py",
+      ".agents/notes/planned/iter11/05-support-matrix.md",
+      "docs/todos/11-reliable-delivery/evidence/05/"
+    ],
+    "dependencies": []
+  },
+  {
+    "task_id": "06",
+    "paths": [
+      "scripts/iter_install.py",
+      "references/installation_verification.md",
+      "tests/test_install_provenance.py",
+      ".agents/notes/planned/iter11/06-installation-provenance.md",
+      "docs/todos/11-reliable-delivery/evidence/06/"
+    ],
+    "dependencies": []
+  },
+  {
+    "task_id": "07",
+    "paths": [
+      "tests/support/",
+      "tests/test_board_handoff.py",
+      "tests/test_harness_portability.py",
+      ".agents/notes/planned/iter11/07-portable-test-support.md",
+      "docs/todos/11-reliable-delivery/evidence/07/"
+    ],
+    "dependencies": []
+  },
+  {
+    "task_id": "08",
+    "paths": [
+      "tests/benchmarks/",
+      "tests/test_approval_benchmark_fixture.py",
+      ".agents/notes/planned/iter11/08-approved-chain-benchmark.md",
+      "docs/todos/11-reliable-delivery/evidence/08/"
+    ],
+    "dependencies": [
+      "01"
+    ]
+  },
+  {
+    "task_id": "09",
+    "paths": [
+      "templates/contracts/refactor_benchmark_contract.md",
+      "references/refactor_evidence.md",
+      "scripts/iter_templates.py",
+      "tests/test_template_generation.py",
+      "tests/test_refactor_evidence_policy.py",
+      ".agents/notes/planned/iter11/09-proportional-refactor-evidence.md",
+      "docs/todos/11-reliable-delivery/evidence/09/"
+    ],
+    "dependencies": []
+  },
+  {
+    "task_id": "10",
+    "paths": [
+      "tests/test_self_hosting.py",
+      ".agents/notes/planned/iter11/10-integration-fault-paths.md",
+      "docs/todos/11-reliable-delivery/evidence/10/"
+    ],
+    "dependencies": [
+      "01",
+      "02",
+      "03",
+      "06",
+      "07"
+    ]
+  },
+  {
+    "task_id": "11",
+    "paths": [
+      ".agents/notes/planned/iter11/11-native-self-use-audit.md",
+      "docs/todos/11-reliable-delivery/evidence/11/"
+    ],
+    "dependencies": [
+      "03",
+      "10"
+    ]
+  },
+  {
+    "task_id": "12",
+    "paths": [
+      "references/agent_protocol.md",
+      "references/execution_readiness.md",
+      "references/worktree_git_contract.md",
+      "templates/assistants/iteration_planner.md",
+      "templates/assistants/iteration_controller.md",
+      "templates/assistants/task_tech_lead.md",
+      "templates/sdd_implementer_prompt.md",
+      "templates/sdd_reviewer_prompt.md",
+      "tests/test_prompt_sources.py",
+      "tests/test_workflow_sequence.py",
+      ".agents/notes/planned/iter11/12-workflow-sequence.md",
+      "docs/todos/11-reliable-delivery/evidence/12/"
+    ],
+    "dependencies": [
+      "03"
+    ]
+  }
+]

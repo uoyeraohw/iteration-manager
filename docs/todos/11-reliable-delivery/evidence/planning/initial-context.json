@@ -1,0 +1,476 @@
+{
+  "version": 1,
+  "tasks": {
+    "01": {
+      "phase": "implementation",
+      "candidate": "fdcc4cce88635ee81573be5991de11de650659d8",
+      "inputs": [
+        "docs/todos/11-reliable-delivery/01-delivery-mode-consistency.md",
+        "docs/todos/11-reliable-delivery/README.md",
+        "docs/todos/11-reliable-delivery/evidence/planning/authorization.json"
+      ],
+      "capabilities": [
+        "initialization-only",
+        "linux-readonly-query",
+        "windows-runner-required",
+        "codeg-schema-exposed-runtime-unverified"
+      ],
+      "dependencies": [],
+      "tool_entry": "/data/workspace/iteration-manager/build/frozen-tools/fdcc4cce8863/scripts/iter_sync.py",
+      "checkpoint": "无业务检查点；仅初始化规划，不计入有效执行进展",
+      "remaining_work": [
+        "补齐执行授权、规划提交与Windows/原生能力后重新观察context",
+        "冻结包含未知模式的合法Git绑定反例和兼容矩阵，取得目标断言RED",
+        "共用纯解析规则，完成审计、派发与交接一致性GREEN",
+        "完成Git/FS受影响回归和待审候选"
+      ],
+      "observations": {
+        "authority": {
+          "status": "NEEDS_INPUT",
+          "summary": "本次只初始化，未授权产品实施；来源evidence/planning/authorization.json"
+        },
+        "execution": {
+          "status": "BLOCKED",
+          "summary": "当前Linux不能运行Windows Job正式runner；Codeg工具schema已发现，目标工作区和原生执行链尚未验证"
+        },
+        "verification": {
+          "status": "BLOCKED",
+          "summary": "正式测试/验收须由冻结Windows runner执行，本次未运行产品测试"
+        }
+      }
+    },
+    "02": {
+      "phase": "implementation",
+      "candidate": "fdcc4cce88635ee81573be5991de11de650659d8",
+      "inputs": [
+        "docs/todos/11-reliable-delivery/02-takeover-report-isolation.md",
+        "docs/todos/11-reliable-delivery/README.md",
+        "docs/todos/11-reliable-delivery/evidence/planning/authorization.json"
+      ],
+      "capabilities": [
+        "initialization-only",
+        "linux-readonly-query",
+        "windows-runner-required",
+        "codeg-schema-exposed-runtime-unverified"
+      ],
+      "dependencies": [],
+      "tool_entry": "/data/workspace/iteration-manager/build/frozen-tools/fdcc4cce8863/scripts/iter_sync.py",
+      "checkpoint": "无业务检查点；仅初始化规划，不计入有效执行进展",
+      "remaining_work": [
+        "补齐执行授权、规划提交与Windows/原生能力后重新观察context",
+        "对健康卡混合UnicodeError、OSError及发现后删除构造有效断言RED",
+        "实现逐卡故障隔离并保留旧报告结构",
+        "完成CLI/发现兼容与只读回归"
+      ],
+      "observations": {
+        "authority": {
+          "status": "NEEDS_INPUT",
+          "summary": "本次只初始化，未授权产品实施；来源evidence/planning/authorization.json"
+        },
+        "execution": {
+          "status": "BLOCKED",
+          "summary": "当前Linux不能运行Windows Job正式runner；Codeg工具schema已发现，目标工作区和原生执行链尚未验证"
+        },
+        "verification": {
+          "status": "BLOCKED",
+          "summary": "正式测试/验收须由冻结Windows runner执行，本次未运行产品测试"
+        }
+      }
+    },
+    "03": {
+      "phase": "implementation",
+      "candidate": "fdcc4cce88635ee81573be5991de11de650659d8",
+      "inputs": [
+        "docs/todos/11-reliable-delivery/03-native-dispatch-guard.md",
+        "docs/todos/11-reliable-delivery/README.md",
+        "docs/todos/11-reliable-delivery/evidence/planning/authorization.json"
+      ],
+      "capabilities": [
+        "initialization-only",
+        "linux-readonly-query",
+        "windows-runner-required",
+        "codeg-schema-exposed-runtime-unverified"
+      ],
+      "dependencies": [
+        "docs/todos/11-reliable-delivery/01-delivery-mode-consistency.md"
+      ],
+      "tool_entry": "/data/workspace/iteration-manager/build/frozen-tools/fdcc4cce8863/scripts/iter_sync.py",
+      "checkpoint": "无业务检查点；仅初始化规划，不计入有效执行进展",
+      "remaining_work": [
+        "补齐执行授权、规划提交与Windows/原生能力后重新观察context",
+        "以可控Promise覆盖running/失败/乱序及身份不符，取得断言RED",
+        "完成薄守卫GREEN及既有截止守卫兼容",
+        "在实际Codeg schema可用时记录一条真实先检查后派发链，缺宿主则保留BLOCKED"
+      ],
+      "observations": {
+        "authority": {
+          "status": "NEEDS_INPUT",
+          "summary": "本次只初始化，未授权产品实施；来源evidence/planning/authorization.json"
+        },
+        "execution": {
+          "status": "BLOCKED",
+          "summary": "当前Linux不能运行Windows Job正式runner；Codeg工具schema已发现，目标工作区和原生执行链尚未验证"
+        },
+        "verification": {
+          "status": "BLOCKED",
+          "summary": "正式测试/验收须由冻结Windows runner执行，本次未运行产品测试"
+        }
+      }
+    },
+    "04": {
+      "phase": "implementation",
+      "candidate": "fdcc4cce88635ee81573be5991de11de650659d8",
+      "inputs": [
+        "docs/todos/11-reliable-delivery/04-navigation-and-support.md",
+        "docs/todos/11-reliable-delivery/README.md",
+        "docs/todos/11-reliable-delivery/evidence/planning/authorization.json"
+      ],
+      "capabilities": [
+        "initialization-only",
+        "linux-readonly-query",
+        "windows-runner-required",
+        "codeg-schema-exposed-runtime-unverified"
+      ],
+      "dependencies": [],
+      "tool_entry": "/data/workspace/iteration-manager/build/frozen-tools/fdcc4cce8863/scripts/iter_sync.py",
+      "checkpoint": "无业务检查点；仅初始化规划，不计入有效执行进展",
+      "remaining_work": [
+        "补齐执行授权、规划提交与Windows/原生能力后重新观察context",
+        "记录进入当前任务所需的直接文档及原件路径",
+        "更新入口和迭代模板的导航路由",
+        "运行导航检查并由新会话定位一次当前任务及失败证据"
+      ],
+      "observations": {
+        "authority": {
+          "status": "NEEDS_INPUT",
+          "summary": "本次只初始化，未授权产品实施；来源evidence/planning/authorization.json"
+        },
+        "execution": {
+          "status": "BLOCKED",
+          "summary": "当前Linux不能运行Windows Job正式runner；Codeg工具schema已发现，目标工作区和原生执行链尚未验证"
+        },
+        "verification": {
+          "status": "BLOCKED",
+          "summary": "正式测试/验收须由冻结Windows runner执行，本次未运行产品测试"
+        }
+      }
+    },
+    "05": {
+      "phase": "implementation",
+      "candidate": "fdcc4cce88635ee81573be5991de11de650659d8",
+      "inputs": [
+        "docs/todos/11-reliable-delivery/05-support-matrix.md",
+        "docs/todos/11-reliable-delivery/README.md",
+        "docs/todos/11-reliable-delivery/evidence/planning/authorization.json"
+      ],
+      "capabilities": [
+        "initialization-only",
+        "linux-readonly-query",
+        "windows-runner-required",
+        "codeg-schema-exposed-runtime-unverified"
+      ],
+      "dependencies": [],
+      "tool_entry": "/data/workspace/iteration-manager/build/frozen-tools/fdcc4cce8863/scripts/iter_sync.py",
+      "checkpoint": "无业务检查点；仅初始化规划，不计入有效执行进展",
+      "remaining_work": [
+        "补齐执行授权、规划提交与Windows/原生能力后重新观察context",
+        "逐项核对契约与有日期的能力原件",
+        "生成支持矩阵和发布索引路由",
+        "执行结构/链接检查并由新会话正确识别未验证项"
+      ],
+      "observations": {
+        "authority": {
+          "status": "NEEDS_INPUT",
+          "summary": "本次只初始化，未授权产品实施；来源evidence/planning/authorization.json"
+        },
+        "execution": {
+          "status": "BLOCKED",
+          "summary": "当前Linux不能运行Windows Job正式runner；Codeg工具schema已发现，目标工作区和原生执行链尚未验证"
+        },
+        "verification": {
+          "status": "BLOCKED",
+          "summary": "正式测试/验收须由冻结Windows runner执行，本次未运行产品测试"
+        }
+      }
+    },
+    "06": {
+      "phase": "implementation",
+      "candidate": "fdcc4cce88635ee81573be5991de11de650659d8",
+      "inputs": [
+        "docs/todos/11-reliable-delivery/06-installation-provenance.md",
+        "docs/todos/11-reliable-delivery/README.md",
+        "docs/todos/11-reliable-delivery/evidence/planning/authorization.json"
+      ],
+      "capabilities": [
+        "initialization-only",
+        "linux-readonly-query",
+        "windows-runner-required",
+        "codeg-schema-exposed-runtime-unverified"
+      ],
+      "dependencies": [],
+      "tool_entry": "/data/workspace/iteration-manager/build/frozen-tools/fdcc4cce8863/scripts/iter_sync.py",
+      "checkpoint": "无业务检查点；仅初始化规划，不计入有效执行进展",
+      "remaining_work": [
+        "补齐执行授权、规划提交与Windows/原生能力后重新观察context",
+        "对来源不符、坏清单、漂移/缺失/越界路径取得断言RED",
+        "生成和只读检查来源清单GREEN",
+        "在白名单临时安装做烟测，记录能力边界和待审候选"
+      ],
+      "observations": {
+        "authority": {
+          "status": "NEEDS_INPUT",
+          "summary": "本次只初始化，未授权产品实施；来源evidence/planning/authorization.json"
+        },
+        "execution": {
+          "status": "BLOCKED",
+          "summary": "当前Linux不能运行Windows Job正式runner；Codeg工具schema已发现，目标工作区和原生执行链尚未验证"
+        },
+        "verification": {
+          "status": "BLOCKED",
+          "summary": "正式测试/验收须由冻结Windows runner执行，本次未运行产品测试"
+        }
+      }
+    },
+    "07": {
+      "phase": "implementation",
+      "candidate": "fdcc4cce88635ee81573be5991de11de650659d8",
+      "inputs": [
+        "docs/todos/11-reliable-delivery/07-portable-test-support.md",
+        "docs/todos/11-reliable-delivery/README.md",
+        "docs/todos/11-reliable-delivery/evidence/planning/authorization.json"
+      ],
+      "capabilities": [
+        "initialization-only",
+        "linux-readonly-query",
+        "windows-runner-required",
+        "codeg-schema-exposed-runtime-unverified"
+      ],
+      "dependencies": [],
+      "tool_entry": "/data/workspace/iteration-manager/build/frozen-tools/fdcc4cce8863/scripts/iter_sync.py",
+      "checkpoint": "无业务检查点；仅初始化规划，不计入有效执行进展",
+      "remaining_work": [
+        "补齐执行授权、规划提交与Windows/原生能力后重新观察context",
+        "取得原维护测试基线及同环境Before量测",
+        "提取测试支持并保持隔离模式/参数/HTTP行为",
+        "白名单临时副本复验、After量测与兼容观察"
+      ],
+      "observations": {
+        "authority": {
+          "status": "NEEDS_INPUT",
+          "summary": "本次只初始化，未授权产品实施；来源evidence/planning/authorization.json"
+        },
+        "execution": {
+          "status": "BLOCKED",
+          "summary": "当前Linux不能运行Windows Job正式runner；Codeg工具schema已发现，目标工作区和原生执行链尚未验证"
+        },
+        "verification": {
+          "status": "BLOCKED",
+          "summary": "正式测试/验收须由冻结Windows runner执行，本次未运行产品测试"
+        }
+      }
+    },
+    "08": {
+      "phase": "implementation",
+      "candidate": "fdcc4cce88635ee81573be5991de11de650659d8",
+      "inputs": [
+        "docs/todos/11-reliable-delivery/08-approved-chain-benchmark.md",
+        "docs/todos/11-reliable-delivery/README.md",
+        "docs/todos/11-reliable-delivery/evidence/planning/authorization.json"
+      ],
+      "capabilities": [
+        "initialization-only",
+        "linux-readonly-query",
+        "windows-runner-required",
+        "codeg-schema-exposed-runtime-unverified"
+      ],
+      "dependencies": [
+        "docs/todos/11-reliable-delivery/01-delivery-mode-consistency.md"
+      ],
+      "tool_entry": "/data/workspace/iteration-manager/build/frozen-tools/fdcc4cce8863/scripts/iter_sync.py",
+      "checkpoint": "无业务检查点；仅初始化规划，不计入有效执行进展",
+      "remaining_work": [
+        "补齐执行授权、规划提交与Windows/原生能力后重新观察context",
+        "构造Git/FS合法批准库存，先断言每卡审计PASS",
+        "分层量测10/100卡各3次并保留原始数据",
+        "按单次调用剖析给出优化或维持现状的决策和后续接口"
+      ],
+      "observations": {
+        "authority": {
+          "status": "NEEDS_INPUT",
+          "summary": "本次只初始化，未授权产品实施；来源evidence/planning/authorization.json"
+        },
+        "execution": {
+          "status": "BLOCKED",
+          "summary": "当前Linux不能运行Windows Job正式runner；Codeg工具schema已发现，目标工作区和原生执行链尚未验证"
+        },
+        "verification": {
+          "status": "BLOCKED",
+          "summary": "正式测试/验收须由冻结Windows runner执行，本次未运行产品测试"
+        }
+      }
+    },
+    "09": {
+      "phase": "implementation",
+      "candidate": "fdcc4cce88635ee81573be5991de11de650659d8",
+      "inputs": [
+        "docs/todos/11-reliable-delivery/09-proportional-refactor-evidence.md",
+        "docs/todos/11-reliable-delivery/README.md",
+        "docs/todos/11-reliable-delivery/evidence/planning/authorization.json"
+      ],
+      "capabilities": [
+        "initialization-only",
+        "linux-readonly-query",
+        "windows-runner-required",
+        "codeg-schema-exposed-runtime-unverified"
+      ],
+      "dependencies": [],
+      "tool_entry": "/data/workspace/iteration-manager/build/frozen-tools/fdcc4cce8863/scripts/iter_sync.py",
+      "checkpoint": "无业务检查点；仅初始化规划，不计入有效执行进展",
+      "remaining_work": [
+        "补齐执行授权、规划提交与Windows/原生能力后重新观察context",
+        "用两种真实新卡规划样例确认当前成本与指标匹配问题",
+        "更新目标对应的证据规则和生成说明",
+        "实际生成及新会话消费两类样例，核对旧卡要求保持"
+      ],
+      "observations": {
+        "authority": {
+          "status": "NEEDS_INPUT",
+          "summary": "本次只初始化，未授权产品实施；来源evidence/planning/authorization.json"
+        },
+        "execution": {
+          "status": "BLOCKED",
+          "summary": "当前Linux不能运行Windows Job正式runner；Codeg工具schema已发现，目标工作区和原生执行链尚未验证"
+        },
+        "verification": {
+          "status": "BLOCKED",
+          "summary": "正式测试/验收须由冻结Windows runner执行，本次未运行产品测试"
+        }
+      }
+    },
+    "10": {
+      "phase": "implementation",
+      "candidate": "fdcc4cce88635ee81573be5991de11de650659d8",
+      "inputs": [
+        "docs/todos/11-reliable-delivery/10-integration-fault-paths.md",
+        "docs/todos/11-reliable-delivery/README.md",
+        "docs/todos/11-reliable-delivery/evidence/planning/authorization.json"
+      ],
+      "capabilities": [
+        "initialization-only",
+        "linux-readonly-query",
+        "windows-runner-required",
+        "codeg-schema-exposed-runtime-unverified"
+      ],
+      "dependencies": [
+        "docs/todos/11-reliable-delivery/01-delivery-mode-consistency.md",
+        "docs/todos/11-reliable-delivery/02-takeover-report-isolation.md",
+        "docs/todos/11-reliable-delivery/03-native-dispatch-guard.md",
+        "docs/todos/11-reliable-delivery/06-installation-provenance.md",
+        "docs/todos/11-reliable-delivery/07-portable-test-support.md"
+      ],
+      "tool_entry": "/data/workspace/iteration-manager/build/frozen-tools/fdcc4cce8863/scripts/iter_sync.py",
+      "checkpoint": "无业务检查点；仅初始化规划，不计入有效执行进展",
+      "remaining_work": [
+        "补齐执行授权、规划提交与Windows/原生能力后重新观察context",
+        "复用成熟夹具定义最少跨模块断言",
+        "运行隔离集成负例并保持原始失败",
+        "交付集成结果与未覆盖边界，最高TESTING"
+      ],
+      "observations": {
+        "authority": {
+          "status": "NEEDS_INPUT",
+          "summary": "本次只初始化，未授权产品实施；来源evidence/planning/authorization.json"
+        },
+        "execution": {
+          "status": "BLOCKED",
+          "summary": "当前Linux不能运行Windows Job正式runner；Codeg工具schema已发现，目标工作区和原生执行链尚未验证"
+        },
+        "verification": {
+          "status": "BLOCKED",
+          "summary": "正式测试/验收须由冻结Windows runner执行，本次未运行产品测试"
+        }
+      }
+    },
+    "11": {
+      "phase": "implementation",
+      "candidate": "fdcc4cce88635ee81573be5991de11de650659d8",
+      "inputs": [
+        "docs/todos/11-reliable-delivery/11-native-self-use-audit.md",
+        "docs/todos/11-reliable-delivery/README.md",
+        "docs/todos/11-reliable-delivery/evidence/planning/authorization.json"
+      ],
+      "capabilities": [
+        "initialization-only",
+        "linux-readonly-query",
+        "windows-runner-required",
+        "codeg-schema-exposed-runtime-unverified"
+      ],
+      "dependencies": [
+        "docs/todos/11-reliable-delivery/03-native-dispatch-guard.md",
+        "docs/todos/11-reliable-delivery/10-integration-fault-paths.md"
+      ],
+      "tool_entry": "/data/workspace/iteration-manager/build/frozen-tools/fdcc4cce8863/scripts/iter_sync.py",
+      "checkpoint": "无业务检查点；仅初始化规划，不计入有效执行进展",
+      "remaining_work": [
+        "补齐执行授权、规划提交与Windows/原生能力后重新观察context",
+        "从Controller来源指针中选择一条完成链和一次正常续接",
+        "运行隔离审计探针并人工核对原生来源",
+        "交付报告及明确缺口供本卡独审，不执行整轮收口"
+      ],
+      "observations": {
+        "authority": {
+          "status": "NEEDS_INPUT",
+          "summary": "本次只初始化，未授权产品实施；来源evidence/planning/authorization.json"
+        },
+        "execution": {
+          "status": "BLOCKED",
+          "summary": "当前Linux不能运行Windows Job正式runner；Codeg工具schema已发现，目标工作区和原生执行链尚未验证"
+        },
+        "verification": {
+          "status": "BLOCKED",
+          "summary": "正式测试/验收须由冻结Windows runner执行，本次未运行产品测试"
+        }
+      }
+    },
+    "12": {
+      "phase": "implementation",
+      "candidate": "fdcc4cce88635ee81573be5991de11de650659d8",
+      "inputs": [
+        "docs/todos/11-reliable-delivery/12-workflow-sequence.md",
+        "docs/todos/11-reliable-delivery/README.md",
+        "docs/todos/11-reliable-delivery/evidence/planning/authorization.json"
+      ],
+      "capabilities": [
+        "initialization-only",
+        "linux-readonly-query",
+        "windows-runner-required",
+        "codeg-schema-exposed-runtime-unverified"
+      ],
+      "dependencies": [
+        "docs/todos/11-reliable-delivery/03-native-dispatch-guard.md"
+      ],
+      "tool_entry": "/data/workspace/iteration-manager/build/frozen-tools/fdcc4cce8863/scripts/iter_sync.py",
+      "checkpoint": "无业务检查点；仅初始化规划，不计入有效执行进展",
+      "remaining_work": [
+        "补齐执行授权、规划提交与Windows/原生能力后重新观察context",
+        "核对三种流程场景及权威来源",
+        "统一协议/流程图/模板对03守卫和收口的引用",
+        "运行流程消费检查并保存真实原生顺序观察"
+      ],
+      "observations": {
+        "authority": {
+          "status": "NEEDS_INPUT",
+          "summary": "本次只初始化，未授权产品实施；来源evidence/planning/authorization.json"
+        },
+        "execution": {
+          "status": "BLOCKED",
+          "summary": "当前Linux不能运行Windows Job正式runner；Codeg工具schema已发现，目标工作区和原生执行链尚未验证"
+        },
+        "verification": {
+          "status": "BLOCKED",
+          "summary": "正式测试/验收须由冻结Windows runner执行，本次未运行产品测试"
+        }
+      }
+    }
+  }
+}

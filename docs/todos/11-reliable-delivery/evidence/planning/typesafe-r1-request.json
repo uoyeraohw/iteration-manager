@@ -1,0 +1,851 @@
+{
+  "state": {
+    "version": 1,
+    "iteration": "11-reliable-delivery",
+    "base_commit": "fdcc4cce88635ee81573be5991de11de650659d8",
+    "repository": "/data/workspace/iteration-manager",
+    "branch": "feat/iter-11-reliable-delivery",
+    "worktree": ".worktrees/iter-11",
+    "objective": "让现有可信交付协议更一致、更容易正确使用，并以本轮真实自用证据验证健壮性。",
+    "constraints": [
+      "本次授权为合并全部意见并初始化迭代；只写规划/初始化资产，不实施产品、不自动Git提交或创建执行Worktree。真实任务交付为Git，任务初态TODO/review PENDING/tdd_verified=false。",
+      "维护源码基线与正式协调器固定fdcc4cce88635ee81573be5991de11de650659d8；候选门禁变更不自动升级协调器，不自证批准。",
+      "默认优先顺序01→02→03→04→05→06→07→08→09；硬依赖仅以逐卡dependencies为准。能力缺口只阻塞受影响步骤，独立READY卡可继续；同卡一个写者，共享源文件单一归属。独审不得参与对应任务设计/实现/测试/RCA。",
+      "默认预算5/10/1/2，连续两次无新增证据禁止原样第三次派发。会话与命令树终态分离，绝对UTC在真实派发时确定。",
+      "正式业务/测试/验收由冻结Windows iter_run包装；当前Linux/Python3.13.5/Node22.23.3只做初始化协调。后续Controller负责补齐Windows正式执行、真实Codeg适配能力及独审后才派发受影响步骤。",
+      "无新依赖/打包平台/调度数据库/第五type/跨调用批准缓存；不扩展Linux runner、FS时间中断grant或自动发现。按支持矩阵与实测决定后续投入。",
+      "不修改历史docs/todos/10或发布原件，不回写旧任务门禁；根索引仅本次main初始化登记，后续特性分支Zero-Root-Touch。",
+      "沿用Git C→独审→登记D→local strict；完成全部卡、整轮集成/全量和独立总审后，对最终登记候选运行冻结branch strict。提前结构预检不替代收口。",
+      "不执行真实安装同步、助手配置、远端推送、合流或清理。新manifest默认stdout和临时副本验证，不自动扩大部署白名单。",
+      "冻结协调器含已知模式审计和旧接管读取缺陷，记录为FROZEN-KNOWN-01/02。相应负例的候选/固定差异是预期修复证据；实际管理卡仅合法Git且独立核对模式，不凭固定工具PASS放行非法卡。",
+      "09交付并独审登记DONE后，Controller另完成独立整轮总审和最终branch strict，防止09自要求其尚未能通过的门禁。收口原件放主checkout的build/iter11-closeout/带UTC唯一目录；不写入已审任务scope，README只记摘要/引用。清理前按授权归档，未归档不得清理唯一原件。"
+    ],
+    "tasks": [
+      {
+        "id": "01",
+        "slug": "delivery-mode-consistency",
+        "name": "统一交付模式解析与完成审计",
+        "type": "Strict-TDD",
+        "requirements": [
+          1
+        ],
+        "dependencies": [],
+        "objective": "缺省 Git 保持兼容；显式空值、未知值及卡/profile 冲突在派发、DONE审计、envelope和board统一拒绝。",
+        "consumes": "parse_card(content); load_profile(iter_dir); audit_task_file(file_path); candidate_identity(card, root, meta); task_handoff_projection(task_file, meta, state)。既有函数签名保持。",
+        "produces": "scripts/iter_contracts.py: resolve_delivery_mode(meta: dict, filesystem_enabled: bool) -> str；只返回git或filesystem，非法组合抛ValueError。既有查询/派发API及JSON键不变。",
+        "scope": [
+          "scripts/iter_contracts.py",
+          "scripts/iter_queries.py",
+          "scripts/iter_preflight.py",
+          "tests/test_delivery_mode_consistency.py",
+          "tests/test_query_contract.py",
+          "tests/test_execution_readiness.py",
+          ".agents/notes/planned/iter11/01-delivery-mode-consistency.md",
+          "docs/todos/11-reliable-delivery/evidence/01/"
+        ],
+        "stages": [
+          "冻结包含未知模式的合法Git绑定反例和兼容矩阵，取得目标断言RED",
+          "共用纯解析规则，完成审计、派发与交接一致性GREEN",
+          "完成Git/FS受影响回归和待审候选"
+        ],
+        "tests": [
+          "tests/test_delivery_mode_consistency.py",
+          "tests/test_query_contract.py",
+          "tests/test_execution_readiness.py",
+          "tests/test_completion_gates.py",
+          "tests/test_filesystem_receipts.py"
+        ],
+        "acceptance": [
+          "先构造其余收据、Git ancestry、冻结规格、check输出和验收勾选均合法的DONE卡，未知delivery_mode从contract提交起存在；断言审计不能PASS，防止用规格漂移替代合法性负例。",
+          "覆盖缺省git、显式git、合法filesystem、显式空串、未知模式、坏profile、缺profile及卡/profile冲突；dispatch非READY，审计非PASS，交接/看板显示UNKNOWN并列错误。",
+          "共享解析不导入CLI、不新增跨调用验收缓存，不改变旧导入、签名、返回/异常合同。"
+        ]
+      },
+      {
+        "id": "02",
+        "slug": "takeover-report-isolation",
+        "name": "隔离旧接管报告的逐卡读取故障",
+        "type": "Strict-TDD",
+        "requirements": [
+          2
+        ],
+        "dependencies": [],
+        "objective": "旧--takeover-report遇到不可读、编码损坏或读取竞态卡仍输出完整JSON库存，坏卡留错误，健康卡继续审计。",
+        "consumes": "discover_task_files(directory); parse_card(content); audit_task_file(path)。沿用旧takeover报告read_only/tasks/next及逐卡path/declared_status/acceptance_verdict/missing/findings字段。",
+        "produces": "scripts/iter_cli.py: _takeover_task(path: Path) -> dict；逐卡返回既有行结构，无法确定的missing为null，错误卡UNKNOWN或FAIL且永不PASS。保留iter_sync.main和iter_cli.main(argv)各自退出/异常合同。",
+        "scope": [
+          "scripts/iter_cli.py",
+          "tests/test_takeover_resilience.py",
+          "tests/test_task_discovery_compat.py",
+          "tests/test_cli_compatibility.py",
+          ".agents/notes/planned/iter11/02-takeover-report-isolation.md",
+          "docs/todos/11-reliable-delivery/evidence/02/"
+        ],
+        "stages": [
+          "对健康卡混合UnicodeError、OSError及发现后删除构造有效断言RED",
+          "实现逐卡故障隔离并保留旧报告结构",
+          "完成CLI/发现兼容与只读回归"
+        ],
+        "tests": [
+          "tests/test_takeover_resilience.py",
+          "tests/test_task_discovery_compat.py",
+          "tests/test_cli_compatibility.py",
+          "tests/test_sync_compatibility.py"
+        ],
+        "acceptance": [
+          "混合至少一张合法可读卡、一张坏编码卡、一张读取OSError卡；结果仍可解析为单份JSON，库存含所有已发现卡，健康卡结果保留，坏卡携带原因且非PASS。",
+          "非法目录/错误参数仍按旧合同失败；不吞掉整轮配置或参数错误，不把坏卡当空库存。",
+          "覆盖旧脚本入口与iter_cli.main(argv)；核对目录字节不变。"
+        ]
+      },
+      {
+        "id": "03",
+        "slug": "native-dispatch-guard",
+        "name": "连接就绪检查与真实委派的薄守卫",
+        "type": "Strict-TDD",
+        "requirements": [
+          3
+        ],
+        "dependencies": [
+          "01"
+        ],
+        "objective": "为现有Codeg持久JavaScript执行器提供可注入的顺序守卫：同owner检查终态成功并消费READY后才调用一次真实委派；保留原生工具和事件账。",
+        "consumes": "现有--dispatch-check card --context path --phase phase --owner owner；返回task_path/task_id/phase/candidate/readiness。scripts/deadline_watch.js: watchDeadline({...})保持原样。实际Codeg schema在运行时确认。",
+        "produces": "scripts/dispatch_guard.js: async dispatchAfterReady({request, check, dispatch}) -> {dispatched, reason, check, delegation}；request含request_id/project_root/tool_entry/task_path/task_id/owner/phase/candidate/context；check(request) -> Promise<{state,exit_code,argv,cwd,request_id,terminal_evidence,stdout,stderr}>；dispatch(request, ready) -> Promise<原生返回>。不使用Node API。",
+        "scope": [
+          "scripts/dispatch_guard.js",
+          "references/native_dispatch_adapter.md",
+          "tests/test_dispatch_guard.py",
+          ".agents/notes/planned/iter11/03-native-dispatch-guard.md",
+          "docs/todos/11-reliable-delivery/evidence/03/"
+        ],
+        "stages": [
+          "以可控Promise覆盖running/失败/乱序及身份不符，取得断言RED",
+          "完成薄守卫GREEN及既有截止守卫兼容",
+          "在实际Codeg schema可用时记录一条真实先检查后派发链，缺宿主则保留BLOCKED"
+        ],
+        "tests": [
+          "tests/test_dispatch_guard.py",
+          "tests/test_deadline_watch.py"
+        ],
+        "acceptance": [
+          "check必须为本次request_id，带实际argv/cwd及原生终态来源；guard核对实际argv的tool_entry/task_path/context/phase/owner与request完全一致，cwd等于project_root；命令state=completed、整数exit_code=0、单份JSON且readiness=READY；stdout中的task_path/task_id/phase/candidate均精确相符。",
+          "check仍running、拒绝、抛错、坏JSON、退出非零、错owner/旧context路径/旧request_id或候选不符时dispatch调用数为0；READY时调用数为1。委派抛错/unknown不自动重试，不伪造终态。",
+          "守卫只约束经过该入口的调用，不声称拦截所有原生委派；真实会话ID/检查原件/调用顺序另存，Node替身不作原生消费证据。",
+          "本卡只交付代码守卫与单独契约；任务04接入权威默认指令，避免多卡改同一流程文件。",
+          "argv/cwd和request标识只是可审计绑定，不能自证原生来源或context语义新鲜度；主控/独审核对真实命令和观察原件。"
+        ]
+      },
+      {
+        "id": "04",
+        "slug": "navigation-and-support",
+        "name": "简化默认阅读路径并统一流程与支持矩阵",
+        "type": "Spike-Discovery",
+        "requirements": [
+          4,
+          8
+        ],
+        "dependencies": [
+          "03"
+        ],
+        "objective": "默认阅读当前目标、交接、证据索引；统一提前结构预检和最终候选strict语义；明确Windows/Linux、Git/FS及宿主消费支持边界，并把03守卫接入受支持宿主默认流程。",
+        "consumes": "任务03 dispatchAfterReady接口及真实能力记录；SKILL/共同协议/Worktree契约；2026-11-14发布记录和本轮Linux初始化观察。",
+        "produces": "references/support_matrix.md：能力/平台/宿主/证据日期/来源候选/限制表；权威共同协议保留流程真源，SKILL与助手模板只路由；当前导航及新迭代模板只链接原件。",
+        "scope": [
+          "SKILL.md",
+          "references/agent_protocol.md",
+          "references/execution_readiness.md",
+          "references/worktree_git_contract.md",
+          "references/support_matrix.md",
+          "references/release_status.md",
+          "templates/assistants/iteration_planner.md",
+          "templates/assistants/iteration_controller.md",
+          "templates/assistants/task_tech_lead.md",
+          "templates/sdd_implementer_prompt.md",
+          "templates/sdd_reviewer_prompt.md",
+          "templates/iteration_readme.md",
+          "tests/test_prompt_sources.py",
+          "tests/test_support_matrix.py",
+          ".agents/notes/planned/iter11/04-navigation-and-support.md",
+          "docs/todos/11-reliable-delivery/evidence/04/"
+        ],
+        "stages": [
+          "记录最短阅读路径、strict阶段与实际支持事实的差异表",
+          "更新导航、权威流程引用和支持矩阵",
+          "以新会话消费代表场景并归档结果，未实测项保留UNKNOWN"
+        ],
+        "tests": [
+          "tests/test_prompt_sources.py",
+          "tests/test_task_card_schema.py",
+          "tests/test_support_matrix.py",
+          "tests/test_release_index.py"
+        ],
+        "acceptance": [
+          "默认入口能定位本轮目标、当前卡/envelope及原件链接；新模板不复制整段原始工具返回，结构测试与实际代理消费分别报告。",
+          "流程明确：提前branch结构预检不算收口；全部卡PASS、集成/全量和独立总审后，对最终登记候选完成branch strict；总审导致变更时重做受影响审查与门禁，不重复无变化证据。",
+          "支持矩阵分别标记查询能力、正式Windows runner、Git批准链、FS本地绑定/正常交接、FS时间中断恢复、显式安装根消费、Gemini CLI自动发现与配置注入；区分已验证/未验证/明确不支持。",
+          "本分支不修改docs/todos/10或历史冻结/发布原件。其190KB README保留历史字节，通过摘要路由避免默认加载；历史正文去重不绕过跨迭代隔离。",
+          "03已验证的宿主使用守卫；其他宿主明确手工消费/未支持，不写虚假的通用自动拦截承诺。"
+        ]
+      },
+      {
+        "id": "05",
+        "slug": "installation-provenance",
+        "name": "提供安装来源清单与轻量自检",
+        "type": "Strict-TDD",
+        "requirements": [
+          5
+        ],
+        "dependencies": [],
+        "objective": "独立副本可用显式来源清单检查来源提交、交付文件漂移及当前能力；分别定义安装烟测和维护全量测试，不引入打包平台或实际部署。",
+        "consumes": "现有交付白名单SKILL.md/scripts/references/templates/tests/.agents/notes；真实Git提交和已提交路径；当前发布支持边界。04支持矩阵是后续交叉核对输入，不是阻塞本卡的硬依赖。",
+        "produces": "scripts/iter_install.py: build_install_manifest(source_root: Path, source_commit: str) -> dict；check_installation(installation_root: Path, manifest: dict) -> dict；main(argv=None) -> int。CLI --make-manifest --root ROOT --source-commit SHA 输出JSON；--check --root ROOT --manifest PATH 只读检查，0一致、2输入/漂移/未知来源。",
+        "scope": [
+          "scripts/iter_install.py",
+          "references/installation_verification.md",
+          "tests/test_install_provenance.py",
+          ".agents/notes/planned/iter11/05-installation-provenance.md",
+          "docs/todos/11-reliable-delivery/evidence/05/"
+        ],
+        "stages": [
+          "对来源不符、坏清单、漂移/缺失/越界路径取得断言RED",
+          "生成和只读检查来源清单GREEN",
+          "在白名单临时安装做烟测，记录能力边界和待审候选"
+        ],
+        "tests": [
+          "tests/test_install_provenance.py",
+          "tests/test_cli_compatibility.py"
+        ],
+        "acceptance": [
+          "清单version=1、source_commit为实际完整可解析Git提交，files含精确相对path与sha256；生成前验证源文件与该提交相符，dirty源码/未知键/重复或越界路径拒绝，不凭提交标签证明来源。",
+          "check拒绝损坏、缺失、字节漂移、符号链接越界；不读取白名单外内容，不修复/覆盖安装，不运行维护全套或产生批准。",
+          "输出来源和文件一致性与运行时能力分别列示；Linux正式runner不可用不会被标成READY，query可用也不代表整条执行链可用。",
+          "来源清单默认stdout，落盘及随副本分发在另获授权的部署阶段执行；本轮只在隔离临时目录验证，不扩大既有部署白名单或覆盖真实安装。"
+        ]
+      },
+      {
+        "id": "06",
+        "slug": "portable-test-support",
+        "name": "消除维护测试对历史证据harness的运行依赖",
+        "type": "Refactor-Benchmark",
+        "requirements": [
+          5
+        ],
+        "dependencies": [],
+        "objective": "把可复用浏览器/HTTP测试支持代码移至tests/support，使白名单副本能够运行相应维护测试，保留历史harness原件和原测试行为。",
+        "consumes": "docs/todos/10-self-hosting-hardening/evidence/04/browser_harness.py的filesystem_fixture(root)、main()及原参数；tests/test_board_handoff.py两处消费者；既有scripts查询/服务接口。",
+        "produces": "tests/support/browser_harness.py: filesystem_fixture(root: Path)与main()保留既有参数语义、ready/stop/isolated-fixtures；测试仅从tests/support加载。历史evidence原件不改。",
+        "scope": [
+          "tests/support/",
+          "tests/test_board_handoff.py",
+          "tests/test_harness_portability.py",
+          ".agents/notes/planned/iter11/06-portable-test-support.md",
+          "docs/todos/11-reliable-delivery/evidence/06/"
+        ],
+        "stages": [
+          "取得原维护测试基线及同环境Before量测",
+          "提取测试支持并保持隔离模式/参数/HTTP行为",
+          "白名单临时副本复验、After量测与兼容观察"
+        ],
+        "tests": [
+          "tests/test_board_handoff.py",
+          "tests/test_board_service.py",
+          "tests/test_harness_portability.py"
+        ],
+        "acceptance": [
+          "两个harness消费者均不依赖维护docs/todos路径；只有白名单文件的临时副本可运行受影响测试，缺少维护历史目录不再造成harness加载失败。",
+          "隔离模式不读真实checkout库存，非隔离参数语义、HTTP边界、加载/错误/正常状态及原超时约定不降低；历史harness及日志字节不变。",
+          "按现有Refactor-Benchmark保留baseline/regression/compatibility/benchmark_before/benchmark_after。相同Windows/Python/临时样例参数，对受影响harness检查做3次Before/After，报告耗时与历史路径依赖数，不承诺提速。",
+          "本卡不宣称所有平台全套已可用；安装烟测、维护回归与真实浏览器观察分别记录，涉及实际浏览器使用Moli并管理自有CDP生命周期。"
+        ]
+      },
+      {
+        "id": "07",
+        "slug": "approved-chain-benchmark",
+        "name": "量测合法Git与FS批准库存的真实成本",
+        "type": "Spike-Discovery",
+        "requirements": [
+          6
+        ],
+        "dependencies": [
+          "01"
+        ],
+        "objective": "先建立合法收据、Git绑定和FS快照均实际PASS的代表库存，再量测查询/盘点/HTTP证据路径，定位单次调用内重复工作，不预设优化收益。",
+        "consumes": "任务01合法模式解析；现有test_filesystem_delivery_controller/执行就绪/Git临时夹具；audit_task_file、generate_board_data、render_task_envelope、inventory及LiveBoardHandler。06测试支持提取不是功能前提。",
+        "produces": "tests/benchmarks/approval_chain.py: main(argv=None) -> int；CLI --sizes 10 100 --repeats 3 --output PATH，输出环境/候选/工作负载/各次秒数/Git调用数/读取字节/批准卡数/限制。tests/test_approval_benchmark_fixture.py验证样例真实性。",
+        "scope": [
+          "tests/benchmarks/",
+          "tests/test_approval_benchmark_fixture.py",
+          ".agents/notes/planned/iter11/07-approved-chain-benchmark.md",
+          "docs/todos/11-reliable-delivery/evidence/07/"
+        ],
+        "stages": [
+          "构造Git/FS合法批准库存，先断言每卡审计PASS",
+          "分层量测10/100卡各3次并保留原始数据",
+          "按单次调用剖析给出优化或维持现状的决策和后续接口"
+        ],
+        "tests": [
+          "tests/test_approval_benchmark_fixture.py",
+          "tests/test_completion_gates.py",
+          "tests/test_filesystem_receipts.py"
+        ],
+        "acceptance": [
+          "分别构造10/100卡Git与FS已批准样例；每张DONE均有合法类型checks/原始输出/报告及真实绑定，量测前accepted必须等于卡数；不得用缺收据的快路径代替。",
+          "分别记录一次board、全部envelope、一次inventory及实际HTTP证据读取的成本，样例构造不计时；真实Git执行及FS字节比较不替换成成功桩。",
+          "相同候选/环境/数据量至少3次，给出逐次值、均值和范围；记录硬件/Python/Git/平台、源码候选及样例限制，不从3次样本推断可靠尾延迟。",
+          "分析仅提出基于证据的单次调用复用机会；不实现跨调用验收缓存，不以合成性能证明真实外部业务PASS，不附带未评估的优化改码。"
+        ]
+      },
+      {
+        "id": "08",
+        "slug": "proportional-refactor-evidence",
+        "name": "使新重构任务的量测匹配实际目标",
+        "type": "Spike-Discovery",
+        "requirements": [
+          7
+        ],
+        "dependencies": [],
+        "objective": "为未来行为保持型重构与性能优化提供两套可消费规划说明：前者量测与结构目标相关的客观指标，后者量测性能；保留四type及既有五项检查，不追溯降低旧卡门禁。",
+        "consumes": "现有Refactor-Benchmark五项TYPE_CHECKS与schema1；既有合成量测限制；render_task_card(spec)及模板消费路径。07结果完成后交叉核对，不是本卡的硬依赖。",
+        "produces": "references/refactor_evidence.md的两类目标/指标/证据选择规则；templates/contracts/refactor_benchmark_contract.md与scripts/iter_templates.py生成说明一致；verification键集不变，不加第五type或必填元数据。",
+        "scope": [
+          "templates/contracts/refactor_benchmark_contract.md",
+          "references/refactor_evidence.md",
+          "scripts/iter_templates.py",
+          "tests/test_template_generation.py",
+          "tests/test_refactor_evidence_policy.py",
+          ".agents/notes/planned/iter11/08-proportional-refactor-evidence.md",
+          "docs/todos/11-reliable-delivery/evidence/08/"
+        ],
+        "stages": [
+          "用两种真实新卡规划样例确认当前成本与指标匹配问题",
+          "更新目标对应的证据规则和生成说明",
+          "实际生成及新会话消费两类样例，核对旧卡要求保持"
+        ],
+        "tests": [
+          "tests/test_refactor_evidence_policy.py",
+          "tests/test_template_generation.py",
+          "tests/test_task_card_schema.py",
+          "tests/test_completion_gates.py"
+        ],
+        "acceptance": [
+          "行为保持型新任务仍有基线/兼容/回归/独审；benchmark_before/after可测任务约定的依赖数、重复入口数等可重复结构指标，无性能目标时不强制延迟/吞吐提升。",
+          "性能优化型明确同环境/规模/命令/单位与目标，仍要求真实Before/After性能证据；不以结构指标替代既定性能目标。",
+          "四type、schema1、五项检查名与收据绑定保持；既有卡、冻结规格及本轮06的Before/After要求不修改，不把未知指标当无须验证。",
+          "两种spec均经实际生成/预检；缺baseline、regression或任一既定检查仍拒绝。模板结构检查与真实助手是否选对指标分别留证。"
+        ]
+      },
+      {
+        "id": "09",
+        "slug": "self-hosting-robustness",
+        "name": "审计本轮真实自用链与健壮性",
+        "type": "Spike-Discovery",
+        "requirements": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "dependencies": [
+          "01",
+          "02",
+          "03",
+          "04",
+          "05",
+          "06",
+          "07",
+          "08"
+        ],
+        "objective": "使用本轮真实卡、原生会话和原始runner收据验证完整管理链，同时在隔离样例核验失败/恢复边界，形成可追溯整体验收。",
+        "consumes": "01—08真实卡/收据/上下文/会话/检查点；固定fdcc4cc协调器与候选查询；既有self_hosting、runner、deadline、自治和resume测试。",
+        "produces": "tests/test_self_hosting.py受影响联合断言；references/self_hosting_acceptance.md当前方法；evidence/09/robustness-report.json使用version,candidate,coordinator_commit,cases[{id,layer,expected,observed,result,evidence}],unverified。",
+        "scope": [
+          "tests/test_self_hosting.py",
+          "references/self_hosting_acceptance.md",
+          ".agents/notes/planned/iter11/09-self-hosting-robustness.md",
+          "docs/todos/11-reliable-delivery/evidence/09/"
+        ],
+        "stages": [
+          "持续索引01—08的真实链和正常跨会话续接，不到末尾才造记录",
+          "组合隔离负例并交叉核对候选与固定协调器",
+          "完成本卡候选集成/全量和报告，交付TESTING；独审登记后转Controller完成整轮总审及最终strict"
+        ],
+        "tests": [
+          "tests/test_self_hosting.py",
+          "tests/test_iter_run.py",
+          "tests/test_deadline_watch.py",
+          "tests/test_autonomy.py",
+          "tests/test_checkpoint_resume.py"
+        ],
+        "acceptance": [
+          "至少一条本轮真实inventory→claim→同owner dispatch-check终态READY→实际原生委派→runner命令终态→attempt→release→独审→C/D→固定strict链，另有至少一次新会话正常检查点继承；保留会话ID、候选、精确顺序和原件，不用模拟替代。",
+          "覆盖未知/空模式、坏卡读取、延迟/失败READY、外来owner、候选/phase漂移、依赖非PASS、两次无进展、幂等/坏payload、Git/FS来源/正文/证据漂移、runner未知终态及FS拒Git grant。破坏性负例仅隔离样例。",
+          "static/synthetic/native-self-use逐例分层，FAIL不改写为PASS；初始化样例不算执行链，历史493通过不算本轮全量。Windows/实际宿主/权限缺失时相应项保留BLOCKED或UNKNOWN。",
+          "本卡候选运行完整python -B -m pytest -p no:cacheprovider tests -q并交付本卡报告，独审登记DONE后由Controller完成独立整轮总审和最终冻结branch strict；不将整轮收口设成本卡DONE的循环前提。收口产物不能改动本卡已审scope；测试/设计/实现参与者不得独审。",
+          "不部署真实安装、不推送/合流/清理、不迁移历史卡；安装烟测与真实新安装消费、FS业务生命周期分别列结果和未验证项。"
+        ]
+      }
+    ],
+    "coverage": {
+      "1": [
+        "01",
+        "09"
+      ],
+      "2": [
+        "02",
+        "09"
+      ],
+      "3": [
+        "03",
+        "04",
+        "09"
+      ],
+      "4": [
+        "04",
+        "09"
+      ],
+      "5": [
+        "05",
+        "06",
+        "09"
+      ],
+      "6": [
+        "07",
+        "09"
+      ],
+      "7": [
+        "08",
+        "09"
+      ],
+      "8": [
+        "04",
+        "09"
+      ]
+    },
+    "observed_capabilities": {
+      "os": "Linux",
+      "python": "3.13.5",
+      "node": "22.23.3",
+      "formal_runner": "requires Windows Job Objects; unavailable here",
+      "typesafe": "mcp__typesafe__evaluate exposed in actual tool catalog",
+      "native_target": "Codeg持久JavaScript执行器是首个受支持目标；当前会话只有collaboration工具，没有Codeg MCP，03/09原生目标验证保持待补，不将其替换为等价PASS。",
+      "dirty": "clean at fdcc4cce88635ee81573be5991de11de650659d8",
+      "git_identity": "user.name/email not configured; no local commit performed"
+    },
+    "planning_authorization": "用户明确要求初始化；授权落盘规划、初始化协调和本机冻结工具快照。未明确授权产品实施、Git提交/Worktree执行、部署、推送、合流或清理；规划不自动提交。",
+    "planning_review": {
+      "kind": "readonly-builder-check",
+      "source": "collaboration agent /root/iter11_plan_check",
+      "verdict": "four findings incorporated; not product approval",
+      "findings": [
+        "separate task09 delivery from post-DONE whole-iteration closeout",
+        "bind task03 to actual argv/cwd/request and terminal source",
+        "use explicit hard dependencies rather than blocking independent tasks",
+        "register known frozen coordinator limitations"
+      ],
+      "notes_scope": "each task owns one exact planned note path"
+    }
+  },
+  "questions": {
+    "task01_granularity": {
+      "type": "score",
+      "instructions": "只评价 state.tasks 中 id=01 的任务「统一交付模式解析与完成审计」在 granularity 这一维的规划质量；结合 state.constraints、planning_authorization 与 observed_capabilities，保留已列能力缺口，不把未来计划当已执行事实。不得把其他维度得分当作本维证据。",
+      "criteria": [
+        "没有可分辨的任务交付单元",
+        "多数任务无法独立验收或超出有界阶段",
+        "部分任务有独立交付，但仍有明显拆分或依赖缺口",
+        "各任务有可独立审查的交付、合理检查点及明确依赖，存在少量边界问题",
+        "各任务粒度适合独立审查，阶段可在有界窗口交付且依赖无循环和隐藏耦合"
+      ]
+    },
+    "task01_clarity": {
+      "type": "score",
+      "instructions": "只评价 state.tasks 中 id=01 的任务「统一交付模式解析与完成审计」在 clarity 这一维的规划质量；结合 state.constraints、planning_authorization 与 observed_capabilities，保留已列能力缺口，不把未来计划当已执行事实。不得把其他维度得分当作本维证据。",
+      "criteria": [
+        "目标和验收缺失",
+        "验收主要是主观描述",
+        "核心行为可理解但重要负例或成功条件缺失",
+        "主要成功条件、负例、证据和命令明确，少量细节可由实现者决定",
+        "成功/失败边界、候选/证据、兼容与验收命令均明确，可客观核验"
+      ]
+    },
+    "task01_single_responsibility": {
+      "type": "score",
+      "instructions": "只评价 state.tasks 中 id=01 的任务「统一交付模式解析与完成审计」在 single_responsibility 这一维的规划质量；结合 state.constraints、planning_authorization 与 observed_capabilities，保留已列能力缺口，不把未来计划当已执行事实。不得把其他维度得分当作本维证据。",
+      "criteria": [
+        "任务没有统一责任",
+        "任务合并多个无关交付且无法独立裁定",
+        "存在可分离的职责或源边界交叠",
+        "任务围绕一个交付责任，直接依赖调整有说明，少量边界仍可收紧",
+        "任务围绕一个可审查交付，源文件归属清楚且跨任务契约稳定"
+      ]
+    },
+    "task01_actionability": {
+      "type": "score",
+      "instructions": "只评价 state.tasks 中 id=01 的任务「统一交付模式解析与完成审计」在 actionability 这一维的规划质量；结合 state.constraints、planning_authorization 与 observed_capabilities，保留已列能力缺口，不把未来计划当已执行事实。不得把其他维度得分当作本维证据。",
+      "criteria": [
+        "无法据此推进",
+        "缺少关键接口、文件或执行能力且无恢复路径",
+        "有步骤但关键命令/前提/恢复责任仍不明",
+        "接口、文件、命令和已知执行前提明确，满足前提后可实施",
+        "精确接口、范围、分层验证、能力缺口责任与恢复条件齐全，实现者可按卡逐步执行"
+      ]
+    },
+    "task02_granularity": {
+      "type": "score",
+      "instructions": "只评价 state.tasks 中 id=02 的任务「隔离旧接管报告的逐卡读取故障」在 granularity 这一维的规划质量；结合 state.constraints、planning_authorization 与 observed_capabilities，保留已列能力缺口，不把未来计划当已执行事实。不得把其他维度得分当作本维证据。",
+      "criteria": [
+        "没有可分辨的任务交付单元",
+        "多数任务无法独立验收或超出有界阶段",
+        "部分任务有独立交付，但仍有明显拆分或依赖缺口",
+        "各任务有可独立审查的交付、合理检查点及明确依赖，存在少量边界问题",
+        "各任务粒度适合独立审查，阶段可在有界窗口交付且依赖无循环和隐藏耦合"
+      ]
+    },
+    "task02_clarity": {
+      "type": "score",
+      "instructions": "只评价 state.tasks 中 id=02 的任务「隔离旧接管报告的逐卡读取故障」在 clarity 这一维的规划质量；结合 state.constraints、planning_authorization 与 observed_capabilities，保留已列能力缺口，不把未来计划当已执行事实。不得把其他维度得分当作本维证据。",
+      "criteria": [
+        "目标和验收缺失",
+        "验收主要是主观描述",
+        "核心行为可理解但重要负例或成功条件缺失",
+        "主要成功条件、负例、证据和命令明确，少量细节可由实现者决定",
+        "成功/失败边界、候选/证据、兼容与验收命令均明确，可客观核验"
+      ]
+    },
+    "task02_single_responsibility": {
+      "type": "score",
+      "instructions": "只评价 state.tasks 中 id=02 的任务「隔离旧接管报告的逐卡读取故障」在 single_responsibility 这一维的规划质量；结合 state.constraints、planning_authorization 与 observed_capabilities，保留已列能力缺口，不把未来计划当已执行事实。不得把其他维度得分当作本维证据。",
+      "criteria": [
+        "任务没有统一责任",
+        "任务合并多个无关交付且无法独立裁定",
+        "存在可分离的职责或源边界交叠",
+        "任务围绕一个交付责任，直接依赖调整有说明，少量边界仍可收紧",
+        "任务围绕一个可审查交付，源文件归属清楚且跨任务契约稳定"
+      ]
+    },
+    "task02_actionability": {
+      "type": "score",
+      "instructions": "只评价 state.tasks 中 id=02 的任务「隔离旧接管报告的逐卡读取故障」在 actionability 这一维的规划质量；结合 state.constraints、planning_authorization 与 observed_capabilities，保留已列能力缺口，不把未来计划当已执行事实。不得把其他维度得分当作本维证据。",
+      "criteria": [
+        "无法据此推进",
+        "缺少关键接口、文件或执行能力且无恢复路径",
+        "有步骤但关键命令/前提/恢复责任仍不明",
+        "接口、文件、命令和已知执行前提明确，满足前提后可实施",
+        "精确接口、范围、分层验证、能力缺口责任与恢复条件齐全，实现者可按卡逐步执行"
+      ]
+    },
+    "task03_granularity": {
+      "type": "score",
+      "instructions": "只评价 state.tasks 中 id=03 的任务「连接就绪检查与真实委派的薄守卫」在 granularity 这一维的规划质量；结合 state.constraints、planning_authorization 与 observed_capabilities，保留已列能力缺口，不把未来计划当已执行事实。不得把其他维度得分当作本维证据。",
+      "criteria": [
+        "没有可分辨的任务交付单元",
+        "多数任务无法独立验收或超出有界阶段",
+        "部分任务有独立交付，但仍有明显拆分或依赖缺口",
+        "各任务有可独立审查的交付、合理检查点及明确依赖，存在少量边界问题",
+        "各任务粒度适合独立审查，阶段可在有界窗口交付且依赖无循环和隐藏耦合"
+      ]
+    },
+    "task03_clarity": {
+      "type": "score",
+      "instructions": "只评价 state.tasks 中 id=03 的任务「连接就绪检查与真实委派的薄守卫」在 clarity 这一维的规划质量；结合 state.constraints、planning_authorization 与 observed_capabilities，保留已列能力缺口，不把未来计划当已执行事实。不得把其他维度得分当作本维证据。",
+      "criteria": [
+        "目标和验收缺失",
+        "验收主要是主观描述",
+        "核心行为可理解但重要负例或成功条件缺失",
+        "主要成功条件、负例、证据和命令明确，少量细节可由实现者决定",
+        "成功/失败边界、候选/证据、兼容与验收命令均明确，可客观核验"
+      ]
+    },
+    "task03_single_responsibility": {
+      "type": "score",
+      "instructions": "只评价 state.tasks 中 id=03 的任务「连接就绪检查与真实委派的薄守卫」在 single_responsibility 这一维的规划质量；结合 state.constraints、planning_authorization 与 observed_capabilities，保留已列能力缺口，不把未来计划当已执行事实。不得把其他维度得分当作本维证据。",
+      "criteria": [
+        "任务没有统一责任",
+        "任务合并多个无关交付且无法独立裁定",
+        "存在可分离的职责或源边界交叠",
+        "任务围绕一个交付责任，直接依赖调整有说明，少量边界仍可收紧",
+        "任务围绕一个可审查交付，源文件归属清楚且跨任务契约稳定"
+      ]
+    },
+    "task03_actionability": {
+      "type": "score",
+      "instructions": "只评价 state.tasks 中 id=03 的任务「连接就绪检查与真实委派的薄守卫」在 actionability 这一维的规划质量；结合 state.constraints、planning_authorization 与 observed_capabilities，保留已列能力缺口，不把未来计划当已执行事实。不得把其他维度得分当作本维证据。",
+      "criteria": [
+        "无法据此推进",
+        "缺少关键接口、文件或执行能力且无恢复路径",
+        "有步骤但关键命令/前提/恢复责任仍不明",
+        "接口、文件、命令和已知执行前提明确，满足前提后可实施",
+        "精确接口、范围、分层验证、能力缺口责任与恢复条件齐全，实现者可按卡逐步执行"
+      ]
+    },
+    "task04_granularity": {
+      "type": "score",
+      "instructions": "只评价 state.tasks 中 id=04 的任务「简化默认阅读路径并统一流程与支持矩阵」在 granularity 这一维的规划质量；结合 state.constraints、planning_authorization 与 observed_capabilities，保留已列能力缺口，不把未来计划当已执行事实。不得把其他维度得分当作本维证据。",
+      "criteria": [
+        "没有可分辨的任务交付单元",
+        "多数任务无法独立验收或超出有界阶段",
+        "部分任务有独立交付，但仍有明显拆分或依赖缺口",
+        "各任务有可独立审查的交付、合理检查点及明确依赖，存在少量边界问题",
+        "各任务粒度适合独立审查，阶段可在有界窗口交付且依赖无循环和隐藏耦合"
+      ]
+    },
+    "task04_clarity": {
+      "type": "score",
+      "instructions": "只评价 state.tasks 中 id=04 的任务「简化默认阅读路径并统一流程与支持矩阵」在 clarity 这一维的规划质量；结合 state.constraints、planning_authorization 与 observed_capabilities，保留已列能力缺口，不把未来计划当已执行事实。不得把其他维度得分当作本维证据。",
+      "criteria": [
+        "目标和验收缺失",
+        "验收主要是主观描述",
+        "核心行为可理解但重要负例或成功条件缺失",
+        "主要成功条件、负例、证据和命令明确，少量细节可由实现者决定",
+        "成功/失败边界、候选/证据、兼容与验收命令均明确，可客观核验"
+      ]
+    },
+    "task04_single_responsibility": {
+      "type": "score",
+      "instructions": "只评价 state.tasks 中 id=04 的任务「简化默认阅读路径并统一流程与支持矩阵」在 single_responsibility 这一维的规划质量；结合 state.constraints、planning_authorization 与 observed_capabilities，保留已列能力缺口，不把未来计划当已执行事实。不得把其他维度得分当作本维证据。",
+      "criteria": [
+        "任务没有统一责任",
+        "任务合并多个无关交付且无法独立裁定",
+        "存在可分离的职责或源边界交叠",
+        "任务围绕一个交付责任，直接依赖调整有说明，少量边界仍可收紧",
+        "任务围绕一个可审查交付，源文件归属清楚且跨任务契约稳定"
+      ]
+    },
+    "task04_actionability": {
+      "type": "score",
+      "instructions": "只评价 state.tasks 中 id=04 的任务「简化默认阅读路径并统一流程与支持矩阵」在 actionability 这一维的规划质量；结合 state.constraints、planning_authorization 与 observed_capabilities，保留已列能力缺口，不把未来计划当已执行事实。不得把其他维度得分当作本维证据。",
+      "criteria": [
+        "无法据此推进",
+        "缺少关键接口、文件或执行能力且无恢复路径",
+        "有步骤但关键命令/前提/恢复责任仍不明",
+        "接口、文件、命令和已知执行前提明确，满足前提后可实施",
+        "精确接口、范围、分层验证、能力缺口责任与恢复条件齐全，实现者可按卡逐步执行"
+      ]
+    },
+    "task05_granularity": {
+      "type": "score",
+      "instructions": "只评价 state.tasks 中 id=05 的任务「提供安装来源清单与轻量自检」在 granularity 这一维的规划质量；结合 state.constraints、planning_authorization 与 observed_capabilities，保留已列能力缺口，不把未来计划当已执行事实。不得把其他维度得分当作本维证据。",
+      "criteria": [
+        "没有可分辨的任务交付单元",
+        "多数任务无法独立验收或超出有界阶段",
+        "部分任务有独立交付，但仍有明显拆分或依赖缺口",
+        "各任务有可独立审查的交付、合理检查点及明确依赖，存在少量边界问题",
+        "各任务粒度适合独立审查，阶段可在有界窗口交付且依赖无循环和隐藏耦合"
+      ]
+    },
+    "task05_clarity": {
+      "type": "score",
+      "instructions": "只评价 state.tasks 中 id=05 的任务「提供安装来源清单与轻量自检」在 clarity 这一维的规划质量；结合 state.constraints、planning_authorization 与 observed_capabilities，保留已列能力缺口，不把未来计划当已执行事实。不得把其他维度得分当作本维证据。",
+      "criteria": [
+        "目标和验收缺失",
+        "验收主要是主观描述",
+        "核心行为可理解但重要负例或成功条件缺失",
+        "主要成功条件、负例、证据和命令明确，少量细节可由实现者决定",
+        "成功/失败边界、候选/证据、兼容与验收命令均明确，可客观核验"
+      ]
+    },
+    "task05_single_responsibility": {
+      "type": "score",
+      "instructions": "只评价 state.tasks 中 id=05 的任务「提供安装来源清单与轻量自检」在 single_responsibility 这一维的规划质量；结合 state.constraints、planning_authorization 与 observed_capabilities，保留已列能力缺口，不把未来计划当已执行事实。不得把其他维度得分当作本维证据。",
+      "criteria": [
+        "任务没有统一责任",
+        "任务合并多个无关交付且无法独立裁定",
+        "存在可分离的职责或源边界交叠",
+        "任务围绕一个交付责任，直接依赖调整有说明，少量边界仍可收紧",
+        "任务围绕一个可审查交付，源文件归属清楚且跨任务契约稳定"
+      ]
+    },
+    "task05_actionability": {
+      "type": "score",
+      "instructions": "只评价 state.tasks 中 id=05 的任务「提供安装来源清单与轻量自检」在 actionability 这一维的规划质量；结合 state.constraints、planning_authorization 与 observed_capabilities，保留已列能力缺口，不把未来计划当已执行事实。不得把其他维度得分当作本维证据。",
+      "criteria": [
+        "无法据此推进",
+        "缺少关键接口、文件或执行能力且无恢复路径",
+        "有步骤但关键命令/前提/恢复责任仍不明",
+        "接口、文件、命令和已知执行前提明确，满足前提后可实施",
+        "精确接口、范围、分层验证、能力缺口责任与恢复条件齐全，实现者可按卡逐步执行"
+      ]
+    },
+    "task06_granularity": {
+      "type": "score",
+      "instructions": "只评价 state.tasks 中 id=06 的任务「消除维护测试对历史证据harness的运行依赖」在 granularity 这一维的规划质量；结合 state.constraints、planning_authorization 与 observed_capabilities，保留已列能力缺口，不把未来计划当已执行事实。不得把其他维度得分当作本维证据。",
+      "criteria": [
+        "没有可分辨的任务交付单元",
+        "多数任务无法独立验收或超出有界阶段",
+        "部分任务有独立交付，但仍有明显拆分或依赖缺口",
+        "各任务有可独立审查的交付、合理检查点及明确依赖，存在少量边界问题",
+        "各任务粒度适合独立审查，阶段可在有界窗口交付且依赖无循环和隐藏耦合"
+      ]
+    },
+    "task06_clarity": {
+      "type": "score",
+      "instructions": "只评价 state.tasks 中 id=06 的任务「消除维护测试对历史证据harness的运行依赖」在 clarity 这一维的规划质量；结合 state.constraints、planning_authorization 与 observed_capabilities，保留已列能力缺口，不把未来计划当已执行事实。不得把其他维度得分当作本维证据。",
+      "criteria": [
+        "目标和验收缺失",
+        "验收主要是主观描述",
+        "核心行为可理解但重要负例或成功条件缺失",
+        "主要成功条件、负例、证据和命令明确，少量细节可由实现者决定",
+        "成功/失败边界、候选/证据、兼容与验收命令均明确，可客观核验"
+      ]
+    },
+    "task06_single_responsibility": {
+      "type": "score",
+      "instructions": "只评价 state.tasks 中 id=06 的任务「消除维护测试对历史证据harness的运行依赖」在 single_responsibility 这一维的规划质量；结合 state.constraints、planning_authorization 与 observed_capabilities，保留已列能力缺口，不把未来计划当已执行事实。不得把其他维度得分当作本维证据。",
+      "criteria": [
+        "任务没有统一责任",
+        "任务合并多个无关交付且无法独立裁定",
+        "存在可分离的职责或源边界交叠",
+        "任务围绕一个交付责任，直接依赖调整有说明，少量边界仍可收紧",
+        "任务围绕一个可审查交付，源文件归属清楚且跨任务契约稳定"
+      ]
+    },
+    "task06_actionability": {
+      "type": "score",
+      "instructions": "只评价 state.tasks 中 id=06 的任务「消除维护测试对历史证据harness的运行依赖」在 actionability 这一维的规划质量；结合 state.constraints、planning_authorization 与 observed_capabilities，保留已列能力缺口，不把未来计划当已执行事实。不得把其他维度得分当作本维证据。",
+      "criteria": [
+        "无法据此推进",
+        "缺少关键接口、文件或执行能力且无恢复路径",
+        "有步骤但关键命令/前提/恢复责任仍不明",
+        "接口、文件、命令和已知执行前提明确，满足前提后可实施",
+        "精确接口、范围、分层验证、能力缺口责任与恢复条件齐全，实现者可按卡逐步执行"
+      ]
+    },
+    "task07_granularity": {
+      "type": "score",
+      "instructions": "只评价 state.tasks 中 id=07 的任务「量测合法Git与FS批准库存的真实成本」在 granularity 这一维的规划质量；结合 state.constraints、planning_authorization 与 observed_capabilities，保留已列能力缺口，不把未来计划当已执行事实。不得把其他维度得分当作本维证据。",
+      "criteria": [
+        "没有可分辨的任务交付单元",
+        "多数任务无法独立验收或超出有界阶段",
+        "部分任务有独立交付，但仍有明显拆分或依赖缺口",
+        "各任务有可独立审查的交付、合理检查点及明确依赖，存在少量边界问题",
+        "各任务粒度适合独立审查，阶段可在有界窗口交付且依赖无循环和隐藏耦合"
+      ]
+    },
+    "task07_clarity": {
+      "type": "score",
+      "instructions": "只评价 state.tasks 中 id=07 的任务「量测合法Git与FS批准库存的真实成本」在 clarity 这一维的规划质量；结合 state.constraints、planning_authorization 与 observed_capabilities，保留已列能力缺口，不把未来计划当已执行事实。不得把其他维度得分当作本维证据。",
+      "criteria": [
+        "目标和验收缺失",
+        "验收主要是主观描述",
+        "核心行为可理解但重要负例或成功条件缺失",
+        "主要成功条件、负例、证据和命令明确，少量细节可由实现者决定",
+        "成功/失败边界、候选/证据、兼容与验收命令均明确，可客观核验"
+      ]
+    },
+    "task07_single_responsibility": {
+      "type": "score",
+      "instructions": "只评价 state.tasks 中 id=07 的任务「量测合法Git与FS批准库存的真实成本」在 single_responsibility 这一维的规划质量；结合 state.constraints、planning_authorization 与 observed_capabilities，保留已列能力缺口，不把未来计划当已执行事实。不得把其他维度得分当作本维证据。",
+      "criteria": [
+        "任务没有统一责任",
+        "任务合并多个无关交付且无法独立裁定",
+        "存在可分离的职责或源边界交叠",
+        "任务围绕一个交付责任，直接依赖调整有说明，少量边界仍可收紧",
+        "任务围绕一个可审查交付，源文件归属清楚且跨任务契约稳定"
+      ]
+    },
+    "task07_actionability": {
+      "type": "score",
+      "instructions": "只评价 state.tasks 中 id=07 的任务「量测合法Git与FS批准库存的真实成本」在 actionability 这一维的规划质量；结合 state.constraints、planning_authorization 与 observed_capabilities，保留已列能力缺口，不把未来计划当已执行事实。不得把其他维度得分当作本维证据。",
+      "criteria": [
+        "无法据此推进",
+        "缺少关键接口、文件或执行能力且无恢复路径",
+        "有步骤但关键命令/前提/恢复责任仍不明",
+        "接口、文件、命令和已知执行前提明确，满足前提后可实施",
+        "精确接口、范围、分层验证、能力缺口责任与恢复条件齐全，实现者可按卡逐步执行"
+      ]
+    },
+    "task08_granularity": {
+      "type": "score",
+      "instructions": "只评价 state.tasks 中 id=08 的任务「使新重构任务的量测匹配实际目标」在 granularity 这一维的规划质量；结合 state.constraints、planning_authorization 与 observed_capabilities，保留已列能力缺口，不把未来计划当已执行事实。不得把其他维度得分当作本维证据。",
+      "criteria": [
+        "没有可分辨的任务交付单元",
+        "多数任务无法独立验收或超出有界阶段",
+        "部分任务有独立交付，但仍有明显拆分或依赖缺口",
+        "各任务有可独立审查的交付、合理检查点及明确依赖，存在少量边界问题",
+        "各任务粒度适合独立审查，阶段可在有界窗口交付且依赖无循环和隐藏耦合"
+      ]
+    },
+    "task08_clarity": {
+      "type": "score",
+      "instructions": "只评价 state.tasks 中 id=08 的任务「使新重构任务的量测匹配实际目标」在 clarity 这一维的规划质量；结合 state.constraints、planning_authorization 与 observed_capabilities，保留已列能力缺口，不把未来计划当已执行事实。不得把其他维度得分当作本维证据。",
+      "criteria": [
+        "目标和验收缺失",
+        "验收主要是主观描述",
+        "核心行为可理解但重要负例或成功条件缺失",
+        "主要成功条件、负例、证据和命令明确，少量细节可由实现者决定",
+        "成功/失败边界、候选/证据、兼容与验收命令均明确，可客观核验"
+      ]
+    },
+    "task08_single_responsibility": {
+      "type": "score",
+      "instructions": "只评价 state.tasks 中 id=08 的任务「使新重构任务的量测匹配实际目标」在 single_responsibility 这一维的规划质量；结合 state.constraints、planning_authorization 与 observed_capabilities，保留已列能力缺口，不把未来计划当已执行事实。不得把其他维度得分当作本维证据。",
+      "criteria": [
+        "任务没有统一责任",
+        "任务合并多个无关交付且无法独立裁定",
+        "存在可分离的职责或源边界交叠",
+        "任务围绕一个交付责任，直接依赖调整有说明，少量边界仍可收紧",
+        "任务围绕一个可审查交付，源文件归属清楚且跨任务契约稳定"
+      ]
+    },
+    "task08_actionability": {
+      "type": "score",
+      "instructions": "只评价 state.tasks 中 id=08 的任务「使新重构任务的量测匹配实际目标」在 actionability 这一维的规划质量；结合 state.constraints、planning_authorization 与 observed_capabilities，保留已列能力缺口，不把未来计划当已执行事实。不得把其他维度得分当作本维证据。",
+      "criteria": [
+        "无法据此推进",
+        "缺少关键接口、文件或执行能力且无恢复路径",
+        "有步骤但关键命令/前提/恢复责任仍不明",
+        "接口、文件、命令和已知执行前提明确，满足前提后可实施",
+        "精确接口、范围、分层验证、能力缺口责任与恢复条件齐全，实现者可按卡逐步执行"
+      ]
+    },
+    "task09_granularity": {
+      "type": "score",
+      "instructions": "只评价 state.tasks 中 id=09 的任务「审计本轮真实自用链与健壮性」在 granularity 这一维的规划质量；结合 state.constraints、planning_authorization 与 observed_capabilities，保留已列能力缺口，不把未来计划当已执行事实。不得把其他维度得分当作本维证据。",
+      "criteria": [
+        "没有可分辨的任务交付单元",
+        "多数任务无法独立验收或超出有界阶段",
+        "部分任务有独立交付，但仍有明显拆分或依赖缺口",
+        "各任务有可独立审查的交付、合理检查点及明确依赖，存在少量边界问题",
+        "各任务粒度适合独立审查，阶段可在有界窗口交付且依赖无循环和隐藏耦合"
+      ]
+    },
+    "task09_clarity": {
+      "type": "score",
+      "instructions": "只评价 state.tasks 中 id=09 的任务「审计本轮真实自用链与健壮性」在 clarity 这一维的规划质量；结合 state.constraints、planning_authorization 与 observed_capabilities，保留已列能力缺口，不把未来计划当已执行事实。不得把其他维度得分当作本维证据。",
+      "criteria": [
+        "目标和验收缺失",
+        "验收主要是主观描述",
+        "核心行为可理解但重要负例或成功条件缺失",
+        "主要成功条件、负例、证据和命令明确，少量细节可由实现者决定",
+        "成功/失败边界、候选/证据、兼容与验收命令均明确，可客观核验"
+      ]
+    },
+    "task09_single_responsibility": {
+      "type": "score",
+      "instructions": "只评价 state.tasks 中 id=09 的任务「审计本轮真实自用链与健壮性」在 single_responsibility 这一维的规划质量；结合 state.constraints、planning_authorization 与 observed_capabilities，保留已列能力缺口，不把未来计划当已执行事实。不得把其他维度得分当作本维证据。",
+      "criteria": [
+        "任务没有统一责任",
+        "任务合并多个无关交付且无法独立裁定",
+        "存在可分离的职责或源边界交叠",
+        "任务围绕一个交付责任，直接依赖调整有说明，少量边界仍可收紧",
+        "任务围绕一个可审查交付，源文件归属清楚且跨任务契约稳定"
+      ]
+    },
+    "task09_actionability": {
+      "type": "score",
+      "instructions": "只评价 state.tasks 中 id=09 的任务「审计本轮真实自用链与健壮性」在 actionability 这一维的规划质量；结合 state.constraints、planning_authorization 与 observed_capabilities，保留已列能力缺口，不把未来计划当已执行事实。不得把其他维度得分当作本维证据。",
+      "criteria": [
+        "无法据此推进",
+        "缺少关键接口、文件或执行能力且无恢复路径",
+        "有步骤但关键命令/前提/恢复责任仍不明",
+        "接口、文件、命令和已知执行前提明确，满足前提后可实施",
+        "精确接口、范围、分层验证、能力缺口责任与恢复条件齐全，实现者可按卡逐步执行"
+      ]
+    }
+  }
+}

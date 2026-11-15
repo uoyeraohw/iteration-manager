@@ -1,0 +1,14 @@
+{
+  "kind": "readonly-builder-check",
+  "source": "collaboration agent /root/iter11_plan_check",
+  "verdict": "four findings incorporated; not product approval",
+  "findings": [
+    "separate task09 delivery from post-DONE whole-iteration closeout",
+    "bind task03 to actual argv/cwd/request and terminal source",
+    "use explicit hard dependencies rather than blocking independent tasks",
+    "register known frozen coordinator limitations",
+    "TypeSafe r1 task04 split into navigation/protocol04 and evidence support05; task09 split into synthetic integration10 and native audit11. Final full suite/whole-branch review/branch strict belong to Controller after task11 DONE.",
+    "TypeSafe r2 task04 narrowed to navigation only; workflow rules moved to task12. Native audit11 now has an exact bounded probe command/input/output and is separate from whole-iteration checks."
+  ],
+  "notes_scope": "each task owns one exact planned note path"
+}

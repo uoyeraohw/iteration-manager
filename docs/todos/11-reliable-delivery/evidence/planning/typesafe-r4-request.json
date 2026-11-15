@@ -1,0 +1,595 @@
+{
+  "state": {
+    "version": 1,
+    "iteration": "11-reliable-delivery",
+    "base_commit": "fdcc4cce88635ee81573be5991de11de650659d8",
+    "repository": "/data/workspace/iteration-manager",
+    "branch": "feat/iter-11-reliable-delivery",
+    "worktree": ".worktrees/iter-11",
+    "objective": "让现有可信交付协议更一致、更容易正确使用，并以本轮真实自用证据验证健壮性。",
+    "constraints": [
+      "本次授权为合并全部意见并初始化迭代；只写规划/初始化资产，不实施产品、不自动Git提交或创建执行Worktree。真实任务交付为Git，任务初态TODO/review PENDING/tdd_verified=false。",
+      "维护源码基线与正式协调器固定fdcc4cce88635ee81573be5991de11de650659d8；候选门禁变更不自动升级协调器，不自证批准。",
+      "默认优先01→02→03→04→05→06→07→08→09→10→11→12；硬依赖仅以逐卡dependencies为准。能力缺口只阻塞受影响步骤，独立READY卡可继续；一个卡片一个写者，源文件单一归属。独审不得参与本任务设计/实现/测试/RCA。",
+      "默认预算5/10/1/2，连续两次无新增证据禁止原样第三次派发。会话与命令树终态分离，绝对UTC在真实派发时确定。",
+      "正式业务/测试/验收由冻结Windows iter_run包装；当前Linux/Python3.13.5/Node22.23.3只做初始化协调。后续Controller负责补齐Windows正式执行、真实Codeg适配能力及独审后才派发受影响步骤。",
+      "无新依赖/打包平台/调度数据库/第五type/跨调用批准缓存；不扩展Linux runner、FS时间中断grant或自动发现。按支持矩阵与实测决定后续投入。",
+      "不修改历史docs/todos/10或发布原件，不回写旧任务门禁；根索引仅本次main初始化登记，后续特性分支Zero-Root-Touch。",
+      "沿用Git C→独审→登记D→local strict；完成全部卡、整轮集成/全量和独立总审后，对最终登记候选运行冻结branch strict。提前结构预检不替代收口。",
+      "不执行真实安装同步、助手配置、远端推送、合流或清理。新manifest默认stdout和临时副本验证，不自动扩大部署白名单。",
+      "冻结协调器含已知模式审计和旧接管读取缺陷，记录为FROZEN-KNOWN-01/02。相应负例的候选/固定差异是预期修复证据；实际管理卡仅合法Git且独立核对模式，不凭固定工具PASS放行非法卡。",
+      "11交付并独审登记DONE后，Controller另完成独立整轮总审和最终branch strict，防止11自要求其尚未能通过的门禁。收口原件放主checkout的build/iter11-closeout/带UTC唯一目录；不写入已审任务scope，README只记摘要/引用。清理前按授权归档，未归档不得清理唯一原件。",
+      "全部12卡PASS后由Controller统一整轮收口；10只做隔离联合验证，11只做选定真实链审计，12只修执行流程契约。三者不互设循环批准前提。"
+    ],
+    "tasks": [
+      {
+        "id": "01",
+        "slug": "delivery-mode-consistency",
+        "name": "统一交付模式解析与完成审计",
+        "type": "Strict-TDD",
+        "requirements": [
+          1
+        ],
+        "dependencies": [],
+        "objective": "缺省 Git 保持兼容；显式空值、未知值及卡/profile 冲突在派发、DONE审计、envelope和board统一拒绝。",
+        "consumes": "parse_card(content); load_profile(iter_dir); audit_task_file(file_path); candidate_identity(card, root, meta); task_handoff_projection(task_file, meta, state)。既有函数签名保持。",
+        "produces": "scripts/iter_contracts.py: resolve_delivery_mode(meta: dict, filesystem_enabled: bool) -> str；只返回git或filesystem，非法组合抛ValueError。既有查询/派发API及JSON键不变。",
+        "scope": [
+          "scripts/iter_contracts.py",
+          "scripts/iter_queries.py",
+          "scripts/iter_preflight.py",
+          "tests/test_delivery_mode_consistency.py",
+          "tests/test_query_contract.py",
+          "tests/test_execution_readiness.py",
+          ".agents/notes/planned/iter11/01-delivery-mode-consistency.md",
+          "docs/todos/11-reliable-delivery/evidence/01/"
+        ],
+        "stages": [
+          "冻结包含未知模式的合法Git绑定反例和兼容矩阵，取得目标断言RED",
+          "共用纯解析规则，完成审计、派发与交接一致性GREEN",
+          "完成Git/FS受影响回归和待审候选"
+        ],
+        "tests": [
+          "tests/test_delivery_mode_consistency.py",
+          "tests/test_query_contract.py",
+          "tests/test_execution_readiness.py",
+          "tests/test_completion_gates.py",
+          "tests/test_filesystem_receipts.py"
+        ],
+        "acceptance": [
+          "先构造其余收据、Git ancestry、冻结规格、check输出和验收勾选均合法的DONE卡，未知delivery_mode从contract提交起存在；断言审计不能PASS，防止用规格漂移替代合法性负例。",
+          "覆盖缺省git、显式git、合法filesystem、显式空串、未知模式、坏profile、缺profile及卡/profile冲突；dispatch非READY，审计非PASS，交接/看板显示UNKNOWN并列错误。",
+          "共享解析不导入CLI、不新增跨调用验收缓存，不改变旧导入、签名、返回/异常合同。"
+        ]
+      },
+      {
+        "id": "02",
+        "slug": "takeover-report-isolation",
+        "name": "隔离旧接管报告的逐卡读取故障",
+        "type": "Strict-TDD",
+        "requirements": [
+          2
+        ],
+        "dependencies": [],
+        "objective": "旧--takeover-report遇到不可读、编码损坏或读取竞态卡仍输出完整JSON库存，坏卡留错误，健康卡继续审计。",
+        "consumes": "discover_task_files(directory); parse_card(content); audit_task_file(path)。沿用旧takeover报告read_only/tasks/next及逐卡path/declared_status/acceptance_verdict/missing/findings字段。",
+        "produces": "scripts/iter_cli.py: _takeover_task(path: Path) -> dict；逐卡返回既有行结构，无法确定的missing为null，错误卡UNKNOWN或FAIL且永不PASS。保留iter_sync.main和iter_cli.main(argv)各自退出/异常合同。",
+        "scope": [
+          "scripts/iter_cli.py",
+          "tests/test_takeover_resilience.py",
+          "tests/test_task_discovery_compat.py",
+          "tests/test_cli_compatibility.py",
+          ".agents/notes/planned/iter11/02-takeover-report-isolation.md",
+          "docs/todos/11-reliable-delivery/evidence/02/"
+        ],
+        "stages": [
+          "对健康卡混合UnicodeError、OSError及发现后删除构造有效断言RED",
+          "实现逐卡故障隔离并保留旧报告结构",
+          "完成CLI/发现兼容与只读回归"
+        ],
+        "tests": [
+          "tests/test_takeover_resilience.py",
+          "tests/test_task_discovery_compat.py",
+          "tests/test_cli_compatibility.py",
+          "tests/test_sync_compatibility.py"
+        ],
+        "acceptance": [
+          "混合至少一张合法可读卡、一张坏编码卡、一张读取OSError卡；结果仍可解析为单份JSON，库存含所有已发现卡，健康卡结果保留，坏卡携带原因且非PASS。",
+          "非法目录/错误参数仍按旧合同失败；不吞掉整轮配置或参数错误，不把坏卡当空库存。",
+          "覆盖旧脚本入口与iter_cli.main(argv)；核对目录字节不变。"
+        ]
+      },
+      {
+        "id": "03",
+        "slug": "native-dispatch-guard",
+        "name": "连接就绪检查与真实委派的薄守卫",
+        "type": "Strict-TDD",
+        "requirements": [
+          3
+        ],
+        "dependencies": [
+          "01"
+        ],
+        "objective": "为现有Codeg持久JavaScript执行器提供可注入的顺序守卫：同owner检查终态成功并消费READY后才调用一次真实委派；保留原生工具和事件账。",
+        "consumes": "现有--dispatch-check card --context path --phase phase --owner owner；返回task_path/task_id/phase/candidate/readiness。scripts/deadline_watch.js: watchDeadline({...})保持原样。实际Codeg schema在运行时确认。",
+        "produces": "scripts/dispatch_guard.js: async dispatchAfterReady({request, check, dispatch}) -> {dispatched, reason, check, delegation}；request含request_id/project_root/tool_entry/task_path/task_id/owner/phase/candidate/context；check(request) -> Promise<{state,exit_code,argv,cwd,request_id,terminal_evidence,stdout,stderr}>；dispatch(request, ready) -> Promise<原生返回>。不使用Node API。",
+        "scope": [
+          "scripts/dispatch_guard.js",
+          "references/native_dispatch_adapter.md",
+          "tests/test_dispatch_guard.py",
+          ".agents/notes/planned/iter11/03-native-dispatch-guard.md",
+          "docs/todos/11-reliable-delivery/evidence/03/"
+        ],
+        "stages": [
+          "以可控Promise覆盖running/失败/乱序及身份不符，取得断言RED",
+          "完成薄守卫GREEN及既有截止守卫兼容",
+          "在实际Codeg schema可用时记录一条真实先检查后派发链，缺宿主则保留BLOCKED"
+        ],
+        "tests": [
+          "tests/test_dispatch_guard.py",
+          "tests/test_deadline_watch.py"
+        ],
+        "acceptance": [
+          "check必须为本次request_id，带实际argv/cwd及原生终态来源；guard核对实际argv的tool_entry/task_path/context/phase/owner与request完全一致，cwd等于project_root；命令state=completed、整数exit_code=0、单份JSON且readiness=READY；stdout中的task_path/task_id/phase/candidate均精确相符。",
+          "check仍running、拒绝、抛错、坏JSON、退出非零、错owner/旧context路径/旧request_id或候选不符时dispatch调用数为0；READY时调用数为1。委派抛错/unknown不自动重试，不伪造终态。",
+          "守卫只约束经过该入口的调用，不声称拦截所有原生委派；真实会话ID/检查原件/调用顺序另存，Node替身不作原生消费证据。",
+          "本卡只交付代码守卫与单独契约；任务04接入权威默认指令，避免多卡改同一流程文件。",
+          "argv/cwd和request标识只是可审计绑定，不能自证原生来源或context语义新鲜度；主控/独审核对真实命令和观察原件。"
+        ]
+      },
+      {
+        "id": "04",
+        "slug": "navigation-and-support",
+        "name": "收敛当前任务的默认阅读导航",
+        "type": "Spike-Discovery",
+        "requirements": [
+          4
+        ],
+        "dependencies": [],
+        "objective": "只调整默认导航：助手定位当前迭代目标、任务交接和证据链接，不默认加载历史全文或工具返回；不修改派发/收口规则。",
+        "consumes": "现有SKILL.md入口、templates/iteration_readme.md及--render-envelope输出；共同协议和任务卡契约仍为必读权威文件。",
+        "produces": "SKILL.md改为角色/授权/真源摘要与资源路由，具体流程链接共同协议；迭代模板增加当前交接/原件索引，不嵌入原始JSON或日志。",
+        "scope": [
+          "SKILL.md",
+          "templates/iteration_readme.md",
+          "tests/test_navigation_paths.py",
+          ".agents/notes/planned/iter11/04-navigation-paths.md",
+          "docs/todos/11-reliable-delivery/evidence/04/"
+        ],
+        "stages": [
+          "记录进入当前任务所需的直接文档及原件路径",
+          "更新入口和迭代模板的导航路由",
+          "运行导航检查并由新会话定位一次当前任务及失败证据"
+        ],
+        "tests": [
+          "tests/test_navigation_paths.py",
+          "tests/test_prompt_sources.py"
+        ],
+        "acceptance": [
+          "对本轮01任务的continue场景，新会话能够指出当前iter:goal、01任务卡/envelope、Strict-TDD契约和01证据目录；查阅01原件失败时明确缺口，不加载10迭代README全文来猜测当前状态。",
+          "SKILL中原执行步骤归并为共同协议链接，授权边界、四type、真假验收、Git/FS区别和CLI入口仍有直接路由；本卡不重新定义顺序或改动共同协议正文。",
+          "新迭代模板包含当前交接摘要/证据路径，链接目标存在且项目内；不内嵌原始JSON/原生工具响应。历史10迭代和发布原件字节不变。",
+          "正式experiment为python -B -m pytest -p no:cacheprovider tests/test_navigation_paths.py tests/test_prompt_sources.py -q，经冻结runner执行；另保存一次真实新会话导航消费记录，测试结构通过不代替消费。"
+        ]
+      },
+      {
+        "id": "05",
+        "slug": "support-matrix",
+        "name": "公布带证据的支持矩阵",
+        "type": "Spike-Discovery",
+        "requirements": [
+          8
+        ],
+        "dependencies": [],
+        "objective": "按能力、平台和宿主公布已验证、未验证及明确不支持范围；仅维护证据支持的声明，不实施跨平台或FS恢复扩展。",
+        "consumes": "2026-11-14发布记录、iter_run/checkpoint契约及本次Linux/TypeSafe/Codeg工具可用性观察；其他任务新事实仅在有原件后增补。",
+        "produces": "references/support_matrix.md：能力/platform/host/status/observed_at/source_candidate/evidence/limitation；references/release_status.md只链接该矩阵；不重写历史观察为当前事实。",
+        "scope": [
+          "references/support_matrix.md",
+          "references/release_status.md",
+          "tests/test_support_matrix.py",
+          ".agents/notes/planned/iter11/05-support-matrix.md",
+          "docs/todos/11-reliable-delivery/evidence/05/"
+        ],
+        "stages": [
+          "逐项核对契约与有日期的能力原件",
+          "生成支持矩阵和发布索引路由",
+          "执行结构/链接检查并由新会话正确识别未验证项"
+        ],
+        "tests": [
+          "tests/test_support_matrix.py",
+          "tests/test_release_index.py"
+        ],
+        "acceptance": [
+          "至少分别覆盖查询、Windows正式runner、Linux正式runner、Git批准链、FS本地绑定/正常交接、FS时间中断grant、显式安装根消费、Gemini CLI自动发现及配置注入；每行均有状态、日期、候选、来源和限制。",
+          "明确FS正常release/claim可用不等于FS时间中断恢复可用；Linux查询可用不等于正式命令链支持；Antigravity消费Gemini副本不等于Gemini CLI自动发现。",
+          "原件不能证明的范围写UNKNOWN/未验证及补齐责任和条件；不因历史493通过扩大版本、平台或宿主声明。",
+          "只修改矩阵/路由和其结构检查，不更改runner、恢复协议、部署配置或历史发布事实。"
+        ]
+      },
+      {
+        "id": "06",
+        "slug": "installation-provenance",
+        "name": "提供安装来源清单与轻量自检",
+        "type": "Strict-TDD",
+        "requirements": [
+          5
+        ],
+        "dependencies": [],
+        "objective": "独立副本可用显式来源清单检查来源提交、交付文件漂移及当前能力；分别定义安装烟测和维护全量测试，不引入打包平台或实际部署。",
+        "consumes": "现有交付白名单SKILL.md/scripts/references/templates/tests/.agents/notes；真实Git提交和已提交路径；当前发布支持边界。05支持矩阵是后续交叉核对输入，不是阻塞本卡的硬依赖。",
+        "produces": "scripts/iter_install.py: build_install_manifest(source_root: Path, source_commit: str) -> dict；check_installation(installation_root: Path, manifest: dict) -> dict；main(argv=None) -> int。CLI --make-manifest --root ROOT --source-commit SHA 输出JSON；--check --root ROOT --manifest PATH 只读检查，0一致、2输入/漂移/未知来源。",
+        "scope": [
+          "scripts/iter_install.py",
+          "references/installation_verification.md",
+          "tests/test_install_provenance.py",
+          ".agents/notes/planned/iter11/06-installation-provenance.md",
+          "docs/todos/11-reliable-delivery/evidence/06/"
+        ],
+        "stages": [
+          "对来源不符、坏清单、漂移/缺失/越界路径取得断言RED",
+          "生成和只读检查来源清单GREEN",
+          "在白名单临时安装做烟测，记录能力边界和待审候选"
+        ],
+        "tests": [
+          "tests/test_install_provenance.py",
+          "tests/test_cli_compatibility.py"
+        ],
+        "acceptance": [
+          "清单version=1、source_commit为实际完整可解析Git提交，files含精确相对path与sha256；生成前验证源文件与该提交相符，dirty源码/未知键/重复或越界路径拒绝，不凭提交标签证明来源。",
+          "check拒绝损坏、缺失、字节漂移、符号链接越界；不读取白名单外内容，不修复/覆盖安装，不运行维护全套或产生批准。",
+          "输出来源和文件一致性与运行时能力分别列示；Linux正式runner不可用不会被标成READY，query可用也不代表整条执行链可用。",
+          "来源清单默认stdout，落盘及随副本分发在另获授权的部署阶段执行；本轮只在隔离临时目录验证，不扩大既有部署白名单或覆盖真实安装。"
+        ]
+      },
+      {
+        "id": "07",
+        "slug": "portable-test-support",
+        "name": "消除维护测试对历史证据harness的运行依赖",
+        "type": "Refactor-Benchmark",
+        "requirements": [
+          5
+        ],
+        "dependencies": [],
+        "objective": "把可复用浏览器/HTTP测试支持代码移至tests/support，使白名单副本能够运行相应维护测试，保留历史harness原件和原测试行为。",
+        "consumes": "docs/todos/10-self-hosting-hardening/evidence/04/browser_harness.py的filesystem_fixture(root)、main()及原参数；tests/test_board_handoff.py两处消费者；既有scripts查询/服务接口。",
+        "produces": "tests/support/browser_harness.py: filesystem_fixture(root: Path)与main()保留既有参数语义、ready/stop/isolated-fixtures；测试仅从tests/support加载。历史evidence原件不改。",
+        "scope": [
+          "tests/support/",
+          "tests/test_board_handoff.py",
+          "tests/test_harness_portability.py",
+          ".agents/notes/planned/iter11/07-portable-test-support.md",
+          "docs/todos/11-reliable-delivery/evidence/07/"
+        ],
+        "stages": [
+          "取得原维护测试基线及同环境Before量测",
+          "提取测试支持并保持隔离模式/参数/HTTP行为",
+          "白名单临时副本复验、After量测与兼容观察"
+        ],
+        "tests": [
+          "tests/test_board_handoff.py",
+          "tests/test_board_service.py",
+          "tests/test_harness_portability.py"
+        ],
+        "acceptance": [
+          "两个harness消费者均不依赖维护docs/todos路径；只有白名单文件的临时副本可运行受影响测试，缺少维护历史目录不再造成harness加载失败。",
+          "隔离模式不读真实checkout库存，非隔离参数语义、HTTP边界、加载/错误/正常状态及原超时约定不降低；历史harness及日志字节不变。",
+          "按现有Refactor-Benchmark保留baseline/regression/compatibility/benchmark_before/benchmark_after。相同Windows/Python/临时样例参数，对受影响harness检查做3次Before/After，报告耗时与历史路径依赖数，不承诺提速。",
+          "本卡不宣称所有平台全套已可用；安装烟测、维护回归与真实浏览器观察分别记录，涉及实际浏览器使用Moli并管理自有CDP生命周期。"
+        ]
+      },
+      {
+        "id": "08",
+        "slug": "approved-chain-benchmark",
+        "name": "量测合法Git与FS批准库存的真实成本",
+        "type": "Spike-Discovery",
+        "requirements": [
+          6
+        ],
+        "dependencies": [
+          "01"
+        ],
+        "objective": "先建立合法收据、Git绑定和FS快照均实际PASS的代表库存，再量测查询/盘点/HTTP证据路径，定位单次调用内重复工作，不预设优化收益。",
+        "consumes": "任务01合法模式解析；现有test_filesystem_delivery_controller/执行就绪/Git临时夹具；audit_task_file、generate_board_data、render_task_envelope、inventory及LiveBoardHandler。07测试支持提取不是功能前提。",
+        "produces": "tests/benchmarks/approval_chain.py: main(argv=None) -> int；CLI --sizes 10 100 --repeats 3 --output PATH，输出环境/候选/工作负载/各次秒数/Git调用数/读取字节/批准卡数/限制。tests/test_approval_benchmark_fixture.py验证样例真实性。",
+        "scope": [
+          "tests/benchmarks/",
+          "tests/test_approval_benchmark_fixture.py",
+          ".agents/notes/planned/iter11/08-approved-chain-benchmark.md",
+          "docs/todos/11-reliable-delivery/evidence/08/"
+        ],
+        "stages": [
+          "构造Git/FS合法批准库存，先断言每卡审计PASS",
+          "分层量测10/100卡各3次并保留原始数据",
+          "按单次调用剖析给出优化或维持现状的决策和后续接口"
+        ],
+        "tests": [
+          "tests/test_approval_benchmark_fixture.py",
+          "tests/test_completion_gates.py",
+          "tests/test_filesystem_receipts.py"
+        ],
+        "acceptance": [
+          "分别构造10/100卡Git与FS已批准样例；每张DONE均有合法类型checks/原始输出/报告及真实绑定，量测前accepted必须等于卡数；不得用缺收据的快路径代替。",
+          "分别记录一次board、全部envelope、一次inventory及实际HTTP证据读取的成本，样例构造不计时；真实Git执行及FS字节比较不替换成成功桩。",
+          "相同候选/环境/数据量至少3次，给出逐次值、均值和范围；记录硬件/Python/Git/平台、源码候选及样例限制，不从3次样本推断可靠尾延迟。",
+          "分析仅提出基于证据的单次调用复用机会；不实现跨调用验收缓存，不以合成性能证明真实外部业务PASS，不附带未评估的优化改码。"
+        ]
+      },
+      {
+        "id": "09",
+        "slug": "proportional-refactor-evidence",
+        "name": "使新重构任务的量测匹配实际目标",
+        "type": "Spike-Discovery",
+        "requirements": [
+          7
+        ],
+        "dependencies": [],
+        "objective": "为未来行为保持型重构与性能优化提供两套可消费规划说明：前者量测与结构目标相关的客观指标，后者量测性能；保留四type及既有五项检查，不追溯降低旧卡门禁。",
+        "consumes": "现有Refactor-Benchmark五项TYPE_CHECKS与schema1；既有合成量测限制；render_task_card(spec)及模板消费路径。08批准库存量测结果完成后交叉核对，不是本卡的硬依赖。",
+        "produces": "references/refactor_evidence.md的两类目标/指标/证据选择规则；templates/contracts/refactor_benchmark_contract.md与scripts/iter_templates.py生成说明一致；verification键集不变，不加第五type或必填元数据。",
+        "scope": [
+          "templates/contracts/refactor_benchmark_contract.md",
+          "references/refactor_evidence.md",
+          "scripts/iter_templates.py",
+          "tests/test_template_generation.py",
+          "tests/test_refactor_evidence_policy.py",
+          ".agents/notes/planned/iter11/09-proportional-refactor-evidence.md",
+          "docs/todos/11-reliable-delivery/evidence/09/"
+        ],
+        "stages": [
+          "用两种真实新卡规划样例确认当前成本与指标匹配问题",
+          "更新目标对应的证据规则和生成说明",
+          "实际生成及新会话消费两类样例，核对旧卡要求保持"
+        ],
+        "tests": [
+          "tests/test_refactor_evidence_policy.py",
+          "tests/test_template_generation.py",
+          "tests/test_task_card_schema.py",
+          "tests/test_completion_gates.py"
+        ],
+        "acceptance": [
+          "行为保持型新任务仍有基线/兼容/回归/独审；benchmark_before/after可测任务约定的依赖数、重复入口数等可重复结构指标，无性能目标时不强制延迟/吞吐提升。",
+          "性能优化型明确同环境/规模/命令/单位与目标，仍要求真实Before/After性能证据；不以结构指标替代既定性能目标。",
+          "四type、schema1、五项检查名与收据绑定保持；既有卡、冻结规格及本轮07的Before/After要求不修改，不把未知指标当无须验证。",
+          "两种spec均经实际生成/预检；缺baseline、regression或任一既定检查仍拒绝。模板结构检查与真实助手是否选对指标分别留证。"
+        ]
+      },
+      {
+        "id": "10",
+        "slug": "integration-fault-paths",
+        "name": "核验跨模块故障路径的一致性",
+        "type": "Spike-Discovery",
+        "requirements": [
+          1,
+          2,
+          3,
+          5
+        ],
+        "dependencies": [
+          "01",
+          "02",
+          "03",
+          "06",
+          "07"
+        ],
+        "objective": "组合已完成模块的隔离夹具，锁定错误在派发、事件、交接和审计之间不被抹平；只补跨模块回归，不重复各卡完整测试或承担真实链审计。",
+        "consumes": "01模式矩阵、02坏卡隔离、03异步守卫、06安装清单及07测试支持接口；现有tests/test_self_hosting.py及执行就绪/FS/Git夹具。",
+        "produces": "tests/test_self_hosting.py受影响联合断言与evidence/10/integration-report.json；报告仅synthetic层，不产生原生验收或批准。",
+        "scope": [
+          "tests/test_self_hosting.py",
+          ".agents/notes/planned/iter11/10-integration-fault-paths.md",
+          "docs/todos/11-reliable-delivery/evidence/10/"
+        ],
+        "stages": [
+          "复用成熟夹具定义最少跨模块断言",
+          "运行隔离集成负例并保持原始失败",
+          "交付集成结果与未覆盖边界，最高TESTING"
+        ],
+        "tests": [
+          "tests/test_self_hosting.py",
+          "tests/test_execution_readiness.py",
+          "tests/test_autonomy.py",
+          "tests/test_checkpoint_resume.py"
+        ],
+        "acceptance": [
+          "坏编码卡与合法卡混合时takeover/inventory仍有完整库存；含未知模式的DONE不在envelope/board重新变PASS。",
+          "延迟/失败READY的guard不产生dispatch；外来owner、phase/candidate不符、依赖非PASS、两次无进展、坏幂等payload均保持拒绝和原卡字节。",
+          "Git/FS源码/证据/正文漂移、FS拒Git grant、未知命令终态的既有成熟覆盖直接沿用适用结果；新增断言仅针对模块连接缺口，不破坏真实卡或耗尽真实预算。",
+          "安装清单漂移不因投影重建变成一致；临时安装受影响harness检查与维护路径脱钩。所有样例标synthetic，报告列每项命令/候选/证据，不声称真实委派。"
+        ]
+      },
+      {
+        "id": "11",
+        "slug": "native-self-use-audit",
+        "name": "审计本轮真实自用链与检查点续接",
+        "type": "Spike-Discovery",
+        "requirements": [
+          3,
+          4,
+          8
+        ],
+        "dependencies": [
+          "03",
+          "10"
+        ],
+        "objective": "只审计预先选择的一条本轮真实管理链和一次真实正常检查点续接；核对原生身份、候选、顺序和证据，不实现产品、不改测试、不承担整轮回归。",
+        "consumes": "Controller在推进期间保存的evidence/planning/native-source-index.json来源指针（不是任务状态账）；03真实守卫链、10隔离报告，以及被选中任务的原生会话/runner/attempt/独审/C-D/local strict原件。",
+        "produces": "evidence/11/audit_native_chain.py: main(argv=None) -> int；--sources PATH --output PATH生成robustness-report.json与native-chain-index.json，沿用既定报告schema。脚本仅校验记录引用/身份/顺序/候选，语义真实性由非参与者核对原件。",
+        "scope": [
+          ".agents/notes/planned/iter11/11-native-self-use-audit.md",
+          "docs/todos/11-reliable-delivery/evidence/11/"
+        ],
+        "stages": [
+          "从Controller来源指针中选择一条完成链和一次正常续接",
+          "运行隔离审计探针并人工核对原生来源",
+          "交付报告及明确缺口供本卡独审，不执行整轮收口"
+        ],
+        "tests": [],
+        "acceptance": [
+          "输入sources逐项提供task_id/session_id、候选、check命令argv/cwd/request_id/UTC、实际dispatch和终态、runner收据、attempt/release、独审、C/D及local strict原件路径；缺项、未知终态或顺序倒置输出FAIL/UNKNOWN/BLOCKED并返回2，不能补造记录。",
+          "experiment为python -B docs/todos/11-reliable-delivery/evidence/11/audit_native_chain.py --sources docs/todos/11-reliable-delivery/evidence/planning/native-source-index.json --output docs/todos/11-reliable-delivery/evidence/11/robustness-report.json，经冻结runner保存真实退出码。至少一条本轮真实完整链、一次新会话正常继承，逐例核对原生身份与原件；不以历史链或synthetic桩替代。",
+          "审计范围仅选中完整链与续接；其他卡只链接已有报告。保留static/synthetic/native-self-use分层、冻结协调器已知缺陷与所有FAIL；元数据来源清单不提供状态、调度或批准。",
+          "本卡只交付探针、报告及来源索引，不改产品/测试/共同协议。11登记DONE后仍由Controller等全部12卡PASS再做最终全量/独立总审/最终branch strict；相应收口原件不写本卡scope。",
+          "实际Codeg、Windows runner或原件不足时相应case为BLOCKED/UNKNOWN并列补齐责任/条件，本卡不宣称安装已部署或外部FS业务通过。"
+        ]
+      },
+      {
+        "id": "12",
+        "slug": "workflow-sequence",
+        "name": "统一默认派发与最终收口顺序",
+        "type": "Spike-Discovery",
+        "requirements": [
+          3,
+          4
+        ],
+        "dependencies": [
+          "03"
+        ],
+        "objective": "仅维护执行流程契约：受支持Codeg路径消费03守卫；提前结构预检与全部卡登记后的最终收口明确分离，消除顺序歧义。",
+        "consumes": "任务03 dispatchAfterReady接口/原生能力记录；既有共同协议、执行检查、Worktree流程图及三助手/委派模板。",
+        "produces": "共同协议的权威顺序与其余引用一致：READY终态后实际派发；每卡C/独审/D/local strict；全部卡DONE后集成/全量、整轮独审及最终branch strict。其他文档只引用，不自建循环。",
+        "scope": [
+          "references/agent_protocol.md",
+          "references/execution_readiness.md",
+          "references/worktree_git_contract.md",
+          "templates/assistants/iteration_planner.md",
+          "templates/assistants/iteration_controller.md",
+          "templates/assistants/task_tech_lead.md",
+          "templates/sdd_implementer_prompt.md",
+          "templates/sdd_reviewer_prompt.md",
+          "tests/test_prompt_sources.py",
+          "tests/test_workflow_sequence.py",
+          ".agents/notes/planned/iter11/12-workflow-sequence.md",
+          "docs/todos/11-reliable-delivery/evidence/12/"
+        ],
+        "stages": [
+          "核对三种流程场景及权威来源",
+          "统一协议/流程图/模板对03守卫和收口的引用",
+          "运行流程消费检查并保存真实原生顺序观察"
+        ],
+        "tests": [
+          "tests/test_workflow_sequence.py",
+          "tests/test_prompt_sources.py",
+          "tests/test_task_card_schema.py"
+        ],
+        "acceptance": [
+          "场景A：检查running或非READY时不得原生派发；终态READY且身份匹配才消费03守卫并派发。只对实际已验证Codeg路径声明支持；其他宿主保留显式能力缺口。",
+          "场景B：提前branch结构预检可在总审前运行，但不标整轮完成；每卡仍C→独审→登记D→local strict。无变更且证据有效时不重复同范围测试或审查。",
+          "场景C：全部卡（包括本卡）有效DONE后，Controller执行整轮集成/全量、独立总审和最终登记候选的冻结branch strict。最后一张卡不得自要求先通过此branch strict；总审触发变更时重审受影响候选。",
+          "收口原件位于主checkout build/iter11-closeout/唯一UTC目录，不写回已审卡scope；README仅摘要/链接。清理前按授权保留/归档原件，不为证据注册嵌入巨型JSON。",
+          "experiment为python -B -m pytest -p no:cacheprovider tests/test_workflow_sequence.py tests/test_prompt_sources.py tests/test_task_card_schema.py -q，经冻结runner执行；实际Codeg消费另外留会话/调用顺序原件，不把模板文本测试当原生链。"
+        ]
+      }
+    ],
+    "coverage": {
+      "1": [
+        "01",
+        "10"
+      ],
+      "2": [
+        "02",
+        "10"
+      ],
+      "3": [
+        "03",
+        "10",
+        "11",
+        "12"
+      ],
+      "4": [
+        "04",
+        "12"
+      ],
+      "5": [
+        "06",
+        "07",
+        "10"
+      ],
+      "6": [
+        "08"
+      ],
+      "7": [
+        "09"
+      ],
+      "8": [
+        "05",
+        "11"
+      ]
+    },
+    "observed_capabilities": {
+      "os": "Linux",
+      "python": "3.13.5",
+      "node": "22.23.3",
+      "formal_runner": "requires Windows Job Objects; unavailable here",
+      "typesafe": "mcp__typesafe__evaluate exposed in actual tool catalog",
+      "native_target": "完整延迟工具目录已确认暴露mcp__codeg_mcp__delegate_to_agent/get_delegation_status/cancel_delegation；仅工具schema可发现，实际目标工作区/执行链未验证。先前not-exposed判断为观察错误，保留原件并在current context更正。",
+      "dirty": "clean at fdcc4cce88635ee81573be5991de11de650659d8",
+      "git_identity": "user.name/email not configured; no local commit performed"
+    },
+    "planning_authorization": "用户明确要求初始化；授权落盘规划、初始化协调和本机冻结工具快照。未明确授权产品实施、Git提交/Worktree执行、部署、推送、合流或清理；规划不自动提交。",
+    "planning_review": {
+      "kind": "readonly-builder-check",
+      "source": "collaboration agent /root/iter11_plan_check",
+      "verdict": "four findings incorporated; not product approval",
+      "findings": [
+        "separate task09 delivery from post-DONE whole-iteration closeout",
+        "bind task03 to actual argv/cwd/request and terminal source",
+        "use explicit hard dependencies rather than blocking independent tasks",
+        "register known frozen coordinator limitations",
+        "TypeSafe r1 task04 split into navigation/protocol04 and evidence support05; task09 split into synthetic integration10 and native audit11. Final full suite/whole-branch review/branch strict belong to Controller after task11 DONE.",
+        "TypeSafe r2 task04 narrowed to navigation only; workflow rules moved to task12. Native audit11 now has an exact bounded probe command/input/output and is separate from whole-iteration checks."
+      ],
+      "notes_scope": "each task owns one exact planned note path",
+      "capability_correction": "Actual lazy tool catalog exposes Codeg tools. Old TypeSafe requests retain the mistaken absence observation as historical input; native actionability is re-evaluated using corrected facts, without design changes."
+    },
+    "actual_tool_catalog": [
+      {
+        "name": "mcp__codeg_mcp__cancel_delegation",
+        "description": "Stop a running delegated task by its task_id and tear down its sub-agent — use this only when you no longer want the result. Don't cancel just because a task is taking a while: substantial work can legitimately run for a long time, so prefer waiting on it (get_delegation_status with wait_ms) over canceling. If the task has already finished, nothing is canceled and its final result is returned instead.\n\nexec tool declaration:\n```ts\ndeclare const tools: { mcp__codeg_mcp__cancel_delegation(args: {\n  // The task_id returned by delegate_to_agent.\n  task_id: string;\n}): Promise<CallToolResult>; };\n```"
+      },
+      {
+        "name": "mcp__codeg_mcp__delegate_to_agent",
+        "description": "Hand off a self-contained sub-task to a separate local AI agent that runs in its own session. ASYNCHRONOUS: returns a task_id right away and the sub-agent keeps working in the background — this call never blocks. So you can fan out several delegations at once and keep working, then collect the results with get_delegation_status by passing the task_ids array (one id to poll a single task, or many at once to poll the whole fan-out in one call) — or stop one early with cancel_delegation(task_id). The sub-agent CANNOT see this conversation, your open files, or earlier turns — it starts cold, so `task` must carry everything it needs. Best for independent, parallelizable work you can describe up front; not for steps that need your ongoing back-and-forth. RECOGNIZING AN EXPLICIT DELEGATION REQUEST: the user can name a sub-agent directly in their message — it appears as `@AgentName` or as a Markdown link `[@AgentName](codeg://agent/<agent_type>)`. Such a mention IS an explicit instruction to delegate the associated work to that agent, even when the user never names this tool. If the message names several agents, make one call per agent, each carrying that agent's slice of the work. A user-defined ASSISTANT is named the same way — `@AssistantName` or `[@AssistantName](codeg://assistant/<number>)` — and that mention is likewise an explicit instruction to delegate to it: pass `assistant_id` set to that number and leave `agent_type` out. An assistant brings its own agent, options and standing instructions.\n\nexec tool declaration:\n```ts\ndeclare const tools: { mcp__codeg_mcp__delegate_to_agent(args: {\n  // Required unless `assistant_id` is given. Which local agent runs the sub-task. Pick the one best suited to the work — or, when the user's message names an agent via `@AgentName` / `codeg://agent/<agent_type>`, use that exact `<agent_type>` slug (e.g. `codeg://agent/claude_code` means `claude_code`).\n  agent_type?: \"codex\" | \"antigravity\";\n  // Delegate to a user-defined assistant instead of picking an agent yourself. Take the number from a `codeg://assistant/<number>` link in the user's message (e.g. `codeg://assistant/3` means 3). When set, `agent_type` is ignored: the assistant decides which agent runs, with which options and instructions. No assistants were configured when this session started; use this only with an id taken from a `codeg://assistant/<number>` link in the user's message.\n  assistant_id?: number;\n  // The complete, self-contained prompt for the sub-agent. It has no access to this conversation or your context, so spell out everything: the goal, the relevant background and absolute file paths, any constraints, and exactly what to return.\n  task: string;\n  // Absolute path the sub-agent runs in. Defaults to this session's working directory.\n  working_dir?: string;\n}): Promise<CallToolResult>; };\n```"
+      },
+      {
+        "name": "mcp__codeg_mcp__get_delegation_status",
+        "description": "Collect delegated task results — or check on them — by the task_ids from delegate_to_agent. Pass a single id in the array to poll one task, or many at once to poll a whole fan-out in a single call. The response is ALWAYS a JSON object {\"tasks\":[...]} with one entry per id, in the order you asked — one entry for a single id, several for a fan-out; every entry carries that task's task_id and status, so you can always tell which task it is and where it stands. The wait_ms argument picks the mode: omit it for a non-blocking snapshot (poll), or pass wait_ms to wait — wait_ms>0 blocks up to that many ms (capped at 60000; re-call to keep waiting), wait_ms=0 blocks with no timeout for as long as the sub-agent runs. When polling several, the wait returns as soon as ANY requested task reaches a terminal state, so re-call to keep collecting the rest. When you just need the results, prefer blocking over repeated polling. Each task reports its current state — running, or a terminal completed / failed / canceled (or unknown if the id isn't recognized); a finished task includes its full result text. A wait ALSO returns early when a sub-agent becomes blocked on the user: that entry stays status \"running\" but carries blocked_on, meaning the sub-agent is parked on a permission / question / plan approval in Codeg and will not progress until a human answers. Tell the user about it — that is the one case where speaking up mid-wait is right — then wait again; each distinct prompt wakes the wait exactly once, so re-calling is safe and will not spin. While tasks are still running and you are simply waiting, do NOT emit any user-facing message between calls — just call again silently. Skip status narration like \"still running\", \"not returned yet\", or \"continuing to wait\"; it fragments the conversation. Speak to the user only when there is a terminal result to report, a task is blocked_on them, or something genuinely needs their input.\n\nexec tool declaration:\n```ts\ndeclare const tools: { mcp__codeg_mcp__get_delegation_status(args: {\n  // One or more task_ids returned by delegate_to_agent — pass a single id to poll one task, or several to poll them together in one call. The response is always a JSON object {\"tasks\":[...]} with one entry per id (in this order) — one entry for a single id — and each entry carries that task's task_id and status. With wait_ms set, the call returns as soon as ANY of these tasks reaches a terminal state, or becomes blocked on you (status stays \"running\", plus a blocked_on field).\n  task_ids: Array<string>;\n  // How long to wait. Omit for an immediate snapshot (poll). A positive value blocks up to that many milliseconds (capped at 60000). 0 means no timeout — block until a task reaches a terminal state, however long it takes. When several ids are given, the wait resolves as soon as ANY requested task becomes terminal, or as soon as one becomes blocked_on the user.\n  wait_ms?: number;\n}): Promise<CallToolResult>; };\n```"
+      }
+    ]
+  },
+  "questions": {
+    "task03_actionability": {
+      "type": "score",
+      "instructions": "只评价state.tasks中id=03的任务「连接就绪检查与真实委派的薄守卫」的可执行性actionability；依据精确接口/范围/命令及更新后的actual_tool_catalog事实。Codeg工具schema已暴露，但实际目标链与Windows正式runner尚未验证/不可在当前Linux运行，不能把工具发现当执行通过。不要评价其他维度。",
+      "criteria": [
+        "无法据此推进",
+        "缺少关键接口、文件或执行能力且无恢复路径",
+        "有步骤但关键命令/前提/恢复责任仍不明",
+        "接口、文件、命令和已知执行前提明确，满足前提后可实施",
+        "精确接口、范围、分层验证、能力缺口责任与恢复条件齐全，实现者可按卡逐步执行"
+      ]
+    },
+    "task11_actionability": {
+      "type": "score",
+      "instructions": "只评价state.tasks中id=11的任务「审计本轮真实自用链与检查点续接」的可执行性actionability；依据精确接口/范围/命令及更新后的actual_tool_catalog事实。Codeg工具schema已暴露，但实际目标链与Windows正式runner尚未验证/不可在当前Linux运行，不能把工具发现当执行通过。不要评价其他维度。",
+      "criteria": [
+        "无法据此推进",
+        "缺少关键接口、文件或执行能力且无恢复路径",
+        "有步骤但关键命令/前提/恢复责任仍不明",
+        "接口、文件、命令和已知执行前提明确，满足前提后可实施",
+        "精确接口、范围、分层验证、能力缺口责任与恢复条件齐全，实现者可按卡逐步执行"
+      ]
+    },
+    "task12_actionability": {
+      "type": "score",
+      "instructions": "只评价state.tasks中id=12的任务「统一默认派发与最终收口顺序」的可执行性actionability；依据精确接口/范围/命令及更新后的actual_tool_catalog事实。Codeg工具schema已暴露，但实际目标链与Windows正式runner尚未验证/不可在当前Linux运行，不能把工具发现当执行通过。不要评价其他维度。",
+      "criteria": [
+        "无法据此推进",
+        "缺少关键接口、文件或执行能力且无恢复路径",
+        "有步骤但关键命令/前提/恢复责任仍不明",
+        "接口、文件、命令和已知执行前提明确，满足前提后可实施",
+        "精确接口、范围、分层验证、能力缺口责任与恢复条件齐全，实现者可按卡逐步执行"
+      ]
+    }
+  }
+}

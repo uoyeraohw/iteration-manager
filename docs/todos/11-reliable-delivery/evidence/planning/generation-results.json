@@ -1,0 +1,389 @@
+{
+  "read_only_cli_operations": [
+    {
+      "operation": "render",
+      "task_id": "01",
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/data/workspace/iteration-manager/build/frozen-tools/fdcc4cce8863/scripts/iter_templates.py",
+        "--render",
+        "/data/workspace/iteration-manager/docs/todos/11-reliable-delivery/evidence/planning/specs/01.json"
+      ],
+      "cwd": "/data/workspace/iteration-manager",
+      "exit_code": 0,
+      "stdout": "---\nschema_version: 1\niteration: \"11-reliable-delivery\"\ntask_id: \"01\"\ntask_name: \"统一交付模式解析与完成审计\"\nstatus: \"TODO\"\ntype: \"Strict-TDD\"\nfix_rounds: 0\nreplan_count: 0\nis_blocked: false\nblocked_reason: \"\"\ntypesafe_score: \"UNASSESSED\"\ntypesafe_evidence: \"\"\ntdd_verified: false\nreview_status: \"PENDING\"\nreview_receipt: \"\"\nbase_sha: \"\"\nhead_sha: \"\"\n---\n\n# 01 · 统一交付模式解析与完成审计\n\n## 1. 任务执行目标与接口契约\n- **主要目标**：缺省 Git 保持兼容；显式空值、未知值及卡/profile 冲突在派发、DONE审计、envelope和board统一拒绝。\n- **Consumes**：parse_card(content); load_profile(iter_dir); audit_task_file(file_path); candidate_identity(card, root, meta); task_handoff_projection(task_file, meta, state)。既有函数签名保持。\n- **Produces**：scripts/iter_contracts.py: resolve_delivery_mode(meta: dict, filesystem_enabled: bool) -> str；只返回git或filesystem，非法组合抛ValueError。既有查询/派发API及JSON键不变。\n\n## 2. 业务阶段\n<!-- iter:stages -->\n- [ ] 冻结包含未知模式的合法Git绑定反例和兼容矩阵，取得目标断言RED\n- [ ] 共用纯解析规则，完成审计、派发与交接一致性GREEN\n- [ ] 完成Git/FS受影响回归和待审候选\n<!-- /iter:stages -->\n\n## 3. 按类型验证规划\n核心行为先取得可编译测试的真实断言RED，再最小GREEN；环境错误不算RED。\n<!-- iter:verification -->\n- [ ] **red**：python -B -m pytest -p no:cacheprovider tests/test_delivery_mode_consistency.py tests/test_query_contract.py tests/test_execution_readiness.py tests/test_completion_gates.py tests/test_filesystem_receipts.py -q；由同一实现者先取得验收中具体行为断言失败，环境/导入失败不作RED；通过冻结runner。\n- [ ] **green**：python -B -m pytest -p no:cacheprovider tests/test_delivery_mode_consistency.py tests/test_query_contract.py tests/test_execution_readiness.py tests/test_completion_gates.py tests/test_filesystem_receipts.py -q；同一实现者最小修复后通过，保留原始输出；通过冻结runner。\n- [ ] **regression**：python -B -m pytest -p no:cacheprovider tests/test_delivery_mode_consistency.py tests/test_query_contract.py tests/test_execution_readiness.py tests/test_completion_gates.py tests/test_filesystem_receipts.py -q；覆盖本卡列出的直接接口/兼容范围，影响不明扩大；不代替整轮全量。\n<!-- /iter:verification -->\n\n## 4. 交付与冻结\n提交实现C及原始证据，再独立审查冻结规格；主管登记D后运行strict，head_sha绑定C。\n执行状态与审查结果读取frontmatter及review_receipt；生成不代表验证或独立批准。\n\n## 5. 新增或变更内容清单\n<!-- iter:scope -->\n| 文件路径 | 变更类型 | 核心职责说明 |\n| --- | --- | --- |\n| `scripts/iter_contracts.py` | MODIFIED | 本任务授权范围 |\n| `scripts/iter_queries.py` | MODIFIED | 本任务授权范围 |\n| `scripts/iter_preflight.py` | MODIFIED | 本任务授权范围 |\n| `tests/test_delivery_mode_consistency.py` | MODIFIED | 本任务授权范围 |\n| `tests/test_query_contract.py` | MODIFIED | 本任务授权范围 |\n| `tests/test_execution_readiness.py` | MODIFIED | 本任务授权范围 |\n| `.agents/notes/planned/iter11/01-delivery-mode-consistency.md` | MODIFIED | 本任务授权范围 |\n| `docs/todos/11-reliable-delivery/evidence/01/` | MODIFIED | 本任务授权范围 |\n<!-- /iter:scope -->\n\n## 6. 确定性验收标准\n<!-- iter:acceptance -->\n- [ ] 先构造其余收据、Git ancestry、冻结规格、check输出和验收勾选均合法的DONE卡，未知delivery_mode从contract提交起存在；断言审计不能PASS，防止用规格漂移替代合法性负例。\n- [ ] 覆盖缺省git、显式git、合法filesystem、显式空串、未知模式、坏profile、缺profile及卡/profile冲突；dispatch非READY，审计非PASS，交接/看板显示UNKNOWN并列错误。\n- [ ] 共享解析不导入CLI、不新增跨调用验收缓存，不改变旧导入、签名、返回/异常合同。\n<!-- /iter:acceptance -->\n\n## 7. 执行实证与裁决账本\n<!-- iter:ledger -->\n实际命令、原始证据、退出码、候选、检查点与剩余项在执行中记录；未执行不推断通过。\n独立审查结果由外部收据与报告提供。\n<!-- /iter:ledger -->\n",
+      "stderr": ""
+    },
+    {
+      "operation": "new-card-precheck",
+      "task_id": "01",
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/data/workspace/iteration-manager/build/frozen-tools/fdcc4cce8863/scripts/iter_templates.py",
+        "--check",
+        "/data/workspace/iteration-manager/docs/todos/11-reliable-delivery/evidence/planning/generation/01-initial.md",
+        "--delivery-mode",
+        "git"
+      ],
+      "cwd": "/data/workspace/iteration-manager",
+      "exit_code": 0,
+      "stdout": "{\"valid\": true, \"errors\": []}\n",
+      "stderr": ""
+    },
+    {
+      "operation": "render",
+      "task_id": "02",
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/data/workspace/iteration-manager/build/frozen-tools/fdcc4cce8863/scripts/iter_templates.py",
+        "--render",
+        "/data/workspace/iteration-manager/docs/todos/11-reliable-delivery/evidence/planning/specs/02.json"
+      ],
+      "cwd": "/data/workspace/iteration-manager",
+      "exit_code": 0,
+      "stdout": "---\nschema_version: 1\niteration: \"11-reliable-delivery\"\ntask_id: \"02\"\ntask_name: \"隔离旧接管报告的逐卡读取故障\"\nstatus: \"TODO\"\ntype: \"Strict-TDD\"\nfix_rounds: 0\nreplan_count: 0\nis_blocked: false\nblocked_reason: \"\"\ntypesafe_score: \"UNASSESSED\"\ntypesafe_evidence: \"\"\ntdd_verified: false\nreview_status: \"PENDING\"\nreview_receipt: \"\"\nbase_sha: \"\"\nhead_sha: \"\"\n---\n\n# 02 · 隔离旧接管报告的逐卡读取故障\n\n## 1. 任务执行目标与接口契约\n- **主要目标**：旧--takeover-report遇到不可读、编码损坏或读取竞态卡仍输出完整JSON库存，坏卡留错误，健康卡继续审计。\n- **Consumes**：discover_task_files(directory); parse_card(content); audit_task_file(path)。沿用旧takeover报告read_only/tasks/next及逐卡path/declared_status/acceptance_verdict/missing/findings字段。\n- **Produces**：scripts/iter_cli.py: _takeover_task(path: Path) -> dict；逐卡返回既有行结构，无法确定的missing为null，错误卡UNKNOWN或FAIL且永不PASS。保留iter_sync.main和iter_cli.main(argv)各自退出/异常合同。\n\n## 2. 业务阶段\n<!-- iter:stages -->\n- [ ] 对健康卡混合UnicodeError、OSError及发现后删除构造有效断言RED\n- [ ] 实现逐卡故障隔离并保留旧报告结构\n- [ ] 完成CLI/发现兼容与只读回归\n<!-- /iter:stages -->\n\n## 3. 按类型验证规划\n核心行为先取得可编译测试的真实断言RED，再最小GREEN；环境错误不算RED。\n<!-- iter:verification -->\n- [ ] **red**：python -B -m pytest -p no:cacheprovider tests/test_takeover_resilience.py tests/test_task_discovery_compat.py tests/test_cli_compatibility.py tests/test_sync_compatibility.py -q；由同一实现者先取得验收中具体行为断言失败，环境/导入失败不作RED；通过冻结runner。\n- [ ] **green**：python -B -m pytest -p no:cacheprovider tests/test_takeover_resilience.py tests/test_task_discovery_compat.py tests/test_cli_compatibility.py tests/test_sync_compatibility.py -q；同一实现者最小修复后通过，保留原始输出；通过冻结runner。\n- [ ] **regression**：python -B -m pytest -p no:cacheprovider tests/test_takeover_resilience.py tests/test_task_discovery_compat.py tests/test_cli_compatibility.py tests/test_sync_compatibility.py -q；覆盖本卡列出的直接接口/兼容范围，影响不明扩大；不代替整轮全量。\n<!-- /iter:verification -->\n\n## 4. 交付与冻结\n提交实现C及原始证据，再独立审查冻结规格；主管登记D后运行strict，head_sha绑定C。\n执行状态与审查结果读取frontmatter及review_receipt；生成不代表验证或独立批准。\n\n## 5. 新增或变更内容清单\n<!-- iter:scope -->\n| 文件路径 | 变更类型 | 核心职责说明 |\n| --- | --- | --- |\n| `scripts/iter_cli.py` | MODIFIED | 本任务授权范围 |\n| `tests/test_takeover_resilience.py` | MODIFIED | 本任务授权范围 |\n| `tests/test_task_discovery_compat.py` | MODIFIED | 本任务授权范围 |\n| `tests/test_cli_compatibility.py` | MODIFIED | 本任务授权范围 |\n| `.agents/notes/planned/iter11/02-takeover-report-isolation.md` | MODIFIED | 本任务授权范围 |\n| `docs/todos/11-reliable-delivery/evidence/02/` | MODIFIED | 本任务授权范围 |\n<!-- /iter:scope -->\n\n## 6. 确定性验收标准\n<!-- iter:acceptance -->\n- [ ] 混合至少一张合法可读卡、一张坏编码卡、一张读取OSError卡；结果仍可解析为单份JSON，库存含所有已发现卡，健康卡结果保留，坏卡携带原因且非PASS。\n- [ ] 非法目录/错误参数仍按旧合同失败；不吞掉整轮配置或参数错误，不把坏卡当空库存。\n- [ ] 覆盖旧脚本入口与iter_cli.main(argv)；核对目录字节不变。\n<!-- /iter:acceptance -->\n\n## 7. 执行实证与裁决账本\n<!-- iter:ledger -->\n实际命令、原始证据、退出码、候选、检查点与剩余项在执行中记录；未执行不推断通过。\n独立审查结果由外部收据与报告提供。\n<!-- /iter:ledger -->\n",
+      "stderr": ""
+    },
+    {
+      "operation": "new-card-precheck",
+      "task_id": "02",
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/data/workspace/iteration-manager/build/frozen-tools/fdcc4cce8863/scripts/iter_templates.py",
+        "--check",
+        "/data/workspace/iteration-manager/docs/todos/11-reliable-delivery/evidence/planning/generation/02-initial.md",
+        "--delivery-mode",
+        "git"
+      ],
+      "cwd": "/data/workspace/iteration-manager",
+      "exit_code": 0,
+      "stdout": "{\"valid\": true, \"errors\": []}\n",
+      "stderr": ""
+    },
+    {
+      "operation": "render",
+      "task_id": "03",
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/data/workspace/iteration-manager/build/frozen-tools/fdcc4cce8863/scripts/iter_templates.py",
+        "--render",
+        "/data/workspace/iteration-manager/docs/todos/11-reliable-delivery/evidence/planning/specs/03.json"
+      ],
+      "cwd": "/data/workspace/iteration-manager",
+      "exit_code": 0,
+      "stdout": "---\nschema_version: 1\niteration: \"11-reliable-delivery\"\ntask_id: \"03\"\ntask_name: \"连接就绪检查与真实委派的薄守卫\"\nstatus: \"TODO\"\ntype: \"Strict-TDD\"\nfix_rounds: 0\nreplan_count: 0\nis_blocked: false\nblocked_reason: \"\"\ntypesafe_score: \"UNASSESSED\"\ntypesafe_evidence: \"\"\ntdd_verified: false\nreview_status: \"PENDING\"\nreview_receipt: \"\"\nbase_sha: \"\"\nhead_sha: \"\"\n---\n\n# 03 · 连接就绪检查与真实委派的薄守卫\n\n## 1. 任务执行目标与接口契约\n- **主要目标**：为现有Codeg持久JavaScript执行器提供可注入的顺序守卫：同owner检查终态成功并消费READY后才调用一次真实委派；保留原生工具和事件账。\n- **Consumes**：现有--dispatch-check card --context path --phase phase --owner owner；返回task_path/task_id/phase/candidate/readiness。scripts/deadline_watch.js: watchDeadline({...})保持原样。实际Codeg schema在运行时确认。\n- **Produces**：scripts/dispatch_guard.js: async dispatchAfterReady({request, check, dispatch}) -> {dispatched, reason, check, delegation}；request含request_id/project_root/tool_entry/task_path/task_id/owner/phase/candidate/context；check(request) -> Promise<{state,exit_code,argv,cwd,request_id,terminal_evidence,stdout,stderr}>；dispatch(request, ready) -> Promise<原生返回>。不使用Node API。\n\n## 2. 业务阶段\n<!-- iter:stages -->\n- [ ] 以可控Promise覆盖running/失败/乱序及身份不符，取得断言RED\n- [ ] 完成薄守卫GREEN及既有截止守卫兼容\n- [ ] 在实际Codeg schema可用时记录一条真实先检查后派发链，缺宿主则保留BLOCKED\n<!-- /iter:stages -->\n\n## 3. 按类型验证规划\n核心行为先取得可编译测试的真实断言RED，再最小GREEN；环境错误不算RED。\n<!-- iter:verification -->\n- [ ] **red**：python -B -m pytest -p no:cacheprovider tests/test_dispatch_guard.py tests/test_deadline_watch.py -q；由同一实现者先取得验收中具体行为断言失败，环境/导入失败不作RED；通过冻结runner。\n- [ ] **green**：python -B -m pytest -p no:cacheprovider tests/test_dispatch_guard.py tests/test_deadline_watch.py -q；同一实现者最小修复后通过，保留原始输出；通过冻结runner。\n- [ ] **regression**：python -B -m pytest -p no:cacheprovider tests/test_dispatch_guard.py tests/test_deadline_watch.py -q；覆盖本卡列出的直接接口/兼容范围，影响不明扩大；不代替整轮全量。\n<!-- /iter:verification -->\n\n## 4. 交付与冻结\n提交实现C及原始证据，再独立审查冻结规格；主管登记D后运行strict，head_sha绑定C。\n执行状态与审查结果读取frontmatter及review_receipt；生成不代表验证或独立批准。\n\n## 5. 新增或变更内容清单\n<!-- iter:scope -->\n| 文件路径 | 变更类型 | 核心职责说明 |\n| --- | --- | --- |\n| `scripts/dispatch_guard.js` | MODIFIED | 本任务授权范围 |\n| `references/native_dispatch_adapter.md` | MODIFIED | 本任务授权范围 |\n| `tests/test_dispatch_guard.py` | MODIFIED | 本任务授权范围 |\n| `.agents/notes/planned/iter11/03-native-dispatch-guard.md` | MODIFIED | 本任务授权范围 |\n| `docs/todos/11-reliable-delivery/evidence/03/` | MODIFIED | 本任务授权范围 |\n<!-- /iter:scope -->\n\n## 6. 确定性验收标准\n<!-- iter:acceptance -->\n- [ ] check必须为本次request_id，带实际argv/cwd及原生终态来源；guard核对实际argv的tool_entry/task_path/context/phase/owner与request完全一致，cwd等于project_root；命令state=completed、整数exit_code=0、单份JSON且readiness=READY；stdout中的task_path/task_id/phase/candidate均精确相符。\n- [ ] check仍running、拒绝、抛错、坏JSON、退出非零、错owner/旧context路径/旧request_id或候选不符时dispatch调用数为0；READY时调用数为1。委派抛错/unknown不自动重试，不伪造终态。\n- [ ] 守卫只约束经过该入口的调用，不声称拦截所有原生委派；真实会话ID/检查原件/调用顺序另存，Node替身不作原生消费证据。\n- [ ] 本卡只交付代码守卫与单独契约；任务04接入权威默认指令，避免多卡改同一流程文件。\n- [ ] argv/cwd和request标识只是可审计绑定，不能自证原生来源或context语义新鲜度；主控/独审核对真实命令和观察原件。\n<!-- /iter:acceptance -->\n\n## 7. 执行实证与裁决账本\n<!-- iter:ledger -->\n实际命令、原始证据、退出码、候选、检查点与剩余项在执行中记录；未执行不推断通过。\n独立审查结果由外部收据与报告提供。\n<!-- /iter:ledger -->\n",
+      "stderr": ""
+    },
+    {
+      "operation": "new-card-precheck",
+      "task_id": "03",
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/data/workspace/iteration-manager/build/frozen-tools/fdcc4cce8863/scripts/iter_templates.py",
+        "--check",
+        "/data/workspace/iteration-manager/docs/todos/11-reliable-delivery/evidence/planning/generation/03-initial.md",
+        "--delivery-mode",
+        "git"
+      ],
+      "cwd": "/data/workspace/iteration-manager",
+      "exit_code": 0,
+      "stdout": "{\"valid\": true, \"errors\": []}\n",
+      "stderr": ""
+    },
+    {
+      "operation": "render",
+      "task_id": "04",
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/data/workspace/iteration-manager/build/frozen-tools/fdcc4cce8863/scripts/iter_templates.py",
+        "--render",
+        "/data/workspace/iteration-manager/docs/todos/11-reliable-delivery/evidence/planning/specs/04.json"
+      ],
+      "cwd": "/data/workspace/iteration-manager",
+      "exit_code": 0,
+      "stdout": "---\nschema_version: 1\niteration: \"11-reliable-delivery\"\ntask_id: \"04\"\ntask_name: \"收敛当前任务的默认阅读导航\"\nstatus: \"TODO\"\ntype: \"Spike-Discovery\"\nfix_rounds: 0\nreplan_count: 0\nis_blocked: false\nblocked_reason: \"\"\ntypesafe_score: \"UNASSESSED\"\ntypesafe_evidence: \"\"\ntdd_verified: false\nreview_status: \"PENDING\"\nreview_receipt: \"\"\nbase_sha: \"\"\nhead_sha: \"\"\n---\n\n# 04 · 收敛当前任务的默认阅读导航\n\n## 1. 任务执行目标与接口契约\n- **主要目标**：只调整默认导航：助手定位当前迭代目标、任务交接和证据链接，不默认加载历史全文或工具返回；不修改派发/收口规则。\n- **Consumes**：现有SKILL.md入口、templates/iteration_readme.md及--render-envelope输出；共同协议和任务卡契约仍为必读权威文件。\n- **Produces**：SKILL.md改为角色/授权/真源摘要与资源路由，具体流程链接共同协议；迭代模板增加当前交接/原件索引，不嵌入原始JSON或日志。\n\n## 2. 业务阶段\n<!-- iter:stages -->\n- [ ] 记录进入当前任务所需的直接文档及原件路径\n- [ ] 更新入口和迭代模板的导航路由\n- [ ] 运行导航检查并由新会话定位一次当前任务及失败证据\n<!-- /iter:stages -->\n\n## 3. 按类型验证规划\n隔离实验，保留可复查决定与后续接口，不虚构测试或批准。\n<!-- iter:verification -->\n- [ ] **experiment**：python -B -m pytest -p no:cacheprovider tests/test_navigation_paths.py tests/test_prompt_sources.py -q；通过冻结runner保留真实退出码，另按本卡验收完成实际消费或实验。\n- [ ] **decision**：在本卡ledger及独立报告记录实测结论、限制、来源和取舍；未知保持UNKNOWN/BLOCKED，不以结构检查代替语义验收。\n- [ ] **interfaces**：SKILL.md改为角色/授权/真源摘要与资源路由，具体流程链接共同协议；迭代模板增加当前交接/原件索引，不嵌入原始JSON或日志。；核对消费者与现有合同兼容，冻结可复查产物。\n<!-- /iter:verification -->\n\n## 4. 交付与冻结\n提交实现C及原始证据，再独立审查冻结规格；主管登记D后运行strict，head_sha绑定C。\n执行状态与审查结果读取frontmatter及review_receipt；生成不代表验证或独立批准。\n\n## 5. 新增或变更内容清单\n<!-- iter:scope -->\n| 文件路径 | 变更类型 | 核心职责说明 |\n| --- | --- | --- |\n| `SKILL.md` | MODIFIED | 本任务授权范围 |\n| `templates/iteration_readme.md` | MODIFIED | 本任务授权范围 |\n| `tests/test_navigation_paths.py` | MODIFIED | 本任务授权范围 |\n| `.agents/notes/planned/iter11/04-navigation-paths.md` | MODIFIED | 本任务授权范围 |\n| `docs/todos/11-reliable-delivery/evidence/04/` | MODIFIED | 本任务授权范围 |\n<!-- /iter:scope -->\n\n## 6. 确定性验收标准\n<!-- iter:acceptance -->\n- [ ] 对本轮01任务的continue场景，新会话能够指出当前iter:goal、01任务卡/envelope、Strict-TDD契约和01证据目录；查阅01原件失败时明确缺口，不加载10迭代README全文来猜测当前状态。\n- [ ] SKILL中原执行步骤归并为共同协议链接，授权边界、四type、真假验收、Git/FS区别和CLI入口仍有直接路由；本卡不重新定义顺序或改动共同协议正文。\n- [ ] 新迭代模板包含当前交接摘要/证据路径，链接目标存在且项目内；不内嵌原始JSON/原生工具响应。历史10迭代和发布原件字节不变。\n- [ ] 正式experiment为python -B -m pytest -p no:cacheprovider tests/test_navigation_paths.py tests/test_prompt_sources.py -q，经冻结runner执行；另保存一次真实新会话导航消费记录，测试结构通过不代替消费。\n<!-- /iter:acceptance -->\n\n## 7. 执行实证与裁决账本\n<!-- iter:ledger -->\n实际命令、原始证据、退出码、候选、检查点与剩余项在执行中记录；未执行不推断通过。\n独立审查结果由外部收据与报告提供。\n<!-- /iter:ledger -->\n",
+      "stderr": ""
+    },
+    {
+      "operation": "new-card-precheck",
+      "task_id": "04",
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/data/workspace/iteration-manager/build/frozen-tools/fdcc4cce8863/scripts/iter_templates.py",
+        "--check",
+        "/data/workspace/iteration-manager/docs/todos/11-reliable-delivery/evidence/planning/generation/04-initial.md",
+        "--delivery-mode",
+        "git"
+      ],
+      "cwd": "/data/workspace/iteration-manager",
+      "exit_code": 0,
+      "stdout": "{\"valid\": true, \"errors\": []}\n",
+      "stderr": ""
+    },
+    {
+      "operation": "render",
+      "task_id": "05",
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/data/workspace/iteration-manager/build/frozen-tools/fdcc4cce8863/scripts/iter_templates.py",
+        "--render",
+        "/data/workspace/iteration-manager/docs/todos/11-reliable-delivery/evidence/planning/specs/05.json"
+      ],
+      "cwd": "/data/workspace/iteration-manager",
+      "exit_code": 0,
+      "stdout": "---\nschema_version: 1\niteration: \"11-reliable-delivery\"\ntask_id: \"05\"\ntask_name: \"公布带证据的支持矩阵\"\nstatus: \"TODO\"\ntype: \"Spike-Discovery\"\nfix_rounds: 0\nreplan_count: 0\nis_blocked: false\nblocked_reason: \"\"\ntypesafe_score: \"UNASSESSED\"\ntypesafe_evidence: \"\"\ntdd_verified: false\nreview_status: \"PENDING\"\nreview_receipt: \"\"\nbase_sha: \"\"\nhead_sha: \"\"\n---\n\n# 05 · 公布带证据的支持矩阵\n\n## 1. 任务执行目标与接口契约\n- **主要目标**：按能力、平台和宿主公布已验证、未验证及明确不支持范围；仅维护证据支持的声明，不实施跨平台或FS恢复扩展。\n- **Consumes**：2026-11-14发布记录、iter_run/checkpoint契约及本次Linux/TypeSafe/Codeg工具可用性观察；其他任务新事实仅在有原件后增补。\n- **Produces**：references/support_matrix.md：能力/platform/host/status/observed_at/source_candidate/evidence/limitation；references/release_status.md只链接该矩阵；不重写历史观察为当前事实。\n\n## 2. 业务阶段\n<!-- iter:stages -->\n- [ ] 逐项核对契约与有日期的能力原件\n- [ ] 生成支持矩阵和发布索引路由\n- [ ] 执行结构/链接检查并由新会话正确识别未验证项\n<!-- /iter:stages -->\n\n## 3. 按类型验证规划\n隔离实验，保留可复查决定与后续接口，不虚构测试或批准。\n<!-- iter:verification -->\n- [ ] **experiment**：python -B -m pytest -p no:cacheprovider tests/test_support_matrix.py tests/test_release_index.py -q；通过冻结runner保留真实退出码，另按本卡验收完成实际消费或实验。\n- [ ] **decision**：在本卡ledger及独立报告记录实测结论、限制、来源和取舍；未知保持UNKNOWN/BLOCKED，不以结构检查代替语义验收。\n- [ ] **interfaces**：references/support_matrix.md：能力/platform/host/status/observed_at/source_candidate/evidence/limitation；references/release_status.md只链接该矩阵；不重写历史观察为当前事实。；核对消费者与现有合同兼容，冻结可复查产物。\n<!-- /iter:verification -->\n\n## 4. 交付与冻结\n提交实现C及原始证据，再独立审查冻结规格；主管登记D后运行strict，head_sha绑定C。\n执行状态与审查结果读取frontmatter及review_receipt；生成不代表验证或独立批准。\n\n## 5. 新增或变更内容清单\n<!-- iter:scope -->\n| 文件路径 | 变更类型 | 核心职责说明 |\n| --- | --- | --- |\n| `references/support_matrix.md` | MODIFIED | 本任务授权范围 |\n| `references/release_status.md` | MODIFIED | 本任务授权范围 |\n| `tests/test_support_matrix.py` | MODIFIED | 本任务授权范围 |\n| `.agents/notes/planned/iter11/05-support-matrix.md` | MODIFIED | 本任务授权范围 |\n| `docs/todos/11-reliable-delivery/evidence/05/` | MODIFIED | 本任务授权范围 |\n<!-- /iter:scope -->\n\n## 6. 确定性验收标准\n<!-- iter:acceptance -->\n- [ ] 至少分别覆盖查询、Windows正式runner、Linux正式runner、Git批准链、FS本地绑定/正常交接、FS时间中断grant、显式安装根消费、Gemini CLI自动发现及配置注入；每行均有状态、日期、候选、来源和限制。\n- [ ] 明确FS正常release/claim可用不等于FS时间中断恢复可用；Linux查询可用不等于正式命令链支持；Antigravity消费Gemini副本不等于Gemini CLI自动发现。\n- [ ] 原件不能证明的范围写UNKNOWN/未验证及补齐责任和条件；不因历史493通过扩大版本、平台或宿主声明。\n- [ ] 只修改矩阵/路由和其结构检查，不更改runner、恢复协议、部署配置或历史发布事实。\n<!-- /iter:acceptance -->\n\n## 7. 执行实证与裁决账本\n<!-- iter:ledger -->\n实际命令、原始证据、退出码、候选、检查点与剩余项在执行中记录；未执行不推断通过。\n独立审查结果由外部收据与报告提供。\n<!-- /iter:ledger -->\n",
+      "stderr": ""
+    },
+    {
+      "operation": "new-card-precheck",
+      "task_id": "05",
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/data/workspace/iteration-manager/build/frozen-tools/fdcc4cce8863/scripts/iter_templates.py",
+        "--check",
+        "/data/workspace/iteration-manager/docs/todos/11-reliable-delivery/evidence/planning/generation/05-initial.md",
+        "--delivery-mode",
+        "git"
+      ],
+      "cwd": "/data/workspace/iteration-manager",
+      "exit_code": 0,
+      "stdout": "{\"valid\": true, \"errors\": []}\n",
+      "stderr": ""
+    },
+    {
+      "operation": "render",
+      "task_id": "06",
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/data/workspace/iteration-manager/build/frozen-tools/fdcc4cce8863/scripts/iter_templates.py",
+        "--render",
+        "/data/workspace/iteration-manager/docs/todos/11-reliable-delivery/evidence/planning/specs/06.json"
+      ],
+      "cwd": "/data/workspace/iteration-manager",
+      "exit_code": 0,
+      "stdout": "---\nschema_version: 1\niteration: \"11-reliable-delivery\"\ntask_id: \"06\"\ntask_name: \"提供安装来源清单与轻量自检\"\nstatus: \"TODO\"\ntype: \"Strict-TDD\"\nfix_rounds: 0\nreplan_count: 0\nis_blocked: false\nblocked_reason: \"\"\ntypesafe_score: \"UNASSESSED\"\ntypesafe_evidence: \"\"\ntdd_verified: false\nreview_status: \"PENDING\"\nreview_receipt: \"\"\nbase_sha: \"\"\nhead_sha: \"\"\n---\n\n# 06 · 提供安装来源清单与轻量自检\n\n## 1. 任务执行目标与接口契约\n- **主要目标**：独立副本可用显式来源清单检查来源提交、交付文件漂移及当前能力；分别定义安装烟测和维护全量测试，不引入打包平台或实际部署。\n- **Consumes**：现有交付白名单SKILL.md/scripts/references/templates/tests/.agents/notes；真实Git提交和已提交路径；当前发布支持边界。05支持矩阵是后续交叉核对输入，不是阻塞本卡的硬依赖。\n- **Produces**：scripts/iter_install.py: build_install_manifest(source_root: Path, source_commit: str) -> dict；check_installation(installation_root: Path, manifest: dict) -> dict；main(argv=None) -> int。CLI --make-manifest --root ROOT --source-commit SHA 输出JSON；--check --root ROOT --manifest PATH 只读检查，0一致、2输入/漂移/未知来源。\n\n## 2. 业务阶段\n<!-- iter:stages -->\n- [ ] 对来源不符、坏清单、漂移/缺失/越界路径取得断言RED\n- [ ] 生成和只读检查来源清单GREEN\n- [ ] 在白名单临时安装做烟测，记录能力边界和待审候选\n<!-- /iter:stages -->\n\n## 3. 按类型验证规划\n核心行为先取得可编译测试的真实断言RED，再最小GREEN；环境错误不算RED。\n<!-- iter:verification -->\n- [ ] **red**：python -B -m pytest -p no:cacheprovider tests/test_install_provenance.py tests/test_cli_compatibility.py -q；由同一实现者先取得验收中具体行为断言失败，环境/导入失败不作RED；通过冻结runner。\n- [ ] **green**：python -B -m pytest -p no:cacheprovider tests/test_install_provenance.py tests/test_cli_compatibility.py -q；同一实现者最小修复后通过，保留原始输出；通过冻结runner。\n- [ ] **regression**：python -B -m pytest -p no:cacheprovider tests/test_install_provenance.py tests/test_cli_compatibility.py -q；覆盖本卡列出的直接接口/兼容范围，影响不明扩大；不代替整轮全量。\n<!-- /iter:verification -->\n\n## 4. 交付与冻结\n提交实现C及原始证据，再独立审查冻结规格；主管登记D后运行strict，head_sha绑定C。\n执行状态与审查结果读取frontmatter及review_receipt；生成不代表验证或独立批准。\n\n## 5. 新增或变更内容清单\n<!-- iter:scope -->\n| 文件路径 | 变更类型 | 核心职责说明 |\n| --- | --- | --- |\n| `scripts/iter_install.py` | MODIFIED | 本任务授权范围 |\n| `references/installation_verification.md` | MODIFIED | 本任务授权范围 |\n| `tests/test_install_provenance.py` | MODIFIED | 本任务授权范围 |\n| `.agents/notes/planned/iter11/06-installation-provenance.md` | MODIFIED | 本任务授权范围 |\n| `docs/todos/11-reliable-delivery/evidence/06/` | MODIFIED | 本任务授权范围 |\n<!-- /iter:scope -->\n\n## 6. 确定性验收标准\n<!-- iter:acceptance -->\n- [ ] 清单version=1、source_commit为实际完整可解析Git提交，files含精确相对path与sha256；生成前验证源文件与该提交相符，dirty源码/未知键/重复或越界路径拒绝，不凭提交标签证明来源。\n- [ ] check拒绝损坏、缺失、字节漂移、符号链接越界；不读取白名单外内容，不修复/覆盖安装，不运行维护全套或产生批准。\n- [ ] 输出来源和文件一致性与运行时能力分别列示；Linux正式runner不可用不会被标成READY，query可用也不代表整条执行链可用。\n- [ ] 来源清单默认stdout，落盘及随副本分发在另获授权的部署阶段执行；本轮只在隔离临时目录验证，不扩大既有部署白名单或覆盖真实安装。\n<!-- /iter:acceptance -->\n\n## 7. 执行实证与裁决账本\n<!-- iter:ledger -->\n实际命令、原始证据、退出码、候选、检查点与剩余项在执行中记录；未执行不推断通过。\n独立审查结果由外部收据与报告提供。\n<!-- /iter:ledger -->\n",
+      "stderr": ""
+    },
+    {
+      "operation": "new-card-precheck",
+      "task_id": "06",
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/data/workspace/iteration-manager/build/frozen-tools/fdcc4cce8863/scripts/iter_templates.py",
+        "--check",
+        "/data/workspace/iteration-manager/docs/todos/11-reliable-delivery/evidence/planning/generation/06-initial.md",
+        "--delivery-mode",
+        "git"
+      ],
+      "cwd": "/data/workspace/iteration-manager",
+      "exit_code": 0,
+      "stdout": "{\"valid\": true, \"errors\": []}\n",
+      "stderr": ""
+    },
+    {
+      "operation": "render",
+      "task_id": "07",
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/data/workspace/iteration-manager/build/frozen-tools/fdcc4cce8863/scripts/iter_templates.py",
+        "--render",
+        "/data/workspace/iteration-manager/docs/todos/11-reliable-delivery/evidence/planning/specs/07.json"
+      ],
+      "cwd": "/data/workspace/iteration-manager",
+      "exit_code": 0,
+      "stdout": "---\nschema_version: 1\niteration: \"11-reliable-delivery\"\ntask_id: \"07\"\ntask_name: \"消除维护测试对历史证据harness的运行依赖\"\nstatus: \"TODO\"\ntype: \"Refactor-Benchmark\"\nfix_rounds: 0\nreplan_count: 0\nis_blocked: false\nblocked_reason: \"\"\ntypesafe_score: \"UNASSESSED\"\ntypesafe_evidence: \"\"\ntdd_verified: false\nreview_status: \"PENDING\"\nreview_receipt: \"\"\nbase_sha: \"\"\nhead_sha: \"\"\n---\n\n# 07 · 消除维护测试对历史证据harness的运行依赖\n\n## 1. 任务执行目标与接口契约\n- **主要目标**：把可复用浏览器/HTTP测试支持代码移至tests/support，使白名单副本能够运行相应维护测试，保留历史harness原件和原测试行为。\n- **Consumes**：docs/todos/10-self-hosting-hardening/evidence/04/browser_harness.py的filesystem_fixture(root)、main()及原参数；tests/test_board_handoff.py两处消费者；既有scripts查询/服务接口。\n- **Produces**：tests/support/browser_harness.py: filesystem_fixture(root: Path)与main()保留既有参数语义、ready/stop/isolated-fixtures；测试仅从tests/support加载。历史evidence原件不改。\n\n## 2. 业务阶段\n<!-- iter:stages -->\n- [ ] 取得原维护测试基线及同环境Before量测\n- [ ] 提取测试支持并保持隔离模式/参数/HTTP行为\n- [ ] 白名单临时副本复验、After量测与兼容观察\n<!-- /iter:stages -->\n\n## 3. 按类型验证规划\n保持外部行为与接口；同环境同数据量取得benchmark_before与benchmark_after实测。\n<!-- iter:verification -->\n- [ ] **baseline**：python -B -m pytest -p no:cacheprovider tests/test_board_handoff.py tests/test_board_service.py -q；在修改前保留实际维护基线，通过冻结runner。\n- [ ] **regression**：python -B -m pytest -p no:cacheprovider tests/test_board_handoff.py tests/test_board_service.py tests/test_harness_portability.py -q；覆盖提取后的隔离库存、参数、HTTP与临时副本。\n- [ ] **compatibility**：观察filesystem_fixture/main参数、ready/stop与HTTP输出一致；历史harness及证据字节不变；保留可复查报告。\n- [ ] **benchmark_before**：修改前在同一Windows/Python/样例参数下，对受影响harness检查运行3次，记录各次耗时与历史路径依赖数，通过冻结runner。\n- [ ] **benchmark_after**：修改后复用Before脚本/参数/环境运行3次，对比耗时与依赖数；不预设提速，通过冻结runner。\n<!-- /iter:verification -->\n\n## 4. 交付与冻结\n提交实现C及原始证据，再独立审查冻结规格；主管登记D后运行strict，head_sha绑定C。\n执行状态与审查结果读取frontmatter及review_receipt；生成不代表验证或独立批准。\n\n## 5. 新增或变更内容清单\n<!-- iter:scope -->\n| 文件路径 | 变更类型 | 核心职责说明 |\n| --- | --- | --- |\n| `tests/support/` | MODIFIED | 本任务授权范围 |\n| `tests/test_board_handoff.py` | MODIFIED | 本任务授权范围 |\n| `tests/test_harness_portability.py` | MODIFIED | 本任务授权范围 |\n| `.agents/notes/planned/iter11/07-portable-test-support.md` | MODIFIED | 本任务授权范围 |\n| `docs/todos/11-reliable-delivery/evidence/07/` | MODIFIED | 本任务授权范围 |\n<!-- /iter:scope -->\n\n## 6. 确定性验收标准\n<!-- iter:acceptance -->\n- [ ] 两个harness消费者均不依赖维护docs/todos路径；只有白名单文件的临时副本可运行受影响测试，缺少维护历史目录不再造成harness加载失败。\n- [ ] 隔离模式不读真实checkout库存，非隔离参数语义、HTTP边界、加载/错误/正常状态及原超时约定不降低；历史harness及日志字节不变。\n- [ ] 按现有Refactor-Benchmark保留baseline/regression/compatibility/benchmark_before/benchmark_after。相同Windows/Python/临时样例参数，对受影响harness检查做3次Before/After，报告耗时与历史路径依赖数，不承诺提速。\n- [ ] 本卡不宣称所有平台全套已可用；安装烟测、维护回归与真实浏览器观察分别记录，涉及实际浏览器使用Moli并管理自有CDP生命周期。\n<!-- /iter:acceptance -->\n\n## 7. 执行实证与裁决账本\n<!-- iter:ledger -->\n实际命令、原始证据、退出码、候选、检查点与剩余项在执行中记录；未执行不推断通过。\n独立审查结果由外部收据与报告提供。\n<!-- /iter:ledger -->\n",
+      "stderr": ""
+    },
+    {
+      "operation": "new-card-precheck",
+      "task_id": "07",
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/data/workspace/iteration-manager/build/frozen-tools/fdcc4cce8863/scripts/iter_templates.py",
+        "--check",
+        "/data/workspace/iteration-manager/docs/todos/11-reliable-delivery/evidence/planning/generation/07-initial.md",
+        "--delivery-mode",
+        "git"
+      ],
+      "cwd": "/data/workspace/iteration-manager",
+      "exit_code": 0,
+      "stdout": "{\"valid\": true, \"errors\": []}\n",
+      "stderr": ""
+    },
+    {
+      "operation": "render",
+      "task_id": "08",
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/data/workspace/iteration-manager/build/frozen-tools/fdcc4cce8863/scripts/iter_templates.py",
+        "--render",
+        "/data/workspace/iteration-manager/docs/todos/11-reliable-delivery/evidence/planning/specs/08.json"
+      ],
+      "cwd": "/data/workspace/iteration-manager",
+      "exit_code": 0,
+      "stdout": "---\nschema_version: 1\niteration: \"11-reliable-delivery\"\ntask_id: \"08\"\ntask_name: \"量测合法Git与FS批准库存的真实成本\"\nstatus: \"TODO\"\ntype: \"Spike-Discovery\"\nfix_rounds: 0\nreplan_count: 0\nis_blocked: false\nblocked_reason: \"\"\ntypesafe_score: \"UNASSESSED\"\ntypesafe_evidence: \"\"\ntdd_verified: false\nreview_status: \"PENDING\"\nreview_receipt: \"\"\nbase_sha: \"\"\nhead_sha: \"\"\n---\n\n# 08 · 量测合法Git与FS批准库存的真实成本\n\n## 1. 任务执行目标与接口契约\n- **主要目标**：先建立合法收据、Git绑定和FS快照均实际PASS的代表库存，再量测查询/盘点/HTTP证据路径，定位单次调用内重复工作，不预设优化收益。\n- **Consumes**：任务01合法模式解析；现有test_filesystem_delivery_controller/执行就绪/Git临时夹具；audit_task_file、generate_board_data、render_task_envelope、inventory及LiveBoardHandler。06测试支持提取不是功能前提。\n- **Produces**：tests/benchmarks/approval_chain.py: main(argv=None) -> int；CLI --sizes 10 100 --repeats 3 --output PATH，输出环境/候选/工作负载/各次秒数/Git调用数/读取字节/批准卡数/限制。tests/test_approval_benchmark_fixture.py验证样例真实性。\n\n## 2. 业务阶段\n<!-- iter:stages -->\n- [ ] 构造Git/FS合法批准库存，先断言每卡审计PASS\n- [ ] 分层量测10/100卡各3次并保留原始数据\n- [ ] 按单次调用剖析给出优化或维持现状的决策和后续接口\n<!-- /iter:stages -->\n\n## 3. 按类型验证规划\n隔离实验，保留可复查决定与后续接口，不虚构测试或批准。\n<!-- iter:verification -->\n- [ ] **experiment**：python -B tests/benchmarks/approval_chain.py --sizes 10 100 --repeats 3 --output docs/todos/11-reliable-delivery/evidence/08/measurements.json；先确认合法Git/FS库存每卡PASS，通过冻结runner。\n- [ ] **decision**：在本卡ledger及独立报告记录实测结论、限制、来源和取舍；未知保持UNKNOWN/BLOCKED，不以结构检查代替语义验收。\n- [ ] **interfaces**：tests/benchmarks/approval_chain.py: main(argv=None) -> int；CLI --sizes 10 100 --repeats 3 --output PATH，输出环境/候选/工作负载/各次秒数/Git调用数/读取字节/批准卡数/限制。tests/test_approval_benchmark_fixture.py验证样例真实性。；核对消费者与现有合同兼容，冻结可复查产物。\n<!-- /iter:verification -->\n\n## 4. 交付与冻结\n提交实现C及原始证据，再独立审查冻结规格；主管登记D后运行strict，head_sha绑定C。\n执行状态与审查结果读取frontmatter及review_receipt；生成不代表验证或独立批准。\n\n## 5. 新增或变更内容清单\n<!-- iter:scope -->\n| 文件路径 | 变更类型 | 核心职责说明 |\n| --- | --- | --- |\n| `tests/benchmarks/` | MODIFIED | 本任务授权范围 |\n| `tests/test_approval_benchmark_fixture.py` | MODIFIED | 本任务授权范围 |\n| `.agents/notes/planned/iter11/08-approved-chain-benchmark.md` | MODIFIED | 本任务授权范围 |\n| `docs/todos/11-reliable-delivery/evidence/08/` | MODIFIED | 本任务授权范围 |\n<!-- /iter:scope -->\n\n## 6. 确定性验收标准\n<!-- iter:acceptance -->\n- [ ] 分别构造10/100卡Git与FS已批准样例；每张DONE均有合法类型checks/原始输出/报告及真实绑定，量测前accepted必须等于卡数；不得用缺收据的快路径代替。\n- [ ] 分别记录一次board、全部envelope、一次inventory及实际HTTP证据读取的成本，样例构造不计时；真实Git执行及FS字节比较不替换成成功桩。\n- [ ] 相同候选/环境/数据量至少3次，给出逐次值、均值和范围；记录硬件/Python/Git/平台、源码候选及样例限制，不从3次样本推断可靠尾延迟。\n- [ ] 分析仅提出基于证据的单次调用复用机会；不实现跨调用验收缓存，不以合成性能证明真实外部业务PASS，不附带未评估的优化改码。\n<!-- /iter:acceptance -->\n\n## 7. 执行实证与裁决账本\n<!-- iter:ledger -->\n实际命令、原始证据、退出码、候选、检查点与剩余项在执行中记录；未执行不推断通过。\n独立审查结果由外部收据与报告提供。\n<!-- /iter:ledger -->\n",
+      "stderr": ""
+    },
+    {
+      "operation": "new-card-precheck",
+      "task_id": "08",
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/data/workspace/iteration-manager/build/frozen-tools/fdcc4cce8863/scripts/iter_templates.py",
+        "--check",
+        "/data/workspace/iteration-manager/docs/todos/11-reliable-delivery/evidence/planning/generation/08-initial.md",
+        "--delivery-mode",
+        "git"
+      ],
+      "cwd": "/data/workspace/iteration-manager",
+      "exit_code": 0,
+      "stdout": "{\"valid\": true, \"errors\": []}\n",
+      "stderr": ""
+    },
+    {
+      "operation": "render",
+      "task_id": "09",
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/data/workspace/iteration-manager/build/frozen-tools/fdcc4cce8863/scripts/iter_templates.py",
+        "--render",
+        "/data/workspace/iteration-manager/docs/todos/11-reliable-delivery/evidence/planning/specs/09.json"
+      ],
+      "cwd": "/data/workspace/iteration-manager",
+      "exit_code": 0,
+      "stdout": "---\nschema_version: 1\niteration: \"11-reliable-delivery\"\ntask_id: \"09\"\ntask_name: \"使新重构任务的量测匹配实际目标\"\nstatus: \"TODO\"\ntype: \"Spike-Discovery\"\nfix_rounds: 0\nreplan_count: 0\nis_blocked: false\nblocked_reason: \"\"\ntypesafe_score: \"UNASSESSED\"\ntypesafe_evidence: \"\"\ntdd_verified: false\nreview_status: \"PENDING\"\nreview_receipt: \"\"\nbase_sha: \"\"\nhead_sha: \"\"\n---\n\n# 09 · 使新重构任务的量测匹配实际目标\n\n## 1. 任务执行目标与接口契约\n- **主要目标**：为未来行为保持型重构与性能优化提供两套可消费规划说明：前者量测与结构目标相关的客观指标，后者量测性能；保留四type及既有五项检查，不追溯降低旧卡门禁。\n- **Consumes**：现有Refactor-Benchmark五项TYPE_CHECKS与schema1；既有合成量测限制；render_task_card(spec)及模板消费路径。07结果完成后交叉核对，不是本卡的硬依赖。\n- **Produces**：references/refactor_evidence.md的两类目标/指标/证据选择规则；templates/contracts/refactor_benchmark_contract.md与scripts/iter_templates.py生成说明一致；verification键集不变，不加第五type或必填元数据。\n\n## 2. 业务阶段\n<!-- iter:stages -->\n- [ ] 用两种真实新卡规划样例确认当前成本与指标匹配问题\n- [ ] 更新目标对应的证据规则和生成说明\n- [ ] 实际生成及新会话消费两类样例，核对旧卡要求保持\n<!-- /iter:stages -->\n\n## 3. 按类型验证规划\n隔离实验，保留可复查决定与后续接口，不虚构测试或批准。\n<!-- iter:verification -->\n- [ ] **experiment**：python -B -m pytest -p no:cacheprovider tests/test_refactor_evidence_policy.py tests/test_template_generation.py tests/test_task_card_schema.py tests/test_completion_gates.py -q；通过冻结runner保留真实退出码，另按本卡验收完成实际消费或实验。\n- [ ] **decision**：在本卡ledger及独立报告记录实测结论、限制、来源和取舍；未知保持UNKNOWN/BLOCKED，不以结构检查代替语义验收。\n- [ ] **interfaces**：references/refactor_evidence.md的两类目标/指标/证据选择规则；templates/contracts/refactor_benchmark_contract.md与scripts/iter_templates.py生成说明一致；verification键集不变，不加第五type或必填元数据。；核对消费者与现有合同兼容，冻结可复查产物。\n<!-- /iter:verification -->\n\n## 4. 交付与冻结\n提交实现C及原始证据，再独立审查冻结规格；主管登记D后运行strict，head_sha绑定C。\n执行状态与审查结果读取frontmatter及review_receipt；生成不代表验证或独立批准。\n\n## 5. 新增或变更内容清单\n<!-- iter:scope -->\n| 文件路径 | 变更类型 | 核心职责说明 |\n| --- | --- | --- |\n| `templates/contracts/refactor_benchmark_contract.md` | MODIFIED | 本任务授权范围 |\n| `references/refactor_evidence.md` | MODIFIED | 本任务授权范围 |\n| `scripts/iter_templates.py` | MODIFIED | 本任务授权范围 |\n| `tests/test_template_generation.py` | MODIFIED | 本任务授权范围 |\n| `tests/test_refactor_evidence_policy.py` | MODIFIED | 本任务授权范围 |\n| `.agents/notes/planned/iter11/09-proportional-refactor-evidence.md` | MODIFIED | 本任务授权范围 |\n| `docs/todos/11-reliable-delivery/evidence/09/` | MODIFIED | 本任务授权范围 |\n<!-- /iter:scope -->\n\n## 6. 确定性验收标准\n<!-- iter:acceptance -->\n- [ ] 行为保持型新任务仍有基线/兼容/回归/独审；benchmark_before/after可测任务约定的依赖数、重复入口数等可重复结构指标，无性能目标时不强制延迟/吞吐提升。\n- [ ] 性能优化型明确同环境/规模/命令/单位与目标，仍要求真实Before/After性能证据；不以结构指标替代既定性能目标。\n- [ ] 四type、schema1、五项检查名与收据绑定保持；既有卡、冻结规格及本轮07的Before/After要求不修改，不把未知指标当无须验证。\n- [ ] 两种spec均经实际生成/预检；缺baseline、regression或任一既定检查仍拒绝。模板结构检查与真实助手是否选对指标分别留证。\n<!-- /iter:acceptance -->\n\n## 7. 执行实证与裁决账本\n<!-- iter:ledger -->\n实际命令、原始证据、退出码、候选、检查点与剩余项在执行中记录；未执行不推断通过。\n独立审查结果由外部收据与报告提供。\n<!-- /iter:ledger -->\n",
+      "stderr": ""
+    },
+    {
+      "operation": "new-card-precheck",
+      "task_id": "09",
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/data/workspace/iteration-manager/build/frozen-tools/fdcc4cce8863/scripts/iter_templates.py",
+        "--check",
+        "/data/workspace/iteration-manager/docs/todos/11-reliable-delivery/evidence/planning/generation/09-initial.md",
+        "--delivery-mode",
+        "git"
+      ],
+      "cwd": "/data/workspace/iteration-manager",
+      "exit_code": 0,
+      "stdout": "{\"valid\": true, \"errors\": []}\n",
+      "stderr": ""
+    },
+    {
+      "operation": "render",
+      "task_id": "10",
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/data/workspace/iteration-manager/build/frozen-tools/fdcc4cce8863/scripts/iter_templates.py",
+        "--render",
+        "/data/workspace/iteration-manager/docs/todos/11-reliable-delivery/evidence/planning/specs/10.json"
+      ],
+      "cwd": "/data/workspace/iteration-manager",
+      "exit_code": 0,
+      "stdout": "---\nschema_version: 1\niteration: \"11-reliable-delivery\"\ntask_id: \"10\"\ntask_name: \"核验跨模块故障路径的一致性\"\nstatus: \"TODO\"\ntype: \"Spike-Discovery\"\nfix_rounds: 0\nreplan_count: 0\nis_blocked: false\nblocked_reason: \"\"\ntypesafe_score: \"UNASSESSED\"\ntypesafe_evidence: \"\"\ntdd_verified: false\nreview_status: \"PENDING\"\nreview_receipt: \"\"\nbase_sha: \"\"\nhead_sha: \"\"\n---\n\n# 10 · 核验跨模块故障路径的一致性\n\n## 1. 任务执行目标与接口契约\n- **主要目标**：组合已完成模块的隔离夹具，锁定错误在派发、事件、交接和审计之间不被抹平；只补跨模块回归，不重复各卡完整测试或承担真实链审计。\n- **Consumes**：01模式矩阵、02坏卡隔离、03异步守卫、06安装清单及07测试支持接口；现有tests/test_self_hosting.py及执行就绪/FS/Git夹具。\n- **Produces**：tests/test_self_hosting.py受影响联合断言与evidence/10/integration-report.json；报告仅synthetic层，不产生原生验收或批准。\n\n## 2. 业务阶段\n<!-- iter:stages -->\n- [ ] 复用成熟夹具定义最少跨模块断言\n- [ ] 运行隔离集成负例并保持原始失败\n- [ ] 交付集成结果与未覆盖边界，最高TESTING\n<!-- /iter:stages -->\n\n## 3. 按类型验证规划\n隔离实验，保留可复查决定与后续接口，不虚构测试或批准。\n<!-- iter:verification -->\n- [ ] **experiment**：python -B -m pytest -p no:cacheprovider tests/test_self_hosting.py tests/test_execution_readiness.py tests/test_autonomy.py tests/test_checkpoint_resume.py -q；通过冻结runner保留真实退出码，另按本卡验收完成实际消费或实验。\n- [ ] **decision**：在本卡ledger及独立报告记录实测结论、限制、来源和取舍；未知保持UNKNOWN/BLOCKED，不以结构检查代替语义验收。\n- [ ] **interfaces**：tests/test_self_hosting.py受影响联合断言与evidence/10/integration-report.json；报告仅synthetic层，不产生原生验收或批准。；核对消费者与现有合同兼容，冻结可复查产物。\n<!-- /iter:verification -->\n\n## 4. 交付与冻结\n提交实现C及原始证据，再独立审查冻结规格；主管登记D后运行strict，head_sha绑定C。\n执行状态与审查结果读取frontmatter及review_receipt；生成不代表验证或独立批准。\n\n## 5. 新增或变更内容清单\n<!-- iter:scope -->\n| 文件路径 | 变更类型 | 核心职责说明 |\n| --- | --- | --- |\n| `tests/test_self_hosting.py` | MODIFIED | 本任务授权范围 |\n| `.agents/notes/planned/iter11/10-integration-fault-paths.md` | MODIFIED | 本任务授权范围 |\n| `docs/todos/11-reliable-delivery/evidence/10/` | MODIFIED | 本任务授权范围 |\n<!-- /iter:scope -->\n\n## 6. 确定性验收标准\n<!-- iter:acceptance -->\n- [ ] 坏编码卡与合法卡混合时takeover/inventory仍有完整库存；含未知模式的DONE不在envelope/board重新变PASS。\n- [ ] 延迟/失败READY的guard不产生dispatch；外来owner、phase/candidate不符、依赖非PASS、两次无进展、坏幂等payload均保持拒绝和原卡字节。\n- [ ] Git/FS源码/证据/正文漂移、FS拒Git grant、未知命令终态的既有成熟覆盖直接沿用适用结果；新增断言仅针对模块连接缺口，不破坏真实卡或耗尽真实预算。\n- [ ] 安装清单漂移不因投影重建变成一致；临时安装受影响harness检查与维护路径脱钩。所有样例标synthetic，报告列每项命令/候选/证据，不声称真实委派。\n<!-- /iter:acceptance -->\n\n## 7. 执行实证与裁决账本\n<!-- iter:ledger -->\n实际命令、原始证据、退出码、候选、检查点与剩余项在执行中记录；未执行不推断通过。\n独立审查结果由外部收据与报告提供。\n<!-- /iter:ledger -->\n",
+      "stderr": ""
+    },
+    {
+      "operation": "new-card-precheck",
+      "task_id": "10",
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/data/workspace/iteration-manager/build/frozen-tools/fdcc4cce8863/scripts/iter_templates.py",
+        "--check",
+        "/data/workspace/iteration-manager/docs/todos/11-reliable-delivery/evidence/planning/generation/10-initial.md",
+        "--delivery-mode",
+        "git"
+      ],
+      "cwd": "/data/workspace/iteration-manager",
+      "exit_code": 0,
+      "stdout": "{\"valid\": true, \"errors\": []}\n",
+      "stderr": ""
+    },
+    {
+      "operation": "render",
+      "task_id": "11",
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/data/workspace/iteration-manager/build/frozen-tools/fdcc4cce8863/scripts/iter_templates.py",
+        "--render",
+        "/data/workspace/iteration-manager/docs/todos/11-reliable-delivery/evidence/planning/specs/11.json"
+      ],
+      "cwd": "/data/workspace/iteration-manager",
+      "exit_code": 0,
+      "stdout": "---\nschema_version: 1\niteration: \"11-reliable-delivery\"\ntask_id: \"11\"\ntask_name: \"审计本轮真实自用链与检查点续接\"\nstatus: \"TODO\"\ntype: \"Spike-Discovery\"\nfix_rounds: 0\nreplan_count: 0\nis_blocked: false\nblocked_reason: \"\"\ntypesafe_score: \"UNASSESSED\"\ntypesafe_evidence: \"\"\ntdd_verified: false\nreview_status: \"PENDING\"\nreview_receipt: \"\"\nbase_sha: \"\"\nhead_sha: \"\"\n---\n\n# 11 · 审计本轮真实自用链与检查点续接\n\n## 1. 任务执行目标与接口契约\n- **主要目标**：只审计预先选择的一条本轮真实管理链和一次真实正常检查点续接；核对原生身份、候选、顺序和证据，不实现产品、不改测试、不承担整轮回归。\n- **Consumes**：Controller在推进期间保存的evidence/planning/native-source-index.json来源指针（不是任务状态账）；03真实守卫链、10隔离报告，以及被选中任务的原生会话/runner/attempt/独审/C-D/local strict原件。\n- **Produces**：evidence/11/audit_native_chain.py: main(argv=None) -> int；--sources PATH --output PATH生成robustness-report.json与native-chain-index.json，沿用既定报告schema。脚本仅校验记录引用/身份/顺序/候选，语义真实性由非参与者核对原件。\n\n## 2. 业务阶段\n<!-- iter:stages -->\n- [ ] 从Controller来源指针中选择一条完成链和一次正常续接\n- [ ] 运行隔离审计探针并人工核对原生来源\n- [ ] 交付报告及明确缺口供本卡独审，不执行整轮收口\n<!-- /iter:stages -->\n\n## 3. 按类型验证规划\n隔离实验，保留可复查决定与后续接口，不虚构测试或批准。\n<!-- iter:verification -->\n- [ ] **experiment**：python -B docs/todos/11-reliable-delivery/evidence/11/audit_native_chain.py --sources docs/todos/11-reliable-delivery/evidence/planning/native-source-index.json --output docs/todos/11-reliable-delivery/evidence/11/robustness-report.json；缺原件返回2不补造，通过冻结runner。\n- [ ] **decision**：在本卡ledger及独立报告记录实测结论、限制、来源和取舍；未知保持UNKNOWN/BLOCKED，不以结构检查代替语义验收。\n- [ ] **interfaces**：evidence/11/audit_native_chain.py: main(argv=None) -> int；--sources PATH --output PATH生成robustness-report.json与native-chain-index.json，沿用既定报告schema。脚本仅校验记录引用/身份/顺序/候选，语义真实性由非参与者核对原件。；核对消费者与现有合同兼容，冻结可复查产物。\n<!-- /iter:verification -->\n\n## 4. 交付与冻结\n提交实现C及原始证据，再独立审查冻结规格；主管登记D后运行strict，head_sha绑定C。\n执行状态与审查结果读取frontmatter及review_receipt；生成不代表验证或独立批准。\n\n## 5. 新增或变更内容清单\n<!-- iter:scope -->\n| 文件路径 | 变更类型 | 核心职责说明 |\n| --- | --- | --- |\n| `.agents/notes/planned/iter11/11-native-self-use-audit.md` | MODIFIED | 本任务授权范围 |\n| `docs/todos/11-reliable-delivery/evidence/11/` | MODIFIED | 本任务授权范围 |\n<!-- /iter:scope -->\n\n## 6. 确定性验收标准\n<!-- iter:acceptance -->\n- [ ] 输入sources逐项提供task_id/session_id、候选、check命令argv/cwd/request_id/UTC、实际dispatch和终态、runner收据、attempt/release、独审、C/D及local strict原件路径；缺项、未知终态或顺序倒置输出FAIL/UNKNOWN/BLOCKED并返回2，不能补造记录。\n- [ ] experiment为python -B docs/todos/11-reliable-delivery/evidence/11/audit_native_chain.py --sources docs/todos/11-reliable-delivery/evidence/planning/native-source-index.json --output docs/todos/11-reliable-delivery/evidence/11/robustness-report.json，经冻结runner保存真实退出码。至少一条本轮真实完整链、一次新会话正常继承，逐例核对原生身份与原件；不以历史链或synthetic桩替代。\n- [ ] 审计范围仅选中完整链与续接；其他卡只链接已有报告。保留static/synthetic/native-self-use分层、冻结协调器已知缺陷与所有FAIL；元数据来源清单不提供状态、调度或批准。\n- [ ] 本卡只交付探针、报告及来源索引，不改产品/测试/共同协议。11登记DONE后仍由Controller等全部12卡PASS再做最终全量/独立总审/最终branch strict；相应收口原件不写本卡scope。\n- [ ] 实际Codeg、Windows runner或原件不足时相应case为BLOCKED/UNKNOWN并列补齐责任/条件，本卡不宣称安装已部署或外部FS业务通过。\n<!-- /iter:acceptance -->\n\n## 7. 执行实证与裁决账本\n<!-- iter:ledger -->\n实际命令、原始证据、退出码、候选、检查点与剩余项在执行中记录；未执行不推断通过。\n独立审查结果由外部收据与报告提供。\n<!-- /iter:ledger -->\n",
+      "stderr": ""
+    },
+    {
+      "operation": "new-card-precheck",
+      "task_id": "11",
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/data/workspace/iteration-manager/build/frozen-tools/fdcc4cce8863/scripts/iter_templates.py",
+        "--check",
+        "/data/workspace/iteration-manager/docs/todos/11-reliable-delivery/evidence/planning/generation/11-initial.md",
+        "--delivery-mode",
+        "git"
+      ],
+      "cwd": "/data/workspace/iteration-manager",
+      "exit_code": 0,
+      "stdout": "{\"valid\": true, \"errors\": []}\n",
+      "stderr": ""
+    },
+    {
+      "operation": "render",
+      "task_id": "12",
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/data/workspace/iteration-manager/build/frozen-tools/fdcc4cce8863/scripts/iter_templates.py",
+        "--render",
+        "/data/workspace/iteration-manager/docs/todos/11-reliable-delivery/evidence/planning/specs/12.json"
+      ],
+      "cwd": "/data/workspace/iteration-manager",
+      "exit_code": 0,
+      "stdout": "---\nschema_version: 1\niteration: \"11-reliable-delivery\"\ntask_id: \"12\"\ntask_name: \"统一默认派发与最终收口顺序\"\nstatus: \"TODO\"\ntype: \"Spike-Discovery\"\nfix_rounds: 0\nreplan_count: 0\nis_blocked: false\nblocked_reason: \"\"\ntypesafe_score: \"UNASSESSED\"\ntypesafe_evidence: \"\"\ntdd_verified: false\nreview_status: \"PENDING\"\nreview_receipt: \"\"\nbase_sha: \"\"\nhead_sha: \"\"\n---\n\n# 12 · 统一默认派发与最终收口顺序\n\n## 1. 任务执行目标与接口契约\n- **主要目标**：仅维护执行流程契约：受支持Codeg路径消费03守卫；提前结构预检与全部卡登记后的最终收口明确分离，消除顺序歧义。\n- **Consumes**：任务03 dispatchAfterReady接口/原生能力记录；既有共同协议、执行检查、Worktree流程图及三助手/委派模板。\n- **Produces**：共同协议的权威顺序与其余引用一致：READY终态后实际派发；每卡C/独审/D/local strict；全部卡DONE后集成/全量、整轮独审及最终branch strict。其他文档只引用，不自建循环。\n\n## 2. 业务阶段\n<!-- iter:stages -->\n- [ ] 核对三种流程场景及权威来源\n- [ ] 统一协议/流程图/模板对03守卫和收口的引用\n- [ ] 运行流程消费检查并保存真实原生顺序观察\n<!-- /iter:stages -->\n\n## 3. 按类型验证规划\n隔离实验，保留可复查决定与后续接口，不虚构测试或批准。\n<!-- iter:verification -->\n- [ ] **experiment**：python -B -m pytest -p no:cacheprovider tests/test_workflow_sequence.py tests/test_prompt_sources.py tests/test_task_card_schema.py -q；通过冻结runner保留真实退出码，另按本卡验收完成实际消费或实验。\n- [ ] **decision**：在本卡ledger及独立报告记录实测结论、限制、来源和取舍；未知保持UNKNOWN/BLOCKED，不以结构检查代替语义验收。\n- [ ] **interfaces**：共同协议的权威顺序与其余引用一致：READY终态后实际派发；每卡C/独审/D/local strict；全部卡DONE后集成/全量、整轮独审及最终branch strict。其他文档只引用，不自建循环。；核对消费者与现有合同兼容，冻结可复查产物。\n<!-- /iter:verification -->\n\n## 4. 交付与冻结\n提交实现C及原始证据，再独立审查冻结规格；主管登记D后运行strict，head_sha绑定C。\n执行状态与审查结果读取frontmatter及review_receipt；生成不代表验证或独立批准。\n\n## 5. 新增或变更内容清单\n<!-- iter:scope -->\n| 文件路径 | 变更类型 | 核心职责说明 |\n| --- | --- | --- |\n| `references/agent_protocol.md` | MODIFIED | 本任务授权范围 |\n| `references/execution_readiness.md` | MODIFIED | 本任务授权范围 |\n| `references/worktree_git_contract.md` | MODIFIED | 本任务授权范围 |\n| `templates/assistants/iteration_planner.md` | MODIFIED | 本任务授权范围 |\n| `templates/assistants/iteration_controller.md` | MODIFIED | 本任务授权范围 |\n| `templates/assistants/task_tech_lead.md` | MODIFIED | 本任务授权范围 |\n| `templates/sdd_implementer_prompt.md` | MODIFIED | 本任务授权范围 |\n| `templates/sdd_reviewer_prompt.md` | MODIFIED | 本任务授权范围 |\n| `tests/test_prompt_sources.py` | MODIFIED | 本任务授权范围 |\n| `tests/test_workflow_sequence.py` | MODIFIED | 本任务授权范围 |\n| `.agents/notes/planned/iter11/12-workflow-sequence.md` | MODIFIED | 本任务授权范围 |\n| `docs/todos/11-reliable-delivery/evidence/12/` | MODIFIED | 本任务授权范围 |\n<!-- /iter:scope -->\n\n## 6. 确定性验收标准\n<!-- iter:acceptance -->\n- [ ] 场景A：检查running或非READY时不得原生派发；终态READY且身份匹配才消费03守卫并派发。只对实际已验证Codeg路径声明支持；其他宿主保留显式能力缺口。\n- [ ] 场景B：提前branch结构预检可在总审前运行，但不标整轮完成；每卡仍C→独审→登记D→local strict。无变更且证据有效时不重复同范围测试或审查。\n- [ ] 场景C：全部卡（包括本卡）有效DONE后，Controller执行整轮集成/全量、独立总审和最终登记候选的冻结branch strict。最后一张卡不得自要求先通过此branch strict；总审触发变更时重审受影响候选。\n- [ ] 收口原件位于主checkout build/iter11-closeout/唯一UTC目录，不写回已审卡scope；README仅摘要/链接。清理前按授权保留/归档原件，不为证据注册嵌入巨型JSON。\n- [ ] experiment为python -B -m pytest -p no:cacheprovider tests/test_workflow_sequence.py tests/test_prompt_sources.py tests/test_task_card_schema.py -q，经冻结runner执行；实际Codeg消费另外留会话/调用顺序原件，不把模板文本测试当原生链。\n<!-- /iter:acceptance -->\n\n## 7. 执行实证与裁决账本\n<!-- iter:ledger -->\n实际命令、原始证据、退出码、候选、检查点与剩余项在执行中记录；未执行不推断通过。\n独立审查结果由外部收据与报告提供。\n<!-- /iter:ledger -->\n",
+      "stderr": ""
+    },
+    {
+      "operation": "new-card-precheck",
+      "task_id": "12",
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/data/workspace/iteration-manager/build/frozen-tools/fdcc4cce8863/scripts/iter_templates.py",
+        "--check",
+        "/data/workspace/iteration-manager/docs/todos/11-reliable-delivery/evidence/planning/generation/12-initial.md",
+        "--delivery-mode",
+        "git"
+      ],
+      "cwd": "/data/workspace/iteration-manager",
+      "exit_code": 0,
+      "stdout": "{\"valid\": true, \"errors\": []}\n",
+      "stderr": ""
+    }
+  ],
+  "meaning": "生成器与初态预检实际执行；随后仅登记真实规划分数和依赖说明，不是产品测试或完成审查。"
+}

@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "task_id": "03",
+  "iteration": "11-reliable-delivery",
+  "task_name": "连接就绪检查与真实委派的薄守卫",
+  "type": "Strict-TDD",
+  "delivery_mode": "git",
+  "objective": "为现有Codeg持久JavaScript执行器提供可注入的顺序守卫：同owner检查终态成功并消费READY后才调用一次真实委派；保留原生工具和事件账。",
+  "consumes": "现有--dispatch-check card --context path --phase phase --owner owner；返回task_path/task_id/phase/candidate/readiness。scripts/deadline_watch.js: watchDeadline({...})保持原样。实际Codeg schema在运行时确认。",
+  "produces": "scripts/dispatch_guard.js: async dispatchAfterReady({request, check, dispatch}) -> {dispatched, reason, check, delegation}；request含request_id/project_root/tool_entry/task_path/task_id/owner/phase/candidate/context；check(request) -> Promise<{state,exit_code,argv,cwd,request_id,terminal_evidence,stdout,stderr}>；dispatch(request, ready) -> Promise<原生返回>。不使用Node API。",
+  "scope": [
+    "scripts/dispatch_guard.js",
+    "references/native_dispatch_adapter.md",
+    "tests/test_dispatch_guard.py",
+    ".agents/notes/planned/iter11/03-native-dispatch-guard.md",
+    "docs/todos/11-reliable-delivery/evidence/03/"
+  ],
+  "stages": [
+    "以可控Promise覆盖running/失败/乱序及身份不符，取得断言RED",
+    "完成薄守卫GREEN及既有截止守卫兼容",
+    "在实际Codeg schema可用时记录一条真实先检查后派发链，缺宿主则保留BLOCKED"
+  ],
+  "acceptance": [
+    "check必须为本次request_id，带实际argv/cwd及原生终态来源；guard核对实际argv的tool_entry/task_path/context/phase/owner与request完全一致，cwd等于project_root；命令state=completed、整数exit_code=0、单份JSON且readiness=READY；stdout中的task_path/task_id/phase/candidate均精确相符。",
+    "check仍running、拒绝、抛错、坏JSON、退出非零、错owner/旧context路径/旧request_id或候选不符时dispatch调用数为0；READY时调用数为1。委派抛错/unknown不自动重试，不伪造终态。",
+    "守卫只约束经过该入口的调用，不声称拦截所有原生委派；真实会话ID/检查原件/调用顺序另存，Node替身不作原生消费证据。",
+    "本卡只交付代码守卫与单独契约；任务04接入权威默认指令，避免多卡改同一流程文件。",
+    "argv/cwd和request标识只是可审计绑定，不能自证原生来源或context语义新鲜度；主控/独审核对真实命令和观察原件。"
+  ],
+  "verification": {
+    "red": "python -B -m pytest -p no:cacheprovider tests/test_dispatch_guard.py tests/test_deadline_watch.py -q；由同一实现者先取得验收中具体行为断言失败，环境/导入失败不作RED；通过冻结runner。",
+    "green": "python -B -m pytest -p no:cacheprovider tests/test_dispatch_guard.py tests/test_deadline_watch.py -q；同一实现者最小修复后通过，保留原始输出；通过冻结runner。",
+    "regression": "python -B -m pytest -p no:cacheprovider tests/test_dispatch_guard.py tests/test_deadline_watch.py -q；覆盖本卡列出的直接接口/兼容范围，影响不明扩大；不代替整轮全量。"
+  }
+}

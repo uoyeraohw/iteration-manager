@@ -1,0 +1,34 @@
+{
+  "version": 1,
+  "task_id": "02",
+  "iteration": "11-reliable-delivery",
+  "task_name": "隔离旧接管报告的逐卡读取故障",
+  "type": "Strict-TDD",
+  "delivery_mode": "git",
+  "objective": "旧--takeover-report遇到不可读、编码损坏或读取竞态卡仍输出完整JSON库存，坏卡留错误，健康卡继续审计。",
+  "consumes": "discover_task_files(directory); parse_card(content); audit_task_file(path)。沿用旧takeover报告read_only/tasks/next及逐卡path/declared_status/acceptance_verdict/missing/findings字段。",
+  "produces": "scripts/iter_cli.py: _takeover_task(path: Path) -> dict；逐卡返回既有行结构，无法确定的missing为null，错误卡UNKNOWN或FAIL且永不PASS。保留iter_sync.main和iter_cli.main(argv)各自退出/异常合同。",
+  "scope": [
+    "scripts/iter_cli.py",
+    "tests/test_takeover_resilience.py",
+    "tests/test_task_discovery_compat.py",
+    "tests/test_cli_compatibility.py",
+    ".agents/notes/planned/iter11/02-takeover-report-isolation.md",
+    "docs/todos/11-reliable-delivery/evidence/02/"
+  ],
+  "stages": [
+    "对健康卡混合UnicodeError、OSError及发现后删除构造有效断言RED",
+    "实现逐卡故障隔离并保留旧报告结构",
+    "完成CLI/发现兼容与只读回归"
+  ],
+  "acceptance": [
+    "混合至少一张合法可读卡、一张坏编码卡、一张读取OSError卡；结果仍可解析为单份JSON，库存含所有已发现卡，健康卡结果保留，坏卡携带原因且非PASS。",
+    "非法目录/错误参数仍按旧合同失败；不吞掉整轮配置或参数错误，不把坏卡当空库存。",
+    "覆盖旧脚本入口与iter_cli.main(argv)；核对目录字节不变。"
+  ],
+  "verification": {
+    "red": "python -B -m pytest -p no:cacheprovider tests/test_takeover_resilience.py tests/test_task_discovery_compat.py tests/test_cli_compatibility.py tests/test_sync_compatibility.py -q；由同一实现者先取得验收中具体行为断言失败，环境/导入失败不作RED；通过冻结runner。",
+    "green": "python -B -m pytest -p no:cacheprovider tests/test_takeover_resilience.py tests/test_task_discovery_compat.py tests/test_cli_compatibility.py tests/test_sync_compatibility.py -q；同一实现者最小修复后通过，保留原始输出；通过冻结runner。",
+    "regression": "python -B -m pytest -p no:cacheprovider tests/test_takeover_resilience.py tests/test_task_discovery_compat.py tests/test_cli_compatibility.py tests/test_sync_compatibility.py -q；覆盖本卡列出的直接接口/兼容范围，影响不明扩大；不代替整轮全量。"
+  }
+}

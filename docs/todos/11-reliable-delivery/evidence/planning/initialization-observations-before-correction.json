@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "observed_at": "2026-11-14T17:05:54.474955+00:00",
+  "cwd": "/data/workspace/iteration-manager",
+  "branch": "main",
+  "head": "fdcc4cce88635ee81573be5991de11de650659d8",
+  "initial_dirty": [],
+  "platform": "Linux-6.18.54-instabox-x86_64-with-glibc2.41",
+  "python": "3.13.5",
+  "node": "22.23.3",
+  "formal_runner": "BLOCKED: requires Windows Job Objects; no fallback",
+  "native_codegen": "BLOCKED: Codeg MCP not exposed in this session",
+  "product_execution_authority": "NEEDS_INPUT: initialization only",
+  "typesafe": "actual mcp__typesafe__evaluate, jev-1.14.0, three preserved rounds",
+  "git_commit": "not performed",
+  "worktree": "not created"
+}

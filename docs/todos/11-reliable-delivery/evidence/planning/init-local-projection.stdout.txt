@@ -1,0 +1,51 @@
+Iteration Board: 11-reliable-delivery | PENDING
+声明DONE: 0/12 | 验收PASS: 0/12
+[TODO] 01. 统一交付模式解析与完成审计 | 验收:UNKNOWN
+  业务阶段: 冻结包含未知模式的合法Git绑定反例和兼容矩阵，取得目标断言RED | 清单完成比例: 0/3 (0%) (非工时)
+  工程阶段: red：python -B -m pytest -p no:cacheprovider tests/test_delivery_mode_consistency.py tests/test_query_contract.py tests/test_execution_readiness.py tests/test_completion_gates.py tests/test_filesystem_receipts.py -q；由同一实现者先取得验收中具体行为断言失败，环境/导入失败不作RED；通过冻结runner。 | 修复轮次/累计: 0/0 | 重规划:0
+  阻塞: 未记录 | 更新时间: UNKNOWN
+[TODO] 02. 隔离旧接管报告的逐卡读取故障 | 验收:UNKNOWN
+  业务阶段: 对健康卡混合UnicodeError、OSError及发现后删除构造有效断言RED | 清单完成比例: 0/3 (0%) (非工时)
+  工程阶段: red：python -B -m pytest -p no:cacheprovider tests/test_takeover_resilience.py tests/test_task_discovery_compat.py tests/test_cli_compatibility.py tests/test_sync_compatibility.py -q；由同一实现者先取得验收中具体行为断言失败，环境/导入失败不作RED；通过冻结runner。 | 修复轮次/累计: 0/0 | 重规划:0
+  阻塞: 未记录 | 更新时间: UNKNOWN
+[TODO] 03. 连接就绪检查与真实委派的薄守卫 | 验收:UNKNOWN
+  业务阶段: 以可控Promise覆盖running/失败/乱序及身份不符，取得断言RED | 清单完成比例: 0/3 (0%) (非工时)
+  工程阶段: red：python -B -m pytest -p no:cacheprovider tests/test_dispatch_guard.py tests/test_deadline_watch.py -q；由同一实现者先取得验收中具体行为断言失败，环境/导入失败不作RED；通过冻结runner。 | 修复轮次/累计: 0/0 | 重规划:0
+  阻塞: 未记录 | 更新时间: UNKNOWN
+[TODO] 04. 收敛当前任务的默认阅读导航 | 验收:UNKNOWN
+  业务阶段: 记录进入当前任务所需的直接文档及原件路径 | 清单完成比例: 0/3 (0%) (非工时)
+  工程阶段: experiment：python -B -m pytest -p no:cacheprovider tests/test_navigation_paths.py tests/test_prompt_sources.py -q；通过冻结runner保留真实退出码，另按本卡验收完成实际消费或实验。 | 修复轮次/累计: 0/0 | 重规划:0
+  阻塞: 未记录 | 更新时间: UNKNOWN
+[TODO] 05. 公布带证据的支持矩阵 | 验收:UNKNOWN
+  业务阶段: 逐项核对契约与有日期的能力原件 | 清单完成比例: 0/3 (0%) (非工时)
+  工程阶段: experiment：python -B -m pytest -p no:cacheprovider tests/test_support_matrix.py tests/test_release_index.py -q；通过冻结runner保留真实退出码，另按本卡验收完成实际消费或实验。 | 修复轮次/累计: 0/0 | 重规划:0
+  阻塞: 未记录 | 更新时间: UNKNOWN
+[TODO] 06. 提供安装来源清单与轻量自检 | 验收:UNKNOWN
+  业务阶段: 对来源不符、坏清单、漂移/缺失/越界路径取得断言RED | 清单完成比例: 0/3 (0%) (非工时)
+  工程阶段: red：python -B -m pytest -p no:cacheprovider tests/test_install_provenance.py tests/test_cli_compatibility.py -q；由同一实现者先取得验收中具体行为断言失败，环境/导入失败不作RED；通过冻结runner。 | 修复轮次/累计: 0/0 | 重规划:0
+  阻塞: 未记录 | 更新时间: UNKNOWN
+[TODO] 07. 消除维护测试对历史证据harness的运行依赖 | 验收:UNKNOWN
+  业务阶段: 取得原维护测试基线及同环境Before量测 | 清单完成比例: 0/3 (0%) (非工时)
+  工程阶段: baseline：python -B -m pytest -p no:cacheprovider tests/test_board_handoff.py tests/test_board_service.py -q；在修改前保留实际维护基线，通过冻结runner。 | 修复轮次/累计: 0/0 | 重规划:0
+  阻塞: 未记录 | 更新时间: UNKNOWN
+[TODO] 08. 量测合法Git与FS批准库存的真实成本 | 验收:UNKNOWN
+  业务阶段: 构造Git/FS合法批准库存，先断言每卡审计PASS | 清单完成比例: 0/3 (0%) (非工时)
+  工程阶段: experiment：python -B tests/benchmarks/approval_chain.py --sizes 10 100 --repeats 3 --output docs/todos/11-reliable-delivery/evidence/08/measurements.json；先确认合法Git/FS库存每卡PASS，通过冻结runner。 | 修复轮次/累计: 0/0 | 重规划:0
+  阻塞: 未记录 | 更新时间: UNKNOWN
+[TODO] 09. 使新重构任务的量测匹配实际目标 | 验收:UNKNOWN
+  业务阶段: 用两种真实新卡规划样例确认当前成本与指标匹配问题 | 清单完成比例: 0/3 (0%) (非工时)
+  工程阶段: experiment：python -B -m pytest -p no:cacheprovider tests/test_refactor_evidence_policy.py tests/test_template_generation.py tests/test_task_card_schema.py tests/test_completion_gates.py -q；通过冻结runner保留真实退出码，另按本卡验收完成实际消费或实验。 | 修复轮次/累计: 0/0 | 重规划:0
+  阻塞: 未记录 | 更新时间: UNKNOWN
+[TODO] 10. 核验跨模块故障路径的一致性 | 验收:UNKNOWN
+  业务阶段: 复用成熟夹具定义最少跨模块断言 | 清单完成比例: 0/3 (0%) (非工时)
+  工程阶段: experiment：python -B -m pytest -p no:cacheprovider tests/test_self_hosting.py tests/test_execution_readiness.py tests/test_autonomy.py tests/test_checkpoint_resume.py -q；通过冻结runner保留真实退出码，另按本卡验收完成实际消费或实验。 | 修复轮次/累计: 0/0 | 重规划:0
+  阻塞: 未记录 | 更新时间: UNKNOWN
+[TODO] 11. 审计本轮真实自用链与检查点续接 | 验收:UNKNOWN
+  业务阶段: 从Controller来源指针中选择一条完成链和一次正常续接 | 清单完成比例: 0/3 (0%) (非工时)
+  工程阶段: experiment：python -B docs/todos/11-reliable-delivery/evidence/11/audit_native_chain.py --sources docs/todos/11-reliable-delivery/evidence/planning/native-source-index.json --output docs/todos/11-reliable-delivery/evidence/11/robustness-report.json；缺原件返回2不补造，通过冻结runner。 | 修复轮次/累计: 0/0 | 重规划:0
+  阻塞: 未记录 | 更新时间: UNKNOWN
+[TODO] 12. 统一默认派发与最终收口顺序 | 验收:UNKNOWN
+  业务阶段: 核对三种流程场景及权威来源 | 清单完成比例: 0/3 (0%) (非工时)
+  工程阶段: experiment：python -B -m pytest -p no:cacheprovider tests/test_workflow_sequence.py tests/test_prompt_sources.py tests/test_task_card_schema.py -q；通过冻结runner保留真实退出码，另按本卡验收完成实际消费或实验。 | 修复轮次/累计: 0/0 | 重规划:0
+  阻塞: 未记录 | 更新时间: UNKNOWN
+[IterSync:Local] Calibrated '11-reliable-delivery/README.md' -> [0/12] (0.0%) ⚪ 待开始 in 11.79ms (Zero-Root-Touch preserved).

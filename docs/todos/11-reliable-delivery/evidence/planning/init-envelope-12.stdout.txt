@@ -1,0 +1,37 @@
+{
+  "TASK_HANDOFF": {
+    "schema_version": 1,
+    "task_id": "12",
+    "delivery_mode": "git",
+    "candidate_id": "",
+    "execution": {
+      "attempt_count": 0,
+      "no_progress_streak": 0,
+      "last_attempt": null,
+      "checkpoint": null,
+      "remaining_work": []
+    },
+    "task_name": "统一默认派发与最终收口顺序",
+    "type": "Spike-Discovery",
+    "status": "TODO",
+    "commit_sha": "",
+    "base_sha": "",
+    "fix_rounds": 0,
+    "fix_total": 0,
+    "consilium_count": 0,
+    "replan_count": 0,
+    "writer": "",
+    "blocked_reason": "",
+    "is_blocked": false,
+    "review_status": "PENDING",
+    "acceptance_verdict": "UNKNOWN",
+    "evidence": {
+      "receipt": ""
+    },
+    "errors": [],
+    "files_changed_count": 0,
+    "files_changed": [],
+    "stage_current": "核对三种流程场景及权威来源",
+    "stage_progress": "0/3 (0%)"
+  }
+}

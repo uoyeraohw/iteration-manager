@@ -1,0 +1,81 @@
+{
+  "kind": "planning-corrections",
+  "recorded_at": "2026-11-14T17:13:54.157219+00:00",
+  "reference_fixes": {
+    "08": "06 test support -> 07 test support",
+    "09": "07 result -> 08 approved-chain benchmark"
+  },
+  "capability_fix": "Codeg schema exposed in full lazy catalog; actual target/runtime remains UNVERIFIED; Windows runner still unavailable on Linux",
+  "quality_impact": "r4 re-evaluates native actionability03/11/12 only; all planning thresholds pass",
+  "preserved": "all original TypeSafe requests/responses, original observations/context, generator stdout and original specs",
+  "regeneration": [
+    {
+      "operation": "render-corrected-numbering",
+      "task_id": "08",
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/data/workspace/iteration-manager/build/frozen-tools/fdcc4cce8863/scripts/iter_templates.py",
+        "--render",
+        "/data/workspace/iteration-manager/docs/todos/11-reliable-delivery/evidence/planning/specs/08.json"
+      ],
+      "cwd": "/data/workspace/iteration-manager",
+      "exit_code": 0,
+      "stdout": "docs/todos/11-reliable-delivery/evidence/planning/generation/08-numbering-corrected.md",
+      "stderr": "",
+      "preserved_original_spec": "docs/todos/11-reliable-delivery/evidence/planning/generation/08-original-spec.json"
+    },
+    {
+      "operation": "precheck-corrected-numbering",
+      "task_id": "08",
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/data/workspace/iteration-manager/build/frozen-tools/fdcc4cce8863/scripts/iter_templates.py",
+        "--check",
+        "/data/workspace/iteration-manager/docs/todos/11-reliable-delivery/evidence/planning/generation/08-numbering-corrected.md",
+        "--delivery-mode",
+        "git"
+      ],
+      "cwd": "/data/workspace/iteration-manager",
+      "exit_code": 0,
+      "stdout": "{\"valid\": true, \"errors\": []}\n",
+      "stderr": ""
+    },
+    {
+      "operation": "render-corrected-numbering",
+      "task_id": "09",
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/data/workspace/iteration-manager/build/frozen-tools/fdcc4cce8863/scripts/iter_templates.py",
+        "--render",
+        "/data/workspace/iteration-manager/docs/todos/11-reliable-delivery/evidence/planning/specs/09.json"
+      ],
+      "cwd": "/data/workspace/iteration-manager",
+      "exit_code": 0,
+      "stdout": "docs/todos/11-reliable-delivery/evidence/planning/generation/09-numbering-corrected.md",
+      "stderr": "",
+      "preserved_original_spec": "docs/todos/11-reliable-delivery/evidence/planning/generation/09-original-spec.json"
+    },
+    {
+      "operation": "precheck-corrected-numbering",
+      "task_id": "09",
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/data/workspace/iteration-manager/build/frozen-tools/fdcc4cce8863/scripts/iter_templates.py",
+        "--check",
+        "/data/workspace/iteration-manager/docs/todos/11-reliable-delivery/evidence/planning/generation/09-numbering-corrected.md",
+        "--delivery-mode",
+        "git"
+      ],
+      "cwd": "/data/workspace/iteration-manager",
+      "exit_code": 0,
+      "stdout": "{\"valid\": true, \"errors\": []}\n",
+      "stderr": ""
+    }
+  ],
+  "product_tests_run": false,
+  "git_commit": false
+}
