@@ -139,7 +139,7 @@
 <!-- iter:projection -->
 ## 验收事实（阶段比例不是工时）
 
-声明DONE 12/13 · 验收PASS 12/13
+声明DONE 13/13 · 验收PASS 13/13
 
 | 任务 | 声明 | 验收 | 业务阶段 / 清单比例 | 工程阶段 | 阻塞原因 | 累计尝试 | 最后更新 |
 | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -155,5 +155,5 @@
 | 09-proportional-refactor-evidence.md | DONE | PASS | 阶段清单已勾选完毕 / 3/3 (100%) | CHECKLIST_COMPLETE (未等同验收) | 未记录 | 0 | 2026-11-15T05:39:34.550878+00:00 |
 | 10-integration-fault-paths.md | DONE | PASS | 阶段清单已勾选完毕 / 3/3 (100%) | CHECKLIST_COMPLETE (未等同验收) | 未记录 | 0 | 2026-11-15T05:46:01.903446+00:00 |
 | 11-native-self-use-audit.md | DONE | PASS | 阶段清单已勾选完毕 / 3/3 (100%) | CHECKLIST_COMPLETE (未等同验收) | 未记录 | 1 | 2026-11-15T06:04:55.785284+00:00 |
-| 12-workflow-sequence.md | FUSED | BLOCKED | 阶段清单已勾选完毕 / 3/3 (100%) | CHECKLIST_COMPLETE (未等同验收) | Task12 recovery authority required (F1); UNKNOWN interrupted child/command-tree state (F3); metadata-only block, no new business/test execution before explicit compliant disposition | 1 | 2026-11-15T06:59:32.114679+00:00 |
+| 12-workflow-sequence.md | DONE | PASS | 阶段清单已勾选完毕 / 3/3 (100%) | CHECKLIST_COMPLETE (未等同验收) | 未记录 | 1 | 2026-11-15T07:36:29.881581+00:00 |
 <!-- /iter:projection -->

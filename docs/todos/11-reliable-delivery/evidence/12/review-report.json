@@ -1,0 +1,279 @@
+{
+  "kind": "independent-review-record",
+  "candidate": "ca69be6c6526a8bf3b77d28e6d4a919c1c4c4f97",
+  "recorded_at": "2026-11-15T07:36:29.870616+00:00",
+  "independent_review": {
+    "candidate": "ca69be6c6526a8bf3b77d28e6d4a919c1c4c4f97",
+    "base": "3de06e0e3715b9f65d7caaf3bdba872a33df0f8c",
+    "recovery_base": "116092c569c4750ca42c4d5a7446f61a9966ab64",
+    "reviewer_uuid": "01a1dde3-9b87-73a3-9eea-deddd1dbdfd7",
+    "independence": {
+      "statement": "Same independent Task12 reviewer as rounds 1 and 2; no Task12 design, implementation, testing, RCA or delegation participation. This review independently assesses the later disposition and evidence; it did not produce the disposition.",
+      "excluded_actors": [
+        "01a1ddcf-b505-7cc1-baac-d53be61431ab (implementer)",
+        "01a1ddd7-05a1-7602-8c59-f04b24481f36 (original Codeg consumer)",
+        "01a1dde0-b168-7760-9704-adc0fec19045 (native CLI consumer)",
+        "01a1de1c-ab55-7fc1-afb2-967831d7e712 (fresh Codeg consumer)",
+        "all other task consumers",
+        "root controller",
+        "/root/task12_recovery_review (independent future recovery disposition reviewer)"
+      ]
+    },
+    "verdicts": {
+      "scope": "APPROVED",
+      "spec": "APPROVED",
+      "quality": "APPROVED",
+      "overall": "APPROVED"
+    },
+    "finding_dispositions": {
+      "F1": {
+        "current": "ADDRESSED",
+        "historical": "FAIL remains: the original checkpoint grant lacked demonstrated explicit user authority and is not retroactively validated.",
+        "basis": "The user explicitly authorized the previously committed recovery plan, prospectively. The authorized plan, separately reviewed safe baseline, bounded replan and new guarded consumption provide a new compliant path. The actual user source excerpt and committed plan bytes were independently matched."
+      },
+      "F2": {
+        "current": "ADDRESSED",
+        "historical": "Original erroneous terminal inventory and decision remain preserved; the retrospective inventory does not bind or validate the old grant.",
+        "basis": "Round 2 independent reconciliation remains applicable; the new commits do not change its sources or product/test bytes."
+      },
+      "F3": {
+        "current": "ADDRESSED for prospective recovery",
+        "historical": "FAIL remains for the earlier release and retry based on insufficient contemporaneous evidence. Interrupted child exit and original command-tree receipt remain UNKNOWN.",
+        "basis": "Same-machine boot after the failed 143 launch and before retry independently establishes old-kernel process cessation for the new baseline. User-authorized independent recovery disposition, normal bounded replan, and new guarded consumption address the future execution precondition; they do not reconstruct historical terminal evidence or controller knowledge."
+      }
+    },
+    "findings": [],
+    "evidence_applicability_and_chronology": [
+      "C is committed HEAD on feat/iter-11-reliable-delivery, with clean status at independent verification. C descends from original BASE and recovery base. Prior independent reviews verified frozen card objective, acceptance, scope and iteration goal against BASE; subsequent changes are metadata, task evidence and the iteration README projection, with no product, script, template or test changes. README's FUSED row is a historical projection awaiting subsequent synchronization, not candidate acceptance. Default Git delivery applies: no explicit filesystem delivery profile. No D is registered by this review.",
+      "Task type is Spike-Discovery, requiring experiment, decision and interfaces, not Strict-TDD RED. Original experiment-04 has actual frozen Linux runner COMPLETED, raw exit 0, launcher exit 0 and tree_terminal true; output 10 passed. The eight product sources and two relevant tests remain byte-identical to recovery base; earlier review bound original experiment and source hashes to implementation chronology. Experiment is reused, not repeated.",
+      "Original v1 check omitted cwd and refused dispatch; v2 check preceded actual Codeg delegate, but its 120-second window ended incomplete and canceled, followed by FUSED and unsupported old grant/resume. Original Codeg03 bwrap worker not started and Codeg04 ordering failure remain historical failures. Native command reconciliation for F2 did not repair the old grant or prove runner-tree termination.",
+      "Exact user instruction at 07:15:11 UTC authorizes the plan committed at ac3bd4c before that instruction; its SHA256 is ae3e2a6fd58d346b6a09bec6175e5d40780424d479a45666e4f0a20ef5ea4a2a. The explicit approval covers prospective recovery only. The independent disposition separately approves a current future baseline, not this candidate or original grant.",
+      "OS boot time 06:35:15 UTC, same-machine identity and boot ID were independently compared with live observations, and fall after the interrupted launch exit143 at 06:35:11.745 and before the retry at 06:47:58.457. It proves prior-kernel processes cannot survive the boot, not the old child exit or contemporaneous evidence. Standard replan at 07:28:58 recorded round 0, total 1, consilium 0, replan 1/2, retaining history.",
+      "Fresh Codeg check reached terminal READY at 1794727781093 before delegate at 1794727781112, bound to same owner and candidate 1454a69b8e22e157df93f9e706502ba90833fabc. Native task 3c184acd-30e5-4285-8bba-ccf0fb13c788 completed; session 01a1de1c-ab55-7fc1-afb2-967831d7e712 contains six read-only commands with actual completed/exit0 events, and A/B/C source-backed responses. Candidate 1454a69 is an ancestor of C and the relevant eight source bytes are unchanged. READY and native completed alone are not acceptance or business-worker execution.",
+      "The first batch read of all source files has a persisted middle truncation, spanning parts of execution_readiness and worktree_git_contract. Its process read and hashed all inputs, and a later native selected-line read has no such truncation and includes all eight matching hashes and relevant source lines; the final native hash output independently matches all eight. A/B/C response is consistent with reviewed source and matches terminal response. Do not claim the full contents of all eight files were presented in the persisted first output. Separate earlier native CLI consumer observes the same source bytes on a different host path; its dirty working-tree qualification and original evidence remain.",
+      "The reviewer launch intent uses a unique outer frozen Linux runner for the native host. Its terminal receipt can only be observed by the controller after this review session returns; no host tree terminal is asserted here. Individual checks below have their own completed tree receipts. Earlier bare launch assumptions are not projected onto this host. D/local strict and iteration-wide final gates remain controller work."
+    ],
+    "source_mapping": {
+      "final_manifest_entries": 30,
+      "git_blob_mismatches": [],
+      "eight_sources_and_two_tests_unchanged_since_recovery_base": true,
+      "authorization_original": "Committed excerpt byte-matches original parent native lines 4660 and 4661, and approved plan Git blob hash matches recorded SHA256.",
+      "fresh_native_original": "Full original native source hash and every indexed excerpt line match. Six native CommandExecution records match original line hashes, thread, ID, process ID, argv, cwd, status, exit and start/completion metadata. Native final and saved terminal text match.",
+      "independent_check_receipt": "build/iter11-review/task12-review3/independent-check.json",
+      "independent_check_result": "COMPLETED, raw exit 0, launcher exit 0, tree_terminal true; original sources and 30 candidate Git blob hashes match.",
+      "additional_diagnostic": "build/iter11-review/task12-review3/consumption-diagnostic.json",
+      "additional_diagnostic_result": "COMPLETED, raw exit 0, tree_terminal true; selected native output and hash output cover eight sources; terminal response equals saved result.",
+      "failed_diagnostic": "build/iter11-review/task12-review3/consumption-check.json",
+      "failed_diagnostic_result": "COMPLETED, raw exit 1, tree_terminal true. Its assertion that each full numbered file appeared in the first captured output failed because the native output was truncated. Subsequent diagnostic established actual coverage; this failure is preserved and does not imply a business test failure."
+    },
+    "scope_receipt": {
+      "path": "build/iter11-review/task12-review3/scope-runner.json",
+      "output": "build/iter11-review/task12-review3/scope-runner.json.output.txt",
+      "status": "COMPLETED",
+      "raw_exit_code": 0,
+      "launcher_exit_code": 0,
+      "tree_terminal": true,
+      "observed": "168 changed files within declared scope. Frozen coordinator's known mode/takeover defects limit this result to physical scope; Git legality and unchanged contract assessed separately."
+    },
+    "DeferredMinors": [],
+    "limitations": [
+      "Historical unsupported grant and insufficient evidence consumption remain FAIL. Exact interrupted child exit and original tree terminal remain UNKNOWN; reboot is only a prospective process-cessation observation.",
+      "Fresh Codeg source consumption and native command exits do not establish a Codeg business-worker test or end-to-end worker execution. Current reviewer host's outer runner tree receipt is pending until this session returns.",
+      "No repeated effective suite, Windows execution, full suite, deployment, merge, push, cleanup, D registration, local strict, final branch strict or iteration release was assessed."
+    ],
+    "approval_scope": "Whole Task12 candidate ca69be6c6526a8bf3b77d28e6d4a919c1c4c4f97 against original frozen BASE/spec, carrying forward valid independent product and experiment review and independently assessing recovery and new evidence. This is not registration D, local strict, total iteration review or iteration release."
+  },
+  "originals": {
+    "scope-runner.json.output.txt": {
+      "path": "build/iter11-review/task12-review3/scope-runner.json.output.txt",
+      "sha256": "0d64dc4b79d84fa4f979adf5e0373105e998860829aa3d3b035ab5e9caafd808"
+    },
+    "review-native.jsonl": {
+      "path": "build/iter11-review/task12-review3/review-native.jsonl",
+      "sha256": "717ed2b05c7ab000ebee523e3240c5476a1071144d70ba624a4a9d2902db6065"
+    },
+    "attempt.call.json": {
+      "path": "build/iter11-review/task12-review3/attempt.call.json",
+      "sha256": "1d5de8ac0b88c8112afa93e7560f86058d9658065085badc09cbdb2f98baafe7"
+    },
+    "review-host-runner.json.child.json": {
+      "path": "build/iter11-review/task12-review3/review-host-runner.json.child.json",
+      "sha256": "d3b10b41bfb7dae947b493fa0ea6adc94d7fc03c2895e10bca88de5cd8ad82ba"
+    },
+    "review-package.txt": {
+      "path": "build/iter11-review/task12-review3/review-package.txt",
+      "sha256": "df57e3881eedb46fb3ea5268a1038913abfba6bb05a46c0f9503110e0ec37859"
+    },
+    "review-last-message.txt": {
+      "path": "build/iter11-review/task12-review3/review-last-message.txt",
+      "sha256": "ff28372005b35209eaa8018433edff47c99be8f89407560823e5826136e10897"
+    },
+    "terminal.json": {
+      "path": "build/iter11-review/task12-review3/terminal.json",
+      "sha256": "bbe61dfd97553b009ec56c88acb8c55b8dca564e0a4fb70b794ad1bf1375def1"
+    },
+    "review-native.stderr.txt": {
+      "path": "build/iter11-review/task12-review3/review-native.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "scope-runner.json": {
+      "path": "build/iter11-review/task12-review3/scope-runner.json",
+      "sha256": "21d5504b8c0f7bcf8b91dcf473733f92236b93e024d4f811afb995e26184fcdd"
+    },
+    "precommit-scope.json": {
+      "path": "build/iter11-review/task12-review3/precommit-scope.json",
+      "sha256": "855945d612c1ef5bb0e84cd79df25e4c006e4d80a654af5237839e28767a736b"
+    },
+    "independent-check.py": {
+      "path": "build/iter11-review/task12-review3/independent-check.py",
+      "sha256": "49878139150a7ebd961861c86de07acf57c24e2de828161538cba15f2e652414"
+    },
+    "independent-check.json": {
+      "path": "build/iter11-review/task12-review3/independent-check.json",
+      "sha256": "7a5b68d8a458a03edd726138dbb246d07721a76c40d55d8bcfc5159dad52a6e5"
+    },
+    "review-host-runner.json.output.txt": {
+      "path": "build/iter11-review/task12-review3/review-host-runner.json.output.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "consumption-diagnostic.json": {
+      "path": "build/iter11-review/task12-review3/consumption-diagnostic.json",
+      "sha256": "e324c0cb8163545f259cc51e319cbc549ac894c1fa57359fbeb6875e9292d076"
+    },
+    "attempt.json": {
+      "path": "build/iter11-review/task12-review3/attempt.json",
+      "sha256": "fe285960aebdc9566a22bae5b6a9c98d6c898aff064a68523844d3dffb548853"
+    },
+    "consumption-check.py": {
+      "path": "build/iter11-review/task12-review3/consumption-check.py",
+      "sha256": "966b1999a718e495360c8a71705d0ca7c585184c43513feb9b80d53f07a30eec"
+    },
+    "precommit-scope.json.child.json": {
+      "path": "build/iter11-review/task12-review3/precommit-scope.json.child.json",
+      "sha256": "980fece8413472d7328de1d2d882203850c08e68c971069ab71f187b67b55f9c"
+    },
+    "consumption-diagnostic.json.child.json": {
+      "path": "build/iter11-review/task12-review3/consumption-diagnostic.json.child.json",
+      "sha256": "02d370e5cb1a8a6cc16b5d54f73847839551b8b85071f27daaf67856db3868e6"
+    },
+    "launch-options.json": {
+      "path": "build/iter11-review/task12-review3/launch-options.json",
+      "sha256": "294186589c48342688af0b14e4e9b9f96cea8d4bf64d5f1ec82133565b23da88"
+    },
+    "review-brief.md": {
+      "path": "build/iter11-review/task12-review3/review-brief.md",
+      "sha256": "da5ceafbbf770bba8b47db4233358c38b1a3aa8c8ad1a4a01a39d4e417f5a75e"
+    },
+    "independent-check.json.child.json": {
+      "path": "build/iter11-review/task12-review3/independent-check.json.child.json",
+      "sha256": "6227a1541e007505a022bc20b1feb4821a57de235f506f269c163dcd73d3326d"
+    },
+    "consumption-check.json.output.txt": {
+      "path": "build/iter11-review/task12-review3/consumption-check.json.output.txt",
+      "sha256": "d80e494d8b22128fb7f3d2b8ce6bed5f665d6315a2bc9b0189f34cb7b367ca13"
+    },
+    "review-guard.json": {
+      "path": "build/iter11-review/task12-review3/review-guard.json",
+      "sha256": "3a80fc5312ca7580c369d684619b10914f19694afc428d1c0c19d6b315754705"
+    },
+    "consumption-diagnostic.py": {
+      "path": "build/iter11-review/task12-review3/consumption-diagnostic.py",
+      "sha256": "4b5f7fe3105282c1ecd809633eedf9eb4f48beddba4a671ff8e580ae2fd7b8d4"
+    },
+    "independent-check.json.output.txt": {
+      "path": "build/iter11-review/task12-review3/independent-check.json.output.txt",
+      "sha256": "7ee6babf5c38458e8a0578892ce8370b4cc263976a3cc2e384e9de32f463ee80"
+    },
+    "consumption-diagnostic.json.output.txt": {
+      "path": "build/iter11-review/task12-review3/consumption-diagnostic.json.output.txt",
+      "sha256": "8315d7addb1acf15d02d023f7741253af2cc989b8920166eecad4704f3b59f99"
+    },
+    "context.json": {
+      "path": "build/iter11-review/task12-review3/context.json",
+      "sha256": "89a97d57267113737026ce3e6a69d47ed5bc3758dfb4e57edb97124cb46b0209"
+    },
+    "consumption-check.json.child.json": {
+      "path": "build/iter11-review/task12-review3/consumption-check.json.child.json",
+      "sha256": "d1ef9a6526cc435aa136d2574653cc72c524ff7d74f4461bbad1ef1e944d3190"
+    },
+    "release.call.json": {
+      "path": "build/iter11-review/task12-review3/release.call.json",
+      "sha256": "e24ffc6de4f1087397e12f55444643f101d195b9f7c7e411bf5cd06bc0ef3c65"
+    },
+    "review-launch-intent.json": {
+      "path": "build/iter11-review/task12-review3/review-launch-intent.json",
+      "sha256": "0328b58c6e7ab4477411890e7ac75175b996ce7d9ed6f7202ec3d4829d10906c"
+    },
+    "precommit-diff-check.json": {
+      "path": "build/iter11-review/task12-review3/precommit-diff-check.json",
+      "sha256": "6a5b95443ef4b8904fb251c0d161f1961ae8f9407ae808331f5d35e5ed746aa5"
+    },
+    "review-check-observation.json": {
+      "path": "build/iter11-review/task12-review3/review-check-observation.json",
+      "sha256": "e8b92afb139a3e5e3fef081fad44885ef6d1a24a2ada19fe3c63f28e88baa715"
+    },
+    "precommit-scope.json.output.txt": {
+      "path": "build/iter11-review/task12-review3/precommit-scope.json.output.txt",
+      "sha256": "d610765d444180c1d3e1891a4ede60c61339b2556aca23187e6e46ec7893925d"
+    },
+    "review-launch-start.json": {
+      "path": "build/iter11-review/task12-review3/review-launch-start.json",
+      "sha256": "fd859fa65df2854acd27b1ca59570fed091a0e7548eb4f94a7a8f542bdfeeb6c"
+    },
+    "consumption-check.json": {
+      "path": "build/iter11-review/task12-review3/consumption-check.json",
+      "sha256": "753e5b9bc9709d3e395fc2b14960ee783d03f97271853bb4fd4f0571632f2132"
+    },
+    "scope-runner.json.child.json": {
+      "path": "build/iter11-review/task12-review3/scope-runner.json.child.json",
+      "sha256": "815e4754e708cf89ee5946f1db761945482a5603c87d0cbc4384bda41acc9dcb"
+    },
+    "report.json": {
+      "path": "build/iter11-review/task12-review3/report.json",
+      "sha256": "3c0178e2fe06e1baa4653b0f86ac737f196bb04a70919628aa70d3b6fd9e9b9f"
+    },
+    "precommit-scope-call.json": {
+      "path": "build/iter11-review/task12-review3/precommit-scope-call.json",
+      "sha256": "1436c5a1f376d39606dd8efc21b780b4276a7612814092bd779ab7eb916dff5c"
+    },
+    "review-host-runner.json": {
+      "path": "build/iter11-review/task12-review3/review-host-runner.json",
+      "sha256": "6b2637de3e0ebf320838cf0e6681453ada4d8eef2e63bca673b52fce870fca17"
+    }
+  },
+  "scope_receipt": {
+    "version": 1,
+    "argv": [
+      "python3",
+      "-B",
+      "/data/workspace/iteration-manager/build/frozen-tools/fdcc4cce8863/scripts/iter_sync.py",
+      "--check-scope",
+      "3de06e0e3715b9f65d7caaf3bdba872a33df0f8c",
+      "ca69be6c6526a8bf3b77d28e6d4a919c1c4c4f97",
+      "docs/todos/11-reliable-delivery/12-workflow-sequence.md"
+    ],
+    "cwd": "/data/workspace/iteration-manager/.worktrees/iter-11",
+    "deadline": "2026-11-15T07:39:28.715268+00:00",
+    "cleanup_reserve_seconds": 5,
+    "status": "COMPLETED",
+    "deadline_checked_at": "2026-11-15T07:33:48.731303+00:00",
+    "started_at": "2026-11-15T07:33:48.733126+00:00",
+    "ended_at": "2026-11-15T07:33:48.845361+00:00",
+    "raw_exit_code": 0,
+    "tree_terminal": true,
+    "output": "build/iter11-review/task12-review3/scope-runner.json.output.txt",
+    "container_pid": 6827,
+    "launcher_exit_code": 0,
+    "command": {
+      "status": "COMPLETED",
+      "raw_exit_code": 0,
+      "started_at": "2026-11-15T07:33:48.733126+00:00",
+      "tree_terminal": true,
+      "deadline_checked_at": "2026-11-15T07:33:48.731303+00:00",
+      "pid": 6828,
+      "ended_at": "2026-11-15T07:33:48.821792+00:00"
+    },
+    "late_by_seconds": 0
+  },
+  "scope_output": "[IterSync:ScopeFirewall:PASSED] All 168 changed files within declared scope; ownership is not inferred.\n"
+}

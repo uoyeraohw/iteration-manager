@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "task_id": "12",
+  "type": "Spike-Discovery",
+  "task_path": "docs/todos/11-reliable-delivery/12-workflow-sequence.md",
+  "base_sha": "3de06e0e3715b9f65d7caaf3bdba872a33df0f8c",
+  "head_sha": "ca69be6c6526a8bf3b77d28e6d4a919c1c4c4f97",
+  "contract_sha": "3de06e0e3715b9f65d7caaf3bdba872a33df0f8c",
+  "implementer": "01a1ddcf-b505-7cc1-baac-d53be61431ab",
+  "reviewer": "01a1dde3-9b87-73a3-9eea-deddd1dbdfd7",
+  "verdict": "APPROVED",
+  "review_report": "docs/todos/11-reliable-delivery/evidence/12/review-report.json",
+  "checks": [
+    {
+      "name": "experiment",
+      "kind": "command",
+      "command": "/data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B /data/workspace/iteration-manager/build/frozen-runners/iter11-platform-v1/scripts/iter_run.py --deadline 2026-11-15T06:14:28.191357+00:00 --evidence docs/todos/11-reliable-delivery/evidence/12/experiment-04.json -- /data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B -m pytest -p no:cacheprovider tests/test_workflow_sequence.py tests/test_prompt_sources.py tests/test_task_card_schema.py -q --basetemp /tmp/iter11-task12-3Zi61t",
+      "cwd": ".",
+      "exit_code": 0,
+      "summary": "Valid experiment-04 reused: unchanged product/test source; ten passed under frozen runner. Fresh recovery authority/source consumption assessed separately.",
+      "output": "docs/todos/11-reliable-delivery/evidence/12/experiment-04.json.output.txt"
+    },
+    {
+      "name": "decision",
+      "kind": "observation",
+      "command": null,
+      "cwd": ".",
+      "exit_code": null,
+      "summary": "Future authorization and independent safe-rebaseline adopted by standard replan; old FAIL/UNKNOWN preserved; exact six-command native evidence inventory and source applicability bound.",
+      "output": "docs/todos/11-reliable-delivery/evidence/12/recovery-final-evidence.json"
+    },
+    {
+      "name": "interfaces",
+      "kind": "observation",
+      "command": null,
+      "cwd": ".",
+      "exit_code": null,
+      "summary": "Fresh authorized guarded Codeg source consumer: eight SHA256 matches and correct A/B/C with six native read exits; prior independent Native CLI same-source reading retained as separate host evidence.",
+      "output": "docs/todos/11-reliable-delivery/evidence/12/recovery-codeg-result.md"
+    }
+  ]
+}
