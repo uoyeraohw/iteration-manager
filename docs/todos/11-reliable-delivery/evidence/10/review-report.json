@@ -1,0 +1,187 @@
+{
+  "kind": "independent-review-record",
+  "candidate": "e237a068fb39d21cd80b68a12dfe9cc0d4d21827",
+  "recorded_at": "2026-11-15T05:46:01.899597+00:00",
+  "independent_review": {
+    "candidate": "e237a068fb39d21cd80b68a12dfe9cc0d4d21827",
+    "base": "40d76d4456261a41bf1b67106becad17ecc28e29",
+    "contract_sha": "40d76d4456261a41bf1b67106becad17ecc28e29",
+    "reviewer_uuid": "01a1ddbb-385e-7642-9401-db08c0912af1",
+    "independence": "I did not participate in task 10 design, implementation, testing, RCA or prior consumption; I did not delegate this review. Excluded implementer 01a1ddb8-4209-7662-991e-fcf18f1a74a2, all task consumers and root controller.",
+    "verdicts": {
+      "scope": "APPROVED",
+      "spec": "APPROVED",
+      "quality": "APPROVED",
+      "overall": "APPROVED"
+    },
+    "findings": [],
+    "scope_receipt": "build/iter11-review/task10-review1/scope-runner.json",
+    "scope_observation": "Actual single requested frozen physical check: COMPLETED, raw exit 0, tree_terminal true, output says 37 changed files in scope. C is HEAD on feat/iter-11-reliable-delivery and has BASE as its direct parent; clean tracked status observed. Independently inspected names and card delta: only authorized test, note, evidence and implicit current card bookkeeping/ledger; no iteration goal or historical cards changed. No explicit invalid delivery_mode or FS profile for this task; Git default applies. Frozen fdcc4cc known mode/takeover limitations are not treated as semantic approval.",
+    "frozen_contract": "Task card objective, scope, acceptance, interfaces and verification wording remain unchanged against BASE; card changes are metadata, checkboxes and ledger permitted by Git contract. Goal README unchanged. Linux runner migration is explicitly authorized in frozen iteration goal and planning/platform-migration-authorization.json; other requirements remain intact.",
+    "type_checks": {
+      "type": "Spike-Discovery",
+      "experiment": "experiment-02 uses exact four required test files, frozen runner, exit 0 and 130 passed; additional 5 Git and nested 11 payload checks apply below. RED is not required for this type.",
+      "decision": "Task ledger, ledger-summary and dated note record fixture design, findings, tradeoffs and limits.",
+      "interfaces": "test_self_hosting.py and integration-report.json provide the specified review interfaces; retained fixtures and consumers inspected."
+    },
+    "source_mapping": {
+      "manifest": "docs/todos/11-reliable-delivery/evidence/10/source-manifest.json",
+      "result": "All 83 SHA256 entries independently compared with bytes of corresponding C Git blobs; zero mismatches. Manifest includes tests, affected scripts and copied raw evidence. Source test changes precede experiment-02 in native log; subsequent recorded edits are reporting/manifest only. Tests ran on BASE plus working-tree candidate before C; source hashes bridge to C, not a claim that C existed during execution. Frozen runner SHA256 b8b22217ad1d8d1f02a9a4d3cb053f84f781888c4871e583f0a7ff27f3fe3ef1 matches delivery and candidate blob."
+    },
+    "evidence_applicability_chronology": [
+      {
+        "evidence": "docs/todos/11-reliable-delivery/evidence/10/implementation-native.jsonl and implementation-terminal.json",
+        "observation": "Native thread ID matches excluded implementer, turn.completed and terminal observer completed exit 0. Guard recorded actual same-owner READY consumed before dispatch; review dispatch-check separately READY with acceptance UNKNOWN. Neither terminal nor READY is acceptance."
+      },
+      {
+        "evidence": "docs/todos/11-reliable-delivery/evidence/10/experiment-01.json and output",
+        "observation": "05:40:42–05:40:54 UTC, completed, raw exit 1, tree terminal; 128 passed, 2 failures caused by fixture interface mistakes. Preserved; not a valid Strict-TDD assertion RED and none required."
+      },
+      {
+        "evidence": "docs/todos/11-reliable-delivery/evidence/10/experiment-02.json and child/output",
+        "observation": "05:41:10–05:41:25 UTC, completed, raw exit 0, tree terminal, 130 passed. Encompasses joint tests plus existing readiness, autonomy and checkpoint cases on mapped source."
+      },
+      {
+        "evidence": "docs/todos/11-reliable-delivery/evidence/10/payload-receipt.json and child/output",
+        "observation": "Nested inside experiment-02, 05:41:14–05:41:18 UTC, temporary payload cwd, completed, raw exit 0, terminal tree; 11 board handoff/service tests passed, without docs. Copied receipt points to original relative output; preserved copy provided."
+      },
+      {
+        "evidence": "docs/todos/11-reliable-delivery/evidence/10/git-drift-01.json and child/output",
+        "observation": "05:41:47–05:41:48 UTC, completed, raw exit 0, terminal tree; five current candidate parameter cases for source, objective, acceptance, iteration goal and evidence drift. Not stale task01 receipt."
+      },
+      {
+        "evidence": "tests/test_self_hosting.py:143",
+        "observation": "Two reports assert both good and malformed UTF-8 card inventory, damaged non-PASS and byte preservation; frozen-mode reviewed fixture independently asserts audit, handoff and board non-PASS."
+      },
+      {
+        "evidence": "tests/test_self_hosting.py:174",
+        "observation": "Actual guard source receives delayed synthetic callback with fixture dispatch-check observation; failed/nonmatching results do not dispatch and fixture card/event inventory and handoff remain unchanged."
+      },
+      {
+        "evidence": "tests/test_self_hosting.py:22 and tests/test_checkpoint_resume.py:74",
+        "observation": "Same experiment reuses direct assertions for foreign owner, context, phase, candidate, dependency, no progress, replay, FS source/evidence/body drift, FS rejection of Git grant and unknown command terminal; unchanged mapped input hashes. Git five-case result independently covers current audit inputs."
+      },
+      {
+        "evidence": "tests/test_self_hosting.py:209 and tests/test_harness_portability.py:15",
+        "observation": "Synthetic byte manifest detects drift before and after separate project projection rebuild; restored temporary payload feeds actual portability harness, which makes a second no-docs copy and runs 11 current payload tests. Manifest is caller-supplied, not Git provenance or real installation."
+      }
+    ],
+    "DeferredMinors": [
+      {
+        "description": "Preserved original failed pytest output contains trailing whitespace; git diff --check reports it. This is raw evidence and should not be edited to beautify it."
+      }
+    ],
+    "limitations": [
+      "Synthetic assertions only; no newly established native self-use, real delegation/adoption, real installation or trusted manifest origin.",
+      "No Windows, browser, full suite, deployment, whole iteration or release review.",
+      "C/D registration and frozen local strict remain subsequent controller actions. Session timing decomposition is unknown.",
+      "Frozen coordinator scope result is physical evidence only; semantic judgment is this independent review."
+    ],
+    "approval_scope": "Whole task 10 candidate C against unchanged BASE contract and iteration goal, including Spike-Discovery experiment, decision and interfaces. This report is independent review only; it does not register D, grant strict PASS or approve iteration/release."
+  },
+  "originals": {
+    "scope-runner.json.output.txt": {
+      "path": "build/iter11-review/task10-review1/scope-runner.json.output.txt",
+      "sha256": "e30e026fe2806e07f31bf5ebc9fd96fee9982993d8518c7476922d4e378e2727"
+    },
+    "review-native.jsonl": {
+      "path": "build/iter11-review/task10-review1/review-native.jsonl",
+      "sha256": "ba14c0c2bdefbc9e17644b9a0d880f61710538f9872e589c25e806afd741c0e7"
+    },
+    "attempt.call.json": {
+      "path": "build/iter11-review/task10-review1/attempt.call.json",
+      "sha256": "1f95780aa7e47572fb12bf38e096c60291ca3cde030682e9f2d703ff42c2b1a5"
+    },
+    "review-package.txt": {
+      "path": "build/iter11-review/task10-review1/review-package.txt",
+      "sha256": "e169bac98c93031ccae63e028adabe170fe0b3904882104d79cd0134336ab8cf"
+    },
+    "review-last-message.txt": {
+      "path": "build/iter11-review/task10-review1/review-last-message.txt",
+      "sha256": "181de90197b5f1a09851173642526ce5a38356eb2b95719fdeb85e8f0b84122b"
+    },
+    "terminal.json": {
+      "path": "build/iter11-review/task10-review1/terminal.json",
+      "sha256": "36d3932c61d9d92e91b01f5ad0f0a9b0d17647f8a57155fdaf3a4e25f21ba64a"
+    },
+    "review-native.stderr.txt": {
+      "path": "build/iter11-review/task10-review1/review-native.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "scope-runner.json": {
+      "path": "build/iter11-review/task10-review1/scope-runner.json",
+      "sha256": "0bb7ad4f36833fb9d5e12ca06fe6c5375b4de4b43a282fad1967022664f9b2b5"
+    },
+    "attempt.json": {
+      "path": "build/iter11-review/task10-review1/attempt.json",
+      "sha256": "5c5f7b64be4db95d615442de954e931484700b24626e25d89b565bc96ea3d294"
+    },
+    "dispatch-check.json": {
+      "path": "build/iter11-review/task10-review1/dispatch-check.json",
+      "sha256": "cab9af6b518c9c175faa9ab9f1b7c71617f4b68dd2f9acdb61607513ebe2a725"
+    },
+    "review-brief.md": {
+      "path": "build/iter11-review/task10-review1/review-brief.md",
+      "sha256": "fa4dd5dcc2dcc0d6dc82a35387656b59fe24a33a9fb0abf3c40c83916957806d"
+    },
+    "review-guard.json": {
+      "path": "build/iter11-review/task10-review1/review-guard.json",
+      "sha256": "012d1f110c4f9b22eaec1796e3dbe2019ac8eaf96428023586121a0dbe2d3dbf"
+    },
+    "context.json": {
+      "path": "build/iter11-review/task10-review1/context.json",
+      "sha256": "e8dad55e16ea663b87841a26ea775c9ecc3dd24f5d2ed6d65443eb08d97dd919"
+    },
+    "release.call.json": {
+      "path": "build/iter11-review/task10-review1/release.call.json",
+      "sha256": "53c96240504e8a396462e3726c985e5e51ccdf04a90fbd37a0aadd44f4c4391d"
+    },
+    "review-check-observation.json": {
+      "path": "build/iter11-review/task10-review1/review-check-observation.json",
+      "sha256": "a42bc6dc0d147665398eba03f4d8c55d6246d6665c2bf2ca475b77c87e400bbb"
+    },
+    "scope-runner.json.child.json": {
+      "path": "build/iter11-review/task10-review1/scope-runner.json.child.json",
+      "sha256": "553926850d53183a3be94118167aed0397755ba8af75c91899317773bdfa54d3"
+    },
+    "report.json": {
+      "path": "build/iter11-review/task10-review1/report.json",
+      "sha256": "26813debed2e0162e4ad3914ec410d66e24ea85032eaa321a2c44c1f4988ad4f"
+    }
+  },
+  "scope_receipt": {
+    "version": 1,
+    "argv": [
+      "python3",
+      "-B",
+      "/data/workspace/iteration-manager/build/frozen-tools/fdcc4cce8863/scripts/iter_sync.py",
+      "--check-scope",
+      "40d76d4456261a41bf1b67106becad17ecc28e29",
+      "e237a068fb39d21cd80b68a12dfe9cc0d4d21827",
+      "docs/todos/11-reliable-delivery/10-integration-fault-paths.md"
+    ],
+    "cwd": "/data/workspace/iteration-manager/.worktrees/iter-11",
+    "deadline": "2026-11-15T05:49:09.267448+00:00",
+    "cleanup_reserve_seconds": 5,
+    "status": "COMPLETED",
+    "deadline_checked_at": "2026-11-15T05:43:25.538200+00:00",
+    "started_at": "2026-11-15T05:43:25.540659+00:00",
+    "ended_at": "2026-11-15T05:43:25.652808+00:00",
+    "raw_exit_code": 0,
+    "tree_terminal": true,
+    "output": "build/iter11-review/task10-review1/scope-runner.json.output.txt",
+    "container_pid": 3528892,
+    "launcher_exit_code": 0,
+    "command": {
+      "status": "COMPLETED",
+      "raw_exit_code": 0,
+      "started_at": "2026-11-15T05:43:25.540659+00:00",
+      "tree_terminal": true,
+      "deadline_checked_at": "2026-11-15T05:43:25.538200+00:00",
+      "pid": 3528893,
+      "ended_at": "2026-11-15T05:43:25.643741+00:00"
+    },
+    "late_by_seconds": 0
+  },
+  "scope_output": "[IterSync:ScopeFirewall:PASSED] All 37 changed files within declared scope; ownership is not inferred.\n"
+}
