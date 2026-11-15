@@ -127,6 +127,8 @@ F1 **BLOCKED**：目前引用记录中没有明确授权 checkpoint resume 的�
 2026-11-15T06:50:43.055536+00:00：fix round1已交F2回溯对账：6组原生工具调用与返回、10条真实CommandExecution completed/exit0、bwrap未启动分开；冻结runner对账退出0/tree_terminal。原错误decision/terminal/grant原封保留，修订清单不是追认旧grant。F1仍BLOCKED，未进行新Codeg委派/恢复。产品/测试未变化，沿用experiment-04的10项有效证据；下一步先独立复核F2，再核对明确恢复处置。
 
 2026-11-15T06:59:32.054266+00:00：独立复审F2 ADDRESSED；F1仍无明确恢复授权，新增F3：外层启动failed/143不能证明子执行树终态，旧query句柄已不存在、原生未记录该区间新turn与当前无匹配进程均不替代历史证明。保留UNKNOWN，不再启动新业务/测试执行者。当前复审会话及其独立命令已真实终态；Controller仅做阻断元数据收尾，绝不将旧子树标为结束。具体待授权恢复处置见controller-recovery-plan.json。
+
+2026-11-15T07:20:55.778486+00:00：用户明确回复“授权按照已提交的计划继续执行”，绑定已提交ac3bd4c恢复计划SHA256 ae3e2a6fd58d346b6a09bec6175e5d40780424d479a45666e4f0a20ef5ea4a2a，只用于后续处置。新OS补证：/proc/stat btime为1794724515（06:35:15 UTC），在旧启动143的06:35:11.745之后、后续06:48重试之前；同Machine ID、boot_id/PID1/uptime与MACHINE.md重写时间一致。可证明旧kernel进程不能跨重启存活，但原子退出码、原调度时缺少证明和旧授权解释不追认为通过。保持FUSED/无写者，先独立审查该恢复基线。
 <!-- /iter:ledger -->
 
 ## 8. 接口依赖与执行边界
