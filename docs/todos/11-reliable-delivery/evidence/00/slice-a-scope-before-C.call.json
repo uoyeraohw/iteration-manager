@@ -1,0 +1,17 @@
+{
+  "kind": "coordination-command",
+  "argv": [
+    "python3",
+    "-B",
+    "/data/workspace/iteration-manager/build/frozen-tools/fdcc4cce8863/scripts/iter_sync.py",
+    "--check-scope",
+    "894dfd6d5d93d2ff99f6eddcaadbb88ee9ce44c3",
+    "HEAD",
+    "docs/todos/11-reliable-delivery/00-linux-runner-and-dev-guide.md",
+    "--include-worktree"
+  ],
+  "cwd": "/data/workspace/iteration-manager/.worktrees/iter-11",
+  "started_at": "2026-11-15T03:09:37.791342+00:00",
+  "ended_at": "2026-11-15T03:09:37.885502+00:00",
+  "exit_code": 0
+}

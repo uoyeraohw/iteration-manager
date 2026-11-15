@@ -1,0 +1,38 @@
+{
+  "kind": "task00-bootstrap-observation",
+  "argv": [
+    "/data/workspace/iteration-manager/build/iter11-venv/bin/python",
+    "-B",
+    "-m",
+    "pytest",
+    "-p",
+    "no:cacheprovider",
+    "tests/test_iter_run.py",
+    "tests/test_linux_runner.py",
+    "-q"
+  ],
+  "cwd": "/data/workspace/iteration-manager/.worktrees/iter-11",
+  "deadline": "2026-11-15T03:03:00+00:00",
+  "checked_at": "2026-11-15T02:59:42.453035+00:00",
+  "formal_runner_receipt": false,
+  "status": "COMPLETED",
+  "exit_code": 0,
+  "started_at": "2026-11-15T02:59:42.453318+00:00",
+  "bootstrap_argv": [
+    "timeout",
+    "--signal=TERM",
+    "--kill-after=5s",
+    "180.000s",
+    "/data/workspace/iteration-manager/build/iter11-venv/bin/python",
+    "-B",
+    "-m",
+    "pytest",
+    "-p",
+    "no:cacheprovider",
+    "tests/test_iter_run.py",
+    "tests/test_linux_runner.py",
+    "-q"
+  ],
+  "ended_at": "2026-11-15T03:00:00.604657+00:00",
+  "output": "docs/todos/11-reliable-delivery/evidence/00/slice-a-development-bootstrap.json.output.txt"
+}

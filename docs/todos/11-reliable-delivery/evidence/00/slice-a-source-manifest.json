@@ -1,0 +1,42 @@
+{
+  "kind": "implementation-source-checkpoint",
+  "observed_at": "2026-11-15T03:08:41.240791+00:00",
+  "base_head": "894dfd6d5d93d2ff99f6eddcaadbb88ee9ce44c3",
+  "files": [
+    {
+      "path": "scripts/iter_run.py",
+      "bytes": 13151,
+      "sha256": "b8b22217ad1d8d1f02a9a4d3cb053f84f781888c4871e583f0a7ff27f3fe3ef1"
+    },
+    {
+      "path": "scripts/iter_linux_job.py",
+      "bytes": 5403,
+      "sha256": "61bc82857ba9a6b68d46aef06b5d89036f4f156065b53cff23d7b3ca93a604b3"
+    },
+    {
+      "path": "tests/test_iter_run.py",
+      "bytes": 5062,
+      "sha256": "fc44866de74623f6c513647e0a5a4cb7abee3e15bd723863878e15a183df91cc"
+    },
+    {
+      "path": "tests/test_linux_runner.py",
+      "bytes": 10659,
+      "sha256": "0da8a10acab5033fd048a173f3afeb30e5b708b2d7e52c80d5ca3e4c14235308"
+    },
+    {
+      "path": "AGENTS.md",
+      "bytes": 20405,
+      "sha256": "eefd7b870a0a504a8bb85a1ec31b0413ccad02d2c4e928ea486e11fbd6948bac"
+    },
+    {
+      "path": "references/checkpoint_execution.md",
+      "bytes": 7620,
+      "sha256": "072b00f3548091d9fe239027457b6f92c45a29acc688104e65cde0c3818983a7"
+    },
+    {
+      "path": ".agents/notes/planned/iter11/00-linux-runner.md",
+      "bytes": 1538,
+      "sha256": "584b8bedca9e3476b6036182b7538bc42ff45e1b6f776ee4fa07468692ae37cc"
+    }
+  ]
+}

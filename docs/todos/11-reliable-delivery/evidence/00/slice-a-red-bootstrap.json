@@ -1,0 +1,36 @@
+{
+  "kind": "task00-bootstrap-observation",
+  "argv": [
+    "/data/workspace/iteration-manager/build/iter11-venv/bin/python",
+    "-B",
+    "-m",
+    "pytest",
+    "-p",
+    "no:cacheprovider",
+    "tests/test_linux_runner.py",
+    "-q"
+  ],
+  "cwd": "/data/workspace/iteration-manager/.worktrees/iter-11",
+  "deadline": "2026-11-15T03:01:30+00:00",
+  "checked_at": "2026-11-15T02:59:04.835429+00:00",
+  "formal_runner_receipt": false,
+  "status": "COMPLETED",
+  "exit_code": 1,
+  "started_at": "2026-11-15T02:59:04.835696+00:00",
+  "bootstrap_argv": [
+    "timeout",
+    "--signal=TERM",
+    "--kill-after=5s",
+    "140.165s",
+    "/data/workspace/iteration-manager/build/iter11-venv/bin/python",
+    "-B",
+    "-m",
+    "pytest",
+    "-p",
+    "no:cacheprovider",
+    "tests/test_linux_runner.py",
+    "-q"
+  ],
+  "ended_at": "2026-11-15T02:59:05.283037+00:00",
+  "output": "docs/todos/11-reliable-delivery/evidence/00/slice-a-red-bootstrap.json.output.txt"
+}

@@ -1,0 +1,23 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+_____________ test_linux_public_cli_preserves_exit_and_raw_output ______________
+
+tmp_path = PosixPath('/tmp/codeg-acp/16270-e611e698/pytest-of-user/pytest-0/test_linux_public_cli_preserve0')
+
+    def test_linux_public_cli_preserves_exit_and_raw_output(tmp_path):
+        runner = Path(__file__).resolve().parents[1] / 'scripts' / 'iter_run.py'
+        deadline = (datetime.now(timezone.utc) + timedelta(seconds=30)).isoformat()
+        proc = subprocess.run([sys.executable, '-B', str(runner), '--deadline', deadline,
+                               '--evidence', 'result.json', '--', sys.executable, '-c',
+                               'print("linux raw output"); raise SystemExit(7)'],
+                              cwd=tmp_path, capture_output=True, text=True)
+>       assert proc.returncode == 7, proc.stderr
+E       AssertionError: {"runner_error": "This runner requires Windows Job Objects; no command started"}
+E         
+E       assert 125 == 7
+E        +  where 125 = CompletedProcess(args=['/data/workspace/iteration-manager/build/iter11-venv/bin/python', '-B', '/data/workspace/iterat...returncode=125, stdout='', stderr='{"runner_error": "This runner requires Windows Job Objects; no command started"}\n').returncode
+
+tests/test_linux_runner.py:15: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_linux_runner.py::test_linux_public_cli_preserves_exit_and_raw_output
+1 failed in 0.07s

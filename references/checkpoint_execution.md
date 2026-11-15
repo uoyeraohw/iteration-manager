@@ -41,10 +41,23 @@ python <skill_root>/scripts/iter_run.py --deadline <明确UTC> --evidence <项�
 $code=$LASTEXITCODE; exit $code
 ```
 
+Linux 同样从目标项目根运行；例如当前维护环境使用隔离 venv，实际项目应指定可用解释器和真实安装根：
+
+```bash
+VENV_PY=/data/workspace/iteration-manager/build/iter11-venv/bin/python
+"$VENV_PY" -B "$skill_root/scripts/iter_run.py" --deadline "$deadline_utc" --evidence "$unique_receipt" -- "$VENV_PY" -B -m pytest -p no:cacheprovider tests -q
+code=$?
+exit "$code"
+```
+
+Bash 的 `$?` 读取刚结束命令的退出码；PowerShell 使用 `$LASTEXITCODE`。不把示例截止或路径当成本次证据。系统 `python3` 可用时可用于具备依赖的环境，不能假设 `python` 或 pytest 已安装。
+
 argv 直接传递，shell=False；不得把整串 shell 文本当 argv 或用外层 exit0 代替业务结果。协调性的原生查询、只读检查、领取/释放/收尾及精准 Git 提交不需要包装，避免把 receipt 的最终写入误提交成已完成记录。
 
-入口排他保留 receipt 和 `.output.txt`，引导进程另写 `.child.json`；已有文件不覆盖。启动前同调用核 UTC，剩余不足5秒不启动；业务在 deadline 前5秒停止等待，余量用于回收。Windows Job Object 在开启启动门闩前接管引导进程，目标及后代继承容器；正常根进程提前退出也回收后代，只有 ActiveProcesses=0 才登记 tree_terminal。Job 不可用则不启动目标，不改用 taskkill 或另一执行通路。当前实现仅支持 Windows，其他系统启动前明确拒绝。
+入口排他保留 receipt 和 `.output.txt`，引导进程另写 `.child.json`；已有文件不覆盖。启动前同调用核 UTC，剩余不足5秒不启动；业务在 deadline 前5秒停止等待，余量用于回收。Windows Job Object 在开启启动门闩前接管引导进程，目标及后代继承容器；正常根进程提前退出也回收后代，只有 ActiveProcesses=0 才登记 tree_terminal。Job 不可用则不启动目标，不改用 taskkill。Linux 每个命令启动专属监督进程，先验证 subreaper、`/proc` 和 pidfd 能力，再打开目标启动门闩；监督进程收养孤儿并以 pidfd 逐层回收自己的子进程，只有确认无子进程才证明终态。长期调用者不设 subreaper；仅 killpg 不能证明 setsid 或孤儿终态。能力或准备失败不启动目标，其他平台启动前拒绝。正常可处理 SIGTERM 请求回收；监督进程被强杀或证明缺失时结果未知，不从外层状态补造。
 
 receipt 分别保存 argv/cwd、核验/起止 UTC、原始输出、实际业务 raw_exit_code、launcher_exit_code 和状态。COMPLETED 才可按业务退出码判断；TIMED_OUT/NOT_STARTED 返回124，CLEANUP_UNKNOWN/ERROR返回125。业务本身也可能退出124/125，必须看 receipt 状态。强杀时拿不到业务退出码则保留 null，不把 launcher 被杀码当断言失败。RUNNING/不完整记录和外层会话 cancelled 不能证明命令已终态。
 
 时间中断仍须 closeout 保留 FUSED 并释放写者；正常切片完成可 release，保留 IN_PROGRESS/TESTING。新会话继承有效 RED、C 和审查成果，不把中断伪装成阶段成功。源码、部署、实际消费和业务整链各自验收，整链未通过不发布副本。
+
+本轮用户明确授权 Linux 迁移；本合同和 AGENTS 在 task00 范围接续共同协议原 Windows-only 句，task12 负责后续同步共同流程。Linux 实际验证以本次原始收据为准；Windows 历史验证未在本 Linux 会话重跑。

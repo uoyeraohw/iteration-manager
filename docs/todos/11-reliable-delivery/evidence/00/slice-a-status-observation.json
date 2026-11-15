@@ -1,0 +1,7 @@
+{
+  "kind": "controller-metadata-observation",
+  "recorded_at": "2026-11-15T03:00:41.641724+00:00",
+  "change": "TODO -> IN_PROGRESS after native implementation launch",
+  "owner": "iter11-controller-linux-20261115",
+  "note": "autonomy claim assigns writer but retains declaration TODO; Controller now updates mutable status, while implementer has no card write access. No extra task dispatch or budget event."
+}

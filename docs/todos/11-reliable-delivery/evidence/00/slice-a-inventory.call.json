@@ -1,0 +1,19 @@
+{
+  "kind": "coordination-command",
+  "argv": [
+    "python3",
+    "-B",
+    "/data/workspace/iteration-manager/build/frozen-tools/fdcc4cce8863/scripts/iter_sync.py",
+    "--inventory",
+    "docs/todos/11-reliable-delivery",
+    "--mode",
+    "continue",
+    "--context",
+    "docs/todos/11-reliable-delivery/evidence/00/slice-a-context.json",
+    "--phase-from-context"
+  ],
+  "cwd": "/data/workspace/iteration-manager/.worktrees/iter-11",
+  "candidate": "894dfd6d5d93d2ff99f6eddcaadbb88ee9ce44c3",
+  "observed_at": "2026-11-15T02:56:17.344395+00:00",
+  "exit_code": 3
+}

@@ -1,7 +1,7 @@
 # 迭代11 · 可信路径一致性、使用成本与真实自用验证
 
 > 初始化：2026-11-14 UTC · 当前checkout：`/data/workspace/iteration-manager` · 基线：`fdcc4cce88635ee81573be5991de11de650659d8`。
-> 2026-11-15最新授权：适配Linux并整理Windows/Linux开发指引；新增00前置任务，随后01—12逐项验收串行推进。当前13卡TODO、产品验收0/13；实施、精准Git与Worktree授权保持。
+> 2026-11-15最新授权：适配Linux并整理Windows/Linux开发指引；新增00前置任务，随后01—12逐项验收串行推进。当前00为TESTING、01—12为TODO，产品验收0/13；实施、精准Git与Worktree授权保持。
 > 独立Worktree为`.worktrees/iter-11`，分支`feat/iter-11-reliable-delivery`。先完成[00平台适配](00-linux-runner-and-dev-guide.md)，不再要求另找Windows主机；原Windows-only拒绝保留为历史证据。迁移授权见[platform-migration-authorization.json](evidence/planning/platform-migration-authorization.json)。
 
 ## 1. 迭代核心目标与全局约束
@@ -97,6 +97,8 @@
 
 ## 5. Linux迁移与历史启动交接
 
+00已交付TESTING候选：Linux后端、AGENTS双环境指引、有效RED及最新GREEN24通过/2跳过、受影响回归141通过/2跳过；独审/批准尚未完成。原件见[evidence/00/slice-a-delivery.json](evidence/00/slice-a-delivery.json)。
+
 最新要求已把00平台适配加入本轮，恢复条件改为在当前Linux上完成00、独审和冻结；不再等待Windows环境。真实TypeSafe四维为90.25/99.50/99.00/93.25，加权95.375，原件见[linux-typesafe-summary.json](evidence/planning/linux-typesafe-summary.json)。协作运行时已实际读取必读契约；Codeg本地子会话则因bwrap启动失败，二者分开记录，不能宣称Codeg链已通过。
 
 以下为Linux迁移授权前的启动历史；不代表最新恢复条件。
@@ -141,7 +143,7 @@
 
 | 任务 | 声明 | 验收 | 业务阶段 / 清单比例 | 工程阶段 | 阻塞原因 | 累计尝试 | 最后更新 |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| 00-linux-runner-and-dev-guide.md | TODO | UNKNOWN | 在当前Linux公共CLI构造有效的支持行为断言RED / 0/3 (0%) | red：同一实现者先新增Linux公共CLI测试；在旧runner上以真实断言如`exit125 != expected7`证明功能缺失。Python/pytest/导入失败不算RED。使用本卡专属GNU timeout引导入口，同调用记录绝对UTC、argv/cwd、stdout/stderr和实际exit；明确标记bootstrap，不伪造iter_run收据。 | 未记录 | 0 | UNKNOWN |
+| 00-linux-runner-and-dev-guide.md | TESTING | UNKNOWN | 整理双环境指引、完成受影响回归及独立验收，冻结获准runner供后续卡使用 / 2/3 (66.7%) | CHECKLIST_COMPLETE (未等同验收) | 未记录 | 0 | 2026-11-15T03:08:41.538360+00:00 |
 | 01-delivery-mode-consistency.md | TODO | UNKNOWN | 冻结包含未知模式的合法Git绑定反例和兼容矩阵，取得目标断言RED / 0/3 (0%) | red：python -B -m pytest -p no:cacheprovider tests/test_delivery_mode_consistency.py tests/test_query_contract.py tests/test_execution_readiness.py tests/test_completion_gates.py tests/test_filesystem_receipts.py -q；由同一实现者先取得验收中具体行为断言失败，环境/导入失败不作RED；通过冻结runner。 | 未记录 | 0 | UNKNOWN |
 | 02-takeover-report-isolation.md | TODO | UNKNOWN | 对健康卡混合UnicodeError、OSError及发现后删除构造有效断言RED / 0/3 (0%) | red：python -B -m pytest -p no:cacheprovider tests/test_takeover_resilience.py tests/test_task_discovery_compat.py tests/test_cli_compatibility.py tests/test_sync_compatibility.py -q；由同一实现者先取得验收中具体行为断言失败，环境/导入失败不作RED；通过冻结runner。 | 未记录 | 0 | UNKNOWN |
 | 03-native-dispatch-guard.md | TODO | UNKNOWN | 以可控Promise覆盖running/失败/乱序及身份不符，取得断言RED / 0/3 (0%) | red：python -B -m pytest -p no:cacheprovider tests/test_dispatch_guard.py tests/test_deadline_watch.py -q；由同一实现者先取得验收中具体行为断言失败，环境/导入失败不作RED；通过冻结runner。 | 未记录 | 0 | UNKNOWN |

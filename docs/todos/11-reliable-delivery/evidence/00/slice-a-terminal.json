@@ -1,0 +1,148 @@
+{
+  "version": 1,
+  "kind": "native-exec-session-terminal",
+  "launch": {
+    "requestedAt": 1794711534551,
+    "hard": 1794712134551,
+    "leaf": 1794712044551,
+    "command": 1794712014551,
+    "launch": {
+      "chunk_id": "33ba2c",
+      "wall_time_seconds": 1.004880917,
+      "session_id": 27875,
+      "original_token_count": 0,
+      "output": ""
+    },
+    "cmd": "timeout --signal=TERM --kill-after=5s 500s codex exec -C '/data/workspace/iteration-manager/.worktrees/iter-11' -s danger-full-access -c 'approval_policy=\"never\"' --json --color never -o '/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/00/slice-a-last-message.txt' - < '/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/00/slice-a-implementer-brief.md' > '/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/00/slice-a-native.jsonl' 2> '/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/00/slice-a-native.stderr.txt'"
+  },
+  "monitor": {
+    "reason": "terminal",
+    "deadlineMs": 1794712044551,
+    "final": {
+      "status": "completed",
+      "raw": {
+        "chunk_id": "3ecc13",
+        "wall_time_seconds": 10.973795483,
+        "exit_code": 0,
+        "original_token_count": 0,
+        "output": ""
+      }
+    },
+    "terminalConfirmed": true,
+    "observedAt": 1794711845657,
+    "lateByMs": 0,
+    "events": [
+      {
+        "kind": "query",
+        "startedAt": 1794711535772,
+        "returnedAt": 1794711595853,
+        "waitMs": 60000,
+        "result": {
+          "status": "running",
+          "raw": {
+            "chunk_id": "0ca74b",
+            "wall_time_seconds": 60.001805389,
+            "session_id": 27875,
+            "original_token_count": 0,
+            "output": ""
+          }
+        }
+      },
+      {
+        "kind": "query",
+        "startedAt": 1794711595853,
+        "returnedAt": 1794711655918,
+        "waitMs": 60000,
+        "result": {
+          "status": "running",
+          "raw": {
+            "chunk_id": "0fca77",
+            "wall_time_seconds": 60.00169265,
+            "session_id": 27875,
+            "original_token_count": 0,
+            "output": ""
+          }
+        }
+      },
+      {
+        "kind": "query",
+        "startedAt": 1794711655918,
+        "returnedAt": 1794711714553,
+        "waitMs": 58633,
+        "result": {
+          "status": "running",
+          "raw": {
+            "chunk_id": "0feeb3",
+            "wall_time_seconds": 58.633883641,
+            "session_id": 27875,
+            "original_token_count": 0,
+            "output": ""
+          }
+        }
+      },
+      {
+        "kind": "checkpoint",
+        "dueAt": 1794711714551,
+        "observedAt": 1794711714553
+      },
+      {
+        "kind": "query",
+        "startedAt": 1794711714553,
+        "returnedAt": 1794711774655,
+        "waitMs": 60000,
+        "result": {
+          "status": "running",
+          "raw": {
+            "chunk_id": "d17419",
+            "wall_time_seconds": 60.001924779,
+            "session_id": 27875,
+            "original_token_count": 0,
+            "output": ""
+          }
+        }
+      },
+      {
+        "kind": "query",
+        "startedAt": 1794711774655,
+        "returnedAt": 1794711834563,
+        "waitMs": 59896,
+        "result": {
+          "status": "running",
+          "raw": {
+            "chunk_id": "d7231b",
+            "wall_time_seconds": 59.897753934,
+            "session_id": 27875,
+            "original_token_count": 0,
+            "output": ""
+          }
+        }
+      },
+      {
+        "kind": "checkpoint",
+        "dueAt": 1794711834551,
+        "observedAt": 1794711834563
+      },
+      {
+        "kind": "query",
+        "startedAt": 1794711834563,
+        "returnedAt": 1794711845657,
+        "waitMs": 60000,
+        "result": {
+          "status": "completed",
+          "raw": {
+            "chunk_id": "3ecc13",
+            "wall_time_seconds": 10.973795483,
+            "exit_code": 0,
+            "original_token_count": 0,
+            "output": ""
+          }
+        }
+      }
+    ]
+  },
+  "meaning": "Observed native execution container terminal; command receipts are checked separately.",
+  "native_cli_thread": "01a1dd24-bea9-7580-bfbd-5afac812648b",
+  "native_source": "docs/todos/11-reliable-delivery/evidence/00/slice-a-native.jsonl",
+  "status": "completed",
+  "session_clock_note": "CLI JSONL has no authoritative session UTC interval; attempt session times remain null. Container request/monitor times are separately preserved."
+}

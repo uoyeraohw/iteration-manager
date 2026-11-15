@@ -46,8 +46,8 @@ def now():
 
 
 def run_check(argv, deadline, evidence, cwd=None):
-    if os.name != 'nt':
-        raise OSError('This runner requires Windows Job Objects; no command started')
+    if os.name != 'nt' and sys.platform != 'linux':
+        raise OSError('Unsupported platform; no command started')
     if not isinstance(argv, (list, tuple)) or not argv or any(not isinstance(x, str) or '\0' in x for x in argv):
         raise ValueError('Nonempty argv list of text required')
     end = utc(deadline)
@@ -81,6 +81,8 @@ def run_check(argv, deadline, evidence, cwd=None):
                 record.update(status='NOT_STARTED', tree_terminal=True, ended_at=now().isoformat())
                 save()
                 return 124
+            if sys.platform == 'linux':
+                return run_linux(argv, end, root, child, log, record, save)
             proc, job = None, None
             cleanup_attempted = False
             timed_out = False
@@ -166,6 +168,99 @@ def run_check(argv, deadline, evidence, cwd=None):
                 record['late_by_seconds'] = max(0, (utc(record['ended_at']) - end).total_seconds())
                 save()
             return wrapper_code
+
+
+def run_linux(argv, end, root, child, log, record, save):
+    """Start a gated supervisor, and accept completion only with its proof."""
+    import signal
+    import threading
+    import time
+    from datetime import timedelta
+    proc = None
+    interrupted = []
+    old_handlers = {}
+    try:
+        if threading.current_thread() is threading.main_thread():
+            def handle(signum, _frame):
+                interrupted.append(signum)
+                if proc is not None and proc.poll() is None:
+                    try:
+                        proc.send_signal(signal.SIGTERM)
+                    except ProcessLookupError:
+                        pass
+            for sig in (signal.SIGTERM, signal.SIGINT):
+                old_handlers[sig] = signal.getsignal(sig)
+                signal.signal(sig, handle)
+        record['status'] = 'RUNNING'; save()
+        supervisor = Path(__file__).with_name('iter_linux_job.py')
+        proc = subprocess.Popen([sys.executable, '-B', str(supervisor), str(child)],
+                                cwd=root, stdin=subprocess.PIPE, stdout=log,
+                                stderr=subprocess.STDOUT, close_fds=True)
+        record['container_pid'] = proc.pid; save()
+        if interrupted and proc.poll() is None:
+            proc.send_signal(signal.SIGTERM)
+        details = {}
+        launch_before = end - timedelta(seconds=CLEANUP_RESERVE_SECONDS)
+        while now() < launch_before and proc.poll() is None and not interrupted:
+            try:
+                details = json.loads(child.read_text(encoding='utf-8'))
+            except (OSError, ValueError):
+                time.sleep(.01); continue
+            if details.get('status') != 'PREPARING':
+                break
+            time.sleep(.01)
+        if details.get('status') == 'READY' and not interrupted and now() < launch_before:
+            request = dict(argv=list(argv), launch_before=launch_before.isoformat())
+            proc.stdin.write((json.dumps(request)+'\n').encode()); proc.stdin.flush()
+        else:
+            proc.stdin.close()
+        remaining = max(0, (end-now()).total_seconds())
+        try:
+            proc.wait(timeout=remaining)
+        except subprocess.TimeoutExpired:
+            proc.kill(); proc.wait(timeout=1)
+        record['launcher_exit_code'] = proc.returncode
+        try:
+            details = json.loads(child.read_text(encoding='utf-8'))
+        except (OSError, ValueError):
+            details = {}
+        record['command'] = details
+        for key in ('raw_exit_code', 'started_at', 'deadline_checked_at'):
+            if details.get(key) is not None:
+                record[key] = details[key]
+        record['tree_terminal'] = details.get('tree_terminal') is True and proc.returncode == 0
+        status = details.get('status')
+        if not record['tree_terminal']:
+            record['status'] = 'CLEANUP_UNKNOWN'
+            result = 125
+        elif interrupted or status in ('INTERRUPTED', 'ERROR'):
+            record['status'] = 'ERROR'; result = 125
+        elif status in ('TIMED_OUT', 'NOT_STARTED'):
+            record['status'] = status; result = 124
+        elif status == 'COMPLETED' and record['raw_exit_code'] is not None:
+            record['status'] = 'COMPLETED'; result = record['raw_exit_code']
+        else:
+            record['status'] = 'ERROR'; result = 125
+        return result
+    except (OSError, ValueError, subprocess.SubprocessError) as error:
+        record.update(status='CLEANUP_UNKNOWN' if proc else 'ERROR', error=str(error), tree_terminal=False)
+        return 125
+    finally:
+        if proc:
+            if proc.stdin and not proc.stdin.closed:
+                proc.stdin.close()
+            if proc.poll() is None:
+                proc.terminate()
+                try:
+                    proc.wait(timeout=max(0, (end-now()).total_seconds()))
+                except subprocess.TimeoutExpired:
+                    proc.kill(); proc.wait()
+                record.update(status='CLEANUP_UNKNOWN', tree_terminal=False)
+        for sig, handler in old_handlers.items():
+            signal.signal(sig, handler)
+        record['ended_at'] = now().isoformat()
+        record['late_by_seconds'] = max(0, (utc(record['ended_at']) - end).total_seconds())
+        save()
 
 
 def main():

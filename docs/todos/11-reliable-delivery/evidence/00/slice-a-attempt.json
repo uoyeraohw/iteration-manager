@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "phase": "implementation",
+  "candidate": "894dfd6d5d93d2ff99f6eddcaadbb88ee9ce44c3",
+  "inputs": [
+    "docs/todos/11-reliable-delivery/00-linux-runner-and-dev-guide.md",
+    "docs/todos/11-reliable-delivery/README.md",
+    "docs/todos/11-reliable-delivery/evidence/planning/platform-migration-authorization.json",
+    "docs/todos/11-reliable-delivery/evidence/planning/linux-capabilities.json",
+    "docs/todos/11-reliable-delivery/evidence/planning/cli-runtime-probe.json",
+    "scripts/iter_run.py",
+    "scripts/iter_win_job.py",
+    "tests/test_iter_run.py",
+    "AGENTS.md",
+    "references/checkpoint_execution.md",
+    "docs/todos/11-reliable-delivery/evidence/00/bootstrap_command.py"
+  ],
+  "capabilities": [
+    "native-codex-cli-exec-session",
+    "GNU-timeout-task00-bootstrap",
+    "Linux-proc-subreaper-pidfd",
+    "independent-native-review-required"
+  ],
+  "checkpoint": "有效公共CLI断言RED、Linux隔离监督及双环境指引；最终GREEN24/2skip，定向回归141/2skip",
+  "remaining_work": [
+    "独立审查C",
+    "批准后登记D和冻结local strict",
+    "导出已审runner并运行01前完整维护基线"
+  ],
+  "executor_id": "01a1dd24-bea9-7580-bfbd-5afac812648b",
+  "terminal_evidence": "docs/todos/11-reliable-delivery/evidence/00/slice-a-terminal.json",
+  "progress": [
+    {
+      "kind": "red",
+      "summary": "旧Linux公共CLI实际125 vs期望7；引导例外，不是导入失败",
+      "evidence": "docs/todos/11-reliable-delivery/evidence/00/slice-a-red-bootstrap.json.output.txt"
+    },
+    {
+      "kind": "implementation",
+      "summary": "Linux后端、通用入口、测试、AGENTS和平台契约的可审差异",
+      "evidence": "docs/todos/11-reliable-delivery/evidence/00/slice-a-source-manifest.json"
+    },
+    {
+      "kind": "green",
+      "summary": "最新候选24 passed/2 Windows skips；141 passed/2 skips回归，实际runner终态",
+      "evidence": "docs/todos/11-reliable-delivery/evidence/00/slice-a-regression-v2.json.output.txt"
+    }
+  ],
+  "commands": [
+    "docs/todos/11-reliable-delivery/evidence/00/slice-a-exit7.json",
+    "docs/todos/11-reliable-delivery/evidence/00/slice-a-green-final.json",
+    "docs/todos/11-reliable-delivery/evidence/00/slice-a-green-v2.json",
+    "docs/todos/11-reliable-delivery/evidence/00/slice-a-green.json",
+    "docs/todos/11-reliable-delivery/evidence/00/slice-a-regression-final.json",
+    "docs/todos/11-reliable-delivery/evidence/00/slice-a-regression-v2.json",
+    "docs/todos/11-reliable-delivery/evidence/00/slice-a-regression.json"
+  ],
+  "started_at": null,
+  "ended_at": null
+}
