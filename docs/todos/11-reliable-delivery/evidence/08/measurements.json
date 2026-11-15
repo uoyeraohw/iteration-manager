@@ -1,0 +1,554 @@
+{
+  "label": "Synthetic workload receipts and reviews; not human or business approval",
+  "base": "6a54aceb2fc540d20480f9cdb5e5a683359c8e1a",
+  "source_sha256": {
+    "scripts/iter_autonomy.py": "5faec682f4cd52d91ebdeb578125f3b4d21c3c22965a5516e07b46567ecf55ba",
+    "scripts/iter_checkpoint.py": "9e68f7c264dbfd56a347a612bcb646f89e3679cb4baf6637dceccd9904804889",
+    "scripts/iter_cli.py": "cb18b63af85ef4c0f572764e6f1dabd9a3b6d2bd1b6e32bd4f0b2fa12a0833c1",
+    "scripts/iter_contracts.py": "bb02f7005ea4359cc8a96d812e241c3155b22bfc90ecb5069629aec0c2134bf2",
+    "scripts/iter_execution.py": "1116403fbbd8d2ba302f6fe2d684b7f8732475d6cbfe9e6ae956de2e0146fdb7",
+    "scripts/iter_filesystem.py": "eaeaaf78f187719fcb13569e069ac49d66cd34d4148791c8168a04903d99da43",
+    "scripts/iter_install.py": "5de6a0e1c943e8b620c064fdf9e498c1243d10bf18b5a112d54cca0cff749226",
+    "scripts/iter_inventory.py": "dbd7a1aed109c05225670fabeef4ac225929acfa8911072b77fdbff6a708f5f2",
+    "scripts/iter_linux_job.py": "68c76c0a9e23209c6e68d0242a0741e5c1bbe6c0019809c65a13034104fa987b",
+    "scripts/iter_preflight.py": "8940012712b0e241a0b4fa3a47ff8e512a975b6e2fdcad37b12a1b4b03b567dd",
+    "scripts/iter_queries.py": "02b0982e8d247e2fbc18b6c247a01e4e9a9e2eeefb60b6cb904b5c85340f7fef",
+    "scripts/iter_run.py": "b8b22217ad1d8d1f02a9a4d3cb053f84f781888c4871e583f0a7ff27f3fe3ef1",
+    "scripts/iter_sync.py": "a3afb08fb8d021feb7b685e6ff4f6c97c3ed60645e111c1034320876bb8959f7",
+    "scripts/iter_templates.py": "d54cea21b9a518450a0af87f384fb88527502f8b3d160eee019399a4641924c8",
+    "scripts/iter_timing.py": "e88a335f83e01b857b8f50de9fafa4ebdeace9486fa048269d4d6027585dc88b",
+    "scripts/iter_win_job.py": "93de97a15f75be1496c4f4e6a727a75e2ca2d89298245eef942bedb9c245c43d",
+    "scripts/skill_readonly_mcp.py": "357416cc3e72341560de1022426a004fec8f9265a29e0f95bbe90a8a9cc6e120",
+    "tests/benchmarks/approval_chain.py": "bfdbe1ee78b92c938e0044d651df82dac56b28b2bf00c641afc9a372bc149b28",
+    "tests/test_approval_benchmark_fixture.py": "b294a619b79e66e6c3458b01d86f78daad1455e587871d30664178f3f01c859a"
+  },
+  "environment": {
+    "python": "3.11.17 (main, Oct  3 2026, 01:05:36) [Clang 22.1.3 ]",
+    "platform": "Linux-6.18.54-instabox-x86_64-with-glibc2.41",
+    "cpu": "",
+    "cpu_count": 4,
+    "cpu_model": "AMD EPYC",
+    "memory_kib": "8155564 kB",
+    "git": "git version 2.47.3"
+  },
+  "definitions": {
+    "git_calls": "actual git subprocess launches during operation",
+    "path_read_bytes": "bytes returned by Path.read_bytes and encoded Path.read_text; excludes git subprocess, open(), HTTP socket and OS reads",
+    "timing": "includes query and assertions/client HTTP read; excludes fixture construction, preflight audit, server startup and shutdown",
+    "limits": "synthetic Spike fixtures; Python stdlib HTTP is not browser evidence; 3 trials do not establish tail latency"
+  },
+  "workloads": [
+    {
+      "mode": "git",
+      "size": 10,
+      "root": "/tmp/iter11-task08-git-10-o8lld2f7/project",
+      "approved_count": 10,
+      "operations": {
+        "board": {
+          "trials": [
+            {
+              "seconds": 0.557396091055125,
+              "git_calls": 221,
+              "path_read_calls": 50,
+              "path_read_bytes": 36360,
+              "detail": null
+            },
+            {
+              "seconds": 0.5796688839327544,
+              "git_calls": 221,
+              "path_read_calls": 50,
+              "path_read_bytes": 36360,
+              "detail": null
+            },
+            {
+              "seconds": 0.5366973190102726,
+              "git_calls": 221,
+              "path_read_calls": 50,
+              "path_read_bytes": 36360,
+              "detail": null
+            }
+          ],
+          "mean_seconds": 0.5579207646660507,
+          "range_seconds": [
+            0.5366973190102726,
+            0.5796688839327544
+          ]
+        },
+        "all_envelopes": {
+          "trials": [
+            {
+              "seconds": 0.6117960819974542,
+              "git_calls": 250,
+              "path_read_calls": 40,
+              "path_read_bytes": 24830,
+              "detail": null
+            },
+            {
+              "seconds": 0.7362562969792634,
+              "git_calls": 250,
+              "path_read_calls": 40,
+              "path_read_bytes": 24830,
+              "detail": null
+            },
+            {
+              "seconds": 0.6730290830601007,
+              "git_calls": 250,
+              "path_read_calls": 40,
+              "path_read_bytes": 24830,
+              "detail": null
+            }
+          ],
+          "mean_seconds": 0.6736938206789395,
+          "range_seconds": [
+            0.6117960819974542,
+            0.7362562969792634
+          ]
+        },
+        "inventory": {
+          "trials": [
+            {
+              "seconds": 0.6626280678901821,
+              "git_calls": 260,
+              "path_read_calls": 50,
+              "path_read_bytes": 31070,
+              "detail": "BLOCKED"
+            },
+            {
+              "seconds": 0.609003186924383,
+              "git_calls": 260,
+              "path_read_calls": 50,
+              "path_read_bytes": 31070,
+              "detail": "BLOCKED"
+            },
+            {
+              "seconds": 0.6690440571401268,
+              "git_calls": 260,
+              "path_read_calls": 50,
+              "path_read_bytes": 31070,
+              "detail": "BLOCKED"
+            }
+          ],
+          "mean_seconds": 0.646891770651564,
+          "range_seconds": [
+            0.609003186924383,
+            0.6690440571401268
+          ]
+        },
+        "http_evidence": {
+          "trials": [
+            {
+              "seconds": 0.565818214090541,
+              "git_calls": 222,
+              "path_read_calls": 51,
+              "path_read_bytes": 36427,
+              "detail": null
+            },
+            {
+              "seconds": 0.5650934928562492,
+              "git_calls": 222,
+              "path_read_calls": 51,
+              "path_read_bytes": 36427,
+              "detail": null
+            },
+            {
+              "seconds": 0.5545582759659737,
+              "git_calls": 222,
+              "path_read_calls": 51,
+              "path_read_bytes": 36427,
+              "detail": null
+            }
+          ],
+          "mean_seconds": 0.561823327637588,
+          "range_seconds": [
+            0.5545582759659737,
+            0.565818214090541
+          ]
+        }
+      }
+    },
+    {
+      "mode": "git",
+      "size": 100,
+      "root": "/tmp/iter11-task08-git-100-hshnhcmp/project",
+      "approved_count": 100,
+      "operations": {
+        "board": {
+          "trials": [
+            {
+              "seconds": 6.12620527879335,
+              "git_calls": 2201,
+              "path_read_calls": 500,
+              "path_read_bytes": 363600,
+              "detail": null
+            },
+            {
+              "seconds": 6.028805583016947,
+              "git_calls": 2201,
+              "path_read_calls": 500,
+              "path_read_bytes": 363600,
+              "detail": null
+            },
+            {
+              "seconds": 6.04180463287048,
+              "git_calls": 2201,
+              "path_read_calls": 500,
+              "path_read_bytes": 363600,
+              "detail": null
+            }
+          ],
+          "mean_seconds": 6.065605164893593,
+          "range_seconds": [
+            6.028805583016947,
+            6.12620527879335
+          ]
+        },
+        "all_envelopes": {
+          "trials": [
+            {
+              "seconds": 6.565923484042287,
+              "git_calls": 2500,
+              "path_read_calls": 400,
+              "path_read_bytes": 248300,
+              "detail": null
+            },
+            {
+              "seconds": 6.712905653053895,
+              "git_calls": 2500,
+              "path_read_calls": 400,
+              "path_read_bytes": 248300,
+              "detail": null
+            },
+            {
+              "seconds": 6.838619029847905,
+              "git_calls": 2500,
+              "path_read_calls": 400,
+              "path_read_bytes": 248300,
+              "detail": null
+            }
+          ],
+          "mean_seconds": 6.705816055648029,
+          "range_seconds": [
+            6.565923484042287,
+            6.838619029847905
+          ]
+        },
+        "inventory": {
+          "trials": [
+            {
+              "seconds": 6.993406211026013,
+              "git_calls": 2600,
+              "path_read_calls": 500,
+              "path_read_bytes": 310700,
+              "detail": "BLOCKED"
+            },
+            {
+              "seconds": 7.278882006881759,
+              "git_calls": 2600,
+              "path_read_calls": 500,
+              "path_read_bytes": 310700,
+              "detail": "BLOCKED"
+            },
+            {
+              "seconds": 7.330347552895546,
+              "git_calls": 2600,
+              "path_read_calls": 500,
+              "path_read_bytes": 310700,
+              "detail": "BLOCKED"
+            }
+          ],
+          "mean_seconds": 7.200878590267773,
+          "range_seconds": [
+            6.993406211026013,
+            7.330347552895546
+          ]
+        },
+        "http_evidence": {
+          "trials": [
+            {
+              "seconds": 6.117778056068346,
+              "git_calls": 2202,
+              "path_read_calls": 501,
+              "path_read_bytes": 363667,
+              "detail": null
+            },
+            {
+              "seconds": 6.051516697974876,
+              "git_calls": 2202,
+              "path_read_calls": 501,
+              "path_read_bytes": 363667,
+              "detail": null
+            },
+            {
+              "seconds": 5.817310997983441,
+              "git_calls": 2202,
+              "path_read_calls": 501,
+              "path_read_bytes": 363667,
+              "detail": null
+            }
+          ],
+          "mean_seconds": 5.995535250675554,
+          "range_seconds": [
+            5.817310997983441,
+            6.117778056068346
+          ]
+        }
+      }
+    },
+    {
+      "mode": "filesystem",
+      "size": 10,
+      "root": "/tmp/iter11-task08-filesystem-10-tcoyvd70/project",
+      "approved_count": 10,
+      "operations": {
+        "board": {
+          "trials": [
+            {
+              "seconds": 0.023843246046453714,
+              "git_calls": 0,
+              "path_read_calls": 181,
+              "path_read_bytes": 55610,
+              "detail": null
+            },
+            {
+              "seconds": 0.023922004969790578,
+              "git_calls": 0,
+              "path_read_calls": 181,
+              "path_read_bytes": 55610,
+              "detail": null
+            },
+            {
+              "seconds": 0.024786466965451837,
+              "git_calls": 0,
+              "path_read_calls": 181,
+              "path_read_bytes": 55610,
+              "detail": null
+            }
+          ],
+          "mean_seconds": 0.02418390599389871,
+          "range_seconds": [
+            0.023843246046453714,
+            0.024786466965451837
+          ]
+        },
+        "all_envelopes": {
+          "trials": [
+            {
+              "seconds": 0.02102953102439642,
+              "git_calls": 0,
+              "path_read_calls": 170,
+              "path_read_bytes": 42750,
+              "detail": null
+            },
+            {
+              "seconds": 0.021535241976380348,
+              "git_calls": 0,
+              "path_read_calls": 170,
+              "path_read_bytes": 42750,
+              "detail": null
+            },
+            {
+              "seconds": 0.020268689841032028,
+              "git_calls": 0,
+              "path_read_calls": 170,
+              "path_read_bytes": 42750,
+              "detail": null
+            }
+          ],
+          "mean_seconds": 0.020944487613936264,
+          "range_seconds": [
+            0.020268689841032028,
+            0.021535241976380348
+          ]
+        },
+        "inventory": {
+          "trials": [
+            {
+              "seconds": 0.023457244969904423,
+              "git_calls": 0,
+              "path_read_calls": 190,
+              "path_read_bytes": 49010,
+              "detail": "BLOCKED"
+            },
+            {
+              "seconds": 0.02413617610000074,
+              "git_calls": 0,
+              "path_read_calls": 190,
+              "path_read_bytes": 49010,
+              "detail": "BLOCKED"
+            },
+            {
+              "seconds": 0.022820614045485854,
+              "git_calls": 0,
+              "path_read_calls": 190,
+              "path_read_bytes": 49010,
+              "detail": "BLOCKED"
+            }
+          ],
+          "mean_seconds": 0.02347134503846367,
+          "range_seconds": [
+            0.022820614045485854,
+            0.02413617610000074
+          ]
+        },
+        "http_evidence": {
+          "trials": [
+            {
+              "seconds": 0.03141167596913874,
+              "git_calls": 0,
+              "path_read_calls": 183,
+              "path_read_bytes": 55727,
+              "detail": null
+            },
+            {
+              "seconds": 0.023629294941201806,
+              "git_calls": 0,
+              "path_read_calls": 183,
+              "path_read_bytes": 55727,
+              "detail": null
+            },
+            {
+              "seconds": 0.026775809936225414,
+              "git_calls": 0,
+              "path_read_calls": 183,
+              "path_read_bytes": 55727,
+              "detail": null
+            }
+          ],
+          "mean_seconds": 0.027272260282188654,
+          "range_seconds": [
+            0.023629294941201806,
+            0.03141167596913874
+          ]
+        }
+      }
+    },
+    {
+      "mode": "filesystem",
+      "size": 100,
+      "root": "/tmp/iter11-task08-filesystem-100-4qkuj3m4/project",
+      "approved_count": 100,
+      "operations": {
+        "board": {
+          "trials": [
+            {
+              "seconds": 0.2688864110969007,
+              "git_calls": 0,
+              "path_read_calls": 1801,
+              "path_read_bytes": 555650,
+              "detail": null
+            },
+            {
+              "seconds": 0.2593038370832801,
+              "git_calls": 0,
+              "path_read_calls": 1801,
+              "path_read_bytes": 555650,
+              "detail": null
+            },
+            {
+              "seconds": 0.2304467330686748,
+              "git_calls": 0,
+              "path_read_calls": 1801,
+              "path_read_bytes": 555650,
+              "detail": null
+            }
+          ],
+          "mean_seconds": 0.25287899374961853,
+          "range_seconds": [
+            0.2304467330686748,
+            0.2688864110969007
+          ]
+        },
+        "all_envelopes": {
+          "trials": [
+            {
+              "seconds": 0.20952360308729112,
+              "git_calls": 0,
+              "path_read_calls": 1700,
+              "path_read_bytes": 427500,
+              "detail": null
+            },
+            {
+              "seconds": 0.20339861302636564,
+              "git_calls": 0,
+              "path_read_calls": 1700,
+              "path_read_bytes": 427500,
+              "detail": null
+            },
+            {
+              "seconds": 0.21221162611618638,
+              "git_calls": 0,
+              "path_read_calls": 1700,
+              "path_read_bytes": 427500,
+              "detail": null
+            }
+          ],
+          "mean_seconds": 0.20837794740994772,
+          "range_seconds": [
+            0.20339861302636564,
+            0.21221162611618638
+          ]
+        },
+        "inventory": {
+          "trials": [
+            {
+              "seconds": 0.2565775029361248,
+              "git_calls": 0,
+              "path_read_calls": 1900,
+              "path_read_bytes": 490100,
+              "detail": "BLOCKED"
+            },
+            {
+              "seconds": 0.27014371287077665,
+              "git_calls": 0,
+              "path_read_calls": 1900,
+              "path_read_bytes": 490100,
+              "detail": "BLOCKED"
+            },
+            {
+              "seconds": 0.2911105540115386,
+              "git_calls": 0,
+              "path_read_calls": 1900,
+              "path_read_bytes": 490100,
+              "detail": "BLOCKED"
+            }
+          ],
+          "mean_seconds": 0.27261058993948,
+          "range_seconds": [
+            0.2565775029361248,
+            0.2911105540115386
+          ]
+        },
+        "http_evidence": {
+          "trials": [
+            {
+              "seconds": 0.24335179291665554,
+              "git_calls": 0,
+              "path_read_calls": 1803,
+              "path_read_bytes": 555767,
+              "detail": null
+            },
+            {
+              "seconds": 0.23592365183867514,
+              "git_calls": 0,
+              "path_read_calls": 1803,
+              "path_read_bytes": 555767,
+              "detail": null
+            },
+            {
+              "seconds": 0.23690383392386138,
+              "git_calls": 0,
+              "path_read_calls": 1803,
+              "path_read_bytes": 555767,
+              "detail": null
+            }
+          ],
+          "mean_seconds": 0.23872642622639736,
+          "range_seconds": [
+            0.23592365183867514,
+            0.24335179291665554
+          ]
+        }
+      }
+    }
+  ]
+}

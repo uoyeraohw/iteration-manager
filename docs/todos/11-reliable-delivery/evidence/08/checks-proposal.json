@@ -1,0 +1,23 @@
+[
+  {
+    "name": "experiment",
+    "kind": "command",
+    "command": "/data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B /data/workspace/iteration-manager/build/frozen-runners/iter11-platform-v1/scripts/iter_run.py --deadline 2026-11-15T05:38:52.888334+00:00 --evidence docs/todos/11-reliable-delivery/evidence/08/experiment-01.json -- /data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B tests/benchmarks/approval_chain.py --sizes 10 100 --repeats 3 --output docs/todos/11-reliable-delivery/evidence/08/measurements.json",
+    "cwd": ".",
+    "exit_code": 0,
+    "summary": "Synthetic Git and filesystem 10/100 approved-chain workloads, four operations each and three trials, completed under frozen runner.",
+    "output": "docs/todos/11-reliable-delivery/evidence/08/experiment-01.json.output.txt"
+  },
+  {
+    "name": "decision",
+    "kind": "observation",
+    "summary": "Retain current implementation; measured repetitions and limits documented without a speedup claim.",
+    "output": "docs/todos/11-reliable-delivery/evidence/08/ledger-summary.md"
+  },
+  {
+    "name": "interfaces",
+    "kind": "observation",
+    "summary": "Benchmark main and CLI, output fields, instrumentation scope, and future within-call interface documented.",
+    "output": "docs/todos/11-reliable-delivery/evidence/08/ledger-summary.md"
+  }
+]

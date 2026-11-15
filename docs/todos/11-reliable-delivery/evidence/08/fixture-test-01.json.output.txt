@@ -1,0 +1,52 @@
+F.F.                                                                     [100%]
+=================================== FAILURES ===================================
+___________ test_approved_fixture_and_independent_binding_drift[git] ___________
+
+tmp_path = PosixPath('/tmp/iter11-task08-fixture-test-01/test_approved_fixture_and_inde0')
+mode = 'git'
+
+    @pytest.mark.parametrize('mode', ['git', 'filesystem'])
+    def test_approved_fixture_and_independent_binding_drift(tmp_path, mode):
+        root = tmp_path / 'project'
+        directory, cards, context = bench.make_workload(root, mode, 2)
+>       assert [bench.audit_task_file(card)['verdict'] for card in cards] == ['PASS', 'PASS']
+E       AssertionError: assert ['FAIL', 'FAIL'] == ['PASS', 'PASS']
+E         
+E         At index 0 diff: 'FAIL' != 'PASS'
+E         Use -v to get more diff
+
+tests/test_approval_benchmark_fixture.py:14: AssertionError
+_______________ test_measurement_exercises_four_real_paths[git] ________________
+
+tmp_path = PosixPath('/tmp/iter11-task08-fixture-test-01/test_measurement_exercises_fou0')
+mode = 'git'
+
+    @pytest.mark.parametrize('mode', ['git', 'filesystem'])
+    def test_measurement_exercises_four_real_paths(tmp_path, mode):
+        root = tmp_path / 'project'
+        directory, cards, context = bench.make_workload(root, mode, 2)
+>       results = bench.benchmark(root, directory, cards, context, 1, lambda _: None)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_approval_benchmark_fixture.py:29: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+root = PosixPath('/tmp/iter11-task08-fixture-test-01/test_measurement_exercises_fou0/project')
+directory = PosixPath('/tmp/iter11-task08-fixture-test-01/test_measurement_exercises_fou0/project/docs/todos/01-synthetic')
+cards = [PosixPath('/tmp/iter11-task08-fixture-test-01/test_measurement_exercises_fou0/project/docs/todos/01-synthetic/001-tas...Path('/tmp/iter11-task08-fixture-test-01/test_measurement_exercises_fou0/project/docs/todos/01-synthetic/002-task.md')]
+context = {'version': 1, 'tasks': {'001': {'phase': 'implementation', 'candidate': '4db3a39cb285f9dc615f188cb90ff241bcf1a745', '...8cb90ff241bcf1a745', 'inputs': ['docs/todos/01-synthetic/002-task.md'], 'capabilities': ['synthetic-benchmark'], ...}}}
+repeats = 1
+save = <function test_measurement_exercises_four_real_paths.<locals>.<lambda> at 0x7f700531be20>
+
+    def benchmark(root, directory, cards, context, repeats, save):
+        # The full gate precedes all trials; no patched audit or successful result.
+        audits = [audit_task_file(card) for card in cards]
+>       assert all(a['verdict'] == 'PASS' for a in audits), audits
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError: [{'file': '001-task.md', 'status': 'DONE', 'is_valid_done': False, 'verdict': 'FAIL', 'violations': ['Reviewed implementation outside frozen scope: docs/todos/01-synthetic/002-task.md', 'Reviewed implementation outside frozen scope: docs/todos/01-synthetic/evidence/002/decision.txt', 'Reviewed implementation outside frozen scope: docs/todos/01-synthetic/evidence/002/experiment.txt', 'Reviewed implementation outside frozen scope: docs/todos/01-synthetic/evidence/002/interfaces.txt', 'Reviewed implementation outside frozen scope: docs/todos/01-synthetic/evidence/002/review.txt', 'Reviewed implementation outside frozen scope: src/002.py']}, {'file': '002-task.md', 'status': 'DONE', 'is_valid_done': False, 'verdict': 'FAIL', 'violations': ['Reviewed implementation outside frozen scope: docs/todos/01-synthetic/001-task.md', 'Reviewed implementation outside frozen scope: docs/todos/01-synthetic/evidence/001/decision.txt', 'Reviewed implementation outside frozen scope: docs/todos/01-synthetic/evidence/001/experiment.txt', 'Reviewed implementation outside frozen scope: docs/todos/01-synthetic/evidence/001/interfaces.txt', 'Reviewed implementation outside frozen scope: docs/todos/01-synthetic/evidence/001/review.txt', 'Reviewed implementation outside frozen scope: src/001.py']}]
+
+tests/benchmarks/approval_chain.py:138: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_approval_benchmark_fixture.py::test_approved_fixture_and_independent_binding_drift[git]
+FAILED tests/test_approval_benchmark_fixture.py::test_measurement_exercises_four_real_paths[git]
+2 failed, 2 passed in 0.93s

@@ -1,0 +1,115 @@
+{
+  "launch": {
+    "requestedAt": 1794720361271,
+    "leaf": 1794721201271,
+    "hard": 1794721291271,
+    "command": 1794721141271,
+    "launch": {
+      "chunk_id": "ea810d",
+      "wall_time_seconds": 1.001315563,
+      "session_id": 25980,
+      "original_token_count": 0,
+      "output": ""
+    },
+    "cmd": "timeout --signal=TERM --kill-after=5s 840s codex exec -C '/data/workspace/iteration-manager/.worktrees/iter-11' -s danger-full-access -c 'approval_policy=\"never\"' --json -o '/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/08/implementation-last-message.txt' - < '/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/08/implementation-brief.md' > '/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/08/implementation-native.jsonl' 2> '/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/08/implementation-native.stderr.txt'"
+  },
+  "monitor": {
+    "reason": "terminal",
+    "deadlineMs": 1794721201271,
+    "final": {
+      "status": "completed",
+      "raw": {
+        "chunk_id": "f3aea5",
+        "wall_time_seconds": 44.337566618,
+        "exit_code": 0,
+        "original_token_count": 0,
+        "output": ""
+      }
+    },
+    "terminalConfirmed": true,
+    "observedAt": 1794720647029,
+    "lateByMs": 0,
+    "events": [
+      {
+        "kind": "query",
+        "startedAt": 1794720362653,
+        "returnedAt": 1794720422655,
+        "waitMs": 60000,
+        "result": {
+          "status": "running",
+          "raw": {
+            "chunk_id": "ae09ab",
+            "wall_time_seconds": 60.000628937,
+            "session_id": 25980,
+            "original_token_count": 0,
+            "output": ""
+          }
+        }
+      },
+      {
+        "kind": "query",
+        "startedAt": 1794720422656,
+        "returnedAt": 1794720482660,
+        "waitMs": 60000,
+        "result": {
+          "status": "running",
+          "raw": {
+            "chunk_id": "6fa42d",
+            "wall_time_seconds": 60.000560798,
+            "session_id": 25980,
+            "original_token_count": 0,
+            "output": ""
+          }
+        }
+      },
+      {
+        "kind": "query",
+        "startedAt": 1794720482660,
+        "returnedAt": 1794720542664,
+        "waitMs": 60000,
+        "result": {
+          "status": "running",
+          "raw": {
+            "chunk_id": "d8926b",
+            "wall_time_seconds": 60.000885168,
+            "session_id": 25980,
+            "original_token_count": 0,
+            "output": ""
+          }
+        }
+      },
+      {
+        "kind": "query",
+        "startedAt": 1794720542664,
+        "returnedAt": 1794720602667,
+        "waitMs": 60000,
+        "result": {
+          "status": "running",
+          "raw": {
+            "chunk_id": "30be7c",
+            "wall_time_seconds": 60.000695578,
+            "session_id": 25980,
+            "original_token_count": 0,
+            "output": ""
+          }
+        }
+      },
+      {
+        "kind": "query",
+        "startedAt": 1794720602667,
+        "returnedAt": 1794720647029,
+        "waitMs": 60000,
+        "result": {
+          "status": "completed",
+          "raw": {
+            "chunk_id": "f3aea5",
+            "wall_time_seconds": 44.337566618,
+            "exit_code": 0,
+            "original_token_count": 0,
+            "output": ""
+          }
+        }
+      }
+    ]
+  }
+}

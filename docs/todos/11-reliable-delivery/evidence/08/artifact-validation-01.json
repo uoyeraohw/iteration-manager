@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "argv": [
+    "/data/workspace/iteration-manager/build/iter11-maint-venv/bin/python",
+    "-B",
+    "-c",
+    "import hashlib,json,statistics; from pathlib import Path; p=Path(\"docs/todos/11-reliable-delivery/evidence/08\"); d=json.loads((p/\"measurements.json\").read_text()); assert d[\"base\"]==\"6a54aceb2fc540d20480f9cdb5e5a683359c8e1a\"; assert all(hashlib.sha256(Path(k).read_bytes()).hexdigest()==v for k,v in d[\"source_sha256\"].items()); assert {(w[\"mode\"],w[\"size\"]) for w in d[\"workloads\"]}=={(m,n) for m in (\"git\",\"filesystem\") for n in (10,100)}; assert all(w[\"approved_count\"]==w[\"size\"] and set(w[\"operations\"])=={\"board\",\"all_envelopes\",\"inventory\",\"http_evidence\"} for w in d[\"workloads\"]); assert all(len(o[\"trials\"])==3 and o[\"mean_seconds\"]==statistics.mean(t[\"seconds\"] for t in o[\"trials\"]) and o[\"range_seconds\"]==[min(t[\"seconds\"] for t in o[\"trials\"]),max(t[\"seconds\"] for t in o[\"trials\"])] and all(t[\"seconds\"]>0 and t[\"path_read_bytes\"]>0 and t[\"git_calls\"]>=0 for t in o[\"trials\"]) for w in d[\"workloads\"] for o in w[\"operations\"].values()); assert all(t[\"detail\"]==\"BLOCKED\" for w in d[\"workloads\"] for t in w[\"operations\"][\"inventory\"][\"trials\"]); assert (Path(\".agents/notes/planned/iter11\")/\"../../../../docs/todos/11-reliable-delivery/evidence/08/ledger-summary.md\").resolve().is_file(); print(\"PASS: four approved workloads, 48 trials, source hashes, statistics, blocked readiness and decision link verified\")"
+  ],
+  "cwd": "/data/workspace/iteration-manager/.worktrees/iter-11",
+  "deadline": "2026-11-15T05:38:52.888334+00:00",
+  "cleanup_reserve_seconds": 5,
+  "status": "COMPLETED",
+  "deadline_checked_at": "2026-11-15T05:30:01.433800+00:00",
+  "started_at": "2026-11-15T05:30:01.437371+00:00",
+  "ended_at": "2026-11-15T05:30:01.499593+00:00",
+  "raw_exit_code": 0,
+  "tree_terminal": true,
+  "output": "docs/todos/11-reliable-delivery/evidence/08/artifact-validation-01.json.output.txt",
+  "container_pid": 3517101,
+  "launcher_exit_code": 0,
+  "command": {
+    "status": "COMPLETED",
+    "raw_exit_code": 0,
+    "started_at": "2026-11-15T05:30:01.437371+00:00",
+    "tree_terminal": true,
+    "deadline_checked_at": "2026-11-15T05:30:01.433800+00:00",
+    "pid": 3517102,
+    "ended_at": "2026-11-15T05:30:01.481458+00:00"
+  },
+  "late_by_seconds": 0
+}

@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "argv": [
+    "/data/workspace/iteration-manager/build/iter11-maint-venv/bin/python",
+    "-B",
+    "-c",
+    "import hashlib,json,os; from pathlib import Path; p=Path(\"docs/todos/11-reliable-delivery/evidence/08\"); m=json.loads((p/\"source-manifest.json\").read_text()); assert set(m)=={\"sha256\"} and all(hashlib.sha256(Path(k).read_bytes()).hexdigest()==v for k,v in m[\"sha256\"].items()); d=json.loads((p/\"delivery.json\").read_text()); assert d[\"thread_id\"]==os.environ[\"CODEX_THREAD_ID\"] and d[\"candidate\"][\"base\"]==\"6a54aceb2fc540d20480f9cdb5e5a683359c8e1a\"; c=json.loads((p/\"checks-proposal.json\").read_text()); assert [(x[\"name\"],x[\"kind\"]) for x in c]==[(\"experiment\",\"command\"),(\"decision\",\"observation\"),(\"interfaces\",\"observation\")]; assert all(Path(x[\"output\"]).is_file() and Path(x[\"output\"]).stat().st_size for x in c); assert c[0][\"exit_code\"]==0 and c[0][\"cwd\"]==\".\"; assert all(Path(x[\"receipt\"]).is_file() and Path(x[\"raw_output\"]).stat().st_size for x in d[\"commands\"]); assert all(x[\"tree_terminal\"] for x in d[\"commands\"]); print(\"PASS: manifest hashes, thread, candidate, check fields, nonempty outputs and command terminals\")"
+  ],
+  "cwd": "/data/workspace/iteration-manager/.worktrees/iter-11",
+  "deadline": "2026-11-15T05:38:52.888334+00:00",
+  "cleanup_reserve_seconds": 5,
+  "status": "COMPLETED",
+  "deadline_checked_at": "2026-11-15T05:30:31.247996+00:00",
+  "started_at": "2026-11-15T05:30:31.251656+00:00",
+  "ended_at": "2026-11-15T05:30:31.311951+00:00",
+  "raw_exit_code": 0,
+  "tree_terminal": true,
+  "output": "docs/todos/11-reliable-delivery/evidence/08/delivery-validation-01.json.output.txt",
+  "container_pid": 3517229,
+  "launcher_exit_code": 0,
+  "command": {
+    "status": "COMPLETED",
+    "raw_exit_code": 0,
+    "started_at": "2026-11-15T05:30:31.251656+00:00",
+    "tree_terminal": true,
+    "deadline_checked_at": "2026-11-15T05:30:31.247996+00:00",
+    "pid": 3517230,
+    "ended_at": "2026-11-15T05:30:31.296839+00:00"
+  },
+  "late_by_seconds": 0
+}
