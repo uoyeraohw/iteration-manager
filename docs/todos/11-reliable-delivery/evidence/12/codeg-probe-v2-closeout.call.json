@@ -1,0 +1,26 @@
+{
+  "kind": "controller-command-observation",
+  "argv": [
+    "python3",
+    "-B",
+    "/data/workspace/iteration-manager/build/frozen-tools/fdcc4cce8863/scripts/iter_sync.py",
+    "--autonomy",
+    "closeout",
+    "docs/todos/11-reliable-delivery/12-workflow-sequence.md",
+    "--event-id",
+    "iter11-12-codeg-probe-v2-closeout-v1",
+    "--owner",
+    "iter11-controller-linux-20261115",
+    "--executor-state",
+    "canceled",
+    "--reason",
+    "execution deadline; task12 Codeg read-only probe incomplete; terminal confirmed, preserve source and resume from bounded checkpoint without approval claim",
+    "--evidence",
+    "docs/todos/11-reliable-delivery/evidence/12/codeg-interruption-terminal.json"
+  ],
+  "started_at": "2026-11-15T06:20:50.442659+00:00",
+  "ended_at": "2026-11-15T06:20:50.521367+00:00",
+  "exit_code": 3,
+  "stdout": "{\"task_id\": \"12-workflow-sequence\", \"previous_rounds\": 0, \"current_rounds\": 0, \"fix_total\": 0, \"consilium_count\": 0, \"replan_count\": 0, \"is_fused\": true, \"status\": \"FUSED\", \"blocked_reason\": \"execution deadline; task12 Codeg read-only probe incomplete; terminal confirmed, preserve source and resume from bounded checkpoint without approval claim\", \"writer\": \"\", \"consilium_bundle\": null}\n",
+  "stderr": ""
+}

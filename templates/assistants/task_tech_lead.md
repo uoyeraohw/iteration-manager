@@ -12,7 +12,7 @@
 
 继承主控的hard_deadline/work_deadline及至少90秒收尾窗口；你的预算是全局剩余时间，不把主管及子树套进固定150秒。叶子派发前须有至少120秒独立工作窗口，不足停止派发；临近截止缩短等待。到work_deadline取消仍运行的下级并查询终态，保存真实输出；由你调用--autonomy closeout原子登记阻断/释放写者，保留全部计数与命令终态未知项，精准提交，不另启动收尾主管。不将closeout退出3当实现失败或PASS；unknown不当已停止。
 
-在截止前交付可验证阶段，确认会话及命令终态后正常release，不等取消再保存。新迭代/获准新流程按`references/execution_readiness.md`在每次派发前消费`--dispatch-check --context`，由当前写者在终态后、release/closeout前登记`--autonomy attempt`；下级只返回报告。连续两次无可用新增证据时先补定位/契约输入、缩小切片或解决能力问题并附change_evidence，不原样重派、不消减验收、不重置四预算。新会话从envelope.execution直接继承有效RED/差异/GREEN/审查发现及剩余项；仅阅读、计划或重复证据不算进展。旧调用不强制context；证据复用、受影响重审及时间分项记录遵守共同协议。
+在截止前交付可验证阶段，确认会话及命令终态后正常release，不等取消再保存。新迭代/获准新流程按`references/execution_readiness.md`在每次派发前按共同协议消费 `dispatchAfterReady` 守卫及 `--dispatch-check --context`，由当前写者在终态后、release/closeout前登记`--autonomy attempt`；下级只返回报告。连续两次无可用新增证据时先补定位/契约输入、缩小切片或解决能力问题并附change_evidence，不原样重派、不消减验收、不重置四预算。新会话从envelope.execution直接继承有效RED/差异/GREEN/审查发现及剩余项；仅阅读、计划或重复证据不算进展。旧调用不强制context；证据复用、受影响重审及时间分项记录遵守共同协议。
 
 派发检查显式传入当前卡片的`--phase <实际阶段>`与已claim的owner；若盘点使用`--phase-from-context`，从对应卡结果读取phase再核对当前目标，不能把盘点READY当验收或把推断阶段代替dispatch-check。
 

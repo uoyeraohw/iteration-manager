@@ -1,0 +1,63 @@
+{
+  "thread_id": "01a1ddcf-b505-7cc1-baac-d53be61431ab",
+  "base": "3de06e0e3715b9f65d7caaf3bdba872a33df0f8c",
+  "status": "CHECKPOINT; implementer highest TESTING; not approved",
+  "candidate": "uncommitted worktree",
+  "commands": [
+    {
+      "command": "/data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B /data/workspace/iteration-manager/build/frozen-runners/iter11-platform-v1/scripts/iter_run.py --deadline 2026-11-15T06:14:28.191357+00:00 --evidence docs/todos/11-reliable-delivery/evidence/12/experiment-01.json -- /data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B -m pytest -p no:cacheprovider tests/test_workflow_sequence.py tests/test_prompt_sources.py tests/test_task_card_schema.py -q --basetemp /tmp/iter11-task12-8GVBNR",
+      "receipt": "docs/todos/11-reliable-delivery/evidence/12/experiment-01.json",
+      "output": "docs/todos/11-reliable-delivery/evidence/12/experiment-01.json.output.txt",
+      "exit_code": 0,
+      "status": "COMPLETED",
+      "tree_terminal": true,
+      "candidate_note": "prior to adapter/test changes"
+    },
+    {
+      "command": "/data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B /data/workspace/iteration-manager/build/frozen-runners/iter11-platform-v1/scripts/iter_run.py --deadline 2026-11-15T06:14:28.191357+00:00 --evidence docs/todos/11-reliable-delivery/evidence/12/experiment-02.json -- /data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B -m pytest -p no:cacheprovider tests/test_workflow_sequence.py tests/test_prompt_sources.py tests/test_task_card_schema.py -q --basetemp /tmp/iter11-task12-D0rWtu",
+      "receipt": "docs/todos/11-reliable-delivery/evidence/12/experiment-02.json",
+      "output": "docs/todos/11-reliable-delivery/evidence/12/experiment-02.json.output.txt",
+      "exit_code": 0,
+      "status": "COMPLETED",
+      "tree_terminal": true,
+      "candidate_note": "prior to nonREADY test addition"
+    },
+    {
+      "command": "/data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B /data/workspace/iteration-manager/build/frozen-runners/iter11-platform-v1/scripts/iter_run.py --deadline 2026-11-15T06:14:28.191357+00:00 --evidence docs/todos/11-reliable-delivery/evidence/12/experiment-03.json -- /data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B -m pytest -p no:cacheprovider tests/test_workflow_sequence.py tests/test_prompt_sources.py tests/test_task_card_schema.py -q --basetemp /tmp/iter11-task12-OJ7ywa",
+      "receipt": "docs/todos/11-reliable-delivery/evidence/12/experiment-03.json",
+      "output": "docs/todos/11-reliable-delivery/evidence/12/experiment-03.json.output.txt",
+      "exit_code": 0,
+      "status": "COMPLETED",
+      "tree_terminal": true,
+      "candidate_note": "prior to reference routing refinement"
+    },
+    {
+      "command": "/data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B /data/workspace/iteration-manager/build/frozen-runners/iter11-platform-v1/scripts/iter_run.py --deadline 2026-11-15T06:14:28.191357+00:00 --evidence docs/todos/11-reliable-delivery/evidence/12/experiment-04.json -- /data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B -m pytest -p no:cacheprovider tests/test_workflow_sequence.py tests/test_prompt_sources.py tests/test_task_card_schema.py -q --basetemp /tmp/iter11-task12-3Zi61t",
+      "receipt": "docs/todos/11-reliable-delivery/evidence/12/experiment-04.json",
+      "output": "docs/todos/11-reliable-delivery/evidence/12/experiment-04.json.output.txt",
+      "exit_code": 0,
+      "status": "COMPLETED",
+      "tree_terminal": true,
+      "candidate_note": "final source"
+    }
+  ],
+  "decisions": "ledger-summary.md",
+  "consumer_brief": "consumer-brief-input.md",
+  "consumer_manifest": "consumer-input-manifest.json",
+  "checks_proposal": "checks-proposal.json",
+  "source_manifest": "source-manifest.json",
+  "environment": "Linux Python 3.11.17, pytest 9.2.0, MCP 1.30; frozen platform runner, frozen coordinator fdcc4cc; evidence applies only to these inputs and environment",
+  "limitations": [
+    "Tests are structural and synthetic, not actual Codeg or Codex source consumption.",
+    "Task03 actual Codeg TOOL-call succeeded but worker CLI bwrap blocked; Native Codex CLI task06 is a separate host path.",
+    "Frozen coordinator has known defects and cannot self-approve candidate.",
+    "No full suite, final strict, independent review, deployment, push, merge or cleanup performed."
+  ],
+  "remaining": [
+    "Root real Codeg guarded read-only probe and fresh source consumption",
+    "Root separate Native Codex CLI source consumption",
+    "C and independent review",
+    "D and frozen local strict",
+    "After all valid DONE, Controller integration/full suite, independent total review and final frozen branch strict"
+  ]
+}

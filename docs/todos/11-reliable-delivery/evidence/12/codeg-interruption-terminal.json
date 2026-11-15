@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "sessions": [
+    {
+      "id": "083b45e8-276c-4509-8720-0c2c9c8ff6a4",
+      "status": "canceled",
+      "source": "docs/todos/11-reliable-delivery/evidence/12/codeg-probe-v2-chain.json"
+    },
+    {
+      "id": "01a1ddcf-b505-7cc1-baac-d53be61431ab",
+      "status": "completed",
+      "source": "docs/todos/11-reliable-delivery/evidence/12/implementation-terminal.json"
+    }
+  ],
+  "commands": [
+    {
+      "id": "task12-experiment-04",
+      "status": "completed",
+      "exit_code": 0,
+      "source": "docs/todos/11-reliable-delivery/evidence/12/experiment-04.json"
+    },
+    {
+      "id": "iter11-task12-codeg-v2-1794723214346-check",
+      "status": "completed",
+      "exit_code": 0,
+      "source": "docs/todos/11-reliable-delivery/evidence/12/codeg-probe-v2-check-observation.json"
+    }
+  ]
+}

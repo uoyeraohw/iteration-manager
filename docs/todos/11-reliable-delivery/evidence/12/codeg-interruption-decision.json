@@ -1,0 +1,22 @@
+{
+  "recorded_at": "2026-11-15T06:20:50.353886+00:00",
+  "scope": "Controller interruption recovery only, no task approval",
+  "finding": "120 second Codeg read-only window ended before final answer; incomplete consumption is not PASS. Initial default sandbox read failed bwrap; permitted same-file read commands later returned native outputs and matching hashes.",
+  "native_tool_calls": [
+    "call_25652ec97f5947b481515e10bb87e291",
+    "call_5d7fc913dbc54b629a15cfddd207e868",
+    "call_686f20ea0bd84381a3353d256dc94a95",
+    "call_83d0d3017bb44bcb9404dbe291b4eb07",
+    "call_846c18c0438d43029cd9942499b34a74",
+    "call_bf55570042574b86b2acc47d749a2c75"
+  ],
+  "terminal_basis": "Original session contains matched tool call outputs and turn_aborted; Codeg cancel/query confirms canceled. No business/test command was delegated to this read-only consumer. Source-reading calls expose text but not inner raw exit metadata; do not invent those codes. Formal implementation runner tree and checker exit are separately evidenced.",
+  "retained_failures": [
+    "codeg-native-chain.json invalid-check missing cwd, no dispatch",
+    "codeg-probe-v2-chain.json deadline cancellation, consumption incomplete"
+  ],
+  "authorization": "User authorized implementation and serial progress of the entire iteration; continue the same bounded task within that scope, with no deployment/push/merge/cleanup or host setting change.",
+  "recovery": "Standard execution-deadline closeout; precise checkpoint commit; controller external single-use grant bound to clean HEAD, prior independently approved baseline checkpoint and terminal evidence; then same canceled Codeg consumer may resume under a fresh guarded check with a 5 minute window. Native Codex CLI consumption remains separate.",
+  "reviewed_checkpoint": "3de06e0e3715b9f65d7caaf3bdba872a33df0f8c",
+  "checkpoint_limit": "Prior baseline is approved; preserved unreviewed task12 changes still require C independent review before DONE. No repair budget reset."
+}
