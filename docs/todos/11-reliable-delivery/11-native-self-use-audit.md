@@ -50,6 +50,34 @@ head_sha: ""
 | --- | --- | --- |
 | `.agents/notes/planned/iter11/11-native-self-use-audit.md` | MODIFIED | 本任务授权范围 |
 | `docs/todos/11-reliable-delivery/evidence/11/` | MODIFIED | 本任务授权范围 |
+| `docs/todos/11-reliable-delivery/evidence/planning/00-initial-card.md` | CONTROLLER-EVIDENCE | 已有启动/迁移原件或来源指针；仅精确归属及只读核对，不改变产品或既有批准 |
+| `docs/todos/11-reliable-delivery/evidence/planning/00-initial-precheck.json` | CONTROLLER-EVIDENCE | 已有启动/迁移原件或来源指针；仅精确归属及只读核对，不改变产品或既有批准 |
+| `docs/todos/11-reliable-delivery/evidence/planning/cli-runtime-probe.json` | CONTROLLER-EVIDENCE | 已有启动/迁移原件或来源指针；仅精确归属及只读核对，不改变产品或既有批准 |
+| `docs/todos/11-reliable-delivery/evidence/planning/cli-runtime-probe.stderr.txt` | CONTROLLER-EVIDENCE | 已有启动/迁移原件或来源指针；仅精确归属及只读核对，不改变产品或既有批准 |
+| `docs/todos/11-reliable-delivery/evidence/planning/cli-runtime-probe.stdout.jsonl` | CONTROLLER-EVIDENCE | 已有启动/迁移原件或来源指针；仅精确归属及只读核对，不改变产品或既有批准 |
+| `docs/todos/11-reliable-delivery/evidence/planning/collaboration-linux-probe.json` | CONTROLLER-EVIDENCE | 已有启动/迁移原件或来源指针；仅精确归属及只读核对，不改变产品或既有批准 |
+| `docs/todos/11-reliable-delivery/evidence/planning/linux-capabilities.json` | CONTROLLER-EVIDENCE | 已有启动/迁移原件或来源指针；仅精确归属及只读核对，不改变产品或既有批准 |
+| `docs/todos/11-reliable-delivery/evidence/planning/linux-typesafe-request.json` | CONTROLLER-EVIDENCE | 已有启动/迁移原件或来源指针；仅精确归属及只读核对，不改变产品或既有批准 |
+| `docs/todos/11-reliable-delivery/evidence/planning/linux-typesafe-response.json` | CONTROLLER-EVIDENCE | 已有启动/迁移原件或来源指针；仅精确归属及只读核对，不改变产品或既有批准 |
+| `docs/todos/11-reliable-delivery/evidence/planning/linux-typesafe-summary.json` | CONTROLLER-EVIDENCE | 已有启动/迁移原件或来源指针；仅精确归属及只读核对，不改变产品或既有批准 |
+| `docs/todos/11-reliable-delivery/evidence/planning/native-linux-probe.json` | CONTROLLER-EVIDENCE | 已有启动/迁移原件或来源指针；仅精确归属及只读核对，不改变产品或既有批准 |
+| `docs/todos/11-reliable-delivery/evidence/planning/platform-migration-authorization.json` | CONTROLLER-EVIDENCE | 已有启动/迁移原件或来源指针；仅精确归属及只读核对，不改变产品或既有批准 |
+| `docs/todos/11-reliable-delivery/evidence/startup/baseline-launch.observation.json` | CONTROLLER-EVIDENCE | 已有启动/迁移原件或来源指针；仅精确归属及只读核对，不改变产品或既有批准 |
+| `docs/todos/11-reliable-delivery/evidence/startup/baseline-launch.stderr.txt` | CONTROLLER-EVIDENCE | 已有启动/迁移原件或来源指针；仅精确归属及只读核对，不改变产品或既有批准 |
+| `docs/todos/11-reliable-delivery/evidence/startup/baseline-launch.stdout.txt` | CONTROLLER-EVIDENCE | 已有启动/迁移原件或来源指针；仅精确归属及只读核对，不改变产品或既有批准 |
+| `docs/todos/11-reliable-delivery/evidence/startup/execution-observations.json` | CONTROLLER-EVIDENCE | 已有启动/迁移原件或来源指针；仅精确归属及只读核对，不改变产品或既有批准 |
+| `docs/todos/11-reliable-delivery/evidence/startup/startup-context.json` | CONTROLLER-EVIDENCE | 已有启动/迁移原件或来源指针；仅精确归属及只读核对，不改变产品或既有批准 |
+| `docs/todos/11-reliable-delivery/evidence/startup/startup-inventory.coordination.json` | CONTROLLER-EVIDENCE | 已有启动/迁移原件或来源指针；仅精确归属及只读核对，不改变产品或既有批准 |
+| `docs/todos/11-reliable-delivery/evidence/startup/startup-inventory.stderr.txt` | CONTROLLER-EVIDENCE | 已有启动/迁移原件或来源指针；仅精确归属及只读核对，不改变产品或既有批准 |
+| `docs/todos/11-reliable-delivery/evidence/startup/startup-inventory.stdout.txt` | CONTROLLER-EVIDENCE | 已有启动/迁移原件或来源指针；仅精确归属及只读核对，不改变产品或既有批准 |
+| `docs/todos/11-reliable-delivery/evidence/startup/startup-report.json` | CONTROLLER-EVIDENCE | 已有启动/迁移原件或来源指针；仅精确归属及只读核对，不改变产品或既有批准 |
+| `docs/todos/11-reliable-delivery/evidence/startup/verify-committed.coordination.json` | CONTROLLER-EVIDENCE | 已有启动/迁移原件或来源指针；仅精确归属及只读核对，不改变产品或既有批准 |
+| `docs/todos/11-reliable-delivery/evidence/startup/verify-committed.stderr.txt` | CONTROLLER-EVIDENCE | 已有启动/迁移原件或来源指针；仅精确归属及只读核对，不改变产品或既有批准 |
+| `docs/todos/11-reliable-delivery/evidence/startup/verify-committed.stdout.txt` | CONTROLLER-EVIDENCE | 已有启动/迁移原件或来源指针；仅精确归属及只读核对，不改变产品或既有批准 |
+| `docs/todos/11-reliable-delivery/evidence/startup/worktree-add.coordination.json` | CONTROLLER-EVIDENCE | 已有启动/迁移原件或来源指针；仅精确归属及只读核对，不改变产品或既有批准 |
+| `docs/todos/11-reliable-delivery/evidence/startup/worktree-add.stderr.txt` | CONTROLLER-EVIDENCE | 已有启动/迁移原件或来源指针；仅精确归属及只读核对，不改变产品或既有批准 |
+| `docs/todos/11-reliable-delivery/evidence/startup/worktree-add.stdout.txt` | CONTROLLER-EVIDENCE | 已有启动/迁移原件或来源指针；仅精确归属及只读核对，不改变产品或既有批准 |
+| `docs/todos/11-reliable-delivery/evidence/planning/native-source-index.json` | CONTROLLER-EVIDENCE | 已有启动/迁移原件或来源指针；仅精确归属及只读核对，不改变产品或既有批准 |
 <!-- /iter:scope -->
 
 ## 6. 确定性验收标准
@@ -65,6 +93,8 @@ head_sha: ""
 <!-- iter:ledger -->
 实际命令、原始证据、退出码、候选、检查点与剩余项在执行中记录；未执行不推断通过。
 独立审查结果由外部收据与报告提供。
+
+2026-11-15T05:47:08.526010+00:00：Ruling: 提前分支范围盘点发现27份启动/Linux迁移原件及本卡已约定的native-source-index没有任何任务scope归属；补28条精确Controller元数据路径，清单及SHA见evidence/11/controller-artifact-ownership.json。旧原件只读，不新增产品/测试或审计目标，不改既有卡门禁，不重置预算；不是实质重规划。错误归属的风险由11独审及最终总审核对，最终branch strict仍必须实跑。
 <!-- /iter:ledger -->
 
 ## 8. 接口依赖与执行边界
