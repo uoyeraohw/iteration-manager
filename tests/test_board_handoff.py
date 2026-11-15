@@ -83,7 +83,7 @@ def test_html_exact_counts_are_rendered_not_just_embedded(tmp_path):
 def test_browser_harness_isolated_mode_never_reads_checkout(tmp_path, monkeypatch, capsys, isolated):
     import importlib.util
 
-    script = Path(__file__).resolve().parents[1] / 'docs/todos/10-self-hosting-hardening/evidence/04/browser_harness.py'
+    script = Path(__file__).resolve().parents[1] / 'tests/support/browser_harness.py'
     spec = importlib.util.spec_from_file_location('isolated_browser_harness', script)
     harness = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(harness)
@@ -124,7 +124,7 @@ def test_browser_harness_isolated_mode_never_reads_checkout(tmp_path, monkeypatc
 def test_browser_http_harness_lifecycle_and_synthetic_provenance(tmp_path):
     import http.client
     import time
-    script = Path(__file__).resolve().parents[1] / 'docs/todos/10-self-hosting-hardening/evidence/04/browser_harness.py'
+    script = Path(__file__).resolve().parents[1] / 'tests/support/browser_harness.py'
     ready, stop = tmp_path/'ready.json', tmp_path/'stop'
     process = subprocess.Popen([sys.executable, '-B', str(script), '--ready-file', str(ready),
         '--stop-file', str(stop), '--duration', '12', '--delay', '.2', '--isolated-fixtures'],

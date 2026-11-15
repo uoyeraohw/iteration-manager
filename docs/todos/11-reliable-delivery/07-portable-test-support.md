@@ -3,7 +3,7 @@ schema_version: 1
 iteration: "11-reliable-delivery"
 task_id: "07"
 task_name: "消除维护测试对历史证据harness的运行依赖"
-status: "TODO"
+status: "TESTING"
 type: "Refactor-Benchmark"
 fix_rounds: 0
 replan_count: 0
@@ -14,8 +14,10 @@ typesafe_evidence: "docs/todos/11-reliable-delivery/evidence/planning/typesafe-s
 tdd_verified: false
 review_status: "PENDING"
 review_receipt: ""
-base_sha: ""
+base_sha: "3158e75869d5c4346c51256de878f14ea190f305"
 head_sha: ""
+autonomy_state: "{\"version\":1,\"policy\":{\"round_limit\":5,\"total_limit\":10,\"consilium_limit\":1,\"replan_limit\":2},\"round\":0,\"total\":0,\"consilium\":0,\"replan\":0,\"writer\":\"iter11-controller-linux-20261115\",\"events\":{\"iter11-07-claim-v1\":{\"input\":{\"action\":\"claim\",\"owner\":\"iter11-controller-linux-20261115\",\"reason\":\"\",\"evidence\":\"\",\"executor_state\":\"\"},\"result\":{\"task_id\":\"07-portable-test-support\",\"previous_rounds\":0,\"current_rounds\":0,\"fix_total\":0,\"consilium_count\":0,\"replan_count\":0,\"is_fused\":false,\"status\":\"TODO\",\"blocked_reason\":\"\",\"writer\":\"iter11-controller-linux-20261115\",\"consilium_bundle\":null},\"at\":\"2026-11-15T05:13:57.826697+00:00\"},\"iter11-07-retry2-attempt-v1\":{\"input\":{\"action\":\"attempt\",\"owner\":\"iter11-controller-linux-20261115\",\"reason\":\"\",\"evidence\":\"docs/todos/11-reliable-delivery/evidence/07/retry2-attempt.json\",\"executor_state\":\"completed\",\"attempt\":{\"report\":{\"phase\":\"implementation\",\"candidate\":\"3158e75869d5c4346c51256de878f14ea190f305\",\"inputs\":[\"docs/todos/11-reliable-delivery/07-portable-test-support.md\",\"docs/todos/11-reliable-delivery/README.md\",\"AGENTS.md\",\"references/task_card_schema.md\",\"tests/test_board_handoff.py\"],\"capabilities\":[\"native-codex-cli-implementer\",\"approved-frozen-linux-runner\",\"Python3.11.17-pytest9.2-mcp1.30\",\"independent-native-reviewer\"],\"version\":1,\"checkpoint\":\"测试支持提取，Linux基线11项、3次Before/After、payload-only临时副本11项及最终回归13项；历史原件未改；嵌套副本收据保持实际cwd，不冒作根命令\",\"remaining_work\":[\"C独审\",\"D/冻结strict\"],\"executor_id\":\"01a1dda0-8d6b-79c0-8739-a8409dec0d93\",\"terminal_evidence\":\"docs/todos/11-reliable-delivery/evidence/07/implementation-terminal.json\",\"progress\":[{\"kind\":\"implementation\",\"summary\":\"测试支持提取，Linux基线11项、3次Before/After、payload-only临时副本11项及最终回归13项；历史原件未改；嵌套副本收据保持实际cwd，不冒作根命令\",\"evidence\":\"docs/todos/11-reliable-delivery/evidence/07/delivery.json\"}],\"commands\":[\"docs/todos/11-reliable-delivery/evidence/07/regression.json\",\"docs/todos/11-reliable-delivery/evidence/07/benchmark-before.json\",\"docs/todos/11-reliable-delivery/evidence/07/regression-v2.json\",\"docs/todos/11-reliable-delivery/evidence/07/compatibility-command.json\",\"docs/todos/11-reliable-delivery/evidence/07/regression-v3.json\",\"docs/todos/11-reliable-delivery/evidence/07/benchmark-after.json\",\"docs/todos/11-reliable-delivery/evidence/07/benchmark-before-v2.json\",\"docs/todos/11-reliable-delivery/evidence/07/baseline-implementer.json\"],\"started_at\":null,\"ended_at\":null},\"source\":\"docs/todos/11-reliable-delivery/evidence/07/retry2-attempt.json\",\"phase\":\"implementation\",\"delivery_mode\":\"git\",\"candidate\":\"3158e75869d5c4346c51256de878f14ea190f305\",\"conditions\":{\"inputs\":[\"AGENTS.md\",\"docs/todos/11-reliable-delivery/07-portable-test-support.md\",\"docs/todos/11-reliable-delivery/README.md\",\"references/task_card_schema.md\",\"tests/test_board_handoff.py\"],\"capabilities\":[\"Python3.11.17-pytest9.2-mcp1.30\",\"approved-frozen-linux-runner\",\"independent-native-reviewer\",\"native-codex-cli-implementer\"],\"scope\":[\".agents/notes/planned/iter11/07-portable-test-support.md\",\"docs/todos/11-reliable-delivery/evidence/07/\",\"tests/support/\",\"tests/test_board_handoff.py\",\"tests/test_harness_portability.py\"]},\"executor_id\":\"01a1dda0-8d6b-79c0-8739-a8409dec0d93\",\"executor_state\":\"completed\",\"terminal_evidence\":\"docs/todos/11-reliable-delivery/evidence/07/implementation-terminal.json\",\"progress\":[{\"kind\":\"implementation\",\"evidence\":\"docs/todos/11-reliable-delivery/evidence/07/delivery.json\",\"summary\":\"测试支持提取，Linux基线11项、3次Before/After、payload-only临时副本11项及最终回归13项；历史原件未改；嵌套副本收据保持实际cwd，不冒作根命令\"}],\"checkpoint\":\"测试支持提取，Linux基线11项、3次Before/After、payload-only临时副本11项及最终回归13项；历史原件未改；嵌套副本收据保持实际cwd，不冒作根命令\",\"remaining_work\":[\"C独审\",\"D/冻结strict\"],\"commands\":[{\"receipt\":\"docs/todos/11-reliable-delivery/evidence/07/baseline-implementer.json\",\"status\":\"COMPLETED\",\"raw_exit_code\":0,\"started_at\":\"2026-11-15T05:14:17.713123+00:00\",\"ended_at\":\"2026-11-15T05:14:21.392737+00:00\"},{\"receipt\":\"docs/todos/11-reliable-delivery/evidence/07/benchmark-after.json\",\"status\":\"COMPLETED\",\"raw_exit_code\":0,\"started_at\":\"2026-11-15T05:15:29.737267+00:00\",\"ended_at\":\"2026-11-15T05:15:35.369484+00:00\"},{\"receipt\":\"docs/todos/11-reliable-delivery/evidence/07/benchmark-before-v2.json\",\"status\":\"COMPLETED\",\"raw_exit_code\":0,\"started_at\":\"2026-11-15T05:14:42.102796+00:00\",\"ended_at\":\"2026-11-15T05:14:47.856578+00:00\"},{\"receipt\":\"docs/todos/11-reliable-delivery/evidence/07/benchmark-before.json\",\"status\":\"COMPLETED\",\"raw_exit_code\":1,\"started_at\":\"2026-11-15T05:14:37.067303+00:00\",\"ended_at\":\"2026-11-15T05:14:37.129481+00:00\"},{\"receipt\":\"docs/todos/11-reliable-delivery/evidence/07/compatibility-command.json\",\"status\":\"COMPLETED\",\"raw_exit_code\":0,\"started_at\":\"2026-11-15T05:15:56.520193+00:00\",\"ended_at\":\"2026-11-15T05:15:56.634455+00:00\"},{\"receipt\":\"docs/todos/11-reliable-delivery/evidence/07/regression-v2.json\",\"status\":\"COMPLETED\",\"raw_exit_code\":0,\"started_at\":\"2026-11-15T05:15:43.088872+00:00\",\"ended_at\":\"2026-11-15T05:15:50.934571+00:00\"},{\"receipt\":\"docs/todos/11-reliable-delivery/evidence/07/regression-v3.json\",\"status\":\"COMPLETED\",\"raw_exit_code\":0,\"started_at\":\"2026-11-15T05:16:03.578802+00:00\",\"ended_at\":\"2026-11-15T05:16:11.389468+00:00\"},{\"receipt\":\"docs/todos/11-reliable-delivery/evidence/07/regression.json\",\"status\":\"COMPLETED\",\"raw_exit_code\":0,\"started_at\":\"2026-11-15T05:15:16.400227+00:00\",\"ended_at\":\"2026-11-15T05:15:23.889425+00:00\"}],\"started_at\":null,\"ended_at\":null,\"session_seconds\":null,\"command_seconds\":38.387616}},\"result\":{\"task_id\":\"07-portable-test-support\",\"previous_rounds\":0,\"current_rounds\":0,\"fix_total\":0,\"consilium_count\":0,\"replan_count\":0,\"is_fused\":false,\"status\":\"IN_PROGRESS\",\"blocked_reason\":\"\",\"writer\":\"iter11-controller-linux-20261115\",\"consilium_bundle\":null},\"at\":\"2026-11-15T05:18:35.283297+00:00\"},\"iter11-07-retry2-release-v1\":{\"input\":{\"action\":\"release\",\"owner\":\"iter11-controller-linux-20261115\",\"reason\":\"\",\"evidence\":\"docs/todos/11-reliable-delivery/evidence/07/implementation-terminal.json\",\"executor_state\":\"completed\"},\"result\":{\"task_id\":\"07-portable-test-support\",\"previous_rounds\":0,\"current_rounds\":0,\"fix_total\":0,\"consilium_count\":0,\"replan_count\":0,\"is_fused\":false,\"status\":\"IN_PROGRESS\",\"blocked_reason\":\"\",\"writer\":\"\",\"consilium_bundle\":null},\"at\":\"2026-11-15T05:18:35.366656+00:00\"},\"iter11-07-retry2-review-claim-v1\":{\"input\":{\"action\":\"claim\",\"owner\":\"iter11-controller-linux-20261115\",\"reason\":\"\",\"evidence\":\"\",\"executor_state\":\"\"},\"result\":{\"task_id\":\"07-portable-test-support\",\"previous_rounds\":0,\"current_rounds\":0,\"fix_total\":0,\"consilium_count\":0,\"replan_count\":0,\"is_fused\":false,\"status\":\"TESTING\",\"blocked_reason\":\"\",\"writer\":\"iter11-controller-linux-20261115\",\"consilium_bundle\":null},\"at\":\"2026-11-15T05:18:35.443706+00:00\"}},\"blocked_reason\":\"\"}"
+updated_at: "2026-11-15T05:18:35.443814+00:00"
 ---
 
 # 07 · 消除维护测试对历史证据harness的运行依赖
@@ -27,19 +29,19 @@ head_sha: ""
 
 ## 2. 业务阶段
 <!-- iter:stages -->
-- [ ] 取得原维护测试基线及同环境Before量测
-- [ ] 提取测试支持并保持隔离模式/参数/HTTP行为
-- [ ] 白名单临时副本复验、After量测与兼容观察
+- [x] 取得原维护测试基线及同环境Before量测
+- [x] 提取测试支持并保持隔离模式/参数/HTTP行为
+- [x] 白名单临时副本复验、After量测与兼容观察
 <!-- /iter:stages -->
 
 ## 3. 按类型验证规划
 保持外部行为与接口；同环境同数据量取得benchmark_before与benchmark_after实测。
 <!-- iter:verification -->
-- [ ] **baseline**：python -B -m pytest -p no:cacheprovider tests/test_board_handoff.py tests/test_board_service.py -q；在修改前保留实际维护基线，通过冻结runner。
-- [ ] **regression**：python -B -m pytest -p no:cacheprovider tests/test_board_handoff.py tests/test_board_service.py tests/test_harness_portability.py -q；覆盖提取后的隔离库存、参数、HTTP与临时副本。
-- [ ] **compatibility**：观察filesystem_fixture/main参数、ready/stop与HTTP输出一致；历史harness及证据字节不变；保留可复查报告。
-- [ ] **benchmark_before**：修改前在同一Windows/Python/样例参数下，对受影响harness检查运行3次，记录各次耗时与历史路径依赖数，通过冻结runner。
-- [ ] **benchmark_after**：修改后复用Before脚本/参数/环境运行3次，对比耗时与依赖数；不预设提速，通过冻结runner。
+- [x] **baseline**：python -B -m pytest -p no:cacheprovider tests/test_board_handoff.py tests/test_board_service.py -q；在修改前保留实际维护基线，通过冻结runner。
+- [x] **regression**：python -B -m pytest -p no:cacheprovider tests/test_board_handoff.py tests/test_board_service.py tests/test_harness_portability.py -q；覆盖提取后的隔离库存、参数、HTTP与临时副本。
+- [x] **compatibility**：观察filesystem_fixture/main参数、ready/stop与HTTP输出一致；历史harness及证据字节不变；保留可复查报告。
+- [x] **benchmark_before**：修改前在同一Windows/Python/样例参数下，对受影响harness检查运行3次，记录各次耗时与历史路径依赖数，通过冻结runner。
+- [x] **benchmark_after**：修改后复用Before脚本/参数/环境运行3次，对比耗时与依赖数；不预设提速，通过冻结runner。
 <!-- /iter:verification -->
 
 ## 4. 交付与冻结
@@ -69,6 +71,18 @@ head_sha: ""
 <!-- iter:ledger -->
 实际命令、原始证据、退出码、候选、检查点与剩余项在执行中记录；未执行不推断通过。
 独立审查结果由外部收据与报告提供。
+
+2026-11-15T05:18:35.386123+00:00：测试支持提取，Linux基线11项、3次Before/After、payload-only临时副本11项及最终回归13项；历史原件未改；嵌套副本收据保持实际cwd，不冒作根命令；原生实现会话01a1dda0-8d6b-79c0-8739-a8409dec0d93和命令树已确认终态。原始证据/source manifest/type checks已核对，冻结C后独审，非整轮批准。
+
+# Task 07 implementer handoff — 2026-11-15 UTC
+
+- BASE `3158e75869d5c4346c51256de878f14ea190f305`; Linux migration expressly authorized in iteration goal and task request. Python 3.11.17 / pytest 9.2.0, frozen platform runner, external pytest roots. This is Refactor-Benchmark; no fabricated RED.
+- Baseline before source change: `baseline-implementer.json`, 11 passed, completed, exit 0, tree terminal. Original harness at `docs/todos/10-self-hosting-hardening/evidence/04/browser_harness.py` matches BASE, and the historical evidence/04 Git status was clean. `compatibility-command.json.output.txt` records hashes and the exact single parent-index change.
+- Decision: copy behavior into `tests/support/browser_harness.py`, preserving `filesystem_fixture`, `main`, real inventory path, isolated fixtures and services. Both handoff consumers now load the support file. The actual whitelist from `iter_install._inventory` constructs a temporary payload with no docs/todos. The v3 copied nested receipt and raw output record its affected 11 tests, exit 0 and tree terminal. Formal run explicitly supplies frozen runner/deadline to the subprocess. The test additionally checks invalid arguments and existing ready-file protection in the payload; HTTP normal, loading, evidence and errors, isolated and nonisolated paths remain exercised by the affected tests.
+- Regression `regression-v3.json`: 13 passed, exit 0, tree terminal. Earlier regression runs remain; v2 added payload argument checks and v3 added a default runner/deadline for future local runs. No full suite or native browser run: UI behavior was unchanged, HTTP/DOM checks are not native browser acceptance. Actual installation, Windows, and new-session consumption remain unverified.
+- Same `measure.py`, Python, Linux and three harness checks per run; unique phase/run temporary paths are the only sample-path differences. Before seconds: 2.015566, 2.013032, 1.637504; after: 1.904979, 1.670483, 1.955465. Historical path references in the two live consumers: 2 → 0. No performance claim. `benchmark-before.json` records initial script error (TypeError before tests); corrected script was used identically in `benchmark-before-v2.json` and `benchmark-after.json`.
+- The prior task06 C1/111-file observation is a different source-bound observation, not this temporary payload run. Coordinator stays fdcc4cc and known defects cannot self-approve. Remaining: controller records card/attempt, freezes implementation C and specification, obtains independent review, registers D, and runs frozen local strict. Implementer does not approve or alter the card.
+
 <!-- /iter:ledger -->
 
 ## 8. 接口依赖与执行边界
