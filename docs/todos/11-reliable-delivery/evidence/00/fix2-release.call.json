@@ -1,0 +1,24 @@
+{
+  "kind": "controller-command-observation",
+  "argv": [
+    "python3",
+    "-B",
+    "/data/workspace/iteration-manager/build/frozen-tools/fdcc4cce8863/scripts/iter_sync.py",
+    "--autonomy",
+    "release",
+    "docs/todos/11-reliable-delivery/00-linux-runner-and-dev-guide.md",
+    "--event-id",
+    "iter11-00-fix2-release-v1",
+    "--owner",
+    "iter11-controller-linux-20261115",
+    "--evidence",
+    "docs/todos/11-reliable-delivery/evidence/00/fix2-terminal.json",
+    "--executor-state",
+    "completed"
+  ],
+  "started_at": "2026-11-15T03:45:49.610749+00:00",
+  "ended_at": "2026-11-15T03:45:49.695165+00:00",
+  "exit_code": 0,
+  "stdout": "{\"task_id\": \"00-linux-runner-and-dev-guide\", \"previous_rounds\": 2, \"current_rounds\": 2, \"fix_total\": 2, \"consilium_count\": 0, \"replan_count\": 0, \"is_fused\": false, \"status\": \"IN_PROGRESS\", \"blocked_reason\": \"\", \"writer\": \"\", \"consilium_bundle\": null}\n",
+  "stderr": ""
+}

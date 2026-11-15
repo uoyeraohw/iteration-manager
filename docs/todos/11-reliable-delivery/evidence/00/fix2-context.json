@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "tasks": {
+    "00": {
+      "phase": "implementation",
+      "candidate": "48e731ed266a35c06c9146aff9eaaf866c3a2e3f",
+      "inputs": [
+        "docs/todos/11-reliable-delivery/00-linux-runner-and-dev-guide.md",
+        "AGENTS.md",
+        "build/iter11-platform-baseline/environment-investigation.json",
+        "build/iter11-platform-baseline/python311-mcp1-full.json",
+        "build/iter11-platform-baseline/complete-deps-full.json"
+      ],
+      "capabilities": [
+        "same-native-codex-cli-implementer",
+        "approved-frozen-Linux-runner",
+        "verified-maintenance311-mcp1-environment"
+      ],
+      "dependencies": [],
+      "tool_entry": "/data/workspace/iteration-manager/build/frozen-tools/fdcc4cce8863/scripts/iter_sync.py",
+      "checkpoint": "仅补齐AGENTS实际测试环境与临时目录指导，已有核心/全量输出沿用",
+      "remaining_work": [
+        "文档C3独审",
+        "登记D和strict后启动01"
+      ],
+      "observations": {
+        "authority": {
+          "status": "READY",
+          "summary": "最新用户Linux兼容和双环境AGENTS授权，原卡拥有文件；不改产品源码/测试/冻结目标",
+          "evidence": "docs/todos/11-reliable-delivery/evidence/planning/platform-migration-authorization.json"
+        },
+        "execution": {
+          "status": "READY",
+          "summary": "C2独审及D/strict已完成，完整命令513/2skip正常终态，原实现者可恢复仅文档切片",
+          "evidence": "build/iter11-platform-baseline/python311-mcp1-full.json"
+        },
+        "verification": {
+          "status": "READY",
+          "summary": "已有原始失败、最小探针和通过全量，不重复业务测试；仅核对新指导路径/版本/命令及差异",
+          "evidence": "build/iter11-platform-baseline/environment-investigation.json"
+        }
+      }
+    }
+  }
+}

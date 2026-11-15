@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "phase": "implementation",
+  "candidate": "48e731ed266a35c06c9146aff9eaaf866c3a2e3f",
+  "inputs": [
+    "docs/todos/11-reliable-delivery/00-linux-runner-and-dev-guide.md",
+    "AGENTS.md",
+    "build/iter11-platform-baseline/environment-investigation.json",
+    "build/iter11-platform-baseline/python311-mcp1-full.json",
+    "build/iter11-platform-baseline/complete-deps-full.json"
+  ],
+  "capabilities": [
+    "same-native-codex-cli-implementer",
+    "approved-frozen-Linux-runner",
+    "verified-maintenance311-mcp1-environment"
+  ],
+  "checkpoint": "仅说明性AGENTS改动；现有完整基线513/2skip及环境探针、语法/链接/哈希核对",
+  "remaining_work": [
+    "C3独立文档复审",
+    "登记D和冻结strict",
+    "按序启动01"
+  ],
+  "executor_id": "01a1dd24-bea9-7580-bfbd-5afac812648b",
+  "terminal_evidence": "docs/todos/11-reliable-delivery/evidence/00/fix2-terminal.json",
+  "progress": [
+    {
+      "kind": "implementation",
+      "summary": "可复现双环境维护配置与已证据化限制，不改产品/测试",
+      "evidence": "docs/todos/11-reliable-delivery/evidence/00/fix2-source-manifest.json"
+    }
+  ],
+  "commands": [
+    "docs/todos/11-reliable-delivery/evidence/00/fix2-environment.json"
+  ],
+  "started_at": null,
+  "ended_at": null
+}

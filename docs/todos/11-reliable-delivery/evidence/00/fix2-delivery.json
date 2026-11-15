@@ -1,0 +1,90 @@
+{
+  "kind": "fix2-documentation-handoff",
+  "checkpoint_utc": "2026-11-15T03:44:37.968794+00:00",
+  "head": "48e731ed266a35c06c9146aff9eaaf866c3a2e3f",
+  "approved_runner_candidate": "3f949f807d3c2eb47b97a116bd6932da55778edd",
+  "status": "TESTING candidate; independent documentation review pending",
+  "changed_files": [
+    "AGENTS.md",
+    "docs/todos/11-reliable-delivery/evidence/00/fix2-environment.json",
+    "docs/todos/11-reliable-delivery/evidence/00/fix2-environment.json.child.json",
+    "docs/todos/11-reliable-delivery/evidence/00/fix2-environment.json.output.txt",
+    "docs/todos/11-reliable-delivery/evidence/00/fix2-source-manifest.json",
+    "docs/todos/11-reliable-delivery/evidence/00/fix2-delivery.json"
+  ],
+  "changes": [
+    "Distinguishes stdlib core CLI from optional MCP 1.x FastMCP full-maintenance tests and isolated setup",
+    "Documents verified Python 3.11.17 pytest 9.2.0 MCP 1.30.0 full baseline, Python 3.13.5 targeted results, and original four-failure full-baseline conditions",
+    "Provides Windows PowerShell and Linux Bash isolated venv, quoted mcp constraint, repository-external unique basetemp, deadline runner, receipt and exit propagation guidance",
+    "Preserves historical Windows, Linux platform, Moli, installation and no-deployment boundaries"
+  ],
+  "source_manifest": "docs/todos/11-reliable-delivery/evidence/00/fix2-source-manifest.json",
+  "checks": {
+    "environment_probe": "docs/todos/11-reliable-delivery/evidence/00/fix2-environment.json",
+    "probe_raw_exit": 0,
+    "probe_tree_terminal": true,
+    "probe_result": "Python 3.11.17, pytest 9.2.0, mcp 1.30.0, FastMCP import succeeded",
+    "source_mapping": "all six approved frozen runner files match C2 Git blobs and worktree SHA256",
+    "doc_link": "task00 card path exists and its ledger points to baseline originals",
+    "bash_syntax": "all AGENTS Bash blocks passed bash -n",
+    "tmp_git_ancestor": "git -C /tmp rev-parse --show-toplevel exit 128",
+    "powershell": "examples inspected; pwsh unavailable, no Windows execution claimed",
+    "test_references": "rg over tests found no AGENTS.md or environment-path references",
+    "git_diff_check": "passed",
+    "pytest": "not rerun: explanatory documentation only; no product or test source changed"
+  },
+  "reused_evidence": [
+    {
+      "path": "build/iter11-platform-baseline/complete-deps-full.json",
+      "output": "build/iter11-platform-baseline/complete-deps-full.json.output.txt",
+      "result": "exit 1, tree_terminal true; 509 passed, 4 failed, 2 skipped under Python 3.13.5, Git-internal basetemp and missing MCP",
+      "applicability": "historical initial baseline and failure attribution, not a PASS"
+    },
+    {
+      "path": "build/iter11-platform-baseline/environment-investigation.json",
+      "output": "build/iter11-platform-baseline/environment-probe.json.output.txt",
+      "result": "external temp and Python 3.11 probes; MCP 2.x FastMCP failure",
+      "applicability": "environment-specific diagnosis"
+    },
+    {
+      "path": "build/iter11-platform-baseline/mcp-v1-probe.json.output.txt",
+      "result": "1 passed with MCP v1",
+      "applicability": "the FastMCP compatibility probe, not the full suite"
+    },
+    {
+      "path": "build/iter11-platform-baseline/python311-mcp1-full.json",
+      "output": "build/iter11-platform-baseline/python311-mcp1-full.json.output.txt",
+      "result": "exit 0, tree_terminal true; 513 passed, 2 skipped, Python 3.11.17 pytest 9.2.0 MCP 1.30.0, external /tmp basetemp",
+      "applicability": "full maintenance baseline for prior candidate and unchanged product/test source; guide edits are documentation only"
+    },
+    {
+      "path": "docs/todos/11-reliable-delivery/evidence/00/fix1-green-final.json",
+      "output": "docs/todos/11-reliable-delivery/evidence/00/fix1-green-final.json.output.txt",
+      "result": "30 passed, 2 skipped, Python 3.13 runner-targeted",
+      "applicability": "approved C2 runner source and unchanged tests"
+    },
+    {
+      "path": "docs/todos/11-reliable-delivery/evidence/00/fix1-regression-final.json",
+      "output": "docs/todos/11-reliable-delivery/evidence/00/fix1-regression-final.json.output.txt",
+      "result": "147 passed, 2 skipped, Python 3.13 affected regression",
+      "applicability": "approved C2 runner source and unchanged tests"
+    },
+    {
+      "path": "/data/workspace/iteration-manager/build/frozen-runners/iter11-platform-v1/manifest-initial-incomplete.json",
+      "result": "initial incomplete snapshot retained, corrected by adding three files from same C2",
+      "applicability": "snapshot provenance, not a tool upgrade"
+    }
+  ],
+  "remaining": [
+    "Controller observes native terminal and command terminal, records attempt/release, and commits exact documentation candidate C3",
+    "Eligible independent reviewer reviews C3 documentation and C2 runner evidence without treating old approval as approval of new documentation",
+    "After approval Controller registers D and runs frozen coordinator local strict",
+    "Reconcile approved frozen runner and applicable full baseline, then proceed serially to task01 only after task00 acceptance"
+  ],
+  "limits": [
+    "No current Windows rerun or PowerShell execution",
+    "No Python 3.13 full-suite pass; signature formatting limitation remains",
+    "No pytest rerun in this documentation slice, no all-version compatibility or deployment claim"
+  ],
+  "active_commands": "No task00-owned command active at checkpoint; unrelated processes untouched"
+}

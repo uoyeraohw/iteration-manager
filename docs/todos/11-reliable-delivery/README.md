@@ -139,11 +139,11 @@
 <!-- iter:projection -->
 ## 验收事实（阶段比例不是工时）
 
-声明DONE 1/13 · 验收PASS 1/13
+声明DONE 0/13 · 验收PASS 0/13
 
 | 任务 | 声明 | 验收 | 业务阶段 / 清单比例 | 工程阶段 | 阻塞原因 | 累计尝试 | 最后更新 |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| 00-linux-runner-and-dev-guide.md | DONE | PASS | 阶段清单已勾选完毕 / 3/3 (100%) | CHECKLIST_COMPLETE (未等同验收) | 未记录 | 1 | 2026-11-15T03:33:36.945243+00:00 |
+| 00-linux-runner-and-dev-guide.md | TESTING | UNKNOWN | 阶段清单已勾选完毕 / 3/3 (100%) | CHECKLIST_COMPLETE (未等同验收) | 未记录 | 2 | 2026-11-15T03:45:49.771066+00:00 |
 | 01-delivery-mode-consistency.md | TODO | UNKNOWN | 冻结包含未知模式的合法Git绑定反例和兼容矩阵，取得目标断言RED / 0/3 (0%) | red：python -B -m pytest -p no:cacheprovider tests/test_delivery_mode_consistency.py tests/test_query_contract.py tests/test_execution_readiness.py tests/test_completion_gates.py tests/test_filesystem_receipts.py -q；由同一实现者先取得验收中具体行为断言失败，环境/导入失败不作RED；通过冻结runner。 | 未记录 | 0 | UNKNOWN |
 | 02-takeover-report-isolation.md | TODO | UNKNOWN | 对健康卡混合UnicodeError、OSError及发现后删除构造有效断言RED / 0/3 (0%) | red：python -B -m pytest -p no:cacheprovider tests/test_takeover_resilience.py tests/test_task_discovery_compat.py tests/test_cli_compatibility.py tests/test_sync_compatibility.py -q；由同一实现者先取得验收中具体行为断言失败，环境/导入失败不作RED；通过冻结runner。 | 未记录 | 0 | UNKNOWN |
 | 03-native-dispatch-guard.md | TODO | UNKNOWN | 以可控Promise覆盖running/失败/乱序及身份不符，取得断言RED / 0/3 (0%) | red：python -B -m pytest -p no:cacheprovider tests/test_dispatch_guard.py tests/test_deadline_watch.py -q；由同一实现者先取得验收中具体行为断言失败，环境/导入失败不作RED；通过冻结runner。 | 未记录 | 0 | UNKNOWN |
