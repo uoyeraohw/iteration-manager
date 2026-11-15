@@ -122,16 +122,30 @@ def _render_task_envelope(task_file: Path, repo_dir: Path, audit_task):
         audit = audit_task(task_file)
         status = card_status(content)
         micro = parse_task_stages_and_micro_state(content, status)
-        projection = task_handoff_projection(task_file, meta, state)
+        profile_error = None
+        try:
+            projection = task_handoff_projection(task_file, meta, state)
+        except (OSError, ValueError, TypeError) as error:
+            # Only add a handoff for profile failures; other projection errors
+            # retain the legacy outer exception response.
+            try:
+                load_profile(task_file.resolve().parent)
+            except (OSError, ValueError, TypeError):
+                profile_error = str(error)
+                projection = dict(delivery_mode="UNKNOWN", candidate_id=None, execution=None)
+            else:
+                raise
         changed = []
-        if meta.get("base_sha") and meta.get("head_sha"):
+        if not profile_error and meta.get("base_sha") and meta.get("head_sha"):
             try:
                 base = resolve_commit(meta["base_sha"], repo_dir)
                 head = resolve_commit(meta["head_sha"], repo_dir)
                 changed = [p for p in _checked_git(["diff", "--name-only", "-z", base, head, "--"], repo_dir).split("\0") if p]
             except (RuntimeError, ValueError) as error:
                 errors.append(str(error))
-        return {"TASK_HANDOFF": dict(
+        if profile_error and profile_error not in audit["violations"]:
+            errors.append(profile_error)
+        result = {"TASK_HANDOFF": dict(
             schema_version=1, task_id=meta.get("task_id", task_file.stem),
             **projection,
             task_name=meta.get("task_name", task_file.stem), type=meta.get("type", "UNKNOWN"),
@@ -139,9 +153,12 @@ def _render_task_envelope(task_file: Path, repo_dir: Path, audit_task):
             fix_rounds=state["round"], fix_total=state["total"], consilium_count=state["consilium"],
             replan_count=state["replan"], writer=state["writer"], blocked_reason=state["blocked_reason"],
             is_blocked=bool(state["blocked_reason"]) or status == 'FUSED', review_status=meta.get("review_status", "PENDING"),
-            acceptance_verdict=audit["verdict"], evidence={"receipt":meta.get("review_receipt", "")},
+            acceptance_verdict="FAIL" if profile_error else audit["verdict"], evidence={"receipt":meta.get("review_receipt", "")},
             errors=errors+audit["violations"], files_changed_count=len(changed), files_changed=changed,
             stage_current=micro["stage_current"], stage_progress=micro["stage_progress"])}
+        if profile_error:
+            result["error"] = profile_error
+        return result
     except (OSError, ValueError, TypeError) as error:
         return {"error": str(error)}
 

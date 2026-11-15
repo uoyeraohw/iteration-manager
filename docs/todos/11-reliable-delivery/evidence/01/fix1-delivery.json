@@ -1,0 +1,96 @@
+{
+  "base_c1": "a1de6fc5229f1a5d18b1967936f4cf269abd15d3",
+  "original_base": "1e99816564fa89d0b43db7a96fbc7c0dac1b6dd9",
+  "native_uuid": "01a1dd56-105c-79d0-9b73-7a708e7d9369",
+  "native_stream": "docs/todos/11-reliable-delivery/evidence/01/fix1-native.jsonl",
+  "status": "Uncommitted implementer candidate; maximum TESTING; no approval",
+  "finding": "F1: broken profile envelope needs both existing top-level error and UNKNOWN handoff with errors",
+  "changed_files": [
+    "scripts/iter_queries.py",
+    "tests/test_delivery_mode_consistency.py",
+    ".agents/notes/planned/iter11/01-delivery-mode-consistency.md",
+    "docs/todos/11-reliable-delivery/evidence/01/fix1-red-0401.json",
+    "docs/todos/11-reliable-delivery/evidence/01/fix1-red-0401.json.output.txt",
+    "docs/todos/11-reliable-delivery/evidence/01/fix1-red-0401.json.child.json",
+    "docs/todos/11-reliable-delivery/evidence/01/fix1-final-0401.json",
+    "docs/todos/11-reliable-delivery/evidence/01/fix1-final-0401.json.output.txt",
+    "docs/todos/11-reliable-delivery/evidence/01/fix1-final-0401.json.child.json",
+    "docs/todos/11-reliable-delivery/evidence/01/fix1-source-manifest.json",
+    "docs/todos/11-reliable-delivery/evidence/01/fix1-delivery.json"
+  ],
+  "controller_owned_dirty": "Task card and preexisting fix1 metadata and review evidence are controller-owned; not modified by implementer.",
+  "source_manifest": "docs/todos/11-reliable-delivery/evidence/01/fix1-source-manifest.json",
+  "commands": [
+    {
+      "purpose": "assertion RED",
+      "receipt": "docs/todos/11-reliable-delivery/evidence/01/fix1-red-0401.json",
+      "output": "docs/todos/11-reliable-delivery/evidence/01/fix1-red-0401.json.output.txt",
+      "child": "docs/todos/11-reliable-delivery/evidence/01/fix1-red-0401.json.child.json",
+      "runner": "/data/workspace/iteration-manager/build/frozen-runners/iter11-platform-v1/scripts/iter_run.py",
+      "deadline": "2026-11-15T04:05:42.806000+00:00",
+      "argv": [
+        "/data/workspace/iteration-manager/build/iter11-maint-venv/bin/python",
+        "-B",
+        "-m",
+        "pytest",
+        "-p",
+        "no:cacheprovider",
+        "tests/test_delivery_mode_consistency.py",
+        "-q",
+        "--basetemp",
+        "/tmp/iter11-task01-fix1-red-0401"
+      ],
+      "status": "COMPLETED",
+      "exit": 1,
+      "tree_terminal": true,
+      "count": "7 failed, 29 passed"
+    },
+    {
+      "purpose": "GREEN and regression",
+      "receipt": "docs/todos/11-reliable-delivery/evidence/01/fix1-final-0401.json",
+      "output": "docs/todos/11-reliable-delivery/evidence/01/fix1-final-0401.json.output.txt",
+      "child": "docs/todos/11-reliable-delivery/evidence/01/fix1-final-0401.json.child.json",
+      "runner": "/data/workspace/iteration-manager/build/frozen-runners/iter11-platform-v1/scripts/iter_run.py",
+      "deadline": "2026-11-15T04:05:42.806000+00:00",
+      "argv": [
+        "/data/workspace/iteration-manager/build/iter11-maint-venv/bin/python",
+        "-B",
+        "-m",
+        "pytest",
+        "-p",
+        "no:cacheprovider",
+        "tests/test_delivery_mode_consistency.py",
+        "tests/test_query_contract.py",
+        "tests/test_execution_readiness.py",
+        "tests/test_completion_gates.py",
+        "tests/test_filesystem_receipts.py",
+        "-q",
+        "--basetemp",
+        "/tmp/iter11-task01-fix1-final-0401"
+      ],
+      "status": "COMPLETED",
+      "exit": 0,
+      "tree_terminal": true,
+      "count": "130 passed"
+    }
+  ],
+  "red": "All seven failures were assertions on absent TASK_HANDOFF, with original exact error assertions already passing; malformed JSON and invalid schema cases included IN_PROGRESS, FUSED and invalid status. No missing-import or environment error.",
+  "error_compatibility": "Consumer tests assert exact original error text for malformed JSON and invalid schema in real CLI output, unchanged direct projection ValueError text, audit non-PASS, board UNKNOWN with findings, and inventory exit 3. Existing render-envelope CLI returns 0 and communicates the failure through top-level error; this exit contract remains unchanged. The handoff is UNKNOWN, has source errors, and is never PASS.",
+  "regression_reuse": "Final five-file run matches both required GREEN and regression selections on same candidate and environment, so one run serves both. The earlier task01 RED and 124 pass are prior C1 evidence only; not claimed as this candidate run.",
+  "prior_evidence": [
+    "docs/todos/11-reliable-delivery/evidence/01/task01-red-0354.json",
+    "docs/todos/11-reliable-delivery/evidence/01/task01-final-0355.json"
+  ],
+  "remaining": [
+    "Controller observes native terminal and records attempt/release",
+    "Controller freezes and commits C2 with separate authorization",
+    "Independent scoped review of C2 and F1 with real source/evidence",
+    "Controller records D after approval and runs frozen coordinator local strict, acknowledging its known mode audit defect"
+  ],
+  "limits": [
+    "No independent approval, task DONE, deployment, merge or push.",
+    "No full suite or Windows run; prior C1 evidence is not a test of the new candidate.",
+    "Source manifest is a bounded inventory, not a full environment snapshot."
+  ],
+  "active_commands": "Both controlled runner commands completed and receipts report tree_terminal true; native session remains active until return."
+}

@@ -93,10 +93,10 @@ def test_invalid_modes_rejected_by_dispatch_audit_and_board(tmp_path, mode, prof
     assert board['delivery_mode'] == 'UNKNOWN' and board['findings'], board
     envelope = render_task_envelope(card, tmp_path)
     if profile == 'broken':
-        assert envelope.get('error')
-    else:
-        handoff = envelope['TASK_HANDOFF']
-        assert handoff['delivery_mode'] == 'UNKNOWN' and handoff['errors'], handoff
+        assert envelope.get('error') == 'Unsupported delivery profile schema keys'
+    assert 'TASK_HANDOFF' in envelope, envelope
+    handoff = envelope['TASK_HANDOFF']
+    assert handoff['delivery_mode'] == 'UNKNOWN' and handoff['errors'], handoff
 
 
 def test_valid_filesystem_done_control(tmp_path):
@@ -183,3 +183,37 @@ def test_valid_mode_dispatch_with_claimed_owner(tmp_path, mode):
     assert json.loads(result.stdout)['delivery_mode'] == ('git' if mode == 'absent' else mode)
     assert generate_board_data(card.parent)['cards'][0]['delivery_mode'] == ('git' if mode == 'absent' else mode)
     assert render_task_envelope(card, tmp_path)['TASK_HANDOFF']['delivery_mode'] == ('git' if mode == 'absent' else mode)
+
+
+@pytest.mark.parametrize('raw,expected', [
+    ('{', 'Corrupt iteration-delivery.json: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)'),
+    ('{}', 'Unsupported delivery profile schema keys'),
+])
+@pytest.mark.parametrize('status', ['IN_PROGRESS', 'FUSED', 'invalid'])
+def test_broken_profile_envelope_retains_error_and_unknown_handoff(tmp_path, raw, expected, status):
+    from iter_autonomy import load_state
+    from iter_contracts import parse_card
+    from iter_queries import task_handoff_projection
+    card, ctx, _ = fixture(tmp_path)
+    card.write_text(card.read_text().replace('status: IN_PROGRESS', 'status: ' + status), encoding='utf-8')
+    (card.parent / 'iteration-delivery.json').write_text(raw, encoding='utf-8')
+    meta, _, _ = parse_card(card.read_text())
+    with pytest.raises(ValueError) as error:
+        task_handoff_projection(card, meta, load_state(meta))
+    assert str(error.value) == expected
+    assert audit_task_file(card)['verdict'] != 'PASS'
+    board = generate_board_data(card.parent)['cards'][0]
+    assert board['delivery_mode'] == 'UNKNOWN' and expected in board['findings']
+    inventory = cli(tmp_path, '--inventory', card.parent, '--mode', 'continue', '--context', ctx.name)
+    assert inventory.returncode == 3 and expected in inventory.stdout
+    response = cli(tmp_path, '--render-envelope', card, tmp_path)
+    assert response.returncode == 0  # Existing CLI contract exposes the error in JSON.
+    envelope = json.loads(response.stdout)
+    assert envelope['error'] == expected
+    assert 'TASK_HANDOFF' in envelope, envelope
+    handoff = envelope['TASK_HANDOFF']
+    assert handoff['delivery_mode'] == 'UNKNOWN' and expected in handoff['errors']
+    assert handoff['acceptance_verdict'] != 'PASS'
+    assert handoff['status'] == ('UNKNOWN' if status == 'invalid' else status)
+    if status == 'FUSED':
+        assert handoff['is_blocked'] is True

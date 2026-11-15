@@ -1,0 +1,10 @@
+{
+  "kind": "controller-implementation-ruling",
+  "recorded_at": "2026-11-15T04:00:21.222018+00:00",
+  "source_authorization": "User authorized all iteration11 implementation and Linux adaptation; task01 frozen acceptance and compatibility retained",
+  "finding": "F1",
+  "decision": "Preserve existing top-level error key and exact error text for malformed delivery profile, and add the existing TASK_HANDOFF representation with delivery_mode UNKNOWN and nonempty errors. Retain valid response shape/public signatures/direct projection exception contract. Error consumers keep their established entry; readers obtain the frozen required UNKNOWN projection. No fallback Git, no readiness/approval from error. Add consumer assertions and reverify.",
+  "scope": "Existing task01 query and test/note scope only",
+  "contract_change": false,
+  "replan": false
+}

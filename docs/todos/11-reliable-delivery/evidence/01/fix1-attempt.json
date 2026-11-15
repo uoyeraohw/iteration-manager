@@ -1,0 +1,49 @@
+{
+  "version": 1,
+  "phase": "implementation",
+  "candidate": "a1de6fc5229f1a5d18b1967936f4cf269abd15d3",
+  "inputs": [
+    "docs/todos/11-reliable-delivery/01-delivery-mode-consistency.md",
+    "scripts/iter_queries.py",
+    "tests/test_delivery_mode_consistency.py",
+    "docs/todos/11-reliable-delivery/evidence/01/preliminary-review1.json",
+    "docs/todos/11-reliable-delivery/evidence/01/fix1-controller-ruling.json"
+  ],
+  "capabilities": [
+    "native-codex-cli-implementer",
+    "approved-frozen-linux-runner",
+    "Python3.11.17-pytest9.2-mcp1.30",
+    "independent-native-reviewer"
+  ],
+  "checkpoint": "F1消费者断言RED7失败；保留原error和补UNKNOWN/errors后130通过",
+  "remaining_work": [
+    "新C对F1受影响独审",
+    "批准D/strict",
+    "串行02"
+  ],
+  "executor_id": "01a1dd56-105c-79d0-9b73-7a708e7d9369",
+  "terminal_evidence": "docs/todos/11-reliable-delivery/evidence/01/fix1-terminal.json",
+  "progress": [
+    {
+      "kind": "red",
+      "summary": "原error文本已正确而TASK_HANDOFF缺失的7项真实断言失败",
+      "evidence": "docs/todos/11-reliable-delivery/evidence/01/fix1-red-0401.json.output.txt"
+    },
+    {
+      "kind": "implementation",
+      "summary": "只对profile失败补UNKNOWN交接，保留原error/公共异常",
+      "evidence": "docs/todos/11-reliable-delivery/evidence/01/fix1-source-manifest.json"
+    },
+    {
+      "kind": "green",
+      "summary": "相同最终五文件130通过覆盖GREEN及regression",
+      "evidence": "docs/todos/11-reliable-delivery/evidence/01/fix1-final-0401.json.output.txt"
+    }
+  ],
+  "commands": [
+    "docs/todos/11-reliable-delivery/evidence/01/fix1-red-0401.json",
+    "docs/todos/11-reliable-delivery/evidence/01/fix1-final-0401.json"
+  ],
+  "started_at": null,
+  "ended_at": null
+}
