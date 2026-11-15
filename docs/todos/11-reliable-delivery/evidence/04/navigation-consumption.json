@@ -1,0 +1,115 @@
+{
+  "kind": "fresh-native-read-only-navigation-consumption",
+  "observed_at_utc": "2026-11-15T04:36:52.412368+00:00",
+  "codex_thread_id": "01a1dd7d-fabf-7a82-829f-7c6b33a9f640",
+  "cwd": "/data/workspace/iteration-manager/.worktrees/iter-11",
+  "worktree_head": "6b6b5515e6e0ea58c1d66d1de514811782441fc5",
+  "branch": "feat/iter-11-reliable-delivery",
+  "candidate_scope": "Current worktree candidate includes uncommitted SKILL.md and other task04 changes; this is not an installed skill or deployment observation.",
+  "role": "task04 validation consumer, not independent reviewer",
+  "navigation_scenario": "continue task01 read-only; actual runtime task04 validation only",
+  "input_routes": [
+    "SKILL.md",
+    "references/agent_protocol.md",
+    "references/task_card_schema.md",
+    "docs/todos/11-reliable-delivery/README.md#iter:goal",
+    "docs/todos/11-reliable-delivery/01-delivery-mode-consistency.md",
+    "templates/contracts/strict_tdd_contract.md",
+    "docs/todos/11-reliable-delivery/evidence/01/"
+  ],
+  "other_read_paths": [
+    "/data/home/.codex/skills/using-superpowers/SKILL.md",
+    "/data/home/MACHINE.md",
+    "docs/todos/11-reliable-delivery/evidence/01/task01-red-0354.json",
+    "docs/todos/11-reliable-delivery/evidence/01/task01-red-0354.json.output.txt",
+    "docs/todos/11-reliable-delivery/evidence/01/task01-final-0355.json",
+    "docs/todos/11-reliable-delivery/evidence/01/task01-final-0355.json.output.txt",
+    "docs/todos/11-reliable-delivery/evidence/01/fix1-red-0401.json",
+    "docs/todos/11-reliable-delivery/evidence/01/fix1-red-0401.json.output.txt",
+    "docs/todos/11-reliable-delivery/evidence/01/fix1-final-0401.json",
+    "docs/todos/11-reliable-delivery/evidence/01/fix1-final-0401.json.output.txt",
+    "docs/todos/11-reliable-delivery/evidence/01/review-receipt.json",
+    "docs/todos/11-reliable-delivery/evidence/01/review-report.json",
+    "docs/todos/11-reliable-delivery/evidence/04/navigation-scenario.md"
+  ],
+  "goal_actual_text": "让现有交付协议不误放行、容易正确使用、可可靠续接且证据可追溯；八项意见统一纳入本轮，使用iteration-manager真实管理自身。任务卡和既有autonomy事件是唯一任务真源。\n\n### 执行约定\n- 2026-11-15用户明确授权实施、精准Git提交和创建独立Worktree，覆盖原初始化授权的相应限制；暂不部署、推送、合流或清理。真实任务交付为Git，任务初态TODO/review PENDING/tdd_verified=false。原初始化授权和证据保留，不回写成已执行事实。\n- 维护源码基线与正式协调CLI固定fdcc4cce88635ee81573be5991de11de650659d8；仅runner按00显式平台迁移。候选门禁变更不自动升级协调器，不自证批准。\n- 按本次用户要求严格串行00→01→02→03→04→05→06→07→08→09→10→11→12；每卡完成type证据、非参与者批准、C/D绑定和冻结local strict验收PASS后才启动下一卡。硬依赖字段保留原意，不把用户串行调度改写为规格依赖；前卡阻断时不跳卡。一个卡片一个写者，源文件单一归属。独审不得参与本任务设计/实现/测试/RCA。\n- 默认预算5/10/1/2，连续两次无新增证据禁止原样第三次派发。会话与命令树终态分离，绝对UTC在真实派发时确定。\n- 用户明确授权Linux适配，00先实现并独审当前平台runner，验收后仅将runner及直接依赖固定到`/data/workspace/iteration-manager/build/frozen-runners/iter11-platform-v1/`；保存C来源及逐文件SHA256，不追随候选。协调CLI仍固定fdcc4cc。00的GNU timeout限时引导例外只验证runner自身，记录真实bootstrap观察，不伪造旧runner收据。01前通过新冻结runner的完整干净基线；后续正式业务/测试/验收均走它。原十二卡中的Windows前提按此显式平台迁移接续，其余验收和预算不变。\n- 无新依赖/打包平台/调度数据库/第五type/跨调用批准缓存；Linux runner扩展仅按00本次授权实施；不扩展FS时间中断grant或自动发现。按支持矩阵与实测决定后续投入。\n- 不修改历史docs/todos/10或发布原件，不回写旧任务门禁；根索引仅本次main初始化登记，后续特性分支Zero-Root-Touch。\n- 沿用Git C→独审→登记D→local strict；完成全部卡、整轮集成/全量和独立总审后，对最终登记候选运行冻结branch strict。提前结构预检不替代收口。\n- 不执行真实安装同步、助手配置、远端推送、合流或清理。新manifest默认stdout和临时副本验证，不自动扩大部署白名单。\n- 冻结协调器含已知模式审计和旧接管读取缺陷，记录为FROZEN-KNOWN-01/02。相应负例的候选/固定差异是预期修复证据；实际管理卡仅合法Git且独立核对模式，不凭固定工具PASS放行非法卡。\n- 11交付并独审登记DONE后，Controller另完成独立整轮总审和最终branch strict，防止11自要求其尚未能通过的门禁。收口原件放主checkout的build/iter11-closeout/带UTC唯一目录；不写入已审任务scope，README只记摘要/引用。清理前按授权归档，未归档不得清理唯一原件。\n- 全部13卡PASS后由Controller统一整轮收口；10只做隔离联合验证，11只做选定真实链审计，12只修执行流程契约。三者不互设循环批准前提。\n- **实际固定入口**：`/data/workspace/iteration-manager/build/frozen-tools/fdcc4cce8863/scripts/iter_sync.py`；模板生成器和截止守卫取同一快照；runner在00通过前仍保留原快照，之后取明确批准的平台快照。逐文件Git字节和SHA256清单见planning/coordinator-manifest.json；不可随候选自动更新。\n- **三级验证**：内环按卡针对性测试；任务交付完成其type检查、直接兼容/回归与独审。全部卡PASS后的集成路径为01模式→02报告→03守卫→投影/事件/交接，以及06临时安装→07测试支持、08合法批准库存；最终全量为`python -B -m pytest -p no:cacheprovider tests -q`。\n- **正式命令入口**：在实际目标项目根目录使用当前平台已验收冻结的`iter_run.py --deadline 实际UTC --evidence 项目相对唯一收据 -- python -B -m pytest -p no:cacheprovider ... -q`。这里是使用形式说明，绝对UTC和真实argv由本次派发即时生成，不原样执行省略号，不回退裸命令。\n- **角色与时间**：主控/主管协调，不写产品；同一owner完成核心RED/GREEN及返修，非参与者独审。按真实schema确定原生工具，不猜助手ID；每次锁定绝对UTC和正常检查点，默认10分钟介入、至少90秒收尾，已知跑不完的门禁不启动。\n- **正式证据与临时输出**：逐卡`evidence/01/`至`evidence/12/`；规划原件在`evidence/planning/`；pytest临时目录和临时安装用独占临时根，运行资产在build，不覆盖原件、不清理他人输出。\n- **冻结器已知限制**：FROZEN-KNOWN-01未知模式DONE审计，FROZEN-KNOWN-02旧接管读取中断。实际管理卡均用合法Git缺省；Controller和独审显式核对模式。候选负例拒绝而固定器未拒绝属于预期修复差异，固定器PASS不能覆盖该语义缺口。\n\n### Review Focus\n1. 非法显式模式原本就在冻结规格中仍须拒绝：01的合法其余Git绑定反例，10跨投影复核。\n2. 一张卡读失败不能拖丢其余库存：02混合Unicode/OSError/竞态，10交叉报告。\n3. 检查仍running、旧request/owner/context及委派unknown不误派发：03异步负例、11原生顺序、12默认消费。\n4. 来源/快照/能力声明不能相互代替：06清单越界/漂移，07白名单临时测试，08合法收据库存，05支持矩阵。\n5. 自用不自证且不循环收口：固定器缺陷保留，11审计实际链，全部卡PASS后Controller总审/最终strict，不改已审scope或嵌入巨型日志。",
+  "envelope": {
+    "argv": [
+      "python3",
+      "-B",
+      "/data/workspace/iteration-manager/build/frozen-tools/fdcc4cce8863/scripts/iter_sync.py",
+      "--render-envelope",
+      "docs/todos/11-reliable-delivery/01-delivery-mode-consistency.md"
+    ],
+    "exit_code": 0,
+    "stdout": "{\n  \"TASK_HANDOFF\": {\n    \"schema_version\": 1,\n    \"task_id\": \"01\",\n    \"delivery_mode\": \"git\",\n    \"candidate_id\": \"\",\n    \"execution\": {\n      \"attempt_count\": 4,\n      \"no_progress_streak\": 0,\n      \"last_attempt\": {\n        \"source\": \"build/iter11-review/task01-review2/attempt.json\",\n        \"phase\": \"evidence-inspection\",\n        \"delivery_mode\": \"git\",\n        \"candidate\": \"a178fbc65c6bc2cd9fed19e691571080e73e1e60\",\n        \"conditions\": {\n          \"inputs\": [\n            \"docs/todos/11-reliable-delivery/01-delivery-mode-consistency.md\",\n            \"docs/todos/11-reliable-delivery/evidence/01/fix1-controller-ruling.json\",\n            \"docs/todos/11-reliable-delivery/evidence/01/preliminary-review1.json\",\n            \"scripts/iter_queries.py\",\n            \"tests/test_delivery_mode_consistency.py\"\n          ],\n          \"capabilities\": [\n            \"Python3.11.17-pytest9.2-mcp1.30\",\n            \"approved-frozen-linux-runner\",\n            \"independent-native-reviewer\",\n            \"native-codex-cli-implementer\"\n          ],\n          \"scope\": [\n            \".agents/notes/planned/iter11/01-delivery-mode-consistency.md\",\n            \"docs/todos/11-reliable-delivery/evidence/01/\",\n            \"scripts/iter_contracts.py\",\n            \"scripts/iter_preflight.py\",\n            \"scripts/iter_queries.py\",\n            \"tests/test_delivery_mode_consistency.py\",\n            \"tests/test_execution_readiness.py\",\n            \"tests/test_query_contract.py\"\n          ]\n        },\n        \"executor_id\": \"01a1dd5a-d17c-78d0-a389-42bd8a3ed379\",\n        \"executor_state\": \"completed\",\n        \"terminal_evidence\": \"build/iter11-review/task01-review2/terminal.json\",\n        \"progress\": [\n          {\n            \"kind\": \"review-finding\",\n            \"evidence\": \"build/iter11-review/task01-review2/report.json\",\n            \"summary\": \"F1 ADDRESSED；当前task01 C2独立APPROVED，无剩余发现\"\n          }\n        ],\n        \"checkpoint\": \"同一独立Reviewer复审F1已关闭，C2 Spec/Quality APPROVED；130真实输出和兼容已核验\",\n        \"remaining_work\": [\n          \"02串行推进\",\n          \"登记D/冻结strict\"\n        ],\n        \"commands\": [\n          {\n            \"receipt\": \"build/iter11-review/task01-review2/scope-runner.json\",\n            \"status\": \"COMPLETED\",\n            \"raw_exit_code\": 0,\n            \"started_at\": \"2026-11-15T04:04:32.735318+00:00\",\n            \"ended_at\": \"2026-11-15T04:04:32.847123+00:00\"\n          }\n        ],\n        \"started_at\": null,\n        \"ended_at\": null,\n        \"session_seconds\": null,\n        \"command_seconds\": 0.111805\n      },\n      \"checkpoint\": {\n        \"candidate\": \"a178fbc65c6bc2cd9fed19e691571080e73e1e60\",\n        \"phase\": \"evidence-inspection\",\n        \"summary\": \"同一独立Reviewer复审F1已关闭，C2 Spec/Quality APPROVED；130真实输出和兼容已核验\",\n        \"progress\": [\n          {\n            \"kind\": \"review-finding\",\n            \"evidence\": \"build/iter11-review/task01-review2/report.json\",\n            \"summary\": \"F1 ADDRESSED；当前task01 C2独立APPROVED，无剩余发现\"\n          }\n        ],\n        \"source\": \"build/iter11-review/task01-review2/attempt.json\"\n      },\n      \"remaining_work\": [\n        \"02串行推进\",\n        \"登记D/冻结strict\"\n      ]\n    },\n    \"task_name\": \"统一交付模式解析与完成审计\",\n    \"type\": \"Strict-TDD\",\n    \"status\": \"DONE\",\n    \"commit_sha\": \"a178fbc65c6bc2cd9fed19e691571080e73e1e60\",\n    \"base_sha\": \"1e99816564fa89d0b43db7a96fbc7c0dac1b6dd9\",\n    \"fix_rounds\": 1,\n    \"fix_total\": 1,\n    \"consilium_count\": 0,\n    \"replan_count\": 0,\n    \"writer\": \"\",\n    \"blocked_reason\": \"\",\n    \"is_blocked\": false,\n    \"review_status\": \"APPROVED\",\n    \"acceptance_verdict\": \"PASS\",\n    \"evidence\": {\n      \"receipt\": \"docs/todos/11-reliable-delivery/evidence/01/review-receipt.json\"\n    },\n    \"errors\": [],\n    \"files_changed_count\": 54,\n    \"files_changed\": [\n      \".agents/notes/planned/iter11/01-delivery-mode-consistency.md\",\n      \"docs/todos/11-reliable-delivery/01-delivery-mode-consistency.md\",\n      \"docs/todos/11-reliable-delivery/README.md\",\n      \"docs/todos/11-reliable-delivery/evidence/01/attempt.call.json\",\n      \"docs/todos/11-reliable-delivery/evidence/01/attempt.json\",\n      \"docs/todos/11-reliable-delivery/evidence/01/claim.call.json\",\n      \"docs/todos/11-reliable-delivery/evidence/01/delivery.json\",\n      \"docs/todos/11-reliable-delivery/evidence/01/dispatch-check.call.json\",\n      \"docs/todos/11-reliable-delivery/evidence/01/fix1-attempt.call.json\",\n      \"docs/todos/11-reliable-delivery/evidence/01/fix1-attempt.json\",\n      \"docs/todos/11-reliable-delivery/evidence/01/fix1-brief.md\",\n      \"docs/todos/11-reliable-delivery/evidence/01/fix1-budget.call.json\",\n      \"docs/todos/11-reliable-delivery/evidence/01/fix1-claim.call.json\",\n      \"docs/todos/11-reliable-delivery/evidence/01/fix1-context.json\",\n      \"docs/todos/11-reliable-delivery/evidence/01/fix1-controller-ruling.json\",\n      \"docs/todos/11-reliable-delivery/evidence/01/fix1-delivery.json\",\n      \"docs/todos/11-reliable-delivery/evidence/01/fix1-dispatch-check.call.json\",\n      \"docs/todos/11-reliable-delivery/evidence/01/fix1-final-0401.json\",\n      \"docs/todos/11-reliable-delivery/evidence/01/fix1-final-0401.json.child.json\",\n      \"docs/todos/11-reliable-delivery/evidence/01/fix1-final-0401.json.output.txt\",\n      \"docs/todos/11-reliable-delivery/evidence/01/fix1-last-message.txt\",\n      \"docs/todos/11-reliable-delivery/evidence/01/fix1-native.jsonl\",\n      \"docs/todos/11-reliable-delivery/evidence/01/fix1-native.stderr.txt\",\n      \"docs/todos/11-reliable-delivery/evidence/01/fix1-red-0401.json\",\n      \"docs/todos/11-reliable-delivery/evidence/01/fix1-red-0401.json.child.json\",\n      \"docs/todos/11-reliable-delivery/evidence/01/fix1-red-0401.json.output.txt\",\n      \"docs/todos/11-reliable-delivery/evidence/01/fix1-release.call.json\",\n      \"docs/todos/11-reliable-delivery/evidence/01/fix1-source-manifest.json\",\n      \"docs/todos/11-reliable-delivery/evidence/01/fix1-terminal.json\",\n      \"docs/todos/11-reliable-delivery/evidence/01/implementation-brief.md\",\n      \"docs/todos/11-reliable-delivery/evidence/01/implementation-context.json\",\n      \"docs/todos/11-reliable-delivery/evidence/01/implementation-last-message.txt\",\n      \"docs/todos/11-reliable-delivery/evidence/01/implementation-native.jsonl\",\n      \"docs/todos/11-reliable-delivery/evidence/01/implementation-native.stderr.txt\",\n      \"docs/todos/11-reliable-delivery/evidence/01/implementation-terminal.json\",\n      \"docs/todos/11-reliable-delivery/evidence/01/inventory.call.json\",\n      \"docs/todos/11-reliable-delivery/evidence/01/preliminary-review1.json\",\n      \"docs/todos/11-reliable-delivery/evidence/01/release.call.json\",\n      \"docs/todos/11-reliable-delivery/evidence/01/review1-claim.call.json\",\n      \"docs/todos/11-reliable-delivery/evidence/01/review2-claim.call.json\",\n      \"docs/todos/11-reliable-delivery/evidence/01/source-manifest.json\",\n      \"docs/todos/11-reliable-delivery/evidence/01/task01-final-0355.json\",\n      \"docs/todos/11-reliable-delivery/evidence/01/task01-final-0355.json.child.json\",\n      \"docs/todos/11-reliable-delivery/evidence/01/task01-final-0355.json.output.txt\",\n      \"docs/todos/11-reliable-delivery/evidence/01/task01-green-0354.json\",\n      \"docs/todos/11-reliable-delivery/evidence/01/task01-green-0354.json.child.json\",\n      \"docs/todos/11-reliable-delivery/evidence/01/task01-green-0354.json.output.txt\",\n      \"docs/todos/11-reliable-delivery/evidence/01/task01-red-0354.json\",\n      \"docs/todos/11-reliable-delivery/evidence/01/task01-red-0354.json.child.json\",\n      \"docs/todos/11-reliable-delivery/evidence/01/task01-red-0354.json.output.txt\",\n      \"scripts/iter_contracts.py\",\n      \"scripts/iter_preflight.py\",\n      \"scripts/iter_queries.py\",\n      \"tests/test_delivery_mode_consistency.py\"\n    ],\n    \"stage_current\": \"阶段清单已勾选完毕\",\n    \"stage_progress\": \"3/3 (100%)\"\n  }\n}\n",
+    "stderr": "",
+    "candidate_id": "",
+    "checkpoint_candidate": "a178fbc65c6bc2cd9fed19e691571080e73e1e60",
+    "commit_sha": "a178fbc65c6bc2cd9fed19e691571080e73e1e60",
+    "status": "DONE",
+    "acceptance_verdict": "PASS",
+    "review_status": "APPROVED",
+    "caveat": "candidate_id is empty; checkpoint candidate and commit_sha identify C2. Remaining-work text in checkpoint is historical, not a new command to reopen DONE01. Frozen coordinator has documented FROZEN-KNOWN-01 semantic mode-audit limitation."
+  },
+  "task01": {
+    "card": "docs/todos/11-reliable-delivery/01-delivery-mode-consistency.md",
+    "type": "Strict-TDD",
+    "evidence_directory": "docs/todos/11-reliable-delivery/evidence/01/",
+    "contract": "red must be assertion failure with nonzero exit; green and regression exit zero; independent review and C/D binding required",
+    "original_red": {
+      "receipt": "docs/todos/11-reliable-delivery/evidence/01/task01-red-0354.json",
+      "output": "docs/todos/11-reliable-delivery/evidence/01/task01-red-0354.json.output.txt",
+      "status": "COMPLETED",
+      "exit_code": 1,
+      "tree_terminal": true,
+      "observed": "7 failed, 98 passed; assertion failures include unknown and empty delivery mode accepted as PASS"
+    },
+    "initial_final": {
+      "receipt": "docs/todos/11-reliable-delivery/evidence/01/task01-final-0355.json",
+      "output": "docs/todos/11-reliable-delivery/evidence/01/task01-final-0355.json.output.txt",
+      "exit_code": 0,
+      "observed": "124 passed; C1 evidence only, not a C2 run"
+    },
+    "repair_red": {
+      "receipt": "docs/todos/11-reliable-delivery/evidence/01/fix1-red-0401.json",
+      "output": "docs/todos/11-reliable-delivery/evidence/01/fix1-red-0401.json.output.txt",
+      "exit_code": 1,
+      "observed": "7 failed, 29 passed; missing UNKNOWN handoff for broken profile"
+    },
+    "final": {
+      "receipt": "docs/todos/11-reliable-delivery/evidence/01/fix1-final-0401.json",
+      "output": "docs/todos/11-reliable-delivery/evidence/01/fix1-final-0401.json.output.txt",
+      "status": "COMPLETED",
+      "exit_code": 0,
+      "tree_terminal": true,
+      "observed": "130 passed; same run recorded for green and regression"
+    },
+    "review": {
+      "receipt": "docs/todos/11-reliable-delivery/evidence/01/review-receipt.json",
+      "report": "docs/todos/11-reliable-delivery/evidence/01/review-report.json",
+      "verdict": "APPROVED",
+      "candidate": "a178fbc65c6bc2cd9fed19e691571080e73e1e60",
+      "contract_sha": "1e99816564fa89d0b43db7a96fbc7c0dac1b6dd9",
+      "finding_F1": "ADDRESSED",
+      "limits": "Recorded independent task01 C2 review; no new independent approval by this consumer; no Windows, full suite, whole iteration, deployment or external validation implied."
+    }
+  },
+  "missing_probe": {
+    "path": "docs/todos/11-reliable-delivery/evidence/01/navigation-probe-intentionally-absent-04.txt",
+    "argv": [
+      "python3",
+      "-B",
+      "-c",
+      "from pathlib import Path; Path('docs/todos/11-reliable-delivery/evidence/01/navigation-probe-intentionally-absent-04.txt').read_text(encoding=\"utf-8\")"
+    ],
+    "exit_code": 1,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n    from pathlib import Path; Path('docs/todos/11-reliable-delivery/evidence/01/navigation-probe-intentionally-absent-04.txt').read_text(encoding=\"utf-8\")\n                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.13/pathlib/_local.py\", line 548, in read_text\n    return PathBase.read_text(self, encoding, errors, newline)\n           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.13/pathlib/_abc.py\", line 632, in read_text\n    with self.open(mode='r', encoding=encoding, errors=errors, newline=newline) as f:\n         ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.13/pathlib/_local.py\", line 539, in open\n    return io.open(self, mode, buffering, encoding, errors, newline)\n           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nFileNotFoundError: [Errno 2] No such file or directory: 'docs/todos/11-reliable-delivery/evidence/01/navigation-probe-intentionally-absent-04.txt'\n",
+    "result": "UNKNOWN: FileNotFoundError for intentionally absent probe; no impact inferred on actual task01 receipt"
+  },
+  "historical_fulltext_required": false,
+  "historical_iteration_10_read": false,
+  "scenario_comparison": "Read scenario after independent navigation; expected paths and missing probe match observed route.",
+  "conclusion": "Navigated candidate entry to current goal, exact task and evidence; actual envelope returns DONE/PASS for C2 and receipt records APPROVED. Intentionally absent probe remains UNKNOWN. This is bounded navigation consumption, not independent approval, a test run, installed-skill claim or deployment."
+}

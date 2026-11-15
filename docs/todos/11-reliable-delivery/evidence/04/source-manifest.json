@@ -1,0 +1,17 @@
+{
+  "sha256": {
+    "SKILL.md": "a6a93c464effecb00a328129befcf933336f24ed45434f473494db751028ecfb",
+    "templates/iteration_readme.md": "09c26b53f852e1126eca82c8f2d18b574b7917b6dfab11b8e84fc63379fe1550",
+    "tests/test_navigation_paths.py": "3d06da1bcd9bd1e0b29f9b668a5df703a8aa7c5ed857ca3b663195c7d481d6f8",
+    ".agents/notes/planned/iter11/04-navigation-paths.md": "2251230cef1b9b1f82caf7ff3c560054ae552ae6a3aa280fec30b718c5791748",
+    "tests/test_prompt_sources.py": "a82cb13d42fd11f4089d7c3355bf033724e08d2c9a89d482ef98c920d1be5b32",
+    "references/agent_protocol.md": "bd77cadd4718448eafca867bbad264bba349fcbf2b6b576c3476fb7052c5441a",
+    "references/task_card_schema.md": "b3ae5d59850d0a0e8bc3b66797fe23535103f762d6c996192aa447c13c07c44c",
+    "references/worktree_git_contract.md": "0c1aca1de1c031380bebe9aa08642244dde70387d98c87a197b13f5bd689b51b",
+    "references/execution_readiness.md": "9883dfe6d6684965a89c3831c6e653196a9b4ff65791c7f78bb41c4561cc4baf",
+    "templates/contracts/spike_discovery_contract.md": "be7abd863d7e6d7465ffc3d6a99d5d129771cb59386dbf14330413f855f5df47",
+    "templates/contracts/strict_tdd_contract.md": "2004b2cc298cd2b6631cf2dc6347e340e3f94753b22d67176fd110823655d8e6",
+    "scripts/iter_sync.py": "a3afb08fb8d021feb7b685e6ff4f6c97c3ed60645e111c1034320876bb8959f7",
+    "scripts/iter_queries.py": "02b0982e8d247e2fbc18b6c247a01e4e9a9e2eeefb60b6cb904b5c85340f7fef"
+  }
+}

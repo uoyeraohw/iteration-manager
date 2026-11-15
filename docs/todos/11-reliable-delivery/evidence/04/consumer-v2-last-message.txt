@@ -1,0 +1,7 @@
+已完成本次独立导航消费，观察记录在 [navigation-consumption-v2.json](/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/04/navigation-consumption-v2.json)。实际 `CODEX_THREAD_ID` 为 `01a1dd7f-c903-7ef2-a6df-87c03f15383c`。
+
+冻结 CLI 的 envelope 退出 0，返回任务 01 `DONE`、验收 `PASS`，`commit_sha` 为 `a178fbc65c6bc2cd9fed19e691571080e73e1e60`；其 `candidate_id` 字段为空。实际原始 RED 为 7 项断言失败、98 项通过；修复后的最终运行是 130 项通过，审查收据对该 C2 候选给出 `APPROVED`。
+
+刻意缺失的探针读取退出 1，实际异常为 `FileNotFoundError: [Errno 2]`。该路径单独记为 **UNKNOWN**，不影响任务 01 的现有收据。导航未要求读取历史迭代 10 README 或完整历史日志；场景文件是在独立定位后才用于比对。
+
+这是当前 worktree 候选的消费观察，不是独立批准、部署或已安装 Skill 的采用证明。未运行测试；返回时没有本次启动的活动命令。

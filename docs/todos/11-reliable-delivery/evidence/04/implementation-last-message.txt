@@ -1,0 +1,10 @@
+任务 04 的实现检查点已交付，尚未提交。原生会话 UUID：`01a1dd7a-d83f-7803-8c9b-7c75e2ce3a78`。当前没有活动命令。
+
+[SKILL.md](/data/workspace/iteration-manager/.worktrees/iter-11/SKILL.md) 已收敛为角色、授权、真源和权威契约导航；[迭代模板](/data/workspace/iteration-manager/.worktrees/iter-11/templates/iteration_readme.md) 增加了交接摘要、任务卡及证据路径槽位。任务卡和 README 的 Controller 状态未由本次实现修改。
+
+指定实验通过冻结 Linux runner 完成：**6 passed，退出码 0，命令树已终止**。原始[收据](/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/04/navigation-experiment-final-0435.json)与输出已保留。历史迭代 10 README 和发布目录共 50 个文件的前后 SHA256 一致。
+
+交接材料包括 [delivery.json](/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/04/delivery.json)、[checks-proposal.json](/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/04/checks-proposal.json) 和 [原生消费场景](/data/workspace/iteration-manager/.worktrees/iter-11/docs/todos/11-reliable-delivery/evidence/04/navigation-scenario.md)。
+
+**实际新会话导航消费仍待 Root 在 C 前执行**，包括缺失原件探针。独立审查、C/D 和冻结 strict 也尚待完成；本检查点不代表批准、DONE、部署或 Windows 验证。
+

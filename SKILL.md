@@ -6,92 +6,29 @@ description: >-
 
 # Iteration Manager
 
-维护主版本为 `.codeg/skills/iteration-manager`；`.codex` 与 `.gemini/config` 是真实独立副本，整轮验收和部署完成后同步同一候选。三个助手的权威指令在 `templates/assistants/`；配置落盘、新会话实际消费和副本同步分别验收，不能互相替代。
+## 入口、角色与授权
 
-## 先选入口与授权
-
-| 入口 | 行为 | 权威助手源 |
+| 入口 | 用途 | 权威助手源 |
 |---|---|---|
-| `/iter init` | 新建、接管或重规划，按授权写计划/提交 | [Planner](templates/assistants/iteration_planner.md) |
-| `/iter next` | 整轮依赖调度、恢复、独立整体验收 | [Controller](templates/assistants/iteration_controller.md) |
-| `/iter task` | 单任务编排、分类型验证与独立审查 | [Tech Lead](templates/assistants/task_tech_lead.md) |
-| `/iter sync` | 只按实际命令更新投影或执行检查 | [CLI](scripts/iter_sync.py) |
+| `/iter init` | 规划、接管或重规划 | [Planner](templates/assistants/iteration_planner.md) |
+| `/iter next` | 整轮调度和验收 | [Controller](templates/assistants/iteration_controller.md) |
+| `/iter task` | 单卡执行和独审 | [Tech Lead](templates/assistants/task_tech_lead.md) |
+| `/iter sync` | 实际 CLI 投影或检查 | [CLI](scripts/iter_sync.py) |
 
-三个助手与生成的新窗口Prompt都使用 [共同执行协议](references/agent_protocol.md)，禁止重新嵌入另一套调度/修复循环。生成Prompt时保留三段：角色/授权/基线 → 任务卡/接口/依赖/类型契约 → 验收/证据/恢复/最高状态。工具名称以当前环境schema为准，不假定固定嵌套能力或并发容量。
+必读[共同执行协议](references/agent_protocol.md)和[任务卡契约](references/task_card_schema.md)：共同流程、授权、角色、预算和恢复以协议为准；生成的委派 Prompt 也消费该协议。仅生成 Prompt、评估或只读接管不授权实施、写文件或 Git 提交。Controller 不写业务代码，执行者最高 TESTING；独立 Reviewer 不参与同任务的实现、测试、设计或 RCA。工具能力以实际环境为准。
 
-**仅生成Prompt、评估或只读接管不授权实施、写文件或Git提交。** 可给标明执行前门禁的预览；实际执行前再校验基线。主控不写业务代码，但可以读取冻结Diff、运行独立验收。单任务执行者最高TESTING，同任务的测试作者、实现者及RCA/设计参与者不能独立对审。
+## 当前任务的真源与导航
 
-## 真源与文件拓扑
+从目标项目当前 Worktree 的 `docs/todos/<当前迭代>/README.md` 读取 `iter:goal` 和当前交接摘要，并按任务索引读取准确任务卡及其证据路径；用实际 CLI 的 `--render-envelope <任务卡>` 只读获取交接。直接查看所需原件，缺失或不可读时记录 UNKNOWN/缺口，不从历史迭代猜状态或默认加载历史全文。任务卡是需求、状态和事件真源，README 的投影和看板是展示；原始输出和独立收据证明实际事实。不要另建状态账。
 
-```text
-docs/todos/
-├── README.md                     # 根总控，特性分支Zero-Root-Touch只读
-└── 01-迭代名称/                   # 1 Worktree = 1 Iteration
-    ├── README.md                 # 目标、约束、Review Focus、聚合投影
-    ├── 01-任务.md                # 需求、接口、范围、验收、执行账本与自治事件
-    └── evidence/01/              # 原始输出、独立报告、JSON收据
-```
+状态 TODO → IN_PROGRESS → TESTING → DONE，FUSED 是异常阻塞，缺失或非法为 UNKNOWN；声明 DONE 不等于验收 PASS。完成收据、冻结规格和四种类型门禁以[任务卡契约](references/task_card_schema.md)为准：[Strict-TDD](templates/contracts/strict_tdd_contract.md)、[UI-Component](templates/contracts/ui_component_contract.md)、[Refactor-Benchmark](templates/contracts/refactor_benchmark_contract.md)、[Spike-Discovery](templates/contracts/spike_discovery_contract.md)。未评估的规划为 UNASSESSED，实际 TypeSafe 门禁见[指南](references/typesafe_eval_guide.md)。
 
-不并行维护 `.superpowers/sdd/` 或另一套任务状态。项目决定理由留在项目自己的 `.agents/notes/`，任务状态仍归docs/todos。分支只读写当前Worktree的卡片及索引，不回写主仓库副本。
+Git 交付的 Worktree、C/D 与分支门禁见 [Worktree 契约](references/worktree_git_contract.md)；显式 filesystem 交付的 profile、快照和本地收据见[任务卡契约](references/task_card_schema.md)。坏配置不降级，FS 本地 strict 不替代 Git 分支或全局门禁。源码、独审、安装、真实消费与业务验收分别核实；合流、推送、部署和清理分别授权。
 
-## 规划与初始化
+## 工具和资源路由
 
-1. 读取需求、项目约定及实际cwd/分支/完整HEAD/dirty；明确写文件和Git权限。
-2. 新建按可独立验收的交付拆解，锁定Consumes/Produces精确签名及依赖；每卡按type设计可验证阶段，迭代README记录Global Constraints、执行约定与3—5项Review Focus。执行约定冻结实际工具入口/版本、交付模式、分层验证与临时产物位置。
-3. 接管先 `--takeover-report`只读报告，保留历史Commit/状态/证据。缺失证据保持UNKNOWN，授权后才能迁移格式或补验。重规划登记具体Ruling与预算事件，普通裁决不自动计重规划。
-4. 按 [TypeSafe指南](references/typesafe_eval_guide.md) 实际evaluate，权重30/30/20/20，总分≥80且单项≥70。未评估UNASSESSED；低分先针对具体缺口改进，不用默认85或自造评分。
-5. 写入已授权的三级模板，依据type替换验证步骤。仅在相应授权下维护.gitignore的.worktrees/规则、同步根索引及精准提交本次归属文件；检查cached diff，不提交他人dirty。
-6. 实际创建Worktree前运行 `--verify-committed`；非零读取诊断，Git失败不视为已提交。没有Git提交权限时交付未提交计划和明确执行依赖，不越权补提交。
+从目标项目根以实际 skill 根和约定的冻结版本运行 [iter_sync.py](scripts/iter_sync.py)；`--help` 给出实际 CLI 参数。只读定位可用 `--takeover-report`、`--inventory`、`--preflight`、`--dispatch-check`、`--render-envelope`、`--execution-report`；`--local` 和根同步会写投影，`--dry-run` 才只读。就绪与交接见[执行检查](references/execution_readiness.md)，正式命令和恢复见[截止入口](references/checkpoint_execution.md)。
 
-## 执行与验收
-
-四态：TODO → IN_PROGRESS → TESTING → DONE；FUSED为异常阻塞，不是第五种成功状态。缺失/非法状态UNKNOWN，不能从正文猜测。声明DONE和验收PASS分别核对。
-
-1. 按 [Worktree契约](references/worktree_git_contract.md) 核对 `.worktrees/iter-{XX}` 与 `feat/iter-{XX}-*`、基线、dirty归属、规划提交和约定基线检查。
-2. 按共同协议先做只读就绪盘点，领取唯一卡片写者后消费逐卡dispatch-check；READY只表示可派发，不是验收PASS。普通任务可由主控兼任技术主管，同一实现者负责核心RED→GREEN及返修，独立Reviewer仍由非参与者担任；指定执行者与角色隔离要求优先。记录实际task_id、时限和可交付检查点，无下级工具时由上层桥接。
-3. 失败按持久预算处理：默认单轮5、累计10、会诊1、重规划2；重启/重复回收不清零。第5次失败后停止修复，预算内诊断/重规划；达累计或其它上限保存成果、证据、具体BLOCKED及恢复条件。不自动方案A，不扩大授权。
-4. 开发内环跑针对性测试，任务交付完成type必需证据与受影响回归，迭代末执行集成路径与全量回归；范围不明或既定契约要求全量时不能缩减。UI先验证一条真实用户路径再扩展矩阵。完成候选及原始证据后，由非参与者独审；停止、completed、exit0或格式检查不等于产品验收。
-5. Git模式独立APPROVED后登记JSON收据、报告和DONE，head_sha绑定C，再提交登记D并运行 `--local --strict`；FS模式按任务卡契约先定稿完整正文、冻结、独审，再只登记允许的元数据。代码/测试/原始证据/冻结规格变化重审受影响内容；有效证据复用不豁免候选绑定。
-6. 全部任务验收PASS后独立总审，聚焦跨任务接口、集成路径与Review Focus，不逐卡重做已通过审查；Git模式还需 `--check-branch --strict`。汇总Rulings、Deferred Minors及真实缺口。合主干、推远端、发布和清理Worktree按各自授权，不自动执行。
-
-预算字段、事件幂等、恢复查询及真实工具调用见 [共同协议](references/agent_protocol.md)；所有收据/按type门禁见 [任务卡契约](references/task_card_schema.md)。会诊只提供建议，不产生APPROVED。旧DONE缺收据UNKNOWN，不补造历史红绿或批准。
-
-获准文件快照交付时，可按任务卡契约显式启用迭代内 `iteration-delivery.json` 的 filesystem 模式；本地strict核对当前收据、源码/证据快照、冻结任务规格及迭代目标。缺/坏配置不作宽松降级，不自动迁造旧收据，预算与类型门禁不变；分支及全局Git提交前提不因此豁免。
-
-业务/测试/验收统一使用[截止入口](references/checkpoint_execution.md)`scripts/iter_run.py`保存同调用核验和原始证据；时间中断可在主控显式单次授权下`resume-checkpoint`续跑，不改变四预算或旧recover。源码验收、模板部署、真实消费和业务整链分开记录。
-
-优先在截止前交付正常检查点，确认终态后记录attempt再release；连续两次尝试无可用新增证据时，不得原样重派，先改变输入、切片或能力条件。新流程由主控消费只读dispatch-check门禁，详见[执行检查与交接](references/execution_readiness.md)；旧调用兼容，不自动拦截原生委派。新模板不追溯改写旧卡；工具升级、收据迁移与业务迭代分别授权。
-
-## CLI：从对应项目根目录运行
-
-用实际安装路径替换 `<skill_root>`，不要假定当前目录是Skill根。
-
-```powershell
-python <skill_root>/scripts/iter_sync.py --verify-committed [仓库路径]
-python <skill_root>/scripts/iter_sync.py --takeover-report <迭代目录>
-python <skill_root>/scripts/iter_sync.py --inventory <迭代目录> --mode continue --context <项目相对观察JSON> --phase-from-context
-python <skill_root>/scripts/iter_sync.py --inventory <迭代目录> --mode takeover [--context <项目相对观察JSON> --phase <实际阶段>] [--details]
-python <skill_root>/scripts/iter_sync.py --preflight <迭代目录> --context <项目相对观察JSON> --phase <实际阶段>
-python <skill_root>/scripts/iter_sync.py --preflight <迭代目录> --context <项目相对观察JSON> --phase-from-context
-python <skill_root>/scripts/iter_sync.py --dispatch-check <任务卡> --context <项目相对观察JSON> --phase <实际阶段> --owner <当前写者>
-python <skill_root>/scripts/iter_sync.py --autonomy attempt <任务卡> --event-id <稳定ID> --owner <当前写者> --executor-state completed --evidence <项目相对报告JSON>
-python <skill_root>/scripts/iter_sync.py --render-envelope <任务卡> [仓库路径]
-python <skill_root>/scripts/iter_sync.py --execution-report <迭代目录>
-python <skill_root>/scripts/iter_sync.py --check-scope <BASE> <C> <任务卡> --include-worktree
-python <skill_root>/scripts/iter_sync.py --review-pkg <BASE> <C> [任务ID] [仓库路径]
-python <skill_root>/scripts/iter_sync.py --local --strict [迭代目录或Worktree]
-python <skill_root>/scripts/iter_sync.py --check-branch --strict [仓库路径] [基准分支]
-python <skill_root>/scripts/iter_sync.py [主干工作区路径]
-```
-
-范围检查包括暂存/未暂存/未追踪，`--baseline-dirty <JSON路径数组文件>`只提示归属，不豁免。检查器只读不回滚。根同步有特性分支保护；`--local`只刷新所属迭代。默认同步报告警告，strict失败/UNKNOWN返回非零。查看看板用 `--board` 或 `--serve-board`，显式导出用 `--export-board`；显示投影不能替代证据验收。`--execution-report`只读汇总现有attempt：会话/命令去重、重叠并集及累计量分列，缺失保持null；不产生验收，不推断测试编写或纯开发耗时，字段及主控消费顺序见[执行检查与交接](references/execution_readiness.md)。
-
-## 资源
-
-- [发布证据索引](references/release_status.md)：源码、已审候选、安装与实际消费分层查证；[结构化任务卡生成](references/template_generation.md)。
-- [任务卡模板](templates/task_detail.md)、[迭代索引](templates/iteration_readme.md)、[根索引](templates/root_readme.md)
-- [Implementer委派](templates/sdd_implementer_prompt.md)、[Reviewer委派](templates/sdd_reviewer_prompt.md)、[会诊](templates/consilium_rca_prompt.md)
-- 类型契约：[Strict-TDD](templates/contracts/strict_tdd_contract.md)、[UI](templates/contracts/ui_component_contract.md)、[重构](templates/contracts/refactor_benchmark_contract.md)、[Spike](templates/contracts/spike_discovery_contract.md)
-- [微观工程手册](references/superpowers_handbook.md)、[Worktree契约](references/worktree_git_contract.md)
-
-维护Skill本身时，规则/模板改动先运行 `python -B -m pytest -p no:cacheprovider tests/test_prompt_sources.py tests/test_task_card_schema.py -q`，并用实际代理场景核验指令消费与独立审查。脚本或跨模块合同改变时补充受影响测试，整轮候选运行 `python -B -m pytest -p no:cacheprovider tests -q`。浏览器/部署证据按对应阶段另验，静态文本检查不代替运行。
+- [任务卡模板](templates/task_detail.md)、[迭代索引模板](templates/iteration_readme.md)、[根索引模板](templates/root_readme.md)、[结构化生成](references/template_generation.md)
+- [Implementer](templates/sdd_implementer_prompt.md)、[Reviewer](templates/sdd_reviewer_prompt.md)、[会诊](templates/consilium_rca_prompt.md)
+- [发布证据索引](references/release_status.md)、[微观工程手册](references/superpowers_handbook.md)

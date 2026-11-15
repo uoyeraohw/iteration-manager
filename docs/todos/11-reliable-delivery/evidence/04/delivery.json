@@ -1,0 +1,35 @@
+{
+  "native_session_uuid": "01a1dd7a-d83f-7803-8c9b-7c75e2ce3a78",
+  "base": "6b6b5515e6e0ea58c1d66d1de514811782441fc5",
+  "candidate": "uncommitted task04 source diff on BASE; see source-manifest.json",
+  "environment": "Linux; Python 3.11.17, pytest 9.2.0; approved immutable iter11-platform-v1 runner",
+  "dispatch_check": "docs/todos/11-reliable-delivery/evidence/04/dispatch-check.call.json",
+  "command": "/data/workspace/iteration-manager/build/iter11-maint-venv/bin/python -B -m pytest -p no:cacheprovider tests/test_navigation_paths.py tests/test_prompt_sources.py -q --basetemp /tmp/iter11-task04-final-0435",
+  "runner_receipt": "docs/todos/11-reliable-delivery/evidence/04/navigation-experiment-final-0435.json",
+  "result": {
+    "status": "COMPLETED",
+    "raw_exit_code": 0,
+    "tree_terminal": true,
+    "output": "docs/todos/11-reliable-delivery/evidence/04/navigation-experiment-final-0435.json.output.txt",
+    "summary": "6 passed in 0.02s"
+  },
+  "source_manifest": "docs/todos/11-reliable-delivery/evidence/04/source-manifest.json",
+  "decision_interfaces": "docs/todos/11-reliable-delivery/evidence/04/navigation-decision-interfaces.md",
+  "scenario": "docs/todos/11-reliable-delivery/evidence/04/navigation-scenario.md",
+  "historical_hashes": [
+    "docs/todos/11-reliable-delivery/evidence/04/historical-before.json",
+    "docs/todos/11-reliable-delivery/evidence/04/historical-after.json"
+  ],
+  "applicability": "final source manifest and specified experiment on Linux; prior run also retained, final run after text refinements",
+  "limitations": [
+    "actual fresh native consumer pending, not simulated",
+    "no independent review, approval, DONE, deployment or Windows claim",
+    "template slots require actual existing project paths when filled"
+  ],
+  "remaining_root_gates": [
+    "actual fresh-session read-only navigation consumption before C including absent probe",
+    "freeze C and independent review",
+    "register D and run frozen strict"
+  ],
+  "controller_files": "task card and README untouched by implementer"
+}

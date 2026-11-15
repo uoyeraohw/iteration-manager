@@ -1,0 +1,11 @@
+{
+  "result": "FAIL",
+  "cause": "Controller started native read-only consumer after dispatch-check returned BLOCKED for duplicate inputs; missing exit-code branch in orchestration",
+  "check": "docs/todos/11-reliable-delivery/evidence/04/consumer-dispatch-check.json",
+  "native": "docs/todos/11-reliable-delivery/evidence/04/consumer-native.jsonl",
+  "terminal": "docs/todos/11-reliable-delivery/evidence/04/consumer-terminal.json",
+  "impact": "read-only navigation plus own observation artifact; no product/card/source mutations by consumer",
+  "correction": "Keep original evidence. Adopt approved dispatchAfterReady around actual command and native launch in same persistent call; regenerate deduplicated current context, new native consumer; no retroactive PASS.",
+  "budgets": "no reset; process incident is not a product test RED or approved task",
+  "root_responsibility": true
+}
